@@ -1,6 +1,7 @@
 """Operações do sistema (usadas pela API web e pelo servidor MCP)."""
 from __future__ import annotations
 
+import copy
 import os
 import re
 import shutil
@@ -153,13 +154,12 @@ class Servico:
                 if cats:
                     self.db.excluir_categoria(pid, cats)
         self.db.inserir_itens(pid, itens)
-        cats = {i["categoria"] for i in itens}
-        self.db.inserir_log(pid, "padronização", [e for e in res.get("padronizacao", []) if e["categoria"] in cats])
         self.db.inserir_log(pid, "vocabulário", [dict(campo=v["campo"], de=v["de"], para=v["para"], situacao="padronizado",
                                                      regra="vocabulário normalizado na leitura", quantidade=v["quantidade"])
                                                 for v in res.get("vocabulario", [])])
         self.db.registrar(pid, "importar", f"{res['arquivo']} — {len(itens)} itens ({modo})")
-        return dict(projeto=self.projeto(pid), importados=len(itens))
+        sug = self.gerar_sugestoes(pid)
+        return dict(projeto=self.projeto(pid), importados=len(itens), sugestoes=sug["pendentes"])
 
     def importar_arquivo(self, caminho: str, modo: str = "novo", projeto_id: int | None = None,
                          categorias: list[str] | None = None, nome: str | None = None) -> dict:
@@ -186,28 +186,19 @@ class Servico:
     def adicionar_itens(self, pid: int, itens: list[dict], categoria: str | None = None) -> list[dict]:
         self.projeto(pid)
         normal = [normalizar_item(i, categoria) for i in itens]
-        log = []
         for it in normal:
             it.setdefault("origem", "manual")
-            log += padrao_dnit.padronizar_item(it)
         ids = self.db.inserir_itens(pid, normal)
-        if log:
-            self.db.inserir_log(pid, "padronização", log)
+        novos = [self.db.item(i) for i in ids]
+        self.db.substituir_pendentes(pid, self._sugestoes_padronizacao(novos), apagar=False)
         self.db.registrar(pid, "adicionar itens", f"{len(ids)}")
-        return [self.db.item(i) for i in ids]
+        return novos
 
     def atualizar_item(self, iid: int, mudancas: dict) -> dict:
         atual = self.db.item(iid)
         if not atual:
             raise KeyError(f"Item {iid} não encontrado")
         norm = normalizar_item({**mudancas, "categoria": atual["categoria"]})
-        if "tipo" in mudancas:
-            tmp = {**atual, **{k: v for k, v in norm.items() if k in mudancas}, "dados": {**atual["dados"], **norm["dados"]}}
-            log = padrao_dnit.padronizar_item(tmp)
-            if log:
-                mudancas = {**mudancas, "tipo": tmp.get("tipo")}
-                norm["tipo"] = tmp.get("tipo")
-                self.db.inserir_log(atual["projeto_id"], "padronização", log)
         campos = {k: v for k, v in norm.items() if k in mudancas or k == "dados"}
         if "dados" in mudancas or any(k not in CAMPOS_TOPO for k in mudancas):
             campos["dados"] = norm["dados"]
@@ -298,6 +289,7 @@ class Servico:
         out["alertas"] = alertas
         out["n_alertas"] = {n: sum(1 for a in alertas if a["nivel"] == n) for n in ("erro", "aviso", "info")}
         out["projeto"] = p
+        out["sugestoes_pendentes"] = len(self.db.sugestoes(pid, "pendente"))
         return out
 
     def validar(self, pid: int) -> list[dict]:
@@ -369,102 +361,218 @@ class Servico:
                 wb.close()
 
     # ------------------------------------------- verificação do SNV / correções
-    def corrigir_analisar(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
+    # ---------------------------------------- sugestões de correção (revisão)
+    _CAMPOS_KM = ("km_ini", "km_fim")
+    _DERIVADOS = ("extensao", "extensao_km", "km_faixa", "km_acost", "area", "area_ha", "area_caiacao",
+                  "area_capina", "quantidade")
+
+    @staticmethod
+    def _valor_atual(it: dict, campo: str):
+        return it.get(campo) if campo in CAMPOS_TOPO else (it.get("dados") or {}).get(campo)
+
+    def _sugestoes_padronizacao(self, itens: list[dict]) -> list[dict]:
+        out = []
+        for it in itens:
+            log = padrao_dnit.padronizar_item(copy.deepcopy(it))
+            if not log:
+                continue
+            for sit in (padrao_dnit.PADRONIZADO, padrao_dnit.CONFERIR, padrao_dnit.VERIFICAR):
+                ents = [e for e in log if e["situacao"] == sit]
+                if not ents:
+                    continue
+                mud = {e["campo"]: e["para"] for e in ents if e.get("para") not in (None, "")}
+                opcoes = []
+                for e in ents:
+                    for v in e.get("opcoes") or []:
+                        opcoes.append(dict(rotulo=f"{e['campo']} = {v}", mudancas={e["campo"]: v}))
+                campos = sorted({e["campo"] for e in ents})
+                out.append(dict(item_id=it["id"], tipo="padronização", origem=it.get("origem"), categoria=it["categoria"],
+                                km_ini=it.get("km_ini"), km_fim=it.get("km_fim"), situacao=sit,
+                                confianca="alta" if sit == padrao_dnit.PADRONIZADO else "média" if sit == padrao_dnit.CONFERIR else "—",
+                                motivo="; ".join(dict.fromkeys(e["regra"] for e in ents)), metodo=padrao_dnit.ALBUM,
+                                atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes))
+        return out
+
+    def _sugestoes_correcao(self, p: dict, itens: list[dict], oficial, versao) -> tuple[list[dict], dict]:
+        an = correcao.analisar(p, itens, oficial, versao)
+        por_id = {i["id"]: i for i in itens}
+        grupos: dict[tuple, list] = {}
+        for a in an["acoes"]:
+            grupos.setdefault((a["id"], a["situacao"], a["motivo"] if a["situacao"] == correcao.VERIFICAR else ""), []).append(a)
+        out = []
+        for (iid, sit, _), acs in grupos.items():
+            it = por_id[iid]
+            a0 = acs[0]
+            mud, opcoes = {}, []
+            if sit == correcao.REMOVIDO:
+                mud = {"_excluir": True}
+            elif sit != correcao.VERIFICAR:
+                mud = {a["campo"]: a["para"] for a in acs if a["campo"] in correcao.CAMPOS_EDITAVEIS}
+            else:
+                pt = a0.get("ponta", "ini")
+                if a0.get("km_pela_coordenada") is not None:
+                    opcoes.append(dict(rotulo=f"Usar o km da coordenada (km {a0['km_pela_coordenada']})",
+                                       mudancas={f"km_{pt}": a0["km_pela_coordenada"]}))
+                if a0.get("pos_pelo_km"):
+                    la, lo = a0["pos_pelo_km"]
+                    opcoes.append(dict(rotulo=f"Manter o km e reposicionar a coordenada pelo eixo ({la}, {lo})",
+                                       mudancas={f"lat_{pt}": la, f"lon_{pt}": lo}))
+                if a0.get("coord_anterior"):
+                    la, lo = a0["coord_anterior"]
+                    opcoes.append(dict(rotulo=f"Usar a coordenada final do segmento anterior ({la}, {lo})",
+                                       mudancas={"lat_ini": la, "lon_ini": lo}))
+                if a0["campo"] == "km_ini" and a0.get("km_pela_coordenada") is not None:
+                    opcoes.append(dict(rotulo="Retirar do inventário (fora do trecho)", mudancas={"_excluir": True}))
+            campos = sorted({c for a in acs for c in a["campo"].split("/") if c in correcao.CAMPOS_EDITAVEIS}
+                            | {c for o in opcoes for c in o["mudancas"] if not c.startswith("_")})
+            motivos = list(dict.fromkeys(a["motivo"] for a in acs))
+            out.append(dict(item_id=iid, tipo="correção", origem=it.get("origem"), categoria=it["categoria"],
+                            km_ini=it.get("km_ini"), km_fim=it.get("km_fim"), situacao=sit, confianca=a0["confianca"],
+                            motivo="; ".join(motivos), metodo="; ".join(dict.fromkeys(a["metodo"] for a in acs)),
+                            atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes))
+        return out, an
+
+    def gerar_sugestoes(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
+        """Analisa o inventário (SNV, coordenadas × km, trecho e nomenclatura do álbum DNIT) e grava as
+        sugestões pendentes para revisão. Nada é alterado nos itens."""
+        import json
         p = self.projeto(pid)
         itens = self.db.itens(pid)
         oficial = correcao.ler_snv_oficial(arquivo_snv, p.get("rodovia")) if arquivo_snv else None
         if arquivo_snv and not oficial:
             raise ValueError("A planilha do SNV não tem segmentos da rodovia " + str(p.get("rodovia")))
-        an = correcao.analisar(p, itens, oficial, versao_snv)
-        token = uuid.uuid4().hex[:12]
-        self._previas["corr_" + token] = dict(pid=pid, analise=an, oficial=oficial, versao=versao_snv)
-        an["token"] = token
-        return an
+        corr, an = self._sugestoes_correcao(p, itens, oficial, versao_snv)
+        novas = corr + self._sugestoes_padronizacao(itens)
+        if oficial:
+            novas.append(dict(item_id=None, tipo="SNV", origem="cadastro de segmentos", categoria="SEG",
+                              situacao=correcao.CONFERIR, confianca="alta",
+                              motivo=f"Substituir o cadastro de segmentos pela tabela oficial do SNV {versao_snv or ''}".strip(),
+                              metodo="SNV oficial", atual={"segmentos": an["snv"]["cadastro_segmentos"]},
+                              mudancas={"_segmentos": oficial, "_versao": versao_snv}, opcoes=[]))
+        n = self.db.substituir_pendentes(pid, novas)
+        self.db.atualizar_projeto(pid, {"analise_snv": json.dumps(dict(an["snv"], tolerancias=an["tolerancias"]),
+                                                                  ensure_ascii=False)})
+        self.db.registrar(pid, "análise de sugestões", f"{n} sugestões pendentes")
+        return self.resumo_sugestoes(pid)
 
-    def corrigir_aplicar(self, token: str) -> dict:
-        reg = self._previas.pop("corr_" + token, None)
-        if not reg:
-            raise KeyError("Análise expirada — rode a verificação novamente.")
-        pid, an = reg["pid"], reg["analise"]
+    def resumo_sugestoes(self, pid: int) -> dict:
+        import json
         p = self.projeto(pid)
-        itens_antes = {i["id"]: i for i in self.db.itens(pid)}
-        res = correcao.aplicar(self.db, pid, an)
-        if reg.get("oficial"):
-            self._atualizar_segmentos(pid, reg["oficial"], reg.get("versao"))
-        out = dict(resultado=res)
-        rel = self._nome(p, "correcoes", "xlsx")
-        correcao.relatorio_xlsx(p, an, str(rel), itens_antes)
-        out["relatorio"] = rel.name
-        self.db.inserir_log(pid, "correção", an["acoes"])
-        if p.get("arquivo_original") and os.path.exists(p["arquivo_original"]):
-            g = self.exportar_original(pid)
-            out["original_corrigido"] = g["nome"]
-            out["celulas_gravadas"] = g["celulas"]
-        self.db.registrar(pid, "correção de pontos / SNV",
-                          f"{res['alterados']} itens alterados, {res['removidos']} removidos")
-        return out
+        todas = self.db.sugestoes(pid)
+        cont: dict = {}
+        for s_ in todas:
+            k = (s_["status"], s_["tipo"], s_["situacao"])
+            cont[k] = cont.get(k, 0) + 1
+        return dict(pendentes=sum(1 for s_ in todas if s_["status"] == "pendente"),
+                    contagem=[dict(status=k[0], tipo=k[1], situacao=k[2], n=v) for k, v in sorted(cont.items())],
+                    snv=json.loads(p["analise_snv"]) if p.get("analise_snv") else None)
+
+    def sugestoes(self, pid: int, status: str | None = None, tipo: str | None = None) -> list[dict]:
+        return self.db.sugestoes(pid, status, tipo)
+
+    def aplicar_sugestao(self, sid: int, mudancas: dict | None = None, opcao: int | None = None) -> dict:
+        s_ = self.db.sugestao(sid)
+        if not s_:
+            raise KeyError(f"Sugestão {sid} não encontrada")
+        if s_["status"] != "pendente":
+            raise ValueError(f"Sugestão já está '{s_['status']}'.")
+        if mudancas:
+            mud = mudancas
+        elif opcao is not None:
+            mud = s_["opcoes"][int(opcao)]["mudancas"]
+        else:
+            mud = s_["mudancas"] or {}
+        if not mud:
+            raise ValueError("Esta sugestão não tem correção automática: escolha uma opção ou informe o valor.")
+        pid = s_["projeto_id"]
+        if "_segmentos" in mud:
+            antes = self.db.itens(pid, "SEG")
+            self._atualizar_segmentos(pid, mud["_segmentos"], mud.get("_versao"))
+            self.db.resolver_sugestao(sid, "aplicada", {"_segmentos": True}, {"_snapshot_seg": antes})
+            return self.db.sugestao(sid)
+        it = self.db.item(s_["item_id"]) if s_["item_id"] else None
+        if not it:
+            raise KeyError("O item desta sugestão não existe mais.")
+        if mud.get("_excluir"):
+            self.db.excluir_itens([it["id"]])
+            self.db.resolver_sugestao(sid, "aplicada", {"_excluir": True}, {"_snapshot": it})
+        else:
+            atual = {c: self._valor_atual(it, c) for c in mud}
+            limpar = {}
+            if any(c in self._CAMPOS_KM for c in mud):
+                for c in self._DERIVADOS:
+                    if c in (it.get("dados") or {}):
+                        atual[c] = it["dados"][c]
+                        limpar[c] = None  # recalculado a partir do km
+            self.atualizar_item(it["id"], {**mud, **limpar})
+            self.db.resolver_sugestao(sid, "aplicada", mud, atual)
+        self.db.registrar(pid, "sugestão aplicada", f"#{sid} {s_['origem'] or ''} {mud}")
+        return self.db.sugestao(sid)
+
+    def aplicar_lote(self, pid: int, ids: list[int] | None = None, confianca: str | None = None,
+                     tipo: str | None = None) -> dict:
+        ok = falhas = 0
+        for s_ in self.db.sugestoes(pid, "pendente", tipo):
+            if ids is not None and s_["id"] not in ids:
+                continue
+            if confianca and s_["confianca"] != confianca:
+                continue
+            if not s_["mudancas"]:
+                continue
+            try:
+                self.aplicar_sugestao(s_["id"])
+                ok += 1
+            except (KeyError, ValueError):
+                falhas += 1
+        return dict(aplicadas=ok, falhas=falhas)
+
+    def dispensar_sugestao(self, sid: int) -> dict:
+        s_ = self.db.sugestao(sid)
+        if not s_ or s_["status"] != "pendente":
+            raise ValueError("Só é possível dispensar sugestões pendentes.")
+        self.db.resolver_sugestao(sid, "dispensada")
+        return self.db.sugestao(sid)
+
+    def desfazer_sugestao(self, sid: int) -> dict:
+        s_ = self.db.sugestao(sid)
+        if not s_ or s_["status"] not in ("aplicada", "dispensada"):
+            raise ValueError("Só é possível desfazer sugestões aplicadas ou dispensadas.")
+        if s_["status"] == "dispensada":
+            self.db.resolver_sugestao(sid, "pendente")
+            return self.db.sugestao(sid)
+        atual, apl = s_["atual"] or {}, s_["aplicado"] or {}
+        if apl.get("_excluir"):
+            snap = dict(atual["_snapshot"])
+            novo_id = self.db.inserir_itens(s_["projeto_id"], [snap])[0]
+            self.db.resolver_sugestao(sid, "pendente", None, {}, item_id=novo_id)
+        elif apl.get("_segmentos"):
+            self.db.excluir_categoria(s_["projeto_id"], ["SEG"])
+            self.db.inserir_itens(s_["projeto_id"], atual.get("_snapshot_seg") or [])
+            self.db.resolver_sugestao(sid, "pendente")
+        else:
+            self.atualizar_item(s_["item_id"], atual)
+            self.db.resolver_sugestao(sid, "pendente")
+        self.db.registrar(s_["projeto_id"], "sugestão desfeita", f"#{sid}")
+        return self.db.sugestao(sid)
 
     def log(self, pid: int, tipo: str | None = None) -> list[dict]:
         return self.db.log(pid, tipo)
 
     def exportar_original(self, pid: int) -> dict:
-        """Cópia da planilha de inventário importada com padronizações e correções gravadas e destacadas."""
+        """Cópia da planilha de inventário importada com os valores das sugestões aplicadas no sistema."""
         p = self.projeto(pid)
         orig = p.get("arquivo_original")
         if not orig or not os.path.exists(orig):
             raise ValueError("A planilha original deste projeto não está guardada (importe o arquivo novamente).")
-        entradas = [e for e in self.db.log(pid) if e["tipo"] in ("padronização", "correção")]
+        entradas = []
+        for s_ in self.db.sugestoes(pid, "aplicada"):
+            for campo, valor in (s_["aplicado"] or {}).items():
+                if not campo.startswith("_"):
+                    entradas.append(dict(origem=s_["origem"], campo=campo, para=valor, km_ini=s_["km_ini"], km_fim=s_["km_fim"]))
         base = re.sub(r"[^\w\-]+", "_", os.path.splitext(p.get("origem_arquivo") or "inventario.xlsx")[0])
-        dest = self.pasta / "exportacoes" / f"{base}_PADRONIZADO_CORRIGIDO_{time.strftime('%Y%m%d_%H%M%S')}.xlsx"
+        dest = self.pasta / "exportacoes" / f"{base}_CORRIGIDO_{time.strftime('%Y%m%d_%H%M%S')}.xlsx"
         g = correcao.gravar_no_original(orig, str(dest), entradas)
         return dict(arquivo=str(dest), nome=dest.name, celulas=g["celulas"])
-
-    def exportar_log(self, pid: int) -> dict:
-        from openpyxl.styles import Font, PatternFill
-        p = self.projeto(pid)
-        dest = self._nome(p, "log", "xlsx")
-        wb = openpyxl.Workbook()
-        abas = [("Padronização", "padronização", ["situacao", "categoria", "origem", "km_ini", "campo", "de", "para", "regra"]),
-                ("Vocabulário", "vocabulário", ["campo", "de", "para", "quantidade", "regra"]),
-                ("Correções", "correção", ["situacao", "categoria", "origem", "km_ini", "km_fim", "campo", "de", "para", "regra"])]
-        rot = dict(situacao="Situação", categoria="Categoria", origem="Origem (aba!linha)", km_ini="km inicial",
-                   km_fim="km final", campo="Campo", de="Valor original", para="Valor ajustado", regra="Regra / motivo",
-                   quantidade="Ocorrências")
-        larg = dict(situacao=26, categoria=10, origem=36, km_ini=10, km_fim=10, campo=12, de=24, para=24, regra=90, quantidade=12)
-        ws0 = wb.active
-        ws0.title = "Resumo"
-        ws0["A1"] = f"LOG DE PADRONIZAÇÃO E CORREÇÕES — {p.get('rodovia') or ''} {p.get('segmento') or ''}"
-        ws0["A1"].font = Font(bold=True, size=12)
-        ws0["A2"] = f"Referência de nomenclatura: {padrao_dnit.ALBUM}, códigos conforme descrições do SICRO."
-        ws0["A3"] = f"Arquivo importado: {p.get('origem_arquivo') or '—'}"
-        r = 5
-        from collections import Counter as _C
-        for titulo, tipo, cols in abas:
-            ent = self.db.log(pid, tipo)
-            ws0.cell(r, 1, titulo).font = Font(bold=True)
-            cont = _C(e["situacao"] for e in ent) if tipo != "vocabulário" else _C({"normalizações": sum(e["quantidade"] or 0 for e in ent)})
-            for k, v in cont.items():
-                r += 1
-                ws0.cell(r, 2, k)
-                ws0.cell(r, 3, v)
-            r += 2
-            ws = wb.create_sheet(titulo)
-            for j, c in enumerate(cols, 1):
-                cell = ws.cell(1, j, rot[c])
-                cell.font = Font(bold=True, color="FFFFFF")
-                cell.fill = PatternFill("solid", fgColor="1F3A5F")
-                ws.column_dimensions[openpyxl.utils.get_column_letter(j)].width = larg[c]
-            for i, e in enumerate(ent, 2):
-                for j, c in enumerate(cols, 1):
-                    ws.cell(i, j, e.get(c))
-                if e.get("situacao") in correcao.CORES:
-                    ws.cell(i, 1).fill = PatternFill("solid", fgColor=correcao.CORES[e["situacao"]])
-            ws.freeze_panes = "A2"
-            ws.auto_filter.ref = ws.dimensions
-        ws0.column_dimensions["A"].width = 30
-        ws0.column_dimensions["B"].width = 30
-        wb.save(dest)
-        return dict(arquivo=str(dest), nome=dest.name)
 
     def _atualizar_segmentos(self, pid: int, oficial: list[dict], versao: str | None) -> None:
         """Substitui o cadastro de segmentos pela tabela oficial do SNV (coordenadas pelo eixo)."""

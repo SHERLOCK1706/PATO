@@ -4,7 +4,7 @@ de Dispositivos de Drenagem do DNIT (IPR-736, 5ª ed.), na forma usada pelo SICR
 A tabela de códigos válidos abaixo foi extraída das descrições do SICRO (aba SICRO da planilha
 PATO), que seguem o álbum vigente. Ela pode ser ampliada em PADRAO sem mexer no código.
 
-Para cada item, `padronizar` devolve o tipo no padrão e registra no log:
+`padronizar_item` ajusta o item recebido (use uma cópia para apenas sugerir) e devolve o log:
   - "padronizado"                 grafia ajustada sem mudar o dispositivo (MFC03 → MFC 03)
   - "padronizado — conferir"      ajuste por correspondência (ex.: código antigo + largura)
   - "fora do padrão — verificar"  não há como determinar o código vigente; mantido como está
@@ -81,7 +81,8 @@ def _oac(it: dict) -> list[dict]:
     else:
         if bruto:
             log.append(dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                            regra="tipo de bueiro não reconhecido (esperado BSTC, BDTC, BTTC, BSCC, BDCC, BTCC…)"))
+                            regra="tipo de bueiro não reconhecido (esperado BSTC, BDTC, BTTC, BSCC, BDCC, BTCC…)",
+                            opcoes=list(PADRAO["tubular_concreto"]) + list(PADRAO["celular_concreto"])))
         return log
     # dimensão escrita no próprio tipo (ex.: 'BSTC Ø1,00' / 'BSCC 2,00x2,00')
     resto = t[t.find(codigo[-2:]) + 2:] if codigo[-2:] in t else ""
@@ -114,7 +115,8 @@ def _oac(it: dict) -> list[dict]:
                             regra=f"nº de linhas pelo código {codigo}"))
         elif int(linhas) != n_cod:
             log.append(dict(campo="linhas", de=linhas, para=None, situacao=VERIFICAR,
-                            regra=f"{codigo} indica {n_cod} linha(s), mas o inventário informa {int(linhas)}"))
+                            regra=f"{codigo} indica {n_cod} linha(s), mas o inventário informa {int(linhas)}",
+                            opcoes=[n_cod]))
     # dimensão padronizada
     dim = d.get("dimensao")
     if isinstance(dim, str):
@@ -133,10 +135,11 @@ def _oac(it: dict) -> list[dict]:
     if isinstance(dim, (int, float)) and lista and not any(abs(dim - v) < 0.005 for v in lista):
         log.append(dict(campo="dimensao", de=dim, para=None, situacao=VERIFICAR,
                         regra=f"{codigo} com {'D' if codigo[2] == 'T' else 'seção'} = {_fmt(dim)} m não consta no álbum "
-                              f"(padrão: {', '.join(_fmt(v) for v in lista)} m)"))
+                              f"(padrão: {', '.join(_fmt(v) for v in lista)} m)",
+                        opcoes=sorted(lista, key=lambda v: abs(v - dim))))
     elif isinstance(dim, str):
         log.append(dict(campo="dimensao", de=dim, para=None, situacao=VERIFICAR,
-                        regra=f"seção retangular {dim} não consta no álbum para {codigo}"))
+                        regra=f"seção retangular {dim} não consta no álbum para {codigo}", opcoes=list(lista or [])))
     return log
 
 
@@ -154,7 +157,8 @@ def _cod_dim(it, familia: dict, nomes: str, largura_campo: str | None = None) ->
         sigla, med = m.group(1), f"{int(m.group(2))}-{int(m.group(3))}"
         if med not in familia.get(sigla, []):
             log.append(dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                            regra=f"{cod} não consta no álbum (padrões {sigla}: {', '.join(familia.get(sigla, [])) or '—'})"))
+                            regra=f"{cod} não consta no álbum (padrões {sigla}: {', '.join(familia.get(sigla, [])) or '—'})",
+                            opcoes=[f"{sigla} {o}" for o in familia.get(sigla, [])]))
             return log
         if cod != bruto.strip():
             log.append(dict(campo="tipo", de=bruto, para=cod, situacao=PADRONIZADO, regra="grafia do código"))
@@ -178,7 +182,8 @@ def _cod_dim(it, familia: dict, nomes: str, largura_campo: str | None = None) ->
         else:
             sug = f"{sig} " + " ou ".join(cands or opcoes)
             log.append(dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                            regra=f"nomenclatura antiga ou sem dimensões; no álbum vigente: {sug}"))
+                            regra=f"nomenclatura antiga ou sem dimensões; no álbum vigente: {sug}",
+                            opcoes=[f"{sig} {o}" for o in (cands or opcoes)]))
     return log
 
 
@@ -189,11 +194,12 @@ def _mfc(it) -> list[dict]:
     if not m:
         if bruto:
             return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                         regra="tipo de meio-fio não reconhecido (padrão MFC 01 a MFC 08)")]
+                         regra="tipo de meio-fio não reconhecido (padrão MFC 01 a MFC 08)", opcoes=PADRAO["MFC"])]
         return []
     cod = f"MFC {int(m.group(1)):02d}"
     if cod not in PADRAO["MFC"]:
-        return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR, regra=f"{cod} não consta no álbum (MFC 01 a 08)")]
+        return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR, regra=f"{cod} não consta no álbum (MFC 01 a 08)",
+                     opcoes=PADRAO["MFC"])]
     if cod != bruto.strip():
         it["tipo"] = cod
         return [dict(campo="tipo", de=bruto, para=cod, situacao=PADRONIZADO, regra="grafia do código")]
@@ -209,7 +215,7 @@ def _eda(it) -> list[dict]:
             return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
                          regra="código de descida d'água (DAR/DAD) no cadastro de ENTRADAS (EDA)")]
         return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                     regra="tipo de entrada não reconhecido (padrão EDA 01 A … EDA 16 B)")] if bruto else []
+                     regra="tipo de entrada não reconhecido (padrão EDA 01 A … EDA 16 B)", opcoes=PADRAO["EDA"])] if bruto else []
     n = int(m.group(1))
     if m.group(2):
         cod = f"EDA {n:02d} {m.group(2)}"
@@ -220,7 +226,8 @@ def _eda(it) -> list[dict]:
             return [dict(campo="tipo", de=bruto, para=cod, situacao=PADRONIZADO, regra="grafia do código")]
         return []
     return [dict(campo="tipo", de=bruto, para=None, situacao=VERIFICAR,
-                 regra=f"falta a variante A ou B (álbum: EDA {n:02d} A ou EDA {n:02d} B)")]
+                 regra=f"falta a variante A ou B (álbum: EDA {n:02d} A ou EDA {n:02d} B)",
+                 opcoes=[f"EDA {n:02d} A", f"EDA {n:02d} B"])]
 
 
 def padronizar_item(it: dict) -> list[dict]:
@@ -245,9 +252,6 @@ def padronizar_item(it: dict) -> list[dict]:
         log = []
     for e in log:
         e.update(origem=it.get("origem"), categoria=cat, km_ini=it.get("km_ini"), referencia=ALBUM)
-        if e["situacao"] != VERIFICAR:
-            orig = it.setdefault("dados", {}).setdefault("_original", {})
-            orig.setdefault(e["campo"], e["de"] if e["campo"] != "dimensao" else orig.get("dimensao", e["de"]))
     return log
 
 

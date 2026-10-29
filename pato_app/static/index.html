@@ -27,6 +27,7 @@
   <button data-aba="mapa">Mapa</button>
   <button data-aba="projeto">Projeto e trecho</button>
   <button data-aba="alertas">Alertas <span id="nAlertas" class="pill"></span></button>
+  <button data-aba="revisao">Revisão <span id="nSug" class="pill pill-info"></span></button>
   <button data-aba="importar">Importar</button>
   <button data-aba="exportar">Exportar</button>
 </nav>
@@ -144,26 +145,33 @@
 
   <!-- ALERTAS -->
   <section id="aba-alertas" class="aba">
-    <div class="caixa">
-      <h3>Verificação do SNV e correção de pontos</h3>
-      <p class="nota">Confere os códigos SNV de cada item com o km, as coordenadas com o eixo da rodovia e o limite do trecho.
-        Corrige o que é possível determinar com segurança (digitação, coordenada registrada na ponta errada, SNV) e aponta o que
-        precisa ser verificado em campo. Opcional: envie a planilha oficial do SNV (DNIT) para comparar e atualizar o cadastro de segmentos.</p>
-      <div class="barra filtros">
-        <label class="cresce">Planilha oficial do SNV (opcional, .xlsx/.csv) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt"></label>
-        <label>Versão do SNV <input id="verSnv" placeholder="ex.: 202604A"></label>
-        <button class="btn primario" id="btnAnalisar">Analisar</button>
-      </div>
-      <div id="resCorrecao"></div>
-    </div>
-    <div class="caixa">
-      <h3>Nomenclatura dos dispositivos <small>(Álbum de Projetos-Tipo de Drenagem DNIT — IPR-736, 5ª ed.)</small></h3>
-      <div id="resLog" class="nota">—</div>
-    </div>
     <div class="barra">
       <div class="chips" id="chipsAlerta"></div>
     </div>
     <div class="tabela-rolagem"><table class="tab" id="tabAlertas"></table></div>
+  </section>
+
+  <!-- REVISÃO -->
+  <section id="aba-revisao" class="aba">
+    <div class="caixa">
+      <h3>Revisão do inventário — sugestões de correção</h3>
+      <p class="nota">Verificação do SNV, das coordenadas × km, do limite do trecho e da nomenclatura dos dispositivos
+        (Álbum de Projetos-Tipo de Drenagem DNIT — IPR-736, 5ª ed.). Nada é alterado até você aplicar: aplique a sugestão,
+        edite o valor antes de aplicar, escolha uma alternativa ou dispense. Toda sugestão aplicada pode ser desfeita.</p>
+      <div class="barra filtros">
+        <label class="cresce">Planilha oficial do SNV (opcional, .xlsx/.csv) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt"></label>
+        <label>Versão do SNV <input id="verSnv" placeholder="ex.: 202604A"></label>
+        <button class="btn primario" id="btnAnalisar">Analisar novamente</button>
+      </div>
+      <div id="infoSnv"></div>
+    </div>
+    <div class="barra">
+      <div class="chips" id="chipsStatus"></div>
+      <div class="chips" id="chipsTipoSug"></div>
+      <button class="btn" id="btnLoteAlta" title="Aplica todas as sugestões pendentes de confiança alta que têm correção definida">Aplicar todas de confiança alta</button>
+    </div>
+    <div class="info" id="infoSug"></div>
+    <div id="listaSug"></div>
   </section>
 
   <!-- IMPORTAR -->
@@ -208,13 +216,10 @@
           <button class="btn" data-exp="geojson">GeoJSON</button>
           <button class="btn" data-exp="kml">KML (Google Earth)</button>
         </div>
-        <h4>Log e planilha original</h4>
-        <p class="nota">Log de padronização (nomenclatura conforme o Álbum de Projetos-Tipo de Drenagem DNIT/IPR-736 5ª ed.),
-          vocabulário normalizado e correções aplicadas; e a planilha de inventário original com tudo gravado e as células destacadas.</p>
-        <div class="linha-botoes">
-          <button class="btn" data-exp="log">Log (.xlsx)</button>
-          <button class="btn" data-exp="original">Planilha original padronizada/corrigida</button>
-        </div>
+        <h4>Planilha original corrigida</h4>
+        <p class="nota">Cópia da planilha de inventário importada com os valores das sugestões aplicadas na aba Revisão
+          (sem marcações nem abas extras; o registro das correções fica só no sistema).</p>
+        <div class="linha-botoes"><button class="btn" data-exp="original">Planilha original corrigida</button></div>
         <div id="resExpInv"></div>
       </div>
     </div>

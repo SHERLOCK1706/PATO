@@ -223,19 +223,48 @@ def test_snv_oficial_csv(tmp_path, br174):
     assert any("174BMT0100" in o for o in an["snv"]["observacoes"])
 
 
-def test_gravar_no_original(tmp_path, sv):
+def test_revisao_sugestoes(tmp_path, sv):
     r = sv.importar_arquivo(str(BR174))
     pid = r["projeto"]["id"]
-    an = sv.corrigir_analisar(pid)
-    out = sv.corrigir_aplicar(an["token"])
-    arq = sv.pasta / "exportacoes" / out["original_corrigido"]
-    wb = openpyxl.load_workbook(arq, read_only=True)
-    ws = wb["CADASTRO TACHA, TACHÕES"]
-    linha = next(ws.iter_rows(min_row=26, max_row=26, values_only=True))
-    assert linha[5] == -14.7247                         # coordenada corrigida
-    ws = wb["CADASTRO DE MEIO FIO"]
-    assert next(ws.iter_rows(min_row=21, max_row=21, values_only=True))[10] == "MFC 03"   # padronizado
+    assert r["sugestoes"] > 0
+    # importação não altera nada: o meio-fio continua com a grafia original
+    mfc = sv.itens(pid, "MFC")[0]
+    assert mfc["tipo"] == "MFC03"
+    pend = sv.sugestoes(pid, "pendente")
+    s_mfc = next(s for s in pend if s["item_id"] == mfc["id"] and s["tipo"] == "padronização")
+    assert s_mfc["mudancas"] == {"tipo": "MFC 03"}
+    sv.aplicar_sugestao(s_mfc["id"])
+    assert sv.db.item(mfc["id"])["tipo"] == "MFC 03"
+    sv.desfazer_sugestao(s_mfc["id"])
+    assert sv.db.item(mfc["id"])["tipo"] == "MFC03"
+    # verificar em campo: escolhe uma alternativa
+    v = next(s for s in pend if s["situacao"] == "verificar em campo" and s["opcoes"])
+    sv.aplicar_sugestao(v["id"], opcao=0)
+    assert sv.db.sugestao(v["id"])["status"] == "aplicada"
+    # EDA sem variante: valor informado pelo usuário
+    eda = next(s for s in pend if s["categoria"] == "EDA" and "variante" in s["motivo"])
+    sv.aplicar_sugestao(eda["id"], mudancas={"tipo": eda["opcoes"][1]["mudancas"]["tipo"]})
+    assert sv.db.item(eda["item_id"])["tipo"].endswith(" B")
+    # fora do trecho: remove e desfaz
+    rem = next(s for s in pend if s["mudancas"] == {"_excluir": True})
+    sv.aplicar_sugestao(rem["id"])
+    assert sv.db.item(rem["item_id"]) is None
+    sv.desfazer_sugestao(rem["id"])
+    assert sv.db.item(sv.db.sugestao(rem["id"])["item_id"]) is not None
+    # dispensada não volta numa nova análise
+    d = next(s for s in sv.sugestoes(pid, "pendente") if s["tipo"] == "padronização" and s["mudancas"])
+    sv.dispensar_sugestao(d["id"])
+    sv.gerar_sugestoes(pid)
+    assert not any(s["item_id"] == d["item_id"] and s["motivo"] == d["motivo"] for s in sv.sugestoes(pid, "pendente"))
+    # lote de confiança alta
+    lote = sv.aplicar_lote(pid, confianca="alta")
+    assert lote["aplicadas"] > 40
+    tacha = next(i for i in sv.itens(pid, "TACHA") if i["origem"] == "CADASTRO TACHA, TACHÕES!26")
+    assert tacha["lat_ini"] == pytest.approx(-14.7247)
+    # planilha original com valores (sem marcações)
+    out = sv.exportar_original(pid)
+    wb = openpyxl.load_workbook(out["arquivo"])
+    c = wb["CADASTRO TACHA, TACHÕES"]["F26"]
+    assert c.value == pytest.approx(-14.7247) and c.fill.fgColor.rgb in (None, "00000000")
+    assert "LOG" not in " ".join(wb.sheetnames).upper()
     wb.close()
-    log = sv.exportar_log(pid)
-    assert os.path.exists(log["arquivo"])
-    assert sv.log(pid, "padronização") and sv.log(pid, "correção")

@@ -132,31 +132,48 @@ def validar_inventario(projeto_id: int, limite: int = 100) -> list[dict]:
 
 
 @mcp.tool()
-def verificar_e_corrigir(projeto_id: int, aplicar: bool = False, arquivo_snv: str | None = None,
-                         versao_snv: str | None = None) -> dict:
-    """Verifica o SNV e os pontos do inventário (coordenada × km, fora do trecho, digitação).
-    aplicar=False só lista; aplicar=True grava as correções, gera o relatório (.xlsx) e uma cópia da planilha
-    original com as células corrigidas destacadas. arquivo_snv: planilha/CSV oficial do SNV (opcional)."""
-    an = sv().corrigir_analisar(projeto_id, arquivo_snv, versao_snv)
-    out = dict(resumo=an["resumo"], snv=an["snv"],
-               acoes=[{k: a.get(k) for k in ("situacao", "origem", "km_ini", "campo", "de", "para", "motivo")}
-                      for a in an["acoes"]][:300])
-    if aplicar:
-        out["aplicado"] = sv().corrigir_aplicar(an["token"])
-    return out
+def analisar_inventario(projeto_id: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
+    """Verifica SNV, coordenadas × km, limite do trecho e nomenclatura (Álbum DNIT IPR-736) e gera sugestões de
+    correção PENDENTES para revisão (nada é alterado). arquivo_snv: planilha/CSV oficial do SNV (opcional)."""
+    return sv().gerar_sugestoes(projeto_id, arquivo_snv, versao_snv)
 
 
 @mcp.tool()
-def log_padronizacao(projeto_id: int, tipo: str | None = None, limite: int = 300) -> dict:
-    """Log das padronizações de nomenclatura (Álbum DNIT IPR-736 / SICRO), do vocabulário normalizado e das
-    correções aplicadas. tipo: 'padronização', 'vocabulário' ou 'correção'."""
-    ent = sv().log(projeto_id, tipo)
-    return dict(total=len(ent), entradas=ent[:limite])
+def listar_sugestoes(projeto_id: int, status: str = "pendente", tipo: str | None = None, limite: int = 200) -> dict:
+    """Sugestões de correção. status: pendente | aplicada | dispensada. tipo: correção | padronização | SNV.
+    Cada uma traz motivo, valores atuais, correção sugerida ('mudancas') e alternativas ('opcoes')."""
+    lst = sv().sugestoes(projeto_id, status, tipo)
+    return dict(total=len(lst), sugestoes=lst[:limite])
+
+
+@mcp.tool()
+def aplicar_sugestao(sugestao_id: int, opcao: int | None = None, mudancas: dict[str, Any] | None = None) -> dict:
+    """Aplica uma sugestão: a correção sugerida, a alternativa nº `opcao`, ou valores informados em `mudancas`."""
+    return sv().aplicar_sugestao(sugestao_id, mudancas, opcao)
+
+
+@mcp.tool()
+def aplicar_sugestoes_em_lote(projeto_id: int, ids: list[int] | None = None, confianca: str | None = "alta",
+                              tipo: str | None = None) -> dict:
+    """Aplica várias sugestões pendentes que tenham correção definida (por padrão só as de confiança alta)."""
+    return sv().aplicar_lote(projeto_id, ids, confianca, tipo)
+
+
+@mcp.tool()
+def dispensar_sugestao(sugestao_id: int) -> dict:
+    """Dispensa (não aplica) uma sugestão; ela não volta em novas análises."""
+    return sv().dispensar_sugestao(sugestao_id)
+
+
+@mcp.tool()
+def desfazer_sugestao(sugestao_id: int) -> dict:
+    """Desfaz uma sugestão aplicada (restaura os valores anteriores) ou reabre uma dispensada."""
+    return sv().desfazer_sugestao(sugestao_id)
 
 
 @mcp.tool()
 def exportar_original_corrigido(projeto_id: int) -> dict:
-    """Cópia da planilha de inventário importada com padronizações/correções gravadas e células destacadas."""
+    """Cópia da planilha de inventário importada com os valores das sugestões aplicadas (sem marcações)."""
     return sv().exportar_original(projeto_id)
 
 

@@ -14,6 +14,7 @@ import openpyxl
 from lxml import etree
 from openpyxl.utils import column_index_from_string, get_column_letter
 
+import copy
 from collections import Counter
 
 from . import normalizar as nz
@@ -305,7 +306,7 @@ def importar_xlsx(path: str) -> dict:
             projeto["km_ini"], projeto["km_fim"] = min(kms), max(kms)
     for rel in relatorio:
         rel.pop("itens")
-    log = padrao_dnit.padronizar(itens)
+    log = padrao_dnit.padronizar(copy.deepcopy(itens))  # só sugere; o item não é alterado
     return dict(projeto=projeto, itens=itens, relatorio=relatorio, ignoradas=ignoradas,
                 padronizacao=log, padronizacao_resumo=padrao_dnit.resumir(log),
                 vocabulario=padrao_dnit.contar_vocabulario(vocab))

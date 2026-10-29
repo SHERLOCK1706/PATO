@@ -33,6 +33,7 @@ function irAba(nome) {
   if (nome === "inventario") carregarItens();
   if (nome === "alertas") renderAlertas();
   if (nome === "projeto") renderProjeto();
+  if (nome === "revisao") carregarSugestoes();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -92,6 +93,7 @@ function renderPainel() {
   $$("#chipsCat .chip").forEach(ch => ch.onclick = () => { E.catInv = ch.dataset.cat; E.pagina = 0; irAba("inventario"); });
   const na = R.n_alertas.erro || 0;
   $("#nAlertas").textContent = na ? na : "";
+  $("#nSug").textContent = R.sugestoes_pendentes || "";
 }
 
 // ---------------------------------------------------------------- inventário
@@ -259,25 +261,8 @@ async function verNoMapa(id) {
 }
 
 // ---------------------------------------------------------------- alertas
-async function renderLog() {
-  if (!E.pid) return;
-  const ent = await api(`/api/projetos/${E.pid}/log?tipo=${encodeURIComponent("padronização")}`);
-  if (!ent.length) { $("#resLog").textContent = "Nenhum ajuste de nomenclatura registrado para este projeto."; return; }
-  const g = {};
-  for (const e of ent) {
-    const k = [e.situacao, e.categoria, e.campo, e.de, e.para, e.regra].join("|");
-    (g[k] ||= { ...e, n: 0, ex: [] }).n++;
-    if (g[k].ex.length < 3 && e.origem) g[k].ex.push(e.origem);
-  }
-  const lst = Object.values(g).sort((a, b) => (a.situacao > b.situacao ? 1 : -1) || b.n - a.n);
-  $("#resLog").innerHTML = `<div class="tabela-rolagem" style="max-height:320px"><table class="tab"><tr><th>Situação</th><th>Cat.</th><th>Campo</th><th>Original</th><th>Padrão</th><th class=n>Qtde</th><th>Regra</th><th>Exemplos</th></tr>` +
-    lst.map(x => `<tr class="${x.situacao.startsWith("fora") ? "sit-verificar" : x.situacao.includes("conferir") ? "sit-conferir" : "sit-corrigido"}">
-      <td>${esc(x.situacao)}</td><td>${esc(x.categoria)}</td><td>${esc(x.campo)}</td><td>${esc(x.de ?? "")}</td><td><b>${esc(x.para ?? "—")}</b></td>
-      <td class=n>${x.n}</td><td>${esc(x.regra)}</td><td><small>${esc(x.ex.join(", "))}</small></td></tr>`).join("") + "</table></div>";
-}
 function renderAlertas() {
   if (!E.resumo) return;
-  renderLog().catch(erro);
   const A = E.resumo.alertas, n = E.resumo.n_alertas;
   $("#chipsAlerta").innerHTML = [["erro", "Erros"], ["aviso", "Avisos"], ["info", "Informações"]].map(([k, r]) =>
     `<span class="chip ${E.alertaNivel === k ? "ativo" : ""}" data-n="${k}">${r} <span class="q">${n[k] || 0}</span></span>`).join("");
@@ -289,52 +274,150 @@ function renderAlertas() {
   $$("#tabAlertas [data-mapa]").forEach(b => b.onclick = () => verNoMapa(+b.dataset.mapa));
 }
 
-// ---------------------------------------------------------------- correções
+// ---------------------------------------------------------------- revisão (sugestões)
 const SIT_CLS = { "corrigido": "sit-corrigido", "corrigido — conferir": "sit-conferir", "recortado": "sit-recortado",
-  "removido": "sit-removido", "verificar em campo": "sit-verificar" };
+  "removido": "sit-removido", "verificar em campo": "sit-verificar", "padronizado": "sit-corrigido",
+  "padronizado — conferir": "sit-conferir", "fora do padrão — verificar": "sit-verificar" };
+const R_ = { sugStatus: "pendente", sugTipo: null, lista: [], resumo: null, abertos: new Set() };
+const fmtV = v => v === null || v === undefined ? "—" : typeof v === "object" ? (v._excluir ? "retirar do inventário" : JSON.stringify(v)) : String(v);
+
+async function carregarSugestoes() {
+  if (!E.pid) return;
+  const q = new URLSearchParams({ status: R_.sugStatus }); if (R_.sugTipo) q.set("tipo", R_.sugTipo);
+  const r = await api(`/api/projetos/${E.pid}/sugestoes?${q}`);
+  R_.lista = r.sugestoes; R_.resumo = r.resumo;
+  $("#nSug").textContent = r.resumo.pendentes || "";
+  renderSnv(r.resumo.snv); renderSugestoes();
+}
+function renderSnv(S) {
+  if (!S) { $("#infoSnv").innerHTML = ""; return; }
+  const tab = t => `<table class="tab"><tr><th>Código</th><th class=n>km inicial</th><th class=n>km final</th></tr>` +
+    t.map(x => `<tr><td>${esc(x.codigo)}</td><td class=n>${nf(x.km_ini, 3)}</td><td class=n>${nf(x.km_fim, 3)}</td></tr>`).join("") + "</table>";
+  $("#infoSnv").innerHTML = `<details style="margin-top:8px" ${S.observacoes.length ? "open" : ""}><summary><b>SNV</b> — versão declarada ${esc(S.versao_inventario || "—")} ·
+      referência: ${esc(S.fonte_referencia)} · ${Math.round(S.concordancia * 100)}% dos itens coerentes com o cadastro de segmentos</summary>
+    ${S.observacoes.map(o => `<p class="nota">• ${esc(o)}</p>`).join("")}
+    <div class="grade2"><div><h4>Cadastro de segmentos do inventário</h4>${tab(S.cadastro_segmentos)}</div><div><h4>Referência</h4>${tab(S.tabela_referencia)}</div></div></details>`;
+}
+function grupos() {
+  const g = new Map();
+  for (const s of R_.lista) {
+    const k = [s.tipo, s.situacao, s.categoria, s.tipo === "padronização" ? s.motivo + JSON.stringify(s.atual) : s.motivo.replace(/[\d.,]+/g, "#"),
+      JSON.stringify(s.mudancas), (s.opcoes || []).map(o => o.rotulo.replace(/[\d.,-]+/g, "#")).join(";")].join("|");
+    if (!g.has(k)) g.set(k, []);
+    g.get(k).push(s);
+  }
+  return [...g.entries()].sort((a, b) => b[1].length - a[1].length);
+}
+function renderSugestoes() {
+  const cont = {};
+  for (const c of R_.resumo.contagem) cont[c.status] = (cont[c.status] || 0) + c.n;
+  $("#chipsStatus").innerHTML = [["pendente", "Pendentes"], ["aplicada", "Aplicadas"], ["dispensada", "Dispensadas"]].map(([k, r]) =>
+    `<span class="chip ${R_.sugStatus === k ? "ativo" : ""}" data-st="${k}">${r} <span class="q">${cont[k] || 0}</span></span>`).join("");
+  $("#chipsTipoSug").innerHTML = [[null, "Todas"], ["correção", "Correções (SNV / coordenadas / trecho)"], ["padronização", "Nomenclatura (álbum DNIT)"], ["SNV", "Cadastro SNV"]].map(([k, r]) =>
+    `<span class="chip ${R_.sugTipo === k ? "ativo" : ""}" data-tp="${k ?? ""}">${r}</span>`).join("");
+  $$("#chipsStatus .chip").forEach(c => c.onclick = () => { R_.sugStatus = c.dataset.st; carregarSugestoes(); });
+  $$("#chipsTipoSug .chip").forEach(c => c.onclick = () => { R_.sugTipo = c.dataset.tp || null; carregarSugestoes(); });
+  $("#btnLoteAlta").style.display = R_.sugStatus === "pendente" ? "" : "none";
+  const G = grupos();
+  $("#infoSug").textContent = `${R_.lista.length} sugestões em ${G.length} grupos. Clique num grupo para ver e ajustar item a item.`;
+  $("#listaSug").innerHTML = G.map(([k, lst], gi) => {
+    const s0 = lst[0], aberto = R_.abertos.has(k) || lst.length === 1;
+    const temCorr = s0.mudancas && Object.keys(s0.mudancas).length;
+    const mud = temCorr ? Object.entries(s0.mudancas).filter(([c]) => !c.startsWith("_") || c === "_excluir")
+      .map(([c, v]) => c === "_excluir" ? "retirar do inventário" : `${esc(c)}: ${esc(fmtV(s0.atual?.[c]))} → <b>${esc(fmtV(v))}</b>`).join(" · ")
+      : (s0.tipo === "padronização" && s0.atual ? Object.entries(s0.atual).map(([c, v]) => `${esc(c)} atual: <b>${esc(fmtV(v))}</b>`).join(" · ") + " · " : "")
+        + (s0.opcoes?.length ? `${s0.opcoes.length} alternativa(s) para escolher` : "sem correção automática — verificar em campo / dispensar");
+    const escolhaG = R_.sugStatus === "pendente" && !temCorr && s0.opcoes?.length && lst.length > 1
+      ? `<select data-gopc="${gi}"><option value="">— alternativa para o grupo —</option>${s0.opcoes.map((o, i) => `<option value="${i}">${esc(lst.length > 1 ? o.rotulo.replace(/\(.*\)/, "") : o.rotulo)}</option>`).join("")}</select>
+         <button class="btn primario" data-gapo="${gi}">Aplicar ao grupo (${lst.length})</button>` : "";
+    const acoesG = R_.sugStatus === "pendente" ? `${temCorr ? `<button class="btn primario" data-gap="${gi}">Aplicar ${lst.length > 1 ? `ao grupo (${lst.length})` : ""}</button>` : escolhaG}
+       <button class="btn" data-gdis="${gi}">Dispensar${lst.length > 1 ? " grupo" : ""}</button>` : "";
+    return `<div class="grupo-sug ${aberto ? "aberto" : ""}" data-g="${gi}">
+      <div class="cab"><div><span class="tag ${SIT_CLS[s0.situacao] || ""}">${esc(s0.situacao)}</span><br><small>${esc(s0.tipo)}${s0.confianca && s0.confianca !== "—" ? " · confiança " + esc(s0.confianca) : ""}</small></div>
+        <div><b>${esc(E.cat.categorias[s0.categoria]?.nome || s0.categoria)}</b><br><small>${lst.length} item(ns)</small></div>
+        <div style="cursor:pointer" data-abre="${gi}">${esc(lst.length > 1 ? s0.motivo.replace(/km ≈?[\d.,]+/g, "km …") : s0.motivo)}<div class="mud">${mud}</div></div>
+        <div class="linha-botoes" style="margin:0">${acoesG}</div></div>
+      <div class="itens">${aberto ? lst.slice(0, 300).map(itemSug).join("") + (lst.length > 300 ? `<p class="nota">… e mais ${lst.length - 300}</p>` : "") : ""}</div></div>`;
+  }).join("") || `<p class="nota">Nenhuma sugestão ${R_.sugStatus}. ${R_.sugStatus === "pendente" ? "Use “Analisar novamente” após alterar o inventário." : ""}</p>`;
+  $$("[data-abre]").forEach(el => el.onclick = () => { const k = grupos()[+el.dataset.abre][0]; R_.abertos.has(k) ? R_.abertos.delete(k) : R_.abertos.add(k); renderSugestoes(); });
+  $$("[data-gap]").forEach(b => b.onclick = async () => {
+    const lst = grupos()[+b.dataset.gap][1];
+    if (lst.length > 1 && !confirm(`Aplicar a correção sugerida a ${lst.length} itens?`)) return;
+    const r = await jpost(`/api/projetos/${E.pid}/sugestoes/aplicar-lote`, { ids: lst.map(s => s.id) });
+    toast(`${r.aplicadas} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
+  });
+  $$("[data-gapo]").forEach(b => b.onclick = async () => {
+    const gi = +b.dataset.gapo, sel = $(`[data-gopc="${gi}"]`);
+    if (!sel || sel.value === "") return toast("Escolha a alternativa para o grupo.");
+    const lst = grupos()[gi][1];
+    if (!confirm(`Aplicar “${sel.selectedOptions[0].textContent.trim()}” a ${lst.length} itens?`)) return;
+    let ok = 0;
+    for (const s of lst) { try { await jpost(`/api/sugestoes/${s.id}/aplicar`, { opcao: +sel.value }); ok++; } catch (e) { /* segue */ } }
+    toast(`${ok} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
+  });
+  $$("[data-gdis]").forEach(b => b.onclick = async () => {
+    const lst = grupos()[+b.dataset.gdis][1];
+    for (const s of lst) await jpost(`/api/sugestoes/${s.id}/dispensar`, {});
+    toast(`${lst.length} dispensada(s)`); carregarSugestoes();
+  });
+  $$(".item-sug").forEach(ligarItemSug);
+}
+function itemSug(s) {
+  const campos = Object.keys({ ...(s.atual || {}), ...(s.mudancas || {}) }).filter(c => !c.startsWith("_"));
+  const opc = (s.opcoes || []).map((o, i) => `<option value="${i}">${esc(o.rotulo)}</option>`).join("");
+  const pend = s.status === "pendente";
+  const exclui = s.mudancas?._excluir;
+  return `<div class="item-sug" data-id="${s.id}">
+    <div><b>${esc(s.origem || "—")}</b><br><small>km ${nf(s.km_ini, 3)}${s.km_fim != null ? "–" + nf(s.km_fim, 3) : ""}</small>
+      ${s.tipo !== "padronização" || s.situacao.startsWith("fora") ? `<br><small>${esc(s.motivo)}</small>` : ""}</div>
+    <div class="campos-sug">${exclui ? `<span class="tag sit-removido">retirar do inventário (fora do trecho)</span>` : ""}
+      ${campos.map(c => {
+        const sug = (pend ? s.mudancas?.[c] : s.aplicado?.[c]);
+        return `<label>${esc(E.cat.rotulos[c] || c)}<span class="de">${esc(fmtV(s.atual?.[c]))}</span>
+          <input data-campo="${c}" value="${esc(sug ?? "")}" ${pend ? "" : "disabled"} placeholder="${pend ? "novo valor" : ""}"></label>`;
+      }).join("")}
+      ${pend && opc ? `<label>Alternativas<select data-opc><option value="">— escolher —</option>${opc}</select></label>` : ""}</div>
+    <div class="linha-botoes" style="margin:0">
+      ${pend ? `<button class="btn primario" data-ap>Aplicar</button><button class="btn" data-dis>Dispensar</button>`
+             : `<button class="btn" data-desf>Desfazer</button>`}
+      ${s.item_id ? `<button class="btn" data-mapa="${s.item_id}">Mapa</button>` : ""}</div></div>`;
+}
+function ligarItemSug(el) {
+  const id = +el.dataset.id, s = R_.lista.find(x => x.id === id);
+  const sel = $("[data-opc]", el);
+  if (sel) sel.onchange = () => {
+    if (sel.value === "") return;
+    const m = s.opcoes[+sel.value].mudancas;
+    $$("input[data-campo]", el).forEach(i => { if (i.dataset.campo in m) i.value = m[i.dataset.campo]; });
+  };
+  const ap = $("[data-ap]", el);
+  if (ap) ap.onclick = async () => {
+    let mudancas = {};
+    if (sel && sel.value !== "" && s.opcoes[+sel.value].mudancas._excluir) mudancas = { _excluir: true };
+    else if (s.mudancas?._excluir) mudancas = { _excluir: true };
+    else $$("input[data-campo]", el).forEach(i => { if (i.value !== "" && String(i.value) !== String(s.atual?.[i.dataset.campo] ?? "")) mudancas[i.dataset.campo] = i.value; });
+    if (!Object.keys(mudancas).length) return toast("Informe o novo valor ou escolha uma alternativa.");
+    try { await jpost(`/api/sugestoes/${id}/aplicar`, { mudancas }); toast("Aplicada"); E.geo = null; await carregarResumo(); carregarSugestoes(); } catch (e) { erro(e); }
+  };
+  const dis = $("[data-dis]", el);
+  if (dis) dis.onclick = async () => { await jpost(`/api/sugestoes/${id}/dispensar`, {}); carregarSugestoes(); };
+  const desf = $("[data-desf]", el);
+  if (desf) desf.onclick = async () => { try { await jpost(`/api/sugestoes/${id}/desfazer`, {}); toast("Desfeita"); E.geo = null; await carregarResumo(); carregarSugestoes(); } catch (e) { erro(e); } };
+  const mp = $("[data-mapa]", el);
+  if (mp) mp.onclick = () => verNoMapa(+mp.dataset.mapa);
+}
 $("#btnAnalisar").onclick = async () => {
-  const box = $("#resCorrecao"); box.innerHTML = `<p class="carregando">Analisando…</p>`;
   const fd = new FormData();
   if ($("#arqSnv").files[0]) fd.append("snv", $("#arqSnv").files[0]);
   if ($("#verSnv").value) fd.append("versao", $("#verSnv").value);
-  try {
-    const an = await api(`/api/projetos/${E.pid}/corrigir/analisar`, { method: "POST", body: fd });
-    const R = an.resumo, S = an.snv;
-    let filtro = null;
-    const tabSnv = (t) => `<table class="tab"><tr><th>Código</th><th class=n>km inicial</th><th class=n>km final</th></tr>` +
-      t.map(x => `<tr><td>${esc(x.codigo)}</td><td class=n>${nf(x.km_ini, 3)}</td><td class=n>${nf(x.km_fim, 3)}</td></tr>`).join("") + "</table>";
-    const desenhar = () => {
-      const lst = an.acoes.filter(a => !filtro || a.situacao === filtro);
-      $("#tabAcoes").innerHTML = "<tr><th>Situação</th><th>Origem</th><th>km</th><th>Campo</th><th>Original</th><th>Corrigido</th><th>Motivo</th><th></th></tr>" +
-        lst.slice(0, 2000).map(a => `<tr class="${SIT_CLS[a.situacao]}"><td>${esc(a.situacao)}</td><td>${esc(a.origem || "")}</td>
-          <td class=n>${nf(a.km_ini, 3)}${a.km_fim != null ? "–" + nf(a.km_fim, 3) : ""}</td><td>${esc(a.campo)}</td>
-          <td>${esc(a.de ?? "")}</td><td><b>${esc(a.para ?? "")}</b></td><td>${esc(a.motivo)}<br><small>${esc(a.metodo)} · confiança ${esc(a.confianca)}</small></td>
-          <td>${a.id != null ? `<button class="btn" data-mapa="${a.id}">Mapa</button>` : ""}</td></tr>`).join("");
-      $$("#tabAcoes [data-mapa]").forEach(b => b.onclick = () => verNoMapa(+b.dataset.mapa));
-    };
-    box.innerHTML = `<div class="cards" style="margin-top:12px">${Object.entries(R).map(([k, v]) =>
-        `<div class="card ${SIT_CLS[k]}" data-sit="${esc(k)}" style="cursor:pointer"><div class="r">${esc(k)}</div><div class="v">${v.itens}<span class="u">itens</span></div></div>`).join("")}</div>
-      <div class="grade2"><div><h4>SNV</h4><p class="nota">Versão declarada: <b>${esc(S.versao_inventario || "—")}</b> · Referência: <b>${esc(S.fonte_referencia)}</b> ·
-        ${Math.round(S.concordancia * 100)}% dos itens coerentes com o cadastro de segmentos.</p>
-        ${S.observacoes.map(o => `<p class="nota">• ${esc(o)}</p>`).join("")}</div>
-        <div class="grade2"><div><h4>Cadastro de segmentos</h4>${tabSnv(S.cadastro_segmentos)}</div><div><h4>Referência</h4>${tabSnv(S.tabela_referencia)}</div></div></div>
-      <div class="legenda-sit">${Object.entries(SIT_CLS).map(([k, c]) => `<span class="${c}">${esc(k)}</span>`).join("")}</div>
-      <div class="linha-botoes"><button class="btn primario" id="btnAplicarCorr">Aplicar correções</button>
-        <span class="nota">“Verificar em campo” não altera nada; os valores originais ficam guardados em cada item.</span></div>
-      <div id="resAplicar"></div>
-      <div class="tabela-rolagem" style="margin-top:10px"><table class="tab" id="tabAcoes"></table></div>`;
-    $$(".cards [data-sit]", box).forEach(c => c.onclick = () => { filtro = filtro === c.dataset.sit ? null : c.dataset.sit; desenhar(); });
-    desenhar();
-    $("#btnAplicarCorr").onclick = async () => {
-      if (!confirm("Aplicar as correções no inventário deste projeto?")) return;
-      try {
-        const r = await jpost("/api/corrigir/aplicar", { token: an.token });
-        $("#resAplicar").innerHTML = `<p class="ok-msg">${r.resultado.alterados} itens corrigidos, ${r.resultado.removidos} removidos (fora do trecho).</p>
-          <div class="linha-botoes">${linkBaixar({ nome: r.relatorio })}${r.original_corrigido ? linkBaixar({ nome: r.original_corrigido }) : ""}</div>`;
-        $("#btnAplicarCorr").disabled = true; E.geo = null; await carregarResumo(); renderAlertas();
-      } catch (e) { erro(e); }
-    };
-  } catch (e) { box.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+  $("#infoSug").textContent = "Analisando…";
+  try { const r = await api(`/api/projetos/${E.pid}/sugestoes/analisar`, { method: "POST", body: fd }); R_.sugStatus = "pendente"; toast(`${r.pendentes} sugestões pendentes`); carregarSugestoes(); }
+  catch (e) { erro(e); }
+};
+$("#btnLoteAlta").onclick = async () => {
+  if (!confirm("Aplicar todas as sugestões pendentes de confiança alta?")) return;
+  const r = await jpost(`/api/projetos/${E.pid}/sugestoes/aplicar-lote`, { confianca: "alta", tipo: R_.sugTipo });
+  toast(`${r.aplicadas} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
 };
 
 // ---------------------------------------------------------------- projeto
@@ -402,7 +485,7 @@ async function enviarPrevia(arq) {
           <input name="nome" value="${esc([p.rodovia, p.segmento].filter(Boolean).join(" "))}"></label>
         <h4>Categorias</h4><div class="chips" style="flex-direction:column;gap:2px">${cats}</div>
         <div class="linha-botoes"><button class="btn primario">Confirmar importação</button></div></form></div>
-      <h4>Nomenclatura × Álbum DNIT (IPR-736) — log de padronização</h4>
+      <h4>Nomenclatura × Álbum DNIT (IPR-736) — sugestões que irão para a aba Revisão</h4>
       ${r.padronizacao.length ? `<div class="tabela-rolagem" style="max-height:300px"><table class="tab"><tr><th>Situação</th><th>Cat.</th><th>Original</th><th>Padrão</th><th class=n>Qtde</th><th>Regra</th></tr>` +
         r.padronizacao.map(x => `<tr class="${x.situacao.startsWith("fora") ? "sit-verificar" : x.situacao.includes("conferir") ? "sit-conferir" : "sit-corrigido"}"><td>${esc(x.situacao)}</td><td>${esc(x.categoria)}</td>
           <td>${esc(x.de ?? "")}</td><td><b>${esc(x.para ?? "—")}</b></td><td class=n>${x.quantidade}</td><td>${esc(x.regra)}<br><small>${esc(x.origens.join(", "))}</small></td></tr>`).join("") + "</table></div>"
@@ -415,7 +498,7 @@ async function enviarPrevia(arq) {
       const f = e.target, modo = f.modo.value;
       const categorias = $$("input[name=cat]:checked", f).map(c => c.value);
       const res = await jpost("/api/importar/confirmar", { token: r.token, modo, nome: f.nome.value, projeto_id: modo === "novo" ? null : E.pid, categorias });
-      box.innerHTML = `<p class="ok-msg">${res.importados} itens importados em “${esc(res.projeto.nome)}”.</p>`;
+      box.innerHTML = `<p class="ok-msg">${res.importados} itens importados em “${esc(res.projeto.nome)}”. ${res.sugestoes} sugestões de correção aguardando revisão (aba Revisão).</p>`;
       E.geo = null; await carregarProjetos(res.projeto.id); irAba("painel");
     };
   } catch (e) { box.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }

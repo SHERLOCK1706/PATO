@@ -146,26 +146,41 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     @app.post("/api/projetos/{pid}/exportar/{formato}")
     def exp_geo(pid: int, formato: str):
-        if formato == "log":
-            return sv.exportar_log(pid)
         if formato == "original":
             return sv.exportar_original(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml, log ou original")
+            raise HTTPException(400, "Formato deve ser geojson, kml ou original")
         return sv.exportar_geo(pid, formato)
 
-    @app.post("/api/projetos/{pid}/corrigir/analisar")
-    async def corr_analisar(pid: int, snv: UploadFile | None = File(default=None), versao: str | None = Form(default=None)):
+    # ------------------------------------------------- revisão (sugestões)
+    @app.post("/api/projetos/{pid}/sugestoes/analisar")
+    async def sug_analisar(pid: int, snv: UploadFile | None = File(default=None), versao: str | None = Form(default=None)):
         caminho = await _salvar_upload(snv) if snv and snv.filename else None
         try:
-            return sv.corrigir_analisar(pid, caminho, versao or None)
+            return sv.gerar_sugestoes(pid, caminho, versao or None)
         finally:
             if caminho:
                 os.unlink(caminho)
 
-    @app.post("/api/corrigir/aplicar")
-    def corr_aplicar(dados: dict = Body(...)):
-        return sv.corrigir_aplicar(dados["token"])
+    @app.get("/api/projetos/{pid}/sugestoes")
+    def sug_listar(pid: int, status: str | None = None, tipo: str | None = None):
+        return dict(resumo=sv.resumo_sugestoes(pid), sugestoes=sv.sugestoes(pid, status, tipo))
+
+    @app.post("/api/sugestoes/{sid}/aplicar")
+    def sug_aplicar(sid: int, dados: dict = Body(default={})):
+        return sv.aplicar_sugestao(sid, dados.get("mudancas"), dados.get("opcao"))
+
+    @app.post("/api/sugestoes/{sid}/dispensar")
+    def sug_dispensar(sid: int):
+        return sv.dispensar_sugestao(sid)
+
+    @app.post("/api/sugestoes/{sid}/desfazer")
+    def sug_desfazer(sid: int):
+        return sv.desfazer_sugestao(sid)
+
+    @app.post("/api/projetos/{pid}/sugestoes/aplicar-lote")
+    def sug_lote(pid: int, dados: dict = Body(default={})):
+        return sv.aplicar_lote(pid, dados.get("ids"), dados.get("confianca"), dados.get("tipo"))
 
     @app.get("/api/projetos/{pid}/log")
     def log(pid: int, tipo: str | None = None):

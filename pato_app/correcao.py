@@ -245,8 +245,8 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                     if pr and pr[1] <= TOL_DIGITO and K0 + 0.2 <= pr[0] <= K1 - 0.2:
                         sug = round(pr[0], 3)
                 if sug is not None:
-                    acao(it, "km_ini", a, sug, f"km {a} fora do trecho ({K0}–{K1}), mas a coordenada está na rodovia no km ≈{sug}",
-                         "projeção da coordenada no eixo", "média", VERIFICAR)
+                    acao(it, "km_ini", a, None, f"km {a} fora do trecho ({K0}–{K1}), mas a coordenada está na rodovia no km ≈{sug}",
+                         "projeção da coordenada no eixo", "média", VERIFICAR, km_pela_coordenada=sug, ponta="ini")
                 else:
                     acao(it, "item", f"km {a}" + (f"–{b}" if b is not None else ""), None,
                          f"inteiramente fora do trecho (km {K0}–{K1})", "limite do segmento", "alta", REMOVIDO)
@@ -318,7 +318,8 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                 acao(it, f"lat_{p}/lon_{p}", f"{la}, {lo}", None,
                      f"coordenada e km divergem {d:.1f} km (coordenada corresponde ao km ≈{pr[0]:.3f})" if pr else
                      f"coordenada a {d:.1f} km do eixo", "sem como decidir qual está certo", "—", VERIFICAR,
-                     km_pela_coordenada=round(pr[0], 3) if pr else None)
+                     km_pela_coordenada=round(pr[0], 3) if pr else None, pos_pelo_km=[_r(esp[0]), _r(esp[1])],
+                     ponta=p)
                 continue
             # b) km confiável (continuidade / extensão) ou coordenada repetida de outro local → refaz a coordenada
             copiada = pr is not None and lateral <= TOL_DIGITO and any(
@@ -410,7 +411,8 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
             if d > 0.1:
                 acao(s2, "lat_ini/lon_ini", f"{s2['lat_ini']}, {s2['lon_ini']}", None,
                      f"coordenada da divisa difere {d * 1000:.0f} m da coordenada final do segmento anterior "
-                     f"({s1['lat_fim']}, {s1['lon_fim']})", "conferir com o SNV oficial", "—", VERIFICAR)
+                     f"({s1['lat_fim']}, {s1['lon_fim']})", "conferir com o SNV oficial", "—", VERIFICAR,
+                     coord_anterior=[s1["lat_fim"], s1["lon_fim"]], ponta="ini")
     if snv_oficial:
         tab_of = {s["codigo"]: s for s in ref}
         tab_inv = {s["codigo"]: s for s in seg}
@@ -440,236 +442,60 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
     )
 
 
-def aplicar(db, pid: int, analise: dict, atualizar_segmentos: list[dict] | None = None) -> dict:
-    """Grava as ações (exceto 'verificar em campo'). Guarda o valor original em dados['_original']."""
-    por_item: dict[int, list] = defaultdict(list)
-    for a in analise["acoes"]:
-        por_item[a["id"]].append(a)
-    alterados, removidos = 0, []
-    for iid, acs in por_item.items():
-        if any(a["situacao"] == REMOVIDO for a in acs):
-            removidos.append(iid)
-            continue
-        mud: dict[str, Any] = {}
-        notas = []
-        for a in acs:
-            if a["situacao"] in (CORRIGIDO, CONFERIR, RECORTADO) and a["campo"] in (
-                    "km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_fim", "snv"):
-                mud[a["campo"]] = a["para"]
-                notas.append(f"{a['campo']}: {a['de']} → {a['para']} ({a['metodo']})")
-        if not mud:
-            continue
-        it = db.item(iid)
-        if not it:
-            continue
-        d = dict(it["dados"])
-        orig = dict(d.get("_original") or {})
-        for k in mud:
-            orig.setdefault(k, it.get(k))
-        d["_original"] = orig
-        d["_correcao"] = "; ".join(notas)
-        if any(k.startswith("km_") for k in mud):
-            for k in ("extensao", "extensao_km", "km_faixa", "km_acost", "area", "area_ha", "area_caiacao",
-                      "area_capina", "quantidade"):
-                if k in d:
-                    d.setdefault("_original", {})
-                    d["_original"].setdefault(k, d[k])
-                    d.pop(k)
-        mud["dados"] = d
-        db.atualizar_item(iid, mud)
-        alterados += 1
-    db.excluir_itens(removidos)
-    return dict(alterados=alterados, removidos=len(removidos))
-
-
 # ------------------------------------------------------------------ saídas
-CORES = {CORRIGIDO: "FFF59D", CONFERIR: "FFCC80", RECORTADO: "B3E5FC", REMOVIDO: "EF9A9A", VERIFICAR: "F48FB1",
-         "padronizado": "C8E6C9", "padronizado — conferir": "FFE0B2", "fora do padrão — verificar": "F8BBD0"}
 CAMPOS_EDITAVEIS = ("km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_fim", "snv", "tipo", "linhas", "dimensao")
-_SO_DESTACAR = {REMOVIDO, VERIFICAR, "fora do padrão — verificar"}
 
 
 def _valor(v):
-    """Valores do log vêm como texto; devolve número quando for número."""
+    """Valores vindos de texto: devolve número quando for número."""
     if isinstance(v, str):
         n = nz.numero(v) if re.fullmatch(r"-?\d+(\.\d+)?", v.strip()) else None
         return n if n is not None else v
     return v
 
 
-def gravar_no_original(arquivo: str, saida: str, entradas: list[dict]) -> dict:
-    """Grava correções/padronizações numa cópia da planilha de inventário original e pinta as células:
-    amarelo = corrigido · laranja = corrigido (conferir) · azul = recortado no limite · vermelho = fora do trecho ·
-    rosa = verificar em campo · verde = nomenclatura padronizada · rosa-claro = fora do padrão (verificar)."""
+def gravar_no_original(arquivo: str, saida: str, mudancas: list[dict]) -> dict:
+    """Grava numa cópia da planilha de inventário importada os valores das correções aplicadas no sistema.
+    Cada entrada: {origem: 'Aba!linha', campo, para, km_ini, km_fim}. Não altera formatação nem acrescenta abas;
+    linhas removidas (fora do trecho) permanecem na planilha original."""
     from .importador import mapa_colunas
     from .xlsx_patch import XlsxPatcher
 
-    acoes = [a for a in entradas if a.get("origem") and "!" in a["origem"]]
-    abas = {a["origem"].rsplit("!", 1)[0] for a in acoes}
-    mapa = mapa_colunas(arquivo, abas)
+    acoes = [a for a in mudancas if a.get("origem") and "!" in a["origem"]]
+    mapa = mapa_colunas(arquivo, {a["origem"].rsplit("!", 1)[0] for a in acoes})
     p = XlsxPatcher(arquivo)
-    gravadas = sem_coluna = 0
+    gravadas = 0
     km_novos: dict[str, dict] = defaultdict(dict)
     for a in acoes:
         aba, linha = a["origem"].rsplit("!", 1)
-        if aba not in p.sheets:
-            continue
         cols = mapa.get(aba, {})
-        cor = CORES.get(a["situacao"], "FFF59D")
-        if a["situacao"] in _SO_DESTACAR or a.get("para") in (None, ""):
-            if a["situacao"] == REMOVIDO:
-                campos = [c for c in ("km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_fim", "snv") if c in cols]
-            else:
-                campos = [x for x in (a.get("campo") or "").split("/") if x in cols]
-            for campo in campos:
-                col = cols[campo][-1] if campo.startswith("km") else cols[campo][0]
-                p.destacar(aba, f"{col}{linha}", cor)
-            continue
-        if a["campo"] not in CAMPOS_EDITAVEIS or a["campo"] not in cols:
-            sem_coluna += 1
+        if aba not in p.sheets or a["campo"] not in CAMPOS_EDITAVEIS or a["campo"] not in cols:
             continue
         col = cols[a["campo"]][-1] if a["campo"].startswith("km") else cols[a["campo"]][0]
         p.set(aba, f"{col}{linha}", _valor(a["para"]))
-        p.destacar(aba, f"{col}{linha}", cor)
         gravadas += 1
         if a["campo"].startswith("km"):
             km_novos[a["origem"]][a["campo"]] = _valor(a["para"])
-            km_novos[a["origem"]]["_ref"] = a
+            km_novos[a["origem"]].setdefault("_ref", a)
     # extensão / quantidade das linhas cujo km mudou (somente se não forem fórmulas)
     for origem, km in km_novos.items():
         aba, linha = origem.rsplit("!", 1)
         cols = mapa.get(aba, {})
         a = km["_ref"]
-        ki = km.get("km_ini", _valor(a.get("km_ini")))
-        kf = km.get("km_fim", _valor(a.get("km_fim")))
+        ki, kf = km.get("km_ini", a.get("km_ini")), km.get("km_fim", a.get("km_fim"))
         if ki is None or kf is None:
             continue
         ext = round(abs(kf - ki) * 1000, 3)
-        cor = CORES.get(a["situacao"], "FFF59D")
         if "extensao" in cols:
             ref = f"{cols['extensao'][0]}{linha}"
             atual = p.get(aba, ref)
             if not (isinstance(atual, str) and atual.startswith("=")):
                 p.set(aba, ref, ext)
-                p.destacar(aba, ref, cor)
         if "quantidade" in cols and "cadencia" in cols:
             ref = f"{cols['quantidade'][0]}{linha}"
             atual = p.get(aba, ref)
             cad = nz.numero(p.get(aba, f"{cols['cadencia'][0]}{linha}"))
             if cad and not (isinstance(atual, str) and atual.startswith("=")):
                 p.set(aba, ref, round(ext * cad, 3))
-                p.destacar(aba, ref, cor)
     p.save(saida)
-    return dict(arquivo=saida, celulas=gravadas, sem_coluna=sem_coluna)
-
-
-def _maps(lat, lon):
-    if lat is None or lon is None:
-        return None
-    return f"https://www.google.com/maps?q={lat},{lon}"
-
-
-def relatorio_xlsx(projeto: dict, analise: dict, saida: str, itens_por_id: dict | None = None) -> str:
-    from openpyxl.styles import Alignment, Font, PatternFill
-    from openpyxl.utils import get_column_letter
-
-    wb = openpyxl.Workbook()
-    azul = PatternFill("solid", fgColor="1F3A5F")
-    branco = Font(bold=True, color="FFFFFF")
-
-    def cab(ws, linha, titulos, larguras):
-        for j, (t, w) in enumerate(zip(titulos, larguras), 1):
-            c = ws.cell(linha, j, t)
-            c.fill, c.font = azul, branco
-            c.alignment = Alignment(wrap_text=True, vertical="center")
-            ws.column_dimensions[get_column_letter(j)].width = w
-        ws.freeze_panes = ws.cell(linha + 1, 1)
-
-    ws = wb.active
-    ws.title = "Resumo"
-    ws["A1"] = "VERIFICAÇÃO DO SNV E CORREÇÃO DE PONTOS DO INVENTÁRIO"
-    ws["A1"].font = Font(bold=True, size=13)
-    linhas = [("Rodovia", projeto.get("rodovia")), ("Segmento", projeto.get("segmento")),
-              ("Trecho (km)", f"{projeto.get('km_ini')} a {projeto.get('km_fim')}"),
-              ("Versão SNV declarada no inventário", analise["snv"]["versao_inventario"]),
-              ("Referência usada para o SNV", analise["snv"]["fonte_referencia"]),
-              ("Itens com SNV coerente com o cadastro de segmentos", f"{analise['snv']['concordancia']:.1%}"),
-              ("Tolerância km × coordenada (aceitável / erro)",
-               f"{analise['tolerancias']['aceitavel_km']} km / {analise['tolerancias']['erro_km']} km")]
-    for i, (a, b) in enumerate(linhas, 3):
-        ws.cell(i, 1, a).font = Font(bold=True)
-        ws.cell(i, 2, b)
-    r = 3 + len(linhas) + 1
-    cab(ws, r, ["Situação", "Itens", "Alterações", "Significado"], [44, 12, 12, 90])
-    sig = {CORRIGIDO: "Erro identificado e corrigido com segurança (digitação, coordenada trocada de ponta, SNV).",
-           CONFERIR: "Valor estimado pelo eixo da rodovia / km; recomenda-se conferir.",
-           RECORTADO: "Feição cortada no limite do trecho (km e coordenada do limite).",
-           REMOVIDO: "Feição inteiramente fora do trecho; retirada do inventário do segmento.",
-           VERIFICAR: "Não foi possível determinar o valor correto; verificar em campo. Nada foi alterado."}
-    for k, v in analise["resumo"].items():
-        r += 1
-        ws.cell(r, 1, k)
-        ws.cell(r, 2, v["itens"])
-        ws.cell(r, 3, v["acoes"])
-        ws.cell(r, 4, sig[k])
-        ws.cell(r, 1).fill = PatternFill("solid", fgColor=CORES[k])
-    r += 2
-    ws.cell(r, 1, "Observações sobre o SNV").font = Font(bold=True)
-    for o in analise["snv"]["observacoes"] or ["Códigos SNV dos itens coerentes com o cadastro de segmentos."]:
-        r += 1
-        ws.cell(r, 1, o).alignment = Alignment(wrap_text=True)
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=4)
-        ws.row_dimensions[r].height = 45
-
-    titulos = ["Situação", "Confiança", "Categoria", "Origem (aba!linha)", "km inicial", "km final", "Campo",
-               "Valor original", "Valor corrigido", "Motivo", "Método", "Mapa (original)", "Mapa (corrigido)"]
-    larg = [20, 10, 24, 34, 10, 10, 14, 22, 22, 70, 36, 18, 18]
-    grupos = [("Corrigidos", (CORRIGIDO, CONFERIR)), ("Fora do trecho", (RECORTADO, REMOVIDO)),
-              ("Verificar em campo", (VERIFICAR,))]
-    for nome, sits in grupos:
-        ws = wb.create_sheet(nome)
-        cab(ws, 1, titulos, larg)
-        lin = 1
-        for a in analise["acoes"]:
-            if a["situacao"] not in sits:
-                continue
-            lin += 1
-            it = (itens_por_id or {}).get(a["id"], {})
-            p = "ini" if a["campo"].endswith("ini") else "fim" if a["campo"].endswith("fim") else "ini"
-            orig = _maps(it.get(f"lat_{p}"), it.get(f"lon_{p}"))
-            corr = None
-            if a["campo"].startswith(("lat", "lon")) and a["para"] is not None:
-                outro = ("lon_" if a["campo"].startswith("lat") else "lat_") + p
-                par = next((b["para"] for b in analise["acoes"] if b["id"] == a["id"] and b["campo"] == outro
-                            and b["situacao"] == a["situacao"]), it.get(outro))
-                corr = _maps(a["para"], par) if a["campo"].startswith("lat") else _maps(par, a["para"])
-            vals = [a["situacao"], a["confianca"], a["nome_categoria"], a["origem"], a["km_ini"], a["km_fim"],
-                    a["campo"], a["de"], a["para"], a["motivo"], a["metodo"], orig, corr]
-            for j, v in enumerate(vals, 1):
-                c = ws.cell(lin, j, v)
-                if j in (12, 13) and v:
-                    c.hyperlink = v
-                    c.value = "abrir mapa"
-                    c.font = Font(color="1F4E79", underline="single")
-            ws.cell(lin, 1).fill = PatternFill("solid", fgColor=CORES[a["situacao"]])
-        if nome == "Verificar em campo":
-            lin += 2
-            ws.cell(lin, 1, "Para cada ponto: confirmar no local o km e a coordenada; se o km pela coordenada "
-                            "(coluna Motivo) estiver certo, corrigir o km; caso contrário, refazer a coordenada.")
-
-    ws = wb.create_sheet("SNV")
-    ws["A1"] = "Cadastro de segmentos do inventário"
-    ws["A1"].font = Font(bold=True)
-    cab(ws, 2, ["Código", "km inicial", "km final"], [16, 12, 12])
-    for i, s in enumerate(analise["snv"]["cadastro_segmentos"], 3):
-        ws.cell(i, 1, s["codigo"]); ws.cell(i, 2, s["km_ini"]); ws.cell(i, 3, s["km_fim"])
-    ws["E1"] = f"Referência: {analise['snv']['fonte_referencia']}"
-    ws["E1"].font = Font(bold=True)
-    for j, t in enumerate(["Código", "km inicial", "km final"], 5):
-        c = ws.cell(2, j, t)
-        c.fill, c.font = azul, branco
-        ws.column_dimensions[get_column_letter(j)].width = 14
-    for i, s in enumerate(analise["snv"]["tabela_referencia"], 3):
-        ws.cell(i, 5, s["codigo"]); ws.cell(i, 6, s["km_ini"]); ws.cell(i, 7, s["km_fim"])
-    wb.save(saida)
-    return saida
+    return dict(arquivo=saida, celulas=gravadas)

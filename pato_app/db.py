@@ -12,7 +12,7 @@ ARQ_DB = PASTA_DADOS / "pato.db"
 
 CAMPOS_PROJETO = ["nome", "rodovia", "trecho", "subtrecho", "segmento", "km_ini", "km_fim", "snv",
                   "snv_versao", "estado", "uf", "unidade_local", "data_inventario", "data_base", "prazo",
-                  "origem_arquivo", "arquivo_original", "obs"]
+                  "origem_arquivo", "arquivo_original", "analise_snv", "obs"]
 CAMPOS_ITEM = ["categoria", "ordem", "snv", "tipo_pista", "km_ini", "km_fim", "lat_ini", "lon_ini",
                "lat_fim", "lon_fim", "lado", "condicao", "tipo", "obs", "origem"]
 
@@ -38,6 +38,14 @@ CREATE TABLE IF NOT EXISTS log (
   km_ini REAL, km_fim REAL, campo TEXT, de TEXT, para TEXT, situacao TEXT, regra TEXT, quantidade INTEGER DEFAULT 1
 );
 CREATE INDEX IF NOT EXISTS ix_log_proj ON log(projeto_id, tipo);
+CREATE TABLE IF NOT EXISTS sugestao (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  projeto_id INTEGER NOT NULL, item_id INTEGER, tipo TEXT, origem TEXT, categoria TEXT,
+  km_ini REAL, km_fim REAL, situacao TEXT, confianca TEXT, motivo TEXT, metodo TEXT,
+  atual TEXT, mudancas TEXT, opcoes TEXT, status TEXT DEFAULT 'pendente', aplicado TEXT,
+  criado_em TEXT DEFAULT CURRENT_TIMESTAMP, resolvido_em TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_sug_proj ON sugestao(projeto_id, status, tipo);
 CREATE TABLE IF NOT EXISTS historico (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, acao TEXT, detalhe TEXT
@@ -99,6 +107,7 @@ class Banco:
         with _lock, self.con:
             self.con.execute("DELETE FROM item WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM log WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM sugestao WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM projeto WHERE id = ?", (pid,))
 
     def tocar(self, pid: int) -> None:
@@ -189,6 +198,61 @@ class Banco:
             sql += " AND tipo = ?"
             args.append(tipo)
         return [dict(r) for r in self.con.execute(sql + " ORDER BY id", args).fetchall()]
+
+    # ------------------------------------------------------------ sugestões
+    _JSON_SUG = ("atual", "mudancas", "opcoes", "aplicado")
+
+    def _sug(self, r) -> dict:
+        d = dict(r)
+        for k in self._JSON_SUG:
+            d[k] = json.loads(d[k]) if d.get(k) else None
+        return d
+
+    def sugestoes(self, pid: int, status: str | None = None, tipo: str | None = None) -> list[dict]:
+        sql, args = "SELECT * FROM sugestao WHERE projeto_id = ?", [pid]
+        if status:
+            sql += " AND status = ?"
+            args.append(status)
+        if tipo:
+            sql += " AND tipo = ?"
+            args.append(tipo)
+        return [self._sug(r) for r in self.con.execute(sql + " ORDER BY id", args).fetchall()]
+
+    def sugestao(self, sid: int) -> dict | None:
+        r = self.con.execute("SELECT * FROM sugestao WHERE id = ?", (sid,)).fetchone()
+        return self._sug(r) if r else None
+
+    def substituir_pendentes(self, pid: int, novas: list[dict], apagar: bool = True) -> int:
+        """Apaga as sugestões pendentes (apagar=True) e grava as novas, exceto as já dispensadas antes."""
+        cols = ["item_id", "tipo", "origem", "categoria", "km_ini", "km_fim", "situacao", "confianca", "motivo",
+                "metodo", "atual", "mudancas", "opcoes"]
+        with _lock, self.con:
+            if apagar:
+                self.con.execute("DELETE FROM sugestao WHERE projeto_id = ? AND status = 'pendente'", (pid,))
+            dispensadas = {(r[0], r[1], r[2]) for r in self.con.execute(
+                "SELECT item_id, motivo, mudancas FROM sugestao WHERE projeto_id = ? AND status = 'dispensada'", (pid,))}
+            n = 0
+            for sg in novas:
+                vals = [json.dumps(sg.get(c), ensure_ascii=False) if c in self._JSON_SUG else sg.get(c) for c in cols]
+                if (sg.get("item_id"), sg.get("motivo"), vals[cols.index("mudancas")]) in dispensadas:
+                    continue
+                self.con.execute(f"INSERT INTO sugestao (projeto_id, {', '.join(cols)}) VALUES (?, {', '.join('?' * len(cols))})",
+                                 [pid] + vals)
+                n += 1
+            return n
+
+    def resolver_sugestao(self, sid: int, status: str, aplicado: dict | None = None, atual: dict | None = None,
+                          item_id: int | None = None) -> None:
+        with _lock, self.con:
+            sets = ["status = ?", "aplicado = ?", "resolvido_em = CURRENT_TIMESTAMP"]
+            args = [status, json.dumps(aplicado, ensure_ascii=False) if aplicado is not None else None]
+            if atual is not None:
+                sets.append("atual = ?")
+                args.append(json.dumps(atual, ensure_ascii=False))
+            if item_id is not None:
+                sets.append("item_id = ?")
+                args.append(item_id)
+            self.con.execute(f"UPDATE sugestao SET {', '.join(sets)} WHERE id = ?", args + [sid])
 
     def historico(self, pid: int, limite: int = 50) -> list[dict]:
         rows = self.con.execute("SELECT * FROM historico WHERE projeto_id = ? ORDER BY id DESC LIMIT ?", (pid, limite))

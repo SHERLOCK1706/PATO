@@ -13,7 +13,7 @@ from typing import Any
 import openpyxl
 from openpyxl.utils import range_boundaries
 
-from . import geo
+from . import correcao, geo, padrao_dnit
 from . import normalizar as nz
 from .calculo import medidas, resumo
 from .catalogo import CAMPOS_NUM, CATEGORIAS
@@ -115,6 +115,11 @@ class Servico:
         res = importar_xlsx(caminho)
         token = uuid.uuid4().hex[:12]
         res["arquivo"] = nome_arquivo or os.path.basename(caminho)
+        seguro = re.sub(r"[^\w.\-]+", "_", res["arquivo"])
+        guarda = self.pasta / "originais" / f"{token}_{seguro}"
+        guarda.parent.mkdir(exist_ok=True)
+        shutil.copyfile(caminho, guarda)
+        res["copia"] = str(guarda)
         self._previas[token] = res
         # limpa prévias antigas
         while len(self._previas) > 5:
@@ -123,7 +128,9 @@ class Servico:
         for it in res["itens"]:
             por_cat[it["categoria"]] = por_cat.get(it["categoria"], 0) + 1
         return dict(token=token, arquivo=res["arquivo"], projeto=res["projeto"], por_categoria=por_cat,
-                    relatorio=res["relatorio"], ignoradas=res["ignoradas"], total=len(res["itens"]))
+                    relatorio=[{k: v for k, v in r.items() if k != "mapa"} for r in res["relatorio"]],
+                    ignoradas=res["ignoradas"], total=len(res["itens"]),
+                    padronizacao=res["padronizacao_resumo"], vocabulario=res["vocabulario"])
 
     def importar_confirmar(self, token: str, modo: str = "novo", projeto_id: int | None = None,
                            categorias: list[str] | None = None, nome: str | None = None) -> dict:
@@ -136,6 +143,7 @@ class Servico:
             dados = dict(res["projeto"])
             dados["nome"] = nome or " ".join(x for x in (dados.get("rodovia"), dados.get("segmento")) if x) or res["arquivo"]
             dados["origem_arquivo"] = res["arquivo"]
+            dados["arquivo_original"] = res.get("copia")
             pid = self.db.criar_projeto(dados)
         else:
             pid = projeto_id
@@ -145,6 +153,11 @@ class Servico:
                 if cats:
                     self.db.excluir_categoria(pid, cats)
         self.db.inserir_itens(pid, itens)
+        cats = {i["categoria"] for i in itens}
+        self.db.inserir_log(pid, "padronização", [e for e in res.get("padronizacao", []) if e["categoria"] in cats])
+        self.db.inserir_log(pid, "vocabulário", [dict(campo=v["campo"], de=v["de"], para=v["para"], situacao="padronizado",
+                                                     regra="vocabulário normalizado na leitura", quantidade=v["quantidade"])
+                                                for v in res.get("vocabulario", [])])
         self.db.registrar(pid, "importar", f"{res['arquivo']} — {len(itens)} itens ({modo})")
         return dict(projeto=self.projeto(pid), importados=len(itens))
 
@@ -173,7 +186,13 @@ class Servico:
     def adicionar_itens(self, pid: int, itens: list[dict], categoria: str | None = None) -> list[dict]:
         self.projeto(pid)
         normal = [normalizar_item(i, categoria) for i in itens]
+        log = []
+        for it in normal:
+            it.setdefault("origem", "manual")
+            log += padrao_dnit.padronizar_item(it)
         ids = self.db.inserir_itens(pid, normal)
+        if log:
+            self.db.inserir_log(pid, "padronização", log)
         self.db.registrar(pid, "adicionar itens", f"{len(ids)}")
         return [self.db.item(i) for i in ids]
 
@@ -182,6 +201,13 @@ class Servico:
         if not atual:
             raise KeyError(f"Item {iid} não encontrado")
         norm = normalizar_item({**mudancas, "categoria": atual["categoria"]})
+        if "tipo" in mudancas:
+            tmp = {**atual, **{k: v for k, v in norm.items() if k in mudancas}, "dados": {**atual["dados"], **norm["dados"]}}
+            log = padrao_dnit.padronizar_item(tmp)
+            if log:
+                mudancas = {**mudancas, "tipo": tmp.get("tipo")}
+                norm["tipo"] = tmp.get("tipo")
+                self.db.inserir_log(atual["projeto_id"], "padronização", log)
         campos = {k: v for k, v in norm.items() if k in mudancas or k == "dados"}
         if "dados" in mudancas or any(k not in CAMPOS_TOPO for k in mudancas):
             campos["dados"] = norm["dados"]
@@ -341,6 +367,128 @@ class Servico:
                 return dict(linhas=linhas)
             finally:
                 wb.close()
+
+    # ------------------------------------------- verificação do SNV / correções
+    def corrigir_analisar(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
+        p = self.projeto(pid)
+        itens = self.db.itens(pid)
+        oficial = correcao.ler_snv_oficial(arquivo_snv, p.get("rodovia")) if arquivo_snv else None
+        if arquivo_snv and not oficial:
+            raise ValueError("A planilha do SNV não tem segmentos da rodovia " + str(p.get("rodovia")))
+        an = correcao.analisar(p, itens, oficial, versao_snv)
+        token = uuid.uuid4().hex[:12]
+        self._previas["corr_" + token] = dict(pid=pid, analise=an, oficial=oficial, versao=versao_snv)
+        an["token"] = token
+        return an
+
+    def corrigir_aplicar(self, token: str) -> dict:
+        reg = self._previas.pop("corr_" + token, None)
+        if not reg:
+            raise KeyError("Análise expirada — rode a verificação novamente.")
+        pid, an = reg["pid"], reg["analise"]
+        p = self.projeto(pid)
+        itens_antes = {i["id"]: i for i in self.db.itens(pid)}
+        res = correcao.aplicar(self.db, pid, an)
+        if reg.get("oficial"):
+            self._atualizar_segmentos(pid, reg["oficial"], reg.get("versao"))
+        out = dict(resultado=res)
+        rel = self._nome(p, "correcoes", "xlsx")
+        correcao.relatorio_xlsx(p, an, str(rel), itens_antes)
+        out["relatorio"] = rel.name
+        self.db.inserir_log(pid, "correção", an["acoes"])
+        if p.get("arquivo_original") and os.path.exists(p["arquivo_original"]):
+            g = self.exportar_original(pid)
+            out["original_corrigido"] = g["nome"]
+            out["celulas_gravadas"] = g["celulas"]
+        self.db.registrar(pid, "correção de pontos / SNV",
+                          f"{res['alterados']} itens alterados, {res['removidos']} removidos")
+        return out
+
+    def log(self, pid: int, tipo: str | None = None) -> list[dict]:
+        return self.db.log(pid, tipo)
+
+    def exportar_original(self, pid: int) -> dict:
+        """Cópia da planilha de inventário importada com padronizações e correções gravadas e destacadas."""
+        p = self.projeto(pid)
+        orig = p.get("arquivo_original")
+        if not orig or not os.path.exists(orig):
+            raise ValueError("A planilha original deste projeto não está guardada (importe o arquivo novamente).")
+        entradas = [e for e in self.db.log(pid) if e["tipo"] in ("padronização", "correção")]
+        base = re.sub(r"[^\w\-]+", "_", os.path.splitext(p.get("origem_arquivo") or "inventario.xlsx")[0])
+        dest = self.pasta / "exportacoes" / f"{base}_PADRONIZADO_CORRIGIDO_{time.strftime('%Y%m%d_%H%M%S')}.xlsx"
+        g = correcao.gravar_no_original(orig, str(dest), entradas)
+        return dict(arquivo=str(dest), nome=dest.name, celulas=g["celulas"])
+
+    def exportar_log(self, pid: int) -> dict:
+        from openpyxl.styles import Font, PatternFill
+        p = self.projeto(pid)
+        dest = self._nome(p, "log", "xlsx")
+        wb = openpyxl.Workbook()
+        abas = [("Padronização", "padronização", ["situacao", "categoria", "origem", "km_ini", "campo", "de", "para", "regra"]),
+                ("Vocabulário", "vocabulário", ["campo", "de", "para", "quantidade", "regra"]),
+                ("Correções", "correção", ["situacao", "categoria", "origem", "km_ini", "km_fim", "campo", "de", "para", "regra"])]
+        rot = dict(situacao="Situação", categoria="Categoria", origem="Origem (aba!linha)", km_ini="km inicial",
+                   km_fim="km final", campo="Campo", de="Valor original", para="Valor ajustado", regra="Regra / motivo",
+                   quantidade="Ocorrências")
+        larg = dict(situacao=26, categoria=10, origem=36, km_ini=10, km_fim=10, campo=12, de=24, para=24, regra=90, quantidade=12)
+        ws0 = wb.active
+        ws0.title = "Resumo"
+        ws0["A1"] = f"LOG DE PADRONIZAÇÃO E CORREÇÕES — {p.get('rodovia') or ''} {p.get('segmento') or ''}"
+        ws0["A1"].font = Font(bold=True, size=12)
+        ws0["A2"] = f"Referência de nomenclatura: {padrao_dnit.ALBUM}, códigos conforme descrições do SICRO."
+        ws0["A3"] = f"Arquivo importado: {p.get('origem_arquivo') or '—'}"
+        r = 5
+        from collections import Counter as _C
+        for titulo, tipo, cols in abas:
+            ent = self.db.log(pid, tipo)
+            ws0.cell(r, 1, titulo).font = Font(bold=True)
+            cont = _C(e["situacao"] for e in ent) if tipo != "vocabulário" else _C({"normalizações": sum(e["quantidade"] or 0 for e in ent)})
+            for k, v in cont.items():
+                r += 1
+                ws0.cell(r, 2, k)
+                ws0.cell(r, 3, v)
+            r += 2
+            ws = wb.create_sheet(titulo)
+            for j, c in enumerate(cols, 1):
+                cell = ws.cell(1, j, rot[c])
+                cell.font = Font(bold=True, color="FFFFFF")
+                cell.fill = PatternFill("solid", fgColor="1F3A5F")
+                ws.column_dimensions[openpyxl.utils.get_column_letter(j)].width = larg[c]
+            for i, e in enumerate(ent, 2):
+                for j, c in enumerate(cols, 1):
+                    ws.cell(i, j, e.get(c))
+                if e.get("situacao") in correcao.CORES:
+                    ws.cell(i, 1).fill = PatternFill("solid", fgColor=correcao.CORES[e["situacao"]])
+            ws.freeze_panes = "A2"
+            ws.auto_filter.ref = ws.dimensions
+        ws0.column_dimensions["A"].width = 30
+        ws0.column_dimensions["B"].width = 30
+        wb.save(dest)
+        return dict(arquivo=str(dest), nome=dest.name)
+
+    def _atualizar_segmentos(self, pid: int, oficial: list[dict], versao: str | None) -> None:
+        """Substitui o cadastro de segmentos pela tabela oficial do SNV (coordenadas pelo eixo)."""
+        p = self.projeto(pid)
+        itens = self.db.itens(pid)
+        eixo = geo.Eixo(itens)
+        k0, k1 = p.get("km_ini"), p.get("km_fim")
+        novos = []
+        for s in oficial:
+            a, b = max(s["km_ini"], k0 if k0 is not None else s["km_ini"]), min(s["km_fim"], k1 if k1 is not None else s["km_fim"])
+            if b <= a:
+                continue
+            pa, pb = eixo.posicao(a), eixo.posicao(b)
+            novos.append(dict(categoria="SEG", snv=s["codigo"], tipo_pista="PISTA SIMPLES", km_ini=a, km_fim=b,
+                              lat_ini=pa[0] if pa else None, lon_ini=pa[1] if pa else None,
+                              lat_fim=pb[0] if pb else None, lon_fim=pb[1] if pb else None,
+                              dados={"local_ini": s.get("local_ini"), "local_fim": s.get("local_fim")},
+                              origem=f"SNV oficial {versao or ''}".strip()))
+        self.db.excluir_categoria(pid, ["SEG"])
+        self.db.inserir_itens(pid, novos)
+        upd = {"snv": f"{novos[0]['snv']} - {novos[-1]['snv']}" if novos else None}
+        if versao:
+            upd["snv_versao"] = versao
+        self.db.atualizar_projeto(pid, upd)
 
     # ---------------------------------------------- planilhas (genérico p/ MCP)
     @staticmethod

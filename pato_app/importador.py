@@ -14,7 +14,10 @@ import openpyxl
 from lxml import etree
 from openpyxl.utils import column_index_from_string, get_column_letter
 
+from collections import Counter
+
 from . import normalizar as nz
+from . import padrao_dnit
 from .catalogo import CAMPOS_NUM, CATEGORIAS, REGRAS_RE, categoria_da_aba
 
 _NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
@@ -102,7 +105,7 @@ def _mapear_colunas(cat: str, rotulos: dict[int, str]) -> tuple[dict[str, list[i
     return campos, extras
 
 
-def ler_aba(ws, nome: str, cat: str, merges) -> dict:
+def ler_aba(ws, nome: str, cat: str, merges, vocab: Counter | None = None) -> dict:
     linhas = _ler_linhas(ws)
     rel = dict(aba=nome, categoria=cat, nome_categoria=CATEGORIAS[cat]["nome"], linhas=0,
                colunas={}, nao_mapeadas=[], avisos=[], itens=[])
@@ -156,13 +159,14 @@ def ler_aba(ws, nome: str, cat: str, merges) -> dict:
 
     campos, extras = _mapear_colunas(cat, rotulos)
     rel["colunas"] = {k: [f"{get_column_letter(c)} · {rotulos[c].split(' > ')[-1]}" for c in v] for k, v in campos.items()}
+    rel["mapa"] = {k: [get_column_letter(c) for c in v] for k, v in campos.items()}
     rel["nao_mapeadas"] = [f"{get_column_letter(c)} · {v}" for c, v in extras.items()]
     for obrig in ("km_ini",):
         if obrig not in campos:
             rel["avisos"].append("Coluna de km/estaca não identificada.")
 
     for r in range(ds, len(linhas) + 1):
-        it = _ler_linha(linhas, r, campos, extras, cat)
+        it = _ler_linha(linhas, r, campos, extras, cat, vocab)
         if it is None:
             continue
         it["origem"] = f"{nome}!{r}"
@@ -171,7 +175,7 @@ def ler_aba(ws, nome: str, cat: str, merges) -> dict:
     return rel
 
 
-def _ler_linha(linhas, r, campos, extras, cat) -> dict | None:
+def _ler_linha(linhas, r, campos, extras, cat, vocab: Counter | None = None) -> dict | None:
     val: dict[str, Any] = {}
     for campo, cols in campos.items():
         brutos = [_cel(linhas, r, c) for c in cols]
@@ -201,13 +205,12 @@ def _ler_linha(linhas, r, campos, extras, cat) -> dict | None:
     for k in ("snv", "km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_fim", "tipo", "obs"):
         if k in val:
             item[k] = val.pop(k)
-    if "tipo_pista" in val:
-        item["tipo_pista"] = nz.tipo_pista(val.pop("tipo_pista"))
-    if "lado" in val:
-        bruto = val.pop("lado")
-        item["lado"] = nz.lado(bruto)
-    if "condicao" in val:
-        item["condicao"] = nz.condicao(val.pop("condicao"))
+    for campo, fn in (("tipo_pista", nz.tipo_pista), ("lado", nz.lado), ("condicao", nz.condicao)):
+        if campo in val:
+            bruto = val.pop(campo)
+            item[campo] = fn(bruto)
+            if vocab is not None and str(bruto) != str(item[campo]):
+                vocab[(campo, str(bruto), str(item[campo]))] += 1
     extra = {}
     for c, lab in extras.items():
         v = nz.texto(_cel(linhas, r, c))
@@ -276,8 +279,9 @@ def importar_xlsx(path: str) -> dict:
                 ignoradas.append(nome)
         relatorio = []
         usadas: set[str] = set()
+        vocab: Counter = Counter()
         for nome, cat in nomes_cat.items():
-            rel = ler_aba(wb[nome], nome, cat, merges.get(nome, []))
+            rel = ler_aba(wb[nome], nome, cat, merges.get(nome, []), vocab)
             if cat in usadas and rel["linhas"]:
                 rel["avisos"].append("Categoria já lida em outra aba; itens somados.")
             usadas.add(cat)
@@ -301,4 +305,24 @@ def importar_xlsx(path: str) -> dict:
             projeto["km_ini"], projeto["km_fim"] = min(kms), max(kms)
     for rel in relatorio:
         rel.pop("itens")
-    return dict(projeto=projeto, itens=itens, relatorio=relatorio, ignoradas=ignoradas)
+    log = padrao_dnit.padronizar(itens)
+    return dict(projeto=projeto, itens=itens, relatorio=relatorio, ignoradas=ignoradas,
+                padronizacao=log, padronizacao_resumo=padrao_dnit.resumir(log),
+                vocabulario=padrao_dnit.contar_vocabulario(vocab))
+
+
+def mapa_colunas(path: str, abas: set[str] | None = None) -> dict[str, dict[str, list[str]]]:
+    """{aba: {campo: [letras das colunas]}} das abas de inventário reconhecidas."""
+    merges = _merges(path)
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    try:
+        out = {}
+        for nome in wb.sheetnames:
+            if abas is not None and nome not in abas:
+                continue
+            cat = categoria_da_aba(nome)
+            if cat:
+                out[nome] = ler_aba(wb[nome], nome, cat, merges.get(nome, [])).get("mapa", {})
+        return out
+    finally:
+        wb.close()

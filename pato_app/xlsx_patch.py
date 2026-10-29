@@ -253,6 +253,37 @@ class XlsxPatcher:
             t.text = str(value)
             t.set("{http://www.w3.org/XML/1998/namespace}space", "preserve")
 
+    # ---------------------------------------------------------------- destaque
+    def destacar(self, sheet: str, ref: str, cor: str) -> None:
+        """Pinta o fundo da célula (cor 'RRGGBB'), mantendo fonte, borda e formato numérico."""
+        st = self._parse("xl/styles.xml")
+        if not hasattr(self, "_xf_cache"):
+            self._xf_cache: dict[tuple[str, str], str] = {}
+            self._fill_cache: dict[str, int] = {}
+        c = self._get_cell(sheet, ref, True)
+        s_atual = c.get("s", "0")
+        chave = (s_atual, cor)
+        if chave not in self._xf_cache:
+            fills = st.find(Q("fills"))
+            if cor not in self._fill_cache:
+                fill = etree.SubElement(fills, Q("fill"))
+                pf = etree.SubElement(fill, Q("patternFill"), patternType="solid")
+                etree.SubElement(pf, Q("fgColor"), rgb="FF" + cor.upper())
+                etree.SubElement(pf, Q("bgColor"), indexed="64")
+                fills.set("count", str(len(fills)))
+                self._fill_cache[cor] = len(fills) - 1
+            xfs = st.find(Q("cellXfs"))
+            base = xfs[int(s_atual)] if int(s_atual) < len(xfs) else xfs[0]
+            novo = etree.fromstring(etree.tostring(base))
+            novo.set("fillId", str(self._fill_cache[cor]))
+            novo.set("applyFill", "1")
+            xfs.append(novo)
+            xfs.set("count", str(len(xfs)))
+            self._xf_cache[chave] = str(len(xfs) - 1)
+            self._touch("xl/styles.xml")
+        c.set("s", self._xf_cache[chave])
+        self._touch(self.sheets[sheet])
+
     # ----------------------------------------------------- fórmulas partilhadas
     def unshare(self, sheet: str, predicate: Callable[[str], bool] | None = None) -> None:
         """Converte fórmulas compartilhadas em fórmulas explícitas."""

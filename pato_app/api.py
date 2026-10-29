@@ -146,9 +146,30 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     @app.post("/api/projetos/{pid}/exportar/{formato}")
     def exp_geo(pid: int, formato: str):
+        if formato == "log":
+            return sv.exportar_log(pid)
+        if formato == "original":
+            return sv.exportar_original(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson ou kml")
+            raise HTTPException(400, "Formato deve ser geojson, kml, log ou original")
         return sv.exportar_geo(pid, formato)
+
+    @app.post("/api/projetos/{pid}/corrigir/analisar")
+    async def corr_analisar(pid: int, snv: UploadFile | None = File(default=None), versao: str | None = Form(default=None)):
+        caminho = await _salvar_upload(snv) if snv and snv.filename else None
+        try:
+            return sv.corrigir_analisar(pid, caminho, versao or None)
+        finally:
+            if caminho:
+                os.unlink(caminho)
+
+    @app.post("/api/corrigir/aplicar")
+    def corr_aplicar(dados: dict = Body(...)):
+        return sv.corrigir_aplicar(dados["token"])
+
+    @app.get("/api/projetos/{pid}/log")
+    def log(pid: int, tipo: str | None = None):
+        return sv.log(pid, tipo)
 
     @app.post("/api/conferir")
     def conferir(dados: dict = Body(...)):

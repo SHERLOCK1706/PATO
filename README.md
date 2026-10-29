@@ -17,6 +17,24 @@ Sistema local (painel web + servidor MCP) construído a partir da planilha
 | Exportar inventário em Excel (uma aba por categoria + resumo), GeoJSON e KML (Google Earth). | aba **Exportar** |
 | Servidor **MCP** para o Claude ler e preencher o inventário e qualquer planilha. | `pato_app/mcp_server.py` |
 
+### Verificação do SNV e correção de pontos (aba Alertas)
+- Confere o código SNV de cada item com o km (cadastro de segmentos ou **planilha oficial do SNV**, opcional) e
+  detecta quando o inventário usa outra numeração/versão do SNV.
+- Constrói o eixo da rodovia com todas as coordenadas (descartando as discrepantes) e classifica cada ponto:
+  ≤ 1 km de divergência km × coordenada = aceitável (odômetro × GPS); 1–2 km = **verificar em campo**; > 2 km = erro.
+- Corrige: erro de digitação (sinal, dígito, dígitos invertidos, lat/long trocadas), coordenada registrada na
+  ponta errada ou copiada de outro ponto (quando o km é confirmado pela continuidade/extensão), SNV faltante ou
+  incompleto, feições que ultrapassam o trecho (recorte) ou estão fora dele (remoção).
+- Saídas: relatório (.xlsx) com links do Google Maps, planilha original com as células corrigidas **pintadas**,
+  e os valores originais guardados em cada item.
+
+### Nomenclatura conforme o Álbum de Projetos-Tipo de Drenagem (DNIT/IPR-736, 5ª ed.)
+Na importação, os tipos de bueiro, meio-fio, sarjeta, descida d'água, entrada e valeta são conferidos com os códigos
+do álbum (na forma usada pelo SICRO: `BSTC` Ø0,60–1,50, `BSCC` 1,50–3,00, `MFC 01–08`, `STC 125-25`, `DAR 60-30`,
+`EDA 03 B`, `VPCC 120-30`…). Grafias fora do padrão são ajustadas (`MFC03` → `MFC 03`, `EDA-03B` → `EDA 03 B`) e o que
+não dá para converter com segurança (ex.: `DAR01`, `EDA01` sem A/B) fica marcado para verificação.
+Tudo vai para um **log** (aba Exportar → Log), junto com o vocabulário normalizado (lado, condição) e as correções.
+
 ### Fórmulas reproduzidas (conferidas contra a planilha original)
 Pista: km de faixa = extensão × nº faixas; área = ext × 1000 × largura · Acostamento por revestimento (CA/TS) ·
 Meio-fio/sarjeta: ext = (kmf − kmi) × 1000, caiação = ext × largura, capina = 0,2 × ext ·
@@ -51,7 +69,7 @@ No Claude Desktop: *Configurações → Desenvolvedor → Editar configuração*
 Ferramentas disponíveis: `listar_projetos`, `ler_projeto`, `criar_projeto`, `atualizar_projeto`, `alterar_trecho`,
 `listar_inventario`, `adicionar_itens_inventario`, `atualizar_item`, `remover_itens`, `importar_planilha`,
 `resumo_inventario`, `validar_inventario`, `gerar_aceiro`, `exportar_planilha_pato`, `exportar_inventario`,
-`categorias_inventario`, e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
+`categorias_inventario`, `verificar_e_corrigir`, `log_padronizacao`, `exportar_original_corrigido`, e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 
 Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e me mostre os alertas”*,

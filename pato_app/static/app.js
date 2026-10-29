@@ -259,8 +259,25 @@ async function verNoMapa(id) {
 }
 
 // ---------------------------------------------------------------- alertas
+async function renderLog() {
+  if (!E.pid) return;
+  const ent = await api(`/api/projetos/${E.pid}/log?tipo=${encodeURIComponent("padronização")}`);
+  if (!ent.length) { $("#resLog").textContent = "Nenhum ajuste de nomenclatura registrado para este projeto."; return; }
+  const g = {};
+  for (const e of ent) {
+    const k = [e.situacao, e.categoria, e.campo, e.de, e.para, e.regra].join("|");
+    (g[k] ||= { ...e, n: 0, ex: [] }).n++;
+    if (g[k].ex.length < 3 && e.origem) g[k].ex.push(e.origem);
+  }
+  const lst = Object.values(g).sort((a, b) => (a.situacao > b.situacao ? 1 : -1) || b.n - a.n);
+  $("#resLog").innerHTML = `<div class="tabela-rolagem" style="max-height:320px"><table class="tab"><tr><th>Situação</th><th>Cat.</th><th>Campo</th><th>Original</th><th>Padrão</th><th class=n>Qtde</th><th>Regra</th><th>Exemplos</th></tr>` +
+    lst.map(x => `<tr class="${x.situacao.startsWith("fora") ? "sit-verificar" : x.situacao.includes("conferir") ? "sit-conferir" : "sit-corrigido"}">
+      <td>${esc(x.situacao)}</td><td>${esc(x.categoria)}</td><td>${esc(x.campo)}</td><td>${esc(x.de ?? "")}</td><td><b>${esc(x.para ?? "—")}</b></td>
+      <td class=n>${x.n}</td><td>${esc(x.regra)}</td><td><small>${esc(x.ex.join(", "))}</small></td></tr>`).join("") + "</table></div>";
+}
 function renderAlertas() {
   if (!E.resumo) return;
+  renderLog().catch(erro);
   const A = E.resumo.alertas, n = E.resumo.n_alertas;
   $("#chipsAlerta").innerHTML = [["erro", "Erros"], ["aviso", "Avisos"], ["info", "Informações"]].map(([k, r]) =>
     `<span class="chip ${E.alertaNivel === k ? "ativo" : ""}" data-n="${k}">${r} <span class="q">${n[k] || 0}</span></span>`).join("");
@@ -271,6 +288,54 @@ function renderAlertas() {
      <td><button class="btn" data-mapa="${a.id}">Ver no mapa</button></td></tr>`).join("");
   $$("#tabAlertas [data-mapa]").forEach(b => b.onclick = () => verNoMapa(+b.dataset.mapa));
 }
+
+// ---------------------------------------------------------------- correções
+const SIT_CLS = { "corrigido": "sit-corrigido", "corrigido — conferir": "sit-conferir", "recortado": "sit-recortado",
+  "removido": "sit-removido", "verificar em campo": "sit-verificar" };
+$("#btnAnalisar").onclick = async () => {
+  const box = $("#resCorrecao"); box.innerHTML = `<p class="carregando">Analisando…</p>`;
+  const fd = new FormData();
+  if ($("#arqSnv").files[0]) fd.append("snv", $("#arqSnv").files[0]);
+  if ($("#verSnv").value) fd.append("versao", $("#verSnv").value);
+  try {
+    const an = await api(`/api/projetos/${E.pid}/corrigir/analisar`, { method: "POST", body: fd });
+    const R = an.resumo, S = an.snv;
+    let filtro = null;
+    const tabSnv = (t) => `<table class="tab"><tr><th>Código</th><th class=n>km inicial</th><th class=n>km final</th></tr>` +
+      t.map(x => `<tr><td>${esc(x.codigo)}</td><td class=n>${nf(x.km_ini, 3)}</td><td class=n>${nf(x.km_fim, 3)}</td></tr>`).join("") + "</table>";
+    const desenhar = () => {
+      const lst = an.acoes.filter(a => !filtro || a.situacao === filtro);
+      $("#tabAcoes").innerHTML = "<tr><th>Situação</th><th>Origem</th><th>km</th><th>Campo</th><th>Original</th><th>Corrigido</th><th>Motivo</th><th></th></tr>" +
+        lst.slice(0, 2000).map(a => `<tr class="${SIT_CLS[a.situacao]}"><td>${esc(a.situacao)}</td><td>${esc(a.origem || "")}</td>
+          <td class=n>${nf(a.km_ini, 3)}${a.km_fim != null ? "–" + nf(a.km_fim, 3) : ""}</td><td>${esc(a.campo)}</td>
+          <td>${esc(a.de ?? "")}</td><td><b>${esc(a.para ?? "")}</b></td><td>${esc(a.motivo)}<br><small>${esc(a.metodo)} · confiança ${esc(a.confianca)}</small></td>
+          <td>${a.id != null ? `<button class="btn" data-mapa="${a.id}">Mapa</button>` : ""}</td></tr>`).join("");
+      $$("#tabAcoes [data-mapa]").forEach(b => b.onclick = () => verNoMapa(+b.dataset.mapa));
+    };
+    box.innerHTML = `<div class="cards" style="margin-top:12px">${Object.entries(R).map(([k, v]) =>
+        `<div class="card ${SIT_CLS[k]}" data-sit="${esc(k)}" style="cursor:pointer"><div class="r">${esc(k)}</div><div class="v">${v.itens}<span class="u">itens</span></div></div>`).join("")}</div>
+      <div class="grade2"><div><h4>SNV</h4><p class="nota">Versão declarada: <b>${esc(S.versao_inventario || "—")}</b> · Referência: <b>${esc(S.fonte_referencia)}</b> ·
+        ${Math.round(S.concordancia * 100)}% dos itens coerentes com o cadastro de segmentos.</p>
+        ${S.observacoes.map(o => `<p class="nota">• ${esc(o)}</p>`).join("")}</div>
+        <div class="grade2"><div><h4>Cadastro de segmentos</h4>${tabSnv(S.cadastro_segmentos)}</div><div><h4>Referência</h4>${tabSnv(S.tabela_referencia)}</div></div></div>
+      <div class="legenda-sit">${Object.entries(SIT_CLS).map(([k, c]) => `<span class="${c}">${esc(k)}</span>`).join("")}</div>
+      <div class="linha-botoes"><button class="btn primario" id="btnAplicarCorr">Aplicar correções</button>
+        <span class="nota">“Verificar em campo” não altera nada; os valores originais ficam guardados em cada item.</span></div>
+      <div id="resAplicar"></div>
+      <div class="tabela-rolagem" style="margin-top:10px"><table class="tab" id="tabAcoes"></table></div>`;
+    $$(".cards [data-sit]", box).forEach(c => c.onclick = () => { filtro = filtro === c.dataset.sit ? null : c.dataset.sit; desenhar(); });
+    desenhar();
+    $("#btnAplicarCorr").onclick = async () => {
+      if (!confirm("Aplicar as correções no inventário deste projeto?")) return;
+      try {
+        const r = await jpost("/api/corrigir/aplicar", { token: an.token });
+        $("#resAplicar").innerHTML = `<p class="ok-msg">${r.resultado.alterados} itens corrigidos, ${r.resultado.removidos} removidos (fora do trecho).</p>
+          <div class="linha-botoes">${linkBaixar({ nome: r.relatorio })}${r.original_corrigido ? linkBaixar({ nome: r.original_corrigido }) : ""}</div>`;
+        $("#btnAplicarCorr").disabled = true; E.geo = null; await carregarResumo(); renderAlertas();
+      } catch (e) { erro(e); }
+    };
+  } catch (e) { box.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {
@@ -337,6 +402,12 @@ async function enviarPrevia(arq) {
           <input name="nome" value="${esc([p.rodovia, p.segmento].filter(Boolean).join(" "))}"></label>
         <h4>Categorias</h4><div class="chips" style="flex-direction:column;gap:2px">${cats}</div>
         <div class="linha-botoes"><button class="btn primario">Confirmar importação</button></div></form></div>
+      <h4>Nomenclatura × Álbum DNIT (IPR-736) — log de padronização</h4>
+      ${r.padronizacao.length ? `<div class="tabela-rolagem" style="max-height:300px"><table class="tab"><tr><th>Situação</th><th>Cat.</th><th>Original</th><th>Padrão</th><th class=n>Qtde</th><th>Regra</th></tr>` +
+        r.padronizacao.map(x => `<tr class="${x.situacao.startsWith("fora") ? "sit-verificar" : x.situacao.includes("conferir") ? "sit-conferir" : "sit-corrigido"}"><td>${esc(x.situacao)}</td><td>${esc(x.categoria)}</td>
+          <td>${esc(x.de ?? "")}</td><td><b>${esc(x.para ?? "—")}</b></td><td class=n>${x.quantidade}</td><td>${esc(x.regra)}<br><small>${esc(x.origens.join(", "))}</small></td></tr>`).join("") + "</table></div>"
+        : `<p class="nota">Nomenclatura dos dispositivos de drenagem já está no padrão do álbum.</p>`}
+      ${r.vocabulario.length ? `<p class="nota">Vocabulário normalizado: ${r.vocabulario.slice(0, 12).map(v => `${esc(v.campo)} “${esc(v.de)}” → “${esc(v.para)}” (${v.quantidade})`).join(" · ")}</p>` : ""}
       <h4>Como cada aba foi lida</h4><div class="relatorio">${rel}</div>
       ${r.ignoradas.length ? `<p class="nota">Abas ignoradas: ${esc(r.ignoradas.slice(0, 40).join(", "))}${r.ignoradas.length > 40 ? "…" : ""}</p>` : ""}`;
     $("#formConfirmar").onsubmit = async e => {

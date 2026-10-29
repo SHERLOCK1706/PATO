@@ -34,26 +34,86 @@ class Eixo:
         segs = [i for i in itens if i["categoria"] == "SEG"]
         base = sorted({(k, la, lo) for k, la, lo, _, _ in _amostras(segs)})
         self.base = base
-        self.pts: list[tuple[float, float, float]] = list(base)
+        # amostras distintas (pontos repetidos em várias linhas contam uma vez)
+        cand = sorted({(round(k, 3), round(la, 6), round(lo, 6)) for k, la, lo, _, _ in _amostras(itens)})
+        # 1) descarta erros grosseiros pela corda dos segmentos SNV
         if len(base) >= 2:
-            for k, la, lo, _, _ in _amostras([i for i in itens if i["categoria"] != "SEG"]):
+            ok = []
+            for k, la, lo in cand:
                 ref = self._interp(base, k)
-                if ref is None:
-                    continue
-                vizinho = self._passo(base, k)
-                tol = max(3.0, 0.3 * vizinho)
-                if dist_km(ref, (la, lo)) <= tol:
-                    self.pts.append((k, la, lo))
-        else:
-            self.pts = sorted({(k, la, lo) for k, la, lo, _, _ in _amostras(itens)})
-        self.pts.sort()
+                if ref is not None and dist_km(ref, (la, lo)) <= max(3.0, 0.3 * self._passo(base, k)):
+                    ok.append((k, la, lo))
+            cand = ok
+        # 2) consistência local: cada ponto deve concordar com os vizinhos de km (sem ele próprio)
+        for janela, tol in ((2.0, 1.5), (1.0, 0.4), (1.0, 0.25)):
+            cand = self._filtrar_local(cand, janela, tol)
+        self.pts = cand
         # mediana por km arredondado reduz ruído de pontos dos dois lados
         agrup: dict[float, list] = {}
         for k, la, lo in self.pts:
             agrup.setdefault(round(k, 2), []).append((la, lo))
         self.pts = [(k, sorted(v)[len(v) // 2][0], sorted(v, key=lambda x: x[1])[len(v) // 2][1])
                     for k, v in sorted(agrup.items())]
+        if len(self.pts) < 2:
+            self.pts = base
         self.kms = [p[0] for p in self.pts]
+        lat0 = self.pts[len(self.pts) // 2][1] if self.pts else 0.0
+        self._kx = 111.32 * math.cos(math.radians(lat0))
+        self._ky = 110.57
+
+    @staticmethod
+    def _filtrar_local(pts, janela: float, tol: float):
+        """Remove pontos que distam > tol km da posição prevista pelos vizinhos (interpolação
+        entre o vizinho anterior e o posterior, ou mediana na janela)."""
+        if len(pts) < 5:
+            return pts
+        kms = [p[0] for p in pts]
+        out = []
+        for i, (k, la, lo) in enumerate(pts):
+            a = bisect.bisect_left(kms, k - janela)
+            b = bisect.bisect_right(kms, k + janela)
+            viz = [pts[j] for j in range(a, b) if j != i and pts[j][0] != k]
+            if len(viz) < 2:
+                out.append((k, la, lo))
+                continue
+            lim = tol
+            antes = [v for v in viz if v[0] < k]
+            depois = [v for v in viz if v[0] > k]
+            if antes and depois:
+                # mediana das interpolações entre pares antes/depois mais próximos
+                prev = sorted(antes, key=lambda v: k - v[0])[:3]
+                prox = sorted(depois, key=lambda v: v[0] - k)[:3]
+                ests = []
+                for p in prev:
+                    for q in prox:
+                        t = (k - p[0]) / (q[0] - p[0])
+                        ests.append((p[1] + t * (q[1] - p[1]), p[2] + t * (q[2] - p[2])))
+                ests.sort()
+                ela = ests[len(ests) // 2][0]
+                elo = sorted(e[1] for e in ests)[len(ests) // 2]
+            else:
+                ela = sorted(v[1] for v in viz)[len(viz) // 2]
+                elo = sorted(v[2] for v in viz)[len(viz) // 2]
+                lim = tol + janela  # sem vizinhos dos dois lados: só erro grosseiro
+            if dist_km((ela, elo), (la, lo)) <= lim:
+                out.append((k, la, lo))
+        return out
+
+    def projetar(self, lat: float, lon: float) -> tuple[float, float] | None:
+        """(km sobre o eixo, distância lateral em km) do ponto mais próximo do eixo."""
+        if len(self.pts) < 2:
+            return None
+        x, y = lon * self._kx, lat * self._ky
+        melhor = None
+        for (k0, a0, o0), (k1, a1, o1) in zip(self.pts, self.pts[1:]):
+            x0, y0, x1, y1 = o0 * self._kx, a0 * self._ky, o1 * self._kx, a1 * self._ky
+            dx, dy = x1 - x0, y1 - y0
+            L2 = dx * dx + dy * dy
+            t = 0.0 if L2 == 0 else max(0.0, min(1.0, ((x - x0) * dx + (y - y0) * dy) / L2))
+            d = math.hypot(x - (x0 + t * dx), y - (y0 + t * dy))
+            if melhor is None or d < melhor[1]:
+                melhor = (k0 + t * (k1 - k0), d)
+        return melhor
 
     @staticmethod
     def _passo(pts, k) -> float:

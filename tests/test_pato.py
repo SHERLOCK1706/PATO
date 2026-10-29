@@ -154,3 +154,88 @@ def test_roundtrip_pato_total_inalterado(tmp_path, pato):
     assert wb["RESUMO_PATO"]["D26"].value == pytest.approx(26682348.76, abs=0.01)
     assert wb["RESUMO_PATO"]["F26"].value == pytest.approx(27994808.64, abs=0.01)
     wb.close()
+
+
+# ------------------------------------------------- nomenclatura (Álbum DNIT) e correções
+from pato_app import correcao, padrao_dnit  # noqa: E402
+
+
+def _pad(cat, tipo, **dados):
+    it = {"categoria": cat, "tipo": tipo, "dados": dict(dados), "origem": "X!1"}
+    return it, padrao_dnit.padronizar_item(it)
+
+
+def test_padronizacao_album():
+    it, log = _pad("MFC", "MFC03")
+    assert it["tipo"] == "MFC 03" and log[0]["situacao"] == "padronizado"
+    it, log = _pad("EDA", "EDA-03B")
+    assert it["tipo"] == "EDA 03 B"
+    it, log = _pad("EDA", "EDA01")
+    assert it["tipo"] == "EDA01" and log[0]["situacao"] == "fora do padrão — verificar"
+    it, log = _pad("STC", "STC-125/25", largura=1.25)
+    assert it["tipo"] == "STC 125-25"
+    it, log = _pad("STC", "STC 01", largura=0.73)
+    assert it["tipo"] == "STC 73-15" and log[0]["situacao"] == "padronizado — conferir"
+    it, log = _pad("DAR", "DAR01")
+    assert log[0]["situacao"] == "fora do padrão — verificar" and "DAR 40-20" in log[0]["regra"]
+    it, log = _pad("OAC", "Bueiro duplo tubular de concreto", dimensao="1,00")
+    assert it["tipo"] == "BDTC" and it["dados"]["dimensao"] == 1.0 and it["dados"]["linhas"] == 2
+    it, log = _pad("OAC", "BSTC Ø 0,40")
+    assert it["tipo"] == "BSTC" and any("não consta no álbum" in e["regra"] for e in log)
+    it, log = _pad("OAC", "4xBSCC", dimensao=1.5, linhas=4)
+    assert it["tipo"] == "BSCC" and it["dados"]["linhas"] == 4
+
+
+def test_correcoes_br158(pato):
+    itens = [dict(i, id=n) for n, i in enumerate(pato["itens"])]
+    an = correcao.analisar(pato["projeto"], itens)
+    fix = {(a["origem"], a["campo"]): a["para"] for a in an["acoes"] if a["situacao"] == "corrigido"}
+    assert fix[("CAD_OAC!80", "lat_ini")] == -11.0662          # sinal
+    assert fix[("CAD_ACEIRO!6", "lat_fim")] == -10.356          # dígito
+    assert fix[("CAD_ACEIRO!27", "lon_ini")] == -51.53637       # dígitos invertidos
+    assert fix[("CAD_ALAMB!21", "snv")] == "158BMT0182"        # falta 'B'
+    assert an["resumo"]["verificar em campo"]["itens"] == 0
+
+
+def test_correcoes_br174_e_snv(br174):
+    itens = [dict(i, id=n) for n, i in enumerate(br174["itens"])]
+    an = correcao.analisar(br174["projeto"], itens)
+    assert an["snv"]["concordancia"] < 0.1  # cadastro de segmentos em outra numeração
+    sit = {(a["origem"], a["campo"]): a for a in an["acoes"]}
+    assert sit[("CADASTRO TACHA, TACHÕES!26", "lat_ini")]["situacao"] == "corrigido"
+    assert sit[("CADASTRO TACHA, TACHÕES!403", "item")]["situacao"] == "removido"
+    assert sit[("CADASTRO TACHA, TACHÕES!389", "km_fim")]["para"] == 503.46
+    assert sit[("CADASTRO DE ÁREA ROÇADA!73", "snv")]["para"] == "174BMT0110 / 174BMT0112"
+
+
+def test_snv_oficial_csv(tmp_path, br174):
+    csv_ = tmp_path / "snv.csv"
+    csv_.write_text("BR;UF;Código;Local de Início;Local de Fim;km inicial;km final\n"
+                    "174;MT;174BMT0110;A;B;366,5;394,0\n174;MT;174BMT0112;B;C;394,0;402,3\n"
+                    "174;MT;174BMT0115;C;D;402,3;440,8\n174;MT;174BMT0120;D;E;440,8;500,4\n"
+                    "174;MT;174BMT0125;E;F;500,4;502,5\n174;MT;174BMT0130;F;G;502,5;510,0\n"
+                    "070;MT;070BMT0010;X;Y;0;10\n", encoding="utf-8")
+    tab = correcao.ler_snv_oficial(str(csv_), "BR-174/MT")
+    assert [t["codigo"] for t in tab][:2] == ["174BMT0110", "174BMT0112"] and len(tab) == 6
+    itens = [dict(i, id=n) for n, i in enumerate(br174["itens"])]
+    an = correcao.analisar(br174["projeto"], itens, tab, "202604A")
+    assert an["snv"]["fonte_referencia"].startswith("SNV oficial")
+    assert any("174BMT0100" in o for o in an["snv"]["observacoes"])
+
+
+def test_gravar_no_original(tmp_path, sv):
+    r = sv.importar_arquivo(str(BR174))
+    pid = r["projeto"]["id"]
+    an = sv.corrigir_analisar(pid)
+    out = sv.corrigir_aplicar(an["token"])
+    arq = sv.pasta / "exportacoes" / out["original_corrigido"]
+    wb = openpyxl.load_workbook(arq, read_only=True)
+    ws = wb["CADASTRO TACHA, TACHÕES"]
+    linha = next(ws.iter_rows(min_row=26, max_row=26, values_only=True))
+    assert linha[5] == -14.7247                         # coordenada corrigida
+    ws = wb["CADASTRO DE MEIO FIO"]
+    assert next(ws.iter_rows(min_row=21, max_row=21, values_only=True))[10] == "MFC 03"   # padronizado
+    wb.close()
+    log = sv.exportar_log(pid)
+    assert os.path.exists(log["arquivo"])
+    assert sv.log(pid, "padronização") and sv.log(pid, "correção")

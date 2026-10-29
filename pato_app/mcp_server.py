@@ -132,6 +132,35 @@ def validar_inventario(projeto_id: int, limite: int = 100) -> list[dict]:
 
 
 @mcp.tool()
+def verificar_e_corrigir(projeto_id: int, aplicar: bool = False, arquivo_snv: str | None = None,
+                         versao_snv: str | None = None) -> dict:
+    """Verifica o SNV e os pontos do inventário (coordenada × km, fora do trecho, digitação).
+    aplicar=False só lista; aplicar=True grava as correções, gera o relatório (.xlsx) e uma cópia da planilha
+    original com as células corrigidas destacadas. arquivo_snv: planilha/CSV oficial do SNV (opcional)."""
+    an = sv().corrigir_analisar(projeto_id, arquivo_snv, versao_snv)
+    out = dict(resumo=an["resumo"], snv=an["snv"],
+               acoes=[{k: a.get(k) for k in ("situacao", "origem", "km_ini", "campo", "de", "para", "motivo")}
+                      for a in an["acoes"]][:300])
+    if aplicar:
+        out["aplicado"] = sv().corrigir_aplicar(an["token"])
+    return out
+
+
+@mcp.tool()
+def log_padronizacao(projeto_id: int, tipo: str | None = None, limite: int = 300) -> dict:
+    """Log das padronizações de nomenclatura (Álbum DNIT IPR-736 / SICRO), do vocabulário normalizado e das
+    correções aplicadas. tipo: 'padronização', 'vocabulário' ou 'correção'."""
+    ent = sv().log(projeto_id, tipo)
+    return dict(total=len(ent), entradas=ent[:limite])
+
+
+@mcp.tool()
+def exportar_original_corrigido(projeto_id: int) -> dict:
+    """Cópia da planilha de inventário importada com padronizações/correções gravadas e células destacadas."""
+    return sv().exportar_original(projeto_id)
+
+
+@mcp.tool()
 def gerar_aceiro(projeto_id: int, largura_ate_cerca: float = 30.0, pct_arboreo: float = 0.2) -> dict:
     """Gera o memorial de aceiro + roçada da faixa (CAD_ACEIRO) a partir das cercas."""
     return sv().gerar_aceiro(projeto_id, largura_ate_cerca, pct_arboreo)

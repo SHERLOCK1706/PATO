@@ -12,7 +12,7 @@ ARQ_DB = PASTA_DADOS / "pato.db"
 
 CAMPOS_PROJETO = ["nome", "rodovia", "trecho", "subtrecho", "segmento", "km_ini", "km_fim", "snv",
                   "snv_versao", "estado", "uf", "unidade_local", "data_inventario", "data_base", "prazo",
-                  "origem_arquivo", "obs"]
+                  "origem_arquivo", "arquivo_original", "obs"]
 CAMPOS_ITEM = ["categoria", "ordem", "snv", "tipo_pista", "km_ini", "km_fim", "lat_ini", "lon_ini",
                "lat_fim", "lon_fim", "lado", "condicao", "tipo", "obs", "origem"]
 
@@ -32,6 +32,12 @@ CREATE TABLE IF NOT EXISTS item (
   dados TEXT DEFAULT '{{}}'
 );
 CREATE INDEX IF NOT EXISTS ix_item_proj ON item(projeto_id, categoria, km_ini);
+CREATE TABLE IF NOT EXISTS log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, tipo TEXT, origem TEXT, categoria TEXT,
+  km_ini REAL, km_fim REAL, campo TEXT, de TEXT, para TEXT, situacao TEXT, regra TEXT, quantidade INTEGER DEFAULT 1
+);
+CREATE INDEX IF NOT EXISTS ix_log_proj ON log(projeto_id, tipo);
 CREATE TABLE IF NOT EXISTS historico (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, acao TEXT, detalhe TEXT
@@ -49,6 +55,11 @@ def conectar(caminho: Path | str | None = None) -> sqlite3.Connection:
     con.execute("PRAGMA foreign_keys = ON")
     con.execute("PRAGMA journal_mode = WAL")
     con.executescript(_SCHEMA)
+    cols = {r[1] for r in con.execute("PRAGMA table_info(projeto)")}
+    for c in CAMPOS_PROJETO:
+        if c not in cols:  # migração de bancos antigos
+            con.execute(f"ALTER TABLE projeto ADD COLUMN {c} {'REAL' if c in ('km_ini', 'km_fim', 'prazo') else 'TEXT'}")
+    con.commit()
     return con
 
 
@@ -87,6 +98,7 @@ class Banco:
     def excluir_projeto(self, pid: int) -> None:
         with _lock, self.con:
             self.con.execute("DELETE FROM item WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM log WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM projeto WHERE id = ?", (pid,))
 
     def tocar(self, pid: int) -> None:
@@ -159,6 +171,24 @@ class Banco:
     def registrar(self, pid: int | None, acao: str, detalhe: str = "") -> None:
         with _lock, self.con:
             self.con.execute("INSERT INTO historico (projeto_id, acao, detalhe) VALUES (?, ?, ?)", (pid, acao, detalhe))
+
+    def inserir_log(self, pid: int, tipo: str, entradas: list[dict]) -> None:
+        def txt(v):
+            return None if v is None else str(v)
+        with _lock, self.con:
+            self.con.executemany(
+                "INSERT INTO log (projeto_id, tipo, origem, categoria, km_ini, km_fim, campo, de, para, situacao, regra, quantidade) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                [(pid, tipo, e.get("origem"), e.get("categoria"), e.get("km_ini"), e.get("km_fim"), e.get("campo"),
+                  txt(e.get("de")), txt(e.get("para")), e.get("situacao"), e.get("regra") or e.get("motivo"),
+                  e.get("quantidade", 1)) for e in entradas])
+
+    def log(self, pid: int, tipo: str | None = None) -> list[dict]:
+        sql, args = "SELECT * FROM log WHERE projeto_id = ?", [pid]
+        if tipo:
+            sql += " AND tipo = ?"
+            args.append(tipo)
+        return [dict(r) for r in self.con.execute(sql + " ORDER BY id", args).fetchall()]
 
     def historico(self, pid: int, limite: int = 50) -> list[dict]:
         rows = self.con.execute("SELECT * FROM historico WHERE projeto_id = ? ORDER BY id DESC LIMIT ?", (pid, limite))

@@ -1,7 +1,7 @@
 # PATO — Inventário georreferenciado e orçamento de conservação
 
 Sistema local (painel web + servidor MCP) construído a partir da planilha
-`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fase 1 entregue: inventário georreferenciado.**
+`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fase 1 (inventário georreferenciado) e Fase 2 (custos: SICRO, BDI, composições e binômio) entregues.**
 
 ## O que faz
 
@@ -55,6 +55,39 @@ Capina total = sarjeta + meio-fio + 1,5 × defensa · regras do PATO (ex.: meio-
 Teste de regressão: importar o inventário do próprio PATO, reexportar e recalcular devolve exatamente
 **R$ 26.682.348,76** (sem desoneração) e **R$ 27.994.808,64** (com desoneração).
 
+## Custos (aba Custos) — Fase 2
+As composições do PATO de exemplo são só exemplos: o orçamento usa as composições que você escolher na base SICRO
+do estado e da data-base (MT ou outro estado; nova base a cada trimestre).
+
+| Subaba | O que faz |
+|---|---|
+| **Base e BDI** | Importa os relatórios do SICRO (.xlsx soltos ou o .zip do DNIT); escolhe base, regime (com/sem desoneração) e BDI. Calculadora de BDI pelo método DNIT: SELIC → despesas financeiras, CPRB do ano (Lei 14.973/2024) e **ISSQN pelos municípios** (alíquota × base de cálculo × peso, limitado a 5%). |
+| **Serviços e composições** | Busca e escolhe serviços; mostra a composição analítica (equipamentos, mão de obra, materiais, auxiliares, tempo fixo, transporte) com preço original × atual. Troca material (ex.: brita 0 → brita 1), equipamento, mão de obra ou auxiliar; tempo fixo: alterar, trocar veículo (o transporte acompanha) ou retirar; DMT. |
+| **Composições próprias** | Cria, copia e edita composições (preços novos). Exemplo pronto: caminhão de 28 m³ (PN01–PN04, 1ª ATF nº 32 – FGV/2024 CGCIT), igual ao PATO. |
+| **Insumos** | Altera preços de insumos; vale para todas as composições que os usam. |
+| **Binômio** | Ver abaixo. |
+| **Alterações** | Registro de tudo que foi alterado, com desfazer/reativar. |
+| **Trocar data-base** | Compara os preços entre bases e passa o projeto para a nova data-base mantendo as alterações. |
+
+O motor reproduz as 132 composições do PATO nos dois regimes (uma única diferença de R$ 0,01 em 6416037 CD,
+arredondamento da planilha).
+
+### Binômio aquisição + transporte
+- **Materiais cotados** (pétreos, madeira, capa asfáltica comercial, outros): cotações de cada fornecedor (R$/t ou R$/m³,
+  densidade, mês, DMT pavimentada/não pavimentada) + linha de referência do SICRO. Preço reajustado =
+  TRUNC(preço × índice da data-base ÷ índice do mês da cotação, 2) (Conservação Rodoviária); total = preço + DMT × custo t·km;
+  vence o menor.
+- **Betuminosos (ANP)**: origens com preço ANP, ICMS, distâncias fluvial/pavimentada/RP/LN, pedágio e balsa; transporte pelas
+  Portarias DNIT 1977/2017 e 434/2017 com Kr/Kf (índice Pavimentação); ICMS e PIS/COFINS por dentro; BDI do projeto na aquisição
+  e 15% no transporte. Resultados iguais à aba BINOMIO_ANP (ex.: CAP 50/70 Cuiabá R$ 6.736,57/t).
+- **Anexos**: cotações dos fornecedores, documento do ICMS, tabela ANP (PDF, e-mail, planilha…), baixáveis no sistema.
+- **Aplicar vencedor ao insumo**: grava o preço vencedor (e as DMTs) no insumo SICRO; entra em Alterações.
+- **Importar de planilha PATO** (BINOMIO_COTACOES, BINOMIO_ANP, INDICES_REAJ) e **Exportar binômio** no modelo da planilha de
+  referência (BINOMIO_COTACOES, RESUMO_COTACOES, BINOMIO_ANP com fórmulas, índices usados e lista de anexos).
+- **Índices de reajuste**: consulta, digitação mensal ou importação da aba de índices.
+
+Os anexos ficam em `%USERPROFILE%\PATO_App\anexos\`.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10+ (python.org, marque “Add to PATH”).
 2. Copie a pasta `pato-app` para, por exemplo, `C:\PATO\pato-app`.
@@ -80,7 +113,12 @@ Ferramentas disponíveis: `listar_projetos`, `ler_projeto`, `criar_projeto`, `at
 `listar_inventario`, `adicionar_itens_inventario`, `atualizar_item`, `remover_itens`, `importar_planilha`,
 `resumo_inventario`, `validar_inventario`, `gerar_aceiro`, `exportar_planilha_pato`, `exportar_inventario`,
 `categorias_inventario`, `analisar_inventario` (aplica o certo, lista o resto), `listar_sugestoes` (Revisão/Ajustes), `aplicar_sugestao`, `aplicar_sugestoes_em_lote`,
-`dispensar_sugestao`, `desfazer_sugestao`, `relatorio_pontos_a_corrigir`, `exportar_original_corrigido`, e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
+`dispensar_sugestao`, `desfazer_sugestao`, `relatorio_pontos_a_corrigir`, `exportar_original_corrigido`;
+custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_composicoes`, `servicos_do_orcamento`, `adicionar_servico`,
+`ver_composicao`, `alterar_preco_insumo`, `trocar_insumo`, `alterar_tempo_fixo`, `alterar_dmt`, `listar_alteracoes_custo`,
+`desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `binomio_listar`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
+`binomio_importar_planilha`, `binomio_aplicar_vencedor`, `binomio_anexar`, `binomio_exportar`, `indices_reajuste`,
+`gravar_indice_reajuste`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 
 Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e me mostre os alertas”*,
@@ -96,11 +134,9 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
   ficam no inventário exportado; a área gramada vai para `RESUMO_INVENT!B44`.
 
 ## Próximas fases (planejadas)
-2. **Insumos e composições** — importar SICRO/EQ/MO/MAT e as 132 CPUs; alterar preço de insumo e ver o efeito;
-   tempo fixo: alterar, trocar veículo transportador ou retirar.
 3. **Transporte, FIT e croqui** — DMT por origem/destino, FIT = 1 + ((70 + 0,0035·VMDf) + 60·DMTu)/(DMTp·60),
    croqui de ocorrências desenhado e quadro de transportes.
-4. **Data-base e PATO completo** — trocar data-base (SICRO, ANP, índices), BDI, curva ABC, cronograma, PDF;
+4. **PATO completo** — quantidades × preços no PATO, curva ABC, cronograma, PDF;
    plano de trabalho conforme Resolução DNIT nº 9/2023 e Manual de Conservação (IPR-710).
 
 ## Testes

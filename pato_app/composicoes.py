@@ -338,11 +338,16 @@ def _bdi_de_linhas(linhas) -> dict:
 class Motor:
     """Recalcula as composições de um regime com os preços de insumos e alterações informados."""
 
-    def __init__(self, base: dict, bdi: float = 0.0, alteracoes: list[dict] | None = None):
-        """base: uma base SICRO de um regime (ver ler_bases); bdi: taxa sobre o custo direto (ex.: 0.3512)."""
+    def __init__(self, base: dict, bdi: float = 0.0, alteracoes: list[dict] | None = None,
+                 proprias: list[dict] | None = None):
+        """base: uma base SICRO de um regime (ver ler_bases); bdi: taxa sobre o custo direto (ex.: 0.3512);
+        proprias: composições próprias (precificadas com os insumos desta base)."""
         self.base = base
         self.regime = base.get("regime")
         self.comps = copy.deepcopy(base["composicoes"])
+        self.avisos: dict[str, list[str]] = {}
+        for p in proprias or []:
+            self.comps[p["codigo"]] = self._montar_propria(p)
         # taxa de BDI com 2 casas em percentual (como nos relatórios do DNIT)
         self.bdi = arred(bdi or 0.0, 4)
         self.precos_insumo: dict[str, dict] = {}
@@ -350,6 +355,69 @@ class Motor:
         for alt in alteracoes or []:
             self._aplicar(alt)
         self._cache: dict[str, dict] = {}
+
+    # ----------------------------------------------- composições próprias
+    def _preco_tabela(self, tipo: str, codigo: str) -> dict | None:
+        """Preço do insumo praticado nas composições da base (pode refletir cotação/binômio);
+        se o insumo não aparece em nenhuma, usa a tabela sintética de insumos."""
+        if not hasattr(self, "_idx_insumos"):
+            self._idx_insumos = {}
+            for c in self.base["composicoes"].values():
+                for k, chave in (("EQ", "equipamentos"), ("MO", "mao_obra"), ("MAT", "materiais")):
+                    for r in c[chave]:
+                        self._idx_insumos.setdefault((k, r["codigo"]), dict(
+                            descricao=r["descricao"], unidade=r.get("unidade"), custo_op=r.get("custo_op"),
+                            custo_imp=r.get("custo_imp"), preco=r.get("custo", r.get("preco"))))
+        return self._idx_insumos.get((tipo, codigo)) or (self.base.get("tabelas") or {}).get(tipo, {}).get(codigo)
+
+    def _montar_propria(self, p: dict) -> dict:
+        d = p.get("dados") or {}
+        cod = p["codigo"]
+        av = self.avisos.setdefault(cod, [])
+        c = dict(codigo=cod, descricao=p.get("descricao"), unidade=p.get("unidade"), propria=True,
+                 producao=nz.numero(d.get("producao")) or 1.0, fic=nz.numero(d.get("fic")) or 0.0,
+                 fit=nz.numero(d.get("fit")) or 0.0, fic_base=d.get("fic_base") or "execucao",
+                 equipamentos=[], mao_obra=[], materiais=[], auxiliares=[], tempo_fixo=[], transportes=[], original={})
+        for e in d.get("equipamentos", []):
+            t = self._preco_tabela("EQ", e["codigo"]) or {}
+            if not t:
+                av.append(f"equipamento {e['codigo']} não está na base")
+            c["equipamentos"].append(dict(codigo=e["codigo"], descricao=t.get("descricao") or e.get("descricao") or e["codigo"],
+                                          quant=nz.numero(e.get("quant")) or 0, util_op=nz.numero(e.get("util_op")) or 0,
+                                          util_imp=nz.numero(e.get("util_imp")) or 0,
+                                          custo_op=nz.numero(t.get("custo_op")) or 0, custo_imp=nz.numero(t.get("custo_imp")) or 0))
+        for m in d.get("mao_obra", []):
+            t = self._preco_tabela("MO", m["codigo"]) or {}
+            if not t:
+                av.append(f"mão de obra {m['codigo']} não está na base")
+            c["mao_obra"].append(dict(codigo=m["codigo"], descricao=t.get("descricao") or m["codigo"],
+                                      quant=nz.numero(m.get("quant")) or 0, unidade=t.get("unidade") or "h",
+                                      custo=nz.numero(t.get("preco", t.get("custo"))) or 0))
+        for m in d.get("materiais", []):
+            t = self._preco_tabela("MAT", m["codigo"]) or {}
+            if not t:
+                av.append(f"material {m['codigo']} não está na base")
+            c["materiais"].append(dict(codigo=m["codigo"], descricao=t.get("descricao") or m["codigo"],
+                                       quant=nz.numero(m.get("quant")) or 0, unidade=t.get("unidade"),
+                                       preco=nz.numero(t.get("preco")) or 0))
+        for a in d.get("auxiliares", []):
+            c["auxiliares"].append(dict(codigo=_cod(a["codigo"]), descricao=a.get("descricao") or a["codigo"],
+                                        quant=nz.numero(a.get("quant")) or 0, unidade=a.get("unidade"), preco=0.0))
+        sint = self.base.get("sintetico") or {}
+        for t in d.get("tempo_fixo", []):
+            tc = _cod(t["composicao"])
+            c["tempo_fixo"].append(dict(insumo=t.get("insumo") or "", composicao=tc,
+                                        descricao=(sint.get(tc) or {}).get("descricao") or tc,
+                                        quant=nz.numero(t.get("quant")) or 0, unidade="t",
+                                        preco=nz.numero((sint.get(tc) or {}).get("preco")) or 0, retirado=False, tf_dinamico=True))
+        for t in d.get("transportes", []):
+            c["transportes"].append(dict(insumo=t.get("insumo") or "", composicao=_cod(t["composicao"]),
+                                         descricao=t.get("descricao") or t["composicao"], quant=nz.numero(t.get("quant")) or 0,
+                                         unidade="tkm", custo_ln=nz.numero(t.get("custo_ln")) or 0,
+                                         custo_rp=nz.numero(t.get("custo_rp")) or 0, custo_p=nz.numero(t.get("custo_p")) or 0,
+                                         dmt_ln=nz.numero(t.get("dmt_ln")) or 0, dmt_rp=nz.numero(t.get("dmt_rp")) or 0,
+                                         dmt_p=nz.numero(t.get("dmt_p")) or 0))
+        return c
 
     def _calibrar(self) -> None:
         """Fatores FIC/FIT efetivos que reproduzem os valores originais da planilha."""
@@ -372,6 +440,27 @@ class Motor:
         t = alt["tipo"]
         if t == "insumo":
             self.precos_insumo[f"{alt['insumo_tipo']}:{alt['codigo']}"] = alt["valores"]
+            return
+        if t == "insumo_trocar":
+            chave = {"A": "equipamentos", "B": "mao_obra", "C": "materiais", "D": "auxiliares"}[alt["secao"]]
+            for cc in ([alt["composicao"]] if alt.get("composicao") else list(self.comps)):
+                c = self.comps.get(cc)
+                for row in (c or {}).get(chave, []):
+                    if row["codigo"] != alt["de_codigo"]:
+                        continue
+                    row["codigo"] = alt["para_codigo"]
+                    row["descricao"] = alt.get("descricao") or row["descricao"]
+                    for k in ("custo_op", "custo_imp", "custo", "preco", "unidade"):
+                        if alt.get(k) is not None:
+                            row[k] = alt[k]
+                    if alt.get("quant") is not None:
+                        row["quant"] = alt["quant"]
+                if c and alt["secao"] == "C":  # tempo fixo e transporte do material acompanham a troca
+                    for row in c["tempo_fixo"] + c["transportes"]:
+                        if row["insumo"] == alt["de_codigo"]:
+                            row["insumo"] = alt["para_codigo"]
+                            if alt.get("descricao") and " - " in (row.get("descricao") or ""):
+                                row["descricao"] = alt["descricao"] + " - " + row["descricao"].split(" - ", 1)[1]
             return
         alvos = [alt["composicao"]] if alt.get("composicao") else list(self.comps)
         for cc in alvos:
@@ -446,7 +535,7 @@ class Motor:
         # FIC incide sobre o custo do período parado (mão de obra + custo improdutivo dos equipamentos);
         # o fator efetivo é calibrado pelos valores originais da planilha (o fator exibido é arredondado)
         improd = sum(e["quant"] * e["custo_imp"] for e in linhas_eq)
-        base_fic = (mo + improd) / (c["producao"] or 1)
+        base_fic = exec_u if c.get("fic_base") == "execucao" else (mo + improd) / (c["producao"] or 1)
         fic = arred(base_fic * c.get("fic_ef", c["fic"]), 4)
         fit = arred(exec_u * c.get("fit_ef", c["fit"]), 4)
         mat = 0.0
@@ -470,7 +559,10 @@ class Motor:
         tf = 0.0
         linhas_tf = []
         for t in c["tempo_fixo"]:
-            p = 0.0 if t["retirado"] else self._preco("TF", t["composicao"], "preco", t["preco"])
+            padrao = t["preco"]
+            if t.get("tf_dinamico") and t["composicao"] in self.comps and t["composicao"] not in _pilha + (codigo,):
+                padrao = self.calcular(t["composicao"], _pilha + (codigo,))["custo_direto"]
+            p = 0.0 if t["retirado"] else self._preco("TF", t["composicao"], "preco", padrao)
             v = arred(t["quant"] * p, 4)
             tf += v
             linhas_tf.append(dict(t, preco=p, total=v))
@@ -509,15 +601,41 @@ def veiculo_tf(desc: str | None) -> str | None:
     return m.group(1).strip() if m else None
 
 
-def transportes_por_veiculo(sicro: dict) -> dict[str, dict[str, str]]:
-    """{veículo: {'ln': código, 'rp': código, 'p': código}} das composições de transporte."""
+def chave_veiculo(desc: str | None) -> str | None:
+    """Tipo + capacidade do veículo, para casar tempo fixo e transporte
+    ('caminhão basculante de 28 m³' ≈ 'caminhão basculante com caçamba estanque com capacidade de 28 m³')."""
+    if not desc:
+        return None
+    u = nz.sem_acento(desc).lower()
+    tipo = next((t for t in ("cavalo mecanico", "basculante", "carroceria", "betoneira", "silo", "tanque", "guindauto")
+                 if t in u), None)
+    cap = re.search(r"(\d+(?:,\d+)?)\s*(m3|m³|t)\b", u.replace("m³", "m3"))
+    return f"{tipo}|{cap.group(1)}{cap.group(2)}" if tipo and cap else None
+
+
+def transportes_por_veiculo(sicro: dict, extras: dict | None = None) -> dict[str, dict[str, str]]:
+    """{veículo: {'ln': código, 'rp': código, 'p': código}} das composições de transporte
+    (lista sintética + composições próprias em `extras` {código: {descricao}})."""
     out: dict[str, dict] = {}
-    for cod, d in sicro.items():
-        m = _VEIC_TR.match(d.get("descricao") or "")
-        if m:
-            sup = {"em leito natural": "ln", "em revestimento primário": "rp", "pavimentada": "p"}[m.group(2).lower()]
-            out.setdefault(m.group(1).strip(), {})[sup] = cod
+    for fonte in (sicro, extras or {}):
+        for cod, d in fonte.items():
+            m = _VEIC_TR.match(d.get("descricao") or "")
+            if m:
+                sup = {"em leito natural": "ln", "em revestimento primário": "rp", "pavimentada": "p"}[m.group(2).lower()]
+                out.setdefault(m.group(1).strip(), {})[sup] = cod
     return out
+
+
+def transporte_do_tf(desc_tf: str | None, sicro: dict, extras: dict | None = None) -> tuple[str | None, dict | None]:
+    """Veículo e composições de transporte (ln/rp/p) correspondentes a um tempo fixo."""
+    tab = transportes_por_veiculo(sicro, extras)
+    v = veiculo_tf(desc_tf)
+    if v in tab:
+        return v, tab[v]
+    k = chave_veiculo(v or desc_tf)
+    cands = [(nome, cods) for nome, cods in tab.items() if chave_veiculo(nome) == k]
+    cands.sort(key=lambda x: -len(x[1]))  # prefere o que tem as três superfícies
+    return (cands[0][0], cands[0][1]) if cands else (v, None)
 
 
 def opcoes_tempo_fixo(sicro: dict) -> list[dict]:

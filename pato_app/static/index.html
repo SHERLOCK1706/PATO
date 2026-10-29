@@ -205,8 +205,18 @@
             <label>BDI com desoneração (%) <input name="bdi_cd" type="number" step="0.01" data-dica="Taxa de BDI sobre o custo direto (ex.: 39,32)"></label>
           </div>
           <details style="margin-top:10px"><summary data-dica="Calcula o BDI pelas parcelas (método DNIT): (1+AC+L)/(1−(DF+S+R+tributos))−1">Calcular o BDI pelas parcelas</summary>
+            <div class="campos" style="margin-top:8px">
+              <label>SELIC (% a.a.) <input id="bdiSelic" type="number" step="0.01" data-dica="Calcula as despesas financeiras: DF = (1+SELIC)^(1/12) − 1"></label>
+              <label>Ano (CPRB) <input id="bdiAno" type="number" step="1" data-dica="Ano da obra: CPRB 3,6% (2025), 2,7% (2026), 1,8% (2027) — Lei 14.973/2024"></label>
+            </div>
+            <h4>ISSQN — municípios da área de influência</h4>
+            <p class="nota">ISS efetivo = Σ peso × alíquota × base de cálculo ÷ Σ peso, limitado a 5%. Base de cálculo = % do preço sujeito ao ISS
+              (100% se a lei municipal não permite deduzir materiais). Peso: km do trecho no município ou % do contrato.</p>
+            <table class="tab" id="tabIss"></table>
+            <div class="linha-botoes"><button class="btn mini" type="button" id="btnAddMun" data-dica="Acrescenta um município">+ Município</button></div>
             <div class="grade2" id="parcelasBdi" style="margin-top:8px"></div>
-            <div class="linha-botoes"><button class="btn" type="button" id="btnCalcBdi" data-dica="Preenche os campos de BDI com o resultado das parcelas">Calcular BDI</button></div>
+            <div id="notasBdi" class="nota"></div>
+            <div class="linha-botoes"><button class="btn" type="button" id="btnCalcBdi" data-dica="Calcula o BDI com as parcelas, a SELIC, a CPRB e o ISSQN dos municípios">Calcular BDI</button></div>
           </details>
           <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Grava base, regime e BDI; os preços são recalculados">Salvar</button></div>
         </form>
@@ -240,6 +250,21 @@
       <div class="caixa" id="detComp"><p class="nota">Clique em “Composição” num serviço para ver e ajustar a composição analítica.</p></div>
     </div>
 
+    <div id="cst-proprias" class="sub-custos">
+      <div class="caixa">
+        <h3>Composições próprias</h3>
+        <p class="nota">Composições criadas por você (ex.: preços novos aprovados pela CGCIT). São precificadas com os insumos da base SICRO do projeto
+          e podem ser usadas como serviço, como tempo fixo ou como transporte nas trocas de veículo.</p>
+        <div class="linha-botoes">
+          <button class="btn primario" id="btnNovaPropria" data-dica="Abre o editor com uma composição vazia">Nova composição</button>
+          <button class="btn" id="btnCopiarPropria" data-dica="Cria uma composição própria copiando uma composição SICRO (ou própria) para editar">Copiar de uma composição</button>
+          <button class="btn" id="btnExemplo28" data-dica="Cria PN01–PN04: transporte e tempo fixo com caminhão basculante de 28 m³ (1ª ATF nº 32 – FGV/2024 CGCIT)">Criar exemplo caminhão 28 m³</button>
+        </div>
+        <div class="tabela-rolagem" style="max-height:300px;margin-top:10px"><table class="tab" id="tabProprias"></table></div>
+      </div>
+      <div class="caixa" id="editorPropria"></div>
+    </div>
+
     <div id="cst-insumos" class="sub-custos">
       <div class="caixa">
         <h3>Insumos dos serviços escolhidos</h3>
@@ -256,6 +281,29 @@
       <div class="caixa"><h3>Alterações de custo</h3>
         <p class="nota">Registro das alterações de preço de insumo, tempo fixo, veículo e transporte. Desfazer não apaga: a alteração fica inativa e pode ser reativada.</p>
         <div class="tabela-rolagem"><table class="tab" id="tabAltCusto"></table></div></div>
+    </div>
+
+    <div id="cst-binomio" class="sub-custos">
+      <div class="caixa">
+        <h3>Binômio aquisição + transporte</h3>
+        <p class="nota">Compara as cotações (reajustadas pelo índice até a data-base) somadas ao transporte até a obra e escolhe a mais vantajosa.
+          Materiais pétreos, madeira e capa asfáltica comercial: preço reajustado + DMT × custo t·km. Betuminosos: preço ANP + transporte
+          pelas Portarias DNIT 1977/2017 e 434/2017, com ICMS, PIS/COFINS e BDI. <span id="binRef"></span></p>
+        <div class="linha-botoes">
+          <button class="btn primario" id="btnNovoMat" data-dica="Cria um material com cotações (pétreo, madeira, capa asfáltica comercial ou outro)">Novo material cotado</button>
+          <button class="btn primario" id="btnNovoBet" data-dica="Cria um material betuminoso com as origens (distribuidoras/refinarias) da tabela ANP">Novo betuminoso (ANP)</button>
+          <button class="btn" id="btnImpBin" data-dica="Lê as abas BINOMIO_COTACOES, BINOMIO_ANP e INDICES_REAJ de uma planilha PATO">Importar de planilha PATO</button>
+          <button class="btn" id="btnAnexoGeral" data-dica="Anexa um documento ao projeto (ex.: legislação do ICMS, tabela ANP do mês)">Anexar documento</button>
+          <button class="btn" id="btnExpBin" data-dica="Gera a planilha do binômio no modelo da planilha de referência (cotações, resumo e ANP)">Exportar binômio (Excel)</button>
+          <button class="btn" id="btnIndices" data-dica="Consulta, digita ou importa os índices de reajustamento do DNIT">Índices de reajuste</button>
+        </div>
+        <div id="anexosGerais"></div>
+        <div id="resBin"></div>
+      </div>
+      <div class="caixa" id="editorBin" hidden></div>
+      <div class="caixa" id="painelIndices" hidden></div>
+      <div id="listaMateriais"></div>
+      <div id="listaBetuminosos"></div>
     </div>
 
     <div id="cst-database" class="sub-custos">

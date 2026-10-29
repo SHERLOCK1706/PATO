@@ -60,6 +60,22 @@ CREATE TABLE IF NOT EXISTS alteracao_custo (
   id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, tipo TEXT, dados TEXT, descricao TEXT,
   ativa INTEGER DEFAULT 1, quando TEXT DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE IF NOT EXISTS composicao_propria (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT UNIQUE NOT NULL, descricao TEXT, unidade TEXT,
+  categoria TEXT, dados TEXT, origem TEXT, observacoes TEXT,
+  criado_em TEXT DEFAULT CURRENT_TIMESTAMP, atualizado_em TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS indice (
+  nome TEXT NOT NULL, mes TEXT NOT NULL, valor REAL, fonte TEXT, PRIMARY KEY (nome, mes)
+);
+CREATE TABLE IF NOT EXISTS binomio (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, tipo TEXT NOT NULL, ordem INTEGER,
+  dados TEXT, atualizado_em TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS anexo (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, binomio_id INTEGER, tipo TEXT, rotulo TEXT,
+  nome TEXT, caminho TEXT, descricao TEXT, tamanho INTEGER, criado_em TEXT DEFAULT CURRENT_TIMESTAMP
+);
 CREATE TABLE IF NOT EXISTS historico (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, acao TEXT, detalhe TEXT
@@ -180,6 +196,8 @@ class Banco:
             self.con.execute("DELETE FROM sugestao WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM servico_projeto WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM alteracao_custo WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM binomio WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM anexo WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM projeto WHERE id = ?", (pid,))
 
     def tocar(self, pid: int) -> None:
@@ -392,6 +410,105 @@ class Banco:
         with _lock, self.con:
             self.con.execute("UPDATE alteracao_custo SET ativa = ? WHERE id = ?", (int(ativa), aid))
 
+    # ------------------------------------------------ composições próprias
+    def proprias(self) -> list[dict]:
+        out = []
+        for r in self.con.execute("SELECT * FROM composicao_propria ORDER BY codigo").fetchall():
+            d = dict(r)
+            d["dados"] = json.loads(d["dados"] or "{}")
+            out.append(d)
+        return out
+
+    def salvar_propria(self, c: dict) -> None:
+        with _lock, self.con:
+            self.con.execute(
+                "INSERT INTO composicao_propria (codigo, descricao, unidade, categoria, dados, origem, observacoes) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT(codigo) DO UPDATE SET descricao = excluded.descricao, "
+                "unidade = excluded.unidade, categoria = excluded.categoria, dados = excluded.dados, "
+                "origem = excluded.origem, observacoes = excluded.observacoes, atualizado_em = CURRENT_TIMESTAMP",
+                (c["codigo"], c.get("descricao"), c.get("unidade"), c.get("categoria"),
+                 json.dumps(c.get("dados") or {}, ensure_ascii=False), c.get("origem"), c.get("observacoes")))
+
+    def excluir_propria(self, codigo: str) -> None:
+        with _lock, self.con:
+            self.con.execute("DELETE FROM composicao_propria WHERE codigo = ?", (codigo,))
+
     def historico(self, pid: int, limite: int = 50) -> list[dict]:
         rows = self.con.execute("SELECT * FROM historico WHERE projeto_id = ? ORDER BY id DESC LIMIT ?", (pid, limite))
         return [dict(r) for r in rows.fetchall()]
+
+    # ------------------------------------------------- índices de reajuste
+    def indices(self) -> dict[str, dict[str, float]]:
+        out: dict[str, dict[str, float]] = {}
+        for r in self.con.execute("SELECT nome, mes, valor FROM indice ORDER BY nome, mes").fetchall():
+            out.setdefault(r[0], {})[r[1]] = r[2]
+        return out
+
+    def gravar_indices(self, valores: list[tuple[str, str, float | None]], fonte: str | None = None) -> int:
+        with _lock, self.con:
+            n = 0
+            for nome, mes, valor in valores:
+                if valor is None:
+                    self.con.execute("DELETE FROM indice WHERE nome = ? AND mes = ?", (nome, mes))
+                else:
+                    self.con.execute("INSERT INTO indice (nome, mes, valor, fonte) VALUES (?, ?, ?, ?) ON CONFLICT(nome, mes) "
+                                     "DO UPDATE SET valor = excluded.valor, fonte = excluded.fonte", (nome, mes, valor, fonte))
+                n += 1
+            return n
+
+    # ------------------------------------------------------------ binômio
+    def binomios(self, pid: int, tipo: str | None = None) -> list[dict]:
+        sql = "SELECT * FROM binomio WHERE projeto_id = ?" + (" AND tipo = ?" if tipo else "") + " ORDER BY ordem, id"
+        out = []
+        for r in self.con.execute(sql, (pid, tipo) if tipo else (pid,)).fetchall():
+            d = dict(r)
+            d["dados"] = json.loads(d["dados"] or "{}")
+            out.append(d)
+        return out
+
+    def binomio(self, bid: int) -> dict | None:
+        r = self.con.execute("SELECT * FROM binomio WHERE id = ?", (bid,)).fetchone()
+        if not r:
+            return None
+        d = dict(r)
+        d["dados"] = json.loads(d["dados"] or "{}")
+        return d
+
+    def salvar_binomio(self, pid: int, tipo: str, dados: dict, bid: int | None = None) -> int:
+        txt = json.dumps(dados, ensure_ascii=False)
+        with _lock, self.con:
+            if bid:
+                self.con.execute("UPDATE binomio SET dados = ?, atualizado_em = CURRENT_TIMESTAMP WHERE id = ? AND projeto_id = ?",
+                                 (txt, bid, pid))
+                return bid
+            n = self.con.execute("SELECT COALESCE(MAX(ordem), 0) + 1 FROM binomio WHERE projeto_id = ?", (pid,)).fetchone()[0]
+            return self.con.execute("INSERT INTO binomio (projeto_id, tipo, ordem, dados) VALUES (?, ?, ?, ?)",
+                                    (pid, tipo, n, txt)).lastrowid
+
+    def excluir_binomio(self, bid: int) -> None:
+        with _lock, self.con:
+            self.con.execute("DELETE FROM binomio WHERE id = ?", (bid,))
+
+    # -------------------------------------------------------------- anexos
+    def anexos(self, pid: int, binomio_id: int | None = None) -> list[dict]:
+        if binomio_id is None:
+            rows = self.con.execute("SELECT * FROM anexo WHERE projeto_id = ? ORDER BY id", (pid,))
+        else:
+            rows = self.con.execute("SELECT * FROM anexo WHERE projeto_id = ? AND binomio_id = ? ORDER BY id", (pid, binomio_id))
+        return [dict(r) for r in rows.fetchall()]
+
+    def anexo(self, aid: int) -> dict | None:
+        r = self.con.execute("SELECT * FROM anexo WHERE id = ?", (aid,)).fetchone()
+        return dict(r) if r else None
+
+    def inserir_anexo(self, a: dict) -> int:
+        with _lock, self.con:
+            return self.con.execute(
+                "INSERT INTO anexo (projeto_id, binomio_id, tipo, rotulo, nome, caminho, descricao, tamanho) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                (a["projeto_id"], a.get("binomio_id"), a.get("tipo"), a.get("rotulo"), a.get("nome"), a.get("caminho"),
+                 a.get("descricao"), a.get("tamanho"))).lastrowid
+
+    def excluir_anexo(self, aid: int) -> None:
+        with _lock, self.con:
+            self.con.execute("DELETE FROM anexo WHERE id = ?", (aid,))

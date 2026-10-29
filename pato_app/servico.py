@@ -77,6 +77,8 @@ class Servico:
         self._previas: dict[str, dict] = {}
         from .custos import Custos
         self.custos = Custos(self)
+        from .binomio_servico import Binomios
+        self.binomio = Binomios(self)
 
     # ------------------------------------------------------------- projetos
     def listar_projetos(self) -> list[dict]:

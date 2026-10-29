@@ -486,13 +486,14 @@ async function carregarCustos() {
   $("#cabCustos").innerHTML = `<div class="it">Base SICRO<br><b>${esc(c.uf || "—")} · ${esc(c.data_base || "—")}</b></div>
     <div class="it">Regime do orçamento<br><b>${esc(REG[c.regime])}</b></div>
     <div class="it">BDI sem desoneração<br><b>${pct(c.bdi.SD)}</b></div><div class="it">BDI com desoneração<br><b>${pct(c.bdi.CD)}</b></div>`;
-  const subs = [["servicos", "Serviços e composições", "Escolha os serviços e veja/ajuste as composições"], ["insumos", "Insumos", "Preços dos insumos usados nos serviços escolhidos"],
+  const subs = [["servicos", "Serviços e composições", "Escolha os serviços e veja/ajuste as composições"], ["proprias", "Composições próprias", "Crie, copie e edite composições próprias (preços novos)"], ["insumos", "Insumos", "Preços dos insumos usados nos serviços escolhidos"],
+    ["binomio", "Binômio", "Cotações × SICRO (pétreos, madeira, capa asfáltica) e betuminosos ANP, com anexos"],
     ["alteracoes", "Alterações", "Registro das alterações de custo, com desfazer"], ["base", "Base e BDI", "Base SICRO do projeto, BDI e importação de novas bases"],
     ["database", "Trocar data-base", "Compare e passe o projeto para outra data-base"]];
   $("#chipsCustos").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${C_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsCustos .chip").forEach(ch => ch.onclick = () => { C_.sub = ch.dataset.sub; carregarCustos(); });
   $$(".sub-custos").forEach(el => el.classList.toggle("ativa", el.id === "cst-" + C_.sub));
-  ({ servicos: renderServicos, insumos: renderInsumos, alteracoes: renderAltCusto, base: renderBaseCfg, database: renderDataBase })[C_.sub]().catch(erro);
+  ({ servicos: renderServicos, proprias: renderProprias, insumos: renderInsumos, alteracoes: renderAltCusto, binomio: renderBinomio, base: renderBaseCfg, database: renderDataBase })[C_.sub]().catch(erro);
 }
 
 // ---- base e BDI
@@ -503,25 +504,40 @@ async function renderBaseCfg() {
   f.bdi_sd.value = (c.bdi.SD * 100).toFixed(2); f.bdi_cd.value = (c.bdi.CD * 100).toFixed(2);
   $("#parcelasBdi").innerHTML = ["SD", "CD"].map(r => `<div><h4>${REG[r]}</h4>${Object.entries(c.rotulos_parcelas).map(([k, rot]) =>
     `<label style="display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:3px 0">${esc(rot)} <input data-reg="${r}" data-par="${k}" type="number" step="0.0001" value="${c.parcelas[r]?.[k] ?? 0}" style="width:90px"></label>`).join("")}</div>`).join("");
+  const ex = c.bdi_extras || {};
+  $("#bdiSelic").value = ex.selic ?? ""; $("#bdiAno").value = ex.ano ?? ""; linhasIss(ex.municipios || []);
   const bases = await api("/api/custos/bases");
   $("#tabBases").innerHTML = "<tr><th>UF</th><th>Data-base</th><th>Regime</th><th class=n>Composições</th><th class=n>Lista sintética</th><th>Origem</th><th></th></tr>" +
     bases.map(b => `<tr><td>${esc(b.uf)}</td><td>${esc(b.data_base)}</td><td>${esc(REG[b.regime] || b.regime)}</td><td class=n>${b.n_composicoes}</td><td class=n>${b.n_sintetico || 0}</td>
       <td><small>${esc(b.origem || "")}</small></td><td><button class="btn mini perigo" data-exb="${b.id}" data-dica="Remove esta base do sistema">Excluir</button></td></tr>`).join("");
   $$("[data-exb]").forEach(b => b.onclick = async () => { if (!confirm("Excluir esta base?")) return; await api(`/api/custos/bases/${b.dataset.exb}`, { method: "DELETE" }); carregarCustos(); });
 }
-$("#btnCalcBdi").onclick = () => {
+function linhasIss(lst) {
+  $("#tabIss").innerHTML = "<tr><th>Município</th><th>UF</th><th>Alíquota (%)</th><th>Base de cálculo (% PV)</th><th>Peso</th><th></th></tr>" +
+    lst.map((m, i) => `<tr data-mun="${i}"><td><input data-k="nome" value="${esc(m.nome || "")}"></td><td><input data-k="uf" value="${esc(m.uf || "")}" style="width:50px"></td>
+      <td><input data-k="aliquota" type="number" step="0.01" value="${m.aliquota ?? ""}" style="width:80px"></td><td><input data-k="base" type="number" step="0.01" value="${m.base ?? 100}" style="width:80px"></td>
+      <td><input data-k="peso" type="number" step="0.01" value="${m.peso ?? 1}" style="width:80px"></td><td><button class="btn mini perigo" type="button" data-rmun="${i}" data-dica="Remove o município">×</button></td></tr>`).join("");
+  $$("[data-rmun]").forEach(b => b.onclick = () => { const l = lerIss(); l.splice(+b.dataset.rmun, 1); linhasIss(l); });
+}
+const lerIss = () => $$("#tabIss tr[data-mun]").map(tr => Object.fromEntries($$("input", tr).map(i => [i.dataset.k, i.value])));
+$("#btnAddMun").onclick = () => { const l = lerIss(); l.push({ base: 100, peso: 1 }); linhasIss(l); };
+$("#btnCalcBdi").onclick = async () => {
   const par = { SD: {}, CD: {} };
   $$("#parcelasBdi input").forEach(i => par[i.dataset.reg][i.dataset.par] = +i.value);
-  const calc = p => ((1 + (p.ac + p.lucro) / 100) / (1 - (p.df + p.seguros + p.riscos + p.pis + p.cofins + p.iss + p.cprb) / 100) - 1) * 100;
-  $("#formCfgCustos").bdi_sd.value = calc(par.SD).toFixed(2); $("#formCfgCustos").bdi_cd.value = calc(par.CD).toFixed(2);
-  C_.parcelas = par; toast("BDI calculado — clique em Salvar para gravar");
+  const municipios = lerIss().filter(m => m.nome || m.aliquota);
+  const r = await jpost("/api/custos/bdi/calcular", { parcelas: par, municipios, selic: $("#bdiSelic").value || null, ano: $("#bdiAno").value || null });
+  $("#formCfgCustos").bdi_sd.value = (r.bdi.SD * 100).toFixed(2); $("#formCfgCustos").bdi_cd.value = (r.bdi.CD * 100).toFixed(2);
+  C_.parcelas = { ...r.parcelas, municipios, selic: r.selic, ano: r.ano };
+  for (const reg of ["SD", "CD"]) for (const [k, v] of Object.entries(r.parcelas[reg])) { const i = $(`#parcelasBdi [data-reg="${reg}"][data-par="${k}"]`); if (i) i.value = v; }
+  $("#notasBdi").innerHTML = r.notas.map(esc).join(" · ") + ` → BDI ${(r.bdi.SD * 100).toFixed(2)}% / ${(r.bdi.CD * 100).toFixed(2)}%`;
+  toast("BDI calculado — clique em Salvar para gravar");
 };
 $("#formCfgCustos").onsubmit = async e => {
   e.preventDefault();
   const f = e.target, [uf, data_base] = f.base.value.split("|");
   try {
-    await jpost(`${base_}${E.pid}/custos/config`, { uf, data_base, regime: f.regime.value, bdi_sd: +f.bdi_sd.value, bdi_cd: +f.bdi_cd.value, ...(C_.parcelas ? { parcelas: C_.parcelas } : {}) }, "PUT");
-    // BDI digitado prevalece sobre as parcelas
+    await jpost(`${base_}${E.pid}/custos/config`, { uf, data_base, regime: f.regime.value, ...(C_.parcelas ? { parcelas: C_.parcelas } : {}) }, "PUT");
+    // o BDI digitado prevalece sobre as parcelas
     await jpost(`${base_}${E.pid}/custos/config`, { bdi_sd: +f.bdi_sd.value, bdi_cd: +f.bdi_cd.value }, "PUT");
     C_.parcelas = null; C_.regimeComp = f.regime.value; toast("Base e BDI salvos"); carregarCustos();
   } catch (er) { erro(er); }
@@ -584,19 +600,19 @@ async function abrirComposicao(cod) {
     <h4>A — Equipamentos</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th class=n>Util. op.</th><th class=n>Util. improd.</th><th>Custo produtivo</th><th>Custo improdutivo</th><th class=n>Custo horário</th><th></th></tr>
       ${x.equipamentos.map(e => `<tr><td>${esc(e.codigo)}</td><td>${esc(e.descricao)}</td><td class=n>${n4(e.quant)}</td><td class=n>${n4(e.util_op)}</td><td class=n>${n4(e.util_imp)}</td>
         <td>${inp(`data-eqop="${esc(e.codigo)}"`, e.custo_op)}</td><td>${inp(`data-eqimp="${esc(e.codigo)}"`, e.custo_imp)}</td><td class=n>${n4(e.custo)}</td>
-        <td><button class="btn mini" data-saveq="${esc(e.codigo)}" data-dica="Grava o novo custo horário do equipamento">✓</button></td></tr>`).join("")}
+        <td><button class="btn mini" data-saveq="${esc(e.codigo)}" data-dica="Grava o novo custo horário do equipamento">✓</button> <button class="btn mini" data-troca="A|${esc(e.codigo)}" data-dica="Troca este equipamento por outro da base">trocar</button></td></tr>`).join("")}
       <tr class="tot"><td colspan=7>Custo horário de equipamentos</td><td class=n>${n4(x.total_equipamentos)}</td><td></td></tr></table>
     <h4>B — Mão de obra</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Custo horário</th><th class=n>Total</th><th></th></tr>
       ${x.mao_obra.map(m => `<tr><td>${esc(m.codigo)}</td><td>${esc(m.descricao)}</td><td class=n>${n4(m.quant)}</td><td>${inp(`data-mo="${esc(m.codigo)}"`, m.custo)}</td><td class=n>${n4(m.total)}</td>
-        <td><button class="btn mini" data-savmo="${esc(m.codigo)}" data-dica="Grava o novo custo horário">✓</button></td></tr>`).join("")}
+        <td><button class="btn mini" data-savmo="${esc(m.codigo)}" data-dica="Grava o novo custo horário">✓</button> <button class="btn mini" data-troca="B|${esc(m.codigo)}" data-dica="Troca esta categoria de mão de obra">trocar</button></td></tr>`).join("")}
       <tr class="tot"><td colspan=4>Custo horário de mão de obra</td><td class=n>${n4(x.total_mao_obra)}</td><td></td></tr>
       <tr class="tot"><td colspan=4>Custo unitário de execução (÷ produção) · FIC · FIT</td><td class=n>${n4(x.exec_unitario)} · ${n4(x.fic)} · ${n4(x.fit)}</td><td></td></tr></table>
     <h4>C — Materiais</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Unid.</th><th>Preço</th><th class=n>Custo</th><th></th></tr>
       ${x.materiais.map(m => `<tr><td>${esc(m.codigo)}</td><td>${esc(m.descricao)}</td><td class=n>${n4(m.quant)}</td><td>${esc(m.unidade || "")}</td><td>${inp(`data-mat="${esc(m.codigo)}"`, m.preco)}</td><td class=n>${n4(m.total)}</td>
-        <td><button class="btn mini" data-savmat="${esc(m.codigo)}" data-dica="Grava o novo preço do material">✓</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
+        <td><button class="btn mini" data-savmat="${esc(m.codigo)}" data-dica="Grava o novo preço do material">✓</button> <button class="btn mini" data-troca="C|${esc(m.codigo)}" data-dica="Troca este material por outro da base (ex.: brita 0 → brita 1)">trocar</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
     <h4>D — Atividades auxiliares</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Unid.</th><th class=n>Preço</th><th class=n>Custo</th><th></th></tr>
       ${x.auxiliares.map(a => `<tr><td>${esc(a.codigo)}</td><td>${esc(a.descricao)}</td><td class=n>${n4(a.quant)}</td><td>${esc(a.unidade || "")}</td><td class=n>${reais(a.preco)}</td><td class=n>${n4(a.total)}</td>
-        <td><button class="btn mini" data-vcomp2="${esc(a.codigo)}" data-dica="Abre a composição auxiliar">abrir</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
+        <td><button class="btn mini" data-vcomp2="${esc(a.codigo)}" data-dica="Abre a composição auxiliar">abrir</button> <button class="btn mini" data-troca="D|${esc(a.codigo)}" data-dica="Troca esta atividade auxiliar por outra composição">trocar</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
     <h4>E — Tempo fixo</h4><label class="check" style="font-size:12px"><input type="checkbox" id="tfTodas" data-dica="Se marcado, a alteração vale para todas as composições do projeto com o mesmo tempo fixo"> aplicar a alteração em todas as composições com o mesmo tempo fixo</label>
       <table class="tab"><tr><th>Insumo / composição</th><th>Descrição</th><th>Quant. (t)</th><th class=n>Preço</th><th class=n>Custo</th><th>Ações</th></tr>
       ${x.tempo_fixo.map(t => `<tr class="${t.retirado ? "retirado" : ""}"><td>${esc(t.insumo)} · ${esc(t.composicao)}</td><td>${esc(t.descricao)}</td>
@@ -616,6 +632,7 @@ async function abrirComposicao(cod) {
   const D = $("#detComp"), recarregar = async () => { await renderServicos(); };
   $$("[data-regc]", D).forEach(ch => ch.onclick = () => { C_.regimeComp = ch.dataset.regc; abrirComposicao(cod); });
   $$("[data-vcomp2]", D).forEach(b => b.onclick = () => abrirComposicao(b.dataset.vcomp2));
+  $$("[data-troca]", D).forEach(b => b.onclick = () => { const [sec, de] = b.dataset.troca.split("|"); dialogoTroca(sec, de, cod, recarregar); });
   const regIns = () => ($("#insAmbos")?.checked ?? true) ? "AMBOS" : reg;
   const altIns = async (tipo, codigo, valores) => { await jpost(`${base_}${E.pid}/custos/insumo`, { tipo, codigo, valores, regime: regIns() }); toast("Preço alterado — registrado em Alterações"); recarregar(); };
   $$("[data-saveq]", D).forEach(b => b.onclick = () => altIns("EQ", b.dataset.saveq, { custo_op: $(`[data-eqop="${b.dataset.saveq}"]`, D).value, custo_imp: $(`[data-eqimp="${b.dataset.saveq}"]`, D).value }));
@@ -635,6 +652,98 @@ async function abrirComposicao(cod) {
     await jpost(`${base_}${E.pid}/custos/dmt`, corpo); toast("DMT gravada"); recarregar();
   });
 }
+
+function dialogoTroca(sec, de, cod, depois) {
+  const nomes = { A: "equipamento", B: "mão de obra", C: "material", D: "atividade auxiliar" };
+  const d = $("#dlg"), f = $("#dlgForm");
+  f.className = "form";
+  f.innerHTML = `<h3>Trocar ${nomes[sec]} ${esc(de)}</h3>
+    <label>Buscar na base <input id="dtBusca" placeholder="código ou descrição" data-dica="Procura na tabela de insumos da base SICRO"></label>
+    <div class="tabela-rolagem" style="max-height:300px;margin-top:8px"><table class="tab" id="dtLista"></table></div>
+    <label class="check" style="margin-top:8px"><input type="checkbox" id="dtTodas" data-dica="Troca em todas as composições que usam este insumo"> trocar em todas as composições</label>
+    <div class="linha-botoes"><button class="btn" value="cancelar" data-dica="Fecha sem trocar">Fechar</button></div>`;
+  d.showModal();
+  let h;
+  const buscar = async () => {
+    const r = await api(`${base_}${E.pid}/custos/insumos-base?tipo=${sec}&q=${encodeURIComponent($("#dtBusca").value)}`);
+    $("#dtLista").innerHTML = "<tr><th>Código</th><th>Descrição</th><th>Unid.</th><th class=n>Preço</th><th></th></tr>" + r.map(x =>
+      `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}</td><td>${esc(x.unidade || "")}</td><td class=n>${x.preco != null ? reais(x.preco) : x.custo_op != null ? reais(x.custo_op) + " / " + reais(x.custo_imp) : ""}</td>
+        <td><button class="btn mini primario" type="button" data-esc="${esc(x.codigo)}" data-dica="Usa este insumo no lugar de ${esc(de)}">usar</button></td></tr>`).join("");
+    $$("[data-esc]", f).forEach(b => b.onclick = async () => {
+      try { await jpost(`${base_}${E.pid}/custos/trocar-insumo`, { secao: sec, de_codigo: de, para_codigo: b.dataset.esc, composicao: $("#dtTodas").checked ? null : cod });
+        d.close(); toast("Insumo trocado — registrado em Alterações"); depois(); } catch (e) { erro(e); }
+    });
+  };
+  $("#dtBusca").oninput = () => { clearTimeout(h); h = setTimeout(buscar, 300); };
+  buscar();
+}
+
+// ---- composições próprias
+const CAT_PROP = { servico: "Serviço", tempo_fixo: "Tempo fixo", transporte: "Transporte" };
+const SEC_PROP = [
+  ["equipamentos", "A — Equipamentos", [["codigo", "Código (ex.: E9018)"], ["quant", "Quant."], ["util_op", "Util. operativa"], ["util_imp", "Util. improdutiva"]]],
+  ["mao_obra", "B — Mão de obra", [["codigo", "Código (ex.: P9824)"], ["quant", "Quant."]]],
+  ["materiais", "C — Materiais", [["codigo", "Código (ex.: M0082)"], ["quant", "Quant."]]],
+  ["auxiliares", "D — Atividades auxiliares", [["codigo", "Composição"], ["quant", "Quant."]]],
+  ["tempo_fixo", "E — Tempo fixo", [["insumo", "Insumo"], ["composicao", "Composição de tempo fixo"], ["quant", "Quant. (t)"]]],
+  ["transportes", "F — Transportes", [["insumo", "Insumo"], ["composicao", "Composição de transporte"], ["quant", "Quant. (t)"], ["custo_ln", "Custo LN"], ["custo_rp", "Custo RP"], ["custo_p", "Custo P"], ["dmt_ln", "DMT LN"], ["dmt_rp", "DMT RP"], ["dmt_p", "DMT P"]]],
+];
+async function renderProprias() {
+  const lst = await api(`${base_}${E.pid}/custos/proprias`);
+  C_.proprias = lst;
+  $("#tabProprias").innerHTML = "<tr><th>Código</th><th>Descrição</th><th>Tipo</th><th>Unid.</th><th class=n>Custo direto SD</th><th class=n>Custo direto CD</th><th>Origem</th><th></th></tr>" + (lst.map(p =>
+    `<tr><td>${esc(p.codigo)}</td><td>${esc(p.descricao || "")}${(p.avisos || []).length ? ` <span class="tag aviso" data-dica="${esc(p.avisos.join("; "))}">insumo fora da base</span>` : ""}</td><td>${esc(CAT_PROP[p.categoria] || p.categoria)}</td><td>${esc(p.unidade || "")}</td>
+     <td class=n>${reais(p.cd_SD)}</td><td class=n>${reais(p.cd_CD)}</td><td><small>${esc(p.origem || "")}</small></td>
+     <td><div class="linha-botoes" style="margin:0"><button class="btn mini" data-edprop="${esc(p.codigo)}" data-dica="Abre no editor">Editar</button>
+       <button class="btn mini" data-verprop="${esc(p.codigo)}" data-dica="Mostra a composição calculada (analítico)">Ver</button>
+       <button class="btn mini primario" data-addprop="${esc(p.codigo)}" data-dica="Inclui como serviço do projeto">+ Projeto</button>
+       <button class="btn mini perigo" data-exprop="${esc(p.codigo)}" data-dica="Apaga a composição própria (de todos os projetos)">Excluir</button></div></td></tr>`).join("")
+    || '<tr><td colspan=8 class="nota">Nenhuma composição própria.</td></tr>');
+  $$("[data-edprop]").forEach(b => b.onclick = () => editorPropria(lst.find(p => p.codigo === b.dataset.edprop)));
+  $$("[data-verprop]").forEach(b => b.onclick = () => { C_.sub = "servicos"; carregarCustos().then(() => abrirComposicao(b.dataset.verprop)); });
+  $$("[data-addprop]").forEach(b => b.onclick = async () => { await jpost(`${base_}${E.pid}/custos/servicos`, { codigo: b.dataset.addprop }); toast("Adicionada aos serviços do projeto"); });
+  $$("[data-exprop]").forEach(b => b.onclick = async () => { if (!confirm("Excluir a composição própria " + b.dataset.exprop + "?")) return; await api(`/api/custos/proprias/${encodeURIComponent(b.dataset.exprop)}`, { method: "DELETE" }); renderProprias(); });
+  if (!$("#editorPropria").innerHTML) $("#editorPropria").innerHTML = '<p class="nota">Use “Nova composição”, “Copiar de uma composição” ou “Editar”.</p>';
+}
+function editorPropria(p) {
+  p = p || { codigo: "", descricao: "", unidade: "", categoria: "servico", dados: { producao: 1, fic: 0, fit: 0, fic_base: "execucao" } };
+  const d = p.dados || {};
+  const sec = ([k, titulo, cols]) => `<h4>${titulo}</h4><table class="tab" data-sec="${k}"><tr>${cols.map(c => `<th>${esc(c[1])}</th>`).join("")}<th></th></tr>
+    ${(d[k] || []).map(r => linhaProp(cols, r)).join("")}</table>
+    <button class="btn mini" type="button" data-addlin="${k}" data-dica="Acrescenta uma linha nesta seção">+ linha</button>`;
+  $("#editorPropria").innerHTML = `<form class="form" id="formPropria"><h3>${p.codigo ? "Editar " + esc(p.codigo) : "Nova composição própria"}</h3>
+    <div class="campos">
+      <label>Código <input name="codigo" value="${esc(p.codigo)}" placeholder="PN01" required data-dica="Código próprio (não pode coincidir com código do SICRO)"></label>
+      <label>Unidade <input name="unidade" value="${esc(p.unidade || "")}" placeholder="t, tkm, m³…"></label>
+      <label class="largo">Descrição <input name="descricao" value="${esc(p.descricao || "")}" required data-dica="Para transportes e tempos fixos, use o padrão SICRO (ex.: “Transporte com … - rodovia pavimentada”) para o sistema reconhecer o veículo"></label>
+      <label>Tipo <select name="categoria" data-dica="Tempo fixo e transporte aparecem como opções na troca de veículo">${Object.entries(CAT_PROP).map(([k, v]) => `<option value="${k}" ${p.categoria === k ? "selected" : ""}>${v}</option>`).join("")}</select></label>
+      <label>Produção da equipe <input name="producao" type="number" step="any" value="${d.producao ?? 1}" data-dica="Unidades por hora"></label>
+      <label>FIC (fator) <input name="fic" type="number" step="any" value="${d.fic ?? 0}" data-dica="Fator de influência de chuvas"></label>
+      <label>Base do FIC <select name="fic_base" data-dica="Execução: FIC × custo unitário de execução (como nas composições aprovadas pela CGCIT). Improdutivo: sobre mão de obra + custo improdutivo"><option value="execucao" ${d.fic_base !== "improdutivo" ? "selected" : ""}>custo de execução</option><option value="improdutivo" ${d.fic_base === "improdutivo" ? "selected" : ""}>mão de obra + improdutivo</option></select></label>
+      <label>FIT (fator) <input name="fit" type="number" step="any" value="${d.fit ?? 0}" data-dica="Fator de interferência de tráfego"></label>
+      <label class="largo">Origem / referência <input name="origem" value="${esc(p.origem || "")}" placeholder="ex.: ATF nº 32 – FGV/2024"></label>
+      <label class="largo">Observações <textarea name="observacoes" rows="2">${esc(p.observacoes || "")}</textarea></label>
+    </div>
+    ${SEC_PROP.map(sec).join("")}
+    <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Grava a composição; o preço é calculado com os insumos da base do projeto">Salvar composição</button></div></form>`;
+  $$("[data-addlin]").forEach(b => b.onclick = () => { const k = b.dataset.addlin, cols = SEC_PROP.find(x => x[0] === k)[2]; $(`table[data-sec="${k}"]`).insertAdjacentHTML("beforeend", linhaProp(cols, {})); ligarRemover(); });
+  ligarRemover();
+  $("#formPropria").onsubmit = async e => {
+    e.preventDefault();
+    const f = e.target, dados = { producao: f.producao.value, fic: f.fic.value, fit: f.fit.value, fic_base: f.fic_base.value };
+    for (const [k, , cols] of SEC_PROP) dados[k] = $$(`table[data-sec="${k}"] tr[data-lin]`).map(tr => Object.fromEntries(cols.map(([c]) => [c, $(`[data-c="${c}"]`, tr).value]))).filter(r => r.codigo || r.composicao);
+    try {
+      const r = await jpost("/api/custos/proprias", { codigo: f.codigo.value, descricao: f.descricao.value, unidade: f.unidade.value, categoria: f.categoria.value, origem: f.origem.value, observacoes: f.observacoes.value, dados });
+      toast("Composição " + r.codigo + " salva"); C_.tfOpcoes = null; renderProprias();
+    } catch (er) { erro(er); }
+  };
+}
+const linhaProp = (cols, r) => `<tr data-lin>${cols.map(([c]) => `<td><input data-c="${c}" value="${esc(r[c] ?? "")}" ${c === "codigo" || c === "insumo" || c === "composicao" ? "" : 'type="number" step="any"'} style="width:${c === "codigo" || c === "composicao" ? 120 : 80}px"></td>`).join("")}<td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a linha">×</button></td></tr>`;
+const ligarRemover = () => $$("[data-rmlin]").forEach(b => b.onclick = () => b.closest("tr").remove());
+$("#btnNovaPropria").onclick = () => editorPropria(null);
+$("#btnExemplo28").onclick = async () => { await jpost("/api/custos/proprias/exemplo-28m3", {}); toast("PN01–PN04 criadas (caminhão 28 m³)"); C_.tfOpcoes = null; renderProprias(); };
+$("#btnCopiarPropria").onclick = () => dialogo("Copiar composição", [["codigo", "Código da composição de origem (SICRO ou própria)"], ["novo_codigo", "Código da nova composição (ex.: PN10)"], ["descricao", "Descrição (opcional)"]],
+  async v => { const r = await jpost(`${base_}${E.pid}/custos/proprias/copiar`, v); toast("Criada " + r.codigo); await renderProprias(); editorPropria(C_.proprias.find(p => p.codigo === r.codigo)); });
 
 // ---- insumos
 let _buscaInsH;
@@ -668,6 +777,183 @@ async function renderAltCusto() {
      <td><button class="btn mini" data-atv="${a.id}" data-v="${a.ativa ? 0 : 1}" data-dica="${a.ativa ? "Desfaz esta alteração (os preços voltam)" : "Reativa esta alteração"}">${a.ativa ? "Desfazer" : "Reativar"}</button></td></tr>`).join("")
     || '<tr><td colspan=5 class="nota">Nenhuma alteração.</td></tr>');
   $$("[data-atv]").forEach(b => b.onclick = async () => { await jpost(`${base_}${E.pid}/custos/alteracoes/${b.dataset.atv}`, { ativa: b.dataset.v === "1" }); renderAltCusto(); });
+}
+
+// ---- binômio
+const B_ = { dados: null, serie: null };
+const pctN = v => v == null ? "" : (v * 100).toLocaleString("pt-BR", { maximumFractionDigits: 4 }) + "%";
+function escolherArquivo(accept = "") {
+  return new Promise(ok => { const i = document.createElement("input"); i.type = "file"; i.accept = accept; i.onchange = () => ok(i.files[0] || null); i.click(); });
+}
+async function enviarAnexo(binomio_id, tipo, rotulo) {
+  const arq = await escolherArquivo(".pdf,.xlsx,.xls,.docx,.doc,.png,.jpg,.jpeg,.msg,.eml,.txt,.zip"); if (!arq) return;
+  const fd = new FormData(); fd.append("arquivo", arq); fd.append("tipo", tipo);
+  if (binomio_id) fd.append("binomio_id", binomio_id); if (rotulo) fd.append("rotulo", rotulo);
+  try { await api(`${base_}${E.pid}/anexos`, { method: "POST", body: fd }); toast("Anexo gravado"); renderBinomio(); } catch (e) { erro(e); }
+}
+const listaAnexos = (lst, tipos) => !lst.length ? "" : `<div class="anexos">📎 ${lst.map(a => `<span class="anexo"><a href="/api/anexos/${a.id}" data-dica="Baixar o arquivo anexado">${esc(a.nome)}</a>
+  <small>${esc(tipos[a.tipo] || a.tipo)}${a.rotulo ? " · " + esc(a.rotulo) : ""}</small> <button class="btn mini perigo" data-exax="${a.id}" data-dica="Remove o anexo">×</button></span>`).join(" ")}</div>`;
+async function renderBinomio() {
+  const d = B_.dados = await api(`${base_}${E.pid}/binomio`);
+  $("#binRef").innerHTML = `Data-base: <b>${esc(d.data_base)}</b> · BDI aplicado aos betuminosos: <b>${pctN(d.bdi)}</b> (aba Base e BDI).`;
+  $("#anexosGerais").innerHTML = listaAnexos(d.anexos_gerais, d.tipos_anexo);
+  const vazio = !d.materiais.length && !d.produtos.length;
+  $("#listaMateriais").innerHTML = vazio ? `<div class="caixa"><p class="nota">Nenhum binômio neste projeto. Crie um material ou importe de uma planilha PATO (abas BINOMIO_COTACOES e BINOMIO_ANP).</p></div>` :
+    d.materiais.map(m => cartaoMaterial(m, d)).join("");
+  $("#listaBetuminosos").innerHTML = d.produtos.map(p => cartaoBetuminoso(p, d)).join("");
+  $$("[data-exax]").forEach(b => b.onclick = async () => { if (!confirm("Remover este anexo?")) return; await api(`/api/anexos/${b.dataset.exax}`, { method: "DELETE" }); renderBinomio(); });
+  $$("[data-edbin]").forEach(b => b.onclick = () => { const id = +b.dataset.edbin; const m = d.materiais.find(x => x.id === id); m ? editorMaterial(m) : editorBetuminoso(d.produtos.find(x => x.id === id)); });
+  $$("[data-exbin]").forEach(b => b.onclick = async () => { if (!confirm("Excluir este binômio e seus anexos?")) return; await api(`${base_}${E.pid}/binomio/${b.dataset.exbin}`, { method: "DELETE" }); renderBinomio(); });
+  $$("[data-axbin]").forEach(b => b.onclick = () => { const [id, tipo] = b.dataset.axbin.split(":"); enviarAnexo(id, tipo, prompt("Fornecedor/origem a que se refere o anexo (opcional):") || ""); });
+  $$("[data-apbin]").forEach(b => b.onclick = () => aplicarVencedor(+b.dataset.apbin));
+}
+function cartaoMaterial(m, d) {
+  const un = m.sicro ? (m.sicro.unidade || "") : "";
+  const lin = m.linhas.map(l => `<tr class="${l.vencedor ? "vencedor" : ""}"><td>${l.vencedor ? "🏆 " : ""}${esc(l.fornecedor)}${l.sicro ? ' <small class="tag">SICRO</small>' : ""}${l.local ? `<br><small>${esc(l.local)}</small>` : ""}</td>
+    <td class=n>${reais(l.unidade === "t" ? l.preco_t : l.preco_m3)} /${l.unidade === "t" ? "t" : "m³"}</td><td class=n>${nf(l.densidade, 3)}</td><td>${esc(l.data || "")}</td>
+    <td class=n title="índice data-base ${nf(l.indice_base, 3)} ÷ índice da cotação ${nf(l.indice_cotacao, 3)} − 1">${pctN(l.fator)}</td>
+    <td class=n>${reais(l.preco_t_reaj)}</td><td class=n>${reais(l.preco_m3_reaj)}</td><td class=n>${nf(l.dmt_pav)}</td><td class=n>${nf(l.dmt_npav)}</td>
+    <td class=n>${reais(l.transporte)}</td><td class=n><b>${reais(l.total)}</b></td></tr>`).join("");
+  const ap = m.aplicado ? `<span class="tag ok">aplicado: ${esc(m.aplicado.fornecedor)} — R$ ${reais(m.aplicado.preco)}</span>` : "";
+  return `<div class="caixa bin-card"><div class="bin-cab"><h3>${esc(m.nome)} <small>${esc(m.codigo || "sem código SICRO")} · ${esc(d.grupos[m.grupo] || m.grupo)}</small></h3>
+    <div>${m.vencedor ? `Mais vantajoso: <b>${esc(m.vencedor.fornecedor)}</b> — R$ ${reais(m.vencedor.total)}/t` : '<span class="tag aviso">sem cotação válida</span>'} ${ap}</div></div>
+    ${m.sem_indice ? `<p class="tag aviso">Sem índice “${esc(m.indice_nome)}” para ${esc(m.data_base)} — preços sem reajuste. Cadastre o índice em “Índices de reajuste”.</p>` : ""}
+    <p class="nota">Índice: ${esc(m.indice_nome)} · custo do transporte: pavimentada R$ ${nf(m.custo_pav, 4)}/t·km, não pavimentada R$ ${nf(m.custo_npav, 4)}/t·km${m.sicro ? ` · SICRO ${esc(m.codigo)}: R$ ${reais(m.sicro.preco)}/${esc(un)}` : ""}</p>
+    <div class="tabela-rolagem"><table class="tab"><tr><th>Fornecedor</th><th class=n>Preço cotado</th><th class=n>Dens. (t/m³)</th><th>Data</th><th class=n>Reajuste</th>
+      <th class=n>Preço reaj. R$/t</th><th class=n>Preço reaj. R$/m³</th><th class=n>DMT pav. (km)</th><th class=n>DMT não pav. (km)</th><th class=n>Transporte R$/t</th><th class=n>TOTAL R$/t</th></tr>${lin}</table></div>
+    ${listaAnexos(m.anexos, d.tipos_anexo)}
+    <div class="linha-botoes"><button class="btn mini primario" data-apbin="${m.id}" data-dica="Grava o preço reajustado do vencedor no insumo SICRO (todas as composições) e as DMTs do transporte">Aplicar vencedor ao insumo</button>
+      <button class="btn mini" data-edbin="${m.id}" data-dica="Edita o material e as cotações">Editar</button>
+      <button class="btn mini" data-axbin="${m.id}:cotacao" data-dica="Anexa a proposta/cotação do fornecedor (PDF, e-mail, planilha)">Anexar cotação</button>
+      <button class="btn mini perigo" data-exbin="${m.id}" data-dica="Exclui este material do binômio">Excluir</button></div></div>`;
+}
+function cartaoBetuminoso(p, d) {
+  const lin = p.linhas.map(l => `<tr class="${l.vencedor ? "vencedor" : ""}"><td>${l.vencedor ? "🏆 " : ""}${esc(l.nome)}</td><td>${esc(l.uf || "")}</td><td>${esc(l.local || "")}</td>
+    <td class=n>${nf(l.d_fluvial)}</td><td class=n>${nf(l.d_pav)}</td><td class=n>${nf(l.d_rp)}</td><td class=n>${nf(l.d_ln)}</td><td class=n>${pctN(l.icms)}</td>
+    <td class=n>${reais(l.aq_sem_icms)}</td><td class=n>${reais(l.tr_sem_icms)}</td><td class=n>${reais(l.aq_icms)}</td><td class=n>${reais(l.tr_icms)}</td>
+    <td class=n>${reais(l.pedagio_t)}</td><td class=n>${reais(l.aq_bdi)}</td><td class=n>${reais(l.tr_bdi)}</td><td class=n><b>${reais(l.total)}</b></td></tr>`).join("");
+  const ap = p.aplicado ? `<span class="tag ok">aplicado: ${esc(p.aplicado.fornecedor)} — R$ ${reais(p.aplicado.preco)}/t em ${esc(p.aplicado.codigo)}</span>` : "";
+  return `<div class="caixa bin-card"><div class="bin-cab"><h3>${esc(p.produto)} <small>${esc(p.codigo || "sem código SICRO")} · betuminoso ANP</small></h3>
+    <div>${p.vencedor ? `Mais vantajoso: <b>${esc(p.vencedor.local)}/${esc(p.vencedor.uf)}</b> — R$ ${reais(p.vencedor.total)}/t` : '<span class="tag aviso">sem preço ANP</span>'} ${ap}</div></div>
+    <p class="nota">Índice ${esc(p.indice || "Pavimentação")} na data-base: ${nf(p.indice_atual, 3)} → Kr = ${nf(p.kr, 3)} (base jul/2014 = 270,237) · Kf = ${nf(p.kf, 3)} (base nov/2016 = 303,752) ·
+      PIS ${pctN(p.pis)} · COFINS ${pctN(p.cofins)} · BDI aquisição ${pctN(p.bdi)}${p.bdi_projeto ? " (do projeto)" : ""} · BDI transporte ${pctN(p.bdi_transporte)} · pedágio ÷ ${nf(p.ton_viagem)} t
+      ${p.fluvial_sempre ? " · parcela fixa do fluvial sempre somada (como na planilha de referência)" : ""}</p>
+    <div class="tabela-rolagem"><table class="tab"><tr><th>Origem</th><th>UF</th><th>Local</th><th class=n>Fluvial D</th><th class=n>Pav. D1</th><th class=n>RP D2</th><th class=n>LN D3</th><th class=n>ICMS</th>
+      <th class=n>Aquisição ANP R$/t</th><th class=n>Transp. s/ ICMS</th><th class=n>Aquisição c/ ICMS</th><th class=n>Transp. c/ ICMS</th><th class=n>Pedágio R$/t</th>
+      <th class=n>Aquisição c/ BDI</th><th class=n>Transp. c/ BDI</th><th class=n>TOTAL R$/t</th></tr>${lin}</table></div>
+    ${listaAnexos(p.anexos, d.tipos_anexo)}
+    <div class="linha-botoes"><button class="btn mini primario" data-apbin="${p.id}" data-dica="Grava a aquisição com ICMS da origem vencedora no insumo SICRO (o BDI é aplicado na composição)">Aplicar vencedor ao insumo</button>
+      <button class="btn mini" data-edbin="${p.id}" data-dica="Edita o produto, as origens, ICMS e distâncias">Editar</button>
+      <button class="btn mini" data-axbin="${p.id}:icms" data-dica="Anexa o documento do ICMS (legislação/alíquota do estado de origem)">Anexar ICMS</button>
+      <button class="btn mini" data-axbin="${p.id}:anp" data-dica="Anexa a tabela de preços ANP usada">Anexar tabela ANP</button>
+      <button class="btn mini perigo" data-exbin="${p.id}" data-dica="Exclui este betuminoso do binômio">Excluir</button></div></div>`;
+}
+async function aplicarVencedor(id) {
+  const it = [...B_.dados.materiais, ...B_.dados.produtos].find(x => x.id === id);
+  let codigo = it.codigo;
+  if (!codigo) { codigo = prompt("Código do insumo no SICRO que receberá o preço (ex.: M0191):"); if (!codigo) return; }
+  const v = it.vencedor; if (!v) return toast("Não há cotação válida.");
+  const forn = v.fornecedor || `${v.local}/${v.uf}`;
+  if (!confirm(`Aplicar o vencedor (${forn}) ao insumo ${codigo}? A alteração entra em “Alterações” e pode ser desfeita.`)) return;
+  try { const r = await jpost(`${base_}${E.pid}/binomio/${id}/aplicar`, { codigo, aplicar_dmt: true }); toast(r.mensagens.join(" ")); renderBinomio(); } catch (e) { erro(e); }
+}
+const inp = (k, v, t = "text", w = 90, extra = "") => `<input data-c="${k}" type="${t}" ${t === "number" ? 'step="any"' : ""} value="${esc(v ?? "")}" style="width:${w}px" ${extra}>`;
+function editorMaterial(m) {
+  m = m || { nome: "", grupo: "petreo", indice: B_.dados.indices.includes("Conservação Rodoviária") ? "Conservação Rodoviária" : "", custo_pav: null, custo_npav: null, cotacoes: [{}, {}, {}] };
+  const ed = $("#editorBin"); ed.hidden = false;
+  const linha = c => `<tr data-cot><td>${inp("fornecedor", c.fornecedor, "text", 150)}</td><td><input data-c="sicro" type="checkbox" ${c.sicro ? "checked" : ""} data-dica="Linha de referência: usa o preço do insumo na base SICRO do projeto"></td>
+    <td>${inp("preco", c.preco, "number", 90, c.sicro ? 'placeholder="base SICRO" data-dica="Linha SICRO: o preço vem da base do projeto"' : "")}</td><td><select data-c="unidade"><option value="t" ${c.unidade !== "m3" ? "selected" : ""}>R$/t</option><option value="m3" ${c.unidade === "m3" ? "selected" : ""}>R$/m³</option></select></td>
+    <td>${inp("densidade", c.densidade, "number", 70)}</td><td>${inp("data", c.data, "month", 130, 'data-dica="Mês da cotação (para o reajuste até a data-base)"')}</td>
+    <td>${inp("dmt_pav", c.dmt_pav, "number", 70)}</td><td>${inp("dmt_npav", c.dmt_npav, "number", 70)}</td><td>${inp("local", c.local, "text", 130)}</td>
+    <td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a cotação">×</button></td></tr>`;
+  ed.innerHTML = `<h3>${m.id ? "Editar" : "Novo"} material cotado</h3><div class="form"><div class="campos">
+    <label>Material <input id="bmNome" value="${esc(m.nome)}" data-dica="Ex.: Brita 1, Pedra de mão, Madeira serrada, CBUQ comercial"></label>
+    <label>Código SICRO <input id="bmCod" value="${esc(m.codigo || "")}" data-dica="Insumo da base (ex.: M0191) — dá o preço de referência e recebe o preço vencedor"></label>
+    <label>Grupo <select id="bmGrupo">${Object.entries(B_.dados.grupos).map(([k, r]) => `<option value="${k}" ${m.grupo === k ? "selected" : ""}>${esc(r)}</option>`).join("")}</select></label>
+    <label>Índice de reajuste <select id="bmInd" data-dica="Pétreos: Conservação Rodoviária (como na planilha de referência)">${B_.dados.indices.map(n => `<option ${m.indice === n ? "selected" : ""}>${esc(n)}</option>`).join("")}</select></label>
+    <label>Custo t·km pavimentada (R$) <input id="bmCp" type="number" step="any" value="${m.custo_pav ?? ""}" data-dica="Custo do transporte por t·km em rodovia pavimentada (composição de transporte SICRO)"></label>
+    <label>Custo t·km não pavimentada (R$) <input id="bmCn" type="number" step="any" value="${m.custo_npav ?? ""}" data-dica="Custo do transporte por t·km em rodovia não pavimentada"></label>
+    <label>Densidade padrão (t/m³) <input id="bmDens" type="number" step="any" value="${m.densidade ?? ""}" data-dica="Usada quando a cotação não informa a densidade"></label></div>
+    <h4>Cotações</h4><div class="tabela-rolagem"><table class="tab" id="tabCot"><tr><th>Fornecedor</th><th>SICRO</th><th>Preço</th><th>Unid.</th><th>Dens.</th><th>Mês</th><th>DMT pav.</th><th>DMT não pav.</th><th>Local/jazida</th><th></th></tr>
+    ${(m.cotacoes || []).map(linha).join("")}</table></div>
+    <div class="linha-botoes"><button class="btn mini" type="button" id="bmAdd" data-dica="Acrescenta uma cotação">+ Cotação</button></div>
+    <div class="linha-botoes"><button class="btn primario" id="bmSalvar" data-dica="Grava e recalcula o binômio">Salvar</button><button class="btn" id="bmFechar">Fechar</button></div></div>`;
+  ligarRemover();
+  $("#bmAdd").onclick = () => { $("#tabCot").insertAdjacentHTML("beforeend", linha({})); ligarRemover(); };
+  $("#bmFechar").onclick = () => ed.hidden = true;
+  $("#bmSalvar").onclick = async () => {
+    const cotacoes = $$("#tabCot tr[data-cot]").map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.type === "checkbox" ? i.checked : i.value])));
+    const dados = { id: m.id, nome: $("#bmNome").value, codigo: $("#bmCod").value, grupo: $("#bmGrupo").value, indice: $("#bmInd").value,
+      custo_pav: $("#bmCp").value, custo_npav: $("#bmCn").value, densidade: $("#bmDens").value, cotacoes };
+    try { await jpost(`${base_}${E.pid}/binomio/material`, dados); toast("Binômio gravado"); ed.hidden = true; renderBinomio(); } catch (e) { erro(e); }
+  };
+  ed.scrollIntoView({ behavior: "smooth" });
+}
+function editorBetuminoso(p) {
+  p = p || { produto: "", indice: "Pavimentação", pis: 0.0065, cofins: 0.03, bdi_transporte: 0.15, ton_viagem: 60, fluvial_sempre: true, origens: [{ nome: "R-1" }, { nome: "R-2" }, { nome: "R-3" }] };
+  const ed = $("#editorBin"); ed.hidden = false;
+  const linha = o => `<tr data-ori><td>${inp("nome", o.nome, "text", 50)}</td><td>${inp("uf", o.uf, "text", 40)}</td><td>${inp("local", o.local, "text", 130)}</td>
+    <td>${inp("preco_t", o.preco_t, "number", 90, 'data-dica="Preço ANP sem ICMS (R$/t)"')}</td><td>${inp("icms", o.icms != null ? +(o.icms * 100).toFixed(4) : "", "number", 60, 'data-dica="Alíquota de ICMS da operação (%)"')}</td>
+    <td>${inp("d_fluvial", o.d_fluvial, "number", 60)}</td><td>${inp("d_pav", o.d_pav, "number", 60)}</td><td>${inp("d_rp", o.d_rp, "number", 60)}</td><td>${inp("d_ln", o.d_ln, "number", 60)}</td>
+    <td>${inp("pedagio", o.pedagio, "number", 70, 'data-dica="Pedágio por viagem (R$) — dividido pela carga do caminhão"')}</td><td>${inp("balsa", o.balsa, "number", 70)}</td>
+    <td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a origem">×</button></td></tr>`;
+  const pc = v => v == null ? "" : +(v * 100).toFixed(4);
+  ed.innerHTML = `<h3>${p.id ? "Editar" : "Novo"} material betuminoso</h3><div class="form"><div class="campos">
+    <label>Produto <input id="bpProd" value="${esc(p.produto)}" data-dica="Ex.: CAP 50/70, Emulsão RR-1C"></label>
+    <label>Código SICRO <input id="bpCod" value="${esc(p.codigo || "")}" data-dica="Insumo da base que recebe o preço vencedor (aquisição com ICMS)"></label>
+    <label>Índice <select id="bpInd">${B_.dados.indices.map(n => `<option ${p.indice === n ? "selected" : ""}>${esc(n)}</option>`).join("")}</select></label>
+    <label>PIS (%) <input id="bpPis" type="number" step="any" value="${pc(p.pis)}"></label><label>COFINS (%) <input id="bpCof" type="number" step="any" value="${pc(p.cofins)}"></label>
+    <label>BDI aquisição (%) <input id="bpBdi" type="number" step="any" value="${p.bdi_projeto || p.bdi == null ? "" : pc(p.bdi)}" placeholder="do projeto" data-dica="Em branco: usa o BDI do projeto (aba Base e BDI)"></label>
+    <label>BDI transporte (%) <input id="bpBdiT" type="number" step="any" value="${pc(p.bdi_transporte)}" data-dica="Portaria DNIT: 15% sobre o transporte de betuminosos"></label>
+    <label>Carga por viagem (t) <input id="bpTon" type="number" step="any" value="${p.ton_viagem ?? 60}" data-dica="Divide o pedágio e a balsa por viagem"></label>
+    <label class="check"><input id="bpFlu" type="checkbox" ${p.fluvial_sempre ? "checked" : ""} data-dica="A planilha de referência soma a parcela fixa do fluvial (20,7256) mesmo sem trecho fluvial"> somar a parcela fixa do fluvial sempre</label></div>
+    <h4>Origens (distribuidoras / refinarias)</h4><div class="tabela-rolagem"><table class="tab" id="tabOri"><tr><th>Origem</th><th>UF</th><th>Local</th><th>ANP R$/t</th><th>ICMS %</th><th>Fluvial</th><th>Pav.</th><th>RP</th><th>LN</th><th>Pedágio</th><th>Balsa</th><th></th></tr>
+    ${(p.origens || []).map(linha).join("")}</table></div>
+    <div class="linha-botoes"><button class="btn mini" type="button" id="bpAdd" data-dica="Acrescenta uma origem">+ Origem</button></div>
+    <div class="linha-botoes"><button class="btn primario" id="bpSalvar" data-dica="Grava e recalcula o binômio">Salvar</button><button class="btn" id="bpFechar">Fechar</button></div></div>`;
+  ligarRemover();
+  $("#bpAdd").onclick = () => { $("#tabOri").insertAdjacentHTML("beforeend", linha({ nome: `R-${$$("#tabOri tr[data-ori]").length + 1}` })); ligarRemover(); };
+  $("#bpFechar").onclick = () => ed.hidden = true;
+  $("#bpSalvar").onclick = async () => {
+    const origens = $$("#tabOri tr[data-ori]").map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.value])));
+    const dados = { id: p.id, produto: $("#bpProd").value, codigo: $("#bpCod").value, indice: $("#bpInd").value, pis: $("#bpPis").value, cofins: $("#bpCof").value,
+      bdi: $("#bpBdi").value, bdi_transporte: $("#bpBdiT").value, ton_viagem: $("#bpTon").value, fluvial_sempre: $("#bpFlu").checked, origens };
+    try { await jpost(`${base_}${E.pid}/binomio/betuminoso`, dados); toast("Binômio gravado"); ed.hidden = true; renderBinomio(); } catch (e) { erro(e); }
+  };
+  ed.scrollIntoView({ behavior: "smooth" });
+}
+$("#btnNovoMat").onclick = () => editorMaterial(null);
+$("#btnNovoBet").onclick = () => editorBetuminoso(null);
+$("#btnAnexoGeral").onclick = () => { const t = prompt("Tipo do documento: icms, anp, cotacao ou outro", "icms"); if (t) enviarAnexo(null, t.trim().toLowerCase(), ""); };
+$("#btnImpBin").onclick = async () => {
+  const arq = await escolherArquivo(".xlsx,.xlsm"); if (!arq) return;
+  const subst = confirm("Substituir os binômios já cadastrados neste projeto?\n(OK = substituir · Cancelar = acrescentar)");
+  const fd = new FormData(); fd.append("arquivo", arq); fd.append("substituir", subst);
+  $("#resBin").innerHTML = `<p class="carregando">Lendo o binômio da planilha…</p>`;
+  try { const r = await api(`${base_}${E.pid}/binomio/importar`, { method: "POST", body: fd });
+    $("#resBin").innerHTML = `<p class="ok-msg">Importado: ${r.importados.materiais} materiais cotados e ${r.importados.produtos} betuminosos (e os índices de reajuste da planilha).</p>`; renderBinomio();
+  } catch (e) { $("#resBin").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
+$("#btnExpBin").onclick = async () => {
+  try { const r = await jpost(`${base_}${E.pid}/exportar/binomio`, {}); $("#resBin").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
+};
+$("#btnIndices").onclick = () => { const p = $("#painelIndices"); p.hidden = !p.hidden; if (!p.hidden) renderIndices(); };
+async function renderIndices() {
+  const r = await api("/api/indices"), p = $("#painelIndices");
+  B_.serie = B_.serie && r.series[B_.serie] ? B_.serie : r.padrao.petreos;
+  const s = r.series[B_.serie] || {};
+  p.innerHTML = `<h3>Índices de reajustamento (DNIT)</h3><p class="nota">Usados para reajustar as cotações até a data-base (Conservação Rodoviária para pétreos) e para Kr/Kf dos betuminosos (Pavimentação).
+    Digite o índice do mês quando o DNIT publicar, ou importe a aba de índices de uma planilha.</p>
+    <div class="barra filtros"><label>Índice <select id="selSerie">${r.nomes.map(n => `<option ${n === B_.serie ? "selected" : ""}>${esc(n)}</option>`).join("")}</select></label>
+    <label>Mês <input type="month" id="indMes"></label><label>Valor <input type="number" step="any" id="indVal" style="width:100px"></label>
+    <button class="btn" id="btnGravaInd" data-dica="Grava (ou corrige) o índice do mês">Gravar</button>
+    <button class="btn" id="btnImpInd" data-dica="Lê a aba de índices (INDICES_REAJ) de uma planilha">Importar planilha</button></div>
+    <div class="tabela-rolagem" style="max-height:260px"><table class="tab"><tr><th>Mês</th><th class=n>Valor</th></tr>
+    ${Object.keys(s).sort().reverse().map(m => `<tr><td>${esc(m)}</td><td class=n>${nf(s[m], 3)}</td></tr>`).join("")}</table></div>`;
+  $("#selSerie").onchange = e => { B_.serie = e.target.value; renderIndices(); };
+  $("#btnGravaInd").onclick = async () => { try { await jpost("/api/indices", { nome: B_.serie, mes: $("#indMes").value, valor: $("#indVal").value }, "PUT"); toast("Índice gravado"); renderIndices(); renderBinomio(); } catch (e) { erro(e); } };
+  $("#btnImpInd").onclick = async () => { const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
+    try { const x = await api("/api/indices/importar", { method: "POST", body: fd }); toast(`${x.gravados} índices gravados`); renderIndices(); renderBinomio(); } catch (e) { erro(e); } };
 }
 
 // ---- data-base

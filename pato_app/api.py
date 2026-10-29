@@ -150,8 +150,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return sv.exportar_original(pid)
         if formato == "composicoes":
             return sv.exportar_composicoes(pid)
+        if formato == "binomio":
+            return sv.binomio.exportar(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml, original ou composicoes")
+            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes ou binomio")
         return sv.exportar_geo(pid, formato)
 
     # ------------------------------------------------- revisão (sugestões)
@@ -214,6 +216,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         return cu.configurar(pid, d.get("uf"), d.get("data_base"), d.get("regime"), d.get("bdi_sd"), d.get("bdi_cd"),
                              d.get("parcelas"))
 
+    @app.post("/api/custos/bdi/calcular")
+    def c_calc_bdi(d: dict = Body(...)):
+        return cu.calcular_bdi_completo(d.get("parcelas"), d.get("municipios"), d.get("selic"), d.get("ano"))
+
     @app.get("/api/projetos/{pid}/custos/buscar")
     def c_buscar(pid: int, q: str = "", limite: int = 60):
         return cu.buscar(pid, q, limite)
@@ -251,6 +257,35 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         return cu.alterar_tempo_fixo(pid, d["acao"], d.get("composicao"), d.get("insumo"), d.get("de_composicao"),
                                      d.get("valor"), d.get("para_composicao"), d.get("trocar_transporte", True))
 
+    @app.get("/api/projetos/{pid}/custos/insumos-base")
+    def c_ins_base(pid: int, tipo: str, q: str = ""):
+        return cu.buscar_insumo_base(pid, tipo, q)
+
+    @app.post("/api/projetos/{pid}/custos/trocar-insumo")
+    def c_trocar_ins(pid: int, d: dict = Body(...)):
+        return cu.trocar_insumo(pid, d["secao"], d["de_codigo"], d["para_codigo"], d.get("composicao"), d.get("quant"))
+
+    @app.get("/api/projetos/{pid}/custos/proprias")
+    def c_proprias(pid: int):
+        return cu.proprias(pid)
+
+    @app.post("/api/custos/proprias")
+    def c_salvar_propria(d: dict = Body(...)):
+        return cu.salvar_propria(d)
+
+    @app.delete("/api/custos/proprias/{codigo}")
+    def c_excluir_propria(codigo: str):
+        cu.excluir_propria(codigo)
+        return {"ok": True}
+
+    @app.post("/api/projetos/{pid}/custos/proprias/copiar")
+    def c_copiar_propria(pid: int, d: dict = Body(...)):
+        return cu.copiar_para_propria(pid, d["codigo"], d["novo_codigo"], d.get("descricao"))
+
+    @app.post("/api/custos/proprias/exemplo-28m3")
+    def c_exemplo28():
+        return cu.criar_exemplo_28m3()
+
     @app.post("/api/projetos/{pid}/custos/dmt")
     def c_dmt(pid: int, d: dict = Body(...)):
         return cu.alterar_dmt(pid, d.get("composicao"), d.get("insumo"), d.get("dmt_ln"), d.get("dmt_rp"), d.get("dmt_p"))
@@ -276,6 +311,74 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.post("/api/projetos/{pid}/sugestoes/aplicar-lote")
     def sug_lote(pid: int, dados: dict = Body(default={})):
         return sv.aplicar_lote(pid, dados.get("ids"), dados.get("confianca"), dados.get("tipo"))
+
+    # ------------------------------------------------ binômio e índices
+    bi = sv.binomio
+
+    @app.get("/api/indices")
+    def b_indices():
+        return bi.indices()
+
+    @app.put("/api/indices")
+    def b_gravar_indice(dados: dict = Body(...)):
+        return bi.gravar_indice(dados.get("nome"), dados.get("mes"), dados.get("valor"))
+
+    @app.post("/api/indices/importar")
+    async def b_importar_indices(arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.importar_indices(caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.get("/api/projetos/{pid}/binomio")
+    def b_listar(pid: int):
+        return bi.listar(pid)
+
+    @app.post("/api/projetos/{pid}/binomio/importar")
+    async def b_importar(pid: int, arquivo: UploadFile = File(...), substituir: bool = Form(default=False)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.importar_de_planilha(pid, caminho, substituir)
+        finally:
+            os.unlink(caminho)
+
+    @app.post("/api/projetos/{pid}/binomio/material")
+    def b_salvar_material(pid: int, dados: dict = Body(...)):
+        return bi.salvar_material(pid, dados, dados.get("id"))
+
+    @app.post("/api/projetos/{pid}/binomio/betuminoso")
+    def b_salvar_produto(pid: int, dados: dict = Body(...)):
+        return bi.salvar_produto(pid, dados, dados.get("id"))
+
+    @app.delete("/api/projetos/{pid}/binomio/{bid}")
+    def b_excluir(pid: int, bid: int):
+        bi.excluir(pid, bid)
+        return {"ok": True}
+
+    @app.post("/api/projetos/{pid}/binomio/{bid}/aplicar")
+    def b_aplicar(pid: int, bid: int, dados: dict = Body(default={})):
+        return bi.aplicar_vencedor(pid, bid, dados.get("aplicar_dmt", True), dados.get("codigo") or None)
+
+    @app.post("/api/projetos/{pid}/anexos")
+    async def b_anexar(pid: int, arquivo: UploadFile = File(...), binomio_id: int | None = Form(default=None),
+                       tipo: str = Form(default="cotacao"), rotulo: str | None = Form(default=None),
+                       descricao: str | None = Form(default=None)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.anexar(pid, caminho, arquivo.filename or "anexo", binomio_id, tipo, rotulo or None, descricao or None)
+        finally:
+            os.unlink(caminho)
+
+    @app.get("/api/anexos/{aid}")
+    def b_baixar_anexo(aid: int):
+        a = bi.anexo(aid)
+        return FileResponse(a["caminho"], filename=a["nome"])
+
+    @app.delete("/api/anexos/{aid}")
+    def b_excluir_anexo(aid: int):
+        bi.excluir_anexo(aid)
+        return {"ok": True}
 
     @app.get("/api/projetos/{pid}/log")
     def log(pid: int, tipo: str | None = None):

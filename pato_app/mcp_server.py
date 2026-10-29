@@ -20,7 +20,7 @@ mcp = FastMCP("pato", instructions=(
     "Ferramentas do sistema PATO (Plano Anual de Trabalho e Orçamento — conservação rodoviária DNIT). "
     "Use listar_projetos para achar o projeto; listar_inventario / adicionar_itens_inventario para ler e "
     "preencher o inventário georreferenciado; importar_planilha para trazer o inventário de outro segmento; "
-    "exportar_planilha_pato para gerar o PATO preenchido. ler_celulas / escrever_celulas atuam em qualquer .xlsx."))
+    "exportar_planilha_pato para gerar o PATO preenchido. Custos: custos_configuracao, ver_composicao, alterar_preco_insumo, trocar_insumo, alterar_tempo_fixo, calcular_bdi; binômio: binomio_listar, binomio_salvar_material, binomio_aplicar_vencedor. ler_celulas / escrever_celulas atuam em qualquer .xlsx."))
 _sv: Servico | None = None
 
 
@@ -228,6 +228,187 @@ def escrever_celulas(caminho_xlsx: str, aba: str, valores: dict[str, Any], salva
     """Grava valores ou fórmulas ('=SOMA(...)' em inglês: '=SUM(...)') em células, ex.: {'D74': 'BR-158/MT'}.
     Preserva desenhos, estilos e demais abas. Retorna o caminho salvo."""
     return sv().escrever_celulas(caminho_xlsx, aba, valores, salvar_como)
+
+
+# ------------------------------------------------------------------ custos (SICRO, BDI, composições)
+@mcp.tool()
+def custos_configuracao(projeto_id: int) -> dict:
+    """Base SICRO (UF e data-base), regime e BDI do projeto, com as bases disponíveis."""
+    return sv().custos.config(projeto_id)
+
+
+@mcp.tool()
+def custos_configurar(projeto_id: int, uf: str | None = None, data_base: str | None = None, regime: str | None = None,
+                      bdi_sd: float | None = None, bdi_cd: float | None = None) -> dict:
+    """Troca a base (UF, data-base AAAA-MM), o regime (SD sem desoneração / CD com desoneração) ou o BDI (%)."""
+    return sv().custos.configurar(projeto_id, uf, data_base, regime, bdi_sd, bdi_cd)
+
+
+@mcp.tool()
+def calcular_bdi(parcelas: dict | None = None, municipios: list[dict] | None = None, selic: float | None = None,
+                 ano: int | None = None) -> dict:
+    """Calculadora de BDI (método DNIT). municipios: [{nome, uf, aliquota (%), base (% do PV), peso}] para o ISSQN;
+    selic (% a.a.) define as despesas financeiras; ano define a CPRB do regime com desoneração."""
+    return sv().custos.calcular_bdi_completo(parcelas, municipios, selic, ano)
+
+
+@mcp.tool()
+def buscar_composicoes(projeto_id: int, texto: str = "", limite: int = 30) -> list[dict]:
+    """Procura composições na base SICRO do projeto (código ou palavras da descrição)."""
+    return sv().custos.buscar(projeto_id, texto, limite)
+
+
+@mcp.tool()
+def servicos_do_orcamento(projeto_id: int) -> dict:
+    """Serviços escolhidos com preço atual e original nos dois regimes."""
+    return sv().custos.servicos(projeto_id)
+
+
+@mcp.tool()
+def adicionar_servico(projeto_id: int, codigo: str) -> dict:
+    """Inclui uma composição (SICRO ou própria) entre os serviços do orçamento."""
+    return sv().custos.adicionar_servico(projeto_id, codigo)
+
+
+@mcp.tool()
+def ver_composicao(projeto_id: int, codigo: str, regime: str | None = None) -> dict:
+    """Composição analítica calculada: equipamentos, mão de obra, materiais, auxiliares, tempo fixo, transportes,
+    custo direto e preço com BDI (com as alterações do projeto)."""
+    return sv().custos.composicao(projeto_id, codigo, regime)
+
+
+@mcp.tool()
+def alterar_preco_insumo(projeto_id: int, tipo: str, codigo: str, preco: float | None = None,
+                         custo_produtivo: float | None = None, custo_improdutivo: float | None = None,
+                         regime: str = "AMBOS", motivo: str | None = None) -> dict:
+    """Altera o preço de um insumo em todas as composições. tipo: MAT, MO, TF (preco) ou EQ (custos horários)."""
+    vals = dict(preco=preco) if tipo.upper() != "EQ" else dict(custo_op=custo_produtivo, custo_imp=custo_improdutivo)
+    return sv().custos.alterar_insumo(projeto_id, tipo, codigo, vals, regime, motivo)
+
+
+@mcp.tool()
+def trocar_insumo(projeto_id: int, secao: str, de_codigo: str, para_codigo: str, composicao: str | None = None,
+                  quantidade: float | None = None) -> dict:
+    """Troca um insumo por outro da base (secao A equipamento, B mão de obra, C material, D auxiliar),
+    ex.: brita 0 comercial → brita 1. composicao=None troca em todas."""
+    return sv().custos.trocar_insumo(projeto_id, secao, de_codigo, para_codigo, composicao, quantidade)
+
+
+@mcp.tool()
+def alterar_tempo_fixo(projeto_id: int, acao: str, composicao: str | None = None, insumo: str | None = None,
+                       de_composicao: str | None = None, valor: float | None = None,
+                       para_composicao: str | None = None) -> dict:
+    """Tempo fixo: acao quantidade | retirar | incluir | trocar (troca o veículo/composição de tempo fixo e o transporte)."""
+    return sv().custos.alterar_tempo_fixo(projeto_id, acao, composicao, insumo, de_composicao, valor, para_composicao)
+
+
+@mcp.tool()
+def alterar_dmt(projeto_id: int, insumo: str, composicao: str | None = None, dmt_leito_natural: float | None = None,
+                dmt_revestimento_primario: float | None = None, dmt_pavimentada: float | None = None) -> dict:
+    """Altera as distâncias de transporte (km) de um insumo, numa composição ou em todas."""
+    return sv().custos.alterar_dmt(projeto_id, composicao, insumo, dmt_leito_natural, dmt_revestimento_primario,
+                                   dmt_pavimentada)
+
+
+@mcp.tool()
+def listar_alteracoes_custo(projeto_id: int) -> list[dict]:
+    """Registro das alterações de custo (preço, troca de insumo, tempo fixo, transporte) com situação ativa/desfeita."""
+    return sv().custos.alteracoes(projeto_id)
+
+
+@mcp.tool()
+def desfazer_alteracao_custo(projeto_id: int, alteracao_id: int, reativar: bool = False) -> dict:
+    """Desfaz (ou reativa) uma alteração de custo."""
+    return sv().custos.ativar(projeto_id, alteracao_id, reativar)
+
+
+@mcp.tool()
+def exportar_composicoes(projeto_id: int) -> dict:
+    """Gera o Excel com serviços, composições (SD/CD), insumos alterados e BDI."""
+    return sv().exportar_composicoes(projeto_id)
+
+
+# ------------------------------------------------------------------ binômio
+def _resumo_binomio(r: dict) -> dict:
+    v = r.get("vencedor") or {}
+    return dict(id=r["id"], nome=r.get("nome") or r.get("produto"), codigo=r.get("codigo"),
+                vencedor=v.get("fornecedor") or (f"{v.get('local')}/{v.get('uf')}" if v else None), total=v.get("total"),
+                linhas=[{k: x.get(k) for k in ("fornecedor", "local", "uf", "preco_t_reaj", "preco_m3_reaj", "transporte",
+                                                "aq_icms", "tr_icms", "aq_bdi", "tr_bdi", "total", "vencedor") if k in x}
+                        for x in r["linhas"]], aplicado=r.get("aplicado"))
+
+
+@mcp.tool()
+def binomio_listar(projeto_id: int) -> dict:
+    """Binômio do projeto: materiais cotados (pétreos, madeira, capa asfáltica comercial) e betuminosos ANP,
+    com o vencedor (menor aquisição + transporte) de cada um."""
+    r = sv().binomio.listar(projeto_id)
+    return dict(data_base=r["data_base"], bdi=r["bdi"], materiais=[_resumo_binomio(m) for m in r["materiais"]],
+                betuminosos=[_resumo_binomio(p) for p in r["produtos"]])
+
+
+@mcp.tool()
+def binomio_salvar_material(projeto_id: int, nome: str, cotacoes: list[dict], codigo: str | None = None,
+                            grupo: str = "petreo", custo_pav: float | None = None, custo_npav: float | None = None,
+                            indice: str | None = None, binomio_id: int | None = None) -> dict:
+    """Cria/atualiza um material cotado. cotacoes: [{fornecedor, preco, unidade 't'|'m3', densidade, data 'AAAA-MM',
+    dmt_pav, dmt_npav}] — inclua {fornecedor:'SICRO', sicro:true, densidade, dmt_pav, dmt_npav} para comparar com a base.
+    grupo: petreo | madeira | betuminoso_comercial | outro."""
+    return _resumo_binomio(sv().binomio.salvar_material(projeto_id, dict(
+        nome=nome, codigo=codigo, grupo=grupo, custo_pav=custo_pav, custo_npav=custo_npav, indice=indice,
+        cotacoes=cotacoes), binomio_id))
+
+
+@mcp.tool()
+def binomio_salvar_betuminoso(projeto_id: int, produto: str, origens: list[dict], codigo: str | None = None,
+                              bdi: float | None = None, binomio_id: int | None = None) -> dict:
+    """Cria/atualiza um betuminoso (ANP). origens: [{nome 'R-1', uf, local, preco_t (ANP R$/t s/ ICMS), icms (%),
+    d_fluvial, d_pav, d_rp, d_ln, pedagio, balsa}]. bdi vazio = BDI do projeto."""
+    return _resumo_binomio(sv().binomio.salvar_produto(projeto_id, dict(
+        produto=produto, codigo=codigo, bdi=bdi, origens=origens), binomio_id))
+
+
+@mcp.tool()
+def binomio_importar_planilha(projeto_id: int, caminho_xlsx: str, substituir: bool = False) -> dict:
+    """Lê BINOMIO_COTACOES, BINOMIO_ANP e INDICES_REAJ de uma planilha PATO."""
+    r = sv().binomio.importar_de_planilha(projeto_id, caminho_xlsx, substituir)
+    return r["importados"]
+
+
+@mcp.tool()
+def binomio_aplicar_vencedor(projeto_id: int, binomio_id: int, codigo_insumo: str | None = None,
+                             aplicar_dmt: bool = True) -> dict:
+    """Grava o preço do vencedor no insumo SICRO (e as DMTs, para materiais cotados). Fica no registro de alterações."""
+    r = sv().binomio.aplicar_vencedor(projeto_id, binomio_id, aplicar_dmt, codigo_insumo)
+    return dict(mensagens=r["mensagens"])
+
+
+@mcp.tool()
+def binomio_anexar(projeto_id: int, caminho_arquivo: str, binomio_id: int | None = None, tipo: str = "cotacao",
+                   fornecedor: str | None = None) -> dict:
+    """Anexa um documento (tipo cotacao | icms | anp | outro) a um binômio ou ao projeto."""
+    import os
+    return sv().binomio.anexar(projeto_id, caminho_arquivo, os.path.basename(caminho_arquivo), binomio_id, tipo, fornecedor)
+
+
+@mcp.tool()
+def binomio_exportar(projeto_id: int) -> dict:
+    """Gera o Excel do binômio (BINOMIO_COTACOES, RESUMO_COTACOES, BINOMIO_ANP, índices e anexos) com fórmulas."""
+    return sv().binomio.exportar(projeto_id)
+
+
+@mcp.tool()
+def indices_reajuste(nome: str | None = None) -> dict:
+    """Índices de reajustamento cadastrados (todas as séries ou uma pelo nome)."""
+    r = sv().binomio.indices()
+    return {nome: r["series"].get(nome)} if nome else dict(nomes=r["nomes"], meses=r["meses"])
+
+
+@mcp.tool()
+def gravar_indice_reajuste(nome: str, mes: str, valor: float) -> str:
+    """Grava o índice de um mês (AAAA-MM), ex.: Conservação Rodoviária 2026-07 = 485,2."""
+    sv().binomio.gravar_indice(nome, mes, valor)
+    return "ok"
 
 
 def main():

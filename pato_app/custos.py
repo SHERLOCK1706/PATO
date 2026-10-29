@@ -10,20 +10,50 @@ from typing import Any
 from . import composicoes as cp
 from . import normalizar as nz
 
-BDI_PARCELAS_PADRAO = {  # método DNIT: AC e Lucro sobre o custo direto; demais parcelas sobre o preço de venda
-    "SD": dict(ac=9.0, lucro=12.0, df=1.0479, seguros=0.25, riscos=0.5, pis=0.65, cofins=3.0, iss=5.0, cprb=0.0),
-    "CD": dict(ac=9.0, lucro=12.0, df=1.0509, seguros=0.25, riscos=0.5, pis=0.65, cofins=3.0, iss=5.0, cprb=2.7),
+BDI_PARCELAS_PADRAO = {  # método DNIT (planilha BDI): AC e Lucro sobre o CD; demais parcelas sobre o PV
+    "SD": dict(ac=9.0, lucro=12.0, df=1.15, seguros=0.25, riscos=0.5, pis=0.65, cofins=3.0, iss=5.0, cprb=0.0),
+    "CD": dict(ac=9.0, lucro=12.0, df=1.15, seguros=0.25, riscos=0.5, pis=0.65, cofins=3.0, iss=5.0, cprb=2.7),
 }
-ROTULO_PARCELA = dict(ac="Administração central (% CD)", lucro="Lucro (% CD)", df="Despesas financeiras (% PV)",
-                      seguros="Seguros e garantias (% PV)", riscos="Riscos (% PV)", pis="PIS (% PV)",
-                      cofins="COFINS (% PV)", iss="ISSQN (% PV)", cprb="Contribuição previdenciária – CPRB (% PV)")
+ROTULO_PARCELA = dict(ac="Administração central (% CD)", lucro="Lucro (% CD)",
+                      df="Despesas financeiras (% sobre PV − lucro)", seguros="Seguros e garantias (% PV)",
+                      riscos="Riscos (% PV)", pis="PIS (% PV)", cofins="COFINS (% PV)", iss="ISSQN (% PV)",
+                      cprb="Contribuição previdenciária – CPRB (% PV)")
+# Lei 14.973/2024: CPRB de 4,5% com base reduzida na transição
+CPRB_POR_ANO = {2024: 4.5, 2025: 3.6, 2026: 2.7, 2027: 1.8, 2028: 0.0}
+ISS_LIMITE = 5.0
 
 
 def calcular_bdi(p: dict) -> float:
-    """BDI = (1 + AC + L) / (1 − (DF + S + R + PIS + COFINS + ISS + CPRB)) − 1   (parcelas em %)."""
-    num = 1 + (p.get("ac", 0) + p.get("lucro", 0)) / 100
-    den = 1 - sum(p.get(k, 0) for k in ("df", "seguros", "riscos", "pis", "cofins", "iss", "cprb")) / 100
+    """Fórmula da planilha BDI do DNIT:
+    BDI = (1 + AC + L − DF·L) / (1 − (DF + R + S + PIS + COFINS + ISS + CPRB)) − 1   (parcelas em %)."""
+    ac, l_, df = p.get("ac", 0) / 100, p.get("lucro", 0) / 100, p.get("df", 0) / 100
+    num = 1 + ac + l_ - df * l_
+    den = 1 - (df + sum(p.get(k, 0) for k in ("seguros", "riscos", "pis", "cofins", "iss", "cprb")) / 100)
     return num / den - 1
+
+
+def df_pela_selic(selic_aa: float) -> float:
+    """DF mensal (%) = [(1 + SELIC)^(1/12) − 1] × 100."""
+    return ((1 + selic_aa / 100) ** (1 / 12) - 1) * 100
+
+
+def calcular_iss(municipios: list[dict]) -> dict:
+    """ISSQN efetivo (% do PV) dos municípios da área de influência da obra:
+    Σ peso × alíquota × base de cálculo / Σ peso, limitado a 5% (observação da planilha BDI).
+    Cada município: nome, uf, aliquota (%), base (% do PV tributável pelo ISS; 100 se não houver dedução de
+    materiais na lei municipal), peso (ex.: km do trecho no município ou % do contrato)."""
+    linhas, soma_p, soma = [], 0.0, 0.0
+    for m in municipios:
+        aliq = nz.numero(m.get("aliquota")) or 0.0
+        base = nz.numero(m.get("base")) if m.get("base") not in (None, "") else 100.0
+        peso = nz.numero(m.get("peso")) if m.get("peso") not in (None, "") else 1.0
+        efetivo = aliq * base / 100
+        linhas.append(dict(m, aliquota=aliq, base=base, peso=peso, efetivo=round(efetivo, 4)))
+        soma_p += peso
+        soma += peso * efetivo
+    media = soma / soma_p if soma_p else 0.0
+    return dict(municipios=linhas, iss_calculado=round(media, 4), iss=round(min(media, ISS_LIMITE), 4),
+                limitado=media > ISS_LIMITE)
 
 
 def _empacotar(b: dict) -> bytes:
@@ -104,9 +134,35 @@ class Custos:
                 bp = self._base(bid).get("bdi_planilha") if bid else None
                 bdi[reg] = cp.arred(bp, 4) if bp else cp.arred(calcular_bdi(BDI_PARCELAS_PADRAO[reg]), 4)
         disp = sorted({(b["uf"], b["data_base"]) for b in bases}, key=lambda x: (x[0], x[1]), reverse=True)
-        return dict(uf=uf, data_base=dbase, regime=regime, bdi=bdi, parcelas=parcelas or BDI_PARCELAS_PADRAO,
+        par = {r: dict(BDI_PARCELAS_PADRAO[r], **((parcelas or {}).get(r) or {})) for r in ("SD", "CD")}
+        extras = {k: (parcelas or {}).get(k) for k in ("municipios", "selic", "ano")}
+        return dict(uf=uf, data_base=dbase, regime=regime, bdi=bdi, parcelas=par, bdi_extras=extras,
                     rotulos_parcelas=ROTULO_PARCELA, disponiveis=[dict(uf=u, data_base=d,
                     regimes=[b["regime"] for b in bases if b["uf"] == u and b["data_base"] == d]) for u, d in disp])
+
+    def calcular_bdi_completo(self, parcelas: dict | None = None, municipios: list | None = None,
+                              selic: float | None = None, ano: int | None = None) -> dict:
+        """Calculadora de BDI: aplica SELIC → DF, CPRB do ano (regime com desoneração) e ISSQN dos municípios."""
+        par = {r: dict(BDI_PARCELAS_PADRAO[r], **((parcelas or {}).get(r) or {})) for r in ("SD", "CD")}
+        notas = []
+        if selic not in (None, ""):
+            df = round(df_pela_selic(nz.numero(selic)), 4)
+            for r in par:
+                par[r]["df"] = df
+            notas.append(f"DF = (1 + {nz.numero(selic)}%)^(1/12) − 1 = {df:.4f}%")
+        if ano not in (None, ""):
+            a = int(nz.numero(ano))
+            cprb = CPRB_POR_ANO.get(a, 0.0 if a > 2027 else 4.5)
+            par["CD"]["cprb"] = cprb
+            notas.append(f"CPRB {a}: {cprb}% (Lei 14.973/2024)")
+        iss = None
+        if municipios:
+            iss = calcular_iss(municipios)
+            for r in par:
+                par[r]["iss"] = iss["iss"]
+            notas.append(f"ISSQN efetivo {iss['iss']:.4f}%" + (" (limitado a 5%)" if iss["limitado"] else ""))
+        return dict(parcelas=par, bdi={r: cp.arred(calcular_bdi(par[r]), 4) for r in par}, iss=iss, notas=notas,
+                    municipios=municipios or [], selic=selic, ano=ano)
 
     def configurar(self, pid: int, uf: str | None = None, data_base: str | None = None, regime: str | None = None,
                    bdi_sd: float | None = None, bdi_cd: float | None = None, parcelas: dict | None = None) -> dict:
@@ -118,9 +174,9 @@ class Custos:
         if regime:
             mud["custo_regime"] = regime
         if parcelas:
-            mud["bdi_parcelas"] = json.dumps(parcelas)
+            mud["bdi_parcelas"] = json.dumps(parcelas, ensure_ascii=False)
             for reg in ("SD", "CD"):
-                if reg in parcelas:
+                if isinstance(parcelas.get(reg), dict):
                     mud[f"bdi_{reg.lower()}"] = cp.arred(calcular_bdi(parcelas[reg]), 4)
         if bdi_sd is not None:
             mud["bdi_sd"] = cp.arred(nz.numero(bdi_sd) / (100 if nz.numero(bdi_sd) > 1 else 1), 4)
@@ -143,7 +199,7 @@ class Custos:
         base = self._base_projeto(pid, regime, uf, data_base)
         cfg = self.config(pid)
         alts = [] if sem_alteracoes else [a["dados"] for a in self.db.alteracoes_custo(pid, so_ativas=True)]
-        return cp.Motor(base, cfg["bdi"][regime], alts)
+        return cp.Motor(base, cfg["bdi"][regime], alts, self.db.proprias())
 
     # -------------------------------------------------------- serviços
     def buscar(self, pid: int, texto: str = "", limite: int = 60) -> list[dict]:
@@ -311,11 +367,20 @@ class Custos:
     def opcoes_tempo_fixo(self, pid: int, regime: str | None = None) -> list[dict]:
         reg = regime or self.config(pid)["regime"]
         base = self._base_projeto(pid, reg)
-        ops = cp.opcoes_tempo_fixo(base.get("sintetico") or {})
-        trans = cp.transportes_por_veiculo(base.get("sintetico") or {})
+        props = {p["codigo"]: p for p in self.db.proprias()}
+        extras = {c: dict(descricao=p["descricao"]) for c, p in props.items()}
+        sint = dict(base.get("sintetico") or {})
+        m = None
+        for c, p in props.items():
+            if p.get("categoria") == "tempo_fixo":
+                m = m or self.motor(pid, reg)
+                sint[c] = dict(descricao=p["descricao"], unidade=p.get("unidade") or "t",
+                               preco=m.calcular(c)["custo_direto"] if c in m.comps else None)
+        ops = cp.opcoes_tempo_fixo(sint)
         for o in ops:
-            o["transporte"] = trans.get(o["veiculo"] or "")
-        return ops
+            o["propria"] = o["codigo"] in props
+            o["veiculo"], o["transporte"] = cp.transporte_do_tf(o["descricao"], base.get("sintetico") or {}, extras)
+        return sorted(ops, key=lambda o: (not o["propria"], o["descricao"]))
 
     def _preco_comp(self, pid: int, reg: str, cod: str) -> tuple[float | None, str]:
         m = self.motor(pid, reg)
@@ -364,8 +429,8 @@ class Custos:
                 dados = dict(base, tipo="tf_trocar", para_composicao=para, preco=preco, descricao=desc_para)
                 desc = f"Tempo fixo trocado para {para} – {desc_para} ({alvo}{filtro}; preço {preco} {fonte})"
                 if trocar_transporte:
-                    veic = cp.veiculo_tf(desc_para)
-                    tr = cp.transportes_por_veiculo(m.base.get("sintetico") or {}).get(veic or "")
+                    extras = {p["codigo"]: dict(descricao=p["descricao"]) for p in self.db.proprias()}
+                    veic, tr = cp.transporte_do_tf(desc_para, m.base.get("sintetico") or {}, extras)
                     if tr:
                         custos = {}
                         for sup, chave in (("ln", "custo_ln"), ("rp", "custo_rp"), ("p", "custo_p")):
@@ -380,6 +445,159 @@ class Custos:
                 raise ValueError("Ação inválida: use quantidade, retirar, incluir ou trocar.")
             res.append(self._registrar(pid, "tempo_fixo", dados, f"{desc} [{cp.REGIMES[reg]}]"))
         return dict(alteracoes=res)
+
+    def buscar_insumo_base(self, pid: int, tipo: str, texto: str = "", limite: int = 40) -> list[dict]:
+        """Insumos da tabela da base (EQ, MO, MAT) ou composições (D) para trocar numa composição."""
+        reg = self.config(pid)["regime"]
+        base = self._base_projeto(pid, reg)
+        t = nz.sem_acento(texto or "").upper().split()
+        if tipo == "D":
+            fonte = {c: dict(descricao=d.get("descricao"), unidade=d.get("unidade")) for c, d in base["composicoes"].items()}
+        else:
+            fonte = (base.get("tabelas") or {}).get({"A": "EQ", "B": "MO", "C": "MAT"}[tipo], {})
+            if not fonte:  # sem tabela sintética: usa os insumos presentes nas composições
+                m = self.motor(pid, reg)
+                chave = {"A": "equipamentos", "B": "mao_obra", "C": "materiais"}[tipo]
+                fonte = {r["codigo"]: r for c in m.comps.values() for r in c[chave]}
+        out = []
+        for cod, d in fonte.items():
+            if t and not all(x in nz.sem_acento(f"{cod} {d.get('descricao')}").upper() for x in t):
+                continue
+            out.append(dict(codigo=cod, descricao=d.get("descricao"), unidade=d.get("unidade"),
+                            preco=d.get("preco", d.get("custo")), custo_op=d.get("custo_op"), custo_imp=d.get("custo_imp")))
+            if len(out) >= limite:
+                break
+        return out
+
+    def _dados_insumo(self, pid: int, reg: str, secao: str, codigo: str) -> dict:
+        base = self._base_projeto(pid, reg)
+        m = self.motor(pid, reg)
+        if secao == "D":
+            if codigo not in m.comps:
+                raise ValueError(f"A composição auxiliar {codigo} não tem analítico na base.")
+            c = m.comps[codigo]
+            return dict(descricao=c["descricao"], unidade=c["unidade"])
+        tab = (base.get("tabelas") or {}).get({"A": "EQ", "B": "MO", "C": "MAT"}[secao], {})
+        d = tab.get(codigo)
+        if not d:  # procura nas composições
+            chave = {"A": "equipamentos", "B": "mao_obra", "C": "materiais"}[secao]
+            d = next((r for c in m.comps.values() for r in c[chave] if r["codigo"] == codigo), None)
+        if not d:
+            raise ValueError(f"Insumo {codigo} não encontrado na base {base.get('uf')} {base.get('data_base')}.")
+        if secao == "A":
+            return dict(descricao=d.get("descricao"), custo_op=nz.numero(d.get("custo_op")), custo_imp=nz.numero(d.get("custo_imp")))
+        if secao == "B":
+            return dict(descricao=d.get("descricao"), custo=nz.numero(d.get("preco", d.get("custo"))), unidade=d.get("unidade"))
+        return dict(descricao=d.get("descricao"), preco=nz.numero(d.get("preco")), unidade=d.get("unidade"))
+
+    def trocar_insumo(self, pid: int, secao: str, de_codigo: str, para_codigo: str, composicao: str | None = None,
+                      quant: float | None = None) -> dict:
+        """Troca um insumo (A equipamento, B mão de obra, C material, D auxiliar) por outro da base."""
+        secao = secao.upper()
+        cfg = self.config(pid)
+        res = []
+        alvo = f"composição {composicao}" if composicao else "todas as composições"
+        for reg in ("SD", "CD"):
+            if not self.db.base_id(cfg["uf"], cfg["data_base"], reg):
+                continue
+            dados = dict(tipo="insumo_trocar", secao=secao, de_codigo=cp._cod(de_codigo), para_codigo=cp._cod(para_codigo),
+                         composicao=cp._cod(composicao) if composicao else None, regime=reg,
+                         quant=nz.numero(quant) if quant not in (None, "") else None,
+                         **self._dados_insumo(pid, reg, secao, cp._cod(para_codigo)))
+            res.append(self._registrar(pid, "troca de insumo", dados,
+                                       f"Insumo {de_codigo} trocado por {para_codigo} – {dados.get('descricao')} ({alvo}) [{cp.REGIMES[reg]}]"))
+        return dict(alteracoes=res)
+
+    # ------------------------------------------------ composições próprias
+    def proprias(self, pid: int | None = None) -> list[dict]:
+        lst = self.db.proprias()
+        if pid:
+            for reg in ("SD", "CD"):
+                try:
+                    m = self.motor(pid, reg)
+                except ValueError:
+                    continue
+                for p in lst:
+                    if p["codigo"] in m.comps:
+                        r = m.calcular(p["codigo"])
+                        p[f"cd_{reg}"], p[f"preco_{reg}"] = r["custo_direto"], r["preco"]
+                        p["avisos"] = m.avisos.get(p["codigo"], [])
+        return lst
+
+    def salvar_propria(self, c: dict) -> dict:
+        cod = (c.get("codigo") or "").strip().upper()
+        if not cod:
+            raise ValueError("Informe o código da composição (ex.: PN01).")
+        base_cod = cp._cod(cod)
+        # não pode coincidir com composição oficial do SICRO (códigos numéricos); códigos próprios vindos de uma
+        # planilha PATO (ex.: PN02) podem ser redefinidos — a composição própria prevalece sobre a da base
+        if base_cod.isdigit():
+            for b in self.db.bases():
+                if base_cod in (self._base(b["id"]).get("composicoes") or {}) or base_cod in (self._base(b["id"]).get("sintetico") or {}):
+                    raise ValueError(f"O código {cod} já existe no SICRO; use outro (ex.: PN01).")
+                break
+        dados = dict(c.get("dados") or {})
+        for k in ("producao", "fic", "fit"):
+            if k in dados:
+                dados[k] = nz.numero(dados[k])
+        self.db.salvar_propria(dict(codigo=base_cod, descricao=c.get("descricao"), unidade=c.get("unidade"),
+                                    categoria=c.get("categoria") or "servico", dados=dados, origem=c.get("origem"),
+                                    observacoes=c.get("observacoes")))
+        return next(p for p in self.db.proprias() if p["codigo"] == base_cod)
+
+    def excluir_propria(self, codigo: str) -> None:
+        self.db.excluir_propria(cp._cod(codigo))
+
+    def copiar_para_propria(self, pid: int, codigo: str, novo_codigo: str, descricao: str | None = None) -> dict:
+        """Cria uma composição própria a partir de uma composição analítica (SICRO ou própria)."""
+        reg = self.config(pid)["regime"]
+        m = self.motor(pid, reg, sem_alteracoes=True)
+        c = m.comps.get(cp._cod(codigo))
+        if not c:
+            raise KeyError(f"Composição {codigo} não tem analítico na base.")
+        dados = dict(producao=c["producao"], fic=c.get("fic_ef", c["fic"]) if c.get("fic_base") == "execucao" else c["fic"],
+                     fit=c["fit"], fic_base=c.get("fic_base") or "improdutivo",
+                     equipamentos=[{k: e[k] for k in ("codigo", "quant", "util_op", "util_imp")} for e in c["equipamentos"]],
+                     mao_obra=[{k: x[k] for k in ("codigo", "quant")} for x in c["mao_obra"]],
+                     materiais=[{k: x[k] for k in ("codigo", "quant")} for x in c["materiais"]],
+                     auxiliares=[{k: x.get(k) for k in ("codigo", "quant", "descricao", "unidade")} for x in c["auxiliares"]],
+                     tempo_fixo=[{k: x[k] for k in ("insumo", "composicao", "quant")} for x in c["tempo_fixo"] if not x["retirado"]],
+                     transportes=[{k: x[k] for k in ("insumo", "composicao", "quant", "custo_ln", "custo_rp", "custo_p",
+                                                     "dmt_ln", "dmt_rp", "dmt_p", "descricao")} for x in c["transportes"]])
+        if c.get("fic_base") != "execucao" and c.get("fic_ef") is not None:
+            dados["fic"] = c["fic_ef"]
+        cat = "tempo_fixo" if (c["descricao"] or "").startswith("Carga, manobra") else \
+              "transporte" if (c["descricao"] or "").startswith("Transporte") else "servico"
+        return self.salvar_propria(dict(codigo=novo_codigo, descricao=descricao or c["descricao"], unidade=c["unidade"],
+                                        categoria=cat, dados=dados, origem=f"cópia de {codigo}"))
+
+    def criar_exemplo_28m3(self) -> list[dict]:
+        """PN01–PN04 conforme a 1ª Análise Técnica Final nº 32 – FGV/2024 (SEPN/CGCIT/DNIT): caminhão basculante
+        com caçamba estanque de 28 m³ (cavalo mecânico + 2 caçambas de 14 m³; produção dobrada)."""
+        ref = "1ª ATF nº 32 – FGV/2024 – SEPN/CGCIT/DNIT (BR-364/AC)"
+        eq_tr = [dict(codigo="E9018", quant=1, util_op=1, util_imp=0), dict(codigo="A9345", quant=2, util_op=1, util_imp=0)]
+        out = []
+        # PN02 segue o PATO e a 5915320 do SICRO (FIC 0,0559 sobre o custo improdutivo)
+        for cod, sup, prod, fic, fic_base in (("PN01", "rodovia em leito natural", 697.20, 0.03568, "execucao"),
+                                              ("PN02", "rodovia em revestimento primário", 871.50, 0.0559, "improdutivo"),
+                                              ("PN03", "rodovia pavimentada", 941.22, 0.0, "execucao")):
+            out.append(self.salvar_propria(dict(
+                codigo=cod, unidade="tkm", categoria="transporte",
+                descricao=f"Transporte com caminhão basculante com caçamba estanque com capacidade de 28 m³ - {sup}",
+                dados=dict(producao=prod, fic=fic, fit=0, fic_base=fic_base, equipamentos=eq_tr),
+                origem=ref, observacoes="Troca de equipamentos (cavalo mecânico com dolly + 2 caçambas de 14 m³ = 28 m³); "
+                                        "produção duplicada em relação à composição de 14 m³.")))
+        out.append(self.salvar_propria(dict(
+            codigo="PN04", unidade="t", categoria="tempo_fixo",
+            descricao="Carga, manobra e descarga de agregados ou solos em caminhão basculante de 28 m³ - carga com "
+                      "carregadeira de 3,40 m³ e descarga livre",
+            dados=dict(producao=914.32, fic=0, fit=0, fic_base="execucao",
+                       equipamentos=[dict(codigo="E9018", quant=1, util_op=0.77, util_imp=0.23),
+                                     dict(codigo="A9345", quant=6, util_op=0.77, util_imp=0.23),
+                                     dict(codigo="E9584", quant=2, util_op=1, util_imp=0)]),
+            origem=ref, observacoes="Baseada na 5914351 (basculante 14 m³): caminhão substituído por caçamba e duplicadas "
+                                    "as quantidades de equipamentos e a produção, mantendo o tempo de produção.")))
+        return out
 
     def alterar_dmt(self, pid: int, composicao: str | None, insumo: str | None, dmt_ln=None, dmt_rp=None, dmt_p=None) -> dict:
         vals = {k: nz.numero(v) for k, v in (("dmt_ln", dmt_ln), ("dmt_rp", dmt_rp), ("dmt_p", dmt_p)) if v not in (None, "")}

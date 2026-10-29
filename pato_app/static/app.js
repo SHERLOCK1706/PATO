@@ -587,6 +587,17 @@ $$("[data-exp]").forEach(b => b.onclick = async () => {
   catch (e) { box.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 });
 
+$("#formRelPontos").onsubmit = async e => {
+  e.preventDefault();
+  const v = formObj(e.target), box = $("#resRelPontos");
+  box.innerHTML = `<p class="carregando">Gerando relatório…</p>`;
+  try {
+    const r = await jpost(`/api/projetos/${E.pid}/relatorio-pontos`, v);
+    box.innerHTML = `<p class="nota">${r.pontos} pontos: ${Object.entries(r.por_acao).map(([k, n]) => `${esc(k)} (${n})`).join(" · ") || "nenhum"}</p>
+      <div class="linha-botoes">${linkBaixar(r)}</div>`;
+  } catch (er) { box.innerHTML = `<p class="tag erro">${esc(er.message)}</p>`; }
+};
+
 // ---------------------------------------------------------------- diálogo
 function dialogo(titulo, campos, aoConfirmar) {
   const d = $("#dlg"), f = $("#dlgForm");

@@ -614,6 +614,25 @@ class Servico:
     def log(self, pid: int, tipo: str | None = None) -> list[dict]:
         return self.db.log(pid, tipo)
 
+    def relatorio_pontos(self, pid: int, pendentes: bool = True, automaticos: bool = True, manuais: bool = True,
+                         dispensadas: bool = False, destinatario: str | None = None, responsavel: str | None = None,
+                         observacoes: str | None = None) -> dict:
+        """Relatório (.xlsx) com os pontos a corrigir, para enviar à empresa que levantou o inventário."""
+        import json
+        from . import relatorio_pontos
+        p = self.projeto(pid)
+        sel = []
+        for s_ in self.db.sugestoes(pid):
+            if (s_["status"] == "pendente" and pendentes) or (s_["status"] == "dispensada" and dispensadas) or \
+               (s_["status"] == "aplicada" and ((s_.get("automatica") and automaticos) or (not s_.get("automatica") and manuais))):
+                sel.append(s_)
+        itens = {i["id"]: i for i in self.db.itens(pid)}
+        dest = self._nome(p, "pontos_a_corrigir", "xlsx")
+        out = relatorio_pontos.gerar(p, sel, itens, str(dest), destinatario, responsavel, observacoes,
+                                     json.loads(p["analise_snv"]) if p.get("analise_snv") else None)
+        self.db.registrar(pid, "relatório de pontos a corrigir", f"{out['pontos']} pontos · {destinatario or ''}")
+        return dict(out, nome=dest.name)
+
     def exportar_original(self, pid: int) -> dict:
         """Cópia da planilha de inventário importada com os valores das sugestões aplicadas no sistema."""
         p = self.projeto(pid)

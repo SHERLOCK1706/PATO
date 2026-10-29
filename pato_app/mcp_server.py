@@ -176,6 +176,16 @@ def desfazer_sugestao(sugestao_id: int) -> dict:
 
 
 @mcp.tool()
+def relatorio_pontos_a_corrigir(projeto_id: int, destinatario: str | None = None, responsavel: str | None = None,
+                                observacoes: str | None = None, pendentes: bool = True, automaticos: bool = True,
+                                manuais: bool = True, dispensadas: bool = False) -> dict:
+    """Gera o relatório (.xlsx) de pontos a corrigir para a empresa que levantou o inventário: aba e linha da planilha,
+    problema, correção (aplicada ou sugerida), ação esperada, links do mapa e coluna para a resposta da empresa."""
+    return sv().relatorio_pontos(projeto_id, pendentes, automaticos, manuais, dispensadas, destinatario, responsavel,
+                                 observacoes)
+
+
+@mcp.tool()
 def exportar_original_corrigido(projeto_id: int) -> dict:
     """Cópia da planilha de inventário importada com os valores das sugestões aplicadas (sem marcações)."""
     return sv().exportar_original(projeto_id)

@@ -179,6 +179,12 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def sug_desfazer(sid: int):
         return sv.desfazer_sugestao(sid)
 
+    @app.post("/api/projetos/{pid}/relatorio-pontos")
+    def rel_pontos(pid: int, dados: dict = Body(default={})):
+        return sv.relatorio_pontos(pid, dados.get("pendentes", True), dados.get("automaticos", True),
+                                   dados.get("manuais", True), dados.get("dispensadas", False),
+                                   dados.get("destinatario"), dados.get("responsavel"), dados.get("observacoes"))
+
     @app.post("/api/projetos/{pid}/sugestoes/aplicar-lote")
     def sug_lote(pid: int, dados: dict = Body(default={})):
         return sv.aplicar_lote(pid, dados.get("ids"), dados.get("confianca"), dados.get("tipo"))

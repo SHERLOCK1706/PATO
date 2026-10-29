@@ -230,6 +230,22 @@
           <button class="btn" data-exp="geojson" data-dica="Arquivo para SIG (QGIS/ArcGIS) com as feições georreferenciadas">GeoJSON</button>
           <button class="btn" data-exp="kml" data-dica="Arquivo para abrir no Google Earth">KML (Google Earth)</button>
         </div>
+        <h4>Relatório de pontos a corrigir <small>(para a empresa que levantou o inventário)</small></h4>
+        <p class="nota">Lista cada ocorrência pela aba e linha da planilha entregue, com o problema, a correção e a ação esperada,
+          links do mapa e uma coluna para a resposta da empresa.</p>
+        <form class="form" id="formRelPontos">
+          <div class="campos">
+            <label>Destinatário (empresa) <input name="destinatario" placeholder="Empresa responsável pelo levantamento" data-dica="Aparece no cabeçalho do relatório"></label>
+            <label>Responsável pela análise <input name="responsavel" data-dica="Nome / cargo de quem analisou o inventário"></label>
+            <label class="largo">Observações <textarea name="observacoes" rows="2" data-dica="Texto livre incluído no resumo (prazo, contrato, orientações…)"></textarea></label>
+            <label class="check largo"><input type="checkbox" name="pendentes" checked data-dica="Decisões ainda pendentes na aba Revisão"> Pendentes de decisão (confirmar sugestão / verificar em campo)</label>
+            <label class="check largo"><input type="checkbox" name="automaticos" checked data-dica="Correções que o sistema já aplicou e que a empresa deve repetir na planilha"> Corrigidos automaticamente pelo sistema</label>
+            <label class="check largo"><input type="checkbox" name="manuais" checked data-dica="Correções aplicadas por você na aba Revisão"> Corrigidos pela fiscalização</label>
+            <label class="check largo"><input type="checkbox" name="dispensadas" data-dica="Sugestões que você decidiu não aplicar"> Incluir sugestões dispensadas</label>
+          </div>
+          <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Gera o relatório (.xlsx) para enviar à empresa">Gerar relatório de pontos</button></div>
+        </form>
+        <div id="resRelPontos"></div>
         <h4>Planilha original corrigida</h4>
         <p class="nota">Cópia da planilha de inventário importada com os valores das sugestões aplicadas na aba Revisão
           (sem marcações nem abas extras; o registro das correções fica só no sistema).</p>

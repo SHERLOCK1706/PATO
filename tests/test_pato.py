@@ -270,3 +270,22 @@ def test_revisao_e_ajustes(tmp_path, sv):
     c = wb["CADASTRO TACHA, TACHÕES"]["F26"]
     assert c.value == pytest.approx(-14.7247) and c.fill.fgColor.rgb in (None, "00000000")
     wb.close()
+
+
+def test_relatorio_pontos_a_corrigir(sv):
+    r = sv.importar_arquivo(str(BR174))
+    pid = r["projeto"]["id"]
+    out = sv.relatorio_pontos(pid, destinatario="Empresa X", responsavel="Fiscal")
+    assert out["pontos"] == r["sugestoes"] + r["ajustes_automaticos"]
+    wb = openpyxl.load_workbook(out["arquivo"])
+    assert wb.sheetnames == ["Resumo", "Pontos a corrigir"]
+    ws = wb["Pontos a corrigir"]
+    linhas = list(ws.iter_rows(min_row=2, values_only=True))
+    acoes = {l[12] for l in linhas}
+    assert {"Corrigir na planilha", "Confirmar a sugestão", "Retirar da planilha (fora do trecho)"} <= acoes
+    tacha = next(l for l in linhas if l[1] == "CADASTRO TACHA, TACHÕES" and l[2] == 26)
+    assert "-14.7247" in tacha[11] and tacha[12] == "Corrigir na planilha"
+    assert "Empresa X" in [c.value for c in wb["Resumo"]["B"]]
+    wb.close()
+    so_pend = sv.relatorio_pontos(pid, automaticos=False, manuais=False)
+    assert so_pend["pontos"] == r["sugestoes"]

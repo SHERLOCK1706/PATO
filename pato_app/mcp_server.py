@@ -132,16 +132,20 @@ def validar_inventario(projeto_id: int, limite: int = 100) -> list[dict]:
 
 
 @mcp.tool()
-def analisar_inventario(projeto_id: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
-    """Verifica SNV, coordenadas × km, limite do trecho e nomenclatura (Álbum DNIT IPR-736) e gera sugestões de
-    correção PENDENTES para revisão (nada é alterado). arquivo_snv: planilha/CSV oficial do SNV (opcional)."""
-    return sv().gerar_sugestoes(projeto_id, arquivo_snv, versao_snv)
+def analisar_inventario(projeto_id: int, arquivo_snv: str | None = None, versao_snv: str | None = None,
+                        tolerancia_km: float = 1.0) -> dict:
+    """Verifica SNV, coordenadas × km, limite do trecho e nomenclatura (Álbum DNIT IPR-736).
+    Correções certas são aplicadas automaticamente (coordenada pelo km informado, digitação, grafia, fora do trecho)
+    e ficam em Ajustes; as demais ficam pendentes com a sugestão mais provável preenchida.
+    arquivo_snv: planilha/CSV oficial do SNV (opcional)."""
+    return sv().gerar_sugestoes(projeto_id, arquivo_snv, versao_snv, tolerancia_km)
 
 
 @mcp.tool()
 def listar_sugestoes(projeto_id: int, status: str = "pendente", tipo: str | None = None, limite: int = 200) -> dict:
-    """Sugestões de correção. status: pendente | aplicada | dispensada. tipo: correção | padronização | SNV.
-    Cada uma traz motivo, valores atuais, correção sugerida ('mudancas') e alternativas ('opcoes')."""
+    """Sugestões e ajustes. status: pendente (Revisão) | aplicada (Ajustes; campo 'automatica' indica se foi o sistema)
+    | dispensada. tipo: correção | padronização | SNV. Traz motivo, valores atuais, correção sugerida ('mudancas'),
+    alternativas ('opcoes') e, se aplicada, o que foi gravado ('aplicado')."""
     lst = sv().sugestoes(projeto_id, status, tipo)
     return dict(total=len(lst), sugestoes=lst[:limite])
 

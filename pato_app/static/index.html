@@ -12,24 +12,25 @@
   <div class="marca"><span class="logo">PATO</span><span class="sub">Plano Anual de Trabalho e Orçamento · Conservação</span></div>
   <div class="proj">
     <label for="selProjeto" class="sr">Projeto</label>
-    <select id="selProjeto"></select>
-    <button class="btn" id="btnNovo" title="Novo projeto vazio">+ Novo</button>
+    <select id="selProjeto" data-dica="Projeto (trecho) em trabalho"></select>
+    <button class="btn" id="btnNovo" data-dica="Cria um projeto vazio (trecho sem inventário)">+ Novo</button>
   </div>
   <div class="acoes">
-    <button class="btn" data-ir="importar">Importar inventário</button>
-    <button class="btn primario" data-ir="exportar">Exportar</button>
+    <button class="btn" data-ir="importar" data-dica="Lê uma planilha de inventário (modelo DNIT ou PATO) e cria/atualiza um projeto">Importar inventário</button>
+    <button class="btn primario" data-ir="exportar" data-dica="Gerar a planilha PATO preenchida, o inventário, GeoJSON/KML ou a planilha original corrigida">Exportar</button>
   </div>
 </header>
 
 <nav class="abas" id="abas">
-  <button data-aba="painel" class="ativa">Painel</button>
-  <button data-aba="inventario">Inventário</button>
-  <button data-aba="mapa">Mapa</button>
-  <button data-aba="projeto">Projeto e trecho</button>
-  <button data-aba="alertas">Alertas <span id="nAlertas" class="pill"></span></button>
-  <button data-aba="revisao">Revisão <span id="nSug" class="pill pill-info"></span></button>
-  <button data-aba="importar">Importar</button>
-  <button data-aba="exportar">Exportar</button>
+  <button data-aba="painel" class="ativa" data-dica="Resumo do trecho, quantidades e reflexo no PATO">Painel</button>
+  <button data-aba="inventario" data-dica="Tabela editável do inventário por categoria">Inventário</button>
+  <button data-aba="mapa" data-dica="Mapa com as camadas do inventário">Mapa</button>
+  <button data-aba="projeto" data-dica="Dados do projeto, alterar trecho e gerar aceiro">Projeto e trecho</button>
+  <button data-aba="alertas" data-dica="Inconsistências encontradas no inventário">Alertas <span id="nAlertas" class="pill"></span></button>
+  <button data-aba="revisao" data-dica="Decisões pendentes: correções que precisam da sua escolha">Revisão <span id="nSug" class="pill pill-info"></span></button>
+  <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer">Ajustes <span id="nAj" class="pill pill-ok"></span></button>
+  <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
+  <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
 </nav>
 
 <main>
@@ -69,8 +70,8 @@
       <label>km de <input type="number" step="0.001" id="fKmDe"></label>
       <label>até <input type="number" step="0.001" id="fKmAte"></label>
       <label class="cresce">Buscar <input type="search" id="fTexto" placeholder="tipo, condição, SNV, obs…"></label>
-      <button class="btn" id="btnAddItem">+ Item</button>
-      <button class="btn perigo" id="btnDelItens" disabled>Excluir selecionados</button>
+      <button class="btn" id="btnAddItem" data-dica="Acrescenta um item na categoria selecionada">+ Item</button>
+      <button class="btn perigo" id="btnDelItens" data-dica="Exclui do inventário os itens marcados" disabled>Excluir selecionados</button>
     </div>
     <div class="info" id="infoInv"></div>
     <div class="tabela-rolagem"><table class="tab editavel" id="tabItens"></table></div>
@@ -106,7 +107,7 @@
           <label>Prazo <input name="prazo" type="number" step="1"></label>
           <label class="largo">Observações <textarea name="obs" rows="2"></textarea></label>
         </div>
-        <div class="linha-botoes"><button class="btn primario" type="submit">Salvar</button></div>
+        <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Grava os dados do projeto (vão para a CAPA na exportação)">Salvar</button></div>
       </form>
       <div>
         <form class="caixa form" id="formTrecho">
@@ -118,7 +119,7 @@
             <label>km final <input name="km_fim" type="number" step="0.001" required></label>
             <label class="check largo"><input type="checkbox" name="recortar"> Recortar o inventário no novo trecho</label>
           </div>
-          <div class="linha-botoes"><button class="btn primario" type="submit">Aplicar</button></div>
+          <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Muda o km inicial/final do segmento; com Recortar, corta o inventário no novo trecho">Aplicar</button></div>
         </form>
         <form class="caixa form" id="formAceiro">
           <h3>Aceiro + roçada da faixa de domínio</h3>
@@ -128,13 +129,13 @@
             <label>Largura até a cerca (m) <input name="largura_ate_cerca" type="number" step="0.1" value="30"></label>
             <label>% indivíduos arbóreos <input name="pct_arboreo" type="number" step="0.05" value="0.2"></label>
           </div>
-          <div class="linha-botoes"><button class="btn" type="submit">Gerar aceiro</button></div>
+          <div class="linha-botoes"><button class="btn" type="submit" data-dica="Cria o memorial de aceiro e roçada da faixa de domínio a partir das cercas">Gerar aceiro</button></div>
         </form>
         <div class="caixa">
           <h3>Projeto</h3>
           <div class="linha-botoes">
-            <button class="btn" id="btnDuplicar">Duplicar</button>
-            <button class="btn perigo" id="btnExcluirProj">Excluir projeto</button>
+            <button class="btn" id="btnDuplicar" data-dica="Cria uma cópia deste projeto com todo o inventário">Duplicar</button>
+            <button class="btn perigo" id="btnExcluirProj" data-dica="Apaga o projeto e o inventário (não pode ser desfeito)">Excluir projeto</button>
           </div>
           <h4>Histórico</h4>
           <ul class="historico" id="historico"></ul>
@@ -154,24 +155,37 @@
   <!-- REVISÃO -->
   <section id="aba-revisao" class="aba">
     <div class="caixa">
-      <h3>Revisão do inventário — sugestões de correção</h3>
-      <p class="nota">Verificação do SNV, das coordenadas × km, do limite do trecho e da nomenclatura dos dispositivos
-        (Álbum de Projetos-Tipo de Drenagem DNIT — IPR-736, 5ª ed.). Nada é alterado até você aplicar: aplique a sugestão,
-        edite o valor antes de aplicar, escolha uma alternativa ou dispense. Toda sugestão aplicada pode ser desfeita.</p>
+      <h3>Revisão — decisões pendentes</h3>
+      <p class="nota">O sistema corrige sozinho o que é certo (coordenada pelo km informado, erro de digitação, grafia do álbum DNIT,
+        itens fora do trecho) e registra na aba <b>Ajustes</b>. Aqui ficam só os casos que dependem de você, já com a sugestão mais
+        provável preenchida (mais usual na rodovia/base, ordem dos códigos antigos…). Aplique, edite o valor, troque a alternativa ou dispense.</p>
       <div class="barra filtros">
-        <label class="cresce">Planilha oficial do SNV (opcional, .xlsx/.csv) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt"></label>
-        <label>Versão do SNV <input id="verSnv" placeholder="ex.: 202604A"></label>
-        <button class="btn primario" id="btnAnalisar">Analisar novamente</button>
+        <label class="cresce">Planilha oficial do SNV (opcional, .xlsx/.csv) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt" data-dica="Tabela do SNV publicada pelo DNIT; o sistema compara e propõe atualizar o cadastro de segmentos"></label>
+        <label>Versão do SNV <input id="verSnv" placeholder="ex.: 202604A" data-dica="Versão da planilha oficial enviada (registrada no projeto)"></label>
+        <label>Tolerância km × coordenada (km) <input id="tolKm" type="number" step="0.1" min="0.1" value="1" data-dica="Coordenadas mais distantes que isso do km informado são reposicionadas pelo km"></label>
+        <button class="btn primario" id="btnAnalisar" data-dica="Refaz a verificação: aplica as correções certas e atualiza as decisões pendentes">Analisar novamente</button>
       </div>
       <div id="infoSnv"></div>
     </div>
     <div class="barra">
       <div class="chips" id="chipsStatus"></div>
       <div class="chips" id="chipsTipoSug"></div>
-      <button class="btn" id="btnLoteAlta" title="Aplica todas as sugestões pendentes de confiança alta que têm correção definida">Aplicar todas de confiança alta</button>
+      <button class="btn" id="btnLoteSug" data-dica="Aplica de uma vez todas as sugestões listadas que têm valor sugerido">Aplicar todas as sugestões listadas</button>
     </div>
     <div class="info" id="infoSug"></div>
     <div id="listaSug"></div>
+  </section>
+
+  <!-- AJUSTES -->
+  <section id="aba-ajustes" class="aba">
+    <div class="caixa">
+      <h3>Ajustes — registro das correções aplicadas</h3>
+      <p class="nota">Tudo o que foi alterado no inventário: o que o sistema corrigiu automaticamente e o que você aplicou na Revisão,
+        com o valor anterior, o novo e o motivo. Este registro fica só no sistema; qualquer ajuste pode ser desfeito.</p>
+      <div class="barra"><div class="chips" id="chipsModoAj"></div><div class="chips" id="chipsTipoAj"></div></div>
+    </div>
+    <div class="info" id="infoAj"></div>
+    <div id="listaAj"></div>
   </section>
 
   <!-- IMPORTAR -->
@@ -199,11 +213,11 @@
           totais acompanham. O Excel recalcula o PATO ao abrir.</p>
         <p class="nota">Modelo atual: <b id="nomeModelo"></b></p>
         <label class="arquivo">Usar outro modelo nesta exportação (opcional)
-          <input type="file" id="arqModelo" accept=".xlsx"></label>
-        <label class="check"><input type="checkbox" id="chkLimpar" checked> Limpar abas CAD_* sem itens no inventário</label>
+          <input type="file" id="arqModelo" data-dica="Opcional: outra planilha PATO para usar só nesta exportação" accept=".xlsx"></label>
+        <label class="check"><input type="checkbox" id="chkLimpar" data-dica="Se marcado, as abas CAD_* sem itens ficam vazias; se não, mantêm o conteúdo do modelo" checked> Limpar abas CAD_* sem itens no inventário</label>
         <div class="linha-botoes">
-          <button class="btn primario" id="btnExpPato">Gerar planilha PATO</button>
-          <button class="btn" id="btnDefModelo" title="Salvar o arquivo escolhido como modelo padrão">Definir como modelo padrão</button>
+          <button class="btn primario" id="btnExpPato" data-dica="Grava CAPA e abas CAD_* numa cópia da planilha modelo, preservando fórmulas e demais abas">Gerar planilha PATO</button>
+          <button class="btn" id="btnDefModelo" data-dica="Usa o arquivo escolhido como modelo padrão nas próximas exportações">Definir como modelo padrão</button>
         </div>
         <div id="resExpPato"></div>
       </div>
@@ -212,14 +226,14 @@
         <p class="nota">Planilha com uma aba por categoria (dados + quantidades calculadas), resumo e reflexo no PATO;
           ou o inventário georreferenciado para SIG / Google Earth.</p>
         <div class="linha-botoes">
-          <button class="btn" data-exp="inventario">Excel (.xlsx)</button>
-          <button class="btn" data-exp="geojson">GeoJSON</button>
-          <button class="btn" data-exp="kml">KML (Google Earth)</button>
+          <button class="btn" data-exp="inventario" data-dica="Planilha com uma aba por categoria, quantidades calculadas e resumo">Excel (.xlsx)</button>
+          <button class="btn" data-exp="geojson" data-dica="Arquivo para SIG (QGIS/ArcGIS) com as feições georreferenciadas">GeoJSON</button>
+          <button class="btn" data-exp="kml" data-dica="Arquivo para abrir no Google Earth">KML (Google Earth)</button>
         </div>
         <h4>Planilha original corrigida</h4>
         <p class="nota">Cópia da planilha de inventário importada com os valores das sugestões aplicadas na aba Revisão
           (sem marcações nem abas extras; o registro das correções fica só no sistema).</p>
-        <div class="linha-botoes"><button class="btn" data-exp="original">Planilha original corrigida</button></div>
+        <div class="linha-botoes"><button class="btn" data-exp="original" data-dica="Cópia do arquivo importado com os valores corrigidos (sem marcações)">Planilha original corrigida</button></div>
         <div id="resExpInv"></div>
       </div>
     </div>

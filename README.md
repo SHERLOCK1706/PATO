@@ -17,24 +17,26 @@ Sistema local (painel web + servidor MCP) construído a partir da planilha
 | Exportar inventário em Excel (uma aba por categoria + resumo), GeoJSON e KML (Google Earth). | aba **Exportar** |
 | Servidor **MCP** para o Claude ler e preencher o inventário e qualquer planilha. | `pato_app/mcp_server.py` |
 
-### Revisão do inventário (aba Revisão) — sugestões de correção
-Ao importar (ou em “Analisar novamente”), o sistema verifica e **sugere** correções; nada é alterado nos dados
-até você decidir. O registro (log) fica somente no sistema — nenhuma planilha recebe marcações ou abas extras.
-- **SNV**: código de cada item × km (cadastro de segmentos ou planilha oficial do SNV, opcional); detecta quando o
-  inventário usa outra numeração/versão; sugere SNV faltante/incompleto e a troca do cadastro de segmentos pelo oficial.
-- **Coordenadas × km**: eixo da rodovia montado com todas as coordenadas (descartando as discrepantes);
-  ≤ 1 km de divergência = aceitável; 1–2 km = *verificar em campo* (com alternativas: usar o km da coordenada ou
-  reposicionar a coordenada pelo km); > 2 km = erro com correção sugerida (digitação: sinal, dígito, dígitos invertidos,
-  lat/long trocadas; coordenada registrada na ponta errada ou copiada de outro ponto).
-- **Trecho**: recorte no limite e retirada de feições fora do segmento.
-- **Nomenclatura × Álbum de Projetos-Tipo de Drenagem (DNIT/IPR-736, 5ª ed.)**, na forma do SICRO (`BSTC` Ø0,60–1,50,
-  `BSCC` 1,50–3,00, `MFC 01–08`, `STC 125-25`, `DAR 60-30`, `EDA 03 B`, `VPCC 120-30`…): grafias fora do padrão recebem a
-  forma correta; códigos antigos/incompletos (ex.: `DAR01`, `EDA01`) recebem as alternativas do álbum para escolher.
+### Correções automáticas (aba Ajustes) e decisões (aba Revisão)
+Ao importar (ou em “Analisar novamente”), o sistema verifica SNV, coordenadas × km, limite do trecho e nomenclatura.
+O registro (log) fica somente no sistema — nenhuma planilha recebe marcações ou abas extras.
 
-Para cada sugestão: **Aplicar** (como sugerido), editar o valor e aplicar, escolher uma **alternativa**, **Dispensar**
-(não volta em novas análises) ou **Desfazer** depois de aplicada. Grupos iguais podem ser aplicados de uma vez e há
-“Aplicar todas de confiança alta”. Em Exportar, “Planilha original corrigida” gera a cópia do arquivo importado com os
-valores aplicados (sem marcações).
+**Aplicado automaticamente — aba Ajustes** (com valor anterior, novo e motivo; qualquer ajuste pode ser desfeito):
+- **Coordenadas pelo km informado** (o km prevalece): pontos e pontas de feições a mais de 1 km (tolerância ajustável)
+  da posição do km são reposicionados no eixo da rodovia; erros de digitação (sinal, dígito, dígitos invertidos,
+  lat/long trocadas) são corrigidos mantendo a precisão original; itens sem coordenada recebem a posição pelo km.
+- **Trecho**: recorte no limite e retirada de feições fora do segmento.
+- **SNV**: códigos incompletos/faltantes e itens que atravessam segmentos (quando o cadastro de segmentos é coerente).
+- **Nomenclatura × Álbum DNIT (IPR-736, 5ª ed.)**: grafias fora do padrão (`MFC03` → `MFC 03`, `EDA-03B` → `EDA 03 B`).
+
+**Decisões pendentes — aba Revisão**, já com a sugestão mais provável preenchida:
+- códigos antigos/incompletos: correspondência pela numeração quando o inventário usa vários (`DAR01` → `DAR 40-20`,
+  `DAR02` → `DAR 60-30`), senão o tipo mais usual na rodovia, na base de projetos ou na planilha de referência
+  (ex.: variante B das entradas `EDA`); entrada registrada com código de descida → a entrada que acompanha essa
+  descida na mesma rodovia; dimensão fora do álbum → a padronizada mais próxima;
+- SNV quando o inventário usa outra numeração que o cadastro de segmentos.
+Para cada uma: **Aplicar sugestão** (item ou grupo), editar o valor, trocar a alternativa ou **Dispensar**.
+Os botões têm balões de ajuda ao passar o mouse.
 
 ### Fórmulas reproduzidas (conferidas contra a planilha original)
 Pista: km de faixa = extensão × nº faixas; área = ext × 1000 × largura · Acostamento por revestimento (CA/TS) ·
@@ -70,7 +72,7 @@ No Claude Desktop: *Configurações → Desenvolvedor → Editar configuração*
 Ferramentas disponíveis: `listar_projetos`, `ler_projeto`, `criar_projeto`, `atualizar_projeto`, `alterar_trecho`,
 `listar_inventario`, `adicionar_itens_inventario`, `atualizar_item`, `remover_itens`, `importar_planilha`,
 `resumo_inventario`, `validar_inventario`, `gerar_aceiro`, `exportar_planilha_pato`, `exportar_inventario`,
-`categorias_inventario`, `analisar_inventario`, `listar_sugestoes`, `aplicar_sugestao`, `aplicar_sugestoes_em_lote`,
+`categorias_inventario`, `analisar_inventario` (aplica o certo, lista o resto), `listar_sugestoes` (Revisão/Ajustes), `aplicar_sugestao`, `aplicar_sugestoes_em_lote`,
 `dispensar_sugestao`, `desfazer_sugestao`, `exportar_original_corrigido`, e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 

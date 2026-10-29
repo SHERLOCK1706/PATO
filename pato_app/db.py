@@ -43,6 +43,7 @@ CREATE TABLE IF NOT EXISTS sugestao (
   projeto_id INTEGER NOT NULL, item_id INTEGER, tipo TEXT, origem TEXT, categoria TEXT,
   km_ini REAL, km_fim REAL, situacao TEXT, confianca TEXT, motivo TEXT, metodo TEXT,
   atual TEXT, mudancas TEXT, opcoes TEXT, status TEXT DEFAULT 'pendente', aplicado TEXT,
+  certa INTEGER DEFAULT 0, automatica INTEGER DEFAULT 0,
   criado_em TEXT DEFAULT CURRENT_TIMESTAMP, resolvido_em TEXT
 );
 CREATE INDEX IF NOT EXISTS ix_sug_proj ON sugestao(projeto_id, status, tipo);
@@ -67,6 +68,10 @@ def conectar(caminho: Path | str | None = None) -> sqlite3.Connection:
     for c in CAMPOS_PROJETO:
         if c not in cols:  # migração de bancos antigos
             con.execute(f"ALTER TABLE projeto ADD COLUMN {c} {'REAL' if c in ('km_ini', 'km_fim', 'prazo') else 'TEXT'}")
+    cols_s = {r[1] for r in con.execute("PRAGMA table_info(sugestao)")}
+    for c in ("certa", "automatica"):
+        if c not in cols_s:
+            con.execute(f"ALTER TABLE sugestao ADD COLUMN {c} INTEGER DEFAULT 0")
     con.commit()
     return con
 
@@ -225,7 +230,7 @@ class Banco:
     def substituir_pendentes(self, pid: int, novas: list[dict], apagar: bool = True) -> int:
         """Apaga as sugestões pendentes (apagar=True) e grava as novas, exceto as já dispensadas antes."""
         cols = ["item_id", "tipo", "origem", "categoria", "km_ini", "km_fim", "situacao", "confianca", "motivo",
-                "metodo", "atual", "mudancas", "opcoes"]
+                "metodo", "atual", "mudancas", "opcoes", "certa"]
         with _lock, self.con:
             if apagar:
                 self.con.execute("DELETE FROM sugestao WHERE projeto_id = ? AND status = 'pendente'", (pid,))
@@ -242,10 +247,10 @@ class Banco:
             return n
 
     def resolver_sugestao(self, sid: int, status: str, aplicado: dict | None = None, atual: dict | None = None,
-                          item_id: int | None = None) -> None:
+                          item_id: int | None = None, automatica: bool = False) -> None:
         with _lock, self.con:
-            sets = ["status = ?", "aplicado = ?", "resolvido_em = CURRENT_TIMESTAMP"]
-            args = [status, json.dumps(aplicado, ensure_ascii=False) if aplicado is not None else None]
+            sets = ["status = ?", "aplicado = ?", "resolvido_em = CURRENT_TIMESTAMP", "automatica = ?"]
+            args = [status, json.dumps(aplicado, ensure_ascii=False) if aplicado is not None else None, int(automatica)]
             if atual is not None:
                 sets.append("atual = ?")
                 args.append(json.dumps(atual, ensure_ascii=False))
@@ -253,6 +258,11 @@ class Banco:
                 sets.append("item_id = ?")
                 args.append(item_id)
             self.con.execute(f"UPDATE sugestao SET {', '.join(sets)} WHERE id = ?", args + [sid])
+
+    def contagem_tipos(self) -> list[tuple[str, str, int]]:
+        """(categoria, tipo, quantidade) de todos os projetos — base para a sugestão 'mais usual'."""
+        return [tuple(r) for r in self.con.execute(
+            "SELECT categoria, tipo, COUNT(*) FROM item WHERE tipo IS NOT NULL GROUP BY categoria, tipo")]
 
     def historico(self, pid: int, limite: int = 50) -> list[dict]:
         rows = self.con.execute("SELECT * FROM historico WHERE projeto_id = ? ORDER BY id DESC LIMIT ?", (pid, limite))

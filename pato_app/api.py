@@ -154,10 +154,11 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     # ------------------------------------------------- revisão (sugestões)
     @app.post("/api/projetos/{pid}/sugestoes/analisar")
-    async def sug_analisar(pid: int, snv: UploadFile | None = File(default=None), versao: str | None = Form(default=None)):
+    async def sug_analisar(pid: int, snv: UploadFile | None = File(default=None), versao: str | None = Form(default=None),
+                           tolerancia: float = Form(default=1.0)):
         caminho = await _salvar_upload(snv) if snv and snv.filename else None
         try:
-            return sv.gerar_sugestoes(pid, caminho, versao or None)
+            return sv.gerar_sugestoes(pid, caminho, versao or None, max(0.05, tolerancia))
         finally:
             if caminho:
                 os.unlink(caminho)

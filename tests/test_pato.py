@@ -206,6 +206,12 @@ def test_correcoes_br174_e_snv(br174):
     assert sit[("CADASTRO TACHA, TACHÕES!403", "item")]["situacao"] == "removido"
     assert sit[("CADASTRO TACHA, TACHÕES!389", "km_fim")]["para"] == 503.46
     assert sit[("CADASTRO DE ÁREA ROÇADA!73", "snv")]["para"] == "174BMT0110 / 174BMT0112"
+    # regra do km informado: divergência de 1–2 km também é reposicionada (não fica para verificar)
+    assert sit[("CADASTRO DE SARJETA!58", "lat_ini")]["situacao"] == "corrigido"
+    assert not any(a["situacao"] == "verificar em campo" and a["campo"].startswith("lat") for a in an["acoes"])
+    # tolerância menor → mais pontos reposicionados
+    an2 = correcao.analisar(br174["projeto"], itens, tol_km=0.3)
+    assert sum(1 for a in an2["acoes"] if a["campo"].startswith("lat")) > sum(1 for a in an["acoes"] if a["campo"].startswith("lat"))
 
 
 def test_snv_oficial_csv(tmp_path, br174):
@@ -223,48 +229,44 @@ def test_snv_oficial_csv(tmp_path, br174):
     assert any("174BMT0100" in o for o in an["snv"]["observacoes"])
 
 
-def test_revisao_sugestoes(tmp_path, sv):
+def test_revisao_e_ajustes(tmp_path, sv):
     r = sv.importar_arquivo(str(BR174))
     pid = r["projeto"]["id"]
-    assert r["sugestoes"] > 0
-    # importação não altera nada: o meio-fio continua com a grafia original
+    assert r["ajustes_automaticos"] > 100 and r["sugestoes"] > 0
+    # certo → aplicado automaticamente e registrado em Ajustes
     mfc = sv.itens(pid, "MFC")[0]
-    assert mfc["tipo"] == "MFC03"
-    pend = sv.sugestoes(pid, "pendente")
-    s_mfc = next(s for s in pend if s["item_id"] == mfc["id"] and s["tipo"] == "padronização")
-    assert s_mfc["mudancas"] == {"tipo": "MFC 03"}
-    sv.aplicar_sugestao(s_mfc["id"])
-    assert sv.db.item(mfc["id"])["tipo"] == "MFC 03"
-    sv.desfazer_sugestao(s_mfc["id"])
-    assert sv.db.item(mfc["id"])["tipo"] == "MFC03"
-    # verificar em campo: escolhe uma alternativa
-    v = next(s for s in pend if s["situacao"] == "verificar em campo" and s["opcoes"])
-    sv.aplicar_sugestao(v["id"], opcao=0)
-    assert sv.db.sugestao(v["id"])["status"] == "aplicada"
-    # EDA sem variante: valor informado pelo usuário
-    eda = next(s for s in pend if s["categoria"] == "EDA" and "variante" in s["motivo"])
-    sv.aplicar_sugestao(eda["id"], mudancas={"tipo": eda["opcoes"][1]["mudancas"]["tipo"]})
-    assert sv.db.item(eda["item_id"])["tipo"].endswith(" B")
-    # fora do trecho: remove e desfaz
-    rem = next(s for s in pend if s["mudancas"] == {"_excluir": True})
-    sv.aplicar_sugestao(rem["id"])
-    assert sv.db.item(rem["item_id"]) is None
-    sv.desfazer_sugestao(rem["id"])
-    assert sv.db.item(sv.db.sugestao(rem["id"])["item_id"]) is not None
-    # dispensada não volta numa nova análise
-    d = next(s for s in sv.sugestoes(pid, "pendente") if s["tipo"] == "padronização" and s["mudancas"])
-    sv.dispensar_sugestao(d["id"])
-    sv.gerar_sugestoes(pid)
-    assert not any(s["item_id"] == d["item_id"] and s["motivo"] == d["motivo"] for s in sv.sugestoes(pid, "pendente"))
-    # lote de confiança alta
-    lote = sv.aplicar_lote(pid, confianca="alta")
-    assert lote["aplicadas"] > 40
+    assert mfc["tipo"].startswith("MFC 0")
     tacha = next(i for i in sv.itens(pid, "TACHA") if i["origem"] == "CADASTRO TACHA, TACHÕES!26")
     assert tacha["lat_ini"] == pytest.approx(-14.7247)
+    aplicadas = sv.sugestoes(pid, "aplicada")
+    assert all(s_["automatica"] for s_ in aplicadas)
+    assert not any(i["origem"] == "CADASTRO TACHA, TACHÕES!403" for i in sv.itens(pid, "TACHA"))
+    # desfazer um ajuste automático volta o valor e a sugestão para a Revisão
+    aj = next(s_ for s_ in aplicadas if s_["item_id"] == mfc["id"])
+    sv.desfazer_sugestao(aj["id"])
+    assert sv.db.item(mfc["id"])["tipo"] == "MFC03" and sv.db.sugestao(aj["id"])["status"] == "pendente"
+    # pendentes já vêm com a sugestão mais assertiva preenchida
+    pend = sv.sugestoes(pid, "pendente")
+    d1 = next(s_ for s_ in pend if s_["atual"].get("tipo") == "DAR01")
+    d2 = next(s_ for s_ in pend if s_["atual"].get("tipo") == "DAR02")
+    assert d1["mudancas"]["tipo"] == "DAR 40-20" and d2["mudancas"]["tipo"] == "DAR 60-30"
+    e1 = next(s_ for s_ in pend if s_["atual"].get("tipo") == "EDA01")
+    assert e1["mudancas"]["tipo"] == "EDA 01 B"          # variante mais usual na referência
+    bstm = next(s_ for s_ in pend if s_["atual"].get("tipo") == "BSTM")
+    assert not bstm["mudancas"]                           # metálico: sem troca automática
+    # aplicar sugestão, aplicar com valor próprio, dispensar
+    sv.aplicar_sugestao(d1["id"])
+    assert sv.db.item(d1["item_id"])["tipo"] == "DAR 40-20"
+    sv.aplicar_sugestao(e1["id"], mudancas={"tipo": "EDA 01 A"})
+    assert sv.db.item(e1["item_id"])["tipo"] == "EDA 01 A"
+    sv.dispensar_sugestao(bstm["id"])
+    sv.gerar_sugestoes(pid)
+    assert not any(s_["item_id"] == bstm["item_id"] for s_ in sv.sugestoes(pid, "pendente"))
+    manuais = [s_ for s_ in sv.sugestoes(pid, "aplicada") if not s_["automatica"]]
+    assert {s_["id"] for s_ in manuais} >= {d1["id"], e1["id"]}
     # planilha original com valores (sem marcações)
     out = sv.exportar_original(pid)
     wb = openpyxl.load_workbook(out["arquivo"])
     c = wb["CADASTRO TACHA, TACHÕES"]["F26"]
     assert c.value == pytest.approx(-14.7247) and c.fill.fgColor.rgb in (None, "00000000")
-    assert "LOG" not in " ".join(wb.sheetnames).upper()
     wb.close()

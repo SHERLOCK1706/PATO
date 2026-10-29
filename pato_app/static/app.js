@@ -34,6 +34,7 @@ function irAba(nome) {
   if (nome === "alertas") renderAlertas();
   if (nome === "projeto") renderProjeto();
   if (nome === "revisao") carregarSugestoes();
+  if (nome === "ajustes") carregarAjustes();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -94,6 +95,7 @@ function renderPainel() {
   const na = R.n_alertas.erro || 0;
   $("#nAlertas").textContent = na ? na : "";
   $("#nSug").textContent = R.sugestoes_pendentes || "";
+  $("#nAj").textContent = R.ajustes_aplicados || "";
 }
 
 // ---------------------------------------------------------------- inventário
@@ -136,7 +138,7 @@ function renderItens() {
     cols.map(c => `<th>${esc(R[c] || c)}</th>`).join("") + meds.map(m => `<th class="n">${esc(E.cat.medidas[m] || m)} (${esc(E.cat.unidades[m] || "")})</th>`).join("") + `</tr></thead><tbody>`;
   for (const it of pag) {
     h += `<tr data-id="${it.id}"><td><input type="checkbox" class="selItem" ${E.sel.has(it.id) ? "checked" : ""} aria-label="Selecionar"></td>
-      <td><button class="btn" data-mapa="${it.id}" title="Ver no mapa">⌖</button></td>`;
+      <td><button class="btn" data-mapa="${it.id}" data-dica="Mostra o item no mapa">⌖</button></td>`;
     for (const c of cols) {
       const v = BASE.includes(c) || c === "obs" ? it[c] : it.dados[c];
       h += `<td contenteditable="true" data-campo="${c}" class="${typeof v === "number" ? "n" : ""}">${esc(nfEd(v))}</td>`;
@@ -235,7 +237,7 @@ function popup(p) {
   const linhas = Object.entries(p).filter(([k, v]) => !["cor", "categoria", "id", "projeto_id", "estimado", "ordem"].includes(k) && v !== null && v !== "")
     .map(([k, v]) => `<tr><td>${esc(E.cat.rotulos[k] || k.replace("calc_", "= "))}</td><td><b>${esc(typeof v === "number" ? nf(v, 6) : v)}</b></td></tr>`).join("");
   return `<b>${esc(nome)}</b>${p.estimado ? ' <span class="tag">posição estimada</span>' : ""}<table>${linhas}</table>
-    <button class="btn" onclick="iniciarPosicionar(${p.id}, 'ini')">Definir coordenada ${p.km_fim != null ? "inicial" : ""} no mapa</button>
+    <button class="btn" data-dica="Clique depois no mapa para gravar a coordenada" onclick="iniciarPosicionar(${p.id}, 'ini')">Definir coordenada ${p.km_fim != null ? "inicial" : ""} no mapa</button>
     ${p.km_fim != null ? `<button class="btn" onclick="iniciarPosicionar(${p.id}, 'fim')">final</button>` : ""}`;
 }
 window.iniciarPosicionar = (id, ponta) => {
@@ -270,120 +272,143 @@ function renderAlertas() {
   const lst = A.filter(a => a.nivel === E.alertaNivel).slice(0, 1000);
   $("#tabAlertas").innerHTML = "<tr><th>Nível</th><th>Categoria</th><th>Mensagem</th><th></th></tr>" + lst.map(a =>
     `<tr><td><span class="tag ${a.nivel}">${a.nivel}</span></td><td>${esc(E.cat.categorias[a.categoria].nome)}</td><td>${esc(a.mensagem)}</td>
-     <td><button class="btn" data-mapa="${a.id}">Ver no mapa</button></td></tr>`).join("");
+     <td><button class="btn" data-mapa="${a.id}" data-dica="Abre o mapa centralizado neste item">Ver no mapa</button></td></tr>`).join("");
   $$("#tabAlertas [data-mapa]").forEach(b => b.onclick = () => verNoMapa(+b.dataset.mapa));
 }
 
-// ---------------------------------------------------------------- revisão (sugestões)
+// ---------------------------------------------------------------- revisão e ajustes
 const SIT_CLS = { "corrigido": "sit-corrigido", "corrigido — conferir": "sit-conferir", "recortado": "sit-recortado",
   "removido": "sit-removido", "verificar em campo": "sit-verificar", "padronizado": "sit-corrigido",
   "padronizado — conferir": "sit-conferir", "fora do padrão — verificar": "sit-verificar" };
-const R_ = { sugStatus: "pendente", sugTipo: null, lista: [], resumo: null, abertos: new Set() };
-const fmtV = v => v === null || v === undefined ? "—" : typeof v === "object" ? (v._excluir ? "retirar do inventário" : JSON.stringify(v)) : String(v);
+const R_ = { rev: { status: "pendente", tipo: null, lista: [] }, aj: { modo: "todos", tipo: null, lista: [] }, resumo: null, abertos: new Set() };
+const fmtV = v => v === null || v === undefined || v === "" ? "—" : typeof v === "object" ? (v._excluir ? "retirar do inventário" : JSON.stringify(v)) : String(v);
+const TIPOS_SUG = [[null, "Todas"], ["correção", "Coordenadas / trecho / SNV"], ["padronização", "Nomenclatura (álbum DNIT)"], ["SNV", "Cadastro SNV"]];
 
 async function carregarSugestoes() {
   if (!E.pid) return;
-  const q = new URLSearchParams({ status: R_.sugStatus }); if (R_.sugTipo) q.set("tipo", R_.sugTipo);
+  const q = new URLSearchParams({ status: R_.rev.status }); if (R_.rev.tipo) q.set("tipo", R_.rev.tipo);
   const r = await api(`/api/projetos/${E.pid}/sugestoes?${q}`);
-  R_.lista = r.sugestoes; R_.resumo = r.resumo;
-  $("#nSug").textContent = r.resumo.pendentes || "";
-  renderSnv(r.resumo.snv); renderSugestoes();
+  R_.rev.lista = r.sugestoes; R_.resumo = r.resumo;
+  atualizarContadores(); renderSnv(r.resumo.snv);
+  montarLista("rev");
+}
+async function carregarAjustes() {
+  if (!E.pid) return;
+  const q = new URLSearchParams({ status: "aplicada" }); if (R_.aj.tipo) q.set("tipo", R_.aj.tipo);
+  const r = await api(`/api/projetos/${E.pid}/sugestoes?${q}`);
+  R_.resumo = r.resumo;
+  R_.aj.lista = r.sugestoes.filter(s => R_.aj.modo === "todos" || (R_.aj.modo === "auto" ? s.automatica : !s.automatica));
+  atualizarContadores(); montarLista("aj");
+}
+function atualizarContadores() {
+  const R = R_.resumo; if (!R) return;
+  $("#nSug").textContent = R.pendentes || "";
+  $("#nAj").textContent = (R.automaticas + R.manuais) || "";
+  const disp = R.contagem.filter(c => c.status === "dispensada").reduce((a, c) => a + c.n, 0);
+  $("#chipsStatus").innerHTML = [["pendente", "Pendentes", R.pendentes, "Correções que precisam da sua decisão"], ["dispensada", "Dispensadas", disp, "Sugestões que você decidiu não aplicar"]].map(([k, r, n, d]) =>
+    `<span class="chip ${R_.rev.status === k ? "ativo" : ""}" data-st="${k}" data-dica="${d}">${r} <span class="q">${n || 0}</span></span>`).join("");
+  $$("#chipsStatus .chip").forEach(c => c.onclick = () => { R_.rev.status = c.dataset.st; carregarSugestoes(); });
+  for (const [alvo, est, fn] of [["#chipsTipoSug", R_.rev, carregarSugestoes], ["#chipsTipoAj", R_.aj, carregarAjustes]]) {
+    $(alvo).innerHTML = TIPOS_SUG.map(([k, r]) => `<span class="chip ${est.tipo === k ? "ativo" : ""}" data-tp="${k ?? ""}" data-dica="Filtrar por tipo de verificação">${r}</span>`).join("");
+    $$(`${alvo} .chip`).forEach(c => c.onclick = () => { est.tipo = c.dataset.tp || null; fn(); });
+  }
+  $("#chipsModoAj").innerHTML = [["todos", "Todos", R.automaticas + R.manuais, "Todos os ajustes aplicados"], ["auto", "Automáticos", R.automaticas, "Corrigidos pelo sistema por serem certos (regra do km informado, digitação, grafia do álbum)"],
+    ["manual", "Por você", R.manuais, "Aplicados por você na aba Revisão"]].map(([k, r, n, d]) =>
+    `<span class="chip ${R_.aj.modo === k ? "ativo" : ""}" data-md="${k}" data-dica="${d}">${r} <span class="q">${n || 0}</span></span>`).join("");
+  $$("#chipsModoAj .chip").forEach(c => c.onclick = () => { R_.aj.modo = c.dataset.md; carregarAjustes(); });
+  $("#btnLoteSug").style.display = R_.rev.status === "pendente" ? "" : "none";
 }
 function renderSnv(S) {
   if (!S) { $("#infoSnv").innerHTML = ""; return; }
   const tab = t => `<table class="tab"><tr><th>Código</th><th class=n>km inicial</th><th class=n>km final</th></tr>` +
     t.map(x => `<tr><td>${esc(x.codigo)}</td><td class=n>${nf(x.km_ini, 3)}</td><td class=n>${nf(x.km_fim, 3)}</td></tr>`).join("") + "</table>";
-  $("#infoSnv").innerHTML = `<details style="margin-top:8px" ${S.observacoes.length ? "open" : ""}><summary><b>SNV</b> — versão declarada ${esc(S.versao_inventario || "—")} ·
+  $("#infoSnv").innerHTML = `<details style="margin-top:8px"><summary><b>SNV</b> — versão declarada ${esc(S.versao_inventario || "—")} ·
       referência: ${esc(S.fonte_referencia)} · ${Math.round(S.concordancia * 100)}% dos itens coerentes com o cadastro de segmentos</summary>
     ${S.observacoes.map(o => `<p class="nota">• ${esc(o)}</p>`).join("")}
     <div class="grade2"><div><h4>Cadastro de segmentos do inventário</h4>${tab(S.cadastro_segmentos)}</div><div><h4>Referência</h4>${tab(S.tabela_referencia)}</div></div></details>`;
 }
-function grupos() {
+function agrupar(lista) {
   const g = new Map();
-  for (const s of R_.lista) {
+  for (const s of lista) {
     const k = [s.tipo, s.situacao, s.categoria, s.tipo === "padronização" ? s.motivo + JSON.stringify(s.atual) : s.motivo.replace(/[\d.,]+/g, "#"),
-      JSON.stringify(s.mudancas), (s.opcoes || []).map(o => o.rotulo.replace(/[\d.,-]+/g, "#")).join(";")].join("|");
+      JSON.stringify(s.status === "aplicada" ? s.aplicado : s.mudancas), s.automatica ? 1 : 0].join("|");
     if (!g.has(k)) g.set(k, []);
     g.get(k).push(s);
   }
   return [...g.entries()].sort((a, b) => b[1].length - a[1].length);
 }
-function renderSugestoes() {
-  const cont = {};
-  for (const c of R_.resumo.contagem) cont[c.status] = (cont[c.status] || 0) + c.n;
-  $("#chipsStatus").innerHTML = [["pendente", "Pendentes"], ["aplicada", "Aplicadas"], ["dispensada", "Dispensadas"]].map(([k, r]) =>
-    `<span class="chip ${R_.sugStatus === k ? "ativo" : ""}" data-st="${k}">${r} <span class="q">${cont[k] || 0}</span></span>`).join("");
-  $("#chipsTipoSug").innerHTML = [[null, "Todas"], ["correção", "Correções (SNV / coordenadas / trecho)"], ["padronização", "Nomenclatura (álbum DNIT)"], ["SNV", "Cadastro SNV"]].map(([k, r]) =>
-    `<span class="chip ${R_.sugTipo === k ? "ativo" : ""}" data-tp="${k ?? ""}">${r}</span>`).join("");
-  $$("#chipsStatus .chip").forEach(c => c.onclick = () => { R_.sugStatus = c.dataset.st; carregarSugestoes(); });
-  $$("#chipsTipoSug .chip").forEach(c => c.onclick = () => { R_.sugTipo = c.dataset.tp || null; carregarSugestoes(); });
-  $("#btnLoteAlta").style.display = R_.sugStatus === "pendente" ? "" : "none";
-  const G = grupos();
-  $("#infoSug").textContent = `${R_.lista.length} sugestões em ${G.length} grupos. Clique num grupo para ver e ajustar item a item.`;
-  $("#listaSug").innerHTML = G.map(([k, lst], gi) => {
-    const s0 = lst[0], aberto = R_.abertos.has(k) || lst.length === 1;
-    const temCorr = s0.mudancas && Object.keys(s0.mudancas).length;
-    const mud = temCorr ? Object.entries(s0.mudancas).filter(([c]) => !c.startsWith("_") || c === "_excluir")
-      .map(([c, v]) => c === "_excluir" ? "retirar do inventário" : `${esc(c)}: ${esc(fmtV(s0.atual?.[c]))} → <b>${esc(fmtV(v))}</b>`).join(" · ")
-      : (s0.tipo === "padronização" && s0.atual ? Object.entries(s0.atual).map(([c, v]) => `${esc(c)} atual: <b>${esc(fmtV(v))}</b>`).join(" · ") + " · " : "")
-        + (s0.opcoes?.length ? `${s0.opcoes.length} alternativa(s) para escolher` : "sem correção automática — verificar em campo / dispensar");
-    const escolhaG = R_.sugStatus === "pendente" && !temCorr && s0.opcoes?.length && lst.length > 1
-      ? `<select data-gopc="${gi}"><option value="">— alternativa para o grupo —</option>${s0.opcoes.map((o, i) => `<option value="${i}">${esc(lst.length > 1 ? o.rotulo.replace(/\(.*\)/, "") : o.rotulo)}</option>`).join("")}</select>
-         <button class="btn primario" data-gapo="${gi}">Aplicar ao grupo (${lst.length})</button>` : "";
-    const acoesG = R_.sugStatus === "pendente" ? `${temCorr ? `<button class="btn primario" data-gap="${gi}">Aplicar ${lst.length > 1 ? `ao grupo (${lst.length})` : ""}</button>` : escolhaG}
-       <button class="btn" data-gdis="${gi}">Dispensar${lst.length > 1 ? " grupo" : ""}</button>` : "";
-    return `<div class="grupo-sug ${aberto ? "aberto" : ""}" data-g="${gi}">
-      <div class="cab"><div><span class="tag ${SIT_CLS[s0.situacao] || ""}">${esc(s0.situacao)}</span><br><small>${esc(s0.tipo)}${s0.confianca && s0.confianca !== "—" ? " · confiança " + esc(s0.confianca) : ""}</small></div>
+function resumoMud(s) {
+  const m = s.status === "aplicada" ? s.aplicado : s.mudancas;
+  if (!m || !Object.keys(m).length) return null;
+  if (m._excluir) return "retirado do inventário (fora do trecho)";
+  if (m._segmentos) return "cadastro de segmentos substituído pelo SNV oficial";
+  return Object.entries(m).filter(([c]) => !c.startsWith("_")).map(([c, v]) => `${esc(E.cat.rotulos[c] || c)}: ${esc(fmtV(s.atual?.[c]))} → <b>${esc(fmtV(v))}</b>`).join(" · ");
+}
+function montarLista(modo) {
+  const est = modo === "rev" ? R_.rev : R_.aj, cont = $(modo === "rev" ? "#listaSug" : "#listaAj"), info = $(modo === "rev" ? "#infoSug" : "#infoAj");
+  const G = agrupar(est.lista), pend = modo === "rev" && est.status === "pendente";
+  info.textContent = modo === "rev"
+    ? `${est.lista.length} ${est.status === "pendente" ? "decisões pendentes" : "sugestões dispensadas"} em ${G.length} grupos.`
+    : `${est.lista.length} ajustes em ${G.length} grupos.`;
+  cont.innerHTML = G.map(([k, lst], gi) => {
+    const s0 = lst[0], aberto = R_.abertos.has(modo + k) || lst.length === 1;
+    const mud = resumoMud(s0);
+    const alt = !mud && s0.opcoes?.length ? `${s0.opcoes.length} alternativa(s)` : (!mud ? "sem correção possível — informe o valor no item ou dispense" : "");
+    let acoes = "";
+    if (pend) acoes = (mud ? `<button class="btn primario" data-gap="${gi}" data-dica="Aplica a correção sugerida ${lst.length > 1 ? "a todos os itens do grupo" : "a este item"}">Aplicar sugestão${lst.length > 1 ? ` (${lst.length})` : ""}</button>` : "")
+      + `<button class="btn" data-gdis="${gi}" data-dica="Não aplica; a sugestão não volta em novas análises (pode ser reaberta em Dispensadas)">Dispensar${lst.length > 1 ? " grupo" : ""}</button>`;
+    else if (modo === "rev") acoes = `<button class="btn" data-gdesf="${gi}" data-dica="Volta as sugestões para Pendentes">Reabrir${lst.length > 1 ? " grupo" : ""}</button>`;
+    else acoes = `<button class="btn" data-gdesf="${gi}" data-dica="Restaura os valores anteriores e devolve a sugestão para a Revisão">Desfazer${lst.length > 1 ? ` (${lst.length})` : ""}</button>`;
+    return `<div class="grupo-sug ${aberto ? "aberto" : ""}">
+      <div class="cab"><div><span class="tag ${SIT_CLS[s0.situacao] || ""}">${esc(s0.situacao)}</span><br><small>${esc(s0.tipo)}${s0.confianca && s0.confianca !== "—" ? " · confiança " + esc(s0.confianca) : ""}${modo === "aj" ? (s0.automatica ? " · automático" : " · por você") : ""}</small></div>
         <div><b>${esc(E.cat.categorias[s0.categoria]?.nome || s0.categoria)}</b><br><small>${lst.length} item(ns)</small></div>
-        <div style="cursor:pointer" data-abre="${gi}">${esc(lst.length > 1 ? s0.motivo.replace(/km ≈?[\d.,]+/g, "km …") : s0.motivo)}<div class="mud">${mud}</div></div>
-        <div class="linha-botoes" style="margin:0">${acoesG}</div></div>
-      <div class="itens">${aberto ? lst.slice(0, 300).map(itemSug).join("") + (lst.length > 300 ? `<p class="nota">… e mais ${lst.length - 300}</p>` : "") : ""}</div></div>`;
-  }).join("") || `<p class="nota">Nenhuma sugestão ${R_.sugStatus}. ${R_.sugStatus === "pendente" ? "Use “Analisar novamente” após alterar o inventário." : ""}</p>`;
-  $$("[data-abre]").forEach(el => el.onclick = () => { const k = grupos()[+el.dataset.abre][0]; R_.abertos.has(k) ? R_.abertos.delete(k) : R_.abertos.add(k); renderSugestoes(); });
-  $$("[data-gap]").forEach(b => b.onclick = async () => {
-    const lst = grupos()[+b.dataset.gap][1];
+        <div style="cursor:pointer" data-abre="${gi}" data-dica="Clique para ver e ajustar item a item">${esc(lst.length > 1 ? s0.motivo.replace(/km ≈[\d.,]+/g, "km ≈…") : s0.motivo)}<div class="mud">${mud || alt}</div></div>
+        <div class="linha-botoes" style="margin:0">${acoes}</div></div>
+      <div class="itens">${aberto ? lst.slice(0, 300).map(s => itemSug(s, modo)).join("") + (lst.length > 300 ? `<p class="nota">… e mais ${lst.length - 300}</p>` : "") : ""}</div></div>`;
+  }).join("") || `<p class="nota">${modo === "rev" ? (est.status === "pendente" ? "Nenhuma decisão pendente. 🎉" : "Nenhuma sugestão dispensada.") : "Nenhum ajuste aplicado."}</p>`;
+  $$("[data-abre]", cont).forEach(el => el.onclick = () => { const k = modo + G[+el.dataset.abre][0]; R_.abertos.has(k) ? R_.abertos.delete(k) : R_.abertos.add(k); montarLista(modo); });
+  const recarregar = async () => { E.geo = null; await carregarResumo(); modo === "rev" ? carregarSugestoes() : carregarAjustes(); };
+  $$("[data-gap]", cont).forEach(b => b.onclick = async () => {
+    const lst = G[+b.dataset.gap][1];
     if (lst.length > 1 && !confirm(`Aplicar a correção sugerida a ${lst.length} itens?`)) return;
     const r = await jpost(`/api/projetos/${E.pid}/sugestoes/aplicar-lote`, { ids: lst.map(s => s.id) });
-    toast(`${r.aplicadas} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
+    toast(`${r.aplicadas} aplicada(s) — veja na aba Ajustes`); recarregar();
   });
-  $$("[data-gapo]").forEach(b => b.onclick = async () => {
-    const gi = +b.dataset.gapo, sel = $(`[data-gopc="${gi}"]`);
-    if (!sel || sel.value === "") return toast("Escolha a alternativa para o grupo.");
-    const lst = grupos()[gi][1];
-    if (!confirm(`Aplicar “${sel.selectedOptions[0].textContent.trim()}” a ${lst.length} itens?`)) return;
-    let ok = 0;
-    for (const s of lst) { try { await jpost(`/api/sugestoes/${s.id}/aplicar`, { opcao: +sel.value }); ok++; } catch (e) { /* segue */ } }
-    toast(`${ok} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
-  });
-  $$("[data-gdis]").forEach(b => b.onclick = async () => {
-    const lst = grupos()[+b.dataset.gdis][1];
+  $$("[data-gdis]", cont).forEach(b => b.onclick = async () => {
+    const lst = G[+b.dataset.gdis][1];
     for (const s of lst) await jpost(`/api/sugestoes/${s.id}/dispensar`, {});
-    toast(`${lst.length} dispensada(s)`); carregarSugestoes();
+    toast(`${lst.length} dispensada(s)`); recarregar();
   });
-  $$(".item-sug").forEach(ligarItemSug);
+  $$("[data-gdesf]", cont).forEach(b => b.onclick = async () => {
+    const lst = G[+b.dataset.gdesf][1];
+    if (lst.length > 1 && !confirm(`Desfazer ${lst.length} ajustes?`)) return;
+    for (const s of lst) { try { await jpost(`/api/sugestoes/${s.id}/desfazer`, {}); } catch (e) { /* segue */ } }
+    toast(`${lst.length} desfeito(s) — voltaram para a Revisão`); recarregar();
+  });
+  $$(".item-sug", cont).forEach(el => ligarItemSug(el, modo, recarregar));
 }
-function itemSug(s) {
-  const campos = Object.keys({ ...(s.atual || {}), ...(s.mudancas || {}) }).filter(c => !c.startsWith("_"));
-  const opc = (s.opcoes || []).map((o, i) => `<option value="${i}">${esc(o.rotulo)}</option>`).join("");
+function itemSug(s, modo) {
+  const campos = Object.keys({ ...(s.atual || {}), ...(s.mudancas || {}), ...(s.aplicado || {}) }).filter(c => !c.startsWith("_"));
   const pend = s.status === "pendente";
-  const exclui = s.mudancas?._excluir;
+  const opc = (s.opcoes || []).map((o, i) => `<option value="${i}">${esc(o.rotulo)}</option>`).join("");
+  const exclui = (pend ? s.mudancas : s.aplicado)?._excluir;
   return `<div class="item-sug" data-id="${s.id}">
     <div><b>${esc(s.origem || "—")}</b><br><small>km ${nf(s.km_ini, 3)}${s.km_fim != null ? "–" + nf(s.km_fim, 3) : ""}</small>
-      ${s.tipo !== "padronização" || s.situacao.startsWith("fora") ? `<br><small>${esc(s.motivo)}</small>` : ""}</div>
+      <br><small>${esc(s.motivo)}</small></div>
     <div class="campos-sug">${exclui ? `<span class="tag sit-removido">retirar do inventário (fora do trecho)</span>` : ""}
       ${campos.map(c => {
-        const sug = (pend ? s.mudancas?.[c] : s.aplicado?.[c]);
+        const v = pend ? s.mudancas?.[c] : s.aplicado?.[c];
         return `<label>${esc(E.cat.rotulos[c] || c)}<span class="de">${esc(fmtV(s.atual?.[c]))}</span>
-          <input data-campo="${c}" value="${esc(sug ?? "")}" ${pend ? "" : "disabled"} placeholder="${pend ? "novo valor" : ""}"></label>`;
+          <input data-campo="${c}" value="${esc(v ?? "")}" ${pend ? "" : "disabled"} placeholder="${pend ? "novo valor" : ""}" ${pend ? 'data-dica="Valor sugerido — pode editar antes de aplicar"' : ""}></label>`;
       }).join("")}
-      ${pend && opc ? `<label>Alternativas<select data-opc><option value="">— escolher —</option>${opc}</select></label>` : ""}</div>
+      ${pend && opc ? `<label>Alternativas<select data-opc data-dica="Outras opções do álbum / da análise; a primeira é a sugerida"><option value="">— trocar a sugestão —</option>${opc}</select></label>` : ""}</div>
     <div class="linha-botoes" style="margin:0">
-      ${pend ? `<button class="btn primario" data-ap>Aplicar</button><button class="btn" data-dis>Dispensar</button>`
-             : `<button class="btn" data-desf>Desfazer</button>`}
-      ${s.item_id ? `<button class="btn" data-mapa="${s.item_id}">Mapa</button>` : ""}</div></div>`;
+      ${pend ? `<button class="btn primario" data-ap data-dica="Grava no inventário o valor mostrado nos campos">Aplicar</button><button class="btn" data-dis data-dica="Não aplica esta sugestão">Dispensar</button>`
+             : `<button class="btn" data-desf data-dica="${s.status === "aplicada" ? "Restaura os valores anteriores" : "Volta para Pendentes"}">${s.status === "aplicada" ? "Desfazer" : "Reabrir"}</button>`}
+      ${s.item_id ? `<button class="btn" data-mapa="${s.item_id}" data-dica="Mostra o item no mapa">Mapa</button>` : ""}</div></div>`;
 }
-function ligarItemSug(el) {
-  const id = +el.dataset.id, s = R_.lista.find(x => x.id === id);
+function ligarItemSug(el, modo, recarregar) {
+  const id = +el.dataset.id, lista = modo === "rev" ? R_.rev.lista : R_.aj.lista, s = lista.find(x => x.id === id);
   const sel = $("[data-opc]", el);
   if (sel) sel.onchange = () => {
     if (sel.value === "") return;
@@ -393,16 +418,15 @@ function ligarItemSug(el) {
   const ap = $("[data-ap]", el);
   if (ap) ap.onclick = async () => {
     let mudancas = {};
-    if (sel && sel.value !== "" && s.opcoes[+sel.value].mudancas._excluir) mudancas = { _excluir: true };
-    else if (s.mudancas?._excluir) mudancas = { _excluir: true };
+    if ((sel && sel.value !== "" && s.opcoes[+sel.value].mudancas._excluir) || s.mudancas?._excluir) mudancas = { _excluir: true };
     else $$("input[data-campo]", el).forEach(i => { if (i.value !== "" && String(i.value) !== String(s.atual?.[i.dataset.campo] ?? "")) mudancas[i.dataset.campo] = i.value; });
     if (!Object.keys(mudancas).length) return toast("Informe o novo valor ou escolha uma alternativa.");
-    try { await jpost(`/api/sugestoes/${id}/aplicar`, { mudancas }); toast("Aplicada"); E.geo = null; await carregarResumo(); carregarSugestoes(); } catch (e) { erro(e); }
+    try { await jpost(`/api/sugestoes/${id}/aplicar`, { mudancas }); toast("Aplicada — registrada em Ajustes"); recarregar(); } catch (e) { erro(e); }
   };
   const dis = $("[data-dis]", el);
-  if (dis) dis.onclick = async () => { await jpost(`/api/sugestoes/${id}/dispensar`, {}); carregarSugestoes(); };
+  if (dis) dis.onclick = async () => { await jpost(`/api/sugestoes/${id}/dispensar`, {}); recarregar(); };
   const desf = $("[data-desf]", el);
-  if (desf) desf.onclick = async () => { try { await jpost(`/api/sugestoes/${id}/desfazer`, {}); toast("Desfeita"); E.geo = null; await carregarResumo(); carregarSugestoes(); } catch (e) { erro(e); } };
+  if (desf) desf.onclick = async () => { try { await jpost(`/api/sugestoes/${id}/desfazer`, {}); toast("Desfeito"); recarregar(); } catch (e) { erro(e); } };
   const mp = $("[data-mapa]", el);
   if (mp) mp.onclick = () => verNoMapa(+mp.dataset.mapa);
 }
@@ -410,15 +434,41 @@ $("#btnAnalisar").onclick = async () => {
   const fd = new FormData();
   if ($("#arqSnv").files[0]) fd.append("snv", $("#arqSnv").files[0]);
   if ($("#verSnv").value) fd.append("versao", $("#verSnv").value);
+  fd.append("tolerancia", $("#tolKm").value || "1");
   $("#infoSug").textContent = "Analisando…";
-  try { const r = await api(`/api/projetos/${E.pid}/sugestoes/analisar`, { method: "POST", body: fd }); R_.sugStatus = "pendente"; toast(`${r.pendentes} sugestões pendentes`); carregarSugestoes(); }
-  catch (e) { erro(e); }
+  try {
+    const r = await api(`/api/projetos/${E.pid}/sugestoes/analisar`, { method: "POST", body: fd });
+    R_.rev.status = "pendente"; toast(`${r.aplicadas_automaticamente} ajustes automáticos · ${r.pendentes} decisões pendentes`);
+    E.geo = null; await carregarResumo(); carregarSugestoes();
+  } catch (e) { erro(e); }
 };
-$("#btnLoteAlta").onclick = async () => {
-  if (!confirm("Aplicar todas as sugestões pendentes de confiança alta?")) return;
-  const r = await jpost(`/api/projetos/${E.pid}/sugestoes/aplicar-lote`, { confianca: "alta", tipo: R_.sugTipo });
-  toast(`${r.aplicadas} aplicada(s)`); E.geo = null; await carregarResumo(); carregarSugestoes();
+$("#btnLoteSug").onclick = async () => {
+  const n = R_.rev.lista.filter(s => s.mudancas && Object.keys(s.mudancas).length).length;
+  if (!n) return toast("Nenhuma sugestão com correção definida.");
+  if (!confirm(`Aplicar as ${n} sugestões mostradas que têm correção definida?`)) return;
+  const r = await jpost(`/api/projetos/${E.pid}/sugestoes/aplicar-lote`, { ids: R_.rev.lista.map(s => s.id) });
+  toast(`${r.aplicadas} aplicada(s) — veja na aba Ajustes`); E.geo = null; await carregarResumo(); carregarSugestoes();
 };
+
+// ---------------------------------------------------------------- balões de ajuda
+(() => {
+  const b = document.createElement("div"); b.className = "balao"; document.body.appendChild(b);
+  let alvo = null;
+  document.addEventListener("mouseover", e => {
+    const el = e.target.closest("[data-dica]");
+    if (el === alvo) return;
+    alvo = el;
+    if (!el) { b.classList.remove("ver"); return; }
+    b.textContent = el.dataset.dica;
+    const r = el.getBoundingClientRect();
+    b.classList.add("ver");
+    const w = b.offsetWidth, h = b.offsetHeight;
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), innerWidth - w - 8);
+    let y = r.top - h - 8; if (y < 8) y = r.bottom + 8;
+    b.style.left = x + "px"; b.style.top = y + "px";
+  });
+  document.addEventListener("scroll", () => { b.classList.remove("ver"); alvo = null; }, true);
+})();
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {
@@ -484,7 +534,7 @@ async function enviarPrevia(arq) {
         <label style="display:flex;flex-direction:column;gap:3px;margin:8px 0;font-size:12px">Nome do projeto
           <input name="nome" value="${esc([p.rodovia, p.segmento].filter(Boolean).join(" "))}"></label>
         <h4>Categorias</h4><div class="chips" style="flex-direction:column;gap:2px">${cats}</div>
-        <div class="linha-botoes"><button class="btn primario">Confirmar importação</button></div></form></div>
+        <div class="linha-botoes"><button class="btn primario" data-dica="Grava os itens; o sistema já aplica as correções certas e lista as decisões na aba Revisão">Confirmar importação</button></div></form></div>
       <h4>Nomenclatura × Álbum DNIT (IPR-736) — sugestões que irão para a aba Revisão</h4>
       ${r.padronizacao.length ? `<div class="tabela-rolagem" style="max-height:300px"><table class="tab"><tr><th>Situação</th><th>Cat.</th><th>Original</th><th>Padrão</th><th class=n>Qtde</th><th>Regra</th></tr>` +
         r.padronizacao.map(x => `<tr class="${x.situacao.startsWith("fora") ? "sit-verificar" : x.situacao.includes("conferir") ? "sit-conferir" : "sit-corrigido"}"><td>${esc(x.situacao)}</td><td>${esc(x.categoria)}</td>
@@ -498,7 +548,7 @@ async function enviarPrevia(arq) {
       const f = e.target, modo = f.modo.value;
       const categorias = $$("input[name=cat]:checked", f).map(c => c.value);
       const res = await jpost("/api/importar/confirmar", { token: r.token, modo, nome: f.nome.value, projeto_id: modo === "novo" ? null : E.pid, categorias });
-      box.innerHTML = `<p class="ok-msg">${res.importados} itens importados em “${esc(res.projeto.nome)}”. ${res.sugestoes} sugestões de correção aguardando revisão (aba Revisão).</p>`;
+      box.innerHTML = `<p class="ok-msg">${res.importados} itens importados em “${esc(res.projeto.nome)}”. ${res.ajustes_automaticos} ajustes automáticos (aba Ajustes) e ${res.sugestoes} decisões pendentes (aba Revisão).</p>`;
       E.geo = null; await carregarProjetos(res.projeto.id); irAba("painel");
     };
   } catch (e) { box.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
@@ -513,7 +563,7 @@ $("#btnExpPato").onclick = async () => {
   fd.append("limpar_ausentes", $("#chkLimpar").checked);
   try {
     const r = await api(`/api/projetos/${E.pid}/exportar/pato`, { method: "POST", body: fd });
-    box.innerHTML = `<div class="linha-botoes">${linkBaixar(r)}<button class="btn" id="btnConferir">Conferir totais (LibreOffice)</button></div>
+    box.innerHTML = `<div class="linha-botoes">${linkBaixar(r)}<button class="btn" id="btnConferir" data-dica="Recalcula a planilha gerada (LibreOffice) e mostra os totais do PATO">Conferir totais (LibreOffice)</button></div>
       <div class="log">${r.log.map(l => `<div>${esc(l)}</div>`).join("")}</div><div id="totais"></div>`;
     $("#btnConferir").onclick = async () => {
       $("#totais").innerHTML = `<p class="carregando">Recalculando a planilha (pode levar ~1 min)…</p>`;

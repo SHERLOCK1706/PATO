@@ -22,7 +22,7 @@ from .calculo import ext_m
 from .catalogo import CATEGORIAS
 from .geo import Eixo, dist_km
 
-TOL_OK = 1.0      # km: divergência aceitável entre km declarado e coordenada (odômetro × GPS)
+TOL_OK = 1.0      # km: divergência aceitável (padrão) entre km informado e coordenada (odômetro × GPS)
 TOL_GRAVE = 2.0   # km: acima disso é erro
 TOL_DIGITO = 0.3  # km: candidato de correção de digitação precisa cair a até 300 m do eixo
 SEM_SNV = {"SEG", "ACEIRO"}  # categorias cujo cadastro não tem coluna SNV
@@ -205,7 +205,9 @@ def _r(v, n=6):
 
 
 def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = None,
-             versao_oficial: str | None = None) -> dict:
+             versao_oficial: str | None = None, tol_km: float = TOL_OK) -> dict:
+    """Regra geral: o km informado prevalece. Coordenadas que não correspondem ao km (além de `tol_km`)
+    são reposicionadas pelo eixo da rodovia no km informado (ou corrigidas, se for erro de digitação)."""
     eixo = Eixo(itens)
     acoes: list[dict] = []
     K0, K1 = projeto.get("km_ini"), projeto.get("km_fim")
@@ -244,13 +246,11 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                     pr = eixo.projetar(it["lat_ini"], it["lon_ini"])
                     if pr and pr[1] <= TOL_DIGITO and K0 + 0.2 <= pr[0] <= K1 - 0.2:
                         sug = round(pr[0], 3)
-                if sug is not None:
-                    acao(it, "km_ini", a, None, f"km {a} fora do trecho ({K0}–{K1}), mas a coordenada está na rodovia no km ≈{sug}",
-                         "projeção da coordenada no eixo", "média", VERIFICAR, km_pela_coordenada=sug, ponta="ini")
-                else:
-                    acao(it, "item", f"km {a}" + (f"–{b}" if b is not None else ""), None,
-                         f"inteiramente fora do trecho (km {K0}–{K1})", "limite do segmento", "alta", REMOVIDO)
-                    removidos.add(it["id"])
+                obs_coord = (f"; a coordenada corresponde ao km ≈{sug}, mas prevalece o km informado" if sug is not None else "")
+                acao(it, "item", f"km {a}" + (f"–{b}" if b is not None else ""), None,
+                     f"inteiramente fora do trecho (km {K0}–{K1}){obs_coord}", "limite do segmento pelo km informado",
+                     "alta", REMOVIDO)
+                removidos.add(it["id"])
             elif b is not None and (lo < K0 - 0.001 or hi > K1 + 0.001):
                 for campo, k in (("km_ini", a), ("km_fim", b)):
                     lim = K0 if k < K0 else K1 if k > K1 else None
@@ -294,13 +294,13 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
             if esp is None:
                 continue
             if la is None or lo is None:
-                acao(it, f"lat_{p}", la, _r(esp[0]), "sem coordenada", "eixo no km declarado", "média", CONFERIR,
+                acao(it, f"lat_{p}", la, _r(esp[0]), "sem coordenada", "eixo no km informado", "alta", CORRIGIDO,
                      preencher=True)
-                acao(it, f"lon_{p}", lo, _r(esp[1]), "sem coordenada", "eixo no km declarado", "média", CONFERIR,
+                acao(it, f"lon_{p}", lo, _r(esp[1]), "sem coordenada", "eixo no km informado", "alta", CORRIGIDO,
                      preencher=True)
                 continue
             d = dist_km(esp, (la, lo))
-            if d <= TOL_OK:
+            if d <= tol_km:
                 continue
             pr = eixo.projetar(la, lo)
             lateral = pr[1] if pr else 99
@@ -314,33 +314,24 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                     if nlo != lo:
                         acao(it, f"lon_{p}", lo, _r(nlo), f"coordenada a {d:.1f} km da rodovia", m, "alta", CORRIGIDO)
                     continue
-            if d <= TOL_GRAVE:
-                acao(it, f"lat_{p}/lon_{p}", f"{la}, {lo}", None,
-                     f"coordenada e km divergem {d:.1f} km (coordenada corresponde ao km ≈{pr[0]:.3f})" if pr else
-                     f"coordenada a {d:.1f} km do eixo", "sem como decidir qual está certo", "—", VERIFICAR,
-                     km_pela_coordenada=round(pr[0], 3) if pr else None, pos_pelo_km=[_r(esp[0]), _r(esp[1])],
-                     ponta=p)
-                continue
-            # b) km confiável (continuidade / extensão) ou coordenada repetida de outro local → refaz a coordenada
+            # b) km informado prevalece → reposiciona a coordenada pelo eixo (continuidade / extensão) ou coordenada repetida de outro local → refaz a coordenada
             copiada = pr is not None and lateral <= TOL_DIGITO and any(
                 abs(kk - pr[0]) < 0.6 for kk in coords_por_ponto.get((round(la, 5), round(lo, 5)), ()))
             if lateral > TOL_DIGITO:
-                motivo, conf = f"coordenada fora da rodovia ({lateral:.1f} km do eixo)", "média"
+                motivo = f"coordenada fora da rodovia ({lateral:.1f} km do eixo); posicionada pelo km informado"
             elif geom == "linha" and continuo(it):
                 outra = "fim" if p == "ini" else "ini"
                 perto_outra = pr and novo[it["id"]].get(f"km_{outra}") is not None and abs(pr[0] - novo[it["id"]][f"km_{outra}"]) < 0.6
                 motivo = (f"coordenada {'inicial' if p == 'ini' else 'final'} registrada no km ≈{pr[0]:.3f}"
                           + (" (junto da outra ponta)" if perto_outra else "")
                           + "; km confirmado pela continuidade/extensão")
-                conf = "alta"
             elif copiada:
-                motivo, conf = f"coordenada repetida de outro ponto (km ≈{pr[0]:.3f})", "alta"
+                motivo = f"coordenada repetida de outro ponto (km ≈{pr[0]:.3f}); posicionada pelo km informado"
             else:
-                motivo, conf = (f"coordenada corresponde ao km ≈{pr[0]:.3f}, a {d:.1f} km do km declarado; "
-                                "mantido o km e reposicionado pelo eixo"), "média"
-            st = CORRIGIDO if conf == "alta" else CONFERIR
-            acao(it, f"lat_{p}", la, _r(esp[0]), motivo, "eixo no km declarado", conf, st)
-            acao(it, f"lon_{p}", lo, _r(esp[1]), motivo, "eixo no km declarado", conf, st)
+                motivo = (f"coordenada corresponde ao km ≈{pr[0]:.3f}, a {d:.1f} km do km informado; "
+                          "posicionada pelo km informado")
+            acao(it, f"lat_{p}", la, _r(esp[0]), motivo, "eixo no km informado", "alta", CORRIGIDO)
+            acao(it, f"lon_{p}", lo, _r(esp[1]), motivo, "eixo no km informado", "alta", CORRIGIDO)
 
     # ---------------------------------------------- 3. SNV
     seg = tabela_seg(itens)
@@ -408,11 +399,13 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                  "conferir com o SNV oficial", "—", VERIFICAR)
         if None not in (s1.get("lat_fim"), s2.get("lat_ini")):
             d = dist_km((s1["lat_fim"], s1["lon_fim"]), (s2["lat_ini"], s2["lon_ini"]))
-            if d > 0.1:
-                acao(s2, "lat_ini/lon_ini", f"{s2['lat_ini']}, {s2['lon_ini']}", None,
-                     f"coordenada da divisa difere {d * 1000:.0f} m da coordenada final do segmento anterior "
-                     f"({s1['lat_fim']}, {s1['lon_fim']})", "conferir com o SNV oficial", "—", VERIFICAR,
-                     coord_anterior=[s1["lat_fim"], s1["lon_fim"]], ponta="ini")
+            pos = eixo.posicao(s2["km_ini"]) if s2.get("km_ini") is not None else None
+            if d > 0.1 and pos:
+                mot = (f"coordenadas da divisa km {s2['km_ini']} diferem {d * 1000:.0f} m entre os segmentos "
+                       f"{s1.get('snv')} e {s2.get('snv')}; ambas posicionadas pelo km informado")
+                for seg_, pt in ((s1, "fim"), (s2, "ini")):
+                    acao(seg_, f"lat_{pt}", seg_.get(f"lat_{pt}"), _r(pos[0]), mot, "eixo no km informado", "alta", CORRIGIDO)
+                    acao(seg_, f"lon_{pt}", seg_.get(f"lon_{pt}"), _r(pos[1]), mot, "eixo no km informado", "alta", CORRIGIDO)
     if snv_oficial:
         tab_of = {s["codigo"]: s for s in ref}
         tab_inv = {s["codigo"]: s for s in seg}
@@ -438,7 +431,7 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
                  cadastro_segmentos=[{k: s[k] for k in ("codigo", "km_ini", "km_fim")} for s in seg],
                  tabela_referencia=[{k: s.get(k) for k in ("codigo", "km_ini", "km_fim")} for s in ref],
                  observacoes=obs),
-        tolerancias=dict(aceitavel_km=TOL_OK, erro_km=TOL_GRAVE, digitacao_km=TOL_DIGITO),
+        tolerancias=dict(aceitavel_km=tol_km, erro_km=TOL_GRAVE, digitacao_km=TOL_DIGITO),
     )
 
 

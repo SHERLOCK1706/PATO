@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from typing import Any
 
 from . import normalizar as nz
 
@@ -129,7 +130,7 @@ def _oac(it: dict) -> list[dict]:
     if codigo[3] == "M":
         log.append(dict(campo="tipo", de=it.get("tipo"), para=None, situacao=VERIFICAR,
                         regra=f"{codigo} (metálico): o álbum IPR-736 só traz bueiros de concreto; informar o tipo de chapa "
-                              "(MP 100 / MP 152) para compor pelo SICRO"))
+                              "(MP 100 / MP 152) para compor pelo SICRO", sem_sugestao=True))
         return log
     lista = PADRAO["tubular_concreto" if codigo[2] == "T" else "celular_concreto"].get(codigo)
     if isinstance(dim, (int, float)) and lista and not any(abs(dim - v) < 0.005 for v in lista):
@@ -278,3 +279,136 @@ def resumir(log: list[dict]) -> list[dict]:
 def contar_vocabulario(registros: Counter) -> list[dict]:
     """Normalizações de vocabulário feitas na leitura (lado, condição, tipo de pista)."""
     return [dict(campo=c, de=de, para=para, quantidade=n) for (c, de, para), n in registros.most_common()]
+
+
+# --------------------------------------------------- sugestão mais assertiva
+def eh_padrao(cat: str, tipo: str | None) -> bool:
+    if not tipo:
+        return False
+    t = tipo.strip()
+    if cat == "OAC":
+        return t in PADRAO["tubular_concreto"] or t in PADRAO["celular_concreto"] or t in PADRAO["metalico"]
+    if cat == "MFC":
+        return t in PADRAO["MFC"]
+    if cat == "EDA":
+        return t in PADRAO["EDA"]
+    fam = {"STC": PADRAO["sarjeta"], "DAR": PADRAO["descida"], "VALETA": PADRAO["valeta"]}.get(cat)
+    if fam:
+        partes = t.split(" ", 1)
+        return len(partes) == 2 and partes[1] in fam.get(partes[0], [])
+    return False
+
+
+_ANTIGO_RE = re.compile(r"^\s*([A-Z]{3,4})\s*[-.]?\s*0?(\d{1,2})\s*$")
+
+
+def contexto(itens_projeto: list[dict], contagem_base: list[tuple[str, str, int]]) -> dict:
+    """Frequências usadas para escolher a sugestão: tipos no padrão nesta rodovia (projeto) e na base inteira,
+    e os códigos antigos numerados presentes no projeto (por família)."""
+    proj: dict[str, Counter] = {}
+    antigos: dict[tuple[str, str], set] = {}
+    for it in itens_projeto:
+        c = dict(it, dados=dict(it.get("dados") or {}))
+        padronizar_item(c)
+        if eh_padrao(it["categoria"], c.get("tipo")):
+            proj.setdefault(it["categoria"], Counter())[c["tipo"]] += 1
+        m = _ANTIGO_RE.match(_limpo(it.get("tipo") or ""))
+        if m:
+            antigos.setdefault((it["categoria"], m.group(1)), set()).add(int(m.group(2)))
+    # entrada (EDA) usada junto de cada tipo de descida (DAR) no mesmo km e lado, nesta rodovia
+    descidas = {(round(i["km_ini"], 3), i.get("lado")): _limpo(i.get("tipo") or "") for i in itens_projeto
+                if i["categoria"] == "DAR" and i.get("km_ini") is not None}
+    pares: dict[str, Counter] = {}
+    for i in itens_projeto:
+        if i["categoria"] == "EDA" and i.get("km_ini") is not None:
+            d = descidas.get((round(i["km_ini"], 3), i.get("lado")))
+            t = _limpo(i.get("tipo") or "")
+            if d and t.startswith("EDA"):
+                pares.setdefault(d, Counter())[t] += 1
+    base: dict[str, Counter] = {}
+    for cat, tipo, n in contagem_base:
+        c = {"categoria": cat, "tipo": tipo, "dados": {}}
+        padronizar_item(c)
+        if eh_padrao(cat, c.get("tipo")):
+            base.setdefault(cat, Counter())[c["tipo"]] += n
+    return dict(projeto=proj, base=base, antigos=antigos, pares=pares)
+
+
+def _tamanho(op: str) -> tuple:
+    nums = re.findall(r"\d+", op)
+    return tuple(int(x) for x in nums[-2:]) if nums else (0,)
+
+
+def escolher(entrada: dict, it: dict, ctx: dict) -> tuple[Any, str, str] | None:
+    """(valor sugerido, justificativa, confiança) para uma entrada 'fora do padrão — verificar'."""
+    cat, campo = it["categoria"], entrada["campo"]
+    ops = entrada.get("opcoes") or []
+    if entrada.get("sem_sugestao"):
+        return None
+    if campo == "linhas" and ops:
+        return ops[0], "nº de linhas indicado pelo código do bueiro", "alta"
+    if campo == "dimensao" and ops:
+        return ops[0], "dimensão padrão do álbum mais próxima da informada", "média"
+    if campo != "tipo":
+        return None
+    proj, base = ctx["projeto"].get(cat, Counter()), ctx["base"].get(cat, Counter())
+
+    def mais_usual(cands):
+        for fonte, nome in ((proj, "nesta rodovia"), (base, "na base de inventários")):
+            cont = [(fonte[c], c) for c in cands if fonte[c]]
+            if cont:
+                n, c = max(cont)
+                return c, f"mais usual {nome} ({n} de {sum(fonte.values())} {CAT_NOME.get(cat, cat)})"
+        return None
+
+    bruto = _limpo(entrada.get("de") or "")
+    m = _ANTIGO_RE.match(bruto)
+    if ops and m and m.group(1) != "EDA":
+        sig, num = m.group(1), int(m.group(2))
+        nums = sorted(ctx["antigos"].get((cat, sig), {num}))
+        ordenadas = sorted(ops, key=_tamanho)
+        if len(nums) > 1 and num <= len(ordenadas):
+            # vários números antigos na mesma família → dispositivos diferentes: correspondência pela ordem
+            return (ordenadas[num - 1], f"o inventário usa {', '.join(f'{sig} {n:02d}' for n in nums)}: nº {num:02d} "
+                    f"corresponde à {num}ª seção do álbum ({ordenadas[num - 1]})", "média")
+        r = mais_usual(ops)
+        if r:
+            return r[0], r[1], "média"
+        return ordenadas[0], "sem referência na rodovia nem na base; adotada a menor seção do álbum", "baixa"
+    if ops and cat == "EDA":
+        r = mais_usual(ops)
+        if r:
+            return r[0], r[1], "média"
+        variantes = Counter(t.rsplit(" ", 1)[-1] for f in (proj, base) for t, n in f.items() for _ in range(n))
+        v = variantes.most_common(1)[0][0] if variantes else "A"
+        alvo = next((o for o in ops if o.endswith(" " + v)), ops[0])
+        return alvo, (f"variante {v} é a mais usual nas entradas da base" if variantes else
+                      "sem referência; adotada a variante A"), "baixa" if not variantes else "média"
+    if ops:
+        r = mais_usual(ops)
+        if r:
+            return r[0], r[1], "média"
+        return sorted(ops, key=_tamanho)[0], "sem referência; adotada a menor seção do álbum", "baixa"
+    # código de descida no cadastro de entradas: usa a entrada que acompanha essa descida nesta rodovia
+    if cat == "EDA" and re.match(r"^(DAR|DAD|DCD)", bruto):
+        par = ctx.get("pares", {}).get(bruto)
+        if par:
+            eda_raw, n = par.most_common(1)[0]
+            tmp = {"categoria": "EDA", "tipo": eda_raw, "dados": {}}
+            lg = _eda(tmp)
+            if tmp["tipo"] in PADRAO["EDA"]:
+                return tmp["tipo"], f"nas descidas {bruto} desta rodovia a entrada é {eda_raw} ({n} casos)", "média"
+            ops_eda = next((e.get("opcoes") for e in lg if e.get("opcoes")), None)
+            if ops_eda:
+                r = escolher(dict(campo="tipo", de=eda_raw, opcoes=ops_eda), {"categoria": "EDA"}, ctx)
+                if r:
+                    return r[0], f"nas descidas {bruto} desta rodovia a entrada é {eda_raw} ({n} casos); {r[1]}", "média"
+    # sem opções (ex.: tipo não reconhecido)
+    r = mais_usual(list((proj or base).keys()))
+    if r:
+        return r[0], r[1], "baixa"
+    return None
+
+
+CAT_NOME = {"OAC": "bueiros", "MFC": "meios-fios", "STC": "sarjetas", "DAR": "descidas", "EDA": "entradas",
+            "VALETA": "valetas"}

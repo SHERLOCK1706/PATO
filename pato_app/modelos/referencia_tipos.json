@@ -1,0 +1,55 @@
+{
+ "fonte": "PATO BR-158/MT km 85–212,5 (planilha modelo incluída)",
+ "contagem": [
+  [
+   "DAR",
+   "DAR 60-30",
+   2797
+  ],
+  [
+   "EDA",
+   "EDA-03 A",
+   210
+  ],
+  [
+   "EDA",
+   "EDA-03B",
+   2587
+  ],
+  [
+   "MFC",
+   "MFC03",
+   223
+  ],
+  [
+   "OAC",
+   "BDCC",
+   5
+  ],
+  [
+   "OAC",
+   "BDTC",
+   7
+  ],
+  [
+   "OAC",
+   "BSCC",
+   20
+  ],
+  [
+   "OAC",
+   "BSTC",
+   27
+  ],
+  [
+   "OAC",
+   "BTCC",
+   4
+  ],
+  [
+   "STC",
+   "STC 125-25",
+   9
+  ]
+ ]
+}

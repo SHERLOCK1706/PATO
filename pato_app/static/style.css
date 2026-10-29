@@ -172,3 +172,8 @@ dialog::backdrop { background: rgba(0,0,0,.35); }
 .item-sug .campos-sug .de { font-size: 11px; color: var(--txt2); text-decoration: line-through; }
 .item-sug select { max-width: 380px; }
 @media (max-width: 800px) { .grupo-sug > .cab, .item-sug { grid-template-columns: 1fr; } }
+
+.pill-ok { background: var(--ok); }
+.balao { position: fixed; z-index: 3000; max-width: 280px; background: #1b2430; color: #fff; font-size: 12px; line-height: 1.35;
+  padding: 6px 9px; border-radius: 6px; box-shadow: 0 4px 14px rgba(0,0,0,.25); pointer-events: none; opacity: 0; transition: opacity .12s; }
+.balao.ver { opacity: .97; }

@@ -159,7 +159,8 @@ class Servico:
                                                 for v in res.get("vocabulario", [])])
         self.db.registrar(pid, "importar", f"{res['arquivo']} — {len(itens)} itens ({modo})")
         sug = self.gerar_sugestoes(pid)
-        return dict(projeto=self.projeto(pid), importados=len(itens), sugestoes=sug["pendentes"])
+        return dict(projeto=self.projeto(pid), importados=len(itens), sugestoes=sug["pendentes"],
+                    ajustes_automaticos=sug["aplicadas_automaticamente"])
 
     def importar_arquivo(self, caminho: str, modo: str = "novo", projeto_id: int | None = None,
                          categorias: list[str] | None = None, nome: str | None = None) -> dict:
@@ -191,6 +192,10 @@ class Servico:
         ids = self.db.inserir_itens(pid, normal)
         novos = [self.db.item(i) for i in ids]
         self.db.substituir_pendentes(pid, self._sugestoes_padronizacao(novos), apagar=False)
+        for s_ in self.db.sugestoes(pid, "pendente", "padronização"):
+            if s_["item_id"] in ids and s_.get("certa"):
+                self.aplicar_sugestao(s_["id"], automatica=True)
+        novos = [self.db.item(i) for i in ids]
         self.db.registrar(pid, "adicionar itens", f"{len(ids)}")
         return novos
 
@@ -290,6 +295,7 @@ class Servico:
         out["n_alertas"] = {n: sum(1 for a in alertas if a["nivel"] == n) for n in ("erro", "aviso", "info")}
         out["projeto"] = p
         out["sugestoes_pendentes"] = len(self.db.sugestoes(pid, "pendente"))
+        out["ajustes_aplicados"] = len(self.db.sugestoes(pid, "aplicada"))
         return out
 
     def validar(self, pid: int) -> list[dict]:
@@ -366,11 +372,24 @@ class Servico:
     _DERIVADOS = ("extensao", "extensao_km", "km_faixa", "km_acost", "area", "area_ha", "area_caiacao",
                   "area_capina", "quantidade")
 
+    def _contagem_base(self) -> list:
+        """Tipos de todos os projetos + referência da planilha modelo (para sugerir o 'mais usual')."""
+        import json
+        ref = Path(__file__).parent / "modelos" / "referencia_tipos.json"
+        extra = [tuple(x) for x in json.loads(ref.read_text(encoding="utf-8"))["contagem"]] if ref.exists() else []
+        return self.db.contagem_tipos() + extra
+
     @staticmethod
     def _valor_atual(it: dict, campo: str):
         return it.get(campo) if campo in CAMPOS_TOPO else (it.get("dados") or {}).get(campo)
 
-    def _sugestoes_padronizacao(self, itens: list[dict]) -> list[dict]:
+    def _sugestoes_padronizacao(self, itens: list[dict], ctx: dict | None = None) -> list[dict]:
+        """Nomenclatura × álbum DNIT. Grafia ajustável = correção certa (automática); casos sem conversão direta
+        recebem a sugestão mais assertiva (mais usual na rodovia/base, ordem dos códigos antigos…)."""
+        if ctx is None:
+            pid = itens[0]["projeto_id"] if itens else None
+            ctx = padrao_dnit.contexto(self.db.itens(pid) if pid else itens, self._contagem_base())
+        ordem_conf = {"alta": 0, "média": 1, "baixa": 2}
         out = []
         for it in itens:
             log = padrao_dnit.padronizar_item(copy.deepcopy(it))
@@ -381,20 +400,36 @@ class Servico:
                 if not ents:
                     continue
                 mud = {e["campo"]: e["para"] for e in ents if e.get("para") not in (None, "")}
+                motivos = [e["regra"] for e in ents]
+                conf = "alta" if sit == padrao_dnit.PADRONIZADO else "média"
                 opcoes = []
                 for e in ents:
-                    for v in e.get("opcoes") or []:
-                        opcoes.append(dict(rotulo=f"{e['campo']} = {v}", mudancas={e["campo"]: v}))
+                    escolha = padrao_dnit.escolher(e, it, ctx) if sit == padrao_dnit.VERIFICAR else None
+                    if escolha:
+                        valor, just, c = escolha
+                        mud[e["campo"]] = valor
+                        motivos.append(f"sugestão: {e['campo']} = {valor} — {just}")
+                        conf = max(conf, c, key=lambda x: ordem_conf.get(x, 3))
+                    ops = list(e.get("opcoes") or [])
+                    if escolha and escolha[0] in ops:
+                        ops.remove(escolha[0])
+                        ops.insert(0, escolha[0])
+                    for v in ops:
+                        opcoes.append(dict(rotulo=f"{e['campo']} = {v}" + (" (sugerido)" if escolha and v == escolha[0] else ""),
+                                           mudancas={e["campo"]: v}))
+                if sit == padrao_dnit.VERIFICAR and not mud:
+                    conf = "—"
                 campos = sorted({e["campo"] for e in ents})
                 out.append(dict(item_id=it["id"], tipo="padronização", origem=it.get("origem"), categoria=it["categoria"],
-                                km_ini=it.get("km_ini"), km_fim=it.get("km_fim"), situacao=sit,
-                                confianca="alta" if sit == padrao_dnit.PADRONIZADO else "média" if sit == padrao_dnit.CONFERIR else "—",
-                                motivo="; ".join(dict.fromkeys(e["regra"] for e in ents)), metodo=padrao_dnit.ALBUM,
-                                atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes))
+                                km_ini=it.get("km_ini"), km_fim=it.get("km_fim"), situacao=sit, confianca=conf,
+                                motivo="; ".join(dict.fromkeys(motivos)), metodo=padrao_dnit.ALBUM,
+                                atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes,
+                                certa=int(sit == padrao_dnit.PADRONIZADO and bool(mud))))
         return out
 
-    def _sugestoes_correcao(self, p: dict, itens: list[dict], oficial, versao) -> tuple[list[dict], dict]:
-        an = correcao.analisar(p, itens, oficial, versao)
+    def _sugestoes_correcao(self, p: dict, itens: list[dict], oficial, versao,
+                            tol_km: float = correcao.TOL_OK) -> tuple[list[dict], dict]:
+        an = correcao.analisar(p, itens, oficial, versao, tol_km)
         por_id = {i["id"]: i for i in itens}
         grupos: dict[tuple, list] = {}
         for a in an["acoes"]:
@@ -429,31 +464,48 @@ class Servico:
             out.append(dict(item_id=iid, tipo="correção", origem=it.get("origem"), categoria=it["categoria"],
                             km_ini=it.get("km_ini"), km_fim=it.get("km_fim"), situacao=sit, confianca=a0["confianca"],
                             motivo="; ".join(motivos), metodo="; ".join(dict.fromkeys(a["metodo"] for a in acs)),
-                            atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes))
+                            atual={c: self._valor_atual(it, c) for c in campos}, mudancas=mud, opcoes=opcoes,
+                            certa=int(a0["confianca"] == "alta" and bool(mud) and sit != correcao.VERIFICAR)))
         return out, an
 
-    def gerar_sugestoes(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None) -> dict:
-        """Analisa o inventário (SNV, coordenadas × km, trecho e nomenclatura do álbum DNIT) e grava as
-        sugestões pendentes para revisão. Nada é alterado nos itens."""
+    def gerar_sugestoes(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None,
+                        tol_km: float = correcao.TOL_OK, automatico: bool = True) -> dict:
+        """Analisa o inventário (SNV, coordenadas × km, trecho e nomenclatura do álbum DNIT).
+        Correções certas são aplicadas automaticamente (vão para a aba Ajustes); as demais ficam pendentes
+        na aba Revisão já com a sugestão mais assertiva preenchida."""
         import json
         p = self.projeto(pid)
         itens = self.db.itens(pid)
         oficial = correcao.ler_snv_oficial(arquivo_snv, p.get("rodovia")) if arquivo_snv else None
         if arquivo_snv and not oficial:
             raise ValueError("A planilha do SNV não tem segmentos da rodovia " + str(p.get("rodovia")))
-        corr, an = self._sugestoes_correcao(p, itens, oficial, versao_snv)
-        novas = corr + self._sugestoes_padronizacao(itens)
+        corr, an = self._sugestoes_correcao(p, itens, oficial, versao_snv, tol_km)
+        sai = {s_["item_id"] for s_ in corr if (s_["mudancas"] or {}).get("_excluir") and s_["certa"]}
+        ctx = padrao_dnit.contexto(itens, self._contagem_base())
+        novas = corr + self._sugestoes_padronizacao([i for i in itens if i["id"] not in sai], ctx)
         if oficial:
             novas.append(dict(item_id=None, tipo="SNV", origem="cadastro de segmentos", categoria="SEG",
                               situacao=correcao.CONFERIR, confianca="alta",
                               motivo=f"Substituir o cadastro de segmentos pela tabela oficial do SNV {versao_snv or ''}".strip(),
                               metodo="SNV oficial", atual={"segmentos": an["snv"]["cadastro_segmentos"]},
-                              mudancas={"_segmentos": oficial, "_versao": versao_snv}, opcoes=[]))
-        n = self.db.substituir_pendentes(pid, novas)
+                              mudancas={"_segmentos": oficial, "_versao": versao_snv}, opcoes=[], certa=1))
+        self.db.substituir_pendentes(pid, novas)
         self.db.atualizar_projeto(pid, {"analise_snv": json.dumps(dict(an["snv"], tolerancias=an["tolerancias"]),
                                                                   ensure_ascii=False)})
-        self.db.registrar(pid, "análise de sugestões", f"{n} sugestões pendentes")
-        return self.resumo_sugestoes(pid)
+        auto = 0
+        if automatico:
+            pend = self.db.sugestoes(pid, "pendente")
+            # ordem: SNV oficial, trecho/coordenadas/SNV dos itens, nomenclatura
+            for s_ in sorted((x for x in pend if x.get("certa")), key=lambda x: {"SNV": 0, "correção": 1}.get(x["tipo"], 2)):
+                try:
+                    self.aplicar_sugestao(s_["id"], automatica=True)
+                    auto += 1
+                except (KeyError, ValueError):
+                    pass
+        out = self.resumo_sugestoes(pid)
+        out["aplicadas_automaticamente"] = auto
+        self.db.registrar(pid, "análise", f"{auto} ajustes automáticos, {out['pendentes']} para revisão")
+        return out
 
     def resumo_sugestoes(self, pid: int) -> dict:
         import json
@@ -464,13 +516,16 @@ class Servico:
             k = (s_["status"], s_["tipo"], s_["situacao"])
             cont[k] = cont.get(k, 0) + 1
         return dict(pendentes=sum(1 for s_ in todas if s_["status"] == "pendente"),
+                    automaticas=sum(1 for s_ in todas if s_["status"] == "aplicada" and s_.get("automatica")),
+                    manuais=sum(1 for s_ in todas if s_["status"] == "aplicada" and not s_.get("automatica")),
                     contagem=[dict(status=k[0], tipo=k[1], situacao=k[2], n=v) for k, v in sorted(cont.items())],
                     snv=json.loads(p["analise_snv"]) if p.get("analise_snv") else None)
 
     def sugestoes(self, pid: int, status: str | None = None, tipo: str | None = None) -> list[dict]:
         return self.db.sugestoes(pid, status, tipo)
 
-    def aplicar_sugestao(self, sid: int, mudancas: dict | None = None, opcao: int | None = None) -> dict:
+    def aplicar_sugestao(self, sid: int, mudancas: dict | None = None, opcao: int | None = None,
+                         automatica: bool = False) -> dict:
         s_ = self.db.sugestao(sid)
         if not s_:
             raise KeyError(f"Sugestão {sid} não encontrada")
@@ -488,14 +543,14 @@ class Servico:
         if "_segmentos" in mud:
             antes = self.db.itens(pid, "SEG")
             self._atualizar_segmentos(pid, mud["_segmentos"], mud.get("_versao"))
-            self.db.resolver_sugestao(sid, "aplicada", {"_segmentos": True}, {"_snapshot_seg": antes})
+            self.db.resolver_sugestao(sid, "aplicada", {"_segmentos": True}, {"_snapshot_seg": antes}, automatica=automatica)
             return self.db.sugestao(sid)
         it = self.db.item(s_["item_id"]) if s_["item_id"] else None
         if not it:
             raise KeyError("O item desta sugestão não existe mais.")
         if mud.get("_excluir"):
             self.db.excluir_itens([it["id"]])
-            self.db.resolver_sugestao(sid, "aplicada", {"_excluir": True}, {"_snapshot": it})
+            self.db.resolver_sugestao(sid, "aplicada", {"_excluir": True}, {"_snapshot": it}, automatica=automatica)
         else:
             atual = {c: self._valor_atual(it, c) for c in mud}
             limpar = {}
@@ -505,8 +560,9 @@ class Servico:
                         atual[c] = it["dados"][c]
                         limpar[c] = None  # recalculado a partir do km
             self.atualizar_item(it["id"], {**mud, **limpar})
-            self.db.resolver_sugestao(sid, "aplicada", mud, atual)
-        self.db.registrar(pid, "sugestão aplicada", f"#{sid} {s_['origem'] or ''} {mud}")
+            self.db.resolver_sugestao(sid, "aplicada", mud, atual, automatica=automatica)
+        if not automatica:
+            self.db.registrar(pid, "sugestão aplicada", f"#{sid} {s_['origem'] or ''} {mud}")
         return self.db.sugestao(sid)
 
     def aplicar_lote(self, pid: int, ids: list[int] | None = None, confianca: str | None = None,

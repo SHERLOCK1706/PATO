@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "pato": {
+      "command": "C:\\PATO\\pato-app\\.venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pato_app.mcp_server"
+      ],
+      "cwd": "C:\\PATO\\pato-app",
+      "env": {
+        "PYTHONPATH": "C:\\PATO\\pato-app"
+      }
+    }
+  }
+}

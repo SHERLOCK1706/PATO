@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PATO · Inventário</title>
+<link rel="stylesheet" href="/static/leaflet/leaflet.css">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="marca"><span class="logo">PATO</span><span class="sub">Plano Anual de Trabalho e Orçamento · Conservação</span></div>
+  <div class="proj">
+    <label for="selProjeto" class="sr">Projeto</label>
+    <select id="selProjeto"></select>
+    <button class="btn" id="btnNovo" title="Novo projeto vazio">+ Novo</button>
+  </div>
+  <div class="acoes">
+    <button class="btn" data-ir="importar">Importar inventário</button>
+    <button class="btn primario" data-ir="exportar">Exportar</button>
+  </div>
+</header>
+
+<nav class="abas" id="abas">
+  <button data-aba="painel" class="ativa">Painel</button>
+  <button data-aba="inventario">Inventário</button>
+  <button data-aba="mapa">Mapa</button>
+  <button data-aba="projeto">Projeto e trecho</button>
+  <button data-aba="alertas">Alertas <span id="nAlertas" class="pill"></span></button>
+  <button data-aba="importar">Importar</button>
+  <button data-aba="exportar">Exportar</button>
+</nav>
+
+<main>
+  <!-- PAINEL -->
+  <section id="aba-painel" class="aba ativa">
+    <div id="vazio" class="vazio oculto">
+      <h2>Nenhum projeto ainda</h2>
+      <p>Importe a planilha de inventário (modelo DNIT “Cadastro de…”) ou uma planilha PATO com as abas CAD_*.</p>
+      <button class="btn primario" data-ir="importar">Importar inventário</button>
+    </div>
+    <div id="painelConteudo">
+      <div class="cab-proj" id="cabProj"></div>
+      <div class="cards" id="cards"></div>
+      <div class="grade2">
+        <div class="caixa">
+          <h3>Resumo do inventário <small>(equivale à aba RESUMO_INVENT)</small></h3>
+          <table class="tab" id="tabResumo"></table>
+        </div>
+        <div class="caixa">
+          <h3>Reflexo no PATO <small>(coluna Inventário dos serviços)</small></h3>
+          <table class="tab" id="tabPato"></table>
+        </div>
+      </div>
+      <div class="caixa">
+        <h3>Categorias</h3>
+        <div class="chips" id="chipsCat"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVENTÁRIO -->
+  <section id="aba-inventario" class="aba">
+    <div class="barra">
+      <div class="chips" id="chipsInv"></div>
+    </div>
+    <div class="barra filtros">
+      <label>km de <input type="number" step="0.001" id="fKmDe"></label>
+      <label>até <input type="number" step="0.001" id="fKmAte"></label>
+      <label class="cresce">Buscar <input type="search" id="fTexto" placeholder="tipo, condição, SNV, obs…"></label>
+      <button class="btn" id="btnAddItem">+ Item</button>
+      <button class="btn perigo" id="btnDelItens" disabled>Excluir selecionados</button>
+    </div>
+    <div class="info" id="infoInv"></div>
+    <div class="tabela-rolagem"><table class="tab editavel" id="tabItens"></table></div>
+    <div class="paginacao" id="pagInv"></div>
+  </section>
+
+  <!-- MAPA -->
+  <section id="aba-mapa" class="aba">
+    <div class="mapa-wrap">
+      <div id="mapa"></div>
+      <aside class="legenda" id="legenda"></aside>
+      <div class="aviso-mapa oculto" id="avisoPosicionar"></div>
+    </div>
+  </section>
+
+  <!-- PROJETO -->
+  <section id="aba-projeto" class="aba">
+    <div class="grade2">
+      <form class="caixa form" id="formProjeto">
+        <h3>Dados do projeto</h3>
+        <div class="campos">
+          <label>Nome <input name="nome"></label>
+          <label>Rodovia <input name="rodovia" placeholder="BR-158/MT"></label>
+          <label class="largo">Trecho <input name="trecho"></label>
+          <label class="largo">Subtrecho <input name="subtrecho"></label>
+          <label>Segmento (texto) <input name="segmento"></label>
+          <label>SNV <input name="snv"></label>
+          <label>Versão SNV <input name="snv_versao"></label>
+          <label>Estado <input name="estado" placeholder="Mato Grosso"></label>
+          <label>Unidade local <input name="unidade_local"></label>
+          <label>Data do inventário <input name="data_inventario" type="date"></label>
+          <label>Data-base <input name="data_base" type="date"></label>
+          <label>Prazo <input name="prazo" type="number" step="1"></label>
+          <label class="largo">Observações <textarea name="obs" rows="2"></textarea></label>
+        </div>
+        <div class="linha-botoes"><button class="btn primario" type="submit">Salvar</button></div>
+      </form>
+      <div>
+        <form class="caixa form" id="formTrecho">
+          <h3>Alterar trecho</h3>
+          <p class="nota">Define o km inicial e final do segmento (CAPA e CAD_SEG). Com “recortar”, itens fora do
+            novo trecho são removidos e feições lineares são cortadas na divisa, com coordenadas reinterpoladas.</p>
+          <div class="campos">
+            <label>km inicial <input name="km_ini" type="number" step="0.001" required></label>
+            <label>km final <input name="km_fim" type="number" step="0.001" required></label>
+            <label class="check largo"><input type="checkbox" name="recortar"> Recortar o inventário no novo trecho</label>
+          </div>
+          <div class="linha-botoes"><button class="btn primario" type="submit">Aplicar</button></div>
+        </form>
+        <form class="caixa form" id="formAceiro">
+          <h3>Aceiro + roçada da faixa de domínio</h3>
+          <p class="nota">Gera o memorial CAD_ACEIRO a partir das cercas inventariadas
+            (aceiro = 1,5 m × extensão; roçada FD = (largura até a cerca − 4,5 m) × extensão; manutenção = 3 m × extensão).</p>
+          <div class="campos">
+            <label>Largura até a cerca (m) <input name="largura_ate_cerca" type="number" step="0.1" value="30"></label>
+            <label>% indivíduos arbóreos <input name="pct_arboreo" type="number" step="0.05" value="0.2"></label>
+          </div>
+          <div class="linha-botoes"><button class="btn" type="submit">Gerar aceiro</button></div>
+        </form>
+        <div class="caixa">
+          <h3>Projeto</h3>
+          <div class="linha-botoes">
+            <button class="btn" id="btnDuplicar">Duplicar</button>
+            <button class="btn perigo" id="btnExcluirProj">Excluir projeto</button>
+          </div>
+          <h4>Histórico</h4>
+          <ul class="historico" id="historico"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALERTAS -->
+  <section id="aba-alertas" class="aba">
+    <div class="barra">
+      <div class="chips" id="chipsAlerta"></div>
+    </div>
+    <div class="tabela-rolagem"><table class="tab" id="tabAlertas"></table></div>
+  </section>
+
+  <!-- IMPORTAR -->
+  <section id="aba-importar" class="aba">
+    <div class="caixa">
+      <h3>Importar inventário de Excel</h3>
+      <p class="nota">Aceita o modelo DNIT de cadastro (abas “Cadastro de Pista”, “Cadastro de Meio Fio”, “Cadastro de OAC”…)
+        e planilhas PATO (abas CAD_*). As colunas são reconhecidas pelo <b>nome do cabeçalho</b>, então layouts com colunas em
+        outra posição também funcionam. Nada é gravado antes de você confirmar.</p>
+      <label class="soltar" id="soltar">
+        <input type="file" id="arqImport" accept=".xlsx,.xlsm">
+        <span>Arraste o arquivo .xlsx aqui ou clique para escolher</span>
+      </label>
+      <div id="previa"></div>
+    </div>
+  </section>
+
+  <!-- EXPORTAR -->
+  <section id="aba-exportar" class="aba">
+    <div class="grade2">
+      <div class="caixa">
+        <h3>Planilha PATO preenchida</h3>
+        <p class="nota">Grava o projeto (CAPA, CAD_SEG) e o inventário nas abas CAD_* de uma cópia da planilha modelo.
+          Todas as fórmulas, croqui, composições e demais abas são preservados; se faltar linha, a tabela cresce e os
+          totais acompanham. O Excel recalcula o PATO ao abrir.</p>
+        <p class="nota">Modelo atual: <b id="nomeModelo"></b></p>
+        <label class="arquivo">Usar outro modelo nesta exportação (opcional)
+          <input type="file" id="arqModelo" accept=".xlsx"></label>
+        <label class="check"><input type="checkbox" id="chkLimpar" checked> Limpar abas CAD_* sem itens no inventário</label>
+        <div class="linha-botoes">
+          <button class="btn primario" id="btnExpPato">Gerar planilha PATO</button>
+          <button class="btn" id="btnDefModelo" title="Salvar o arquivo escolhido como modelo padrão">Definir como modelo padrão</button>
+        </div>
+        <div id="resExpPato"></div>
+      </div>
+      <div class="caixa">
+        <h3>Inventário</h3>
+        <p class="nota">Planilha com uma aba por categoria (dados + quantidades calculadas), resumo e reflexo no PATO;
+          ou o inventário georreferenciado para SIG / Google Earth.</p>
+        <div class="linha-botoes">
+          <button class="btn" data-exp="inventario">Excel (.xlsx)</button>
+          <button class="btn" data-exp="geojson">GeoJSON</button>
+          <button class="btn" data-exp="kml">KML (Google Earth)</button>
+        </div>
+        <div id="resExpInv"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<div id="toast" class="toast"></div>
+
+<script src="/static/leaflet/leaflet.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

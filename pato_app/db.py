@@ -12,14 +12,15 @@ ARQ_DB = PASTA_DADOS / "pato.db"
 
 CAMPOS_PROJETO = ["nome", "rodovia", "trecho", "subtrecho", "segmento", "km_ini", "km_fim", "snv",
                   "snv_versao", "estado", "uf", "unidade_local", "data_inventario", "data_base", "prazo",
-                  "origem_arquivo", "arquivo_original", "analise_snv", "obs"]
+                  "origem_arquivo", "arquivo_original", "analise_snv", "custo_uf", "custo_data_base",
+                  "custo_regime", "bdi_sd", "bdi_cd", "bdi_parcelas", "obs"]
 CAMPOS_ITEM = ["categoria", "ordem", "snv", "tipo_pista", "km_ini", "km_fim", "lat_ini", "lon_ini",
                "lat_fim", "lon_fim", "lado", "condicao", "tipo", "obs", "origem"]
 
 _SCHEMA = f"""
 CREATE TABLE IF NOT EXISTS projeto (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  {", ".join(c + (" REAL" if c in ("km_ini", "km_fim", "prazo") else " TEXT") for c in CAMPOS_PROJETO)},
+  {", ".join(c + (" REAL" if c in ("km_ini", "km_fim", "prazo", "bdi_sd", "bdi_cd") else " TEXT") for c in CAMPOS_PROJETO)},
   criado_em TEXT DEFAULT CURRENT_TIMESTAMP,
   alterado_em TEXT DEFAULT CURRENT_TIMESTAMP
 );
@@ -47,6 +48,18 @@ CREATE TABLE IF NOT EXISTS sugestao (
   criado_em TEXT DEFAULT CURRENT_TIMESTAMP, resolvido_em TEXT
 );
 CREATE INDEX IF NOT EXISTS ix_sug_proj ON sugestao(projeto_id, status, tipo);
+CREATE TABLE IF NOT EXISTS base_sicro (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, uf TEXT, data_base TEXT, regime TEXT, descricao TEXT, origem TEXT,
+  n_composicoes INTEGER, n_sintetico INTEGER, criado_em TEXT DEFAULT CURRENT_TIMESTAMP, dados BLOB
+);
+CREATE TABLE IF NOT EXISTS servico_projeto (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, codigo TEXT NOT NULL, ordem INTEGER,
+  item TEXT, obs TEXT, UNIQUE(projeto_id, codigo)
+);
+CREATE TABLE IF NOT EXISTS alteracao_custo (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, tipo TEXT, dados TEXT, descricao TEXT,
+  ativa INTEGER DEFAULT 1, quando TEXT DEFAULT CURRENT_TIMESTAMP
+);
 CREATE TABLE IF NOT EXISTS historico (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, acao TEXT, detalhe TEXT
@@ -67,7 +80,7 @@ def conectar(caminho: Path | str | None = None) -> sqlite3.Connection:
     cols = {r[1] for r in con.execute("PRAGMA table_info(projeto)")}
     for c in CAMPOS_PROJETO:
         if c not in cols:  # migração de bancos antigos
-            con.execute(f"ALTER TABLE projeto ADD COLUMN {c} {'REAL' if c in ('km_ini', 'km_fim', 'prazo') else 'TEXT'}")
+            con.execute(f"ALTER TABLE projeto ADD COLUMN {c} {'REAL' if c in ('km_ini', 'km_fim', 'prazo', 'bdi_sd', 'bdi_cd') else 'TEXT'}")
     cols_s = {r[1] for r in con.execute("PRAGMA table_info(sugestao)")}
     for c in ("certa", "automatica"):
         if c not in cols_s:
@@ -76,9 +89,61 @@ def conectar(caminho: Path | str | None = None) -> sqlite3.Connection:
     return con
 
 
+class _Resultado:
+    """Resultado já lido (a leitura acontece dentro da trava, sem concorrência no cursor)."""
+
+    def __init__(self, cur):
+        self.lastrowid = cur.lastrowid
+        self.rowcount = cur.rowcount
+        self._linhas = cur.fetchall() if cur.description else []
+
+    def fetchall(self):
+        return self._linhas
+
+    def fetchone(self):
+        return self._linhas[0] if self._linhas else None
+
+    def __iter__(self):
+        return iter(self._linhas)
+
+
+class _Conexao:
+    """Conexão SQLite compartilhada entre as threads do servidor, com acesso serializado."""
+
+    def __init__(self, con: sqlite3.Connection):
+        self._con = con
+
+    def execute(self, sql, args=()):
+        with _lock:
+            return _Resultado(self._con.execute(sql, args))
+
+    def executemany(self, sql, seq):
+        with _lock:
+            return _Resultado(self._con.executemany(sql, seq))
+
+    def executescript(self, sql):
+        with _lock:
+            return self._con.executescript(sql)
+
+    def commit(self):
+        with _lock:
+            self._con.commit()
+
+    def __enter__(self):
+        _lock.acquire()
+        self._con.__enter__()
+        return self
+
+    def __exit__(self, *exc):
+        try:
+            return self._con.__exit__(*exc)
+        finally:
+            _lock.release()
+
+
 class Banco:
     def __init__(self, caminho: Path | str | None = None):
-        self.con = conectar(caminho)
+        self.con = _Conexao(conectar(caminho))
 
     # ------------------------------------------------------------- projetos
     def projetos(self) -> list[dict]:
@@ -113,6 +178,8 @@ class Banco:
             self.con.execute("DELETE FROM item WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM log WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM sugestao WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM servico_projeto WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM alteracao_custo WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM projeto WHERE id = ?", (pid,))
 
     def tocar(self, pid: int) -> None:
@@ -263,6 +330,67 @@ class Banco:
         """(categoria, tipo, quantidade) de todos os projetos — base para a sugestão 'mais usual'."""
         return [tuple(r) for r in self.con.execute(
             "SELECT categoria, tipo, COUNT(*) FROM item WHERE tipo IS NOT NULL GROUP BY categoria, tipo")]
+
+    # --------------------------------------------------------- bases SICRO
+    def inserir_base(self, b: dict, dados: bytes) -> int:
+        with _lock, self.con:
+            cur = self.con.execute(
+                "INSERT INTO base_sicro (uf, data_base, regime, descricao, origem, n_composicoes, n_sintetico, dados) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                (b.get("uf"), b.get("data_base"), b.get("regime"), b.get("descricao"), b.get("origem"),
+                 b.get("n_composicoes"), b.get("n_sintetico"), dados))
+            return cur.lastrowid
+
+    def bases(self) -> list[dict]:
+        return [dict(r) for r in self.con.execute(
+            "SELECT id, uf, data_base, regime, descricao, origem, n_composicoes, n_sintetico, criado_em FROM base_sicro "
+            "ORDER BY uf, data_base DESC, regime")]
+
+    def base_dados(self, bid: int) -> bytes | None:
+        r = self.con.execute("SELECT dados FROM base_sicro WHERE id = ?", (bid,)).fetchone()
+        return r[0] if r else None
+
+    def base_id(self, uf: str, data_base: str, regime: str) -> int | None:
+        r = self.con.execute("SELECT id FROM base_sicro WHERE uf = ? AND data_base = ? AND regime = ? ORDER BY id DESC",
+                             (uf, data_base, regime)).fetchone()
+        return r[0] if r else None
+
+    def excluir_base(self, bid: int) -> None:
+        with _lock, self.con:
+            self.con.execute("DELETE FROM base_sicro WHERE id = ?", (bid,))
+
+    # ------------------------------------------------ serviços e alterações
+    def servicos(self, pid: int) -> list[dict]:
+        return [dict(r) for r in self.con.execute(
+            "SELECT * FROM servico_projeto WHERE projeto_id = ? ORDER BY ordem, id", (pid,))]
+
+    def adicionar_servico(self, pid: int, codigo: str, item: str | None = None) -> None:
+        with _lock, self.con:
+            n = self.con.execute("SELECT COALESCE(MAX(ordem), 0) + 1 FROM servico_projeto WHERE projeto_id = ?", (pid,)).fetchone()[0]
+            self.con.execute("INSERT OR IGNORE INTO servico_projeto (projeto_id, codigo, ordem, item) VALUES (?, ?, ?, ?)",
+                             (pid, codigo, n, item))
+
+    def remover_servico(self, pid: int, codigo: str) -> None:
+        with _lock, self.con:
+            self.con.execute("DELETE FROM servico_projeto WHERE projeto_id = ? AND codigo = ?", (pid, codigo))
+
+    def alteracoes_custo(self, pid: int, so_ativas: bool = False) -> list[dict]:
+        sql = "SELECT * FROM alteracao_custo WHERE projeto_id = ?" + (" AND ativa = 1" if so_ativas else "") + " ORDER BY id"
+        out = []
+        for r in self.con.execute(sql, (pid,)).fetchall():
+            d = dict(r)
+            d["dados"] = json.loads(d["dados"])
+            out.append(d)
+        return out
+
+    def inserir_alteracao_custo(self, pid: int, tipo: str, dados: dict, descricao: str) -> int:
+        with _lock, self.con:
+            return self.con.execute("INSERT INTO alteracao_custo (projeto_id, tipo, dados, descricao) VALUES (?, ?, ?, ?)",
+                                    (pid, tipo, json.dumps(dados, ensure_ascii=False), descricao)).lastrowid
+
+    def ativar_alteracao_custo(self, aid: int, ativa: bool) -> None:
+        with _lock, self.con:
+            self.con.execute("UPDATE alteracao_custo SET ativa = ? WHERE id = ?", (int(ativa), aid))
 
     def historico(self, pid: int, limite: int = 50) -> list[dict]:
         rows = self.con.execute("SELECT * FROM historico WHERE projeto_id = ? ORDER BY id DESC LIMIT ?", (pid, limite))

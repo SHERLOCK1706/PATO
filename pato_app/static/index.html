@@ -29,6 +29,7 @@
   <button data-aba="alertas" data-dica="Inconsistências encontradas no inventário">Alertas <span id="nAlertas" class="pill"></span></button>
   <button data-aba="revisao" data-dica="Decisões pendentes: correções que precisam da sua escolha">Revisão <span id="nSug" class="pill pill-info"></span></button>
   <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer">Ajustes <span id="nAj" class="pill pill-ok"></span></button>
+  <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições e insumos">Custos</button>
   <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
   <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
 </nav>
@@ -188,6 +189,85 @@
     <div id="listaAj"></div>
   </section>
 
+  <!-- CUSTOS -->
+  <section id="aba-custos" class="aba">
+    <div class="caixa cab-custos" id="cabCustos"></div>
+    <div class="barra"><div class="chips" id="chipsCustos"></div></div>
+
+    <div id="cst-base" class="sub-custos">
+      <div class="grade2">
+        <form class="caixa form" id="formCfgCustos">
+          <h3>Base e BDI do projeto</h3>
+          <div class="campos">
+            <label>Base SICRO (estado e data-base) <select name="base" data-dica="Tabela do SICRO usada para os preços deste projeto"></select></label>
+            <label>Regime <select name="regime" data-dica="Regime de encargos usado para o orçamento"><option value="SD">Sem desoneração</option><option value="CD">Com desoneração</option></select></label>
+            <label>BDI sem desoneração (%) <input name="bdi_sd" type="number" step="0.01" data-dica="Taxa de BDI sobre o custo direto (ex.: 35,12)"></label>
+            <label>BDI com desoneração (%) <input name="bdi_cd" type="number" step="0.01" data-dica="Taxa de BDI sobre o custo direto (ex.: 39,32)"></label>
+          </div>
+          <details style="margin-top:10px"><summary data-dica="Calcula o BDI pelas parcelas (método DNIT): (1+AC+L)/(1−(DF+S+R+tributos))−1">Calcular o BDI pelas parcelas</summary>
+            <div class="grade2" id="parcelasBdi" style="margin-top:8px"></div>
+            <div class="linha-botoes"><button class="btn" type="button" id="btnCalcBdi" data-dica="Preenche os campos de BDI com o resultado das parcelas">Calcular BDI</button></div>
+          </details>
+          <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Grava base, regime e BDI; os preços são recalculados">Salvar</button></div>
+        </form>
+        <div class="caixa">
+          <h3>Bases SICRO importadas</h3>
+          <div class="tabela-rolagem" style="max-height:220px"><table class="tab" id="tabBases"></table></div>
+          <h4>Importar nova base (atualização trimestral)</h4>
+          <p class="nota">Envie os relatórios do SICRO do estado e mês (relatório analítico de composições e, se houver, os sintéticos
+            de composições, equipamentos, mão de obra e materiais) — .xlsx soltos ou o .zip publicado pelo DNIT. Também aceita uma planilha PATO.</p>
+          <form class="form" id="formBase">
+            <div class="campos">
+              <label class="largo">Arquivos <input type="file" name="arquivos" multiple accept=".xlsx,.xlsm,.zip" required data-dica="Selecione um ou vários arquivos (ou o .zip do SICRO)"></label>
+              <label>Estado (UF) <input name="uf" maxlength="2" placeholder="lido do arquivo" data-dica="Opcional: o sistema lê do relatório (ex.: ABRIL/2026-MT)"></label>
+              <label>Data-base (AAAA-MM) <input name="data_base" placeholder="lida do arquivo" data-dica="Opcional: o sistema lê do relatório"></label>
+            </div>
+            <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Lê e guarda a base; fica disponível para todos os projetos">Importar base</button></div>
+          </form>
+          <div id="resBase"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cst-servicos" class="sub-custos">
+      <div class="caixa">
+        <h3>Serviços escolhidos</h3>
+        <div class="tabela-rolagem" style="max-height:340px"><table class="tab" id="tabServicos"></table></div>
+        <h4>Adicionar serviço da base</h4>
+        <div class="barra filtros"><label class="cresce">Buscar por código ou descrição <input type="search" id="buscaComp" placeholder="ex.: meio-fio, roçada, 4915632…" data-dica="Procura nas composições da base SICRO selecionada"></label></div>
+        <div class="tabela-rolagem" style="max-height:260px"><table class="tab" id="tabBusca"></table></div>
+      </div>
+      <div class="caixa" id="detComp"><p class="nota">Clique em “Composição” num serviço para ver e ajustar a composição analítica.</p></div>
+    </div>
+
+    <div id="cst-insumos" class="sub-custos">
+      <div class="caixa">
+        <h3>Insumos dos serviços escolhidos</h3>
+        <div class="barra filtros">
+          <div class="chips" id="chipsTipoIns"></div>
+          <label class="cresce">Buscar <input type="search" id="buscaIns" data-dica="Filtra por código ou descrição"></label>
+          <label class="check"><input type="checkbox" id="insAmbos" checked data-dica="Se marcado, o novo preço vale para os regimes com e sem desoneração"> aplicar nos dois regimes</label>
+        </div>
+        <div class="tabela-rolagem"><table class="tab" id="tabInsumos"></table></div>
+      </div>
+    </div>
+
+    <div id="cst-alteracoes" class="sub-custos">
+      <div class="caixa"><h3>Alterações de custo</h3>
+        <p class="nota">Registro das alterações de preço de insumo, tempo fixo, veículo e transporte. Desfazer não apaga: a alteração fica inativa e pode ser reativada.</p>
+        <div class="tabela-rolagem"><table class="tab" id="tabAltCusto"></table></div></div>
+    </div>
+
+    <div id="cst-database" class="sub-custos">
+      <div class="caixa"><h3>Trocar a data-base</h3>
+        <p class="nota">Compare os preços dos serviços escolhidos entre a data-base atual e outra base importada; as alterações de insumo e tempo fixo são mantidas.</p>
+        <div class="barra filtros"><label>Nova base <select id="selNovaBase" data-dica="Base importada para comparar"></select></label>
+          <button class="btn" id="btnComparar" data-dica="Mostra a variação de preço de cada serviço">Comparar</button>
+          <button class="btn primario" id="btnAdotarBase" data-dica="Passa o projeto para a nova data-base">Adotar esta data-base</button></div>
+        <div class="tabela-rolagem"><table class="tab" id="tabComparar"></table></div></div>
+    </div>
+  </section>
+
   <!-- IMPORTAR -->
   <section id="aba-importar" class="aba">
     <div class="caixa">
@@ -229,6 +309,7 @@
           <button class="btn" data-exp="inventario" data-dica="Planilha com uma aba por categoria, quantidades calculadas e resumo">Excel (.xlsx)</button>
           <button class="btn" data-exp="geojson" data-dica="Arquivo para SIG (QGIS/ArcGIS) com as feições georreferenciadas">GeoJSON</button>
           <button class="btn" data-exp="kml" data-dica="Arquivo para abrir no Google Earth">KML (Google Earth)</button>
+          <button class="btn" data-exp="composicoes" data-dica="Preços dos serviços escolhidos, composições analíticas (SD e CD), insumos alterados, BDI e alterações">Composições e preços (.xlsx)</button>
         </div>
         <h4>Relatório de pontos a corrigir <small>(para a empresa que levantou o inventário)</small></h4>
         <p class="nota">Lista cada ocorrência pela aba e linha da planilha entregue, com o problema, a correção e a ação esperada,

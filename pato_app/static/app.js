@@ -35,6 +35,7 @@ function irAba(nome) {
   if (nome === "projeto") renderProjeto();
   if (nome === "revisao") carregarSugestoes();
   if (nome === "ajustes") carregarAjustes();
+  if (nome === "custos") carregarCustos();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -469,6 +470,228 @@ $("#btnLoteSug").onclick = async () => {
   });
   document.addEventListener("scroll", () => { b.classList.remove("ver"); alvo = null; }, true);
 })();
+
+// ---------------------------------------------------------------- custos
+const C_ = { sub: "servicos", cfg: null, comp: null, regimeComp: null, tipoIns: null, tfOpcoes: null };
+const REG = { SD: "sem desoneração", CD: "com desoneração" };
+const pct = v => v == null ? "—" : (v * 100).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%";
+const reais = v => v == null ? "—" : v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const base_ = `/api/projetos/`;
+async function carregarCustos() {
+  if (!E.pid) return;
+  $("#cabCustos").innerHTML = `<p class="carregando">Carregando a base SICRO… (na primeira vez a base de exemplo é importada, leva alguns segundos)</p>`;
+  try { C_.cfg = await api(`${base_}${E.pid}/custos/config`); } catch (e) { $("#cabCustos").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; return; }
+  const c = C_.cfg;
+  C_.regimeComp = C_.regimeComp || c.regime;
+  $("#cabCustos").innerHTML = `<div class="it">Base SICRO<br><b>${esc(c.uf || "—")} · ${esc(c.data_base || "—")}</b></div>
+    <div class="it">Regime do orçamento<br><b>${esc(REG[c.regime])}</b></div>
+    <div class="it">BDI sem desoneração<br><b>${pct(c.bdi.SD)}</b></div><div class="it">BDI com desoneração<br><b>${pct(c.bdi.CD)}</b></div>`;
+  const subs = [["servicos", "Serviços e composições", "Escolha os serviços e veja/ajuste as composições"], ["insumos", "Insumos", "Preços dos insumos usados nos serviços escolhidos"],
+    ["alteracoes", "Alterações", "Registro das alterações de custo, com desfazer"], ["base", "Base e BDI", "Base SICRO do projeto, BDI e importação de novas bases"],
+    ["database", "Trocar data-base", "Compare e passe o projeto para outra data-base"]];
+  $("#chipsCustos").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${C_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
+  $$("#chipsCustos .chip").forEach(ch => ch.onclick = () => { C_.sub = ch.dataset.sub; carregarCustos(); });
+  $$(".sub-custos").forEach(el => el.classList.toggle("ativa", el.id === "cst-" + C_.sub));
+  ({ servicos: renderServicos, insumos: renderInsumos, alteracoes: renderAltCusto, base: renderBaseCfg, database: renderDataBase })[C_.sub]().catch(erro);
+}
+
+// ---- base e BDI
+async function renderBaseCfg() {
+  const c = C_.cfg, f = $("#formCfgCustos");
+  f.base.innerHTML = c.disponiveis.map(d => `<option value="${d.uf}|${d.data_base}">${d.uf} — ${d.data_base} (${d.regimes.map(r => REG[r]).join(", ")})</option>`).join("");
+  f.base.value = `${c.uf}|${c.data_base}`; f.regime.value = c.regime;
+  f.bdi_sd.value = (c.bdi.SD * 100).toFixed(2); f.bdi_cd.value = (c.bdi.CD * 100).toFixed(2);
+  $("#parcelasBdi").innerHTML = ["SD", "CD"].map(r => `<div><h4>${REG[r]}</h4>${Object.entries(c.rotulos_parcelas).map(([k, rot]) =>
+    `<label style="display:flex;justify-content:space-between;gap:8px;font-size:12px;margin:3px 0">${esc(rot)} <input data-reg="${r}" data-par="${k}" type="number" step="0.0001" value="${c.parcelas[r]?.[k] ?? 0}" style="width:90px"></label>`).join("")}</div>`).join("");
+  const bases = await api("/api/custos/bases");
+  $("#tabBases").innerHTML = "<tr><th>UF</th><th>Data-base</th><th>Regime</th><th class=n>Composições</th><th class=n>Lista sintética</th><th>Origem</th><th></th></tr>" +
+    bases.map(b => `<tr><td>${esc(b.uf)}</td><td>${esc(b.data_base)}</td><td>${esc(REG[b.regime] || b.regime)}</td><td class=n>${b.n_composicoes}</td><td class=n>${b.n_sintetico || 0}</td>
+      <td><small>${esc(b.origem || "")}</small></td><td><button class="btn mini perigo" data-exb="${b.id}" data-dica="Remove esta base do sistema">Excluir</button></td></tr>`).join("");
+  $$("[data-exb]").forEach(b => b.onclick = async () => { if (!confirm("Excluir esta base?")) return; await api(`/api/custos/bases/${b.dataset.exb}`, { method: "DELETE" }); carregarCustos(); });
+}
+$("#btnCalcBdi").onclick = () => {
+  const par = { SD: {}, CD: {} };
+  $$("#parcelasBdi input").forEach(i => par[i.dataset.reg][i.dataset.par] = +i.value);
+  const calc = p => ((1 + (p.ac + p.lucro) / 100) / (1 - (p.df + p.seguros + p.riscos + p.pis + p.cofins + p.iss + p.cprb) / 100) - 1) * 100;
+  $("#formCfgCustos").bdi_sd.value = calc(par.SD).toFixed(2); $("#formCfgCustos").bdi_cd.value = calc(par.CD).toFixed(2);
+  C_.parcelas = par; toast("BDI calculado — clique em Salvar para gravar");
+};
+$("#formCfgCustos").onsubmit = async e => {
+  e.preventDefault();
+  const f = e.target, [uf, data_base] = f.base.value.split("|");
+  try {
+    await jpost(`${base_}${E.pid}/custos/config`, { uf, data_base, regime: f.regime.value, bdi_sd: +f.bdi_sd.value, bdi_cd: +f.bdi_cd.value, ...(C_.parcelas ? { parcelas: C_.parcelas } : {}) }, "PUT");
+    // BDI digitado prevalece sobre as parcelas
+    await jpost(`${base_}${E.pid}/custos/config`, { bdi_sd: +f.bdi_sd.value, bdi_cd: +f.bdi_cd.value }, "PUT");
+    C_.parcelas = null; C_.regimeComp = f.regime.value; toast("Base e BDI salvos"); carregarCustos();
+  } catch (er) { erro(er); }
+};
+$("#formBase").onsubmit = async e => {
+  e.preventDefault();
+  const f = e.target, fd = new FormData();
+  for (const a of f.arquivos.files) fd.append("arquivos", a);
+  if (f.uf.value) fd.append("uf", f.uf.value); if (f.data_base.value) fd.append("data_base", f.data_base.value);
+  $("#resBase").innerHTML = `<p class="carregando">Lendo os relatórios do SICRO… (arquivos grandes podem levar alguns minutos)</p>`;
+  try {
+    const r = await api("/api/custos/bases", { method: "POST", body: fd });
+    $("#resBase").innerHTML = `<p class="ok-msg">Importado: ${r.map(b => `${b.uf} ${b.data_base} ${REG[b.regime]} (${b.n_composicoes} composições)`).join(" · ")}</p>`;
+    f.reset(); renderBaseCfg();
+  } catch (er) { $("#resBase").innerHTML = `<p class="tag erro">${esc(er.message)}</p>`; }
+};
+
+// ---- serviços e composição
+async function renderServicos() {
+  const r = await api(`${base_}${E.pid}/custos/servicos`);
+  const cel = (s, reg) => {
+    const a = s[`preco_${reg}`], o = s[`preco_original_${reg}`];
+    if (a == null) return "—";
+    return a !== o ? `<span title="original ${reais(o)}">${reais(a)}</span> <small class="${a > o ? "var-pos" : "var-neg"}">(${((a / o - 1) * 100).toFixed(2)}%)</small>` : reais(a);
+  };
+  $("#tabServicos").innerHTML = `<tr><th>Código</th><th>Serviço</th><th>Unid.</th><th class=n>Preço ${REG.SD}</th><th class=n>Preço ${REG.CD}</th><th></th></tr>` +
+    (r.servicos.map(s => `<tr><td>${esc(s.codigo)}</td><td>${esc(s.descricao || "")}${s.analitica ? "" : ' <span class="tag" data-dica="A base não tem o relatório analítico desta composição; o preço vem da lista sintética">sem analítico</span>'}</td>
+      <td>${esc(s.unidade || "")}</td><td class=n>${cel(s, "SD")}</td><td class=n>${cel(s, "CD")}</td>
+      <td><div class="linha-botoes" style="margin:0">${s.analitica ? `<button class="btn mini" data-vcomp="${esc(s.codigo)}" data-dica="Abre a composição analítica para ver e ajustar">Composição</button>` : ""}
+      <button class="btn mini perigo" data-rserv="${esc(s.codigo)}" data-dica="Tira o serviço da lista do projeto">Remover</button></div></td></tr>`).join("")
+      || `<tr><td colspan=6 class="nota">Nenhum serviço escolhido. Busque abaixo e clique em Adicionar.</td></tr>`);
+  $$("[data-vcomp]").forEach(b => b.onclick = () => abrirComposicao(b.dataset.vcomp));
+  $$("[data-rserv]").forEach(b => b.onclick = async () => { await api(`${base_}${E.pid}/custos/servicos/${encodeURIComponent(b.dataset.rserv)}`, { method: "DELETE" }); renderServicos(); });
+  if (C_.comp) abrirComposicao(C_.comp);
+}
+let _buscaCompH;
+$("#buscaComp").oninput = () => { clearTimeout(_buscaCompH); _buscaCompH = setTimeout(buscarComp, 350); };
+async function buscarComp() {
+  const q = $("#buscaComp").value.trim();
+  if (q.length < 2) { $("#tabBusca").innerHTML = ""; return; }
+  const r = await api(`${base_}${E.pid}/custos/buscar?q=${encodeURIComponent(q)}`);
+  $("#tabBusca").innerHTML = "<tr><th>Código</th><th>Descrição</th><th>Unid.</th><th class=n>Custo direto</th><th></th></tr>" + r.map(x =>
+    `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}${x.analitica ? "" : ' <span class="tag">sem analítico</span>'}</td><td>${esc(x.unidade || "")}</td><td class=n>${reais(x.custo_direto)}</td>
+     <td>${x.escolhido ? '<span class="tag">escolhido</span>' : `<button class="btn mini primario" data-addserv="${esc(x.codigo)}" data-dica="Inclui o serviço no projeto">Adicionar</button>`}</td></tr>`).join("");
+  $$("[data-addserv]").forEach(b => b.onclick = async () => { await jpost(`${base_}${E.pid}/custos/servicos`, { codigo: b.dataset.addserv }); toast("Serviço adicionado"); renderServicos(); buscarComp(); });
+}
+async function abrirComposicao(cod) {
+  C_.comp = cod;
+  const reg = C_.regimeComp || C_.cfg.regime;
+  let x;
+  try { x = await api(`${base_}${E.pid}/custos/composicao/${encodeURIComponent(cod)}?regime=${reg}`); } catch (e) { $("#detComp").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; return; }
+  if (!C_.tfOpcoes) C_.tfOpcoes = await api(`${base_}${E.pid}/custos/tempo-fixo/opcoes`);
+  const n4 = v => v == null ? "" : v.toLocaleString("pt-BR", { maximumFractionDigits: 6 });
+  const inp = (attrs, v) => `<input type="number" step="any" ${attrs} value="${v ?? ""}">`;
+  const tfSel = t => `<select data-tftrocar="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}" data-dica="Troca a composição de tempo fixo (e o veículo do transporte do mesmo insumo)"><option value="">trocar veículo…</option>${C_.tfOpcoes.map(o => `<option value="${esc(o.codigo)}">${esc(o.codigo)} — ${esc((o.veiculo || o.descricao).slice(0, 70))} (R$ ${reais(o.preco)}/t)</option>`).join("")}</select>`;
+  $("#detComp").innerHTML = `<div class="cpu">
+    <div class="barra" style="justify-content:space-between"><h3 style="margin:0">${esc(x.codigo)} — ${esc(x.descricao)} <small>(${esc(x.unidade)})</small></h3>
+      <div class="chips">${["SD", "CD"].map(r => `<span class="chip ${r === reg ? "ativo" : ""}" data-regc="${r}" data-dica="Mostrar a composição ${REG[r]}">${REG[r]}</span>`).join("")}</div></div>
+    <p class="nota">SICRO ${esc(x.uf)} ${esc(x.data_base)} · Produção da equipe ${n4(x.producao)} ${esc(x.unidade)}/h · Edite o preço de um insumo e clique em ✓ — vale para todas as composições que usam o insumo.</p>
+    <h4>A — Equipamentos</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th class=n>Util. op.</th><th class=n>Util. improd.</th><th>Custo produtivo</th><th>Custo improdutivo</th><th class=n>Custo horário</th><th></th></tr>
+      ${x.equipamentos.map(e => `<tr><td>${esc(e.codigo)}</td><td>${esc(e.descricao)}</td><td class=n>${n4(e.quant)}</td><td class=n>${n4(e.util_op)}</td><td class=n>${n4(e.util_imp)}</td>
+        <td>${inp(`data-eqop="${esc(e.codigo)}"`, e.custo_op)}</td><td>${inp(`data-eqimp="${esc(e.codigo)}"`, e.custo_imp)}</td><td class=n>${n4(e.custo)}</td>
+        <td><button class="btn mini" data-saveq="${esc(e.codigo)}" data-dica="Grava o novo custo horário do equipamento">✓</button></td></tr>`).join("")}
+      <tr class="tot"><td colspan=7>Custo horário de equipamentos</td><td class=n>${n4(x.total_equipamentos)}</td><td></td></tr></table>
+    <h4>B — Mão de obra</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Custo horário</th><th class=n>Total</th><th></th></tr>
+      ${x.mao_obra.map(m => `<tr><td>${esc(m.codigo)}</td><td>${esc(m.descricao)}</td><td class=n>${n4(m.quant)}</td><td>${inp(`data-mo="${esc(m.codigo)}"`, m.custo)}</td><td class=n>${n4(m.total)}</td>
+        <td><button class="btn mini" data-savmo="${esc(m.codigo)}" data-dica="Grava o novo custo horário">✓</button></td></tr>`).join("")}
+      <tr class="tot"><td colspan=4>Custo horário de mão de obra</td><td class=n>${n4(x.total_mao_obra)}</td><td></td></tr>
+      <tr class="tot"><td colspan=4>Custo unitário de execução (÷ produção) · FIC · FIT</td><td class=n>${n4(x.exec_unitario)} · ${n4(x.fic)} · ${n4(x.fit)}</td><td></td></tr></table>
+    <h4>C — Materiais</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Unid.</th><th>Preço</th><th class=n>Custo</th><th></th></tr>
+      ${x.materiais.map(m => `<tr><td>${esc(m.codigo)}</td><td>${esc(m.descricao)}</td><td class=n>${n4(m.quant)}</td><td>${esc(m.unidade || "")}</td><td>${inp(`data-mat="${esc(m.codigo)}"`, m.preco)}</td><td class=n>${n4(m.total)}</td>
+        <td><button class="btn mini" data-savmat="${esc(m.codigo)}" data-dica="Grava o novo preço do material">✓</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
+    <h4>D — Atividades auxiliares</h4><table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th>Unid.</th><th class=n>Preço</th><th class=n>Custo</th><th></th></tr>
+      ${x.auxiliares.map(a => `<tr><td>${esc(a.codigo)}</td><td>${esc(a.descricao)}</td><td class=n>${n4(a.quant)}</td><td>${esc(a.unidade || "")}</td><td class=n>${reais(a.preco)}</td><td class=n>${n4(a.total)}</td>
+        <td><button class="btn mini" data-vcomp2="${esc(a.codigo)}" data-dica="Abre a composição auxiliar">abrir</button></td></tr>`).join("") || '<tr><td colspan=7 class="nota">—</td></tr>'}</table>
+    <h4>E — Tempo fixo</h4><label class="check" style="font-size:12px"><input type="checkbox" id="tfTodas" data-dica="Se marcado, a alteração vale para todas as composições do projeto com o mesmo tempo fixo"> aplicar a alteração em todas as composições com o mesmo tempo fixo</label>
+      <table class="tab"><tr><th>Insumo / composição</th><th>Descrição</th><th>Quant. (t)</th><th class=n>Preço</th><th class=n>Custo</th><th>Ações</th></tr>
+      ${x.tempo_fixo.map(t => `<tr class="${t.retirado ? "retirado" : ""}"><td>${esc(t.insumo)} · ${esc(t.composicao)}</td><td>${esc(t.descricao)}</td>
+        <td>${inp(`data-tfq="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}"`, t.quant)}</td><td class=n>${reais(t.preco)}</td><td class=n>${n4(t.total)}</td>
+        <td><div class="linha-botoes" style="margin:0"><button class="btn mini" data-tfqok="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}" data-dica="Grava a nova quantidade do tempo fixo">✓ quant.</button>
+          ${t.retirado ? `<button class="btn mini" data-tfinc="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}" data-dica="Volta a considerar o tempo fixo no preço (preço da base)">Incluir</button>`
+                       : `<button class="btn mini" data-tfret="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}" data-dica="Retira o tempo fixo do preço da composição">Retirar</button>`}
+          ${tfSel(t)}</div></td></tr>`).join("") || '<tr><td colspan=6 class="nota">—</td></tr>'}</table>
+    <h4>F — Transportes</h4><table class="tab"><tr><th>Insumo / composição</th><th>Descrição</th><th class=n>Quant.</th><th class=n>Custo LN/RP/P</th><th>DMT LN</th><th>DMT RP</th><th>DMT P</th><th class=n>Custo</th><th></th></tr>
+      ${x.transportes.map(t => `<tr><td>${esc(t.insumo)} · ${esc(t.composicao)}</td><td>${esc(t.descricao)}</td><td class=n>${n4(t.quant)}</td><td class=n>${reais(t.custo_ln)} / ${reais(t.custo_rp)} / ${reais(t.custo_p)}</td>
+        ${["dmt_ln", "dmt_rp", "dmt_p"].map(k => `<td>${inp(`data-dmt="${k}" data-ins="${esc(t.insumo)}" style="width:70px"`, t[k])}</td>`).join("")}<td class=n>${n4(t.total)}</td>
+        <td><button class="btn mini" data-savdmt="${esc(t.insumo)}" data-dica="Grava as distâncias de transporte (km) deste insumo nesta composição">✓</button></td></tr>`).join("") || '<tr><td colspan=9 class="nota">—</td></tr>'}</table>
+    <table class="tab" style="margin-top:10px"><tr class="tot"><td>Subtotal</td><td class=n>${reais(x.subtotal)}</td></tr>
+      <tr class="tot"><td>Custo unitário direto total</td><td class=n>${reais(x.custo_direto)} ${x.custo_direto !== x.custo_direto_original ? `<small>(original ${reais(x.custo_direto_original)})</small>` : ""}</td></tr>
+      <tr class="tot"><td>BDI (${pct(x.bdi_taxa)})</td><td class=n>${reais(x.bdi)}</td></tr>
+      <tr class="tot"><td>Preço unitário</td><td class=n>${reais(x.preco)} ${x.preco !== x.preco_original ? `<small class="${x.preco > x.preco_original ? "var-pos" : "var-neg"}">(original ${reais(x.preco_original)})</small>` : ""}</td></tr></table></div>`;
+  const D = $("#detComp"), recarregar = async () => { await renderServicos(); };
+  $$("[data-regc]", D).forEach(ch => ch.onclick = () => { C_.regimeComp = ch.dataset.regc; abrirComposicao(cod); });
+  $$("[data-vcomp2]", D).forEach(b => b.onclick = () => abrirComposicao(b.dataset.vcomp2));
+  const regIns = () => ($("#insAmbos")?.checked ?? true) ? "AMBOS" : reg;
+  const altIns = async (tipo, codigo, valores) => { await jpost(`${base_}${E.pid}/custos/insumo`, { tipo, codigo, valores, regime: regIns() }); toast("Preço alterado — registrado em Alterações"); recarregar(); };
+  $$("[data-saveq]", D).forEach(b => b.onclick = () => altIns("EQ", b.dataset.saveq, { custo_op: $(`[data-eqop="${b.dataset.saveq}"]`, D).value, custo_imp: $(`[data-eqimp="${b.dataset.saveq}"]`, D).value }));
+  $$("[data-savmo]", D).forEach(b => b.onclick = () => altIns("MO", b.dataset.savmo, { preco: $(`[data-mo="${b.dataset.savmo}"]`, D).value }));
+  $$("[data-savmat]", D).forEach(b => b.onclick = () => altIns("MAT", b.dataset.savmat, { preco: $(`[data-mat="${b.dataset.savmat}"]`, D).value }));
+  const tf = async (corpo) => {
+    const todas = $("#tfTodas", D).checked;
+    try { await jpost(`${base_}${E.pid}/custos/tempo-fixo`, { composicao: todas ? null : cod, ...corpo }); toast("Tempo fixo alterado — registrado em Alterações"); recarregar(); } catch (e) { erro(e); }
+  };
+  $$("[data-tfqok]", D).forEach(b => b.onclick = () => tf({ acao: "quantidade", insumo: $("#tfTodas", D).checked ? null : b.dataset.tfqok, de_composicao: b.dataset.tfde, valor: $(`[data-tfq="${b.dataset.tfqok}"][data-tfde="${b.dataset.tfde}"]`, D).value }));
+  $$("[data-tfret]", D).forEach(b => b.onclick = () => tf({ acao: "retirar", insumo: $("#tfTodas", D).checked ? null : b.dataset.tfret, de_composicao: b.dataset.tfde }));
+  $$("[data-tfinc]", D).forEach(b => b.onclick = () => tf({ acao: "incluir", insumo: $("#tfTodas", D).checked ? null : b.dataset.tfinc, de_composicao: b.dataset.tfde }));
+  $$("[data-tftrocar]", D).forEach(sel => sel.onchange = () => { if (sel.value) tf({ acao: "trocar", insumo: $("#tfTodas", D).checked ? null : sel.dataset.tftrocar, de_composicao: sel.dataset.tfde, para_composicao: sel.value }); });
+  $$("[data-savdmt]", D).forEach(b => b.onclick = async () => {
+    const corpo = { composicao: cod, insumo: b.dataset.savdmt };
+    $$(`[data-ins="${b.dataset.savdmt}"]`, D).forEach(i => corpo[i.dataset.dmt] = i.value);
+    await jpost(`${base_}${E.pid}/custos/dmt`, corpo); toast("DMT gravada"); recarregar();
+  });
+}
+
+// ---- insumos
+let _buscaInsH;
+$("#buscaIns").oninput = () => { clearTimeout(_buscaInsH); _buscaInsH = setTimeout(renderInsumos, 350); };
+async function renderInsumos() {
+  const tipos = [[null, "Todos"], ["EQ", "Equipamentos"], ["MO", "Mão de obra"], ["MAT", "Materiais"], ["TF", "Tempo fixo"]];
+  $("#chipsTipoIns").innerHTML = tipos.map(([k, r]) => `<span class="chip ${C_.tipoIns === k ? "ativo" : ""}" data-ti="${k ?? ""}" data-dica="Filtrar por tipo de insumo">${r}</span>`).join("");
+  $$("#chipsTipoIns .chip").forEach(c => c.onclick = () => { C_.tipoIns = c.dataset.ti || null; renderInsumos(); });
+  const q = new URLSearchParams({ regime: C_.cfg.regime, q: $("#buscaIns").value }); if (C_.tipoIns) q.set("tipo", C_.tipoIns);
+  const lst = await api(`${base_}${E.pid}/custos/insumos?${q}`);
+  $("#tabInsumos").innerHTML = `<tr><th>Tipo</th><th>Código</th><th>Descrição</th><th>Unid.</th><th>Preço atual (${REG[C_.cfg.regime]})</th><th class=n>Original</th><th class=n>Usos</th><th></th></tr>` + lst.map(i => {
+    const atual = i.tipo === "EQ" ? `<input type="number" step="any" data-iop="${esc(i.codigo)}" value="${i.custo_op}" style="width:95px" data-dica="Custo horário produtivo"> / <input type="number" step="any" data-iimp="${esc(i.codigo)}" value="${i.custo_imp}" style="width:95px" data-dica="Custo horário improdutivo">`
+      : `<input type="number" step="any" data-ip="${esc(i.tipo)}:${esc(i.codigo)}" value="${i.preco}" style="width:110px">`;
+    const orig = i.tipo === "EQ" ? `${n6(i.original_op)} / ${n6(i.original_imp)}` : n6(i.original);
+    return `<tr class="${i.alterado ? "alterado sit-corrigido" : ""}"><td>${esc(i.tipo)}</td><td>${esc(i.codigo)}</td><td>${esc(i.descricao)}</td><td>${esc(i.unidade || "")}</td><td>${atual}</td><td class=n>${orig}</td><td class=n>${i.usos}</td>
+      <td><button class="btn mini" data-salvai="${esc(i.tipo)}:${esc(i.codigo)}" data-dica="Grava o preço; vale para todas as composições que usam este insumo">✓</button></td></tr>`;
+  }).join("");
+  $$("[data-salvai]").forEach(b => b.onclick = async () => {
+    const [tipo, codigo] = b.dataset.salvai.split(":");
+    const valores = tipo === "EQ" ? { custo_op: $(`[data-iop="${codigo}"]`).value, custo_imp: $(`[data-iimp="${codigo}"]`).value } : { preco: $(`[data-ip="${tipo}:${codigo}"]`).value };
+    try { await jpost(`${base_}${E.pid}/custos/insumo`, { tipo, codigo, valores, regime: $("#insAmbos").checked ? "AMBOS" : C_.cfg.regime }); toast("Preço alterado"); renderInsumos(); } catch (e) { erro(e); }
+  });
+}
+const n6 = v => v == null ? "—" : v.toLocaleString("pt-BR", { maximumFractionDigits: 6 });
+
+// ---- alterações
+async function renderAltCusto() {
+  const lst = await api(`${base_}${E.pid}/custos/alteracoes`);
+  $("#tabAltCusto").innerHTML = "<tr><th>Quando</th><th>Tipo</th><th>Alteração</th><th>Situação</th><th></th></tr>" + (lst.slice().reverse().map(a =>
+    `<tr class="${a.ativa ? "" : "retirado"}"><td>${esc(a.quando)}</td><td>${esc(a.tipo)}</td><td>${esc(a.descricao)}</td><td>${a.ativa ? "ativa" : "desfeita"}</td>
+     <td><button class="btn mini" data-atv="${a.id}" data-v="${a.ativa ? 0 : 1}" data-dica="${a.ativa ? "Desfaz esta alteração (os preços voltam)" : "Reativa esta alteração"}">${a.ativa ? "Desfazer" : "Reativar"}</button></td></tr>`).join("")
+    || '<tr><td colspan=5 class="nota">Nenhuma alteração.</td></tr>');
+  $$("[data-atv]").forEach(b => b.onclick = async () => { await jpost(`${base_}${E.pid}/custos/alteracoes/${b.dataset.atv}`, { ativa: b.dataset.v === "1" }); renderAltCusto(); });
+}
+
+// ---- data-base
+async function renderDataBase() {
+  const c = C_.cfg;
+  $("#selNovaBase").innerHTML = c.disponiveis.filter(d => !(d.uf === c.uf && d.data_base === c.data_base))
+    .map(d => `<option value="${d.uf}|${d.data_base}">${d.uf} — ${d.data_base}</option>`).join("") || '<option value="">(importe outra base em “Base e BDI”)</option>';
+  $("#tabComparar").innerHTML = "";
+}
+$("#btnComparar").onclick = async () => {
+  const v = $("#selNovaBase").value; if (!v) return toast("Importe outra base primeiro (Base e BDI).");
+  const [uf, data_base] = v.split("|");
+  const r = await api(`${base_}${E.pid}/custos/comparar?uf=${uf}&data_base=${data_base}`);
+  const vv = x => x == null ? "—" : `<span class="${x > 0 ? "var-pos" : "var-neg"}">${x > 0 ? "+" : ""}${x.toFixed(2)}%</span>`;
+  $("#tabComparar").innerHTML = `<tr><th>Código</th><th>Serviço</th><th class=n>Atual SD</th><th class=n>Nova SD</th><th class=n>Var.</th><th class=n>Atual CD</th><th class=n>Nova CD</th><th class=n>Var.</th></tr>` +
+    r.servicos.map(s => `<tr><td>${esc(s.codigo)}</td><td>${esc(s.descricao || "")}</td><td class=n>${reais(s.atual_SD)}</td><td class=n>${reais(s.novo_SD)}</td><td class=n>${vv(s.var_SD)}</td>
+      <td class=n>${reais(s.atual_CD)}</td><td class=n>${reais(s.novo_CD)}</td><td class=n>${vv(s.var_CD)}</td></tr>`).join("");
+};
+$("#btnAdotarBase").onclick = async () => {
+  const v = $("#selNovaBase").value; if (!v) return;
+  const [uf, data_base] = v.split("|");
+  if (!confirm(`Passar o projeto para a base ${uf} ${data_base}?`)) return;
+  await jpost(`${base_}${E.pid}/custos/config`, { uf, data_base }, "PUT"); toast("Data-base alterada"); C_.sub = "servicos"; carregarCustos();
+};
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {

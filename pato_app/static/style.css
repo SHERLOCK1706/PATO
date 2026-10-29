@@ -177,3 +177,13 @@ dialog::backdrop { background: rgba(0,0,0,.35); }
 .balao { position: fixed; z-index: 3000; max-width: 280px; background: #1b2430; color: #fff; font-size: 12px; line-height: 1.35;
   padding: 6px 9px; border-radius: 6px; box-shadow: 0 4px 14px rgba(0,0,0,.25); pointer-events: none; opacity: 0; transition: opacity .12s; }
 .balao.ver { opacity: .97; }
+
+.sub-custos { display: none; } .sub-custos.ativa { display: block; }
+.cab-custos { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.cab-custos .it { font-size: 13px; } .cab-custos .it b { font-size: 15px; }
+.cpu h4 { margin: 14px 0 4px; background: var(--sup2); padding: 4px 8px; border-radius: 4px; }
+.cpu td input { width: 100px; } .cpu .tot td { font-weight: 600; background: var(--sup2); }
+.cpu .alterado { background: color-mix(in srgb, #fff59d 45%, transparent); }
+.cpu .retirado td { color: var(--txt2); text-decoration: line-through; }
+.mini { padding: 3px 7px; font-size: 12px; }
+.var-pos { color: var(--erro); } .var-neg { color: var(--ok); }

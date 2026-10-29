@@ -75,6 +75,8 @@ class Servico:
         (self.pasta / "modelos").mkdir(exist_ok=True)
         self.db = banco or Banco(self.pasta / "pato.db")
         self._previas: dict[str, dict] = {}
+        from .custos import Custos
+        self.custos = Custos(self)
 
     # ------------------------------------------------------------- projetos
     def listar_projetos(self) -> list[dict]:
@@ -87,6 +89,10 @@ class Servico:
         return p
 
     def criar_projeto(self, dados: dict) -> dict:
+        dados = {k: (None if v == "" else v) for k, v in dados.items()}
+        for k in ("km_ini", "km_fim", "prazo"):
+            if dados.get(k) is not None:
+                dados[k] = nz.numero(dados[k])
         pid = self.db.criar_projeto(dados)
         self.db.registrar(pid, "criar", dados.get("nome") or "")
         return self.projeto(pid)
@@ -632,6 +638,13 @@ class Servico:
                                      json.loads(p["analise_snv"]) if p.get("analise_snv") else None)
         self.db.registrar(pid, "relatório de pontos a corrigir", f"{out['pontos']} pontos · {destinatario or ''}")
         return dict(out, nome=dest.name)
+
+    def exportar_composicoes(self, pid: int) -> dict:
+        from .custos import exportar_xlsx
+        p = self.projeto(pid)
+        dest = self._nome(p, "composicoes", "xlsx")
+        exportar_xlsx(self.custos, pid, str(dest))
+        return dict(arquivo=str(dest), nome=dest.name)
 
     def exportar_original(self, pid: int) -> dict:
         """Cópia da planilha de inventário importada com os valores das sugestões aplicadas no sistema."""

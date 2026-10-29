@@ -148,8 +148,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def exp_geo(pid: int, formato: str):
         if formato == "original":
             return sv.exportar_original(pid)
+        if formato == "composicoes":
+            return sv.exportar_composicoes(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml ou original")
+            raise HTTPException(400, "Formato deve ser geojson, kml, original ou composicoes")
         return sv.exportar_geo(pid, formato)
 
     # ------------------------------------------------- revisão (sugestões)
@@ -178,6 +180,92 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.post("/api/sugestoes/{sid}/desfazer")
     def sug_desfazer(sid: int):
         return sv.desfazer_sugestao(sid)
+
+    # ------------------------------------------------------------ custos
+    cu = sv.custos
+
+    @app.get("/api/custos/bases")
+    def c_bases():
+        cu.garantir_base_exemplo()
+        return cu.bases()
+
+    @app.post("/api/custos/bases")
+    async def c_importar(arquivos: list[UploadFile] = File(...), uf: str | None = Form(default=None),
+                         data_base: str | None = Form(default=None), descricao: str | None = Form(default=None)):
+        caminhos = [await _salvar_upload(a) for a in arquivos]
+        try:
+            return cu.importar_base(caminhos, (uf or "").upper() or None, data_base or None, descricao or None,
+                                    origem=", ".join(a.filename or "" for a in arquivos))
+        finally:
+            for c in caminhos:
+                os.unlink(c)
+
+    @app.delete("/api/custos/bases/{bid}")
+    def c_excluir_base(bid: int):
+        cu.excluir_base(bid)
+        return {"ok": True}
+
+    @app.get("/api/projetos/{pid}/custos/config")
+    def c_config(pid: int):
+        return cu.config(pid)
+
+    @app.put("/api/projetos/{pid}/custos/config")
+    def c_configurar(pid: int, d: dict = Body(...)):
+        return cu.configurar(pid, d.get("uf"), d.get("data_base"), d.get("regime"), d.get("bdi_sd"), d.get("bdi_cd"),
+                             d.get("parcelas"))
+
+    @app.get("/api/projetos/{pid}/custos/buscar")
+    def c_buscar(pid: int, q: str = "", limite: int = 60):
+        return cu.buscar(pid, q, limite)
+
+    @app.get("/api/projetos/{pid}/custos/servicos")
+    def c_servicos(pid: int):
+        return cu.servicos(pid)
+
+    @app.post("/api/projetos/{pid}/custos/servicos")
+    def c_add_servico(pid: int, d: dict = Body(...)):
+        return cu.adicionar_servico(pid, d["codigo"], d.get("item"))
+
+    @app.delete("/api/projetos/{pid}/custos/servicos/{codigo}")
+    def c_rem_servico(pid: int, codigo: str):
+        return cu.remover_servico(pid, codigo)
+
+    @app.get("/api/projetos/{pid}/custos/composicao/{codigo}")
+    def c_composicao(pid: int, codigo: str, regime: str | None = None):
+        return cu.composicao(pid, codigo, regime)
+
+    @app.get("/api/projetos/{pid}/custos/insumos")
+    def c_insumos(pid: int, regime: str | None = None, q: str = "", tipo: str | None = None):
+        return cu.insumos(pid, regime, q, tipo)
+
+    @app.post("/api/projetos/{pid}/custos/insumo")
+    def c_alt_insumo(pid: int, d: dict = Body(...)):
+        return cu.alterar_insumo(pid, d["tipo"], d["codigo"], d["valores"], d.get("regime", "AMBOS"), d.get("motivo"))
+
+    @app.get("/api/projetos/{pid}/custos/tempo-fixo/opcoes")
+    def c_tf_opcoes(pid: int, regime: str | None = None):
+        return cu.opcoes_tempo_fixo(pid, regime)
+
+    @app.post("/api/projetos/{pid}/custos/tempo-fixo")
+    def c_tf(pid: int, d: dict = Body(...)):
+        return cu.alterar_tempo_fixo(pid, d["acao"], d.get("composicao"), d.get("insumo"), d.get("de_composicao"),
+                                     d.get("valor"), d.get("para_composicao"), d.get("trocar_transporte", True))
+
+    @app.post("/api/projetos/{pid}/custos/dmt")
+    def c_dmt(pid: int, d: dict = Body(...)):
+        return cu.alterar_dmt(pid, d.get("composicao"), d.get("insumo"), d.get("dmt_ln"), d.get("dmt_rp"), d.get("dmt_p"))
+
+    @app.get("/api/projetos/{pid}/custos/alteracoes")
+    def c_alteracoes(pid: int):
+        return cu.alteracoes(pid)
+
+    @app.post("/api/projetos/{pid}/custos/alteracoes/{aid}")
+    def c_ativar(pid: int, aid: int, d: dict = Body(...)):
+        return cu.ativar(pid, aid, bool(d.get("ativa")))
+
+    @app.get("/api/projetos/{pid}/custos/comparar")
+    def c_comparar(pid: int, uf: str, data_base: str):
+        return cu.comparar_data_base(pid, uf, data_base)
 
     @app.post("/api/projetos/{pid}/relatorio-pontos")
     def rel_pontos(pid: int, dados: dict = Body(default={})):

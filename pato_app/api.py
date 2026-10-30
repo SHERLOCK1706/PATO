@@ -154,8 +154,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return sv.binomio.exportar(pid)
         if formato == "transportes":
             return sv.transporte.exportar(pid)
+        if formato == "orcamento":
+            return sv.orcamento.exportar(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes, binomio ou transportes")
+            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes, binomio, transportes ou orcamento")
         return sv.exportar_geo(pid, formato)
 
     # ------------------------------------------------- revisão (sugestões)
@@ -433,6 +435,45 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return tr.importar_planilha(pid, caminho, quadro, quantidades, vmd)
         finally:
             os.unlink(caminho)
+
+    # ------------------------------------------------ planilha PATO (orçamento)
+    orc = sv.orcamento
+
+    @app.get("/api/projetos/{pid}/pato")
+    def o_calcular(pid: int):
+        return orc.calcular(pid)
+
+    @app.get("/api/projetos/{pid}/pato/resumo")
+    def o_resumo(pid: int):
+        return orc.resumo(pid)
+
+    @app.get("/api/projetos/{pid}/pato/medidas")
+    def o_medidas(pid: int):
+        return orc.medidas(pid)
+
+    @app.post("/api/projetos/{pid}/pato/importar")
+    async def o_importar(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return orc.importar_referencia(pid, caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.put("/api/projetos/{pid}/pato/itens/{iid}")
+    def o_editar(pid: int, iid: str, dados: dict = Body(...)):
+        return orc.editar_item(pid, iid, dados)
+
+    @app.post("/api/projetos/{pid}/pato/itens")
+    def o_incluir(pid: int, dados: dict = Body(...)):
+        return orc.incluir_item(pid, dados.get("apos"), dados)
+
+    @app.delete("/api/projetos/{pid}/pato/itens/{iid}")
+    def o_remover(pid: int, iid: str):
+        return orc.remover_item(pid, iid)
+
+    @app.put("/api/projetos/{pid}/pato/preco")
+    def o_preco(pid: int, dados: dict = Body(...)):
+        return orc.preco_informado(pid, dados["codigo"], dados.get("SD"), dados.get("CD"), dados.get("descricao"), dados.get("unidade"))
 
     @app.get("/api/projetos/{pid}/log")
     def log(pid: int, tipo: str | None = None):

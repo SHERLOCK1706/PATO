@@ -490,6 +490,60 @@ def exportar_transportes(projeto_id: int) -> dict:
     return sv().transporte.exportar(projeto_id)
 
 
+# ------------------------------------------------------------------ planilha PATO (Res. DNIT nº 8/2023)
+@mcp.tool()
+def pato_importar_planilha(projeto_id: int, caminho_xlsx: str) -> dict:
+    """Importa a aba PATO (itens, níveis de esforço, memórias), DESEMPENHO e preços da BD de uma planilha PATO,
+    ligando as quantidades ao inventário do projeto."""
+    return sv().orcamento.importar_referencia(projeto_id, caminho_xlsx)
+
+
+@mcp.tool()
+def pato_orcamento(projeto_id: int, com_itens: bool = False) -> dict:
+    """Totais SD/CD, condição mais vantajosa, resumo por grupo de tarefas e avisos (limite de 25% de DSM).
+    com_itens=True devolve também os itens (quantidade, base, NE, preços e parciais)."""
+    c = sv().orcamento.calcular(projeto_id)
+    out = dict(totais=c["totais"], vantajosa=c["vantajosa"], secoes=c["secoes"], avisos=c["avisos"], sem_preco=c["sem_preco"])
+    if com_itens:
+        out["itens"] = [{k: x.get(k) for k in ("id", "item", "codigo", "descricao", "unidade", "base_valor", "base_fonte", "ne",
+                                                "quantidade", "preco_SD", "parcial_SD", "preco_CD", "parcial_CD")}
+                        for x in c["itens"] if x["tipo"] == "servico"]
+    return out
+
+
+@mcp.tool()
+def pato_editar_item(projeto_id: int, item_id: str, ne: float | None = None, valor_base: float | None = None,
+                     medida_inventario: str | None = None) -> dict:
+    """Altera o nível de esforço, o valor da base ou liga a base a uma medida do inventário (ver pato_medidas)."""
+    campos: dict = {}
+    if ne is not None:
+        campos["ne"] = ne
+    if medida_inventario:
+        campos["base"] = dict(tipo="inventario", medida=medida_inventario, fator=1.0)
+    elif valor_base is not None:
+        campos["base"] = dict(tipo="valor", valor=valor_base, fonte="informado")
+    c = sv().orcamento.editar_item(projeto_id, item_id, campos)
+    return dict(totais=c["totais"])
+
+
+@mcp.tool()
+def pato_medidas(projeto_id: int) -> dict:
+    """Medidas do inventário disponíveis para as quantidades do PATO (nome → valor)."""
+    return sv().orcamento.medidas(projeto_id)
+
+
+@mcp.tool()
+def pato_resumo(projeto_id: int) -> dict:
+    """Curva ABC (Anexo XXI), % dos grupos (Anexo XX) e cronograma físico-financeiro."""
+    return sv().orcamento.resumo(projeto_id)
+
+
+@mcp.tool()
+def pato_exportar(projeto_id: int) -> dict:
+    """Gera o Excel da planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho."""
+    return sv().orcamento.exportar(projeto_id)
+
+
 def main():
     mcp.run()
 

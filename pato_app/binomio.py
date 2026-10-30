@@ -131,10 +131,14 @@ def calcular_material(mat: dict, indices: dict, data_base: str, preco_sicro: dic
 
 
 # ----------------------------------------------------------- betuminosos
-def calcular_betuminoso(prod: dict, indices: dict, data_base: str, bdi: float) -> dict:
+BDI_TRANSPORTE = {"SD": 0.15, "CD": 0.1867}  # BDI do transporte de betuminosos (planilha de referência: 15% / 18,67%)
+
+
+def calcular_betuminoso(prod: dict, indices: dict, data_base: str, bdi: float, regime: str = "SD") -> dict:
     p = prod
     pis, cofins = nz.numero(p.get("pis", 0.0065)), nz.numero(p.get("cofins", 0.03))
-    bdi_tr = nz.numero(p.get("bdi_transporte", 0.15))
+    chave_tr = "bdi_transporte" if regime == "SD" else "bdi_transporte_cd"
+    bdi_tr = nz.numero(p.get(chave_tr)) if p.get(chave_tr) not in (None, "") else BDI_TRANSPORTE[regime]
     ton_viagem = nz.numero(p.get("ton_viagem", 60)) or 60
     i_at = nz.numero(p.get("indice_atual")) or indice(indices, p.get("indice") or INDICE_ASFALTO, data_base)
     base_r, base_f = nz.numero(p.get("base_rodoviario", BASE_RODOVIARIO)), nz.numero(p.get("base_fluvial", BASE_FLUVIAL))

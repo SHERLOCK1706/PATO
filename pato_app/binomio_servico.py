@@ -158,7 +158,8 @@ class Binomios:
                    codigo=cp._cod(d["codigo"]) if d.get("codigo") else None, indice=d.get("indice") or bn.INDICE_ASFALTO,
                    origens=origens, obs=nz.texto(d.get("obs")), aplicado=d.get("aplicado"),
                    fluvial_sempre=bool(d.get("fluvial_sempre", True)))
-        for k, padrao in (("pis", 0.0065), ("cofins", 0.03), ("bdi_transporte", 0.15), ("ton_viagem", 60)):
+        for k, padrao in (("pis", 0.0065), ("cofins", 0.03), ("bdi_transporte", 0.15), ("bdi_transporte_cd", 0.1867),
+                          ("ton_viagem", 60)):
             v = _num(d.get(k))
             if v is not None and k != "ton_viagem" and v > 1:
                 v /= 100

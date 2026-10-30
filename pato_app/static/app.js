@@ -37,6 +37,7 @@ function irAba(nome) {
   if (nome === "ajustes") carregarAjustes();
   if (nome === "custos") carregarCustos();
   if (nome === "transporte") carregarTransp();
+  if (nome === "orcamento") carregarOrc();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -1089,6 +1090,7 @@ async function renderCroqui() {
   $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial</th><th>km final</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
   $("#tabLocal").innerHTML = `<tr><th>Nome</th><th>km</th><th></th></tr>` + (d.localidades || []).map(l => `<tr data-lc><td>${ci("nome", l.nome)}</td><td>${ci("km", l.km, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
   $("#crMetodo").value = d.metodo || "referencia"; $("#crFitMax").value = d.fit_dmt_max ?? 100;
+  $("#crPareSiga").value = d.pare_siga || "auto"; $("#crVelUrb").value = d.vel_urbana ?? 30;
   $("#crKmIni").value = d.km_ini ?? ""; $("#crKmFim").value = d.km_fim ?? "";
   ligarRemover();
 }
@@ -1098,6 +1100,7 @@ $("#btnAddLocal").onclick = () => { $("#tabLocal").insertAdjacentHTML("beforeend
 $("#btnSalvarCroqui").onclick = async () => {
   const dados = { ocorrencias: lerTab("#tabOcorr tr[data-oc]").filter(o => o.nome), travessias: lerTab("#tabTrav tr[data-tv]").filter(t => t.km_ini != null && t.km_fim != null),
     localidades: lerTab("#tabLocal tr[data-lc]").filter(l => l.nome), metodo: $("#crMetodo").value, fit_dmt_max: +$("#crFitMax").value || 100,
+    pare_siga: $("#crPareSiga").value, vel_urbana: +$("#crVelUrb").value || 30,
     km_ini: $("#crKmIni").value === "" ? null : +$("#crKmIni").value, km_fim: $("#crKmFim").value === "" ? null : +$("#crKmFim").value };
   try { await jpost(`${base_}${E.pid}/croqui`, dados, "PUT"); toast("Croqui salvo — DMT e FIT recalculados"); carregarTransp(); } catch (e) { erro(e); }
 };
@@ -1132,6 +1135,8 @@ $("#btnImpVmd").onclick = async () => {
 
 // ---- DMT e FIT
 async function renderRotas() {
+  $("#notaPareSiga").innerHTML = T_.cro.pare_siga ? "<b>A1 considerado</b> (operação PARE e SIGA " + (T_.cro.pare_siga_previsto ? "prevista no orçamento" : "marcada no croqui") + ")."
+    : "<b>A1 = 0</b>: o orçamento não prevê a operação PARE e SIGA (5213850).";
   const man = new Set((T_.cro.dados.rotas_manuais || []).map(r => `${r.origem}|${r.destino}`));
   $("#tabRotas").innerHTML = `<tr><th>Origem</th><th>Destino</th><th class=n>LN</th><th class=n>RP</th><th class=n>P</th><th class=n>Pr</th><th class=n>Pu</th><th class=n>DMT</th><th>Sentido</th><th class=n>VMDf</th><th class=n>A1 (s)</th><th class=n>A2 (s)</th><th class=n>FIT</th><th>Cálculo</th><th></th></tr>` +
     (T_.cro.rotas.map(r => { const m = man.has(`${r.origem}|${r.destino}`);
@@ -1200,6 +1205,119 @@ $("#btnImpTransp").onclick = async () => {
 };
 $("#btnExpTransp").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/exportar/transportes`, {}); $("#resTransp").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
+};
+
+// ---------------------------------------------------------------- PATO (orçamento)
+const O_ = { sub: "planilha", c: null, med: null };
+const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 3 });
+async function carregarOrc() {
+  if (!E.pid) return;
+  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
+    ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
+  $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
+  $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
+  $$(".sub-orc").forEach(el => el.classList.toggle("ativa", el.id === "orc-" + O_.sub));
+  $("#cabOrc").innerHTML = '<p class="carregando">Calculando a planilha…</p>';
+  try {
+    const c = O_.c = await api(`${base_}${E.pid}/pato`);
+    const n = c.itens.filter(i => i.tipo === "servico").length, t = c.totais;
+    $("#cabOrc").innerHTML = n ? `<div class="it">Sem desoneração<br><b>R$ ${reais(t.SD)}</b></div><div class="it">Com desoneração<br><b>R$ ${reais(t.CD)}</b></div>
+      <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
+      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
+      : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
+    await ({ planilha: renderOrcPlanilha, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+  } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+}
+function renderOrcPlanilha() {
+  const c = O_.c;
+  $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Código</th><th>Discriminação</th><th class=n>Base</th><th class=n>NE</th><th class=n>Quantidade</th><th>Und</th>
+    <th class=n>Preço SD</th><th class=n>Parcial SD</th><th class=n>Preço CD</th><th class=n>Parcial CD</th><th></th></tr>` + c.itens.map(i => i.tipo === "titulo"
+    ? `<tr class="titulo-orc"><td>${esc(i.item)}</td><td colspan=11>${esc(i.descricao)}</td></tr>`
+    : `<tr><td>${esc(i.item)}</td><td>${esc(i.codigo)}</td><td>${esc(i.descricao)}</td>
+      <td class=n title="${esc(i.base_fonte || "")}">${q3(i.base_valor)}<br><small>${esc((i.base_fonte || "").slice(0, 38))}</small></td><td class=n>${(i.base || {}).tipo === "direta" ? "—" : q3(i.ne)}</td>
+      <td class=n><b>${q3(i.quantidade)}</b></td><td>${esc(i.unidade || "")}</td>
+      <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n>${reais(i.parcial_SD)}</td>
+      <td class=n title="${esc(i.preco_fonte_CD || "")}">${reais(i.preco_CD)}</td><td class=n>${reais(i.parcial_CD)}</td>
+      <td><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Altera a base da quantidade (inventário, outro item, transporte, valor), o nível de esforço ou o preço">Editar</button></td></tr>`).join("")
+    + `<tr class="titulo-orc"><td colspan=8>TOTAL GERAL DO ORÇAMENTO</td><td class=n>${reais(c.totais.SD)}</td><td></td><td class=n>${reais(c.totais.CD)}</td><td></td></tr>`;
+  $$("[data-edorc]").forEach(b => b.onclick = () => editarItemOrc(b.dataset.edorc));
+}
+async function editarItemOrc(id) {
+  const i = O_.c.itens.find(x => x.id === id), b = i.base || {};
+  O_.med = O_.med || await api(`${base_}${E.pid}/pato/medidas`);
+  const itens = O_.c.itens.filter(x => x.tipo === "servico" && x.id !== id);
+  const d = $("#dlg"), f = $("#dlgForm");
+  f.className = "form";
+  f.innerHTML = `<h3>Item ${esc(i.item)} — ${esc(i.codigo)}</h3><p class="nota">${esc(i.descricao)}</p><div class="campos">
+    <label>Base da quantidade <select name="tipo">${[["valor", "Valor informado"], ["inventario", "Medida do inventário"], ["item", "Outro item da planilha"], ["transporte", "Momento do quadro de transportes"], ["direta", "Quantidade direta"]]
+      .map(([k, r]) => `<option value="${k}" ${b.tipo === k ? "selected" : ""}>${r}</option>`).join("")}</select></label>
+    <label>Valor <input name="valor" type="number" step="any" value="${b.valor ?? i.base_valor ?? ""}" data-dica="Base (valor informado) ou quantidade (direta)"></label>
+    <label class="largo">Medida do inventário <select name="medida"><option value=""></option>${Object.entries(O_.med).map(([k, v]) => `<option value="${esc(k)}" ${b.medida === k ? "selected" : ""}>${esc(k)} = ${q3(v)}</option>`).join("")}</select></label>
+    <label>Fator sobre a medida <input name="fator" type="number" step="any" value="${b.fator ?? 1}"></label>
+    <label class="largo">Item de referência <select name="ref"><option value=""></option>${itens.map(x => `<option value="${esc(x.id)}" ${b.ref === x.id ? "selected" : ""}>${esc(x.item)} ${esc(x.codigo)} — ${esc((x.descricao || "").slice(0, 50))}</option>`).join("")}</select></label>
+    <label>Usar do item <select name="campo"><option value="quantidade">quantidade</option><option value="base" ${b.campo === "base" ? "selected" : ""}>base</option></select></label>
+    <label>Nível de esforço <input name="ne" type="number" step="any" value="${i.ne ?? 1}"></label>
+    <label>Arredondamento <select name="arred"><option value="trunc">TRUNCAR (3 casas)</option><option value="arred" ${i.arred === "arred" ? "selected" : ""}>ARRED (3 casas)</option></select></label>
+    <label>Preço SD informado <input name="psd" type="number" step="any" value="${i.preco_manual?.SD ?? ""}" placeholder="${reais(i.preco_SD)}"></label>
+    <label>Preço CD informado <input name="pcd" type="number" step="any" value="${i.preco_manual?.CD ?? ""}" placeholder="${reais(i.preco_CD)}"></label>
+    </div>${b.expr ? `<p class="nota">Memória de origem: <code>${esc(b.expr)}</code></p>` : ""}
+    <div class="linha-botoes"><button class="btn primario" value="ok">Salvar</button><button class="btn perigo" value="remover" formnovalidate>Remover item</button><button class="btn" value="cancelar" formnovalidate>Cancelar</button></div>`;
+  d.showModal();
+  d.onclose = async () => {
+    try {
+      if (d.returnValue === "remover") { if (confirm("Remover o item?")) { await api(`${base_}${E.pid}/pato/itens/${id}`, { method: "DELETE" }); carregarOrc(); } return; }
+      if (d.returnValue !== "ok") return;
+      const v = formObj(f), base = { tipo: v.tipo, expr: b.expr, fonte: v.tipo === b.tipo ? b.fonte : "informado" };
+      if (v.tipo === "valor" || v.tipo === "direta") base.valor = +v.valor;
+      if (v.tipo === "inventario") Object.assign(base, { medida: v.medida, fator: +v.fator || 1, valor: +v.valor || null });
+      if (v.tipo === "item") Object.assign(base, { ref: v.ref, campo: v.campo });
+      if (v.tipo === "transporte") Object.assign(base, { codigo: i.codigo, valor: b.valor });
+      await jpost(`${base_}${E.pid}/pato/itens/${id}`, { base, ne: v.ne, arred: v.arred, preco_manual: { SD: v.psd === "" ? null : +v.psd, CD: v.pcd === "" ? null : +v.pcd } }, "PUT");
+      toast("Item atualizado"); carregarOrc();
+    } catch (e) { erro(e); }
+  };
+}
+async function renderOrcResumo() {
+  const c = O_.c;
+  $("#avisosOrc").innerHTML = c.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("") + (c.sem_preco.length ? `<p class="tag erro">Sem preço: ${c.sem_preco.map(esc).join(", ")}</p>` : "");
+  $("#tabOrcResumo").innerHTML = `<tr><th>Seção</th><th>Grupo de tarefas</th><th class=n>Itens</th><th class=n>Sem desoneração</th><th class=n>%</th><th class=n>Com desoneração</th><th class=n>%</th></tr>` +
+    c.secoes.map(s => `<tr><td>${esc(s.secao)}</td><td>${esc(s.nome)}</td><td class=n>${s.n}</td><td class=n>${reais(s.SD)}</td><td class=n>${pct(s.pct_SD)}</td><td class=n>${reais(s.CD)}</td><td class=n>${pct(s.pct_CD)}</td></tr>`).join("") +
+    `<tr class="titulo-orc"><td colspan=3>TOTAL</td><td class=n>${reais(c.totais.SD)}</td><td class=n>100%</td><td class=n>${reais(c.totais.CD)}</td><td class=n>100%</td></tr>`;
+}
+async function renderOrcAbc() {
+  const r = O_.res = await api(`${base_}${E.pid}/pato/resumo`);
+  $("#tabAbc").innerHTML = `<tr><th>Faixa</th><th>Código</th><th>Descrição</th><th>Und</th><th class=n>Quantidade</th><th class=n>Preço</th><th class=n>Custo total</th><th class=n>%</th><th class=n>% acumulado</th></tr>` +
+    r.abc.map(a => `<tr><td><span class="tag ${a.faixa === "A" ? "erro" : a.faixa === "B" ? "aviso" : ""}">${a.faixa}</span></td><td>${esc(a.codigo)}</td><td>${esc(a.descricao || "")}</td><td>${esc(a.unidade || "")}</td>
+      <td class=n>${q3(a.quantidade)}</td><td class=n>${reais(a.preco)}</td><td class=n>${reais(a.total)}</td><td class=n>${pct(a.pct)}</td><td class=n>${pct(a.acumulado)}</td></tr>`).join("");
+}
+async function renderOrcCrono() {
+  const r = await api(`${base_}${E.pid}/pato/resumo`), cr = r.cronograma;
+  $("#tabCrono").innerHTML = `<tr><th>Grupo</th><th class=n>Total</th>${cr.por_mes.map((_, i) => `<th class=n>Mês ${i + 1}</th>`).join("")}</tr>` +
+    cr.linhas.map(l => `<tr><td>${esc(l.nome)}</td><td class=n>${reais(l.total)}</td>${l.meses.map(v => `<td class=n>${reais(v)}</td>`).join("")}</tr>`).join("") +
+    `<tr class="titulo-orc"><td>Total do mês</td><td class=n>${reais(cr.por_mes.reduce((a, b) => a + b, 0))}</td>${cr.por_mes.map(v => `<td class=n>${reais(v)}</td>`).join("")}</tr>
+     <tr><td>% acumulado</td><td></td>${cr.acumulado.map(v => `<td class=n>${pct(v)}</td>`).join("")}</tr>`;
+}
+function renderOrcDesemp() {
+  const g = Object.values(O_.c.desempenho || {});
+  $("#listaDesemp").innerHTML = g.map(x => `<h4>${esc(x.codigo)} — ${esc(x.descricao)}: R$ ${reais(x.mensal_SD)}/mês (SD) · R$ ${reais(x.mensal_CD)}/mês (CD)</h4>
+    <div class="tabela-rolagem"><table class="tab"><tr><th>Serviço</th><th>Descrição</th><th class=n>Qtde total</th><th class=n>NE</th><th class=n>Freq.</th><th class=n>Qtde/km</th><th>Und</th><th class=n>Preço SD</th><th class=n>R$/km/ano SD</th><th class=n>Preço CD</th><th class=n>R$/km/ano CD</th></tr>
+    ${x.linhas.map(l => `<tr><td>${esc(l.codigo)}</td><td>${esc(l.descricao)}<br><small>${esc(l.desc_qtd || "")}</small></td><td class=n>${q3(l.qtd_total_calc)}</td><td class=n>${q3(l.ne)}</td><td class=n>${q3(l.freq)}</td>
+      <td class=n>${q3(l.qtd_km_calc)}</td><td>${esc(l.unidade || "")}</td><td class=n>${reais(l.preco)}</td><td class=n>${reais(l.valor_km_ano)}</td><td class=n>${reais(l.preco_CD)}</td><td class=n>${reais(l.valor_km_ano_CD)}</td></tr>`).join("")}</table></div>`).join("")
+    || '<p class="nota">Sem grupos por desempenho (importe de uma planilha PATO com a aba DESEMPENHO).</p>';
+}
+$("#btnImpOrc").onclick = async () => {
+  const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return;
+  if (O_.c?.itens?.length && !confirm("Substituir a planilha PATO deste projeto pela importada?")) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  $("#resOrc").innerHTML = '<p class="carregando">Lendo a planilha PATO…</p>';
+  try { const r = await api(`${base_}${E.pid}/pato/importar`, { method: "POST", body: fd });
+    $("#resOrc").innerHTML = `<p class="ok-msg">Importado: ${r.itens} linhas; ${r.vinculados} quantidades ligadas ao inventário do projeto.</p>`; O_.med = null; carregarOrc();
+  } catch (e) { $("#resOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
+$("#btnAddOrc").onclick = () => dialogo("Incluir item na planilha PATO", [["item", "Item (ex.: 01.02.09)"], ["codigo", "Código SICRO ou próprio"], ["quantidade", "Quantidade (base)", "number"], ["ne", "Nível de esforço", "number"]],
+  async v => { await jpost(`${base_}${E.pid}/pato/itens`, { ...v, ne: v.ne || 1 }); toast("Item incluído"); carregarOrc(); });
+$("#btnExpOrc").onclick = async () => {
+  try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
 
 // ---------------------------------------------------------------- projeto

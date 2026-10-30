@@ -31,6 +31,7 @@
   <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer">Ajustes <span id="nAj" class="pill pill-ok"></span></button>
   <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições e insumos">Custos</button>
   <button data-aba="transporte" data-dica="Croqui de ocorrências, VMD, DMT, FIT e quadro de transportes (momentos)">Transporte</button>
+  <button data-aba="orcamento" data-dica="Planilha PATO (Res. DNIT 8/2023): quantidades × preços, resumo, % dos grupos, curva ABC e cronograma">PATO</button>
   <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
   <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
 </nav>
@@ -347,7 +348,10 @@
         <div class="campos" style="margin-top:10px">
           <label>Parcela urbana (Pu) <select id="crMetodo" data-dica="Planilha de referência: travessia que contém a ocorrência = distância média dentro dela; demais = metade da extensão. Exato: média sobre todos os destinos do segmento">
             <option value="referencia">Método da planilha de referência</option><option value="exato">Exato (destinos uniformes no segmento)</option></select></label>
-          <label>FIT até DMTp de (km) <input id="crFitMax" type="number" step="any" data-dica="Acima desta DMT pavimentada o FIT não é aplicado (planilha: 100 km)"></label>
+          <label>FIT até DMTp de (km) <input id="crFitMax" type="number" step="any" data-dica="Acima de 100 km de DMT pavimentada o FIT não é aplicado (Vol. 05, item 3.2.1)"></label>
+          <label>Operação PARE e SIGA (A1) <select id="crPareSiga" data-dica="A1 = 70 + 0,0035·VMDf só entra quando o orçamento prevê a operação de sinalização PARE e SIGA (serviço 5213850 ou similar) — Vol. 05, item 3.2.1.1">
+            <option value="auto">Automático (pelo orçamento)</option><option value="sim">Sim</option><option value="nao">Não</option></select></label>
+          <label>Velocidade em via urbana (km/h) <input id="crVelUrb" type="number" step="any" data-dica="Padrão 30 km/h → Fc = 60 s/km. Pode ser ajustada com justificativa técnica (Vol. 05, item 3.2.1.2)"></label>
           <label>km inicial do croqui <input id="crKmIni" type="number" step="any" placeholder="do projeto" data-dica="Em branco: km inicial do projeto"></label>
           <label>km final do croqui <input id="crKmFim" type="number" step="any" placeholder="do projeto" data-dica="Em branco: km final do projeto"></label>
         </div>
@@ -369,8 +373,9 @@
 
     <div id="trp-dmt" class="sub-transp">
       <div class="caixa"><h3>DMT e FIT por rota</h3>
-        <p class="nota">FIT (nova metodologia do DNIT): A1 = 70 + 0,0035·VMDf · A2 = 60·DMTu · FIT = 1 + (A1 + A2)/(60·DMTp).
-          Aplicado no transporte pavimentado que sai de uma ocorrência (até a DMT limite). Para usar uma distância medida, clique em “Informar”.</p>
+        <p class="nota">FIT — Manual de Custos, Vol. 05 (2ª ed., 2025): A1 = 70 + 0,0035·VMDf (só com operação PARE e SIGA no orçamento) ·
+          A2 = Fc·DMTu (Fc = 60 s/km a 30 km/h) · FIT = 1 + (A1 + A2)/(60·DMTp) · DMTF = FIT × DMTp. Só no transporte de insumos em vias
+          pavimentadas, DMTp ≤ 100 km, sem FIT no tempo fixo. Para usar uma distância medida, clique em “Informar”. <span id="notaPareSiga"></span></p>
         <div class="tabela-rolagem"><table class="tab" id="tabRotas"></table></div>
       </div>
     </div>
@@ -392,6 +397,28 @@
       <div class="caixa"><h3>Linhas do quadro</h3>
         <div class="tabela-rolagem" style="max-height:560px"><table class="tab" id="tabQuadro"></table></div></div>
     </div>
+  </section>
+
+  <!-- PATO (orçamento) -->
+  <section id="aba-orcamento" class="aba">
+    <div class="caixa cab-custos" id="cabOrc"></div>
+    <div class="barra"><div class="chips" id="chipsOrc"></div>
+      <div class="linha-botoes" style="margin:0 0 0 auto">
+        <button class="btn" id="btnImpOrc" data-dica="Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO: itens, níveis de esforço, memórias de cálculo e preços informados; liga as quantidades ao inventário do projeto">Importar planilha PATO</button>
+        <button class="btn" id="btnAddOrc" data-dica="Inclui um serviço na planilha">+ Item</button>
+        <button class="btn primario" id="btnExpOrc" data-dica="Gera o Excel: planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Exportar (Excel)</button>
+      </div></div>
+    <div id="resOrc"></div>
+    <div id="orc-planilha" class="sub-orc"><div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-resumo" class="sub-orc"><div class="caixa"><h3>Resumo por grupo de tarefas (Anexo XX)</h3><div id="avisosOrc"></div>
+      <div class="tabela-rolagem"><table class="tab" id="tabOrcResumo"></table></div></div></div>
+    <div id="orc-abc" class="sub-orc"><div class="caixa"><h3>Curva ABC (Anexo XXI)</h3><p class="nota">Regime mais vantajoso. Faixa A até 80% do custo acumulado, B até 95%, C o restante.</p>
+      <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabAbc"></table></div></div></div>
+    <div id="orc-crono" class="sub-orc"><div class="caixa"><h3>Cronograma físico-financeiro (12 meses)</h3>
+      <p class="nota">Desempenho, administração local e serviços em parcelas mensais iguais; mobilização, canteiro e instalação industrial no 1º mês; desmobilização no último (Res. 8/2023, art. 56, § 1º: DSM, rotineira, periódica, emergencial e desempenho separados).</p>
+      <div class="tabela-rolagem"><table class="tab" id="tabCrono"></table></div></div></div>
+    <div id="orc-desemp" class="sub-orc"><div class="caixa"><h3>Grupos por desempenho</h3>
+      <p class="nota">Parcela mensal (Res. 8/2023, art. 42): Σ (quantidade × nível de esforço × frequência ÷ extensão × preço) ÷ 12 × extensão.</p><div id="listaDesemp"></div></div></div>
   </section>
 
   <!-- IMPORTAR -->

@@ -200,3 +200,5 @@ tr.vencedor td { background: #66bb6a33; font-weight: 600; }
 .croqui-svg svg { display: block; min-width: 900px; width: 100%; height: auto; }
 #tabOcorr input, #tabOcorr select, #tabTrav input, #tabLocal input, #tabVmd input { width: 100%; min-width: 60px; }
 td.manual { background: #fff59d55; }
+.sub-orc { display: none; } .sub-orc.ativa { display: block; }
+tr.titulo-orc td { background: var(--pri-claro); font-weight: 600; }

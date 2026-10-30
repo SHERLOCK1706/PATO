@@ -125,9 +125,17 @@ class Transportes:
                      km_projeto=[p.get("km_ini"), p.get("km_fim")])
         return d
 
+    def pare_siga_previsto(self, pid: int) -> bool:
+        """O orçamento prevê a operação PARE e SIGA (5213850 ou similar)? — condição do A1 (Vol. 05, 3.2.1.1)."""
+        cods = {s["codigo"] for s in self.db.servicos(pid)}
+        cods |= {x.get("codigo") for x in (self.db.dados_projeto(pid, "pato") or {}).get("itens", [])}
+        return "5213850" in cods or any(c and c.startswith("5213850") for c in cods)
+
     def croqui_obj(self, pid: int, dados: dict | None = None) -> tp.Croqui:
         p = self.sv.projeto(pid)
-        return tp.Croqui(dados or self.dados_croqui(pid), p.get("km_ini") or 0.0, p.get("km_fim") or 0.0)
+        d = dict(dados or self.dados_croqui(pid))
+        d["_pare_siga_auto"] = self.pare_siga_previsto(pid)
+        return tp.Croqui(d, p.get("km_ini") or 0.0, p.get("km_fim") or 0.0)
 
     def croqui(self, pid: int) -> dict:
         d = self.dados_croqui(pid)
@@ -147,11 +155,13 @@ class Transportes:
         except Exception:  # noqa: BLE001 — sem inventário georreferenciado o croqui funciona sem mapa
             pass
         return dict(dados=d, km_ini=c.a, km_fim=c.b, rotas=rotas, tipos=tp.TIPOS, segmentos_snv=self._segmentos_snv(pid),
-                    fonte_vmd=DNIT_MODELAGEM)
+                    fonte_vmd=DNIT_MODELAGEM, pare_siga=c.pare_siga, pare_siga_previsto=self.pare_siga_previsto(pid),
+                    fc=tp.fator_urbano(c.vel_urbana))
 
     def salvar_croqui(self, pid: int, dados: dict) -> dict:
         atual = self.dados_croqui(pid)
-        for k in ("km_ini", "km_fim", "metodo", "fit_dmt_max", "ocorrencias", "travessias", "localidades", "vmd", "rotas_manuais"):
+        for k in ("km_ini", "km_fim", "metodo", "fit_dmt_max", "ocorrencias", "travessias", "localidades", "vmd", "rotas_manuais",
+                  "pare_siga", "vel_urbana"):
             if k in dados:
                 atual[k] = dados[k]
         nomes = [tp._chave(o.get("nome")) for o in atual.get("ocorrencias", []) if o.get("nome")]

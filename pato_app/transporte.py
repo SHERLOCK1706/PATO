@@ -12,9 +12,11 @@ Entre duas ocorrências: distância pela rodovia; Pu = extensão das travessias 
 VMDf da viagem: média dos VMD por faixa dos segmentos atravessados, ponderada pela extensão, no sentido da viagem
 (da ocorrência para a pista: sentido do lado mais longo do segmento, intervalo [x, x ± DMT]).
 
-FIT (nova metodologia — Manual de Custos de Infraestrutura de Transportes, vol. 05):
-    A1 = 70 + 0,0035·VMDf   (s)      A2 = 60·DMTu   (s)      FIT = 1 + (A1 + A2) / (60·DMTp)
-aplicado ao transporte em rodovia pavimentada saindo de uma ocorrência, com DMTp ≤ 100 km (como na planilha).
+FIT (Manual de Custos de Infraestrutura de Transportes, Vol. 05 – FIT, 2ª ed., 2025):
+    A1 = 70 + 0,0035·VMDf (s) — só com operação PARE e SIGA prevista no orçamento (5213850 ou similar)
+    A2 = Fc·DMTu (s), Fc = (1/Vu − 1/Vp)·3.600 = 60 s/km (Vu 30 km/h, Vp 60 km/h)
+    FIT = 1 + (A1 + A2) / (DMTp·Fp), Fp = 3.600/Vp = 60 s/km;  DMTF = FIT × DMTp (parcela F – momento de transporte)
+aplicado ao transporte de insumos pela contratada em vias pavimentadas, com DMTp ≤ 100 km; sem FIT no tempo fixo.
 
 Quadro: momento (t·km) = TRUNC(quantidade anual × fator (t/un) × DMT × FIT, 3), somado por composição de transporte.
 """
@@ -71,6 +73,10 @@ class Croqui:
         self.b = nz.numero(d.get("km_fim")) if d.get("km_fim") not in (None, "") else km_fim
         self.metodo = d.get("metodo") or "referencia"
         self.fit_max = nz.numero(d.get("fit_dmt_max")) or FIT_DMT_MAX
+        # operação PARE e SIGA: "sim" | "nao" | "auto" (auto = o orçamento tem o serviço 5213850 ou similar)
+        ps = d.get("pare_siga", "auto")
+        self.pare_siga = bool(d.get("_pare_siga_auto", True)) if ps in (None, "", "auto") else ps in (True, "sim", "true", 1)
+        self.vel_urbana = nz.numero(d.get("vel_urbana")) or VEL_URBANA
         self.ocorrencias = [o for o in (d.get("ocorrencias") or []) if o.get("nome")]
         self.travessias = [t for t in (d.get("travessias") or []) if t.get("km_ini") not in (None, "")
                            and t.get("km_fim") not in (None, "")]
@@ -204,15 +210,16 @@ class Croqui:
 
     def _com_fit(self, r: dict, origem: str, destino: str) -> dict:
         r["dmt"] = r["ln"] + r["rp"] + r["p"]
-        r["fit"] = fit_transporte(r.get("vmdf"), r["pu"], r["p"]) if (
-            r.get("aplicar_fit") and r["p"] > 0 and r["p"] <= self.fit_max and r.get("vmdf") is not None) else 1.0
-        if r.get("aplicar_fit") and r.get("vmdf") is None and r["p"] > 0:
-            r["aviso"] = "Sem VMD para o FIT: informe o VMD dos segmentos (FIT = 1)."
+        a1_ok = self.pare_siga and r.get("vmdf") is not None
+        aplica = r.get("aplicar_fit") and 0 < r["p"] <= self.fit_max and (a1_ok or r["pu"] > 0)
+        r["fit"] = fit_transporte(r.get("vmdf"), r["pu"], r["p"], self.pare_siga, self.vel_urbana) if aplica else 1.0
+        if r.get("aplicar_fit") and self.pare_siga and r.get("vmdf") is None and r["p"] > 0:
+            r["aviso"] = "Sem VMD por faixa: A1 (PARE e SIGA) não calculado — informe o VMD dos segmentos."
         if r.get("aplicar_fit") and r["p"] > self.fit_max:
-            r["aviso"] = f"DMT pavimentada acima de {self.fit_max:g} km: FIT não aplicado."
+            r["aviso"] = f"DMT pavimentada acima de {self.fit_max:g} km: FIT não aplicado (Vol. 05, item 3.2.1)."
         if r["fit"] != 1.0:
-            r["a1"] = 70 + 0.0035 * r["vmdf"]
-            r["a2"] = 60 * r["pu"]
+            r["a1"] = (70 + 0.0035 * r["vmdf"]) if a1_ok else 0.0
+            r["a2"] = fator_urbano(self.vel_urbana) * r["pu"]
         return r
 
     def desenho(self) -> dict:
@@ -233,10 +240,22 @@ def vmdf_segmento(s: dict, sentido: str) -> float | None:
     return v / faixas if v is not None else None
 
 
-def fit_transporte(vmdf: float, dmt_u: float, dmt_p: float) -> float:
-    a1 = 70 + 0.0035 * vmdf
-    a2 = 60 * dmt_u
-    return 1 + (a1 + a2) / (dmt_p * 60)
+VEL_PADRAO = 60.0   # km/h — rodovia rural pavimentada (Vp)
+VEL_URBANA = 30.0   # km/h — via urbana pavimentada (Vu), ajustável com justificativa técnica
+
+
+def fator_urbano(vel_urbana: float = VEL_URBANA, vel_padrao: float = VEL_PADRAO) -> float:
+    """Fc = (1/Vu − 1/Vp) × 3.600 s/h  (Vol. 05, Eq. 3) — 60 s/km para 30 km/h."""
+    return (1 / vel_urbana - 1 / vel_padrao) * 3600
+
+
+def fit_transporte(vmdf: float | None, dmt_u: float, dmt_p: float, pare_siga: bool = True,
+                   vel_urbana: float = VEL_URBANA, vel_padrao: float = VEL_PADRAO) -> float:
+    """FIT = 1 + (A1 + A2)/(DMTp × Fp) — Manual de Custos, Vol. 05 (2ª ed., 2025), Eq. 2, 4, 5 e 7.
+    A1 = 70 + 0,0035·VMDf só quando o orçamento prevê a operação PARE e SIGA; A2 = Fc·DMTu; Fp = 3.600/Vp."""
+    a1 = (70 + 0.0035 * vmdf) if pare_siga and vmdf is not None else 0.0
+    a2 = fator_urbano(vel_urbana, vel_padrao) * dmt_u
+    return 1 + (a1 + a2) / (dmt_p * (3600 / vel_padrao))
 
 
 # ------------------------------------------------------------- quadro de transportes

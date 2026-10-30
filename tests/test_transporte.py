@@ -71,7 +71,7 @@ def test_gerar_quadro_das_composicoes(tmp_path):
     tr = sv.transporte
     sv.custos.criar_exemplo_28m3()
     tr.salvar_croqui(pid, CROQUI_PATO)
-    for cod, qtd in (("6416078", 2842.827), ("4915786", 2.118)):
+    for cod, qtd in (("6416078", 2842.827), ("4915786", 2.118), ("5213850", 6207.206)):  # 5213850: PARE e SIGA
         tr.definir_quantidade(pid, cod, qtd)
     q = tr.gerar_quadro(pid)
     lin = {(x["material"], x["origem"], x["destino"]): x for x in q["linhas"] if x.get("origem")}
@@ -95,3 +95,18 @@ def test_importar_vmd_dnit(tmp_path):
     assert r["casados"] == 2
     c = sv.transporte.croqui_obj(pid)
     assert c.vmdf(100, 120) == 1308 and c.vmdf(120, 100) == 1174 and c.vmdf(150, 160) == 1400
+
+
+def test_fit_volume05_pare_siga_e_velocidade_urbana():
+    """Vol. 05 (2ª ed., 2025): A1 só com operação PARE e SIGA; Fc = (1/Vu − 1/Vp)·3.600."""
+    assert tp.fator_urbano(30) == pytest.approx(60) and tp.fator_urbano(40) == pytest.approx(30)
+    com = tp.Croqui(dict(CROQUI_PATO, pare_siga="sim"), 85, 212.5).rota("Centro Sede", "Pista")
+    sem = tp.Croqui(dict(CROQUI_PATO, pare_siga="nao"), 85, 212.5).rota("Centro Sede", "Pista")
+    assert com["fit"] == pytest.approx(1.1306341478, abs=1e-9)
+    assert sem["a1"] == 0 and sem["fit"] == pytest.approx(1 + 60 * 2.951219512195124 / (32.181372549019606 * 60), abs=1e-9)
+    # sem PARE e SIGA e sem trecho urbano: FIT = 1
+    fora = dict(CROQUI_PATO, pare_siga="nao", travessias=[])
+    assert tp.Croqui(fora, 85, 212.5).rota("Centro Sede", "Pista")["fit"] == 1.0
+    # acima de 100 km de DMT pavimentada não há FIT
+    longe = dict(CROQUI_PATO, ocorrencias=[dict(nome="Pedreira", tipo="pedreira", km=142.5, acesso_p=120)])
+    assert tp.Croqui(longe, 85, 212.5).rota("Pedreira", "Pista")["fit"] == 1.0

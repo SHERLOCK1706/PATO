@@ -1,7 +1,7 @@
 # PATO — Inventário georreferenciado e orçamento de conservação
 
 Sistema local (painel web + servidor MCP) construído a partir da planilha
-`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fases 1 (inventário georreferenciado), 2 (custos: SICRO, BDI, composições e binômio) e 3 (croqui, VMD, FIT e transportes) entregues.**
+`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fases 1 (inventário georreferenciado), 2 (custos: SICRO, BDI, composições e binômio), 3 (croqui, VMD, FIT e transportes) e a Planilha PATO (Res. DNIT nº 8/2023) entregues.**
 
 ## O que faz
 
@@ -98,8 +98,10 @@ Os anexos ficam em `%USERPROFILE%\PATO_App\anexos\`.
 
 **DMT** média até a pista = ((x − a)² + (b − x)²) / (2·(b − a)); parcela urbana pelo método da planilha de referência
 (travessia que contém a ocorrência = média interna; demais = metade da extensão) ou exata (opção).
-**FIT — nova metodologia do DNIT**: A1 = 70 + 0,0035·VMDf; A2 = 60·DMTu; FIT = 1 + (A1 + A2)/(60·DMTp), no transporte
-pavimentado que sai de uma ocorrência, até DMTp de 100 km (ajustável). O VMDf da viagem é a média ponderada pela extensão dos
+**FIT — Manual de Custos, Volume 05 (2ª ed., 2025)**: A1 = 70 + 0,0035·VMDf (só com operação PARE e SIGA prevista no orçamento,
+serviço 5213850); A2 = Fc·DMTu, Fc = (1/Vu − 1/60)·3.600 = 60 s/km a 30 km/h (velocidade urbana ajustável); FIT = 1 + (A1 + A2)/(60·DMTp);
+DMTF = FIT × DMTp, só no transporte de insumos em vias pavimentadas, DMTp ≤ 100 km, sem FIT no tempo fixo.
+Detalhes e o manual em `docs/referencias/sicro/`. O VMDf da viagem é a média ponderada pela extensão dos
 segmentos percorridos no sentido da viagem.
 
 Conferência com a planilha BR-158/MT: DMT, VMDf (1476, 1174, 1392) e FIT (1,1306; 1,2297; 1,0904) idênticos; momentos
@@ -112,6 +114,26 @@ PN03 567.788,895, 5914479 299,214 e 5915014 3.309,30 idênticos. Diferenças da 
 Importar de planilha PATO traz as quantidades (aba PATO), o VMD (VMDf) e as linhas do quadro (TRANSPORTES_CONSERVA).
 Exportar gera CROQUI (desenho em células), DMT, VMDf, FIT (com fórmulas), TRANSPORTES_CONSERVA (momentos com fórmulas) e
 RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” guarda a quantidade de cada serviço.
+
+## Planilha PATO (aba PATO) — Resolução DNIT nº 8/2023
+- **Importar planilha PATO**: lê as abas PATO (itens, níveis de esforço e memórias de cálculo), DESEMPENHO e BD (preços de
+  administração local, canteiro, instalação industrial, mobilização) e liga as quantidades ao inventário do projeto.
+- Quantidade = TRUNC|ARRED(base × nível de esforço; 3). A base pode ser medida do inventário (vínculo vivo), outro item
+  (ex.: usinagem = tapa-buraco × 2,4 t/m³; betuminoso = usinagem × teor), momento do quadro de transportes, valor informado ou
+  quantidade direta (levantamento IP). Cada item é editável.
+- Preços nos dois regimes: composições SICRO/próprias (com as alterações do projeto), lista sintética, betuminosos AM/TM pelo
+  binômio ANP, grupo por desempenho (GD — parcela mensal, art. 42) e preços informados. Parcial = TRUNC(quantidade × preço; 2).
+- **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
+  **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
+- **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.
+
+Conferência com a planilha BR-158/MT: todas as quantidades e preços batem (GD R$ 148.968,45 / 148.228,95/mês), exceto:
+- transportes 5915321 e 5914464 — as diferenças da planilha documentadas na Fase 3;
+- **aquisição de betuminosos com desoneração (AM)**: a planilha calcula `AM_SD/(1+BDI!E25)*(1+BDI!E44)` com os BDI em % sem
+  dividir por 100 (35,12 e 39,32), o que infla esses preços em ~8,3% (ex.: CAP R$ 6.564,02 em vez de R$ 6.062,43). O sistema
+  aplica o BDI com desoneração corretamente;
+- transporte de betuminosos com desoneração (TM): BDI de transporte 18,67% (parâmetro do binômio), diferença de R$ 0,01 por
+  arredondamento.
 
 ## Instalação (Windows)
 1. Instale o Python 3.10+ (python.org, marque “Add to PATH”).
@@ -145,7 +167,8 @@ custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_comp
 `binomio_importar_planilha`, `binomio_aplicar_vencedor`, `binomio_anexar`, `binomio_exportar`, `indices_reajuste`,
 `gravar_indice_reajuste`; transporte: `croqui_ler`, `croqui_salvar`, `importar_vmd_dnit`, `quadro_transportes`,
 `gerar_quadro_transportes`, `definir_origem_material`, `definir_quantidade_servico`, `aplicar_momentos_ao_orcamento`,
-`importar_transportes_planilha`, `exportar_transportes`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
+`importar_transportes_planilha`, `exportar_transportes`; PATO: `pato_importar_planilha`, `pato_orcamento`, `pato_editar_item`,
+`pato_medidas`, `pato_resumo`, `pato_exportar`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 
 Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e me mostre os alertas”*,
@@ -161,7 +184,8 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
   ficam no inventário exportado; a área gramada vai para `RESUMO_INVENT!B44`.
 
 ## Próximas fases (planejadas)
-4. **PATO completo** — quantidades × preços no PATO, curva ABC, cronograma, PDF;
+4. **PATO final no modelo da planilha de licitação** — exportar a planilha completa (72 abas) preenchida pelo sistema, com as
+   correções; calculadoras de administração local, canteiro e mobilização (Manual de Custos, Vol. 06–08); PDF;
    plano de trabalho conforme a Resolução DNIT nº 8/2023 (elaboração do PATO e execução, medição, fiscalização,
    prorrogação e reajuste dos contratos; revogou as Resoluções nº 8/2022 e nº 4/2023) e o Manual de Conservação (IPR-710).
 

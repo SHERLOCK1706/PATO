@@ -81,6 +81,8 @@ class Servico:
         self.binomio = Binomios(self)
         from .transporte_servico import Transportes
         self.transporte = Transportes(self)
+        from .orcamento_servico import Orcamentos
+        self.orcamento = Orcamentos(self)
 
     # ------------------------------------------------------------- projetos
     def listar_projetos(self) -> list[dict]:

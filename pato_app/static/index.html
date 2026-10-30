@@ -30,6 +30,7 @@
   <button data-aba="revisao" data-dica="Decisões pendentes: correções que precisam da sua escolha">Revisão <span id="nSug" class="pill pill-info"></span></button>
   <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer">Ajustes <span id="nAj" class="pill pill-ok"></span></button>
   <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições e insumos">Custos</button>
+  <button data-aba="transporte" data-dica="Croqui de ocorrências, VMD, DMT, FIT e quadro de transportes (momentos)">Transporte</button>
   <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
   <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
 </nav>
@@ -313,6 +314,83 @@
           <button class="btn" id="btnComparar" data-dica="Mostra a variação de preço de cada serviço">Comparar</button>
           <button class="btn primario" id="btnAdotarBase" data-dica="Passa o projeto para a nova data-base">Adotar esta data-base</button></div>
         <div class="tabela-rolagem"><table class="tab" id="tabComparar"></table></div></div>
+    </div>
+  </section>
+
+  <!-- TRANSPORTE -->
+  <section id="aba-transporte" class="aba">
+    <div class="caixa cab-custos" id="cabTransp"></div>
+    <div class="barra"><div class="chips" id="chipsTransp"></div>
+      <div class="linha-botoes" style="margin:0 0 0 auto">
+        <button class="btn" id="btnImpTransp" data-dica="Lê de uma planilha PATO as quantidades (aba PATO), o VMD por segmento (VMDf) e as linhas do quadro (TRANSPORTES_CONSERVA)">Importar de planilha PATO</button>
+        <button class="btn" id="btnExpTransp" data-dica="Gera o Excel com CROQUI, DMT, VMDf, FIT, quadro de transportes e resumo dos momentos (com fórmulas)">Exportar (Excel)</button>
+      </div></div>
+    <div id="resTransp"></div>
+
+    <div id="trp-croqui" class="sub-transp">
+      <div class="caixa"><div class="bin-cab"><h3>Croqui de ocorrências</h3>
+        <div class="linha-botoes" style="margin:0"><button class="btn mini" id="btnSvgCroqui" data-dica="Baixa o desenho do croqui (SVG — abre no navegador, Word, Inkscape)">Baixar desenho</button></div></div>
+        <p class="nota">Desenhado pelo sistema a partir do segmento do projeto. Informe o km do canteiro/centro sede, pedreira, areal, usina e
+          demais ocorrências, as distâncias de acesso e as travessias urbanas; as DMT e o FIT são recalculados ao salvar.</p>
+        <div id="croquiSvg" class="croqui-svg"></div>
+      </div>
+      <div class="caixa form">
+        <h3>Ocorrências</h3>
+        <div class="tabela-rolagem"><table class="tab" id="tabOcorr"></table></div>
+        <div class="linha-botoes"><button class="btn mini" type="button" id="btnAddOcorr" data-dica="Acrescenta uma ocorrência (pedreira, areal, usina, bota-fora…)">+ Ocorrência</button></div>
+        <div class="grade2" style="margin-top:10px">
+          <div><h4>Travessias urbanas</h4><table class="tab" id="tabTrav"></table>
+            <div class="linha-botoes"><button class="btn mini" type="button" id="btnAddTrav" data-dica="Trecho urbano (DMTu) — entra no FIT">+ Travessia</button></div></div>
+          <div><h4>Localidades (referência no desenho)</h4><table class="tab" id="tabLocal"></table>
+            <div class="linha-botoes"><button class="btn mini" type="button" id="btnAddLocal" data-dica="Cidade ou marco apenas para o desenho">+ Localidade</button></div></div>
+        </div>
+        <div class="campos" style="margin-top:10px">
+          <label>Parcela urbana (Pu) <select id="crMetodo" data-dica="Planilha de referência: travessia que contém a ocorrência = distância média dentro dela; demais = metade da extensão. Exato: média sobre todos os destinos do segmento">
+            <option value="referencia">Método da planilha de referência</option><option value="exato">Exato (destinos uniformes no segmento)</option></select></label>
+          <label>FIT até DMTp de (km) <input id="crFitMax" type="number" step="any" data-dica="Acima desta DMT pavimentada o FIT não é aplicado (planilha: 100 km)"></label>
+          <label>km inicial do croqui <input id="crKmIni" type="number" step="any" placeholder="do projeto" data-dica="Em branco: km inicial do projeto"></label>
+          <label>km final do croqui <input id="crKmFim" type="number" step="any" placeholder="do projeto" data-dica="Em branco: km final do projeto"></label>
+        </div>
+        <div class="linha-botoes"><button class="btn primario" id="btnSalvarCroqui" data-dica="Grava o croqui e recalcula DMT, VMDf e FIT">Salvar croqui</button></div>
+      </div>
+    </div>
+
+    <div id="trp-vmd" class="sub-transp">
+      <div class="caixa form"><h3>Volume médio diário por segmento</h3>
+        <p class="nota">Baixe a planilha da modelagem do VMDa no site do DNIT (<a id="lnkVmd" target="_blank" rel="noopener">servicos.dnit.gov.br/dadospnct/Modelagem</a>,
+          Plano Nacional de Contagem de Tráfego) e importe aqui: o sistema casa os registros pelo código SNV dos segmentos do projeto (ou pela BR e km).
+          VMD por faixa = VMDa do sentido ÷ faixas por sentido (sem o sentido: metade do VMDa). Também é possível digitar o VMDf direto.</p>
+        <div class="linha-botoes"><button class="btn" id="btnImpVmd" data-dica="Planilha .xlsx, .csv ou GeoJSON da modelagem do VMDa (DNIT)">Importar VMD do DNIT</button>
+          <button class="btn mini" type="button" id="btnAddSeg" data-dica="Acrescenta um segmento">+ Segmento</button></div>
+        <div class="tabela-rolagem"><table class="tab" id="tabVmd"></table></div>
+        <div class="linha-botoes"><button class="btn primario" id="btnSalvarVmd" data-dica="Grava o VMD e recalcula o FIT">Salvar VMD</button></div>
+      </div>
+    </div>
+
+    <div id="trp-dmt" class="sub-transp">
+      <div class="caixa"><h3>DMT e FIT por rota</h3>
+        <p class="nota">FIT (nova metodologia do DNIT): A1 = 70 + 0,0035·VMDf · A2 = 60·DMTu · FIT = 1 + (A1 + A2)/(60·DMTp).
+          Aplicado no transporte pavimentado que sai de uma ocorrência (até a DMT limite). Para usar uma distância medida, clique em “Informar”.</p>
+        <div class="tabela-rolagem"><table class="tab" id="tabRotas"></table></div>
+      </div>
+    </div>
+
+    <div id="trp-quadro" class="sub-transp">
+      <div class="caixa"><div class="bin-cab"><h3>Quadro de transportes (momentos)</h3>
+        <div class="linha-botoes" style="margin:0">
+          <button class="btn primario" id="btnGerarQuadro" data-dica="Monta as linhas a partir dos transportes das composições dos serviços escolhidos (auxiliares incluídas), com a quantidade anual de cada serviço">Gerar das composições</button>
+          <button class="btn" id="btnLinhaManual" data-dica="Acrescenta uma linha (ex.: resíduo recolhido na pista)">+ Linha manual</button>
+          <button class="btn primario" id="btnAplicarMom" data-dica="Grava os momentos (t·km) como quantidade dos serviços de transporte do orçamento">Aplicar ao orçamento</button></div></div>
+        <p class="nota">Momento = TRUNC(quantidade anual × fator de utilização × DMT × FIT; 3). Materiais sem origem são CIF (o preço já inclui o frete) e ficam fora do quadro.</p>
+        <div id="avisoQuadro"></div>
+        <h4>Totais por serviço de transporte</h4>
+        <div class="tabela-rolagem"><table class="tab" id="tabTotTransp"></table></div>
+      </div>
+      <div class="caixa"><h3>Origem dos materiais</h3>
+        <p class="nota">Vale para todas as linhas do material. Deixe a origem vazia para tratar como CIF.</p>
+        <div class="tabela-rolagem" style="max-height:320px"><table class="tab" id="tabOrigens"></table></div></div>
+      <div class="caixa"><h3>Linhas do quadro</h3>
+        <div class="tabela-rolagem" style="max-height:560px"><table class="tab" id="tabQuadro"></table></div></div>
     </div>
   </section>
 

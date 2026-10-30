@@ -1,7 +1,7 @@
 # PATO — Inventário georreferenciado e orçamento de conservação
 
 Sistema local (painel web + servidor MCP) construído a partir da planilha
-`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fase 1 (inventário georreferenciado) e Fase 2 (custos: SICRO, BDI, composições e binômio) entregues.**
+`PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx`. **Fases 1 (inventário georreferenciado), 2 (custos: SICRO, BDI, composições e binômio) e 3 (croqui, VMD, FIT e transportes) entregues.**
 
 ## O que faz
 
@@ -88,6 +88,31 @@ arredondamento da planilha).
 
 Os anexos ficam em `%USERPROFILE%\PATO_App\anexos\`.
 
+## Transporte (aba Transporte) — Fase 3
+| Subaba | O que faz |
+|---|---|
+| **Croqui** | Desenhado pelo sistema a partir do segmento do projeto. Você informa o km do canteiro/centro sede, pedreira, areal, usina e demais ocorrências (lado, acessos LN/RP/P), as travessias urbanas e localidades de referência. Ocorrências sem km (bota-fora, empréstimo, aterro) usam distância fixa até a pista (ou ½ extensão). Botão para baixar o desenho (SVG). |
+| **VMD** | VMD por segmento SNV. Importa o arquivo da **modelagem do VMDa do DNIT** (servicos.dnit.gov.br/dadospnct/Modelagem — .xlsx, .csv ou GeoJSON), casando pelo código SNV (ou BR e km). VMDf = VMDa do sentido ÷ faixas por sentido; também pode ser digitado. |
+| **DMT e FIT** | Para cada rota: LN, RP, P, Pr, Pu, DMT, sentido, VMDf, A1, A2 e FIT. Qualquer rota pode receber distâncias medidas (“Informar”). |
+| **Quadro de transportes** | Gerado das composições dos serviços escolhidos (transportes das auxiliares expandidos, fatores multiplicados), com a quantidade anual de cada serviço. Origem/destino por material (sugestão automática; vazio = CIF). Momento = TRUNC(quant. × fator × DMT × FIT; 3), separado por composição de transporte e por superfície. **Aplicar ao orçamento** grava os momentos como quantidade dos serviços de transporte. |
+
+**DMT** média até a pista = ((x − a)² + (b − x)²) / (2·(b − a)); parcela urbana pelo método da planilha de referência
+(travessia que contém a ocorrência = média interna; demais = metade da extensão) ou exata (opção).
+**FIT — nova metodologia do DNIT**: A1 = 70 + 0,0035·VMDf; A2 = 60·DMTu; FIT = 1 + (A1 + A2)/(60·DMTp), no transporte
+pavimentado que sai de uma ocorrência, até DMTp de 100 km (ajustável). O VMDf da viagem é a média ponderada pela extensão dos
+segmentos percorridos no sentido da viagem.
+
+Conferência com a planilha BR-158/MT: DMT, VMDf (1476, 1174, 1392) e FIT (1,1306; 1,2297; 1,0904) idênticos; momentos
+PN03 567.788,895, 5914479 299,214 e 5915014 3.309,30 idênticos. Diferenças da planilha, mantidas de propósito:
+- Areal/Usina → Pista: a planilha considera só a travessia de Confresa (Pu 2,05); o sistema também a de Porto Alegre do Norte
+  (Pu 3,80). Para reproduzir a planilha, informe a rota.
+- 5914464 (carroceria 15 t em revestimento primário): a planilha usa a distância pavimentada (63,75 km); o sistema usa a de RP (10 km).
+- 4915623A (brita 4): a planilha usa FIT 1,0917 só nessa linha (sem A1); o sistema usa o FIT da rota (1,1306).
+
+Importar de planilha PATO traz as quantidades (aba PATO), o VMD (VMDf) e as linhas do quadro (TRANSPORTES_CONSERVA).
+Exportar gera CROQUI (desenho em células), DMT, VMDf, FIT (com fórmulas), TRANSPORTES_CONSERVA (momentos com fórmulas) e
+RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” guarda a quantidade de cada serviço.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10+ (python.org, marque “Add to PATH”).
 2. Copie a pasta `pato-app` para, por exemplo, `C:\PATO\pato-app`.
@@ -118,7 +143,9 @@ custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_comp
 `ver_composicao`, `alterar_preco_insumo`, `trocar_insumo`, `alterar_tempo_fixo`, `alterar_dmt`, `listar_alteracoes_custo`,
 `desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `binomio_listar`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
 `binomio_importar_planilha`, `binomio_aplicar_vencedor`, `binomio_anexar`, `binomio_exportar`, `indices_reajuste`,
-`gravar_indice_reajuste`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
+`gravar_indice_reajuste`; transporte: `croqui_ler`, `croqui_salvar`, `importar_vmd_dnit`, `quadro_transportes`,
+`gerar_quadro_transportes`, `definir_origem_material`, `definir_quantidade_servico`, `aplicar_momentos_ao_orcamento`,
+`importar_transportes_planilha`, `exportar_transportes`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 
 Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e me mostre os alertas”*,
@@ -134,8 +161,6 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
   ficam no inventário exportado; a área gramada vai para `RESUMO_INVENT!B44`.
 
 ## Próximas fases (planejadas)
-3. **Transporte, FIT e croqui** — DMT por origem/destino, FIT = 1 + ((70 + 0,0035·VMDf) + 60·DMTu)/(DMTp·60),
-   croqui de ocorrências desenhado e quadro de transportes.
 4. **PATO completo** — quantidades × preços no PATO, curva ABC, cronograma, PDF;
    plano de trabalho conforme Resolução DNIT nº 9/2023 e Manual de Conservação (IPR-710).
 

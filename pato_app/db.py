@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS base_sicro (
 );
 CREATE TABLE IF NOT EXISTS servico_projeto (
   id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, codigo TEXT NOT NULL, ordem INTEGER,
-  item TEXT, obs TEXT, UNIQUE(projeto_id, codigo)
+  item TEXT, obs TEXT, quantidade REAL, origem_quantidade TEXT, UNIQUE(projeto_id, codigo)
 );
 CREATE TABLE IF NOT EXISTS alteracao_custo (
   id INTEGER PRIMARY KEY AUTOINCREMENT, projeto_id INTEGER NOT NULL, tipo TEXT, dados TEXT, descricao TEXT,
@@ -64,6 +64,10 @@ CREATE TABLE IF NOT EXISTS composicao_propria (
   id INTEGER PRIMARY KEY AUTOINCREMENT, codigo TEXT UNIQUE NOT NULL, descricao TEXT, unidade TEXT,
   categoria TEXT, dados TEXT, origem TEXT, observacoes TEXT,
   criado_em TEXT DEFAULT CURRENT_TIMESTAMP, atualizado_em TEXT DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE IF NOT EXISTS projeto_dados (
+  projeto_id INTEGER NOT NULL, chave TEXT NOT NULL, dados TEXT, atualizado_em TEXT DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (projeto_id, chave)
 );
 CREATE TABLE IF NOT EXISTS indice (
   nome TEXT NOT NULL, mes TEXT NOT NULL, valor REAL, fonte TEXT, PRIMARY KEY (nome, mes)
@@ -97,6 +101,10 @@ def conectar(caminho: Path | str | None = None) -> sqlite3.Connection:
     for c in CAMPOS_PROJETO:
         if c not in cols:  # migração de bancos antigos
             con.execute(f"ALTER TABLE projeto ADD COLUMN {c} {'REAL' if c in ('km_ini', 'km_fim', 'prazo', 'bdi_sd', 'bdi_cd') else 'TEXT'}")
+    cols_sp = {r[1] for r in con.execute("PRAGMA table_info(servico_projeto)")}
+    for c in ("quantidade", "origem_quantidade"):
+        if c not in cols_sp:
+            con.execute(f"ALTER TABLE servico_projeto ADD COLUMN {c} {'REAL' if c == 'quantidade' else 'TEXT'}")
     cols_s = {r[1] for r in con.execute("PRAGMA table_info(sugestao)")}
     for c in ("certa", "automatica"):
         if c not in cols_s:
@@ -197,6 +205,7 @@ class Banco:
             self.con.execute("DELETE FROM servico_projeto WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM alteracao_custo WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM binomio WHERE projeto_id = ?", (pid,))
+            self.con.execute("DELETE FROM projeto_dados WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM anexo WHERE projeto_id = ?", (pid,))
             self.con.execute("DELETE FROM projeto WHERE id = ?", (pid,))
 
@@ -387,6 +396,21 @@ class Banco:
             n = self.con.execute("SELECT COALESCE(MAX(ordem), 0) + 1 FROM servico_projeto WHERE projeto_id = ?", (pid,)).fetchone()[0]
             self.con.execute("INSERT OR IGNORE INTO servico_projeto (projeto_id, codigo, ordem, item) VALUES (?, ?, ?, ?)",
                              (pid, codigo, n, item))
+
+    def quantidade_servico(self, pid: int, codigo: str, quantidade: float | None, origem: str | None = None) -> None:
+        with _lock, self.con:
+            self.con.execute("UPDATE servico_projeto SET quantidade = ?, origem_quantidade = ? WHERE projeto_id = ? AND codigo = ?",
+                             (quantidade, origem, pid, codigo))
+
+    def dados_projeto(self, pid: int, chave: str) -> dict | None:
+        r = self.con.execute("SELECT dados FROM projeto_dados WHERE projeto_id = ? AND chave = ?", (pid, chave)).fetchone()
+        return json.loads(r[0]) if r and r[0] else None
+
+    def gravar_dados_projeto(self, pid: int, chave: str, dados: dict) -> None:
+        with _lock, self.con:
+            self.con.execute("INSERT INTO projeto_dados (projeto_id, chave, dados) VALUES (?, ?, ?) ON CONFLICT(projeto_id, chave) "
+                             "DO UPDATE SET dados = excluded.dados, atualizado_em = CURRENT_TIMESTAMP",
+                             (pid, chave, json.dumps(dados, ensure_ascii=False)))
 
     def remover_servico(self, pid: int, codigo: str) -> None:
         with _lock, self.con:

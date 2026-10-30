@@ -20,7 +20,7 @@ mcp = FastMCP("pato", instructions=(
     "Ferramentas do sistema PATO (Plano Anual de Trabalho e Orçamento — conservação rodoviária DNIT). "
     "Use listar_projetos para achar o projeto; listar_inventario / adicionar_itens_inventario para ler e "
     "preencher o inventário georreferenciado; importar_planilha para trazer o inventário de outro segmento; "
-    "exportar_planilha_pato para gerar o PATO preenchido. Custos: custos_configuracao, ver_composicao, alterar_preco_insumo, trocar_insumo, alterar_tempo_fixo, calcular_bdi; binômio: binomio_listar, binomio_salvar_material, binomio_aplicar_vencedor. ler_celulas / escrever_celulas atuam em qualquer .xlsx."))
+    "exportar_planilha_pato para gerar o PATO preenchido. Custos: custos_configuracao, ver_composicao, alterar_preco_insumo, trocar_insumo, alterar_tempo_fixo, calcular_bdi; binômio: binomio_listar, binomio_salvar_material, binomio_aplicar_vencedor; transporte: croqui_ler, croqui_salvar, importar_vmd_dnit, quadro_transportes, aplicar_momentos_ao_orcamento. ler_celulas / escrever_celulas atuam em qualquer .xlsx."))
 _sv: Servico | None = None
 
 
@@ -409,6 +409,85 @@ def gravar_indice_reajuste(nome: str, mes: str, valor: float) -> str:
     """Grava o índice de um mês (AAAA-MM), ex.: Conservação Rodoviária 2026-07 = 485,2."""
     sv().binomio.gravar_indice(nome, mes, valor)
     return "ok"
+
+
+# ------------------------------------------------------------------ transporte (croqui, VMD, FIT, quadro)
+@mcp.tool()
+def croqui_ler(projeto_id: int) -> dict:
+    """Croqui do segmento: ocorrências (km, acessos), travessias urbanas, VMD por segmento e as rotas calculadas
+    (LN, RP, P, Pr, Pu, DMT, VMDf, FIT)."""
+    r = sv().transporte.croqui(projeto_id)
+    return dict(dados=r["dados"], km_ini=r["km_ini"], km_fim=r["km_fim"], rotas=r["rotas"])
+
+
+@mcp.tool()
+def croqui_salvar(projeto_id: int, ocorrencias: list[dict] | None = None, travessias: list[dict] | None = None,
+                  vmd: list[dict] | None = None, localidades: list[dict] | None = None, metodo: str | None = None) -> dict:
+    """Grava o croqui. ocorrencias: [{nome, tipo (canteiro|pedreira|areal|usina|deposito|bota_fora|emprestimo|aterro|
+    cidade|outro), km, lado 'E'|'D', acesso_ln, acesso_rp, acesso_p}] — sem km, use dist_ln/dist_rp/dist_p (distância
+    fixa até a pista) ou meia_extensao=true. travessias: [{nome, km_ini, km_fim}]. vmd: [{snv, km_ini, km_fim, vmda,
+    vmda_c, vmda_d, faixas_sentido, vmdf_c, vmdf_d}]. metodo: referencia | exato (parcela urbana). Campos omitidos são mantidos."""
+    dados = {k: v for k, v in dict(ocorrencias=ocorrencias, travessias=travessias, vmd=vmd, localidades=localidades,
+                                   metodo=metodo).items() if v is not None}
+    r = sv().transporte.salvar_croqui(projeto_id, dados)
+    return dict(rotas=r["rotas"])
+
+
+@mcp.tool()
+def importar_vmd_dnit(projeto_id: int, caminho_arquivo: str) -> dict:
+    """Importa o VMDa da modelagem do DNIT (servicos.dnit.gov.br/dadospnct/Modelagem — .xlsx, .csv ou GeoJSON),
+    casando pelo código SNV dos segmentos do projeto (ou pela BR e km)."""
+    r = sv().transporte.importar_vmd(projeto_id, caminho_arquivo)
+    return dict(casados=r["casados"], lidos=r["lidos"], vmd=r["dados"]["vmd"])
+
+
+@mcp.tool()
+def quadro_transportes(projeto_id: int, com_linhas: bool = False) -> dict:
+    """Quadro de transportes: momentos (t·km) por composição de transporte e, se pedido, as linhas
+    (serviço, material, fator, origem → destino, DMT, FIT, momento)."""
+    r = sv().transporte.quadro(projeto_id)
+    out = dict(totais=r["totais"], sem_quantidade=r["sem_quantidade"], materiais=r["materiais"])
+    if com_linhas:
+        out["linhas"] = [{k: ln.get(k) for k in ("servico", "material", "quantidade_anual", "fator", "origem", "destino",
+                                                  "dmt", "fit", "momentos", "erro")} for ln in r["linhas"]]
+    return out
+
+
+@mcp.tool()
+def gerar_quadro_transportes(projeto_id: int) -> dict:
+    """Monta o quadro a partir dos transportes das composições dos serviços escolhidos (auxiliares expandidas)."""
+    r = sv().transporte.gerar_quadro(projeto_id)
+    return dict(totais=r["totais"], materiais=r["materiais"])
+
+
+@mcp.tool()
+def definir_origem_material(projeto_id: int, chave: str, origem: str | None, destino: str | None = "Pista") -> dict:
+    """Origem/destino de um material do quadro (chave 'INSUMO|pista' ou 'INSUMO|usina'); origem vazia = CIF."""
+    return dict(totais=sv().transporte.definir_origem(projeto_id, chave, origem, destino)["totais"])
+
+
+@mcp.tool()
+def definir_quantidade_servico(projeto_id: int, codigo: str, quantidade: float) -> dict:
+    """Quantidade anual (12 meses) de um serviço do orçamento — base do quadro de transportes."""
+    return sv().transporte.definir_quantidade(projeto_id, codigo, quantidade)
+
+
+@mcp.tool()
+def aplicar_momentos_ao_orcamento(projeto_id: int) -> dict:
+    """Grava os momentos do quadro como quantidade dos serviços de transporte do orçamento."""
+    return sv().transporte.aplicar_ao_orcamento(projeto_id)
+
+
+@mcp.tool()
+def importar_transportes_planilha(projeto_id: int, caminho_xlsx: str) -> dict:
+    """Lê de uma planilha PATO as quantidades (aba PATO), o VMD (VMDf) e as linhas do quadro (TRANSPORTES_CONSERVA)."""
+    return sv().transporte.importar_planilha(projeto_id, caminho_xlsx)
+
+
+@mcp.tool()
+def exportar_transportes(projeto_id: int) -> dict:
+    """Gera o Excel com CROQUI, DMT, VMDf, FIT, TRANSPORTES_CONSERVA e resumo dos momentos (com fórmulas)."""
+    return sv().transporte.exportar(projeto_id)
 
 
 def main():

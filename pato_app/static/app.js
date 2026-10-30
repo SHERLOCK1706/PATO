@@ -36,6 +36,7 @@ function irAba(nome) {
   if (nome === "revisao") carregarSugestoes();
   if (nome === "ajustes") carregarAjustes();
   if (nome === "custos") carregarCustos();
+  if (nome === "transporte") carregarTransp();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -563,12 +564,14 @@ async function renderServicos() {
     if (a == null) return "—";
     return a !== o ? `<span title="original ${reais(o)}">${reais(a)}</span> <small class="${a > o ? "var-pos" : "var-neg"}">(${((a / o - 1) * 100).toFixed(2)}%)</small>` : reais(a);
   };
-  $("#tabServicos").innerHTML = `<tr><th>Código</th><th>Serviço</th><th>Unid.</th><th class=n>Preço ${REG.SD}</th><th class=n>Preço ${REG.CD}</th><th></th></tr>` +
+  $("#tabServicos").innerHTML = `<tr><th>Código</th><th>Serviço</th><th>Unid.</th><th class=n>Quant. anual</th><th class=n>Preço ${REG.SD}</th><th class=n>Preço ${REG.CD}</th><th></th></tr>` +
     (r.servicos.map(s => `<tr><td>${esc(s.codigo)}</td><td>${esc(s.descricao || "")}${s.analitica ? "" : ' <span class="tag" data-dica="A base não tem o relatório analítico desta composição; o preço vem da lista sintética">sem analítico</span>'}</td>
-      <td>${esc(s.unidade || "")}</td><td class=n>${cel(s, "SD")}</td><td class=n>${cel(s, "CD")}</td>
+      <td>${esc(s.unidade || "")}</td><td class=n><input type="number" step="any" data-qserv="${esc(s.codigo)}" value="${s.quantidade ?? ""}" style="width:110px"
+        data-dica="${s.origem_quantidade ? "Origem: " + esc(s.origem_quantidade) + ". " : ""}Quantidade de trabalho em 12 meses — usada no quadro de transportes"></td><td class=n>${cel(s, "SD")}</td><td class=n>${cel(s, "CD")}</td>
       <td><div class="linha-botoes" style="margin:0">${s.analitica ? `<button class="btn mini" data-vcomp="${esc(s.codigo)}" data-dica="Abre a composição analítica para ver e ajustar">Composição</button>` : ""}
       <button class="btn mini perigo" data-rserv="${esc(s.codigo)}" data-dica="Tira o serviço da lista do projeto">Remover</button></div></td></tr>`).join("")
-      || `<tr><td colspan=6 class="nota">Nenhum serviço escolhido. Busque abaixo e clique em Adicionar.</td></tr>`);
+      || `<tr><td colspan=7 class="nota">Nenhum serviço escolhido. Busque abaixo e clique em Adicionar.</td></tr>`);
+  $$("[data-qserv]").forEach(i => i.onchange = async () => { try { await jpost(`${base_}${E.pid}/custos/quantidade`, { codigo: i.dataset.qserv, quantidade: i.value }, "PUT"); toast("Quantidade gravada"); } catch (e) { erro(e); } });
   $$("[data-vcomp]").forEach(b => b.onclick = () => abrirComposicao(b.dataset.vcomp));
   $$("[data-rserv]").forEach(b => b.onclick = async () => { await api(`${base_}${E.pid}/custos/servicos/${encodeURIComponent(b.dataset.rserv)}`, { method: "DELETE" }); renderServicos(); });
   if (C_.comp) abrirComposicao(C_.comp);
@@ -977,6 +980,226 @@ $("#btnAdotarBase").onclick = async () => {
   const [uf, data_base] = v.split("|");
   if (!confirm(`Passar o projeto para a base ${uf} ${data_base}?`)) return;
   await jpost(`${base_}${E.pid}/custos/config`, { uf, data_base }, "PUT"); toast("Data-base alterada"); C_.sub = "servicos"; carregarCustos();
+};
+
+// ---------------------------------------------------------------- transporte
+const T_ = { sub: "croqui", cro: null, q: null };
+const km3 = v => v == null || v === "" ? "—" : Number(v).toLocaleString("pt-BR", { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+async function carregarTransp() {
+  if (!E.pid) return;
+  const subs = [["croqui", "Croqui", "Desenho do segmento com as ocorrências e travessias urbanas"], ["vmd", "VMD", "Volume médio diário por segmento (modelagem DNIT)"],
+    ["dmt", "DMT e FIT", "Distâncias médias de transporte e fator de interferência de tráfego por rota"], ["quadro", "Quadro de transportes", "Momentos de transporte por serviço e material"]];
+  $("#chipsTransp").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${T_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
+  $$("#chipsTransp .chip").forEach(ch => ch.onclick = () => { T_.sub = ch.dataset.sub; carregarTransp(); });
+  $$(".sub-transp").forEach(el => el.classList.toggle("ativa", el.id === "trp-" + T_.sub));
+  try {
+    T_.cro = await api(`${base_}${E.pid}/croqui`);
+    const d = T_.cro.dados, nOc = d.ocorrencias.filter(o => o.km !== null && o.km !== "" && o.km !== undefined).length;
+    const fits = T_.cro.rotas.filter(r => r.fit !== 1);
+    $("#cabTransp").innerHTML = `<div class="it">Segmento<br><b>km ${nf(T_.cro.km_ini, 3)} ao ${nf(T_.cro.km_fim, 3)}</b></div>
+      <div class="it">Ocorrências no croqui<br><b>${nOc} com km · ${d.ocorrencias.length - nOc} com distância fixa</b></div>
+      <div class="it">Travessias urbanas<br><b>${d.travessias.length}</b></div><div class="it">Segmentos com VMD<br><b>${d.vmd.filter(s => s.vmda != null || s.vmdf_c != null).length} de ${d.vmd.length}</b></div>
+      <div class="it">Rotas com FIT<br><b>${fits.length}</b></div>`;
+    await ({ croqui: renderCroqui, vmd: renderVmd, dmt: renderRotas, quadro: renderQuadro })[T_.sub]();
+  } catch (e) { erro(e); }
+}
+
+// ---- croqui
+const COR_TIPO = { canteiro: "#1f4e79", pedreira: "#7f6000", areal: "#c55a11", usina: "#7030a0", deposito: "#3b6ea8", bota_fora: "#595959",
+  emprestimo: "#548235", aterro: "#843c0c", cidade: "#000", outro: "#2e75b6" };
+function svgCroqui(c) {
+  const d = c.dados, a = +c.km_ini, b = +c.km_fim, W = 1200, x0 = 80, x1 = W - 80;
+  const X = k => x0 + (Math.min(Math.max(+k, a), b) - a) / ((b - a) || 1) * (x1 - x0);
+  const e = s => esc(s);
+  // ocorrências: acima (E) / abaixo (D), em níveis para não sobrepor
+  const ocs = (d.ocorrencias || []).filter(o => o.km !== "" && o.km != null).sort((p, q) => p.km - q.km);
+  const ult = { E: [], D: [] }, pos = [];
+  ocs.forEach(o => {
+    const lado = (o.lado || "E").toUpperCase().startsWith("D") ? "D" : "E", x = X(o.km);
+    let n = 0; while (ult[lado][n] != null && x - ult[lado][n] < 160) n++;
+    ult[lado][n] = x; pos.push({ o, lado, n, x });
+  });
+  const nE = Math.max(1, ult.E.length), nD = ult.D.length, Y = 110 + nE * 54, YD = Y + 128;
+  const H = YD + nD * 54 + 50;
+  let linhas = "", caixas = "";
+  let g = `<rect x="0" y="0" width="${W}" height="${H}" fill="#fff"/>`;
+  g += `<text x="${W / 2}" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2430">CROQUI DE OCORRÊNCIA DE MATERIAIS E DMT's</text>`;
+  g += `<text x="${W / 2}" y="48" text-anchor="middle" font-size="12" fill="#5b6675">${e((E.resumo?.projeto?.rodovia || "") + " — segmento km " + nf(a, 3) + " ao km " + nf(b, 3))}</text>`;
+  (d.vmd || []).forEach((s, i) => {
+    const xa = X(s.km_ini), xb = X(s.km_fim), y = Y + 84;
+    g += `<line x1="${xa}" y1="${Y + 10}" x2="${xa}" y2="${y + 20}" stroke="#bbb" stroke-dasharray="3 3"/>`;
+    const f = s.faixas_sentido || 1;
+    const vc = s.vmdf_c ?? (s.vmda_c != null ? s.vmda_c / f : s.vmda != null ? s.vmda / 2 / f : null);
+    const vd = s.vmdf_d ?? (s.vmda_d != null ? s.vmda_d / f : s.vmda != null ? s.vmda / 2 / f : null);
+    g += `<text x="${(xa + xb) / 2}" y="${y}" text-anchor="middle" font-size="11" fill="#3b6ea8">${e(s.snv || "Seg. " + (s.segmento || i + 1))}</text>`;
+    if (vc != null || vd != null) g += `<text x="${(xa + xb) / 2}" y="${y + 15}" text-anchor="middle" font-size="11" fill="#3b6ea8">VMDf ${vc != null ? Math.round(vc) : "—"} → / ← ${vd != null ? Math.round(vd) : "—"}</text>`;
+  });
+  g += `<line x1="${x0}" y1="${Y}" x2="${x1}" y2="${Y}" stroke="#595959" stroke-width="10" stroke-linecap="round"/>`;
+  (d.travessias || []).forEach(t => {
+    const xa = X(t.km_ini), xb = X(t.km_fim);
+    g += `<rect x="${xa}" y="${Y - 9}" width="${Math.max(3, xb - xa)}" height="18" fill="#f4b183"/>`;
+    g += `<text x="${(xa + xb) / 2}" y="${Y + 44}" text-anchor="middle" font-size="10" fill="#843c0c">TRAVESSIA URBANA</text>`;
+    g += `<text x="${(xa + xb) / 2}" y="${Y + 57}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#843c0c">${e(t.nome || "")}</text>`;
+  });
+  g += `<line x1="${x0}" y1="${Y}" x2="${x1}" y2="${Y}" stroke="#fff" stroke-width="1.5" stroke-dasharray="14 10"/>`;
+  const passo = [1, 2, 5, 10, 20, 25, 50, 100].find(p => (b - a) / p <= 12) || 100;
+  for (let k = Math.ceil(a / passo) * passo; k <= b; k += passo) g += `<line x1="${X(k)}" y1="${Y + 7}" x2="${X(k)}" y2="${Y + 14}" stroke="#333"/><text x="${X(k)}" y="${Y + 26}" text-anchor="middle" font-size="9.5" fill="#555">${k}</text>`;
+  g += `<text x="${x0}" y="${Y - 30}" text-anchor="middle" font-size="11" font-weight="700">INÍCIO</text><text x="${x0}" y="${Y - 16}" text-anchor="middle" font-size="10.5">km ${nf(a, 3)}</text>`;
+  g += `<text x="${x1}" y="${Y - 30}" text-anchor="middle" font-size="11" font-weight="700">FIM</text><text x="${x1}" y="${Y - 16}" text-anchor="middle" font-size="10.5">km ${nf(b, 3)}</text>`;
+  (d.localidades || []).filter(l => l.km !== "" && l.km != null).forEach(l => {
+    g += `<text x="${X(l.km)}" y="${Y + 70}" text-anchor="middle" font-size="11" font-weight="700">${e(l.nome)}</text>`;
+  });
+  pos.forEach(({ o, lado, n, x }) => {
+    const y = lado === "E" ? Y - 64 - n * 54 : YD + n * 54, cor = COR_TIPO[o.tipo] || "#2e75b6";
+    const ac = ["ln", "rp", "p"].map(k => +o["acesso_" + k] ? `${k.toUpperCase()} ${nf(+o["acesso_" + k], 2)} km` : "").filter(Boolean).join(" · ");
+    linhas += `<line x1="${x}" y1="${Y}" x2="${x}" y2="${y}" stroke="${cor}" stroke-width="1.5" ${ac ? 'stroke-dasharray="5 3"' : ""}/>`;
+    const h = ac ? 44 : 34;
+    caixas += `<rect x="${x - 74}" y="${y - h / 2}" width="148" height="${h}" rx="6" fill="#fff" stroke="${cor}" stroke-width="1.5"/>`;
+    caixas += `<text x="${x}" y="${y - h / 2 + 15}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${cor}">${e(o.nome)}</text>`;
+    caixas += `<text x="${x}" y="${y - h / 2 + 28}" text-anchor="middle" font-size="10" fill="#333">km ${nf(+o.km, 3)}</text>`;
+    if (ac) caixas += `<text x="${x}" y="${y - h / 2 + 39}" text-anchor="middle" font-size="9.5" fill="#555">acesso ${e(ac)}</text>`;
+    caixas += `<circle cx="${x}" cy="${Y}" r="6" fill="${cor}" stroke="#fff" stroke-width="2"/>`;
+  });
+  g += linhas + caixas;
+  const fixas = (d.ocorrencias || []).filter(o => o.km === "" || o.km == null);
+  if (fixas.length) {
+    g += `<text x="${x0}" y="${H - 18}" font-size="11" fill="#333"><tspan font-weight="700">Distância fixa até a pista: </tspan>${e(fixas.map(o => {
+      const p = o.meia_extensao ? (b - a) / 2 : +o.dist_p || 0;
+      return `${o.nome} (${["LN " + nf(+o.dist_ln || 0, 2), "RP " + nf(+o.dist_rp || 0, 2), "P " + nf(p, 2)].filter(x => !x.endsWith(" 0")).join(", ") || "0"} km)`;
+    }).join(" · "))}</text>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Segoe UI, Arial, sans-serif">${g}</svg>`;
+}
+const SEL_TIPO = v => `<select data-c="tipo">${Object.entries(T_.cro.tipos).map(([k, r]) => `<option value="${k}" ${v === k ? "selected" : ""}>${esc(r)}</option>`).join("")}</select>`;
+const ci = (k, v, t = "text", extra = "") => `<input data-c="${k}" type="${t}" ${t === "number" ? 'step="any"' : ""} value="${esc(v ?? "")}" ${extra}>`;
+function linhaOcorr(o) {
+  return `<tr data-oc><td>${ci("nome", o.nome)}</td><td>${SEL_TIPO(o.tipo)}</td><td>${ci("km", o.km, "number", 'data-dica="km na rodovia; em branco = ocorrência fora do segmento com distância fixa"')}</td>
+    <td><select data-c="lado"><option value="E" ${(o.lado || "E") === "E" ? "selected" : ""}>E</option><option value="D" ${o.lado === "D" ? "selected" : ""}>D</option></select></td>
+    <td>${ci("acesso_ln", o.acesso_ln, "number")}</td><td>${ci("acesso_rp", o.acesso_rp, "number")}</td><td>${ci("acesso_p", o.acesso_p, "number")}</td>
+    <td>${ci("dist_ln", o.dist_ln, "number")}</td><td>${ci("dist_rp", o.dist_rp, "number")}</td><td>${ci("dist_p", o.dist_p, "number")}</td>
+    <td style="text-align:center"><input data-c="meia_extensao" type="checkbox" ${o.meia_extensao ? "checked" : ""} data-dica="P = metade da extensão do segmento (ex.: aterro sanitário, recolhimento ao longo do trecho)"></td>
+    <td>${ci("obs", o.obs)}</td><td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a ocorrência">×</button></td></tr>`;
+}
+const lerTab = sel => $$(sel).map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.type === "checkbox" ? i.checked : (i.type === "number" ? (i.value === "" ? null : +i.value) : i.value)])));
+async function renderCroqui() {
+  const c = T_.cro, d = c.dados;
+  $("#croquiSvg").innerHTML = svgCroqui(c);
+  $("#tabOcorr").innerHTML = `<tr><th>Nome</th><th>Tipo</th><th>km</th><th>Lado</th><th colspan=3 data-dica="Distância do acesso entre a rodovia e a ocorrência">Acesso LN / RP / P (km)</th>
+    <th colspan=3 data-dica="Para ocorrências sem km: distância fixa até a pista (ex.: bota-fora a 5 km)">Distância fixa LN / RP / P (km)</th><th>½ ext.</th><th>Obs.</th><th></th></tr>` + d.ocorrencias.map(linhaOcorr).join("");
+  $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial</th><th>km final</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
+  $("#tabLocal").innerHTML = `<tr><th>Nome</th><th>km</th><th></th></tr>` + (d.localidades || []).map(l => `<tr data-lc><td>${ci("nome", l.nome)}</td><td>${ci("km", l.km, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
+  $("#crMetodo").value = d.metodo || "referencia"; $("#crFitMax").value = d.fit_dmt_max ?? 100;
+  $("#crKmIni").value = d.km_ini ?? ""; $("#crKmFim").value = d.km_fim ?? "";
+  ligarRemover();
+}
+$("#btnAddOcorr").onclick = () => { $("#tabOcorr").insertAdjacentHTML("beforeend", linhaOcorr({ tipo: "pedreira", lado: "E" })); ligarRemover(); };
+$("#btnAddTrav").onclick = () => { $("#tabTrav").insertAdjacentHTML("beforeend", `<tr data-tv><td>${ci("nome", "")}</td><td>${ci("km_ini", "", "number")}</td><td>${ci("km_fim", "", "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+$("#btnAddLocal").onclick = () => { $("#tabLocal").insertAdjacentHTML("beforeend", `<tr data-lc><td>${ci("nome", "")}</td><td>${ci("km", "", "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+$("#btnSalvarCroqui").onclick = async () => {
+  const dados = { ocorrencias: lerTab("#tabOcorr tr[data-oc]").filter(o => o.nome), travessias: lerTab("#tabTrav tr[data-tv]").filter(t => t.km_ini != null && t.km_fim != null),
+    localidades: lerTab("#tabLocal tr[data-lc]").filter(l => l.nome), metodo: $("#crMetodo").value, fit_dmt_max: +$("#crFitMax").value || 100,
+    km_ini: $("#crKmIni").value === "" ? null : +$("#crKmIni").value, km_fim: $("#crKmFim").value === "" ? null : +$("#crKmFim").value };
+  try { await jpost(`${base_}${E.pid}/croqui`, dados, "PUT"); toast("Croqui salvo — DMT e FIT recalculados"); carregarTransp(); } catch (e) { erro(e); }
+};
+$("#btnSvgCroqui").onclick = () => {
+  const blob = new Blob([svgCroqui(T_.cro)], { type: "image/svg+xml" }), a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = "croqui.svg"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+};
+
+// ---- VMD
+function linhaSeg(s) {
+  return `<tr data-sg><td>${ci("segmento", s.segmento)}</td><td>${ci("snv", s.snv)}</td><td>${ci("km_ini", s.km_ini, "number")}</td><td>${ci("km_fim", s.km_fim, "number")}</td>
+    <td>${ci("vmda", s.vmda, "number", 'data-dica="VMDa total (dois sentidos)"')}</td><td>${ci("vmda_c", s.vmda_c, "number")}</td><td>${ci("vmda_d", s.vmda_d, "number")}</td>
+    <td>${ci("faixas_sentido", s.faixas_sentido ?? 1, "number", 'data-dica="Faixas por sentido (pista simples = 1)"')}</td>
+    <td>${ci("vmdf_c", s.vmdf_c, "number", 'data-dica="VMD por faixa no sentido crescente (se informado, prevalece)"')}</td><td>${ci("vmdf_d", s.vmdf_d, "number")}</td>
+    <td>${ci("ano", s.ano)}</td><td><small>${esc(s.fonte || "")}</small><input data-c="fonte" type="hidden" value="${esc(s.fonte || "")}"></td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`;
+}
+async function renderVmd() {
+  $("#lnkVmd").href = T_.cro.fonte_vmd;
+  $("#tabVmd").innerHTML = `<tr><th>Seg.</th><th>SNV</th><th>km inicial</th><th>km final</th><th>VMDa</th><th>VMDa cresc.</th><th>VMDa decresc.</th><th>Faixas/sentido</th><th>VMDf cresc.</th><th>VMDf decresc.</th><th>Ano</th><th>Fonte</th><th></th></tr>` +
+    T_.cro.dados.vmd.map(linhaSeg).join("");
+  ligarRemover();
+}
+$("#btnAddSeg").onclick = () => { $("#tabVmd").insertAdjacentHTML("beforeend", linhaSeg({ faixas_sentido: 1, fonte: "manual" })); ligarRemover(); };
+$("#btnSalvarVmd").onclick = async () => {
+  try { await jpost(`${base_}${E.pid}/croqui`, { vmd: lerTab("#tabVmd tr[data-sg]").filter(s => s.km_ini != null) }, "PUT"); toast("VMD salvo"); carregarTransp(); } catch (e) { erro(e); }
+};
+$("#btnImpVmd").onclick = async () => {
+  const a = await escolherArquivo(".xlsx,.xls,.csv,.txt,.geojson,.json"); if (!a) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  try { const r = await api(`${base_}${E.pid}/croqui/vmd`, { method: "POST", body: fd }); toast(`${r.casados} segmentos com VMD (de ${r.lidos} registros lidos)`); carregarTransp(); } catch (e) { erro(e); }
+};
+
+// ---- DMT e FIT
+async function renderRotas() {
+  const man = new Set((T_.cro.dados.rotas_manuais || []).map(r => `${r.origem}|${r.destino}`));
+  $("#tabRotas").innerHTML = `<tr><th>Origem</th><th>Destino</th><th class=n>LN</th><th class=n>RP</th><th class=n>P</th><th class=n>Pr</th><th class=n>Pu</th><th class=n>DMT</th><th>Sentido</th><th class=n>VMDf</th><th class=n>A1 (s)</th><th class=n>A2 (s)</th><th class=n>FIT</th><th>Cálculo</th><th></th></tr>` +
+    (T_.cro.rotas.map(r => { const m = man.has(`${r.origem}|${r.destino}`);
+      return `<tr><td>${esc(r.origem)}</td><td>${esc(r.destino)}</td><td class="n">${km3(r.ln)}</td><td class="n">${km3(r.rp)}</td><td class="n ${m ? "manual" : ""}">${km3(r.p)}</td><td class=n>${km3(r.pr)}</td><td class=n>${km3(r.pu)}</td>
+      <td class=n><b>${km3(r.dmt)}</b></td><td>${esc(r.sentido || "")}</td><td class=n>${r.vmdf ?? "—"}</td><td class=n>${r.a1 != null ? nf(r.a1, 3) : ""}</td><td class=n>${r.a2 != null ? nf(r.a2, 3) : ""}</td>
+      <td class=n><b>${nf(r.fit, 4)}</b></td><td><small>${esc(r.metodo)}</small>${r.erro ? `<br><span class="tag erro">${esc(r.erro)}</span>` : ""}${r.aviso ? `<br><span class="tag aviso">${esc(r.aviso)}</span>` : ""}</td>
+      <td><button class="btn mini" data-rman="${esc(r.origem)}|${esc(r.destino)}" data-dica="Informa as distâncias medidas desta rota (prevalecem sobre o cálculo)">Informar</button>
+      ${m ? `<button class="btn mini perigo" data-rdes="${esc(r.origem)}|${esc(r.destino)}" data-dica="Volta ao cálculo pelo croqui">Calcular</button>` : ""}</td></tr>`; }).join("")
+    || '<tr><td colspan=15 class="nota">Cadastre as ocorrências no croqui.</td></tr>');
+  $$("[data-rman]").forEach(b => b.onclick = () => {
+    const [origem, destino] = b.dataset.rman.split("|");
+    dialogo(`Distâncias ${origem} → ${destino}`, [["ln", "LN (km)", "number"], ["rp", "RP (km)", "number"], ["p", "P total (km)", "number"], ["pu", "Pu — parte urbana (km)", "number"], ["vmdf", "VMDf (para o FIT)", "number"]],
+      async v => { const lst = (T_.cro.dados.rotas_manuais || []).filter(r => !(r.origem === origem && r.destino === destino));
+        lst.push({ origem, destino, ...Object.fromEntries(Object.entries(v).map(([k, x]) => [k, x === "" ? null : +x])), aplicar_fit: v.vmdf !== "" });
+        await jpost(`${base_}${E.pid}/croqui`, { rotas_manuais: lst }, "PUT"); toast("Rota informada"); carregarTransp(); });
+  });
+  $$("[data-rdes]").forEach(b => b.onclick = async () => { const [o, d] = b.dataset.rdes.split("|");
+    await jpost(`${base_}${E.pid}/croqui`, { rotas_manuais: (T_.cro.dados.rotas_manuais || []).filter(r => !(r.origem === o && r.destino === d)) }, "PUT"); carregarTransp(); });
+}
+
+// ---- quadro
+async function renderQuadro() {
+  const q = T_.q = await api(`${base_}${E.pid}/transportes`);
+  const selLocal = (v, k) => `<select data-k="${k}"><option value="">${k === "origem" ? "(CIF — sem transporte)" : "—"}</option>${q.locais.map(l => `<option ${l === v ? "selected" : ""}>${esc(l)}</option>`).join("")}${v && !q.locais.includes(v) ? `<option selected>${esc(v)}</option>` : ""}</select>`;
+  $("#avisoQuadro").innerHTML = (q.sem_quantidade.length ? `<p class="tag aviso">Serviços sem quantidade anual (momento zero): ${q.sem_quantidade.slice(0, 12).map(esc).join(", ")}${q.sem_quantidade.length > 12 ? "…" : ""} — informe em Custos → Serviços.</p>` : "")
+    + (q.linhas.some(l => l.erro) ? `<p class="tag erro">Há linhas com local que não está no croqui: cadastre a ocorrência ou ajuste a origem.</p>` : "");
+  $("#tabTotTransp").innerHTML = `<tr><th>Código</th><th>Serviço de transporte</th><th class=n>Momento (t·km)</th><th class=n>Linhas</th><th>No orçamento</th></tr>` +
+    (q.totais.map(t => `<tr><td>${esc(t.codigo)}</td><td>${esc(t.descricao || "")}</td><td class=n><b>${nf(t.momento, 3)}</b></td><td class=n>${t.linhas}</td>
+      <td>${t.no_orcamento ? (Math.abs((t.quantidade_orcamento || 0) - t.momento) < 0.001 ? '<span class="tag ok">aplicado</span>' : `<span class="tag aviso">orçamento: ${nf(t.quantidade_orcamento, 3)}</span>`) : '<span class="tag">não</span>'}</td></tr>`).join("")
+     || '<tr><td colspan=5 class="nota">Sem momentos: gere o quadro das composições ou importe de uma planilha PATO.</td></tr>');
+  $("#tabOrigens").innerHTML = `<tr><th>Material</th><th>Insumo</th><th>Usado em</th><th>Origem</th><th>Destino</th><th></th></tr>` + (q.materiais.map(m =>
+    `<tr data-mat="${esc(m.chave)}"><td>${esc(m.material)}</td><td>${esc(m.insumo || "")}</td><td><small>${m.chave.endsWith("|usina") ? "usinagem" : "serviço"}</small></td>
+     <td>${selLocal(m.origem, "origem")}</td><td>${selLocal(m.destino, "destino")}</td><td><button class="btn mini" data-salvaori data-dica="Grava a origem/destino deste material em todas as linhas">✓</button></td></tr>`).join("")
+    || '<tr><td colspan=6 class="nota">Gere o quadro das composições para listar os materiais.</td></tr>');
+  $$("[data-salvaori]").forEach(b => b.onclick = async () => { const tr = b.closest("tr");
+    try { await jpost(`${base_}${E.pid}/transportes/origem`, { chave: tr.dataset.mat, origem: $('[data-k="origem"]', tr).value, destino: $('[data-k="destino"]', tr).value || "Pista" }, "PUT"); toast("Origem gravada"); renderQuadro(); } catch (e) { erro(e); } });
+  const linhas = q.linhas.map((l, i) => [l, i]).filter(([l]) => l.ativo !== false && l.origem);
+  $("#tabQuadro").innerHTML = `<tr><th>Serviço</th><th>Material</th><th class=n>Quant. anual</th><th class=n>Fator (t/un)</th><th class=n>Peso (t)</th><th>Origem → destino</th><th class=n>DMT</th><th class=n>FIT</th><th>Transporte</th><th class=n>Momento (t·km)</th><th></th></tr>` +
+    linhas.map(([l, i]) => `<tr><td>${esc(l.servico)}<br><small>${esc((l.servico_desc || "").slice(0, 60))}</small></td><td>${esc(l.material)}${l.origem_linha !== "composição" ? ` <span class="tag">${esc(l.origem_linha)}</span>` : ""}</td>
+      <td class=n>${nf(l.quantidade_anual, 3)}</td><td class=n>${nf(l.fator, 6)}</td><td class=n>${nf(l.peso, 3)}</td><td>${esc(l.origem)} → ${esc(l.destino)}${l.erro ? `<br><span class="tag erro">${esc(l.erro)}</span>` : ""}</td>
+      <td class=n>${km3(l.dmt)}</td><td class=n>${nf(l.fit, 4)}</td><td><small>${Object.keys(l.momentos || {}).map(esc).join(", ") || esc(l.transporte || "")}</small></td>
+      <td class=n>${nf(Object.values(l.momentos || {}).reduce((x, y) => x + y, 0), 3)}</td>
+      <td><button class="btn mini perigo" data-rmq="${i}" data-dica="Tira a linha do quadro">×</button></td></tr>`).join("");
+  $$("[data-rmq]").forEach(b => b.onclick = async () => { const lst = T_.q.linhas.filter((_, i) => i !== +b.dataset.rmq);
+    await jpost(`${base_}${E.pid}/transportes/linhas`, { linhas: lst }, "PUT"); renderQuadro(); });
+}
+$("#btnGerarQuadro").onclick = async () => {
+  if (!confirm("Gerar as linhas a partir das composições dos serviços escolhidos?\n(As linhas manuais e importadas são mantidas; as geradas antes são substituídas.)")) return;
+  $("#avisoQuadro").innerHTML = '<p class="carregando">Lendo os transportes das composições…</p>';
+  try { await jpost(`${base_}${E.pid}/transportes/gerar`, { manter_manuais: true }); toast("Quadro gerado"); renderQuadro(); } catch (e) { erro(e); }
+};
+$("#btnLinhaManual").onclick = () => dialogo("Linha manual do quadro", [["servico", "Código do serviço"], ["material", "Material"], ["fator", "Fator de utilização (t por unidade do serviço)", "number"],
+  ["origem", "Origem (Pista ou nome da ocorrência)"], ["destino", "Destino"], ["transporte", "Composição de transporte (ex.: 5915321)"], ["quantidade", "Quantidade anual (vazio = a do serviço)", "number"]],
+  async v => { const lst = (T_.q?.linhas || []).concat([{ ...v, origem_linha: "manual", ativo: true }]); await jpost(`${base_}${E.pid}/transportes/linhas`, { linhas: lst }, "PUT"); toast("Linha incluída"); renderQuadro(); });
+$("#btnAplicarMom").onclick = async () => {
+  if (!confirm("Gravar os momentos como quantidade dos serviços de transporte do orçamento?")) return;
+  try { const r = await jpost(`${base_}${E.pid}/transportes/aplicar`, {}); toast(`${r.aplicados.length} serviços de transporte atualizados`); renderQuadro(); } catch (e) { erro(e); }
+};
+$("#btnImpTransp").onclick = async () => {
+  const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  $("#resTransp").innerHTML = '<p class="carregando">Lendo a planilha…</p>';
+  try { const r = await api(`${base_}${E.pid}/transportes/importar`, { method: "POST", body: fd });
+    $("#resTransp").innerHTML = `<p class="ok-msg">Importado: quantidades de ${r.quantidades} serviços, ${r.linhas} linhas do quadro, VMD de ${r.vmd} segmentos. Confira o croqui (ocorrências e travessias).</p>`; carregarTransp();
+  } catch (e) { $("#resTransp").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
+$("#btnExpTransp").onclick = async () => {
+  try { const r = await jpost(`${base_}${E.pid}/exportar/transportes`, {}); $("#resTransp").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
 
 // ---------------------------------------------------------------- projeto

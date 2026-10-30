@@ -3,6 +3,7 @@ recalculadas e alterações (preço de insumo, tempo fixo, veículo, transporte)
 from __future__ import annotations
 
 import json
+import threading
 import zlib
 from collections import Counter
 from typing import Any
@@ -64,6 +65,9 @@ def _desempacotar(raw: bytes) -> dict:
     return json.loads(zlib.decompress(raw).decode("utf-8"))
 
 
+_TRAVA_EXEMPLO = threading.Lock()
+
+
 class Custos:
     def __init__(self, sv):
         self.sv = sv
@@ -111,9 +115,12 @@ class Custos:
         """Na primeira execução, importa a base MT 04/2026 contida na planilha PATO de exemplo."""
         if self.db.bases():
             return
-        from .servico import MODELO_PADRAO
-        self.importar_base(str(MODELO_PADRAO), descricao=None,
-                           origem="Planilha PATO de exemplo (BR-158/MT) — 132 composições analíticas + lista sintética")
+        with _TRAVA_EXEMPLO:  # requisições simultâneas não podem importar a base duas vezes
+            if self.db.bases():
+                return
+            from .servico import MODELO_PADRAO
+            self.importar_base(str(MODELO_PADRAO), descricao=None,
+                               origem="Planilha PATO de exemplo (BR-158/MT) — 132 composições analíticas + lista sintética")
 
     # ---------------------------------------------------------- projeto
     def config(self, pid: int) -> dict:

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import re
 import shutil
+import threading
 import uuid
 from pathlib import Path
 
@@ -13,6 +14,9 @@ from . import normalizar as nz
 TIPO_MATERIAL = "cotacao"
 TIPO_BETUMINOSO = "betuminoso"
 TIPOS_ANEXO = {"cotacao": "Cotação", "icms": "ICMS (legislação/alíquota)", "anp": "Tabela ANP", "outro": "Outro"}
+
+
+_TRAVA = threading.Lock()
 
 
 def _num(v):
@@ -29,11 +33,14 @@ class Binomios:
     def garantir_indices(self) -> None:
         if self.db.indices():
             return
-        from .servico import MODELO_PADRAO
-        try:
-            self._gravar_series(bn.ler_indices(str(MODELO_PADRAO)), "Planilha PATO de exemplo (INDICES_REAJ)")
-        except Exception:  # noqa: BLE001 — sem índices o binômio funciona sem reajuste
-            pass
+        with _TRAVA:
+            if self.db.indices():
+                return
+            from .servico import MODELO_PADRAO
+            try:
+                self._gravar_series(bn.ler_indices(str(MODELO_PADRAO)), "Planilha PATO de exemplo (INDICES_REAJ)")
+            except Exception:  # noqa: BLE001 — sem índices o binômio funciona sem reajuste
+                pass
 
     def _gravar_series(self, series: dict, fonte: str) -> int:
         return self.db.gravar_indices([(n, m, v) for n, s in series.items() for m, v in s.items()], fonte)

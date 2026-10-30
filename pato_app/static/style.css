@@ -194,3 +194,9 @@ tr.vencedor td { background: #66bb6a33; font-weight: 600; }
 .anexos { margin: 8px 0; font-size: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .anexo { background: var(--sup2); border-radius: 6px; padding: 2px 6px; }
 .tag.ok { color: var(--ok); border-color: var(--ok); }
+/* transporte */
+.sub-transp { display: none; } .sub-transp.ativa { display: block; }
+.croqui-svg { background: #fff; border: 1px solid var(--borda); border-radius: 8px; overflow-x: auto; }
+.croqui-svg svg { display: block; min-width: 900px; width: 100%; height: auto; }
+#tabOcorr input, #tabOcorr select, #tabTrav input, #tabLocal input, #tabVmd input { width: 100%; min-width: 60px; }
+td.manual { background: #fff59d55; }

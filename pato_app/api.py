@@ -152,8 +152,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return sv.exportar_composicoes(pid)
         if formato == "binomio":
             return sv.binomio.exportar(pid)
+        if formato == "transportes":
+            return sv.transporte.exportar(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes ou binomio")
+            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes, binomio ou transportes")
         return sv.exportar_geo(pid, formato)
 
     # ------------------------------------------------- revisão (sugestões)
@@ -379,6 +381,58 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def b_excluir_anexo(aid: int):
         bi.excluir_anexo(aid)
         return {"ok": True}
+
+    # ------------------------------------------- transporte (croqui, VMD, FIT, quadro)
+    tr = sv.transporte
+
+    @app.get("/api/projetos/{pid}/croqui")
+    def t_croqui(pid: int):
+        return tr.croqui(pid)
+
+    @app.put("/api/projetos/{pid}/croqui")
+    def t_salvar_croqui(pid: int, dados: dict = Body(...)):
+        return tr.salvar_croqui(pid, dados)
+
+    @app.post("/api/projetos/{pid}/croqui/vmd")
+    async def t_vmd(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return tr.importar_vmd(pid, caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.get("/api/projetos/{pid}/transportes")
+    def t_quadro(pid: int):
+        return tr.quadro(pid)
+
+    @app.post("/api/projetos/{pid}/transportes/gerar")
+    def t_gerar(pid: int, dados: dict = Body(default={})):
+        return tr.gerar_quadro(pid, dados.get("manter_manuais", True))
+
+    @app.put("/api/projetos/{pid}/transportes/linhas")
+    def t_linhas(pid: int, dados: dict = Body(...)):
+        return tr.salvar_linhas(pid, dados.get("linhas") or [])
+
+    @app.put("/api/projetos/{pid}/transportes/origem")
+    def t_origem(pid: int, dados: dict = Body(...)):
+        return tr.definir_origem(pid, dados["chave"], dados.get("origem"), dados.get("destino"))
+
+    @app.post("/api/projetos/{pid}/transportes/aplicar")
+    def t_aplicar(pid: int):
+        return tr.aplicar_ao_orcamento(pid)
+
+    @app.put("/api/projetos/{pid}/custos/quantidade")
+    def t_quantidade(pid: int, dados: dict = Body(...)):
+        return tr.definir_quantidade(pid, dados["codigo"], dados.get("quantidade"))
+
+    @app.post("/api/projetos/{pid}/transportes/importar")
+    async def t_importar(pid: int, arquivo: UploadFile = File(...), quadro: bool = Form(default=True),
+                         quantidades: bool = Form(default=True), vmd: bool = Form(default=True)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return tr.importar_planilha(pid, caminho, quadro, quantidades, vmd)
+        finally:
+            os.unlink(caminho)
 
     @app.get("/api/projetos/{pid}/log")
     def log(pid: int, tipo: str | None = None):

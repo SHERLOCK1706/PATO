@@ -475,6 +475,18 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def o_preco(pid: int, dados: dict = Body(...)):
         return orc.preco_informado(pid, dados["codigo"], dados.get("SD"), dados.get("CD"), dados.get("descricao"), dados.get("unidade"))
 
+    @app.put("/api/projetos/{pid}/ne-rocada")
+    def ner_salvar(pid: int, dados: dict = Body(...)):
+        return orc.salvar_ne_rocada(pid, dados)
+
+    @app.get("/api/projetos/{pid}/sinalizacao")
+    def sz_ler(pid: int):
+        return orc.sinalizacao(pid)
+
+    @app.put("/api/projetos/{pid}/sinalizacao")
+    def sz_salvar(pid: int, dados: dict = Body(...)):
+        return orc.salvar_sinalizacao(pid, dados)
+
     # ------------------------------------------------ levantamento IP
     @app.get("/api/projetos/{pid}/ip")
     def ip_ler(pid: int):

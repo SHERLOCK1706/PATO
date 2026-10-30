@@ -7,6 +7,7 @@ from . import binomio as bn
 from . import composicoes as cp
 from . import normalizar as nz
 from . import ip as ip_mod
+from . import ne_rocada as ne_rocada_mod
 from . import pato_orcamento as po
 
 CHAVE = "pato"
@@ -40,12 +41,65 @@ class Orcamentos:
         return {k: v for k, v in out.items() if isinstance(v, (int, float))}
 
     # --------------------------------------------------------- importação
+    def _producao_fn(self, pid: int):
+        try:
+            m = self.sv.custos.motor(pid, "SD")
+        except ValueError:
+            return None
+        return lambda cod: nz.numero((m.comps.get(cp._cod(cod)) or {}).get("producao"))
+
+    def anos_contrato(self, pid: int, d: dict | None = None) -> float:
+        """Vigência em anos (canteiro e mobilização são rateados por ano: 1 ÷ anos). Projeto (prazo) ou planilha de origem."""
+        p = self.sv.projeto(pid)
+        pr = nz.numero(p.get("prazo"))
+        if pr:
+            return pr / 12 if pr > 6 else pr  # prazo informado em meses ou em anos
+        return nz.numero((d or self.dados(pid)).get("prazo_anos")) or 1.0
+
+    def _regras(self, pid: int, d: dict, ext: float) -> int:
+        """Reconhece nas memórias da planilha as regras do PATO base: produção × 8 h × dias, fator × extensão, 1 ÷ anos."""
+        import re as _re
+        prod = self._producao_fn(pid)
+        n = 0
+        for x in d["itens"]:
+            b = x.get("base") or {}
+            if x.get("tipo") != "servico" or b.get("tipo") != "valor":
+                continue
+            e = (b.get("expr") or "").replace(" ", "").replace(",", ".")
+            m = _re.fullmatch(r"=([\d.]+)\*8(?:\*([\d.]+))?", e)
+            if m:
+                p_ref = float(m.group(1))
+                p_base = prod(x["codigo"]) if prod else None
+                if p_base is None or abs(p_base - p_ref) <= max(1e-6, p_ref * 1e-6):
+                    x["base"] = dict(tipo="producao", horas=8.0, dias=float(m.group(2) or 1), producao_ref=p_ref, expr=b.get("expr"),
+                                     valor=b.get("valor"), fonte="produção SICRO × 8 h × dias")
+                    n += 1
+                continue
+            if _re.fullmatch(r"=1/\$?R\$?7", e):
+                x["base"] = dict(tipo="contrato", fator=1.0, expr=b.get("expr"), valor=b.get("valor"))
+                n += 1
+                continue
+            if _re.search(r"(^|[^A-Z])\$?D\$?9([^0-9]|$)", e) and ext and b.get("valor"):
+                x["base"] = dict(tipo="extensao", fator=b["valor"] / ext, expr=b.get("expr"), valor=b.get("valor"))
+                n += 1
+        return n
+
     def importar_referencia(self, pid: int, caminho: str, vincular: bool = True) -> dict:
         d = po.importar_referencia(caminho)
+        p_ = self.sv.projeto(pid)
+        regras = self._regras(pid, d, (p_.get("km_fim") or 0) - (p_.get("km_ini") or 0))
         if d.get("ip"):
             self.db.gravar_dados_projeto(pid, "ip", d.pop("ip"))
         else:
             d.pop("ip", None)
+        if d.get("ne_rocada"):
+            self.db.gravar_dados_projeto(pid, "ne_rocada", d.pop("ne_rocada"))
+        else:
+            d.pop("ne_rocada", None)
+        if d.get("sinalizacao"):
+            self.db.gravar_dados_projeto(pid, "sinalizacao", d.pop("sinalizacao"))
+        else:
+            d.pop("sinalizacao", None)
         vinc = 0
         if vincular:
             med = self.medidas(pid)
@@ -60,7 +114,7 @@ class Orcamentos:
         self._gravar(pid, d)
         self.db.registrar(pid, "PATO: planilha importada", f"{d['origem']}: {sum(1 for x in d['itens'] if x['tipo'] == 'servico')} "
                                                           f"serviços, {vinc} quantidades ligadas ao inventário")
-        return dict(itens=len(d["itens"]), vinculados=vinc, totais_ref=d.get("totais_ref"))
+        return dict(itens=len(d["itens"]), vinculados=vinc, regras=regras, totais_ref=d.get("totais_ref"))
 
     @staticmethod
     def _casar(b: dict, med: dict[str, float]) -> bool:
@@ -140,8 +194,12 @@ class Orcamentos:
             momentos = {}
         ip_dados = self.db.dados_projeto(pid, "ip")
         ip_calc = ip_mod.calcular(ip_dados) if ip_dados and ip_dados.get("linhas") else None
-        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d), ext, ip_calc)
+        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d), ext, ip_calc,
+                          self._producao_fn(pid), self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
+        ner = ne_rocada_mod.calcular(self.db.dados_projeto(pid, "ne_rocada"))
+        calc.ne_rocada = ner["adotado"] if ner else None
         r = calc.calcular()
+        r["ne_rocada"] = ner
         r["desempenho"] = {}
         for cod in (d.get("desempenho") or {}):
             for reg in ("SD", "CD"):
@@ -155,6 +213,7 @@ class Orcamentos:
         r["origem"] = d.get("origem")
         r["config"] = self.sv.custos.config(pid)
         r["ip_lancado"] = bool(ip_calc)
+        r["sinalizacao"] = calc.sinalizacao()
         return r
 
     def resumo(self, pid: int) -> dict:
@@ -296,3 +355,28 @@ class Orcamentos:
         out = self.ip(pid)
         out["aplicadas"] = n
         return out
+
+    # ------------------------------------------------- sinalização de obras
+    def sinalizacao(self, pid: int) -> dict:
+        from . import sinalizacao as sz
+        d = self.db.dados_projeto(pid, "sinalizacao") or sz.padrao()
+        c = self.calcular(pid)
+        return dict(dados=d, resultado=c.get("sinalizacao"), tipos_rotulo={str(k): v["rotulo"] for k, v in sz.TIPOS.items()},
+                    grupos=sz.GRUPOS)
+
+    def salvar_sinalizacao(self, pid: int, dados: dict) -> dict:
+        from . import sinalizacao as sz
+        atual = self.db.dados_projeto(pid, "sinalizacao") or sz.padrao()
+        for k in ("horas_dia", "tipos", "dispositivos", "servicos"):
+            if k in dados:
+                atual[k] = dados[k]
+        self.db.gravar_dados_projeto(pid, "sinalizacao", atual)
+        return self.sinalizacao(pid)
+
+    def salvar_ne_rocada(self, pid: int, dados: dict) -> dict:
+        atual = self.db.dados_projeto(pid, "ne_rocada") or dict(estacoes=[], acrescimo=1.0)
+        for k in ("estacoes", "acrescimo", "adotado", "justificativa"):
+            if k in dados:
+                atual[k] = dados[k]
+        self.db.gravar_dados_projeto(pid, "ne_rocada", atual)
+        return ne_rocada_mod.calcular(atual) or {}

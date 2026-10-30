@@ -430,6 +430,19 @@
         <div class="tabela-rolagem" style="max-height:65vh"><table class="tab" id="tabIp"></table></div></div>
     </div>
 
+    <div id="orc-sinal" class="sub-orc">
+      <div class="caixa"><div class="bin-cab"><h3>Sinalização de obras (Anexo XIII)</h3>
+        <div class="linha-botoes" style="margin:0"><button class="btn primario" id="btnSzSalvar" data-dica="Grava projetos-tipo, operadores e dispositivos; os itens 01.06 e o GD são recalculados">Salvar</button></div></div>
+        <p class="nota">Horas de cada serviço = quantidade no PATO ÷ produção horária da composição (manutenção rotineira: h por km × extensão).
+          Por projeto-tipo: dias = horas ÷ <input id="szHd" type="number" step="any" style="width:70px"> h/dia; bandeirola (5213850) = horas × operadores;
+          dispositivos (un.dia) = ARRED(quantidade no projeto-tipo × dias).</p>
+        <div id="szTotais"></div>
+        <h4>Serviços que ocupam a via</h4><div class="tabela-rolagem" style="max-height:340px"><table class="tab" id="tabSzServ"></table></div>
+        <div class="grade2" style="margin-top:10px"><div><h4>Projetos-tipo</h4><table class="tab" id="tabSzTipos"></table></div>
+          <div><h4>Dispositivos por projeto-tipo</h4><div class="tabela-rolagem"><table class="tab" id="tabSzDisp"></table></div></div></div>
+      </div>
+    </div>
+
     <div id="orc-resumo" class="sub-orc"><div class="caixa"><h3>Resumo por grupo de tarefas (Anexo XX)</h3><div id="avisosOrc"></div>
       <div class="tabela-rolagem"><table class="tab" id="tabOrcResumo"></table></div></div></div>
     <div id="orc-abc" class="sub-orc"><div class="caixa"><h3>Curva ABC (Anexo XXI)</h3><p class="nota">Regime mais vantajoso. Faixa A até 80% do custo acumulado, B até 95%, C o restante.</p>

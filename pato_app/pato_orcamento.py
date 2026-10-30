@@ -125,6 +125,9 @@ def importar_referencia(caminho: str) -> dict:
                 x["base_ref_valor"] = nz.numero(fv)
             elif m and int(m.group(2)) in por_linha:
                 x["base"] = dict(tipo="item", ref=por_linha[int(m.group(2))]["id"], campo="quantidade" if m.group(1) == "J" else "base")
+            elif fs and "UN_DIA!" in fs.upper():
+                x["base"] = dict(tipo="undia", grupo="conservacao", codigo=x["codigo"], valor=nz.numero(fv), expr=F_txt(fs),
+                                 fonte="sinalização de obras (un.dia)")
             elif fs and "TRANSPORTES_CONSERVA!" in fs.upper():
                 x["base"] = dict(tipo="transporte", codigo=x["codigo"], valor=nz.numero(fv))
             elif fs and fs.startswith("="):
@@ -143,8 +146,19 @@ def importar_referencia(caminho: str) -> dict:
             t = re.sub(r"\s+", " ", nz.sem_acento(_txt(vs.cell(r, 3).value)).upper())
             if t.startswith("TOTAL GERAL DO ORCAMENTO"):
                 totais = dict(SD=nz.numero(vs.cell(r, 13).value), CD=nz.numero(vs.cell(r, 15).value))
+        try:
+            from . import ne_rocada as _ner
+            dados_ner = _ner.importar_planilha(caminho)
+        except Exception:  # noqa: BLE001
+            dados_ner = None
+        try:
+            from . import sinalizacao as _sz
+            dados_sz = _sz.importar_planilha(caminho)
+        except Exception:  # noqa: BLE001 — modelo sem as abas de sinalização
+            dados_sz = None
         return dict(itens=itens, desempenho=desempenho, precos_informados=precos, prazo_anos=prazo,
-                    totais_ref=totais, origem=Path(caminho).name, ip=dados_ip)
+                    totais_ref=totais, origem=Path(caminho).name, ip=dados_ip, sinalizacao=dados_sz,
+                    ne_rocada=dados_ner)
     finally:
         wf.close()
         wv.close()
@@ -188,7 +202,9 @@ def _ler_desempenho(wf, wv) -> dict:
             codigo=b, subgrupo=sub, descricao=_txt(vs.cell(r, 3).value), unidade=_txt(vs.cell(r, 9).value),
             qtd_total=dict(tipo="valor", valor=nz.numero(dv), expr=F_txt(D), fonte=_fonte(D or "")) if not auxiliar else None,
             ne=nz.numero(vs.cell(r, 5).value), freq=nz.numero(vs.cell(r, 6).value), desc_qtd=_txt(vs.cell(r, 7).value),
-            qtd_km=nz.numero(hv) if auxiliar else None, qtd_km_expr=F_txt(Hf) if auxiliar else None))
+            qtd_km=nz.numero(hv) if auxiliar else None, qtd_km_expr=F_txt(Hf) if auxiliar else None,
+            undia=bool(auxiliar and isinstance(Hf, str) and "UN_DIA" in Hf.upper()),
+            freq_ne_rocada=bool(isinstance(ws.cell(r, 6).value, str) and "NE_ROCADA" in ws.cell(r, 6).value.upper())))
     return grupos
 
 
@@ -214,7 +230,8 @@ class Calculo:
     """Resolve quantidades e preços de um PATO (dados do projeto + motores + binômio + transporte)."""
 
     def __init__(self, dados: dict, medidas: dict[str, float], momentos: dict[str, float], preco_fn, extensao: float,
-                 ip_calc: dict | None = None):
+                 ip_calc: dict | None = None, producao_fn=None, anos_contrato: float | None = None,
+                 sinal_dados: dict | None = None):
         self.d = dados
         self.medidas = medidas
         self.momentos = momentos
@@ -222,7 +239,57 @@ class Calculo:
         self.ext = extensao
         self.idx = {x["id"]: x for x in dados.get("itens", [])}
         self.ip = {c["chave"]: c for c in (ip_calc or {}).get("calculo", [])}
+        self.producao_fn = producao_fn  # código -> produção horária da equipe (composição da base)
+        self.anos = anos_contrato or nz.numero(dados.get("prazo_anos")) or 1.0
+        self.sinal_dados = sinal_dados
+        self.ne_rocada = None  # NE da roçada (DNIT 182/2018) — frequência das linhas de roçada/capina do GD
+        self._sinal = None
         self._q: dict[str, tuple] = {}
+
+    # ------------------------------------------------ sinalização de obras
+    def gd_qtd_km(self, cod: str) -> float | None:
+        """Quantidade por km de um serviço dos grupos por desempenho (aba DESEMPENHO, coluna H)."""
+        for g in (self.d.get("desempenho") or {}).values():
+            for ln in g["linhas"]:
+                if ln["codigo"] == cod and ln.get("qtd_total"):
+                    qt = ln["qtd_total"]
+                    tot = (self.medidas[qt["medida"]] * (nz.numero(qt.get("fator")) or 1.0)
+                           if qt.get("tipo") == "inventario" and self.medidas.get(qt.get("medida")) is not None
+                           else nz.numero(qt.get("valor")) or 0.0)
+                    return trunc(tot * (nz.numero(ln.get("ne")) or 1.0) * self.freq(ln) / (self.ext or 1), 3)
+        return None
+
+    def freq(self, ln: dict) -> float:
+        liga = ln.get("freq_ne_rocada") or ("182/2018" in (ln.get("desc_qtd") or ""))  # projetos importados antes da regra
+        if liga and self.ne_rocada is not None:
+            return self.ne_rocada
+        return nz.numero(ln.get("freq")) or 1.0
+
+    def sinalizacao(self) -> dict | None:
+        if self._sinal is None and self.sinal_dados:
+            from . import sinalizacao as sz
+
+            def qtd(sv_):
+                if sv_.get("fonte") == "desempenho":
+                    v = self.gd_qtd_km(sv_["codigo"])
+                    return v if v is not None else nz.numero(sv_.get("quantidade_ref"))
+                if sv_.get("fonte") == "pato":
+                    lim = sv_.get("linhas_pato")
+                    tot, achou = 0.0, False
+                    for x in self.d.get("itens", []):
+                        if x.get("tipo") != "servico" or x.get("codigo") != sv_["codigo"]:
+                            continue
+                        if (x.get("base") or {}).get("tipo") == "undia":
+                            continue
+                        mrow = re.fullmatch(r"L(\d+)", x["id"])
+                        if lim and mrow and not (lim[0] <= int(mrow.group(1)) <= lim[1]):
+                            continue
+                        tot += self.quantidade(x)[0]
+                        achou = True
+                    return tot if achou else 0.0
+                return nz.numero(sv_.get("quantidade_ref")) or 0.0
+            self._sinal = sz.calcular(self.sinal_dados, qtd, self.producao_fn, self.ext)
+        return self._sinal
 
     def base(self, x: dict) -> tuple[float, str]:
         b = x.get("base") or {}
@@ -244,6 +311,25 @@ class Calculo:
             if v is None:
                 return nz.numero(b.get("valor")) or 0.0, "momento da planilha (gere o quadro de transportes)"
             return v, "quadro de transportes"
+        if t == "producao":
+            prod = self.producao_fn(x["codigo"]) if self.producao_fn else None
+            fonte_p = "composição da base"
+            if prod is None:
+                prod, fonte_p = nz.numero(b.get("producao_ref")) or 0.0, "produção da planilha de origem"
+            h, dias = nz.numero(b.get("horas")) or 8.0, nz.numero(b.get("dias")) or 1.0
+            return prod * h * dias, f"produção {prod:g}/h ({fonte_p}) × {h:g} h × {dias:g} dia(s)"
+        if t == "extensao":
+            f = nz.numero(b.get("fator")) or 0.0
+            return self.ext * f, f"extensão {self.ext:g} km × {f:g}"
+        if t == "contrato":
+            f = nz.numero(b.get("fator")) or 1.0
+            return f / self.anos, f"{f:g} ÷ {self.anos:g} ano(s) de contrato"
+        if t == "undia":
+            sg = self.sinalizacao()
+            if not sg:
+                return nz.numero(b.get("valor")) or 0.0, "sinalização de obras não cadastrada — valor anterior"
+            v = sg["grupos"][b.get("grupo", "conservacao")]["codigos"].get(b.get("codigo") or x["codigo"], 0)
+            return float(v), "sinalização de obras (un.dia, Anexo XIII)"
         if t == "ip":
             if not self.ip:
                 return nz.numero(b.get("valor")) or 0.0, "levantamento IP não lançado — valor anterior"
@@ -283,7 +369,10 @@ class Calculo:
             return None, "grupo de desempenho sem serviços", []
         linhas, soma = [], 0.0
         for ln in g["linhas"]:
-            if ln.get("qtd_km") is not None and not ln.get("qtd_total"):
+            if ln.get("undia") and self.sinalizacao():
+                qkm = float(self.sinalizacao()["grupos"]["desempenho"]["codigos"].get(ln["codigo"], 0))
+                tot = None
+            elif ln.get("qtd_km") is not None and not ln.get("qtd_total"):
                 qkm = nz.numero(ln["qtd_km"]) or 0.0
                 tot = None
             else:
@@ -292,7 +381,7 @@ class Calculo:
                     tot = self.medidas[qt["medida"]] * (nz.numero(qt.get("fator")) or 1.0)
                 else:
                     tot = nz.numero(qt.get("valor")) or 0.0
-                qkm = trunc(tot * (nz.numero(ln.get("ne")) or 1.0) * (nz.numero(ln.get("freq")) or 1.0) / (self.ext or 1), 3)
+                qkm = trunc(tot * (nz.numero(ln.get("ne")) or 1.0) * self.freq(ln) / (self.ext or 1), 3)
             p, fonte = self.preco_fn(ln["codigo"], regime)
             v = qkm * (p or 0.0)
             soma += v

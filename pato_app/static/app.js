@@ -1215,7 +1215,8 @@ const O_ = { sub: "planilha", c: null, med: null };
 const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 3 });
 async function carregarOrc() {
   if (!E.pid) return;
-  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
+  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
+    ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
@@ -1228,7 +1229,7 @@ async function carregarOrc() {
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
       <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
-    await ({ planilha: renderOrcPlanilha, ip: renderIp, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 function renderOrcPlanilha() {
@@ -1252,13 +1253,17 @@ async function editarItemOrc(id) {
   const d = $("#dlg"), f = $("#dlgForm");
   f.className = "form";
   f.innerHTML = `<h3>Item ${esc(i.item)} — ${esc(i.codigo)}</h3><p class="nota">${esc(i.descricao)}</p><div class="campos">
-    <label>Base da quantidade <select name="tipo">${[["valor", "Valor informado"], ["inventario", "Medida do inventário"], ["item", "Outro item da planilha"], ["transporte", "Momento do quadro de transportes"], ["direta", "Quantidade direta"]]
+    <label>Base da quantidade <select name="tipo">${[["valor", "Valor informado"], ["inventario", "Medida do inventário"], ["item", "Outro item da planilha"], ["producao", "Produção da equipe × horas × dias"],
+      ["extensao", "Extensão do segmento × fator"], ["contrato", "Rateio por ano de contrato (fator ÷ anos)"], ["ip", "Levantamento IP"], ["transporte", "Momento do quadro de transportes"], ["direta", "Quantidade direta"]]
       .map(([k, r]) => `<option value="${k}" ${b.tipo === k ? "selected" : ""}>${r}</option>`).join("")}</select></label>
     <label>Valor <input name="valor" type="number" step="any" value="${b.valor ?? i.base_valor ?? ""}" data-dica="Base (valor informado) ou quantidade (direta)"></label>
     <label class="largo">Medida do inventário <select name="medida"><option value=""></option>${Object.entries(O_.med).map(([k, v]) => `<option value="${esc(k)}" ${b.medida === k ? "selected" : ""}>${esc(k)} = ${q3(v)}</option>`).join("")}</select></label>
     <label>Fator sobre a medida <input name="fator" type="number" step="any" value="${b.fator ?? 1}"></label>
     <label class="largo">Item de referência <select name="ref"><option value=""></option>${itens.map(x => `<option value="${esc(x.id)}" ${b.ref === x.id ? "selected" : ""}>${esc(x.item)} ${esc(x.codigo)} — ${esc((x.descricao || "").slice(0, 50))}</option>`).join("")}</select></label>
     <label>Usar do item <select name="campo"><option value="quantidade">quantidade</option><option value="base" ${b.campo === "base" ? "selected" : ""}>base</option></select></label>
+    <label>Dias de equipe <input name="dias" type="number" step="any" value="${b.dias ?? ""}" data-dica="Produção: dias de trabalho no ano (a produção horária vem da composição da base)"></label>
+    <label>Horas por dia <input name="horas" type="number" step="any" value="${b.horas ?? 8}"></label>
+    <label>Fator (extensão / contrato) <input name="fext" type="number" step="any" value="${b.tipo === "extensao" || b.tipo === "contrato" ? b.fator ?? 1 : ""}" data-dica="Extensão: quantidade por km do segmento · Contrato: unidades rateadas pelos anos de vigência"></label>
     <label>Nível de esforço <input name="ne" type="number" step="any" value="${i.ne ?? 1}"></label>
     <label>Arredondamento <select name="arred"><option value="trunc">TRUNCAR (3 casas)</option><option value="arred" ${i.arred === "arred" ? "selected" : ""}>ARRED (3 casas)</option></select></label>
     <label>Preço SD informado <input name="psd" type="number" step="any" value="${i.preco_manual?.SD ?? ""}" placeholder="${reais(i.preco_SD)}"></label>
@@ -1275,6 +1280,9 @@ async function editarItemOrc(id) {
       if (v.tipo === "inventario") Object.assign(base, { medida: v.medida, fator: +v.fator || 1, valor: +v.valor || null });
       if (v.tipo === "item") Object.assign(base, { ref: v.ref, campo: v.campo });
       if (v.tipo === "transporte") Object.assign(base, { codigo: i.codigo, valor: b.valor });
+      if (v.tipo === "producao") Object.assign(base, { dias: +v.dias || 1, horas: +v.horas || 8, producao_ref: b.producao_ref, fonte: "produção SICRO × 8 h × dias" });
+      if (v.tipo === "extensao" || v.tipo === "contrato") Object.assign(base, { fator: +v.fext || 1 });
+      if (v.tipo === "ip") Object.assign(base, { chaves: b.chaves, campo: b.campo, fator: b.fator });
       await jpost(`${base_}${E.pid}/pato/itens/${id}`, { base, ne: v.ne, arred: v.arred, preco_manual: { SD: v.psd === "" ? null : +v.psd, CD: v.pcd === "" ? null : +v.pcd } }, "PUT");
       toast("Item atualizado"); carregarOrc();
     } catch (e) { erro(e); }
@@ -1301,12 +1309,33 @@ async function renderOrcCrono() {
      <tr><td>% acumulado</td><td></td>${cr.acumulado.map(v => `<td class=n>${pct(v)}</td>`).join("")}</tr>`;
 }
 function renderOrcDesemp() {
-  const g = Object.values(O_.c.desempenho || {});
+  const g = Object.values(O_.c.desempenho || {}), ner = O_.c.ne_rocada;
+  const blocoNer = `<h4>Nível de esforço da roçada — norma DNIT 182/2018 (Res. 8/2023, art. 24, § 4º)</h4>
+    <p class="nota">NERp = Σ(NERe ÷ distância) ÷ Σ(1 ÷ distância) das estações pluviométricas mais próximas; NE = NERp arredondado + acréscimo.
+      O NE adotado é a frequência anual da capina e das roçadas do grupo por desempenho; pode prevalecer a observação de campo, com justificativa.</p>
+    <table class="tab" id="tabNer"><tr><th>Estação</th><th>UF</th><th>Nome / município</th><th class=n>Distância (km)</th><th class=n>NERe</th><th></th></tr>
+    ${(ner?.estacoes || []).map(e => `<tr data-est><td><input data-c="codigo" value="${esc(e.codigo || "")}" style="width:90px"></td><td><input data-c="uf" value="${esc(e.uf || "")}" style="width:40px"></td>
+      <td><input data-c="nome" value="${esc(e.nome || "")}" style="width:160px"> <input data-c="municipio" value="${esc(e.municipio || "")}" style="width:160px"></td>
+      <td class=n><input data-c="distancia" type="number" step="any" value="${e.distancia ?? ""}" style="width:80px"></td><td class=n><input data-c="nere" type="number" step="any" value="${e.nere ?? ""}" style="width:70px"></td>
+      <td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("")}</table>
+    <div class="linha-botoes"><button class="btn mini" type="button" id="btnNerAdd">+ Estação</button></div>
+    <p>NERp = <b>${ner?.nerp != null ? nf(ner.nerp, 4) : "—"}</b> · acréscimo <input id="nerAcr" type="number" step="any" value="${ner?.acrescimo ?? 1}" style="width:60px">
+      · sugerido <b>${ner?.sugerido ?? "—"}</b> · <b>NE adotado</b> <input id="nerAdot" type="number" step="any" value="${ner && ner.adotado !== ner.sugerido ? ner.adotado : ""}" placeholder="${ner?.sugerido ?? ""}" style="width:70px">
+      <input id="nerJust" placeholder="justificativa (observação de campo)" value="${esc(ner?.justificativa || "")}" style="width:280px">
+      <button class="btn mini primario" type="button" id="btnNerSalvar" data-dica="Grava o NE da roçada; o grupo por desempenho é recalculado">Salvar NE</button></p>`;
   $("#listaDesemp").innerHTML = g.map(x => `<h4>${esc(x.codigo)} — ${esc(x.descricao)}: R$ ${reais(x.mensal_SD)}/mês (SD) · R$ ${reais(x.mensal_CD)}/mês (CD)</h4>
     <div class="tabela-rolagem"><table class="tab"><tr><th>Serviço</th><th>Descrição</th><th class=n>Qtde total</th><th class=n>NE</th><th class=n>Freq.</th><th class=n>Qtde/km</th><th>Und</th><th class=n>Preço SD</th><th class=n>R$/km/ano SD</th><th class=n>Preço CD</th><th class=n>R$/km/ano CD</th></tr>
     ${x.linhas.map(l => `<tr><td>${esc(l.codigo)}</td><td>${esc(l.descricao)}<br><small>${esc(l.desc_qtd || "")}</small></td><td class=n>${q3(l.qtd_total_calc)}</td><td class=n>${q3(l.ne)}</td><td class=n>${q3(l.freq)}</td>
       <td class=n>${q3(l.qtd_km_calc)}</td><td>${esc(l.unidade || "")}</td><td class=n>${reais(l.preco)}</td><td class=n>${reais(l.valor_km_ano)}</td><td class=n>${reais(l.preco_CD)}</td><td class=n>${reais(l.valor_km_ano_CD)}</td></tr>`).join("")}</table></div>`).join("")
     || '<p class="nota">Sem grupos por desempenho (importe de uma planilha PATO com a aba DESEMPENHO).</p>';
+  $("#listaDesemp").insertAdjacentHTML("beforeend", blocoNer);
+  ligarRemover();
+  $("#btnNerAdd").onclick = () => { $("#tabNer").insertAdjacentHTML("beforeend", `<tr data-est><td><input data-c="codigo" style="width:90px"></td><td><input data-c="uf" style="width:40px"></td><td><input data-c="nome" style="width:160px"> <input data-c="municipio" style="width:160px"></td><td class=n><input data-c="distancia" type="number" step="any" style="width:80px"></td><td class=n><input data-c="nere" type="number" step="any" style="width:70px"></td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+  $("#btnNerSalvar").onclick = async () => {
+    const estacoes = lerTab("#tabNer tr[data-est]").filter(e => e.distancia != null);
+    try { await jpost(`${base_}${E.pid}/ne-rocada`, { estacoes, acrescimo: +$("#nerAcr").value, adotado: $("#nerAdot").value === "" ? null : +$("#nerAdot").value, justificativa: $("#nerJust").value }, "PUT");
+      toast("NE da roçada salvo — desempenho recalculado"); carregarOrc(); } catch (e) { erro(e); }
+  };
 }
 $("#btnImpOrc").onclick = async () => {
   const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return;
@@ -1368,6 +1397,36 @@ $("#btnIpGrade").onclick = async () => { if (IP_.d?.linhas?.length && !confirm("
   try { await jpost(`${base_}${E.pid}/ip/grade`, { passo: 1, faixas: 2 }); toast("Grade criada"); carregarOrc(); } catch (e) { erro(e); } };
 $("#btnIpImp").onclick = async () => { const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
   try { const r = await api(`${base_}${E.pid}/ip/importar`, { method: "POST", body: fd }); toast(`${r.linhas.length} linhas importadas`); carregarOrc(); } catch (e) { erro(e); } };
+
+// ---- sinalização de obras
+const SZ_ = { r: null };
+async function renderSinal() {
+  const r = SZ_.r = await api(`${base_}${E.pid}/sinalizacao`), d = r.dados, res = r.resultado;
+  $("#szHd").value = d.horas_dia;
+  if (!res) { $("#szTotais").innerHTML = '<p class="tag aviso">Sem cadastro de sinalização: importe a planilha PATO (abas DURACAO_SERVICOS, TEMPO_PROJETO_TIPO e UN_DIA).</p>'; }
+  const cods = res ? [...new Set(Object.values(res.grupos).flatMap(g => Object.keys(g.codigos)))] : [];
+  if (res) $("#szTotais").innerHTML = `<table class="tab"><tr><th>Código</th>${Object.entries(r.grupos).map(([k, v]) => `<th class=n>${esc(v)}</th>`).join("")}</tr>` +
+    cods.map(c => `<tr><td>${esc(c)}</td>${Object.keys(r.grupos).map(g => `<td class=n>${nf(res.grupos[g].codigos[c] ?? 0, 3)}</td>`).join("")}</tr>`).join("") + "</table>";
+  const tipoSel = (v, i) => `<select data-szt="${i}">${Object.entries(r.tipos_rotulo).map(([k, rot]) => `<option value="${k}" ${+k === +v ? "selected" : ""}>${k} — ${esc(rot)}</option>`).join("")}</select>`;
+  $("#tabSzServ").innerHTML = `<tr><th>Grupo</th><th>Código</th><th>Descrição</th><th class=n>Quantidade</th><th class=n>Produção/h</th><th class=n>Horas</th><th>Projeto-tipo</th></tr>` +
+    (res ? res.servicos : d.servicos).map((x, i) => `<tr><td>${esc(r.grupos[x.grupo] || x.grupo)}</td><td>${esc(x.codigo)}</td><td>${esc((x.descricao || "").slice(0, 60))}</td>
+      <td class=n>${q3(x.quantidade)}</td><td class=n>${x.h_por_km ? `${nf(x.h_por_km)} h/km` : q3(x.producao)}</td><td class=n>${q3(x.horas)}</td><td>${tipoSel(x.tipo, i)}</td></tr>`).join("");
+  const tps = Object.keys(d.tipos);
+  $("#tabSzTipos").innerHTML = `<tr><th>Projeto-tipo</th><th class=n>Operadores</th>${res ? Object.values(r.grupos).map(g => `<th class=n>Horas / dias — ${esc(g)}</th>`).join("") : ""}</tr>` +
+    tps.map(t => `<tr><td>${t} — ${esc(d.tipos[t].rotulo)}</td><td class=n><input data-szop="${t}" type="number" step="any" value="${d.tipos[t].operadores}" style="width:60px"></td>
+      ${res ? Object.keys(r.grupos).map(g => { const x = res.grupos[g].tipos.find(y => +y.tipo === +t) || {}; return `<td class=n>${q3(x.horas)} h / ${nf(x.dias, 2)} d</td>`; }).join("") : ""}</tr>`).join("");
+  $("#tabSzDisp").innerHTML = `<tr><th>Dispositivo</th><th>Código</th>${tps.map(t => `<th class=n>Tipo ${t}</th>`).join("")}</tr>` +
+    d.dispositivos.map((x, i) => `<tr><td>${esc(x.chave)}<br><small>${esc(x.descricao || "")}</small></td><td>${esc(x.codigo || "—")}</td>
+      ${tps.map(t => `<td class=n><input data-szd="${i}" data-t="${t}" type="number" step="any" value="${x.qtd[t] ?? 0}" style="width:60px"></td>`).join("")}</tr>`).join("");
+}
+$("#btnSzSalvar").onclick = async () => {
+  const d = JSON.parse(JSON.stringify(SZ_.r.dados));
+  d.horas_dia = +$("#szHd").value || 7.333;
+  $$("[data-szt]").forEach(s => { d.servicos[+s.dataset.szt].tipo = +s.value; });
+  $$("[data-szop]").forEach(i => { d.tipos[i.dataset.szop].operadores = +i.value; });
+  $$("[data-szd]").forEach(i => { d.dispositivos[+i.dataset.szd].qtd[i.dataset.t] = +i.value; });
+  try { await jpost(`${base_}${E.pid}/sinalizacao`, d, "PUT"); toast("Sinalização salva — PATO recalculado"); carregarOrc(); } catch (e) { erro(e); }
+};
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {

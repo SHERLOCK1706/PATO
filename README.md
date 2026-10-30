@@ -130,6 +130,15 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   e o histórico de consumo (Res. 8/2023, art. 17). Tapa-buraco, reparo, remendo, correção, fresagens, microrrevestimento e a
   sinalização para abertura passam a vir do levantamento. Importa da aba IP (modelo atual) ou ICP (modelos antigos:
   Alta/Média/Baixa, nível de serventia, intervalos de linhas), conferido com BR-158, BR-364/405/435 e BR-174/MT.
+- **Regras do PATO base** reconhecidas na importação e recalculadas para qualquer segmento:
+  produção da equipe (da composição da base) × 8 h × dias; fator × extensão do segmento; rateio por ano de contrato
+  (canteiro, instalação industrial, mobilização: 1 ÷ anos).
+- **Sinalização de obras (Anexo XIII)** — sub-aba própria: horas de cada serviço = quantidade no PATO ÷ produção horária;
+  por projeto-tipo (1 fixo no acostamento, 3 fixo na pista com PARE e SIGA, 16 móvel no acostamento, 17 móvel na pista)
+  dias = horas ÷ 7,333 e bandeirola = horas × operadores; dispositivos (un.dia) = ARRED(quantidade × dias), por código SICRO.
+  Alimenta os itens 01.06 e as linhas de sinalização do grupo por desempenho.
+- **NE da roçada (DNIT 182/2018)** — na sub-aba Desempenho: NERp = Σ(NERe/d)/Σ(1/d) das estações pluviométricas, NE adotado
+  (ou informado pela observação de campo) como frequência anual da capina e das roçadas do GD.
 - **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
   **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
 - **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.

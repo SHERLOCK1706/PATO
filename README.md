@@ -162,7 +162,8 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
 
 ## Próximas fases (planejadas)
 4. **PATO completo** — quantidades × preços no PATO, curva ABC, cronograma, PDF;
-   plano de trabalho conforme Resolução DNIT nº 9/2023 e Manual de Conservação (IPR-710).
+   plano de trabalho conforme a Resolução DNIT nº 8/2023 (elaboração do PATO e execução, medição, fiscalização,
+   prorrogação e reajuste dos contratos; revogou as Resoluções nº 8/2022 e nº 4/2023) e o Manual de Conservação (IPR-710).
 
 ## Testes
 `python -m pytest -q` (o teste de recálculo com LibreOffice é pulado se ele não estiver instalado).

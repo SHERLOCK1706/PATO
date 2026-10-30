@@ -100,6 +100,13 @@ class Orcamentos:
             self.db.gravar_dados_projeto(pid, "sinalizacao", d.pop("sinalizacao"))
         else:
             d.pop("sinalizacao", None)
+        try:
+            from . import diversos as dv
+            div = dv.importar_planilha(caminho)
+        except Exception:  # noqa: BLE001 — planilha sem as abas de ADM/canteiro/MOB: ficam os preços informados
+            div = None
+        if div:
+            self.db.gravar_dados_projeto(pid, "diversos", div)
         vinc = 0
         if vincular:
             med = self.medidas(pid)
@@ -128,20 +135,71 @@ class Orcamentos:
         return False
 
     # ------------------------------------------------------------ preços
-    def _precificador(self, pid: int, d: dict):
-        cu = self.sv.custos
+    def bdi_exato(self, pid: int) -> dict:
+        """BDI de cada regime sem o arredondamento de 2 casas em % (as planilhas usam BDI!E25/100 com todas as casas)."""
+        from .custos import calcular_bdi
+        cfg = self.sv.custos.config(pid)
+        out = {}
+        for reg in ("SD", "CD"):
+            b = cfg["bdi"][reg]
+            ex = calcular_bdi(cfg["parcelas"][reg]) if cfg.get("parcelas", {}).get(reg) else b
+            out[reg] = ex if abs(ex - b) < 0.00005 else b
+        return out
+
+    def _motores(self, pid: int) -> dict:
         motores = {}
         for reg in ("SD", "CD"):
             try:
-                motores[reg] = cu.motor(pid, reg)
+                motores[reg] = self.sv.custos.motor(pid, reg)
             except ValueError:
                 motores[reg] = None
+        return motores
+
+    def _calc_diversos(self, pid: int, d: dict, motores: dict, quantidade_fn=None, dados_div: dict | None = None) -> dict | None:
+        """Administração local, canteiro, usina e mobilização com os preços da base, o BDI e o prazo do projeto."""
+        from . import diversos as dv
+        dd = dados_div if dados_div is not None else self.db.dados_projeto(pid, "diversos")
+        if not dd or not any(motores.values()):
+            return None
+
+        def mo(cod, reg):
+            m = motores.get(reg)
+            t = m._preco_tabela("MO", cod) if m else None
+            return nz.numero((t or {}).get("preco", (t or {}).get("custo")))
+
+        def eq(cod, reg):
+            m = motores.get(reg)
+            t = m._preco_tabela("EQ", cod) if m else None
+            return (nz.numero(t.get("custo_op")), nz.numero(t.get("custo_imp"))) if t else None
+
+        def custo_comp(cod, reg):
+            m = motores.get(reg)
+            c = cp._cod(cod)
+            return m.calcular(c)["custo_direto"] if m and c in m.comps else None
+
+        ind = self.sv.binomio.indices()["series"]
+        from . import binomio as bn_
+        cfg = self.sv.custos.config(pid)
+        meses = round(self.anos_contrato(pid, d) * 12, 6)
+        return dv.calcular(dd, mo_fn=mo, eq_fn=eq, custo_comp_fn=custo_comp, bdi=self.bdi_exato(pid), meses=meses,
+                           quantidade_fn=quantidade_fn, indice_fn=lambda n, m: bn_.indice(ind, n, m),
+                           data_base=bn_.mes(cfg.get("data_base")))
+
+    def _precificador(self, pid: int, d: dict, diversos_fn=None):
+        motores = self._motores(pid)
         bets = self._betuminosos(pid)
         inf = d.get("precos_informados") or {}
+        div_cache = {}
 
         def preco(cod: str, reg: str):
             cod = cp._cod(cod)
             m = motores.get(reg)
+            if diversos_fn and cod in ("ADM", "CAN", "INSIND", "MOB", "DESMOB") and not (inf.get(cod) or {}).get("fixo"):
+                if "r" not in div_cache:
+                    div_cache["r"] = diversos_fn(motores)
+                v = ((div_cache["r"] or {}).get("precos", {}).get(cod) or {}).get(reg)
+                if v is not None:
+                    return v, "calculado (ADM local/canteiro/mobilização — SICRO Vol. 07 a 09)"
             if cod[:2] in ("AM", "TM") and cod[2:].isdigit():
                 chave = po.chave_asfalto((inf.get(cod) or {}).get("descricao"))
                 b = bets.get((chave, reg))
@@ -194,8 +252,11 @@ class Orcamentos:
             momentos = {}
         ip_dados = self.db.dados_projeto(pid, "ip")
         ip_calc = ip_mod.calcular(ip_dados) if ip_dados and ip_dados.get("linhas") else None
-        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d), ext, ip_calc,
+        ref = {}
+        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d, lambda mt: self._calc_diversos(
+                              pid, d, mt, ref["qtd"])), ext, ip_calc,
                           self._producao_fn(pid), self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
+        ref["qtd"] = self._qtd_contrato_fn(calc, d)
         ner = ne_rocada_mod.calcular(self.db.dados_projeto(pid, "ne_rocada"))
         calc.ne_rocada = ner["adotado"] if ner else None
         r = calc.calcular()
@@ -215,6 +276,81 @@ class Orcamentos:
         r["ip_lancado"] = bool(ip_calc)
         r["sinalizacao"] = calc.sinalizacao()
         return r
+
+    @staticmethod
+    def _qtd_contrato_fn(calc, d: dict):
+        """Quantidade de um serviço no contrato (Σ quantidades anuais do PATO × anos), como a aba QUANTIDADES."""
+        def q(cod: str):
+            cod = cp._cod(cod)
+            xs = [x for x in d.get("itens", []) if x.get("tipo") == "servico" and cp._cod(x.get("codigo") or "") == cod]
+            if not xs:
+                return None
+            return round(sum(calc.quantidade(x)[0] for x in xs) * calc.anos, 6)
+        return q
+
+    # ------------------------------------- ADM local, canteiro, usina e mobilização
+    def diversos(self, pid: int) -> dict:
+        from . import diversos as dv
+        d = self.dados(pid)
+        dd = self.db.dados_projeto(pid, "diversos")
+        if not dd:
+            from .servico import MODELO_PADRAO
+            dd = dv.importar_planilha(str(MODELO_PADRAO)) or {}
+            dd["modelo"] = True
+        p = self.sv.projeto(pid)
+        ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, None, self._producao_fn(pid),
+                          self.anos_contrato(pid, d), None)
+        r = self._calc_diversos(pid, d, self._motores(pid), self._qtd_contrato_fn(calc, d), dd)
+        inf = d.get("precos_informados") or {}
+        ref = {c: {reg: (inf.get(c) or {}).get(reg) for reg in ("SD", "CD")} for c in dv.CODIGOS}
+        return dict(dados=dd, resultado=r, referencia=ref, codigos=dv.CODIGOS,
+                    fixos=[c for c in dv.CODIGOS if (inf.get(c) or {}).get("fixo")], gravado=bool(self.db.dados_projeto(pid, "diversos")))
+
+    def salvar_diversos(self, pid: int, dados: dict | None = None, fixos: list | None = None) -> dict:
+        from . import diversos as dv
+        if dados is not None:
+            atual = self.db.dados_projeto(pid, "diversos") or {}
+            for k in ("adm", "canteiro", "usina", "mob"):
+                if k in dados:
+                    atual[k] = dados[k]
+            atual.pop("modelo", None)
+            self.db.gravar_dados_projeto(pid, "diversos", atual)
+        if fixos is not None:
+            d = self.dados(pid)
+            inf = d.setdefault("precos_informados", {})
+            for c in dv.CODIGOS:
+                if c in inf:
+                    inf[c]["fixo"] = c in fixos
+            self._gravar(pid, d)
+        self.db.registrar(pid, "PATO: ADM local/canteiro/mobilização", "parâmetros atualizados")
+        return self.diversos(pid)
+
+    def sugerir_mob(self, pid: int) -> list[dict]:
+        """Equipamentos das composições do PATO que exigem transporte rodoviário (Vol. 09, tabela IMOB)."""
+        from . import diversos as dv
+        m = self._motores(pid).get("SD")
+        if not m:
+            return []
+        eqs: dict[str, float] = {}
+
+        def visitar(cod, vistos):
+            c = m.comps.get(cod)
+            if not c or cod in vistos:
+                return
+            vistos.add(cod)
+            for e in c.get("equipamentos") or []:
+                eqs[e["codigo"]] = max(eqs.get(e["codigo"], 0), nz.numero(e.get("quant")) or 0)
+            for a in c.get("auxiliares") or []:
+                visitar(cp._cod(a.get("codigo") or ""), vistos)
+        d = self.dados(pid)
+        for x in d.get("itens", []):
+            if x.get("tipo") == "servico":
+                visitar(cp._cod(x.get("codigo") or ""), set())
+        for g in (d.get("desempenho") or {}).values():
+            for ln in g.get("linhas") or []:
+                visitar(cp._cod(ln.get("codigo") or ""), set())
+        return dv.sugerir_equipamentos_mob(eqs)
 
     def resumo(self, pid: int) -> dict:
         r = self.calcular(pid)

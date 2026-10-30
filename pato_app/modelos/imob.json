@@ -1,0 +1,2290 @@
+{
+"fonte": "SICRO — Manual de Custos Vol. 09 (Mobilização e Desmobilização), tabela de transporte rodoviário de equipamentos (aba IMOB do PATO BR-158/MT)",
+"equipamentos": {
+"E9174": {
+"descricao": "Aferidor para protensão de fios com capacidade de 3 a 6 t",
+"transporte": null,
+"fu": null
+},
+"E9115": {
+"descricao": "Amortecedor retrátil (AMC) para montagem em caminhão",
+"transporte": "E9508",
+"fu": 0.54
+},
+"E9559": {
+"descricao": "Aquecedor de fluido térmico - 12 kW",
+"transporte": "E9687",
+"fu": 0.29
+},
+"E9010": {
+"descricao": "Balança plataforma digital à bateria, com mesa de 75 x 75 cm e capacidade de 500 kg",
+"transporte": null,
+"fu": null
+},
+"E9106": {
+"descricao": "Balsa de convés com capacidade de 200 t",
+"transporte": "E9606",
+"fu": 0.25
+},
+"E9258": {
+"descricao": "Balsa de convés com capacidade de 600 t",
+"transporte": "E9105",
+"fu": 0.5
+},
+"E9173": {
+"descricao": "Bancos de ancoragem passiva e ativa para protensão de fios com capacidade de 200 tf",
+"transporte": null,
+"fu": null
+},
+"E9714": {
+"descricao": "Bate-estaca com martelo hidráulico - 450 kW",
+"transporte": "E9018",
+"fu": 0.9
+},
+"E9502": {
+"descricao": "Bate-estaca de gravidade para 6 t - 119 kW",
+"transporte": "E9018",
+"fu": 1.08
+},
+"E9082": {
+"descricao": "Bate-estaca hidráulico para defensas montado em caminhão guindauto com capacidade de 6,2 t e carroceria de 5 t - 152 kW",
+"transporte": "E9082",
+"fu": 1
+},
+"E9726": {
+"descricao": "Bate-estaca Strauss - 15 kW",
+"transporte": "E9665",
+"fu": 0.73
+},
+"E9618": {
+"descricao": "Batelão autopropelido com capacidade de 300 m³ - 224 kW",
+"transporte": "E9618",
+"fu": 1
+},
+"E9619": {
+"descricao": "Batelão autopropelido com capacidade de 500 m³ - 373 kW",
+"transporte": "E9619",
+"fu": 1
+},
+"E9057": {
+"descricao": "Batelão sem propulsão com capacidade de 66 m³",
+"transporte": "E9009",
+"fu": 1
+},
+"E9704": {
+"descricao": "Batelão sem propulsão montado na obra com capacidade de 66 m³ .",
+"transporte": "E9606",
+"fu": 1
+},
+"E9519": {
+"descricao": "Betoneira com motor a gasolina com capacidade de 600 l - 10 kW",
+"transporte": "E9687",
+"fu": 0.38
+},
+"E9548": {
+"descricao": "Bomba centrífuga com capacidade de 7,1 a 22 m³/h - 1,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9614": {
+"descricao": "Bomba com capacidade de 136 m³/h e câmara de vácuo - 5,60 kW",
+"transporte": null,
+"fu": null
+},
+"E9028": {
+"descricao": "Bomba de alta pressão para hidrojateamento com capacidade de 18 MPa - 5,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9049": {
+"descricao": "Bomba de alta pressão para hidrojateamento com capacidade de 250 MPa - 72 kW",
+"transporte": "E9686",
+"fu": 0.52
+},
+"E9755": {
+"descricao": "Bomba de alta pressão para jet grouting de até 45 MPa - 150 kW",
+"transporte": "E9592",
+"fu": 0.33
+},
+"E9073": {
+"descricao": "Bomba de concreto rebocável com capacidade de 30 m³/h - 74 kW",
+"transporte": "E9687",
+"fu": 0.76
+},
+"E9086": {
+"descricao": "Bomba de concreto rebocável com capacidade de 41 m³/h - 74 kW",
+"transporte": "E9687",
+"fu": 0.76
+},
+"E9750": {
+"descricao": "Bomba de injeção de argamassa com capacidade de 50 l/min",
+"transporte": null,
+"fu": null
+},
+"E9621": {
+"descricao": "Bomba de injeção de argamassa e nata com capacidade de 1,08 m³/h (18 l/min) e misturador com tambor de 0,100 m³ - 6,20 kW",
+"transporte": "E9687",
+"fu": 0.1
+},
+"E9007": {
+"descricao": "Bomba de pistão triplex com capacidade de 7,80 m³/h (130 l/min) - 8,20 kW",
+"transporte": "E9687",
+"fu": 0.12
+},
+"E9030": {
+"descricao": "Bomba de protensão com leitura digital para tensionamento de estais - 3 kW",
+"transporte": null,
+"fu": null
+},
+"E9787": {
+"descricao": "Bomba para concreto com lança montada sobre chassi com capacidade de 50 m³/h - 136 kW",
+"transporte": "E9787",
+"fu": 1
+},
+"E9631": {
+"descricao": "Bomba para concreto projetado via seca com capacidade de 6 m³/h - 7,5 kW",
+"transporte": "E9687",
+"fu": 0.15
+},
+"E9790": {
+"descricao": "Bomba para concreto projetado via úmida com capacidade de 10 m³/h - 14,70 kW",
+"transporte": "E9687",
+"fu": 0.27
+},
+"E9026": {
+"descricao": "Bomba para injeção de nata de cimento com capacidade de 2 MPa - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9791": {
+"descricao": "Bomba pneumática para injeção de resina com capacidade de 0,18 m³/h",
+"transporte": null,
+"fu": null
+},
+"E9734": {
+"descricao": "Bomba projetora de argamassa com capacidade de 2 m³/h - 5,50 kW",
+"transporte": "E9687",
+"fu": 0.11
+},
+"E9079": {
+"descricao": "Bomba submersível com capacidade de 360 m³/h - 23 kW",
+"transporte": null,
+"fu": null
+},
+"E9630": {
+"descricao": "Bomba submersível com capacidade de 75 m³/h - 3,6 kW",
+"transporte": null,
+"fu": null
+},
+"E9151": {
+"descricao": "Britador de mandíbulas móvel sobre esteiras, sem peneira, com capacidade de 140 m³/h - 170 kW",
+"transporte": "E9018",
+"fu": 0.68
+},
+"E9756": {
+"descricao": "Calandra para chapas de aço até 25 mm - 22 kW",
+"transporte": "E9666",
+"fu": 0.71
+},
+"E9522": {
+"descricao": "Caldeira de asfalto rebocável com capacidade de 1.500 l - 6,5 kW",
+"transporte": "E9687",
+"fu": 0.89
+},
+"E9155": {
+"descricao": "Caldeira de asfalto rebocável com capacidade de 600 l - 5,20 kW",
+"transporte": "E9687",
+"fu": 0.46
+},
+"E9692": {
+"descricao": "Caldeira para aquecimento e injeção de cera - 1 kW",
+"transporte": "E9687",
+"fu": 0.13
+},
+"E9243": {
+"descricao": "Câmara hiperbárica com filtro, serpentina e reservatório de ar para mergulho raso - D = 1,80 m e H = 2,22 m",
+"transporte": "E9687",
+"fu": 0.66
+},
+"E9575": {
+"descricao": "Caminhão basculante com caçamba estanque com capacidade de 14 m³ - 210 kW",
+"transporte": "E9575",
+"fu": 1
+},
+"E9579": {
+"descricao": "Caminhão basculante com capacidade de 10 m³ - 210 kW",
+"transporte": "E9579",
+"fu": 1
+},
+"E9667": {
+"descricao": "Caminhão basculante com capacidade de 14 m³ - 210 kW",
+"transporte": "E9667",
+"fu": 1
+},
+"E9506": {
+"descricao": "Caminhão basculante com capacidade de 6 m³ - 136 kW",
+"transporte": "E9506",
+"fu": 1
+},
+"E9145": {
+"descricao": "Caminhão basculante para concreto com capacidade de 10 m³ - 210 kW",
+"transporte": "E9145",
+"fu": 1
+},
+"E9672": {
+"descricao": "Caminhão basculante para rocha com capacidade de 12 m³ - 210 kW",
+"transporte": "E9672",
+"fu": 1
+},
+"E9201": {
+"descricao": "Caminhão basculante para rocha com capacidade de 12 m³ - 210 kW com periculosidade",
+"transporte": "E9201",
+"fu": 1
+},
+"E9604": {
+"descricao": "Caminhão basculante para rocha com capacidade de 8 m³ - 210 kW",
+"transporte": "E9604",
+"fu": 1
+},
+"E9600": {
+"descricao": "Caminhão betoneira com capacidade de 8 m³ - 236 kW",
+"transporte": "E9600",
+"fu": 1
+},
+"E9592": {
+"descricao": "Caminhão carroceria com capacidade de 15 t - 188 kW",
+"transporte": "E9592",
+"fu": 1
+},
+"E9687": {
+"descricao": "Caminhão carroceria com capacidade de 5 t - 120 kW",
+"transporte": "E9687",
+"fu": 1
+},
+"E9508": {
+"descricao": "Caminhão carroceria com capacidade de 9 t - 136 kW",
+"transporte": "E9508",
+"fu": 1
+},
+"E9520": {
+"descricao": "Caminhão com caçamba térmica com capacidade de 6 m³ - 136 kW",
+"transporte": "E9520",
+"fu": 1
+},
+"E9199": {
+"descricao": "Caminhão com sistema de hidrojateamento de alta pressão e vácuo para limpeza e desobstrução de bueiros com capacidade total de 15.600 l - 188 kW",
+"transporte": "E9199",
+"fu": 1
+},
+"E9557": {
+"descricao": "Caminhão comboio com capacidade de 5.000 l - 136 kW (sem motorista)",
+"transporte": "E9557",
+"fu": 1
+},
+"E9098": {
+"descricao": "Caminhão de resgate de veículos de porte médio com capacidade do guincho de 20 t - 236 kW",
+"transporte": "E9098",
+"fu": 1
+},
+"E9097": {
+"descricao": "Caminhão de resgate de veículos leves com plataforma com capacidade de 5 t - 129 kW",
+"transporte": "E9097",
+"fu": 1
+},
+"E9099": {
+"descricao": "Caminhão de resgate de veículos pesados com dois guinchos com capacidade de 35 t - 265 kW",
+"transporte": "E9099",
+"fu": 1
+},
+"E9644": {
+"descricao": "Caminhão demarcador de faixas com sistema de pintura a frio - 28 kW/129 kW",
+"transporte": "E9644",
+"fu": 1
+},
+"E9645": {
+"descricao": "Caminhão demarcador de faixas com sistema de pintura a quente - 5 kW/30,10 kW/136 kW",
+"transporte": "E9645",
+"fu": 1
+},
+"E9693": {
+"descricao": "Caminhão demarcador de faixas com sistema de pintura Spray - 129 kW",
+"transporte": "E9693",
+"fu": 1
+},
+"E9027": {
+"descricao": "Caminhão distribuidor de cimento e cal com capacidade de 15 m³ - 210 kW",
+"transporte": "E9027",
+"fu": 1
+},
+"E9041": {
+"descricao": "Caminhão guindauto com capacidade de elevação de 11,9 t e carroceria de 11,5 t - 188 kW",
+"transporte": "E9041",
+"fu": 1
+},
+"E9686": {
+"descricao": "Caminhão guindauto com capacidade de elevação de 6,2 t e carroceria de 7 t - 136 kW",
+"transporte": "E9686",
+"fu": 1
+},
+"E9690": {
+"descricao": "Caminhão guindauto com cesto aéreo simples e capacidade de elevação de 5,7 t e carroceria de 8,5 t - 136 kW",
+"transporte": "E9690",
+"fu": 1
+},
+"E9792": {
+"descricao": "Caminhão para hidrossemeadura com capacidade de 7.500 l - 77,2 kW/235 kW",
+"transporte": "E9792",
+"fu": 1
+},
+"E9146": {
+"descricao": "Caminhão silo com capacidade de 30 m³ - 368 kW",
+"transporte": "E9146",
+"fu": 1
+},
+"E9571": {
+"descricao": "Caminhão tanque com capacidade de 10.000 l - 188 kW",
+"transporte": "E9571",
+"fu": 1
+},
+"E9680": {
+"descricao": "Caminhão tanque com capacidade de 13.000 l - 188 kW",
+"transporte": "E9680",
+"fu": 1
+},
+"E9605": {
+"descricao": "Caminhão tanque com capacidade de 6.000 l - 136 kW",
+"transporte": "E9605",
+"fu": 1
+},
+"E9669": {
+"descricao": "Caminhão tanque com capacidade de 8.000 l - 136 kW",
+"transporte": "E9669",
+"fu": 1
+},
+"E9013": {
+"descricao": "Caminhão tanque de asfalto com capacidade de 31.000 l - 368 kW",
+"transporte": "E9013",
+"fu": 1
+},
+"E9509": {
+"descricao": "Caminhão tanque distribuidor de asfalto com capacidade de 6.000 l - 7 kW/136 kW",
+"transporte": "E9509",
+"fu": 1
+},
+"E9584": {
+"descricao": "Carregadeira de pneus com capacidade de 1,72 m³ - 113 kW",
+"transporte": "E9665",
+"fu": 0.92
+},
+"E9511": {
+"descricao": "Carregadeira de pneus com capacidade de 3,40 m³ - 195 kW",
+"transporte": "E9666",
+"fu": 0.64
+},
+"E9168": {
+"descricao": "Carregadeira de pneus com implemento de garfo - 195 kW",
+"transporte": "E9666",
+"fu": 0.64
+},
+"E9581": {
+"descricao": "Carregadeira de pneus para rocha com capacidade de 1,72 m³ - 113 kW",
+"transporte": "E9665",
+"fu": 0.79
+},
+"E9117": {
+"descricao": "Carregadeira de pneus para rocha com capacidade de 2,50 m³ - 105 kW",
+"transporte": "E9666",
+"fu": 0.52
+},
+"E9200": {
+"descricao": "Carregadeira de pneus para rocha com capacidade de 2,50 m³ - 105 kW com periculosidade",
+"transporte": "E9666",
+"fu": 0.52
+},
+"E9080": {
+"descricao": "Carrelone com capacidade máxima de 70 t",
+"transporte": "E9666",
+"fu": 0.56
+},
+"E9065": {
+"descricao": "Carro controle ferroviário - 186 kW",
+"transporte": "E9065",
+"fu": 1
+},
+"E9789": {
+"descricao": "Carro manual modelo plataforma de 150 x 80 cm com capacidade de 800 kg",
+"transporte": null,
+"fu": null
+},
+"E9011": {
+"descricao": "Carro manual modelo plataforma de 200 x 80 cm com capacidade de 800 kg",
+"transporte": null,
+"fu": null
+},
+"E9170": {
+"descricao": "Cavalo mecânico com dois dollys pneumáticos de 3 e 4 eixos e mesas de giro com capacidade de 77 t - 364 kW",
+"transporte": "E9170",
+"fu": 1
+},
+"E9171": {
+"descricao": "Cavalo mecânico com dois dollys pneumáticos de 4 e 5 eixos e mesas de giro com capacidade de 111 t - 440 kW",
+"transporte": "E9171",
+"fu": 1
+},
+"E9679": {
+"descricao": "Cavalo mecânico com dois reboques hidropneumáticos de 5 e 4 eixos e mesas de giro com capacidade de 130 t - 440 kW",
+"transporte": "E9679",
+"fu": 1
+},
+"E9018": {
+"descricao": "Cavalo mecânico com dolly intermediário e semirreboque de 4 eixos com capacidade de 52 t - 364 kW",
+"transporte": "E9018",
+"fu": 1
+},
+"E9169": {
+"descricao": "Cavalo mecânico com dolly pneumático de 4 eixos e mesas de giro com capacidade de 56 t - 364 kW",
+"transporte": "E9169",
+"fu": 1
+},
+"E9665": {
+"descricao": "Cavalo mecânico com semirreboque com capacidade de 20 t - 276 kW",
+"transporte": "E9665",
+"fu": 1
+},
+"E9666": {
+"descricao": "Cavalo mecânico com semirreboque com capacidade de 32 t - 302 kW",
+"transporte": "E9666",
+"fu": 1
+},
+"E9100": {
+"descricao": "Cavalo mecânico sem reboque - 272 kW",
+"transporte": "E9100",
+"fu": 1
+},
+"E9044": {
+"descricao": "Central de concreto com capacidade de 150 m³/h - dosadora e misturadora",
+"transporte": "E9018",
+"fu": 2.18
+},
+"E9182": {
+"descricao": "Central de concreto com capacidade de 20 m³/h - dosadora e misturadora",
+"transporte": null,
+"fu": null
+},
+"E9599": {
+"descricao": "Central de concreto com capacidade de 30 m³/h - dosadora RS",
+"transporte": "E9018",
+"fu": 1.79
+},
+"E9590": {
+"descricao": "Central de concreto com capacidade de 40 m³/h - dosadora fixa",
+"transporte": "E9018",
+"fu": 1.43
+},
+"E9180": {
+"descricao": "Cesto para transporte aéreo de concreto com capacidade de 1,5 m³",
+"transporte": null,
+"fu": null
+},
+"E9107": {
+"descricao": "Compactador manual com soquete vibratório - 2,24 kW",
+"transporte": null,
+"fu": null
+},
+"E9647": {
+"descricao": "Compactador manual com soquete vibratório - 4,10 kW",
+"transporte": null,
+"fu": null
+},
+"E9556": {
+"descricao": "Compactador manual de placa vibratória - 3,00 kW",
+"transporte": null,
+"fu": null
+},
+"E9513": {
+"descricao": "Compressor de ar portátil de 160,46 l/s (340 PCM) - 81 kW",
+"transporte": "E9687",
+"fu": 0.6
+},
+"E9629": {
+"descricao": "Compressor de ar portátil de 185,95 l/s (394 PCM) - 81,50 kW",
+"transporte": "E9687",
+"fu": 0.6
+},
+"E9640": {
+"descricao": "Compressor de ar portátil de 33,51 l/s (71 PCM) - 14 kW",
+"transporte": "E9687",
+"fu": 0.28
+},
+"E9671": {
+"descricao": "Compressor de ar portátil de 363,87 l/s (771 PCM) - 158,13 kW",
+"transporte": "E9687",
+"fu": 0.83
+},
+"E9768": {
+"descricao": "Compressor de ar portátil de 373,78 l/s (792 PCM) - 213,30 kW",
+"transporte": "E9687",
+"fu": 0.84
+},
+"E9751": {
+"descricao": "Compressor de ar portátil de 377 a 421 l/s (798 a 892 PCM) com sistema de regulagem de pressão - 243 kW",
+"transporte": "E9687",
+"fu": 0.88
+},
+"E9610": {
+"descricao": "Compressor de ar portátil de 42,48 l/s (90 PCM) - 18,50 kW",
+"transporte": "E9687",
+"fu": 0.2
+},
+"E9648": {
+"descricao": "Compressor de ar portátil de 422,86 l/s (896 PCM) - 213 kW",
+"transporte": "E9687",
+"fu": 0.83
+},
+"E9652": {
+"descricao": "Compressor de ar portátil de 540,85 l/s (1.146 PCM) - 331,10 kW",
+"transporte": "E9508",
+"fu": 0.69
+},
+"E9646": {
+"descricao": "Compressor de ar portátil de 58,52 l/s (124 PCM) - 27 kW",
+"transporte": "E9687",
+"fu": 0.26
+},
+"E9641": {
+"descricao": "Compressor de ar portátil de 75,04 l/s (159 PCM) - 33 kW",
+"transporte": "E9687",
+"fu": 0.26
+},
+"E9661": {
+"descricao": "Compressor de ar portátil de 89,67 l/s (190 PCM) - 36 kW",
+"transporte": "E9687",
+"fu": 0.19
+},
+"E9767": {
+"descricao": "Compressor de ar portátil de 9,44 l/s (20 PCM) a gasolina - 5,22 kW",
+"transporte": null,
+"fu": null
+},
+"E9649": {
+"descricao": "Compressor de ar portátil de 94,39 l/s (200 PCM) - 36 kW",
+"transporte": "E9687",
+"fu": 0.53
+},
+"E9543": {
+"descricao": "Compressor de ar respirável com capacidade de até 35 MPa e 3,58 l/s - 5,52 kW",
+"transporte": null,
+"fu": null
+},
+"E9047": {
+"descricao": "Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.390 kN",
+"transporte": null,
+"fu": null
+},
+"E9048": {
+"descricao": "Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.859 kN",
+"transporte": null,
+"fu": null
+},
+"E9045": {
+"descricao": "Conjunto bomba e macaco hidráulico para elevação com capacidade de 496 kN",
+"transporte": null,
+"fu": null
+},
+"E9046": {
+"descricao": "Conjunto bomba e macaco hidráulico para elevação com capacidade de 929 kN",
+"transporte": null,
+"fu": null
+},
+"E9721": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 1.150 kN - 5 kW",
+"transporte": null,
+"fu": null
+},
+"E9722": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.000 kN - 5 kW",
+"transporte": null,
+"fu": null
+},
+"E9723": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.500 kN - 7 kW",
+"transporte": "E9687",
+"fu": 0.08
+},
+"E9720": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 250 kN - 3,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9724": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 4.000 kN - 10 kW",
+"transporte": "E9687",
+"fu": 0.08
+},
+"E9725": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 5.400 kN - 10 kW",
+"transporte": "E9687",
+"fu": 0.17
+},
+"E9716": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 590 kN - 3,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9025": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 7.000 kN - 15 kW",
+"transporte": "E9687",
+"fu": 0.08
+},
+"E9029": {
+"descricao": "Conjunto bomba e macaco hidráulico para protensão com capacidade de 8.000 kN - 20 kW",
+"transporte": "E9687",
+"fu": 0.09
+},
+"E9746": {
+"descricao": "Conjunto bomba e prensa para luva de emenda de 25 mm",
+"transporte": null,
+"fu": null
+},
+"E9747": {
+"descricao": "Conjunto bomba e prensa para luva de emenda de 32 mm",
+"transporte": null,
+"fu": null
+},
+"E9611": {
+"descricao": "Conjunto de britagem com capacidade de 80 m³/h - 313 kW",
+"transporte": "E9100",
+"fu": 1.18
+},
+"E9607": {
+"descricao": "Conjunto de britagem para rachão com capacidade de 80 m³/h - 224 kW",
+"transporte": "E9100",
+"fu": 0.9
+},
+"E9737": {
+"descricao": "Conjunto para pré-aquecimento de trilho em solda aluminotérmica .",
+"transporte": null,
+"fu": null
+},
+"E9538": {
+"descricao": "Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,30 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9578": {
+"descricao": "Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,40 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9632": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,20 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9633": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,30 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9634": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,40 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9001": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,60 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9002": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,80 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9003": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,00 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9004": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,20 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9005": {
+"descricao": "Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,50 m - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9118": {
+"descricao": "Cortadora de pavimento com disco diamantado de 450 a 1.500 mm - 55,40 kW",
+"transporte": "E9687",
+"fu": 0.26
+},
+"E9769": {
+"descricao": "Cunha hidráulica com três cilindros e acessórios com capacidade de 3.000 kN - 5,60 kW",
+"transporte": null,
+"fu": null
+},
+"E9014": {
+"descricao": "Deflectômetro de impacto (FWD) instalado em picape com reboque e faixa de carga de 7 a 120 kN - 147 kW",
+"transporte": "E9014",
+"fu": 1
+},
+"E9707": {
+"descricao": "Desarenador - 15 kW",
+"transporte": null,
+"fu": null
+},
+"E9260": {
+"descricao": "Detector de gases com bomba elétrica para espaço confinado",
+"transporte": null,
+"fu": null
+},
+"E9583": {
+"descricao": "Distribuidor de agregados rebocável com capacidade de 1,9 m³",
+"transporte": "E9687",
+"fu": 0.4
+},
+"E9514": {
+"descricao": "Distribuidor de agregados sobre pneus autopropelido - 130 kW",
+"transporte": "E9665",
+"fu": 0.77
+},
+"E9254": {
+"descricao": "Dobradeira viradeira manual comprimento máximo de dobra de até 2.000 mm",
+"transporte": "E9687",
+"fu": 0.15
+},
+"E9126": {
+"descricao": "Draga backhoe com capacidade de 7 m³ - 1.000 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9638": {
+"descricao": "Draga de sucção e recalque com potência da bomba de 1.350 kW e cortador de 170 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9635": {
+"descricao": "Draga de sucção e recalque com potência da bomba de 294 kW e cortador de 30 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9636": {
+"descricao": "Draga de sucção e recalque com potência da bomba de 483 kW e cortador de 55 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9637": {
+"descricao": "Draga de sucção e recalque com potência da bomba de 746 kW e cortador de 110 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9609": {
+"descricao": "Draga de sucção para extração de areia com tubo de descarga de 150 mm - 100 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9594": {
+"descricao": "Draga hopper com capacidade de 1.000 m³",
+"transporte": "E9594",
+"fu": 1
+},
+"E9624": {
+"descricao": "Draga hopper com capacidade de 10.000 m³",
+"transporte": "E9624",
+"fu": 1
+},
+"E9625": {
+"descricao": "Draga hopper com capacidade de 15.000 m³",
+"transporte": "E9625",
+"fu": 1
+},
+"E9595": {
+"descricao": "Draga hopper com capacidade de 2.000 m³",
+"transporte": "E9595",
+"fu": 1
+},
+"E9626": {
+"descricao": "Draga hopper com capacidade de 20.000 m³",
+"transporte": "E9626",
+"fu": 1
+},
+"E9596": {
+"descricao": "Draga hopper com capacidade de 3.000 m³",
+"transporte": "E9596",
+"fu": 1
+},
+"E9597": {
+"descricao": "Draga hopper com capacidade de 4.000 m³",
+"transporte": "E9597",
+"fu": 1
+},
+"E9598": {
+"descricao": "Draga hopper com capacidade de 5.000 m³",
+"transporte": "E9598",
+"fu": 1
+},
+"E9593": {
+"descricao": "Draga hopper com capacidade de 750 m³",
+"transporte": "E9593",
+"fu": 1
+},
+"E9031": {
+"descricao": "Elevador de cremalheira com cabine simples, com capacidade de 1.500 kg e altura de até 100 m - 15 kW",
+"transporte": "E9686",
+"fu": 0.24
+},
+"E9015": {
+"descricao": "Elevador de obra com capacidade de 1.000 kg - 9 kW",
+"transporte": "E9687",
+"fu": 0.15
+},
+"E9043": {
+"descricao": "Embarcação de alumínio com comprimento de 6 m e motor de popa - 18,60 kW",
+"transporte": "E9508",
+"fu": 1
+},
+"E9601": {
+"descricao": "Embarcação de transporte de pessoal e apoio logístico - 130 kW",
+"transporte": "E9592",
+"fu": 1
+},
+"E9536": {
+"descricao": "Embarcação de transporte de pessoal e apoio logístico - 30 kW",
+"transporte": "E9687",
+"fu": 1
+},
+"E9676": {
+"descricao": "Embarcação de transporte de pessoal e apoio logístico - 90 kW",
+"transporte": "E9592",
+"fu": 1
+},
+"E9105": {
+"descricao": "Embarcação rebocadora multipropósito com guindaste hidráulico 155 kN.m - 2 x 186 kW",
+"transporte": "E9105",
+"fu": 1
+},
+"E9603": {
+"descricao": "Embarcação rebocadora multipropósito com guindaste hidráulico de 74 kN.m - 165 kW",
+"transporte": "E9603",
+"fu": 1
+},
+"E9627": {
+"descricao": "Embarcação hotel com capacidade para 15 pessoas - 199 kW",
+"transporte": "E9627",
+"fu": 1
+},
+"E9639": {
+"descricao": "Embarcação hotel com capacidade para 30 pessoas - 2 x 112 kW .",
+"transporte": "E9639",
+"fu": 1
+},
+"E9606": {
+"descricao": "Embarcação rebocadora - 2 x 268 kW",
+"transporte": "E9606",
+"fu": 1
+},
+"E9009": {
+"descricao": "Embarcação rebocadora - 268 kW",
+"transporte": "E9009",
+"fu": 1
+},
+"E9052": {
+"descricao": "Empilhadeira a diesel com capacidade de 10 t - 82 kW",
+"transporte": "E9666",
+"fu": 0.4
+},
+"E9528": {
+"descricao": "Empilhadeira a diesel com capacidade de 4 t - 60 kW",
+"transporte": "E9508",
+"fu": 0.72
+},
+"E9539": {
+"descricao": "Equipamento de batimetria monofeixe",
+"transporte": null,
+"fu": null
+},
+"E9673": {
+"descricao": "Equipamento de batimetria multifeixe",
+"transporte": null,
+"fu": null
+},
+"E9205": {
+"descricao": "Equipamento de corte a plasma CNC - 12.000 x 5.500 mm - 19,5 kW",
+"transporte": "E9665",
+"fu": 3.68
+},
+"E9120": {
+"descricao": "Equipamento de cravação sobre esteira para geodreno com haste para profundidade de até 20 m - 258 kW",
+"transporte": "E9018",
+"fu": 0.97
+},
+"E9063": {
+"descricao": "Equipamento de estabilização dinâmica da via - 300 kW",
+"transporte": null,
+"fu": 1
+},
+"E9674": {
+"descricao": "Equipamento de medição de descarga líquida com ADCP",
+"transporte": null,
+"fu": null
+},
+"E9261": {
+"descricao": "Equipamento de pintura com pistola airless - 0,90 KW",
+"transporte": null,
+"fu": null
+},
+"E9532": {
+"descricao": "Equipamento de solda MIG/MAG semiautomática com acessórios - 28,36 kVA",
+"transporte": null,
+"fu": null
+},
+"E9181": {
+"descricao": "Equipamento desbobinador de fios de protensão móvel",
+"transporte": null,
+"fu": null
+},
+"E9172": {
+"descricao": "Equipamento distribuidor de fios para fábrica de dormentes - 2,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9167": {
+"descricao": "Equipamento para carga e descarga de TLS de até 250 m - 90 kW",
+"transporte": null,
+"fu": 1
+},
+"E9175": {
+"descricao": "Equipamento para concretagem de fôrmas de dormentes com silo de 1,5 m³ - 9 kW",
+"transporte": null,
+"fu": null
+},
+"E9643": {
+"descricao": "Equipamento para pintura a ar comprimido de pistola com caneca com capacidade de 1.000 ml e compressor de 1,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9256": {
+"descricao": "Equipamento para pintura com cal rebocável com dois bicos aplicadores e capacidade de 2.200 l",
+"transporte": "E9687",
+"fu": 0.66
+},
+"E9076": {
+"descricao": "Equipamento para pintura eletrostática com cabine dupla de 7,00 kW e estufa de 80.000 kCal",
+"transporte": "E9665",
+"fu": 1.45
+},
+"E9729": {
+"descricao": "Equipamento para pintura eletrostática com cabine simples de 5,50 kW e estufa de 2x120.000 kCal",
+"transporte": "E9665",
+"fu": 0.3
+},
+"E9032": {
+"descricao": "Equipamento para regulagem final de estais com até 37 cordoalhas - D = 15,7 mm - 20 kW",
+"transporte": null,
+"fu": null
+},
+"E9033": {
+"descricao": "Equipamento para regulagem final de estais de 38 a 55 cordoalhas - D = 15,7 mm - 30 kW",
+"transporte": null,
+"fu": null
+},
+"E9034": {
+"descricao": "Equipamento para regulagem final de estais de 56 a 73 cordoalhas - D = 15,7 mm - 40 kW",
+"transporte": null,
+"fu": null
+},
+"E9035": {
+"descricao": "Equipamento para regulagem final de estais de 74 a 91 cordoalhas - D = 15,7 mm - 50 kW",
+"transporte": "E9687",
+"fu": 0.06
+},
+"E9154": {
+"descricao": "Equipamento para selagem com material asfáltico rebocável com capacidade de 370 l - 35 kW",
+"transporte": "E9665",
+"fu": 0.37
+},
+"E9662": {
+"descricao": "Equipamento para solda e corte com oxiacetileno",
+"transporte": null,
+"fu": null
+},
+"E9546": {
+"descricao": "Equipamento para solda e corte com oxi-GLP",
+"transporte": null,
+"fu": null
+},
+"E9006": {
+"descricao": "Equipamento para sondagem manual",
+"transporte": null,
+"fu": null
+},
+"E9054": {
+"descricao": "Equipamento sobre forma-trilho para execução e acabamento de pavimento de concreto - 13,40 kW",
+"transporte": "E9665",
+"fu": 0.74
+},
+"E9401": {
+"descricao": "Escavadeira hidráulica com martelo hidráulico de 1.500 kg - 117 kW",
+"transporte": "E9666",
+"fu": 0.78
+},
+"E9775": {
+"descricao": "Escavadeira hidráulica com martelo hidráulico de 1.700 kg - 103 kW",
+"transporte": "E9666",
+"fu": 0.82
+},
+"E9203": {
+"descricao": "Escavadeira hidráulica com martelo hidráulico de 1.700 kg - 103 kW com periculosidade",
+"transporte": "E9666",
+"fu": 0.82
+},
+"E9127": {
+"descricao": "Escavadeira hidráulica com martelo hidráulico de 520 kg - 75 kW",
+"transporte": "E9666",
+"fu": 0.58
+},
+"E9576": {
+"descricao": "Escavadeira hidráulica de longo alcance sobre esteiras - 103 kW",
+"transporte": "E9666",
+"fu": 0.82
+},
+"E9017": {
+"descricao": "Escavadeira hidráulica sobre esteira com capacidade de 0,4 m³ - 64 kW",
+"transporte": "E9666",
+"fu": 0.52
+},
+"E9515": {
+"descricao": "Escavadeira hidráulica sobre esteiras com caçamba com capacidade de 1,56 m³ - 118 kW",
+"transporte": "E9666",
+"fu": 0.78
+},
+"E9110": {
+"descricao": "Escavadeira hidráulica sobre esteiras para rocha com caçamba com capacidade de 1,56 m³ - 118 kW",
+"transporte": "E9666",
+"fu": 0.78
+},
+"E9262": {
+"descricao": "Escova rotativa com cerdas de aço para tratamento de superfície - 0,91 kW",
+"transporte": null,
+"fu": null
+},
+"E9553": {
+"descricao": "Estação total eletrônica com alcance máximo de 3.000 m",
+"transporte": null,
+"fu": null
+},
+"E9245": {
+"descricao": "Estação transmissora de superfície para comunicação com fio",
+"transporte": null,
+"fu": null
+},
+"E9244": {
+"descricao": "Estação transmissora de superfície para comunicação sem fio",
+"transporte": null,
+"fu": null
+},
+"E9242": {
+"descricao": "Estação transmissora de superfície para televisionamento",
+"transporte": null,
+"fu": null
+},
+"E9178": {
+"descricao": "Estação viradora de dormentes com esteira de 6 m - 7,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9267": {
+"descricao": "Exaustor centrífugo alta pressão com capacidade de 35 m³/min - 1,47 kW",
+"transporte": null,
+"fu": null
+},
+"E9777": {
+"descricao": "Extrusora de barreira de concreto - 74 kW",
+"transporte": "E9666",
+"fu": 0.53
+},
+"E9103": {
+"descricao": "Extrusora para meio-fio de concreto - 10,44 kW",
+"transporte": "E9687",
+"fu": 0.18
+},
+"E9102": {
+"descricao": "Extrusora para sarjeta de concreto - 10,44 kW",
+"transporte": "E9687",
+"fu": 0.36
+},
+"E9628": {
+"descricao": "Fábrica de pré-moldado de concreto para balizador - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9703": {
+"descricao": "Fábrica de pré-moldado de concreto para mourão - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9152": {
+"descricao": "Ferramenta de fixação à pólvora de ação direta",
+"transporte": null,
+"fu": null
+},
+"E9153": {
+"descricao": "Ferramenta de fixação à pólvora e sistema à pistão",
+"transporte": null,
+"fu": null
+},
+"E9081": {
+"descricao": "Fischietti simples com capacidade de 70 t",
+"transporte": "E9687",
+"fu": 0.7
+},
+"E9255": {
+"descricao": "Fonte de plasma para corte manual - 45A - 10 kW",
+"transporte": null,
+"fu": null
+},
+"E9251": {
+"descricao": "Fonte de plasma para corte manual - 65A - 15 kW",
+"transporte": null,
+"fu": null
+},
+"E9185": {
+"descricao": "Fôrma metálica para dormentes de concreto de bitola larga ou mista - 4 cavidades",
+"transporte": null,
+"fu": null
+},
+"E9186": {
+"descricao": "Fôrma metálica para dormentes de concreto de bitola métrica - 4 cavidades",
+"transporte": null,
+"fu": null
+},
+"E9700": {
+"descricao": "Fresadora a frio - 155 kW",
+"transporte": "E9666",
+"fu": 0.68
+},
+"E9678": {
+"descricao": "Fresadora a frio - 455 kW",
+"transporte": "E9018",
+"fu": 0.8
+},
+"E9567": {
+"descricao": "Fresadora de piso de concreto - 6,7 kW",
+"transporte": null,
+"fu": null
+},
+"E9580": {
+"descricao": "Fresadora e distribuidora com controle de greide - 287 kW",
+"transporte": "E9666",
+"fu": 0.89
+},
+"E9570": {
+"descricao": "Furadeira com base magnética - 1,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9568": {
+"descricao": "Furadeira de impacto de 12,5 mm - 0,80 kW",
+"transporte": null,
+"fu": null
+},
+"E9562": {
+"descricao": "GPS geodésico de dupla frequência (L1/L2)",
+"transporte": null,
+"fu": null
+},
+"E9561": {
+"descricao": "GPS geodésico de simples frequência (L1)",
+"transporte": null,
+"fu": null
+},
+"E9518": {
+"descricao": "Grade de 24 discos rebocável de D = 60 cm (24\")",
+"transporte": "E9687",
+"fu": 0.37
+},
+"E9036": {
+"descricao": "Grua fixa para alturas de 60 a 102 m, com alcance de 60 m com capacidade de 1.500 kg na ponta da lança - 37 kW",
+"transporte": "E9666",
+"fu": 9.88
+},
+"E9779": {
+"descricao": "Grupo gerador - 113 kVA",
+"transporte": "E9687",
+"fu": 0.29
+},
+"E9066": {
+"descricao": "Grupo gerador - 14 kVA",
+"transporte": "E9687",
+"fu": 0.12
+},
+"E9776": {
+"descricao": "Grupo gerador - 174 kVA",
+"transporte": "E9687",
+"fu": 0.37
+},
+"E9753": {
+"descricao": "Grupo gerador - 23 kVA",
+"transporte": "E9687",
+"fu": 0.12
+},
+"E9521": {
+"descricao": "Grupo gerador - 3,2 kVA",
+"transporte": null,
+"fu": null
+},
+"E9778": {
+"descricao": "Grupo gerador - 338 kVA",
+"transporte": "E9687",
+"fu": 0.71
+},
+"E9763": {
+"descricao": "Grupo gerador - 40 kVA",
+"transporte": "E9687",
+"fu": 0.24
+},
+"E9021": {
+"descricao": "Grupo gerador - 456 kVA",
+"transporte": "E9508",
+"fu": 0.54
+},
+"E9765": {
+"descricao": "Grupo gerador - 569 kVA",
+"transporte": "E9508",
+"fu": 0.58
+},
+"E9754": {
+"descricao": "Grupo gerador - 68 kVA",
+"transporte": "E9687",
+"fu": 0.23
+},
+"E9764": {
+"descricao": "Grupo gerador - 7,2 kVA",
+"transporte": null,
+"fu": null
+},
+"E9730": {
+"descricao": "Grupo vibrador com gerador - 2,80 kW",
+"transporte": null,
+"fu": null
+},
+"E9503": {
+"descricao": "Guilhotina hidráulica 16 x 6.100 mm - 30 kW",
+"transporte": "E9018",
+"fu": 0.62
+},
+"E9759": {
+"descricao": "Guincho de alavanca com capacidade de 5,4 t",
+"transporte": null,
+"fu": null
+},
+"E9761": {
+"descricao": "Guincho de coluna com capacidade de 200 kg - 0,92 kW",
+"transporte": null,
+"fu": null
+},
+"E9786": {
+"descricao": "Guincho elétrico para lançamento de embarcações com capacidade de 30 t - 66 kW",
+"transporte": "E9592",
+"fu": 1
+},
+"E9055": {
+"descricao": "Guincho pneumático com capacidade de 2,5 t",
+"transporte": "E9687",
+"fu": 0.11
+},
+"E9691": {
+"descricao": "Guincho tracionador de cordoalhas - 7,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9050": {
+"descricao": "Guindaste móvel compacto com plataforma integrada sobre pneus com 2 eixos com capacidade de 18 t - 97 kW",
+"transporte": "E9050",
+"fu": 1
+},
+"E9785": {
+"descricao": "Guindaste móvel para terrenos acidentados sobre pneus com 2 eixos com capacidade máxima de 55 t - 186 kW",
+"transporte": "E9785",
+"fu": 1
+},
+"E9094": {
+"descricao": "Guindaste móvel para todos os terrenos sobre pneus com 6 eixos com capacidade máxima de 350 t - 450 kW",
+"transporte": "E9094",
+"fu": 1
+},
+"E9095": {
+"descricao": "Guindaste móvel para todos os terrenos sobre pneus com 8 eixos com capacidade máxima de 500 t - 500 kW",
+"transporte": "E9095",
+"fu": 1
+},
+"E9657": {
+"descricao": "Guindaste móvel sobre esteiras com caçamba para escavação em rocha - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9656": {
+"descricao": "Guindaste móvel sobre esteiras com caçamba para escavação em solos - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9660": {
+"descricao": "Guindaste móvel sobre esteiras com capacidade de 40 t - 186 kW .",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9664": {
+"descricao": "Guindaste móvel sobre esteiras com capacidade de 80 t - 212 kW .",
+"transporte": "E9018",
+"fu": 0.98
+},
+"E9566": {
+"descricao": "Guindaste móvel sobre esteiras com clamshell de 1,9 m³ - 220 kW",
+"transporte": "E9018",
+"fu": 0.64
+},
+"E9569": {
+"descricao": "Guindaste móvel sobre esteiras com clamshell de 4,6 m³ - 403 kW",
+"transporte": "E9018",
+"fu": 1.28
+},
+"E9023": {
+"descricao": "Guindaste móvel sobre esteiras com dragline com capacidade de 1,9 a 2,3 m³ - 270 kW",
+"transporte": "E9018",
+"fu": 1.03
+},
+"E9651": {
+"descricao": "Guindaste móvel sobre esteiras com Hammer Grab - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9613": {
+"descricao": "Guindaste móvel sobre esteiras com pinça com capacidade de 40 t - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9654": {
+"descricao": "Guindaste móvel sobre esteiras com trado com bits escavação em rocha - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9653": {
+"descricao": "Guindaste móvel sobre esteiras com trado para escavação em solos - 186 kW",
+"transporte": "E9018",
+"fu": 0.74
+},
+"E9111": {
+"descricao": "Jateador abrasivo úmido com capacidade de 350 kg de abrasivo",
+"transporte": "E9687",
+"fu": 0.09
+},
+"E9549": {
+"descricao": "Jateador e sistema de pintura para chapas e perfis metálicos com transportador a roletes - 160 kW",
+"transporte": "E9666",
+"fu": 5
+},
+"E9529": {
+"descricao": "Jateador para chapas e perfis metálicos com transportador a roletes - 132 kW",
+"transporte": "E9666",
+"fu": 2
+},
+"E9749": {
+"descricao": "Jateador portátil multiabrasivo com capacidade de 300 kg",
+"transporte": null,
+"fu": null
+},
+"E9701": {
+"descricao": "Jateador pressurizado multiabrasivo com capacidade de 280 l",
+"transporte": "E9687",
+"fu": 0.1
+},
+"E9797": {
+"descricao": "Jumbo eletro-hidráulico com 3 braços - 155 kW/237 kW",
+"transporte": "E9018",
+"fu": 1.11
+},
+"E9213": {
+"descricao": "Jumbo eletro-hidráulico com 3 braços - 155 kW/237 kW com periculosidade",
+"transporte": "E9018",
+"fu": 1.11
+},
+"E9061": {
+"descricao": "Lixadeira/esmerilhadeira elétrica manual angular - 2,2 kW",
+"transporte": null,
+"fu": null
+},
+"E9158": {
+"descricao": "Locomotiva diesel-elétrica CC - bitola larga - 2.237 kW",
+"transporte": "E9158",
+"fu": 1
+},
+"E9157": {
+"descricao": "Locomotiva diesel-elétrica CC - bitola métrica - 2.237 kW",
+"transporte": "E9157",
+"fu": 1
+},
+"E9148": {
+"descricao": "Macaco de protensão de fios com bomba - 3,72 kW",
+"transporte": null,
+"fu": null
+},
+"E9038": {
+"descricao": "Macaco hidráulico monocordoalha para tensionamento de estais - 3 kW",
+"transporte": null,
+"fu": null
+},
+"E9231": {
+"descricao": "Maçarico lança-chamas a gás liquefeito de petróleo (GLP)",
+"transporte": null,
+"fu": null
+},
+"E9149": {
+"descricao": "Máquina de aplicação e extração de grampo elástico tipo Pandrol - 6,70 kW",
+"transporte": "E9687",
+"fu": 0.34
+},
+"E9623": {
+"descricao": "Máquina de bancada guilhotina - 4,00 kW",
+"transporte": "E9687",
+"fu": 0.25
+},
+"E9622": {
+"descricao": "Máquina de bancada universal para corte de chapa - 1,50 kW",
+"transporte": "E9687",
+"fu": 0.16
+},
+"E9738": {
+"descricao": "Máquina de esmerilhar topo e lateral de boleto - 5,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9731": {
+"descricao": "Máquina de furar dormente portátil - 1,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9207": {
+"descricao": "Máquina de solda elétrica retificadora 425 A - 18,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9547": {
+"descricao": "Máquina de solda elétrica transformadora 250 A - 9,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9039": {
+"descricao": "Máquina de solda por termofusão para tubos PEAD com gerador de 4 kW",
+"transporte": "E9687",
+"fu": 0.08
+},
+"E9051": {
+"descricao": "Máquina levantadora e posicionadora de via - 7,40 kW",
+"transporte": "E9686",
+"fu": 0.36
+},
+"E9732": {
+"descricao": "Máquina para furar dormente - 6,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9736": {
+"descricao": "Máquina para furar trilho - 1,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9735": {
+"descricao": "Máquina para serrar trilho - 5,00 kW",
+"transporte": null,
+"fu": null
+},
+"E9717": {
+"descricao": "Máquina policorte - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9589": {
+"descricao": "Máquina texturizadora e aplicadora de cura química em pavimento de concreto - 44,80 kW",
+"transporte": "E9665",
+"fu": 0.82
+},
+"E9733": {
+"descricao": "Máquina tirefonadora e parafusadora - 6,70 kW",
+"transporte": null,
+"fu": null
+},
+"E9677": {
+"descricao": "Martelete perfurador/rompedor a ar comprimido de 10 kg com capacidade de 1.800 gpm",
+"transporte": null,
+"fu": null
+},
+"E9527": {
+"descricao": "Martelete perfurador/rompedor a ar comprimido de 25 kg para rocha com capacidade de 2.040 gpm",
+"transporte": null,
+"fu": null
+},
+"E9209": {
+"descricao": "Martelete perfurador/rompedor a ar comprimido de 25 kg para rocha, com insalubridade, com capacidade de 2.040 gpm",
+"transporte": null,
+"fu": null
+},
+"E9706": {
+"descricao": "Martelete perfurador/rompedor a ar comprimido de 28 kg para concreto com capacidade de 1.230 gpm",
+"transporte": null,
+"fu": null
+},
+"E9683": {
+"descricao": "Martelete perfurador/rompedor elétrico - 0,90 kW",
+"transporte": null,
+"fu": null
+},
+"E9675": {
+"descricao": "Martelete perfurador/rompedor elétrico - 1,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9072": {
+"descricao": "Martelo hidráulico vibratório com unidade hidráulica - 486 kW",
+"transporte": "E9665",
+"fu": 0.33
+},
+"E9668": {
+"descricao": "Mesa vibratória - 2,20 kW",
+"transporte": null,
+"fu": null
+},
+"E9708": {
+"descricao": "Microtrator com roçadeira - 10 kW",
+"transporte": "E9687",
+"fu": 0.15
+},
+"E9096": {
+"descricao": "Minicarregadeira de pneus - 45,50 kW",
+"transporte": "E9665",
+"fu": 0.26
+},
+"E9697": {
+"descricao": "Minicarregadeira de pneus com vassoura de 1,68 m - 45,50 kW",
+"transporte": "E9665",
+"fu": 0.3
+},
+"E9119": {
+"descricao": "Minicarregadeira sobre pneus com valetadeira - 55,40 kW",
+"transporte": "E9665",
+"fu": 0.32
+},
+"E9134": {
+"descricao": "Miniônibus com capacidade para 30 passageiros - 120 kW",
+"transporte": "E9134",
+"fu": 1
+},
+"E9239": {
+"descricao": "Miniônibus com capacidade para 30 passageiros - 120 kW (sem motorista)",
+"transporte": "E9239",
+"fu": 1
+},
+"E9780": {
+"descricao": "Misturador automático para grauteamento com capacidade de 20 m³/h - 7 kW",
+"transporte": "E9687",
+"fu": 0.44
+},
+"E9781": {
+"descricao": "Misturador com bomba para grauteamento tipo Flex E ou similar - 25 kW",
+"transporte": "E9687",
+"fu": 0.26
+},
+"E9788": {
+"descricao": "Misturador de argamassa com capacidade de 0,250 m³ - 3,70 kW",
+"transporte": "E9687",
+"fu": 0.25
+},
+"E9694": {
+"descricao": "Misturador de argamassa de alta turbulência com capacidade de 220 l - 13 kW",
+"transporte": null,
+"fu": null
+},
+"E9705": {
+"descricao": "Misturador de lama bentonítica - 4 kW",
+"transporte": null,
+"fu": null
+},
+"E9024": {
+"descricao": "Misturador de nata cimento - 1,50 kW",
+"transporte": null,
+"fu": null
+},
+"E9524": {
+"descricao": "Motoniveladora - 93 kW",
+"transporte": "E9666",
+"fu": 0.68
+},
+"E9523": {
+"descricao": "Motoscraper - 304 kW",
+"transporte": "E9018",
+"fu": 1.72
+},
+"E9585": {
+"descricao": "Motosserra com motor a gasolina - 2,30 kW",
+"transporte": null,
+"fu": null
+},
+"E9552": {
+"descricao": "Nível ótico com capacidade de aumento de 32x",
+"transporte": null,
+"fu": null
+},
+"E9551": {
+"descricao": "Obturador mecânico simples com extensão de 12 m",
+"transporte": null,
+"fu": null
+},
+"E9560": {
+"descricao": "Ônibus com capacidade para 46 passageiros - 153 kW",
+"transporte": "E9560",
+"fu": 1
+},
+"E9240": {
+"descricao": "Ônibus com capacidade para 46 passageiros - 153 kW (sem motorista)",
+"transporte": "E9240",
+"fu": 1
+},
+"E9220": {
+"descricao": "Ônibus rodoviário com capacidade para 50 passageiros - 280 kW",
+"transporte": "E9220",
+"fu": 1
+},
+"E9114": {
+"descricao": "Painel com seta luminosa para montagem em caminhão",
+"transporte": "E9508",
+"fu": 0.61
+},
+"E9246": {
+"descricao": "Painel de controle de ar com manômetros e pneufatômetros",
+"transporte": null,
+"fu": null
+},
+"E9113": {
+"descricao": "Painel de Mensagem Variável - PMV móvel, com sistema fotovoltaico de energia e montado em chassi sobre pneus",
+"transporte": "E9508",
+"fu": 0.37
+},
+"E9077": {
+"descricao": "Perfuratriz de circulação reversa tipo Wirth ou similar com unidade hidráulica (Power Pack) - 273 kW",
+"transporte": "E9018",
+"fu": 1.79
+},
+"E9795": {
+"descricao": "Perfuratriz de superfície sobre pneus com martelo de topo e controle remoto via rádio - 60 kW",
+"transporte": "E9665",
+"fu": 0.47
+},
+"E9053": {
+"descricao": "Perfuratriz hidráulica montada em flutuante - 32 kW",
+"transporte": "E9666",
+"fu": 0.53
+},
+"E9798": {
+"descricao": "Perfuratriz hidráulica rotopercussiva - 123 kW",
+"transporte": "E9666",
+"fu": 0.79
+},
+"E9068": {
+"descricao": "Perfuratriz hidráulica rotopercussiva para CCPH - 123 kW",
+"transporte": "E9666",
+"fu": 0.64
+},
+"E9516": {
+"descricao": "Perfuratriz hidráulica sobre esteiras - 283 kW",
+"transporte": "E9018",
+"fu": 1.24
+},
+"E9563": {
+"descricao": "Perfuratriz hidráulica sobre esteiras com clamshell - 220 kW",
+"transporte": "E9018",
+"fu": 0.64
+},
+"E9642": {
+"descricao": "Perfuratriz hidráulica sobre esteiras para estaca raiz - 56 kW",
+"transporte": "E9665",
+"fu": 0.73
+},
+"E9760": {
+"descricao": "Perfuratriz manual para coroa diamantada - 1,60 kW",
+"transporte": null,
+"fu": null
+},
+"E9782": {
+"descricao": "Perfuratriz pneumática com avanço de coluna de 33,5 kg com capacidade de 2.280 gpm",
+"transporte": null,
+"fu": null
+},
+"E9060": {
+"descricao": "Perfuratriz pneumática rotopercussiva montada em flutuante com pressão de 0,70 MPa e capacidade de 2.500 gpm",
+"transporte": null,
+"fu": null
+},
+"E9400": {
+"descricao": "Perfuratriz pneumática sobre esteiras",
+"transporte": "E9665",
+"fu": 0.77
+},
+"E9574": {
+"descricao": "Perfuratriz sobre esteiras - 145 kW",
+"transporte": "E9666",
+"fu": 0.59
+},
+"E9204": {
+"descricao": "Perfuratriz sobre esteiras - 145 kW com periculosidade",
+"transporte": "E9666",
+"fu": 0.59
+},
+"E9122": {
+"descricao": "Perfuratriz tipo Bottom Feed para coluna de brita - 194 kW",
+"transporte": "E9018",
+"fu": 1.1
+},
+"E9184": {
+"descricao": "Pista de apoio para fôrmas metálicas para dormentes de concreto - 4 cavidades - C = 127,90 m",
+"transporte": null,
+"fu": null
+},
+"E9056": {
+"descricao": "Plataforma autoelevatória de 12 x 24 m com capacidade de 150 t",
+"transporte": "E9009",
+"fu": 1
+},
+"E9059": {
+"descricao": "Plataforma autoelevatória de 12 x 24 m montada na obra com capacidade de 150 t",
+"transporte": "E9018",
+"fu": 6.31
+},
+"E9784": {
+"descricao": "Plataforma autopropelida com alcance de 12 m com capacidade de 700 kg - 24 kW",
+"transporte": "E9666",
+"fu": 0.33
+},
+"E9037": {
+"descricao": "Plataforma de inspeção sob pontes montada em caminhão com capacidade de 500 kg e alcance de 15 m - 236 kW",
+"transporte": "E9037",
+"fu": 1
+},
+"E9058": {
+"descricao": "Plataforma flutuante de 12 x 24 x 1,8 m com capacidade de 150 t",
+"transporte": "E9009",
+"fu": 1
+},
+"E9612": {
+"descricao": "Plataforma flutuante montada na obra de 12 x 24 x 1,8 m com capacidade de 150 t",
+"transporte": "E9018",
+"fu": 6.31
+},
+"E9783": {
+"descricao": "Plataforma pantográfica montada em caminhão com capacidade de carga de 600 kg - 120 kW",
+"transporte": "E9783",
+"fu": 1
+},
+"E9202": {
+"descricao": "Plataforma pantográfica montada em caminhão com capacidade de carga de 600 kg - 120 kW com periculosidade",
+"transporte": "E9202",
+"fu": 1
+},
+"E9507": {
+"descricao": "Plotadora de recorte com computador e programa computacional",
+"transporte": null,
+"fu": null
+},
+"E9620": {
+"descricao": "Pontão flutuante de 15 x 30 x 1,8 m com capacidade de 500 t",
+"transporte": "E9606",
+"fu": 1
+},
+"E9525": {
+"descricao": "Ponte rolante com capacidade de 15 t e vão de até 15 m - 20 kW",
+"transporte": "E9665",
+"fu": 2.58
+},
+"E9070": {
+"descricao": "Ponte rolante com capacidade de 5 t e vão de até 15 m - 10 kW",
+"transporte": "E9665",
+"fu": 2.58
+},
+"E9718": {
+"descricao": "Pórtico duplo de descarga e posicionamento de dormente - 89 kW .",
+"transporte": "E9718",
+"fu": 1
+},
+"E9179": {
+"descricao": "Pórtico metálico com talha e pinça para seleção de dormentes com capacidade de 1 t - 1,10 kW",
+"transporte": "E9666",
+"fu": 1.76
+},
+"E9022": {
+"descricao": "Pórtico metálico rolante com capacidade de 25 t - 30 kW",
+"transporte": "E9666",
+"fu": 1.76
+},
+"E9144": {
+"descricao": "Pórtico metálico rolante com talha com capacidade de 5 t – 5,60 kW",
+"transporte": "E9666",
+"fu": 1.76
+},
+"E9177": {
+"descricao": "Pórtico metálico rolante com talha com capacidade de 5 t e pinça mecânica dupla para elevação de até 4 dormentes - 5,60 kW",
+"transporte": "E9666",
+"fu": 1.76
+},
+"E9727": {
+"descricao": "Posicionadora de trilhos - 7,40 kW",
+"transporte": "E9687",
+"fu": 0.83
+},
+"E9505": {
+"descricao": "Prensa dobradeira capacidade 320 t - comprimento até 3.100 mm - 30 kW",
+"transporte": "E9665",
+"fu": 0.85
+},
+"E9766": {
+"descricao": "Prensa hidráulica para fabricação de blocos pré-moldados - 20 kW",
+"transporte": "E9665",
+"fu": 0.85
+},
+"E9141": {
+"descricao": "Rebarbador hidráulico com bomba manual com capacidade de força de 9.000 kgf",
+"transporte": null,
+"fu": null
+},
+"E9253": {
+"descricao": "Rebordeadeira diâmetro máximo 3,00 m - 4,85 kW",
+"transporte": "E9687",
+"fu": 0.53
+},
+"E9020": {
+"descricao": "Recicladora a frio - 455 kW",
+"transporte": "E9666",
+"fu": 0.93
+},
+"E9586": {
+"descricao": "Régua vibratória dupla com 4 m - 4,10 kW",
+"transporte": null,
+"fu": null
+},
+"E9712": {
+"descricao": "Reguladora e distribuidora de lastro - 300 kW",
+"transporte": "E9712",
+"fu": 1
+},
+"E9101": {
+"descricao": "Removedora de faixas de sinalização viária - 9,69 kW",
+"transporte": null,
+"fu": null
+},
+"E9265": {
+"descricao": "Respirador de adução de ar tipo linha de ar comprimido para jateamento",
+"transporte": null,
+"fu": null
+},
+"E9264": {
+"descricao": "Respirador purificador de ar motorizado",
+"transporte": null,
+"fu": null
+},
+"E9526": {
+"descricao": "Retroescavadeira de pneus - capacidade da caçamba da pá- carregadeira de 0,76 m³ e da retroescavadeira de 0,29 m³ - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9771": {
+"descricao": "Retroescavadeira de pneus com caçamba de escavação trapezoidal ou triangular com seção de corte de 0,10 a 0,15 m² - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9772": {
+"descricao": "Retroescavadeira de pneus com caçamba de escavação trapezoidal ou triangular com seção de corte de 0,15 a 0,20 m² - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9773": {
+"descricao": "Retroescavadeira de pneus com caçamba de escavação trapezoidal ou triangular com seção de corte de 0,20 a 0,30 m² - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9774": {
+"descricao": "Retroescavadeira de pneus com caçamba de escavação trapezoidal ou triangular com seção de corte de 0,30 a 0,50 m² - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9770": {
+"descricao": "Retroescavadeira de pneus com caçamba de escavação trapezoidal ou triangular com seção de corte inferior a 0,10 m² - 58 kW",
+"transporte": "E9666",
+"fu": 0.75
+},
+"E9793": {
+"descricao": "Robot para concreto projetado com capacidade de 30 m³/h - 70 kW - com compressor diesel",
+"transporte": "E9666",
+"fu": 0.51
+},
+"E9089": {
+"descricao": "Roçadeira costal - 1,40 kW",
+"transporte": null,
+"fu": null
+},
+"E9762": {
+"descricao": "Rolo compactador de pneus autopropelido de 27 t - 85 kW",
+"transporte": "E9665",
+"fu": 0.69
+},
+"E9682": {
+"descricao": "Rolo compactador liso tandem vibratório autopropelido de 1,6 t - 18 kW",
+"transporte": "E9665",
+"fu": 0.11
+},
+"E9681": {
+"descricao": "Rolo compactador liso tandem vibratório autopropelido de 10,4 t - 82 kW",
+"transporte": "E9665",
+"fu": 0.58
+},
+"E9530": {
+"descricao": "Rolo compactador liso vibratório autopropelido por pneus de 11 t - 97 kW",
+"transporte": "E9665",
+"fu": 0.68
+},
+"E9685": {
+"descricao": "Rolo compactador pé de carneiro vibratório autopropelido por pneus de 11,6 t - 82 kW",
+"transporte": "E9665",
+"fu": 0.7
+},
+"E9748": {
+"descricao": "Rosqueadeira para rosca cônica - 0,75 kW",
+"transporte": null,
+"fu": null
+},
+"E9116": {
+"descricao": "Semáforo móvel com 3 lentes e bateria - D = 200 mm",
+"transporte": null,
+"fu": null
+},
+"E9535": {
+"descricao": "Serra circular com bancada - D = 30 cm - 4 kW",
+"transporte": null,
+"fu": null
+},
+"E9252": {
+"descricao": "Serra de esquadria com braço telescópico - D = 250 mm (10\") - 1,80 kW",
+"transporte": null,
+"fu": null
+},
+"E9040": {
+"descricao": "Serra mármore - 1,45 kW",
+"transporte": null,
+"fu": null
+},
+"E9587": {
+"descricao": "Serra para corte de concreto - 4 kW",
+"transporte": null,
+"fu": null
+},
+"E9591": {
+"descricao": "Serra para corte de concreto e asfalto - 10 kW",
+"transporte": null,
+"fu": null
+},
+"E9112": {
+"descricao": "Sinalizador direcional móvel com sistema fotovoltaico de energia e montado em chassi sobre pneus",
+"transporte": "E9508",
+"fu": 0.33
+},
+"E9248": {
+"descricao": "Sistema de ar comprimido para mergulho até 30 m com pressão de trabalho de 1,4 MPa - 7,46 kW",
+"transporte": null,
+"fu": null
+},
+"E9249": {
+"descricao": "Sistema de ar comprimido para mergulho até 50 m com pressão de trabalho de 1,7 MPa - 16,18 kW",
+"transporte": null,
+"fu": null
+},
+"E9176": {
+"descricao": "Sistema de desprotensão com capacidade de 150 t - 3,72 kW",
+"transporte": null,
+"fu": null
+},
+"E9247": {
+"descricao": "Sistema de Sino aberto (sinete) para mergulho até 50 m - 33,50 kW",
+"transporte": "E9687",
+"fu": 0.51
+},
+"E9710": {
+"descricao": "Socadora automática de linha - 253 kW",
+"transporte": "E9710",
+"fu": 1
+},
+"E9108": {
+"descricao": "Soldadora de trilho por caldeamento na via - 400 kW",
+"transporte": "E9108",
+"fu": 1
+},
+"E9156": {
+"descricao": "Soprador de ar costal - 2,6 kW",
+"transporte": null,
+"fu": null
+},
+"E9062": {
+"descricao": "Soprador de ar quente manual - 1,60 kW",
+"transporte": null,
+"fu": null
+},
+"E9719": {
+"descricao": "Talha manual com capacidade de 3 t",
+"transporte": null,
+"fu": null
+},
+"E9074": {
+"descricao": "Tanque de estocagem de asfalto com agitadores de 60.000 l",
+"transporte": "E9100",
+"fu": 0.33
+},
+"E9558": {
+"descricao": "Tanque de estocagem de asfalto com capacidade de 30.000 l",
+"transporte": "E9018",
+"fu": 0.67
+},
+"E9728": {
+"descricao": "Tirefonadora/parafusadora portátil - 3,10 kW",
+"transporte": null,
+"fu": null
+},
+"E9075": {
+"descricao": "Trado cavadeira de 12\"",
+"transporte": null,
+"fu": null
+},
+"E9071": {
+"descricao": "Transportador manual carrinho de mão com capacidade de 80 l",
+"transporte": null,
+"fu": null
+},
+"E9008": {
+"descricao": "Transportador manual de tubos de concreto com capacidade de 1 t",
+"transporte": null,
+"fu": null
+},
+"E9064": {
+"descricao": "Transportador manual gerica com capacidade de 180 l",
+"transporte": null,
+"fu": null
+},
+"E9577": {
+"descricao": "Trator agrícola sobre pneus - 77 kW",
+"transporte": "E9665",
+"fu": 0.56
+},
+"E9742": {
+"descricao": "Trator agrícola sobre pneus com roçadeira articulada e capacidade de 1,12 m - 77 kW",
+"transporte": "E9665",
+"fu": 0.7
+},
+"E9745": {
+"descricao": "Trator agrícola sobre pneus com roçadeira de arraste e capacidade de 1,50 m - 77 kW",
+"transporte": "E9665",
+"fu": 0.55
+},
+"E9540": {
+"descricao": "Trator sobre esteiras com lâmina - 127 kW",
+"transporte": "E9665",
+"fu": 0.94
+},
+"E9541": {
+"descricao": "Trator sobre esteiras com lâmina - 259 kW",
+"transporte": "E9018",
+"fu": 0.73
+},
+"E9042": {
+"descricao": "Trator sobre esteiras com lâmina - 97 kW",
+"transporte": "E9665",
+"fu": 0.88
+},
+"E9565": {
+"descricao": "Trator sobre esteiras com lâmina e escarificador - 259 kW",
+"transporte": "E9018",
+"fu": 0.73
+},
+"E9078": {
+"descricao": "Treliça lançadeira com capacidade de carga de 100 a 120 t e vão máximo de 45 m - 110 kW",
+"transporte": "E9666",
+"fu": 7.74
+},
+"E9263": {
+"descricao": "Tripé com guincho para espaço confinado",
+"transporte": null,
+"fu": null
+},
+"E9699": {
+"descricao": "Trituradora de galhos e troncos rebocável com capacidade de até 350 mm de diâmetro com guincho - 96,94 kW",
+"transporte": "E9508",
+"fu": 0.59
+},
+"E9689": {
+"descricao": "Usina de asfalto a quente gravimétrica com capacidade de 100/140 t/h - 260 kW",
+"transporte": "E9018",
+"fu": 1.47
+},
+"E9617": {
+"descricao": "Usina misturadora de pré-misturado a frio com capacidade de 60 t/h - 23,50 kW",
+"transporte": "E9665",
+"fu": 0.53
+},
+"E9615": {
+"descricao": "Usina misturadora de solos com capacidade de 300 t/h - 44 kW",
+"transporte": "E9018",
+"fu": 1.44
+},
+"E9016": {
+"descricao": "Usina misturadora móvel de reciclagem a frio com sistema de espuma de asfalto - 129,40 kW",
+"transporte": "E9100",
+"fu": 0.56
+},
+"E9670": {
+"descricao": "Usina móvel de lama asfáltica ou microrrevestimento com cavalo mecânico com capacidade de 12 m³ - 95,6 kW/276 kW",
+"transporte": "E9670",
+"fu": 1
+},
+"E9161": {
+"descricao": "Vagão fechado com porta para carga e descarga de paletes FLD com capacidade de 64 t - bitola métrica",
+"transporte": "E9157",
+"fu": 0.08
+},
+"E9162": {
+"descricao": "Vagão fechado com porta para carga e descarga de paletes FLT com capacidade de 99 t - bitola larga",
+"transporte": "E9158",
+"fu": 0.1
+},
+"E9083": {
+"descricao": "Vagão fechado FLT com capacidade de 99 t",
+"transporte": "E9158",
+"fu": 0.1
+},
+"E9085": {
+"descricao": "Vagão gôndola GDE com capacidade de 93,5 t / 29 m³",
+"transporte": "E9157",
+"fu": 0.07
+},
+"E9163": {
+"descricao": "Vagão hopper aberto com descarga automática HNE com capacidade de 45 m³ - bitola métrica",
+"transporte": "E9157",
+"fu": 0.1
+},
+"E9164": {
+"descricao": "Vagão hopper aberto com descarga automática HNT com capacidade de 63 m³ - bitola larga",
+"transporte": "E9158",
+"fu": 0.08
+},
+"E9159": {
+"descricao": "Vagão plataforma PNE com capacidade de 82 t - bitola métrica",
+"transporte": "E9157",
+"fu": 0.08
+},
+"E9160": {
+"descricao": "Vagão plataforma PNT com capacidade de 98 t - bitola larga",
+"transporte": "E9158",
+"fu": 0.1
+},
+"E9084": {
+"descricao": "Vagão tanque convencional TCT com capacidade de 97 t e 103.000 l",
+"transporte": "E9158",
+"fu": 0.1
+},
+"E9183": {
+"descricao": "Vagonete para transporte de até 16 dormentes",
+"transporte": "E9157",
+"fu": 0.01
+},
+"E9544": {
+"descricao": "Vassoura mecânica rebocável com largura de 2,44 m",
+"transporte": "E9665",
+"fu": 0.67
+},
+"E9067": {
+"descricao": "Veículo ferroviário para capina química com capacidade de 12.000 l - 115 kW",
+"transporte": "E9067",
+"fu": 1
+},
+"E9512": {
+"descricao": "Veículo leve - 53 kW",
+"transporte": "E9512",
+"fu": 1
+},
+"E9093": {
+"descricao": "Veículo leve - 53 kW (sem motorista)",
+"transporte": "E9093",
+"fu": 1
+},
+"E9128": {
+"descricao": "Veículo leve picape compacta 4 x 2 com cabine dupla com capacidade de 0,65 t - 72 kW",
+"transporte": "E9128",
+"fu": 1
+},
+"E9129": {
+"descricao": "Veículo leve picape compacta 4 x 2 com cabine dupla com capacidade de 0,65 t - 72 kW (sem motorista)",
+"transporte": "E9129",
+"fu": 1
+},
+"E9684": {
+"descricao": "Veículo leve picape média 4 x 4 com cabine dupla com capacidade de 1,10 t - 152,25 kW",
+"transporte": "E9684",
+"fu": 1
+},
+"E9130": {
+"descricao": "Veículo leve picape média 4 x 4 com cabine dupla com capacidade de 1,10 t - 152,25 kW (sem motorista)",
+"transporte": "E9130",
+"fu": 1
+},
+"E9125": {
+"descricao": "Veículo tipo van furgão com capacidade de 1,38 t - 100 kW",
+"transporte": "E9125",
+"fu": 1
+},
+"E9131": {
+"descricao": "Veículo tipo van furgão com capacidade de 1,38 t - 100 kW (sem motorista)",
+"transporte": "E9131",
+"fu": 1
+},
+"E9501": {
+"descricao": "Ventilador axial para ventilação forçada com velocidade de saída de 32,8 m/s - D = 1.000 mm - 30 kW",
+"transporte": "E9687",
+"fu": 0.11
+},
+"E9510": {
+"descricao": "Ventilador centrífugo baixa pressão com capacidade de 58 m³/min - 3,68 kW",
+"transporte": null,
+"fu": null
+},
+"E9259": {
+"descricao": "Ventilador centrífugo média pressão com capacidade de 38 m³/min - 2,21 kW",
+"transporte": null,
+"fu": null
+},
+"E9069": {
+"descricao": "Vibrador de imersão para concreto - 4,10 kW",
+"transporte": null,
+"fu": null
+},
+"E9545": {
+"descricao": "Vibroacabadora de asfalto sobre esteiras - 97 kW",
+"transporte": "E9665",
+"fu": 0.77
+},
+"E9758": {
+"descricao": "Vibroacabadora de asfalto sobre pneus - 97 kW",
+"transporte": "E9665",
+"fu": 0.77
+},
+"E9588": {
+"descricao": "Vibroacabadora de concreto sobre esteiras com fôrmas deslizantes - 205 kW",
+"transporte": "E9666",
+"fu": 0.65
+}
+}
+}

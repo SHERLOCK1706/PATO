@@ -1130,7 +1130,10 @@ $("#btnSalvarVmd").onclick = async () => {
 $("#btnImpVmd").onclick = async () => {
   const a = await escolherArquivo(".xlsx,.xls,.csv,.txt,.geojson,.json"); if (!a) return;
   const fd = new FormData(); fd.append("arquivo", a);
-  try { const r = await api(`${base_}${E.pid}/croqui/vmd`, { method: "POST", body: fd }); toast(`${r.casados} segmentos com VMD (de ${r.lidos} registros lidos)`); carregarTransp(); } catch (e) { erro(e); }
+  try { const r = await api(`${base_}${E.pid}/croqui/vmd`, { method: "POST", body: fd });
+    $("#resTransp").innerHTML = `<p class="ok-msg">VMD importado: ${r.segmentos} segmentos (${r.casados} subtrechos de ${r.lidos} registros do arquivo).</p>` +
+      (r.lacunas.length ? `<p class="tag aviso">Sem VMD no arquivo: ${r.lacunas.map(l => `km ${nf(l.km_ini, 3)} a ${nf(l.km_fim, 3)}`).join(" · ")} — o FIT usa o segmento vizinho; confira ou digite o VMD.</p>` : "");
+    carregarTransp(); } catch (e) { erro(e); }
 };
 
 // ---- DMT e FIT

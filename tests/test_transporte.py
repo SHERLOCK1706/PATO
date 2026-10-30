@@ -110,3 +110,35 @@ def test_fit_volume05_pare_siga_e_velocidade_urbana():
     # acima de 100 km de DMT pavimentada não há FIT
     longe = dict(CROQUI_PATO, ocorrencias=[dict(nome="Pedreira", tipo="pedreira", km=142.5, acesso_p=120)])
     assert tp.Croqui(longe, 85, 212.5).rota("Pedreira", "Pista")["fit"] == 1.0
+
+
+def test_importar_vmd_modelagem_dnit_formato_2025(tmp_path):
+    """Planilha VMDa2025_SNV202401A: subtrechos (km_i_estim/km_f_estim), VMDa por sentido, pista DUP, aba de metadados."""
+    import openpyxl
+    wb = openpyxl.Workbook()
+    meta = wb.active
+    meta.title = "Metadados"
+    meta.append(["Nome do Campo", "Descrição"])
+    for c in ("vl_codigo", "vl_km_inic", "VMDa_C", "VMDa_D"):
+        meta.append([c, "campo"])
+    ws = wb.create_sheet("VMDa2025_SNV202401A")
+    cab = ["ID", "vl_br", "sg_uf", "vl_codigo", "vl_km_inic", "vl_km_fina", "km_i_estim", "km_f_estim", "ds_superfi", "versao_snv",
+           "VMDa_C", "VMDa_D"]
+    ws.append(cab)
+    for lin in (["1", "158", "MT", "158BMT0182", 85, 138, 85, 138, "PAV", "202401A", 1308, 1174],
+                ["2", "158", "MT", "158BMT0184", 138, 143, 138, 143, "PAV", "202401A", 1308, 1174],
+                ["3", "158", "MT", "158BMT0195", 169.4, 189, 173.3, 189, "DUP", "202401A", 3380, 3200],
+                ["4", "158", "MT", "158BMT0205", 201.2, 270, 201.2, 213.4, "N_PAV", "202401A", None, None],
+                ["5", "070", "MT", "070BMT0010", 85, 100, 85, 100, "PAV", "202401A", 9999, 9999]):
+        ws.append(lin)
+    arq = tmp_path / "VMDa_2025.xlsx"
+    wb.save(arq)
+    sv = Servico(pasta=tmp_path)
+    pid = sv.criar_projeto(dict(nome="t", rodovia="BR-158/MT", km_ini=85, km_fim=212.5))["id"]
+    r = sv.transporte.importar_vmd(pid, str(arq))
+    segs = r["dados"]["vmd"]
+    assert [(s["km_ini"], s["km_fim"]) for s in segs] == [(85, 143), (173.3, 189)]  # 0182+0184 juntos; BR-070 fora
+    assert segs[1]["faixas_sentido"] == 2 and segs[0]["ano"] == "2025"
+    assert r["lacunas"] == [dict(km_ini=143, km_fim=173.3), dict(km_ini=189, km_fim=212.5)]
+    c = sv.transporte.croqui_obj(pid)
+    assert c.vmdf(100, 120) == 1308 and c.vmdf(180, 185) == 1690  # pista dupla: 3380 / 2 faixas

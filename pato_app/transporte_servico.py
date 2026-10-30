@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import re
 import io
 import json
 from pathlib import Path
@@ -23,8 +24,11 @@ def _num(v):
 # ---------------------------------------------------------------- VMD (arquivo DNIT)
 _COLS_VMD = {
     "snv": ("vl_codigo", "codigo_snv", "cod_snv", "snv", "codigo", "código", "cd_snv", "trecho_snv"),
-    "km_ini": ("vl_km_inic", "km_inicial", "km_ini", "km inicial", "km_inic", "kminicial"),
-    "km_fim": ("vl_km_fina", "km_final", "km_fim", "km final", "km_fina", "kmfinal"),
+    # subtrechos da base georreferenciada (quebras no SNV) têm prioridade sobre o km do segmento SNV inteiro
+    "km_ini": ("km_i_estim", "vl_km_i_estim", "vl_km_inic", "km_inicial", "km_ini", "km inicial", "km_inic", "kminicial"),
+    "km_fim": ("km_f_estim", "vl_km_f_estim", "vl_km_fina", "km_final", "km_fim", "km final", "km_fina", "kmfinal"),
+    "superficie": ("ds_superfi", "sg_legenda", "superficie", "tipo_pista"),
+    "versao": ("versao_snv",),
     "vmda": ("vmda", "vmd", "vmda_total", "vl_vmda", "vmda total", "vmdat", "volume"),
     "vmda_c": ("vmda_c", "vmda_cres", "vmda_crescente", "crescente", "vmd_c", "vmda_sentido_crescente", "sentido c"),
     "vmda_d": ("vmda_d", "vmda_decr", "vmda_decrescente", "decrescente", "vmd_d", "vmda_sentido_decrescente", "sentido d"),
@@ -48,8 +52,10 @@ def _mapear(cab: list) -> dict[str, int]:
 def ler_vmd_dnit(caminho: str) -> list[dict]:
     """Planilha/CSV da modelagem do VMDa (DNIT/PNCT) ou tabela própria: código SNV, km inicial/final, VMDa
     (total e/ou por sentido)."""
+    import re as _re
     ext = Path(caminho).suffix.lower()
     linhas: list[list] = []
+    ano_arq = None
     if ext in (".csv", ".txt"):
         bruto = Path(caminho).read_bytes()
         txt = next((bruto.decode(enc) for enc in ("utf-8-sig", "latin-1") if _decodifica(bruto, enc)), "")
@@ -66,9 +72,11 @@ def ler_vmd_dnit(caminho: str) -> list[dict]:
         try:
             for ws in wb.worksheets:
                 rows = [list(r) for r in ws.iter_rows(values_only=True)]
+                ma = _re.search(r"VMDa\s*_?(\d{4})", ws.title, _re.I)
+                ano_arq = ma.group(1) if ma else ano_arq
                 for i, r in enumerate(rows[:30]):
                     m = _mapear(r)
-                    if "vmda" in m or "vmda_c" in m:
+                    if ("vmda" in m or "vmda_c" in m) and ("snv" in m or "km_ini" in m):
                         linhas = rows[i:]
                         break
                 if linhas:
@@ -84,10 +92,13 @@ def ler_vmd_dnit(caminho: str) -> list[dict]:
     for r in linhas[1:]:
         g = lambda k: r[m[k]] if k in m and m[k] < len(r) else None  # noqa: E731
         reg = dict(snv=nz.texto(g("snv")), km_ini=_num(g("km_ini")), km_fim=_num(g("km_fim")), vmda=_num(g("vmda")),
-                   vmda_c=_num(g("vmda_c")), vmda_d=_num(g("vmda_d")), ano=nz.texto(g("ano")), br=nz.texto(g("br")),
-                   uf=nz.texto(g("uf")))
+                   vmda_c=_num(g("vmda_c")), vmda_d=_num(g("vmda_d")), ano=nz.texto(g("ano")) or ano_arq,
+                   br=nz.texto(g("br")), uf=nz.texto(g("uf")), superficie=nz.texto(g("superficie")),
+                   versao=nz.texto(g("versao")))
         if reg["vmda"] is None and reg["vmda_c"] is None:
             continue
+        if reg["vmda"] is None and reg["vmda_c"] is not None and reg["vmda_d"] is not None:
+            reg["vmda"] = reg["vmda_c"] + reg["vmda_d"]
         out.append(reg)
     return out
 
@@ -175,44 +186,67 @@ class Transportes:
         return self.croqui(pid)
 
     def importar_vmd(self, pid: int, caminho: str) -> dict:
+        """Modelagem do VMDa do DNIT (PNCT): usa os subtrechos da mesma BR/UF que cruzam o segmento do projeto
+        (o SNV da modelagem pode ser de outra versão); sem BR no projeto, casa pelo código SNV dos segmentos."""
         regs = ler_vmd_dnit(caminho)
         d = self.dados_croqui(pid)
         p = self.sv.projeto(pid)
-        segs = d.get("vmd") or []
-        snvs = {tp._chave(s.get("snv")).replace(" ", ""): s for s in segs if s.get("snv")}
-        casados = 0
-        br = "".join(ch for ch in (p.get("rodovia") or "") if ch.isdigit())[:3]
+        a, b = p.get("km_ini"), p.get("km_fim")
+        br = "".join(ch for ch in (p.get("rodovia") or "") if ch.isdigit())[:3].lstrip("0")
+        uf = (p.get("uf") or "").upper() or next((t for t in re.findall(r"[A-Z]{2}", (p.get("rodovia") or "").upper())
+                                                  if t not in ("BR",)), "")
+        snvs = {tp._chave(s.get("snv")).replace(" ", "") for s in (d.get("vmd") or []) if s.get("snv")}
+        snvs |= {tp._chave(s.get("snv")).replace(" ", "") for s in self._segmentos_snv(pid) if s.get("snv")}
+        cand = []
         for r in regs:
-            k = tp._chave(r["snv"]).replace(" ", "") if r.get("snv") else None
-            alvo = snvs.get(k) if k else None
-            if alvo is None and not snvs and r.get("km_ini") is not None and r.get("km_fim") is not None:
-                # sem cadastro de segmentos: usa os registros da mesma BR que cruzam o segmento do projeto
-                if br and r.get("br") and "".join(ch for ch in r["br"] if ch.isdigit()).lstrip("0") != br.lstrip("0"):
-                    continue
-                if r.get("uf") and p.get("uf") and r["uf"].upper() != str(p["uf"]).upper():
-                    continue
-                if r["km_fim"] <= (p.get("km_ini") or 0) or r["km_ini"] >= (p.get("km_fim") or 0):
-                    continue
-                alvo = dict(snv=r.get("snv"), km_ini=max(r["km_ini"], p["km_ini"]), km_fim=min(r["km_fim"], p["km_fim"]),
-                            faixas_sentido=1)
-                segs.append(alvo)
-            if alvo is None:
+            if r.get("km_ini") is None or r.get("km_fim") is None:
                 continue
-            for c in ("vmda", "vmda_c", "vmda_d", "ano"):
-                if r.get(c) is not None:
-                    alvo[c] = r[c]
-            alvo.pop("vmdf_c", None)
-            alvo.pop("vmdf_d", None)
-            alvo["fonte"] = f"Modelagem DNIT ({Path(caminho).name})"
-            casados += 1
-        if not casados:
-            raise ValueError("Nenhum registro do arquivo corresponde aos segmentos SNV do projeto (código SNV ou BR/km).")
-        segs.sort(key=lambda s: _num(s.get("km_ini")) or 0)
-        for i, s in enumerate(segs):
-            s.setdefault("segmento", f"{i + 1:02d}")
+            k0, k1 = sorted((r["km_ini"], r["km_fim"]))
+            if br and a is not None and b is not None:
+                if "".join(ch for ch in (r.get("br") or "") if ch.isdigit()).lstrip("0") != br:
+                    continue
+                if uf and r.get("uf") and r["uf"].upper() != uf:
+                    continue
+                if k1 <= a or k0 >= b:
+                    continue
+                k0, k1 = max(k0, a), min(k1, b)
+            elif not (r.get("snv") and tp._chave(r["snv"]).replace(" ", "") in snvs):
+                continue
+            if k1 - k0 <= 1e-9:
+                continue
+            dup = "DUP" in (r.get("superficie") or "").upper()
+            cand.append(dict(snv=r.get("snv"), km_ini=round(k0, 3), km_fim=round(k1, 3), vmda=r.get("vmda"),
+                             vmda_c=r.get("vmda_c"), vmda_d=r.get("vmda_d"), faixas_sentido=2 if dup else 1,
+                             ano=r.get("ano"), superficie=r.get("superficie"),
+                             fonte=f"Modelagem VMDa DNIT/PNCT ({Path(caminho).name}{', SNV ' + r['versao'] if r.get('versao') else ''})"))
+        if not cand:
+            raise ValueError("Nenhum registro do arquivo cruza o segmento do projeto (BR, UF e km) nem os códigos SNV cadastrados.")
+        cand.sort(key=lambda s: (s["km_ini"], s["km_fim"]))
+        segs: list[dict] = []
+        for s_ in cand:  # junta subtrechos vizinhos com o mesmo VMD
+            u = segs[-1] if segs else None
+            if u and abs(u["km_fim"] - s_["km_ini"]) < 1e-6 and (u["vmda_c"], u["vmda_d"], u["faixas_sentido"]) == \
+                    (s_["vmda_c"], s_["vmda_d"], s_["faixas_sentido"]):
+                u["km_fim"] = s_["km_fim"]
+                if s_.get("snv") and s_["snv"] not in (u.get("snv") or ""):
+                    u["snv"] = f"{u['snv']}; {s_['snv']}" if u.get("snv") else s_["snv"]
+            else:
+                segs.append(dict(s_))
+        lacunas = []
+        ini = a if a is not None else segs[0]["km_ini"]
+        for s_ in segs:
+            if s_["km_ini"] - ini > 0.05:
+                lacunas.append((round(ini, 3), s_["km_ini"]))
+            ini = max(ini, s_["km_fim"])
+        if b is not None and b - ini > 0.05:
+            lacunas.append((round(ini, 3), b))
+        for i, s_ in enumerate(segs):
+            s_["segmento"] = f"{i + 1:02d}"
         d["vmd"] = segs
         self.db.gravar_dados_projeto(pid, "croqui", d)
-        return dict(casados=casados, lidos=len(regs), **self.croqui(pid))
+        self.db.registrar(pid, "transporte: VMD importado", f"{Path(caminho).name}: {len(segs)} segmentos")
+        return dict(casados=len(cand), lidos=len(regs), segmentos=len(segs),
+                    lacunas=[dict(km_ini=x, km_fim=y) for x, y in lacunas], **self.croqui(pid))
 
     # ------------------------------------------------------------- quadro
     def _motor(self, pid: int) -> cp.Motor:

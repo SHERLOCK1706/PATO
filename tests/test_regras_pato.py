@@ -17,7 +17,8 @@ def test_reconhece_regras_e_mantem_o_total(proj):
     sv, pid, imp = proj
     assert imp["regras"] == 38
     c = sv.orcamento.calcular(pid)
-    assert c["totais"] == pytest.approx(dict(SD=26682348.76, CD=27994808.64), abs=0.005)
+    # CD: a planilha soma a instalação da usina sem desoneração (USINA!H38); corrigido: 0,5 × (503.838,39 − 498.500,50)
+    assert c["totais"] == pytest.approx(dict(SD=26682348.76, CD=27994808.64 - 2668.94), abs=0.005)
     q = {x["item"]: x for x in c["itens"] if x["tipo"] == "servico"}
     assert q["01.02.05.01"]["base"]["tipo"] == "producao" and q["01.02.05.01"]["quantidade"] == 337.5  # 2,8125 × 8 × 15
     assert q["01.02.05.06"]["base"]["tipo"] == "extensao" and q["01.02.05.06"]["quantidade"] == 159375

@@ -40,7 +40,8 @@ def test_importa_e_reproduz_planilha(proj):
         if x["codigo"] not in ("5915321", "5914464"):
             assert x["quantidade"] == pytest.approx(x["quantidade_ref"], abs=0.0005), x["item"]
         assert x["parcial_SD"] == pytest.approx(_parcial_ref(x, "SD"), abs=0.005) or x["codigo"] in ("5915321", "5914464"), x["item"]
-        if not x["codigo"].startswith(("AM", "TM")) and x["codigo"] not in ("5915321", "5914464"):
+        # INSIND com desoneração: a planilha soma a instalação 903810 sem desoneração (USINA!H38) — corrigido no sistema
+        if not x["codigo"].startswith(("AM", "TM")) and x["codigo"] not in ("5915321", "5914464", "INSIND"):
             assert x["parcial_CD"] == pytest.approx(_parcial_ref(x, "CD"), abs=0.005), x["item"]
 
 

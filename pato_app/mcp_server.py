@@ -544,6 +544,22 @@ def pato_exportar(projeto_id: int) -> dict:
     return sv().orcamento.exportar(projeto_id)
 
 
+@mcp.tool()
+def pato_adm_mobilizacao(projeto_id: int) -> dict:
+    """Administração local, canteiro, instalação industrial (usina) e mobilização/desmobilização: parâmetros e preços
+    calculados com a base SICRO do projeto (SICRO Vol. 07 a 09), ao lado dos preços da planilha de origem."""
+    r = sv().orcamento.diversos(projeto_id)
+    return dict(precos=(r["resultado"] or {}).get("precos"), referencia=r["referencia"], fixos=r["fixos"], dados=r["dados"])
+
+
+@mcp.tool()
+def pato_salvar_adm_mobilizacao(projeto_id: int, dados: dict | None = None, fixos: list[str] | None = None) -> dict:
+    """Grava parâmetros (chaves adm, canteiro, usina, mob — mesmo formato de pato_adm_mobilizacao) e/ou a lista de códigos
+    (ADM, CAN, INSIND, MOB, DESMOB) que devem manter o preço da planilha de origem."""
+    r = sv().orcamento.salvar_diversos(projeto_id, dados, fixos)
+    return dict(precos=(r["resultado"] or {}).get("precos"), fixos=r["fixos"])
+
+
 # ------------------------------------------------------------------ levantamento IP (condição do pavimento)
 @mcp.tool()
 def ip_levantamento(projeto_id: int, com_linhas: bool = False) -> dict:

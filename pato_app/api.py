@@ -479,6 +479,18 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def ner_salvar(pid: int, dados: dict = Body(...)):
         return orc.salvar_ne_rocada(pid, dados)
 
+    @app.get("/api/projetos/{pid}/diversos")
+    def div_ler(pid: int):
+        return orc.diversos(pid)
+
+    @app.put("/api/projetos/{pid}/diversos")
+    def div_salvar(pid: int, dados: dict = Body(...)):
+        return orc.salvar_diversos(pid, dados.get("dados"), dados.get("fixos"))
+
+    @app.get("/api/projetos/{pid}/diversos/sugerir-mob")
+    def div_sug_mob(pid: int):
+        return orc.sugerir_mob(pid)
+
     @app.get("/api/projetos/{pid}/sinalizacao")
     def sz_ler(pid: int):
         return orc.sinalizacao(pid)

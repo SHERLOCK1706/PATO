@@ -139,6 +139,13 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   Alimenta os itens 01.06 e as linhas de sinalização do grupo por desempenho.
 - **NE da roçada (DNIT 182/2018)** — na sub-aba Desempenho: NERp = Σ(NERe/d)/Σ(1/d) das estações pluviométricas, NE adotado
   (ou informado pela observação de campo) como frequência anual da capina e das roçadas do GD.
+- **ADM local e mobilização** (sub-aba própria, itens 01.07 — SICRO Vol. 07, 08 e 09): administração local (parcelas fixa,
+  vinculada e variável com MO mensalista e veículos da base, equipes de laboratório ELA = Σ quantidade no contrato ÷ QE,
+  manutenção do canteiro, despesas diversas), canteiro (áreas por NPF/NMAX/NMO, FEAC, k1·k2·k3, CMCC), instalação
+  industrial (laboratório + composição 903810) e mobilização/desmobilização (passagem reajustada pelo índice, tempo de
+  viagem e descanso, veículo transportador e FU da tabela IMOB). Recalcula com o prazo, o BDI e a base do projeto; a
+  opção "fixar" mantém o preço da planilha de origem. Na BR-158/MT reproduz ADM, CAN, MOB e DESMOB ao centavo; a usina
+  com desoneração é corrigida (a planilha somava a instalação sem desoneração em USINA!H38: R$ 503.838,39 → 498.500,50).
 - **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
   **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
 - **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.

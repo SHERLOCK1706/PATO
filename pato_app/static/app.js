@@ -1216,7 +1216,7 @@ const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumF
 async function carregarOrc() {
   if (!E.pid) return;
   const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
-    ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
+    ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
@@ -1229,7 +1229,7 @@ async function carregarOrc() {
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
       <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
-    await ({ planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 function renderOrcPlanilha() {
@@ -1426,6 +1426,86 @@ $("#btnSzSalvar").onclick = async () => {
   $$("[data-szop]").forEach(i => { d.tipos[i.dataset.szop].operadores = +i.value; });
   $$("[data-szd]").forEach(i => { d.dispositivos[+i.dataset.szd].qtd[i.dataset.t] = +i.value; });
   try { await jpost(`${base_}${E.pid}/sinalizacao`, d, "PUT"); toast("Sinalização salva — PATO recalculado"); carregarOrc(); } catch (e) { erro(e); }
+};
+
+// ---- ADM local, canteiro, usina e mobilização
+const DV_ = { r: null };
+const dvIn = (path, v, w = 80, dica = "") => `<input data-dv="${path}" type="number" step="any" value="${v ?? ""}" style="width:${w}px" ${dica ? `data-dica="${esc(dica)}"` : ""}>`;
+const dvTx = (path, v, w = 160) => `<input data-dvt="${path}" value="${esc(v ?? "")}" style="width:${w}px">`;
+async function renderDiv() {
+  const r = DV_.r = await api(`${base_}${E.pid}/diversos`), d = r.dados, res = r.resultado;
+  if (!res) { $("#divResumo").innerHTML = '<p class="tag aviso">Sem base SICRO no projeto: importe a base na aba Custos.</p>'; ["#divAdm", "#divCan", "#divUsi", "#divMob"].forEach(s => $(s).innerHTML = ""); return; }
+  const aviso = r.gravado ? "" : '<p class="tag aviso">Parâmetros do modelo BR-158/MT — ajuste e salve para este projeto.</p>';
+  $("#divResumo").innerHTML = aviso + `<table class="tab"><tr><th>Código</th><th>Item</th><th class=n>Calculado SD</th><th class=n>Calculado CD</th><th class=n>Planilha de origem SD</th><th class=n>Planilha de origem CD</th><th>Fixar</th></tr>` +
+    Object.entries(r.codigos).map(([c, nome]) => { const p = res.precos[c], f = r.referencia[c] || {};
+      const dif = reg => f[reg] != null && Math.abs(f[reg] - p[reg]) > 0.005 ? ' class="n sit-conferir"' : " class=n";
+      return `<tr><td>${c}</td><td>${esc(nome)}${c === "ADM" ? " (por mês)" : ""}</td><td class=n>${reais(p.SD)}</td><td class=n>${reais(p.CD)}</td>
+        <td${dif("SD")}>${f.SD == null ? "—" : reais(f.SD)}</td><td${dif("CD")}>${f.CD == null ? "—" : reais(f.CD)}</td>
+        <td><input type="checkbox" data-dvfix="${c}" ${r.fixos.includes(c) ? "checked" : ""} ${f.SD == null ? "disabled" : ""} data-dica="Usa o preço da planilha de origem em vez do calculado"></td></tr>`; }).join("") + "</table>";
+  // ADM
+  const a = res.adm, REGRA = { contrato: "meses do contrato", "contrato-1": "meses do contrato − 1", ela: "equipes de laboratório (ELA)" };
+  $("#divAdm").innerHTML = a.parcelas.map((p, i) => `<h5>${esc(p.titulo || p.chave)} — ${q3(p.meses)} meses <small>(${esc(REGRA[p.regra] || "informado")})</small></h5>
+    <table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th class=n>h prod/mês</th><th class=n>h improd/mês</th><th class=n>Unit. SD</th><th class=n>Total/mês SD</th><th class=n>Unit. CD</th><th class=n>Total/mês CD</th></tr>` +
+    p.mao_obra.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}</td><td class=n>${dvIn(`adm.parcelas.${i}.mao_obra.${j}.quant`, x.quant, 70)}</td><td></td><td></td>
+      <td class=n>${reais(x.preco_SD)}</td><td class=n>${reais(x.total_SD)}</td><td class=n>${reais(x.preco_CD)}</td><td class=n>${reais(x.total_CD)}</td></tr>`).join("") +
+    p.veiculos.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}</td><td class=n>${dvIn(`adm.parcelas.${i}.veiculos.${j}.quant`, x.quant, 70)}</td>
+      <td class=n>${dvIn(`adm.parcelas.${i}.veiculos.${j}.h_prod`, x.h_prod, 70)}</td><td class=n>${dvIn(`adm.parcelas.${i}.veiculos.${j}.h_improd`, x.h_improd, 84)}</td>
+      <td class=n>${nf(x.chp_SD, 4)} / ${nf(x.chi_SD, 4)}</td><td class=n>${reais(x.total_SD)}</td><td class=n>${nf(x.chp_CD, 4)} / ${nf(x.chi_CD, 4)}</td><td class=n>${reais(x.total_CD)}</td></tr>`).join("") +
+    `<tr class="tot"><td colspan=6>Total da parcela (× meses)</td><td class=n>${reais(p.total_SD)}</td><td></td><td class=n>${reais(p.total_CD)}</td></tr></table>`).join("") +
+    `<h5>Equipes de laboratório (parcela variável): ELA = Σ ARRED(quantidade no contrato ÷ QE; 5) = ${nf(a.ela, 5)}</h5>
+    <table class="tab"><tr><th>Código</th><th>Serviço</th><th class=n>Quantidade no contrato</th><th class=n>QE</th><th class=n>ELA</th></tr>` +
+    a.ela_linhas.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc((x.descricao || "").slice(0, 70))}</td><td class=n>${q3(x.quantidade)}</td>
+      <td class=n>${dvIn(`adm.ela.${j}.qe`, x.qe, 100)}</td><td class=n>${nf(x.ela, 5)}</td></tr>`).join("") + "</table>" +
+    `<p>Despesas diversas ${dvIn("adm.despesas_pct", a.despesas_pct, 60)} % · Custo SD R$ ${reais(a.SD.custo)} · CD R$ ${reais(a.CD.custo)} ·
+      Preço SD R$ ${reais(a.SD.preco)} (R$ ${reais(a.SD.mensal)}/mês) · CD R$ ${reais(a.CD.preco)} (R$ ${reais(a.CD.mensal)}/mês) · ${q3(a.meses)} meses</p>`;
+  // canteiro
+  const c = res.canteiro, dc = d.canteiro || {}, f = c.funcionarios;
+  $("#divCan").innerHTML = `<p>Funcionários: fixa ${q3(f.fixa)} · vinculada ${q3(f.vinculada)} · variável ${q3(f.variavel)} · mão de obra ordinária (NMO) ${dvIn("canteiro.nmo", dc.nmo, 70)} · NMAX ${q3(f.nmax)}</p>
+    <table class="tab"><tr><th>Área</th><th>Regra</th><th class=n>Área (m²)</th><th class=n>FEAC</th><th class=n>Equivalente</th></tr>` +
+    c.areas.map((x, i) => `<tr><td>${esc(x.nome)}</td><td><small>${esc(x.formula)}</small></td><td class=n>${i >= 4 ? dvIn(`canteiro.areas_fixas.${i - 4}.area`, x.area, 80) : nf(x.area, 4)}</td>
+      <td class=n>${dvIn(i >= 4 ? `canteiro.areas_fixas.${i - 4}.feac` : `canteiro.feac_${["escritorio", "refeitorio", "alojamento", "banheiros"][i]}`, x.feac, 55)}</td><td class=n>${nf(x.equivalente, 2)}</td></tr>`).join("") +
+    `<tr class="tot"><td colspan=4>AC (área coberta equivalente)</td><td class=n>${nf(c.ac, 2)}</td></tr></table>
+    <p>k1 ${dvIn("canteiro.k1", dc.k1, 60)} · k2 ${dvIn("canteiro.k2", dc.k2, 60)} · distância aos centros fornecedores ${dvIn("canteiro.distancia_km", dc.distancia_km, 60)} km (k3 = ${nf(c.k3, 4)}) · FEAD ${dvIn("canteiro.fead", dc.fead, 70)}</p>
+    <p>CMCC (custo médio da construção civil, R$/m²): SD ${dvIn("canteiro.cmcc.SD", (dc.cmcc || {}).SD, 90)} · CD ${dvIn("canteiro.cmcc.CD", (dc.cmcc || {}).CD, 90)}</p>
+    <p>CCO = (k1·k2·k3·AC + AD·FEAD)·CMCC → SD R$ ${reais(c.SD.custo)} · CD R$ ${reais(c.CD.custo)}<br><b>PCO SD R$ ${reais(c.SD.preco)} · CD R$ ${reais(c.CD.preco)}</b></p>`;
+  const u = res.usina;
+  $("#divUsi").innerHTML = `<table class="tab"><tr><th>Área coberta</th><th class=n>Área (m²)</th><th class=n>FEAC</th><th class=n>Equivalente</th></tr>` +
+    u.areas.map((x, i) => `<tr><td>${esc(x.nome)}</td><td class=n>${dvIn(`usina.areas.${i}.area`, x.area, 70)}</td><td class=n>${dvIn(`usina.areas.${i}.feac`, x.feac, 55)}</td><td class=n>${nf(x.equivalente, 2)}</td></tr>`).join("") +
+    `</table><p>Instalação da usina: composição ${dvTx("usina.codigo_instalacao", u.codigo_instalacao, 90)} — custo direto SD R$ ${reais(u.SD.instalacao)} · CD R$ ${reais(u.CD.instalacao)}</p>
+    <p>CCO = k1·k2·k3·AC·CMCC + instalação → SD R$ ${reais(u.SD.custo)} · CD R$ ${reais(u.CD.custo)}<br><b>PCO SD R$ ${reais(u.SD.preco)} · CD R$ ${reais(u.CD.preco)}</b></p>
+    <p class="nota">A planilha BR-158/MT soma, na condição com desoneração, o custo da instalação sem desoneração (USINA!H38 usa F22): o sistema usa o custo com desoneração.</p>`;
+  const m = res.mob, dm = d.mob || {}, ps = m.pessoal;
+  $("#divMob").innerHTML = `<p>Pessoal: ${ps.quantidade} motoristas/operadores (50% dos equipamentos) × passagem R$ ${reais(ps.passagem)} — itinerário ${dvTx("mob.itinerario", dm.itinerario, 200)} ·
+      passagem pesquisada R$ ${dvIn("mob.passagem", dm.passagem, 80)} · mês do índice da pesquisa ${dvTx("mob.mes_indice_pesquisa", dm.mes_indice_pesquisa, 80)}
+      (${esc(ps.indice)}: ${ps.a ? `${nf(ps.a, 2)} → ${nf(ps.b, 2)}` : "sem índice — fator da planilha"}, reajuste ${nf(ps.fator * 100, 4)}%)</p>
+    <div class="tabela-rolagem" style="max-height:420px"><table class="tab"><tr><th>Código</th><th>Equipamento</th><th>Veículo transp.</th><th class=n>Quant.</th><th class=n>DMT pav</th><th class=n>DMT npav</th><th class=n>v pav</th><th class=n>v npav</th>
+      <th class=n>Viagem (h)</th><th class=n>Descanso (h)</th><th class=n>FU</th><th class=n>Custo SD</th><th class=n>Custo CD</th><th></th></tr>` +
+    m.equipamentos.map((x, i) => `<tr><td>${esc(x.codigo)}</td><td><small>${esc(x.descricao || "")}</small></td><td>${dvTx(`mob.equipamentos.${i}.transporte`, x.transporte, 70)}</td>
+      <td class=n>${dvIn(`mob.equipamentos.${i}.quant`, x.quant, 50)}</td><td class=n>${dvIn(`mob.equipamentos.${i}.dmt_pav`, x.dmt_pav, 60)}</td><td class=n>${dvIn(`mob.equipamentos.${i}.dmt_npav`, x.dmt_npav, 60)}</td>
+      <td class=n>${dvIn(`mob.equipamentos.${i}.vel_pav`, x.vel_pav, 58)}</td><td class=n>${dvIn(`mob.equipamentos.${i}.vel_npav`, x.vel_npav, 58)}</td>
+      <td class=n>${nf(x.tempo_viagem, 4)}</td><td class=n>${nf(x.tempo_descanso, 1)}</td><td class=n>${dvIn(`mob.equipamentos.${i}.fu`, x.fu, 64)}</td>
+      <td class=n>${reais(x.custo_SD)}</td><td class=n>${reais(x.custo_CD)}</td><td><button class="btn mini" data-dvrem="${i}" data-dica="Retira o equipamento da mobilização">×</button></td></tr>`).join("") +
+    `</table></div><p>Custo SD R$ ${reais(m.SD.custo)} · CD R$ ${reais(m.CD.custo)} → <b>MOB = DESMOB: SD R$ ${reais(m.SD.preco)} · CD R$ ${reais(m.CD.preco)}</b></p>`;
+  $$("[data-dvrem]").forEach(b => b.onclick = () => { const dd = lerDiv(); dd.mob.equipamentos.splice(+b.dataset.dvrem, 1); salvarDiv(dd); });
+}
+function lerDiv() {
+  const d = JSON.parse(JSON.stringify(DV_.r.dados));
+  const por = (path, v) => { const ks = path.split("."); let o = d; ks.slice(0, -1).forEach(k => { o[k] ??= {}; o = o[k]; }); o[ks.at(-1)] = v; };
+  $$("[data-dv]").forEach(i => por(i.dataset.dv, i.value === "" ? null : +i.value));
+  $$("[data-dvt]").forEach(i => por(i.dataset.dvt, i.value.trim() || null));
+  return d;
+}
+async function salvarDiv(d) {
+  const fixos = $$("[data-dvfix]").filter(c => c.checked).map(c => c.dataset.dvfix);
+  try { await jpost(`${base_}${E.pid}/diversos`, { dados: d, fixos }, "PUT"); toast("Parâmetros salvos — PATO recalculado"); carregarOrc(); } catch (e) { erro(e); }
+}
+$("#btnDivSalvar").onclick = () => salvarDiv(lerDiv());
+$("#btnDivSug").onclick = async () => {
+  try { const l = await api(`${base_}${E.pid}/diversos/sugerir-mob`); if (!l.length) return toast("Nenhum equipamento com transporte rodoviário nas composições");
+    if (!confirm(`Substituir a lista da mobilização por ${l.length} equipamentos das composições do PATO?`)) return;
+    const d = lerDiv(), ant = d.mob.equipamentos[0] || {};
+    d.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
+    salvarDiv(d); } catch (e) { erro(e); }
 };
 
 // ---------------------------------------------------------------- projeto

@@ -410,6 +410,26 @@
       </div></div>
     <div id="resOrc"></div>
     <div id="orc-planilha" class="sub-orc"><div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-ip" class="sub-orc">
+      <div class="caixa"><div class="bin-cab"><h3>Levantamento da condição do pavimento (IP)</h3>
+        <div class="linha-botoes" style="margin:0">
+          <button class="btn" id="btnIpImp" data-dica="Lê as abas IP e CALCULO_IP de uma planilha PATO (levantamento km a km, níveis de esforço e histórico de consumo)">Importar da planilha PATO</button>
+          <button class="btn" id="btnIpGrade" data-dica="Cria as linhas km a km do segmento (ida e volta) para lançar o levantamento — substitui o levantamento atual">Gerar grade km a km</button>
+          <button class="btn" id="btnIpSug" data-dica="Preenche a intervenção primária e secundária dos km ainda sem intervenção, pela regra sugerida">Aplicar sugestões</button>
+          <button class="btn primario" id="btnIpSalvar" data-dica="Grava o levantamento e os parâmetros; as quantidades do PATO são recalculadas">Salvar</button></div></div>
+        <p class="nota">ICP = 50·panela + 30·remendo + 20·trincamento (Bom 0 · Regular 0,25 · Ruim 0,5 · Péssimo 1); condição: &lt; 30 BOM, &lt; 50 REGULAR, &lt; 70 RUIM, senão PÉSSIMO.
+          Quantidade = ARRED.PARA.CIMA(kmf com a intervenção) × nível de esforço; o PATO adota o maior entre o calculado e o histórico de consumo (Res. 8/2023, art. 17).
+          A intervenção sugerida segue o padrão da BR-158/MT — a escolha final é sua, km a km.</p>
+        <div id="ipResumo"></div>
+        <h4>Memória de cálculo (CALCULO_IP)</h4>
+        <div class="tabela-rolagem"><table class="tab" id="tabIpCalc"></table></div>
+      </div>
+      <div class="caixa"><h4>Levantamento km a km</h4>
+        <div class="barra filtros"><label class="check"><input type="checkbox" id="ipSoInterv" data-dica="Mostra só os km com intervenção ou com defeito"> só km com defeito/intervenção</label>
+          <label class="check"><input type="checkbox" id="ipSoDiv" data-dica="Mostra os km em que a intervenção escolhida difere da sugerida"> só divergentes da sugestão</label></div>
+        <div class="tabela-rolagem" style="max-height:65vh"><table class="tab" id="tabIp"></table></div></div>
+    </div>
+
     <div id="orc-resumo" class="sub-orc"><div class="caixa"><h3>Resumo por grupo de tarefas (Anexo XX)</h3><div id="avisosOrc"></div>
       <div class="tabela-rolagem"><table class="tab" id="tabOrcResumo"></table></div></div></div>
     <div id="orc-abc" class="sub-orc"><div class="caixa"><h3>Curva ABC (Anexo XXI)</h3><p class="nota">Regime mais vantajoso. Faixa A até 80% do custo acumulado, B até 95%, C o restante.</p>

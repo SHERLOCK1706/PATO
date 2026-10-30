@@ -71,6 +71,11 @@ def importar_referencia(caminho: str) -> dict:
         if "PATO" not in wf.sheetnames:
             raise ValueError("A planilha não tem a aba PATO.")
         ws, vs = wf["PATO"], wv["PATO"]
+        try:
+            from . import ip as _ip
+            dados_ip = _ip.importar_planilha(caminho)
+        except ValueError:
+            dados_ip = None
         itens: list[dict] = []
         por_linha: dict[int, dict] = {}
         fim = ws.max_row
@@ -106,7 +111,16 @@ def importar_referencia(caminho: str) -> dict:
             x.pop("_linha")
             fs = F if isinstance(F, str) else None
             m = re.fullmatch(r"=\$?([JF])\$?(\d+)", (fs or "").replace(" ", ""))
-            if isinstance(J, str) and not re.search(r"(TRUNC|ROUND)\(\s*\$?[FH]\$?\d+\s*\*\s*\$?[FH]\$?\d+", J.upper()):
+            bip = None
+            if dados_ip:
+                from . import ip as _ip
+                bip = _ip.base_do_pato(J if isinstance(J, str) else None, dados_ip["parametros"]) or \
+                    _ip.base_do_pato(fs, dados_ip["parametros"])
+            if bip:
+                bip["valor"] = nz.numero(jv) if bip["campo"] == "pato" else nz.numero(fv)
+                x["base"] = bip
+                x["base_ref_valor"] = nz.numero(fv)
+            elif isinstance(J, str) and not re.search(r"(TRUNC|ROUND)\(\s*\$?[FH]\$?\d+\s*\*\s*\$?[FH]\$?\d+", J.upper()):
                 x["base"] = dict(tipo="direta", valor=nz.numero(jv), expr=F_txt(J), fonte=_fonte(J))
                 x["base_ref_valor"] = nz.numero(fv)
             elif m and int(m.group(2)) in por_linha:
@@ -130,7 +144,7 @@ def importar_referencia(caminho: str) -> dict:
             if t.startswith("TOTAL GERAL DO ORCAMENTO"):
                 totais = dict(SD=nz.numero(vs.cell(r, 13).value), CD=nz.numero(vs.cell(r, 15).value))
         return dict(itens=itens, desempenho=desempenho, precos_informados=precos, prazo_anos=prazo,
-                    totais_ref=totais, origem=Path(caminho).name)
+                    totais_ref=totais, origem=Path(caminho).name, ip=dados_ip)
     finally:
         wf.close()
         wv.close()
@@ -199,13 +213,15 @@ def _ler_bd(wv) -> dict:
 class Calculo:
     """Resolve quantidades e preços de um PATO (dados do projeto + motores + binômio + transporte)."""
 
-    def __init__(self, dados: dict, medidas: dict[str, float], momentos: dict[str, float], preco_fn, extensao: float):
+    def __init__(self, dados: dict, medidas: dict[str, float], momentos: dict[str, float], preco_fn, extensao: float,
+                 ip_calc: dict | None = None):
         self.d = dados
         self.medidas = medidas
         self.momentos = momentos
         self.preco_fn = preco_fn  # (codigo, regime) -> (preço, fonte) | (None, motivo)
         self.ext = extensao
         self.idx = {x["id"]: x for x in dados.get("itens", [])}
+        self.ip = {c["chave"]: c for c in (ip_calc or {}).get("calculo", [])}
         self._q: dict[str, tuple] = {}
 
     def base(self, x: dict) -> tuple[float, str]:
@@ -228,6 +244,13 @@ class Calculo:
             if v is None:
                 return nz.numero(b.get("valor")) or 0.0, "momento da planilha (gere o quadro de transportes)"
             return v, "quadro de transportes"
+        if t == "ip":
+            if not self.ip:
+                return nz.numero(b.get("valor")) or 0.0, "levantamento IP não lançado — valor anterior"
+            v = sum((self.ip.get(c) or {}).get(b.get("campo", "pato"), 0.0) or 0.0 for c in b.get("chaves") or [])
+            fator = nz.numero(b.get("fator")) or 1.0
+            rot = " + ".join(b.get("chaves") or [])
+            return v * fator, f"levantamento IP: {rot}" + (f" × {fator:g}" if fator != 1 else "")
         if t == "meses":
             return nz.numero(b.get("valor")) or 0.0, "prazo (meses)"
         return nz.numero(b.get("valor")) or 0.0, b.get("fonte") or "informado"
@@ -237,6 +260,11 @@ class Calculo:
             return self._q[x["id"]]
         self._q[x["id"]] = (0.0, 0.0, "referência circular")
         b = x.get("base") or {}
+        if b.get("tipo") == "ip" and b.get("campo", "pato") == "pato":
+            q, fonte = self.base(x)
+            res = (round(q, 6), nz.numero(x.get("base_ref_valor")) or 0.0, fonte)
+            self._q[x["id"]] = res
+            return res
         if b.get("tipo") == "direta":
             q = nz.numero(b.get("valor")) or 0.0
             bs = nz.numero(x.get("base_ref_valor")) or 0.0

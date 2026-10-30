@@ -6,6 +6,7 @@ import uuid
 from . import binomio as bn
 from . import composicoes as cp
 from . import normalizar as nz
+from . import ip as ip_mod
 from . import pato_orcamento as po
 
 CHAVE = "pato"
@@ -41,6 +42,10 @@ class Orcamentos:
     # --------------------------------------------------------- importação
     def importar_referencia(self, pid: int, caminho: str, vincular: bool = True) -> dict:
         d = po.importar_referencia(caminho)
+        if d.get("ip"):
+            self.db.gravar_dados_projeto(pid, "ip", d.pop("ip"))
+        else:
+            d.pop("ip", None)
         vinc = 0
         if vincular:
             med = self.medidas(pid)
@@ -133,7 +138,9 @@ class Orcamentos:
             momentos = {t["codigo"]: t["momento"] for t in self.sv.transporte.quadro(pid)["totais"]}
         except Exception:  # noqa: BLE001 — sem base/quadro, usa o valor importado
             momentos = {}
-        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d), ext)
+        ip_dados = self.db.dados_projeto(pid, "ip")
+        ip_calc = ip_mod.calcular(ip_dados) if ip_dados and ip_dados.get("linhas") else None
+        calc = po.Calculo(d, self.medidas(pid), momentos, self._precificador(pid, d), ext, ip_calc)
         r = calc.calcular()
         r["desempenho"] = {}
         for cod in (d.get("desempenho") or {}):
@@ -147,6 +154,7 @@ class Orcamentos:
         r["extensao"] = ext
         r["origem"] = d.get("origem")
         r["config"] = self.sv.custos.config(pid)
+        r["ip_lancado"] = bool(ip_calc)
         return r
 
     def resumo(self, pid: int) -> dict:
@@ -224,3 +232,67 @@ class Orcamentos:
         dest = self.sv._nome(p, "PATO_orcamento", "xlsx")
         exportar_xlsx(self, pid, str(dest))
         return dict(arquivo=str(dest), nome=dest.name)
+
+    # ------------------------------------------------- levantamento IP
+    def ip(self, pid: int) -> dict:
+        d = self.db.dados_projeto(pid, "ip") or dict(linhas=[], parametros=ip_mod.parametros_padrao())
+        r = ip_mod.calcular(d)
+        r["parametros"] = d.get("parametros") or ip_mod.parametros_padrao()
+        r["opcoes"] = dict(primaria=ip_mod.OPCOES_PRIMARIA, secundaria=ip_mod.OPCOES_SECUNDARIA, niveis=ip_mod.NIVEIS)
+        return r
+
+    def ip_importar(self, pid: int, caminho: str) -> dict:
+        d = ip_mod.importar_planilha(caminho)
+        self.db.gravar_dados_projeto(pid, "ip", d)
+        self.db.registrar(pid, "PATO: levantamento IP importado", f"{len(d['linhas'])} linhas")
+        return self.ip(pid)
+
+    def ip_gerar_grade(self, pid: int, passo: float = 1.0, faixas: int = 2) -> dict:
+        """Grade km a km (ida e volta, como na planilha) para lançar o levantamento."""
+        p = self.sv.projeto(pid)
+        a, b = p.get("km_ini"), p.get("km_fim")
+        if a is None or b is None:
+            raise ValueError("Informe o km inicial e final do projeto.")
+        kms = []
+        k = a
+        while k < b - 1e-9:
+            kms.append((round(k, 3), round(min(k + passo, b), 3)))
+            k += passo
+        linhas = [dict(rodovia=p.get("rodovia"), km_ini=x, km_fim=y, ext=round(y - x, 3), faixa="crescente") for x, y in kms]
+        if faixas >= 2:
+            linhas += [dict(rodovia=p.get("rodovia"), km_ini=y, km_fim=x, ext=round(y - x, 3), faixa="decrescente") for x, y in reversed(kms)]
+        d = self.db.dados_projeto(pid, "ip") or dict(parametros=ip_mod.parametros_padrao())
+        d["linhas"] = linhas
+        self.db.gravar_dados_projeto(pid, "ip", d)
+        return self.ip(pid)
+
+    def ip_salvar(self, pid: int, linhas: list | None = None, parametros: dict | None = None) -> dict:
+        d = self.db.dados_projeto(pid, "ip") or dict(linhas=[], parametros=ip_mod.parametros_padrao())
+        if linhas is not None:
+            d["linhas"] = [{k: v for k, v in ln.items() if k not in ("icp", "condicao", "sugestao", "diverge")} for ln in linhas]
+        if parametros is not None:
+            par = d.get("parametros") or ip_mod.parametros_padrao()
+            if parametros.get("largura") not in (None, ""):
+                par["largura"] = nz.numero(parametros["largura"])
+            for k, v in (parametros.get("intervencoes") or {}).items():
+                if k in par["intervencoes"]:
+                    for c in ("ne", "espessura", "pct", "historico"):
+                        if c in v:
+                            par["intervencoes"][k][c] = nz.numero(v[c]) if v[c] not in (None, "") else None
+            d["parametros"] = par
+        self.db.gravar_dados_projeto(pid, "ip", d)
+        return self.ip(pid)
+
+    def ip_aplicar_sugestoes(self, pid: int, so_vazias: bool = True) -> dict:
+        d = self.db.dados_projeto(pid, "ip") or {}
+        n = 0
+        for ln in d.get("linhas") or []:
+            if so_vazias and (ln.get("primaria") or ln.get("secundaria")):
+                continue
+            p, r, t = (ip_mod.nivel(ln.get(k)) for k in ip_mod.DEFEITOS)
+            ln["primaria"], ln["secundaria"] = ip_mod.sugerir(p, r, t)
+            n += 1
+        self.db.gravar_dados_projeto(pid, "ip", d)
+        out = self.ip(pid)
+        out["aplicadas"] = n
+        return out

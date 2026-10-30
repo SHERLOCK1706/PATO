@@ -123,6 +123,13 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   quantidade direta (levantamento IP). Cada item é editável.
 - Preços nos dois regimes: composições SICRO/próprias (com as alterações do projeto), lista sintética, betuminosos AM/TM pelo
   binômio ANP, grupo por desempenho (GD — parcela mensal, art. 42) e preços informados. Parcial = TRUNC(quantidade × preço; 2).
+- **Levantamento IP** (aba PATO → Levantamento IP): condição do pavimento km a km por faixa (panela, remendo, trincamento —
+  Bom/Regular/Ruim/Péssimo), ICP = 50·panela + 30·remendo + 20·trincamento e condição; intervenção primária e secundária
+  sugeridas pelo padrão da BR-158/MT (a escolha final é do engenheiro, km a km). Memória de cálculo (CALCULO_IP): kmf com cada
+  intervenção × nível de esforço (Manual de Conservação ou % da faixa × espessura), e o PATO adota o maior entre o calculado
+  e o histórico de consumo (Res. 8/2023, art. 17). Tapa-buraco, reparo, remendo, correção, fresagens, microrrevestimento e a
+  sinalização para abertura passam a vir do levantamento. Importa da aba IP (modelo atual) ou ICP (modelos antigos:
+  Alta/Média/Baixa, nível de serventia, intervalos de linhas), conferido com BR-158, BR-364/405/435 e BR-174/MT.
 - **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
   **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
 - **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.
@@ -168,7 +175,7 @@ custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_comp
 `gravar_indice_reajuste`; transporte: `croqui_ler`, `croqui_salvar`, `importar_vmd_dnit`, `quadro_transportes`,
 `gerar_quadro_transportes`, `definir_origem_material`, `definir_quantidade_servico`, `aplicar_momentos_ao_orcamento`,
 `importar_transportes_planilha`, `exportar_transportes`; PATO: `pato_importar_planilha`, `pato_orcamento`, `pato_editar_item`,
-`pato_medidas`, `pato_resumo`, `pato_exportar`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
+`pato_medidas`, `pato_resumo`, `pato_exportar`; levantamento IP: `ip_levantamento`, `ip_importar_planilha`, `ip_lancar_km`; e para qualquer .xlsx: `listar_abas`, `ler_celulas`, `escrever_celulas`
 (grava preservando desenhos e fórmulas).
 
 Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e me mostre os alertas”*,

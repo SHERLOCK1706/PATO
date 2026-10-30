@@ -475,6 +475,31 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def o_preco(pid: int, dados: dict = Body(...)):
         return orc.preco_informado(pid, dados["codigo"], dados.get("SD"), dados.get("CD"), dados.get("descricao"), dados.get("unidade"))
 
+    # ------------------------------------------------ levantamento IP
+    @app.get("/api/projetos/{pid}/ip")
+    def ip_ler(pid: int):
+        return orc.ip(pid)
+
+    @app.put("/api/projetos/{pid}/ip")
+    def ip_salvar(pid: int, dados: dict = Body(...)):
+        return orc.ip_salvar(pid, dados.get("linhas"), dados.get("parametros"))
+
+    @app.post("/api/projetos/{pid}/ip/importar")
+    async def ip_importar(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return orc.ip_importar(pid, caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.post("/api/projetos/{pid}/ip/grade")
+    def ip_grade(pid: int, dados: dict = Body(default={})):
+        return orc.ip_gerar_grade(pid, float(dados.get("passo") or 1), int(dados.get("faixas") or 2))
+
+    @app.post("/api/projetos/{pid}/ip/sugestoes")
+    def ip_sugestoes(pid: int, dados: dict = Body(default={})):
+        return orc.ip_aplicar_sugestoes(pid, dados.get("so_vazias", True))
+
     @app.get("/api/projetos/{pid}/log")
     def log(pid: int, tipo: str | None = None):
         return sv.log(pid, tipo)

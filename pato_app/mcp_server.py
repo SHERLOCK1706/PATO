@@ -544,6 +544,46 @@ def pato_exportar(projeto_id: int) -> dict:
     return sv().orcamento.exportar(projeto_id)
 
 
+# ------------------------------------------------------------------ levantamento IP (condição do pavimento)
+@mcp.tool()
+def ip_levantamento(projeto_id: int, com_linhas: bool = False) -> dict:
+    """Memória de cálculo do levantamento IP (por intervenção: kmf, nível de esforço, calculado, histórico e PATO),
+    resumo por condição e, se pedido, as linhas km a km (panela, remendo, trinca 0–3, ICP, condição, intervenções)."""
+    r = sv().orcamento.ip(projeto_id)
+    out = dict(calculo=r["calculo"], resumo_condicao=r["resumo_condicao"], kmf_total=r["kmf_total"],
+               divergencias=r["divergencias"], largura=r["largura"])
+    if com_linhas:
+        out["linhas"] = r["linhas"]
+    return out
+
+
+@mcp.tool()
+def ip_importar_planilha(projeto_id: int, caminho_xlsx: str) -> dict:
+    """Importa o levantamento (aba IP ou ICP) e a memória de cálculo (CALCULO_IP/CALCULO_ICP) de uma planilha PATO —
+    modelo atual (Bom/Regular/Ruim/Péssimo) ou antigo (Alta/Média/Baixa)."""
+    r = sv().orcamento.ip_importar(projeto_id, caminho_xlsx)
+    return dict(linhas=len(r["linhas"]), calculo=r["calculo"])
+
+
+@mcp.tool()
+def ip_lancar_km(projeto_id: int, km_ini: float, panela: int | None = None, remendo: int | None = None,
+                 trinca: int | None = None, primaria: str | None = None, secundaria: str | None = None) -> dict:
+    """Lança a condição de um km do levantamento (graus 0 Bom, 1 Regular, 2 Ruim, 3 Péssimo) e/ou as intervenções."""
+    d = sv().db.dados_projeto(projeto_id, "ip") or {}
+    alt = 0
+    for ln in d.get("linhas") or []:
+        if abs((ln.get("km_ini") or 0) - km_ini) < 1e-6:
+            for k, v in (("panela", panela), ("remendo", remendo), ("trinca", trinca), ("primaria", primaria),
+                         ("secundaria", secundaria)):
+                if v is not None:
+                    ln[k] = v
+            alt += 1
+    if not alt:
+        raise ValueError(f"km {km_ini} não está no levantamento (gere a grade km a km na aba PATO → Levantamento IP).")
+    r = sv().orcamento.ip_salvar(projeto_id, d["linhas"])
+    return dict(linhas_alteradas=alt, calculo=r["calculo"])
+
+
 def main():
     mcp.run()
 

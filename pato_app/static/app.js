@@ -1215,7 +1215,7 @@ const O_ = { sub: "planilha", c: null, med: null };
 const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 3 });
 async function carregarOrc() {
   if (!E.pid) return;
-  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
+  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
@@ -1228,7 +1228,7 @@ async function carregarOrc() {
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
       <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
-    await ({ planilha: renderOrcPlanilha, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ planilha: renderOrcPlanilha, ip: renderIp, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 function renderOrcPlanilha() {
@@ -1322,6 +1322,52 @@ $("#btnAddOrc").onclick = () => dialogo("Incluir item na planilha PATO", [["item
 $("#btnExpOrc").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
+
+// ---- levantamento IP
+const IP_ = { d: null };
+const NIV = ["Bom", "Regular", "Ruim", "Péssimo"];
+async function renderIp() {
+  const d = IP_.d = await api(`${base_}${E.pid}/ip`);
+  const rc = Object.entries(d.resumo_condicao || {}).map(([k, v]) => `${k}: ${nf(v, 1)} kmf`).join(" · ");
+  $("#ipResumo").innerHTML = d.linhas.length ? `<p class="nota"><b>${nf(d.kmf_total, 1)} kmf</b> levantados · ${esc(rc)} · ${d.divergencias} km com intervenção diferente da sugerida ·
+    largura da faixa <input id="ipLarg" type="number" step="any" value="${d.largura}" style="width:70px" data-dica="Largura da faixa (m) — CAD_PISTA ÷ 2"> m</p>`
+    : `<p class="tag aviso">Sem levantamento. Importe da planilha PATO ou gere a grade km a km e lance a condição.</p>`;
+  const P = d.parametros.intervencoes;
+  $("#tabIpCalc").innerHTML = `<tr><th>Serviço</th><th class=n>kmf</th><th class=n>Inventário (kmf)</th><th>Nível de esforço</th><th class=n>NE</th><th class=n>Quantidade</th><th class=n>Histórico</th><th class=n>PATO</th><th>Critério</th></tr>` +
+    d.calculo.map(c => `<tr data-ipk="${esc(c.chave)}"><td>${esc(c.rotulo)}</td><td class=n>${nf(c.kmf, 1)}</td><td class=n>${c.inventario}</td>
+      <td>${c.modo === "ne" ? `<input data-p="ne" type="number" step="any" value="${P[c.chave].ne ?? ""}" style="width:70px"> ${esc(c.unidade)}/kmf`
+        : `${c.espessura ? `esp. <input data-p="espessura" type="number" step="any" value="${P[c.chave].espessura ?? ""}" style="width:75px"> m · ` : ""}% <input data-p="pct" type="number" step="any" value="${P[c.chave].pct ?? ""}" style="width:75px">`}</td>
+      <td class=n>${nf(c.ne_calc, 3)}</td><td class=n>${q3(c.quantidade)}</td>
+      <td class=n><input data-p="historico" type="number" step="any" value="${P[c.chave].historico ?? ""}" style="width:100px" data-dica="Consumo nos últimos 12 meses (SIAC); o PATO usa o maior valor"></td>
+      <td class=n><b>${q3(c.pato)}</b> <small>${esc(c.fonte)}</small></td><td><small>${esc(c.nota || "")}</small></td></tr>`).join("");
+  desenharLinhasIp();
+}
+function desenharLinhasIp() {
+  const d = IP_.d, soI = $("#ipSoInterv").checked, soD = $("#ipSoDiv").checked;
+  const sel = (v, k) => `<select data-k="${k}">${NIV.map((n, i) => `<option value="${i}" ${v === i ? "selected" : ""}>${n}</option>`).join("")}</select>`;
+  const opc = (v, lst, k) => `<select data-k="${k}">${[...new Set([...lst, v || ""])].map(o => `<option ${o === (v || "") ? "selected" : ""}>${esc(o)}</option>`).join("")}</select>`;
+  $("#tabIp").innerHTML = `<tr><th>km inicial</th><th>km final</th><th class=n>kmf</th><th>Panela</th><th>Remendo</th><th>Trincamento</th><th class=n>ICP</th><th>Condição</th><th>Intervenção primária</th><th>Secundária</th><th>Sugestão</th></tr>` +
+    d.linhas.map((l, i) => [l, i]).filter(([l]) => (!soI || l.panela || l.remendo || l.trinca || l.primaria || l.secundaria) && (!soD || l.diverge)).map(([l, i]) =>
+      `<tr data-ipl="${i}" class="${l.diverge ? "sit-conferir" : ""}"><td>${nf(l.km_ini, 3)}</td><td>${nf(l.km_fim, 3)}</td><td class=n>${nf(l.ext, 3)}</td>
+       <td>${sel(l.panela, "panela")}</td><td>${sel(l.remendo, "remendo")}</td><td>${sel(l.trinca, "trinca")}</td><td class=n>${nf(l.icp, 1)}</td><td>${esc(l.condicao)}</td>
+       <td>${opc(l.primaria, d.opcoes.primaria, "primaria")}</td><td>${opc(l.secundaria, d.opcoes.secundaria, "secundaria")}</td>
+       <td><small>${esc(l.sugestao.filter(Boolean).join(" + ") || "—")}</small></td></tr>`).join("");
+}
+$("#ipSoInterv").onchange = desenharLinhasIp; $("#ipSoDiv").onchange = desenharLinhasIp;
+function lerIp() {
+  const linhas = IP_.d.linhas.map(l => ({ ...l }));
+  $$("#tabIp tr[data-ipl]").forEach(tr => { const l = linhas[+tr.dataset.ipl];
+    $$("select", tr).forEach(s => { l[s.dataset.k] = ["panela", "remendo", "trinca"].includes(s.dataset.k) ? +s.value : s.value; }); });
+  const intervencoes = {};
+  $$("#tabIpCalc tr[data-ipk]").forEach(tr => { intervencoes[tr.dataset.ipk] = Object.fromEntries($$("[data-p]", tr).map(i => [i.dataset.p, i.value === "" ? null : +i.value])); });
+  return { linhas, parametros: { largura: $("#ipLarg") ? +$("#ipLarg").value : null, intervencoes } };
+}
+$("#btnIpSalvar").onclick = async () => { try { await jpost(`${base_}${E.pid}/ip`, lerIp(), "PUT"); toast("Levantamento salvo — PATO recalculado"); carregarOrc(); } catch (e) { erro(e); } };
+$("#btnIpSug").onclick = async () => { try { await jpost(`${base_}${E.pid}/ip`, lerIp(), "PUT"); const r = await jpost(`${base_}${E.pid}/ip/sugestoes`, { so_vazias: true }); toast(`${r.aplicadas} km com intervenção sugerida`); carregarOrc(); } catch (e) { erro(e); } };
+$("#btnIpGrade").onclick = async () => { if (IP_.d?.linhas?.length && !confirm("Substituir o levantamento atual por uma grade em branco (km a km, ida e volta)?")) return;
+  try { await jpost(`${base_}${E.pid}/ip/grade`, { passo: 1, faixas: 2 }); toast("Grade criada"); carregarOrc(); } catch (e) { erro(e); } };
+$("#btnIpImp").onclick = async () => { const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
+  try { const r = await api(`${base_}${E.pid}/ip/importar`, { method: "POST", body: fd }); toast(`${r.linhas.length} linhas importadas`); carregarOrc(); } catch (e) { erro(e); } };
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {

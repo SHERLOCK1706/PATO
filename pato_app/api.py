@@ -168,10 +168,16 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
                            tolerancia: float = Form(default=1.0)):
         caminho = await _salvar_upload(snv) if snv and snv.filename else None
         try:
-            return sv.gerar_sugestoes(pid, caminho, versao or None, max(0.05, tolerancia))
+            return sv.gerar_sugestoes(pid, caminho, versao or None, max(0.05, tolerancia), snv_incluido=not caminho)
         finally:
             if caminho:
                 os.unlink(caminho)
+
+    @app.get("/api/snv")
+    def snv_segmentos(rodovia: str, km_ini: float | None = None, km_fim: float | None = None):
+        from . import snv
+        br, uf = snv.br_uf(rodovia)
+        return dict(versao=snv.versao(), segmentos=snv.segmentos(br, uf, km_ini, km_fim))
 
     @app.get("/api/projetos/{pid}/sugestoes")
     def sug_listar(pid: int, status: str | None = None, tipo: str | None = None):

@@ -481,7 +481,7 @@ class Servico:
         return out, an
 
     def gerar_sugestoes(self, pid: int, arquivo_snv: str | None = None, versao_snv: str | None = None,
-                        tol_km: float = correcao.TOL_OK, automatico: bool = True) -> dict:
+                        tol_km: float = correcao.TOL_OK, automatico: bool = True, snv_incluido: bool = False) -> dict:
         """Analisa o inventário (SNV, coordenadas × km, trecho e nomenclatura do álbum DNIT).
         Correções certas são aplicadas automaticamente (vão para a aba Ajustes); as demais ficam pendentes
         na aba Revisão já com a sugestão mais assertiva preenchida."""
@@ -489,6 +489,10 @@ class Servico:
         p = self.projeto(pid)
         itens = self.db.itens(pid)
         oficial = correcao.ler_snv_oficial(arquivo_snv, p.get("rodovia")) if arquivo_snv else None
+        if not arquivo_snv and snv_incluido:  # SNV oficial incluído no sistema (versão 202610A, MT)
+            from . import snv as snv_mod
+            oficial = snv_mod.tabela_oficial(p.get("rodovia")) or None
+            versao_snv = versao_snv or (snv_mod.versao() if oficial else None)
         if arquivo_snv and not oficial:
             raise ValueError("A planilha do SNV não tem segmentos da rodovia " + str(p.get("rodovia")))
         corr, an = self._sugestoes_correcao(p, itens, oficial, versao_snv, tol_km)

@@ -250,6 +250,7 @@ class Orcamentos:
             pos = geo.Eixo(self.db.itens(pid)).posicao(km) if km is not None else None
         except Exception:  # noqa: BLE001
             pos = None
+        pos = pos or self._pos_snv(pid, km)
         return dv.capitais_mais_proximas(pos[0], pos[1]) if pos else []
 
     def _precificador(self, pid: int, d: dict, diversos_fn=None):
@@ -760,10 +761,20 @@ class Orcamentos:
         p = self.sv.projeto(pid)
         if p.get("km_ini") is None or p.get("km_fim") is None:
             return None
+        km = (p["km_ini"] + p["km_fim"]) / 2
         try:
-            return geo.Eixo(self.db.itens(pid)).posicao((p["km_ini"] + p["km_fim"]) / 2)
+            pos = geo.Eixo(self.db.itens(pid)).posicao(km)
         except Exception:  # noqa: BLE001 — inventário sem coordenadas
+            pos = None
+        return pos or self._pos_snv(pid, km)
+
+    def _pos_snv(self, pid: int, km: float | None):
+        """Coordenada do km pelo eixo oficial do SNV incluído no sistema (quando o inventário não tem coordenadas)."""
+        from . import snv
+        if km is None:
             return None
+        br, uf = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
+        return snv.posicao(br, uf, km) if br else None
 
     def ne_rocada_estacoes(self, pid: int, n: int = 5, lat: float | None = None, lon: float | None = None) -> dict:
         """NE da roçada pela norma DNIT 182/2018: as n (2 a 5) estações mais próximas do ponto médio do trecho e as

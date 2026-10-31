@@ -164,7 +164,7 @@
         itens fora do trecho) e registra na aba <b>Ajustes</b>. Aqui ficam só os casos que dependem de você, já com a sugestão mais
         provável preenchida (mais usual na rodovia/base, ordem dos códigos antigos…). Aplique, edite o valor, troque a alternativa ou dispense.</p>
       <div class="barra filtros">
-        <label class="cresce">Planilha oficial do SNV (opcional, .xlsx/.csv) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt" data-dica="Tabela do SNV publicada pelo DNIT; o sistema compara e propõe atualizar o cadastro de segmentos"></label>
+        <label class="cresce">Planilha oficial do SNV (opcional — sem ela, usa o SNV 202610A de MT incluído no sistema) <input type="file" id="arqSnv" accept=".xlsx,.csv,.txt" data-dica="Tabela do SNV publicada pelo DNIT; sem arquivo, o sistema compara com o SNV 202610A (Mato Grosso) que acompanha o sistema e propõe atualizar o cadastro de segmentos"></label>
         <label>Versão do SNV <input id="verSnv" placeholder="ex.: 202604A" data-dica="Versão da planilha oficial enviada (registrada no projeto)"></label>
         <label>Tolerância km × coordenada (km) <input id="tolKm" type="number" step="0.1" min="0.1" value="1" data-dica="Coordenadas mais distantes que isso do km informado são reposicionadas pelo km"></label>
         <button class="btn primario" id="btnAnalisar" data-dica="Refaz a verificação: aplica as correções certas e atualiza as decisões pendentes">Analisar novamente</button>

@@ -171,6 +171,13 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   - mobilização (Vol. 08): CMD = QT × FU × {[(TV × CHP + TD × CHI) × K] + CC}, TV = Σ D ÷ VM (caminhão 60/50/40 km/h, cavalo com
     prancha/dolly 30/25/20 km/h), TD = 0,5 h a cada 6 h (carga), K = 2 quando o transportador retorna, CC = pedágio; pessoal
     NTF = 50% × NMO + NPF-V + 50% × NPV × passagem.
+- **Datas-base selecionáveis**: o sistema já traz o SICRO oficial de MT 01/2026, 04/2026 e 07/2026 (sem e com desoneração);
+  na aba Custos escolha estado, mês e fonte (SICRO oficial ou planilha de origem). Novas datas-base entram pela importação
+  do pacote publicado pelo DNIT. Os índices de reajustamento seguem a data-base escolhida: o sistema traz a publicação
+  "Índices de Reajustamento de Obras Rodoviárias" de set/2026 (22 séries, 01 a 09/2026) e importa as próximas em PDF.
+- **SNV oficial incluído** (versão 202610A, Mato Grosso — 350 segmentos das BR-070, 080, 158, 163, 174, 242, 251 e 364):
+  segmentos do trecho, superfície e unidade local, coordenada de qualquer km pelo eixo oficial (ponto médio para o NE da
+  roçada, canteiro para a capital mais próxima) e referência da Revisão do inventário sem precisar enviar a planilha.
 - **Relatórios oficiais do SICRO**: na aba Custos, importe o pacote publicado pelo DNIT (.7z, .rar ou .zip, um por data-base,
   vários de uma vez). O relatório analítico dá as composições sem desoneração; as com desoneração saem dos sintéticos de
   mão de obra e equipamentos "com desoneração". Em MT 04/2026 o motor reproduz o custo unitário direto publicado em 6.611 de

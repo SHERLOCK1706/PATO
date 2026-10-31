@@ -553,6 +553,24 @@ def pato_exportar_licitacao(projeto_id: int, recalcular: bool = True) -> dict:
 
 
 @mcp.tool()
+def snv_trecho(rodovia: str, km_ini: float | None = None, km_fim: float | None = None) -> dict:
+    """Segmentos do SNV oficial incluído no sistema (versão 202610A, Mato Grosso) que cruzam o trecho: código, km,
+    superfície (PAV, DUP, IMP, PLA…), locais de início/fim e unidade local. Ex.: rodovia='BR-158/MT'."""
+    from . import snv
+    br, uf = snv.br_uf(rodovia)
+    return dict(versao=snv.versao(), segmentos=snv.segmentos(br, uf, km_ini, km_fim))
+
+
+@mcp.tool()
+def snv_coordenada(rodovia: str, km: float) -> dict:
+    """Latitude e longitude de um km da rodovia pelo eixo oficial do SNV (versão 202610A, MT)."""
+    from . import snv
+    br, uf = snv.br_uf(rodovia)
+    pos = snv.posicao(br, uf, km)
+    return dict(versao=snv.versao(), lat=pos[0] if pos else None, lon=pos[1] if pos else None)
+
+
+@mcp.tool()
 def pato_conferencia(projeto_id: int) -> dict:
     """Conferência do PATO (checklists de elaboração/auditoria e normativos): itens automáticos com status ok/atenção/
     falha e detalhe, e itens manuais pendentes ou feitos, cada um com a fonte normativa."""

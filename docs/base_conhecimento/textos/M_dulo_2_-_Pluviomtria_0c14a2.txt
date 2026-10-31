@@ -1,0 +1,1510 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+Conceitos Básicos
+de Hidrologia e
+Drenagem para
+Projetos Rodoviários
+
+
+
+Módulo
+            2
+Pluviometria.
+
+- O que é pluviometria e instrumentos de
+medição;
+- Obtenção e formas de processamento
+dos dados de chuva;
+- Tempo de recorrência e tempo de
+concentração.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático, cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.008060/2022-01, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o
+ceder a outros órgãos e entidades federais..
+                                SUMÁRIO
+1.      INTRODUÇÃO ...................................................................................................................... 1
+
+2.      Pluviometria ........................................................................................................................... 2
+     2.1.      PLUVIÔMETRO ............................................................................................................ 2
+     2.2.      PLUVIÓGRAFO ............................................................................................................. 3
+
+3.      OBTENÇÃO E PROCESSAMENTO DE DADOS DE CHUVA ............................................. 6
+     3.1.   OTTO PFAFSTETTER .................................................................................................. 7
+       3.1.1.  Coleta dos dados ................................................................................................... 7
+       3.1.2.  Análise da frequência ............................................................................................ 9
+       3.1.3.  Representação gráfica ........................................................................................ 12
+       3.1.4.  Ajustamento de fórmulas empíricas .................................................................... 14
+     3.2.   ISOZONAS .................................................................................................................. 18
+       3.2.1.   relação 24 horas / 1 dia ....................................................................................... 20
+       3.2.2.   relação 1 hora / 24 horas .................................................................................... 20
+       3.2.3.   relação 6 minutos / 1 hora ................................................................................... 21
+       3.2.4.   metodologia ......................................................................................................... 21
+     3.3.      EQUAÇÕES DE CHUVAS (COPASA / DAEE) ........................................................... 24
+
+4.      Tempo de Recorrência e Tempo de concentração ............................................................. 25
+     4.1.      TEMPO DE RECORRÊNCIA ...................................................................................... 25
+     4.2.   TEMPO DE CONCENTRAÇÃO .................................................................................. 29
+       4.2.1.  Fórmula de Kerby ................................................................................................ 31
+       4.2.2.  Fórmula de Kirpich .............................................................................................. 31
+       4.2.3.  Fórmula de Picking .............................................................................................. 32
+       4.2.4.  Fórmula do U. S. CORPS OF ENGINEERS ....................................................... 32
+       4.2.5.  Fórmula de VEN TE CHOW ................................................................................ 32
+       4.2.6.  Fórmula do DNOS ............................................................................................... 33
+       4.2.7.  Fórmula de Kirpich (modificada) ......................................................................... 33
+       4.2.8.  Fórmula de GEORGE RIBEIRO .......................................................................... 34
+       4.2.9.  Fórmula de Pasini................................................................................................ 34
+       4.2.10. Fórmula de Ventura ............................................................................................. 35
+       4.2.11. Fórmula de Rossi ................................................................................................ 35
+       4.2.12. Fórmula de Giandotti ........................................................................................... 35
+       4.2.13. Fórmula de John Collins ...................................................................................... 36
+       4.2.14. R. Peltier / J. L. Bonnenfant ................................................................................ 36
+
+5.      REFERÊNCIAS BIBLIOGRÁFICAS .................................................................................... 44
+                                                                                      1
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+1. INTRODUÇÃO
+
+No módulo anterior foram apresentados os conceitos relacionados ao clima e à
+hidrologia, bem como foram abordadas as fases que constituem o ciclo
+hidrológico.
+
+Dentre as fases constituintes de tal ciclo, foi dado destaque ao escoamento e à
+precipitação, sendo esta última a que será abordada com maior ênfase neste
+presente módulo.
+
+De início serão apresentados o conceito e os principais instrumentos de medição
+de chuva, passando pela forma de obtenção destes dados e sua interpretação.
+
+Na sequência, serão abordados os diversos métodos aplicados para o
+tratamento dos dados de chuva e alguns métodos para o seu tratamento
+estatístico, além da extrapolação destes para diferentes tempos de concentração
+e de recorrência.
+
+Sobre estes tempos, também serão apresentados seus conceitos, bem como os
+principais métodos empregados para o cálculo do tempo de concentração, além
+dos parâmetros envolvidos nas equações e limites de aplicabilidade de cada um
+deles.
+                                                                                       2
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+2. PLUVIOMETRIA
+
+Quando se avalia a distribuição das chuvas em diferentes épocas e regiões, é
+comum se usar o termo pluviosidade e é por meio do índice pluviométrico que
+se mede a quantidade de chuva numa região e dentro de um determinado
+intervalo de tempo.
+
+Tal medição pode ser efetuada por instrumentos conhecidos como pluviômetros
+e pluviógrafos.
+
+   2.1.        PLUVIÔMETRO
+
+É o instrumento usado para medir a quantidade de chuva caída em determinado
+lugar e em determinado tempo e um dos modelos mais usuais pode ser
+visualizado na figura 2.1.
+
+O pluviômetro coleta e mede a chuva captada em milímetros (mm). Existem
+muitos tipos de pluviômetros, mas eles se classificam basicamente em três tipos:
+
+   •   Pluviômetro convencional (manual): armazena a quantidade de chuva e a
+medição é feita e anotada manualmente;
+   •   Pluviômetro semiautomático: mede a armazena a informação sobre a
+quantidade de chuva e a leitura é feita por meio de um painel digital;
+   •   Pluviômetro automático: mede, armazena e transmite automaticamente a
+informação sobre a quantidade de chuva.
+                                                                                        3
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+                      Figura 2.1 – Modelo de pluviômetro convencional.
+
+As medidas nos pluviômetros, com destaque para os modelos manuais, são
+realizadas de forma periódica, geralmente em intervalos de 24 horas, coma as
+leituras ocorrendo normalmente às 7h da manhã.
+
+TOME NOTA
+
+vídeo mostrando os            tipos    e   funcionamento de              um   pluviômetro
+(https://www.youtube.com/watch?v=Z0lSxYsIJKs)
+
+
+
+   2.2.          PLUVIÓGRAFO
+
+
+É o instrumento que registra a quantidade, duração e intensidade da chuva caída
+em determinado lugar. Para fins de ilustração, apresenta-se a figura 2.2 com um
+modelo de pluviógrafo.
+                                                                                     4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+                      Figura 2.2 – Modelo de pluviógrafo flutuador.
+
+Dentre os modelos mais utilizados em nosso país estão o pluviógrafo flutuador,
+o pluviógrafo de peso e o pluviógrafo de caçambas basculantes.
+
+O resultado da informação coletada por este aparelho corresponde a um gráfico
+chamado pluviograma. Em tal gráfico, pode-se ler o tempo no eixo das abscissas
+e a altura de precipitação no eixo das coordenadas, como pode ser visualizado
+na figura 2.3.
+
+
+
+
+                          Figura 2.3 – Modelo de pluviograma.
+                                                                                     5
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+A diferença básica entre estes dois equipamentos consiste, portanto, no fato do
+primeiro medir apenas a quantidade de chuva, normalmente registrada em “mm”,
+enquanto o segundo registra também a duração da chuva, sendo normalmente
+expressa em “mm/h”.
+
+Quando a medida é apenas quantitativa, emprega-se o termo precipitação
+pluviométrica ou altura pluviométrica, ao passo que, quando a medida também
+está associada ao tempo, dando uma noção qualitativa, emprega-se o termo
+intensidade pluviométrica.
+
+Deste modo, a altura pluviométrica corresponde a uma lâmina d´água
+precipitada sobre uma área. Quando é dito, por exemplo, que choveu 10 mm em
+um dia, isso significa que um volume correspondente a 10 litros d´água caiu
+sobre uma área de 1 m², ou seja, que se formou uma coluna d´água de 10 mm
+de altura sobre uma área correspondente a 1 m².
+
+    TOME NOTA
+Para maiores informações sobre precipitações, mapas interativos e dados de
+chuva, recomenda-se consultar o site do Centro Nacional de Monitoramento
+e      Alertas        de       Desastres          Naturais        -        CEMADEN
+(http://www2.cemaden.gov.br/categoria/pluviometros/),                 do     Instituto
+Nacional de Meteorologia - INMET (https://portal.inmet.gov.br/) e da
+Agência              Nacional               de               Águas-              ANA
+(https://www.snirh.gov.br/hidroweb/apresentacao).
+                                                                                     6
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+3. OBTENÇÃO E PROCESSAMENTO DE
+DADOS DE CHUVA
+
+Como visto no capítulo anterior, as medidas relacionadas à pluviosidade são
+normalmente aferidas por meio de aparelhos conhecidos como pluviômetros e
+pluviógrafos.
+
+No Brasil há diversas instituições que realizam estas medições e as
+disponibilizam por meio de suas home pages.
+
+Assim, ao efetuar a consulta para os dados de seu interesse, o projetista teria de
+escolher uma estação de medição e processar ou tratar seus dados por
+diferentes métodos disponíveis.
+
+Em outros casos, pode-se obter diretamente os valores de pluviometria e de
+intensidade a partir de métodos já consagrados e disponíveis em diferentes
+bibliografias ou publicações, como é o caso da metodologia de Otto Pfafstetter.
+
+Vale destacar que o próprio Manual de Hidrologia Básica para Estruturas de
+Drenagem do DNIT (BRASIL, 2005), em sua seção 6.3, destaca que "quando
+não há dados pluviográficos nas proximidades do local da obra, deve-se recorrer
+a dados bibliográficos, entre os quais destaca-se o livro "Chuvas Intensas do
+Brasil”, do Engº. Otto Pfafstetter.
+
+Apesar desta expressa recomendação, é conveniente que o engenheiro
+projetista avalie o segmento de interesse com base em todos os dados
+disponíveis, sejam provenientes de bibliografias ou publicações, seja coletando
+e processando os dados de pluviosidade diretamente de estações hidrológicas,
+comparando os dados e adotando àqueles que melhor representam o
+comportamento da região ou que ofereçam maior segurança.
+                                                                                     7
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+3.1. OTTO PFAFSTETTER
+
+
+O método é o resultado da compilação dos registros pluviográficos em 98 postos
+do Serviço de Meteorologia do Ministério da Agricultura, contido na obra do
+Engenheiro Otto Pfafstetter - “Chuvas Intensas no Brasil”, Ministério da Viação e
+Obras Públicas - DNOS, 1957.
+
+      3.1.1. COLETA DOS DADOS
+
+Para a coleta de dados das chuvas intensas foram consultados os registros
+pluviográficos disponíveis no arquivo do Serviço de Meteorologia do Ministério
+da Agricultura. Estes registros pluviográficos se apresentam em folhas, cujo
+comprimento e altura correspondem a 24horas de observação e a 10 mm de
+precipitação, respectivamente. Na graduação horizontal é possível apreciar
+intervalos de tempo de 5 minutos e na vertical as precipitações com aproximação
+de 0,1 mm.
+
+Desses gráficos se retirou o valor das precipitações nas partes mais intensas de
+cada chuva, registradas em intervalos de 5 min, 15 min, 30 min, 1 h, 2 h, 4 h, 8
+h, 14 h, 24 h e 48 h, intervalos que definem a duração das precipitações
+correspondentes.
+
+Para achar a parte mais intensa da chuva, procurou-se a parte mais inclinada da
+curva registrada ou o trecho da curva, que apresenta a maior diferença de
+precipitação para a duração considerada. O início ou o fim da parte intensa da
+chuva não coincidia necessariamente para as diversas durações.
+
+As durações de 5 min a 48 h, para as quais foram anotadas as precipitações
+máximas, foram aproximadamente uma progressão geométrica de razão 2,
+permitindo-se unir com facilidade por uma curva os resultados marcados em
+papel de graduação logarítmica. O limite mínimo de 5 min representa o menor
+intervalo que se pode ler com precisão adequada nos registros pluviográficos. O
+limite máximo foi fixado em 48 h, pois para durações maiores se podem usar
+dados pluviométricos com mais facilidade e suficiente precisão. A duração de 14
+h representa a média de 16 h e 12 h, que se obtém partindo-se respectivamente
+                                                                                     8
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+com a progressão de razão 2 das durações de 1 h e 24 h, que devem ser
+mantidas por conveniência. A razão 3, entre as durações de 5 min e 15 min, não
+prejudica a definição da curva nesta parte.
+
+Foram anotadas somente as precipitações máximas com 5 min, 15 min, 30 min,
+1 h, 2 h, 4 h, 8 h, 14 h, 24 h e 48 h de duração que excederam as alturas de 8
+mm, 15 mm, 20 mm, 25 mm, 30 mm, 35 mm, 40 mm, 47 mm, 55 mm e 70 mm
+respectivamente, para estes intervalos de tempo.
+
+Tais limites mínimos das precipitações anotadas foram escolhidas de modo que,
+em cada posto e para cada duração, se tivesse na média aproximadamente 3
+chuvas por ano de observação. Como em geral as chuvas intensas não
+representam precipitações que excedam, para todas as durações, os limites
+mínimos fixados, foram anotados na média, aproximadamente 10 chuvas por
+ano de observação em cada posto.
+
+Uma chuva pode ser considerada como intensa desde que, para qualquer
+duração, ocorre uma precipitação superior aos limites acima estabelecidos.
+
+A fim de completar o estudo das chuvas para durações entre 2 e 6 dias,
+coletaram-se dados pluviométricos dos mesmos postos os quais foi feita a
+análise dos registros pluviográficos. Serviram de fonte de informação os livros
+dos Serviços de Meteorologia, que forneciam as precipitações totais, observadas
+em 1, 2, 3, 4 e 6 dias consecutivos, cujas alturas excedeu em geral os limites de
+60 mm, 80 mm, 100 mm, 120 mm e 150 mm respectivamente, para estes
+intervalos de tempo. Estes limites mínimos foram fixados de modo a se anotar
+na média aproximadamente 2 precipitações por ano em cada posto para 1, 2 e
+3 dias de duração e cerca de 1 precipitação por ano para durações de 4 e 6 dias.
+Em alguns postos foi necessário modificar os limites mínimos das precipitações
+anotadas, para dispor de um número adequado de observações.
+                                                                                    9
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+      3.1.2. ANÁLISE DA FREQUÊNCIA
+
+Para a análise da frequência das chuvas intensas de um posto colocaram-se as
+precipitações anotadas para cada duração em ordem decrescente. Para isto
+foram usadas folhas adequadas (stencil nº 7428) que se encontravam
+arquivadas no Departamento Nacional de Obras de Saneamento. Para fins de
+exemplificação, apresenta-se a figura 3.1 com uma destas folhas.
+                                                                                        10
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+Figura 3.1 – Precipitações para a estação Vassouras, no estado do Rio de Janeiro. (Fonte:
+                                       DNOS, 1957)
+                                                                                    11
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+Para facilitar a disposição em ordem decrescente, as precipitações foram
+escritas primeiro em um rascunho, classificadas em grupos. Depois era fácil
+reordenar as precipitações de cada grupo para figurarem nas folhas definitivas.
+
+Para não haver perigo de falhar alguma precipitação, contava-se o número total
+delas tanto no registro primitivo como nas folhas finais.
+
+No alto da folha, anotou-se o período total de observações no posto, descontado
+de todas as interrupções. Este período é em geral diferente para as observações
+pluviográficas e as pluviométricas.
+
+Como os aparelhos registradores estão sujeitos a desarranjos, de preferência na
+ocasião das chuvas mais intensas, aparecem erros sistemáticos nas análises de
+frequência, em geral pequenos, e que não foi possível eliminar.
+
+Na última coluna das folhas de análise de frequência, figura o tempo de
+recorrência das precipitações, definido pela seguinte relação:
+
+                                  T = n / m, onde:
+
+            T = tempo de recorrência, em anos;
+            n = número de anos de observação;
+            m = número de ordem das precipitações, numa série disposta em
+ordem decrescente.
+
+
+Esta definição do tempo de recorrência faz uso do Método Californiano e foi
+escolhida por ser a mais simples e suficientemente precisa.
+
+Nas previsões das chuvas intensas, o tempo de recorrência correspondente ao
+número médio de anos em que uma dada precipitação será igualada ou
+excedida.
+
+Em outras palavras, suponde que se mantenham no futuro as condições
+meteorológicas que existiram num posto durante o período de observação, a
+precipitação de duração dada e tempo de recorrência T, terá probabilidade de
+máxima de ser igualada ou excedida "n/T" vezes em "n" anos.
+                                                                                    12
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+Isto não significa que as precipitações de tempo de recorrência "T" vão ocorrer
+em intervalos regulares de "T" anos. É possível, apesar de pouco provável, que
+as precipitações com tempo de recorrência muito grande ocorram duas vezes
+seguidas num espaço de tempo relativamente curto. Uma precipitação de
+recorrência muito grande pode ocorrer em qualquer época, independente da
+extensão e do início do período considerado.
+
+Quanto maior o número de anos de observação, comparado com o tempo de
+recorrência da precipitação, tanto menor será a probabilidade de haver certa
+divergência entre o número n/T e precipitações iguais ou maiores previstas e as
+realmente observadas. Para valores da relação n/T superiores a 5, a diferença
+entre os tempos de recorrência previstos e observados costuma ser desprezível
+na prática. Isto mostra a grande vantagem de dispor de um longo período de
+observações de chuvas.
+
+      3.1.3. REPRESENTAÇÃO GRÁFICA
+
+As chuvas intensas de um posto podem ser expressas por uma função de três
+variáveis: precipitação, duração e tempo de recorrência. Em coordenadas
+cartesianas tri retangulares, esta função define uma superfície. As interseções
+desta superfície com planos paralelos aos eixos das precipitações e dos tempos
+de recorrência dão curvas que foram escolhidas nesta publicação para a
+representação gráfica dos dados de chuvas intensas.
+
+Assim se fez, para cada posto, a representação gráfica das precipitações para
+diversas durações em função dos tempos de recorrência. As durações das
+precipitações figuram como parâmetros constantes de cada curva. Ficam assim
+representadas graficamente todos os elementos das curvas intensas, das quais
+se faz a coleta de dados.
+
+A representação gráfica foi feita em folhas com graduação bi logarítmica. No eixo
+das abscissas marcaram-se os tempos de recorrência e no das ordenadas, as
+precipitações. As coordenadas de cada ponto são dadas pelo par de valores,
+que figuram nas duas últimas colunas das folhas de análise de frequência. Os
+                                                                                      13
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+pontos marcados foram ligados por uma linha poligonal contínua. Só foram
+marcadas as precipitações com tempo de recorrência superior a 0,25 anos.
+
+As folhas com as representações gráficas podem ser consultadas entre as folhas
+33 e 386 da publicação original. Cada posto é identificado pela cidade ou local e
+estado onde está instalado. A figura 3.2 fornece a relação dos postos, em ordem
+alfabética, além das coordenadas geográficas dos postos e o número de anos
+de observação.
+
+
+
+
+     Figura 3.2 – Relação dos postos com suas coordenadas geográficas e períodos de
+                            observação. (Fonte: DNOS, 1957).
+                                                                                    14
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+       3.1.4. AJUSTAMENTO DE FÓRMULAS EMPÍRICAS
+
+Entre os pontos marcados nos gráficos que representam os dados de chuvas
+intensas, procurou-se ajustar uma curva regular de conhecida definição analítica.
+
+A fórmula empírica escolhida para definir as precipitações máximas em função
+da duração e do tempo de concentração possui a seguinte notação:
+
+
+
+                       P = K * [a * t + b * log(1 + c * t)], sendo:
+
+           P = precipitação máxima em mm;
+           T = tempo de recorrência em anos;
+           t = duração da precipitação em horas;
+           K = fator de probabilidade, função do período de recorrência, da
+duração da precipitação e da localidade;
+           a, b, c = constantes específicas de cada posto pluviográfico.
+
+
+
+                                               𝛽
+                                       (∝+ 0,25 )
+                                𝑘=𝑇        𝑇        , sendo:
+
+           T = tempo de recorrência em anos;
+           α = valor que depende da precipitação e igualdade para todos os
+postos (figura 3.3);
+           β = valor que depende da duração da precipitação e específico para
+cada posto (figura 3.4).
+
+
+
+
+               Figura 3.3 – Valores de α na metodologia de Otto Pfafstetter.
+                                  (Fonte: JABÔR, 2019).
+                                                                            15
+
+CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+       Figura 3.4 – Valores de β na metodologia de Otto Pfafstetter.
+                          (Fonte: JABÔR, 2019).
+                                                                              16
+
+CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+Figura 3.4 – Valores de β na metodologia de Otto Pfafstetter - Continuação.
+                          (Fonte: JABÔR, 2019).
+                                                                              17
+
+CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+Figura 3.4 – Valores de β na metodologia de Otto Pfafstetter - Continuação.
+                          (Fonte: JABÔR, 2019).
+                                                                                       18
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+   3.2.           ISOZONAS
+
+
+A determinação das relações precipitação/descarga em projetos de pequenas
+barragens e de outras obras de drenagem, como aquelas associadas a rodovias
+e ferrovias, requer o conhecimento das alturas de precipitação para períodos, às
+vezes, inferiores a 24 horas.
+
+Infelizmente, a rede de estações pluviográficas capazes de proporcionar estes
+dados é relativamente pequena, o que obriga os projetistas a extrapolações a
+partir de postos pluviográficos distantes da área de interesse, ignorando-se os
+dados dos postos aludidos são representativos para as bacias do projeto e
+desconhecendo-se a eventual existência de microclima em algumas delas.
+
+Entretanto, a existência de um número relativamente bem maior de estações
+pluviométricas, com registros de precipitações diárias, sugere a possibilidade de
+desenvolvimento de metodologias que correlacionem os dados dos postos
+pluviométricos com os dos postos pluviográficos e permitam deduzir, de forma
+simples, as precipitações para períodos inferiores a 24 horas.
+
+Assim,     torna-se    possível    maior    utilização   de     informação      disponível
+(pluviográficas    e   pluviométricas)     possibilitando     calcular,   com    razoável
+aproximação, as precipitações de projeto, inclusive para áreas afetadas por
+microclimas.
+
+Ao desenhar, em um papel de probabilidades de Hershifild e Wilson, as
+precipitações de 24 horas e 1 hora de diferentes estações pluviográficas do
+Brasil, observou-se que, prolongando-se as respectivas retas de altura de
+precipitação/duração, estas tendem a cortar o eixo das abcissas em um mesmo
+ponto, para determinadas áreas geográficas (TORRICO, 1975).
+
+Esta tendência significa que, em cada área homóloga, a relação entre as
+precipitações de 1 hora e 24 horas, para um mesmo tempo de recorrência, é
+constante e independe das alturas de precipitação. A estas áreas de
+comportamento homólogo foi dado o nome de isozona e seu mapa pode ser
+visualizado na figura 3.5.
+                                                                                     19
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+Construiu-se o mapa de isozonas relacionando as alturas de precipitação
+máxima anual de 1 hora com a máxima anual de 24 horas, para cada posto
+pluviográfico (que correspondem as mesmas 98 estações utilizadas por Otto
+Pfafstetter).
+
+Uma análise sumária do mapa de isozonas do Brasil revela as seguintes
+características:
+
+   • Isozonas B e C: tipificam a zona de influência marítima, com coeficientes
+de intensidade suaves;
+   • Isozonas E e F: tipificam as zonas continental e do Nordeste, com
+coeficientes de intensidade altos;
+   • Isozona D: tipifica a zona de transição entre continental e marítima. Esta
+isozona se prolonga, caracterizando a zona de influência do Rio Amazonas;
+   • Isozonas G e H: tipificam a zona da caatinga nordestina, com coeficientes
+de intensidade muito altos;
+   • Isozona: A coincide com a zona de maior precipitação anual do brasil, com
+coeficientes de intensidade baixos.
+
+
+
+
+                         Figura 3.4 – Mapa de isozonas do Brasil.
+                                                                                    20
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+      3.2.1. RELAÇÃO 24 HORAS / 1 DIA
+
+Para correlacionar as precipitações nas estações pluviométricas com as
+isozonas, deduzidas das estações pluviográficas, determinou-se a relação 24
+horas / 1 hora para o tempo de recorrência base de 1 ano. O coeficiente é de
+1,095, com o desvio padrão de ± 6,6 %.
+
+O temo de recorrência nesta relação não tem influência prática, porque a
+precipitação de 1 dia equivale a uma duração média de 15 horas e 50 minutos,
+para um tempo de recorrência de 1 ano, e a 16 horas e 10 minutos, para 10.000
+anos de tempo de recorrência (+0,1 % de influência nas alturas de precipitação.
+
+TOME NOTA
+O Manual de Hidrologia Básica do DNIT sugere um coeficiente de valor 1,13 para
+transformar a precipitação de 1 dia em precipitação de 24 horas.
+
+      3.2.2. RELAÇÃO 1 HORA / 24 HORAS
+
+A figura 3.5 identifica zonas de igual relação, 1 hora / 24 horas de altura de
+precipitação, para diferentes tempos de recorrência. Assim, para transformar a
+chuva de 24 horas, obtida conforme orientação da seção anterior, em chuva de
+1 hora, basta multiplicá-la pelos percentuais indicados na figura 3.5.
+
+
+
+
+             Figura 3.5 – Isozonas de igual relação. (Fonte: TORRICO, 1975).
+
+Os valores médios de cada uma das izosonas, para tempo de recorrência base
+de 1 ano, são:
+
+  • Isozona A: 37 % de 24 horas;
+  • Isozona B: 39 % de 24 horas;
+                                                                                    21
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+  • Isozona C: 41 % de 24 horas;
+  • Isozona D: 43 % de 24 horas;
+  • Isozona E: 45 % de 24 horas;
+  • Isozona F: 47 % de 24 horas;
+  • Isozona G: 49 % de 24 horas;
+  • Isozona H: 51 % de 24 horas.
+
+      3.2.3. RELAÇÃO 6 MINUTOS / 1 HORA
+
+A tabela anterior também identifica, para cada uma das isozonas, a relação 6
+minutos / 24 horas de alturas de precipitação, para tempos de recorrência entre
+5 e 50 anos.
+
+Os erros que se cometem ao tomar a média dos tempos de recorrência de 5 a
+50 anos são praticamente desprezíveis, como se demonstra: -1 % para 5 anos;
+0 % para 15 anos; +1 % para 50 anos.
+
+      3.2.4. METODOLOGIA
+
+O uso da metodologia das izosonas exige a adoção da seguinte sequência
+metodológica:
+
+   • Compilam-se os dados das máximas chuvas diárias, para cada ano, dos
+postos pluviométricos da região do projeto.
+
+Os projetos que abranjam regiões muito extensas, com climas diferentes, ou que
+contenham microclimas, deverão ser divididos em sub-regiões.
+
+   • Calcula-se, para cada posto, por qualquer método estatístico (sendo o
+método de GUMBEL, um dos mais utilizados) a chuva de 1 dia, no tempo de
+recorrência previsto.
+   • Determina-se, no mapa do projeto, com o método de Thiessen, a média
+ponderada das máximas chuvas diárias de cada ponto, para o tempo de
+recorrência previsto.
+
+Esta é a metodologia normalmente empregada para a determinação da média
+das máximas chuvas diárias.
+                                                                                    22
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+Para a conversão das máximas chuvas diárias em chuvas com duração de 6
+minutos e 24 horas, segue-se a seguinte metodologia:
+
+   • Converte-se a chuva de 1 dia em chuva de 24 horas, multiplicando-se a
+primeira pelo fator 1,095.
+   • Determina-se, por meio da figura 3.4, a isozona correspondente ao projeto;
+   • Com base na figura 3.5, fixam-se, para a isozona de projeto e tempo de
+recorrência previsto, as percentagens para 6 minutos e 1 hora;
+   • Calculam-se, com estas percentagens e chuva de 24 horas, as alturas de
+precipitação para 6 minutos e 1 hora;
+   • Delimitam-se, como a exemplo do gráfico mostrado na figura 3.6, as alturas
+de precipitação para 24 horas, 1 hora e 6 minutos de duração;
+   • Traçam-se as retas das precipitações de 6 minutos para 1 hora desta para
+24 horas, no papel de probabilidade;
+   • Para calcular tempo de duração contida entre 6 minutos e 24 horas, lê-se
+a altura correspondente no gráfico do papel de probabilidade mostrada na
+mesma figura a pouco citada.
+                                                                                          23
+
+      CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+Figura 3.6 – Curvas de precipitação x duração x frequência no papel de probabilidade de
+                                 Hershifeld e Wilson.
+                                                                                      24
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+   3.3.          EQUAÇÕES DE CHUVAS (COPASA / DAEE)
+
+
+Outra possibilidade que pode ser adotada pelo projetista para obter os valores
+de precipitação ou intensidade é utilizar-se das equações de chuva definidas
+para diversas cidades do país em diferentes publicações, a exemplo daquelas
+encontradas no trabalho da COPASA (Companhia de Saneamento de Minas
+Gerais) e do DAEE/SP (Departamento de Águas e Energia Elétrica), ou mesmo
+de outras publicações nacionais, a exemplo do Atlas Pluviométrico do Brasil
+(divulgado pela CPRM).
+
+TOME NOTA
+
+A seguir são disponibilizados alguns links para download de publicações
+nacionais com equações de chuvas em diferentes cidades do país.
+
+   • DAEE/SP: http://www.daee.sp.gov.br/site/hidrologia/
+   • CPRM/RIGeo: https://rigeo.cprm.gov.br/jspui/handle/doc/1269
+   • COPASA/MG: Planilha Excel com equações de chuva (anexo ao módulo);
+   • DAEE/SP: Planilha Excel com equações de chuva (anexo ao módulo).
+                                                                                      25
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+4. TEMPO DE RECORRÊNCIA E TEMPO DE
+  CONCENTRAÇÃO
+
+   4.1.          TEMPO DE RECORRÊNCIA
+
+
+O tempo de recorrência é o intervalo médio de tempo, normalmente expresso
+em anos, onde um dado evento pode ocorrer ou ser superado.
+
+Quando se trata de estruturas hidráulicas, o termo pode ser compreendido como
+sendo o intervalo de tempo no qual uma determinada chuva, de intensidade e
+duração conhecidas, será igualada ou superada. Este tempo diz respeito a
+enchentes de projeto que orientarão o dimensionamento de tais estruturas, de
+modo que elas resistam a essas enchentes sem risco de superação.
+
+A escolha do tempo de recorrência, ou do período de retorno, como também
+costuma ser chamado, está intimamente relacionada com parâmetros
+econômicos e de segurança.
+
+Deste modo, uma obra de grandes dimensões e importância, cujo colapso possa
+trazer consequências severas e seu reparo exija vultosos investimentos, a citar
+como exemplo grandes barragens hidroelétricas, demandará um tempo de
+recorrência maior.
+
+Por sua vez, uma galeria de águas pluviais exigiria tempo de recorrência menor,
+pois se trata de uma estrutura de menor dimensão e importância, cujo colapso
+traria danos de menores proporções e seu reparo exigiria um investimento
+menor.
+
+Quando se avalia a escolha do tempo de recorrência em um projeto rodoviário
+está-se ponderando, na verdade, a grandeza da vazão de contribuição para as
+estruturas projetadas. Tal escolha deve resultar na adoção de um valor para o
+qual o risco de superação seja adequado à segurança da rodovia, aos danos
+causados e aos investimentos necessários para sua reparação.
+                                                                                    26
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+Assim, um bueiro de rodovia com capacidade de vazão insuficiente pode causar
+a erosão dos taludes junto à boca de jusante, ruptura do aterro por
+transbordamento das águas, ou inundação de áreas a montante. No caso de
+canal ou galeria de drenagem urbana, estes danos serão mais sentidos, pois
+causam a interrupção do trânsito, mesmo temporariamente, e danos em imóveis
+residenciais ou nas mercadorias dos estabelecimentos comerciais.
+
+No caso da insuficiência de vazão em seções de pontes, visto que abrangem
+cursos d’água com maior vazão, em geral os danos são muito significativos,
+podendo ocorrer a destruição da estrutura ou a ruptura dos aterros contíguos,
+proporcionando uma interrupção do tráfego, muito mais séria, exigindo obras de
+recomposição mais vultuosas e demoradas.
+
+Para a fixação do tempo de recorrência da enchente em projetos deve-se ainda
+ser considerada uma folga entre o nível d’água previsto e algum ponto crítico
+característico, como um ponto baixo na estrada próximo ao local em análise e à
+face inferior da superestrutura. No caso de uma ponte, por exemplo, deve-se
+considerar uma folga de 1,00 m ou valores mais elevados no caso de águas
+navegáveis ou possibilidades de transportes por via líquida de troncos ou galhos.
+
+Para o projeto de bueiros, é habitual considerar como limite o afogamento da
+galeria no interior da canalização, sendo permissível a elevação do nível d’água
+a montante, além da geratriz superior da obra, pelo fato de que a retenção
+temporária das águas a montante pode amortecer consideravelmente os picos
+de cheias, sem comprometer os taludes vizinhos.
+
+O procedimento recomendado pela Instrução de Serviço IS-203 é o
+dimensionamento do bueiro para condições críticas de escoamento, para a
+vazão calculada com o tempo de recorrência de 15 ou 25 anos e a verificação
+do nível d’água a montante para a enchente de 25 ou 50 anos.
+
+Já para o dimensionamento hidráulico das obras de arte especiais, a exemplo
+de pontilhões e pontes, que são estruturas localizadas que dificilmente permitem
+melhorias posteriores e que podem constituir um ponto de estrangulamento, é
+                                                                                    27
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+mais conveniente a adoção de um período de retorno maior, sendo fixado 50 e
+100 anos, respectivamente.
+
+É importante destacar que o tempo de recorrência fixado por diferentes órgãos
+rodoviários pode variar para um mesmo tipo de dispositivo, bem como que os
+valores constantes na tabela 4.1 do módulo anterior referem-se às estruturas
+projetadas nas rodovias federais sob jurisdição do DNIT.
+
+Para fins de exemplificação as tabelas 4.1 a 4.4 trazem os tempos de recorrência
+recomendados por diferentes órgãos rodoviários.
+
+              Tabela 4.1 – Tempos de recorrência recomendados pelo DNIT.
+                Tipo de obra            Tempo de recorrência – TR (anos)
+         Drenagem superficial                         5 a 10
+         Drenagem profunda                              10
+         Bueiro tubular                             15 (canal)
+                                                    25 (orifício)
+         Bueiro celular                             25 (canal)
+                                                    50 (orifício)
+         Pontilhão                                      50
+         Ponte                                          100
+                                Fonte: BRASIL, 2006.
+
+
+           Tabela 4.2 – Tempos de recorrência recomendados pela AGTOP/GO
+                Tipo de obra            Tempo de recorrência – TR (anos)
+         Drenagem superficial                            5
+         Bueiros de grota                                5
+         Bueiro ou galeria em bacias                10 (canal)
+         até 1 km²                                  25 (orifício)
+         Bueiro ou galeria em bacias                25 (canal)
+         com 1 km² < A ≤ 5 km²                      50 (orifício)
+         Bueiro ou galeria em bacias                    50
+         com 5 km² < A ≤ 10 km²
+         Pontes até 100 m                               50
+         Pontes maiores que 100 m                       100
+             Fonte: Manual Técnico de Drenagem e Esgoto Sanitário – ABTC.
+                                                                                     28
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+   Tabela 4.3 – Tempos de recorrência recomendados pelo DER/MG (Rodovias normais).
+                  Tipo de obra          Tempo de recorrência – TR (anos)
+         Drenagem superficial                               10
+         Drenagem profunda                                   1
+         Bueiro tubular/ drenagem de                    25 (orifício)
+         grota
+         Bueiro celular/ drenagem de                    25 (canal)
+         grota                                          50 (orifício)
+         Bueiro celular                                 25 (canal)
+                                                        50 (orifício)
+         Pontes                                          50 e 100
+             Fonte: Manual Técnico de Drenagem e Esgoto Sanitário – ABTC.
+
+
+   Tabela 4.4 – Tempos de recorrência recomendados pelo DER/MG (Rodovias com baixo
+                                  volume de tráfego).
+                 Tipo de obra           Tempo de recorrência – TR (anos)
+         Drenagem superficial                         10
+         Drenagem profunda                             1
+         Bueiro tubular/ drenagem de              15 (orifício)
+         grota
+         Bueiro celular/ drenagem de                    25 (orifício)
+         grota
+         Pontes                                              50
+             Fonte: Manual Técnico de Drenagem e Esgoto Sanitário – ABTC.
+
+
+
+No entanto, o engenheiro projetista não deve considerar estes valores como
+absolutos ou imutáveis, haja vista que algumas peculiaridades ou condições de
+contorno em seu projeto podem exigir algum tipo de ajuste.
+
+Para fins de exemplificação, pode-se citar que há uma gama de bueiros tubulares
+de grandes dimensões, fabricados com chapas metálicas ou polietileno de alta
+densidade, com capacidade de descarga igual ou superior aos bueiros celulares
+de concreto, podendo se adotar os mesmos tempos de recorrência para ambos
+os casos.
+
+Da mesma maneira, se uma ponte está sendo projetada em um trecho rodoviário
+com um talvegue profundo e em terreno montanhoso, ou ainda num trecho
+rodoviário de acesso único a uma cidade e com volume médio de tráfego próximo
+aos 100.000 veículos/dia, pode-se sugerir um tempo de recorrência maior do que
+                                                                                    29
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+aquele que poderia ser adotado para uma ponte inserida em região plana, com
+talvegue raso e dotada de uma rede viária provida de vários acessos terrestres,
+com volume médio diário de tráfego de aproximadamente 1.000 veículos/dia.
+
+Assim, desde que justificado, os tempos de recorrência adotados em um dado
+projeto rodoviário podem diferir daqueles fixados na Instrução de Serviço IS-203.
+
+O Manual de Hidrologia Básica do DNIT (BRASIL, 2005) traz alguns métodos de
+cálculo que permite a obtenção do tempo de recorrência relacionado a uma dada
+série histórica. Os métodos mais conhecidos são o de GUMBEL e o de HAZEN.
+
+De acordo com este último autor, as descargas máximas anuais dos registros de
+um curso d'água distribuem-se, em uma representação logarítmica, segundo a
+distribuição de frequência normal de Gauss.
+
+Com isto, a partir dos registros fluviométricos de um posto, pode-se organizar
+uma série de máximas anuais, dispondo-as em ordem decrescente, com seus
+respectivos números de ordem, a partir do qual são calculados os tempos de
+recorrência pela expressão seguinte:
+
+                              TR = n / (m-0,5), onde:
+      n = número de anos de observação;
+      m = número da ordem de grandeza.
+
+
+ TOME NOTA
+
+A mesma metodologia pode ser aplicada para o cálculo do TR associado aos
+registros das estações pluviométricas.
+
+
+ 4.2. TEMPO DE CONCENTRAÇÃO
+
+Em hidrologia, o tempo de concentração pode ser definido como o tempo
+necessário para uma gota d´água caminhar superficialmente do ponto mais
+distante da bacia de contribuição até sua exutória.
+
+Pode ser definido também como o tempo de percurso em que o deflúvio leva
+para atingir o curso principal desde os pontos mais longínquos da bacia de
+                                                                                    30
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+contribuição até o local onde se deseja definir a descarga, ou ainda, o intervalo
+de tempo entre o início da precipitação e o instante em que todos os pontos da
+bacia estão contribuindo para a vazão.
+
+A determinação numérica do tempo de concentração depende primordialmente
+do comprimento do curso d'água principal e de sua declividade, embora alguns
+autores também expressem o tempo de concentração em função da área da
+bacia hidrográfica.
+
+Normalmente considera-se que, nas pequenas bacias hidrográficas, com áreas
+até 1 km², o deflúvio superficial escoa em grande parte do seu percurso sobre o
+terreno, sem chegar aos canalículos ou pequenos cursos d'água e a velocidade
+de escoamento é fortemente influenciada pela rugosidade do terreno, por sua
+cobertura vegetal e pelos detritos sobre o solo.
+
+Já nas bacias maiores, com áreas em torno de 10 km², por exemplo, o deflúvio
+superficial escoa na maior parte do tempo através de canais ou canalículos
+erodidos no solo pela própria passagem da água. Deste modo, a textura
+superficial do solo, a permeabilidade e a cobertura vegetal têm efeito cada vez
+menos pronunciado sobre o tempo de concentração.
+
+A avaliação do tempo de concentração de uma bacia é bastante complexa,
+devido aos inúmeros condicionantes envolvidos, existindo uma grande variedade
+de expressões de cálculo, merecendo, por isso, grande atenção na sua
+determinação, pois influencia significativamente no resultado da descarga de
+projeto. De uma forma geral, para uma mesma bacia hidrográfica, a descarga
+máxima calculada é proporcional ao inverso do tempo de concentração para ela
+considerado.
+
+A seguir, serão apresentadas algumas das fórmulas mais usuais para o cálculo
+do tempo de concentração, mas a escolha de uma delas deverá estar norteada
+por alguns parâmetros, a citar como exemplos:
+
+      - A mais compatível com a forma da bacia;
+
+      - A mais adaptável à região de interesse da rodovia;
+                                                                                      31
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+      - A que contenha o maior número de elementos físicos, como declividade,
+natureza do solo, recobrimento vegetal, etc;
+
+      - A distinção entre área urbana e rural.
+
+
+
+Vale destacar que a própria IS-203 esclarece que o tempo de concentração das
+bacias deverá ser avaliado por metodologias e modelos usuais que apresentem
+resultados compatíveis e que considerem: comprimento e declividade do
+talvegue principal; área da bacia; recobrimento vegetal; e uso da terra, dentre
+outros.
+
+      4.2.1. FÓRMULA DE KERBY
+
+                             Tc = 37 * (L * a / I)0,47, onde:
+
+
+            Tc = tempo de concentração, em minutos;
+            L = comprimento do talvegue principal, em quilômetros;
+            I = declividade do talvegue, em %;
+            a = 0,5.
+
+
+Essa fórmula forneceu velocidade média de 6,3 km/h para as bacias pequenas,
+crescendo rapidamente para as bacias maiores, não sendo, assim,
+recomendável para estas.
+
+
+      4.2.2. FÓRMULA DE KIRPICH
+
+                            Tc = 0,95 * (L3 / H)0,385, onde:
+
+
+            Tc = tempo de concentração, em horas;
+            L = comprimento do talvegue principal, em quilômetros;
+            H = desnível máximo do talvegue principal, em metros.
+
+
+Essa fórmula forneceu uma velocidade média de 6,0 km/h para as 15 bacias
+menores analisadas e de 7,3 km/h para as bacias médias e grandes, indicando
+                                                                                    32
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+sua aplicação para ambos os casos, embora as velocidades sejam muito altas
+se comparadas com as outras fórmulas.
+
+
+      4.2.3. FÓRMULA DE PICKING
+
+                              Tc = 5,3 * (L2 / I)1/3, onde:
+
+
+          Tc = tempo de concentração, em horas;
+          L = comprimento do talvegue principal, em quilômetros;
+          I = declividade do talvegue principal, em metro/metro.
+
+
+Para as bacias pequenas, a média das velocidades resultou em 5,4 km/h,
+crescendo para 8,6 km/h para as bacias maiores, não sendo, por isso, indicada
+para estas.
+
+
+      4.2.4. FÓRMULA DO U. S. CORPS OF ENGINEERS
+
+                             Tc = 0,3 * (L / I0,25)0,76, onde:
+
+
+          Tc = tempo de concentração, em horas;
+          L = comprimento do talvegue principal, em quilômetros;
+          I = declividade do talvegue principal, em %.
+
+
+Para as bacias pequenas resultou em uma velocidade média de 5,1 km/h,
+crescendo para uma média de 8,1 km/h para bacias maiores, não sendo, por
+isso, indicada para estas.
+
+
+      4.2.5. FÓRMULA DE VEN TE CHOW
+
+                             Tc = 25,2 * (L / I0,5)0,64, onde:
+
+
+          Tc = tempo de concentração, em minutos;
+          L = comprimento do talvegue principal, em quilômetros;
+          I = declividade do talvegue principal, em %.
+                                                                                       33
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+A média das velocidades para as bacias pequenas resultou em 4,9 km/h,
+crescendo para 9,4 km/h para as bacias maiores, não sendo, por isso,
+recomendada para estas.
+
+
+          4.2.6. FÓRMULA DO DNOS
+
+                          Tc = 10 * A0,3 * L0,2 / (k * I0,4), onde:
+
+
+             Tc = tempo de concentração, em minutos;
+             A = área da bacia, em hectare;
+             L = comprimento do talvegue principal, em metros;
+             I = declividade do talvegue principal, em %;
+             k = depende das características da bacia, conforme descrito em
+seguida.
+
+
+  - Terreno areno-argiloso, coberto de vegetação intensa, elevada absorção (k
+= 2,0);
+  - Terreno comum, coberto de vegetação, absorção apreciável (k = 3,0);
+  - Terreno argiloso, coberto de vegetação, absorção média (k = 4,0);
+  - Terreno argiloso de vegetação média, pouca absorção (k = 4,5);
+  - Terreno com rocha, escassa vegetação, baixa absorção (k = 5,0);
+  - Terreno rochoso, vegetação rala, reduzida absorção (k = 5,5).
+
+
+Para condições médias, com K= 4,0, resultou, na média, uma velocidade de
+4,9 km/h para bacias pequenas e 5,7 km/h para bacias maiores, portanto
+aceitável para qualquer tamanho de bacia.
+
+
+          4.2.7. FÓRMULA DE KIRPICH (MODIFICADA)
+
+                             Tc = 1,42 * (L3 / H)0,385, onde:
+
+
+             Tc = tempo de concentração, em horas;
+             L = comprimento do talvegue principal, em quilômetros;
+                                                                                    34
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+           H = desnível máximo do talvegue principal, em metros
+
+
+Essa fórmula fornece velocidades próximas da média de todas as expressões
+analisadas. A velocidade média para as bacias pequenas resultou em 4,0 km/h
+e para as bacias maiores em 4,8 km/h, indicando sua aplicação para uma grande
+faixa de áreas.
+
+
+      4.2.8. FÓRMULA DE GEORGE RIBEIRO
+
+                  Tc = 16 * L / (1,05 - 0,2 * Pr) * (100 * I)0,04, onde:
+
+
+           Tc = tempo de concentração, em minutos;
+           L = comprimento do talvegue principal, em quilômetros;
+           I = declividade do talvegue principal, em metro/metro;
+           Pr = parâmetro dados pela porção da bacia coberta por vegetação.
+
+
+Para um valor de Pr = 0,60 resultou uma velocidade de 3,8 km/h para as bacias
+menores e de 3,6 km/h para bacias maiores, sendo assim, aplicável para
+qualquer tamanho de bacia.
+
+
+      4.2.9. FÓRMULA DE PASINI
+
+                          Tc = 0,107 * (A * L)1/3 / I0,5, onde:
+
+
+           Tc = tempo de concentração, em horas;
+           A = área da bacia, em km²;
+           L = comprimento do talvegue principal, em quilômetros;
+           I = declividade do talvegue principal, em metro/metro.
+
+
+Resultou uma velocidade de 3,9 km/h, na média, para as bacias pequenas de
+2,3 km/h para as bacias maiores, sendo assim, aplicável a bacias de qualquer
+tamanho.
+                                                                                   35
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+      4.2.10.       FÓRMULA DE VENTURA
+
+                          Tc = 0,127 * (A * I)0,5, onde:
+
+
+          Tc = tempo de concentração, em horas;
+          A = área da bacia, em km²;
+          I = declividade do talvegue principal, em metro/metro.
+
+
+Resultou a média das velocidades de 3,9 km/h para bacias pequenas e de 2,4
+Km/h para bacias maiores, sendo aplicável a qualquer tamanho de bacia.
+
+
+      4.2.11.       FÓRMULA DE ROSSI
+
+                         Tc = 0,77 * (L / I0,5)0,295, onde:
+
+
+          Tc = tempo de concentração, em horas;
+          L = comprimento do talvegue principal, em quilômetros;
+          I = declividade do talvegue principal, em %.
+
+
+Resultaram, em média, uma velocidade muito baixa, de 2,0 km/h para as bacias
+pequenas, sendo muito altas para as bacias grandes, contra-indicando sua
+aplicação para ambos os casos.
+
+
+      4.2.12.       FÓRMULA DE GIANDOTTI
+
+                  Tc = (4 * A0,5 + 1,5 * L) / (0,8 * H0,5), onde:
+
+
+          Tc = tempo de concentração, em horas;
+          A = área da bacia, em km²;
+          L = comprimento do talvegue principal, em quilômetros;
+          H = desnível máximo do talvegue principal, em metros.
+
+
+Resultou a aplicação desta expressão, em média, na velocidade de 2,1 km/h
+para bacias pequenas, e em 5,0 km/h para bacias maiores. As velocidades para
+                                                                                    36
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+as bacias pequenas são abaixo da média das outras fórmulas, parecendo, por
+isso, pouco recomendável sua aplicação nestas áreas.
+
+
+      4.2.13.        FÓRMULA DE JOHN COLLINS
+
+                        Tc = 44 * L / Dm * (A2 / I)0,2, onde:
+
+
+           Tc = tempo de concentração, em minutos;
+           L = comprimento do talvegue principal, em quilômetros;
+           A = área da bacia, em km²;
+           I = declividade do talvegue principal, em % e restrita aos limites 1 %
+a 3,5 %;
+           Dm = diâmetro de um círculo de área equivalente ao da bacia, sendo
+calculado por:
+                             Dm = (4 * A / π)0,5, onde:
+
+
+A média das velocidades para bacias pequenas resultou em 1,8 km/h e para
+bacias maiores em 3,1 km/h.         As velocidades para bacias pequenas são
+reduzidas, comparadas com a média das outras fórmulas, não se
+recomendando, por isso, seu emprego para estas.
+
+
+      4.2.14.        R. PELTIER / J. L. BONNENFANT
+
+O tempo de concentração é calculado pela expressão:
+                                Tc = T1 + T2, onde:
+
+
+           Tc = tempo de concentração, em minutos;
+           T1 = tempo de concentração expresso em minutos, tabelados em
+função da cobertura vegetal e declividade do talvegue (tabela 4.5).
+
+
+                                T2 = β * T'2, sendo:
+           β = coeficiente de correção da cobertura vegetal (tabela 4.5);
+           T'2 = valores constantes nas tabelas 4.6 A 4.11.
+                                                                                              37
+
+             CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+                                      α = L / A0,5, onde:
+                 α = coeficiente de forma da bacia;
+                 L = comprimento do talvegue principal, em hectômetro;
+                 A = área da bacia, em hectare.
+
+
+                                Tabela 4.5 – Valores de T1 e de β.
+  TEMPOS DE ACUMULAÇÃO E COFICIENTE DE CORREÇÃO DA COBERTURA VEGETAL
+Natureza da cobertura          Correção da                      Valores de T1 (min)
+vegetal                        cobertura               Declividade do talvegue “I” (m/m)
+                               vegetal
+                                     β         0,025     0,05        0,1   0,15       0,20   0,25
+Plataforma de estradas,            1,00          7        5          3       2         2      2
+terrenos com vegetação
+rala, sem vegetação ou
+rochosa (região montanhosa
+com rocha)
+Vegetação normal, gramas,          1,33          16      13          8       6         5      5
+etc. (região montanhosa)
+Vegetação densa e cerrado          1,67          20      16          10      8         7      6
+(região plana)
+Floresta densa (região plana       2,50          20      20          18     10         9      8
+com alagadiços)
+                                                                                                 38
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+                        Tabela 4.6 – Valores de T´2 para I = 0,025 m/m.
+I=                                                   α
+0.025m/m    1.0   1.1     1.2   1.3    1.4   1.5   1.6    1.7   1.8       1.9   2.0   3.0   4.0
+A (ha)
+1           3     3       3     4      4     4     5      5     5         5     6     9     13
+2           4     5       5     5      6     6     7      7     8         8     8     13    17
+5           6     6       7     7      8     8     9      10    10        11    11    17    23
+10          7     8       8     9      10    11    11     12    13        13    14    21    32
+20          11    12      14    15     16    17    18     19    20        22    23    34    45
+30          13    14      15    17     18    19    20     22    23        24    25    28    51
+40          15    16      17    18     20    21    23     24    25        27    28    42    55
+50          17    19      20    22     24    25    27     29    31        32    34    51    58
+60          24    29      29    31     34    35    38     41    43        45    48    72    96
+70          30    33      36    39     42    45    48     50    53        55    59    89    119
+80          33    36      39    41     46    49    52     55    59        62    65    98    130
+90          35    39      42    46     50    53    57     60    64        67    74    106   141
+100         38    42      45    50     53    57    61     65    69        73    76    115   153
+150         48    53      58    62     67    72    77     82    87        91    96    144   192
+200         57    62      67    74     79    85    91     96    102       107   113   170   225
+250         69    75      83    90     97    104   111    118   125       132   139   206   227
+300         81    89      97    105    113   121   129    137   147       153   160   242   322
+400         109   120     131   142    153   168   174    185   196       207   221   327   435
+                                                                                               39
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+                       Tabela 4.7 – Valores de T´2 para I = 0,05 m/m.
+I=                                                   α
+0.05m/m    1.0   1.1   1.2   1.3    1.4   1.5    1.6     1.7   1.8      1.9   2.0   3.0   4.0
+A (ha)
+1          2     2     2     3      3     3      3       3     4        4     4     5     8
+2          3     3     4     4      4     4      5       5     5        6     6     9     12
+5          4     4     5     5      6     6      6       7     7        8     8     12    16
+10         5     5     6     6      7     7      8       8     9        9     10    15    20
+20         8     9     10    10     11    12     13      14    14       15    16    24    32
+30         9     10    11    12     13    13     14      15    16       17    18    27    35
+40         10    11    12    13     14    15     16      17    18       19    20    30    40
+12         12    13    14    16     17    18     19      20    22       23    24    36    48
+60         17    19    20    22     24    25     27      29    31       32    34    51    68
+70         21    23    25    27     29    31     34      36    38       40    42    63    84
+80         23    25    28    30     32    34     37      39    41       44    46    69    92
+90         25    27    30    32     35    37     40      42    45       47    50    75    100
+100        27    30    32    35     38    40     43      45    49       51    54    81    108
+150        34    37    41    44     48    51     54      58    61       65    68    102   135
+200        40    44    48    52     56    60     64      68    72       76    80    120   160
+250        49    54    59    64     69    73     78      83    88       93    98    147   198
+300        57    63    68    74     80    85     91      97    102      108   114   171   228
+400        77    85    92    100    108   116    116     131   139      146   154   231   306
+                                                                                               40
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+                       Tabela 4.8 – Valores de T´2 para I = 0,10 m/m.
+I=                                                   α
+0.10m/m    1.0   1.1   1.2    1.3   1.4    1.5   1.6     1.7   1.8      1.9   2.0   3.0   4.0
+A (ha)
+1          1     2     2      2     2      2     22      2     3        3     3     4     5
+2          2     2     3      3     3      3     3       4     4        4     4     6     8
+5          3     3     3      4     4      4     5       5     5        5     6     8     11
+10         4     4     4      5     5      5     6       6     6        7     7     11    14
+20         6     6     7      7     8      8     9       10    10       11    11    17    23
+30         6     7     8      8     9      10    10      11    11       12    13    19    25
+40         7     8     8      9     10     11    11      12    13       13    14    21    28
+50         8     9     10     11    12     13    14      14    15       16    17    25    34
+60         12    13    14     15    17     18    19      20    22       23    24    36    48
+70         15    16    18     19    21     22    24      25    27       28    30    45    59
+80         16    18    20     21    23     24    26      28    29       31    33    49    65
+90         18    19    21     23    25     26    28      30    32       34    35    53    71
+100        19    21    23     25    27     29    31      32    34       36    38    57    78
+150        24    26    29     31    34     36    38      41    43       46    48    72    96
+200        28    31    34     37    40     42    45      48    51       54    57    85    113
+250        35    38    42     45    48     52    55      59    62       66    69    104   139
+300        40    44    48     52    56     60    64      68    72       77    81    121   161
+400        54    60    65     71    76     82    87      92    98       103   109   168   218
+                                                                                               41
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+                       Tabela 4.9 – Valores de T´2 para I = 0,15 m/m.
+I=                                                 α
+0.15m/m    1.0   1.1   1.2    1.3   1.4    1.5   1.6    1.7   1.8       1.9   2.0   3.0   4.0
+A (ha)
+1          1     1     1      2     2      2     2      2     2         2     2     3     3
+2          2     2     2      2     2      3     3      3     3         3     3     5     7
+5          2     3     3      3     3      3     4      4     4         4     5     7     9
+10         3     3     3      4     4      4     5      5     5         5     6     9     12
+20         5     5     6      6     6      7     7      8     8         9     9     14    19
+30         5     6     6      7     7      8     8      9     9         10    10    16    21
+40         6     6     7      8     8      9     9      10    10        11    12    17    23
+50         7     7     8      9     10     10    11     12    12        13    14    21    28
+60         10    11    12     13    14     15    16     17    18        19    20    29    39
+70         12    13    15     16    17     18    19     21    22        23    24    36    49
+80         13    15    16     17    19     20    21     23    24        25    27    40    53
+90         14    16    17     18    20     22    23     25    26        27    29    43    58
+100        16    17    19     20    22     23    25     27    28        30    31    47    62
+150        22    22    24     26    27     29    31     32    33        35    37    59    79
+200        23    25    28     30    32     35    37     39    42        44    46    69    92
+250        28    31    34     37    40     42    45     48    51        54    57    85    113
+300        33    36    40     43    46     49    53     56    59        63    66    99    132
+400        44    49    53     58    62     67    71     76    80        84    89    134   178
+                                                                                            42
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+                       Tabela 4.10 – Valores de T´2 para I = 0,20 m/m.
+I=                                                 α
+0.20m/m    1.0   1.1    1.2   1.3    1.4   1.5    1.6   1.7    1.8   1.9   2.0   3.0   4.0
+A (ha)
+1          1     1      1     1      1     1      2     2      2     2     2     3     4
+2          1     2      2     2      2     2      3     3      3     3     3     4     5
+5          2     2      2     3      3     3      4     3      4     4     4     6     8
+10         2     3      3     3      3     4      5     4      4     5     5     7     10
+20         4     4      5     5      6     6      7     7      7     8     8     12    16
+30         4     5      5     6      6     7      8     8      8     9     9     13    18
+40         5     5      6     6      7     7      9     8      9     9     10    15    20
+50         6     7      7     8      8     9      11    10     11    11    12    18    24
+60         8     9      10    11     12    13     16    14     15    16    17    25    34
+70         10    12     13    14     15    16     19    18     19    20    21    31    42
+80         11    13     14    15     16    17     21    20     21    22    24    34    46
+90         12    14     15    16     17    19     23    21     22    24    25    37    50
+100        13    15     16    18     19    20     25    23     24    26    27    40    54
+150        17    19     20    22     24    25     31    29     31    32    34    51    68
+200        20    22     24    26     28    30     37    34     36    38    40    60    80
+250        24    27     29    32     34    37     45    42     44    47    49    73    98
+300        28    31     34    37     40    45     53    48     51    54    57    85    114
+400        38    42     46    50     54    58     71    65     69    73    77    105   154
+                                                                                            43
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+                       Tabela 4.11 – Valores de T´2 para I = 0,25 m/m.
+I=                                                 α
+0.25m/m    1.0   1.1    1.2   1.3    1.4   1.5    1.6   1.7    1.8   1.9   2.0   3.0   4.0
+A (ha)
+1          1     1      1     1      1     1      1     2      2     2     2     3     4
+2          1     2      2     2      2     2      2     2      2     3     3     4     5
+5          2     2      2     2      3     3      3     3      3     3     4     5     9
+10         2     2      3     3      3     3      4     4      4     4     4     5     9
+20         4     4      4     5      5     5      6     6      6     7     7     11    14
+30         4     4      5     5      6     6      6     7      7     8     8     12    16
+40         5     5      5     6      6     7      7     8      8     8     9     13    16
+50         5     6      6     7      7     8      8     9      10    10    11    16    21
+60         8     8      9     10     11    11     12    13     14    14    15    23    30
+70         9     10     11    12     13    14     15    16     17    18    19    28    38
+80         10    11     12    13     14    15     16    17     18    20    21    31    41
+90         11    12     13    15     16    17     18    19     20    21    22    33    45
+100        12    13     14    17     17    18     19    21     22    23    24    36    48
+150        15    17     18    20     21    23     24    26     27    29    30    46    60
+200        18    20     21    23     26    27     29    30     32    34    36    54    65
+250        22    24     26    28     31    35     36    37     39    42    44    66    68
+300        25    28     31    35     36    38     41    45     46    48    51    76    102
+400        34    38     41    45     48    52     55    59     62    65    69    103   137
+                                                                                          44
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 2
+
+
+
+
+5. REFERÊNCIAS BIBLIOGRÁFICAS
+
+BRASIL. Manual de Hidrologia Básica para Estruturas de Drenagem. Rio de Janeiro, IPR, 2
+ed. DNIT, 2005.
+
+BRASIL. Diretrizes Básicas para Estudos e Projetos Rodoviários: Escopos Básicos/
+Instruções de Serviço. Rio de Janeiro, IPR, 3 ed. DNIT, 2006.
+
+DNOS. Chuvas Intensas no Brasil. Brasília, Ministério da Viação e Obras Públicas, 1957.
+
+GIMENEZ, Alírio Brasil. FIGUEIREDO, Antônio Domingues. SILVA, Cláudio Oliveira.
+LANGENDONCK, Francisco Van. ROMERO, José Roberto Hortêncio. JABÔR, Marcos
+Augusto. TSUTIYA, Milton Yomoyuki. DEBS, Mounir Khalil El. NETO, Pedro Jorge Chama.
+BANNOKI, Regina. Manuel Técnico de Drenagem e Esgoto Sanitário. São Paulo, ABTC, 1
+ed, 2008.
+
+JABÔR, Marcos Augusto. Drenagem de Rodovias – Estudos Hidrológicos e Projeto de
+Drenagem. Notas de aula, 2019.
+
+TORRICO, José Jaime Taborga. Práticas Hidrológicas. Rio de Janeiro, TRANSCON, 2 ed.,
+1975.

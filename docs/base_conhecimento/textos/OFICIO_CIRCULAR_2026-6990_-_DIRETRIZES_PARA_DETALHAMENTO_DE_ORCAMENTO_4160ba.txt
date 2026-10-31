@@ -1,0 +1,141 @@
+                                 Ministério dos Transportes
+                    Departamento Nacional de Infraestrutura de Transportes
+                               Sede do DNIT em Brasília/DF
+                            Diretoria de Infraestrutura Rodoviária
+OFÍCIO CIRCULAR Nº 6990/2026/DIR/DNIT SEDE
+
+                                                                              Brasília, na data da assinatura.
+ Aos Senhores,
+ Superintendentes Regionais do DNIT
+
+ Assunto: Diretriz sobre o nível de detalhamento do orçamento divulgado nas licitações de obras.
+ Divulgação da planilha orçamentária no nível de item e não obrigatoriedade de juntada das
+ composições de custos unitários (CPU) ao edital. Lei nº 14.133/2021.
+
+
+
+ 1.              Trata-se de diretriz uniforme, no âmbito desta Diretoria de Infraestrutura Rodoviária,
+ quanto ao nível de detalhamento e à forma de apresentação do orçamento de referência a ser divulgado nos
+ editais de licitação de obras e serviços de engenharia, especialmente no tocante às fichas analíticas de
+ composição de custos unitários (CPU) elaboradas com base no Sistema de Custos Referenciais de Obras
+ (SICRO).
+ 2.            Registro, preliminarmente, que a presente orientação não institui, não autoriza e não se
+ confunde com a adoção de orçamento sigiloso, nos termos do art. 24 da Lei nº 14.133/2021. O orçamento
+ de referência permanecerá público, na forma da legislação aplicável, devendo ser divulgado em nível
+ suficiente para assegurar a adequada formulação das propostas, a isonomia entre os licitantes, a
+ objetividade do julgamento e o controle dos atos praticados.
+ 3.             A diretriz visa à eficiência, à racionalização da instrução processual e à sustentabilidade
+ administrativa, mediante a distinção entre dois planos de informação:
+                  I-        Planilha Orçamentária de Referência: documento sintético-descritivo contendo a
+                  discriminação dos itens de serviço, códigos referenciais, unidades de medida,
+                  quantitativos, preços unitários referenciais, preços totais, percentuais de Benefícios e
+                  Despesas Indiretas (BDI), encargos sociais aplicáveis, data-base e demais premissas
+                  relevantes à compreensão da formação do preço, a qual será divulgada como anexo
+                  obrigatório do edital, ressalvadas apenas as hipóteses legais de sigilo formalmente
+                  justificadas; e
+                  II -    As Fichas Analíticas de Composições de Custos Unitários (CPU) Padronizadas:
+                  o detalhamento insumo a insumo de cada preço unitário referenciado em tabela padrão
+                  do SICRO (equipamentos, mão de obra, materiais e produtividades), as quais, por já
+                  serem de acesso público e universal no portal oficial deste DNIT, ficam dispensadas de
+                  anexação ao edital.
+ 4.             A providência decorre dos princípios da eficiência, da desburocratização, da economicidade
+ processual, da publicidade, da competitividade e do julgamento objetivo, previstos no art. 5º da Lei nº
+ 14.133/2021. A anexação extensiva de grande volume de páginas contendo composições padronizadas do
+ SICRO, cujos dados já são públicos e imutáveis em cada data-base, sobrecarrega desnecessariamente os
+ repositórios eletrônicos de licitação sem agregar nova informação técnica aos licitantes. Ademais, ressalta-
+ se que a formulação da proposta comercial, a aferição de produtividades próprias e o gerenciamento de
+ riscos na cotação dos insumos constituem encargo e responsabilidade exclusiva do particular licitante, não
+ havendo vinculação obrigatória de sua proposta analítica aos coeficientes de referência da Administração,
+
+                     Ofício Circular 6990 (25344789)    SEI 50600.036815/2024-11 / pg. 1
+salvo quanto ao respeito aos preços máximos fixados e às regras de inexequibilidade.
+5.             Vale acrescentar que, a legislação preceitua como elemento obrigatório do Projeto Básico,
+nos termos do art. 6º, inciso XXV, alínea “f”, da Lei nº 14.133/2021, o "orçamento detalhado do custo
+global da obra, fundamentado em quantitativos de serviços e fornecimentos propriamente avaliados",
+exigência plenamente atendida pela divulgação da Planilha Orçamentária de Referência no nível de item
+com quantitativos e preços unitários. A lei não exige a juntada física ou replicação, no corpo dos editais,
+das fichas analíticas de sistemas referenciais já disponíveis ao público.
+6.             A própria estrutura da Lei nº 14.133/2021 corroborou essa sistemática ao dispor, no seu art.
+18, § 1º, inciso VI, que a estimativa do valor da contratação será acompanhada "dos preços unitários
+referenciais, das memórias de cálculo e dos documentos que lhe dão suporte" . As composições analíticas
+ostentam natureza jurídica de memória de cálculo e documento de suporte à formação do preço de
+referência da autarquia, não se confundindo com a planilha orçamentária de publicação obrigatória no
+instrumento convocatório.
+7.             Considerando que o SICRO constitui sistema referencial oficial instituído pelo Decreto nº
+7.983/2013, cujas metodologias, manuais, tabelas de insumos e composições analíticas são publicadas e
+permanentemente atualizadas na sítio eletrônico do DNIT na internet, a remissão expressa ao código da
+composição SICRO na Planilha Orçamentária assegura integral transparência, segurança jurídica e
+objetividade ao julgamento das propostas.
+8.             No tocante aos regimes de contratação integrada e semi-integrada, deverá ser observada a
+orientação já consolidada no Ofício-Circular nº 5760/2024/DIR/DNIT SEDE (SEI nº 19247525), segundo
+a qual não deve ser incluído orçamento analítico nos artefatos de licitação, devendo ser apresentado o
+valor global da contratação, acompanhado do critério de pagamento correspondente e da especificação dos
+respectivos percentuais. Nesses regimes, a matéria possui disciplina própria, com estimativa baseada em
+orçamento sintético ou metodologia paramétrica, na forma do art. 23, §§ 5º e 6º, e anteprojeto de
+engenharia, nos termos do art. 46, § 2º, da Lei nº 14.133/2021.
+9.            A medida não afronta o princípio da publicidade (arts. 5º e 13): o orçamento é público no
+nível de item, as fichas de CPU do orçamento de referência permanecem integralmente nos autos do
+processo, acessíveis aos órgãos de controle interno e externo a qualquer momento, e a metodologia
+SICRO é de livre consulta. A diretriz presta-se, ainda, a preservar a competitividade e a prevenir o
+denominado "jogo de planilha".
+10.          Diante do exposto, no exercício da competência de coordenação e supervisão desta
+Diretoria, DETERMINO às Coordenações-Gerais CGCONT, CGMRR e CGPERT, bem como às
+Superintendências Regionais do DNIT, a adoção das seguintes providências padronizadas:
+                 a) Nos editais de licitação de obras e serviços de engenharia, divulgar como anexo
+                 obrigatório a Planilha Orçamentária de Referência no nível de item (contendo
+                 discriminação do serviço, código SICRO, unidade de medida, quantitativo, preço unitário
+                 referencial, preço total, BDI e encargos sociais), ficando dispensada a juntada em
+                 edital das fichas analíticas de Composições de Custos Unitários (CPU)
+                 padronizadas do SICRO;
+                 b) Manter as composições de custos unitários (CPU) integralmente nos autos do
+                 processo, à disposição dos órgãos de controle interno e externo, podendo ser
+                 disponibilizadas mediante análise quando efetivamente necessário;
+                 c) Nos regimes de contratação integrada e semi-integrada, observar que o orçamento de
+                 referência é sintético (art. 23, §§ 5º e 6º), inexistindo composição analítica de referência
+                 a divulgar;
+                 d) Consignar expressamente nos autos que a medida não configura orçamento sigiloso
+                 (art. 24), permanecendo o orçamento público no nível de item;
+                 e) Não estender automaticamente esta diretriz aos contratos de serviços, notadamente os
+                 prestados com dedicação de mão de obra, em que a planilha de custos e formação de
+                 preços cumpre funções próprias, inclusive para fins de repactuação (art. 135), devendo
+                 cada caso ser previamente avaliado;
+
+
+                    Ofício Circular 6990 (25344789)    SEI 50600.036815/2024-11 / pg. 2
+                       f) Articular-se com a Diretoria de Planejamento e Pesquisa (DPP) para alinhamento
+                       técnico e submeter as minutas de edital padronizadas decorrentes desta diretriz à análise
+                       e chancela da Procuradoria Federal Especializada junto ao DNIT (PFE-DNIT).
+ 11.           As diretrizes ora fixadas aplicam-se aos certames a serem publicados partir da data de
+ assinatura deste Circular, no que for compatível e juridicamente viável, aos procedimentos em curso,
+ mediante avaliação caso a caso pelas Superintendências Regionais.
+ 12.           Solicito, por fim, ampla divulgação do teor deste Ofício-Circular às Superintendências
+ Regionais, para fiel cumprimento.
+
+
+                   Atenciosamente,
+
+
+                                                 (assinado eletronicamente)
+                                            FÁBIO PESSOA DA SILVA NUNES
+                                             Diretor de Infraestrutura Rodoviária
+                  Documento assinado eletronicamente por Fabio Pessoa da Silva Nunes, Diretor de Infraestrutura
+                  Rodoviária, em 16/07/2026, às 12:04, conforme horário oficial de Brasília, com fundamento no art. 4º,
+                  § 3º, do Decreto nº 10.543, de 13 de novembro de 2020.
+
+                 A autenticidade deste documento pode ser conferida no site
+                 https://sei.dnit.gov.br/sei/controlador_externo.php?
+                 acao=documento_conferir&id_orgao_acesso_externo=0, informando o código verificador 25344789 e
+                 o código CRC 78C0FCD4.
+
+
+Referência: Caso responda este Ofício-Circular, indicar expressamente o Processo nº 50600.036815/2024-11                        SEI nº 25344789
+
+
+                                                                                     Setor de Autarquias Norte | Quadra 3 | Lote A
+                                                                                     CEP 70040-902
+                                                                                     Brasília/DF | (061) 3315-4300
+
+
+
+
+                          Ofício Circular 6990 (25344789)             SEI 50600.036815/2024-11 / pg. 3

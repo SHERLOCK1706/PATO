@@ -1,0 +1,74 @@
+[aba DURACAO_SERVICOS]
+SINALIZAÇÃO DE OBRAS - DURAÇÃO DOS SERVIÇOS
+CÓDIGO | DESCRIÇÃO | QUANTIDADE | UN | PROD. HORÁRIA (UND/H) | TEMPO DE EXECUÇÃO (H) | TEMPO DE BANDEIROLA (H) | PROJETO TIPO
+PISTA DE ROLAMENTO
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+ACOSTAMENTO
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+#DIV/0! | 0
+SINALIZAÇÃO E SEGURANÇA VIÁRIA
+#DIV/0! | 0
+MANUTENÇÃO E CONSERVAÇÃO ROTINEIRA
+MER | MANUTENÇÃO E CONSERVAÇÃO ROTINEIRA | km | 15 | 0 | 0[aba TEMPO_PROJETO_TIPO]
+SINALIZAÇÃO DE OBRAS - CÁLCULO DO TEMPO DE EXECUÇÃO E OPERAÇÃO
+PROJETO TIPO | DESCRIÇÃO | HORAS DE SERVIÇO | DIAS DE SERVIÇO | QUANTIDADE DE OPERADORES DE BANDEIROLA/PARE E SIGA | HORA DE OPERAÇÃO
+1 | Fixo no acostamento | 0 | 0 | 0 | 0
+3 | Fixo na pista com operação Pare e Siga | 0 | 0 | 4 | 0
+16 | Móvel no acostamento | 0 | 0 | 1 | 0
+17 | Móvel na pista com operação Pare e Siga | 0 | 0 | 4 | 0[aba UN_DIA]
+SINALIZAÇÃO DE OBRAS - CÁLCULO DA QUANTIDADE DE UN.DIA
+CÓDIGO DISPOSITIVO | DESCRIÇÃO | QUANTITATIDE UN.DIA | TOTAL
+1 | 3 | 16 | 17
+R-1 | Parada Obrigatória (Pare e Siga) | 0 | 0 | 0 | 0 | 0 | 5212558 | 0
+R-7 | Proibido Ultrapassar | 0 | 0 | 0 | 0 | 0 | 5212557 | 0
+R-19 | Velocidade Máxima permitida | 0 | 0 | 0 | 0 | 0 | 5212560 | 0
+A-24 | Obras ou serviço | 0 | 0 | 0 | 0 | 0 | 5212556 | 0
+A15 + DIST | Parada Obrigatória a frente com indicação de distância | 0 | 0 | 0 | 0 | 0 | 5213835 | 0
+A24 + DIST | Obras ou serviço com indicação de distância | 0 | 0 | 0 | 0 | 0 | 5213838 | 0
+DESVIO | Desvio (1,25 x 0,40 m) | 0 | 0 | 0 | 0 | 0 | 5213383 | 0
+FIM DAS OBRAS | Fim das obras (1,25 x 0,80 m) | 0 | 0 | 0 | 0 | 0 | 5213850 | 0
+SEM ACOST | Trecho sem acostamento (1,75 x 1,00 m) | 0 | 0 | 0 | 0 | 0
+CONE | Cone plástico para canalização de trânsito | 0 | 0 | 0 | 0 | 0
+TAMBOR | Cilindro canalizador de tráfego com base quadrada | 0 | 0 | 0 | 0 | 0
+CAVAL. ART. | Cavalete Articulado | 0 | 0 | 0 | 0 | 0
+R-1 | Parada Obrigatória (Pare e Siga) | 0 | 4 | 0 | 4
+R-7 | Proibido Ultrapassar | 0 | 4 | 0 | 0
+R-19 | Velocidade Máxima permitida | 2 | 6 | 0 | 4
+A-24 | Obras ou serviço | 1 | 0 | 0 | 0
+A15 + DIST | Parada Obrigatória a frente com indicação de distância | 0 | 2 | 0 | 2
+A24 + DIST | Obras ou serviço com indicação de distância | 2 | 4 | 2 | 2
+DESVIO | Desvio (1,25 x 0,40 m) | 0 | 1 | 0 | 0
+FIM DAS OBRAS | Fim das obras (1,25 x 0,80 m) | 2 | 2 | 0 | 0
+SEM ACOST | Trecho sem acostamento (1,75 x 1,00 m) | 1 | 0 | 1 | 0
+CONE | Cone plástico para canalização de trânsito | 103 | 148 | 111 | 82
+TAMBOR | Cilindro canalizador de tráfego com base quadrada | 11 | 16 | 0 | 0
+CAVAL. ART. | Cavalete Articulado | 1 | 6 | 0 | 3[aba SERV_SIN]
+SINALIZAÇÃO DE OBRAS - SERVIÇOS
+CÓDIGO | DESCRIÇÃO | TOTAL
+5212558 | PLACA DE REGULAMENTAÇÃO PARA SINALIZAÇÃO DE OBRAS MONTADA EM SUPORTE METÁLICO MÓVEL, R1 LADO 0,414 M - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5212557 | PLACA DE REGULAMENTAÇÃO PARA SINALIZAÇÃO DE OBRAS MONTADA EM SUPORTE METÁLICO MÓVEL - D = 1,00 M - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5212560 | PLACA DE ADVERTÊNCIA PARA SINALIZAÇÃO DE OBRAS MONTADA EM SUPORTE METÁLICO MÓVEL, LADO 1,00 M - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5212556 | PLACA PARA SINALIZAÇÃO DE OBRAS MONTADA EM CAVALETE METÁLICO - 1,00 X 1,00 M - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5213835 | CONE PLÁSTICO PARA CANALIZAÇÃO DE TRÂNSITO - UTILIZAÇÃO DE 150 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5213838 | CILINDRO CANALIZADOR DE TRÁFEGO COM BASE QUADRADA DE 111 X 56 X 56 CM - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5213383 | CAVALETE EM POLIETILENO ZEBRADO COM FAIXA REFLETIVA - H = 1,00 M - UTILIZAÇÃO DE 600 CICLOS - FORNECIMENTO, 01 IMPLANTAÇÃO E 01 RETIRADA DIÁRIA | 0
+5213850 | OPERAÇÃO DE SINALIZAÇÃO POR BANDEIROLA DE TECIDO OU COM PLACA METÁLICA | 0

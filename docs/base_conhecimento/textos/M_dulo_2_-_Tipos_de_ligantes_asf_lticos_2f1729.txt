@@ -1,0 +1,747 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Misturas asfálticas:
+Conceituação, Materiais
+e Dosagem
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Brasília, fevereiro de 2023
+
+DNI E: Misturas asfálticas:
+
+Conceituação,
+Materiais e Dosagem
+
+Módulo
+
+Tipos de Ligantes
+Asfálticos
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Instituto de Brasília, fevereiro de 2023
+Pesquisas em
+Transportes
+
+                                                       LISTA DE FIGURAS
+Figura 1 - Lago de Asfalto em Trinidad ............................................................................................................................. 2
+Figura 2 - Imprimação de base com uso de CM-30.......................................................................................................... 5
+Figura 3 - Esquema da câmara de expansão de Asfalto-Espuma e o processo de Espumação .................................... 6
+Figura 4 - Reciclagem in situ utilizando asfalto-espuma .................................................................................................. 6
+Figura 5 - Processo úmido - Wet process - Terminal Blend e Continuous Blend .......................................................... 12
+Figura 6 - Processo Seco - Dry Process ......................................................................................................................... 12
+Figura 7 - Fatores que interferem na ruptura da emulsão asfáltica ................................................................................ 15
+Figura 8 -Asfaltos oxidados ............................................................................................................................................. 18
+                                                           LISTA DE TABELAS
+Tabela 1 - Especificação Brasileira para Agentes Rejuvenescedores - DNC 733/97 ...................................................... 8
+Tabela 2 - Características do cimento asfáltico de petróleo modificado por polímero elastomérico ............................. 10
+Tabela 3 - Características do cimento asfáltico modificado por borracha de pneus inservíveis pelo processo via úmida
+........................................................................................................................................................................................ 13
+Tabela 4 - Sugestão para emprego de materiais asfálticos em pavimentação .............................................................. 17
+                                                SUMÁRIO
+1.     O QUE É LIGANTE ASFÁLTICO? ............................................................................................................................ 1
+2.     ASFALTOS NATURAIS (CAN) ................................................................................................................................. 1
+3.     CIMENTO ASFÁLTICO DE PETRÓLEO (CAP) ....................................................................................................... 2
+4.     ASFALTO DILUÍDO DE PETRÓLEO (ADP) ............................................................................................................. 3
+5.     ASFALTO ESPUMA .................................................................................................................................................. 5
+6.     AGENTES REJUVENESCEDORES (ARE, AR) ....................................................................................................... 7
+7.     ASFALTO MODIFICADO .......................................................................................................................................... 8
+     7.1.     ASFALTO MODIFICADO POR POLÍMERO (AMP) ........................................................................................ 10
+     7.2.     ASFALTO MODIFICADO POR BORRACHA DE PNEUS (AMB) ................................................................... 11
+8.     EMULSÕES ASFÁLTICAS ..................................................................................................................................... 14
+9.     ASFALTOS OXIDADOS OU SOPRADOS DE USO INDUSTRIAL ........................................................................ 17
+10. REFERÊNCIAS ....................................................................................................................................................... 18
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+
+   1. O QUE É LIGANTE ASFÁLTICO?
+          Como já descrito no Módulo 1, ligante é o material que tem a propriedade
+de aglutinar partículas sólidas para formar uma massa coesa.
+
+          Os ligantes denominados “Ligante Asfálticos” são aqueles constituídos por
+misturas complexas de hidrocarbonetos de elevada massa molar, cujos componentes
+principais são o carbono e o hidrogênio, contendo também outros elementos como o
+oxigênio, enxofre e alguns metais. São obtidos por evaporação natural de depósitos
+localizados na superfície da terra (asfaltos naturais), ou por destilação em unidades
+industriais especialmente projetadas (refinarias de petróleo) (Senço, 1997).
+
+
+
+   2. ASFALTOS NATURAIS (CAN)
+          Conforme já apresentado no Módulo 1, o asfalto natural foi o primeiro a ser
+utilizado na natureza, justamente por serem prontamente utilizáveis, por estarem
+disponíveis na natureza. Os asfaltos são provenientes de “lagos” formados a partir de
+depósitos de petróleo que migraram para a superfície, e após processos naturais de
+perda de outras frações, resultaram em um produto que contém betume e,
+eventualmente, materiais minerais (BERNUCCI et al., 2008).
+
+          Os asfaltos naturais eram naturalmente moles e eram encontrados em
+depósitos da Ilha Trinidad, do Lago Bermudez na Venezuela, e em extensas
+ocorrências de “areias alcatroadas” no Oeste do Canadá. Os asfaltos naturais também
+aparecem encrustados em poros de rochas, denominadas rochas asfálticas (gilsonita
+e asfaltita) e misturados em impurezas minerais (argilas e areias), em quantidade
+variáveis, sendo geralmente submetidos a processos de purificação para serem
+utilizados na pavimentação (ABEDA, 2010).
+
+          No Brasil, as primeiras pavimentações asfálticas ocorreram em vias do Rio
+de Janeiro, com asfalto natural importado em barris de Trinidad.
+
+
+
+
+                                                                               Página 1
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+                          Figura 1 - Lago de Asfalto em Trinidad
+
+
+
+
+                                  Fonte: ABEDA, 2010.
+
+
+
+
+   3. CIMENTO ASFÁLTICO DE PETRÓLEO (CAP)
+          O Cimento Asfáltico de Petróleo (CAP) utilizado em pavimentação é
+proveniente da destilação do petróleo e tem como propriedade ser um adesivo
+termoviscoplástico, ou seja, possui propriedades viscoplásticas alteradas pela
+variação da temperatura. Segundo Bernucci et al. (2008), o CAP é um material
+impermeável à água e pouco reativo.
+
+          A termoviscoelasticidade do asfalto se manifesta no comportamento
+mecânico, sendo suscetível à velocidade, ao tempo e à intensidade de carregamento,
+além da temperatura de serviço. O comportamento termoviscoelástico é mais
+comumente assumido do que o termoviscoplástico, com suficiente aproximação do
+real comportamento do material (BERNUCCI et al., 2008).
+
+          Os CAPs são flexíveis, resistentes à ação da maioria dos produtos
+inorgânicos e duráveis, contribuindo para o seu desempenho.
+
+          Os CAPs são matéria-prima para outros tipos de asfaltos como os asfaltos
+diluídos, as emulsões asfálticas, os asfaltos modificados, os asfaltos espuma, os
+asfaltos soprados, além de suas aplicações rodoviárias a quente por meio do concreto
+asfáltico que envolve vários tipos de composições granulométricas em conjunto com
+o CAP.
+
+          Além das informações compartilhadas no Módulo 1 sobre as especificações
+brasileiras que designam um CAP, no Módulo 4, mais informações serão
+
+
+                                                                             Página 2
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+disponibilizadas sobre as caracterizações baseadas em propriedades relacionadas ao
+desempenho dos pavimentos em serviço, a especificação SUPERPAVE.
+
+
+
+
+   4. ASFALTO DILUÍDO DE PETRÓLEO (ADP)
+          O Asfalto Diluído de Petróleo - ADP resulta da diluição do cimento asfáltico
+por destilados leves de petróleo, proporcionando um produto menos viscoso que o
+CAP e que podem ser aplicados a temperaturas mais baixas, sendo que os diluentes
+evaporam-se após a aplicação. Sua principal aplicação é na imprimação de camadas
+de base dos pavimentos.
+
+          No caso do ADP ocorre a adição de um diluente volátil, obtido do próprio
+petróleo, ao asfalto. A denominação do ADP é dada segundo a velocidade de
+evaporação do solvente.
+
+          No Brasil são fabricados dois tipos de asfalto diluído: o de cura rápida (CR)
+e o de cura média (CM). O CR utiliza gasolina ou nafta como solvente, enquanto o CM
+utiliza o querosene. O ADP também é classificado segundo sua viscosidade
+cinemática para cada classe. Um ligante asfáltico do tipo CM-30 é um asfalto diluído
+de cura média (CM) cuja faixa de viscosidade a 60 ºC começa em 30cSt (centiStokes
+= unidade utilizada para viscosidade cinemática).
+
+
+
+TOME NOTA:
+
+Para obter a viscosidade em m²/s, multiplique a viscosidade em cSt por 10-6
+
+
+
+          Para se obter os asfaltos diluídos, há um custo elevado social e financeiro.
+Os solventes emanam para a atmosfera, gerando problemas de meio ambiente e de
+saúde ocupacional (ABEDA, 2010). Devido aos problemas ambientais, em países
+desenvolvidos, seu uso vem sendo substituído por Emulsões Asfálticas de Petróleo -
+EAP.
+
+          Por possuir uma pequena quantidade de voláteis em relação ao ADP, a
+emulsão tem um impacto ambiental muito menor. Na cura, o ADP perde para a
+
+
+
+                                                                               Página 3
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+atmosfera produtos valiosos que demandam grande energia para serem produzidos;
+enquanto a EAP não. A EAP é um produto de uso mais seguro, com pouco risco de
+incêndio comparado ao ADP, que pode apresentar baixo ponto de fulgor. E, para
+aplicação em temperatura ambiente, a EAP economiza combustível por poder ser
+aplicada em temperaturas mais baixas, comparando com o ADP. Veremos sobre as
+Emulsões Asfálticas de Petróleo – EAP mais à frente.
+
+          As especificações brasileiras para asfalto diluído tipo cura rápida são
+definidas na norma DNER-EM 362/97 e para asfalto diluído tipo cura média utiliza-se
+a DNER-EM 363/97.
+
+          Pelas normas citadas, os asfaltos diluídos são caracterizados pelos
+seguintes ensaios:
+
+      Viscosidade cinemática
+      Viscosidade Saybolt-Furol
+      Ponto de Fulgor
+      Destilação
+      Resíduo a 360ºC, por diferença, em % volume mínimo
+      Teor de água
+      Penetração do resíduo de destilação
+      Teor de betume do resíduo de destilação
+      Ductibilidade do resíduo de destilação
+
+
+
+
+                                                                            Página 4
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+                     Figura 2 - Imprimação de base com uso de CM-30
+
+
+
+
+                                 Fonte: THIVES, 2016.
+          O ADP pode ser utilizado nos serviços de imprimação, preferencialmente
+os de cura média, CM-30 para superfície com texturas fechadas e CM-70 para texturas
+abertas. O CR não é recomendado devido a uma penetração não adequada na base.
+
+          As taxas de aplicação do asfalto diluído usuais são da ordem de 0,8 a 1,6
+l/m², devendo ser determinadas experimentalmente mediante absorção pela base em
+24 h. Deve ser observado o tempo de cura, conforme especificação de serviço de
+Imprimação.
+
+
+
+
+   5. ASFALTO ESPUMA
+          O Asfalto Espuma é uma técnica de utilização do CAP que consiste em se
+promover o aumento de seu volume pelo choque térmico. Promove-se o encontro, sob
+condições apropriadas, entre o asfalto aquecido à temperatura típica de utilização a
+quente com água espargida à temperatura ambiente dentro de uma câmara
+desenvolvida especialmente para este processo (Figura 3).
+
+
+
+
+                                                                            Página 5
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+   Figura 3 - Esquema da câmara de expansão de Asfalto-Espuma e o processo de Espumação
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+          Essa técnica foi inicialmente patenteada e vem sendo empregada nos EUA,
+Austrália e Europa desde os anos 1980. No processo, ocorre a expansão de volume
+do CAP de 10 a 15 vezes e então ele é utilizado espargido sob os agregados úmidos
+e frios produzindo uma mistura betuminosa. O uso desta técnica pode se dar em
+algumas atividades de campo como: reciclagem a frio in situ do revestimento, do
+revestimento e da base com adição de cimento e também na camada final de base.
+
+
+
+                    Figura 4 - Reciclagem in situ utilizando asfalto-espuma
+
+
+
+
+                             Fonte: Adaptado de THIVES, 2016.
+
+
+
+          Na reciclagem a frio in situ, o material fresado é misturado com a espuma
+de asfalto no próprio local do corte (Figura 4). A operação ocorre dentro do módulo
+
+
+                                                                                   Página 6
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+fresador da máquina fresadora-recicladora. Além da espuma de asfalto e dos
+materiais fresados do pavimento existente, pode-se incluir também agregados
+adicionais. O equipamento fresador-reciclador espalha o material reciclado na
+espessura determinada em projeto por meio de saída niveladora controlada.
+
+
+
+TOME NOTA:
+
+Para mais informações sobre a execução de serviços utilizando Asfalto-espuma,
+verificar as especificações de serviço DNIT 169/2014-ES - Reciclagem de pavimento
+em usina com espuma de asfalto e DNIT 166/2013-ES - Reciclagem de pavimento a
+frio "in situ" com adição de espuma de asfalto.
+
+
+
+
+   6. AGENTES REJUVENESCEDORES (ARE,
+       AR)
+           Ao longo do tempo, sob efeito das intempéries, o ligante asfáltico perde
+parte de suas frações maltênicas (aromáticos do asfalto). Essas alterações provocam
+uma elevação relativa na quantidade de asfaltenos do ligante asfáltico, tornando-o
+mais rígido e frágil. Para devolver as características de flexibilidade do ligante, utiliza-
+se o chamado agente rejuvenescedor que visa repor parte desta fração aromática.
+
+           O uso de aditivos químicos ao ligante envelhecido recoloca as resinas e
+óleos aromáticos para a recuperação das características do ligante. Os principais
+agentes rejuvenescedores disponíveis no mercado são os agentes à base de óleo de
+xisto e à base de alcatrão.
+
+           Os agentes rejuvenescedores à base de óleo de xisto podem ser: a frio -
+ARE e a quente - AR. Estes são classificados conforme a viscosidade do ligante
+asfáltico: AR-1 e ARE-1; AR-5 e ARE-5; AR-25 e ARE-25; AR-75 e ARE-75; AR-250
+e ARE-250; AR-500 e ARE-500.
+
+           Quanto mais envelhecido for o asfalto a ser rejuvenescido, menos viscoso
+deve ser o agente. Os agentes são utilizados em processos de reciclagem a quente,
+seja em usina ou in situ, já para as reciclagens a frio são utilizados os agentes
+
+
+
+                                                                                    Página 7
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+rejuvenescedores emulsionados. O agente rejuvenescedor a quente é disponibilizado
+pela Petrobrás, com especificações dadas pelo DNC 733/97 (extinto Departamento
+Nacional de Combustíveis, atualmente Agência Nacional de Petróleo - ANP),
+conforme
+
+Tabela 1.
+
+        Tabela 1 - Especificação Brasileira para Agentes Rejuvenescedores - DNC 733/97
+
+
+
+
+                                Fonte: BERNUCCI et al., 2008
+
+Diversos tipos de agentes rejuvenescedores são testados, fabricados e lançados no
+mercado, como óleos de base biológica e óleos vegetais modificados. Entretanto,
+parte dos produtos são patenteados, o que prejudica uma descrição química
+detalhada. O que se busca com o agente rejuvenescedor é reestabelecer as
+características do ligante asfáltico, após seu envelhecimento.
+
+
+
+
+   7. ASFALTO MODIFICADO
+            O CAP pode receber adição de polímeros como o SBR (borracha estireno-
+butadieno), o EVA (etileno-acetato de vinila) ou o SBS (estireno-butadieno-estireno),
+além de poder ser modificado pelo uso da borracha de pneus. Os modificadores
+interferem no comportamento reológico do CAP, conferindo elasticidade e melhorando
+suas propriedades mecânicas.
+
+
+                                                                                         Página 8
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+          O Asfalto Modificado apresenta uma série de vantagens em sua utilização.
+Com o uso destes modificadores ocorre uma diminuição da suscetibilidade térmica do
+ligante, uma melhor característica adesiva e coesiva, uma maior resistência ao
+envelhecimento, uma elevação em seu ponto de amolecimento, o aumento da sua
+elasticidade, o aumento da resistência à deformação permanente e a melhora das
+características de fadiga e da propagação de fendas (THIVES, 2016).
+
+          Para condições de alto volume de veículos comerciais com pesos por eixo
+crescente em rodovias de grande fluxo ou em aeroportos, em corredores de tráfego
+pesado e canalizado em condições adversas de clima e com ampla variação térmica
+entre inverno e verão, o uso dos asfaltos modificados tem sido necessário.
+
+          O uso dos asfaltos modificados reduz os custos de manutenção dos
+pavimentos, aumenta sua resistência ao envelhecimento e oxidação e também à
+abrasão das misturas. Seu uso também é recomendado para revestimento de pontes
+com objetivo de reduzir a susceptibilidade térmica e aumentar a resistência à flexão
+no pavimento.
+
+          Para a escolha do modificador a ser utilizado alguns fatores são
+considerados como: o preço do polímero, a facilidade de incorporação do polímero no
+asfalto, os equipamentos disponíveis para mistura do polímero com o asfalto, a
+composição química do cimento asfáltico a ser modificado pelo polímero, a resistência
+ao envelhecimento, a estabilidade à estocagem e também sua curva de viscosidade
+para estimativa da temperatura de usinagem e compactação.
+
+          Os polímeros são classificados conforme seu comportamento frente às
+variações térmicas. São do tipo termorrígidos, termoplásticos, elastoméricos e elasto-
+termoplásticos. Nem todos os polímeros são passíveis de serem adicionados ao CAP
+e nem todo CAP quando modificado por polímeros apresenta estabilidade à
+estocagem (BERNUCCI et al., 2008).
+
+          Alguns ensaios mais aprofundados podem ser necessários para a
+avaliação dos asfaltos modificados. Estes são necessários para garantir a obtenção
+de asfaltos modificados compatíveis e com baixa viscosidade à alta temperatura,
+facilitando o bombeamento, a usinagem e a compactação da mistura asfáltica
+desejada. Entretanto, ainda se discutem quais seriam os mais adequados ensaios de
+desempenho.
+
+
+                                                                              Página 9
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+           Nos AMP, a viscosidade não pode ser determinada pelos viscosímetros
+capilares ou Saybolt Furol. Devem ser determinados em viscosímetros dinâmicos com
+registro da taxa de cisalhamento e geometria. Ainda há uma certa dificuldade em se
+estabelecer temperaturas de mistura e compactação.
+
+
+
+         7.1. ASFALTO MODIFICADO POR POLÍMERO (AMP)
+
+           O Asfalto Modificado por Polímero - AMP, conforme apresentado, possui
+para o polímero do tipo elastomérico, especificações em norma DNIT 129/2011-EM.
+Nesta normativa, polímero se define como substância macromolecular que resulta da
+união de moléculas simples.
+
+           Os     AMP     elastoméricos      são    classificados     segundo      o    Ponto    de
+Amolecimento e sua recuperação elástica a 25 ºC. São os tipos: CAP-55/75-E, 60/85-
+E e 65/90-E. A Tabela 2, demonstra os limites estabelecidos e os ensaios a serem
+seguidos, conforme NORMA DNIT 129/2011-EM.
+
+  Tabela 2 - Características do cimento asfáltico de petróleo modificado por polímero elastomérico
+
+
+
+
+                                        Fonte: DNIT, 2011.
+
+           O polímero elastomérico é de fácil incorporação e não requer alto
+cisalhamento, possui boa resistência ao envelhecimento e fácil dispersão no CAP. A
+sua utilização também promove resistência à deformação permanente.
+
+
+
+
+                                                                                           Página 10
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+         7.2.ASFALTO MODIFICADO POR BORRACHA DE PNEUS
+            (AMB)
+
+          O Asfalto Modificado por Borracha de Pneus (AMB) é o CAP acrescido de
+borracha moída de pneus. O processo de incorporação utiliza alta temperatura e alto
+cisalhamento, o que propicia a degradação e a desvulcanização parcial da borracha
+moída durante a incorporação no asfalto. O tamanho da partícula deve ser observado
+para garantir a compatibilidade do ligante. O menor tamanho de partícula da borracha
+propicia maior viscosidade a alta temperatura.
+
+          As misturas com borracha de pneu requerem de 3 a 4 vezes mais
+quantidade de polímero virgem para alcançar as mesmas propriedades reológicas,
+devido ao fato de a borracha conter de 40% a 50% de elementos não polímeros e os
+polímeros estarem vulcanizados (THIVES, 2016).
+
+          A legislação ambiental que obriga que as empresas fabricantes ou
+reformadoras de pneus devam dar destinação final aos pneus inservíveis, aliada aos
+benefícios da incorporação dos polímeros no ligante asfáltico, incentivou a utilização
+desse tipo de AMB. Além de utilizar grandes volumes do resíduo das borrachas de
+pneus, há melhorias para as misturas asfálticas sob vários aspectos.
+
+          A incorporação da borracha às misturas asfálticas se dá de duas maneiras:
+pelo processo úmido (wet process) ou pelo processo seco (dry process), conforme
+Figura 5 e Figura 6.
+
+
+
+
+                                                                             Página 11
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+         Figura 5 - Processo úmido - Wet process - Terminal Blend e Continuous Blend
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+
+
+                           Figura 6 - Processo Seco - Dry Process
+
+
+
+
+                                   Fonte: THIVES, 2016.
+
+          No processo úmido, a incorporação da borracha de pneu é feita ao CAP
+como um polímero modificador das suas características. No processo seco, a
+incorporação é feita à mistura asfáltica como substituição de parte do agregado.
+
+          O ligante modificado por borracha por via úmida, dependendo do seu
+processo de fabricação, pode ser estocável ou não estocável. O sistema não
+estocável é conhecido como “Continuous Blending”, é produzido na própria obra e
+deve ser aplicado imediatamente. O sistema estocável, conhecido como “Terminal
+Blending” é preparado em um terminal especial, produzindo um ligante estável e
+relativamente homogêneo, podendo ser transportado até a obra.
+
+
+
+
+                                                                                       Página 12
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+           A norma DNIT 111/2009 - EM especifica o cimento asfáltico modificado por
+borracha de pneus inservíveis pelo processo via úmida, do tipo “Terminal Blending”.
+O teor mínimo de borracha deve ser de 15% em peso, incorporado ao ligante asfáltico
+por via úmida e os limites estabelecidos e os ensaios a serem seguidos estão
+demonstrados na Tabela 3.
+
+           As aplicações do asfalto borracha são diversas. Seu uso pode ser no
+concreto asfáltico denso, em Membranas Absorvedoras de Tensão (SAM), em
+Camadas intermediárias anti-reflexão de trincas (SAMI), no Concreto Asfáltico
+Descontínuo (Gap Graded), em Camada Porosa de Atrito (aberto), em Camada
+Selante (Cape Seal) e também em tratamentos superficiais duplos e triplos (THIVES,
+2016).
+
+ Tabela 3 - Características do cimento asfáltico modificado por borracha de pneus inservíveis pelo
+                                        processo via úmida
+
+
+
+
+                                       Fonte: DNIT, 2009.
+
+
+
+
+                                                                                          Página 13
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+
+   8. EMULSÕES ASFÁLTICAS
+          Como exposto no item 3, nos Asfaltos Diluídos de Petróleo - ADP é feita a
+adição de um diluente de petróleo com o objetivo de evitar a necessidade de
+aquecimento do CAP a fim de obter viscosidades de trabalho nos serviços de
+pavimentação. Uma outra maneira de se atingir essas viscosidades no CAP é por
+meio do emulsionamento do asfalto com as Emulsões Asfálticas de Petróleo - EAP.
+
+          As emulsões asfálticas são dispersões coloidais de uma fase asfáltica (50
+a 70 % de CAP) em fase aquosa composta de agentes emulsificantes e aditivos que
+estabilizam o produto, promovem a melhoria da adesividade e o controle de ruptura.
+Entre as vantagens das emulsões asfálticas está a redução da viscosidade do CAP,
+possibilitando a sua utilização em temperatura ambiente e reduzindo a liberação de
+voláteis e oxidação do CAP (ABEDA, 2022).
+
+          Uma emulsão é definida como uma dispersão estável entre dois ou mais
+líquidos que não se misturam. A emulsão asfáltica é constituída por parcelas de água
+e asfalto, com a inserção de emulsificante ou emulsionante. Estes componentes são
+inseridos em um moinho coloidal que cisalha o asfalto em pequenos glóbulos. O
+emulsificante é um agente tensoativo que reduz a tensão superficial das moléculas,
+permitindo que os glóbulos do asfalto permaneçam estáveis em suspensão na água
+por um certo tempo, evitando sua ruptura.
+
+          Os agentes emulsificantes conferem cargas elétricas, positivas ou
+negativas, ou, em alguns casos, não conferem ionicidade aos glóbulos de asfalto.
+Desta forma, a emulsão asfáltica é classificada quanto à carga da partícula em:
+catiônica (cargas positivas), aniônica (carga negativa), neutra (sem ionicidade) ou
+como anfotérica (que atraem tanto cargas positivas quanto negativas).
+
+TOME NOTA:
+
+As emulsões catiônicas são as de maior uso na pavimentação pelo seu melhor
+desempenho nos serviços.
+
+          Quando ocorre a separação entre as fases da água e do asfalto, considera-
+se que ocorreu a ruptura da emulsão. O tempo necessário para que se ocorra essa
+separação de fases confere diferentes usos em campo para a emulsão, servindo,
+
+
+
+                                                                            Página 14
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+também, como base para a sua classificação quanto à velocidade de ruptura. Esta
+velocidade é função da composição química do agente emulsificante e da sua
+dosagem na emulsão e seus fatores podem ser alterados por alguns fatores, conforme
+Figura 7.
+
+                Figura 7 - Fatores que interferem na ruptura da emulsão asfáltica
+
+
+
+
+                       Fonte: (Adaptado de ABEDA, PETROBRAS; 2009)
+
+
+
+            As emulsões podem ser classificadas em: RR - ruptura rápida, RM - ruptura
+média, RL - ruptura lenta e RC - ruptura controlada.
+
+                     A   emulsão       RR     é   considerada       rápida     porque    ocorre
+                      imediatamente após seu contato com agregados limpos de baixa
+                      área superficial, por exemplo, na briga utilizada para tratamento
+                      superficial.
+
+                     A emulsão RM é considerada média porque há um tempo de
+                      exposição maior, permitindo a mistura da emulsão com
+                      agregados sem sujidades e com baixa área superficial, como, por
+                      exemplo, em britas utilizadas em pré-misturados abertos.
+
+
+
+                                                                                         Página 15
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+                      A emulsão RL é considerada lenta quando seu tempo de
+                       rompimento é superior à média e a rápida e permite a mistura
+                       com agregados de elevada área superficial, como os agregados
+                       miúdos, pó de pedra e fíler utilizados em pré-misturados densos.
+
+                      A emulsão RC é considerada controlada porque sua reatividade
+                       é intermediária entre a RM e a RL e pode ter seu tempo
+                       controlado conforme necessidade de aplicação com diferentes
+                       aditivos. Ela é formulada especialmente com características
+                       específicas dependendo do tipo de estrutura da via, clima e
+                       tráfego. A emulsão é utilizada em lama asfáltica de ruptura
+                       controlada e microrrevestimento asfáltico.
+
+          As emulsões também possuem a terminologia 1C e 2C, onde C indica
+emulsão asfáltica do tipo catiônica, e os números 1 ou 2 estão associados a menor e
+maior viscosidade/teor de asfalto, respectivamente. Segundo a ABEDA (2010), para
+Lamas Asfálticas, há três tipos de emulsões: LA-1C, LAN e LARC, onde a terminologia
+N significa carga de partícula neutra e RC significa ruptura controlada. A mesma
+proposição foi feita para as emulsões asfálticas para imprimação (EAI).
+
+          Os resíduos das emulsões asfálticas modificadas por polímeros
+elastoméricos SBS e SBR apresentam vantagens sobre os resíduos das emulsões
+convencionais, a saber (ABEDA,2010):
+
+                  menor susceptibilidade térmica tanto a alta quanto a baixa
+                   temperatura;
+                  maior coesão interna que se transmite à mistura asfáltica ou
+                   tratamentos de superfície;
+                  maior elasticidade, praticamente inexistente nos resíduos asfálticos
+                   das emulsões convencionais;
+                  maior adesividade aos agregados;
+                  maior resistência ao envelhecimento em serviço.
+
+Essas características são fundamentais, principalmente para as técnicas a frio.
+
+          Em uma estrutura de pavimento, em todas as camadas asfálticas
+existentes, pode-se utilizar as emulsões asfálticas. Desde um pavimento novo até a
+reconstrução de camadas destinadas à recuperação e ao rejuvenescimento do
+
+
+
+                                                                               Página 16
+                   MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+rolamento. A Tabela 4 apresenta sugestões para o emprego de emulsões em serviços
+asfálticos.
+
+              Tabela 4 - Sugestão para emprego de materiais asfálticos em pavimentação
+
+
+
+
+                                       Fonte: ABEDA, 2010.
+
+
+
+
+   9. ASFALTOS OXIDADOS OU SOPRADOS DE
+       USO INDUSTRIAL
+              Os asfaltos oxidados ou soprados de uso industrial são obtidos pela
+passagem de uma corrente de ar através da massa de asfalto, em temperatura
+adequada, som ou sem catalisador. Eles são mais sólidos e mais duros que o CAP e
+menos sensíveis às intempéries, menos adesivos, menos aglutinantes, menos
+dúcteis. Os asfaltos oxidados são adequados às impermeabilizações.
+
+              Seu processo de fabricação consiste em uma desidrogenação e
+policondensação. Uma geração de átomos policondensados e eliminação de água
+(pelo aumento de carbono e redução de hidrogênio).
+
+              O uso mais comum destes asfaltos é industrial (Figura 8), com aplicações
+em telhados, EM revestimentos acústicos e isolamentos elétricos. Por serem menos
+dúcteis, apresentam maior resistência à variação de temperatura.
+
+
+
+
+                                                                                         Página 17
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 2
+
+
+
+                                    Figura 8 -Asfaltos oxidados
+
+
+
+
+                                Fonte: Adaptado de THIVES, 2016.
+
+
+
+
+   10.         REFERÊNCIAS
+
+ABEDA - ASSOCIAÇÃO BRASILEIRA DE EMPRESAS DISTRIBUIDORAS DE ASFALTO. Manual
+Básico de Emulsões Asfálticas. Rio de Janeiro, ABEDA, 2001. 2ª ed. 2010
+
+ABEDA - ASSOCIAÇÃO BRASILEIRA DE EMPRESAS DISTRIBUIDORAS DE ASFALTO. Página da
+web. Disponível em: http://www.abeda.org.br/produtos/#produtos-emulsoes. Acesso em 30 abr. 2022.
+
+ABEDA – PETROBRAS. Emulsões Asfálticas. Programa Asfalto na Universidade, 2009.
+
+BERNUCCI, et al. Pavimentação Asfáltica – Formação Básica para Engenheiros. 2008.
+
+SENÇO, W. In: Manual de técnicas de pavimentação., Ed.; Pini, São Paulo, Vol.1, p. 1-746, 1997
+
+THIVES, L. P. Comportamento dos materiais empregados na pavimentação: Ligantes Asfálticos. 2016.
+16 p. Notas de Aula.
+
+
+
+
+                                                                                         Página 18

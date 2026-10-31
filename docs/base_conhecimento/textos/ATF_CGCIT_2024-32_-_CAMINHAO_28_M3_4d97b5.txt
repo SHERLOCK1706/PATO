@@ -1,0 +1,567 @@
+                                                  1ª ANÁLISE TÉCNICA FINAL
+                                               Nº 32 – FGV/2024 – SEPN/CGCIT/DPP/DNIT SEDE
+
+                                                              IDENTIFICAÇÃO DA OBRA
+
+            - Assunto:                       Análise de Composições de Custos Não Existentes no SICRO.
+            - Natureza:                      Projetos Básico e Executivo de Engenharia.
+                                             Elaboração de Estudos e Projetos Básico e Executivo de Engenharia
+            - Objeto:
+                                             visando à execução das obras de Restauração da BR-364/AC.
+            - Rodovia/UF:                    BR-364/AC
+                                             Div. RO/AC - fronteira brasil/peru (boqueirão da esperança) - (BR-
+            - Trecho:
+                                             364/AC).
+            - Subtrecho:                     Entr. AC-339 Sena Madureira – Rio Macapá
+            - Segmento:                      km 272,90 ao km 370,70 / Acesso Manoel Urbano km 0,00 ao km 6,40
+            - Extensão:                      104,20 km
+            - Contrato:                      0172/2022
+            - PNV:                           364BAC1670 – 364BAC1690 – 364AAC1005
+            - Empresa:                       Geosistemas Engenharia E Planejamento Ltda
+            - Processo:                      50600.023259/2022-51
+            - Demandante:                    Coordenador-Geral de Desenvolvimento de Projeto - CGDESP/DNIT
+
+
+           CONTROLE DAS ANÁLISES
+
+                                                                    ANÁLISES
+                          1ª ANÁLISE                                 2ª ANÁLISE                              3ª ANÁLISE
+                      CONCLUÍDA EM:                                CONCLUÍDA EM:                          CONCLUÍDA EM:
+                        29/10/2024
+
+
+           1.        INTRODUÇÃO
+
+           O Contrato de Prestação de Serviços que entre si celebram o DNIT e a FGV/IBRE, cujo objetivo
+           é a execução de serviços técnicos especializados referentes à manutenção e criação de
+           composições de custos do Sistema de Custos Referenciais de Obras – SICRO, a realização de
+           pesquisa nacional de insumos em todas as unidades da federação, a revisão e o cálculo dos
+           índices de reajustamento de obras rodoviárias, ferroviárias e portuárias, ao apoio técnico à
+           Coordenação-Geral de Custos de Infraestrutura e Transportes.
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+           Não fazem parte do escopo deste projeto quaisquer considerações e/ou interpretações legais,
+           regulatórias, fiscais ou contábeis, cabendo ao DNIT validar as recomendações feitas pela
+           FUNDAÇÃO GETULIO VARGAS – FGV com seus assessores em tais áreas. Este trabalho não
+           constitui identificação de riscos, desenho, documentação e teste de controles relacionados ao
+           Ato Sarbanes-Oxley ou qualquer outro ato regulatório nacional ou internacional.
+
+           Todas as decisões relativas a cumprimento de lei e/ou regulamentação serão tomadas
+           exclusivamente pelo DNIT, seu departamento jurídico e/ou por terceiros que ela determinar,
+           sem qualquer influência da FUNDAÇÃO GETULIO VARGAS - FGV, que recebeu os parâmetros
+           a serem observados de acordo com a interpretação do DNIT, sem que a FUNDAÇÃO GETULIO
+           VARGAS - FGV realizasse qualquer interpretação legal e/ou regulatória.
+
+           A presente análise tem por objetivo a avaliação e aprovação das novas composições de preço
+           não existentes no SICRO, em atendimento às determinações preconizadas na Instrução
+           Normativa nº 44, publicada no Boletim Administrativo Edição nº 155, de 16 de agosto de 2021.
+
+           No caso específico de revisões de projeto em fase de obras, em respeito à Instrução Normativa
+           nº 12/2022, as composições de custos unitários não constantes do SICRO devem ser
+           elaboradas respeitando-se os valores de insumos e da parcela de bonificação e despesas
+           indiretas (BDI) definidos no contrato, adotando-se, caso não existam na proposta, os custos
+           dos sistemas referenciais oficiais (SICRO ou SINAPI) ou cotação de preços.
+
+           Todos os custos de insumos contratuais e o detalhamento do BDI devem ser apresentados por
+           meio de cópias das composições de custos unitários já existentes no contrato, devendo ser
+           anexada uma declaração da Superintendência Regional ou Diretoria afeta atestando a
+           correção dos valores adotados na composição.
+
+           Entretanto, em respeito ao Decreto n° 7.983/2013, o qual estabelece regras e critérios para
+           elaboração do orçamento de referência de obras e serviços de engenharia, contratados e
+           executados com recursos dos orçamentos da União, e dá outras providências, mais
+           especificamente em seu Art. 4° onde estabelece que:
+
+                                 “O custo global de referência dos serviços e obras de infraestrutura
+                                 de transportes será obtido a partir das composições dos custos
+                                 unitários previstas no projeto que integra o edital de licitação,
+                                 menores ou iguais aos seus correspondentes nos custos unitários de
+                                 referência do Sistema de Custos Referenciais de Obras - SICRO, cuja
+                                 manutenção e divulgação caberá ao Departamento Nacional de
+                                 Infraestrutura de Transportes - DNIT, excetuados os itens
+                                 caracterizados como montagem industrial ou que não possam ser
+                                 considerados como de infraestrutura de transportes” (grifo nosso)
+           Ademais, o preço unitário advindo das condições contratuais deverá ser comparado ao de
+           referência do DNIT.
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+           Caso o preço unitário advindo da aplicação da Instrução Normativa nº 12/2022 mostre-se
+           superior ao de referência do DNIT, será aplicado um fator de redução ao preço unitário do
+           serviço de modo a enquadrá-lo no valor limite preconizado no Decreto n° 7.983/2013, não
+           impedindo que a setorial responsável pela aprovação da revisão de projeto proceda a
+           aplicação de desconto adicional eventualmente necessário à garantia do equilíbrio
+           econômico-financeiro do contrato.
+
+           Importa também destacar a necessidade de respeito, tanto em projeto, quanto em revisão,
+           das determinações preconizadas na Instrução Normativa n° 62/2021, Seção II – Do BDI
+           diferenciado, no qual estabelece que deve ser aplicado o BDI de 15,0% nos serviços que
+           tiverem seus custos obtidos por meio de cotações de preços de mercado, compostas de forma
+           a permitir a execução total do serviço.
+
+           Por fim, importa destacar que a definição da natureza dos insumos (extraída, produzida ou
+           comercial) e as consequentes distâncias de transporte adotadas na análise de preços novos
+           realizadas no âmbito desse Serviço Especializado de Preços Novos são atribuições do ente
+           responsável pela elaboração/aprovação do projeto ou aquelas informadas pelo setor
+           solicitante.
+
+           2.        OBSERVAÇÕES GERAIS
+           2.1.   As distâncias médias de transportes não serão objeto dessa análise, devendo ser
+           avaliadas pela respectiva Superintendência Regional;
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+           3.        ANÁLISE TÉCNICA DOS SERVIÇOS
+
+                                                         Tabela - Novas Composições
+                                             (Mês-Base: Julho/2012 – Estado: Rio Grande do Sul)
+                                                              (Sicro 2 - BDI: 26,70%)
+
+
+                                                                                    Preço Proposto             Preço Aprovado
+                 Composição                            Descrição                      1ª Análise                 SEPN/CGCIT
+                                                                                          (R$)                       (R$)
+                                        Transporte com caminhão
+                                        basculante com caçamba                         1,06 / tkm                  Aprovado.
+                      PN 01
+                                        estanque com capacidade de
+                                        28 m³ - rodovia em leito natural
+                                        Transporte com caminhão
+                                        basculante com caçamba                         1,13 / tkm                   0,85 / tkm
+                      PN 02             estanque com capacidade de
+                                        28 m³ - rodovia em
+                                        revestimento primário
+                                        Transporte com caminhão
+                                        basculante com caçamba                         0,76 / tkm                  Aprovado.
+                      PN 03
+                                        estanque com capacidade de
+                                        28 m³ - rodovia pavimentada
+                                        Carga, manobra e descarga de
+                                        agregados ou solos em
+                                        caminhão basculante de 28 m³
+                      PN 04                                                              1,27 / t                  Aprovado.
+                                        - carga com carregadeira de
+                                        3,40 m³ e descarga
+                                        livre
+                                        Dissipador de energia - DB 01 -
+                      PN 05             areia, brita e pedra de mão                14.876,03 / und            Não é preço novo.
+                                        comerciais
+                                        Dissipador de energia - DB 02 -
+                      PN 06             areia, brita e pedra de mão                18.415,42 / und            Não é preço novo.
+                                        comerciais
+                                        Dissipador de energia - DB 03 -
+                      PN 07             areia, brita e pedra de mão                31.796,17 / und            Não é preço novo.
+                                        comerciais
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                                        Dissipador de energia - DB 04 -
+                      PN 08             areia, brita e pedra de mão                25.848,86 / und            Não é preço novo.
+                                        comerciais
+                                        Dissipador de energia - DB 05 -
+                      PN 09             areia, brita e pedra de mão                30.494,23 / und            Não é preço novo.
+                                        comerciais
+                                        Dissipador de energia - DB 06 -
+                      PN 10             areia, brita e pedra de mão                53.174,46 / und            Não é preço novo.
+                                        comerciais
+
+
+           3.1.      COMPOSIÇÕES PN 01 AO PN 03
+
+           Descrição PN 01: Transporte com caminhão basculante com caçamba estanque com
+           capacidade de 28 m³ - rodovia em leito natural.
+
+           Descrição PN 02: Transporte com caminhão basculante com caçamba estanque com
+           capacidade de 28 m³ - rodovia em revestimento primário.
+
+           Descrição PN 03: Transporte com caminhão basculante com caçamba estanque com
+           capacidade de 28 m³ - rodovia pavimentada.
+
+           Unidade: tkm.
+
+           1ª ANÁLISE TÉCNICA (SEI nº 19228256) - PÁG. 30 a 32
+
+                1ª 3.1.1. Trata-se de composições de custo unitário do serviço “Transporte com
+                    caminhão basculante com caçamba estanque com capacidade de 28 m³”, constantes
+                    no “Anexo LOTE 04 -20241014T124949Z-001 (SEI nº 19228256), págs. 30 a 32,
+                    conforme apresentadas nas Figura 1, 2 e 3.
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                             Figura 1 – Composição de Custo Unitário Transporte com caminhão basculante com caçamba
+                                            estanque com capacidade de 28 m³ - rodovia em leito natural
+
+
+
+
+                             Figura 2 – Composição de Custo Unitário Transporte com caminhão basculante com caçamba
+                                        estanque com capacidade de 28 m³ - rodovia em revestimento primário
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                             Figura 3 – Composição de Custo Unitário Transporte com caminhão basculante com caçamba
+                                             estanque com capacidade de 28 m³ - rodovia pavimentada
+
+               1ª 3.3.1. Verifica-se que as composições foram estruturadas adotando-se dos
+                   transportes e equipamentos constantes no SICRO, mês base abril/2024.
+
+               1ª 3.3.2.    A estrutura composicional apresentada está de acordo com a metodologia
+                   SICRO. Entretanto, identificou-se que o FIC aplicado nas composições do PN 01 e 02 são
+                   divergentes.
+
+               1ª 3.3.3. Ponderando-se a estrutura composicional referencial adotada do SICRO para o
+                   PN 02 “5901638 Transporte com caminhão basculante com caçamba estanque com
+                   capacidade de 14 m³ - rodovia em revestimento primário”, o FIC foi reajustado para
+                   0,03568.
+
+               1ª 3.3.4. De modo a dar celeridade no processo, dada as considerações expostas, far-se-
+                   á os ajustes necessários para estrutura composicional do PN 02:
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                      CGCIT                                                                                                                                                                                                                           DNIT
+                      SISTEMA DE CUSTOS REFERENCIAIS DE OBRAS - SICRO                                        Acre                                                                             FIC 0,03568
+                      Custo Unitário de Referência                                                           abr/24                                                                   Produção da equipe            871,50 tkm
+
+                      PN 02       Transporte com caminhão basculante com caçamba estanque com capacidade de 28 m³ - rodovia em revestimento primário                                                                       Valores em reais (R$)
+
+                                                                                                                            Utilização                                     Custo Horário                                                 Custo
+                     A - EQUIPAMENTOS                                                           Quantidade
+                                                                                                                      Operativa          Improdutiva     Produtivo                                                                    Horário Total
+                                  Cavalo mecânico com dolly intermediário e semirreboque de 4
+                     E9018                                                                       1,00000                1,00                0,00            556,7173                                163,2521                                       556,7173
+                                  eixos com capacidade de 53 t - 323 kW
+                     A9345        Caçamba basculante estanque com capacidade de 14 m3            2,00000                1,00                0,00             15,6303                                 8,2044                                        31,2606
+                                                                                                                                                                        Custo horário total de equipamentos                                       587,9779
+                     B - MÃO DE OBRA                                                            Quantidade            Unidade                          Custo Horário                                                                    Custo Horário Total
+                                                                                                                                                                          Custo horário total de mão de obra                                         0,6747
+                                                                                                                                                                                                         FIC     0,03568                             0,0241
+                                                                                                                                                                            Custo horário total de execução
+                                                                                                                                                                                Custo unitário de Execução
+                     C - MATERIAL                                                               Quantidade            Unidade                          Preço Unitário                                                                        Custo Unitário
+                                                                                                                                                                              Custo unitário total de material
+                     D - ATIVIDADES AUXILIARES                                                  Quantidade            Unidade                          Custo Unitário                                                                        Custo Unitário
+                                                                                                                                                                         Custo total de atividades auxiliares
+                                                                                                                                                                                                     Subtotal                                          0,6987
+                                                                                                                                                                         DMT
+                     F - MOMENTO DE TRANSPORTE                                                  Quantidade            Unidade                                                                                                                Custo Unitário
+                                                                                                                                             LN             RP                           P
+                                                                                                                                                                         Custo unitário total de transporte
+                                                                                                                                                                                  Custo unitário direto total                                            0,70
+                                                                                                                                                                        Lucro e Despesas Indiretas (22,35 %)                                             0,16
+                                                                                                                                                                                         Preço Unitário Total                                            0,85
+                           Obs.
+
+
+
+
+               1ª 3.3.5. Cumpre esclarecer que as distâncias médias de transportes (DMT), a aplicação
+                   das parcelas de FIT e FIC adotadas no projeto, assim como a taxa referente ao
+                   percentual do BDI não são objetos de análise por parte desta SEPN/CGCIT, devendo
+                   ser estudados e aplicados na CCU, caso pertinente.
+
+               1ª 3.3.6. Diante do exposto, os serviços de PN 01, PN 02 e PN 03, considerando as
+                   alterações indicadas para o PN 02, para o mês-base abril/2024 no Estado do Acre,
+                   encontram-se em condições de aceitação.
+
+               1ª 3.3.7. Outrossim, apesar da estrutura composicional dos referidos serviços serem
+                   aprovados por este Serviço Especializado de Preços Novo (SEPN), ressalta-se que a
+                   avaliação da real necessidade do serviço/solução para o projeto em questão, deve ser
+                   avaliada pela respectiva Superintendência Regional e/ou pela Diretoria Singular
+                   responsável pela aprovação do projeto, bem como, caso estejam de acordo adequar a
+                   planilha orçamentária.
+
+
+           3.2.      COMPOSIÇÃO-PN 04
+
+           Descrição: Carga, manobra e descarga de agregados ou solos em caminhão basculante de 28
+           m³ - carga com carregadeira de 3,40 m³ e descarga livre.
+           Unidade: t.
+
+           1ª ANÁLISE TÉCNICA (SEI nº 19228256) - PÁG. 33
+
+                1ª 3.4.1. Trata-se de composição de custo unitário do serviço “Carga, manobra e
+                    descarga de agregados ou solos em caminhão basculante de 28 m³ - carga com
+                    carregadeira de 3,40 m³ e descarga livre”, constante no “Anexo LOTE 04 -
+                    20241014T124949Z-001 (SEI nº 19228256), pág. 33, conforme apresentada na Figura
+                    4.
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                            Figura 4 – Composição de Custo Unitário Carga, manobra e descarga de agregados ou solos em
+                                  caminhão basculante de 28 m³ - carga com carregadeira de 3,40 m³ e descarga livre
+
+                1ª 3.4.2. Verifica-se que a composição foi estruturada baseando-se ao SICRO “5914351
+                    Carga, manobra e descarga de agregados ou solos em caminhão basculante de 14 m³
+                    - carga com carregadeira de 3,40 m³ e descarga livre”, mês base abril/2024.
+
+                1ª 3.4.3. Avaliando-se os parâmetros aplicados para estruturação composicional, de
+                    modo a adequar a capacidade de 14m³ para 28m³ e o tempo de produção, conclui-se
+                    que a composição encaminhada para análise está apresentada de acordo com a
+                    metodologia do Sistema de Custos Referenciais de Obras (SICRO) e a remuneração do
+                    serviço está correta.
+
+                1ª 3.4.4. Destarte, entende-se que o serviço “Carga, manobra e descarga de agregados
+                    ou solos em caminhão basculante de 28 m³ - carga com carregadeira de 3,40 m³ e
+                    descarga livre” de valor R$1,27/t para o mês base abril/2024 no Estado do Acre, já
+                    considerando a parcela de BDI referencial de 22,35, encontra-se, nestes termos, em
+                    condições de aceitação.
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+           3.3.      COMPOSIÇÃO- PN 05 AO PN 10
+
+           Descrição PN 05: Dissipador de energia - DB 01 - areia, brita e pedra de mão comerciais.
+           Descrição PN 06: Dissipador de energia - DB 02 - areia, brita e pedra de mão comerciais.
+           Descrição PN 07: Dissipador de energia - DB 03 - areia, brita e pedra de mão comerciais.
+           Descrição PN 08: Dissipador de energia - DB 04 - areia, brita e pedra de mão comerciais.
+           Descrição PN 09: Dissipador de energia - DB 05 - areia, brita e pedra de mão comerciais.
+           Descrição PN 10: Dissipador de energia - DB 06 - areia, brita e pedra de mão comerciais.
+           Unidade: und.
+
+           1ª ANÁLISE TÉCNICA (SEI nº 19228256) - PÁG. 34
+
+                1ª 3.5.1. Trata-se de composições de custo unitário de serviços constante no “Anexo
+                    LOTE 04 -20241014T124949Z-001 (SEI nº 19228256), pág. 34 a 44.
+
+                1ª 3.5.2. Verifica-se que as composições foram estruturadas apropriando-se de
+                    atividades auxiliares do SICRO. Entretanto, os custos unitários apresentados são
+                    divergentes do mês base referencial (abril/2024). Além disso, não foram apresentados
+                    os relatórios analíticos destas composições auxiliares, impossibilitando a análise do
+                    custo unitário ora proposto.
+
+                1ª 3.5.3. Alinhada a essa exposição, ao preconizado na Instrução Normativa nº 44, de 16
+                    de agosto de 2021, que dispõe, em seu art. 3º, § 1º, inciso I:
+
+                                            “1º Não se caracterizam como preços novos:
+                                            I - serviços que constem do SICRO, mas que tenham o consumo de materiais alterado
+                                            em função de condicionantes de projeto, tais como: traço de misturas betuminosas,
+                                            misturas de solos, taxas de armadura, etc;” (grifos nossos)
+
+                1ª 3.5.4. De modo a auxiliar, caso tenha sido apropriado o uso de cotação para definição
+                    de custo de insumos, devem ser apresentadas com suas respectivas atestações pela
+                    Superintendência Regional ou pela Diretoria Singular responsável pela aprovação do
+                    projeto ou obra. Tal ateste é exigido pela Instrução Normativa nº 44, de 16 de agosto
+                    de 2021, que dispõe, em seu art. 4º, inciso I, alínea ‘g’, as seguintes informações:
+
+                                            “Art. 4º A solicitação de análise de preços novos deverá ser acompanhada da
+                                            seguinte documentação, expressamente apontada no pedido:
+                                            I - volume próprio suplementar, contendo as seguintes informações:
+                                            [...]
+                                            g) pesquisas de mercado contendo pelo menos 3 (três) cotações de cada insumo
+                                            ou serviço de engenharia, devidamente atestadas pela Superintendência Regional
+                                            ou Diretoria Singular que responde pelo objeto, identificando-se a fonte das
+                                            informações;” (grifos nosso)
+
+                1ª 3.5.5. Para tanto, a pesquisa de mercado deve ser realizada na região mais próxima
+                    da obra, e quando não dispor na região, pode-se apropriar de outras fontes, podendo,
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                     justificadamente, ter o custo do transporte custeado no item T – Momento de
+                     transporte da estrutura composicional.
+
+                1ª 3.5.6. Ante o exposto, o item apresentado não é considerado Preço Novo, devendo
+                    ser retirado do Caderno de Preços Novos, onde a verificação das quantidades
+                    definidas em projeto, são avaliados e validadas pela respectiva Superintendência
+                    Regional e/ou pela Diretoria Singular responsável pela aprovação dos Projetos
+                    Básico e Executivo.
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+           4.        CONCLUSÃO:
+
+           Concluída a verificação, informamos que os novos serviços propostos, considerando as
+           revisões indicadas, encontram-se em condições de aprovação, não necessitando de os autos
+           retornarem a este Serviço Especializado de Preços Novos para nova verificação.
+
+           É imprescindível também destacar que as composições de preços unitários analisadas no
+           âmbito da Coordenação-Geral de Custos de Infraestrutura de Transportes (CGCIT) são
+           definidas em função de premissas estabelecidas e validadas pelos entes responsáveis pela
+           aprovação do projeto ou da revisão.
+
+           Caso durante a execução das obras identifique-se situações adversas que impliquem
+           mudanças significativas nas premissas estabelecidas para a modelagem referencial dos
+           serviços e que, por isso, venha a restringir o adequado desenvolvimento das atividades
+           como planejado, descaracterizando de forma substancial o método executivo e, assim,
+           porventura causando até mesmo um desequilíbrio econômico-financeiro entre as partes,
+           recomenda-se ao fiscal do contrato a anotação de tais alterações no Diário de Obra e, caso
+           necessário, encaminhe estas considerações para nova análise e eventual aprovação da nova
+           composição de preço unitário.
+
+
+
+                                                                                                                  Em 29/10/2024.
+
+           Análise Técnica,
+
+                                                 ______________________________
+                                                    Engº. Roniquele Mirtis da Silva
+                                                          CREA 29694/D-DF
+                                             Apoio Técnico – Contrato nº 647/2024 – DNIT
+                                              FUNDAÇÃO GETULIO VARGAS – FGV/IBRE
+
+
+
+
+                         Programa DNIT – Objetivo V
+                  1ª Análise Técnica Final nº 32 – FGV/2024
+                        SEPN/CGCIT/DPP/DNIT SEDE
+
+
+
+
+D4Sign 161fe096-026c-4907-8c6e-b6a9b56c16df - Para conﬁrmar as assinaturas acesse https://secure.d4sign.com.br/veriﬁcar
+Documento assinado eletronicamente, conforme MP 2.200-2/01, Art. 10º, §2.
+                                           13 páginas - Datas e horá rios baseados em Brasília, Brasil
+                                      Sincronizado com o NTP.br e Observatório Nacional (ON)
+                               Certiﬁcado de assinaturas gerado em 29 de October de 2024, 10:29:53
+
+
+
+
+1ª Análise Técnica Final nº 32 FGV 2024 BR-364 AC pdf
+Código do documento 161fe096-026c-4907-8c6e-b6a9b56c16df
+
+
+
+
+Assinaturas
+         Roniquele Mirtis da Silva
+         roniquele.silva@fgv.br
+         Assinou
+
+
+
+
+Eventos do documento
+
+29 Oct 2024, 10:09:08
+Documento 161fe096-026c-4907-8c6e-b6a9b56c16df criado por LUIZ FELIPE MASCARENHAS COUTINHO
+(c8fb904b-8a06-44a2-ab3c-caf74aafd873). Email:luiz.coutinho@fgv.br. - DATE_ATOM: 2024-10-29T10:09:08-03:00
+
+29 Oct 2024, 10:09:44
+Assinaturas iniciadas por LUIZ FELIPE MASCARENHAS COUTINHO (c8fb904b-8a06-44a2-ab3c-caf74aafd873).
+Email: luiz.coutinho@fgv.br. - DATE_ATOM: 2024-10-29T10:09:44-03:00
+
+29 Oct 2024, 10:26:43
+RONIQUELE MIRTIS DA SILVA Assinou (6b42419e-072b-46f7-bfd9-466dd43641dc) - Email: roniquele.silva@fgv.br -
+IP: 179.131.234.124 (179-131-234-124.user.vivozap.com.br porta: 31864) - Geolocalização: -15.8309619
+-48.0137453 - Documento de identiﬁcação informado: 102.223.334-30 - DATE_ATOM: 2024-10-29T10:26:43-03:00
+
+
+
+Hash do documento original
+(SHA256):576c0de1e80e2de8a9d517473016012393dd29592c01044dcfd8ﬀ3b04a44e22
+(SHA512):b08532817925b2371142e2279e3ab88bd37c59e1baf3576ab582087dab732b4e02b4b42fc4345f7670bcac33d104d2f3e7d1e5131d86745c738a71d81072a5f5
+
+
+Esse log pertence única e exclusivamente aos documentos de HASH acima
+
+Esse documento está assinado e certiﬁcado pela D4Sign

@@ -1,0 +1,60 @@
+[aba USINA_CBUQ]
+INSTALAÇÃO INDUSTRIAL - USINA DE ASFALTO A QUENTE CAPACIDADE DE 120 T/H
+1 - Canteiros das Instalações Industriais
+Usina de Asfalto a Quente
+A usina de asfalto a quente demanda instalações provisórias como laboratórios
+Áreas Cobertas | Unid | Área de ref. | FEAC (%) | Área de equiv.
+Laboratório | m² | 94.36 | 0.6 | 56.61
+Tabela 38 - Manual de Custos de Infraestrutura de Transportes - Canteiro de Obras - Volume 06 - 2025 - 2ª Ed. | Total | 94.36 | 56.61
+Código | Áreas descobertas | Unid | Quant. | Custo Unit. | Custo total
+903810 | Instalação da usina de asfalto a quente capacidade de 120 t/h | un | 1 | 0
+0
+2 - Custo Total de Referência
+k1 (fator de ajuste do padrão de construção) | 0.8
+k2 (fator mobiliário) | 0.11
+DMT pavimentada entre os centros fornecedores ao canteiro de obras | 0
+DMT com revestimento primário entre os centros fornecedores ao canteiro de obras | 0
+k3  (fator de ajuste da distância do canteiro aos centros fornecedores) | 1
+AD (área descoberta) | 56.61
+FEAD (fator de equivalência de áreas descobertas) | 0.05
+CMCC onerado
+CMCC desonerado
+VERSÃO ONERADA
+CCO - Custo Total da Instalação Industrial: | 0
+BDI:
+PCO - Preço Total do Canteiro da Instalação Industrial: | 0
+VERSÃO DESONERADA
+CCO - Custo Total da Instalação Industrial: | 0
+BDI:
+PCO - Preço Total do Canteiro da Instalação Industrial: | 0[aba USINA_SOLOS]
+INSTALAÇÃO INDUSTRIAL - USINA DE FIXA MISTURADORA DE SOLOS
+1 - Quantidade de Conteiners
+Descrição | Área (m²) | Tipo | Quantidade | Preço unitário | Preço parcial
+Laboratório | 14.86 | M0042 | 1 | 0
+Refeitório e vestiário | 14.86 | M0041 | 1 | 0
+Guarita | 7.44 | M0071 | 1 | 0
+Total: | 0
+Tabela 38 - Manual de Custos de Infraestrutura de Transportes - Canteiro de Obras - Volume 06 - 2025 - 2ª Ed.
+Código | Áreas descobertas | Unid | Quant. | Custo Unit. | Custo total
+903808 | Instalação da usina misturadora de solos com capacidade de 300 t/h | un | 1 | 0
+0
+2 - Custo total da Usina
+Extensão da rodovia em kmf
+Cp | 1
+k2 (fator mobiliário) | 1.13
+DMT pavimentada entre os centros fornecedores ao canteiro de obras | 0
+DMT com revestimento primário entre os centros fornecedores ao canteiro de obras | 0
+k3  (fator de ajuste da distância do canteiro aos centros fornecedores) | 1
+AC (área coberta) | 37.16
+AD (área descoberta) | 37.16
+FEAD (fator de equivalência de áreas descobertas) | 0.03
+CMCC onerado
+CMCC desonerado
+VERSÃO ONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0
+VERSÃO DESONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0

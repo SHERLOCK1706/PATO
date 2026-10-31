@@ -1,0 +1,32 @@
+[aba MOBP]
+CUSTO DE MOBILIZAÇÃO DA MÃO DE OBRA
+ITEM | DESCRIÇÃO | QTD | EQUIP. | TV | TD | FU | K | ITINERÁRIO | CUSTO | CUSTO TOTAL (R$)
+TRANSPORTADOR | (R$)
+1.1.1 | Ônibus intermunicipal | N/A | N/A | N/A | N/A | 0
+1.1.2 | N/A | N/A | N/A | N/A | 0
+1.1.3 | N/A | N/A | N/A | N/A | 0
+1.1.4 | N/A | N/A | N/A | N/A | 0
+1.1.5 | N/A | N/A | N/A | N/A | 0
+CUSTO TOTAL (R$) | 0
+CUSTO DIRETO TOTAL: | 0
+BDI
+PREÇO DIRETO TOTAL: | 0
+…[aba MOBEQ]
+CUSTO DE MOBILIZAÇÃO DOS EQUIPAMENTOS
+CÓDIGO SICRO | DESCRIÇÃO | QTD | EQUIP. TRANSPORTADOR | DMT | VM | TV | TD | FU | K | CUSTO DO PEDÁGIO | CHP | CHI | CUSTO TOTAL
+CÓDIGO SICRO | DESCRIÇÃO | (km) | EIXOS | CUSTO POR EIXO | CUSTO TOTAL
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+#DIV/0! | #DIV/0! | 0 | #DIV/0!
+CUSTO TOTAL: | #DIV/0!
+CUSTO DIRETO TOTAL: | #DIV/0!
+BDI
+PREÇO DIRETO TOTAL: | #DIV/0!
+…

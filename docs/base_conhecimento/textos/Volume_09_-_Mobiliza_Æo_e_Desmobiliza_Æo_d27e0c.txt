@@ -1,0 +1,1998 @@
+  DNIT
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+                      VOLUME 09
+        MOBILIZAÇÃO E DESMOBILIZAÇÃO
+
+
+
+
+                          2017
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+Exmo. Sr. Maurício Quintella Malta Lessa
+
+DIRETOR GERAL DO DNIT
+Sr. Valter Casimiro Silveira
+
+DIRETOR EXECUTIVO DO DNIT
+Eng.º Halpher Luiggi Mônico Rosa
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Eng.º Luiz Heleno Albuquerque Filho
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+            VOLUME 09
+    MOBILIZAÇÃO E DESMOBILIZAÇÃO
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 09 - Mobilização e Desmobilização
+
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ EQUIPE TÉCNICA:
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012)
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015)
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ FISCALIZAÇÃO E SUPERVISÃO DO DNIT:
+ MSc. Eng.º Luiz Heleno Albuquerque Filho
+ Eng.º Paulo Moreira Neto
+ Eng.º Caio Saravi Cardoso
+
+B. PRIMEIRAS VERSÕES
+
+ EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+ Elaboração: CENTRAN
+ Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+ SUPERVISÃO DO DNIT:
+ Eng.º Silvio Mourão (Brasília)
+ Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+
+              Brasil, Departamento Nacional de Infraestrutura de Transportes.
+              Diretoria Executiva. Coordenação-Geral de Custos de Infraestrutura
+           de Transportes.
+              Manual de Custos de Infraestrutura de Transportes. 1ª Edição -
+           Brasília, 2017.
+
+           12v. em 74.
+
+
+           Volume 09: Mobilização e Desmobilização
+
+           1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias -
+           Construções - Estimativa e Custo - Manuais. 3. Aquavias - Construções -
+           Estimativa e Custo - Manuais. I. Título.
+
+
+
+
+                                                 ii
+            Manual de Custos de Infraestrutura de Transportes
+               Volume 09 - Mobilização e Desmobilização
+
+
+    MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA GERAL
+                    DIRETORIA EXECUTIVA
+   COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                       TRANSPORTES
+
+
+
+
+                 MANUAL DE CUSTOS DE
+            INFRAESTRUTURA DE TRANSPORTES
+
+                            VOLUME 09
+             MOBILIZAÇÃO E DESMOBILIZAÇÃO
+
+                      1ª Edição - Versão 3.0
+
+
+
+
+                             BRASÍLIA
+                               2017
+
+                                   iii
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+        MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+    DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                          DIRETORIA GERAL
+                        DIRETORIA EXECUTIVA
+       COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                           TRANSPORTES
+
+
+
+
+Setor de Autarquias Norte, Bloco A, Edifício Núcleo dos Transportes, Edifício Sede do
+DNIT, Mezanino, Sala M.4.10
+Brasília - DF
+CEP: 70.040-902
+Tel.: (061) 3315-8351
+Fax: (061) 3315-4721
+E-mail: cgcit@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+Primeira edição: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES, 2017
+
+VOLUME 09: Mobilização e Desmobilização
+
+
+
+
+Revisão:
+Fundação Getulio Vargas - FGV
+Contrato 327/2012-00 e 462/2015 (DNIT)
+Aprovado pela Diretoria Colegiada em 25/04/2017
+Processo Administrativo nº 50600.096538/2013-43
+
+Impresso no Brasil / Printed in Brazil
+
+Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que citada a
+fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda comercial.
+
+
+                                                 iv
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 09 - Mobilização e Desmobilização
+
+
+                                    APRESENTAÇÃO
+
+O Manual de Custos de Infraestrutura de Transportes constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto DNER e do DNIT na formação
+de preços referenciais de obras públicas.
+
+Em consonância à história destes importantes órgãos, o Manual de Custos de
+Infraestrutura de Transportes abrange o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes, particularmente no que
+se refere às composições de custos de serviços ferroviários e hidroviários.
+
+Outras inovações relevantes no presente Manual de Custos de Infraestrutura de
+Transportes referem-se à metodologia para definição de custos de referência de
+canteiros de obras e de administração local e à diferenciação das taxas referenciais
+de bonificação e despesas indiretas em função da natureza e do porte das obras.
+Também merece registro a proposição de novas metodologias para o cálculo dos
+custos horários dos equipamentos e da mão de obra e para definição dos custos de
+referência para aquisição e transporte de produtos asfálticos.
+
+O Manual de Custos de Infraestrutura de Transportes encontra-se organizado nos
+seguintes volumes, conteúdos e tomos:
+
+Volume 01 - Metodologia e Conceitos
+
+Volume 02 - Pesquisa de Preços
+
+Volume 03 - Equipamentos
+
+Volume 04 - Mão de Obra
+           Tomo 01 - Parâmetros do CAGED
+           Tomo 02 - Encargos Sociais
+           Tomo 03 - Encargos Complementares
+           Tomo 04 - Consolidação dos Custos de Mão de Obra
+
+Volume 05 - Materiais
+
+Volume 06 - Fator de Influência de Chuvas
+           Tomo 01 - Índices Pluviométricos - Região Norte
+           Tomo 02 - Índices Pluviométricos - Região Nordeste
+           Tomo 03 - Índices Pluviométricos - Região Centro-Oeste
+           Tomo 04 - Índices Pluviométricos - Região Sudeste
+           Tomo 05 - Índices Pluviométricos - Região Sul
+
+
+
+                                               v
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+Volume 07 - Canteiros de Obras
+           Tomo 01 - Módulos Básicos e Projetos Tipo (A3)
+
+Volume 08 - Administração Local
+
+Volume 09 - Mobilização e Desmobilização
+
+Volume 10 - Manuais Técnicos
+   Conteúdo 01 - Terraplenagem
+   Conteúdo 02 - Pavimentação / Usinagem
+   Conteúdo 03 - Sinalização Rodoviária
+   Conteúdo 04 - Concretos, Agregados, Armações, Fôrmas e Escoramentos
+   Conteúdo 05 - Drenagem e Obras de Arte Correntes
+   Conteúdo 06 - Fundações e Contenções
+   Conteúdo 07 - Obras de Arte Especiais
+   Conteúdo 08 - Manutenção e Conservação Rodoviária
+   Conteúdo 09 - Ferrovias
+   Conteúdo 10 - Hidrovias
+   Conteúdo 11 - Transportes
+   Conteúdo 12 - Obras Complementares e Proteção Ambiental
+
+Volume 11 - Composições de Custos
+
+Volume 12 - Produções de Equipes Mecânicas
+
+
+
+
+                                           vi
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 09 - Mobilização e Desmobilização
+
+
+
+
+                                          RESUMO
+
+O Manual de Custos de Infraestrutura de Transportes apresenta as metodologias, as premissas e as
+memórias adotadas para o cálculo dos custos de referência dos serviços necessários à execução de
+obras de infraestrutura de transportes e suas estruturas auxiliares.
+
+
+
+
+                                               vii
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+
+
+                                            ABSTRACT
+
+The Transport Infrastructure Costs Manual presents the methodologies, assumptions and calculation
+sheets adopted for defining the required service referential costs to implement transport infrastructure
+ventures and its auxiliary facilities.
+
+
+
+
+                                                   ix
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+                                      LISTA DE TABELAS
+
+Tabela 01 - Velocidades médias de transporte por tipo e condição da via ............... 19
+Tabela 02 - Fatores de utilização de equipamentos de grande porte ....................... 31
+Tabela 03 - Equipamentos de pequeno porte ........................................................... 41
+
+
+
+
+                                                   xi
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 09 - Mobilização e Desmobilização
+
+
+                                               SUMÁRIO
+
+       INTRODUÇÃO ............................................................................................. 3
+       DISTÂNCIAS DE MOBILIZAÇÃO E DE DESMOBILIZAÇÃO ..................... 7
+2.1.   Equipamentos ............................................................................................. 7
+2.2.   Mão de Obra ................................................................................................ 7
+2.3.   Distância Mínima de Mobilização .............................................................. 7
+       EFETIVO DE PESSOAL A SER MOBILIZADO......................................... 11
+       DESLOCAMENTO DE EQUIPAMENTOS ................................................. 15
+4.1.   Obras Rodoviárias e Ferroviárias ........................................................... 15
+4.2.   Obras Hidroviárias e Portuárias .............................................................. 15
+       VELOCIDADE MÉDIA DE TRANSPORTE ................................................ 19
+       DESLOCAMENTO DE PESSOAL ............................................................. 23
+       CUSTOS DE MOBILIZAÇÃO E DESMOBILIZAÇÃO ............................... 27
+       FATORES DE UTILIZAÇÃO (FU) .............................................................. 31
+8.1.   Equipamentos de Grande Porte .............................................................. 31
+8.2.   Equipamentos de Pequeno Porte ........................................................... 41
+
+
+
+
+                                                     xiii
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+                                               1. INTRODUÇÃO
+
+
+
+
+                       1
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+  INTRODUÇÃO
+
+Os serviços de mobilização e desmobilização são definidos como o conjunto de
+operações que o executor deve providenciar com intuito de transportar seus recursos,
+em pessoal e equipamentos, até o local da obra, e fazê-los retornar ao seu ponto de
+origem, ao término dos trabalhos.
+
+A metodologia para definição dos custos para mobilização e desmobilização de
+pessoal e equipamentos de uma determinada obra foi desenvolvida por meio do
+estabelecimento das seguintes considerações:
+
+    Todas as capitais das unidades da federação têm condições de fornecer mão
+     de obra e equipamentos para atender às necessidades da maioria das obras
+     de engenharia;
+    Serão mobilizados por transportadores especializados os equipamentos que
+     não puderem se deslocar pelos próprios meios;
+    As ferramentas e os equipamentos leves ou de pequeno porte, cujo peso
+     individual e formato permitem que sejam transportados, embarcados ou
+     rebocados, serão transportados em veículos transportadores autônomos da
+     frota mobilizada (que podem se deslocar pelos próprios meios);
+    Para todos os equipamentos embarcados na frota serão considerados os
+     custos de embarque e de desembarque;
+    Não serão consideradas improdutividades na mobilização ou desmobilização
+     dos equipamentos;
+    A cada mobilização corresponderá uma desmobilização. O cálculo do custo da
+     desmobilização será igual ao da mobilização.
+
+
+
+
+                                            3
+       Manual de Custos de Infraestrutura de Transportes
+          Volume 09 - Mobilização e Desmobilização
+
+
+
+
+2. DISTÂNCIAS DE MOBILIZAÇÃO E DE DESMOBILIZAÇÃO
+
+
+
+
+                              5
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+  DISTÂNCIAS DE MOBILIZAÇÃO E DE DESMOBILIZAÇÃO
+
+2.1. Equipamentos
+
+    Mobilização Internacional
+      Para equipamentos que não existem no país, será considerada a distância do
+      país de origem até o local da obra. Caso a origem seja indeterminada, a
+      distância a ser considerada será de 10.000 km, o que corresponde à média da
+      distância entre capitais do mundo em relação à cidade de São Paulo.
+
+    Mobilização Nacional
+      Será considerada como origem o centro da capital estadual mais próxima e
+      como destino o local do canteiro da obra. Caso a capital selecionada não
+      possua o equipamento, em condições de atender as necessidades, a distância
+      será a da capital mais próxima, com disponibilidade do equipamento, até o local
+      da obra, desde que devidamente justificado.
+
+2.2. Mão de Obra
+
+    Mobilização Internacional
+      Para profissionais com conhecimento especializado e que não existam no
+      território nacional, a distância de mobilização será a do país de origem até o
+      local da obra.
+
+    Mobilização Nacional
+      A distância de mobilização será o da capital mais próxima até o canteiro ou
+      acampamento da obra. Caso a capital selecionada como origem não possua
+      profissionais com as qualificações necessárias e em condições de atender as
+      necessidades, a distância será a da capital mais próxima, com disponibilidade,
+      até o local da obra, desde que devidamente justificado.
+
+2.3. Distância Mínima de Mobilização
+
+A distância mínima de mobilização e de desmobilização será de 50 km.
+
+
+
+
+                                            7
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+    3. EFETIVO DE PESSOAL A SER MOBILIZADO
+
+
+
+
+                       9
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+  EFETIVO DE PESSOAL A SER MOBILIZADO
+
+O efetivo a ser mobilizado será composto por todos os profissionais especializados,
+técnicos e operadores de equipamentos, bem como pela mão de obra não
+especializada alojada.
+
+O efetivo alojado será estabelecido em função da natureza dos serviços e da
+disponibilidade local de mão de obra. No caso de impossibilidade de comprovação,
+serão adotados os seguintes percentuais do efetivo para a condição alojada:
+
+    Obras rodoviárias e ferroviárias = 50%;
+    Obras aquaviárias e de barragens = 100%;
+    Demais obras = 50%.
+
+
+
+
+                                           11
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+           4. DESLOCAMENTO DE EQUIPAMENTOS
+
+
+
+
+                      13
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 09 - Mobilização e Desmobilização
+
+
+  DESLOCAMENTO DE EQUIPAMENTOS
+
+O deslocamento dos equipamentos, tanto para mobilização como para
+desmobilização, poderá ser realizado por via terrestre, fluvial, marítima ou com a
+utilização logística multimodal, recorrendo a cada modal em sub-trechos abertos ao
+trânsito, de forma integrada e buscando sempre o menor custo de transporte.
+
+4.1. Obras Rodoviárias e Ferroviárias
+
+Por via terrestre, o deslocamento dos equipamentos poderá ser realizado por rodovias
+pavimentadas e estradas em revestimento primário ou em terreno natural, por
+ferrovias, por hidrovias ou vias marítimas, utilizando, sempre que possível e viável, os
+caminhões como primeira alternativa de transporte ou o cavalo mecânico com reboque
+como segunda alternativa.
+
+Quando houver necessidade de mais de um cavalo mecânico com reboque ou quando
+o Peso Bruto Total - PBT exceder 57 toneladas tornar-se-á necessária a previsão de
+utilização de veículo de escolta, em conformidade com as diretrizes preconizadas na
+Resolução DNIT nº 02, de 27 de fevereiro de 2014.
+
+Nos deslocamentos em rodovias, a cada quatro horas de percurso, será considerada
+meia hora adicional de descanso remunerado para motoristas e ajudantes.
+
+No caso de utilização de ferrovias, deverá ser utilizada a rede de ferrovias concedidas,
+por meio de contratos diretos com as concessionárias de transporte de cargas
+existentes, sob a jurisdição da Agência Nacional de Transportes Terrestres (ANTT).
+Os referidos contratos de transporte deverão ser previamente analisados e aprovados
+pela Coordenação-Geral de Custos de Infraestrutura de Transportes - CGCIT/DIREX.
+
+4.2. Obras Hidroviárias e Portuárias
+
+Considerando que o deslocamento via terrestre para obras hidroviárias e portuárias
+refere-se somente ao acesso ao porto mais próximo de embarque, o transporte de
+equipamentos para essas obras deverá ser realizado em função da previsão de
+empresas de navegação de cabotagem e fluvial, por meio de contratos previamente
+analisados e aprovados pela Coordenação-Geral de Custos de Infraestrutura de
+Transportes.
+
+O custo de transporte do ponto de origem do equipamento até o porto de embarque
+mais próximo deverá ser incluído nos contratos.
+
+
+
+
+                                            15
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+          5. VELOCIDADE MÉDIA DE TRANSPORTE
+
+
+
+
+                      17
+                       Manual de Custos de Infraestrutura de Transportes
+                          Volume 09 - Mobilização e Desmobilização
+
+
+  VELOCIDADE MÉDIA DE TRANSPORTE
+
+A Tabela 01 consiste em quadro-resumo das velocidades médias adotadas como
+referência para os principais tipos de transporte, em função das condições da via e da
+natureza dos equipamentos, para os serviços de mobilização e desmobilização.
+
+          Tabela 01 - Velocidades médias de transporte por tipo e condição da via
+
+        Tipo de Via         Equipamento            Tipo de Pavimento       Velocidade
+
+                      Veículos rodoviários     Pavimentado                  60 km/h
+
+       Rodovia        Veículos rodoviários     Revestimento primário        50 km/h
+
+                      Veículos rodoviários     Terreno natural              40 km/h
+
+       Ferrovia       Veículos ferroviários                -                30 km/h
+
+                      Rebocadores                          -                 6 nós
+
+                      Draga Hopper 750 m3                  -                 10 nós
+
+                      Draga Hopper 1.000 m3                -                10,2 nós
+
+       Hidrovia       Draga Hopper 2.000 m3                -                10,9 nós
+
+                      Draga Hopper 3.000 m3                -                11,6 nós
+
+                      Draga Hopper 4.000 m3                -                12,3 nós
+
+                      Draga Hopper 5.000 m3                -                 13 nós
+
+
+
+
+                                              19
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+                     6. DESLOCAMENTO DE PESSOAL
+
+
+
+
+                      21
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+  DESLOCAMENTO DE PESSOAL
+
+O transporte da mão de obra poderá ser realizado por meio de transporte aéreo ou
+terrestre, diferenciando-se em função da categoria profissional e das condições
+logísticas locais, conforme apresentado a seguir:
+
+    Transporte Aéreo
+      O transporte aéreo será previsto para as seguintes categorias profissionais:
+      - Profissionais de nível superior;
+      - Encarregado geral, mestre de obras e encarregados especializados;
+      - Técnicos especializados;
+      - Operadores de equipamentos pesados e especiais.
+
+    Transporte Terrestre por Ônibus
+     O transporte terrestre por ônibus será indicado para os demais profissionais.
+
+Durante o período de deslocamento do pessoal deverão também ser considerados os
+custos adicionais de diárias de alimentação e eventual pousada.
+
+
+
+
+                                           23
+ Manual de Custos de Infraestrutura de Transportes
+    Volume 09 - Mobilização e Desmobilização
+
+
+
+
+7. CUSTOS DE MOBILIZAÇÃO E DESMOBILIZAÇÃO
+
+
+
+
+                       25
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 09 - Mobilização e Desmobilização
+
+
+  CUSTOS DE MOBILIZAÇÃO E DESMOBILIZAÇÃO
+
+Segundo a nova metodologia, os custos de mobilização de um determinado projeto
+podem ser definidos em função de composições de custos de referência elaboradas
+para os diferentes veículos transportadores, conforme expressão apresentada abaixo:
+
+                                      DM × K × FU
+                           CMob = (              ) × CH
+                                          V
+
+onde:
+
+CMob representa o custo de mobilização;
+DM representa a distância de mobilização, em quilômetros (km) ou em milhas náuticas
+(mi);
+K representa o fator relacionado à necessidade de retorno do veículo a sua origem;
+FU representa o fator de utilização do veículo transportador;
+V representa a velocidade média de transporte, em km/h ou nós;
+CH representa o custo horário do veículo transportador.
+
+O fator K será igual a 1 quando o veículo não retornar e 2 quando o veículo
+transportador retornar ao local de origem.
+
+Já o fator FU representa o inverso do número de equipamentos a serem transportados
+nos diferentes veículos transportadores.
+
+
+
+
+                                           27
+Manual de Custos de Infraestrutura de Transportes
+   Volume 09 - Mobilização e Desmobilização
+
+
+
+
+                      8. FATORES DE UTILIZAÇÃO (FU)
+
+
+
+
+                      29
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+  FATORES DE UTILIZAÇÃO (FU)
+
+8.1. Equipamentos de Grande Porte
+
+Os fatores de utilização de equipamentos de grande porte são apresentados na
+Tabela 02.
+              Tabela 02 - Fatores de utilização de equipamentos de grande porte
+
+                                                         Transporte     Transporte    Transporte
+Código                                                   Rodoviário     Aquaviário    Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                        Código   FU    Código   FU   Código    FU
+
+ 9012    Recicladora a frio - 403 kW                     9666    1,0
+
+         Caminhão tanque de asfalto de 6.000 l - 136
+ 9013                                                    9013    1,0
+         kW
+
+         Deflectômetro de impacto (FWD) instalado
+ 9014    em pick up com reboque e faixa de carga de      9014    1,0
+         7 a 120 kN - 147 kW
+
+         Escavadeira hidráulica sobre esteira de 0,4
+ 9017                                                    9665    0,5
+         m³ - 64 kW
+
+         Usina misturadora móvel de reciclagem a frio
+ 9016                                                    9016    1,0
+         com sistema de espuma de asfalto - 129 kW
+
+         Cavalo mecânico com semi-reboque de 6
+ 9018                                                    9018    1,0
+         eixos com capacidade de 74 t - 324 kW
+
+         Recicladora a frio com espuma de asfalto -
+ 9020                                                    9665    1,0
+         315 kW
+
+         Pórtico rolante com capacidade de 25 t - 30
+ 9022                                                    9666    1,0
+         kW
+
+         Guindaste sobre esteiras com dragline com
+ 9023                                                    9666    1,0
+         capacidade de 1,9 a 2,3 m³ - 270 kW
+
+         Caminhão distribuidor de cimento       com
+ 9027                                                    9027    1,0
+         capacidade de 17 t - 265 kW
+
+         Elevador de cremalheira com cabine simples,
+ 9031    com capacidade de 1.500 kg e altura de até      9686    2,0
+         100 m - 15 kW
+
+         Grua fixa para alturas de 60 a 198 m, com
+ 9036    alcance de 60 m e capacidade de 1.500 kg na     9665    3,0
+         ponta da lança - 37 kW
+
+         Plataforma de inspeção sob pontes montada
+ 9037    em caminhão com capacidade 600 kg e             9037    1,0
+         alcance de 14 m - 210 kW
+
+         Caminhão carroceria com       guindauto   e
+ 9041                                                    9041    1,0
+         capacidade de 10 t - 188 kW
+
+
+
+
+                                                   31
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (2/11)
+
+                                                          Transporte     Transporte     Transporte
+Código                                                    Rodoviário     Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                         Código   FU    Código   FU    Código    FU
+
+ 9042    Trator de esteiras com lâmina - 74,5 kW          9665    0,5
+
+         Barco de alumínio com comprimento de 7 m
+ 9043                                                     9043    1,0
+         e motor de popa - 30 HP
+
+         Central de concreto com capacidade de 150
+ 9044                                                     9665    3,0
+         m³/h - dosadora e misturadora
+
+         Lavadora profissional de alta pressão com
+ 9049                                                     9686    0,2
+         capacidade de 250 MPa - 72 kW
+
+         Guindaste sobre rodas com capacidade de
+ 9050                                                     9050    1,0
+         370 kNm - 75 kW
+
+         Máquina levantadora e puxadora de via - 7,4
+ 9051                                                     9686    0,2
+         kW
+
+         Empilhadeira a diesel com capacidade de 10
+ 9052                                                     9665    0,5
+         t - 100 kW
+
+         Perfuratriz hidráulica montada em flutuante -
+ 9053                                                                    9508    1,0
+         32 kW
+
+ 9054    Equipamento forma-trilho - 13,4 kW                                             9665     1,0
+
+         Plataforma autoelevatriz de 12 x 24 m² e
+ 9056                                                                    9534    1,0
+         capacidade de 150 t
+
+         Batelão sem propulsão com capacidade de
+ 9057                                                                    9534    1,0
+         100 t
+
+         Plataforma flutuante de 12 x 24 x 1,8 m e
+ 9058                                                                    9534    1,0
+         capacidade de 150 t
+
+         Plataforma autoelevatriz de 12 x 24 m²
+ 9059                                                                    9665    1,0
+         montada na obra e capacidade de 150 t
+
+         Perfuratriz  pneumática     rotopercussiva
+ 9060    montada em flutuante com pressão de 7 bar -                     9508    1,0
+         D = 64 a 89 mm
+
+         Máquina estabilizadora dinâmica da via - 300
+ 9063                                                                                   9063     1,0
+         kW
+
+ 9065    Carro controle ferroviário - 186 kW                                            9065     1,0
+
+ 9067    Veículo ferroviário para capina química                                        9067     1,0
+
+         Perfuratriz hidráulica rotopercussiva para
+ 9068                                                     9665    1,0
+         CCPH - 123 kW
+
+         Ponte rolante com acessórios para vão de até
+ 9070                                                     9665    1,0
+         15 m e capacidade de 5 t
+
+         Martelo hidráulico vibratório com unidade
+ 9072                                                     9665    0,2
+         hidráulica (Power Pack) - 486 kW
+
+         Bomba de concreto rebocável               com
+ 9073                                                     9073    1,0
+         capacidade de 30 m³/h - 74 kW
+
+
+
+
+                                                    32
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (3/11)
+
+                                                             Transporte      Transporte     Transporte
+Código                                                       Rodoviário      Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                            Código   FU     Código   FU    Código    FU
+
+         Tanque de estocagem de asfalto com
+ 9074                                                        9016    1,0
+         agitadores de 60.000 l
+
+         Equipamento de pintura eletrostática com
+ 9076                                                        9665    0,5
+         cabine de 13,2 kW e estufa de 90.000 kCal
+
+         Perfuratriz Wirth com acessórios e unidade
+ 9077                                                        9665    0,5
+         hidráulica (Power Pack) - 273 kW
+
+         Treliça lançadeira com capacidade de carga
+ 9078    de 120 a 150 t e vão máximo de 45 m - 110           9665    9,0
+         kW
+
+         Carrelone com capacidade máxima de 70 t -
+ 9080                                                        9665    0,25
+         24 kW
+
+         Bate estaca hidráulico para defensas
+ 9082    montado em caminhão guindauto com                   9082    1,0
+         capacidade de 6 t - 136 kW
+
+ 9083    Vagão fechado tipo FSS                                                             9743     0,1
+
+ 9084    Vagão tanque tipo TCR                                                              9743     0,1
+
+ 9085    Vagão gôndola tipo GTB                                                             9743     0,1
+
+         Bomba de concreto rebocável com
+ 9086                                                        9086    1,0
+         capacidade de 41 m³/h - 74 kW
+
+         Vagão Hopper aberto com descarga inferior
+ 9087                                                                                       9743     0,1
+         manual e capacidade de 60 t, bitola métrica
+
+         Vagão Hopper aberto com descarga inferior
+ 9088                                                                                       9743     0,1
+         manual e capacidade de 75 t, bitola larga
+
+         Equipamento para descarga de TLS - 140
+ 9090                                                                                       9090     1,0
+         kW
+
+ 9091    Empurrador fluvial - 500 kW                                         9091    1,0
+
+         Balsa para transporte de material asfáltico
+ 9092                                                                        9091    1,0
+         com 6 tanques de 60.000 litros cada
+
+ 9093    Veículo leve - 53 kW (sem motorista)                9512    1,0
+
+         Guindaste móvel sobre pneus com 6 eixos e
+ 9094                                                        9094    1,0
+         capacidade de 10.500 kNm - 450 kW
+
+         Guindaste móvel sobre pneus com 8 eixos e
+ 9095                                                        9095    1,0
+         capacidade de 15.000 kNm - 500 kW
+
+ 9096    Mini-carregadeira de pneus - 42 kW                  9665    0,33
+
+         Caminhão de resgate de veículos leves com
+ 9097                                                        9097    1,0
+         capacidade de guincho de 6 t - 115 kW
+
+         Caminhão de resgate de veículos de porte
+ 9098    médio com capacidade do guincho de 20 t -           9098    1,0
+         136 kW
+
+
+
+
+                                                       33
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (4/11)
+
+                                                           Transporte     Transporte      Transporte
+Código                                                     Rodoviário     Aquaviário      Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                          Código   FU    Código   FU     Código    FU
+
+         Caminhão de resgate de veículos pesados
+ 9099    com dois guinchos e capacidade de 30 t -          9099    1,0
+         335 kW
+
+ 9100    Cavalo mecânico sem reboque - 210 kW              9100    1,0
+
+         Embarcação empurradora multi-propósito - 2
+ 9104                                                                     9104    1,0
+         x 150 HP
+
+         Embarcação empurradora multi-propósito - 2
+ 9105                                                                     9105    1,0
+         x 250 HP
+
+ 9106    Balsa de convés com capacidade de 200 t                          9603    0,25
+
+         Soldadora de trilho por caldeamento na via -
+ 9108                                                                                     9108     1,0
+         400 kW
+
+         Cavalo mecânico com tanque isotérmico e
+ 9109                                                      9109    1,0
+         capacidade de 31.000 litros - 323 kW
+
+         Escavadeira hidráulica sobre esteira para
+ 9110    rocha com caçamba e capacidade de 1,5 m³          9665    1,0
+         - 110 kW
+
+         Carregadeira de pneus para rocha com
+ 9117                                                      9665    0,5
+         capacidade de 2,9 m³ - 96 kW
+
+         Carregadeira compacta com valetadeira
+ 9119    para escavação até a profundidade de 1.575        9665    0,5
+         mm - 55,4 kW
+
+         Equipamento de cravação sobre esteira para
+ 9120    geodreno com haste para profundidade de           9666    1,0
+         até 20 m - 200 kW
+
+         Perfuratriz tipo Bottom Feed para coluna de
+ 9122                                                      9665    1,0
+         brita - 194 kW
+
+ 9123    Veículo leve a gasolina - 72 a 92 kW              9123    1,0
+
+         Caminhonete a gasolina cabine dupla 4 x 4 -
+ 9124                                                      9124    1,0
+         101 a 145 kW
+
+ 9125    Van furgão a diesel - 93 a 102 kW                 9125    1,0
+
+         Draga Backhoe com capacidade de 7 m³ -
+ 9126                                                                     9606    1,0
+         1.000 kW
+
+         Escavadeira     hidráulica   com       martelo
+ 9127                                                      9665    1,0
+         hidráulico de 550 kg - 103 kW
+
+         Semi-reboque com tanque isotérmico com
+ 9135                                                      9135    1,0
+         capacidade de 31.000 litros
+
+ 9136    Cavalo mecânico - 323 kW                          9136    1,0
+
+         Viscosímetro Saybolt-Furol com controle
+ 9499                                                      9665    1,0
+         eletrônico para 2 corpos de prova
+
+
+
+
+                                                     34
+                           Manual de Custos de Infraestrutura de Transportes
+                              Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (5/11)
+
+                                                           Transporte     Transporte     Transporte
+Código                                                     Rodoviário     Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                          Código   FU    Código   FU    Código    FU
+
+ 9500    Vagão gôndola com capacidade de 100 t                                           9743     0,1
+
+         Bate-estaca de gravidade para 3,5 a 4,0 t -
+ 9502                                                      9686    1,0
+         119 kW
+
+         Caminhão basculante com capacidade de 6
+ 9506                                                      9506    1,0
+         m³ - 136 kW
+
+         Caminhão carroceria com capacidade de 9 t -
+ 9508                                                      9508    1,0
+         136 kW
+
+         Caminhão tanque distribuidor de asfalto com
+ 9509                                                      9509    1,0
+         capacidade de 6.000 l - 136 kW
+
+         Carregadeira de pneus com capacidade de
+ 9511                                                      9665    0,5
+         3,3 m³ - 213 kW
+
+ 9512    Veículo leve - 53 kW                              9512    1,0
+
+         Distribuidor de agregados autopropelido - 130
+ 9514                                                      9665    0,5
+         kW
+
+         Escavadeira hidráulica sobre esteira com
+ 9515                                                      9665    1,0
+         caçamba com capacidade de 1,5 m³ - 110 kW
+
+ 9516    Perfuratriz hidráulica sobre esteiras - 300 kW    9018    1,0
+
+ 9518    Grade de discos rebocável de 24 x 24              9518    1,0
+
+         Caminhão com caçamba térmica                e
+ 9520                                                      9520    1,0
+         capacidade de 5,5 m³ - 210 kW
+
+         Caldeira  de    asfalto     rebocável    com
+ 9522                                                      9522    1,0
+         capacidade de 1.500 l - 6,5 kW
+
+ 9523    Motoscraper - 304 kW                              9665    1,0
+
+ 9524    Motoniveladora - 93 kW                            9665    1,0
+
+         Ponte rolante com acessórios para vãos de
+ 9525                                                      9666    1,0
+         até 15 m e capacidade de 15 t - 20 kW
+
+ 9526    Retroescavadeira de pneus - 58 kW                 9665    0,5
+
+         Rolo     compactador      liso   autopropelido
+ 9530                                                      9665    0,5
+         vibratório de 11 t - 97 kW
+
+         Equipamento de sondagem a percussão com
+ 9531                                                      9508    1,0
+         motobomba - 2,5 kW
+
+         Sonda rotativa com motor, bombas, mastro e
+ 9533                                                      9508    1,0
+         cabeçote - 20 kW
+
+ 9534    Rebocador - 2 x 500 HP                                           9534    1,0
+
+         Carregadeira de pneus com capacidade de
+ 9537                                                      9665    0,5
+         1,72 m³ - 113 kW
+
+ 9540    Trator de esteiras com lâmina - 112 kW            9665    0,5
+
+
+
+
+                                                     35
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (6/11)
+
+                                                          Transporte     Transporte    Transporte
+Código                                                    Rodoviário     Aquaviário    Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                         Código   FU    Código   FU   Código    FU
+
+ 9541    Trator de esteiras com lâmina - 259 kW           9665    1,0
+
+         Vibroacabadora de asfalto sobre esteiras - 82
+ 9545                                                     9665    0,5
+         kW
+
+         Tanque de estocagem de asfalto com
+ 9558                                                     9665    1,0
+         capacidade de 30.000 l
+
+         Ônibus com capacidade para 80 lugares - 175
+ 9560                                                     9560    1,0
+         kW
+
+         Perfuratriz hidráulica sobre esteiras com
+ 9563                                                     9666    1,0
+         clamshell - 220 kW
+
+ 9565    Trator de esteiras com escarificador - 259 kW    9665    1,0
+
+         Guindaste sobre esteiras com clamshell de
+ 9566                                                     9666    1,0
+         1,9 m³ - 220 kW
+
+         Guindaste sobre esteiras com clamshell de
+ 9569                                                     9665    1,0
+         4,6 m³ - 403 kW
+
+         Caminhão tanque com capacidade de 10.000
+ 9571                                                     9571    1,0
+         l - 188 kW
+
+ 9574    Perfuratriz sobre esteiras - 145 kW              9665    0,5
+
+         Caminhão     basculante   com     caçamba
+ 9575                                                     9575    1,0
+         estanque e capacidade de 14 m³ - 265 kW
+
+         Escavadeira hidráulica de longo alcance
+ 9576                                                     9665    1,0
+         sobre esteiras - 103 kW
+
+ 9577    Trator agrícola - 77 kW                          9665    0,5
+
+         Caminhão basculante com capacidade de 10
+ 9579                                                     9579    1,0
+         m³ - 210 kW
+
+         Distribuidora / fresadora com controle de
+ 9580                                                     9665    1,0
+         greide - 287 kW
+
+         Carregadeira de pneus com capacidade de
+ 9582                                                     9665    0,5
+         2,9 m³ - 96 kW
+
+         Distribuidor de agregados rebocável de 1,9
+ 9583                                                     9583    1,0
+         m³
+
+         Carregadeira de pneus com capacidade de
+ 9584                                                     9665    0.5
+         1,53 m³ - 106 kW
+
+         Vibroacabadora de concreto com formas
+ 9588                                                     9665    1,0
+         deslizantes - 205 kW
+
+ 9589    Texturizadora/cura - 44,8 kW                     9665    1,0
+
+         Central de concreto com capacidade de 40
+ 9590                                                     9665    1,0
+         m³/h - dosadora fixa
+
+
+
+
+                                                    36
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (7/11)
+
+                                                         Transporte     Transporte     Transporte
+Código                                                   Rodoviário     Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                        Código   FU    Código   FU    Código    FU
+
+         Caminhão carroceria com capacidade de 15 t
+ 9592                                                    9592    1,0
+         - 188 kW
+
+ 9593    Draga Hopper com capacidade de 750 m³                          9593    1,0
+
+ 9594    Draga Hopper com capacidade de 1.000 m³                        9594    1,0
+
+ 9595    Draga Hopper com capacidade de 2.000 m³                        9595    1,0
+
+ 9596    Draga Hopper com capacidade de 3.000 m³                        9596    1,0
+
+ 9597    Draga Hopper com capacidade de 4.000 m³                        9597    1,0
+
+ 9598    Draga Hopper com capacidade de 5.000 m³                        9598    1,0
+
+         Central de concreto com capacidade de 30
+ 9599                                                    9665    1,0
+         m³/h - dosadora RS
+
+         Caminhão betoneira com capacidade de 15,2
+ 9600                                                    9600    1,0
+         t - 210 kW
+
+         Embarcação de transporte de pessoal e apoio
+ 9601                                                                   9601    1,0
+         logístico - 175 HP
+
+ 9602    Embarcação de sondagem - 120 HP                                9602    1,0
+
+         Embarcação empurradora multi-propósito
+ 9603    com guindaste hidráulico de 11 mt - 2 x 150                    9603    1,0
+         HP
+
+         Caminhão basculante para       rocha   com
+ 9604                                                    9604    1,0
+         capacidade de 8 m³ - 210 kW
+
+         Caminhão tanque com capacidade de 6.000 l
+ 9605                                                    9605    1,0
+         - 136 kW
+
+ 9606    Rebocador - 2 x 360 HP                                         9606    1,0
+
+         Conjunto de britagem para rachão com
+ 9607                                                    9665    1,0
+         capacidade de 80 m³/h
+
+ 9608    Lancha de apoio - 40 HP                                        9608    1,0
+
+         Draga de sucção para extração de areia com
+ 9609                                                                   9009    1,0
+         tubo de descarga de 150 mm - 100 kW
+
+         Conjunto de britagem com capacidade de 80
+ 9611                                                    9665    1,0
+         m³/h
+
+         Plataforma flutuante montada na obra de 12 x
+ 9612                                                                   9534    1,0
+         24 x 1,8 m e com capacidade de 150 t
+
+ 9613    Guindaste sobre esteiras com pinça - 220 kW     9666    1,0
+
+         Usina misturadora de solos com capacidade
+ 9615                                                    9665    2,0
+         de 300 t/h
+
+
+
+
+                                                   37
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (8/11)
+
+                                                        Transporte     Transporte     Transporte
+Código                                                  Rodoviário     Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                       Código   FU    Código   FU    Código    FU
+
+         Usina misturadora de pré misturado a frio
+ 9617                                                   9665    1,0
+         com capacidade de 60 t/h
+
+         Batelão autopropelido com capacidade de
+ 9618                                                                  9618    1,0
+         300 m³
+
+         Batelão autopropelido com capacidade de
+ 9619                                                                  9619    1,0
+         500 m³
+
+         Pontão flutuante de 15 x 30 x 1,8 m e
+ 9620                                                                  9534    1,0
+         capacidade de 500 t
+
+         Draga de sucção e recalque com potência da
+ 9635                                                                  9603    1,0
+         bomba de 177 kW e do cortador de 30 kW
+
+         Draga de sucção e recalque com potência da
+ 9636                                                                  9603    1,0
+         bomba de 447 kW e do cortador de 52 kW
+
+         Draga de sucção e recalque com potência da
+ 9637                                                                  9603    1,0
+         bomba de 746 kW e do cortador de 110 kW
+
+         Draga de sucção e recalque com potência da
+ 9638                                                                  9603    1,0
+         bomba de 1.350 kW e do cortador de 170 kW
+
+         Barco hotel com capacidade para 30 pessoas
+ 9639                                                                  9603    1,0
+         - 2 x 150 HP
+
+         Perfuratriz hidráulica sobre esteiras para
+ 9642                                                   9665    0,5
+         estaca raiz - 56 kW
+
+         Caminhão para pintura a frio com demarcador
+ 9644                                                   9644    1,0
+         de faixas - 143 kW
+
+         Caminhão        aplicador   de     material
+ 9645                                                   9645    1,0
+         termoplástico - 233 kW
+
+         Guindaste sobre esteiras com       martelo
+ 9650                                                   9666    1,0
+         hidráulico de 2.600 kg - 220 kW
+
+         Guindaste sobre esteiras com Hammer Grab
+ 9651                                                   9666    1,0
+         - 220 kW
+
+         Guindaste sobre esteiras com trado com bits
+ 9653                                                   9666    1,0
+         para material de 1ª categoria - 220 kW
+
+         Guindaste sobre esteiras com trado com bits
+ 9654                                                   9666    1,0
+         para material de 2ª categoria - 220 kW
+
+         Guindaste sobre esteiras com trado com bits
+ 9655                                                   9666    1,0
+         para material de 3ª categoria - 220 kW
+
+         Guindaste sobre esteiras com caçamba para
+ 9656                                                   9665    1,0
+         material de 1ª categoria - 220 kW
+
+         Guindaste sobre esteiras com caçamba para
+ 9657                                                   9666    1,0
+         material de 2ª categoria - 220 kW
+
+
+
+
+                                                  38
+                           Manual de Custos de Infraestrutura de Transportes
+                              Volume 09 - Mobilização e Desmobilização
+
+
+          Tabela 02 - Fatores de utilização de equipamentos de grande porte (9/11)
+
+                                                            Transporte     Transporte    Transporte
+Código                                                      Rodoviário     Aquaviário    Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                           Código   FU    Código   FU   Código    FU
+
+         Guindaste sobre esteiras com caçamba para
+ 9658                                                       9666    1,0
+         material de 3ª categoria - 220 kW
+
+         Campânula de ar             comprimido   com
+ 9659                                                       9508    0,5
+         capacidade de 3 m³
+
+ 9660    Guindaste sobre esteiras - 220 kW                  9666    1,0
+
+         Caminhão basculante com capacidade de 4
+ 9663                                                       9663    1,0
+         m³ - 115 kW
+
+         Caminhão basculante com capacidade de 5
+ 9664                                                       9664    1,0
+         m³ - 136 kW
+
+         Cavalo mecânico com semi-reboque             e
+ 9665                                                       9665    1,0
+         capacidade de 35 t - 210 kW
+
+         Cavalo mecânico com semi-reboque             e
+ 9666                                                       9666    1,0
+         capacidade de 45 t - 295 kW
+
+         Caminhão basculante com capacidade de 14
+ 9667                                                       9667    1,0
+         m³ - 295 kW
+
+         Caminhão tanque com capacidade de 8.000 l
+ 9669                                                       9669    1,0
+         - 188 kW
+
+         Usina móvel para microrrevestimento - 335
+ 9670                                                       9670    1,0
+         kW
+
+         Caminhão basculante para rocha           com
+ 9672                                                       9672    1,0
+         capacidade de 12 m³ - 294 kW
+
+ 9678    Fresadora a frio - 410 kW                          9665    1,0
+
+         Cavalo mecânico com semi-reboque de 6
+ 9679                                                       9679    1,0
+         eixos para até 216 t - 440 kW
+
+         Caminhão tanque com capacidade de 13.000
+ 9680                                                       9680    1,0
+         l - 188 kW
+
+         Rolo     compactador      liso   autopropelido
+ 9682                                                       9665    0,1
+         vibratório de 1,6 t - 18 kW
+
+ 9684    Veículo leve Pick Up 4 x 4 - 147 kW                9684    1,0
+
+         Rolo compactador pé de carneiro vibratório
+ 9685                                                       9665    0,5
+         autopropelido de 11,6 t - 82 kW
+
+         Caminhão carroceria com          guindauto   e
+ 9686                                                       9686    1,0
+         capacidade de 6 t - 136 kW
+
+         Caminhão carroceria com capacidade de 4 t -
+ 9687                                                       9687    1,0
+         115 kW
+
+ 9688    Usina móvel de lama asfáltica - 230 kW             9688    1,0
+
+         Usina de asfalto a quente gravimétrica com
+ 9689                                                       9665    4,0
+         capacidade de 100/140 t/h - 260 kW
+
+
+
+
+                                                      39
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 09 - Mobilização e Desmobilização
+
+
+         Tabela 02 - Fatores de utilização de equipamentos de grande porte (10/11)
+
+                                                            Transporte      Transporte     Transporte
+Código                                                      Rodoviário      Aquaviário     Ferroviário
+             Discriminação dos Equipamentos
+SICRO
+                                                           Código   FU     Código   FU    Código    FU
+
+         Máquina de pintura do sistema Spray - 115
+ 9693                                                       9693    1,0
+         kW
+
+         Mini-carregadeira de pneus com vassoura de
+ 9697                                                       9665    0,33
+         1,8 m - 42 kW
+
+ 9700    Fresadora a frio - 155 kW                          9665    0,5
+
+         Batelão sem propulsão montado na obra com
+ 9704                                                                       9534    1,0
+         capacidade de 100 t
+
+ 9710    Socadora automática de linha - 253 kW                                             9710     1,0
+
+ 9711    Socadora automática de chave - 370 kW                                             9711     1,0
+
+ 9712    Reguladora e distribuidora de lastro - 300 kW                                     9712     1,0
+
+ 9713    Soldadora de trilho - 168 kW                                                      9713     1,0
+
+ 9714    Bate-estaca com martelo hidráulico - 450 kW        9666    1,0
+
+         Pórtico duplo de descarga e posicionamento
+ 9718                                                                                      9718     1,0
+         de dormente - 89 kW
+
+ 9726    Bate-estaca Strauss - 15 kW                        9508    1,0
+
+ 9743    Locomotiva diesel/elétrica - 1.492 kW                                             9743     1,0
+
+ 9744    Vagão prancha com capacidade de 100 t                                             9743     0,1
+
+         Trator de pneus com roçadeira a diesel - 77
+ 9745                                                       9665    0,5
+         kW
+
+         Vibroacabadora de asfalto sobre pneus - 72
+ 9758                                                       9665    0,5
+         kW
+
+         Rolo compactador de pneus autopropelido de
+ 9762                                                       9665    1,0
+         27 t - 85 kW
+
+         Escavadeira      hidráulica   com       martelo
+ 9775                                                       9665    1,0
+         hidráulico de 1.700 kg - 103 kW
+
+ 9777    Extrusora de barreira de concreto - 74 kW          9665    1,0
+
+         Plataforma pantográfica        montada      em
+ 9783                                                       9783    1,0
+         caminhão - 136 kW
+
+         Plataforma autopropelida com alcance de 12
+ 9784                                                       9665    0,5
+         m e capacidade de 700 kg - 24 kW
+
+         Guindaste sobre caminhão, com chassi 4 x 4
+ 9785    x 4, altura de elevação de 35,8 m e                9785    1,0
+         capacidade de 1.500 kNm - 186 kW
+
+         Bomba para concreto com lança sobre chassi
+ 9787                                                       9787    1,0
+         e capacidade de 71/43 m³/h
+
+
+
+
+                                                      40
+                           Manual de Custos de Infraestrutura de Transportes
+                              Volume 09 - Mobilização e Desmobilização
+
+
+           Tabela 02 - Fatores de utilização de equipamentos de grande porte (11/11)
+
+                                                            Transporte       Transporte            Transporte
+Código                                                      Rodoviário       Aquaviário            Ferroviário
+              Discriminação dos Equipamentos
+SICRO
+                                                           Código   FU     Código      FU     Código        FU
+
+          Carreta de perfuração de superfície com
+ 9795     martelo de topo e controle remoto via rádio -     9665    0,33
+          46 kW
+
+          Carreta de perfuração de superfície com
+ 9795     martelo de topo e controle remoto via rádio -     9665    0,33
+          46 kW
+
+          Jumbo eletro-hidráulico com 3 braços - 233
+ 9797                                                       9666    1,0
+          kW
+
+ 9798     Perfuratriz hidráulica rotopercussiva - 123 kW    9665    1,0
+
+   -      Container 20 TEU                                  9665    0,5
+
+   -      Container 40 TEU                                  9665    1,0
+
+
+8.2. Equipamentos de Pequeno Porte
+
+Os equipamentos de pequeno porte são apresentados na Tabela 03.
+                             Tabela 03 - Equipamentos de pequeno porte
+
+ Código
+                                          Discriminação dos Equipamentos
+ SICRO
+
+           Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 60 cm - 2,2
+  9001
+           kW
+
+           Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 80 cm - 2,2
+  9002
+           kW
+
+           Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 100 cm - 2,2
+  9003
+           kW
+
+           Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 120 cm - 2,2
+  9004
+           kW
+
+           Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 150 cm - 2,2
+  9005
+           kW
+
+  9006     Equipamento para sondagem manual
+
+  9007     Bomba de pistão triplex com capacidade de 130 l/min - 8,2 kW
+
+  9008     Transportador manual de tubos de concreto
+
+  9010     Balança plataforma digital com mesa de 75 x 75 cm e capacidade de 500 kg
+
+  9011     Carro manual modelo plataforma de 200 x 80 cm e capacidade de 800 kg
+
+  9015     Elevador de obra - 9 kW
+
+  9019     Câmara hiperbárica com filtro, serpentina e reservatório de ar - D = 1,80 m e H = 2 m
+
+  9021     Grupo gerador - 456 kVA
+
+  9024     Misturador de nata cimento - 1,5 kW
+
+  9025     Conjunto bomba e macaco hidráulico para protensão com capacidade de 7.000 kN
+
+
+
+                                                      41
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 09 - Mobilização e Desmobilização
+
+
+                       Tabela 03 - Equipamentos de pequeno porte (2/6)
+
+Código
+                                       Discriminação dos Equipamentos
+SICRO
+
+ 9026    Bomba para injeção de nata de cimento - 2,2 kW
+
+ 9028    Lavadora profissional de baixa pressão (máximo de 35 MPa) - 5,2 kW
+
+ 9029    Conjunto bomba e macaco hidráulico para protensão com capacidade de 8.000 kN
+
+ 9030    Bomba de protensão com leitura digital para tensionamento de estais - 3 kW
+
+ 9032    Equipamento para regulagem final de estais com até 37 cordoalhas - D = 15,7 mm - 20 kW
+
+ 9033    Equipamento para regulagem final de estais de 38 a 55 cordoalhas - D = 15,7 mm - 30 kW
+
+ 9034    Equipamento para regulagem final de estais de 56 a 73 cordoalhas - D = 15,7 mm - 40 kW
+
+ 9035    Equipamento para regulagem final de estais de 74 a 91 cordoalhas - D = 15,7 mm - 50 kW
+
+ 9038    Macaco hidráulico monocordoalha para tensionamento de estais
+
+ 9039    Máquina de solda por termofusão para tubos HDPE com gerador de 5,5 kVA
+
+ 9040    Serra mármore - 1,45 kW
+
+ 9045    Conjunto bomba e macaco hidráulico para elevação com capacidade de 490 kN
+
+ 9046    Conjunto bomba e macaco hidráulico para elevação com capacidade de 980 kN
+
+ 9047    Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.470 kN
+
+ 9048    Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.960 kN
+
+ 9055    Guincho pneumático com capacidade de 2,5 t
+
+ 9061    Lixadeira elétrica manual angular - 2 kW
+
+ 9062    Soprador de ar quente manual - 1.600 W
+
+ 9064    Transportador manual gerica com capacidade de 180 l
+
+ 9066    Grupo gerador - 13 / 14 kVA
+
+ 9069    Vibrador de imersão para concreto - 4,1 kW
+
+ 9071    Transportador manual carrinho de mão com capacidade de 80 l
+
+ 9075    Trado cavadeira de 10 a 12”
+
+ 9079    Bomba submersível Flygt 12 - 23 kW
+
+ 9089    Roçadeira costal - 1,4 kW
+
+ 9101    Removedora de faixas de sinalização viária - 9,69 kW
+
+ 9102    Extrusora para sarjeta de concreto - 10,44 kW
+
+ 9103    Extrusora para meio fio de concreto - 10,44 kW
+
+ 9107    Compactador manual com soquete vibratório - 3 HP
+
+ 9111    Jateador abrasivo úmido com capacidade de 200 kg de abrasivo
+
+         Sinalizador direcional móvel, LED, com banco fotovoltaico de energia e montado em chassi com
+ 9112
+         engate
+
+         Painel de mensagem variável PMV portátil móvel, LED, com energia solar e montado em chassi
+ 9113
+         sobre rodas
+
+
+
+                                                    42
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 09 - Mobilização e Desmobilização
+
+
+                       Tabela 03 - Equipamentos de pequeno porte (3/6)
+
+Código
+                                       Discriminação dos Equipamentos
+SICRO
+
+ 9114    Painel com seta luminosa montado em chassi de caminhão com prancha - 115 kW
+
+         Painel com seta luminosa montado em chassi de caminhão com prancha e amortecedor retrátil
+ 9115
+         (AMC)
+
+ 9116    Semáforo móvel com 3 lentes e bateria - D = 200 mm
+
+ 9118    Cortadora de pavimento com disco diamantado de 450 a 1.500 mm - 74 kW
+
+ 9121    Plataforma elevatória articulada elétrica com alcance de 6 m e capacidade de 500 kg - 1,5 kW
+
+ 9140    Equipamento Clip Driver para grampos elásticos - 10 kW
+
+ 9141    Rebarbador hidráulico com bomba manual e capacidade de força de 9.000 kgf
+
+ 9142    Máquina de alívio de tensões em trilhos Rail Knocker 48 batidas/min
+
+ 9501    Ventilador axial para ventilação forçada - 30 kW
+
+ 9507    Computador, plotter de recorte e software
+
+ 9143    Máquina liberadora de tensão para o processo de soldagem Rail Tensor THR 542
+
+ 9144    Pórtico metálico com talha e capacidade de 5 t
+
+ 9510    Ventilador centrífugo baixa pressão com capacidade de 58 m³/min - 3,68 kW
+
+ 9513    Compressor de ar portátil de 340 PCM - 81 kW
+
+ 9517    Compressor de ar portátil de 912 PCM - 184 kW
+
+ 9519    Betoneira com motor a gasolina e capacidade de 600 l - 10 kW
+
+ 9521    Grupo gerador - 2,5/3 kVA
+
+ 9527    Martelete perfurador/rompedor a ar comprimido de 25 kg
+
+ 9529    Jateadora com mesa transportadora de rolos de 3.200 x 600 x 1.300 mm - 22 kW
+
+ 9532    Equipamento de solda MIG com acessórios - 14,6 KVA
+
+ 9535    Serra circular com bancada - D = 30 cm - 4 kW
+
+         Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de formas - D = 30 cm
+ 9538
+         - 2,2 Kw
+
+ 9544    Vassoura mecânica rebocável
+
+ 9547    Máquina para solda elétrica - 9,2 kW
+
+ 9548    Bomba centrífuga com capacidade de 8,6 a 22 m³/h - 1,5 kW
+
+ 9552    Nível ótico
+
+         Estação total eletrônica com precisão angular de 2”, linear de 2 mm e alcance com 1 prisma de
+ 9553
+         3.000 m
+
+ 9556    Compactador manual de placa vibratória com motor diesel - 3 kW
+
+         Aparelho GPS com 4 GB de memória, altímetro barométrico e base mundial Garmin eTrex 30x
+ 9561
+         ou similar
+
+ 9562    GPS geodésico de dupla frequência (L1/L2)
+
+
+
+
+                                                     43
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 09 - Mobilização e Desmobilização
+
+
+                       Tabela 03 - Equipamentos de pequeno porte (4/6)
+
+Código
+                                       Discriminação dos Equipamentos
+SICRO
+
+ 9567    Fresadora de piso de concreto - 6,7 kW
+
+ 9568    Furadeira de impacto de 12,5 mm - 0,8 kW
+
+         Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de formas - D = 40 cm -
+ 9578
+         2,2 kW
+
+ 9585    Motoserra com motor a gasolina - 2,3 kW
+
+ 9586    Régua vibratória treliçada com 4 m - 4,1 kW
+
+ 9591    Serra para corte de concreto e asfalto - 10 kW
+
+ 9614    Bomba com câmara de vácuo - 5,6 kW
+
+         Bomba de injeção de argamassa e nata com capacidade de 50 l/min e misturador com tambor de
+ 9621
+         150 l - 12,5 kW
+
+ 9622    Máquina de bancada universal para corte de chapa - 1,5 kW
+
+ 9623    Máquina de bancada guilhotina - 4 kW
+
+ 9628    Fábrica de pré-moldado de concreto com balizador - 2,2 kW
+
+ 9630    Bomba submersível com capacidade de 75 m³/h - 3,6 kW
+
+ 9631    Bomba para projeção de concreto via seca com capacidade de 6 m³/h - 7,5 kW
+
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 20 cm - 2,2
+ 9632
+         kW
+
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 30 cm - 2,2
+ 9633
+         kW
+
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de formas - D = 40 cm - 2,2
+ 9634
+         kW
+
+         Equipamento de pintura a ar comprimido de pistola com caneca de 1.000 ml e compressor de 1,5
+ 9643
+         kW
+
+ 9647    Compactador manual com soquete vibratório - 4,1 kW
+
+ 9649    Compressor de ar portátil 197 PCM - 55 kW
+
+ 9662    Equipamento para solda/corte com oxiacetileno
+
+ 9668    Fábrica de pré-moldado de concreto com guarda corpo - 2,2 kW
+
+ 9671    Compressor de ar portátil 748 PCM - 154 kW
+
+ 9675    Martelete perfurador/rompedor elétrico - 1,5 kW
+
+ 9677    Martelete perfurador/rompedor a ar comprimido de 10 kg
+
+ 9691    Tracionador de cordoalhas - 7,5 kW
+
+ 9692    Caldeira para aquecimento e injeção de cera - 1 kW
+
+ 9694    Misturador de argamassa de alta turbulência com capacidade de 220 l
+
+ 9701    Jateador pressurizado multiabrasivo com capacidade de 280 l
+
+ 9702    Bomba de injeção de argamassa com capacidade de 340 l/min
+
+
+
+
+                                                   44
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 09 - Mobilização e Desmobilização
+
+
+                       Tabela 03 - Equipamentos de pequeno porte (5/6)
+
+Código
+                                        Discriminação dos Equipamentos
+SICRO
+
+ 9703    Fábrica de pré-moldado de concreto para mourão - 2,2 kW
+
+ 9705    Misturador de lama bentonítica - 4 kW
+
+ 9706    Martelete perfurador/rompedor a ar comprimido de 28 kg
+
+ 9707    Desarenador - 15 kW
+
+ 9708    Micro trator com roçadeira - 10 kW
+
+ 9716    Conjunto bomba e macaco hidráulico de protensão com capacidade de 590 kN
+
+ 9717    Máquina policorte - 2,2 kW
+
+ 9719    Talha manual com capacidade de 3 t
+
+ 9720    Conjunto bomba e macaco hidráulico para protensão com capacidade de 250 kN
+
+ 9721    Conjunto bomba e macaco hidráulico para protensão com capacidade de 1.150 kN
+
+ 9722    Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.000 kN
+
+ 9723    Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.500 kN
+
+ 9724    Conjunto bomba e macaco hidráulico para protensão com capacidade de 4.000 kN
+
+ 9725    Conjunto bomba e macaco hidráulico para protensão com capacidade de 5.400 kN
+
+ 9727    Posicionadora de trilhos - 7,4 kW
+
+ 9729    Equipamento para pintura eletrostática a pó
+
+ 9730    Grupo vibrador/gerador - 2,8 kW
+
+ 9731    Tirefonadora - 3,7 kW
+
+ 9732    Máquina para furar dormente - 3,7 kW
+
+ 9733    Tirefonadora/parafusadora - 3,7 kW
+
+ 9734    Bomba projetora de argamassa de 2 m³/h - 5,5 kW
+
+ 9735    Máquina para serrar trilho - 3,7 kW
+
+ 9736    Máquina para furar trilho - 1,2 kW
+
+ 9738    Máquina de esmerilhar topo e lateral de boleto - 5,2 kW
+
+ 9740    Quadro tubular contraventado para andaime de 1 x 1 x 1 m e capacidade de 2 t
+
+ 9746    Conjunto bomba e prensa para luva de emenda de até 25 mm
+
+ 9747    Conjunto bomba e prensa para luva de emenda de 32 mm
+
+ 9748    Rosqueadeira para rosca cônica - 750 W
+
+ 9749    Jateador portátil multiabrasivo com capacidade de 100 l
+
+ 9755    Bomba de alta pressão para jet grouting 450 bar - 150 kW
+
+ 9756    Calandra para chapas de aço até 25 mm - 22 kW
+
+ 9760    Perfuratriz manual para coroa diamantada - 1,6 kW
+
+
+
+
+                                                  45
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 09 - Mobilização e Desmobilização
+
+
+                      Tabela 03 - Equipamentos de pequeno porte (6/6)
+
+Código
+                                       Discriminação dos Equipamentos
+SICRO
+
+ 9761    Guincho de coluna com capacidade de 200 kg - 920 W
+
+ 9763    Grupo gerador - 36/40 kVA
+
+ 9766    Prensa hidráulica para fabricação de blocos pré-moldados - 20 kW
+
+ 9768    Compressor de ar a diesel 778 PCM - 184 kW
+
+ 9769    Cunha hidráulica com três cilindros e acessórios e capacidade de 3.000 kN - 5,6 kW
+
+ 9776    Grupo gerador - 145/160 kVA
+
+ 9778    Grupo gerador - 310/340 kVA
+
+ 9779    Grupo gerador - 100/110 kVA
+
+ 9780    Misturador automático para grouteamento com capacidade de 20 m³/h - 7 kW
+
+ 9781    Misturador com bomba para grouteamento tipo flex E - 25 kW
+
+ 9782    Perfuratriz pneumática com avanço de coluna de 33,5 kg
+
+ 9788    Misturador de argamassa com capacidade de 250 l - 3 kW
+
+ 9789    Carro manual modelo plataforma de 150 x 80 cm e capacidade de 800 kg
+
+ 9790    Bomba para concreto projetado via úmida com capacidade de 10 m³/h - 14,7 kW
+
+
+
+
+                                                  46
+.
+Manual de Custos de Infraestrutura de Transportes
+        Volume 02 - Pesquisa de Preços
+
+
+
+
+                      48

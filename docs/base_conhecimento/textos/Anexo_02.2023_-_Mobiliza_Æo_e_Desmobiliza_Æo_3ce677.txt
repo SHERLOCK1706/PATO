@@ -1,0 +1,1211 @@
+    DNIT
+  +++
+
+
+
+
+      MANUAL DE CUSTOS DE
+ INFRAESTRUTURA DE TRANSPORTES
+                    ANEXO 02/2023
+
+
+
+
+                MINISTÉRIO DA INFRAESTRUTURA
+   DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Manual de Custos de Infraestrutura de Transportes D, NIT
+CGCiT Anexo 02/2023
+
+1. INTRODUÇÃO
+
+                      Manual de Custos de Infraestrutura de Transportes
+                                      Anexo 02/2023
+
+
+
+       INTRODUÇÃO
+
+1.1. Objetos de atualização
+
+O presente conteúdo, associado à metodologia de Mobilização e Desmobilização,
+integrante do Sistema de Custos Referenciais de Obras (SICRO), e disposta no
+Manual de Custos de Infraestrutura de Transportes, Volume 09 - Mobilização e
+Desmobilização, compreende os elementos objetos de atualização decorrentes do
+processo revisional contínuo do sistema, cujas ações desenvolvidas consistiram em:
+
+   ▪   atualização de equipamentos do modal aquaviário e mudança da unidade de
+       medida da velocidade média de transporte, de nós para quilômetros por hora;
+   ▪   ajuste da descrição das variáveis da equação que representa o custo de
+       mobilização;
+   ▪   atualização do rol de equipamentos de grande e pequeno porte, além dos
+       fatores de utilização.
+
+
+
+
+                                             2
+Manual de Custos de Infraestrutura de Transportes D, NIT
+CGCIT Anexo 0212023
+
+2. CONTEÚDO REVISADO
+
+                              Manual de Custos de Infraestrutura de Transportes
+                                              Anexo 02/2023
+
+
+
+           VELOCIDADE MÉDIA DE TRANSPORTE
+
+A tabela 1 consiste em quadro-resumo das velocidades médias adotadas como
+referência para os principais tipos de transporte, em função das condições da via e da
+natureza dos equipamentos, para os serviços de mobilização e desmobilização.
+
+              Tabela 1 - Velocidades médias de transporte por tipo e condição da via
+Tipo de via                 Equipamento                   Tipo de pavimento       Velocidade (km/h)
+              Veículos rodoviários                     Pavimentado                      60,00
+Rodovia       Veículos rodoviários                     Revestimento primário            50,00
+              Veículos rodoviários                     Terreno natural                  40,00
+Ferrovia      Veículos ferroviários                                -                    24,00
+              Rebocadores                                          -                    10,29
+              Draga hopper 750 m3                                  -                    15,48
+              Draga hopper 1.000 m3                                -                    18,49
+              Draga hopper 2.000 m3                                -                    20,95
+              Draga hopper 3.000 m3                                -                    22,49
+              Draga hopper 4.000 m3                                -                    23,49
+Hidrovia
+              Draga hopper 5.000 m3                                -                    24,96
+              Draga hopper 10.000 m³                               -                    28,97
+              Draga hopper 15.000 m³                               -                    28,97
+              Draga hopper 20.000 m³                               -                    28,97
+              Batelão autopropelido 300 m³                         -                    12,69
+              Batelão autopropelido 500 m³                         -                    12,69
+
+
+
+
+                                                     4
+                      Manual de Custos de Infraestrutura de Transportes
+                                      Anexo 02/2023
+
+
+
+        CUSTOS DE MOBILIZAÇÃO E DESMOBILIZAÇÃO
+
+Os custos de mobilização de um determinado projeto podem ser definidos em função
+de composições de custos de referência elaboradas para os diferentes veículos
+transportadores, conforme expressão apresentada abaixo:
+
+                                  DM × K × FU
+                          CMob = (            ) × CH
+                                      V
+
+onde:
+
+CMob representa o custo de mobilização, em reais;
+DM representa a distância de mobilização, em quilômetros;
+K representa o fator relacionado à necessidade de retorno do veículo a sua origem;
+FU representa o fator de utilização do veículo transportador;
+V representa a velocidade média de transporte, em quilômetros por hora ;
+CH representa o custo horário do veículo transportador, em reais por hora.
+
+O fator K será igual a 1 quando o veículo não retornar e 2 quando o veículo
+transportador retornar ao local de origem.
+
+Os custos relacionados à mobilização e desmobilização de equipamentos e pessoal
+são impactados pela aplicação da taxa de Benefícios e Despesas Indiretas (BDI).
+
+
+
+
+                                             5
+                              Manual de Custos de Infraestrutura de Transportes
+                                              Anexo 02/2023
+
+
+
+         FATORES DE UTILIZAÇÃO (FU)
+
+8.1. Equipamentos de Grande Porte
+
+Os fatores de utilização de equipamentos de grande porte são apresentados na tabela 2.
+                 Tabela 2 - Fatores de utilização de equipamentos de grande porte
+                                                             Transporte      Transporte       Transporte
+Código                                                       rodoviário      aquaviário       ferroviário
+                 Descrição dos equipamentos
+SICRO
+                                                            Código   FU     Código   FU     Código    FU
+E9009    Embarcação rebocadora - 268 kW                                     E9009    1,00
+         Caminhão tanque de asfalto com capacidade
+E9013                                                       E9013    1,00
+         de 31.000 l - 265 kW
+         Deflectômetro de impacto (FWD) instalado em
+E9014    picape com reboque e faixa de carga de 7 a         E9014    1,00
+         120 kN - 147 kW
+         Usina misturadora móvel de reciclagem a frio
+E9016                                                       E9016    1,00
+         com sistema de espuma de asfalto - 129 kW
+         Escavadeira hidráulica sobre esteira com
+E9017                                                       E9665    1,00
+         capacidade de 0,4 m³ - 64 kW
+         Cavalo mecânico com dolly intermediário e
+E9018    semirreboque de 4 eixos com capacidade de 53       E9018    1,00
+         t - 323 kW
+E9020    Recicladora a frio - 455 kW                        E9666    1,00
+E9021    Grupo gerador - 456 kVA                            E9508    1,00
+         Pórtico metálico rolante com capacidade de 25
+E9022                                                       E9666    2,00
+         t - 30 kW
+         Guindaste móvel sobre esteiras com dragline
+E9023                                                       E9018    1,00
+         com capacidade de 1,9 a 2,3 m³ - 270 kW
+         Caminhão distribuidor de cimento e cal com
+E9027                                                       E9027    1,00
+         capacidade de 17 m³ - 210 kW
+         Elevador de cremalheira com cabine simples,
+E9031    com capacidade de 1.500 kg e altura de até         E9686    2,00
+         100 m - 15 kW
+         Grua fixa para alturas de 60 a 102 m, com
+E9036    alcance de 60 m com capacidade de 1.500 kg         E9665    3,00
+         na ponta da lança - 37 kW
+         Plataforma de inspeção sob pontes montada
+E9037    em caminhão com capacidade de 500 kg e             E9037    1,00
+         alcance de 15 m - 188 kW
+         Caminhão carroceria com guindauto com
+E9041                                                       E9041    1,00
+         capacidade de 45 t.m - 188 kW
+E9042    Trator sobre esteiras com lâmina - 97 kW           E9666    0,50
+         Embarcação de alumínio com comprimento de
+E9043                                                       E9508    1,00   E9043    1,00
+         6 m e motor de popa - 18,60 kW
+         Central de concreto com capacidade de 150
+E9044                                                       E9018    3,00
+         m³/h - dosadora e misturadora
+         Bomba de alta pressão para hidrojateamento
+E9049                                                       E9686    1,00
+         com capacidade de 250 MPa - 72 kW
+         Guindaste móvel sobre pneus com 2 eixos com
+E9050                                                       E9050    1,00
+         capacidade de 18 t - 97 kW
+
+
+
+                                                        6
+                             Manual de Custos de Infraestrutura de Transportes
+                                             Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (2/10)
+                                                              Transporte      Transporte      Transporte
+Código                                                        rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                             Código   FU     Código   FU     Código    FU
+         Máquina levantadora e posicionadora de via -
+E9051                                                        E9686    0,50
+         7,40 kW
+         Empilhadeira a diesel com capacidade de 10 t
+E9052                                                        E9666    0,50
+         - 82 kW
+         Perfuratriz hidráulica montada em flutuante -
+E9053                                                        E9665    1,00
+         32 kW
+         Equipamento sobre forma-trilho para
+E9054    execução e acabamento de pavimento de               E9665    1,00
+         concreto - 13,40 kW
+         Plataforma autoelevatória de 12 x 24 m com
+E9056                                                                        E9009    1,00
+         capacidade de 150 t
+         Batelão sem propulsão com capacidade de
+E9057                                                                        E9009    1,00
+         66 m³
+         Plataforma flutuante de 12 x 24 x 1,8 m com
+E9058                                                                        E9009    1,00
+         capacidade de 150 t
+         Plataforma autoelevatória de 12 x 24 m
+E9059                                                        E9018    2,00
+         montada na obra com capacidade de 150 t
+         Equipamento de estabilização dinâmica da via
+E9063                                                                                        E9063    1,00
+         - 300 kW
+E9065    Carro controle ferroviário - 186 kW                                                 E9065    1,00
+         Veículo ferroviário para capina química com
+E9067                                                                                        E9067    1,00
+         capacidade de 12.000 l - 115 kW
+         Perfuratriz hidráulica rotopercussiva para
+E9068                                                        E9666    1,00
+         CCPH - 123 kW
+         Ponte rolante com capacidade de 5 t e vão de
+E9070                                                        E9665    2,00
+         até 15 m - 10 kW
+         Martelo hidráulico vibratório com unidade
+E9072                                                        E9665    0,50
+         hidráulica - 486 kW
+         Tanque de estocagem de asfalto com
+E9074                                                        E9100    1,00
+         agitadores de 60.000 l
+         Equipamento para pintura eletrostática com
+E9076    cabine dupla de 7,00 kW e estufa de                 E9665    1,00
+         80.000 kCal
+         Perfuratriz de circulação reversa tipo Wirth ou
+E9077    similar com unidade hidráulica (Power Pack) -       E9018    2,00
+         273 kW
+         Treliça lançadeira com capacidade de carga
+E9078    de 100 a 120 t e vão máximo de 45 m –               E9666    9,00
+         110 kW
+E9080    Carrelone com capacidade máxima de 70 t             E9665    0,50
+         Bate-estaca hidráulico para defensas
+         montado em caminhão guindauto com
+E9082                                                        E9082    1,00
+         capacidade de 20 t.m e carroceria de 4 t –
+         136 kW
+E9083    Vagão fechado FLT com capacidade de 99 t                                            E9158    0,10
+         Vagão tanque convencional TCT com
+E9084                                                                                        E9158    0,10
+         capacidade de 97 t e 103.000 l
+
+
+
+                                                         7
+                            Manual de Custos de Infraestrutura de Transportes
+                                            Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (3/10)
+                                                             Transporte      Transporte      Transporte
+Código                                                       rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                            Código   FU     Código   FU     Código    FU
+         Vagão gôndola GDE com capacidade de
+E9085                                                                                       E9157    0,10
+         93,5 t / 29 m³
+E9091    Embarcação empurradora fluvial - 372 kW                            E9091    1,00
+E9093    Veículo leve - 53 kW (sem motorista)               E9512    1,00
+         Guindaste móvel sobre pneus com 6 eixos
+E9094                                                       E9094    1,00
+         com capacidade máxima de 350 t - 450 kW
+         Guindaste móvel sobre pneus com 8 eixos
+E9095                                                       E9095    1,00
+         com capacidade máxima de 500 t - 500 kW
+E9096    Minicarregadeira de pneus - 45,50 kW               E9665    0,33
+         Caminhão de resgate de veículos leves com
+E9097                                                       E9097    1,00
+         plataforma com capacidade de 4 t - 115 kW
+         Caminhão de resgate de veículos de porte
+E9098    médio com capacidade do guincho de 20 t -          E9098    1,00
+         136 kW
+         Caminhão de resgate de veículos pesados
+E9099    com dois guinchos com capacidade de 35 t -         E9099    1,00
+         240 kW
+E9100    Cavalo mecânico sem reboque - 210 kW               E9100    1,00
+         Embarcação empurradora multipropósito - 2 x
+E9105                                                                       E9105    1,00
+         186 kW
+E9106    Balsa de convés com capacidade de 200 t                            E9606    0,25
+         Soldadora de trilho por caldeamento na via -
+E9108                                                                                       E9108    1,00
+         400 kW
+         Escavadeira hidráulica sobre esteiras para
+E9110    rocha com caçamba com capacidade de 1,56           E9666    1,00
+         m³ - 118 kW
+         Carregadeira de pneus para rocha com
+E9117                                                       E9665    1,00
+         capacidade de 2,50 m³ - 105 kW
+         Minicarregadeira sobre pneus com valetadeira
+E9119                                                       E9665    0,50
+         - 55,40 kW
+         Equipamento de cravação sobre esteira para
+E9120    geodreno com haste para profundidade de até        E9018    1,00
+         20 m - 258 kW
+         Perfuratriz tipo Bottom Feed para coluna de
+E9122                                                       E9666    2,00
+         brita - 194 kW
+         Veículo tipo van furgão com capacidade de
+E9125                                                       E9125    1,00
+         1,54 t - 93 kW
+         Draga backhoe com capacidade de 7 m³ -
+E9126                                                                       E9603    1,00
+         1.000 kW
+         Escavadeira hidráulica com martelo hidráulico
+E9127                                                       E9665    1,00
+         de 520 kg - 75 kW
+         Miniônibus com capacidade para 30
+E9134                                                       E9134    1,00
+         passageiros - 111 kW
+         Pórtico metálico rolante com talha com
+E9144                                                       E9666    2,00
+         capacidade de 5 t - 10 kW
+
+
+
+
+                                                        8
+                             Manual de Custos de Infraestrutura de Transportes
+                                             Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (4/10)
+                                                               Transporte      Transporte    Transporte
+Código                                                         rodoviário      aquaviário    ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                              Código   FU     Código   FU   Código    FU
+         Caminhão basculante para concreto com
+E9145                                                         E9145    1,00
+         capacidade de 7 m³ - 188 kW
+         Caminhão silo com capacidade de 30 m³ -
+E9146                                                         E9146    1,00
+         265 kW
+         Britador de mandíbulas móvel sobre esteiras,
+E9151    sem peneira, com capacidade de 140 m³/h -            E9018    1,00
+         170 kW
+         Locomotiva diesel-elétrica CC - bitola métrica
+E9157                                                                                       E9157    1,00
+         - 2.237 kW
+         Locomotiva diesel-elétrica CC - bitola larga -
+E9158                                                                                       E9158    1,00
+         2.237 kW
+         Vagão plataforma PNE com capacidade de
+E9159                                                                                       E9157    0,10
+         82 t - bitola métrica
+         Vagão plataforma PNT com capacidade de
+E9160                                                                                       E9158    0,10
+         98 t - bitola larga
+         Vagão fechado com porta para carga e
+E9161    descarga de paletes FLD com capacidade de                                          E9157    0,10
+         64 t - bitola métrica
+         Vagão fechado com porta para carga e
+E9162    descarga de paletes FLT com capacidade de                                          E9158    0,10
+         99 t - bitola larga
+         Vagão hopper aberto com descarga
+E9163    automática HNE com capacidade de 45 m³ -                                           E9157    0,10
+         bitola métrica
+         Vagão hopper aberto com descarga
+E9164    automática HNT com capacidade de 63 m³ -                                           E9158    0,10
+         bitola larga
+         Equipamento para carga e descarga de TLS
+E9167                                                                                       E9167    1,00
+         de até 250 m - 90 kW
+         Carregadeira de pneus com implemento de
+E9168                                                         E9665    1,00
+         garfo - 195 kW
+         Cavalo mecânico com dolly pneumático de 4
+E9169    eixos e mesas de giro com capacidade de 57 t         E9169    1,00
+         - 323 kW
+         Cavalo mecânico com dois dollys
+E9170    pneumáticos de 3 e 4 eixos e mesas de giro           E9170    1,00
+         com capacidade de 77 t - 323 kW
+         Cavalo mecânico com dois dollys
+E9171    pneumáticos de 4 e 5 eixos e mesas de giro           E9171    1,00
+         com capacidade de 111 t - 440 kW
+         Caminhão com sistema de hidrojateamento
+         de alta pressão e vácuo para limpeza e
+E9199                                                         E9199    1,00
+         desobstrução de bueiros com capacidade
+         total de 15.600 l - 188 kW
+         Carregadeira de pneus para rocha com
+E9200    capacidade de 2,50 m³ - 105 kW com                   E9665    1,00
+         periculosidade
+
+
+
+
+                                                          9
+                             Manual de Custos de Infraestrutura de Transportes
+                                             Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (5/10)
+                                                            Transporte      Transporte    Transporte
+Código                                                      rodoviário      aquaviário    ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                           Código   FU     Código   FU   Código    FU
+         Caminhão basculante para rocha com
+E9201    capacidade de 12 m³ - 188 kW com                  E9201    1,00
+         periculosidade
+         Plataforma pantográfica montada em
+E9202                                                      E9202    1,00
+         caminhão - 115 kW com periculosidade
+         Escavadeira hidráulica com martelo hidráulico
+E9203                                                      E9666    1,00
+         de 1.700 kg - 103 kW com periculosidade
+         Perfuratriz sobre esteiras - 145 kW com
+E9204                                                      E9665    1,00
+         periculosidade
+         Equipamento de corte a plasma CNC - 12.000
+E9205                                                      E9508    2,00
+         x 5.500 mm - 19,5 kW
+         Jumbo eletro-hidráulico com 3 braços - 155
+E9213                                                      E9666    2,00
+         kW/237 kW com periculosidade
+E9502    Bate-estaca de gravidade para 6 t - 119 kW        E9665    2,00
+E9503    Guilhotina hidráulica 16 x 6.100 mm - 30 kW       E9018    1,00
+         Prensa dobradeira capacidade 320 t -
+E9505                                                      E9018    0,50
+         comprimento até 3.100 mm - 30 kW
+         Caminhão basculante com capacidade de
+E9506                                                      E9506    1,00
+         6 m³ - 136 kW
+         Caminhão carroceria com capacidade de 9 t -
+E9508                                                      E9508    1,00
+         136 kW
+         Caminhão tanque distribuidor de asfalto com
+E9509                                                      E9509    1,00
+         capacidade de 6.000 l - 7 kW/136 kW
+         Carregadeira de pneus com capacidade de
+E9511                                                      E9665    1,00
+         3,40 m³ - 195 kW
+E9512    Veículo leve - 53 kW                              E9512    1,00
+         Distribuidor de agregados sobre pneus
+E9514                                                      E9665    0,50
+         autopropelido - 130 kW
+         Escavadeira hidráulica sobre esteiras com
+E9515    caçamba com capacidade de 1,56 m³ -               E9666    1,00
+         118 kW
+E9516    Perfuratriz hidráulica sobre esteiras - 283 kW    E9018    2,00
+         Caminhão com caçamba térmica com
+E9520                                                      E9520    1,00
+         capacidade de 6 m³ - 188 kW
+E9523    Motoscraper - 304 kW                              E9665    2,00
+E9524    Motoniveladora - 93 kW                            E9665    1,00
+         Ponte rolante com capacidade de 15 t e vão
+E9525                                                      E9665    2,00
+         de até 15 m - 20 kW
+         Retroescavadeira de pneus com capacidade
+E9526                                                      E9665    1,00
+         de 0,76 m³ - 58 kW
+         Empilhadeira a diesel com capacidade de 4 t -
+E9528                                                      E9666    0,50
+         60 kW
+         Jateador para estruturas metálicas com
+E9529                                                      E9666    2,00
+         transportador a roletes - 22 kW
+         Rolo compactador liso vibratório autopropelido
+E9530                                                      E9666    0,50
+         por pneus de 11 t - 97 kW
+
+
+
+                                                      10
+                             Manual de Custos de Infraestrutura de Transportes
+                                             Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (6/10)
+                                                            Transporte      Transporte      Transporte
+Código                                                      Rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                           Código   FU     Código   FU     Código    FU
+         Embarcação de transporte de pessoal e apoio
+E9536                                                      E9508    1,00   E9536    1,00
+         logístico - 30 kW
+E9540    Trator sobre esteiras com lâmina - 127 kW         E9018    0,50
+E9541    Trator sobre esteiras com lâmina - 259 kW         E9018    1,00
+         Vibroacabadora de asfalto sobre esteiras -
+E9545                                                      E9018    0,50
+         82 kW
+         Tanque de estocagem de asfalto com
+E9558                                                      E9665    1,00
+         capacidade de 30.000 l
+         Ônibus com capacidade para 80 passageiros
+E9560                                                      E9560    1,00
+         - 175 kW
+         Perfuratriz hidráulica sobre esteiras com
+E9563                                                      E9018    1,00
+         clamshell - 220 kW
+         Trator sobre esteiras com lâmina e
+E9565                                                      E9018    1,00
+         escarificador - 259 kW
+         Guindaste móvel sobre esteiras com
+E9566                                                      E9018    1,00
+         clamshell de 1,9 m³ - 220 kW
+         Guindaste móvel sobre esteiras com
+E9569                                                      E9018    2,00
+         clamshell de 4,6 m³ - 403 kW
+         Caminhão tanque com capacidade de
+E9571                                                      E9571    1,00
+         10.000 l - 188 kW
+E9574    Perfuratriz sobre esteiras - 145 kW               E9665    1,00
+         Caminhão basculante com caçamba estanque
+E9575                                                      E9575    1,00
+         com capacidade de 14 m³ - 188 kW
+         Escavadeira hidráulica de longo alcance
+E9576                                                      E9666    1,00
+         sobre esteiras - 103 kW
+E9577    Trator agrícola sobre pneus - 77 kW               E9665    0,50
+         Caminhão basculante com capacidade de 10
+E9579                                                      E9579    1,00
+         m³ - 188 kW
+         Fresadora e distribuidora com controle de
+E9580                                                      E9666    1,00
+         greide - 287 kW
+         Carregadeira de pneus para rocha com
+E9581                                                      E9665    1,00
+         capacidade de 1,72 m³ - 113 kW
+         Carregadeira de pneus com capacidade de
+E9584                                                      E9665    1,00
+         1,72 m³ - 113 kW
+         Vibroacabadora de concreto sobre esteiras
+E9588                                                      E9018    0,50
+         com fôrmas deslizantes - 205 kW
+         Máquina texturizadora e aplicadora de cura
+E9589    química em pavimento de concreto -                E9665    1,00
+         44,80 kW
+         Central de concreto com capacidade de
+E9590                                                      E9665    2,00
+         40 m³/h - dosadora fixa
+         Caminhão carroceria com capacidade de 15 t
+E9592                                                      E9592    1,00
+         - 188 kW
+E9593    Draga hopper com capacidade de 750 m³                             E9593    1,00
+E9594    Draga hopper com capacidade de 1.000 m³                           E9594    1,00
+
+
+
+
+                                                      11
+                            Manual de Custos de Infraestrutura de Transportes
+                                            Anexo 02/2023
+
+
+
+           Tabela 2 - Fatores de utilização de equipamentos de grande porte (7/10)
+                                                          Transporte      Transporte      Transporte
+Código                                                    Rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                         Código   FU     Código   FU     Código    FU
+E9595    Draga hopper com capacidade de 2.000 m³                         E9595    1,00
+E9596    Draga hopper com capacidade de 3.000 m³                         E9596    1,00
+E9597    Draga hopper com capacidade de 4.000 m³                         E9597    1,00
+E9598    Draga hopper com capacidade de 5.000 m³                         E9598    1,00
+         Central de concreto com capacidade de
+E9599                                                    E9018    1,00
+         30 m³/h - dosadora RS
+         Caminhão betoneira com capacidade de 8 m³
+E9600                                                    E9600    1,00
+         - 188 kW
+         Embarcação de transporte de pessoal e apoio
+E9601                                                    E9592    1,00   E9601    1,00
+         logístico - 130 kW
+         Embarcação empurradora multipropósito com
+E9603                                                                    E9603    1,00
+         guindaste hidráulico de 74 kN.m - 165 kW
+         Caminhão basculante para rocha com
+E9604                                                    E9604    1,00
+         capacidade de 8 m³ - 210 kW
+         Caminhão tanque com capacidade de 6.000 l
+E9605                                                    E9605    1,00
+         - 136 kW
+E9606    Embarcação rebocadora - 2 x 268 kW                              E9606    1,00
+         Conjunto de britagem para rachão com
+E9607                                                    E9666    2,00
+         capacidade de 80 m³/h - 224 kW
+         Draga de sucção para extração de areia com
+E9609                                                                    E9603    1,00
+         tubo de descarga de 150 mm - 100 kW
+         Conjunto de britagem com capacidade de
+E9611                                                    E9018    2,00
+         80 m³/h - 313 kW
+         Plataforma flutuante montada na obra de 12 x
+E9612                                                    E9018    2,00
+         24 x 1,8 m com capacidade de 150 t
+         Guindaste móvel sobre esteiras com pinça
+E9613                                                    E9018    1,00
+         com capacidade de 40 t - 186 kW
+         Usina misturadora de solos com capacidade
+E9615                                                    E9018    2,00
+         de 300 t/h - 44 kW
+         Usina misturadora de pré-misturado a frio com
+E9617                                                    E9665    1,00
+         capacidade de 60 t/h - 23,50 kW
+         Batelão autopropelido com capacidade de
+E9618                                                                    E9618    1,00
+         300 m³ - 224 kW
+         Batelão autopropelido com capacidade de
+E9619                                                                    E9619    1,00
+         500 m³ - 373 kW
+         Pontão flutuante de 15 x 30 x 1,8 m com
+E9620                                                                    E9606    1,00
+         capacidade de 500 t
+E9624    Draga hopper com capacidade de 10.000 m³                        E9624    1,00
+E9625    Draga hopper com capacidade de 15.000 m³                        E9625    1,00
+E9626    Draga hopper com capacidade de 20.000 m³                        E9626    1,00
+         Embarcação hotel com capacidade para 15
+E9627                                                                    E9627    1,00
+         pessoas - 199 kW
+         Draga de sucção e recalque com potência da
+E9635                                                                    E9603    1,00
+         bomba de 294 kW e cortador de 30 kW
+
+
+
+
+                                                    12
+                             Manual de Custos de Infraestrutura de Transportes
+                                             Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (8/10)
+                                                            Transporte      Transporte      Transporte
+Código                                                      rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                           Código   FU     Código   FU     Código    FU
+         Draga de sucção e recalque com potência da
+E9636                                                                      E9603    1,00
+         bomba de 483 kW e cortador de 55 kW
+         Draga de sucção e recalque com potência da
+E9637                                                                      E9603    1,00
+         bomba de 746 kW e cortador de 110 kW
+         Draga de sucção e recalque com potência da
+E9638                                                                      E9603    1,00
+         bomba de 1.350 kW e cortador de 170 kW
+         Embarcação hotel com capacidade para 30
+E9639                                                                      E9639    1,00
+         pessoas - 2 x 112 kW
+         Perfuratriz hidráulica sobre esteiras para
+E9642                                                      E9665    1,00
+         estaca raiz - 56 kW
+         Caminhão demarcador de faixas com sistema
+E9644                                                      E9644    1,00
+         de pintura a frio - 28 kW/115 kW
+         Caminhão demarcador de faixas com sistema
+E9645                                                      E9645    1,00
+         de pintura a quente - 5 kW/30,10 kW/136 kW
+         Guindaste móvel sobre esteiras com Hammer
+E9651                                                      E9018    1,00
+         Grab - 186 kW
+         Compressor de ar portátil de 540,85 l/s (1.146
+E9652                                                      E9508    1,00
+         PCM) - 331,10 kW
+         Guindaste móvel sobre esteiras com trado
+E9653                                                      E9018    1,00
+         para escavação em solos - 186 kW
+         Guindaste móvel sobre esteiras com trado
+E9654                                                      E9018    1,00
+         com bits escavação em rocha - 186 kW
+         Guindaste móvel sobre esteiras com caçamba
+E9656                                                      E9018    1,00
+         para escavação em solos - 186 kW
+         Guindaste móvel sobre esteiras com caçamba
+E9657                                                      E9018    1,00
+         para escavação em rocha - 186 kW
+         Campânula de ar comprimido com
+E9659                                                      E9508    1,00
+         capacidade de 3 m³
+         Guindaste móvel sobre esteiras com
+E9660                                                      E9018    1,00
+         capacidade de 40 t - 186 kW
+         Caminhão basculante com capacidade de
+E9663                                                      E9663    1,00
+         4 m³ - 136 kW
+         Guindaste móvel sobre esteiras com
+E9664                                                      E9018    1,00
+         capacidade de 80 t - 212 kW
+         Cavalo mecânico com semirreboque com
+E9665                                                      E9665    1,00
+         capacidade de 22 t - 240 kW
+         Cavalo mecânico com semirreboque com
+E9666                                                      E9666    1,00
+         capacidade de 30 t - 265 kW
+         Caminhão basculante com capacidade de
+E9667                                                      E9667    1,00
+         14 m³ - 188 kW
+         Caminhão tanque com capacidade de 8.000 l
+E9669                                                      E9669    1,00
+         - 136 kW
+         Usina móvel de lama asfáltica ou
+E9670    microrrevestimento com cavalo mecânico com        E9670    1,00
+         capacidade de 12 m³ - 95,6 kW/240 kW
+         Caminhão basculante para rocha com
+E9672                                                      E9672    1,00
+         capacidade de 12 m³ - 188 kW
+
+
+
+                                                      13
+                            Manual de Custos de Infraestrutura de Transportes
+                                            Anexo 02/2023
+
+
+
+            Tabela 2 - Fatores de utilização de equipamentos de grande porte (9/10)
+                                                            Transporte      Transporte      Transporte
+Código                                                      rodoviário      aquaviário      ferroviário
+                Descrição dos equipamentos
+SICRO
+                                                           Código   FU     Código   FU     Código    FU
+         Embarcação de transporte de pessoal e apoio
+E9676                                                      E9592    1,00   E9676    1,00
+         logístico - 90 kW
+E9678    Fresadora a frio - 410 kW                         E9666    1,00
+         Cavalo mecânico com dois reboques
+E9679    hidropneumáticos de 5 e 4 eixos e mesas de        E9679    1,00
+         giro com capacidade de 130 t - 440 kW
+         Caminhão tanque com capacidade de
+E9680                                                      E9680    1,00
+         13.000 l - 188 kW
+         Rolo compactador liso tandem vibratório
+E9681                                                      E9666    0,50
+         autopropelido de 10,4 t - 82 kW
+         Rolo compactador liso tandem vibratório
+E9682                                                      E9666    0,20
+         autopropelido de 1,6 t - 18 kW
+         Veículo leve picape 4 x 4 com capacidade de
+E9684                                                      E9684    1,00
+         1,10 t - 147 kW
+         Rolo compactador pé de carneiro vibratório
+E9685                                                      E9666    0,50
+         autopropelido por pneus de 11,6 t - 82 kW
+         Caminhão carroceria com guindauto com
+E9686                                                      E9686    1,00
+         capacidade de 20 t.m - 136 kW
+         Caminhão carroceria com capacidade de 5 t -
+E9687                                                      E9687    1,00
+         115 kW
+         Usina de asfalto a quente gravimétrica com
+E9689                                                      E9666    3,00
+         capacidade de 100/140 t/h - 260 kW
+         Caminhão carroceria com guindauto e cesto
+E9690                                                      E9690    1,00
+         aéreo com capacidade de 10 t.m - 136 kW
+         Caminhão demarcador de faixas com sistema
+E9693                                                      E9693    1,00
+         de pintura Spray - 115 kW
+         Minicarregadeira de pneus com vassoura de
+E9697                                                      E9665    0,33
+         1,8 m - 45,50 kW
+E9700    Fresadora a frio - 155 kW                         E9666    0,50
+         Batelão sem propulsão montado na obra com
+E9704                                                                      E9606    1,00
+         capacidade de 66 m³
+E9710    Socadora automática de linha - 253 kW                                             E9710    1,00
+E9712    Reguladora e distribuidora de lastro - 300 kW                                     E9712    1,00
+E9714    Bate-estaca com martelo hidráulico - 450 kW       E9665    2,00
+         Pórtico duplo de descarga e posicionamento
+E9718                                                                                      E9718    1,00
+         de dormente - 89 kW
+E9726    Bate-estaca Strauss - 15 kW                       E9665    1,00
+         Trator agrícola sobre pneus com roçadeira
+E9742                                                      E9666    0,50
+         articulada e capacidade de 1,12 m - 77 kW
+         Trator agrícola sobre pneus com roçadeira de
+E9745                                                      E9665    0,50
+         arraste e capacidade de 1,50 m - 77 kW
+         Bomba de alta pressão para jet grouting de
+E9755                                                      E9592    0,50
+         até 45 MPa - 150 kW
+         Calandra para chapas de aço até 25 mm –
+E9756                                                      E9666    1,00
+         22 kW
+
+
+
+
+                                                      14
+                              Manual de Custos de Infraestrutura de Transportes
+                                              Anexo 02/2023
+
+
+
+           Tabela 2 - Fatores de utilização de equipamentos de grande porte (10/10)
+                                                              Transporte     Transporte    Transporte
+Código                                                        rodoviário     aquaviário    ferroviário
+                 Descrição dos equipamentos
+SICRO
+                                                            Código   FU     Código   FU   Código   FU
+E9758    Vibroacabadora de asfalto sobre pneus – 82 kW E9018         0,50
+         Rolo compactador de pneus autopropelido de
+E9762                                                        E9666   0,50
+         27 t - 85 kW
+         Prensa hidráulica para fabricação de blocos
+E9766                                                        E9665   1,00
+         pré-moldados - 20 kW
+         Retroescavadeira de pneus com caçamba de
+E9770    escavação trapezoidal ou triangular com seção       E9665   1,00
+         de corte inferior a 0,10 m² - 58 kW
+         Retroescavadeira de pneus com caçamba de
+E9771    escavação trapezoidal ou triangular com seção       E9665   1,00
+         de corte de 0,10 a 0,15 m² - 58 kW
+         Retroescavadeira de pneus com caçamba de
+E9772    escavação trapezoidal ou triangular com seção       E9665   1,00
+         de corte de 0,15 a 0,20 m² - 58 kW
+         Retroescavadeira de pneus com caçamba de
+E9773    escavação trapezoidal ou triangular com seção       E9665   1,00
+         de corte de 0,20 a 0,30 m² - 58 kW
+         Retroescavadeira de pneus com caçamba de
+E9774    escavação trapezoidal ou triangular com seção       E9665   1,00
+         de corte de 0,30 a 0,50 m² - 58 kW
+         Escavadeira hidráulica com martelo hidráulico
+E9775                                                        E9666   1,00
+         de 1.700 kg - 103 kW
+E9777    Extrusora de barreira de concreto - 74 kW           E9665   1,00
+         Plataforma pantográfica montada em caminhão
+E9783                                                        E9783   1,00
+         - 115 kW
+         Plataforma autopropelida com alcance de 12 m
+E9784                                                        E9666   0,50
+         com capacidade de 700 kg - 24 kW
+         Guindaste móvel sobre pneus com 2 eixos com
+E9785                                                        E9785   1,00
+         capacidade máxima de 55 t - 186 kW
+         Bomba para concreto com lança montada sobre
+E9787                                                E9787           1,00
+         chassi com capacidade de 50 m³/h - 136 kW
+         Caminhão para hidrossemeadura com
+E9792                                                        E9792   1,00
+         capacidade de 7.500 l - 136 kW
+         Robot para concreto projetado com capacidade
+E9793                                                        E9665   1,00
+         de 30 m³/h - 70 kW - com compressor diesel
+         Perfuratriz de superfície sobre pneus com
+E9795    martelo de topo e controle remoto via rádio - 60    E9665   0,50
+         kW
+         Jumbo eletro-hidráulico com 3 braços - 155
+E9797                                                        E9666   2,00
+         kW/237 kW
+E9798    Perfuratriz hidráulica rotopercussiva - 123 kW      E9018   1,00
+  -      Contêiner de 1/2 TEU                                E9665   0,33
+  -      Contêiner de 3/4 TEU                                E9665   0,50
+  -      Contêiner de 1 TEU                                  E9665   1,00
+  -      Contêiner de 2 TEU                                  E9018   1,00
+
+
+
+
+                                                       15
+                            Manual de Custos de Infraestrutura de Transportes
+                                            Anexo 02/2023
+
+
+
+8.2. Equipamentos de Pequeno Porte
+
+Os equipamentos de pequeno porte são apresentados na tabela 3.
+                            Tabela 3 - Equipamentos de pequeno porte
+ Código
+                                            Descrição dos Equipamentos
+ SICRO
+  E9001   Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,60 m - 2,20 kW
+  E9002   Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,80 m - 2,20 kW
+  E9003   Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,00 m - 2,20 kW
+  E9004   Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,20 m - 2,20 kW
+  E9005   Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 1,50 m - 2,20 kW
+  E9006   Equipamento para sondagem manual
+  E9007   Bomba de pistão triplex com capacidade de 7,80 m³/h (130 l/min) - 8,20 kW
+  E9008   Transportador manual de tubos de concreto com capacidade de 1 t
+  E9010   Balança plataforma digital com mesa de 75 x 75 cm com capacidade de 500 kg
+  E9011   Carro manual modelo plataforma de 200 x 80 cm com capacidade de 800 kg
+  E9015   Elevador de obra com capacidade de 1.000 kg - 9 kW
+  E9019   Câmara hiperbárica com filtro, serpentina e reservatório de ar - D = 1,80 m e H = 2 m
+  E9024   Misturador de nata cimento - 1,50 kW
+  E9025   Conjunto bomba e macaco hidráulico para protensão com capacidade de 7.000 kN - 15 kW
+  E9026   Bomba para injeção de nata de cimento com capacidade de 2 MPa - 2,20 kW
+  E9028   Bomba de alta pressão para hidrojateamento com capacidade de 18 MPa - 5,20 kW
+  E9029   Conjunto bomba e macaco hidráulico para protensão com capacidade de 8.000 kN - 20 kW
+  E9030   Bomba de protensão com leitura digital para tensionamento de estais - 3 kW
+  E9032   Equipamento para regulagem final de estais com até 37 cordoalhas - D = 15,7 mm - 20 kW
+  E9033   Equipamento para regulagem final de estais de 38 a 55 cordoalhas - D = 15,7 mm - 30 kW
+  E9034   Equipamento para regulagem final de estais de 56 a 73 cordoalhas - D = 15,7 mm - 40 kW
+  E9035   Equipamento para regulagem final de estais de 74 a 91 cordoalhas - D = 15,7 mm - 50 kW
+  E9038   Macaco hidráulico monocordoalha para tensionamento de estais - 3 kW
+  E9039   Máquina de solda por termofusão para tubos PEAD com gerador de 4 kW
+  E9040   Serra mármore - 1,45 kW
+  E9045   Conjunto bomba e macaco hidráulico para elevação com capacidade de 496 kN
+  E9046   Conjunto bomba e macaco hidráulico para elevação com capacidade de 929 kN
+  E9047   Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.390 kN
+  E9048   Conjunto bomba e macaco hidráulico para elevação com capacidade de 1.859 kN
+  E9055   Guincho pneumático com capacidade de 2,5 t
+          Perfuratriz pneumática rotopercussiva montada em flutuante com pressão de 0,70 MPa e
+  E9060
+          capacidade de 2.500 gpm
+  E9061   Lixadeira elétrica manual angular - 2 kW
+  E9062   Soprador de ar quente manual - 1,60 kW
+  E9064   Transportador manual gerica com capacidade de 180 l
+  E9066   Grupo gerador - 13/14 kVA
+
+
+
+                                                     16
+                           Manual de Custos de Infraestrutura de Transportes
+                                           Anexo 02/2023
+
+
+
+                        Tabela 3 - Equipamentos de pequeno porte (2/6)
+Código
+                                          Descrição dos Equipamentos
+SICRO
+E9069    Vibrador de imersão para concreto - 4,10 kW
+E9071    Transportador manual carrinho de mão com capacidade de 80 l
+E9073    Bomba de concreto rebocável com capacidade de 30 m³/h - 74 kW
+E9075    Trado cavadeira de 12"
+E9079    Bomba submersível com capacidade de 360 m³/h - 23 kW
+E9081    Fischietti simples com capacidade de 70 t
+E9086    Bomba de concreto rebocável com capacidade de 41 m³/h - 74 kW
+E9089    Roçadeira costal - 1,40 kW
+E9101    Removedora de faixas de sinalização viária - 9,69 kW
+E9102    Extrusora para sarjeta de concreto - 10,44 kW
+E9103    Extrusora para meio-fio de concreto - 10,44 kW
+E9107    Compactador manual com soquete vibratório - 2,24 kW
+E9111    Jateador abrasivo úmido com capacidade de 350 kg de abrasivo
+         Sinalizador direcional móvel com sistema fotovoltaico de energia e montado em chassi sobre
+E9112
+         pneus
+         Painel de Mensagem Variável - PMV móvel, com sistema fotovoltaico de energia e montado em
+E9113
+         chassi sobre pneus
+E9114    Painel com seta luminosa para montagem em caminhão
+E9115    Amortecedor retrátil (AMC) para montagem em caminhão
+E9116    Semáforo móvel com 3 lentes e bateria - D = 200 mm
+E9118    Cortadora de pavimento com disco diamantado de 450 a 1.500 mm - 55,40 kW
+E9121    Plataforma elevatória articulada elétrica com alcance de 6 m com capacidade de 500 kg - 1,5 kW
+E9141    Rebarbador hidráulico com bomba manual com capacidade de força de 9.000 kgf
+E9148    Macaco de protensão de fios com bomba - 3,72 kW
+E9149    Máquina de aplicação e extração de grampo elástico tipo Pandrol - 6,70 kW
+E9152    Ferramenta de fixação à pólvora de ação direta
+E9153    Ferramenta de fixação à pólvora e sistema à pistão
+E9154    Equipamento para selagem com material asfáltico rebocável com capacidade de 370 l - 35 kW
+E9155    Caldeira de asfalto rebocável com capacidade de 600 l - 5,20 kW
+E9156    Soprador de ar costal - 2,6 kW
+E9206    Equipamento de solda MIG automática com acessórios - 14,6 kVA
+E9207    Máquina de solda elétrica retificadora 425 A - 18,70 kW
+         Martelete perfurador/rompedor a ar comprimido de 25 kg para rocha, com insalubridade, com
+E9209
+         capacidade de 2.040 gpm
+E9242    Estação transmissora de superfície para televisionamento
+         Câmara hiperbárica com filtro, serpentina e reservatório de ar para mergulho raso - D = 1,80 m e
+E9243
+         H = 2,22 m.
+E9244    Estação transmissora de superfície para comunicação sem fio
+E9245    Estação transmissora de superfície para comunicação com fio
+E9246    Painel de controle de ar com manômetros e pneufatômetros
+
+
+
+
+                                                     17
+                           Manual de Custos de Infraestrutura de Transportes
+                                           Anexo 02/2023
+
+
+
+                        Tabela 3 - Equipamentos de pequeno porte (3/6)
+Código
+                                         Descrição dos Equipamentos
+SICRO
+E9247    Sistema de Sino aberto (sinete) para mergulho até 50 m - 33,50 kW
+E9248    Sistema de ar comprimido para mergulho até 30 m com pressão de trabalho de 1,4 MPa - 7,46 kW
+         Sistema de ar comprimido para mergulho até 50 m com pressão de trabalho de 1,7 MPa - 16,18
+E9249
+         kW
+E9251    Fonte de plasma para corte manual - 65A - 15 kW
+E9252    Serra de esquadria com braço telescópico - D = 250 mm (10") - 1,80 kW
+E9253    Rebordeadeira diâmetro máximo 3,00 m - 4,85 kW
+E9254    Dobradeira viradeira manual comprimento máximo de dobra de até 2.000 mm
+E9255    Fonte de plasma para corte manual - 45A - 10 kW
+E9256    Equipamento para pintura com cal rebocável com dois bicos aplicadores e capacidade de 2.200 l
+         Ventilador axial para ventilação forçada com velocidade de saída de 32,8 m/s - D = 1.000 mm - 30
+E9501
+         kW
+E9507    Plotadora de recorte com computador e programa computacional
+E9510    Ventilador centrífugo baixa pressão com capacidade de 58 m³/min - 3,68 kW
+E9513    Compressor de ar portátil de 160,46 l/s (340 PCM) - 81 kW
+E9517    Compressor de ar portátil de 430,42 l/s (912 PCM) - 242 kW
+E9518    Grade de 24 discos rebocável de D = 60 cm (24")
+E9519    Betoneira com motor a gasolina com capacidade de 600 l - 10 kW
+E9521    Grupo gerador - 2,5/3 kVA
+E9522    Caldeira de asfalto rebocável com capacidade de 1.500 l - 6,5 kW
+         Martelete perfurador/rompedor a ar comprimido de 25 kg para rocha com capacidade de 2.040
+E9527
+         gpm
+E9532    Equipamento de solda MIG com acessórios - 14,6 kVA
+E9535    Serra circular com bancada - D = 30 cm - 4 kW
+         Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,30 m
+E9538
+         - 2,20 kW
+E9539    Equipamento de batimetria monofeixe
+         Compressor de ar respirável para recarga de cilindros de mergulho com capacidade de até
+E9543
+         35 MPa e 3,58 l/s - 5,52 kW
+E9544    Vassoura mecânica rebocável com largura de 2,44 m
+E9547    Máquina de solda elétrica transformadora 250 A - 9,20 kW
+E9548    Bomba centrífuga com capacidade de 7,1 a 22 m³/h - 1,50 kW
+E9551    Obturador mecânico simples com extensão de 12 m
+E9552    Nível ótico com capacidade de aumento de 32x
+E9553    Estação total eletrônica com alcance máximo de 3.000 m
+E9556    Compactador manual de placa vibratória - 3,00 kW
+E9559    Aquecedor de fluido térmico - 12 kW
+E9561    GPS geodésico de simples frequência (L1)
+E9562    GPS geodésico de dupla frequência (L1/L2)
+E9567    Fresadora de piso de concreto - 6,7 kW
+E9568    Furadeira de impacto de 12,5 mm - 0,80 kW
+
+
+
+                                                  18
+                           Manual de Custos de Infraestrutura de Transportes
+                                           Anexo 02/2023
+
+
+
+                        Tabela 3 - Equipamentos de pequeno porte (4/6)
+Código
+                                          Descrição dos Equipamentos
+SICRO
+E9570    Furadeira com base magnética - 1,20 kW
+         Conjunto vibratório para meio tubo de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,40 m
+E9578
+         - 2,20 kW
+E9583    Distribuidor de agregados rebocável com capacidade de 1,9 m³
+E9585    Motosserra com motor a gasolina - 2,30 kW
+E9586    Régua vibratória dupla com 4 m - 4,10 kW
+E9587    Serra para corte de concreto - 4 kW
+E9591    Serra para corte de concreto e asfalto - 10 kW
+E9610    Compressor de ar portátil de 42,48 l/s (90 PCM) - 18,50 kW
+E9614    Bomba com capacidade de 136 m³/h e câmara de vácuo - 5,60 kW
+         Bomba de injeção de argamassa e nata com capacidade de 1,08 m³/h (18 l/min) e misturador com
+E9621
+         tambor de 0,100 m³ - 6,20 kW
+E9622    Máquina de bancada universal para corte de chapa - 1,50 kW
+E9623    Máquina de bancada guilhotina - 4,00 kW
+E9628    Fábrica de pré-moldado de concreto para balizador - 2,20 kW
+E9629    Compressor de ar portátil de 185,95 l/s (394 PCM) - 81,50 kW
+E9630    Bomba submersível com capacidade de 75 m³/h - 3,6 kW
+E9631    Bomba para concreto projetado via seca com capacidade de 6 m³/h - 7,5 kW
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,20 m -
+E9632
+         2,20 kW
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,30 m -
+E9633
+         2,20 kW
+         Conjunto vibratório para tubos de concreto com encaixe PB e 3 jogos de fôrmas - D = 0,40 m -
+E9634
+         2,20 kW
+E9640    Compressor de ar portátil de 33,51 l/s (71 PCM) - 14 kW
+E9641    Compressor de ar portátil de 75,04 l/s (159 PCM) - 33 kW
+         Equipamento para pintura a ar comprimido de pistola com caneca com capacidade de 1.000 ml e
+E9643
+         compressor de 1,50 kW
+E9646    Compressor de ar portátil de 58,52 l/s (124 PCM) - 27 kW
+E9647    Compactador manual com soquete vibratório - 4,10 kW
+E9648    Compressor de ar portátil de 422,86 l/s (896 PCM) - 213 kW
+E9649    Compressor de ar portátil de 94,39 l/s (200 PCM) - 36 kW
+E9661    Compressor de ar portátil de 89,67 l/s (190 PCM) - 36 kW
+E9662    Equipamento para solda e corte com oxiacetileno
+E9668    Mesa vibratória - 2,20 kW
+E9671    Compressor de ar portátil de 363,87 l/s (771 PCM) - 158,13 kW
+E9673    Equipamento de batimetria multifeixe
+E9674    Equipamento de medição de descarga líquida com ADCP
+E9675    Martelete perfurador/rompedor elétrico - 1,50 kW
+E9677    Martelete perfurador/rompedor a ar comprimido de 10 kg com capacidade de 1.800 gpm
+E9683    Martelete perfurador/rompedor elétrico - 0,90 kW
+
+
+
+                                                    19
+                           Manual de Custos de Infraestrutura de Transportes
+                                           Anexo 02/2023
+
+
+
+                        Tabela 3 - Equipamentos de pequeno porte (5/6)
+Código
+                                          Descrição dos Equipamentos
+SICRO
+E9691    Guincho tracionador de cordoalhas - 7,50 kW
+E9692    Caldeira para aquecimento e injeção de cera - 1 kW
+E9694    Misturador de argamassa de alta turbulência com capacidade de 220 l - 13 kW
+         Trituradora de galhos e troncos rebocável com capacidade de até 350 mm de diâmetro com
+E9699
+         guincho - 96,94 kW
+E9701    Jateador pressurizado multiabrasivo com capacidade de 280 l
+E9703    Fábrica de pré-moldado de concreto para mourão - 2,20 kW
+E9705    Misturador de lama bentonítica - 4 kW
+         Martelete perfurador/rompedor a ar comprimido de 28 kg para concreto com capacidade de 1.230
+E9706
+         gpm
+E9707    Desarenador - 15 kW
+E9708    Microtrator com roçadeira - 10 kW
+E9716    Conjunto bomba e macaco hidráulico para protensão com capacidade de 590 kN - 3,70 kW
+E9717    Máquina policorte - 2,20 kW
+E9719    Talha manual com capacidade de 3 t
+E9720    Conjunto bomba e macaco hidráulico para protensão com capacidade de 250 kN - 3,70 kW
+E9721    Conjunto bomba e macaco hidráulico para protensão com capacidade de 1.150 kN - 5 kW
+E9722    Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.000 kN - 5 kW
+E9723    Conjunto bomba e macaco hidráulico para protensão com capacidade de 2.500 kN - 7 kW
+E9724    Conjunto bomba e macaco hidráulico para protensão com capacidade de 4.000 kN - 10 kW
+E9725    Conjunto bomba e macaco hidráulico para protensão com capacidade de 5.400 kN - 10 kW
+E9727    Posicionadora de trilhos - 7,40 kW
+E9728    Tirefonadora/parafusadora portátil - 3,10 kW
+         Equipamento para pintura eletrostática com cabine simples de 5,50 kW e estufa de 2x120.000
+E9729
+         kCal
+E9730    Grupo vibrador com gerador - 2,80 kW
+E9731    Máquina de furar dormente portátil - 1,50 kW
+E9732    Máquina para furar dormente - 6,70 kW
+E9733    Máquina tirefonadora e parafusadora - 6,70 kW
+E9734    Bomba projetora de argamassa com capacidade de 2 m³/h - 5,50 kW
+E9735    Máquina para serrar trilho - 5,00 kW
+E9736    Máquina para furar trilho - 1,20 kW
+E9737    Conjunto para pré-aquecimento de trilho em solda aluminotérmica
+E9738    Máquina de esmerilhar topo e lateral de boleto - 5,20 kW
+E9740    Quadro tubular contraventado para andaime de 1 x 1 x 1 m com capacidade de 2 t
+E9746    Conjunto bomba e prensa para luva de emenda de 25 mm
+E9747    Conjunto bomba e prensa para luva de emenda de 32 mm
+E9748    Rosqueadeira para rosca cônica - 0,75 kW
+E9749    Jateador portátil multiabrasivo com capacidade de 300 kg
+E9750    Bomba de injeção de argamassa com capacidade de 50 l/min
+
+
+
+                                                   20
+                           Manual de Custos de Infraestrutura de Transportes
+                                           Anexo 02/2023
+
+
+
+                        Tabela 3 - Equipamentos de pequeno porte (6/6)
+Código
+                                          Descrição dos Equipamentos
+SICRO
+E9760    Perfuratriz manual para coroa diamantada - 1,60 kW
+E9761    Guincho de coluna com capacidade de 200 kg - 0,92 kW
+E9763    Grupo gerador - 36/40 kVA
+E9767    Compressor de ar portátil de 9,44 l/s (20 PCM) a gasolina - 5,22 kW
+E9768    Compressor de ar portátil de 373,78 l/s (792 PCM) - 213,30 kW
+E9769    Cunha hidráulica com três cilindros e acessórios com capacidade de 3.000 kN - 5,60 kW
+E9776    Grupo gerador - 145/160 kVA
+E9778    Grupo gerador - 310/340 kVA
+E9779    Grupo gerador - 100/110 kVA
+E9780    Misturador automático para grauteamento com capacidade de 20 m³/h - 7 kW
+E9781    Misturador com bomba para grauteamento tipo Flex E ou similar - 25 kW
+E9782    Perfuratriz pneumática com avanço de coluna de 33,5 kg com capacidade de 2.280 gpm
+E9788    Misturador de argamassa com capacidade de 0,250 m³ - 3,70 kW
+E9789    Carro manual modelo plataforma de 150 x 80 cm com capacidade de 800 kg
+E9790    Bomba para concreto projetado via úmida com capacidade de 10 m³/h - 14,70 kW
+E9791    Bomba pneumática para injeção de resina com capacidade de 0,18 m³/h
+
+
+
+
+                                                   21
+Manual de Custos de Infraestrutura de Transportes
+        Volume 02 - Pesquisa de Preços
+
+
+
+
+                      22

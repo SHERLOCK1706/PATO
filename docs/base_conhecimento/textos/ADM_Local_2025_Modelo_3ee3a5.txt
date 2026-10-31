@@ -1,0 +1,143 @@
+[aba ADM_LOCAL]
+ADMINISTRAÇÃO LOCAL
+1 - Parcela fixa da Administração Local
+Composição de custo da parcela fixa da administração local (mão de obra)
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo unitário (R$) | Custo total (R$) | Custo unitário (R$) | Custo total (R$)
+1.1 | Mão de Obra
+1.1.1 | Gerência Técnica
+1.1.1.1 | Geral
+1.1.1.1.1 | P9819 | Engenheiro supervisor | mês | 0 | 0
+1.1.1.1.2 | P9958 | Motorista de ônibus - mensalista | mês | 1 | 0 | 0
+Subtotal do item 1.1.1.1 | 0 | 0
+Total do item 1.1.1 | 0 | 0
+1.1.2 | Gerência Administrativa
+1.1.2.1 | Auxiliar
+1.1.2.1.1 | P9806 | Auxiliar administrativo | mês | 1 | 0 | 0
+1.1.2.1.2 | P9803 | Almoxarife | mês | 1 | 0 | 0
+1.1.2.1.3 | P9842 | Faxineiro | mês | 1 | 0 | 0
+Subtotal do item 1.1.2.1 | 0 | 0
+Total do item 1.1.2 | 0 | 0
+Total da parcela fixa para mão de obra | 0 | 0
+Composição de custo da parcela fixa da administração local (veículos)
+Item | Código | Discriminação | Unidade | Quant | Utilização produtiva | Utilização improdutiva | Custo onerado | Custo desonerado
+Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$) | Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$)
+1.2 | Veículo
+1.2.1 | Gerência Técnica
+1.2.1.1 | Geral
+1.2.1.1.1 | E9093 | Veículo leve - 53 kW (sem motorista) | mês | 0 | 44 | 138.49 | 0 | 0
+1.2.1.1.2 | E9239 | Miniônibus com capacidade para 30 passageiros (sem motorista) | mês | 1 | 44 | 138.49 | 0 | 0
+Subtotal do item 1.2.1.1 | 0 | 0
+Total do item 1.2.1 | 0 | 0
+1.2.2 | Gerência Técnica
+1.2.2.1 | Auxiliar
+1.2.2.1.1 | E9093 | Veículo leve - 53 kW (sem motorista) | mês | 1 | 44 | 138.49 | 0 | 0
+Subtotal do item 1.2.2.1 | 0 | 0
+Total do item 1.2.2 | 0 | 0
+Total da parcela fixa para veículos | #REF! | 0 | 0
+Tabela 6 - Manual de Custos de Infraestrutura de Transportes - Administração Local - Volume 07 - 2025 - 2ª Ed.
+2 - Parcela vinculada da Administração Local
+Composição de custo da parcela vinculada da administração local (mão de obra)
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo unitário (R$) | Custo total (R$) | Custo unitário (R$) | Custo total (R$)
+2.1 | Mão de Obra
+2.1.1 | Equipe de conservação
+2.1.1.1 | P9916 | Encarregado de conservação rodoviária | mês | 1 | 0 | 0
+2.1.1.2 | P9875 | Encarregado de turma | mês | 2 | 0 | 0
+Total do item 2.1.1 | 0 | 0
+Total do item 2.1 | 0 | 0
+Total da parcela vinculada para mão de obra | 0 | 0
+Composição de custo da parcela vinculada da administração local (veículos)
+Item | Código | Discriminação | Unidade | Quant | Utilização produtiva | Utilização improdutiva | Custo onerado | Custo desonerado
+Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$) | Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$)
+2.2 | Veículo
+2.2.1 | Equipe de conservação
+2.2.1.1 | E9093 | Veículo leve - 53 kW (sem motorista) | mês | 1 | 44 | 138.49 | 0 | 0
+Subtotal do item 2.2.1 | 0 | 0
+Total do item 2.2 | 0 | 0
+Total da parcela vinculada para veículos | #REF! | 0 | 0
+Tabela 16 - Manual de Custos de Infraestrutura de Transportes - Administração Local - Volume 07 - 2025 - 2ª Ed.
+3 - Parcela variável da Administração Local
+Composição de custo da parcela variável da administração local (mão de obra)
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo unitário (R$) | Custo total (R$) | Custo unitário (R$) | Custo total (R$)
+3.1 | Mão de obra
+3.1.1 | Laboratório de asfálto
+3.1.1.1 | P9858 | Laboratorista | mês | 1 | 0 | 0
+3.1.1.2 | P9833 | Auxiliar de laboratório | mês | 2 | 0 | 0
+Total do item 3.1.1 | 0 | 0
+3.1.2 | Manejo florestal
+3.1.2.1 | P9947 | Técnico florestal | mês | 1 | 0 | 0
+Total do item 3.1.2 | 0 | 0
+Total do item 3.1 | 0 | 0
+Total da parcela variável para mão de obra | 0 | 0
+Composição de custo da parcela variável da administração local (veículos)
+Item | Código | Discriminação | Unidade | Quant | Utilização produtiva | Utilização improdutiva | Custo onerado | Custo desonerado
+Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$) | Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$)
+3.1 | Laboratório de asfálto
+3.1.1 | Veículo
+3.1.1.1 | E9125 | Veículo tipo van furgão com capacidade de 1,54 t - 93 kW | mês | 1 | 44 | 138.49 | 0 | 0
+Subtotal do item 3.1.1 | 0 | 0
+Total do item 3.1 | 0 | 0
+Total da parcela variável para veículos | #REF! | 0 | 0
+Tabela 30 - Manual de Custos de Infraestrutura de Transportes - Administração Local - Volume 07 - 2025 - 2ª Ed.
+4 - Manutenção de Canteiro de Obras e Acampamentos
+Composição de custo da manutenção de canteiro de obras da administração local (mão de obra)
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo unitário (R$) | Custo total (R$) | Custo unitário (R$) | Custo total (R$)
+4.1 | Mão de Obra
+4.1.1 | P9952 | Pedreiro - mensalista | un | 0.1 | 0 | 0
+4.1.2 | P9954 | Servente - mensalista | un | 0.1 | 0 | 0
+4.1.3 | P9953 | Eletricista - mensalista | un | 0.1 | 0 | 0
+Total do item 4.1 | 0 | 0
+Total da manutenção do canteiro para mão de obra | 0 | 0
+Composição de custo da manutenção de canteiro de obras da administração local (veículos)
+Item | Código | Discriminação | Unidade | Quant | Utilização produtiva | Utilização improdutiva | Custo onerado | Custo desonerado
+Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$) | Custo horário produtivo (R$) | Custo horário improdutivo (R$) | Custo Total (R$)
+4.2 | Veículo
+4.2.1 | E9686 | Caminhão carroceria com guindauto com capacidade de 20 t.m - 136 kW | h | 5.5 | N/A | N/A | N/A | 0 | N/A | 0
+4.2.2 | E9669 | Caminhão tanque com capacidade de 8.000 l - 136 kW | h | 11 | N/A | N/A | N/A | 0 | N/A | 0
+4.2.3 | E9524 | Motoniveladora - 93 kW | h | 5.5 | N/A | N/A | N/A | 0 | N/A | 0
+Total do item 4.2 | 0 | 0
+Total da manutenção do canteiro para veículos | #REF! | 0 | 0
+Tabela 48 - Manual de Custos de Infraestrutura de Transportes - Administração Local - Volume 07 - 2025 - 2ª Ed.
+5 - Resumo das parcelas da administração local
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo (R$) | Custo total (R$) | Custo (R$) | Custo total (R$)
+5.1 | Parcela Fixa
+5.1.1 | Mão de Obra+Veículos | mês | 0 | 0 | 0 | 0
+Subtotal do item 1 | 0 | 0
+5.2 | Parcela Vinculada
+5.2.1 | Mão de Obra+Veículos | mês | 0 | 0 | 0 | 0 | 0
+Subtotal do item 2 | 0 | 0
+5.3 | Parcela Variável
+5.3.1 | Laboratório de asfálto | mês | #DIV/0! | 0 | #DIV/0! | 0 | #DIV/0!
+5.3.2 | Manejo florestal | mês | #DIV/0! | 0 | #DIV/0! | 0 | #DIV/0!
+Subtotal do item 3 | #DIV/0! | #DIV/0!
+5.4 | Manutenção do Canteiro de Obras e Acampamento
+5.4.1 | Equipe de manutenção | mês | -1 | 0 | 0 | 0 | 0
+Subtotal do item 4 | 0 | 0
+6 - Custo total da Administração Local
+Item | Código | Discriminação | Unidade | Quantidade | Custo onerado | Custo desonerado
+Custo (R$) | Custo total (R$) | Custo (R$) | Custo total (R$)
+6.1 | Parcela Fixa | und | 1 | 0 | 0 | 0 | 0
+6.2 | Parcela Vinculada | und | 1 | 0 | 0 | 0 | 0
+6.3 | Parcela Variável | und | 1 | #DIV/0! | #DIV/0! | #DIV/0! | #DIV/0!
+6.4 | Manutenção do Canteiro de Obras e Acampamentos | und | 1 | 0 | 0 | 0 | 0
+Subtotal | #DIV/0! | #DIV/0!
+6.5 | Despesas Diversas | % | 5 | #DIV/0! | #DIV/0!
+Custo Total da Administração Local: | #DIV/0! | #DIV/0!
+BDI
+Preço Total da Administração Local: | #DIV/0! | #DIV/0![aba ADM_LOCAL_VARIAVEL]
+1) Laboratório de asfalto
+Item | Código | Discriminação | Unidade | Quantidade | QE | Ela
+#DIV/0!
+#DIV/0!
+#DIV/0!
+TOTAL | #DIV/0!
+2) Manejo florestal
+Item | Código | Discriminação | Unidade | Quantidade | Produto horária (und/h) | Tf
+#DIV/0!
+#DIV/0!
+#DIV/0!
+TOTAL | #DIV/0!

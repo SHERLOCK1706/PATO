@@ -1,0 +1,2048 @@
+                                                                                                             NORMA DNIT 031/2024 – ES
+
+            DNIT
+                                                                   OUTUBRO 2024
+
+                                                                                 Pavimentação – Concreto asfáltico –
+                                                                                       Especificação de serviço
+       MINISTÉRIO DOS TRANSPORTES
+                                                                      Autor: Instituto de Pesquisas em Transportes – IPR
+       DEPARTAMENTO NACIONAL DE
+    INFRAESTRUTURA DE TRANSPORTES                                     Processo: 50600.030776/2019-81
+                                                                      Origem: Revisão da Norma DNIT 031/2006 – ES
+                 DIRETORIA-GERAL
+                                                                      Aprovação pela Diretoria Colegiada do DNIT na reunião de 08/10/2024.
+      DIRETORIA DE PLANEJAMENTO E
+                PESQUISA                                        Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que
+                                                                citada a fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda
+        INSTITUTO DE PESQUISAS EM                               comercial.
+                 TRANSPORTES
+           Setor de Autarquias Norte
+                Quadra 03 Lote A                                                             Palavras-chave:                                            Nº total de páginas
+          Ed. Núcleo dos Transportes
+         Brasília – DF – CEP 70040-902                               Concreto asf áltico, pavimento f lexível, mistura asf áltica densa                             33
+            Tel./f ax: (61) 3315-4831
+
+
+Resumo
+                                                                                               5     Condições específicas ...............................................5
+
+Este      documento            estabelece          a sistemática             a ser             6     Condicionantes ambientais .....................................16
+empregada na produção e na execução de camada de
+                                                                                               7     Inspeções .................................................................18
+pavimento,          utilizando        uma mistura asfáltica densa
+usinada a quente, composta por cimento asfáltico                                               8     Critérios de medição ................................................23
+
+convencional, agregados e material de enchimento. São                                          Anexo A (Normativo) – Amostragem Variável ...............24
+também apresentados os requisitos concernentes a
+                                                                                               Anexo B (Normativo) – Tolerâncias da granulometria ..25
+materiais,        equipamentos,              execução,          condicionantes
+ambientais, controle da qualidade, plano de amostragem,                                        Anexo C (Normativo) – Absorção dos agregados .........27
+condições de conformidade e não conformidade e os
+                                                                                               Anexo D (Normativo) – Textura superficial ....................28
+critérios de medição dos serviços.
+                                                                                               Anexo E (Normativo) – Ensaios de controle ..................30
+Abstract
+                                                                                               Anexo F (Informativo) – Bibliografia ...............................32
+
+This document establishes                      the systematics for the                         Índice geral ......................................................................33
+execution of a pavement layer, using a dense hot mix
+                                                                                               Prefácio
+asphalt,       composed conventional of asphalt binder,
+aggregates and mineral filler. Requirements regarding
+                                                                                               A presente Norma foi preparada pelo Instituto de
+materials,          equipment,              execution,            environmental
+                                                                                               Pesquisas em Transportes – IPR, conforme a Instrução
+conditioners, quality control, sampling plan compliance
+                                                                                               Normativa nº 20/DNIT SEDE, de 1º de novembro de 2022
+and         non-compliance                conditions             and        service
+                                                                                               e a norma DNIT 001/2023 – PRO.
+measurement criteria are also presented.
+
+                                                                                               Esta publicação cancela e substitui a norma DNIT
+Sumário
+                                                                                               031/2006 – ES, a qual foi tecnicamente revisada.
+
+Prefácio ............................................................................. 1
+                                                                                               1         Objetivo
+1      Objetivo ...................................................................... 1
+                                                                                               Esta Norma estabelece as condições exigíveis para a
+2      Referências normativas ............................................ 2
+                                                                                               produção e a execução de camada de pavimento,
+3      Termos e definições .................................................. 4                quando empregada uma mistura asfáltica densa usinada
+                                                                                               a quente, composta por cimento asfáltico convencional,
+4      Condições gerais....................................................... 5
+                                                                                               agregados e material de enchimento.
+NORMA DNIT 031/2024 – ES                                                                                                 2
+
+
+2      Referências normativas                                   l)   _____. DNIT 105 – ES: Terraplenagem – Caminhos
+                                                                     de serviço – Especificação de Serviço.
+Os documentos relacionados a seguir são indispensáveis
+à aplicação desta Norma. Para referências datadas,              m)   _____. DNIT 131 – ME: Materiais asfálticos –
+aplicam-se somente as edições citadas. Para referências              Determinação do ponto de amolecimento – Método
+não datadas, aplicam-se as edições mais recentes do                  do Anel e Bola – Método de Ensaio.
+referido documento (incluindo emendas):
+                                                                n)   _____. DNIT 133 – ME: Pavimentação asfáltica –
+                                                                     Delineamento da linha de influência longitudinal da
+a)   DEPARTAMENTO NACIONAL DE ESTRADAS DE
+                                                                     bacia de deformação por intermédio da Viga
+     RODAGEM.        DNER     –   ME     053/94:   Misturas
+                                                                     Benkelman – Método de ensaio.
+     betuminosas – Percentagem de betume.
+
+                                                                o)   _____. DNIT 135 – ME: Pavimentação asfáltica –
+b)   _____. DNER – ME 148/94: Material betuminoso –
+                                                                     Misturas asfálticas – Determinação do módulo de
+     Determinação dos pontos de fulgor e de combustão
+                                                                     resiliência – Método de ensaio.
+     (vaso aberto Cleveland).
+
+                                                                p)   _____. DNIT 136 – ME: Pavimentação asfáltica –
+c)   _____. DNER      –    ME     196/98:    Agregados      –
+                                                                     Misturas asfálticas – Determinação da resistência à
+     Determinação do teor de umidade total, por
+                                                                     tração por compressão diametral – Método de
+     secagem, em agregado graúdo.
+                                                                     ensaio.
+
+d)   _____. DNER – PRO 273/96: Determinação de
+                                                                q)   _____. DNIT 144 – ES: Pavimentação – Imprimação
+     deflexões utilizando o deflectômetro de impacto tipo
+                                                                     com ligante asfáltico – Especificação de serviço.
+     “Falling Weight Deflectometer (FWD)”.
+
+                                                                r)   _____. DNIT 145 – ES: Pavimentação – Pintura de
+e)   _____. DNER – PRO 277/97: Metodologia para
+                                                                     ligação com ligante asfáltico – Especificação de
+     controle estatístico de obras e serviços.
+                                                                     serviço.
+f)   _____. DNER – ES 395/99: Pavimentação – Pintura
+     de ligação com asfalto polímero.                           s)   _____. DNIT 155 – ME: Material           asfáltico –
+                                                                     Determinação da penetração – Método de ensaio.
+g)   _____. DNER      –    ME     401/99:    Agregados      –
+     determinação do índice de degradação de rochas             t)   _____. DNIT 158 – ME: Mistura            asfáltica –
+     após compactação Marshall com ligante – IDML e                  Determinação da porcentagem de betume em
+     sem ligante – IDM.                                              mistura asfáltica utilizando o extrator Soxhlet –
+                                                                     Método de ensaio.
+h)   DEPARTAMENTO                  NACIONAL                DE
+     INFRAESTRUTURA          DE    TRANSPORTES. DNIT            u)   _____. DNIT 178 – PRO: Pavimentação asfáltica –
+     011 – PRO: Gestão da qualidade em obras                         Preparação de corpos de prova para ensaios
+     rodoviárias – Procedimento.                                     mecânicos    usando     o   compactador     giratório
+                                                                     Superpave ou o Marshall – Procedimento.
+i)   _____. DNIT 013 – PRO: Requisitos para a
+     qualidade na execução de obras rodoviárias –
+                                                                v)   _____. DNIT 180 – ME: Pavimentação – Misturas
+     Procedimento
+                                                                     asfálticas – Determinação do dano por umidade
+j)   _____. DNIT     070     –    PRO:       Condicionantes          induzida – Método de ensaio.
+     ambientais    das    áreas   de   uso    de   obras    –
+                                                                w)   _____. DNIT 183 – ME: Pavimentação asfáltica –
+     Procedimento.
+                                                                     Ensaio de fadiga por compressão diametral à tensão
+k)   _____. DNIT 095 – EM: Cimentos asfálticos de                    controlada – Método de ensaio.
+     petróleo – Especificação de material.
+NORMA DNIT 031/2024 – ES                                                                                              3
+
+
+x)    _____. DNIT 184 – ME: Pavimentação – Misturas            ii)   _____. DNIT 428 – ME: Pavimentação – Misturas
+      asfálticas – Ensaio uniaxial de carga repetida para            asfálticas – Determinação da densidade relativa
+      determinação    da       resistência   à   deformação          aparente e da massa específica aparente de corpos
+      permanente – Método de ensaio.                                 de prova compactados – Método de ensaio.
+
+
+y)    _____. DNIT 411 – ME: Pavimentação – Massa               jj)   _____. DNIT 429 – ME: Agregados – Determinação
+      específica, densidade       relativa e absorção de             de partículas achatadas e alongadas em agregados
+      agregado miúdo para misturas asfálticas – Método               graúdos – Método de ensaio.
+      de ensaio.
+                                                               kk) _____. DNIT 430 – ME: Agregados – Percentual da
+z)    _____. DNIT 412 – ME: Pavimentação – Misturas                  porcentagem de partículas fraturadas em agregados
+      asfálticas – Análise granulométrica de agregados               graúdos – Método de ensaio.
+      graúdos e miúdos e misturas de agregados por
+      peneiramento – Método de ensaio.                         ll)   _____. DNIT 431 – ME: Pavimentação – Misturas
+                                                                     asfálticas – Densidade in situ usando densímetro
+aa) _____. DNIT 413 – ME: Pavimentação – Massa                       não nuclear – Método de ensaio.
+      específica, densidade       relativa e absorção de
+      agregado graúdo para misturas asfálticas – Método        mm) _____. DNIT 435 – PRO: Materiais rochosos usados
+
+      de ensaio.                                                     em rodovias – Análise Petrográfica – Procedimento.
+
+
+bb) _____. DNIT 415 – ME: Pavimentação – Mistura               nn) _____. DNIT 438 – PRO: Pavimentação – Misturas
+
+      asfáltica – Teor de vazios de agregados miúdos não             asfálticas – Seleção granulométrica de agregados
+
+      compactados – Método de ensaio.                                para concreto asfáltico pelo Método Bailey –
+                                                                     Procedimento.
+cc) _____. DNIT 418 – EM: Pavimentação – Solo-Cal –
+      Cal Virgem e Cal Hidratada – Especificação de            oo) _____. DNIT 439 – ME: Pavimentação – Ligante
+
+      material.                                                      Asfáltico – Avaliação da resistência à fadiga de
+                                                                     ligantes asfálticos usando varredura de amplitude
+dd) _____. DNIT 423 – ME: Pavimentação – Ligante
+                                                                     linear (LAS – Linear Amplitude Sweep) – Método de
+      asfáltico – Fluência e recuperação de ligantes
+                                                                     ensaio.
+      asfálticos determinados       sob tensões    múltiplas
+      (MSCR) – Método de ensaio.                               pp) _____. DNIT       442   –   PRO:    Pavimentação   –
+
+ee) _____. DNIT 424 – ME: Pavimentação – Agregado                    Levantamento do perfil longitudinal de pavimentos
+
+      – Determinação do índice de forma com crivos –                 com perfilômetro inercial – Procedimento.
+
+      Método de ensaio.
+                                                               qq) _____. DNIT 446 – ME: Agregados – Avaliação da
+ff)   _____. DNIT 425 – ME: Pavimentação – Agregado                  durabilidade pelo emprego de soluções de sulfato de
+      – Determinação do índice de forma com paquímetro               sódio ou magnésio – Método de ensaio.
+      – Método de ensaio.
+                                                               rr)   _____. DNIT 447 – ME: Misturas asfálticas – Ensaio
+gg) _____. DNIT 426 – IE: Pavimentação – Misturas                    de estabilidade e fluência Marshall – Método de
+      asfálticas – Determinação dos parâmetros CDI e TDI             ensaio.
+      – Instrução de ensaio.
+                                                               ss) _____. DNIT 449 – PRO: Pavimentação asfáltica –
+hh) _____. DNIT 427 – ME: Pavimentação – Misturas                    Misturas asfálticas – Parâmetros volumétricos para
+      asfálticas – Determinação da densidade relativa                dosagem de misturas asfálticas – Procedimento.
+      máxima medida e da massa específica máxima
+      medida em amostras não compactadas – Método de           tt)   _____. DNIT 450 – ME: Equivalente de areia –
+
+      ensaio.                                                        Método de ensaio.
+NORMA DNIT 031/2024 – ES                                                                                                       4
+
+
+uu) _____. DNIT 451 – ME: Agregados – Determinação                      3.2    Agregado miúdo
+      do desgaste por abrasão e impacto no equipamento
+      “Los Angeles” – Método de ensaio.                                 O agregado miúdo corresponde a todas as partículas
+                                                                        minerais passantes na peneira nº 4 (4,8 mm) e retidas na
+vv) _____. DNIT 452 – ME: Agregado graúdo –                             peneira nº 200 (0,075 mm).
+      Adesividade a ligante betuminoso – Método de
+      ensaio.                                                           3.3    Cimento Asfáltico de Petróleo (CAP)
+
+ww) ASSOCIAÇÃO             BRASILEIRA         DE          NORMAS        Derivado de petróleo de alta viscosidade, semissólido à
+      TÉCNICAS.        ABNT     NBR    14950          –    Materiais    temperatura ambiente (25 ºC) e de cor preta. O CAP é
+      betuminosos      –    Determinação      da      viscosidade       obtido por refino de petróleo e apresenta consistência e
+      Saybolt-Furol.                                                    propriedades próprias para o uso direto na construção de
+                                                                        pavimentos.
+xx) _____. ABNT NBR 15184 – Materiais betuminosos
+      – Determinação da viscosidade em temperaturas                     3.4    Concreto Asfáltico
+      elevadas usando um viscosímetro rotacional.
+                                                                        O concreto asfáltico é uma mistura asfáltica densa, isto
+yy) _____. ABNT NBR 15235 – Materiais asfálticos –                      é, com distribuição granulométrica contínua, produzida,
+      Determinação do efeito do calor e do ar em uma                    espalhada e compactada a quente, constituída de CAP,
+      película delgada rotacional.                                      agregados pétreos e material de enchimento.
+
+zz) _____. ABNT NBR 16504 – Misturas asfálticas –                       3.5    Dimensão ou tamanho máximo (TM)
+      Determinação         da    profundidade         média       da
+      macrotextura superficial de pavimentos asfálticos                 É a menor abertura de peneira da série padronizada
+      por volumetria – Método da mancha de areia.                       através da qual toda a massa de agregado passa, ou
+                                                                        seja, não fica retida nenhuma partícula, passam 100 %
+aaa) _____. ABNT NBR 16780 – Sinalização horizontal                     dos grãos.
+      viária – Medição da resistência à derrapagem de
+      uma superfície utilizando o pêndulo britânico.                    3.6    Material de enchimento
+
+bbb) AMERICAN          SOCIETY       FOR      TESTING           AND
+                                                                        Material mineral, finamente dividido, não plástico, que
+      MATERIALS. ASTM D5361: Practice for sampling
+                                                                        passa totalmente na peneira nº 40 (0,42 mm) e passa
+      compacted asphalt mixtures for laboratory testing.
+                                                                        mais que 65 % na peneira nº 200 (0,075 mm).
+
+ccc) _____. ASTM D6307: Test method for asphalt
+                                                                        3.7    Material pulverulento ou filler
+      content of asphalt mixture by ignition method.
+                                                                        O filler corresponde a todas as partículas minerais
+ddd) _____. ASTM        E1960:     Practice     for       calculating
+                                                                        passantes na peneira n° 200 (0,075 mm), incluindo os
+      International Friction Index of a pavement surface.
+                                                                        materiais solúveis em água presentes nos agregados.
+
+3       Termos e definições
+                                                                        3.8    Melhorador de adesividade
+
+Para os efeitos deste documento técnico, aplicam-se os
+                                                                        Material utilizado para promover a afinidade físico-
+seguintes termos e definições:
+                                                                        química entre a película do CAP e a superfície dos
+                                                                        agregados, corrigindo a adesividade insatisfatória entre
+3.1     Agregado graúdo
+                                                                        agregados e CAP, na presença de água. Podem ser
+
+O agregado graúdo corresponde a todas as partículas                     empregados     produtos      comerciais   desenvolvidos
+
+minerais passantes na peneira de 3‘’ (75 mm) e retidas                  especificamente para essa função e/ou a cal hidratada,
+
+na peneira nº 4 (4,8 mm).                                               preferencialmente, do tipo CH-I.
+NORMA DNIT 031/2024 – ES                                                                                                      5
+
+
+3.9     Tamanho Nominal Máximo (TNM)                                  adequada sinalização da obra, visando à segurança
+                                                                      do tráfego. Essa sinalização deverá ser objeto de
+É o tamanho de abertura de malha da peneira                           manutenção contínua, durante a execução dos
+imediatamente acima da primeira peneira da série                      serviços. Atenção especial deve ser dada para a
+padronizada que retém mais de 10 % das partículas da                  segurança do tráfego na operação do sistema
+amostra do agregado (% retida acumulada).                             siga/pare.
+
+4       Condições gerais                                        NOTA 1: Deve-se seguir obrigatoriamente o Manual de
+                                                                            Sinalização de Obras e Emergências em
+a)    O concreto asfáltico pode ser empregado como
+                                                                            Rodovias do DNIT (Publicação IPR – 738).
+      camada de rolamento, camada de ligação, base,
+      regularização ou reforço do pavimento.
+                                                                5        Condições específicas
+
+b)    Não é permitida a execução dos serviços objeto
+                                                                5.1      Materiais
+      desta Norma em dias de chuva.
+
+                                                                Os materiais constituintes do concreto asfáltico são:
+c)    O concreto asfáltico somente deve ser produzido,
+                                                                agregado     graúdo,      agregado     miúdo,    CAP   e,    se
+      transportado e aplicado quando a temperatura da
+                                                                necessário, material de enchimento e agente melhorador
+      superfície da pista for superior a 10 ºC. Para
+                                                                de adesividade. Esses materiais devem ser avaliados na
+      espessuras de concreto asfáltico inferiores a 3 cm,
+                                                                fase de dosagem e só podem ser utilizados se atenderem
+      no momento da aplicação, a superfície da pista
+                                                                às especificações indicadas nesta Norma.
+      deverá apresentar temperatura superior a 15 ºC.
+
+                                                                5.1.1     Cimento asfáltico
+d)    Todo carregamento de CAP que chegar à obra deve
+      estar acompanhado de um certificado emitido pelo
+                                                                Podem ser empregados os seguintes tipos de cimento
+      fabricante/distribuidor,    com   os   resultados   dos
+                                                                asfáltico de petróleo (CAP):
+      ensaios exigidos pela especificação DNIT 095 – EM
+      e outros ensaios, conforme subseção 5.1.1, se             a)    CAP-30/45;
+      especificados em projeto. Tais resultados devem
+      corresponder à data de produção do CAP, ou ao dia         b)    CAP-50/70;
+      de carregamento para transporte com destino à obra,
+                                                                c)    CAP-85/100.
+      caso o intervalo entre os dois eventos ultrapasse 10
+      dias. Deve também conter indicação clara da origem
+                                                                O CAP deve atender aos requisitos da Especificação
+      e tipo do CAP, da quantidade do conteúdo da carreta
+                                                                DNIT 095 – EM, e ainda a outros critérios, se
+      e da distância de transporte entre a refinaria e o
+                                                                especificados no projeto de pavimentação, tais como
+      canteiro de obra.
+                                                                MSCR (DNIT 423 – ME), LAS (DNIT 439 – ME), etc.
+
+e)    É responsabilidade         da empresa executante a
+                                                                5.1.2     Agregados
+      proteção dos serviços e materiais contra a ação
+      destrutiva das águas pluviais, do tráfego e de outros     5.1.2.1 Agregado graúdo
+      agentes que possam danificá-los.
+                                                                O agregado graúdo pode ser rocha britada, escória, seixo
+f)    Para correta execução da camada e adequado                rolado    britado    ou    outro     material   indicado    nas
+      acompanhamento         dos    serviços,   deverá    ser   especificações complementares. Deve-se constituir de
+      executado previamente um segmento experimental,           fragmentos sãos, duráveis e livres de torrões de argila,
+      conforme a subseção 5.4.1.                                matéria orgânica e outras impurezas.
+
+g)    Antes do início dos serviços, deve ser implantada a       A fonte do agregado graúdo indicada deve ser validada
+NORMA DNIT 031/2024 – ES                                                                                              6
+
+
+durante a dosagem do concreto asfáltico e, se possível,        mistura de ambos ou outro material indicado nas
+respeitada durante toda a obra. Em caso de necessidade         especificações do DNIT. Para a areia natural, a
+de alteração, a fiscalização deverá ser comunicada e           quantidade máxima permitida na composição é de 8 %.
+novas avaliações do material deverão ser realizadas para       Suas partículas     individuais   devem ser resistentes,
+verificação quanto ao atendimento aos parâmetros               estando livres de torrões de argila, matéria orgânica e
+exigidos   nessa   norma.       Recomenda-se    a   análise    outras impurezas.
+petrográfica da rocha (DNIT 435 – PRO), para definir
+seus constituintes minerais e principais propriedades.         A fonte de agregado miúdo indicada deve ser validada
+                                                               durante a dosagem do concreto asfáltico e, se possível,
+O agregado graúdo deve apresentar            as seguintes      respeitada durante toda a obra. Em caso de necessidade
+características:                                               de alteração, a fiscalização deverá ser comunicada e
+                                                               novas avaliações do material deverão ser realizadas para
+a)   Abrasão Los Angeles ≤ 50 % (DNIT 451 – ME).               verificação quanto ao atendimento aos parâmetros
+     Pode-se admitir valores superiores a 50 % quando o        exigidos nessa norma.
+     agregado      tiver    apresentado        desempenho
+     comprovadamente satisfatório em utilização anterior       O agregado miúdo deve apresentar            as seguintes
+     ou apresentar     índice    de degradação      após   a   características:
+     compactação Marshall sem ligante (𝐼𝐷𝑚) ≤ 5 % e
+     com ligante (𝐼𝐷𝑚𝑙) ≤ 8 % (DNER – ME 401/99 ou             a)   Equivalente de areia ≥ 55 % (DNIT 450 – ME).
+
+     norma DNIT que venha a substituí-la).
+                                                               b)   Teor de vazios não compactados ≥ 45 % (DNIT 415
+
+b)   Percentual de partículas fraturadas ≥ 90 %, em                 – ME), para camadas de rolamento aplicadas em
+
+     massa, dos fragmentos retidos na peneira nº 4 (4,8             vias   com N > 1,0 × 107 .      Para   camadas   de
+
+     mm), devendo apresentar, pelo menos, uma face                  rolamento em vias com N       ≤ 1,0 × 107 e demais
+     fragmentada pela britagem (DNIT 430 – ME).                     camadas citadas na alínea a da seção 4, admite-se
+                                                                    teor de vazios não compactados ≥ 40 %.
+c)   Índice de forma ≥ 0,5 (DNIT 424 – ME) ou ≤ 2,0
+     (DNIT 425 – ME).                                          c)   Se a fonte do agregado miúdo for diferente da fonte
+                                                                    do agregado graúdo, realizar o ensaio indicado na
+d)   Percentual de partículas chatas e alongadas ≤ 25 %,            alínea f, da subseção 5.1.2.1 com o agregado graúdo
+     na relação 3:1 (DNIT 429 – ME).                                da mesma fonte do agregado miúdo.
+
+e)   Durabilidade pelo emprego de soluções de sulfato de       5.1.2.3 Material de enchimento
+     sódio com perda < 12 % ou pelo emprego de sulfato
+     de magnésio com perda < 15 % (DNIT 446 – ME).             Para o concreto asfáltico, o material de enchimento (se
+                                                               necessário) deve ser a cal hidratada, atendendo às
+f)   Adesividade ao ligante asfáltico satisfatória (DNIT       especificações da norma DNIT 418 – EM. Ao ser
+     452 – ME).                                                aplicado, o material de enchimento deve estar seco e
+                                                               isento de grumos.
+g)   Absorção ≤ 2,0 % (DNIT 413 – ME).
+
+                                                               A fonte de material de enchimento indicada deve ser
+NOTA 2: Poderá ser admitida a utilização de agregados
+                                                               validada durante a dosagem do concreto asfáltico e, se
+           com absorção entre 2,0 % e 3,0 %, desde que
+                                                               possível, respeitada durante toda a obra. Deve-se
+           observado o exposto no Anexo C.
+                                                               respeitar a quantidade usada na dosagem para atingir as
+                                                               características mecânicas previstas no dimensionamento
+5.1.2.2 Agregado miúdo
+                                                               do pavimento.
+O agregado miúdo pode ser areia, pó de pedra, uma
+                                                               A cal hidratada contribui para a melhoria de adesividade
+NORMA DNIT 031/2024 – ES                                                                                                        7
+
+
+entre o CAP e os agregados. Essa melhoria de                   agregados, ao tipo e ao teor de CAP, empregando a
+adesividade       deve   ser   verificada pelo   ensaio   de   mesma refinaria indicada (se houver indicação) e as
+determinação do dano por umidade induzida (DNIT 180            mesmas fontes de agregados. Em caso de necessidade
+– ME). Deverá ser atendido o limite indicado na Tabela 4.      de alteração, a fiscalização deverá ser comunicada e
+                                                               deverá ser realizado um novo projeto de dosagem.
+Quando o uso da cal hidratada for necessário ou
+especificado, a quantidade adicionada não deve ser             No projeto de dosagem, as curvas granulométricas dos
+superior a 2,0 %, em relação à massa total de agregados,       agregados do concreto asfáltico, determinadas conforme
+para evitar o enrijecimento excessivo da mistura e não         a norma DNIT 412 – ME, devem ser combinadas para
+comprometer os parâmetros volumétricos.                        formar uma mistura de agregados que se enquadre em
+                                                               uma das faixas granulométricas da Tabela 1. As faixas da
+5.1.3     Melhorador de adesividade                            Tabela 1 são identificadas por uma letra seguida de um
+                                                               número que indica o TNM da respectiva faixa.
+Não havendo adesividade satisfatória entre o CAP e os
+agregados ou não sendo atendido o limite de dano por             Tabela 1 – Faixas granulométricas para concreto
+umidade induzida da Tabela 4, deve-se utilizar um aditivo                            asfáltico
+melhorador de adesividade ou a cal hidratada. A escolha         Peneira de malha              % passante, em massa
+entre o aditivo melhorador de adesividade ou a cal                 quadrada                             Faixas
+
+hidratada fica a critério da empresa projetista, desde que               Abertura
+                                                                ASTM                 A-25        B-19      C-12,5     D-9,5
+                                                                          (mm)
+seja confirmada a adesividade satisfatória entre o CAP e         1 ½”      38,1      100           -             -      -
+os agregados após a adição do melhorador, levando-se              1”       25,4     90 -100      100             -      -
+em conta a disponibilidade e custos dessas soluções.              ¾”       19,1     75 - 89    90 - 100      100        -
+                                                                  ½”       12,7     58 - 78     70 - 89    90 -100     100
+Caso seja utilizada a cal hidratada, deve-se verificar a          ⅜”       9,5      48 - 71     55 - 82    73 - 89   90 - 100
+
+adesividade       conforme o especificado na subseção             ¼”       6,3      35 - 61     42 - 70    53 - 78   65 - 89
+                                                                 Nº 4      4,8      29 - 55     35 - 63    44 - 72   53 - 83
+5.1.2.3. Caso seja utilizado um aditivo melhorador de
+                                                                 Nº 8      2,36     19 - 45     23 - 49    28 - 58   32 - 67
+adesividade, a eficácia do melhorador de adesividade             Nº 16     1,18     13 - 36     16 - 37    17 - 45   20 - 52
+deverá ser verificada das duas formas seguintes:                 Nº 30     0,60     9 - 28      10 - 28    11 - 35   13 - 40
+                                                                 Nº 50     0,30     5 - 21      6 – 20      6 - 25    8 - 29
+a) Inicialmente com os agregados, pelo ensaio DNIT 452          Nº 100    0,150     2 - 14      4 – 13      3 - 17    4 - 19
+      – ME, conforme as subseções 5.1.2.1 e 5.1.2.2;            N° 200    0,075      1-7         2-8        2 - 10    2 - 10
+
+
+b) Posteriormente com o concreto asfáltico, pelo ensaio
+                                                               A faixa granulométrica deve ser selecionada em função
+      de determinação do dano por umidade induzida
+                                                               da camada a ser executada, de modo que a espessura
+      (DNIT 180 – ME), atendendo ao limite mínimo da
+                                                               da camada compactada deve ser, no mínimo, 2,5 vezes
+      Tabela 4.
+                                                               o TNM da faixa granulométrica selecionada na Tabela 1.
+
+Os ensaios das alíneas (a) e (b) desta subseção devem
+                                                               Na determinação da curva granulométrica da mistura de
+ser realizados após submeter o ligante com o aditivo
+                                                               agregados, recomenda-se o uso do Método Bailey (DNIT
+melhorador de adesividade ao ensaio RTFOT (ABNT
+                                                               438 – PRO) para ajuste dos percentuais de cada
+NBR 15235). Não havendo boa adesividade, após as
+                                                               tamanho de agregado, de forma a garantir um esqueleto
+verificações (com o aditivo ou a cal), deve-se avaliar a
+                                                               pétreo com maior intertravamento e mais resistente às
+quantidade do melhorador ou a substituição do mesmo.
+                                                               deformações    permanentes,        principalmente      quando
+                                                               houver dificuldade de atendimento ao valor mínimo de
+5.2      Composição do concreto asfáltico
+                                                               vazios do agregado mineral (VAM) da Tabela 5. Para
+
+A composição do concreto asfáltico deve satisfazer o que       todas as faixas, a fração retida entre duas peneiras
+
+foi estabelecido na dosagem quanto à combinação dos            consecutivas não deve ser inferior a 4 % do total, exceto
+NORMA DNIT 031/2024 – ES                                                                                                     8
+
+
+entre as duas peneiras de maior malha de cada faixa.          Caso isso ocorra, deverão ser realizados os devidos
+                                                              ajustes, conforme o exemplo do Anexo B.
+A granulometria da mistura de agregados deve ser
+classificada como de comportamento graúdo, quando o           A dosagem do concreto asfáltico deve ser realizada
+percentual passante na Peneira de Controle Primário           seguindo o procedimento de preparação de corpos de
+(PCP) for inferior ao especificado na Tabela 2. Se o          prova descrito na norma DNIT 178 – PRO e utilizando
+percentual for superior, a mistura de agregados terá          todos os materiais que serão empregados na mistura. O
+comportamento fino. O comportamento da mistura de             teor de projeto de CAP deve ser o determinado com
+agregados influencia diretamente as propriedades do           tolerância de ±0,3 %, desde que atendidos os parâmetros
+concreto asfáltico e suas condições de macrotextura,          das Tabelas 4 e 5.
+conforme o Anexo D. Portanto, deve ser considerado no
+projeto de dosagem.                                           A energia de compactação deve ser determinada em
+                                                              função do volume de tráfego e os porcentuais de CAP
+ Tabela 2 – Pontos de controle para a classificação           devem ser calculados considerando a mistura completa
+        de graduação do concreto asfáltico
+                                                              como 100 %.
+       TNM                 PCP           % de controle
+       25,4                 4,8              40,0                Tabela 4 – Requisitos para projeto de concreto
+       19,1                 4,8              47,0                                   asfáltico
+       12,7                2,36              39,0
+                                                                   Parâmetros                    Norma           Valor
+        9,5                2,36              47,0
+                                                                Volume de vazios
+                                                                                         DNIT 449 – PRO           3a5
+                                                                          (%)
+                                                                 Relação betume
+A Tabela 3 apresenta os valores de tolerância da curva                                   DNIT 449 – PRO         65 a 75
+                                                                      vazios (%)
+granulométrica para a produção do concreto asfáltico. A        Vazios do agregado
+                                                                                         DNIT 449 – PRO         Tabela 5
+partir da curva granulométrica do projeto de dosagem e               mineral (%)
+                                                                       Proporção
+das tolerâncias dessa tabela, constrói-se a faixa de                                     DNIT 449 – PRO         0,6 a 1,6
+                                                                filler/asfalto (F/A)
+trabalho.                                                          Resistência à
+                                                                                         DNIT 136 – ME           ≥ 0,65
+                                                                    tração (MPa)
+Tabela 3 – Tolerância da curva granulométrica para
+                                                               Dano por umidade
+         a produção do concreto asfáltico                                                DNIT 180 – ME           ≥ 0,70
+                                                                 induzida (razão)
+              Peneira de malha quadrada                              Estabilidade
+      ASTM          Abertura (mm)        Tolerância (%)            Marshall (kgf)        DNIT 446 – ME           ≥ 500
+       1 ½”              38,1                   -                     (75 golpes)
+        1”               25,4                  ±7                         CDI
+                                                                                          DNIT 426 – IE
+        ¾”               19,1                  ±7                         TDI
+                                                                                                               Conforme
+        ½”               12,7                  ±7                     Módulo de
+                                                                                         DNIT 135 – ME          definido
+                                                                       resiliência
+        ⅜”               9,5                   ±7                                                                 em
+                                                                  Parâmetros de                                 projeto
+        ¼”               6,3                   ±7                                        DNIT 183 – ME
+                                                                         fadiga
+       Nº 4              4,8                   ±5
+                                                               Flow Number (FN)          DNIT 184 – ME
+       Nº 8              2,36                  ±5
+      Nº 16              1,18                  ±5                Tabela 5 – Requisitos para Vazios do Agregado
+      Nº 30              0,60                  ±5                                Mineral - VAM
+      Nº 50              0,30                  ±4                                      VAM mínimo
+     Nº 100              0,150                 ±3                       TNM                  Volume de vazios (%)¹
+     N° 200              0,075                 ±2               ASTM          mm           3,0           4,0       5,0
+                                                                  1”          25,0         11            12         13
+Os limites da faixa de trabalho são obtidos a partir dos
+                                                                 3/4”         19,0         12            13         14
+percentuais passantes     em cada peneira da curva               1/2”         12,5         13            14         15
+granulométrica do projeto de dosagem, somando e                   3/8”        9,5          14           15          16
+subtraindo os respectivos valores da tolerância individual.    ¹Para percentuais de vazios não inteiros, entre 3,0 % e 5,0
+                                                               %, os valores de VAM devem ser interpolados.
+A faixa de trabalho não deve extrapolar os valores da
+faixa granulométrica escolhida, conforme a Tabela 1.
+NORMA DNIT 031/2024 – ES                                                                                                9
+
+
+5.3     Equipamentos                                           distribuidor ou fornecedor.
+
+
+Os equipamentos necessários à execução dos serviços            A capacidade total dos tanques deve ser suficiente para,
+devem ser adequados aos locais de instalação das obras,        no mínimo, três dias de operação.
+atendendo       às   especificações   descritas    em   seus
+respectivos itens dessa norma.                                 5.3.2     Depósito para agregados
+
+
+Todo equipamento a ser utilizado deve ser vistoriado pela      Os agregados devem ser estocados em locais limpos,
+
+fiscalização antes do início da execução do serviço, de        drenados, cobertos e próximos aos silos de agregados da
+
+modo a garantir condições apropriadas de operação.             usina. Devem estar identificados e dispostos de maneira
+
+Sem essa vistoria, não será autorizada a sua utilização.       que não haja mistura entre diferentes tipos de agregados,
+                                                               preservando a sua homogeneidade e granulometria e
+Devem     ser    utilizados,   no   mínimo,   os   seguintes   evitando a contaminação por agentes externos.
+equipamentos:
+                                                               Se for constatada contaminação em qualquer pilha de
+5.3.1    Tanque para CAP                                       agregados, esta deve ser imediatamente removida da
+                                                               área de estoque e os trabalhos na usina devem ser
+Os tanques devem possuir dispositivos capazes de               paralisados até que o problema seja sanado.
+aquecer e manter o CAP nas temperaturas indicadas pelo
+fornecedor e determinadas conforme a subseção 5.4.3.           5.3.3     Silos frios para agregados
+O aquecimento deve ser feito por meio de serpentinas
+com óleo térmico ou resistências elétricas, evitando           Os silos devem ter capacidade total de, no mínimo, três
+
+qualquer superaquecimento localizado. Tubulações e             vezes a capacidade do misturador. Devem ser colocados
+
+acessórios devem ter diâmetro mínimo de 75 mm e                em locais drenados, preferencialmente          cobertos e
+
+devem ser dotados de isolamento térmico, a fim de evitar       dispostos de modo a separar e estocar, adequadamente,
+
+perdas de calor.                                               cada fração de agregado. Cada compartimento deve
+                                                               possuir dispositivos de descarga e recarga apropriados,
+Devem possuir um sistema de recirculação para o CAP,           para permitir dosagem adequada da quantidade de
+que proporcione uma circulação contínua, para garantir a       materiais.
+homogeneidade do CAP (caso seja utilizado um aditivo
+melhorador de adesividade) e da temperatura no interior        O número de silos frios deve ser igual ao número de
+
+do tanque. Recomenda-se o uso de tanques cilíndricos           frações de agregados disponíveis, sendo exigido, no
+
+verticais de fundo cônico, com recirculação da base para       mínimo,      três   frações   de   agregado.   Quando   for
+
+o topo. Para tanques não verticais, a recirculação deve        empregado material de enchimento, deve haver um silo
+
+ser feita do ponto de saída para o misturador até o ponto      adicional específico para esse material, conjugado com
+
+mais distante dentro do tanque. Caso os depósitos não          dispositivos que permitam sua dosagem e incorporação
+
+possuam sistema de recirculação, devem ser utilizados          ao concreto asfáltico, no local apropriado e sem perdas.
+
+agitadores mecânicos.
+                                                               Os silos frios devem possuir sensor de umidade para
+
+O CAP armazenado deverá ser aquecido por um período            determinar a umidade interna e para garantir que o CAP
+
+mínimo de 24 horas antes da sua utilização, na                 será dosado em função do peso seco dos agregados.
+
+temperatura máxima de mistura, definida conforme a
+                                                               5.3.4     Usina para concreto asfáltico
+subseção 5.4.3, devendo iniciar a recirculação e/ou
+agitação nas últimas 2 horas que antecedem a sua
+                                                               Para produção do concreto asfáltico, recomenda-se a
+utilização.   Para períodos     de armazenamento sem
+                                                               utilização de usinas do tipo gravimétrica. Admite-se o uso
+produção de concreto asfáltico superiores a 24 horas, o
+                                                               de usinas do tipo volumétricas, desde que atendam aos
+CAP deverá ser estocado conforme orientação do
+                                                               requisitos constantes na subseção 5.3.4.2.
+NORMA DNIT 031/2024 – ES                                                                                                 10
+
+
+A usina deve ser capaz de produzir misturas uniformes,            pronta, para determinação de umidade, que deve ser
+sem segregações e na temperatura adequada. Antes do               igual ou inferior a 0,3 %.
+início da produção, a usina deve ser totalmente revisada
+e aferida em todos os seus aspectos.                              A usina deve ser provida de um alimentador de material
+                                                                  de enchimento, com controle por massa, e um filtro
+5.3.4.1 Usina gravimétrica                                        coletor de pó. A cal hidratada, quando utilizada, deve ser
+                                                                  adicionada aos agregados no misturador, na zona de
+Para usinas gravimétricas, os silos da subseção 5.3.3             mistura seca. O sistema de coleta do pó deve ser
+devem ser equipados com pesagem estática em cada silo             comprovadamente eficiente, a fim de minimizar os
+e cobertura para minimizar o ganho de umidade.                    impactos ambientais. O material fino coletado deve ser
+                                                                  devolvido, no todo ou em parte, ao misturador.
+O CAP deve ser armazenado em um tanque externo,
+preferencialmente,   com     eixo   na      direção   vertical,   Termômetros com proteção metálica, com escala de
+localizado próximo ao misturador. As balanças para                90 °C a 210 °C e precisão de ±1 °C, devem ser
+pesagem de agregados, material de enchimento e CAP                adequadamente instalados nos silos quentes, no dosador
+devem ter precisão de 0,5 % a 1,0 %, aferidas com pesos.          ou na linha de alimentação de CAP (próximo à descarga
+                                                                  do misturador) e na mistura final. Além disso, a usina
+O CAP deve ser injetado na usina por uma bomba
+                                                                  deve ser equipada com um pirômetro elétrico, ou outros
+instalada próxima à saída de injeção, no máximo a dois
+                                                                  instrumentos termométricos adequados, colocados na
+metros de distância do misturador. A linha de tubulação
+                                                                  descarga do secador, com dispositivos para registrar a
+que conecta o reservatório de CAP à bomba deve ser
+                                                                  temperatura dos agregados, com precisão de ±5 °C. A
+equipada com proteção térmica. Deve-se instalar uma
+                                                                  temperatura deve ser controlada automaticamente.
+tubulação de retorno entre a saída de injeção no
+misturador e o tanque visando à limpeza da tubulação              O   sistema    de   controle   de   dosagem    deve   ser
+entre a bomba e a saída de injeção. Recomenda-se que              automatizado e sincronizado entre os diferentes tipos de
+seja realizada a circulação de CAP aquecido pela                  agregados e o CAP, com pesagem individual dos silos e
+tubulação de retorno, por pelo menos 15 minutos, antes            do dosador de massa do CAP. O controle de nível mínimo
+do início das atividades diárias de produção de concreto          de cada silo e o processo de controle do fluxo de mistura
+asfáltico.                                                        e descarga (batelada), também devem ser automáticos
+                                                                  ou semiautomáticos, com controle, leitura e registro dos
+O tambor secador deve ser do tipo contrafluxo de duas
+                                                                  pesos, temperaturas, tempos e cargas, sendo indicados
+zonas (convecção e radiação), e ter configuração e
+                                                                  em tempo real em display, computador e/ou interface
+dimensionamento compatíveis. Após o secador, deve
+                                                                  homem máquina (IHM).
+existir uma unidade classificadora de agregados, para a
+distribuição   do material   aos    silos    quentes.    Para     A usina deve possuir uma cabine de comando equipada
+agregados com absorção entre 2,0 % e 3,0 %, deve-se               com dispositivos operacionais que permitam controlar e
+retirar amostras dos agregados, após a secagem e antes            registrar todas as etapas do processo de usinagem. A
+da descarga no misturador, para determinação de                   cabine e os quadros de força devem estar instalados de
+umidade, que deve ser igual ou inferior a 0,3 %.                  forma apropriada e com as proteções necessárias.
+
+O misturador deve ser do tipo pug-mill, com duplo eixo            5.3.4.2 Usina volumétrica (contínua)
+conjugado, provido de palhetas reversíveis, ajustáveis e
+removíveis, devendo possuir dispositivos de descarga de           Para usinas volumétricas, os silos da subseção 5.3.3
+fundo ajustável, controlador do ciclo completo da mistura         devem ser equipados com pesagem dinâmica em cada
+e ser capaz de produzir uma mistura uniforme. Em caso             silo, de modo a permitir a imediata e automática correção
+de agregados com absorção entre 2,0 % e 3,0 %, deve-              da dosagem dos materiais, a partir da variação de
+se observar o Anexo C e coletar amostras da mistura               qualquer deles, inclusive do CAP. Os silos devem
+NORMA DNIT 031/2024 – ES                                                                                                 11
+
+
+também ser equipados com cobertura para evitar o                 completo da mistura e ser capaz de produzir uma mistura
+aumento de umidade.                                              uniforme. Deverá ocorrer, obrigatoriamente a limpeza
+                                                                 diária do tambor misturador. Em caso de agregados com
+O CAP deve ser armazenado em um tanque externo,                  absorção entre 2,0 % e 3,0 %, deve-se observar o Anexo
+preferencialmente,    com   eixo    na    direção    vertical,   C   e   coletar   amostras   da   mistura   pronta,    para
+localizado     próximo ao misturador. A pesagem            de    determinação de umidade, que deve ser igual ou inferior
+agregados, material de enchimento e CAP deve ter                 a 0,3 %.
+precisão de 0,5 % a 1,0 %, sendo aferidas com pesos.
+                                                                 A usina deve ser provida de um alimentador de material
+Durante o carregamento, não é permitido que os                   de enchimento, com controle por massa, e um filtro
+agregados de granulometrias diferentes se misturem,              coletor de pó. A cal hidratada, quando utilizada, deve ser
+assegurando-se a homogeneidade dos mesmos.                       adicionada aos agregados no misturador, na zona de
+                                                                 mistura seca. O sistema de coleta do pó deve ser
+O CAP deve ser injetado na usina por uma bomba
+                                                                 comprovadamente eficiente, a fim de minimizar os
+instalada próxima à saída de injeção, no máximo a dois
+                                                                 impactos ambientais. O material fino coletado deve ser
+metros de distância do misturador. A linha de tubulação
+                                                                 devolvido, no todo ou em parte, ao misturador.
+que conecta o reservatório à bomba deve ser equipada
+com proteção térmica. Deve-se instalar uma tubulação de          Termômetros com proteção metálica, com escala de
+retorno entre a saída de injeção no misturador e o tanque,       90 °C a 210 °C e precisão de ±1 °C, devem ser
+visando à limpeza da tubulação entre a bomba e a saída           adequadamente instalados na linha de alimentação de
+de injeção.      Recomenda-se      que seja   realizada     a    CAP (próximo à descarga do misturador) e na mistura
+circulação de CAP aquecido pela tubulação de retorno,            final. Além disso, a usina deve ser equipada com um
+por pelo menos 15 minutos, antes do início das atividades        pirômetro elétrico ou outros instrumentos termométricos
+diárias de produção de concreto asfáltico.                       adequados, colocados no misturador, com dispositivos
+                                                                 para registrar a temperatura do concreto asfáltico, com
+A operação de adição do CAP deve ser realizada com
+                                                                 precisão de ±5 °C. A temperatura deve ser controlada
+controle de velocidade da bomba e um medidor de vazão
+                                                                 automaticamente.
+mássico (que afere massa por unidade de tempo). Deve
+existir   um sistema de compensação das massas                   O sistema de transporte da mistura asfáltica, do
+específicas,    capaz de ajustar     as velocidades       dos    misturador até o silo de massa deve ser composto de
+alimentadores de CAP e agregados, para garantir que o            elevador de arraste (tipo redler) a fim de levar a mistura
+teor de CAP e a composição granulométrica previstos              (isolada do ambiente externo).
+sejam atingidos ao final de cada batelada.
+                                                                 O silo de armazenamento deve estar posicionado a uma
+O tambor secador deve ser do tipo contrafluxo de duas            altura que permita a manobra de caminhões sob o
+zonas (convecção e radiação), com configuração e                 mesmo e deve armazenar a mistura por período mínimo
+dimensionamento compatíveis. A descarga do secador               para a realização da referida manobra. O silo deve
+deve ser feita diretamente no misturador. Para agregados         apresentar possibilidade     de controle do tempo de
+com absorção entre 2,0 % e 3,0 %, deve-se retirar                abertura, evitando assim segregação da mistura por
+amostras dos agregados, após a secagem e antes da                tempo      demasiadamente    elevado   de   abertura    da
+descarga no misturador, para determinação de umidade,            comporta. Além do acionamento automático o silo deve
+que deve ser igual ou inferior a 0,3 %.                          apresentar possibilidade de abertura em manual.
+
+O misturador deve ser externo, do tipo pug-mill, com             É desejável a utilização de silo de armazenamento maior,
+duplo eixo conjugado, provido de palhetas reversíveis,           com capacidade para armazenar a produção de 30
+ajustáveis e removíveis, devendo possuir dispositivos de         minutos da usina operando em sua capacidade mínima.
+descarga de fundo ajustável, controlador            do ciclo     Tais silos devem ter sistema de aquecimento para
+NORMA DNIT 031/2024 – ES                                                                                               12
+
+
+permitir o armazenamento da mistura por até 24 horas.            conservação rodoviária, de forma a manter a temperatura
+Esse sistema de aquecimento pode ser por meio de óleo            da massa asfáltica constante.
+térmico ou resistências elétricas.
+                                                                 5.3.6   Equipamento         para     espalhamento      e
+O   sistema       de   controle   de   dosagem    deve    ser            acabamento
+automatizado e sincronizado entre os diferentes tipos de
+agregados e o CAP, com pesagem individual dos silos,             O espalhamento e acabamento devem ser realizados
+
+leitura e registro de pesos, temperaturas, tempos e              com pavimentadora automotriz (vibroacabadora) sobre
+
+cargas, sendo indicados em tempo real em display,                esteira, capaz de espalhar e conformar o concreto
+
+computador e/ou interface homem máquina (IHM). O                 asfáltico no alinhamento, cotas e abaulamento definidos
+
+controle do nível mínimo de cada silo e o processo de            em projeto.
+
+controle do fluxo de mistura e descarga (batelada)
+                                                                 As vibroacabadoras devem ser equipadas com parafusos
+também devem ser automáticos ou semiautomáticos.
+                                                                 sem fim ao longo de toda a largura da mesa (incluindo os
+
+A usina deve possuir uma cabine de comando equipada              prolongamentos), a fim de espalhar o concreto asfáltico
+
+com dispositivos operacionais que permitam controlar e           sem segregação. Quando for utilizado o prolongamento
+
+registrar todas as etapas do processo de usinagem. A             da mesa, devem ser instaladas extensões das roscas
+
+cabine e os quadros de força devem estar instalados de           sem fim, para que o término da rosca fique posicionado
+
+forma apropriada e com as proteções necessárias.                 aproximadamente 20,0 cm antes da lateral da mesa
+                                                                 deslizante, de forma a evitar segregação.
+5.3.5    Caminhões para transporte do concreto
+         asfáltico                                               Devem possuir dispositivos rápidos e eficientes de
+                                                                 direção, além de marchas para a frente e para trás.
+Os caminhões para o transporte do concreto asfáltico
+                                                                 Devem ser equipadas, preferencialmente, com sistema
+devem ser do tipo basculantes e ter caçambas metálicas
+                                                                 de controle de nivelamento eletrônico nos dois lados da
+robustas, limpas e lisas, ligeiramente lubrificadas com
+                                                                 mesa, para garantir o nivelamento adequado e colocar o
+água e sabão, óleo cru fino, óleo parafínico ou solução de
+                                                                 concreto asfáltico exatamente nas faixas da via.
+cal hidratada (3:1), de modo a evitar a aderência do
+concreto asfáltico à caçamba. Não é permitida a                  Devem possuir        um sistema     de pré-compactação,
+utilização de produtos capazes de dissolver o CAP, tais          preferencialmente,    eletrônico   com mesa vibratória,
+como óleo diesel, gasolina, etc.                                 vibradores excêntricos, tamper, alisadores e dispositivos
+                                                                 para aquecimento da mesa à temperatura requerida,
+Recomenda-se que as caçambas possuam um furo na
+                                                                 para evitar que o concreto asfáltico fique aderido
+lateral (Ø 6,3 mm), para facilitar e agilizar a verificação da
+                                                                 prejudicando o acabamento.
+temperatura da massa.
+
+As caçambas dos veículos devem ser cobertas com lona             5.3.7   Equipamento para compactação
+
+impermeável, com tamanho suficiente para sobrepassar
+                                                                 A compactação do concreto asfáltico deve ser efetuada
+a caçamba nas laterais e na traseira. A lona deve estar
+                                                                 por rolos autopropelidos pneumáticos e metálicos lisos do
+bem fixada na dianteira para impedir a entrada de ar,
+                                                                 tipo duplo tandem estático ou vibratório, não sendo
+água ou poeira entre a cobertura e o concreto asfáltico,
+                                                                 permitida a utilização de rolos mistos em serviços de
+protegendo a mistura de contaminação e evitando a
+                                                                 implantação e restauração. Os rolos utilizados devem ser
+perda de temperatura ou a queda de partículas durante
+                                                                 específicos para a compactação de misturas asfálticas.
+todo o trajeto.
+                                                                 Não é permitida a utilização de rolos compactadores de
+                                                                 solos adaptados.
+Recomenda-se a utilização de caminhão com caçamba
+térmica ou lonas térmicas para o transporte da mistura
+                                                                 Os rolos pneumáticos devem possuir um peso mínimo de
+em serviços descontínuos, especialmente em obras de
+                                                                 3 toneladas por roda (contando com o lastro) e devem ser
+NORMA DNIT 031/2024 – ES                                                                                             13
+
+
+dotados de dispositivos que permitam a calibragem             a)   Se a mistura produzida na usina apresenta as
+uniforme da pressão dos pneus entre 2,5 kgf/cm² e 8,4              características indicadas no projeto, conforme a
+kgf/cm² (35 psi a 120 psi) e um dispositivo para monitorar         subseção 7.2.
+e manter constante a pressão de ar de todos os pneus.
+Os pneus devem estar em perfeito estado, ter a mesma          b)   Se os equipamentos a serem utilizados estão em
+
+altura e estar alinhados, para que não deixem marcas na            condições de uso e quantidade adequadas para a
+
+pista.                                                             execução do serviço.
+
+
+Os rolos devem possuir sistema de aspersão para               c)   Definir o processo construtivo (tempo de espera
+
+aplicação de antiaderente. Nos rolos pneumáticos, deve             necessário para aplicação da massa, temperatura de
+
+haver, no mínimo, um bico espargidor por pneu; nos rolos           início da compactação, velocidade de distribuição da
+
+metálicos, deve haver um sistema para cada cilindro. A             mistura, número de passadas dos rolos, tipos de
+
+adição do antiaderente tem que ser suficiente para                 equipamentos de compactação, etc.) de modo a se
+
+manter os pneus ou cilindros úmidos, porém, sem                    obter uma camada íntegra e que atenda aos
+
+escorrimentos. Devem ser adequadamente instalados                  requisitos desta Norma, conforme a subseção 7.3.
+
+raspadores para realizar a limpeza individual dos pneus
+                                                              d)   Se as condições de segurança          indicadas   na
+ou cilindros.
+                                                                   subseção 7.3.6 foram atendidas.
+
+Os equipamentos de compactação a serem utilizados
+                                                              O segmento experimental deve ser dimensionado em
+devem ser       aferidos em segmentos experimentais,
+                                                              função da capacidade de produção da usina, com
+conforme a subseção          5.4.1, antes   de obras de
+                                                              extensão mínima de 200 m, e deve ser executado em
+implantação e restauração, para definir o número de
+                                                              conformidade com as subseções 5.4.2 até 5.4.10. Deve
+coberturas, a pressão dos pneus, a frequência e a
+                                                              também integrar o projeto de engenharia, e sua execução
+amplitude de vibração, a velocidade, entre outros.
+                                                              deve ser acompanhada por técnicos da empresa
+
+Os equipamentos em operação devem ser adequados               contratada e pela fiscalização do DNIT.
+
+para compactar o concreto asfáltico, de forma a atingir o
+                                                              Havendo rejeição da mistura, dos equipamentos ou do
+grau de compactação especificado, enquanto a mistura
+                                                              processo construtivo, os ajustes necessários devem ser
+se encontrar em condições de trabalhabilidade.
+                                                              realizados, e o segmento deve ser refeito, em um
+
+5.3.8     Equipamentos complementares                         processo iterativo, às custas da empresa executante, até
+                                                              que os parâmetros em análise estejam adequados.
+Para auxiliar o espalhamento e a compactação, devem
+ser utilizados os equipamentos seguintes:                     Quando as verificações e controles realizados no trecho
+                                                              experimental comprovarem o atendimento a esta Norma
+a)    Placas vibratórias, para a compactação de áreas         e ao projeto, a fiscalização do DNIT deve emitir um
+      inacessíveis aos equipamentos convencionais;            relatório de aceitação do segmento experimental, com a
+                                                              descrição do processo construtivo e outras observações
+b)    Pás, rastelos metálicos (ancinhos) e rodos metálicos,   pertinentes, para autorizar a continuação dos serviços.
+      para operações eventuais.
+                                                              Após a referida aceitação, o segmento experimental fará
+5.4      Execução                                             parte da obra, e os procedimentos adotados deverão ser
+                                                              replicados na execução do serviço restante da respectiva
+5.4.1     Segmento experimental
+                                                              camada da obra.
+
+O trecho inicial da camada de concreto asfáltico deverá
+                                                              5.4.2    Preparo da Superfície
+ser utilizado como segmento experimental para realizar
+as seguintes verificações:                                    A superfície que receberá a camada de concreto asfáltico
+NORMA DNIT 031/2024 – ES                                                                                                       14
+
+
+deve estar seca e limpa, isenta de pó ou outros materiais     temperatura-viscosidade,          obtida   com o ensaio          de
+soltos e substâncias prejudiciais. Eventuais defeitos         viscosidade realizado com o viscosímetro Saybolt-Furol
+existentes devem ser reparados previamente à aplicação        (ABNT NBR 14950) ou com o viscosímetro rotacional
+do concreto asfáltico.                                        (ABNT NBR 15184).
+
+
+5.4.3         Imprimação e pintura de ligação                 Quando    utilizado    o       viscosímetro     Saybolt-Furol,   a
+                                                              temperatura do CAP para a produção do concreto
+A imprimação e/ou pintura de ligação, conforme o caso,        asfáltico (temperatura de mistura) é aquela na qual a sua
+deverão ser realizadas de acordo com as normas DNIT           viscosidade se situe dentro da faixa de 75 SSF a 95 SSF.
+144 – ES, para imprimação, e DNIT 145 – ES ou DNER            A temperatura do CAP para a execução do concreto
+– ES 395/99 (ou norma do DNIT que venha a substituí-          asfáltico (temperatura de compactação) é aquela na qual
+la),    para     pintura   com emulsão    convencional   ou   a sua viscosidade se situe na faixa de 125 SSF a 155
+modificada, respectivamente.                                  SSF.
+
+A pintura de ligação e a imprimação devem ser aplicadas,      Quando     utilizado       o     viscosímetro     rotacional,    a
+obrigatoriamente, com a barra espargidora, respeitando        temperatura de mistura do CAP é aquela na qual a sua
+a      taxa    de   aplicação   determinada   no   segmento   viscosidade se situe dentro da faixa de 0,15 Pa.s a 0,19
+experimental (subseção 5.4.1). Somente para correções         Pa.s. A temperatura de compactação do CAP é aquela
+localizadas ou no caso de aplicações em locais de difícil     na qual sua viscosidade se situe dentro da faixa de 0,25
+acesso pode ser utilizada a caneta. Deve-se evitar a          Pa.s a 0,31 Pa.s.
+sobreposição de aplicações na execução de faixas
+contíguas transversais e longitudinais.                       A temperatura do CAP durante a produção e a execução
+                                                              da mistura asfáltica não deve ser inferior a 107 °C, nem
+A pintura e a imprimação devem formar uma película            superior a 177 °C.
+homogênea e ter condições adequadas de aderência
+para a execução do concreto asfáltico. Caso não ocorra        5.4.5    Aquecimento dos agregados
+uma condição satisfatória de aderência, uma nova
+pintura de ligação deverá ser aplicada previamente à          Para a mistura, os agregados devem ser aquecidos de
+
+distribuição do concreto asfáltico.                           10 °C a 15 °C acima da temperatura do CAP.
+
+
+Deve-se executar uma pintura de ligação sobre a camada        5.4.6    Produção do concreto asfáltico
+
+já imprimada ou pintada, antes da execução da camada
+                                                              A produção do concreto asfáltico deve ser efetuada em
+de revestimento, caso ocorra uma ou mais das seguintes
+                                                              usinas apropriadas, conforme descrito na subseção
+situações: se decorridos mais de sete dias entre a
+                                                              5.3.4. A usina não deve apresentar deficiência no
+imprimação e a execução do revestimento; caso tenha
+                                                              processo de mistura dos materiais ou variações bruscas
+havido trânsito sobre a superfície previamente imprimada
+                                                              de temperatura, o que indicaria falta de controle de
+ou pintada; ou se a camada tiver sido recoberta com
+                                                              alimentação ou secador desregulado.
+areia, pó de pedra, etc.
+
+                                                              Previamente à colocação dos agregados nos silos frios,
+O tráfego de caminhões para início do lançamento do
+                                                              esses devem ser homogeneizados com pá-carregadeira.
+concreto asfáltico sobre a imprimação ou sobre a pintura
+                                                              As aberturas dos silos frios devem ser ajustadas de
+de ligação só é permitido após a cura do asfalto diluído
+                                                              acordo com a granulometria do projeto da mistura e dos
+ou a ruptura da emulsão asfáltica aplicada.
+                                                              agregados para evitar sobras.
+
+5.4.4         Aquecimento do CAP
+                                                              A temperatura de usinagem do concreto asfáltico deve
+
+As temperaturas do CAP empregado no concreto                  ser definida obedecendo o intervalo de viscosidade
+
+asfáltico devem ser determinadas em função da relação         descrito na subseção 5.4.3. Recomenda-se que, no
+NORMA DNIT 031/2024 – ES                                                                                              15
+
+
+referido intervalo, a temperatura de usinagem seja a mais     a acabadora deve ser removida da pista e deve-se dar
+elevada possível, visando a otimizar a homogeneização         um novo início à distribuição após a chegada do
+da massa produzida.                                           caminhão.
+
+
+A produção na usina só deve iniciar quando todos os           Antes do início dos trabalhos, a mesa alisadora da
+equipamentos necessários para transporte, distribuição e      acabadora deve ser aquecida, no mínimo, até o limite
+compactação estiverem em condições de uso, para evitar        inferior da faixa de temperaturas de compactação
+atrasos na aplicação da mistura na pista.                     definida na subseção 5.4.3. O sistema de aquecimento
+                                                              destina-se exclusivamente ao aquecimento da mesa
+5.4.7    Transporte do concreto asfáltico                     alisadora, não sendo permitido o reaquecimento da
+                                                              massa asfáltica que eventualmente tenha esfriado.
+O concreto asfáltico produzido deve ser transportado da
+usina ao local de aplicação em caminhões basculantes,         Na partida da acabadora, devem ser colocadas de duas
+conforme especificado em 5.3.5. O carregamento deve           a três réguas para apoiar a mesa, com altura igual à
+ser feito primeiro na parte dianteira, em seguida na parte    espessura da camada mais o empolamento previsto.
+traseira e, por último, no meio da caçamba. O
+                                                              A descarga do material da vibroacabadora deve ser
+carregamento deve ser realizado de forma a evitar a
+                                                              contínua,    mantendo-se      sempre    o     reservatório
+segregação do concreto asfáltico dentro da caçamba.
+                                                              parcialmente cheio. O caminhão deve ser empurrado
+
+O tempo máximo de permanência do concreto asfáltico           pela acabadora, não sendo permitidos choques ou
+
+no caminhão, até o espalhamento na pista, é aquele que        travamento    dos   pneus     durante   a   operação.   A
+
+garanta que a temperatura de aplicação da massa               vibroacabadora deve ser abastecida exclusivamente com
+
+asfáltica não será inferior ao limite mínimo estabelecido     o material da caçamba, não sendo permitido, entre as
+
+conforme a subseção 5.4.3. Para agregados com                 recargas, bascular o material retido nas abas. Esse
+
+absorção entre 2,0 % e 3,0 %, deve ser observado o            material deve ser retirado e descartado após o final de
+
+Anexo C.                                                      cada turno de serviço.
+
+
+NOTA 3: Sugere-se o uso de um alimentador de mistura          O concreto asfáltico distribuído deve apresentar textura
+
+           asfáltica (shuttle buggy) entre o caminhão e a     uniforme, sem pontos segregados. Caso se observe,
+
+           pavimentadora. O equipamento possui um             durante o espalhamento, irregularidades na superfície da
+
+           sistema     aquecido       com    distribuidores   camada, como segregações, ondulações transversais,
+
+           helicoidais, sendo responsável pela mistura        marcas longitudinais     ou outros resultados     de má
+
+           contínua no material, evitando a segregação.       operação da vibroacabadora,        o serviço deve ser
+                                                              paralisado até a correção desses pontos e a verificação
+NOTA 4: Durante a usinagem, o CAP não deve ser                da máquina. As correções devem ser realizadas antes do
+           aquecido além do limite superior, determinado      início da compactação, pela adição manual de concreto
+           conforme a subseção 5.4.3, para compensar a        asfáltico, com espalhamento efetuado por meio de
+           distância de transporte.                           ancinhos e rodos metálicos.
+
+5.4.8    Distribuição do concreto asfáltico                   As correções no espalhamento do concreto asfáltico
+                                                              devem ser minimizadas, pois o excesso de reparos
+A distribuição do concreto asfáltico deve ser feita por
+                                                              manuais compromete a qualidade do serviço. Caso as
+equipamentos adequados, conforme especificado na
+                                                              irregularidades observadas sejam muito frequentes, a
+subseção 5.3.6. A velocidade da acabadora deve ser
+                                                              acabadora deve ser ajustada ou substituída.
+selecionada em função da capacidade de produção da
+usina,   de maneira que esteja         continuamente   em     5.4.9   Compactação
+movimento, sem paralisações para esperar caminhões.
+Se a distribuição for interrompida por mais de 15 minutos,    A rolagem deve ser iniciada imediatamente após a
+NORMA DNIT 031/2024 – ES                                                                                                     16
+
+
+distribuição do concreto asfáltico. A faixa de temperaturas         5.4.10    Juntas
+para a rolagem deve ser definida obedecendo o intervalo
+de viscosidade descrito na subseção 5.4.3. Recomenda-               As juntas     transversais    e longitudinais    devem ser
+
+se que, no referido intervalo, a temperatura de rolagem             executadas de forma a assegurar condições adequadas
+
+seja   a     mais    elevada   possível,    para     otimizar   a   de acabamento, de modo que não haja irregularidades
+
+densificação da massa aplicada.                                     nas emendas.
+
+
+A compactação deve ser iniciada, preferencialmente,                 Em rodovias de pista dupla, é recomendado o uso de
+
+com uma passada do rolo duplo tandem (estático ou                   duas vibroacabadoras, para que os revestimentos das
+
+vibratório), para acomodar a mistura aplicada e evitar a            pistas adjacentes sejam executados simultaneamente,
+
+formação de marcas com a passagem do rolo de pneus.                 tanto nas faixas da pista quanto nos acostamentos.
+
+Em seguida, inicia-se a compactação com os rolos
+                                                                    Em rodovias em operação, devem ser evitados degraus
+pneumáticos, com pressão constante. Ao concluir a
+                                                                    longitudinais muito extensos, sendo permitido no máximo
+compactação com o rolo de pneus, finaliza-se com a
+                                                                    o equivalente a uma jornada de trabalho. Na jornada de
+compactação com o rolo duplo tandem (estático ou
+                                                                    trabalho seguinte, a aplicação do concreto asfáltico deve
+vibratório), para fazer o acabamento do revestimento
+                                                                    começar no início do degrau remanescente da jornada de
+asfáltico.
+                                                                    trabalho anterior.
+
+A determinação do tipo de rolo metálico para iniciar e
+                                                                    No reinício dos trabalhos, a compactação da emenda
+finalizar a compactação, da sequência e dos tipos de
+                                                                    transversal deve ser realizada com o rolo na direção
+rolos, bem como a pressão necessária dos pneus do rolo
+                                                                    perpendicular ao eixo da via, posicionando um terço do
+pneumático, deve ser feita no trecho experimental,
+                                                                    rolo sobre o pano já compactado e os outros dois terços
+conforme a subseção 5.4.1.
+                                                                    sobre a massa recém-aplicada. A emenda transversal
+
+A compactação deve ser realizada na direção longitudinal            deve ser sempre reta.
+
+da pista, iniciando pelas bordas e continuando em
+                                                                    5.4.11    Abertura ao tráfego
+direção ao eixo da pista. Nos trechos de curva, de acordo
+com a superelevação, a compactação deve começar
+                                                                    Os revestimentos recém-acabados devem ser mantidos
+sempre do ponto mais baixo para o ponto mais alto. Cada
+                                                                    sem tráfego até que a temperatura da mistura, medida
+passada do rolo deve ser recoberta pela seguinte, em
+                                                                    com um termômetro a laser, esteja abaixo da temperatura
+pelo menos, metade da largura rolada. Em qualquer
+                                                                    do ponto de amolecimento do CAP.
+caso, a operação de rolagem deve perdurar até o
+momento em que seja atingido o grau de compactação                  6        Condicionantes ambientais
+especificado.
+                                                                    Devem ser observadas e adotadas as soluções e os
+Os pneus dos rolos pneumáticos ou os cilindros metálicos            procedimentos        relacionados   ao    tema    ambiental,
+dos rolos lisos devem ser mantidos umedecidos, a fim de             especificados      nas    normas    vigentes      do   DNIT,
+evitar a aderência ao concreto asfáltico, conforme                  especialmente a norma DNIT 070 – PRO, e também na
+descrito     na     subseção   5.3.7.      Deve-se     evitar   o   documentação técnica vinculada à execução das obras.
+umedecimento excessivo para não causar o resfriamento               Essa     documentação        compreende    o     Componente
+da mistura.                                                         Ambiental do Projeto de Engenharia, os estudos, os
+                                                                    planos e as recomendações e exigências dos órgãos
+Durante a rolagem, não são permitidas mudanças de
+                                                                    ambientais.
+direção,     inversões    bruscas    da     marcha,     nem     o
+estacionamento do equipamento sobre o revestimento                  Para execução do concreto asfáltico são necessários
+recém-rolado.                                                       trabalhos envolvendo a utilização de CAP e agregados,
+                                                                    além da instalação de usina misturadora. Os cuidados
+NORMA DNIT 031/2024 – ES                                                                                                17
+
+
+observados para fins de preservação do meio ambiente         h)    Seguir as recomendações constantes da Norma
+abrangem a produção, a estocagem e a aplicação de                  DNIT 105 – ES para os caminhos de serviço.
+agregados, a estocagem e a aplicação de CAP, assim
+como a operação da usina. Os procedimentos de controle       6.2     Cimento asfáltico
+
+ambiental referem-se à proteção de corpos d’água, da
+                                                             Os tanques de CAP devem ser instalados em locais
+vegetação lindeira e da segurança viária.
+                                                             afastados de cursos d’água e sem restrições ambientais.
+
+6.1     Agregados
+                                                             É vedado o descarte de refugos dos materiais usados na
+
+No decorrer do processo de obtenção de agregados de          faixa de domínio e em áreas onde possam causar
+
+pedreiras e areais, devem ser considerados os seguintes      prejuízos ambientais.
+
+cuidados principais:
+                                                             6.3     Procedimentos em usina
+a)    A exploração da pedreira e do areal deve ser
+      planejada adequadamente, de modo a minimizar os        As operações em usinas a quente englobam:
+      impactos decorrentes da exploração, possibilitando
+      a recuperação ambiental da área após o término das     a)    Transporte, estocagem, peneiramento e dosagem
+
+      atividades exploratórias.                                    de agregados (frios e quentes) e material de
+                                                                   enchimento.
+b)    Somente é permitida a exploração de pedreira/areal
+      ou a implantação de instalações de britagem em         b)    Transporte, estocagem e aquecimento de óleo
+      áreas que possuam licença ambiental aprovada.                combustível e de CAP.
+
+c)    Construir, junto às instalações de britagem, bacias    Os agentes e fontes poluidoras compreendem os itens
+      de sedimentação para retenção do pó de pedra que       indicados na Tabela 6.
+      eventualmente seja produzido        em excesso ou
+      provenientes de lavagem de brita, evitando o seu       Considera-se      como     emissões    fugitivas   quaisquer
+      carreamento para cursos d’água.                        lançamentos ao meio ambiente, sem passar primeiro por
+                                                             alguma chaminé ou duto projetado para corrigir ou
+d)    Caso seja necessário promover o corte de árvores,      controlar seu fluxo.
+      deve-se obter autorização dos órgãos ambientais
+      competentes. Os serviços devem ser executados em       Em função dos agentes da Tabela 6, devem ser
+
+      concordância com os critérios estipulados por esses    obedecidas as subseções 6.4 e 6.5.
+
+      órgãos, presentes nos documentos de autorização.
+                                                                             Tabela 6 – Fontes poluidoras
+
+e)    Em hipótese alguma será admitida a queima de                 Agente
+                                                                                          Fontes poluidoras
+                                                                  poluidor
+      vegetação.
+                                                                                A principal fonte é o secador rotativo.
+                                                                                Outras fontes são: peneiramento,
+f)    Caso sejam utilizadas instalações comerciais, os        I. Emissão
+                                                                                transferência e manuseio de agregados,
+                                                             de partículas
+      materiais somente serão aceitos após a empresa                            balança, pilhas de estocagem, tráfego
+                                                                                de veículos e vias de acesso.
+      executante apresentar documentação que ateste,
+                                                                                Combustão do óleo: óxido de enxofre,
+      junto   aos   órgãos   ambientais   competentes,   a                      óxido de nitrogênio, monóxido de
+      regularidade das instalações e das operações.                             carbono e hidrocarbonetos.
+                                                              II. Emissão
+                                                                                Misturador de CAP: hidrocarbonetos.
+                                                                de gases
+                                                                                Aquecimento de CAP: hidrocarbonetos.
+g)    As cópias de todos os documentos de regularização                         Tanques de estocagem de óleo
+                                                                                combustível e de CAP: hidrocarbonetos.
+      ambiental devem ser arquivadas junto ao Livro de
+                                                                                As principais fontes são pilhas de
+      Ocorrências da Obra, bem como outras licenças          III. Emissões      estocagem ao ar livre, carregamento
+      exigíveis.                                                Fugitivas       dos silos frios, vias de tráfego, áreas de
+                                                                                peneiramento, pesagem e mistura.
+NORMA DNIT 031/2024 – ES                                                                                            18
+
+
+6.4    Instalação                                            peneiras classificatórias devem ser dotadas de sistema
+                                                             de controle de poluição do ar, para evitar emissões de
+As usinas de asfalto a quente devem ser instaladas em        vapores e partículas para a atmosfera.
+locais previamente autorizados pelos órgãos ambientais
+responsáveis. As bases das chaminés das usinas não           Os silos de estocagem de concreto asfáltico devem ser
+podem ser posicionadas a uma distância inferior a 200 m      fechados. Os silos de estocagem de material de
+de    residências,   hospitais,   clínicas,   centros   de   enchimento devem possuir sistema próprio de filtragem a
+reabilitação, escolas, asilos, orfanatos, creches, clubes    seco.
+esportivos, parques de diversões e outras construções
+comunitárias.                                                As vias de acesso internas da usina devem ser mantidas
+                                                             de tal modo que as emissões provenientes do tráfego de
+No projeto executivo, devem ser definidas áreas para as      veículos não ultrapassem 20 % de opacidade. Essa
+instalações industriais, de modo a gerar o menor impacto     manutenção pode incluir diferentes métodos, como
+possível ao meio ambiente.                                   pavimentação com revestimento asfáltico, utilização de
+                                                             material britado, fresado, calçado, umedecido, entre
+É responsabilidade da empresa executante a obtenção          outros, visando garantir a conformidade e praticabilidade
+da licença de instalação/operação junto aos órgãos           do limite de opacidade estabelecido.
+ambientais competentes, assim como a manutenção das
+condições de funcionamento da usina dentro do prescrito      Devem ser adotados procedimentos operacionais que
+nesta Norma.                                                 evitem a emissão de partículas         provenientes   dos
+                                                             sistemas de limpeza dos filtros de mangas e de
+6.5    Operação                                              reciclagem do pó retido nas mangas.
+
+Devem ser instalados sistemas de controle de poluição        Os sistemas de controle de poluição do ar devem ser
+do ar, constituídos por ciclones e filtro de mangas ou por   acionados antes dos equipamentos de processo. Os
+equipamentos que atendam aos padrões estabelecidos           equipamentos de processo e de controle devem ser
+na legislação. As chaminés devem possuir instalações         mantidos em boas condições de funcionamento.
+adequadas para realização de medições.
+                                                             Recomenda-se que o óleo combustível seja substituído
+Junto com o projeto, para obtenção de licença, devem ser     por outra fonte de energia menos poluidora (gás ou
+apresentados os resultados de medições em chaminés           eletricidade) e barreiras vegetais devem ser instaladas no
+que comprovem a capacidade do equipamento de                 local, quando possível.
+controle proposto de atender aos padrões estabelecidos
+pelo órgão ambiental.                                        A área afetada pelas operações de construção/execução
+                                                             deve ser recuperada imediatamente após a remoção da
+Os silos de estocagem de agregados frios devem ser           usina, dos depósitos e da limpeza do canteiro de obras.
+dotados de proteções laterais e cobertura, para evitar
+dispersão das emissões fugitivas durante a operação de       7       Inspeções
+carregamento. A correia transportadora de agregados
+frios deve ser enclausurada.                                 7.1     Controle dos insumos
+
+
+Devem ser adotados procedimentos de forma que a              Os materiais utilizados na produção de Concreto Asfáltico
+
+alimentação do secador seja feita sem emissão visível        devem ser examinados na fase de dosagem para atender
+
+para a atmosfera. Enquanto a usina estiver em operação,      a todas as especificações apresentadas na Seção 5,
+
+deve-se manter pressão negativa no secador rotativo,         conforme as normas indicadas pelo DNIT. Caso alguma
+
+para evitar emissões de partículas na entrada e na saída.    especificação não seja atendida, o insumo em questão
+                                                             não deve ser aceito. Em campo, os insumos devem ser
+O misturador, os silos de agregados quentes e as             rotineiramente examinados no laboratório do canteiro de
+NORMA DNIT 031/2024 – ES                                                                                                 19
+
+
+obras, realizando os ensaios especificados a seguir.         d)    01 determinação de umidade              da mistura de
+                                                                   agregados a cada dia de produção (DNER – ME
+7.1.1     Cimento asfáltico                                        196/98 ou norma DNIT que venha a substituí-la),
+                                                                   com agregados coletados após a secagem.
+O controle da qualidade do CAP em obra deve ser feito
+pelos ensaios seguintes, para todo carregamento que          e)    01 ensaio de equivalente de areia do agregado
+chegar à obra:                                                     miúdo a cada semana de produção (DNIT 450 – ME).
+
+a)   01 ensaio de penetração a 25 ºC (DNIT 155 – ME).        f)    Outros ensaios de rotina, quando especificados no
+                                                                   projeto de dosagem ou no dimensionamento, na
+b)   01 ensaio de ponto de amolecimento (DNIT 131 –
+                                                                   frequência especificada.
+     ME).
+
+                                                             7.2       Controle da usinagem do concreto asfáltico
+c)   01 ensaio de ponto de fulgor (DNER – ME 148/94 ou
+     norma DNIT que venha a substituí-la).                   O controle da produção do concreto asfáltico deve ser
+                                                             acompanhado por ensaios de laboratório, que devem
+d)   01 verificação de formação de espuma, quando o
+                                                             seguir as metodologias indicadas pelo DNIT e atender
+     CAP é aquecido a 175 ºC.
+                                                             aos parâmetros especificados             nesta Norma. Caso
+                                                             alguma especificação não seja atendida, os ajustes e
+e)   01 ensaio de viscosidade com viscosímetro “Saybolt-
+                                                             ações corretivas necessários devem ser executados
+     Furol” (ABNT NBR 14950) ou viscosímetro rotacional
+                                                             imediatamente após a constatação da não conformidade.
+     (ABNT NBR 15184), a diferentes temperaturas, para
+     verificação da curva viscosidade x temperatura.
+                                                             No caso de ocorrerem situações que justifiquem mais de
+                                                             uma ação corretiva e/ou ajuste, devem-se priorizar as
+f)   01 determinação do índice de susceptibilidade
+                                                             ações mais severas. A interrupção da produção tem
+     térmica (DNIT 095 – EM).
+                                                             prioridade sobre todas as outras ações corretivas. Caso
+g)   Outros ensaios, quando indicados no projeto de          ela seja necessária, mas não tenha ocorrido, todo o
+     pavimentação, na frequência especificada.               concreto asfáltico produzido a partir daquele momento
+                                                             deverá ser rejeitado. Somente após a realização dos
+7.1.2     Agregados                                          ajustes     necessários     e    todos   os   critérios   desta
+                                                             Especificação terem sido atendidos, a produção poderá
+O controle da qualidade dos agregados em obra deve ser
+                                                             ser retomada.
+feito pelos seguintes ensaios:
+
+                                                             Todas as ações corretivas necessárias                durante a
+a)   01 ensaio de granulometria com cada fração de
+                                                             produção do concreto asfáltico devem ser baseadas em
+     agregado a cada 4 horas de produção (DNIT 412 –
+                                                             resultados        de   ensaios   e   devem     ser    tomadas
+     ME).
+                                                             imediatamente após a obtenção dos mesmos. Todas as
+                                                             ações corretivas devem ser documentadas.
+b)   01   ensaio   de   granulometria   do   material   de
+     enchimento a cada dia de produção (DNIT 418 –
+                                                             7.2.1      Controle de temperatura
+     EM).
+                                                             Devem ser efetuadas medidas de temperatura em cada
+c)   01 ensaio de granulometria da mistura de agregados
+                                                             um dos materiais, conforme descritos a seguir:
+     a cada 4 horas de produção (DNIT 412 – ME), com
+     amostras coletadas no tambor secador, para verificar    a)    Nos agregados, antes de entrar no misturador, pelo
+     e, se necessário, realizar os ajustes necessários             menos,       a    cada     4   horas    de     produção,
+     para atender à composição granulométrica de                   preferencialmente, no início de cada turno de
+     projeto.                                                      trabalho.
+NORMA DNIT 031/2024 – ES                                                                                                 20
+
+
+b)   No CAP, antes de entrar no misturador da usina, pelo       com a curva de projeto e enquadrar-se dentro da faixa de
+     menos,      a   cada     4   horas    de     produção,     trabalho, construída com as tolerâncias da Tabela 3,
+     preferencialmente, no início de cada turno de              conforme a subseção 5.2. Durante a calibração citada na
+     trabalho.                                                  subseção 7.2.2, deve-se avaliar a possibilidade de perda
+                                                                de finos no processo de extração.
+c)   No concreto asfáltico, em cada caminhão carregado,
+     no momento da saída da usina.                              A produção do concreto asfáltico deve ser interrompida
+                                                                imediatamente e a granulometria deve ser corrigida
+d)   No concreto asfáltico, em cada caminhão carregado,         quando o percentual passante em qualquer uma das
+     no momento do espalhamento da mistura.                     peneiras extrapolar os limites da faixa de trabalho. Em
+                                                                caso de interrupção, a produção só deve ser retomada
+As temperaturas podem apresentar pequenas variações
+                                                                após um processo de verificação completo ter sido
+na usinagem e na compactação, desde que sejam
+                                                                executado e aprovado, com as devidas correções.
+respeitadas as faixas de viscosidade da subseção 5.4.3.
+
+                                                                7.2.4      Controle das características do concreto
+7.2.2    Controle da quantidade de CAP no concreto
+                                                                           asfáltico
+         asfáltico
+                                                                O controle da qualidade do concreto asfáltico deve ser
+Deve ser efetuada, no mínimo, uma determinação de teor          feito pelos ensaios listados a seguir, realizados com
+de CAP a cada 4 horas de produção de concreto asfáltico         material solto coletado diretamente da acabadora, para
+(DNER – ME 053/94 ou norma DNIT que venha a                     contabilizar o efeito do envelhecimento de curto prazo. A
+substituí-la, DNIT 158 – ME, ou ASTM D 6307), sempre            quantidade de material coletado deve ser compatível com
+na primeira das 4 horas, em amostras coletadas logo             as quantidades especificadas em cada uma das normas
+após    a     usinagem,     respeitando    o     tempo    de    relacionadas abaixo:
+condicionamento, conforme o Anexo C.
+                                                                a)    01 ensaio de densidade máxima medida (DNIT 427
+                                                                      – ME) a cada 4 horas de trabalho;
+O equipamento utilizado para extração do CAP deve ser
+calibrado para cada concreto asfáltico utilizado, durante
+                                                                b)    01 determinação de umidade da mistura usinada
+o procedimento de dosagem. Essa calibração deve ser
+                                                                      para cada dia de produção, realizada em estufa a
+feita com os teores de CAP utilizados na dosagem,
+                                                                      105 °C, até a constância de massa;
+realizando pelo menos duas extrações para cada teor. A
+função de calibração deve ser aferida com a produção da         c)    01 ensaio de resistência à tração por compressão
+usina e utilizada     para corrigir o teor de ligante                 diametral a 25 °C (DNIT 136 – ME), para cada dia de
+determinado.                                                          produção, preferencialmente, nas primeiras horas de
+                                                                      trabalho    (os    CPs    produzidos    devem      ser
+A porcentagem de CAP no concreto asfáltico deve
+                                                                      compactados conforme a norma DNIT 178 – PRO);
+respeitar os limites estabelecidos no projeto de dosagem ,
+não devendo apresentar variação superior a ±0,3 % do            d)    01 ensaio de dano por umidade induzida (DNIT 180
+teor de projeto estabelecido, desde que atendidos os                  –    ME),   para   cada    5   dias    de    produção,
+parâmetros volumétricos indicados nas Tabelas 4 e 5.                  preferencialmente, no primeiro dos 5 dias.
+
+7.2.3    Controle    da     graduação     da    mistura   de    NOTA 5: Para agregados com absorção entre 2,0 % e
+         agregados                                                          3,0 %, deve-se observar o Anexo C.
+
+Deve ser realizado o ensaio de granulometria (DNIT 412          7.3       Controle da execução
+– ME) da mistura dos agregados resultantes                das
+extrações de CAP citadas na subseção 7.2.2. A curva             O controle da execução da camada de Concreto Asfáltico
+granulométrica deve manter-se contínua e consistente            deve ser exercido mediante a realização de ensaios e
+NORMA DNIT 031/2024 – ES                                                                                                21
+
+
+medições feitas em locais selecionados de maneira          Deve ser realizada, no mínimo, uma determinação a cada
+aleatória. O número de amostras e de determinações a       100 metros de concreto asfáltico compactado, em locais
+serem realizadas e suas respectivas localizações devem     escolhidos aleatoriamente. Não são permitidos valores
+ser definidos     no Plano de Amostragem Variável,         de 𝐺𝐶 inferiores a 97 % ou superiores a 100 %, aplicando
+elaborado conforme a subseção 7.4 e a norma DNIT 013       o controle estatístico bilateral, conforme a subseção 7.5.
+– PRO.
+                                                           7.3.2    Espessura da camada
+Devem ser efetuadas as seguintes determinações e
+ensaios:                                                   A espessura da camada compactada deve ser medida
+                                                           em corpos de prova extraídos da pista (ASTM D5361), no
+7.3.1      Espalhamento e compactação na pista             mínimo, a cada 100 m, admitindo-se uma variação de
+                                                           ±5 % em relação às espessuras de projeto. O controle
+Devem ser efetuadas medidas de temperatura durante o
+                                                           estatístico   bilateral deve ser aplicado, conforme a
+espalhamento, para cada carregamento de mistura,
+                                                           subseção 7.5.
+imediatamente antes de iniciar a compactação. Essas
+temperaturas      não   devem    apresentar    variações   As mesmas amostras extraídas para a determinação da
+superiores a ±5 °C, em relação à indicada em projeto. A    espessura     podem       ser usadas     para determinar a
+temperatura da massa, no decorrer da rolagem, deve         densidade relativa aparente.
+propiciar adequadas condições de compressão, de forma
+a atingir o grau de compactação previsto. Devem ser        7.3.3    Nivelamento, alinhamento e largura
+evitadas temperaturas inferiores a 145 ºC.
+                                                           O nivelamento dos pontos do eixo e das bordas de cada
+
+O grau de compactação (𝐺𝐶) do concreto asfáltico           pista deve ser feito, pelo menos, a cada 20 m, antes do
+
+executado deve ser calculado pela equação seguinte:        espalhamento       da     massa     asfáltica   e   depois   da
+                                                           compactação da            camada.   As    cotas     não   devem
+         𝐺𝑚𝑏𝑐                                              apresentar valores individuais fora do intervalo de -1 cm
+𝐺𝐶 = 𝐺           × 100%                             (1)
+           𝑚𝑏𝑙                                             a +2 cm, em relação à cota prevista em projeto. O
+                                                           controle estatístico bilateral deve ser aplicado conforme
+Onde:
+                                                           a subseção 7.5.
+
+𝐺𝐶 é o grau de compactação, expresso em porcentagem        A verificação do eixo e dos bordos deve ser feita durante
+(%);                                                       os trabalhos de locação e nivelamento nas diversas
+                                                           seções correspondentes às estacas da locação. Os
+𝐺𝑚𝑏𝑐 é a densidade relativa aparente medida em campo,
+                                                           desvios verificados não devem exceder ±5 cm. O controle
+adimensional;
+                                                           estatístico   bilateral    deve ser aplicado conforme a
+                                                           subseção 7.5.
+𝐺𝑚𝑏𝑙 é a densidade relativa aparente determinada na
+dosagem do concreto asfáltico, adimensional.               A largura da plataforma acabada deve ser determinada
+                                                           por medidas a trena, executadas, no mínimo, a cada
+As determinações de densidade relativa aparente na
+                                                           20 m. A plataforma não deve apresentar largura inferior
+pista podem ser feitas com uso do densímetro não
+                                                           ao valor previsto em projeto. O controle estatístico
+nuclear (DNIT 431 – ME), calibrado para o concreto
+                                                           unilateral deve ser aplicado conforme a subseção 7.5.
+asfáltico em questão, ou conforme a norma DNIT 428 –
+ME, a partir de corpos de prova extraídos do concreto      7.3.4    Controle construtivo por deflexão
+asfáltico compactado na pista, por meio de sondas
+rotativas (ASTM D5361). As determinações ou extrações      Deverá ser realizado o controle construtivo por deflexão,
+devem ser feitas após o completo resfriamento da massa     para verificar o atendimento aos valores previstos,
+compactada.                                                quando    definidos       em contrato ou no projeto          de
+NORMA DNIT 031/2024 – ES                                                                                              22
+
+
+dimensionamento. As deflexões podem ser medidas com           empresa executante. Os trechos corrigidos devem ser
+a Viga Benkelman (DNIT 133 – ME) ou com o FWD                 novamente avaliados para garantir o atendimento às
+(DNER – PRO 273/96 ou norma DNIT que venha a                  condições de rolamento e à uniformidade em relação ao
+substituí-la).                                                trecho contíguo não corrigido. Os trabalhos corretivos
+                                                              devem ser concluídos          antes da determinação da
+A deflexão máxima (𝐷0) deve ser determinada, no               espessura da camada acabada. Todos os trabalhos
+mínimo, a cada 20 m por faixa alternada e a cada 40 m         corretivos devem ser feitos às expensas da executante.
+na mesma faixa. A bacia deflectométrica deve ser
+determinada, no mínimo, a cada 100 m por faixa                Os levantamentos de IRI e os trabalhos corretivos
+
+alternada e a cada 200 m na mesma faixa. O controle           durante a execução não eliminam a necessidade de
+estatístico unilateral deve ser aplicado conforme a           realização do levantamento para o recebimento de obra.
+subseção 7.5.
+                                                              7.3.6     Condições de segurança
+
+NOTA 6: O equipamento empregado na medição das                As condições de segurança da camada de rolamento do
+            deflexões deve ser o indicado em projeto.         pavimento devem ser definidas em projeto, seguindo as
+                                                              recomendações do Anexo D.
+NOTA 7: Caso o controle de deflexão não tenha sido
+            previsto nos contratos de conservação, a          A camada de revestimento de concreto asfáltico acabado
+            aplicação   desta   subseção     poderá     ser   deve ser avaliada quanto às condições de segurança
+            dispensada, se autorizada pela fiscalização.      pelos ensaios seguintes:
+
+
+7.3.5     Acabamento da superfície                            a)    Macrotextura: altura da mancha de areia (ABNT NBR
+                                                                    16504), definida em projeto conforme o Anexo D.
+Durante a execução de camadas de revestimento, deve
+ser feito o controle do acabamento da superfície a cada       b)    Microtextura: valor de resistência à derrapagem
+200 m, com o auxílio de uma régua de 3,00 m colocada                (VDR) ≥ 47, medido com o Pêndulo Britânico (ABNT
+no sentido transversal da pista. A variação da superfície,          NBR 16780).
+
+entre dois pontos quaisquer de contato, não deve
+                                                              Opcionalmente, a resistência à derrapagem pode ser
+exceder 0,5 cm. O controle estatístico bilateral deve ser
+                                                              avaliada por meio do International Friction Index (IFI),
+aplicado conforme a subseção 7.5.
+                                                              conforme a Norma ASTM E 1960-07, cujos valores
+O acabamento longitudinal da superfície do revestimento       mínimos são:
+deve ser verificado com perfilômetro inercial (DNIT 425 –
+                                                              a)    IFI (F60) ≥ 0,22, para pavimentos novos;
+PRO) ou com outro dispositivo equivalente para esta
+finalidade, devidamente calibrado.
+                                                              b)    IFI (F60) ≥ 0,15, para pavimentos restaurados.
+
+Para pavimentos novos, o International Roughness Index
+                                                              Os ensaios de controle de segurança devem ser
+(IRI) deve apresentar valor inferior ou igual a 2,0 m/m
+                                                              realizados, no mínimo, a cada 300 m. O Controle
+(Quociente de Irregularidade – QI ≤ 26 contagens/km).
+                                                              unilateral deve ser aplicado conforme a subseção 7.5.
+Para obras de restauração, o IRI deve apresentar valor
+inferior ou igual a 2,4 m/m (QI ≤ 31 contagens/km). O IRI     7.4     Plano de amostragem – Controle tecnológico
+deve ser determinado a cada 200 m e/ou em segmentos
+indicados pela fiscalização.                                  O     número    e   a   frequência    de   determinações
+                                                              correspondentes aos diversos ensaios para o controle
+Se os valores de IRI forem superiores aos limites             tecnológico da execução devem ser estabelecidos
+especificados, os trabalhos devem ser suspensos e só          segundo     um Plano     de    Amostragem, previamente
+reiniciados após a realização das ações corretivas pela       apresentado pela empresa executante e aprovado pela
+NORMA DNIT 031/2024 – ES                                                                                                      23
+
+
+Fiscalização, elaborado de acordo com os preceitos da            determinações, conforme a Tabela A1 do Anexo A;
+Norma DNER – PRO 277/97 (ou norma DNIT que venha
+                                                                 𝑛 é o número de determinações (tamanho da amostra).
+a substituí-la). O tamanho das amostras deve ser
+documentado e previamente informado à Fiscalização.
+                                                                 Os resultados      do controle      estatístico    devem ser
+                                                                 registrados       em        relatórios     periódicos        de
+7.5      Condições      de       conformidade    e    não
+         conformidade                                            acompanhamento, de acordo com a norma DNIT 011 –
+                                                                 PRO a qual estabelece que sejam tomadas providências
+Todos os ensaios de controle dos insumos e da usinagem           para tratamento das “não conformidades”.
+devem cumprir as Condições Gerais e Específicas desta
+Norma. Os ensaios de controle da execução devem ser              Os serviços só devem ser aceitos se atenderem às
+
+realizados de acordo com o Plano de Amostragem e estar           prescrições desta Norma. Os serviços não conformes (ou
+                                                                 rejeitados) deverão ser refeitos.
+de acordo com os critérios descritos a seguir.
+
+                                                                 8      Critérios de medição
+Quando especificado um valor mínimo e/ou máximo a
+ser(em) atingido(s), devem ser verificadas as seguintes
+                                                                 Os serviços considerados conformes devem ser medidos
+condições:
+                                                                 de acordo com os critérios estabelecidos no Edital de
+
+a) Condições de conformidade:                                    Licitação dos serviços ou, na falta destes critérios, de
+                                                                 acordo com as seguintes disposições gerais:
+      𝑋̅ − 𝑘𝑠 ≥ valor mínimo especificado;
+                                                                 a)   O concreto asfáltico deve ser medido em toneladas
+
+      𝑋̅ + 𝑘𝑠 ≤ valor máximo especificado.                            de mistura efetivamente aplicada na pista. Não serão
+                                                                      motivos de medição em separado: mão de obra,
+
+b) Condições de não conformidade:                                     materiais (exceto CAP), transporte do concreto
+                                                                      asfáltico da usina à pista, equipamentos e encargos,
+      𝑋̅ − 𝑘𝑠 < valor mínimo especificado;                            devendo estes serem incluídos na composição do
+                                                                      preço unitário.
+      𝑋̅ + 𝑘𝑠 > valor máximo especificado.
+                                                                 b)   A quantidade de CAP aplicada deve ser obtida pela
+Sendo:                                                                média aritmética dos valores medidos na usina, em
+                                                                      toneladas.
+        ∑𝑛
+         𝑖=1 𝑥𝑖
+𝑋̅ =                                                 (3)
+          𝑛                                                      c)   O transporte do CAP efetivamente aplicado deve ser
+                                                                      medido com base na distância entre a refinaria e o
+          ∑(𝑥𝑖 −𝑋̅) 2                                                 canteiro de serviço.
+𝑆=√                                                  (4)
+              𝑛−1
+                                                                 d)   Não devem ser considerados             quantitativos    de
+Onde:                                                                 serviço superiores aos indicados no projeto.
+
+
+𝑥𝑖 são os valores individuais;                                   e)   Nenhuma medição deve ser processada se, junto a
+                                                                      ela, não estiver anexado um relatório de controle da
+𝑋̅ é a média aritmética da amostra;                                   qualidade, contendo os resultados dos ensaios e as
+                                                                      determinações          devidamente           interpretados,
+𝑆 é o desvio padrão da amostra;
+                                                                      caracterizando a qualidade do serviço executado.
+
+𝑘 é o coeficiente obtido em função do número de
+
+
+                                                 _________________/Anexo A
+NORMA DNIT 031/2024 – ES                                                                                            24
+
+
+                                       Anexo A (Normativo) – Amostragem Variável
+
+
+                                              Tabela A1 – Amostragem Variável
+
+  n       5       6       7       8       9       10     11    12     13        14   15     16     17     19     21
+  𝒌     1,55     1,41    1,36   1,31     1,25    1,21   1,19   1,16   1,13   1,11    1,10   1,08   1,06   1,04   1,01
+  α     0,45     0,35    0,30   0,25     0,19    0,15   0,13   0,10   0,08   0,06    0,05   0,04   0,03   0,02   0,01
+n = n° de amostras
+𝒌 = coeficiente multiplicador
+α = risco da empresa executante
+
+
+
+
+                                                _________________/Anexo B
+NORMA DNIT 031/2024 – ES                                                                                                       25
+
+
+                                           Anexo B (Normativo) – Tolerâncias da granulometria
+
+
+                        100
+                        90
+                        80
+                        70
+         Passante (%)
+
+
+
+
+                        60
+                        50
+                        40
+                        30
+                                                                                                Limites da Faixa C-12,5
+                        20
+                                                                                                Curva de projeto
+                        10                                                                      Faixa de trabalho
+                         0
+                          0,05                          0,5                            5                                  50
+                                                                 Abertura (mm)
+
+                          Figura B1 – Exemplo de faixa de trabalho para uma curva granulométrica da faixa C-12,5
+
+
+A Figura B1 apresenta um exemplo de curva granulométrica de projeto enquadrada na faixa C-12,5, com a sua faixa de
+trabalho. Nesse exemplo, observa-se que os limites inferiores da faixa de trabalho extrapolam os limites inferiores da Faixa
+C-12,5 nas peneiras de 9,5 mm e 12,5 mm, conforme detalhado na Figura B2. Importante ressaltar que, para a faixa C-12,5,
+não deve haver material retido na peneira de 19 mm. Portanto, não há tolerâncias para essa peneira.
+
+
+                        100
+                        95
+                        90
+                        85
+         Passante (%)
+
+
+
+
+                        80
+                                                                                            #12,5 mm          #19 mm
+                        75
+                        70
+                        65
+                                                                                 #9,5 mm        Limites da Faixa C-12,5
+                        60
+                                                                                                Curva de projeto
+                        55
+                                                                                                Faixa de trabalho
+                        50
+                              2                                                                                           20
+                                                                 Abertura (mm)
+
+
+      Figura B2 – Detalhe das peneiras cujos limites de tolerância extrapolam a faixa granulométrica escolhida
+
+
+Conforme especificado na subseção 5.2, a faixa de trabalho da curva granulométrica não deve extrapolar os limites da faixa
+granulométrica selecionada. Quando isso ocorrer, os percentuais das peneiras que extrapolarem a faixa devem ser ajustados,
+fazendo com que os limites da faixa de trabalho coincidam com os limites da faixa selecionada, conforme a Figura B3.
+NORMA DNIT 031/2024 – ES                                                                                                      26
+
+
+                        100
+                        95
+                        90
+                        85
+         Passante (%)
+
+
+
+
+                        80
+                                                                                            #12,5 mm         #19 mm
+                        75
+                        70
+                                                                                           #9,5 mm
+                        65
+                                                                                               Limites da Faixa C-12,5
+                        60
+                                                                                               Curva de projeto
+                        55
+                                                                                               Faixa de trabalho
+                        50
+                              2                                                                                          20
+                                                                 Abertura (mm)
+
+                                  Figura B3 – Detalhe das peneiras com limites de tolerância corrigidos
+
+Nas peneiras onde ocorrer extrapolação da faixa granulométrica selecionada, deve-se ajustar apenas os limites que
+extrapolarem a faixa. Desta forma, no ajuste da Figura B3, apenas os limites inferiores das peneiras de 9,5 mm e 12,5 mm
+foram alterados, mantendo-se inalterados os limites superiores iniciais.
+
+
+
+
+                                                      _________________/Anexo C
+NORMA DNIT 031/2024 – ES                                                                                                   27
+
+
+                                         Anexo C (Normativo) – Absorção dos agregados
+
+Para projetar e produzir misturas asfálticas, é essencial compreender e considerar a absorção dos agregados, pois essa
+propriedade influencia diretamente a quantidade de ligante asfáltico necessária para a mistura. Durante a dosagem, deve-se
+adicionar uma quantidade de ligante asfáltico que seja suficiente para preencher os poros permeáveis dos agregados e
+revestir todas partículas, tornando-as impermeáveis à água e reduzindo os vazios de ar interconectados na mistura após a
+compactação. Por esse motivo, é importante considerar a absorção dos agregados, pois o ligante que preencher os poros
+permeáveis não estará disponível para recobrir as partículas do agregado.
+
+
+Além de influenciar a quantidade de ligante, a absorção dos agregados também pode impactar o cálculo dos parâmetros
+volumétricos da mistura, especialmente os valore de 𝐺𝑚𝑚, que são calculados considerando o volume de ligante asfáltico
+absorvido pelo agregado, conforme a norma DNIT 427 – ME. Esse impacto no cálculo do 𝐺𝑚𝑚 depende não apenas do nível
+de absorção, mas também do tempo de condicionamento antes da realização do ensaio. A Figura C1 ilustra como a absorção
+dos agregados e o tempo de condicionamento podem afetar significativamente a determinação de 𝐺𝑚𝑚.
+
+
+
+           2,51
+
+           2,50
+
+           2,49
+     Gmm
+
+
+
+
+           2,48
+
+           2,47
+                                                                                                 Absorção de 1,0 %
+           2,46
+                                                                                                 Absorção de 2,8 %
+           2,45
+                  0,0      0,5     1,0    1,5     2,0     2,5   3,0     3,5       4,0      4,5      5,0      5,5     6,0
+                                                           Tempo em horas
+
+                        Figura C1 – Variação do 𝑮𝒎𝒎 em função do tempo de condicionamento e da absorção
+                                                   Fonte: Adaptado do AI MS-2
+
+
+As especificações nacionais (DNIT 427 – ME e DNIT 178 – PRO) e internacionais (AASHTO R 30 e AASHTO T 209)
+recomendam que as amostras de mistura asfálticas sejam condicionadas por duas horas na temperatura de compactação,
+antes da moldagem dos corpos de prova, da aplicação no campo ou do resfriamento para a determinação do 𝐺𝑚𝑚. No
+entanto, como ilustrado na Figura C1, para agregados com absorção acima de 2,0 %, esse tempo de condicionamento pode
+não ser suficiente. Desta forma, a utilização de agregados com absorção entre 2,0 % e 3,0 % será admitida desde que:
+
+
+a)   Para determinar o tempo de condicionamento da mistura pronta para os procedimentos dosagem e realização de todos
+     os ensaios, deve-se avaliar a variação de 𝐺𝑚𝑚, conforme Figura C1, até que a mesma apresente tendência de
+     estabilização, sendo o tempo mínimo de duas horas.
+
+
+b)   Para a produção do concreto asfáltico em obra, recomenda-se que o tempo total entre a produção da mistura e sua
+     aplicação na pista seja definido conforme a alínea anterior, garantindo a completa absorção do ligante pelos agregados
+     e evitando o espelhamento da mistura após a compactação.
+
+
+                                                  _________________/Anexo D
+NORMA DNIT 031/2024 – ES                                                                                                 28
+
+
+                                       Anexo D (Normativo) – Textura superficial
+
+
+A aderência entre os pneus e o pavimento é fundamental para a segurança dos motoristas em situações de emergência.
+Essa aderência depende diretamente da textura superficial da camada de rolamento, que pode ser dividida em microtextura
+e macrotextura. A microtextura está relacionada à aspereza da superfície do agregado mineral, sendo crucial para a aderência
+a baixas velocidades e para romper o filme de água no contato direto entre o pneu e o pavimento. Por outro lado, a
+macrotextura está relacionada às protuberâncias superficiais geradas pelos agregados e pelos vazios da mistura, sendo
+importante para a aderência em altas velocidades e para drenar a água da superfície do pavimento.
+
+
+As Tabelas D1 e D2 apresentam os limites para classificação de microtextura e macrotextura, respectivamente, com base
+nos resultados dos ensaios de Pêndulo Britânico (ABNT NBR 16780) e Mancha de Areia (ABNT NBR 16504). Os limites para
+a classificação da macrotextura, apresentados no Manual de Restauração de Pavimentos Asfálticos (Publicação IPR – 720),
+foram atualizados com base nos trabalhos de Pasquet (1968) e APS (2006).
+
+
+                       Tabela D1 – Classes de microtextura pelo método do Pêndulo Britânico
+                         Classes de microtextura                Valor de Resistência à Derrapagem – VDR
+             1 – Perigosa                                                          < 25
+             2 – Muito lisa                                                   25 ≤ VDR < 32
+             3 – Lisa                                                         32 ≤ VDR < 40
+             4 – Insuficientemente rugosa                                     40 ≤ VDR < 47
+             5 – Medianamente rugosa                                          47 ≤ VDR < 55
+             6 – Rugosa                                                       55 ≤ VDR < 75
+             7 – Muito rugosa                                                   VDR ≥ 75
+                      Fonte: Manual de Restauração de Pavimentos Asfálticos (Publicação IPR – 720)
+
+
+                        Tabela D2 – Classes de macrotextura pelo método da Mancha de Areia
+     Classes de macrotextura          Altura da Mancha de Areia – HS (mm)               Velocidade diretriz (km/h)
+  1 – Muito fina                                    HS < 0,20                              Não deve ser utilizado
+  2 – Fina                                       0,20 ≤ HS < 0,40                             Velocidade < 60
+  3 – Medianamente fina                          0,40 ≤ HS < 0,60                           60 ≤ Velocidade < 80
+  4 – Média                                      0,60 ≤ HS < 0,80                          80 ≤ Velocidade < 100
+  5 – Medianamente grossa                        0,80 ≤ HS < 1,00                         100 ≤ Velocidade < 120
+  6 – Grossa                                     1,00 ≤ HS < 1,20                             Velocidade ≥ 120
+  7 – Muito grossa                                  HS ≥ 1,20                          Aplicação em casos especiais
+
+                                     Fonte: Adaptado de Pasquet (1968) e APS (2006)
+
+
+A microtextura é influenciada pelas características do agregado mineral, enquanto a macrotextura depende principalmente
+da distribuição granulométrica, sendo influenciada diretamente pelo TNM e pela relação entre as quantidades de agregados
+graúdos e miúdos. Misturas com agregados maiores e uma maior proporção de graúdos tendem a produzir uma superfície
+com textura superficial mais aberta, aumentando a rugosidade e a área de contato entre o pneu e o pavimento. Por outro
+lado, misturas com agregados menores e maior proporção de agregados finos resultam em uma superfície mais lisa, com
+menor macrotextura.
+
+
+A escolha da granulometria e a concepção da mistura asfáltica são essenciais para garantir uma superfície com macrotextura
+adequada. Portanto, a macrotextura deve ser considerada na fase de dosagem, com a seleção da curva granulométrica
+apropriada, para garantir que a mistura aplicada em campo proporcione boa aderência entre os pneus e a superfície do
+pavimento, principalmente na presença de água, possibilitando um desempenho seguro para os usuários.
+
+
+Opcionalmente, as avaliações tradicionais de textura podem ser substituídas pela avaliação da resistência à derrapagem, por
+meio do Índice Internacional de Atrito (IFI), conforme a Norma ASTM E 1960-07. Os limites para classificação do IFI,
+NORMA DNIT 031/2024 – ES                                                                                                 29
+
+
+apresentados na Publicação IPR – 720, também foram atualizados com base em APS (2006), conforme a Tabela D3.
+
+
+                                           Tabela D3 – Classes de atrito pelo IFI
+                              Classes de atrito                      International Friction Index – IFI
+             1 – Péssimo                                                         IFI < 0,06
+             2 – Muito ruim                                                   0,06 ≤ IFI < 0,08
+             3 – Ruim                                                         0,09 ≤ IFI < 0,12
+             4 – Regular                                                      0,12 ≤ IFI < 0,15
+             5 – Bom                                                          0,15 ≤ IFI < 0,22
+             6 – Muito bom                                                    0,22 ≤ IFI < 0,35
+             7 – Ótimo                                                           IFI ≥ 0,35
+
+                                              Fonte: Adaptado de APS (2006)
+
+
+Por fim, destaca-se que as condições de textura superficial da camada de rolamento devem ser consideradas na concepção
+do projeto de pavimentação, de modo a selecionar o tipo de mistura asfáltica mais adequado às características específicas
+da via a ser construída, com o objetivo de proporcionar sempre o maior nível de segurança possível aos usuários, minimizando
+riscos de acidentes. Nesse sentido, se os materiais disponíveis não possibilitarem a concepção de um concreto asfáltico que
+atenda aos requisitos mínimos de segurança, a empresa projetista deve optar por outro tipo de mistura asfáltica para ser
+aplicada como camada de rolamento.
+
+
+
+
+                                                  _________________/Anexo E
+NORMA DNIT 031/2024 – ES                                                                                         30
+
+
+                                      Anexo E (Normativo) – Ensaios de controle
+
+
+ENSAIO                                     MÉTODO              FREQUÊNCIA         AVALIAÇÃO       CRITÉRIO
+1. CONTROLE DOS INSUMOS
+1.1. AGREGADOS
+                                        DNIT 411 – ME
+Densidade individual                                            Na dosagem         Individual          -
+                                        DNIT 413 – ME
+Partículas chatas e alongadas (3:1)     DNIT 429 – ME           Na dosagem         Individual       ≤ 25 %
+                                       DNIT 424 – ME ou                                             ≥ 0,5 ou
+Índice de forma                                                 Na dosagem         Individual
+                                        DNIT 425 – ME                                                 ≤ 2,0
+Partículas fraturadas                   DNIT 430 – ME           Na dosagem         Individual       ≥ 90 %
+                                        DNIT 411 – ME                                             ≤ 2,0 % ou
+Absorção                                                        Na dosagem         Individual
+                                        DNIT 413 – ME                                            2,0 % a 3,0%
+                                                                                                   ≥ 45 % ou
+Teor de vazios não compactados          DNIT 415 – ME           Na dosagem         Individual
+                                                                                                    ≥ 40 %
+Los Angeles                             DNIT 451 – ME           Na dosagem         Individual       ≤ 50 %
+                                                                                                  𝐼𝐷𝑚 ≤ 5%
+Degradação Marshall                    DNER–ME 401/99           Na dosagem         Individual
+                                                                                                  𝐼𝐷𝑚𝑙 ≤ 8%
+                                                                                                  < 12 % ou
+Durabilidade                            DNIT 446 – ME           Na dosagem         Individual
+                                                                                                    < 15 %
+Adesividade                            DNIT 452 – ME            Na dosagem         Individual     Satisfatória
+Método Bailey                          DNIT 438 – PRO           Na dosagem         Individual       Projeto
+Equivalente de areia                   DNIT 450 – ME             Semanal           Individual       ≥ 55 %
+Umidade dos agregados                 DNER – ME 196/98             Diária          Individual      < 0,3 %
+Granulometria da cal                   DNIT 418 – EM               Diária          Individual          -
+Granulometria individual               DNIT 412 – ME             Cada 4h           Individual          -
+Granulometria da mistura               DNIT 412 – ME             Cada 4h           Individual      Anexo B
+1.2. CAP
+MSCR                                   DNIT 423 – ME         Todo carregamento     Individual       Projeto
+LAS                                    DNIT 439 – ME         Todo carregamento     Individual       Projeto
+Ponto de amolecimento                  DNIT 131 – ME         Todo carregamento     Individual
+Penetração                             DNIT 155 – ME         Todo carregamento     Individual
+Ponto de fulgor                       DNER – ME 148/94       Todo carregamento     Individual
+Formação de espuma                    Aquecer a 175 °C       Todo carregamento     Individual   DNIT 095 – EM
+Susceptibilidade térmica               DNIT 095 – EM         Todo carregamento     Individual
+                                      ABNT NBR 14950
+Curva de viscosidade                                         Todo carregamento     Individual
+                                      ABNT NBR 15184
+2. CONTROLE DA USINAGEM
+Parâmetros volumétricos                DNIT 449 – PRO           Na dosagem         Individual   Tabelas 4 e 5
+Estabilidade Marshall                  DNIT 447 – ME            Na dosagem         Individual        ≥ 500
+                                       DNIT 178 – PRO
+CDI e TDI                                                       Na dosagem         Individual       Projeto
+                                        DNIT 426 – IE
+Módulo de Resiliência                  DNIT 135 – ME            Na dosagem         Individual       Projeto
+Flow Number                            DNIT 184 – ME            Na dosagem         Individual       Projeto
+Fadiga por compressão diametral        DNIT 183 – ME            Na dosagem         Individual       Projeto
+Dano por umidade induzida              DNIT 180 – ME             Semanal           Individual       ≥ 0,70
+Resistência à tração                   DNIT 136 – ME               Diária          Individual       ≥ 0,65
+
+                                       Estufa a 105 °C até
+Umidade da massa asfáltica                                         Diária          Individual      < 0,3 %
+                                      constância de massa
+
+                                      DNER – ME 053/94
+Teor de CAP                            DNIT 158 – ME             Cada 4h           Individual       ±0,3 %
+                                        ASTM D 6307
+Granulometria                           DNIT 412 – ME            Cada 4h           Individual      Anexo B
+Rice                                    DNIT 427 – ME            Cada 4h           Individual         -
+Temperatura CAP                          Termômetro              Cada 4h           Individual       ±5 °C
+Temperatura agregados                    Termômetro              Cada 4h           Individual       ±5 °C
+NORMA DNIT 031/2024 – ES                                                                                 31
+
+
+ENSAIO                                MÉTODO            FREQUÊNCIA      AVALIAÇÃO         CRITÉRIO
+Temperatura mistura                  Termômetro         Cada caminhão    Individual         ±5 °C
+3. CONTROLE DA APLICAÇÃO
+                                                                          Controle
+Temperatura na chegada               Termômetro         Cada caminhão                          -
+                                                                         Estatístico
+                                                                          Controle
+Temperatura após o espalhamento      Termômetro         Cada caminhão                       ±5 °C
+                                                                         Estatístico
+                                                                          Controle
+Nivelamento do greide                 Topografia          Cada 20 m                     -1 cm ou +2 cm
+                                                                         Estatístico
+                                                                          Controle
+Alinhamento do greide                 Topografia          Cada 20 m                         ±5 cm
+                                                                         Estatístico
+                                                                          Controle
+Largura da plataforma                 Topografia          Cada 20 m                        ≥ Projeto
+                                                                         Estatístico
+                                    DNIT 428 – ME                         Controle
+Grau de compactação                                      Cada 100 m                     97 % a 100 %
+                                    DNIT 431 – ME                        Estatístico
+                                    DNIT 428 – ME                         Controle
+Espessura aplicada                                       Cada 100 m                          ±5 %
+                                    DNIT 431 – ME                        Estatístico
+                                                                          Controle
+Mancha de areia                    ABNT NBR 16504        Cada 300 m                         Projeto
+                                                                         Estatístico
+                                                                          Controle
+Pêndulo Britânico                  ABNT NBR 16780        Cada 300 m                          ≥ 47
+                                                                         Estatístico
+                                                                          Controle         ≥ 0,22 ou
+IFI                                 ASTM E 1960          Cada 300 m
+                                                                         Estatístico         ≥ 0,15
+                                                                          Controle
+Deflexão característica             DNIT 133 – ME         Cada 20 m                         Projeto
+                                                                         Estatístico
+                                    DNIT 133 – ME                         Controle
+Bacia deflectométrica                                    Cada 100 m                         Projeto
+                                  DNER – PRO 273/96                      Estatístico
+                                                                          Controle
+Acabamento superficial                 Régua             Cada 200 m                    Variação ≤ 0,5 cm
+                                                                         Estatístico
+                                                                          Controle        IRI ≤ 2,0 ou
+IRI                                DNIT 442 – PRO         Cada 200m
+                                                                         Estatístico        IRI ≤ 2,4
+
+
+
+
+                                        _________________/Anexo F
+NORMA DNIT 031/2024 – ES                                                                                                     32
+
+
+                                               Anexo F (Informativo) – Bibliografia
+
+
+a)   AMERICAN ASSOCIATION OF STATE HIGHWAY                            j)   ECORODOVIAS.ET-ECS.00.00-PAV.Pavimentação
+     AND TRANSPORTATION OFFICIALS. AASHTO M                                – Especificação técnica para concreto asfáltico
+     323.    Standard    Specification   for      Superpave                usinado a quente. 2023.
+     Volumetric Mix Design. 2022.
+                                                                      k)   NATIONAL ASPHALT PAVEMENT ASSOCIATION.
+b)   _____. AASHTO R 30. Standard practice for mixture                     NAPA. HMA Pavement Mix Type Selection Guide.
+     conditioning of hot mix asphalt (HMA).                                2001.
+
+
+c)   _____. AASHTO T 209. Standard method test of                     l)   NORTH        CAROLINA        DEPARTMENT           OF
+     theoretical maximum specific gravity (Gmm) and                        TRANSPORTATION. NCDOT. Materials and Tests
+     density of hot mix asphalt (HMA).                                     Unit. Asphalt Quality Management System Manual.
+                                                                           2020.
+d)   APS, M. Classificação da aderência pneu-pavimento
+     pelo índice combinado IFI – International Friction               m) PARANÁ. DEPARTAMENTO DE ESTRADAS DE
+     Index   para revestimentos     asfálticos.    Tese de                 RODAGEM. ES-PA 21/23. Pavimentação: Concreto
+     Doutorado. Escola Politécnica da Universidade de                      Asfáltico Usinado a quente. Curitiba, 2023.
+     São Paulo. USP. São Paulo, 2006.
+                                                                      n)   PASQUET, A. Campagne Nationale de Glissance
+e)   ARTERIS ES 027: Concreto asfáltico usinado a                          1967 en France, in Colloque International sur la
+     quente. Especificação Particular. 2022.                               Glissance et la Sécurité de la Circulation sur Routes
+                                                                           Mouillées, Berlin, pp. 717-732. 1968.
+f)   ASPHALT INSTITUTE. MANUAL SERIES NO. 02
+     (MS-2). Asphalt Mix Design Methods. 7th Edition.                 o)   SANTA       CATARINA.      DEPARTAMENTO           DE
+     2014.                                                                 INFRAESTRUTURA. ES-P 05/16. Pavimentação:
+                                                                           Camadas de misturas asfálticas usinadas a quente.
+g)   BERNUCCI, L.B. MOTTA, L.M.G. CERATTI, J.A.P.                          Florianópolis, 2016.
+     SOARES, J.B. Pavimentação Asfáltica: Formação
+     básica para engenheiros. Rio de Janeiro, 2ª Edição.              p)   SÃO PAULO. DEPARTAMENTO DE ESTRADAS
+     2022.                                                                 DE RODAGEM. ET-DE-P00/027. Concreto asfáltico.
+                                                                           2024.
+h)   BRASIL.     DEPARTAMENTO            NACIONAL        DE
+     INFRAESTRUTURA DE TRANSPORTES. Diretoria                         q)   TEXAS DEPARTMENT OF TRANSPORTATION.
+     de Planejamento e Pesquisa. Publicação IPR 743 -                      TexDOT. Pavement Manual. 2021.
+     Manual de sinalização rodoviária. 3. ed. Rio de
+     Janeiro, 2010.                                                   r)   US ARMY CORPS OF ENGINEERS. Hot-mix
+                                                                           asphalt    paving   handbook.   AC      150/5370-14A.
+i)   _____. Manual de Restauração de pavimentos                            Appendix 1. 2000.
+     asfálticos. Publicação IPR 720. 2ª ed. Rio de Janeiro,
+     2005.
+
+
+
+
+                                                  _________________/índice Geral
+NORMA DNIT 031/2024 – ES                                                                                                                                                             33
+
+
+                                                                                      Índice geral
+
+
+
+
+Abertura ao tráfego ..........................................5.4.11......16                    Dimensão ou tamanho máximo............................3.5......4
+Abstract ..............................................................................1        Distribuição do concreto asfáltico .....................5.4.8......15
+Acabamento da superfície................................7.3.5.......22                          Equipamento para compactação ......................5.3.7......12
+Agregado graúdo .................................. 3.1,5.1.2.1......4, 5                        Equipamento                     para                espalhamento                       e
+Agregado miúdo.................................... 3.2,5.1.2.2......4, 6                        acabamento .......................................................5.3.6......12
+Agregados ............................... 5.1.2,6.1,7.1.2......5, 17, 19                        Equipamentos .........................................................5.3......9
+Anexo A (Normativo) – Amostragem Variável ...............24                                     Equipamentos complementares .......................5.3.8......13
+Anexo B (Normativo) – Tolerâncias da granulometria...25                                         Espalhamento e compactação na pista.............7.3.1.....21
+Anexo C (Normativo) – Absorção dos agregados.........27                                         Espessura da camada ........................................7.3.2.....21
+Anexo D (Normativo) – Textura superficial...................28                                  Execução...............................................................5.4......13
+Anexo E (Normativo) – Ensaios de controle.................30                                    Imprimação e pintura de ligação .......................5.4.3......14
+Anexo F (Informativo) – Bibliografia ...............................32                          Índice geral.......................................................................33
+Aquecimento do CAP ........................................5.4.4......14                        Inspeções ...............................................................7........19
+Aquecimento dos agregados ............................5.4.5......14                             Instalação .............................................................6.4.......18
+Caminhões                para           transporte             do          concreto             Juntas ................................................................5.4.10.....16
+asfáltico ...............................................................5.3.5.....12           Materiais ..................................................................5.1......5
+Cimento asfáltico ...................... 5.1.1,6.2,7.1.1....5, 17, 19                           Material de enchimento ...........................3.6,5.1.2.3......4,6
+Cimento asfáltico de petróleo (CAP) .....................3.3......4                             Material pulverulento ou filler .................................3.7......4
+Compactação .....................................................5.4.9......15                  Melhorador de adesividade ......................3.8,5.1.3......4, 7
+Composição do concreto asfáltico .........................5.2......7                            Nivelamento, alinhamento e largura.................7.3.3.....21
+Concreto Asfáltico...................................................3.4......5                 Objetivo .....................................................................1.......1
+Condicionantes ambientais .....................................6......16                        Operação................................................................6.5.....18
+Condições de conformidade e não conformidade ..7.5..23                                          Plano de amostragem - Controle tecnológico ......7.4.....22
+Condições de segurança.....................................7.3.6....22                          Prefácio ..............................................................................1
+Condições específicas.............................................5........5                    Preparo da Superf ície.......................................5.4.2.......13
+Condições gerais .....................................................4........5                Procedimentos em usina ....................................6.3........17
+Controle construtivo por deflexão ......................7.3.4.....21                            Produção do concreto asfáltico.........................5.4.6......14
+Controle da execução.........................................7.3........20                      Referências normativas.............................................2......2
+Controle            da         graduação               da         mistura            de         Resumo ..............................................................................1
+agregados ..........................................................7.2.3......20               Segmento experimental....................................5.4.1.....13
+Controle         da      quantidade            de      CAP         no      concreto             Silos frios para agregados...................................5.3.3......9
+asfáltico ..............................................................7.2.2......20           Sumário ..............................................................................1
+Controle da usinagem do concreto asfáltico ........7.2.....20                                   Tamanho Nominal Máximo (TNM).........................3.9......5
+Controle            das           características               do         concreto             Tanque para CAP ................................................5.3.1......9
+asfáltico ..............................................................7.2.4......20           Termos e definições ................................................3........4
+Controle de temperatura ...................................7.2.1......19                        Transporte do concreto asfáltico.......................5.4.7......15
+Controle dos insumos ...........................................7.1......18                     Usina gravimétrica ..........................................5.3.4.1......10
+Critérios de medição................................................8......23                   Usina para concreto asfáltico ..............................5.3.4......9
+Depósito para agregados ....................................5.3.2......9                        Usina volumétrica (contínua) ..........................5.3.4.2.....10
+
+                                                                                _________________

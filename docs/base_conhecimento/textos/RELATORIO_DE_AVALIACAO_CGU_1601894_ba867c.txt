@@ -1,0 +1,572 @@
+   RELATÓRIO DE AVALIAÇÃO
+   PREVENTIVA DE LICITAÇÕES, EDITAIS E
+   CONTRATOS
+   Superintendência Regional - Departamento Nacional de Infraestrutura de
+   Transportes - Minas Gerais
+   Exercício 2024
+
+
+
+
+13 de novembro de 2024
+Controladoria-Geral da União (CGU)
+Secretaria Federal de Controle Interno (SFC)
+
+
+RELATÓRIO DE AVALIAÇÃO
+Órgão: MINISTÉRIO DOS TRANSPORTES
+Unidade Examinada: Superintendência Regional - Departamento Nacional de
+Infraestrutura de Transportes - Minas Gerais
+Município/UF: Belo Horizonte/Minas Gerais
+Relatório de Avaliação: #1601894
+
+
+13 de novembro de 2024
+Missão
+Elevar a credibilidade do Estado por meio da participação social, do controle
+interno governamental e do combate à corrupção em defesa da sociedade.
+
+Avaliação
+O trabalho de avaliação, como parte da atividade de auditoria interna, consiste
+na obtenção e na análise de evidências com o objetivo de fornecer opiniões ou
+conclusões independentes sobre um objeto de auditoria. Objetiva também
+avaliar a eficácia dos processos de governança, de gerenciamento de riscos e de
+controles internos relativos ao objeto e à Unidade Auditada, e contribuir para o
+seu aprimoramento.
+
+
+                                                                              3
+SUMÁRIO
+INTRODUÇÃO                                                                           5
+
+RESULTADOS DOS EXAMES                                                                6
+
+1. Falhas na elaboração do orçamento para contratação de serviços de manutenção e
+conservação na rodovia BR-116/MG, referente ao Edital do Pregão nº 016/2024-06,
+devidamente saneadas.                                                                6
+
+2. Possível superestimativa de quantidade de aquisição e de transporte de cimento
+asfáltico de petróleo, com risco de ocorrência de superfaturamento nas medições.     8
+
+ANEXOS                                                                              10
+
+I – MANIFESTAÇÃO DA UNIDADE AUDITADA E ANÁLISE DA EQUIPE DE AUDITORIA               10
+
+
+
+
+                                                                                         4
+INTRODUÇÃO
+Trata-se de avaliação realizada preventivamente em licitação, cuja origem decorre da análise
+autônoma realizada pela ferramenta Analisador de Licitações, Contratos e Editais – ALICE,
+desenvolvida pela Controladoria-Geral da União – CGU. O ALICE gera alertas, a partir de trilhas
+de auditoria automatizadas suportadas por cruzamentos de dados e inteligência artificial, que
+são avaliados e confirmados por uma equipe de auditoria, resultando no presente trabalho.
+
+A avaliação realizada pela CGU se limita aos alertas gerados pelo Sistema ALICE e possui
+natureza preventiva para mitigar os riscos que poderiam impactar os objetivos da futura
+contratação, fundamentada nos artigos 169 e 170 da Lei nº 14.133 de 1º de abril de 2021. As
+análises, conclusões e opiniões apresentadas no presente relatório não se confundem com
+aprovação ou homologação do procedimento licitatório realizado, tendo em vista que essas
+atividades são de responsabilidade da gestão da unidade auditada.
+
+A ação de controle consistiu em análise preventiva do Edital do Pregão Eletrônico
+nº 016/2024-06, cujo objeto é a contratação de empresa para execução de Serviços de
+Manutenção (Conservação/Recuperação) em trecho na Rodovia BR-116/MG, segmento km
+207,10 ao km 306,50, com vistas a execução de Plano de Trabalho e Orçamento –
+PATO, extensão de 99,40 km, com valor previsto de R$ 95.556.542,63.
+
+A partir da publicação do edital, realizada em 7 de março de 2024, considerando a
+materialidade do certame e o alerta do Sistema Alice, foi realizada análise preliminar das
+quantidades e dos custos dos itens da planilha orçamentária com maior materialidade, na qual
+foram detectadas possíveis inconsistências.
+
+Mediante a Solicitação de Auditoria nº 01 (#1611569), via e-Aud, de 25 de março de 2024, foi
+solicitado à Superintendência Regional do DNIT em Minas Gerais que alocasse corretamente
+os serviços de limpeza e de desobstrução de bueiros no PATO e que revisasse o nível de
+esforço do serviço de tapa buraco. Já na Solicitação de Auditoria nº 02 (#1612310),
+encaminhada em 27 de março de 2024, o DNIT foi instado a avaliar a redução do teor de
+ligante no PATO. Mediante o Ofício nº 63636/2024/NAA - MG/SRE - MG, de 8 de abril de 2024,
+a Superintendência Regional do DNIT em Minas Gerais apresentou sua manifestação quanto
+à Solicitação de Auditoria nº 01, informando que os itens apontados pela CGU foram
+corrigidos. No que tange à Solicitação de Auditoria nº 02, a autarquia enviou o Ofício
+nº 63637/2024/NAA - MG/SRE - MG, de 15 de abril de 2024. Cabe mencionar que foi
+apresentada a mesma resposta para a Solicitação de Auditoria nº 01 e para a Solicitação de
+Auditoria nº 02, ou seja, o Despacho do Chefe da Unidade Local do DNIT em Teófilo Otoni
+(documento SEI DNIT nº 17450545). Nesse despacho não foi apresentada manifestação
+quanto ao apontamento da Solicitação de Auditoria nº 02. Em 12 de abril de 2024, foi
+publicado novo aviso de reabertura do edital com novo valor previsto de R$ 85.057.524,41.
+
+Em 23 de maio de 2024, mediante o Ofício nº 96987/2024/DIR/DNIT SEDE, o DNIT apresentou
+suas considerações acerca do Relatório Preliminar.
+
+
+
+                                                                                             5
+RESULTADOS DOS EXAMES
+1. Falhas na elaboração do orçamento para contratação de serviços de
+manutenção e conservação na rodovia BR-116/MG, referente ao Edital do
+Pregão nº 016/2024-06, devidamente saneadas.
+
+A análise da planilha orçamentária da versão do Plano Anual de Trabalho e Orçamento – PATO,
+anexa ao Edital nº 016/2024-06, publicado em 7 de março de 2024, permitiu verificar que
+havia inconsistências na elaboração dela, as quais se encontram resumidamente descritas a
+seguir:
+
+a) Serviços de limpeza e desobstrução de bueiros.
+
+Foram alocados no Grupo I - Conservação da faixa de domínio e limpeza de dispositivos de
+drenagem e de OAC do PATO os seguintes serviços relacionados à limpeza e desobstrução de
+bueiros:
+
+- Limpeza e desobstrução mecanizada de bueiros com diâmetro de até 1,00 m;
+- Limpeza e desobstrução mecanizada de bueiros com diâmetro acima de 1,00 até 1,50 m;
+- Limpeza de bueiro;
+- Desobstrução de bueiro.
+
+Conforme o Edital do certame, os serviços do Grupo I serão avaliados a partir de parâmetros
+de desempenho.
+
+Como os serviços relacionados à limpeza e desobstrução de bueiros não são mais passíveis de
+serem avaliados por padrão de desempenho, não constando no anexo XIV da Resolução
+nº 8/2023, que elenca os serviços que podem ser avaliados a partir de parâmetros de
+desempenho, foi solicitado ao DNIT que avaliasse a exclusão desses serviços do Grupo I,
+promovendo a inclusão desses serviços no Grupo 2 - Conservação corretiva rotineira. Após a
+solicitação, o DNIT publicou novo edital com as correções solicitadas.
+
+b) Nível de esforço do serviço de tapa-buraco.
+
+A quantidade do serviço de tapa-buraco alocada na planilha orçamentária, de 2.417,48m³, foi
+estimada com a adoção da extensão de 402,91 kmfa (quilômetro faixa pista e acostamento),
+conforme tabela a seguir:
+
+                    Tabela 01 – Cálculo da quantidade de tapa buraco
+                                             Quantidade      Nível de  Quantidade
+                 Descrição                  inventariada      Esforço  para 2 anos
+                                                 (a)            (b)   (c = a x b x 2)
+   Tapa buraco com pintura de ligação -
+                                              402,91 kmfa    3 m³/kmfa 2.417,48m³
+   demolição com serra corta piso
+       Fonte: PATO versão publicada em 07/03/2024.
+
+                                                                                         6
+Conforme a memória de cálculo do PATO, o nível de esforço do tapa-buraco foi calculado em
+função dos contratos em andamento no trecho, da seguinte forma:
+
+         Tabela 02 - Demonstrativo de Cálculo do nível de esforço de tapa buraco
+    Contrato 781/2021 - Até 19º MP (m³)                               Extensão do Trecho
+                                              Volume Médio (m³)
+    Contrato 748/2021 - Até 21º MP (m³)                                     (kmfa)
+                    2050,81                              1.295,25             402,91
+                    1579,28                               902,44
+                  Valor Médio                            1.098,85
+                                                       Nível de Esforço:     2,73 m³/km
+                                               Nível de Esforço Adotado:     3,00 m³/km
+       Fonte: PATO versão publicada em 07/03/2024.
+
+Ou seja, para o cálculo do nível de esforço foi considerado o volume médio anual de tapa-
+buraco dos contratos nº 782/2021 e 748/2021 e dividido pela extensão das duas faixas da
+pista, 3ª faixas e acostamentos do trecho do PATO do Pregão nº 016/2024-06.
+
+Há duas falhas nessa estimativa da quantidade do serviço de tapa-buraco.
+
+Primeiramente, o cálculo correto do nível de esforço seria a divisão do volume médio anual
+de cada contrato pela extensão das pistas de cada um dos contratos, obtendo-se o nível de
+esforço médio ponderado, conforme recalculado a seguir:
+
+    Tabela 03 - Demonstrativo de Cálculo do nível de esforço de tapa buraco - correção
+                                   Quanti_        Quanti_                  Nível de
+      Contrato      Medição          dade      dade anual       kmf        esforço
+                                     (m³)          (m³)                   (m³/kmf)
+          748              21               1.579,28     902,45     292,46        3,09
+          781              19               2.050,81   1.295,25     315,55        4,10
+                                               Total   2.197,69     608,01        3,61
+     Fonte: elaborado pela equipe da CGU.
+
+A segunda falha refere-se à adoção indevida das faixas de acostamento para cálculo do
+consumo do serviço. Conforme o §2º do art. 17 da Resolução nº 8/2023, “É vedada a
+consideração do acostamento para estimativa dos quantitativos dos serviços de tapa buraco
+e remendo profundo, devendo-se ser restringida à pista de rolamento”.
+
+Assim, como a extensão das duas pistas e 3ª faixas é de 271,35kmf e é vedada a inclusão dos
+acostamentos para estimativa dos quantitativos dos serviços de tapa buraco, o DNIT foi
+instado a avaliar a redução da quantidade do serviço “Tapa buraco com pintura de ligação -
+demolição com serra corta piso” para 1.961,63m³ (271,35 x 3,61 x 2). Após a solicitação, o
+DNIT publicou novo edital, com a previsão de 1.953,74m³ para o serviço de tapa buraco
+(271,35 x 3,60 x 2), atendendo assim, as correções solicitadas.
+
+                                                                                           7
+2. Possível superestimativa de quantidade de aquisição e de transporte de
+cimento asfáltico de petróleo, com risco de ocorrência de superfaturamento
+nas medições.
+
+Na análise da planilha orçamentária da versão do Plano Anual de Trabalho e Orçamento –
+PATO, anexa ao Edital nº 016/2024-06, publicado em 7 de março de 2024, foi verificada
+possível superestimativa na quantidade de aquisição e de transporte de cimento asfáltico de
+petróleo.
+
+Conforme a planilha “Quantidade de Material Betuminoso” do PATO, para a estimativa da
+quantidade de aquisição e transporte de cimento asfáltico de petróleo – CAP 50/70 foi
+adotada a densidade de 2,4t/m³ e a taxa de 6,323%, referente à taxa prevista na composição
+de custo do Sicro.
+
+Na Resolução nº 8/2023, de 8 de novembro de 2023, que estabeleceu a rotina de
+procedimentos relativos à elaboração do PATO e à execução, medição, fiscalização,
+prorrogação e adequação de contratos de PATO, é previsto no parágrafo único do art. 59 que
+devem ser adotados os valores reais de densidade e teor de CAP nas medições dos serviços
+que envolvam execução de serviços de concreto betuminoso usinado a quente:
+                      Art. 59. Em aplicações que envolvam execução de serviços de concreto betuminoso
+                      usinado à quente (CBUQ), a contratada deverá apresentar o traço da mistura
+                      devidamente assinado pelo responsável técnico do contrato.
+                      Parágrafo único. O traço a que se refere este caput deverá ser aceito pela fiscalização
+                      local, aplicando-se, para efeito de medição, monitoramento, fiscalização e auditoria,
+                      os valores reais de densidade e teor de CAP, admitindo-se a tolerância constante
+                      nas especificações DNIT 031/2006-ES e DNER-ES 385/99. (grifo nosso)
+
+Em auditoria realizada nos Contratos nº 103/2022-06 e nº 722/2022-06 (tarefa e-Aud
+#1352633), referente a contratos de manutenção em trechos de rodovias próximas ao trecho
+em questão e sob a fiscalização da Unidade Local do DNIT em Teófilo Otoni/MG, foi verificado
+que as misturas betuminosas vêm sendo produzidas ou adquiridas com teor de ligante na
+ordem de 5,3%, referentes ao teor ótimo de betume obtido em laboratório. Foi constatado
+nessa auditoria que as superestimativas na previsão de aquisição e transporte de CAP 50/70
+nos pregões do DNIT resultaram em superfaturamentos expressivos nesses contratos, uma
+vez que as quantidades de aquisição e transporte foram superestimadas pois utilizaram o teor
+de ligante teórico constante na base do Sicro, de 6,323%, sendo que foram executadas taxas
+de ligante até 20% menores, mas foram medidos e pagos integralmente com base no teor de
+6,323%.
+
+Assim, devido ao risco de ocorrer novos superfaturamentos referente à medição e pagamento
+de aquisição e transporte de CAP 50/70 sem levar em consideração o teor ótimo de ligante
+efetivamente utilizado, o DNIT foi instado a avaliar a redução do teor de ligante no PATO,
+condizente com a realidade da região, para a estimativa da quantidade de aquisição e de
+transporte de cimento asfáltico de petróleo – CAP 50/70.
+
+                                                                                                           8
+Como o DNIT, inicialmente, não apresentou manifestação a esse questionamento, sendo
+mantida na planilha orçamentária a quantidade superestimada de aquisição e de transporte
+de cimento asfáltico de petróleo – CAP 50/70 e que, reiteradamente, nos contratos de
+manutenção rodoviária sob fiscalização da Unidade Local do DNIT em Teófilo Otoni/MG, essa
+superestimativa vem efetivando-se em superfaturamento, decorrente da medição do teor de
+CAP de 6,323% previsto no PATO, em detrimento da medição do teor efetivamente utilizado
+na mistura asfáltica, foi recomendado ao DNIT, em caráter preliminar, que:
+
+- Instruísse a empresa contratada que ela deve, ao elaborar a memória de cálculo da medição,
+adotar a densidade real e o teor de cimento asfáltico de petróleo real, conforme preconizado
+no parágrafo único do art. 59 da Resolução nº 8/2023, com base no projeto da mistura e/ou
+ensaios realizados;
+
+- Instruísse a empresa supervisora que, ao atestar a medição dos serviços, verificasse se os
+valores reais de densidade e de teor de CAP foram observados, cotejando os dados dos
+ensaios apresentados pela executora com os dados dos ensaios realizados pela supervisora;
+
+- Instruísse o fiscal do contrato que, ao atestar a medição dos serviços, verificasse se os valores
+reais de densidade e de teor de CAP foram observados.
+
+Conforme a manifestação ao Relatório Preliminar, o DNIT entende que deve ser adotado no
+orçamento o teor de 6,323%, uma vez que, no momento da contratação, ainda não se dispõe
+da taxa real. Por outro lado, o fiscal do contrato encaminhou a recomendação
+supramencionada do Relatório Preliminar à empresa supervisora. Porém, cabe ainda ao DNIT
+instruir a empresa contratada a adotar a densidade real e o teor de cimento asfáltico de
+petróleo real nas medições, uma vez que ela é responsável pela sua elaboração.
+
+2.1 Recomendação do Achado
+
+Recomenda-se à Superintendência Regional do DNIT em Minas Gerais instruir a empresa
+contratada para a execução do PATO relativo ao Edital nº 016/2024-06 que adote densidades
+e teores de cimento asfáltico de petróleo reais nas medições.
+
+
+
+
+                                                                                                 9
+ANEXOS
+I – MANIFESTAÇÃO DA UNIDADE AUDITADA E ANÁLISE DA EQUIPE DE
+AUDITORIA
+Achado nº 1
+
+Manifestação da unidade auditada
+
+Em resposta ao Relatório Preliminar, encaminhado em 10 de maio de 2024, via e-Aud (tarefa
+#1631350), mediante o Ofício nº 96371/2024/CGMRR/DIR/DNIT SEDE, de 23 de maio de 2024,
+foi apresentada a seguinte consideração da Coordenação-Geral de Manutenção e Restauração
+Rodoviária do DNIT:
+
+“3. As falhas na elaboração do orçamento dizem respeito, inicialmente, à alocação, no Grupo
+I -Conservação da faixa de domínio e limpeza de dispositivos de drenagem e de OAC do PATO,
+serviços relacionados à limpeza e desobstrução de bueiros, sendo que, conforme o Edital do
+certame, os serviços do Grupo I serão avaliados a partir de parâmetros de desempenho.
+
+4. Como tais serviços, de acordo a Resolução nº 8/2023, de 06 de novembro de 2023, não são
+mais passíveis de serem avaliados por padrão de desempenho, a CGU solicitou ao DNIT que
+avaliasse a exclusão desses serviços do Grupo I, promovendo a inclusão desses serviços no
+Grupo 2 - Conservação corretiva rotineira. Após a solicitação, o DNIT publicou novo edital
+com as correções solicitadas.
+
+5. A outra falha refere-se a impropriedades na determinação do nível de esforço do serviço de
+tapa buraco, sendo a primeira delas na consideração da extensão das pistas de dois contratos
+em andamento no trecho que serviram de base para o cálculo e, a outra, na adoção indevida
+das faixas de acostamento para cálculo do consumo do serviço, o que contraria o §2º, do art.
+17 da Resolução nº 8/2023, que estabelece:
+
+                       “É vedada a consideração do acostamento para estimativa dos quantitativos dos
+                       serviços de tapa buraco e remendo profundo, devendo-se ser restringida à pista de
+                       rolamento.” 4. 5.
+
+6. Em consequência, foi solicitado ao DNIT avaliar a redução da quantidade do serviço “Tapa
+buraco com pintura de ligação - demolição com serra corta piso” de acordo com o cálculo
+demonstrado no Relatório Preliminar em tela, o que foi providenciado com a publicação de
+novo edital, com a previsão de1.953,74m³ para o serviço de tapa buraco, atendendo, assim,
+as correções solicitadas.”
+
+Análise da equipe de auditoria
+
+Conforme mencionado no apontamento, o DNIT saneou a impropriedade, com redução da
+quantidade do serviço.
+
+                                                                                                     10
+Achado nº 2
+
+Manifestação da unidade auditada
+
+Em resposta ao Relatório Preliminar, encaminhado em 10 de maio de 2024, via e-Aud (tarefa
+#1631350), mediante o Ofício nº 96371/2024/CGMRR/DIR/DNIT SEDE, de 23 de maio de 2024,
+foi apresentada a seguinte consideração da Coordenação-Geral de Manutenção e Restauração
+Rodoviária do DNIT:
+
+“7. Quanto à possível superestimativa de quantidade de aquisição e de transporte de cimento
+asfáltico de petróleo - CAP, com risco de ocorrência de superfaturamento nas medições, a
+CGU pontuou que, conforme a planilha “Quantidade de Material Betuminoso”, da planilha
+orçamentária da versão do Plano Anual de Trabalho e Orçamento - PATO, anexa ao Edital nº
+016/2024-06, publicado em 7 de março de 2024,para a estimativa da quantidade de aquisição
+e transporte de cimento asfáltico de petróleo - CAP 50/70, foi adotada a densidade de 2,4t/m³
+e a taxa de 6,323%, referente à taxa prevista na composição de custo do Sicro.
+
+8. Indicou, também, que na Resolução nº 8/2023, de 8 de novembro de 2023, que estabeleceu
+a rotina de procedimentos relativos à elaboração do PATO e à execução, medição, fiscalização,
+prorrogação e adequação de contratos de PATO, é previsto no parágrafo único do art. 59 que
+devem ser adotados os valores reais de densidade e teor de CAP nas medições dos serviços
+que envolvam execução de serviços de concreto betuminoso usinado à quente:
+
+                       Art. 59. Em aplicações que envolvam execução de serviços de concreto betuminoso
+                       usinado à quente (CBUQ), a contratada deverá apresentar o traço da mistura
+                       devidamente assinado pelo responsável técnico do contrato.
+
+                       Parágrafo único. O traço a que se refere este caput deverá ser aceito pela
+                       fiscalização local, aplicando-se, para efeito de medição, monitoramento,
+                       fiscalização e auditoria, os valores reais de densidade e teor de CAP, admitindo-se
+                       a tolerância constante nas especificações DNIT 031/2006-ES e DNER-ES 385/99.
+                       (Grifos acrescidos).
+
+9. Informou a CGU que, em auditoria realizada nos Contratos nº 103/2022-06 e nº 722/2022-
+06 (tarefa e-Aud #1352633), referente a contratos de manutenção em trechos de rodovias
+próximas ao trecho em questão e sob a fiscalização da Unidade Local do DNIT em Teófilo
+Otoni/MG, verificou que as misturas betuminosas vêm sendo produzidas ou adquiridas com
+teor de ligante na ordem de 5,3%, referentes ao teor ótimo de betume obtido em laboratório.
+
+10. Constatou, também, que as superestimativas na previsão de aquisição e transporte de CAP
+50/70 em tais pregões do DNIT resultaram em superfaturamentos expressivos nesses
+contratos, uma vez que as quantidades de aquisição e transporte foram superestimadas pois
+utilizaram o teor de ligante teórico constante na base do Sicro, de 6,323%, sendo que foram
+executadas taxas de ligante até 20% menores, mas foram medidos e pagos integralmente com
+base no teor de 6,323%.
+
+
+
+
+                                                                                                       11
+11. Neste sentido, o DNIT foi instado a avaliar a redução do teor de ligante no PATO,
+condizente com a realidade da região, para a estimativa da quantidade de aquisição e de
+transporte de cimento asfáltico de petróleo - CAP 50/70.
+
+12. Observa-se que o que consta da norma do DNIT é que a menção ao artigo 59 da referida
+resolução é relacionado à fase de execução e fiscalização do contrato de conservação
+rodoviária.
+
+13. Os termos do dispositivo da norma não se aplica a fase atual da orçamentação, que foi
+considerada a estimativa e sendo mantida na planilha orçamentária a quantidade referencial
+de aquisição e de transporte de cimento asfáltico de petróleo - CAP 50/70 conforme a taxa
+média.
+
+14. Decerto, que acaso já se dispunha pela Unidade Local da taxa real do trecho, a boa prática
+da orçamentação é a adoção de parâmetros o mais real possível. Noutro norte, a exigência
+constante da norma de se aprovar o traço da mistura somente após o objeto ser contratado
+é decorrente do fato de que a taxa tem uma variação consoante seus materiais específicos
+que comporão a mistura e suas características físicas ao final induzem em alterações da taxa
+do insumo asfáltico na mistura.
+
+15. A ponderação trazida pela auditoria realizada é que durante a execução está se adotando
+medição do serviço usando a taxa teórica em detrimento da medição do teor efetivamente
+utilizado na mistura asfáltica, a qual. CGU emitiu a seguinte recomendação:
+
+                       Recomenda-se à Superintendência Regional do DNIT em Minas Gerais instruir a
+                       empresa contratada para a execução do PATO que adote densidades e teores de
+                       cimento asfáltico de petróleo reais nas medições, bem como instruir o fiscal do
+                       contrato e a empresa supervisora que verifiquem se esses valores foram observados
+                       e que façam o cotejamento dos dados dos ensaios da executora com os ensaios da
+                       supervisora.
+
+16. Entretanto, se observa que a fase atual é o procedimento licitatório, onde somente após
+a celebração do contrato com o licitante vencedor é que será procedido pela empresa junto a
+fiscalização com o ensaio da mistura e a obtenção da taxa real a ser aplicada e medida durante
+sua execução.
+
+17. Do exposto, esta Coordenação-Geral entende, que somente é cabível tal recomendação
+acaso a Unidade Local tenha certeza da taxa média real (parâmetro mais preciso que o teórico)
+que venha a ser aplicada. Do contrário, a adoção da taxa teórica deve ser adotada,
+considerando que a contratação é empreitada por preços unitários e conforme norma é
+obrigado a realizar o ensaio prévio para obter a taxa real da mistura.
+
+18. Em que pese a pertinência da recomendação feita pela CGU, o que se encontra
+consignado no parágrafo único do art. 59 da Resolução nº 8/2023, de 8 de novembro de
+2023, é aplicado somente durante o início da execução dos serviços do contrato firmado, não
+se aplicando na fase de orçamentação tampouco fase licitatória.
+
+
+                                                                                                     12
+19. Outrossim, verifica-se que tanto a SRE/MG quanto a Unidade Local de Teófilo Otoni/MG,
+tomaram conhecimento do teor da recomendação perpetrada pela CGU como se extrai do
+Despacho / SRE -MG/COENGE - CAF - MG (SEI! nº 17822248) e do Despacho (DNIT) UL - Teófilo
+Otoni - MG (SEI! nº17870623), onde foi declarado que serão seguidos os procedimentos afetos
+ao artigo 59 após assinatura do contrato e previamente a execução dos serviços.
+
+20. No que diz respeito à observação realizada de que em auditoria realizada nos Contratos
+nº103/2022-06 e nº 722/2022-06 (tarefa e-Aud #1352633), referente a contratos de
+manutenção em trechos de rodovias próximas ao trecho em Teófilo Otoni/MG, onde a CGU
+verificou que as misturas betuminosas vêm sendo produzidas ou adquiridas constante na base
+do Sicro, cabe pontuar que os citados Contratos nº103/2022-06 e nº 722/2022-06 foram
+celebrados, respectivamente, em 22 de março de 2022 e 02 de janeiro de 2022.
+
+20.1. A determinação de a contratada apresentar o traço da mistura devidamente assinado
+pelo responsável técnico do contrato, após assinatura, devendo ser aceito pela fiscalização
+local, aplicando-se, para efeito de medição, monitoramento, fiscalização e auditoria, os
+valores reais de densidade e teor de CAP, somente surgiu com a Resolução nº 8/2022, de 23
+de junho de 2022, conforme o art. 53 e seu parágrafo único. Posteriormente, esta Resolução
+foi revista e revogada pela Resolução nº 8/2023, de 8 de novembro de2023, que incorporou
+tais exigências no art. 59 e seu parágrafo único.
+
+20.2. Verifica-se, consequentemente, que os citados contratos são anteriores à Resolução nº
+8/2022, de 23 de junho de 2022, portanto, não abrangidos pela citada determinação.
+
+20.3. Entretanto, a adoção da taxa de mistura real é e deve sempre ser uma prática a ser
+adotada pela fiscalização, dado que a medição dos serviços devem ser realizados nos termos
+reais executados.
+
+20.4. Deve ser ressaltado que anteriormente à Resolução nº 8/2022, de 23 de junho de 2022,
+a rotina de procedimentos relativos à elaboração do PATO e à execução, medição e
+fiscalização de contratos PATO era regida pela Instrução de Serviço nº 08, de 22/03/2019, que
+não trazia qualquer regramento a respeito do tema.
+
+20.5. Atualmente, com o regramento estabelecido pela Resolução nº 8/2023, de 8 de
+novembro de2023, os procedimentos estão perfeitamente definidos, não havendo o risco de
+ocorrer medições e pagamentos de aquisição e transporte de CAP 50/70 sem levar em
+consideração o teor ótimo de ligante efetivamente utilizado.
+
+20.6. É cediço que qualquer ato administrativo, inclusive normativo, editado pela
+Administração Pública, só tem existência jurídica, vigência e eficácia após a sua publicação.
+Com exceção do que ocorre no Direito Administrativo sancionador, que, em perfeita simetria
+com os princípios que regem o Direito Penal, permite a retroatividade da lei sancionadora
+mais benéfica ao acusado. É a conclusão que se extrai do artigo 6º, caput, da Lei de Introdução
+às Normas do Direito Brasileiro - LINDB (Decreto-Lei nº 4.657, de 4 de setembro de 1942)..
+
+20.7. Nem mesmo a simples interpretação de norma administrativa pode retroagir, por força
+do artigo 2º, parágrafo único, inciso XIII, da Lei Federal nº 9.784/99:
+                                                                                            13
+                       "Art. 2º A Administração Pública obedecerá, dentre outros, aos princípios da
+                       legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade,
+                       ampla defesa, contraditório, segurança jurídica, interesse público e eficiência.
+                       Parágrafo único. Nos processos administrativos serão observados, entre outros, os
+                       critérios de:
+                       [...]
+                       XIII - interpretação da norma administrativa da forma que melhor garanta o
+                       atendimento do fim público a que se dirige, vedada aplicação retroativa de nova
+                       interpretação." (Grifo acrescido).
+
+20.8. Além disso, vide o que informam os artigos 23 e 24, da LINDB:
+
+                       "Art. 23. A decisão administrativa, controladora ou judicial que estabelecer
+                       interpretação ou orientação nova sobre norma de conteúdo indeterminado,
+                       impondo novo dever ou novo condicionamento de direito, deverá prever regime de
+                       transição quando indispensável para que o novo dever ou condicionamento de
+                       direito seja cumprido de modo proporcional, equânime e eficiente e sem prejuízo
+                       aos interesses gerais.”
+
+                       Art. 24. A revisão, nas esferas administrativa, controladora ou judicial, quanto à
+                       validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção
+                       já se houver completado levará em conta as orientações gerais da época, sendo
+                       vedado que, com base em mudança posterior de orientação geral, se declarem
+                       inválidas situações plenamente constituídas.
+
+                       Parágrafo único. Consideram-se orientações gerais as interpretações e
+                       especificações contidas em atos públicos de caráter geral ou em jurisprudência
+                       judicial ou administrativa majoritária, e ainda as adotadas por prática administrativa
+                       reiterada e de amplo conhecimento público."(Destaques editados).
+
+20.9. Em observância às determinações legais supratranscritas, é manifesta a
+inadmissibilidade de se analisar à luz de um novo ato regulamentar, como é o caso da
+Resolução nº 8 de 6/11/2023, a validade de atos administrativos elaborados/praticados com
+base em ordenamento anterior.
+
+20.10. Não se pode olvidar, ainda, o teor do artigo 22, § 1º da LINDB que dispõe:
+
+                       "Art. 22. Na interpretação de normas sobre gestão pública, serão considerados os
+                       obstáculos e as dificuldades reais do gestor e as exigências das políticas públicas a
+                       seu cargo, sem prejuízo dos direitos dos administrados. (Regulamento)
+
+                       § 1º Em decisão sobre regularidade de conduta ou validade de ato, contrato, ajuste,
+                       processo ou norma administrativa, serão consideradas as circunstâncias práticas que
+                       houverem imposto, limitado ou condicionado a ação do agente"
+
+20.11. Ou seja, mesmo que aferida eventual desconformidade em determinado ato
+administrativo, os elementos do caso devem ser contextualizados com as circunstâncias e
+dificuldades enfrentadas pelo gestor à época da edição do ato. Ou seja, não se pode decidir
+pela invalidação de atos ocorridos nos anos pretéritos, se no mundo real a situação prática
+indicava ser aquele o comportamento possível e adequado, conforme o ordenamento então
+em vigor.
+
+                                                                                                         14
+20.12. Portanto, s.m.j., entende-se que com relação aos Contratos nº 103/2022-06 e nº
+722/2022-06 celebrados, em março e em janeiro de 2022, respectivamente, devem ser
+analisados segundo a Instrução de Serviço nº 08, de 22/03/2019, a qual não trazia qualquer
+regramento a respeito do tema, em que pese a ponderação da necessidade apropriação real
+dos serviços a serem executados, como a taxa real de ligante aplicado após definição do traço
+da mistura.”
+
+Mediante o Ofício nº 95353/2024/UL - TEÓFILO OTONI - MG/SRE – MG, de 21 de maio de
+2024, a Chefe de Serviço da Unidade Local de Teófilo Otoni – Substituta, encaminhou o
+Relatório Preliminar à empresa supervisora de apoio à unidade local de Teófilo Otoni,
+alertando-a a observar a recomendação exarada.
+
+Análise da equipe de auditoria
+
+Os Contratos nº 103/2022-06 e nº 722/2022-06 foram mencionados a fim de exemplificar o
+superfaturamento que vem ocorrendo nas medições, devido à superestimativa do teor de
+cimento asfáltico de petróleo nos PATOs e a inobservância do teor e densidade real nas
+medições. Tais superfaturamentos estão sendo tratados no âmbito do Plano de Trabalho de
+Auditoria e-CGU #1352633. Cabe esclarecer que o Contrato nº 722/2022-06 foi firmado em 2
+de janeiro de 2023 e não em 2022, já sob a vigência da Resolução nº 8/2022 e, em que pese o
+Contrato nº 103/2022-06 ter sido firmado durante a vigência da Instrução de Serviço nº
+08/2019, demais normativos do DNIT que regem a execução dos serviços de pavimentação
+estabelecem que a quantidade medida de cimento asfáltico de petróleo deve ser a
+efetivamente aplicada. Conforme os critérios de medição do item 8, b) da Norma DNIT nº
+031/2006 – ES - Pavimentos flexíveis - Concreto asfáltico, “a quantidade de cimento asfáltico
+aplicada é obtida pela média aritmética dos valores medidos na usina, em toneladas”. Já na
+Norma DNIT nº 154/2010 – ES - Pavimentação asfáltica – Recuperação de defeitos em
+pavimentos asfálticos, em seu item 8, g), o critério de medição é “A quantidade de materiais
+asfálticos, em toneladas, deve ser a aplicada e seu transporte calculado com base na distância
+entre o fornecedor e os depósitos da obra”.
+
+O intuito do apontamento foi no sentido de adotar o teor de cimento asfáltico de petróleo na
+fase da orçamentação mais próximo ao teor que vem sendo adotado na região. Entretanto, o
+DNIT entende que a taxa de 6,323% seria uma taxa média e, uma vez que ainda não dispõe da
+taxa real, não seria possível adotar no orçamento uma taxa menor. Tendo em vista que o
+certame já ocorreu, não cabe mais essa possível redução.
+
+Quanto à recomendação exarada no Relatório Preliminar, a Unidade Local de Teófilo
+Otoni/MG já instruiu a empresa supervisora a verificar se as densidades e teores de cimento
+asfáltico de petróleo reais foram adotadas nas medições. Cabe ainda a instrução à empresa
+executora, uma vez que ela é responsável pela elaboração das medições.
+
+
+
+
+                                                                                           15

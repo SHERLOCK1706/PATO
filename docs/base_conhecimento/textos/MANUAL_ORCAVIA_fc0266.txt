@@ -1,0 +1,233 @@
+OrçaVia
+
+Do zero ao primeiro orçamento
+Manual rápido de operação e arquitetura do sistema.
+
+Orçamentos a partir do SICRO/SINAPI com rastreabilidade total de cada ajuste manual.
+
+(O) (65) 9 9990 - 3725
+
+Conceitos Básicos
+
+io
+
+Base (UF & Período) Composição
+
+Trava os preços. O estado e o mês/ano da tabela O bloco de montar da obra. Um serviço com
+oficial que serve como referência inalterável. seu custo detalhado (ex: Escavação). O
+Inclui a escolha de Regime (Onerado/Desonerado). orçamento é uma lista destas composições.
+
+(MA
+«) E
+
+Vivo vs. Personalizado Override
+
+Origem do preço. “Vivo” busca o valor O “carimbo” laranja. Qualquer ajuste manual
+atualizado na base automaticamente. feito sobre um valor oficial (trocar um preço,
+
+“Personalizado” é um valor fixo digitado por você. equipamento ou caminhão).
+
+(o) (65) 9 9990 - 3725
+
+O Fluxo do Primeiro Projeto
+
+4
+
+1 a 3
+
+Configuração Edição 3 Revisão Exportação
+
+Comparar o valor Gerar o Excel final
+oficial contra o parametrizado.
+valor recalculado.
+
+Escolher a base e Definir regime e
+selecionar os aplicar ajustes à
+serviços. realidade da obra.
+
+Projetos novos seguem esta esteira. Projetos já salvos abrem direto na tela “Resumo” (veremos mais à frente).
+(o) (65) 9 9990 - 3725
+
+Passo 1. Configuração
+
+Subir Planilha
+
+O app reconhece a origem
+automaticamente via código
+(com ou sem quantidades).
+
+Cesta do Projeto
+
+As composições selecionadas /
+aguardam a definição do
+regime.
+
+Busca Manual
+
+Autocomplete inteligente por
+código ou descrição.
+
+(605) 9 9990 - 3725
+
+Passo 2. Edição
+
+É aqui que você ajusta o orçamento à realidade da obra (troca de preços,
+equipamentos, caminhões).
+
+Material: Cimento Portland -R$10000- R$120,00
+
+Regra de Ouro: Todo ajuste feito aqui não
+altera a base oficial por baixo. Ele apenas
+cria o “Override” (marcado em laranja),
+
+permitindo auditoria visual imediata.
+
+(605) 9 9990 - 3725
+
+Passo 3. Revisão
+
+Valor Original Valor Recalculado
+
+Com todos os seus
+overrides aplicados.
+
+Direto da base oficial,
+sem intervenções.
+
+Se nenhum ajuste manual foi feito no Passo 2, os
+valores das duas colunas baterão exatamente.
+9 9990 - 3725
+
+Passo 4. Exportação
+
+BDI
+(Opção: Aplicar só no resumo ou dentro de cada composição).
+
+Curva ABC OD)
+(Opção: Por serviços e/ou materiais, classes A/B/C).
+
+Fórmula Viva ou Fixa
+(Opção: Planilha recalcula sozinha ao editar preço/quantidade, ou valores fixos).
+
+Momento de Transporte
+(Opção: Omitir este bloco na planilha impressa, se desejado).
+
+(*) (65) -
+o
+o
+o
+
+Layouts Alternativos
+(Opção: Uma aba por composição ou parâmetros divididos por categoria).
+
+(O) (65) 9 9990 - 3725
+
+Retornando a um Projeto (O Painel Principal)
+
+Projetos já criados não passam pelos 4 passos iniciais. Eles abrem direto no Resumo,
+onde tudo pode ser editado rapidamente (com salvamento automático).
+
+Auditoria Visual Alterar Quantidade
+(Painel para verificar £oE (Edição direta no campo
+alterações) numérico).
+
+Trocar Serviço
+" E a
+5 (Substitui, recalcula e
+mantém a posição).
+
++ Adicionar Serviço
+
+(Inclui direto do painel).
+
+Telade |
+Resumo =»
+
+Remover Serviço Remover Serviço
+(Exclui sem afetar [ui (Exclui sem afetar
+demais linhas). demais linhas).
+(o) (65) 9 9990 - 3725
+
+Auditoria Visual: O bloco “O que foi alterado”
+
+Um dashboard de 5 cartões que centraliza todos os overrides do projeto inteiro.
+
+Pessoal e Material
+
+Nenhuma alteração
+
+Tempo Fixo
+
+Nenhuma alteração
+
+Momento de
+Transporte
+
+Nenhuma alteração
+
+Equipamento
+
+(Separado em Produtivo / Improdutivo)
+
+Se nenhum ajuste for feito, o bloco confirma:
+“Nenhum ajuste manual feito — tudo com o
+valor original”.
+
+(o) (65) 9 9990 - 3725
+
+Criando uma Composição Própria
+
+O SICRO/SINAPI não resolve?
+
+l Hi
+
+Do Zero Clonando importando Planilha
+Abre o formulário vazio. Você Copia uma composição existente Sobe modelo .xIsx. Linhas com
+monta seção por seção. (oficial ou própria). Totalmente código oficial viram itens “vivos”.
+independente e editável. Sem código viram itens
+
+“personalizados”.
+
+Importante: Composições próprias vivem independentes na tela “Minhas Composições”.
+(605) 9 9990 - 3725
+
+A Anatomia de uma Composição
+
+(Nome único, Unidade, Tipo:
+Serviço/Tempo Fixo/Transporte,
+Produtividade, FIC/FIT).
+
+(A trava inicial de UF/Período).
+
+Os Itens | dad? Lembrete de Origem: Itens
+oficiais (SICRO/SINAPI) são
+
+“vivos” (atualizam sozinhos).
+Itens sem código oficial são
+“personalizados” e exigem
+preço digitado manualmente.
+(O) (65) 9 9990 - 3725
+
+Dúvidas Frequentes (FAQ Expresso)
+
+Q: Preciso criar composição no 1º Q: Como desfazer um override?
+orçamento? A: Simples. Retorne à tela 'Edição' e
+
+A: Não. 99% dos casos são resolvidos restaure para o valor oficial. Sem override, o
+apenas com o catálogo oficial. app volta à base.
+
+Q: A planilha exportada recalcula Q: Momento de transporte tem preço?
+sozinha? A: Não no app. É apenas uma referência. O
+A: Apenas se você selecionar a opção “Com custo real do frete é gerado na exportação
+fórmula" na tela de Exportação. usando a distância real da obra.
+
+Q: Como sei se um código foi validado?
+A: O app avisa na hora ao sair do campo: 'Y Encontrado' (verde) ou “E Não encontrado
+(vermelho).
+Dúvidas e Suporte?
+
+Pode me chamar no
+WhatsApp, João Lopes!
+
+(65) 9 9990-5725
+

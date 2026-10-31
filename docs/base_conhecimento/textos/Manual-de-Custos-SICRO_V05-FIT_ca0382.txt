@@ -1,0 +1,1222 @@
+      ,
+
+
+
+
+          DNIT
+                 MANUAL DE CUSTOS DE
+          INFRAESTRUTURA DE TRANSPORTES
+          FATOR DE INTERFERÊNCIA DE TRÁFEGO (FIT)
+
+
+                          VOLUME 05
+
+
+
+
+                             2ª Edição
+                            BRASÍLIA-DF
+                                2025
+
+
+
+                 MINISTÉRIO DOS TRANSPORTES
+   DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA-GERAL
+             DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES
+José Renan Vasconcelos Calheiros Filho
+
+
+DIRETOR-GERAL DO DNIT
+Fabricio de Oliveira Galvão
+
+
+DIRETOR DE PLANEJAMENTO E PESQUISA
+Luiz Guilherme Rodrigues de Mello
+
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Caio Saravy Cardoso
+      MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+FATOR DE INTERFERÊNCIA DE TRÁFEGO (FIT)
+
+
+              VOLUME 05
+SEGUNDA EDIÇÃO – Brasília, 2025
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 490/2021-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 647/2024-00)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Caio Saravy Cardoso
+Eng.º Rodrigo Bezerra Marques
+Eng.º Renan Abreu de Moura
+Eng.º Pedro Henrique Dantas de Medeiros
+Eng.º Gleydson Viegas de Oliveira
+
+PRIMEIRA EDIÇÃO – Brasília, 2017
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015-00)
+
+COMISSÃO DE SUPERVISÃO:
+MSc. Eng.º Luiz Heleno Albuquerque Filho
+Eng.º Paulo Moreira Neto
+Eng.º Caio Saravy Cardoso
+
+PRIMEIRAS VERSÕES
+EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+Elaboração: CENTRAN
+Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Silvio Mourão (Brasília)
+Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+
+                   Brasil. Departamento Nacional de Infraestrutura de Transportes.
+            Diretoria-Geral. Diretoria de Planejamento e Pesquisa. Coordenação-Geral de
+                                Custos de Infraestrutura de Transportes.
+
+             Manual de Custos de Infraestrutura de Transportes – Volume 05 – Fator de
+                  Interferência de Tráfego. 2ª Edição – Brasília – DF, 2025. 36p.
+
+            1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias - Construções -
+                Estimativa e Custo – Manuais. 3. Aquavias - Construções - Estimativa e Custo –
+                                        Manuais. I. Série. II. Título.
+
+
+
+Reprodução permitida desde que citado o DNIT como fonte.
+Impresso no Brasil / Printed in Brazil
+                 MINISTÉRIO DOS TRANSPORTES
+  DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+
+
+
+            MANUAL DE CUSTOS DE
+  INFRAESTRUTURA DE TRANSPORTES
+  FATOR DE INTERFERÊNCIA DE TRÁFEGO (FIT)
+
+
+                       VOLUME 05
+
+
+
+
+                          2ª Edição
+                           Brasília
+                            2025
+MINISTÉRIO DOS TRANSPORTES – MT
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES – DNIT
+DIRETORIA-GERAL – DG
+DIRETORIA DE PLANEJAMENTO E PESQUISA – DPP
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES – CGCIT
+
+
+Setor de Autarquias Norte
+Quadra 03 Lote A, Ed. Núcleo dos Transportes
+CEP: 70040-902 – Brasília – DF
+Telefone: (061) 3315-4700
+E-mail: cgcit.sicro@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+            Volume 05: Fator de Interferência de Tráfego (FIT)
+
+
+Segunda Edição: 2025
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 490/2021-00 e 647/2024-00
+Aprovado pela Diretoria Colegiada do DNIT em 21/10/2025 (Relato nº 191/2025)
+Processo SEI nº 50600.027352/2017-78
+
+
+Primeira Edição: 2017
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 327/2012-00 e 462/2015-00
+Aprovado pela Diretoria Colegiada do DNIT em 25/04/2017 (Relato nº 38/2017)
+Processo SEI nº 50600.027352/2017-78
+
+
+
+
+Impresso no Brasil / Printed in Brazil
+                                 APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto Departamento Nacional de
+Estradas e Rodagem (DNER) e do Departamento Nacional de Infraestrutura de
+Transportes (DNIT) na formação de preços referenciais de obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos de
+Infraestrutura de Transportes preserva o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da divulgação
+dos relatórios sintéticos e analíticos valorados de composições de custos e insumos,
+juntamente com a publicação da 1ª edição do Manual de Custos de Infraestrutura de
+Transportes e das Produções de Equipes Mecânicas dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual de
+Custos de Infraestrutura de Transportes. Os conteúdos encontram-se dispostos
+conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+Os cadernos técnicos apresentam as condições de contorno adotadas nos cálculos
+dos consumos dos materiais e da produção horária dos serviços, suas respectivas
+memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para elaboração de
+orçamentos baseados no SICRO, estabelecendo diretrizes básicas para tomada de
+decisão e exemplos práticos que ilustram o emprego das diferentes ferramentas que
+integram o sistema.
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está dividido
+em oito volumes:
+
+    ▪ Volume 01 - Metodologia e Conceitos;
+    ▪ Volume 02 - Mão de Obra;
+    ▪ Volume 03 - Preços Referenciais;
+    ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+    ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+    ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+    ▪ Volume 07 - Administração Local;
+    ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de Infraestrutura
+de Transportes, pode produzir orçamentos para obras de infraestrutura de transportes
+que incorporam as nuances dos casos concretos, ao tempo que observam a eficiência
+associada à otimização dos recursos envolvidos característica da engenharia.
+
+                             CAIO SARAVY CARDOSO
+           Coordenador-Geral de Custos de Infraestrutura de Transportes
+                                              LISTA DE FIGURAS
+
+Figura 1 - Organograma do manual de custos do Fator de Interferência de Tráfego
+            (FIT) ....................................................................................................... 12
+Figura 2 - Bloqueio de faixas (pistas simples) ........................................................... 21
+                                                   SUMÁRIO
+
+1          INTRODUÇÃO ........................................................................................... 10
+1.1        Requisitos legais e técnicos.................................................................... 13
+
+1.1.1      Requisitos legais ........................................................................................ 13
+
+1.1.2      Requisitos técnicos ..................................................................................... 13
+
+2          CONCEITOS .............................................................................................. 17
+2.1        Especificidades do Sistema de Custos Referenciais de Obras ........... 17
+
+2.1.1      Transporte de insumos ............................................................................... 18
+
+2.2        Caracterização de vias e rodovias .......................................................... 18
+
+2.2.1      Vias urbanas............................................................................................... 18
+
+2.2.2      Rodovias rurais........................................................................................... 19
+
+2.3        Volume Médio Diário ................................................................................ 20
+
+2.4        Operações de sinalização ........................................................................ 21
+
+3          METODOLOGIA ........................................................................................ 23
+3.1        Levantamento de dados........................................................................... 24
+
+3.1.1      Distâncias Médias de Transporte ............................................................... 24
+
+3.1.2      Volume Médio Diário por faixa.................................................................... 25
+
+3.1.3      Operações de sinalização de obra ............................................................. 25
+
+3.2        Cálculo e aplicação do Fator de Interferência de Tráfego (FIT) ........... 26
+
+3.2.1      Cálculo dos atrasos .................................................................................... 26
+
+3.2.2      Cálculo do Fator de Interferência de Tráfego ............................................. 29
+
+3.2.3      Aplicação do Fator de Interferência de Tráfego .......................................... 31
+
+4          CONSIDERAÇÕES FINAIS ....................................................................... 34
+REFERÊNCIAS BIBLIOGRÁFICAS ......................................................................... 36
+Manual de Custos de Infraestrutura de Transportes
+Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+
+                                                 1    INTRODUÇÃO
+
+
+
+
+                        9                             DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                        Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+1 INTRODUÇÃO
+
+Obras de infraestrutura rodoviária, como conservação, restauração, duplicação e
+construção de terceira faixa, apresentam uma relação de impacto mútuo com a
+dinâmica de tráfego das vias circundantes. Devido à própria natureza desses projetos,
+medidas preventivas são necessárias para a segurança, como a instalação de
+dispositivos de sinalização temporária e a interdição parcial ou total de pistas,
+influenciando diretamente o fluxo local de veículos.
+
+Essas interferências no tráfego podem ocasionar atrasos no transporte dos insumos
+necessários à obra, comprometendo a eficiência logística e, consequentemente,
+impactando nos custos envolvidos no empreendimento.
+
+Ademais, o percurso de transporte dos materiais até o canteiro de obras ou frentes de
+serviço, frequentemente, inclui segmentos urbanos, que possuem uma dinâmica de
+tráfego diferenciada.
+
+Diante disso, torna-se fundamental analisar a interação entre o tráfego e as obras e o
+seu impacto nos custos totais do empreendimento. No âmbito do Sistema de Custos
+Referenciais de Obras (SICRO), esse efeito é caracterizado pelo Fator de
+Interferência de Tráfego (FIT).
+
+Anteriormente, o FIT era aplicado aos custos horários da mão de obra e
+equipamentos, sendo considerado um fator de interferência da produção do serviço.
+Como parâmetros de cálculo, eram utilizados os Volumes Médios Diários de tráfego
+(VMD) e percentuais relativos à proximidade de centros urbanos, com limites de
+impacto estabelecidos.
+
+Considerando a constante evolução do SICRO, a metodologia de cálculo do FIT foi
+revisada com o objetivo de aprimorar o tratamento dado à interferência do tráfego no
+âmbito dos orçamentos de obras de infraestrutura de transportes. Nessa revisão foram
+considerados diversos fatores, como número de faixas de rolamento, velocidades
+médias dos veículos, volume de tráfego por faixa e o tráfego em centros urbanos.
+
+
+
+
+                                                10                            DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                     Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+A metodologia de cálculo do FIT apresentada neste volume do Manual de Custos de
+Infraestrutura de Transportes compreende que o tráfego veicular não interfere na
+produção direta dos serviços, e sim no transporte dos insumos. Isso decorre do fato
+de que, em obras devidamente sinalizadas, o tráfego não deve prejudicar a execução
+das atividades que acontecem dentro das áreas delimitadas pela sinalização. Dessa
+forma, aplica-se o FIT apenas sobre a parcela de momento de transporte das
+composições de custos unitários do SICRO.
+
+A metodologia atualizada considera o impacto do aumento do VMD por faixa de
+tráfego, as operações de sinalização que podem causar congestionamentos e dos
+atrasos no transporte de materiais em áreas urbanas devido ao fluxo distinto nas vias
+com características locais e coletoras das cidades.
+
+Este volume do Manual apresenta as premissas e critérios utilizados para o cálculo
+do FIT. Para melhor compreensão do documento, a Figura 1 a seguir apresenta um
+organograma do sumário, exibindo os títulos das seções até o nível 3, de modo a
+permitir a visualização dos principais conceitos abordados, assim como a metodologia
+utilizada.
+
+
+
+
+                                             11                            DNIT/DPP/CGCIT
+                   Manual de Custos de Infraestrutura de Transportes
+                   Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+
+Figura 1 - Organograma do manual de custos do Fator de Interferência de Tráfego (FIT)
+                                     Fonte: FGV IBRE
+
+
+
+
+                                           12                            DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                        Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+1.1       Requisitos legais e técnicos
+
+Os itens a seguir abordam os requisitos legais e técnicos relacionados à metodologia
+do Fator de Interferência de Tráfego, os quais auxiliam na definição de parâmetros e
+permitem uma abordagem em conformidade com os normativos e padrões técnico-
+operacionais pertinentes.
+
+1.1.1 Requisitos legais
+
+Requisitos legais são obrigações, condições ou critérios estabelecidos por leis,
+regulamentos, normas ou outras formas de legislação. São impostos por autoridades
+governamentais ou entidades reguladoras e devem ser cumpridos por indivíduos,
+organizações ou empresas para atender à legislação vigente.
+
+Dentre os requisitos legais avaliados, destaca-se o Código de Trânsito Brasileiro
+(CTB), instituído pela Lei nº 9.503, de 23 de setembro de 1997. Conforme especificado
+em seu Artigo 60, as vias urbanas, conforme sua função e os limites de velocidade
+estipulados, são classificadas do seguinte modo:
+
+      ▪ via de trânsito rápido: limite de 80 km/h;
+      ▪ via arterial: limite de 60 km/h;
+      ▪ via coletora: limite de 40 km/h;
+      ▪ via local: limite de 30 km/h.
+
+1.1.2 Requisitos técnicos
+
+Requisitos      técnicos    são     especificações       detalhadas       das   características,
+funcionalidades, desempenho e outros aspectos técnicos necessários para o
+desenvolvimento, implementação ou operação de um produto, sistema ou serviço.
+São formulados para garantir que o produto atenda aos padrões desejados, cumpra
+com as expectativas de desempenho e possa ser integrado de forma eficiente em um
+ambiente específico.
+
+
+
+
+                                                13                              DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                     Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+Os requisitos técnicos avaliados pela metodologia são:
+
+    ▪ Manual de Capacidade Rodoviária (Highway Capacity Manual - HCM);
+    ▪ Manual de Estudos de Tráfego do Departamento Nacional de Infraestrutura de
+      Transportes (DNIT);
+    ▪ Manual de Sinalização de Obras e Emergências em Rodovias do DNIT.
+
+1.1.2.1 Manual de Capacidade Rodoviária
+
+Para análise do nível de serviço e a capacidade de componentes viários, emprega-se
+o Manual de Capacidade Rodoviária (NASEM, 2022), também intitulado Highway
+Capacity Manual (HCM). O documento em questão define parâmetros para
+caracterização de uma via, considerando extensão do trecho, características do
+terreno, inclinações, número de faixas e tipos de veículos.
+
+1.1.2.2 Manual de Estudos de Tráfego do DNIT
+
+O Manual de Estudos de Tráfego (DNIT, 2006) apresenta parâmetros relacionados ao
+volume de tráfego, fornecendo as diretrizes necessárias para determinar o fluxo de
+veículos. Pesquisas sobre o assunto, como contagens volumétricas, oferecem dados
+significativos sobre o volume de tráfego em uma via específica. Um dos parâmetros
+definidos, por exemplo, é o Volume Médio Diário (VMD), essencial para compreensão
+da demanda de tráfego em uma via e aplicação da metodologia do FIT.
+
+1.1.2.3 Manual de Sinalização de Obras e Emergências em Rodovias do DNIT
+
+O Manual de Sinalização de Obras e Emergências em Rodovias (DNIT, 2010)
+estabelece as diretrizes e normas para a implementação de sinalização em obras e
+situações emergenciais ao longo das rodovias. O documento apresenta orientações
+específicas para sinalização de desvios necessários durante a execução da obra. Isso
+inclui a sinalização de tráfego em meia pista, com a utilização de placas de "PARE” e
+“SIGA" quando houver circulação alternada, detalhando procedimentos para controlar
+o tráfego de forma eficiente.
+
+
+
+
+                                             14                            DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                     Volume 05 - Fator de Interferência de Tráfego (FIT)
+
+
+
+Ressalta-se que o cumprimento dessas diretrizes é importante para certificar tanto a
+segurança viária quanto a eficácia do serviço oferecido. O correto uso da sinalização
+alerta os condutores sobre possíveis mudanças nas condições da estrada e minimiza
+consideravelmente os riscos de acidentes. Além disso, ao guiar os motoristas de
+maneira clara e precisa, a sinalização contribui para a manutenção da produção da
+mão de obra, assegurando a execução do serviço de maneira eficaz e segura.
+
+
+
+
+                                             15                            DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+  Volume 05 - Fator de Interferência de Tráfego
+
+
+
+
+                                                    2    CONCEITOS
+
+
+
+
+                       16                               DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                        Volume 05 - Fator de Interferência de Tráfego
+
+
+
+2 CONCEITOS
+
+O Fator de Interferência de Tráfego é uma metodologia aplicada ao transporte de
+insumos em obras de infraestrutura rodoviária, visando contemplar os atrasos
+provocados pelo tráfego. Esses atrasos podem ser classificados em duas categorias
+principais: operações de sinalização e o tráfego em vias urbanas.
+
+As características específicas das vias também desempenham importante função,
+uma vez que cada segmento rodoviário apresenta singularidades em termos de
+extensão, condições topográficas, quantidade de faixas e tipos de veículos que nele
+circulam, tanto em áreas rurais quanto urbanas. Essas variáveis influenciam o
+gerenciamento do tráfego durante a execução das obras e intervenções.
+
+Outro fator fundamental para a aplicação do FIT é a análise do Volume Médio Diário,
+o qual fornece uma estimativa do fluxo de veículos na via e permite avaliar a demanda
+de tráfego.
+
+A operação de sinalização, por sua vez, exerce influência direta sobre a aplicação da
+metodologia, uma vez que a execução de obras rodoviárias requer a implantação de
+sinalização adequada para redirecionar o tráfego, assegurando tanto a segurança
+viária quanto a integridade dos serviços realizados. O sistema de "PARE" e "SIGA",
+necessário quando há apenas uma faixa disponível para o tráfego em ambas as
+direções, constitui um exemplo usual de operação de sinalização.
+
+Os itens a seguir apresentam os conceitos dos principais parâmetros que compõem o
+FIT.
+
+2.1     Especificidades do Sistema de Custos Referenciais de Obras
+
+O FIT incide sobre a parcela de momento de transporte, tendo em vista que a
+presença de tráfego durante a execução dos serviços ocasiona a redução da
+velocidade média de transporte. Dessa forma, o transporte dos insumos sujeita-se a
+fatores como o volume de tráfego, as interferências na via devido às obras, as regras
+de trânsito, entre outros.
+
+
+
+
+                                             17                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                         Volume 05 - Fator de Interferência de Tráfego
+
+
+
+2.1.1 Transporte de insumos
+
+Com relação ao serviço de transporte, os preços dos insumos podem ser
+caracterizados de duas formas:
+
+      ▪ Cost, Insurance and Freight (CIF), referente à custo, seguro e frete;
+      ▪ Free On Board (FOB), referente ao preço livre de frete.
+
+Quando o transporte dos insumos é realizado pelo fornecedor, caracteriza-se o preço
+como CIF (custo que inclui seguro e frete) e o fornecedor assume todos os custos e
+riscos relacionados à entrega dos materiais no canteiro de obras. Caso o transporte
+seja realizado pela empresa contratada, caracteriza-se o preço como FOB (livre de
+frete) e a empresa assume todos os custos e riscos com o transporte dos insumos.
+
+No caso do transporte executado pela empresa contratada, é importante considerar o
+tráfego como um fator de interferência que pode ocasionar atrasos e custos adicionais.
+Nesse contexto, aplica-se o FIT especificamente ao transporte de insumos
+caracterizado como livre de frete (FOB) e executado pela empresa contratada, do local
+de fornecimento até o canteiro de obras ou frente de serviço.
+
+2.2       Caracterização de vias e rodovias
+
+Na aplicação da metodologia do FIT, é necessário identificar as vias urbanas e as
+rodovias rurais, cujas particularidades são detalhadas nos itens a seguir.
+
+2.2.1 Vias urbanas
+
+No que se refere às superfícies destinadas ao trânsito de veículos, o Código de
+Trânsito Brasileiro (Brasil, 1997) classifica as vias urbanas, em função da sua
+utilização, nas seguintes categorias:
+
+      ▪ via de trânsito rápido: caracteriza-se por acessos especiais com trânsito livre,
+        sem interseções em nível, sem acessibilidade direta aos lotes lindeiros e sem
+        travessia de pedestres em nível;
+      ▪ via arterial: caracteriza-se por interseções em nível, geralmente controlada por
+        semáforo, com acessibilidade aos lotes lindeiros e às vias secundárias e locais,
+        possibilitando o trânsito entre as regiões da cidade;
+
+
+                                              18                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+   ▪ via coletora: destina-se a coletar e distribuir o fluxo que tenha necessidade de
+      entrar ou sair das vias de trânsito rápido ou arteriais, possibilitando o
+      deslocamento dentro das regiões da cidade;
+   ▪ via local: caracteriza-se por interseções em nível não semaforizadas, destinada
+      apenas ao acesso local ou a áreas restritas.
+
+Os ambientes urbanos envolvem interações com fluxos de pedestres, bicicletas e
+motocicletas, juntamente com dispositivos de sinalização de trânsito, como semáforos
+e placas, além de redutores de velocidade, como lombadas e radares. Em função
+desses fatores, a velocidade nas vias urbanas é frequentemente reduzida, sendo essa
+redução mais perceptível nas vias com características coletoras e locais.
+
+2.2.2 Rodovias rurais
+
+As rodovias rurais são trechos que conectam áreas urbanas e industriais, pontos de
+geração e atração de tráfego, e pontos significativos dos segmentos modais,
+atravessando áreas rurais.
+
+As rodovias podem ser caracterizadas em função da condição do revestimento,
+conforme as seguintes definições:
+
+   ▪ rodovia pavimentada: rodovia com revestimento superior;
+   ▪ revestimento primário: camada de solo selecionado de boa qualidade,
+      estabilizado, superposta ao leito natural de uma rodovia, para permitir uma
+      superfície de rolamento com características superiores às do solo natural,
+      garantindo melhores condições de trânsito;
+   ▪ leito natural: terreno conforme se apresenta na natureza.
+
+A interferência do tráfego ocorre especificamente em rodovias pavimentadas. Para as
+demais classificações, leito natural e revestimento primário, os volumes de tráfego
+geralmente não atingem níveis elevados, causando impactos irrelevantes em
+comparação às rodovias pavimentadas.
+
+
+
+
+                                            19                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Nas rodovias rurais pavimentadas, diversos fatores podem influenciar o tráfego dos
+veículos, incluindo as características geométricas do traçado, a classificação da
+rodovia (pista dupla ou simples), o relevo local e possíveis interferências ao longo do
+percurso.
+
+2.3     Volume Médio Diário
+
+O Volume Médio Diário consiste na média do volume de veículos que circula em um
+segmento da via durante 24 horas. O quantitativo representa, de forma otimizada, a
+utilização da via, sendo aplicado para calcular índices de uso, como taxas de
+acidentes e receitas de postos de pedágio, assim como auxiliar no planejamento de
+benefícios e investimentos.
+
+O volume médio diário pode ser mensurado por pista ou por faixa. O VMD por pista
+representa o total de veículos que trafegam em todas as faixas de uma pista, enquanto
+o VMD por faixa pode ser calculado a partir da média das contagens individuais de
+cada faixa ou pela divisão do VMD total por pista pelo número de faixas disponíveis.
+Essa distinção é importante, pois o impacto do VMD sobre o tráfego é proporcional à
+quantidade de faixas de rolamento disponíveis, influenciando diretamente a
+capacidade e a fluidez da via.
+
+O Volume Médio Diário anual (VMDa), por sua vez, representa o total de veículos que
+trafegam em um ano dividido por 365 dias. Dessa forma, o VMDa por faixa é o
+parâmetro utilizado para a aplicação da metodologia do FIT, pois oferece uma análise
+mais abrangente das variações sazonais ao longo do ano, capturando tanto eventos
+pontuais quanto tendências de longo prazo que afetam o fluxo de tráfego.
+
+No entanto, quando os estudos de tráfego não fornecem dados anuais, outros
+períodos representativos podem ser considerados. Além disso, ao utilizar o VMD por
+faixa, a análise abrange não apenas o volume total de veículos, mas também a
+distribuição desse tráfego entre as faixas, proporcionando uma visão mais precisa do
+comportamento veicular.
+
+Durante a fase de elaboração do projeto, o conhecimento desse parâmetro torna-se
+um fator relevante para a avaliação da distribuição de tráfego, a definição da demanda
+de uma via e a programação de melhorias básicas.
+
+                                            20                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                           Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Nos casos em que os projetos não contenham dados específicos para a determinação
+do VMD por faixa, pode-se coletá-los em bases de dados do Departamento Nacional
+de Infraestrutura de Transportes (DNIT), como o Plano Nacional de Contagem de
+Tráfego (PNCT) e o Programa Nacional de Controle Eletrônico de Velocidade (PNCV).
+Ressalta-se que, quando os valores são obtidos sem um estudo de tráfego específico,
+deve-se justificar e referenciar a base utilizada nos memoriais descritivos do orçamento.
+
+2.4     Operações de sinalização
+
+A execução de obras ou demais serviços em rodovias pode gerar conflitos no trânsito
+local, tornando indispensável uma sinalização adequada para assegurar a circulação
+segura e eficiente dos veículos.
+
+Entre os dispositivos e procedimentos de segurança demonstrados no Manual de
+Sinalização de Obras e Emergências em Rodovias (DNIT, 2010), destaca-se a
+sinalização para pista simples com alternância de tráfego, também conhecida como
+operação "PARE" e "SIGA". Essa operação regula o fluxo de veículos para garantir a
+segurança dos trabalhadores que atuam nas proximidades do tráfego, conforme
+ilustrado na Figura 2.
+
+
+
+
+                          Figura 2 - Bloqueio de faixas (pistas simples)
+                                          Fonte: FGV IBRE
+
+
+É fundamental ressaltar a importância da elaboração de um projeto de sinalização
+adequado, em conformidade com as diretrizes estabelecidas pelo Manual de
+Sinalização de Obras e Emergências em Rodovias (DNIT, 2010).
+
+                                                21                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+  Volume 05 - Fator de Interferência de Tráfego
+
+
+
+
+                                             3      METODOLOGIA
+
+
+
+
+                       22                            DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+3 METODOLOGIA
+
+O presente capítulo detalha a metodologia de cálculo do Fator de Interferência de
+Tráfego e os critérios para a sua aplicação em orçamentos realizados com o SICRO,
+conforme os conceitos e definições estabelecidos anteriormente.
+
+O FIT é aplicável ao transporte de insumos realizado pelo executor da obra e deve ser
+utilizado apenas em segmentos pavimentados. Esses segmentos classificam-se como
+rodovias rurais pavimentadas ou vias urbanas pavimentadas, cada uma com
+características de tráfego distintas, as quais requerem métodos específicos para
+calcular os atrasos no transporte dos materiais.
+
+Para determinar o FIT, torna-se essencial analisar os dados fornecidos pelo projeto,
+com especial atenção para as Distâncias Médias de Transporte (DMT). Durante a
+etapa de levantamento de dados, deve-se classificar e definir a extensão dos
+segmentos percorridos, distinguindo entre Distância Média de Transporte em rodovia
+rural pavimentada (DMTr) e Distância Média de Transporte em vias urbanas
+pavimentadas (DMTu). Cabe destacar que todos os insumos com incidência do FIT
+devem constar na tabela de DMT do projeto.
+
+Além disso, outros parâmetros fundamentais para a definição do FIT são o Volume
+Médio Diário por faixa (VMDf), obtido a partir dos estudos de tráfego presentes no
+projeto, e as informações sobre a sinalização da obra.
+
+Em resumo, o cálculo do FIT envolve a determinação de dois tipos de atrasos, que
+são:
+
+    ▪ atraso devido às operações de sinalização “PARE” e “SIGA”, que ocorrem
+       exclusivamente em casos com uma única faixa de circulação para os dois
+       sentidos da via durante a execução das obras;
+    ▪ atraso devido ao tráfego em vias urbanas pavimentadas, previsto para o
+       transporte de insumos cujo percurso passe por centros urbanos (i.e., DMTu),
+       compartilhando características de tráfego similares às vias coletoras e locais,
+       conforme descrito na subseção 2.2 deste volume do Manual.
+
+
+
+
+                                            23                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                        Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Os itens a seguir apresentam as etapas da metodologia para a determinação e
+aplicação do Fator de Interferência de Tráfego.
+
+3.1      Levantamento de dados
+
+As informações de projeto necessárias para a definição do FIT incluem a tabela das
+Distâncias Médias de Transporte (DMT), diagrama linear de ocorrências ou
+localização da origem dos insumos transportados, mapa de situação, especificações
+de sinalização da obra, Volume Médio Diário por faixa (VMDf) e os segmentos de
+obras, além de outros dados relevantes avaliados pelo orçamentista.
+
+A partir dessas informações, tem-se as seguintes etapas:
+
+      ▪ avaliação da origem dos insumos e dos trechos segmentos percorridos;
+      ▪ determinação das distâncias médias em rodovias rurais pavimentadas e vias
+        urbanas pavimentadas para todos os insumos sujeitos ao FIT;
+      ▪ delimitação do Volume Médio Diário por faixa (VMDf);
+      ▪ identificação dos serviços que necessitam das operações de sinalização
+        “PARE” e “SIGA”.
+
+3.1.1 Distâncias Médias de Transporte
+
+O quadro de Distâncias Médias de Transporte (DMT) desempenha um papel essencial
+para a aplicação do FIT e deve considerar todos os insumos que terão a aplicação do
+fator, ou seja, insumos cujo transporte é realizado pela empresa executora.
+
+O quadro de DMT deve conter as distâncias pavimentadas divididas entre rodovias
+rurais pavimentadas (DMTr) e vias urbanas pavimentadas (DMTu). A correta definição
+das distâncias de transporte cujo trajeto incida sobre vias urbanas é essencial para
+calcular o atraso no tráfego dessas regiões.
+
+Com base nessa definição, cabe ao orçamentista decidir se o FIT será aplicado a
+todos os insumos do orçamento ou apenas àqueles mais significativos.
+
+
+
+
+                                             24                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+3.1.2 Volume Médio Diário por faixa
+
+A aplicação do FIT considera apenas o VMDf do segmento da obra, cujos dados são
+fornecidos a partir de estudos de tráfego. Na ausência desses estudos, no entanto,
+pode-se recorrer a outras bases de dados, como o PNCT ou PNCV.
+
+Caso o segmento da obra apresente mais de um valor de VMDf, deve-se calcular um
+VMDf médio pela média ponderada dos segmentos com diferentes volumes de
+tráfego, como demonstrado pela Equação 1.
+
+
+           ∑(DTri × VMDi )
+ VMDmp =                                                                           (1)
+               ∑DTri
+
+
+onde:
+
+VMDmp é a média ponderada dos Volumes Médios Diários por faixa (un/dia);
+
+DTri é a Distância de Transporte em rodovia rural pavimentada do segmento
+correspondente a cada VMD (km);
+
+VMDi é o Volume Médio Diário por faixa (un/dia).
+
+A média ponderada dos VMDf considera a variação do tráfego ao longo do segmento
+da obra. Assim, mesmo que a distância de transporte do insumo ultrapasse a extensão
+da obra, para fins de aplicação do FIT será adotado o VMDf correspondente ao
+segmento da obra, uma vez que é esse valor que representa o atraso gerado pelo
+tráfego dentro de sua extensão.
+
+3.1.3 Operações de sinalização de obra
+
+As operações de sinalização consideradas na metodologia são aquelas que
+empregam um regime de fluxo de tráfego alternado, ou seja, as operações de "PARE"
+e "SIGA". Essas operações afetam o tráfego no segmento da obra, causando atrasos
+no transporte de materiais.
+
+
+
+
+                                            25                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Caso a obra possua previsão de aplicação de operação de "PARE" e "SIGA", será
+calculado o atraso em todo transporte de insumos cujo trajeto incida sobre a extensão
+da obra.
+
+3.2     Cálculo e aplicação do Fator de Interferência de Tráfego (FIT)
+
+Finalizada a etapa de levantamento de dados, a qual define os parâmetros de cálculo
+para a aplicação do FIT, calculam-se os atrasos que podem afetar o transporte dos
+insumos. Por fim, a equação de cálculo do FIT é apresentada na subseção 3.2.3.
+
+3.2.1 Cálculo dos atrasos
+
+O Fator de Interferência de Tráfego é calculado de forma a remunerar dois tipos de
+atrasos classificados pelo orçamentista no transporte de insumos, que são causados
+pela operação de “PARE” e “SIGA” e pelo tráfego em vias urbanas.
+
+Em relação à sinalização de obras, especialmente com o uso de bandeirolas ou placas
+metálicas que indicam as operações de "PARE" e "SIGA", é essencial destacar seu
+impacto direto no transporte de insumos. As mudanças no tráfego causadas por essa
+sinalização, incluindo possíveis congestionamentos, têm efeito no tempo necessário
+para o deslocamento dos materiais.
+
+Quando se trata do transporte de insumos em áreas urbanas, identificam-se atrasos
+devido ao tráfego nessas vias, o qual é impactado por fatores como fluxo de pedestres,
+bicicletas, dispositivos de controle de velocidade, lombadas, entre outros elementos.
+
+Para as Distâncias Médias de Transporte superiores a 100 km, no entanto, a
+velocidade média permanece constante em 60 km/h devido à dissipação gradual do
+tempo ao longo da viagem. Dessa forma, não são previstos atrasos, resultando na
+não aplicação do FIT para as DMTs que excedem essa distância.
+
+É importante notar que a aplicação do FIT é restrita a segmentos pavimentados, sendo
+rodovias rurais ou vias urbanas. A seguir são apresentadas as equações utilizadas
+para remunerar os atrasos que incidem sobre o FIT.
+
+
+
+
+                                            26                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                         Volume 05 - Fator de Interferência de Tráfego
+
+
+
+3.2.1.1 Atraso devido à operação de “PARE” e “SIGA”
+
+O atraso devido à sinalização de “PARE” e “SIGA” ocorre quando é liberada somente
+uma faixa de circulação para os dois sentidos da via durante a execução das obras,
+sendo interrompido totalmente o tráfego em um sentido da pista e permitido o tráfego
+apenas de forma alternada.
+
+Além disso, também deve-se prever no orçamento a composição de custos do serviço
+de “Operação de sinalização por bandeirola de tecido ou com placa metálica - Código
+SICRO: 5213850” ou similar, conforme as exigências do DNIT e como previsto no
+projeto de sinalização da obra. Caso contrário, o valor do referido atraso deve ser igual
+a zero.
+
+A equação referente a esse atraso é aplicada para todo transporte de insumos cujo
+trajeto incida em qualquer segmento dentro da extensão total da obra com ocupação
+de área da pista ou acostamento.
+
+Em resumo, para a aplicação da equação em questão, devem ser observados os
+seguintes critérios:
+
+    ▪ o orçamento deve prever os serviços de sinalização de ocupação de área da
+        pista ou acostamento;
+    ▪ o segmento da obra deve ser em rodovia pavimentada;
+    ▪ o transporte do insumo deve passar pela extensão da obra.
+
+Para calcular o atraso devido à operação de sinalização, utiliza-se a Equação 2.
+
+
+ A1 = 70 + 0,0035 × VMDf                                                              (2)
+
+
+onde:
+
+A1 é o atraso devido à operação de “PARE” e “SIGA” (s);
+
+VMDf é o Volume Médio Diário por faixa.
+
+
+
+
+                                              27                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                        Volume 05 - Fator de Interferência de Tráfego
+
+
+
+3.2.1.2 Atraso devido ao tráfego em vias urbanas pavimentadas
+
+Atrasos devido ao tráfego em vias urbanas pavimentadas são previstos nos casos em
+que o transporte atravesse centros urbanos em vias pavimentadas.
+
+Destaca-se que o atraso calculado devido ao tráfego em vias urbanas pavimentadas,
+assim como toda a metodologia empregada, aplica-se especificamente no transporte
+de insumos.
+
+Para a aplicação da equação em questão, observam-se os seguintes critérios:
+
+    ▪ a via urbana deve ser pavimentada;
+    ▪ a DMT deve ser caracterizada como Distância Média de Transporte em via
+        urbana pavimentada.
+
+Para aplicação da metodologia do FIT, considera-se uma velocidade média de
+operação padrão, igual a 60 km/h para rodovias rurais pavimentadas e 30 km/h para
+vias urbanas pavimentadas.
+
+Considerando essas velocidades médias, estabelece-se que, para cada quilômetro
+percorrido em vias urbanas pavimentadas, ocorre um atraso de 60 segundos no tempo
+de percurso, conforme representado pela Equação 3. Vale ressaltar que nessa
+aplicação é feita a conversão de horas para segundos (ou seja, 3.600 s/h).
+
+
+          D   D     3.600
+ Fc = (     -   ) ×                                                                  (3)
+          Vu Vp       D
+
+
+          1   1     3.600
+ Fc = (     -   ) ×
+          30 60       1
+
+
+ Fc = 60 s/km
+
+
+onde:
+
+Fc é o fator de conversão gerado pela representação (s/km);
+
+D é a distância-tipo (km);
+
+                                             28                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Vu é a velocidade em vias urbanas pavimentadas (30 km/h);
+
+Vp é a velocidade padrão adotada (60 km/h).
+
+A velocidade estabelecida para as vias urbanas pavimentadas foi definida com base
+em estudos e considerações específicas para a aplicação da metodologia em questão.
+No entanto, pode-se realizar ajustes nessa velocidade para calcular um novo fator de
+conversão, considerando as particularidades do centro urbano, mediante uma
+justificativa técnica adequada.
+
+Para calcular o atraso devido ao tráfego nas vias urbanas pavimentadas, utiliza-se a
+Equação 4.
+
+
+ A2 = Fc × DMTu                                                                     (4)
+
+
+onde:
+
+A2 é o atraso devido ao tráfego nas vias urbanas pavimentadas (s);
+
+Fc é o fator de conversão referencial no âmbito do FIT para vias urbanas pavimentadas
+(s/km);
+
+DMTu é a Distância Média de Transporte em vias urbanas pavimentadas (km).
+
+3.2.2 Cálculo do Fator de Interferência de Tráfego
+
+O FIT é determinado a partir dos atrasos calculados na subseção 3.2.1, sendo definido
+o valor correspondente a cada insumo transportado e previamente selecionado para
+sua aplicação.
+
+Em síntese, o cálculo do FIT resulta em diferentes valores, de acordo com as
+condições de transporte específicas de cada insumo e conforme determinado através
+dos critérios estabelecidos anteriormente.
+
+
+
+
+                                            29                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+Inicialmente, determina-se o fator padrão, dado pela Equação 5, cujo valor reflete a
+relação entre a velocidade padrão para o transporte e sua representação em termos
+de segundos por quilômetro. Vale ressaltar que nessa aplicação é feita a conversão
+de horas para segundos (ou seja, 3.600 s/h).
+
+
+       3.600
+Fp =                                                                                      (5)
+         Vp
+
+
+       3.600
+Fp =
+        60
+
+
+Fp = 60 s/km
+
+
+onde:
+
+Fp é o fator padrão (s/km);
+
+Vp é a velocidade padrão para tráfego em rodovia rural pavimentada (60 km/h).
+
+Em seguida, calcula-se a DMT total pavimentada de cada insumo. Isso inclui a soma
+das distâncias percorridas em rodovias rurais pavimentadas e vias urbanas
+pavimentadas, conforme descrito pela Equação 6.
+
+
+DMTp = DMTr + DMTu                                                                 (6)
+
+
+onde:
+
+DMTp é a Distância Média de Transporte total pavimentada (km);
+
+DMTr é a Distância Média de Transporte em rodovia rural pavimentada (km);
+
+DMTu é a Distância Média de Transporte em via urbana pavimentada (km).
+
+Por fim, após a determinação dos atrasos e das demais variáveis descritas
+anteriormente, define-se o FIT por meio da aplicação da Equação 7.
+
+
+
+                                            30                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+
+              (A1 + A2)
+ FIT = 1 +                                                                          (7)
+             DMTp × Fp
+
+
+onde:
+
+FIT é o Fator de Interferência de Tráfego aplicado aos serviços de transporte de
+insumos;
+
+A1 é o atraso devido à operação de “PARE” e “SIGA” (s);
+
+A2 é o atraso devido ao tráfego nas vias urbanas pavimentadas (s);
+
+DMTp representa a Distância Média de Transporte total pavimentada dos insumos
+(km);
+
+Fp é o fator padrão referencial no âmbito do FIT (s/km), cujo valor padrão é igual a 60
+s/km.
+
+3.2.3 Aplicação do Fator de Interferência de Tráfego
+
+O valor do FIT, calculado na subseção 3.2.2, aplica-se aos custos referentes ao
+transporte dos insumos, multiplicando o valor da DMT pavimentada pelo FIT
+correspondente, o que resulta na Distância Média de Transporte em rodovia
+pavimentada com FIT (DMTF), conforme detalhado na Equação 8.
+
+
+DMTF = FIT × DMTp                                                                  (8)
+
+
+onde:
+
+DMTF é a Distância Média de Transporte total pavimentada com FIT (km);
+
+FIT é o Fator de Interferência de Tráfego aplicado aos serviços de transporte;
+
+DMTp é a Distância Média de Transporte total pavimentada (km).
+
+
+
+
+                                            31                           DNIT/DPP/CGCIT
+                    Manual de Custos de Infraestrutura de Transportes
+                      Volume 05 - Fator de Interferência de Tráfego
+
+
+
+A DMTF obtida é aplicada na “Parcela F - Momento de Transporte” de cada
+composição de custos do orçamento que possui insumos na referida parcela, a fim de
+remunerar de forma equivalente os atrasos no transporte dos insumos.
+
+
+
+
+                                           32                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+  Volume 05 - Fator de Interferência de Tráfego
+
+
+
+
+                                4        CONSIDERAÇÕES FINAIS
+
+
+
+
+                       33                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+4 CONSIDERAÇÕES FINAIS
+
+O Manual de Custos de Infraestrutura de Transportes - Volume 05 - Fator de
+Interferência de Tráfego - 2ª Edição apresenta a metodologia de cálculo do Fator de
+Interferência de Tráfego para os custos de obras de infraestrutura de transportes do
+SICRO.
+
+A revisão da metodologia do Fator de Interferência do Tráfego (FIT), no contexto da
+atualização contínua do SICRO, revisitou o tratamento dado até então aos efeitos do
+tráfego nos orçamentos de obras de infraestrutura de transportes. O novo enfoque
+restringe a aplicação do FIT ao transporte de insumos em vias pavimentadas,
+reconhecendo que a execução dos serviços ocorre em áreas devidamente
+sinalizadas, sem prejuízo direto da produção. Dessa forma, a metodologia passa a
+considerar variáveis como VMD por faixa, número de faixas de rolamento, velocidades
+médias, operações de sinalização e as particularidades do tráfego urbano.
+
+Por fim, cabe registrar que, no modelo adotado, os atrasos calculados já incorporam
+o efeito do volume de tráfego, uma vez que as velocidades médias empregadas
+refletem essa influência.
+
+
+
+
+                                            34                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+  Volume 05 - Fator de Interferência de Tráfego
+
+
+
+
+                               REFERÊNCIAS BIBLIOGRÁFICAS
+
+
+
+
+                       35                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                       Volume 05 - Fator de Interferência de Tráfego
+
+
+
+                        REFERÊNCIAS BIBLIOGRÁFICAS
+
+BRASIL. Lei nº 9.503, de 23 de setembro de 1997. Institui o Código Brasileiro de
+Trânsito. Diário Oficial da União, Brasília, DF, 1997. Disponível em:
+https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm. Acesso em: 26 jan.
+2024.
+
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTE. IPR
+738: Manual de Sinalização de Obras e Emergências em Rodovias. Rio de
+Janeiro: DNIT, 2010. Disponível em: https://www.gov.br/dnit/pt-
+br/assuntos/planejamento-e-pesquisa/ipr/coletanea-de-
+manuais/vigentes/738_manual_sinalizacao_obras_emergenciais_rodovias.pdf.
+Acesso em: 10 mar. 2024.
+
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTE. IPR
+723: Manual de Estudos de Tráfego. Rio de Janeiro: DNIT, 2006. Disponível em:
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/ipr/coletanea-de-
+manuais/vigentes/723_manual_estudos_trafego.pdf. Acesso em: 10 mar. 2024.
+
+NATIONAL ACADEMIES OF SCIENCES, ENGINEERING, AND MEDICINE.
+Highway Capacity Manual 7th Edition: A Guide for Multimodal Mobility
+Analysis. Estados Unidos da América: NASEM, 2022. 1286 p.
+
+
+
+
+                                            36                           DNIT/DPP/CGCIT

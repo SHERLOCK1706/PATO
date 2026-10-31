@@ -1,0 +1,542 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Misturas asfálticas:
+Conceituação, Materiais
+e Dosagem
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Brasília, maio de 2022.
+DNIT: Misturas asfálticas:
+
+Conceituação,
+Materiais e Dosagem
+
+Módulo
+
+Dosagem de Misturas
+Asfálticas
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Brasília, maio de 2022.
+
+Instituto de
+Pesquisas em
+Transportes
+
+                                                    LISTA DE FIGURAS
+Figura 1- Relação de peso-volume para uma mistura asfáltica ....................................................................................... 2
+Figura 2 - Esquema de componentes de uma mistura asfáltica ....................................................................................... 2
+Figura 3 - Volumetria das misturas asfálticas ................................................................................................................... 4
+Figura 4 - Fluxograma de procedimento para a determinação da densidade relativa aparente e da massa específica
+aparente de corpos de prova compactados ...................................................................................................................... 4
+Figura 5 - Curva viscosidade-temperatura do ligante ....................................................................................................... 6
+Figura 6 - Prensa Marshall, para ensaios de Estabilidade e Fluência.............................................................................. 7
+Figura 7 - Exemplos de curva de parâmetros determinados na dosagem Marshall ........................................................ 8
+Figura 8 - Equipamento Compactador Giratório (CGS) e especificações ...................................................................... 12
+Figura 9 - Fluxograma de Dosagem Superpave ............................................................................................................. 13
+                                               LISTA DE TABELAS
+Tabela 1 - Organização Hierárquica do Método Superpave .......................................................................................... 11
+Tabela 2 - Critérios Volumétricos para escolha do teor de asfalto de projeto ................................................................ 13
+SUMÁRIO
+
+DOSAGEM DE MISTURAS ASFÁLTICAS ..
+METODOLOGIA MARSHALL...
+METODOLOGIA SUPERPAVE ...........iiirimeseeeemeeaeenetiaets eremita ese reaereeerenerenernernares 10
+[=] 87 =]5] =] N (6) e PD 14
+
+1.
+2.
+3.
+4.
+
+                                                                                    1
+
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+
+
+   1. DOSAGEM DE MISTURAS ASFÁLTICAS
+             O primeiro método de dimensionamento do pavimento asfáltico no Brasil
+foi idealizado pelo engenheiro Murillo Lopes de Souza e implementado na década de
+1960. É consenso que foi revolucionário e importante para a época, mas também é
+consenso que, devido às mudanças das características do tráfego e dos materiais
+disponíveis atualmente, fez-se necessário buscar novos métodos.
+
+             Com essa defasagem, em meados dos anos 2000, a Petrobras passou a
+articular parcerias com universidades federais para que, através de pesquisas
+científicas, fosse possível efetuar a atualização do modelo de dimensionamento
+asfáltico.
+
+             Em 2009 foi criada a Rede Temática de Asfaltos, um novo projeto
+financiado pela Petrobras, formada pelo conjunto de várias universidades. Foram
+pavimentados diversos trechos entre 200 e 300 metros, em rodovias de todo o país,
+utilizando diferentes tipos de soluções para monitorar o desempenho de cada um
+deles em situações climáticas distintas. A partir desse monitoramento, o método foi
+desenvolvido.
+
+             Esse incentivo dado pela Rede Temática de Asfaltos permitiu o avanço das
+tecnologias normalmente utilizadas, geralmente caracterizadas pelo uso da
+metodologia Marshall, se aproximando muito do que é feito em países mais
+desenvolvidos.
+
+             A metodologia utilizada por Marshall utiliza da compactação de corpos de
+prova por impacto e pode não representar corretamente as densidades do pavimento
+em campo. Por esse motivo, foi desenvolvida nova tecnologia que resultou em um
+novo procedimento de dosagem por amassamento, denominado Superpave.
+
+             Antes de iniciar as explicações das dosagens Marshall e Superpave, é
+necessário compreender a relação de massa-volume de misturas asfálticas
+compactadas. O projeto de uma mistura é volumétrico, entretanto, para simplificar as
+medidas, massas são usadas no lugar de volumes e a massa específica é usada para
+converter massa em volume. Um comparativo entre as relações peso e volume é
+realizado na Figura 1.
+                                                                                     2
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+                 Figura 1- Relação de peso-volume para uma mistura asfáltica
+
+
+
+
+                                   Fonte: THIVES, 2016.
+
+          Dosar uma mistura asfáltica trata de escolher, por meio de procedimentos
+experimentais, um teor “ótimo” de ligante, a partir de uma faixa granulométrica
+definida. O teor ótimo é definido conforme teor de projeto e varia conforme o critério
+utilizado na sua avaliação. O teor de projeto é função de parâmetros como energia de
+compactação, tipo de mistura, temperatura a qual o pavimento estará submetido, entre
+outros.
+
+                Figura 2 - Esquema de componentes de uma mistura asfáltica
+
+
+
+
+                         Fonte: Adaptado de BERNUCCI et al., 2008.
+
+          Para o cálculo de densidades e massas específicas pode-se utilizar a
+seguinte relação:
+                                                                                   3
+
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+             ▪     A Densidade Real Gsa é calculada como a razão entre a massa
+                   seca e o volume real da partícula sólida do agregado:
+
+                                 𝐺𝑠𝑎 = (𝑀𝑎𝑠𝑠𝑎 𝑠𝑒𝑐𝑎)/(𝑉𝑜𝑙𝑢𝑚𝑒 𝑟𝑒𝑎𝑙)
+
+
+
+             ▪        A Densidade Aparente Gsb é calculada como a razão entre a
+                   massa seca e o volume aparente do sólido (volume do sólido mais
+                   o volume do poro permeável à água):
+
+                              𝐺𝑠𝑏 = (𝑀𝑎𝑠𝑠𝑎 𝑠𝑒𝑐𝑎)/(𝑉𝑜𝑙𝑢𝑚𝑒 𝑎𝑝𝑎𝑟𝑒𝑛𝑡𝑒)
+
+
+
+              ▪       A Densidade Efetiva Gse é calculada como a razão entre a massa
+                   seca e o volume efetivo (volume do sólido mais o volume do poro
+                   permeável à água não preenchidos pelo ligante)
+
+                               𝐺𝑠𝑒 = (𝑀𝑎𝑠𝑠𝑎 𝑠𝑒𝑐𝑎)/(𝑉𝑜𝑙𝑢𝑚𝑒 𝑒𝑓𝑒𝑡𝑖𝑣𝑜)
+
+
+
+Na Figura 3 são exemplificadas três situações para a determinação dessa densidade:
+
+   •   “A”, em que a massa do corpo de prova é seco ao ar e pesado em balança
+
+   •   “B”, em que a massa é determinada por pesagem hidrostática e a condição
+
+   •   “C”, em que o corpo de prova é submerso e depois pesado em balança.
+                                                                                                 4
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+                              Figura 3 - Volumetria das misturas asfálticas
+
+
+
+
+                              Fonte: Adaptado de THIVES, 2016.
+
+             Conforme a NORMA DNIT 428/2022 - ME, a Determinação da densidade
+relativa aparente e da massa específica aparente de corpos de prova compactados, a
+densidade relativa aparente e a massa específica aparente das misturas asfálticas
+compactadas são calculadas conforme especificações em seu item 7. Um fluxograma
+explica as etapas para se obter os dados (Figura 4).
+
+
+
+ Figura 4 - Fluxograma de procedimento para a determinação da densidade relativa aparente e da
+                   massa específica aparente de corpos de prova compactados
+
+
+
+
+                                      Fonte: DNIT, 2022.
+                                                                                   5
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+
+   2. METODOLOGIA MARSHALL
+          A metodologia desenvolvida por Bruce Marshall para o Mississipi Highway
+Department na década de 1930, e posteriormente modificado pela United States
+Corps of Engineers (Usace), é o método de dosagem mais utilizado no mundo até os
+dias de hoje.
+
+          Alguns parâmetros são considerados para obter a dosagem, entre eles: o
+volume de vazios (Vv), que é o somatório dos volumes dos espaços existentes entre
+os agregados revestidos, o volume de vazios da mistura compactada (VMA/VAM), que
+seria o volume obtido retirando-se todo o ligante sem que se alterasse a posição dos
+agregados, e a proporção de betume dentro dos vazios deixados pelos agregados
+(RBV).
+
+          As especificações para a realização do Ensaio Marshall estão disponíveis
+na normativa DNER-ME 043/95.
+
+          Para a obtenção do teor ótimo de ligante, é necessário determinar as
+massas específicas reais dos constituintes da mistura: agregados e ligante.
+
+          Em seguida, escolhe-se a faixa granulométrica a ser utilizada, conforme
+especificação. Os agregados deverão apresentar composição de forma a se
+enquadrarem nos limites da faixa granulométrica escolhida, ou seja, é escolhido o
+percentual em peso de cada agregado para formar a mistura.
+
+          Para obter a melhor combinação de agregados, pode-se utilizar diferentes
+métodos de combinação. Seja por tentativa, por método algébrico ou utilizando o
+gráfico de Rothfuchs (THIVES, 2016).
+
+          Após a escolha da composição dos agregados (percentual de cada um na
+mistura), de forma a se enquadrarem dentro da faixa granulométrica desejada, é feita
+a distribuição granulométrica sem considerar, ainda, o teor de asfalto. Estes
+agregados somados serão 100 % da mistura.
+
+          Em seguida, considerando agora os teores de asfalto utilizados no ensaio
+Marshall do grupo de corpos de prova, ajusta-se o percentual em peso para cada
+agregado e se redistribui o percentual de cada participante na mistura.
+                                                                                      6
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+            A partir da curva de viscosidade-temperatura do ligante, obtidas pelo ensaio
+de viscosidade, determinar a temperatura da mistura e da compactação a ser utilizada
+no ensaio Marshall e produzir os corpos de prova, conforme especificações
+normativas.
+
+            A temperatura do ligante, na hora de ser misturado ao agregado, deve estar
+entre 75SSF e 95SSF, correspondendo a temperaturas entre 107 ºC e 177 ºC.
+
+            A temperatura do agregado deve ser de 10 a 15 ºC acima da temperatura
+definhada para o ligante, sem ultrapassar 177 ºC.
+
+            A temperatura de compactação deve ser tal que o ligante apresente
+viscosidades na faixa de 125SSF a 155SSF, conforme Figura 5.
+
+                      Figura 5 - Curva viscosidade-temperatura do ligante
+
+
+
+
+                                    Fonte: THIVES, 2016.
+
+São preparados três corpos de prova (cada um com aproximadamente 1200 g e altura
+de 63,5 ± 1,3 mm) com 5 diferentes teores de asfalto, obtendo assim 15 corpos de
+prova. Seguir as recomendações da norma para realizar a mistura dos agregados com
+o ligante, homogeneizar a mistura e preparar os moldes padronizados dos corpos de
+prova.
+
+Com equipamento específico, manual ou mecânico, contendo soquete padronizado
+com 4540 g, iniciar a compactação com a queda do soquete a uma altura padrão de
+45,72 cm.
+
+            O método Marshall indica dois níveis de compactação para misturas
+diferentes. Para misturas drenantes e abertas, são indicados 50 golpes por face do
+corpo de prova para baixo volume de tráfego (Norma alemã ZTV Asphalt – StB 94,
+                                                                                    7
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+2001). Para misturas densas, com alto volume de tráfego, são recomendados 75
+golpes por face do corpo de prova (Norma DNER-ME 043/95).
+
+          A norma não faz recomendação quanto à frequência de aplicação dos
+golpes de compactação durante o processo de dosagem.
+
+          Após 12h, realizar a desmoldagem dos corpos de prova escolhidos, obter
+a massa seca (Ms) e a massa submersa em água (Msub), necessárias para obtenção
+da massa específica e densidade aparente, permitindo assim estabelecer as relações
+volumétricas da dosagem.
+
+          Colocar os corpos de prova em imersão de 30 a 40 minutos, a 60 ºC, e
+após realizar os ensaios de Estabilidade (corrigindo em função da espessura do corpo
+de prova) e de Fluência na prensa Marshall (Figura 6).
+
+              Figura 6 - Prensa Marshall, para ensaios de Estabilidade e Fluência
+
+
+
+
+                                    Fonte: THIVES, 2016.
+
+          O ensaio de Estabilidade é a carga máxima indicativa da resistência do
+corpo de prova à compressão diametral confinada (modo de falha não definido),
+representado por uma unidade de força. O ensaio de Fluência é o deslocamento
+máximo apresentado pelo corpo de prova correspondente à aplicação da carga
+máxima, representado por uma unidade de distância.
+
+          Como tratam-se de ensaios destrutivos, e é necessário obter um valor
+médio de cada um dos parâmetros, o ensaio de Estabilidade tem caído em desuso,
+sendo mais comum a realização de ensaios de Resistência à tração por compressão
+diametral e de Módulo de resiliência.
+                                                                                       8
+
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+           Após a realização do Ensaio, os resultados são plotados em gráficos para
+determinar o teor do projeto (ótimo) de asfalto:
+
+              ▪    densidade aparente x % de asfalto;
+              ▪    fluência x % de asfalto;
+              ▪    VMA x % de asfalto;
+              ▪    vazios x % de asfalto;
+              ▪    RBV x % de asfalto;
+              ▪    estabilidade x % de asfalto.
+
+           A Figura 7 exemplifica curvas de parâmetros que são determinados na
+dosagem Marshall.
+
+         Figura 7 - Exemplos de curva de parâmetros determinados na dosagem Marshall
+
+
+
+
+                                Fonte: BERNUCCI et al., 2008
+
+
+           Com os gráficos é possível avaliar a máxima estabilidade e a máxima
+densidade da mistura. Conforme as especificações, avaliar também a média dos
+                                                                                   9
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+limites de vazios, a média dos limites de proporção betume vazios - RBV, a média dos
+limites de fluência e o volume de vazios da mistura compactada - VMA (VMA mínimo).
+
+           A massa específica máxima teórica (DMT) é dada pela ponderação entre
+as massas constituintes das misturas asfálticas. A massa específica máxima medida
+(DMM) é dada pela razão entre a massa do agregado mais ligante asfáltico e a soma
+dos volumes dos agregados, vazios impermeáveis, vazios permeáveis não
+preenchidos com asfalto e o total de asfalto (Gmm).
+
+                                            100
+                            𝐷𝑀𝑇 =
+                                    %𝑎 %𝐴𝑔 %𝐴𝑚 %𝑓
+                                    𝐺𝑎 + 𝐺𝑎𝑔 + 𝐺𝑎𝑚 + 𝐺𝑓
+
+Onde:
+
+   •    %a = porcentagem de asfalto, expressa em relação à massa total da mistura
+        asfáltica;
+   •    %Ag, %Am e %f = porcentagens do agregado graúdo, agregado miúdo e fíler,
+        respectivamente, expressas em relação à massa total da mistura asfáltica;
+   •    Ga, Gag, Gam e Gf = massas específicas reais do asfalto, do agregado graúdo,
+        do agregado miúdo e do fíler, respectivamente.
+
+           O DMT é numericamente igual à massa total dividida pela soma dos
+volumes ocupados pelos materiais. O Gmm não leva em consideração a absorção de
+parte do ligante pelos agregados. Para obtenção do Gmm utiliza-se o método Rice,
+especificado pela ABNT NBR 15619, e nos métodos norte-americanos ASTM D 2041
+(2000), AASHTO T 209 (1999) ou no método europeu EN 12697-5.
+
+           A utilização destes ensaios reduz a dispersão nos resultados do ensaio
+Marshall, entretanto, não são exigidas na norma DNER-ME 043/95. As dispersões
+significativas nos ensaios utilizando o método Marshall podem ser provocadas pela
+variabilidade nas condições de uso dos equipamentos e operacionais do processo.
+Esta é uma das críticas relativas ao método, além da pouca representatividade do
+método de compactação em relação ao campo.
+
+        Não são cobrados ensaios de caracterização mecânica e tampouco ensaios de
+desempenho para esta forma de dosagem.
+
+
+
+Vídeos explicativos dos ensaios podem ser observados por meio dos links:
+
+Agregados: VÍDEO 58 - https://youtu.be/zNVGAb5uqu0
+                                                                                  10
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+Dosagem: VÍDEO 61 - https://youtu.be/wXFToZOKuuo
+
+
+
+
+   3. METODOLOGIA SUPERPAVE
+           Como já dissemos, as mudanças das características do tráfego e dos
+materiais disponíveis forçaram a engenharia de pavimentos asfálticos a buscar novas
+alternativas de dosagem, já que a metodologia Marshall não conseguia dar respostas
+a vários problemas.
+
+           Iniciou-se então, em pesquisa, desenvolvida nos Estados Unidos pelo
+Strategic Highway Research Program (SHRP) e que resultou metodologia Superpave
+(Superior Performance Asphalt Pavements). A pesquisa tinha como objetivo
+desenvolver métodos de análise de materiais betuminosos e de misturas asfálticas
+com base em suas propriedades fundamentais.
+
+           Com a implementação do Superpave, surgiram novos materiais, novos
+ensaios, novos equipamentos e novas especificações. O Superpave consiste na
+análise das propriedades reológicas relacionadas ao desempenho em serviço do
+pavimento. Para isso, são considerados fatores de envelhecimento do ligante durante
+a mistura e colocação na pista, o envelhecimento durante a vida de serviço, o
+afundamento resultante da inadequada resistência ao cisalhamento da mistura, o
+trincamento térmico e o trincamento por fadiga devido à repetição de cargas.
+
+           Diferentemente da classificação por penetração do ligante, como no Brasil,
+toda sua categorização foi redimensionada para atender às propriedades reológicas
+relacionadas ao desempenho em serviço da mistura.
+
+           A nova especificação para ligantes asfálticos é baseada em medidas de
+propriedades de desempenho dos pavimentos. Assim, os ligantes são ensaiados em
+temperaturas ligadas ao seu ciclo de utilização que indicam o seu grau de
+desempenho (Performance Grade). O grau de desempenho é denominado pelas
+letras PG seguidas por dois números que representam a faixa de temperatura em que
+o ligante pode ser utilizado.
+
+           Para a dosagem Superpave, três níveis de projeto de mistura devem ser
+considerados, a depender do tráfego e da importância da rodovia (Tabela 1).
+                                                                                          11
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+                  Tabela 1 - Organização Hierárquica do Método Superpave
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+          Em seu primeiro nível, o dimensionamento Superpave se assemelha ao
+Marshall pois leva em consideração os parâmetros volumétricos. Nos níveis 2 e 3, o
+projeto volumétrico é considerado como um ponto de partida e, em seguida, são
+necessários ensaios de previsão de desempenho. No nível 3 são necessários ensaios
+adicionais em uma faixa mais ampla de temperatura.
+
+          O    dimensionamento       Superpave      se    difere   do      ensaio   Marshall
+principalmente pela forma de compactação. Enquanto na dosagem Marshall a
+compactação é feita por impacto, utilizando golpes, na dosagem Superpave é
+realizada a compactação por amassamento, utilizando giros. Outra diferença é a
+forma de escolha da granulometria na mistura dos agregados. Para garantir
+durabilidade e ainda permitir algum volume de vazios na mistura evitando a
+exsudação, é necessária a existência de um espaço de vazios para que um volume
+de ligante seja incorporado.
+
+          O Compactador Girosférico Superpave (CGS) apresenta ângulo de rotação
+de 1,25º ± 0,02º, uma taxa de rotação de trinta giros por minuto, uma tensão de
+compressão vertical durante a rotação de 600 kPa e capacidade de produzir corpos
+de prova com diâmetros de 100 e 150 mm (Figura 8).
+                                                                                   12
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+             Figura 8 - Equipamento Compactador Giratório (CGS) e especificações
+
+
+
+
+                                   Fonte: TRICHES, 2021.
+
+          As misturas no Superpave são projetadas para um nível específico de
+energia de compactação. O esforço é determinado pelo número de giros no CGS, e é
+função do tráfego.
+
+          Para o dimensionamento, devem ser escolhidas três composições
+granulométricas com os materiais da mistura. Em seguida, deve-se compactar os
+corpos de prova no CGS com um teor de tentativa para cada mistura (dois corpos de
+prova por mistura), obtido por estimativas utilizando a massa específica efetiva dos
+agregados. A partir dessas misturas, obtêm-se as propriedades volumétricas (Volume
+de vazios - Vv, Volume de vazios da mistura compactada - VAM e Relação betume
+vazios - RBV) após a compactação no CGS.
+
+          Também se verifica a proporção pó/asfalto, correspondente à razão entre
+o teor de material passante na peneira nº 200 e o teor do ligante, parâmetro que deve
+estar entre 0,6 e 1,2 (BERNUCCI et al., 2008).
+
+          Para o nível 1 de dimensionamento, a quantidade de ligante utilizada deve
+ser tal que a mistura atinja 4 % de Vv no número de giros do projeto (Figura 9).
+                                                                                          13
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+                         Figura 9 - Fluxograma de Dosagem Superpave
+
+
+
+
+                                 Fonte: BERNUCCI et al., 2008.
+
+
+
+          Após a seleção do teor de ligante de projeto, produzir outros corpos de
+prova considerando os teores estimados em ±0,5 % e +1 %. Após 2 h em temperatura
+especificada, compactar novamente em CGS no Nprojeto e com as propriedades
+volumétricas obtidas. O teor final de projeto será aquele que corresponde a um Vv=4
+%.
+
+           Tabela 2 - Critérios Volumétricos para escolha do teor de asfalto de projeto
+
+
+
+
+                                 Fonte: BERNUCCI et al., 2008.
+
+          Conclui-se realizando o ensaio de Lottman, que avalia a resistência ao
+dano por umidade induzida nas misturas compactadas, seguindo a normativa
+AASHTO T283-89.
+
+As especificações americanas de asfalto podem ser encontradas no link:
+
+https://www.asphaltinstitute.org/engineering/specification-databases/us-state-
+binder-specifications/
+                                                                                             14
+
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 4
+
+
+
+   4. REFERÊNCIAS
+
+BERNUCCI, et al. Pavimentação Asfáltica – Formação Básica para Engenheiros. 2008.
+
+IA – INSTITUTO DO ASFALTO. Manual de asfalto. Rio de Janeiro: IA, 2001.
+
+THIVES, L. P. Comportamento dos materiais empregados na pavimentação: Ligantes Asfálticos. 2016.
+16 p. Notas de Aula.
+
+TRICHES, G. Caracterização Mecânica das Misturas Asfálticas. Curso MeDiNa. 2021. 62p. Notas de
+Aula.

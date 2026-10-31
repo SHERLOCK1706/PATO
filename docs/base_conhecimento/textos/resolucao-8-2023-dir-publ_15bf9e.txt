@@ -1,0 +1,1723 @@
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+                                    DIREÇÃO SUPERIOR
+
+
+                                  DIRETORIA COLEGIADA
+
+
+                                RESOLUÇÃO Nº 8, DE 6/11/2023
+
+                                                     Estabelece a rotina de procedimentos
+                                                     relativos à elaboração do Plano Anual de
+                                                     Trabalho e Orçamento – PATO e à execução,
+                                                     medição, fiscalização, prorrogação e
+                                                     adequação de contratos de PATO.
+
+               A DIRETORIA COLEGIADA DO DEPARTAMENTO NACIONAL DE INFRAESTRUTURA
+DE TRANSPORTES – DNIT, representada pelo Diretor-Geral, no uso das atribuições que lhe foram
+conferidas pelo art. 12 do Regimento Interno, aprovado pela Resolução/CONSAD nº 39, de
+17/11/2020, publicada no Diário Oficial da União de 19/11/2020, os art. 9º, inciso I, e 24, inciso
+IV, do Anexo I do Decreto nº 8.489, de 10/7/2015, o disposto no art. 6º, inciso IX, alínea “e” da
+Lei nº 8.666, de 21/6/1993, no art. 2º, parágrafo único, inciso V, da Lei nº 12.462, de 4/8/2011,
+e no art. 6º, inciso XXV, alínea “e” da Lei nº 14.133, de 1/4/2021, o constante do Relato nº
+209/2023/DIR/DNIT SEDE, o qual foi incluído na 41ª Reunião Ordinária da Diretoria Colegiada,
+realizada em 24/10/2023, e tendo em vista os autos do Processo nº 50600.030597/2023-21,
+resolve:
+
+                                         CAPÍTULO I
+                                     DISPOSIÇÕES INICIAIS
+
+               Art. 1º Estabelecer, no âmbito do Departamento Nacional de Infraestrutura dos
+Transportes - DNIT, os procedimentos gerais a serem utilizados na elaboração do Plano Anual de
+Trabalho e Orçamento - PATO e na execução, medição, fiscalização, prorrogação e adequação de
+contratos de PATO, além dos procedimentos necessários à contratação de serviços por
+parâmetro de desempenho.
+
+              Art. 2º O escopo dos contratos PATO compreende a execução dos serviços de
+conservação rotineira, preventiva periódica, emergencial e eventualmente demais serviços de
+manutenção com a finalidade de preservar as características técnicas e físico-operacionais do
+corpo estradal e da faixa de domínio, dentro de padrões de serviço estabelecidos, bem como
+intervenções que tenham caráter de urgência para sanar ocorrências indesejáveis.
+
+             § 1º Esta Resolução se aplica somente aos contratos de conservação rodoviária,
+conhecidos como PATO, não abrangendo:
+
+
+
+
+                                                5
+                               BOLETIM ADMINISTRATIVO
+     EDIÇÃO Nº 212            Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              I - contratos de Recuperação e Manutenção Rodoviária - CREMA;
+              II - contratos do Programa de Manutenção e Reabilitação de Estruturas - PROARTE;
+              III - contratos do Programa BR-Legal; e
+              IV - contratos de restauração rodoviária.
+
+              § 2º O mapa de competência para elaboração do PATO está consolidado no Anexo
+I.
+
+                                        CAPÍTULO II
+                                   DOS CONCEITOS BÁSICOS
+
+              Art. 3º Para os fins desta Resolução considera-se:
+
+               I - conservação rodoviária: conjunto de operações rotineiras, periódicas e de
+emergência realizadas com o objetivo de preservar as características técnicas e físico-
+operacionais do sistema rodoviário e das instalações fixas, dentro de padrões de serviços
+estabelecidos no Manual de Conservação Rodoviária, Publicação IPR 710, Edição 2005;
+               II - conservação corretiva rotineira: conjunto de operações de conservação que
+tem como objeto reparar ou sanar o defeito e restabelecer o funcionamento dos componentes
+da rodovia, propiciando conforto e segurança aos usuários, nos termos do item 4.1 do Manual
+de Conservação Rodoviária;
+               III - conservação preventiva periódica: conservação preventiva periódica: conjunto
+de operações de conservação, realizadas periodicamente com o objetivo de evitar surgimento
+ou agravamento de defeitos, mas cuja frequência de execução depende do trânsito, topografia
+e clima, nos termos do item 4.1 do Manual de Conservação Rodoviária;
+               IV - conservação de emergência: conservação destinada a corrigir defeitos,
+surgidos de modo repentino que ocasionam restrição ao tráfego ou sérios riscos aos usuários;
+               V - obras emergenciais: obras necessárias para reparar, repor, reconstruir ou
+restaurar trechos ou estrutura da rodovia, que tenham sido seccionados, obstruídos ou
+danificados por evento extraordinário, catastrófico, ocasionando a interrupção do tráfego da
+rodovia;
+               VI – situações que caracterizam urgência na intervenção: circunstância em que o
+segmento da rodovia pode comprometer a segurança dos usuários e que necessitam de
+intervenções urgentes para restabelecer a condição de segurança operacional da rodovia e dos
+usuários;
+               VII - restauração: conjunto de operações destinado a reestabelecer, na íntegra, o
+perfeito funcionamento da rodovia e as suas características técnicas originais, adaptando-a às
+novas condições de tráfego de forma a prolongar sua vida útil, nos termos do item 4.1 do Manual
+de Conservação Rodoviária;
+               VIII- melhoria da rodovia: conjunto de operações que acrescentam à rodovia
+existente, características novas, ou modificam as características existentes, nos termos do item
+4.1 do Manual de Conservação Rodoviária;
+
+
+
+
+                                               6
+                                BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               IX - serviços de conservação especial: aqueles pertinentes aos incisos III, IV, VII e
+VIII;
+                  X - demais serviços de manutenção (DSM): aqueles não enquadrados nos incisos
+II, III e IV e, por terem seus objetivos específicos, pertinentes aos incisos VI, VII e VIII;
+                  XI - nível de esforço - NE: quantidade de trabalho que se pretende aplicar durante
+o ano a cada unidade de inventário correspondente a esta tarefa, baseado na frequência de
+execução da tarefa (m/m), ou sob a forma de uma taxa de consumo de materiais, nos termos do
+item 5.5.4 do Manual de Conservação Rodoviária;
+                  XII - fator de pagamento: percentual a ser aplicado sobre a parcela mensal
+referente aos grupos de serviços por desempenho, calculado conforme indicadores específicos a
+serem atendidos;
+                  XIII - plano anual de trabalho e orçamento - PATO: planilha que consolida a
+quantidade de serviços e preços necessários para a execução da manutenção durante o período
+contratual, devendo contemplar inventário atualizado do trecho, atribuição das condições dos
+serviços, determinação de níveis de esforços, além dos demais requisitos mínimos do projeto
+básico previstos no art. 2º, parágrafo único da Lei nº 12.462, de 4 de agosto de 2011, e no art.
+6º, inciso XXV da Lei nº 14.133, de 1º de abril de 2021;
+                  XIV - contrato PATO ou contrato de PATO: contrato de conservação rodoviária que,
+fundamentado em preceitos técnicos e econômicos, visa manter os elementos construtivos das
+rodovias tão próximos quanto possível das condições originais em que foram construídos ou
+reconstruídos, objetivando preservar os investimentos, garantir a segurança do tráfego e o
+conforto do usuário, além de manter o fluxo racional e econômico dos veículos;
+                  XV - inventário de elementos geradores de conservação: planilha ou ficha que
+contém o registro de todos os elementos da rodovia que servirão de base para a definição das
+quantidades de serviços necessárias à manutenção de um determinado trecho rodoviário;
+                  XVI - instrumento de medição de resultado - IMR: mecanismo que define os
+indicadores e os parâmetros mínimos de avaliação da qualidade da prestação do serviço, em
+bases compreensíveis, tangíveis, objetivamente observáveis e comprováveis, e respectivas
+adequações de pagamento;
+                  XVII - nota por desempenho do contrato - NDC: avaliação mensal em relação à
+performance da contratada conforme critérios estabelecidos;
+                  XVIII - fator de desconto: percentagem de desconto que incide sobre a medição
+em caso de descumprimento dos critérios estabelecidos;
+                  XIX - programa de melhoramento de rodovias não pavimentadas (PMNP):
+conjunto de atividades e procedimentos a serem desenvolvidos visando executar serviços de
+melhoramento do suporte do sub-leito com implantação de camada de mistura de solos com
+conclusão de camada impermeabilizante/selante a ser aplicadas nas rodovias não pavimentadas.
+                  XX - camada selante/impermeabilizante: produto aplicado à camada de solo
+melhorado com misturas com o objetivo de impermeabilizar e manter a integridade da base
+contra as intempéries do tráfego e clima.
+                  XXI - estabilização química: tipo de estabilização que consiste na adição de um
+material químico a um solo natural para melhorar ou adicionar uma característica desejada à
+camada final.
+
+
+
+                                                 7
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+               XXII - estabilização granulométrica: são as camadas constituídas por solos, britas
+de rochas, ou ainda, pela mistura desses materiais, cujos quais são estabilizados
+granulometricamente pela compactação para que apresentem uma granulometria apropriada e
+índices geotécnicos específicos;
+               XXIII - rodovia pavimentada: é aquela revestida com material betuminoso ou
+concreto, permitindo o tráfego de veículos durante o ano todo;
+               XXIV - rodovia com revestimento primário: é aquela revestida com material
+granular (saibros, cascalhos, entre outros);
+               XXV - rodovia sem revestimento: é aquela que não apresenta qualquer tipo de
+revestimento, portanto, geralmente o tráfego de veículos durante a época chuvosa é dificultado
+ou pode não ocorrer.
+
+                                        CAPÍTULO III
+                                    DOS CONTRATOS PATO
+
+              Art. 4º A contratação por parâmetro de desempenho tem por finalidade:
+
+              I - definir objetivamente os serviços de conservação da faixa de domínio, de
+limpeza de dispositivos de drenagem e de supressão de buracos; e
+              II - melhorar a qualidade do estado de conservação das rodovias federais
+pavimentadas e não pavimentadas.
+
+              Art. 5º A contratação por parâmetro de desempenho será aplicável em parte dos
+serviços de conservação rotineira e preventiva periódica, conforme os três grupos distintos:
+
+               I - conservação da faixa de domínio e limpeza de dispositivos de drenagem em
+rodovias pavimentadas;
+               II - conservação e manutenção da pista de rolamento e acostamento em rodovias
+pavimentadas; e
+               III - conservação e manutenção da pista de rolamento, dispositivos de drenagem
+e obras de arte especiais - OAE de rodovias não pavimentadas.
+
+             § 1º O grupo de desempenho previsto no inciso I é obrigatório nas contratações
+de PATO em rodovias pavimentadas.
+
+              § 2º Os grupos de desempenho previstos no inciso II e III são facultativos nas
+contratações de PATO, à critério da Superintendência Regional.
+
+              Art. 6º Além dos serviços listados no item 4.2 do Manual de Conservação
+Rodoviária, poderão ser contemplados em contratos de conservação rodoviária:
+
+              I - serviços que não foram contemplados no Manual de Conservação Rodoviária,
+porém que se enquadrem no conceito de conservação corretiva rotineira, preventiva periódica
+e de conservação de emergência;
+
+
+
+                                               8
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               II - serviços com finalidade de intervenção funcional do pavimento, desde que
+atendidas as soluções e os critérios de limitação estabelecidos no Anexo V;
+               III - os DSM desde que o somatório dos valores desses serviços, na fase da
+orçamentação fique limitado a 25% (vinte e cinco por cento) do valor global do orçamento inicial,
+sem prejuízo à inclusão de DSM em termos aditivos contratuais nos termos da Lei nº 14.133/2021
+e não transfigurado o objeto da contratação;
+               IV - obras emergenciais, durante a execução contratual, via termo aditivo e
+observado o disposto nos arts. 125 e 126 da Lei nº 14.133, de 2021 e;
+               V – intervenções de urgência, com o objetivo de mitigar o grau de criticidade de
+um determinado segmento, caracterizado conforme o Inciso VI do Art. 3º e que será estabelecido
+em normativo específico.
+
+              § 1º Serão passíveis de execução em contratos de conservação, serviços de
+melhorias que impliquem em estabelecimento de faixa adicional desde que atendidos aos
+seguintes requisitos ou caracterização da intervenção:
+
+               I - adequação de sinalização quando a plataforma existente apresentar largura
+igual ou superior a 12 metros sem alteração da plataforma; ou
+               II - implantação de faixa adicional com ampliação da largura da plataforma quando
+caracterizada a intervenção de urgência.
+
+             § 2º As condições e requisitos técnicos para implementação de serviços de
+alargamento serão estabelecidas em normativo específico.
+
+               Art. 7º Para cada grupo por desempenho descrito no art. 5º observa-se no Anexo
+XIV a codificação de serviços conforme o Sistema de Custos Referenciais de Obras - Sicro.
+
+              § 1º A lista de serviços é referencial para a elaboração do orçamento destes
+grupos, não sendo restritiva a adoção de outros serviços do Sicro, desde que atenda os
+indicadores dos grupos de desempenho.
+
+               § 2º Para compor o rol de serviços dos grupos por desempenho, devem ser
+previstos os insumos e o respectivo transportes, de forma a permitir sua completa execução.
+
+               Art. 8º As propostas de trabalho devem contemplar todos os elementos
+necessários e suficientes para caracterizar os serviços objeto da licitação, com nível de precisão
+adequado.
+
+             Parágrafo único. Os documentos de que trata o caput deverão ser baseados no
+estudo técnico preliminar, no anteprojeto, no projeto básico, no edital e nos demais
+levantamentos que assegurem a viabilidade técnica e a definição dos métodos de execução.
+
+
+
+
+                                                9
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              Art. 9º À critério da Administração o prazo de execução dos contratos de
+conservação será múltiplo de 1 (um) ano, observado o disposto nos arts. 105 e 107 da Lei nº
+14.133, de 2021, por se tratar de serviço de prestação continuada.
+
+             § 1º O Superintendente Regional, conjuntamente com o Setor de Planejamento e
+Coordenação de Engenharia, determinará a duração da vigência do contrato.
+
+               § 2º O período mínimo necessário entre o término dos serviços e o término da
+vigência será de 150 (cento e cinquenta) dias, considerando a comunicação formal de conclusão
+da obra ou do serviço pela contratada no último dia do término dos serviços.
+
+              § 3º Os serviços classificados como DSM não são considerados de natureza
+continuada.
+
+                                 CAPÍTULO IV
+          DO PROGRAMA DE MELHORAMENTO DAS RODOVIAS NÃO PAVIMENTADAS
+
+              Art. 10. As rodovias não pavimentadas poderão receber, além dos serviços de
+conservação rotineira, conservação periódica e conservação emergencial, soluções para
+melhoria da capacidade de suporte do subleito natural.
+
+             Parágrafo único. As intervenções de que tratam o caput estão abrangidas dentro
+do Programa de Melhoramento das Rodovias Não Pavimentadas (PMNP), conforme Anexo XXVI.
+
+               Art. 11. A implementação do Programa de Melhoramento das Rodovias Não
+Pavimentadas deve seguir um conjunto de atividade predefinidas a serem desenvolvidas para
+subsidiar a elaboração do Plano de Trabalho.
+
+               § 1º Não fazem parte do escopo implantação de dispositivos de drenagem
+superficial em concreto em rodovias não pavimentadas.
+
+               § 2º Somente estarão elegíveis ao PMNP aquelas rodovias cujo Número N, após o
+cálculo com todas as variáveis que o compõe, apresente o valor de até 106 (N≤106), de acordo
+com os critérios estabelecidos no Anexo XXVI.
+
+               § 3º O período de execução dos serviços previstos no PMNP é de no máximo 24
+(vinte e quatro) meses, podendo ser estendido, mediante justificativa técnica e conforme regime
+pluviométrico da região, ao período máximo de até 36 (trinta e seis) meses.
+
+              Art. 12. As disposições técnicas e procedimentos necessários para a elaboração do
+Plano de Trabalho da contratação do PMNP deverão seguir os levantamentos, estudos, ensaios
+e o mapa de competências descritos no Anexo XXVI.
+
+
+
+
+                                              10
+                             BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+              Parágrafo único. Todos os resultados de levantamentos, ensaios e estudos
+deverão ser encaminhados à CGMRR para análise.
+
+             I - a empresa supervisora poderá executar os levantamentos, ensaios e estudos
+desde que este seja validado pelo Chefe da Unidade Local ou Superintendência Regional.
+
+              Art. 13. Atendidos aos requisitos técnicos do PMNP e caso a camada selante
+adotada apresente como solução o tratamento superficial, após a etapa de envio da
+documentação para licitação pela CGMRR à Superintendência regional, também deverá ser
+enviado para à Coordenação-Geral de Meio Ambiente (CGMAB) para conhecimento e
+providências acerca de avaliação quanto aos aspectos ambientais das melhorias a serem
+executadas e providências pertinentes junto aos órgãos ambientais afetos.
+
+              Art. 14. Os segmentos das rodovias não pavimentadas que não receberem
+intervenções abrangidas pelo PMNP deverão seguir a metodologia e o rito processual, conforme
+as demais orientações desta Resolução.
+
+                                     CAPÍTULO V
+                        DO MANUAL DE CONSERVAÇÃO RODOVIÁRIA
+
+              Art. 15. Os modelos de documentos existentes no Manual de Conservação
+Rodoviária poderão ser adaptados à realidade atual dos contratos de conservação.
+
+               Parágrafo único. Deve-se observar as informações mínimas necessárias que
+garantam a eficiente elaboração, contratação e acompanhamento da manutenção da malha
+rodoviária existente.
+
+               Art. 16. Conforme previsto no Capítulo IV do Manual de Conservação Rodoviária,
+as listagens abrangem uma extensa gama de serviços de conservação suficientes para a malha
+viária.
+
+            Parágrafo único. À medida em que a prática e as condições de campo
+comprovarem a necessidade de novos serviços, estes poderão ser incorporados.
+
+               Art. 17. Devem ser realizados estudos prévios e levantamentos para compor o
+inventário de elementos geradores de conservação da rodovia.
+
+              § 1º No caso dos revestimentos betuminosos, deve-se observar sistematicamente
+o progresso da deterioração através da apropriação do consumo de materiais para tapa-buraco,
+remendo profundo e selagem de trincas.
+
+             § 2º É vedada a consideração do acostamento para estimativa dos quantitativos
+dos serviços de tapa buraco e remendo profundo, devendo-se ser restringida à pista de
+rolamento.
+
+
+
+                                             11
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              § 3º Deverá ser realizado o cadastro de remendos profundos, tapa buracos e
+selagens de trincas para a recuperação do passivo inicial da rodovia, devendo constar
+separadamente, para cada segmento, os respectivos quantitativos necessários para a
+recuperação inicial da rodovia, conforme modelo indicado no Anexo XXVII.
+
+             Art. 18. Pode-se adotar níveis de esforços diferentes dos definidos no item 5.5.4
+do Manual de Conservação Rodoviária.
+
+              Parágrafo único. A justificativa deve basear em critérios objetivos e estudos
+contendo os levantamentos realizados e os critérios técnicos adotados.
+
+                                      CAPÍTULO VI
+                         DA ELABORAÇÃO E DA APROVAÇÃO DO PATO
+
+              Art. 19. As fases para obtenção dos quantitativos a serem utilizados na proposta
+do PATO são, no mínimo, as seguintes:
+
+               I - elaboração do inventário de elementos geradores de conservação;
+               II - atribuição da intensidade de aplicação dos serviços dos grupos por
+desempenho e dos serviços de conservação corretiva rotineira, preventiva periódica e
+emergencial, conforme item 5.3.6 do Manual de Conservação Rodoviária;
+               III - obtenção das quantidades dos serviços dos grupos por desempenho e dos
+serviços de conservação corretiva rotineira, preventiva periódica e emergencial baseados nos
+níveis de esforços correspondentes; e
+               IV - quantificação dos DSM.
+
+              Art. 20. O chefe da unidade local designará um servidor, com formação em
+engenharia civil, de sua unidade, como responsável pelos levantamentos dos dados necessários
+à elaboração da proposta de PATO ou sua atualização, por meio de planilhas eletrônicas ou outro
+sistema eletrônico de fácil acesso às demais unidades do DNIT.
+
+               § 1º Os registros realizados pela equipe de campo deverão seguir as orientações
+dos Anexos II e III ou do sistema eletrônico disponível, estar atualizados e conter, no mínimo, as
+seguintes informações:
+
+             I - preâmbulo com informações de rodovia, SNV atualizado, trecho, subtrecho,
+quilometragem inicial e final, cadastro de terceira faixa e acostamento, assim como o mês de
+elaboração;
+             II - registro fotográfico ou vídeo registro georreferenciado que auxilie no registro
+do levantamento;
+             III - pesquisa de fontes de materiais e cotação de preços (brita, areia, materiais
+betuminosos, solos, água, etc.);
+
+
+
+
+                                               12
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               IV - indicação do local para instalação do canteiro de obras e das instalações
+industriais, quando aplicável;
+               V - gestão ambiental; e
+               VI - mapa das estações pluviométricas.
+
+              § 2º Nos modelos de cadastro do inventário dos elementos geradores de
+conservação constante do Anexo III, a localização dos elementos deverão ter obrigatoriamente
+cadastro por coordenada geográfica ou referência quilométrica.
+
+               § 3º A localização por coordenadas geográficas dos elementos geradores de
+conservação constante do Anexo III é facultativa, devendo ser preenchidas quando do pleno
+funcionamento do banco de dados do inventário nacional. Nesta situação será adotada a
+localização conforme SNV, referenciando sua versão no cabeçalho dos cadastros, sendo vedado
+o emprego de estacas como referência.
+
+              § 4º A empresa supervisora atuante no trecho poderá executar os levantamentos
+de que trata o § 1º, comprometendo-se com a veracidade e a precisão das informações
+prestadas, desde que não exerça atribuição própria e exclusiva do gestor e do fiscal do contrato,
+e nem do servidor de que trata o caput, observada a legislação vigente.
+
+              § 5º O documento de que trata o caput deverá estar atualizado e servirá de base
+para a elaboração ou atualização do inventário de elementos geradores de conservação.
+
+              § 6º No caso das Superintendências Regionais que não possuam unidades locais,
+o servidor de que trata o caput será designado pelo Coordenador de Engenharia Terrestre ou
+chefe do Serviço de Manutenção Terrestre.
+
+                Art. 21. É vedada a inclusão de insumos relativos à mão de obra e equipamentos
+diretamente como itens na planilha de serviços, por impor elevada dificuldade de apropriação,
+fiscalização e controle.
+
+               Art. 22. O orçamento deverá ser elaborado com as composições dos preços
+utilizados para sua formação e, preferencialmente, com base no Sicro mais recente.
+
+             Parágrafo único. Admite-se o interstício máximo de 1 (um) ano entre a data base
+do orçamento e o início do processo licitatório.
+
+               Art. 23. O licenciamento ambiental e a responsabilidade ambiental das
+contratadas - RAC deverão observar os normativos vigentes que regem a matéria.
+
+             Art. 24. Após levantamento, o responsável encaminhará todos os dados ao chefe
+da unidade local para fins de validação dos dados, atribuição das condições aos serviços, e
+proposição dos DSM que porventura necessitem ser inseridos.
+
+
+
+                                               13
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              § 1º Os responsáveis pela elaboração dos planos anuais de trabalho e orçamento
+não podem reproduzir as quantidades de elementos geradores de conservação de planos
+anteriores ou em estimativas próprias, sem embasamento técnico.
+
+               § 2º A atribuição das condições aos serviços (máxima, média e mínima) deverá
+seguir as orientações do item 5.3.6 do Manual de Conservação Rodoviária.
+
+               § 3º A atribuição das condições dos serviços servirá de referência para a aplicação
+dos níveis de esforços de cada serviço.
+
+               § 4º No caso dos serviços de roçada, corte e limpeza de áreas gramadas e capina,
+deverão ser calculadas conforme previstas na norma DNIT 182/2018-PRO para fins referenciais,
+devendo ser adotada e prevalecida a frequência e nível de esforço da observação de campo
+avaliada pela Unidade Local, mediante justificativa técnica, em caso de divergência com a norma
+DNIT 182/2018-PRO.
+
+                 § 5º O chefe da unidade local, com base em critérios técnicos, quantificará,
+justificará e fará a proposta de inclusão dos DSM em planilha específica.
+
+              § 6º A quantidade dos DSM deverá ser obtida por memória de cálculo direta, sem
+a necessidade de se aplicar níveis de esforços, contendo sua respectiva justificativa obrigatória.
+
+             § 7º Em caso de divergência entre o Manual de Conservação Rodoviária e os
+manuais vigentes do Sicro e da presente Resolução, prevalecerão os últimos.
+
+               Art. 25. Para formação do custo de referência de administração local dos contratos
+de PATO, deve ser considerada a previsão de 0,25 (vinte e cinco centésimos) até 1,00 (Um) de
+engenheiro supervisor e, consequentemente, de seu veículo leve e a exclusão da previsão de
+secretária da parcela fixa da administração local mediante justificativa técnica.
+
+              Parágrafo único. A definição do coeficiente do engenheiro deve ser definido em
+função do escopo dos serviços, do volume de serviços com intervenções funcionais e DSM, da
+extensão do trecho e da necessidade de permanência na obra.
+
+               Art. 26. Para formação do custo de referência da parcela fixa da administração
+local dos contratos de PATO, mediante justificativa, poderá ser inserido 1 (um) vigia para realizar
+a segurança do canteiro de obras afastados dos centros urbanos.
+
+              Art. 27. Os serviços mecanizados devem ser sempre utilizados em detrimento dos
+serviços manuais, sendo estes aplicáveis somente no caso de impossibilidade das atividades
+mecanizadas, sendo imprescindível a adoção de justificativa.
+
+
+
+
+                                                14
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              Parágrafo único. A roçada será costal ou mecanizada, admitindo-se
+excepcionalmente, no caso de impossibilidade de execução, o emprego da roçada manual,
+mediante justificativa.
+
+              Art. 28. O canteiro referencial proposto para obras de conservação rodoviária foi
+concebido em contêineres, conforme Volume VII do Manual de Custos de Infraestrutura de
+Transportes e considerações adicionais apresentadas no Anexo XII.
+
+               Art. 29. Recomenda-se a substituição do caminhão basculante com capacidade de
+6 (seis) m³ pelo caminhão basculante de 10 (dez) m³ ou 14 (quatorze) m³ para a realização de
+carga, manobra, descarga e transporte dos materiais para serviços que demandarem o
+transporte de grandes volumes e/ou grandes Distâncias Médias de Transportes:
+
+              Parágrafo único. Para a aplicação da alteração proposta no caput, deve-se
+observar a existência das composições de custo unitário de tempo fixo e de transportes que
+contemplem a mesma descrição do serviço para o caminhão basculante de 6 (seis) m³ e de 10
+(dez) m³ ou 14 (quatorze) m³.
+
+               Art. 30. Em caso de o trecho não ser coberto pelo programa BR-Legal, a previsão
+de recomposição ou implantação de dispositivos de sinalização vertical deve observar o disposto
+nas Seção I, do Capítulo I da Instrução Normativa DNIT nº 3, de 26 de fevereiro de 2021.
+
+              § 1º A previsão de recomposição ou implantação de dispositivos auxiliares deve
+observar o disposto nas Seção II, Subseção IV e V, do Capítulo I do referido normativo.
+
+              § 2º Em atenção ao disposto na Instrução Normativa DNIT nº 3, de 26 de fevereiro
+de 2021, em caso de o trecho não ser coberto pelo Programa BR-Legal, deverá ser prevista a
+capina na totalidade das placas em um raio de 3 (três) metros contados a partir do eixo do
+suporte da placa.
+
+              Art. 31. Recomenda-se avaliar, com o apoio da empresa supervisora atuante no
+trecho, se houver, o reaproveitamento do material resultante do serviço de fresagem.
+
+              Art. 32. Deverá ser considerado para fins de orçamentação área máxima individual
+de 350 m² (trezentos e cinquenta metros quadrados) para consideração do serviço de fresagem
+descontínua.
+
+              § 1º Considera-se serviços de fresagem contínua aquele cuja área individual seja
+superior ao disposto no caput, abrangendo a largura total da pista e cuja execução seja com
+equipamento de grande porte.
+
+            § 2º A forma executiva para a fresagem descontínua é efetuada mediante
+equipamentos de pequeno e médio porte, mediante comprimento e larguras variáveis.
+
+
+
+                                              15
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              Art. 33. O relatório para apresentação da proposta de contratação de PATO
+apresentará, no mínimo, as seguintes informações:
+
+             I - justificativas e resumo do PATO:
+             a) preâmbulo com informações de rodovia, SNV atualizado, trecho, subtrecho,
+quilometragem inicial e final, assim como o mês de elaboração e mês da data base do orçamento;
+             b) mapa de localização do trecho da rodovia;
+             c) justificativas das necessidades do trecho;
+             d) metodologia de elaboração e considerações; e
+             e) gestão ambiental.
+
+               II - levantamento de campo, memória de cálculo e orçamento:
+               a) cadastro do quilômetro inicial e final, coordenadas geográficas de início e fim,
+extensão em metros, tipo de pista, número de faixas, larguras em metros da pista de rolamento,
+terceiras faixas e acostamentos, indicação referencial das fotos e campo observação para
+referências e pontos notáveis que caracterizam o segmento, conforme modelo indicado no
+Anexo II;
+               b) inventário dos elementos geradores de conservação, conforme apresentado no
+Anexo III;
+               c) registro fotográfico ou vídeo registro georreferenciados dos elementos notáveis
+do trecho ou os que a unidade local considerar relevantes;
+               d) mapa das estações pluviométricas adotadas;
+               e) planilha resumo do inventário, conforme Anexo III;
+               f) memória de Cálculo dos serviços previstos no PATO;
+               g) planilha contendo os serviços previstos e seus níveis de esforços (conservação
+por desempenho, conservação corretiva rotineira, preventiva periódica e emergencial);
+               h) planilha com os quantitativos dos serviços destinados à intervenção funcional
+da pista e acostamento;
+               i) planilha com os quantitativos de DSM;
+               j) planilha de PATO com a listagem de todos os serviços e seus quantitativos,
+inclusive os serviços por desempenho, para o período contratual, conforme exemplificado no
+Anexo XIX;
+               k) croqui com ocorrência de materiais e DMT, conforme Anexo IX;
+               l) cálculo do fator de influência de tráfego - FIT, Anexo VI;
+               m) pesquisas de mercado (se for o caso), Anexo VII;
+               n) detalhamento dos itens de orçamento: canteiro de obras, administração local e
+mobilização e desmobilização;
+               o) quadro comparativo do binômio de aquisição e transporte de materiais
+betuminosos em atendimento à Portaria nº 1.977, de 25 de outubro de 2017 e à Portaria nº 434,
+de 14 de março de 2017 e relação dos pedágios, conforme Anexo X;
+               p) proposta de cronograma físico-financeiro;
+               q) demonstrativo do cálculo de benefícios e despesas indiretas - BDI; conforme
+Anexo XI;
+
+
+
+                                               16
+                             BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             r) orçamento onerado (Sicro);
+             s) orçamento desonerado (Sicro);
+             t) curva ABC de orçamento, conforme modelo disposto Anexo XXI;
+             u) distribuição percentual do orçamento conforme grupos de tarefas, incluindo os
+respectivos custos de transportes dos serviços e aquisição e transporte de materiais
+betuminosos, conforme Anexo XX; e
+             v) composições de custos unitários.
+
+              Art. 34. Após consolidação das informações da proposta de contratação, o
+servidor responsável elaborará nota técnica explicativa em relação à proposta de PATO e
+encaminhará o processo ao chefe da unidade local.
+
+             Parágrafo único. O chefe da unidade local, poderá solicitar retificações e
+esclarecimentos ao responsável pela elaboração da proposta.
+
+               Art. 35. Após concordância, o chefe da unidade local encaminhará a proposta de
+PATO à Superintendência Regional, que imediatamente tramitará ao Serviço de Manutenção
+para verificação do cumprimento da presente Resolução.
+
+            § 1º Caso seja verificada incoerência nas informações prestadas, o Serviço de
+Manutenção devolverá o processo à unidade local para devidas correções ou esclarecimentos.
+
+              § 2º Não caberá ao Serviço de Manutenção alterar por iniciativa própria os
+quantitativos ou metodologias utilizadas, porém caberá alertar a unidade local sobre
+inconsistências que porventura sejam encontradas.
+
+             Art. 36. Após verificação, o Serviço de Manutenção encaminhará o processo à
+Coordenação de Engenharia propondo a aprovação do Superintendente Regional.
+
+              Art. 37. A Coordenação de Engenharia fará a revisão final e encaminhará o
+processo ao Superintendente Regional para fins de aprovação.
+
+              Art. 38. Concordando com a proposta do PATO, o Superintendente Regional
+lavrará o Termo de Aprovação do Plano Anual de Trabalho e Orçamento - PATO, conforme o
+Anexo XXII.
+
+                                      CAPÍTULO VII
+                               DA ORÇAMENTAÇÃO DO PATO
+
+              Art. 39. O inventário dos elementos geradores de conservação deverá conter o
+cadastro detalhado dos elementos que subsidiarão a elaboração do PATO, conforme Anexo II e
+III.
+
+
+
+
+                                             17
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              Art. 40. Para os serviços categorizados como DSM deverão ser indicados a
+localização exata dos serviços, bem como os documentos que possam garantir plena
+compreensão e caracterização dos serviços, tais como croquis, cortes, plantas, ou desenhos
+esquemáticos.
+
+              Parágrafo único. No Anexo IV encontra-se um modelo para cadastro de solução de
+pista e acostamento para os serviços classificados como DSM.
+
+              Art. 41. A planilha de PATO deverá separar de forma clara os serviços de
+conservação por desempenho, conservação corretiva rotineira, preventiva periódica,
+emergencial e os demais serviços de manutenção.
+
+              Parágrafo único. Deverão estar separados ainda os respectivos serviços auxiliares,
+transportes e os custos referentes à aquisição e transporte de materiais betuminosos, conforme
+Anexo XIX.
+
+               Art. 42. Os grupos por desempenho comporão, cada um, item específico de
+planilha orçamentária, de frequência mensal, cujo valor unitário será formado pela soma de
+todos os serviços de cada grupo.
+
+               Parágrafo único. O valor global dos grupos por desempenho será distribuído no
+prazo total de cada etapa de cumprimento dos padrões de desempenho, em parcelas mensais.
+
+              Art. 43. Deverá ser prevista a sinalização horizontal para abertura ao tráfego de
+forma a garantir as condições adequadas de segurança na circulação.
+
+              Parágrafo único. A sinalização deve atender aos parâmetros previstos na Instrução
+de Serviço DNIT nº 23, de 9 de dezembro de 2019.
+
+              Art. 44. Devem ser previstos dispositivos de sinalização de obras para a execução
+dos serviços que envolvam intervenções na pista e no acostamento a fim de que se obtenha um
+controle temporário de tráfego, garantindo-se a segurança dos usuários da rodovia e dos
+trabalhadores envolvidos, conforme apresentado no Anexo XIII.
+
+               Art. 45. A cotação dos valores de aquisição de agregados pétreos e areia deve ser
+providenciada juntamente com a elaboração do croqui de ocorrência de materiais, assinado pelo
+representante da unidade local do DNIT, indicando-se as fontes de materiais, de maneira que
+sejam adotados os valores mais próximos possíveis dos reais para cada região no orçamento de
+licitação das obras.
+
+             Parágrafo único. Informações adicionais sobre as cotações de materiais pétreos
+encontram-se dispostas no Anexo VII.
+
+
+
+
+                                              18
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               Art. 46. Devem ser indicadas, no mínimo, 3 (três) fontes de aquisição (Refinarias)
+e 3 (três) fontes de distribuição (Distribuidoras) de materiais betuminosos, de modo a atender
+ao que prevê a Portaria nº 1.977, de 25 de outubro de 2017, conforme modelo de binômio de
+aquisição e transporte indicado no Anexo X.
+
+             Parágrafo único. Informações adicionais sobre as cotações de materiais
+betuminosos encontram-se dispostas no Anexo VII.
+
+               Art. 47. A cotação dos valores de aquisição da massa asfáltica comercial deve ser
+providenciada juntamente com a elaboração do croqui de ocorrência de materiais, indicando-se
+a localização do fornecedor e assinadas pelo representante da unidade local do DNIT.
+
+              Parágrafo único. Informações adicionais sobre as cotações de massa asfáltica
+comercial encontram-se no Anexo VII.
+
+             Art. 48. Deve-se observar o disposto na Instrução Normativa DNIT nº 62, de 17 de
+setembro de 2021 quanto à aplicação do BDI diferenciado.
+
+              Parágrafo único. Para serviços que possuem insumos asfálticos, estes deverão ser
+extraídos das composições de custos unitário e seus custos de aquisição e transporte inseridos
+como item específico da planilha orçamentária.
+
+               Art. 49. Os custos relacionados ao transporte de insumos necessários à execução
+dos serviços, devem observar as premissas apresentadas no Anexo VIII.
+
+                                    CAPÍTULO VIII
+                   DA ELABORAÇÃO DO TERMO DE REFERÊNCIA E LICITAÇÃO
+
+             Art. 50. O PATO será encaminhado ao Serviço de Manutenção para elaboração da
+minuta de Termo de Referência - TR e juntada dos demais documentos necessários à licitação.
+
+               Art. 51. O TR indicará as normas do DNIT aplicáveis à execução dos serviços,
+contendo, no mínimo, os elementos previstos no inciso XXIII do caput do art. 6º e no § 1º do art.
+40 da Lei nº 14.133, de 2021, e no art. 30 da Instrução Normativa SEGES/MP nº 5, de 26/5/2017,
+além das ações relativas à gestão ambiental.
+
+             Art. 52. Após elaboração da minuta do TR, o Serviço de Manutenção encaminhará
+o processo à Coordenação de Engenharia que revisará os documentos e proporá ao
+Superintendente Regional a sua aprovação.
+
+                Art. 53. Após concordância, o Superintendente Regional aprovará o TR e
+encaminhará o processo ao setor de licitação com a autorização para a abertura do certame
+licitatório para fins de contratação.
+
+
+
+                                               19
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               § 1º A licitação deverá ser realizada na modalidade pregão e de forma eletrônica,
+ficando facultada à Superintendência Regional a escolha do modo de disputa aberto ou aberto e
+fechado.
+
+               § 2º À critério da Superintendência Regional, o valor total referencial do
+orçamento poderá ser sigiloso, nos termos art. 15 do Decreto nº 10.024, de 20/9/2019, e do art.
+24 da Lei nº 14.133, de 2021.
+
+             § 3º As fases internas e externas do certame licitatório correrão conforme a
+modalidade da licitação.
+
+                Art. 54. Após homologação, assinatura do contrato e publicação do seu extrato no
+Diário Oficial da União, a Superintendência designará um ou mais fiscais do contrato, na forma
+dos arts. 7º e 117 da Lei nº 14.133, de 2021, para acompanhamento da execução do contrato e
+desempenho das demais atividades previstas na Resolução nº 20, de 30 de dezembro de 2020.
+
+             Parágrafo único. Será providenciado o cadastro básico do contrato no Sistema de
+Acompanhamento de Contratos - Siac, conforme previsto na Instrução Normativa DNIT nº 57, de
+14 de setembro de 2021.
+
+                                    CAPÍTULO IX
+               DA EXECUÇÃO DOS SERVIÇOS, DA FISCALIZAÇÃO E DA MEDIÇÃO
+
+                                          Seção I
+                          Da execução dos serviços e da fiscalização
+
+              Art. 55. Vencidas as etapas anteriores, seguindo as diretrizes previstas na
+Instrução Normativa DNIT nº 57, de 14 de setembro de 2021, que determina a sistemática de
+cadastro de contrato, medições e autorização de pagamento de obras e serviços de engenharia,
+será dada a ordem de início para a mobilização da empresa e execução dos serviços contratados.
+
+              Parágrafo único. De forma complementar às disposições da Instrução Normativa
+DNIT nº 57, de 14 de setembro de 2021, devem compor obrigatoriamente em todas as medições
+de contratos de PATO regulados pela presente resolução relatório fotográfico e inventário dos
+serviços de remendo profundo e tapa-buraco seguindo o modelo disposto no Anexo XXVIII.
+
+               Art. 56. Previamente ao início da execução dos serviços contratados e
+paralelamente à mobilização da empresa, o fiscal irá se reunir com os representantes da empresa
+contratada para passar suas diretrizes iniciais e solicitar à empresa a elaboração do plano de
+ataque inicial e o cronograma de execução dos serviços, que deverá ser apresentado no prazo
+máximo de 2 (dois) dias úteis.
+
+
+
+
+                                              20
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             § 1º O cronograma de execução deverá prever separadamente os DSM, os serviços
+de conservação rotineira, preventiva periódica, emergencial e os serviços do(s) grupo(s) por
+desempenho.
+
+               § 2º A empresa contratada apresentará proposta de Plano de Ataque inicial para
+análise e aprovação do fiscal.
+
+               § 3º Caberá à contratada realizar o estaqueamento do trecho, conforme o sistema
+de referência quilométrico do SNV, e mantê-lo visível ao longo da execução do contrato.
+
+              § 4º Caberá à contratada, antes do início dos serviços, aferir as efetivas DMTs para
+aquisição dos diversos insumos que deverão ser validadas pelo fiscal, a fim de se evitarem
+pagamentos indevidos ou que não reflitam a realidade da obra.
+
+               § 5º Para a execução dos serviços do DSM, caso a Unidade Local avalie necessária
+e, caso coberto por contrato de supervisão, poderá ser expedida ordem de serviço à supervisora
+para realização de ensaios e parecer afetos às soluções funcionais e estruturais para ratificação
+ou retificação da solução dada no Plano de Trabalho.
+
+              Art. 57. A execução dos serviços deverá seguir as especificações listadas no Anexo
+B do Manual de Conservação Rodoviária, além dos demais normativos vigentes relativos aos
+serviços não contemplados ou desatualizados no Manual de Conservação Rodoviária.
+
+              § 1º A contratada deverá realizar todos os controles tecnológicos exigidos pelas
+especificações do DNIT, para garantir a qualidade especificada para a obra, os quais serão de sua
+responsabilidade, com ênfase nos itens especificados no Edital de referência.
+
+              § 2º Os controles tecnológicos exigidos pelas especificações do DNIT realizados
+pela contratada devem ser apresentados à fiscalização em até 30 dias subsequentes ao período
+de execução dos serviços da medição em referência, não se vinculando ao prosseguimento
+regular da medição.
+
+               Art. 58. O diário de obras deverá ser fornecido pela contratada, mantido sob a sua
+guarda e responsabilidade, de maneira física ou eletrônica, e colocado em local acessível à
+supervisora e à fiscalização do DNIT.
+
+             §1º As regras gerais e padronização do diário de obras encontram-se especificadas
+na norma DNIT 097/2007 - PRO.
+
+               §2º No caso de diário de obras eletrônico, o preenchimento deve ser realizados
+de maneira rotineira ao longo do mês, competindo à fiscalização lançamento de observações e
+validação das informações prestadas pelo contratado, sendo obrigatória a assinatura eletrônica,
+independente da frequência da validação ao longo do mês de referência.
+
+
+
+                                               21
+                                BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             Art. 59. Em aplicações que envolvam execução de serviços de concreto
+betuminoso usinado à quente (CBUQ), a contratada deverá apresentar o traço da mistura
+devidamente assinado pelo responsável técnico do contrato.
+
+                Parágrafo único. O traço a que se refere este caput deverá ser aceito pela
+fiscalização local, aplicando-se, para efeito de medição, monitoramento, fiscalização e auditoria,
+os valores reais de densidade e teor de CAP, admitindo-se a tolerância constante nas
+especificações DNIT 031/2006-ES e DNER-ES 385/99.
+
+             Art. 60. Durante a execução dos serviços, a fiscalização deverá exigir o
+cumprimento das orientações de segurança contidas nos itens 4.6.1 a 4.6.3 do Manual de
+Conservação Rodoviária e no art. 44 desta Resolução.
+
+                Art. 61. O trecho coberto pelo contrato deverá ser objeto de inspeções
+permanentes com a finalidade de definir e localizar os defeitos, determinar as suas causas e, a
+partir daí, executar os devidos reparos.
+
+              Art. 62. A fiscalização deverá realizar no mínimo 2 (duas) inspeções mensais, sem
+aviso prévio, para controle, acompanhamento dos serviços e do cronograma proposto pela
+contratada, bem como a verificação ao atendimento dos padrões de desempenho.
+
+              Art. 63. Caberá à unidade local e à supervisora, se houver, realizar a inspeção visual
+frequentemente objetivando o acompanhamento dos serviços e a detecção de qualquer
+problema no sistema viário, seja operacional ou relativo à conservação corretiva rotineira,
+preventiva periódica, emergencial e DSM, que necessite a mobilização imediata de uma equipe
+para a resolução do problema.
+
+             § 1º A fiscalização do contrato registrará no diário de obras, que comporá o
+processo de suporte documental das medições, todas as ocorrências relacionadas com a
+execução do contrato, determinando o que for necessário à regularização das falhas ou defeitos
+observados.
+
+              § 2º As decisões e providências que ultrapassarem a competência da fiscalização
+deverão ser solicitadas a seus superiores em tempo hábil para a adoção das medidas
+convenientes.
+
+               § 3º Os elementos e as respectivas ocorrências a serem verificadas são, entre
+outras, as seguintes:
+
+              I - terrapleno, taludes de corte e aterros: instabilidade, erosões, falhas no
+revestimento vegetal, deficiências na drenagem;
+
+
+
+
+                                                22
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+                II - pavimento (pista de rolamento e acostamento): ocorrência de trincas no
+pavimento; exsudação; segregação; evidência de infiltração através da superfície; ondulações
+indicativas de instabilidade na superfície, base ou sub-base; desagregação de bordo do
+pavimento; panelas; permeabilidade do pavimento e recalques nos encontros das pontes e
+trilhas de rodas;
+                III - drenagem e obras-de-arte correntes: crescimento de vegetação ou material
+arrastado na entradas ou saídas das obras de drenagem; entulho e sujeiras em sarjetas, valetas
+e saídas d`água; ruptura de meios-fios, banquetas e sarjetas; solapamento e ruptura de descidas
+de água; obstrução de drenos profundos; bueiros obstruídos, fora do alinhamento ou com vazão
+insuficiente; aparecimento de trincas ou de outros sinais de defeito nos bueiros e muros de
+arrimo; necessidade de estruturas adicionais de drenagem;
+                IV - obras de arte especiais: guarda-corpo e guarda-rodas sem pintura ou
+danificados. Em caso de o trecho não ser coberto pelo PROARTE: estrutura; trincas; revestimento
+danificado, escamado etc.; deslocamento dos pilares e vigas de apoio e aparecimento de trincas
+e escamas; defeito nos aparelhos de apoio e junta de dilatação cheia de materiais estranhos
+impedindo seu funcionamento normal;
+                V - canteiros, interseções, faixa de domínio e áreas de exploração recuperadas:
+árvores e arbustos que representam perigo para a plataforma da estrada ou interferência na
+distância de visibilidade nas curvas; altura do revestimento vegetal; falta de revestimento
+vegetal; árvores e arbustos que funcionem como obstrução visual da sinalização; adubação;
+ocorrência de pragas e deficiência na irrigação das áreas recentemente plantadas e na aplicação
+de fertilizantes; e
+                VI - segurança e sinalização: falta de caiação no meio-fio e sarjetas; crescimento
+da vegetação e existência de obstrução visual ao redor da sinalização vertical. Em caso de o
+trecho não ser coberto pelo Programa BR-Legal: sinalização horizontal pouco visível, por falta de
+condição de retrorrefletância ausência de sinais ou deterioração da película retrorrefletiva das
+placas; balizadores, catadióptricos, tachas e tachões sujos, danificados ou inexistentes; defensa
+deteriorada, danificada ou inexistente; acúmulo de detritos ou danificação em tachas, tachões e
+balizadores e ausência dos elementos refletivos.
+
+              Art. 64. Para os serviços de revestimento betuminoso, serão realizadas avaliações
+pela empresa supervisora (com acompanhamento da fiscalização) para verificação dos controles
+tecnológicos realizados pela contratada.
+
+             § 1º As avaliações constarão da execução de contraprova por parte da supervisora
+de pelo menos 10% (dez por cento) de todos os ensaios exigidos pelas especificações junto à
+empresa executora.
+
+               § 2º O princípio da fiscalização é o controle tecnológico por amostragem, sem
+aviso prévio, para verificação da fidelidade dos controles executados pela contratada.
+
+              § 3º Somente poderão ter prosseguimento no andamento regular da medição,
+caso os resultados de contraprova por parte da supervisora apresentem consonância aos
+parâmetros definidos nas especificações de serviço e normativos do DNIT.
+
+
+
+                                               23
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             Art. 65. Os serviços deverão ser executados em concordância com a fiscalização,
+com registro em Diário de Obras. A contratada deverá ser notificada sobre toda não
+conformidade identificada.
+
+               § 1º Toda não conformidade resultará em uma ficha de não-conformidades para
+registro de ocorrência e atendimento, conforme modelo presente no Anexo XXIX.
+
+              § 2º A partir de 3 (três) notificações referentes a mesma natureza de não
+conformidades, a fiscalização deverá relatar os fatos e encaminhar os documentos ao gestor do
+contrato para que esse possa providenciar as sanções de penalidades previstas em contrato.
+
+             § 3º O modelo de planilha de gerenciamento das não conformidades encontra-se
+no Anexo XXIX.
+
+                Art. 66. A contratada é obrigada a reparar, corrigir, remover, reconstruir ou
+substituir, às suas expensas, no total ou em parte, o objeto do contrato em que se verificarem
+vícios, defeitos ou incorreções resultantes da execução ou de materiais empregados.
+
+                                          Seção II
+                                 Dos padrões de desempenho
+
+             Art. 67. A contratada é responsável por manter os serviços de manutenção e
+conservação dos grupos por desempenho, dentro dos padrões estabelecidos.
+
+             § 1º Admite-se prazo máximo de 48 (quarenta e oito) horas para correção das não
+conformidades eventualmente detectadas pela fiscalização.
+
+              § 2º Caso a não-conformidade não seja sanada, aplicar-se-á os percentuais
+redutores dos fatores de pagamento em medição.
+
+              § 3º Toda não conformidade deverá ter seu registro de ocorrência (ficha de não
+conformidades) e de seu atendimento, independentemente de seu enquadramento em casos
+excepcionais.
+
+               Art. 68. Os padrões de desempenho deverão ser atendidos a partir da aplicação
+de um conjunto de ações coordenadas compostas pelos serviços dos grupos por desempenho
+listados no art. 5º
+
+             § 1º Para o cálculo do fator de pagamento serão utilizados os critérios de aceitação
+presente no Anexo XVI.
+
+              § 2º Nos grupos de desempenho, o contratado deverá cumprir a manutenção da
+rodovia dentro de um nível de desempenho satisfatório e preestabelecido.
+
+
+
+                                               24
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              § 3º As definições e especificações de serviços dos grupos previstos no art. 5º
+estão dispostos no Anexo XV.
+
+                                          Seção III
+                                 Da medição e do pagamento
+
+             Art. 69. Os serviços realizados serão quantificados mensalmente conforme critério
+adotado em Termo de Referência, nos termos do art. 92, § 5º da Lei nº 14.133, de 2021
+
+           § 1º Caso exista empresa supervisora contratada, esta auxiliará a fiscalização no
+acompanhamento da execução e quantificação dos serviços.
+
+               § 2º A sistemática para medições e autorização de pagamento no SIAC seguirão as
+diretrizes previstas na Instrução Normativa DNIT nº 57, de 14/9/2021.
+
+              § 3º O modelo de medição dos serviços e as responsabilidades decorrentes dos
+processos de medição e do suporte documental seguirá as diretrizes da Instrução Normativa
+DNIT nº 57, de 14/9/2021.
+
+               Art. 70. Recomenda-se como condição para o pagamento das medições, por
+unidade de serviço concluído, que os quantitativos medidos sejam discriminados em relatório de
+fiscalização que identifique, por meio de mapas lineares ou outros instrumentos, a posição
+geográfica inicial e final da execução dos serviços.
+
+              § 1º Para os serviços mais representativos da medição, o relatório deverá conter
+arquivo de fotos digitais datadas, georreferenciadas e que enquadrem a indicação da localização
+em que foram obtidas, de forma a evidenciar suficientemente a situação dos segmentos que
+sofreram intervenções.
+
+              § 2º Para os serviços de tapa buraco e remendo profundo que comporão o suporte
+documental da medição, o relatório deverá obrigatoriamente seguir o modelo disposto no Anexo
+XXVIII, contendo arquivo de fotos digitais datadas, georreferenciadas, com demonstração da
+situação antes e depois da intervenção, de forma a evidenciar suficientemente a situação dos
+segmentos que sofreram intervenções.
+
+                Art. 71. Somente poderá ser realizada a medição dos respectivos serviços
+auxiliares, transportes e os custos referentes à aquisição e transporte de materiais betuminosos
+mediante a execução efetiva correspondente ao quantitativo que guarde correlação e
+consonância aos exatos quantitativos de serviços executados em aplicações que envolvam
+execução de serviços que utilizem os insumos betuminosos no trecho correspondente ao período
+de referência da medição.
+
+
+
+
+                                              25
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               Art. 72. A parcela referente aos serviços contratados por desempenho, conforme
+listado no art. 5º, serão pagas mensalmente, a partir de seu fator de pagamento, levando em
+consideração seus padrões de desempenho.
+
+             § 1º Não deverá haver consumo de eventuais saldos das parcelas decorrentes de
+penalização do fator de pagamento, de forma a incentivar sempre a obtenção dos padrões
+máximos de desempenho.
+
+             § 2º Não poderá haver consumo de valor superior a 1 (uma) unidade (mês) da
+parcela de cada grupo por desempenho em uma medição, pois descaracterizará o fator de
+pagamento e a avaliação de desempenho dos respectivos grupos.
+
+              Art. 73. O critério de medição para os grupos por desempenho previstos no art. 5º
+deve ser precedido de inspeção do trecho pelo DNIT, conforme art. 62.
+
+              Parágrafo único. Deve a fiscalização avaliar, conforme exposto no caput, as
+condições da rodovia e da faixa de domínio e sua conformidade com os padrões de desempenho
+apresentados no Anexo XVI.
+
+              Art. 74. O atendimento aos padrões de desempenho apresentados no Anexo XVI
+para os grupos de serviços previstos nos incisos I, II e III do art. 5º é condição para aceitação e
+para cômputo dos indicadores do fator de medição.
+
+             § 1º Os indicadores estabelecidos para avaliação do critério de medição e
+aceitação mensal e os respectivos pesos estão estabelecidos no Anexo XVII.
+
+             § 2º A avaliação dos diferentes indicadores de desempenho será realizada, de
+quilômetro em quilômetro, em toda a extensão contratual do Plano de Trabalho.
+
+              § 3º Caso algum dos indicadores não atinja o padrão exigido em parte da extensão
+de determinado quilômetro, deve-se desconsiderar a totalidade deste quilômetro no cômputo
+da extensão atendida, uma vez que o padrão estabelecido é a condição mínima que se exige para
+a rodovia.
+
+               § 4º Partindo-se da percentagem da extensão atendida, será estabelecido o
+coeficiente de correlação e então será calculado o fator de pagamento, conforme o Anexo XVII.
+
+              § 5º Durante a execução contratual é vedada a adequação dos níveis de esforços
+dos grupos de serviços por desempenho previstos no art. 5º, sendo responsabilidade da empresa
+a maior frequência de execução de determinados serviços, cuja contratada deve prever em sua
+proposta de preço.
+
+
+
+
+                                                26
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               Art. 75. Deve constar no Termo de Referência que o critério de medição do custo
+da administração local deve estar atrelado ao andamento da obra. Dessa forma, a administração
+local deverá será medida de forma proporcional à execução financeira.
+
+                                           Seção IV
+                    Da aplicação do instrumento de medição por resultado
+
+              Art. 76. A fiscalização técnica dos contratos deve avaliar constantemente a
+execução do objeto de forma global por meio do instrumento de medição de resultado - IMR,
+conforme critérios previstos no Anexo XVIII.
+
+              Parágrafo único. A análise dos resultados destas avaliações pela fiscalização
+poderá resultar em penalidades caso a contratada não cumpra com os seus compromissos de
+prestação do objeto contratual, conforme estabelecido pelos indicadores.
+
+             Art. 77. Estabelece-se como Nota de Desempenho Global - NDG a avaliação da
+execução global do contrato, conforme critérios constantes no Anexo XVIII.
+
+             Parágrafo único. A nota da contratada partirá de 100 (cem) pontos e será deduzida
+conforme ocorrências apontadas pela fiscalização.
+
+               Art. 78. O IMR será implementado a partir da primeira medição a contar da data
+de assinatura de contrato, cabendo ao fiscal técnico avaliar mensalmente a execução dos serviços
+prestados.
+
+               § 1º A aplicabilidade do fator de desconto se dará a partir do início do quarto mês
+após o início da execução do contrato:
+
+              I - para o recebimento integral do valor contratado, a contratada deverá cumprir
+com suas obrigações, em especial as dispostas nos indicadores de desempenho do IMR.
+
+               Art. 79. As faixas e os percentuais de fator de desconto estão explicitados no
+Anexo XVIII.
+
+                § 1º A aplicação do fator de desconto é um procedimento ligado exclusivamente
+à medição dos serviços, e não elimina eventuais penalidades contratuais e previstas na lei de
+licitação referente.
+
+               § 2º Caso haja descumprimento aos padrões de desempenho elencados no Anexo
+XVIII, estes deverão ser aplicados especificamente naqueles grupos de desempenho avaliados,
+não sendo possível dupla penalização no IMR pela(s) mesma(s) ocorrência(s) ou não-
+conformidade(s) apontadas no padrão de desempenho.
+
+
+
+
+                                               27
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+             Art. 80. A avaliação deverá ter periodicidade mensal e será baseada em vistorias
+para aferição da execução do contrato, conforme critérios de ocorrências definidas na
+metodologia.
+
+               § 1º Caso seja identificada alguma ocorrência, a fiscalização deverá dar ciência por
+escrito à contratada e prazo para correção dos problemas.
+
+              § 2º Toda não conformidade deverá ter seu registro de ocorrência e de seu
+atendimento, independentemente de seu enquadramento no período de carência estabelecido
+no IMR.
+
+              Art. 81. Deve-se haver o redimensionamento do pagamento com base nos
+indicadores estabelecidos, e a aplicação de sanções contratuais cabíveis, e demais ocorrências
+previstas no Anexo XVIII, sempre que a contratada:
+
+                I - não produzir os resultados, deixar de executar, ou não executar com a qualidade
+mínima exigida as atividades contratadas;
+                II - deixar de utilizar materiais e recursos humanos exigidos para a execução do
+serviço, ou utilizá-los com qualidade ou quantidade inferior à demandada; e
+                III - não atender as demandas solicitadas pela fiscalização.
+
+               Art. 82. O fiscal técnico do contrato deverá apresentar ao preposto da contratada
+a avaliação da execução do objeto realizado mensalmente.
+
+              Art. 83. Em caso de incidência continuada de redução de fator em três ocorrências
+consecutivas abaixo de 90% (noventa por cento), ou por mais de 5 (cinco) ocorrências abaixo de
+90% (noventa por cento) ao longo de um ano de prestação de serviços, poderá proceder com a
+rescisão contratual unilateral.
+
+              Parágrafo único. Além da providência prevista no caput, também implicará na
+obrigatoriedade da Superintendência Regional realizar notificações prévias e iniciar os
+procedimentos de aplicação de sanções previstas em lei e na Instrução Normativa DNIT nº 6, de
+24 de maio de 2019.
+
+                                      CAPÍTULO X
+            DO HISTÓRICO DE SERVIÇOS E ATUALIZAÇÃO DOS NÍVEIS DE ESFORÇOS
+
+                Art. 84. Caberá à Coordenação-geral de Manutenção e Restauração Rodoviária
+contabilizar o histórico da quantidade de serviços executados a cada período de um ano para fins
+de obtenção dos níveis de esforços médios atualizados.
+
+              § 1º Deverá ser analisada e avaliada a performance das quantidades de serviços
+executados e o efeito resultante na malha viária, em termos de nível de conservação da rodovia,
+seguindo o histórico de serviços dos contratos dos segmentos rodoviários do sistema SIAC.
+
+
+
+                                                28
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+              § 2º Para registro e atualização dos níveis de esforços, a Coordenação-geral de
+Manutenção e Restauração Rodoviária publicará anualmente em sitio eletrônico do DNIT níveis
+de esforços atualizados.
+
+              § 3º Caso o serviço não conste da lista de serviços com níveis de esforços
+atualizados, devem ser adotados aqueles constante do Manual de Conservação Rodoviária,
+Publicação IPR 710, Edição 2005.
+
+             Art. 85. Caberá à unidade local avaliar as condições do trecho atuais para fins de
+obtenção dos níveis de esforços atualizados que reflita a orçamentação de novo PATO.
+
+                                     CAPÍTULO XI
+                   DOS TERMOS ADITIVOS – PRORROGAÇÃO E ADEQUAÇÃO
+
+                                            Seção I
+                                        Da prorrogação
+
+              Art. 86. Os contratos PATO poderão ser prorrogados com finalidade de manter as
+atividades de manutenção e conservação das rodovias, observado o disposto no art. 107 da Lei
+nº 14.133, de 2021, conforme o caso.
+
+              Parágrafo único. A prorrogação deve garantir preços e condições mais vantajosas
+à Administração, devendo-se acompanhar da devida motivação, em consonância com o interesse
+público e com o princípio da economicidade.
+
+               Art. 87. Por ocasião das prorrogações contratuais, deverá ser realizado atualização
+do inventário de elementos geradores de conservação para a quantificação dos serviços dos
+grupos por desempenho, de conservação corretiva rotineira, preventiva periódica e emergencial
+necessários à nova etapa.
+
+              § 1º Os inventários de elementos geradores de conservação e seus respectivos
+quantitativos não poderão ser automaticamente replicados da etapa anterior, salvo se não
+houver alteração no inventário ou na atribuição dos níveis de esforços, devendo o fiscal do
+contrato declarar claramente que não houve alteração nesses elementos em sua justificativa
+técnica.
+
+              § 2º A atualização do novo inventário de elementos geradores de conservação
+tornará como base o novo inventário dos elementos que comporão a avaliação das prorrogações
+dos contratos ou novo certame licitatório.
+
+               Art. 88. Os quantitativos dos serviços a serem executados nos períodos relativos
+às respectivas prorrogações não entram no cômputo dos limites estabelecidos no art. 125 da Lei
+nº 14.133, de 2021, conforme o caso, desde que a planilha do PATO-ETAPA contenha os mesmos
+itens do objeto original, permitindo-se a inclusão de quantitativos necessários em função do
+inventário atualizado.
+
+
+
+                                               29
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             § 1º É vedada a alteração dos níveis de esforço dos itens de desempenho e a
+majoração dos DSM.
+
+               § 2º Em caso de não execução dos DSM na etapa prevista os saldos existentes
+poderão ser mantidos para execução em etapa futura, desde que justificado pela fiscalização do
+contrato e vinculados às necessidades inicialmente previstas.
+
+              § 3º Os saldos existentes dos DSM não utilizados na etapa anterior comporão a
+planilha do PATO-ETAPA futuro para fins de cálculo da vantajosidade da prorrogação.
+
+               Art. 89. A equação econômico-financeira da proposta inicial deverá ser mantida
+durante toda a execução do contrato, não podendo alterá-la em favor do contratado, quando na
+realização das prorrogações contratuais.
+
+             Art. 90. Cada prorrogação contará com a elaboração de relatório específico sendo
+composto, no mínimo, das seguintes informações:
+
+                I - relatório de prorrogação de etapa:
+                a) preâmbulo com informações do número do contrato, empresa contratada,
+rodovia, trecho, subtrecho, quilometragem inicial e final, SNV e data base do orçamento;
+                b) planilha resumo da nova etapa;
+                c) justificativas para prorrogação;
+                d) metodologia de elaboração;
+                e) inventário atualizado dos elementos geradores de conservação, conforme
+Anexo II e III;
+                f) registro fotográfico ou vídeo registro georreferenciados;
+                g) planilha com níveis de esforços utilizados;
+                h) justificativa para execução dos saldos existentes de DSM em etapa futura (se
+for o caso);
+                i) croqui com ocorrência de materiais e cálculo de DMT;
+                j) memória de cálculo de todos os serviços a serem prorrogados;
+                k) planilha de PATO com a listagem e quantidade de todos os serviços, inclusive os
+serviços por desempenho, para a nova etapa;
+                l) proposta de cronograma físico-financeiro; e
+                m) orçamento na modalidade onerado ou desonerado (conforme orçamento
+original).
+
+              Art. 91. Tomando como base as quantidades de serviços apresentadas no relatório
+de prorrogação de etapa, será elaborada nota técnica de análise da vantajosidade em se
+prorrogar o contrato, seguindo as diretrizes de critérios de vantajosidade previstas no Anexo XXIV
+ou ato normativo vigente.
+
+
+
+
+                                               30
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+                Art. 92. Em consequência da análise de vantajosidade, caso haja necessidade de
+aplicação de desconto adicional nos preços unitários do contrato, não haverá a necessidade de
+se retificar os valores apresentados no relatório de prorrogação de etapa.
+
+               Parágrafo único. A nota técnica deverá conter o valor total do contrato assim como
+as planilhas com os preços finais a serem implantados no SIAC, após a prorrogação.
+
+               Art. 93. Desde que atendidos os parágrafos anteriores e que se mantenha o
+equilíbrio contratual, o valor da etapa a ser prorrogada não estará limitado ao valor da etapa
+anterior, podendo ser maior ou menor.
+
+                                            Seção II
+                             Dos aditivos de adequação contratual
+
+                 Art. 94. São admitidas adequações contratuais de quantitativos ou inserção de
+serviços novos nos planos de trabalho quando surgirem circunstâncias, situações imprevistas ou
+fatores supervenientes que exijam alterações quantitativas ou inclusões de serviços e desde que
+guardem relação com a natureza do objeto contratado, observado o disposto no Capítulo VII do
+Título III da Lei nº 14.133, de 2021.
+
+              § 1º A proposta das alterações deverá ser motivada pela fiscalização em nota
+técnica apoiada por estudos pertinentes, bem como caracterizada a natureza superveniente em
+relação ao momento da licitação dos fatos ensejadores das alterações.
+
+               § 2º A supervisora deverá dar suporte à fiscalização na verificação da necessidade
+em realizar alterações contratuais e elaborará documento contendo todas justificativas, dados e
+demais informações necessárias ao seu claro entendimento.
+
+             § 3º Havendo necessidade de inserir novos serviços na lista de serviços de
+desempenho contratada, este deverá ser remetido à Coordenação Geral de Manutenção e
+Restauração Rodoviária para análise e deliberação da solicitação requerida pela
+Superintendência Regional.
+
+               § 4º Se durante a vigência do contrato surgir a necessidade de alterar os
+quantitativos iniciais dos DSM, estes poderão ser aditados, desde que justificados, analisados e
+aceitos pela Administração e atendido o limite de 25% (vinte e cinco por cento) do valor do
+contrato original.
+
+              Art. 95. As alterações quantitativas e serviços novos que tratam nesta Seção
+devem observar o previsto no art. 125 da Lei 14.133, de 2021, não sendo autorizada, em hipótese
+alguma, a superação deste limite.
+
+
+
+
+                                               31
+                               BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+             § 1º Para a base de cálculo considerar-se-á sempre o valor original do contrato,
+independente de quantas prorrogações ou adequações contratuais ocorreram.
+
+              § 2º Os limites citados no caput se aplicam a cada um dos conjuntos de reduções
+e de acréscimos, individualmente e sem nenhum tipo de compensação entre eles.
+
+               Art. 96. A equação econômico-financeira da proposta inicial deverá ser mantida
+durante toda a execução do contrato, não podendo alterá-la em favor do contratado, quando na
+realização das adequações contratuais.
+               § 1º Caso o desconto global do contrato após a adequação seja menor que aquele
+ofertado durante à licitação, deve-se proceder a aplicação de um deflator, inicialmente nos
+preços unitários novos, até o limite do percentual de desconto original de licitação.
+
+               § 2º Se mesmo assim persistir o desequilíbrio, aplicar-se-á deflatores nos preços
+unitários existentes que tiveram alteração de quantitativos até a obtenção do referido equilíbrio.
+
+             Art. 97. Os quantitativos dos serviços inseridos via termo aditivo não poderão
+sofrer aumento em função de prorrogações de prazo, porém os saldos de tais serviços poderão
+ser medidos em etapas futuras, caso necessário.
+
+               Art. 98. A inclusão dos novos serviços estará condicionada à natureza dos
+respectivos itens, devendo, obrigatoriamente, existir relação com serviços de manutenção
+rodoviária, sob pena de caracterização de desvio de objeto.
+
+              Parágrafo único. Deverá ser realizada clara distinção das solicitações de
+prorrogação e de adequação, especificando-se os serviços e os quantitativos referentes à
+prorrogação, os serviços novos e os quantitativos adicionais inseridos para atender uma
+alteração contratual.
+
+              Art. 99. Caso haja necessidade de formação de preços novos que não encontram
+correspondentes no Sistema Sicro, deverão, obrigatoriamente, ser objeto de exame e aprovação
+por parte da Coordenação Geral de Custos de Infraestrutura de Transportes - CGCIT/DIREX e
+atender às prescrições da Instrução Normativa DNIT nº 44, de 16 de agosto de 2021.
+
+              Art. 100. Na criação de preços novos deve ser mantido o percentual do BDI e BDI
+diferenciado constantes na proposta de preços da empresa contratada para a execução dos
+serviços.
+
+              Art. 101. O preço novo proposto deverá ser igual ou inferior ao preço paradigma,
+sendo o último considerado como o novo preço referencial da administração.
+
+             § 1º Na composição do preço paradigma que trata o caput deve ser utilizado BDI
+do orçamento referencial.
+
+
+
+                                               32
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               § 2º Na elaboração do preço paradigma deve ser utilizado a mesma estruturação
+utilizada no preço novo a ser comparado.
+
+              § 3º As orientações gerais para as adequações encontram-se no anexo XXV.
+
+               Art. 102. Excepcionalmente, admitir-se-á adequação contratual de serviços já
+executados, desde que tenham sido realizados em decorrência de emergência, com eminente
+risco de prejuízo ao erário ou à segurança dos usuários da via, nos termos do art. 132 da Lei
+14.133 de 2021.
+
+              Parágrafo único. Para aplicação do que trata neste caput é necessária a publicação
+da declaração de emergência pelo Superintendente Regional.
+
+              Art. 103. A fiscalização técnica encaminhará a proposta ao chefe da unidade local
+que, em caso de concordância, encaminhará ao Serviço de Manutenção.
+
+              Art. 104. O Serviço de Manutenção encaminhará a proposta ao fiscal
+administrativo para análise referente aos aspectos administrativos do contrato, como previsão
+em cláusula de Edital, equilíbrio econômico-financeiro e demais exigências previstas na Lei
+14.133, de 2021.
+
+               Art. 105. O fiscal administrativo encaminhará a proposta de aditivo ao Serviço de
+Manutenção que fará a verificação de atendimento aos normativos e elaborará a minuta de
+termo aditivo, assim como providenciará demais documentos necessários à sua lavratura.
+
+             Art. 106. O chefe do Serviço de Manutenção encaminhará o processo à
+Coordenação de Engenharia que, após revisão, enviará à Superintendência Regional para
+aprovação e encaminhamento à Procuradoria Federal Especializada - PFE.
+
+              Art. 107. As alterações contratuais serão realizadas através da lavratura de termo
+aditivo obedecendo o que prevê o art. 132 da Lei 14.133, de 2021.
+
+              Art. 108. No Anexo XXV encontra-se um modelo de planilha para adequação
+contratual.
+
+                                        CAPÍTULO XII
+                                 DO RECEBIMENTO DEFINITIVO
+
+              Art. 109. Os recebimentos provisório e definitivo devem seguir o art. 140 da Lei nº
+14.133, de 2021, bem como o Manual de Gestão e Fiscalização de Contratos no âmbito do DNIT,
+aprovado pela Resolução nº 20, de 30 de dezembro de 2020, e o disposto no Anexo XXIII.
+
+
+
+
+                                               33
+                             BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212             Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+               Parágrafo único. Por ocasião do recebimento, todos os serviços demandados
+deverão ter sido realizados até o término de sua vigência contratual.
+
+             Art. 110. A administração rejeitará, no todo ou em parte, serviço executado em
+desacordo com o contrato.
+
+                                       CAPÍTULO XIII
+                                    DISPOSIÇÕES FINAIS
+
+               Art. 111. Os casos omissos que necessitarem de regulamentação e eventuais
+conflitos serão dirimidos pela Diretoria de Infraestrutura Rodoviária.
+
+              Art. 112. Os planos de trabalhos aprovados até a entrada em vigor da Resolução
+continuarão a ser regidos de acordo com as regras previstas na legislação revogada.
+
+             Art. 113. Ficam revogados:
+
+             I - a Resolução nº 8, de 23/6/2022, publicada no BA nº 118, de 24/6/2022; e
+             II - a Resolução nº 4, de 5/4/2023, publicada no BA nº 68, de 10/4/2023.
+
+             Art. 114. Esta Resolução entra em vigor em 1º de dezembro de 2023.
+
+                              FABRICIO DE OLIVEIRA GALVÃO
+                                      Diretor-Geral
+
+                                    ANEXOS(16052101)
+
+I - MAPA DE COMPETÊNCIA
+II - MODELO DE CADASTRO DO SEGMENTO
+III - MODELO DE CADASTRO DO INVENTÁRIO DOS ELEMENTOS GERADORES DE CONSERVAÇÃO
+IV - MODELO DE CADASTRO DE SOLUÇÃO DE PISTA/ACOSTAMENTO - DSM
+V - INTERVENÇÃO FUNCIONAL DE PISTA/ACOSTAMENTO
+VI - FATOR DE INTERFERÊNCIA DE TRÁFEGO - FIT
+VII - COTAÇÃO DE INSUMOS
+VIII - TRANSPORTE DE INSUMOS
+IX - MODELO DE CROQUI DE OCORRÊNCIA DE MATERIAIS E DMTs
+X - BINÔMIO DE AQUISIÇÃO E TRANSPORTE DE MATERIAL BETUMINOSO
+XI - MODELO DE APRESENTAÇÃO DO CÁLCULO DE BENEFÍCIOS E DESPESAS INDIRETAS - BDI
+XII - CANTEIRO DE OBRA
+XIII - PROJETOS TIPO PARA SINALIZAÇÃO DE OBRAS E EXEMPLO DE CÁLCULO DE QUANTIDADES
+XIV - GRUPOS DE DESEMPENHO
+XV - DEFINIÇÃO E ESPECIFICAÇÃO DOS SERVIÇOS POR DESEMPENHO
+XVI - PADRÃO DE DESEMPENHO
+
+
+
+                                            34
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+XVII - CRITÉRIO DE MEDIÇÃO DOS GRUPOS POR DESEMPENHO
+XVIII - INSTRUMENTO DE MEDIÇÃO POR RESULTADOS
+XIX - PLANILHA DE SERVIÇOS E QUANTITATIVOS DO PATO
+XX - DISTRIBUIÇÃO PERCENTUAL DO ORÇAMENTO DOS GRUPOS DE TAREFAS
+XXI - CURVA ABC
+XXII - MODELO DO TERMO DE APROVAÇÃO DO PLANO ANUAL DE TRABALHO E ORÇAMENTO -
+PATO
+XXIII - RECEBIMENTO DE OBRA
+XXIV - ANÁLISE DE VANTAJOSIDADE NA PRORROGAÇÃO DE PRAZO
+XXV - MODELO DE PLANILHA PARA ADEQUAÇÃO CONTRATUAL
+XXVI – PROGRAMA DE MELHORAMENTO DE RODOVIAS NÃO PAVIMENTADAS (PMNPV)
+XXVII – LEVANTAMENTO DO NÍVEL DE ESFORÇO DOS SERVIÇOS DE TAPA BURACO, REMENDO
+PROFUNDO E SELAGEM DE TRINCAS
+XXVIII – PLANILHA MODELO PARA ANEXAR À MEDIÇÃO DOS SERVIÇOS DE TAPA BURACO E
+REMENDO PROFUNDO
+XXIX – MODELO DE FICHA DE NÃO CONFORMIDADE
+
+
+          INSTRUÇÃO NORMATIVA Nº 10/DNIT SEDE, DE 6 DE NOVEMBRO DE 2023
+
+                                                    Altera no que tange aos recebimentos
+                                                    provisórios das parcelas executadas, a
+                                                    Instrução Normativa nº 15/2021, que
+                                                    estabelece os procedimentos técnicos e
+                                                    administrativos para recebimento de
+                                                    obras de pavimentos novos e restaurados
+                                                    que foram objeto de intervenções de
+                                                    caráter estrutural no âmbito do
+                                                    Departamento Nacional de Infraestrutura
+                                                    de Transportes.
+
+               A Diretoria Colegiada do Departamento Nacional de Infraestrutura de
+Transportes - DNIT, representada pelo Diretor-Geral, no uso das atribuições que lhe foram
+conferidas pelo art. 12 do Regimento Interno aprovado pela Resolução/CONSAD nº 39, de
+17/11/2020, publicada no DOU de 19/11/2020, o art. 73, da Lei 8.666/93, art. 140, da Lei 14.133,
+de 1º/04/2021 e o art. 39 da Lei 12.462/2011, bem como as determinações contidas no item 9.1
+do Acórdão nº 328/2013 - TCU/Plenário, constante do processo TC 030.410/2012-6, as
+deliberações contidas no Acórdão nº 372/2017 - TCU/Plenário, constante do processo TC
+006.811/2014-0, o constante do Relato nº 213/2023/DIR/DNIT SEDE, o qual foi qual foi incluído
+na Ata da 42ª Reunião Ordinária da Diretoria Colegiada, realizada em 31/10/2023, e tendo em
+vista o constante no Processo nº 50600.003644/2021-00, resolve:
+
+
+
+
+                                              35
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+              Art. 1º A Instrução Normativa nº 15/DNIT Sede, de 28/04/2021, que estabelece os
+procedimentos técnicos e administrativos para recebimento de obras de pavimentos novos e
+restaurados que foram objeto de intervenções de caráter estrutural no âmbito do Departamento
+Nacional de Infraestrutura de Transportes - DNIT, passa a vigorar com as seguintes alterações:
+
+             "Art. 47. Para as parcelas executadas que não restam serviços pendentes e que já
+estão sendo utilizadas pela Autarquia, entregues à população, deverá ser feita a emissão dos
+Termos de Recebimento Provisórios de Parcelas, bem como, ao final, de todo o objeto.
+
+             §1º A emissão dos Termos de Recebimento Provisórios das parcelas executadas
+deverá atender ao preconizado no artigo 25 do Decreto 11.246/2022, bem como, no que couber,
+aos procedimentos elencados no Capítulo II da presente Instrução Normativa.
+
+              §2º Os Termos de Recebimento Provisórios são apenas de cunho técnico, não
+dando total quitação à Contratada.
+
+             §3º O Termo de Recebimento Provisório das parcelas executadas poderá ser
+observado na emissão dos Termos de Recebimento Provisórios e Definitivos do Contrato.
+
+             Art. 48. No Modelo 8 do Anexo IV desta Instrução Normativa consta um exemplo
+de Termo de Recebimento Provisório de Parcelas." (NR).
+
+              Art. 2º Esta Instrução Normativa entra em vigor em 1º de dezembro de 2023.
+
+                               FABRICIO DE OLIVEIRA GALVÃO
+                                       Diretor-Geral
+
+
+                                         Anexo IV
+                              Modelos de documentos diversos
+
+
+                                          Modelo 8
+
+                       Termo de Recebimento Provisório de Parcelas
+
+            Aos ___ dias do mês de _______ de _______, na sede da
+________________________________, situada à __________, nº ______, bairro ______, em
+____________/____, presentes o senhor _________________, representante da empresa
+____________________, e a Comissão do DNIT composta pelos servidores
+____________________, Analista em Infraestrutura de Transportes, matrícula DNIT nº _______,
+__________________, Analista em Infraestrutura de Transportes, matrícula DNIT nº ________,
+e ___________________, Analista em Infraestrutura de Transportes, matrícula DNIT nº
+
+
+
+                                             36
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212               Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+_________ e como substituto, o servidor___________________, Analista de Infraestrutura de
+Transportes, matrícula DNIT nº ________, designados pela Portaria nº ___, de __/__/____,
+publicada no Boletim Administrativo nº ____, de ___/___/____, tendo a contratada cumprido
+parcialmente todas as exigências contratuais, vimos fazer a entrega provisória da parcela
+(especificar a parcela entregue, contendo a descrição, quantificação e valoração) do objeto do
+Contrato          nº        ____________/____,           cujo         objeto         é         a
+_________________________________________________, com um prazo para conclusão das
+discrepâncias encontradas na obra (relação em anexo) de 90 (noventa) dias corridos à partir da
+assinatura deste Termo de Recebimento Provisório de Parcelas. Pela Comissão do DNIT, foi dito,
+falando cada qual por sua vez, que, após o exame feito nas obras e serviços, objeto do contrato,
+aceitam a entrega provisória desta parcela, sendo lavrado o presente Termo, lido perante todos
+e as testemunhas e por todos assinado, documento bastante e a partir de cuja data passa a ser
+responsabilidade da _____________________, a conservação das obras objeto do contrato.
+               O presente termo é apenas de cunho técnico, não resultando na total quitação à
+Contratada, o que somente ocorrerá após o recebimento integral do objeto do contrato.
+
+             Pra firmeza do que foi dito, as partes indicadas, neste ato firmam este termo,
+juntamente com as testemunhas abaixo, que a tudo presenciaram.
+
+                                                              Belém-PA, de dezembro de 2023.
+
+
+                                          Contratada
+
+                                      Fiscal do Contrato
+
+                                         Testemunha
+
+                                         Testemunha
+
+
+          INSTRUÇÃO NORMATIVA Nº 11/DNIT SEDE, DE 6 DE NOVEMBRO DE 2023
+
+                                                    Dispõe sobre o Rito Processual da
+                                                    Modificação dos Critérios de Pagamento no
+                                                    âmbito da Diretoria de Infraestrutura
+                                                    Rodoviária - DIR.
+
+              A Diretoria Colegiada do Departamento Nacional de Infraestrutura de Transportes
+– DNIT, representada pelo Diretor-Geral, no uso das atribuições que lhe conferem o artigo 12 do
+Regimento Interno, aprovado pela Resolução nº 39, de 17/11/2020, publicado no DOU de
+19/11/2020, e tendo em vista o constante no processo administrativo nº 50600.007943/2020-
+24,
+
+
+
+
+                                              37
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 212              Brasília-DF, quarta-feira, 08 de novembro de 2023
+
+
+
+             Considerando a determinação exarada pelo Tribunal de Contas da União, no
+âmbito do ACÓRDÃO Nº 2.956/2019 – TCU – Plenário;
+
+              Considerando a necessidade de uniformizar os entendimentos acerca da matéria,
+que envolvem a Modificação dos Critérios de Pagamento voltados às Obras de Infraestrutura
+Rodoviária; e
+
+             Considerando a necessidade de unificar as diversas Notas Técnicas, Memorandos
+e outros documentos que orientam o procedimento da Modificação dos Critérios de Pagamento
+no âmbito da Diretoria de Infraestrutura Rodoviária – DIR, resolve:
+
+               Art. 1º EXPEDIR a presente Instrução Normativa, com a finalidade de instituir o
+rito processual para procedimento de Modificação dos Critérios de Pagamento no âmbito da
+Diretoria de Infraestrutura Rodoviária - DIR.
+
+              §1º Esta Instrução visa regulamentar os ritos administrativos para que seja
+requerida, analisada e aprovada a Modificação dos Critérios de Pagamento.
+
+                §2º Salienta-se que, no caso do pleito se referir aos contratos de programas
+específicos como CREMA, BR-LEGAL, PROARTE, dentre outros, previamente a aprovação de
+modificações dos seus critérios de pagamento, deverá ser observado se não há conflitos entre a
+metodologia de remuneração do Programa e esta Instrução, devendo prevalecer, no caso de
+conflitos, a Instrução do respectivo Programa.
+
+              Art. 2º As Coordenações-Gerais da Diretoria de Infraestrutura Rodoviária – DIR
+envolvidas no processo de análise dos pedidos deverão observar as determinações presentes
+nesta Instrução Normativa, bem como as demais orientações que venham a ser emitidas, como
+as dos Órgãos de Controle, por exemplo.
+
+                                       Seção I
+               Das denominações para modificação de critérios de pagamento
+
+            Art. 3º Para efeito desta Instrução Normativa ficam estabelecidas as seguintes
+denominações:
+
+              I - MCP – Modificação dos Critérios de Pagamento;
+              II - RPFO – Revisão de Projeto em Fase de Obras;
+              III - SEI – Sistema Eletrônico de Informações;
+              IV - DIR – Diretoria de Infraestrutura Rodoviária;
+              V - SR – Superintendência Regional.
+
+
+
+
+                                             38

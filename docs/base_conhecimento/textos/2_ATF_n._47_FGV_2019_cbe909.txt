@@ -1,0 +1,552 @@
+wº FGV IBRE [MME
+
+22 ANÁLISE TÉCNICA FINAL Nº 47 — FGV/2019 — CPN/CGCIT/DIREX
+IDENTIFICAÇÃO DA OBRA
+
+- Assunto: Análise de Composições de Custos Não Existentes no SICRO.
+
+Projeto Básico do Plano Anual de Trabalho e Orçamento — P.A.T.O. na
+Rodovia.
+
+BR-156/AP
+Cachoeira de Santo Antônio — Fronteira Brasil/Guiana (Ponte Internacional).
+Beiradão (Laranjal do Jari) — Início da Ponte Sobre o Rio Maracá.
+
+- Tipo de Obra:
+
+- Rodovia/UF:
+- Trecho:
+
+Nisa Novo Subtrecho:
+
+Rio Cajari-Santa Clara — Entr AP-030(A) (Camaipi-Rio Vila Nova)
+Km 28,50 — Km 164,20
+
+fc diana Novo Segmento:
+
+Km 164,20 - km 212,15
+135,70 Km
+
+No Nova extensão:
+
+47,95 km
+50600.025942/2019-28
+- Demandante: | Coordenação-Geral de Manutenção e Restauração Rodoviária.
+
+- Processo:
+
+CONTROLE DAS ANÁLISES
+| 1º ANÁLISE | 2º ANÁLISE | 3º ANÁLISE
+CONCLUÍDA EM: CONCLUÍDA EM: CONCLUÍDA EM:
+20/08/2019 13/09/2019
+
+“7 FGV IBRE NNE
+
+1. INTRODUÇÃO
+
+O Contrato de Prestação de Serviços que entre si celebram o DNIT e a FGVIIBRE, cujo objetivo
+é a execução de serviços técnicos especializados referentes à manutenção e criação de
+composições de custos do Sistema de Custos Referenciais de Obras — SICRO, a realização de
+pesquisa nacional de insumos em todas as unidades da federação, a revisão e o cálculo dos
+índices de reajustamento de obras rodoviárias, ferroviárias e hidroviárias, ao apoio técnico à
+Coordenação-Geral de Custos de Infraestrutura e Transportes.
+
+Não fazem parte do escopo deste projeto quaisquer considerações e/ou interpretações legais,
+regulatórias, fiscais ou contábeis, cabendo ao DNIT validar as recomendações feitas pela
+FUNDAÇÃO GETULIO VARGAS — FGV com seus assessores em tais áreas. Este trabalho não
+constitui identificação de riscos, desenho, documentação e teste de controles relacionados ao Ato
+Sarbanes-Oxley ou qualquer outro ato regulatório nacional ou internacional.
+
+Todas as decisões relativas a cumprimento de lei e/ou regulamentação serão tomadas
+exclusivamente pelo DNIT, seu departamento jurídico e/ou por terceiros que ela determinar, sem
+qualquer influência da FUNDAÇÃO GETULIO VARGAS - FGV, que recebeu os parâmetros a
+serem observados de acordo com a interpretação do DNIT, sem que a FUNDAÇÃO GETULIO
+VARGAS - FGV realizasse qualquer interpretação legal e/ou regulatória.
+
+A presente análise tem por objetivo a avaliação e aprovação das novas composições de preço
+não existentes no SICRO, em atendimento às determinações preconizadas na Instrução de
+Serviço nº 15, publicada no Boletim Administrativo nº 051, de 18 a 22 de dezembro de 2006 e a
+Instrução de Serviço nº 22, publicada no Boletim Administrativo nº 052, de 27 a 31 de dezembro
+de 2010, bem como do Memorando Circular nº 39/2011-DIREX.
+
+No caso específico de revisões de projeto em fase de obras, em respeito ao Memorando nº
+37/2003-DIT, as composições de custos unitários não constantes do SICRO devem ser elaboradas
+respeitando-se os valores de insumos e da parcela de bonificação e despesas indiretas (BDI)
+definidos no contrato, adotando-se, caso não existam na proposta, os custos dos sistemas
+referenciais oficiais (SICRO ou SINAPI) ou cotação de preços.
+
+Todos os custos de insumos contratuais e o detalhamento do BDI devem ser apresentados por
+meio de cópias das composições de custos unitários já existentes no contrato, devendo ser
+anexada uma declaração da Superintendência Regional ou Diretoria afeta atestando a correção
+dos valores adotados na composição.
+
+Entretanto, em respeito ao Decreto nº 7.983/2013, o qual estabelece regras e critérios para
+elaboração do orçamento de referência de obras e serviços de engenharia, contratados e
+executados com recursos dos orçamentos da União, e dá outras providências, mais
+especificamente em seu Art. 4º onde estabelece que “O custo global de referência dos serviços
+e obras de infraestrutura de transportes será obtido a partir das composições dos custos
+unitários previstas no projeto que integra o edital de licitação, menores ou iguais aos seus
+correspondentes nos custos unitários de referência do Sistema de Custos Referenciais de
+Obras - Sicro, cuja manutenção e divulgação caberá ao Departamento Nacional de Infraestrutura
+de Transportes - DNIT, excetuados os itens caracterizados como montagem industrial ou que não
+possam ser considerados como de infraestrutura de transportes”, o preço unitário advindo das
+condições contratuais deverá ser comparado ao de referência do DNIT.
+
+Caso o preço unitário advindo da aplicação do Memorando nº 37/2003-DIT mostre-se superior ao
+
+de referência do DNIT, será aplicado um fator de redução ao preço unitário do serviço de modo a
+enquadrá-lo no valor limite preconizado no Decreto nº 7.983/2013, não impedindo que a setorial
+
+| bad am
+
+QI FGV IBRE tia nbedadod
+
+responsável pela aprovação da revisão de projeto proceda a aplicação de desconto adicional
+eventualmente necessário à garantia do equilíbrio econômico-financeiro do contrato.
+
+Importa também destacar a necessidade de respeito, tanto em projeto, quanto em revisão, das
+determinações preconizadas no Memorando Circular nº 12/2012-DIREX, de 09 de março de 2012,
+que estabelece que:
+
+“Para serviços não constantes do Sicro 2, onde o custo de referência for por meio de cotações de
+preços de mercado, compostas de forma a permitir a execução total do serviço, adotar-se-á
+obrigatoriamente o BDI (Bonificação e Despesas Indiretas) diferenciado de 15,0% (quinze por
+cento), por analogia ao percentual utilizado para aquisição de materiais betuminosos (Portaria DNIT
+nº 349, de 06 de março de 2010)”.
+
+Reforça-se ainda que, em consonância às determinações contidas na Instrução de Serviço nº
+12/2010, “os percentuais de incidência a título de ISSQN a serem aplicados na composição das
+despesas fiscais do orçamento deverão ter como base as alíquotas adotadas pelos Municípios
+
+situados na área de execução das obras/serviços estabelecidos no momento da elaboração do
+projeto.” (grifo nosso)
+
+Por fim, importa destacar que a definição da natureza dos insumos (extraída, produzida ou
+comercial) e as consequentes distâncias de transporte adotadas na análise de preços novos
+realizadas no âmbito dessa Coordenação de Preços Novos são atribuições do ente responsável
+pela elaboração/aprovação do projeto ou aquelas informadas pelo setor solicitante.
+
+Pe ul l o O E
+deli
+
+2.2.
+
+2.3.
+
+2.4.
+
+2.5.
+
+2.6.
+
+2.7.
+
+2.8.
+
+2.9.
+
+wº FGV IBRE [MNE
+
+OBSERVAÇÕES GERAIS
+
+Apresentar todos os documentos (composições, especificações, memórias e etc.)
+assinados e atestados pelo Responsável Técnico bem como pelo setor solicitante,
+conforme item 3 do Memorando Circular nº 39/2011-DIREX.
+
+Apresentar Especificação Particular, nos padrões adotados pelo DNIT, contendo a
+descrição detalhada da metodologia de execução, o equipamento, a mão de obra a
+empregar e os critérios de medição, pagamento e aceitação do serviço, sendo necessária
+inclusive a apresentação de um diagrama sequencial de atividades, conforme item 4 do
+Memorando Circular nº 39/2011-DIREX.
+
+Apresentar justificativas para os serviços com preços novos, ou seja, para cada CCU
+deve ser demonstrado o motivo pelo qual aquele serviço é necessário, em detrimento a
+serviço referencial equivalente disponível no SICRO, conforme item 18 do Memorando
+Circular nº 39/2011-DIREX.
+
+Todas as cotações devem ser apresentadas atestadas pela Superintendência Regional
+(carimbada e assinada em todas as folhas), conforme determina a Instrução de Serviço nº
+22 de 2010 Art. 4º Item C.
+
+As cotações devem conter claramente a data de coleta, identificação do fornecedor, o valor
+a ser considerado e deve obedecer aos padrões legais de comercialização, ou seja, o custo
+deve levar em consideração compra com emissão de nota fiscal.
+
+Para itens baseados no SICRO ou Sistema Nacional de Pesquisa de Custos e Índices da
+Construção Civil - SINAPI, anexar a respectiva composição/pesquisa. A pesquisa de itens
+no SINAPI deve ter como referência a data-base do orçamento.
+
+Apresentar Planilha de Quantidades e Preços Unitários e Curva ABC dos serviços, com
+destaque para aqueles a serem analisados, conforme item 11 do Memorando Circular nº
+39/2011-DIREX.
+
+As distâncias médias de transportes não serão objeto dessa análise, devendo ser avaliadas
+pela respectiva Superintendência Regional.
+
+De acordo com os entendimentos e orientações desta CGCIT, exarados inclusive no
+Memorando Circular nº 322/2014-CGCIT/DIREX, mais especificamente em seus
+parágrafos 27 e 28, conclui-se pela necessidade de que os custos de referência dos
+insumos, principalmente dos materiais que compõem a faixa A da Curva ABC, sejam
+preferencialmente definidos em função de cotações de preços no local da obra,
+lançando-se então os custos e distâncias de transportes, a partir do conhecimento da
+origem definida para os referidos materiais. Nas situações que não permitam a definição
+do preço praticado no local da obra, admite-se a utilização do preço médio de referência
+divulgado pelo SICRO, sem, entretanto, incluir qualquer custo complementar advindo do
+transporte comercial, uma vez que a origem (posição no espaço) da informação é
+desconhecida, e uma vez que a metodologia de pesquisa de preços dos insumos SICRO
+já é realizada prevendo a inclusão do custo de frete dos materiais. Diante do exposto acima
+e considerando a boa técnica de engenharia, esta CPN/CGCIT entende que a projetista
+deve realizar cotações de mercado para os principais insumos da obra (mesmo aqueles
+que possuem preço de referência no SICRO), demonstrando assim o custo destes
+materiais no local de execução da obra, bem como a inclusão ou não do custo de transporte
+nas respectivas cotações, para somente então prever as devidas parcelas de transporte.
+
+Gola eo. | Tam
+2.10.
+
+241.
+
+2.12.
+
+2.13.
+
+2.14.
+
+2415.
+
+wº FGv IBRE EEE
+
+De acordo com o disposto no Memorando Circular nº 03/2016-DIREX, de 02 de fevereiro
+de 2016, a partir de dezembro/2015 os orçamentos de obras de infraestrutura no âmbito
+do DNIT devem ser elaborados nas duas condições de recolhimento de tributos
+previdenciários possíveis: condição onerada e condição desonerada. Após comparação
+entre ambos, deve-se escolher a condição mais vantajosa para a Administração Pública.
+Não há necessidade de se apresentar a esta CPN/CGCIT os dois orçamentos, mas tão
+somente aquele mais vantajoso.
+
+Nos termos do Memorando-Circular nº 1651/2018/DIREX/DNIT SEDE, é oportuno
+observar a atualização ocorrida na parcela das despesas financeiras das taxas de BDI do
+SICRO, em função da taxa de juros básica do Banco Central (SELIC). Os novos valores
+atualizados de referência do BDI são apresentados nas Tabelas 01 (sem desoneração da
+mão de obra) e 02 (com desoneração), anexas ao memorando, de modo que se pede
+
+atenção quanto a este aspecto. De toda sorte, ressalta-se que, pelo fato do detalhamento
+das taxas de benefícios e despesas indiretas estar devidamente definido, para obras de
+
+diferentes naturezas e portes, o percentual relativo ao BDI não é objeto de análise desta
+CPN/CGCIT.
+
+Em relação aos preços novos avaliados por esta Coordenação, no que couber a
+necessidade de aplicação das parcelas de FIT e FIC - em que os serviços estejam sujeitos
+efetivamente às suas interferências -, entende-se que também cabe ao orçamentista ou a
+área técnica demandante a sua classificação e definição, não sendo, neste momento,
+objeto de análise.
+
+Tendo em vista a necessidade da elaboração de Plano Anual de Trabalho e Orçamento
+(PATO) para licitações objetivando a contratação de empresas para executarem serviços
+de Manutenção (Conservação/Recuperação) nas rodovias implantadas com revestimento
+primário e Pontes de Madeira, entre elas a Rodovia BR-156/AP, Trecho: Cachoeira de
+Santo Antônio — Fronteira Brasil/Guiana (Ponte Internacional); Subtrecho: Rio Cajari-Santa
+Clara — Entr AP-O30(A) (Camaipi-Rio Vila Nova); Segmento: Km 164,20 - km
+212,15; Extensão: 47,95 km, a Coordenação-Geral de Manutenção e Restauração
+Rodoviária solicita à CPN/CGCIT que sejam analisadas e adequadas ao SICRO as
+composições de preços unitários propostas.
+
+Sabe-se que preços similares já foram aprovados em análises anteriores, como no Parecer
+Técnico nº 700-02/2013-CGCIT/DIREX (SEI nº 0445804) e no Parecer Técnico nº 04-
+01/2018-CPN/CGCIT/DIREX.
+
+Importante evidenciar que se deve atentar para algumas inovações da metodologia do
+SICRO em relação ao Sicro 2:
+
+a. OSICRO exclui os custos referentes a encarregados das composições de custos e os
+aloca em metodologia específica da Administração Local.
+
+b. De forma análoga, os custos referentes à alimentação, transporte, ferramentas e
+equipamentos de proteção, anteriormente apropriados em função de um percentual do
+custo da mão de obra, foram, no SICRO, definidos de forma analítica por categoria
+profissional e unidade da federação e incluídos nos encargos complementares.
+
+c. O formato das composições de custos em base mista horária/unitária foi preservado,
+alterando-se, entretanto, o conceito de produtivo e improdutivo dos equipamentos
+adotado anteriormente no Sicro 2. No SICRO, a parcela improdutiva só será passível
+de remuneração nos serviços realizados por patrulha de equipamentos e cuja espera
+seja inerente ao equilíbrio das produções.
+
+= | fm
+
+“7 FGV IBRE NA
+
+Em face de sua natureza essencialmente linear, o conhecimento das condições
+climáticas regionais constitui fator fundamental para o planejamento de uma obra de
+infraestrutura de transportes. Por meio do tratamento da série histórica de centenas
+de estações pluviométricas do país, o SICRO propõe a utilização de um Fator de
+Influência de Chuvas - FIC a ser aplicado sobre o custo unitário de execução dos
+serviços que sofram influência das chuvas em sua produção.
+
+Durante a execução de obras em rodovias novas ou existentes, o volume de tráfego
+local é fator real de redução de produção dos serviços, principalmente nas
+proximidades dos grandes centros. Por essa razão, o SICRO apresenta o conceito de
+Fator de Interferência de Tráfego - FIT a ser aplicado sobre o custo unitário de alguns
+serviços nas obras de melhoramentos, de adequação de capacidade, de restauração,
+de conservação e de transporte, em função do volume médio diário de tráfego.
+
+Apenas o fator de eficiência diferenciava as composições de custos comuns aos
+serviços de construção e de restauração rodoviária no Sicro 2, notadamente os
+serviços de pavimentação. Este fator era uniformemente aplicado aos serviços
+executados na pista, independente da intensidade do tráfego no local da obra. No
+SICRO, as composições de custos dos serviços de pavimentação são apresentadas
+de forma única e diferenciadas apenas na fase de projeto, em função do conhecimento
+do tráfego local e da determinação do volume médio diário de veículos. Em função
+deste volume de tráfego, torna-se possível calcular o FIT a ser aplicado no custo
+unitário de execução dos serviços que este influencia.
+
+Em consonância à revisão do SINAPI e às discussões do Comitê de Estudo Especial
+da ABNT responsável pela elaboração da norma técnica de orçamentos e formação
+de preços de obras públicas, o SICRO apresenta nova metodologia de cálculo do custo
+horário dos equipamentos. As principais inovações desta metodologia referem-se à
+revisão dos parâmetros de vida útil e de valor residual dos equipamentos e a inclusão
+de parcela de oportunidade do capital no custo horário produtivo e dos custos de
+propriedade no custo horário improdutivo dos equipamentos.
+
+A nova metodologia para definição dos custos de referência da mão de obra consiste
+na análise e no tratamento da base de dados do Cadastro Geral de Empregados e
+Desempregados do Ministério do Trabalho e Emprego - CAGED/MTE. Tal inovação
+permitiu ampliar de forma significativa o número de categorias profissionais
+necessárias face ao incremento de composições de custos do SICRO e a obtenção de
+valores referenciais médios mais aderentes à realidade de mercado.
+
+No SICRO, eliminou-se a motoniveladora das composições de custos de escavação,
+carga e transporte de materiais, sendo propostas novas composições específicas para
+manutenção dos caminhos de serviços em leito natural ou revestimento primário.
+
+Os tempos fixos de carga, descarga e manobras dos equipamentos foram apropriados
+em composições de custos específicas no SICRO, incluídas nos serviços a que se
+destinam, em substituição à metodologia de caminhões equivalentes do Sicro 2.
+
+No Sicro 2, diferenciava-se a natureza dos transportes dos insumos de uma obra em
+local e comercial. Eram considerados transportes locais aqueles realizados
+exclusivamente no âmbito da obra, e comerciais, aqueles associados ao deslocamento
+de materiais de fora dos limites da obra. No SICRO, o fator de eficiência adotado nas
+composições de custos dos momentos de transporte passa a ser único e com valor
+igual a 0,83 (50/60), admitindo-se, entretanto, a aplicação do FIT durante a fase de
+elaboração do orçamento.
+
+O 7;
+“7 FGV IBRE Ha
+
+A necessidade de maior detalhamento dos custos envolvidos na obra motivou a
+pesquisa e o desenvolvimento de uma metodologia para definição dos custos de
+referência da administração local em função do porte e da natureza das obras, das
+características da mão de obra e da quantidade dos serviços envolvidos.
+
+Consoante diferenciação dos custos de referência para instalação dos canteiros de
+obras e para administração local e das alterações no cálculo do custo horário dos
+equipamentos, particularmente na inclusão dos custos de oportunidade do capital,
+observou-se a necessidade de se alterar as parcelas constituintes do BDI. A principal
+inovação do SICRO encontra-se na diferenciação do BDI por faixas em função da
+
+natureza e do porte das obras. Dessa maneira, considerando que o BDI deverá ser
+calculado na fase de orçamentação (projeto básico/executivo), o presente parecer
+técnico não indicou preços unitários, mas tão somente custos, já que não foi possível,
+
+neste momento, incidir a parcela de bonificação e despesas indiretas sobre o custo
+total unitário.
+
+“7 FGV IBRE [Ha
+
+3: ANÁLISE TÉCNICA DOS SERVIÇOS
+
+Tabela - Novas Composições
+(Mês-Base: Outubro/2018 - Estado: Amapá - Regime: Sem Desoneração)
+
+| Composição Descrição
+PN 18 Reconstrução de Ponte.
+
+3.18. COMPOSIÇÃO-PN 18
+
+Descrição: Reconstrução de Ponte.
+Unidade: m
+
+1º ANÁLISE TÉCNICA - Linha 1 - Excel
+
+1º 3.18.1. O Ofício nº 84092/2019/CGMRR/DIR/DNIT-SEDE (sei! nº 3966064) anuncia a inclusão
+de uma nova composição ao projeto básico do Plano Anual de Trabalho e Orçamento
+— P.A.T.O. na Rodovia BR-156/AP, Trecho: Cachoeira de Santo Antônio — Fronteira
+Brasil/Guiana (Ponte Internacional); Subtrecho: Rio Cajari-Santa Clara — Entr AP-
+030(a) (Camaipi-Rio Vila Nova); Segmento: km 164,20 - km 212,15; Extensão: 47,95
+km.
+
+1º 3.18.2. Assim, é apresentada uma Composição de custos unitários (sei! nº 3966689) para a
+reconstrução de ponte de madeira localizada no Estado do Amapá sendo que nesta
+composição há 3 (três) composições auxiliares já aprovadas conforme 1º Análise
+Técnica nº 47 (sei! nº 3863483), conforme se pode verificar a seguir:
+
+DNIT - Sistema de Custos Rodoviários Conservação Rodoviária SRE/DNIT/AP
+Custo Unitário de Referência Mês: Outubro/2018 MACAPÁ - AMAPÁ
+pu 18 Reconstrução de Ponte Produção da Equipe: 100 m (Valores em R$)
+A Equipamento Quantidade Utilização Custo Operacional Custo Horário
+Operativa Improdutiva Oporativo  Improdutivo
+E Este-ssnca do gravidade para 454 4/01- LIS kw E] 0,60 0,40 211,95 101,88 157,92
+Esr19 Talha manual com capacidade de 3t 100 0,80 0,40 osr ou ousa
+Eosas Motosarra com motor a gasolina - 2.3 KW 100 0,90 010 2507 2248 24,81
+Custo Horário de Equipamentos. 192,87
+5- Mão-go-Obra Quantidade Salário Hora Custo Horário
+PSBOS - Cerpintelro 2,00 2072 ALAS
+eagos Armador 100 2200 2200
+P9824 Servente 500 1560 7802
+Custo Horário de Mão-de-obra 141,46
+0,00
+Custo Horário de Execução 334,34
+—DD—D————————————————————>—>—>—>—>—>——————— IS
+Gusto Unitário de Execução 334,33
+- Material Quantidade Unidade Preço Unitário Custo Unitário
+Rea Madeira de lol 1º qualidade amaro m 22125 sasas2
+M1205 Prego de fero 442920 mt 63455 27.22
+Custo Total de Material 6.481,74
+D- Atividades Auxiliares Quantidade Unidade Preço Unitário Custo Unitário
+SERAF AUXOZ Ferragens 139870 “E ECA 119,39
+SERAP AUXOS Pintura em esmalte sintético 29.306 ma 16,33268 7541
+SERAP AUXOL Pintura geral com Ri-1C 781 mê 13,27368 10367
+Custo Total de Atividades 698,47
+E - Transporte do Materiais Toneladas / Unidade de Serviço Custo Unitário
+E- Transporte do Matoriais Produzidos / Comarciais Tonsiadas / Unidade de Serviço = Custo Unitário
+Custo Unitário Direto Total 7.514,53
+so! 31,35% 2.355,80
+
+Preço Unitário Total 9.870,33
+
+| gu
+“7 FGV IBRE NA
+
+1º 3.18.3. Importante observar que o subtrecho, segmento e extensão relacionados a esta
+análise estão diferentes daqueles relacionados à 1º Análise Técnica nº 47-FGV/2019
+BR-156/AP.
+
+12 3.18.4. Por isso, considerando esta alteração e a escassez de informação acerca do serviço,
+poder-se-ia entender que o mesmo se destinaria à síntese de todas as composições
+anteriormente observadas na 1º Análise Técnica. Neste caso, concluir-se-ia ser mais
+coerente a adoção destas composições como auxiliares. Todavia, poder-se-ia
+
+entender também que se propõe a trocas de peças individuais, em consonância com
+as referências já aprovadas pela CPN/CGCIT.
+
+1º 3.18.5. Ademais, cumpre ressaltar que os serviços aprovados anteriormente visam manter a
+padronização das análises aprovadas por esta Coordenação. Entretanto, caso o
+responsável pelo setor solicitante opte pela composição “Reconstrução de Ponte de
+Madeira", sugere-se, observando que a utilização da composição de custo aqui
+estruturada fica restrita ao P.A.T.O., que se contemple especificamente as pontes
+referenciadas no levantamento, uma vez que os parâmetros da CCU devem se pautar
+nos seus respectivos quantitativos.
+
+1º 3.18.6. Logo, a CCU proposta para o serviço de “Reconstrução de ponte de madeira” deve ser
+a média ponderada dos custos para a reconstrução de seis pontes, sendo esse custo
+pago em metro de ponte reconstruída e para o caso específico em tela, ou seja,
+considerando os quantitativos levantados em campo para as pontes pré-estabelecidas
+e considerando uma largura fixa.
+
+1º 3.18.7. Solicita-se, então, a alteração da descrição do serviço, visando detalhar com mais
+precisão a atividade a ser desempenhada, por exemplo, “Reconstrução de Ponte de
+madeira de lei de 1º qualidade”. Vale ressaltar que este insumo (“Madeira de lei de 1º
+qualidade”) pode ter seu uso questionado enquanto não se prevê referencias em
+projeto para tal, por isso existirão, neste caso, referencias no próprio SINAPI de
+madeiras de qualidade inferior que poderiam substitui-lo (SINAPI 4004, por exemplo).
+Consequentemente, a descrição do serviço deve evidenciar e especificar esta opção.
+
+1º 3.18.8. Consequentemente, deve-se ressaltar também a existência de referência para este
+insumo no SINAPI até o mês-base de Setembro/2018, por isso, há de se atentar para
+o seguinte cálculo de ajustamento:
+
+sopontaa
+
+| omasor mms
+umoas
+
+1º3.18.9. É válido mencionar que os itens e consumos adotados respeitam o aprovado
+anteriormente pela CPN/CGCIT no 3º Parecer Técnico Final nº 79-10/2015.
+
+1º 3.18.10. Feitas estas considerações, entende-se que o serviço “Reconstrução de Ponte de
+madeira de lei de 1º qualidade” deve seguir a seguinte estruturação:
+
+— gabual an ai carecem A
+“7 FGV IBRE NA
+
+DNIT - Sistema de Custos Rodoviários Conservação Rodoviária SRE/DNIT/AP
+Custo Unitário de Referência Mês: Outubro/2018 MACAPÁ - AMAPÁ
+E) Reconstrução de Ponte de madeira de lol de 1º qualidade Produção de Equipe: 100 m (Valores em R$)
+A- Equipamento Quantidade utilização Custo Operacional Custo Horário
+Operativa improgutiva Operativo Improdutivo
+E9502 Bate-estaca de gravidade para 358 4,01-119 Kw 100 0,60 0,40 211,95 10188 167,92
+Egrag Talns manual com capacidade do 31 100 0,80 0,80 oa7 oas 014
+[E Motaserra com motor a gasolina - 2,3 kW 100 0,90 0,30 25,07 zas 24,81
+Custo Horário de Equipamentos 192,87
+O Mão-do-Obra Quantidade Salário Hora Custo Horário
+POBOS - Carpinteiro 2,00 20,72 41,44
+PoBos Armador 1,00 22,00 22,00
+Ppogaa Servento 5,00 15,60 7802
+Custo Horário de Mão-de-obra 141,46
+0,00
+Custo Horário de Execução 334,34
+= Custo Unitário de Execução 334,33
+C- Material Quantidade Unidade Preço Unitário Custo Unitário
+ES .
+(SINAPI) Maceira de let 1º qualidade 304279 m 197,69 5.987,25
+MIZ05 Prego doforo 442820 mt 61455 27,22
+
+Custo Totsl de Material 6.014,47
+
+D.- Atividades Auxiliares Quantidade Unidade Preço Unitário Custo Unitário,
+SERAP AUXDZ Ferragens 13,9870 kg 8535874 119,39
+SER-AP AUXO3 Pintura em esmalte sintético 29,108 m 16,33268 a1541
+SERAP AUXDI Pintura geral com R.-10 781 me 13,27368 103,67
+Custo Total de Atividades 698,47
+E- Transporte de Materiais Tonaladas / Unidada de Serviço Custo Unitário
+LEE Transporte de Materiais Produzidos / Comerciais Toneladas / Unidade de Sarviço Custo Unitário
+
+Custo Unitário Diroto Total 7.047,27
+BD! 31,35% 2.209,31
+Proço Unitário Total 9.256,58
+
+1º 3.18.11. Portanto, reforçando que as incidências do FIC e FIT deverão ser calculadas e
+
+aplicadas durante a fase de orçamentação seguindo a metodologia do SICRO, o
+serviço “Reconstrução de Ponte de madeira de lei de 1º qualidade” com preço
+
+unitário total de R$ 9.256,58/m, já incluído do BDI de 31,35% (Mês-Base:
+Outubro/2018 - Estado: Amapá - Regime: Sem Desoneração) encontra-se, nestes
+termos, em condições de aceitação.
+
+O Su
+
+“7 FGV IBRE Ha
+
+4. CONCLUSÃO:
+
+Concluída a verificação, informamos que, respeitadas as correções propostas nos termos
+descritos nesta Análise Técnica, os novos serviços propostos não constantes no SICRO se
+encontram em condições de aprovação.
+
+É imprescindível também destacar que as composições de preços unitários analisadas no âmbito
+da Coordenação-Geral de Custos de Infraestrutura de Transportes (CGCIT) são definidas em
+função de premissas estabelecidas e validadas pelos entes responsáveis pela aprovação do
+projeto ou da revisão.
+
+Caso durante a execução das obras identifique-se situações adversas que impliquem
+mudanças significativas nas premissas estabelecidas para a modelagem referencial dos
+serviços e que, por isso, venha a restringir o adequado desenvolvimento das atividades
+como planejado, descaracterizando de forma substancial o método executivo e, assim,
+porventura causando até mesmo um desequilíbrio econômico-financeiro entre as partes,
+recomenda-se ao fiscal do contrato a anotação de tais alterações no Diário de Obra e, caso
+necessário, encaminhe estas considerações para nova análise e eventual aprovação da
+nova composição de preço unitário.
+
+Em 13/09/2019.
+
+Análise Técnica,
+
+CREA 19835/D-GO
+Apoio Técnico - Contrato nº 559/2018 - DNIT
+FUNDAÇÃO GETULIO VARGAS - FGV/IBRE
+
+| 2 o
+bb o . o [uu

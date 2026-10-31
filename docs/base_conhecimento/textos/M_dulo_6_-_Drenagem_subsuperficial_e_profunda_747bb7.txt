@@ -1,0 +1,1401 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+Conceitos Básicos
+de Hidrologia e
+Drenagem para
+Projetos Rodoviários
+
+
+
+
+Módulo
+             6
+Drenagem
+Subsuperficial e
+Profunda.
+- Drenagem subsuperficial: conceitos,
+tipos de dispositivos e empregos;
+- Drenagem profunda: conceitos, tipos de
+dispositivos e empregos.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático, cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.008060/2022-01, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o
+ceder a outros órgãos e entidades federais.
+                              SUMÁRIO
+1.     INTRODUÇÃO ...................................................................................................................... 1
+
+2.     DRENAGEM SUBSUPERFICIAL .......................................................................................... 2
+     2.1.     CAMADA DRENANTE - CD .......................................................................................... 6
+     2.2.     DRENO RASO LONGITUDINAL - DRL ...................................................................... 13
+     2.3.     DRENO RASO TRANSVERSAL – DRT ..................................................................... 17
+     2.4.     DRENO LATERAL DE BASE ...................................................................................... 21
+
+3.     DRENAGEM PROFUNDA .................................................................................................. 23
+     3.1      DRENO LONGITUDINAL PROFUNDO - DLP ............................................................ 24
+     3.2      DRENO ESPINHA DE PEIXE ..................................................................................... 37
+     3.3      COLCHÃO DRENANTE .............................................................................................. 40
+     3.4      DRENO HORIZONTAL PROFUNDO - DHP ............................................................... 42
+
+4.     REFERÊNCIAS BIBLIOGRÁFICAS .................................................................................... 48
+                                                                                     1
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+1. INTRODUÇÃO
+Muitas das patologias encontradas nas rodovias advêm do excesso de umidade
+presente no interior de sua estrutura, combinado com o efeito do tráfego dos
+veículos.
+
+Para captar estas águas ou mesmo impedir tal excesso de umidade e preservar
+a estrutura das rodovias, é indispensável que sejam previstos dispositivos de
+drenagem profunda e subsuperficial.
+
+Em ambos os casos, o objetivo é proteger o pavimento das águas que se infiltram
+na sua estrutura, seja pela parte superior, quando a água penetra principalmente
+através das trincas e juntas, ou pela parte inferior, quando a água ascende pelo
+efeito da poropressão ou pela elevação do nível do lençol freático, ou ainda pelas
+áreas laterais.
+
+Neste módulo, serão apresentados os conceitos relativos à drenagem profunda
+e subsuperficial, detalhando os seus mecanismos de combate ao excesso de
+umidade e os diferentes tipos de dispositivos que estão à disposição dos
+projetistas.
+                                                                                        2
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+2. Drenagem Subsuperficial
+Os dispositivos de drenagem subsuperficial tem por objetivo proteger o
+pavimento das águas que se infiltram nas camadas mais superficiais de sua
+estrutura, sendo assim chamados pois estão normalmente compreendidos entre
+os dispositivos de drenagem superficial e os de drenagem profunda.
+
+Essas águas, de um modo geral, provêm principalmente de duas fontes:
+infiltrações diretas das precipitações pluviométricas e as provenientes de lençóis
+d'água subterrâneos. No primeiro caso, as águas irão atravessar os
+revestimentos numa taxa variando de 33 a 50 %, nos pavimentos com
+revestimentos asfálticos, e de 50 a 67 % nos pavimentos de concreto de cimento
+Portland, podendo causar sérios danos à estrutura do pavimento, inclusive base
+e sub-base, se não forem adotados dispositivos especiais para drená-las
+(BRASIL, 2006).
+
+A penetração da água na estrutura do pavimento (e que poderá ser captada
+pelos dispositivos de drenagem subsuperficial) deriva quase que na sua
+totalidade de águas precipitadas que penetram nas juntas e fissuras dos
+revestimentos, quer estes sejam de concreto asfáltico (CA) ou placas de
+concreto de cimento Portland (CCP).
+
+Segundo Suzuki (2013), a maior parcela de infiltração ocorre através das juntas
+longitudinais e transversais, bem como pelas trincas presentes nas placas de
+concreto de cimento Portland ao longo do tempo. Quando o acostamento dos
+pavimentos de CCP é executado com revestimento asfáltico, a junta pista-
+acostamento é outro ponto significativo de infiltração, caso não seja devidamente
+tratado.
+
+Já em pavimentos de concreto asfáltico (CA), as juntas de construção das
+camadas de revestimento e as trincas que surgem ao longo do tempo no
+revestimento são os pontos críticos de infiltração. As figuras 2.1 e 2.2 ilustram
+alguns destes casos.
+                                                                                            3
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+  Figura 2.1 – Junta acostamento-pista, sendo pista em CCP e acostamento em CA (Fonte:
+                                       próprio autor).
+
+
+
+
+  Figura 2.2 - Juntas longitudinais e transversais em revestimento de CCP de uma rodovia.
+
+Além do mais, com o passar do tempo, há grande chance de aparecerem
+fissuras maiores e em maior quantidade, bem como outras patologias, que irão
+contribuir ainda mais para a penetração da água no interior dos pavimentos, tal
+como pode ser evidenciado nas figuras 2.3 e 2.4.
+                                                                                              4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+           Figura 2.3 - Fissuras seladas em revestimento asfáltico de uma rodovia.
+
+Outros fatores que intervêm na maior ou menor quantidade de água que pode
+infiltrar nos pavimentos não estão relacionados ao clima, à pluviometria, e sim
+às características geométricas e aos materiais empregados em sua construção.
+Assim, as declividades transversais e longitudinais, bem como a permeabilidade
+dos materiais da estrutura da rodovia, em especial de seu revestimento, irão
+interferir no processo de infiltração.
+
+
+
+
+   Figura 2.4 - Patologia do tipo couro de jacaré em revestimento asfáltico de uma rodovia.
+
+Ainda no tocante aos materiais constituintes, é de conhecimento comum que
+muitas das rodovias de nosso pais são formadas por materiais de baixa
+                                                                                            5
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+permeabilidade, ou mesmo com o subleito formado de materiais finos argilosos
+e ainda com acostamentos laterais pouco permeáveis, o que dificulta ainda mais
+a drenagem das águas que penetram pelas trincas e juntas, intensificando o
+problema da umidade excessiva, tal como mostram as figuras 2.5 e 2.6.
+
+
+
+
+  Figura 2.5 – Seção transversal tipo “banheira” de uma plataforma de CA. (Fonte: SUZUKI,
+                                           2013).
+
+Assim, os dispositivos de drenagem subsuperficial (complementados pelos
+dispositivos de drenagem superficial) são de suma importância para remover
+toda a água que precipita e se infiltra na estrutura, num tempo relativamente
+curto e que evite a saturação, estando intimamente relacionados ao
+desempenho dos pavimentos, haja vista que o movimento das cargas de tráfego
+na superfície do pavimento que contenha água livre no interior de sua estrutura
+irá produzir ondas móveis de pressão e/ou poropressão hidrostática pulsante.
+
+As magnitudes das pressões neutras são afetadas pelo tipo de solo, grau de
+compactação, teor de umidade inicial, natureza e variação da aplicação das
+cargas, gradiente de temperaturas, tratamento e rigidez dos materiais
+constituintes da estrutura do pavimento.
+                                                                                            6
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+ Figura 2.6 – Seção transversal tipo “banheira” de uma plataforma de CCP. (Fonte: SUZUKI,
+                                           2013).
+
+De um modo geral, a drenagem do pavimento se faz necessária, no Brasil, nas
+regiões onde anualmente se verifica uma altura pluviométrica maior do que 1.500
+milímetros e nas estradas com um volume médio diário - VMD de 500 veículos
+comerciais, nos dois sentidos (DNIT, 2006).
+
+Já Cedergren, apud Suzuki (2013), recomenda a implantação nos seguintes
+casos: altura de precipitação média anual superior a 254 mm e número de
+repetições do eixo padrão N ≥ 106.
+
+Na sequência serão abordados os principais tipos de dispositivos de drenagem
+subsuperficial, tratando-se de cada um deles de forma isolada.
+
+
+
+   2.1. CAMADA DRENANTE - CD
+
+É uma camada de material granular, com granulometria apropriada, colocada
+normalmente abaixo do revestimento, seja ele asfáltico ou de concreto de
+cimento Portland, com a finalidade de drenar as águas infiltradas para fora da
+pista de rolamento, sendo também designadas de base drenante. As figuras 2.7
+e 2.8 ilustram alguns casos de sua aplicação.
+                                                                                              7
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+ Figura 2.7 – Detalhe de seção de rodovia com camada drenante executada com tubo coletar
+                           na extremidade. (Fonte: BRASIL, 2006).
+
+
+
+
+Figura 2.8 – Detalhe de seção de rodovia com camada drenante conectada a dreno longitudinal
+                           na extremidade. (Fonte: BRASIL, 2006).
+
+Alguns autores consideram que a CD pode estar situada entre o revestimento e
+o subleito, e normalmente conectada a drenos longitudinais, ou mesmo se
+estendendo até a face lateral do talude, possibilitando a livre descarga da água
+por ela conduzida, conforme pode-se notar por meio da figura 2.9. A escolha de
+uma solução ou outra dependerá da largura do acostamento e da vantagem,
+principalmente econômica, entre e extensão desta camada ou instalação de um
+dreno longitudinal.
+
+
+
+
+ Figura 2.9 – Detalhe de solução com camada drenante interligada a dreno longitudinal e com
+              camada drenante estendida até face talude. (Fonte: SUZUKI, 2013).
+                                                                                         8
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+TOME NOTA
+
+Quando empregadas nas camadas mais inferiores da estrutura do pavimento,
+próximo ao subleito, passam a atuar mais como um dispositivo de drenagem
+profunda, propriamente dito, recebendo a denominação de colchão drenante,
+cujo detalhamento será apresentado no próximo capítulo.
+
+
+
+Para Suzuki (2013), a colocação da camada drenante logo abaixo do
+revestimento, seja ele de CA ou de CCP, é preferível, pois a água pode ser
+drenada e expelida mais rapidamente da estrutura, eliminando assim a
+possibilidade de ocorrer bombeamento. Neste caso, a camada funcionará como
+uma base drenante e deverá satisfazer condições de permeabilidade e de
+estabilidade, tal como pode ser notado na figura 2.10.
+
+
+
+
+ Figura 2.10 – Posicionamento recomendado para a camada drenante/dreno longitudinal em
+                       pavimentos rodoviários. (Fonte: SUZUKI, 2013).
+
+
+
+Neste caso, a CD interferirá nas condições de suporte do pavimento, devendo,
+portanto, ser considerada no seu dimensionamento estrutural. Por isso é
+recomendável que a mesma não só tenha elevada permeabilidade, como
+também características de suporte compatíveis com o nível de solicitação do
+tráfego.
+
+Em outras situações, a camada drenante poderá ser colocada no topo do
+subleito, atuando como uma camada extra, sem apresentar contribuição
+estrutural, ou poderá ser uma parte da sub-base, como pode ser exemplificado
+                                                                                         9
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+pela figura 2.11. Nestas aplicações, as permeabilidades das camadas situadas
+acima devem ser maiores que o índice de infiltração, de modo a permitir que a
+água flua livremente pela CD.
+
+
+
+
+     Figura 2.11 – Camada drenante situada em posições mais inferiores da estrutura de
+                      pavimentos rodoviários. (Fonte: SUZUKI, 2013).
+
+Na maior parte do nosso país, assim como nas regiões de clima tropical úmido,
+onde ocorrem elevados índices pluviométricos, há uma nítida predominância das
+infiltrações ocorrendo pela superfície do pavimento. Com isso, é recomendável
+que a camada drenante fique o mais próximo possível do revestimento,
+possibilitando a captação e remoção imediata das águas infiltradas.
+
+A espessura da CD irá variar de acordo com as condições pluviométricas das
+regiões onde se situam e serão fixadas pela necessidade hidráulica de drenagem
+imposta pela rodovia.
+
+De um modo geral, os materiais utilizados na sua execução costumam ser
+agregados de rocha sadia, britadas ou não. A experiência tem recomendado
+algumas curvas para agregados de graduação que estão reproduzidas na figura
+2.12, retirada do Manual de Drenagem de Rodovias do DNIT. Nela pode-se
+verificar que as cinco granulometrias recomendadas se situam entre os
+diâmetros 11/1 e 1, 11/2 e nº 4, 3/4 e 3/8, 3/8 e nº 4 e nº 8.
+                                                                                     10
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+      Figura 2.12 – Curvas para agregados e suas graduações (Fonte: BRASIL, 2006).
+
+A condutividade hidráulica dessas faixas é avaliada pelos respectivos
+coeficientes de condutividade hidráulica, que variam de k = 42 cm/s, para a faixa
+dos agregados de maior tamanho, a k = 2,1 cm/s, para a faixa dos de menores
+dimensões, mostrando-se valores amplamente satisfatórios.
+
+Recomenda-se que as características dos agregados usados sejam controladas
+durante os trabalhos de construção, com amostras tiradas da própria camada
+drenante, depois de compactada, tanto para a granulometria como para a
+condutividade hidráulica, uma vez que a compactação pode fazer variar o
+tamanho dos agregados e, consequentemente, influir na alteração das citadas
+características.
+
+Também é recomendável que, nos casos em que o subleito for argiloso, o que é
+relativamente comum em nosso país, há a necessidade de uma base de valor
+                                                                                    11
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+estrutural sob a camada drenante, ou pelo menos, uma sub-base, para proteger
+a base drenante da intrusão de materiais finos que possam obstruir os poros da
+CD, provenientes do subleito.
+
+Entre as camadas drenantes (bases e sub-bases) e entre as camadas drenantes
+e o subleito deve-se ter o cuidado, se as granulometrias não forem adequadas,
+de intercalar materiais que se constituam em filtro-separador para evitar sua
+mistura e comprometimento da capacidade drenante, tal como se mostra na
+figura 2.13a e 2.13b.
+
+Entre os drenos rasos longitudinais, drenos laterais de base e drenos
+transversais, que envolvam contatos com seu material de enchimento e
+materiais de granulometrias diferentes, como por exemplo o solo do subleito,
+deve-se ter o mesmo cuidado em se dispor de elementos filtros-separadores
+para evitar mistura, intrusão de finos e comprometimento da capacidade
+drenante, como ilustrado nas figuras 2.13c e 2.13d.
+
+Alguns autores designam estes elementos de camada separadora, ou ainda,
+camada de bloqueio, mas em todos os casos sua finalidade será a mesma: evitar
+penetração de material fino para o interior da camada drenante, que poderia
+ocasionar entupimento e redução da sua permeabilidade, ou mesmo diminuir a
+capacidade de suporte da camada subjacente.
+
+Quando as CDs forem projetadas em segmentos rodoviários onde há presença
+de material de terceira categoria, pode-se recorrer à solução proposta no Álbum
+de Projetos-tipo de Dispositivos de Drenagem (BRASIL, 2018), conforme
+apresentado na figura 2.14.
+                                                                                         12
+
+      CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 2.13 – Exemplos de utilização de camadas ou filtros separadores (Fonte: BRASIL,
+                                         2006).
+
+
+
+
+Figura 2.14 – Aplicação de camada drenante em segmentos de corte com ocorrência de
+                  material de terceira categoria (Fonte: BRASIL, 2018).
+                                                                                      13
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   2.2.      DRENO RASO LONGITUDINAL - DRL
+
+Também conhecidos como drenos de borda, são dispositivos que recebem as
+águas captadas pela camada drenante, aliviadas pelos drenos laterais e
+transversais que recebem as águas por ele transportadas, quando atingida sua
+capacidade de vazão, conduzindo-as para fora da faixa estradal.
+
+Tais dispositivos devem ser projetados quando não é técnica e economicamente
+aconselhável a extensão da camada drenante por toda a largura da plataforma,
+ou ainda quando não é possível interconectar a camada drenante com drenos
+longitudinais profundos, que possam vir a ser necessários.
+
+É conveniente destacar que os DRLs têm profundidade relativamente pequena
+e por tal razão não tem a finalidade de rebaixar o lençol freático elevado ou
+coletar águas provenientes de outras fontes subterrâneas. Nestes casos, devem
+ser previstos drenos profundos, que serão tratados mais à frente.
+
+Normalmente os DRLs são executados a partir da escavação de trincheiras, que
+são revestidas ou não por manta geotêxtil e preenchidas somente por agregados
+(quando são chamados de drenos cegos), ou com a inclusão de tubulação, que
+possibilita elevar a capacidade de vazão do dispositivo.
+
+É recomendável que os drenos rasos longitudinais sejam posicionados no
+acostamento, e de certa forma o mais próximo de sua borda externa, ou mesmo
+sob os dispositivos de drenagem superficial, quando projetados, de modo a evitar
+o desconfinamento das camadas subjacentes, tal como pode ser observado nas
+figuras 2.15 e 2.16. Quando tratar-se de segmento em corte e houver
+possibilidade de instabilização ou escorregamento do talude, a localização do
+dreno deve ser reavaliada.
+                                                                                       14
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+ Figura 2.15 – Posicionamento recomendado para o DRL em pavimentos rodoviários. (Fonte:
+                                    SUZUKI, 2013).
+
+
+
+
+  Figura 2.16 – Posicionamento recomendado para o DRL em pavimentos urbanos. (Fonte:
+                                    SUZUKI, 2013).
+
+
+
+As vias expressas que forem construídas com pavimentos de CCP, com
+acostamento em CA, merecem atenção especial, haja vista que poderão sofrer
+grave deterioração ao longo da junta CCP – CA. O estrago nesta junta
+normalmente é causado pelos caminhões pesados passando pelo acostamento
+(particularmente nas curvas horizontais), juntamente com a expansão e
+contração térmica do pavimento principal, que tendem a abrir esta junta, além
+das ações de congelamento e degelo, a penetração da água, o bombeamento
+do pavimento adjacente sob a ação da rodas pesadas, e assim por diante
+(CEDERGREN, 1980).
+
+Para proteger esta área, o tubo do dispositivo de drenagem longitudinal poderá
+ser colocado ligeiramente fora da junta, conforme mostrado na figura 2.17, ou se
+for aconselhável proteger o acostamento totalmente, a camada drenante poderá
+                                                                                            15
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+ser estendida e o tubo coletor longitudinal instalado no bordo exterior, como
+mostra a figura 2.18.
+
+
+
+
+   Figura 2.17 – Solução com instalação de tubo coletor próximo a junta CCP - CA. (Fonte:
+                                   CEDERGREN, 1980).
+
+
+
+
+  Figura 2.18 – Solução com extensão da camada drenante e instalação de tubo coletor no
+                           bordo. (Fonte: CEDERGREN, 1980).
+
+
+
+Os materiais dos drenos laterais de base devem ser inertes e ter, pelo menos,
+os valores dos coeficientes de condutividade hidráulica dos materiais usados nas
+respectivas camadas drenantes.
+
+Alguns tipos de DRLs podem ser encontrados no Álbum de Projetos-tipo de
+Dispositivos de Drenagem (DNIT, 2018), conforme apresentado na figura 2.19.
+                                                                                        16
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 2.19 – Modelos de drenos subsuperficiais sugeridos pelo DNIT (Fonte: BRASIL, 2018).
+
+Por meio da análise da figura anterior, é possível notar que os drenos tipo DSS-
+01 e DSS-03 não têm a trincheira envolvida com manta geotêxtil. O primeiro é
+preenchido com material filtrante e provido de tubulação, enquanto o segundo é
+preenchido com material drenante e desprovido de tubo. Já os modelos DSS-02
+e DSS-04 são envolvidos com manta e preenchidos com material drenante,
+sendo o primeiro do tipo cego e o segundo com tubulação.
+
+As saídas destes dispositivos normalmente recebem uma boca do tipo BSD-03,
+tal como detalhado na figura 2.19 e ilustrado na figura 2.20. Quando possível, o
+deságue também poderá ocorrer em outros dispositivos de drenagem existentes,
+como a exemplo de sarjetas e valetas, tal como pode ser notado na figura 2.21.
+                                                                                          17
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 2.20 – Boca de saída de dreno instalada nas obras de duplicação da BR-304/RN (Fonte:
+                                       próprio autor).
+
+
+
+
+ Figura 2.21 – Saída de dreno em sarjeta de corte junta da BR-354/MG (Fonte: próprio autor).
+
+
+
+   2.3.      DRENO RASO TRANSVERSAL – DRT
+
+Os drenos rasos transversais diferem dos drenos rasos longitudinais por ocasião
+de seu posicionamento na rodovia. Os DRTs são posicionados transversalmente
+à pista de rolamento, em toda a largura da plataforma, sendo usualmente
+indicados nos pontos baixos das curvas verticais côncavas, ou em outros locais
+onde se necessitar drenar as bases permeáveis.
+
+Segundo Cedergren (1980), ao projetar sistemas de drenagem de pavimento, os
+profissionais devem tentar visualizar o sistema em três dimensões e procurar
+                                                                                          18
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+todas as situações especiais ou singulares nas quais a água possa ficar
+represada por geometria incomum, ou onde a água tenda a formar meandros por
+longas distâncias, sem alcançar uma saída. Alguns locais que requerem atenção
+especial são as curvas reversas com superelevação, longos trechos em rampa
+batida e curvas verticais côncavas.
+
+Um critério sugerido por aquele autor para ser utilizado ao se examinar o projeto
+de pavimentação, com vistas a localizar os tubos coletores necessários, é que a
+máxima distância de percolação não deva exceder 45 a 60 m. Drenos
+longitudinais, drenos transversais e drenos coletores suplementares deverão ser
+projetados conforme necessário para satisfazer tal critério.
+
+A figura 2.22 ilustra os caminhos da água em curvas rodoviárias superelevadas,
+bem como trazem os drenos transversais e de borda localizados nos pontos
+necessários para evitar longos meandros de percolação. Já a figura 2.23 mostra
+uma curva vertical côncava que requer drenos transversais, a depender da
+inclinação das rampas envolvidas e também do desenvolvimento da própria
+curva.
+
+
+
+
+  Figura 2.22 – Drenos em curvas com superelevação e caminhos dos fluxos d´agua (Fonte:
+                                  CEDERGREN, 1980).
+                                                                                      19
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 2.23 – Drenos transversais em curvas verticais côncavas (Fonte: CEDERGREN, 1980).
+
+
+Outros autores, como Silva (2008), sugerem que os drenos transversais sejam
+instalados em curvas verticais côncavas da forma como ilustrado na figura 2.24.
+No caso de haver alguma OAE ou OAC no ponto mais baixo da curva vertical,
+deve-se fazer a correção da disposição dos DRTs conforme orientação da figura
+2.25.
+                                                                                        20
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+        Figura 2.24 – Disposição de drenos transversais em curva vertical côncava.
+                                  (Fonte: SILVA, 2008).
+
+
+
+
+Figura 2.25 – Disposição de drenos transversais em curva vertical côncava com OAE (Fonte:
+                                       SILVA, 2008).
+                                                                                      21
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   2.4.      DRENO LATERAL DE BASE
+
+São drenos que têm a função de recolher as águas que se infiltram na camada
+de base, sendo usualmente utilizados nas situações em que o material da base
+dos acostamentos apresenta baixa permeabilidade, encaminhando-as para fora
+da plataforma.
+
+Eles se confundem com os drenos rasos longitudinais, haja vista que as suas
+funções são muito semelhantes, qual seja, recolher a água drenada pela camada
+drenante, porém explorando mais a sua capacidade de escoamento.
+
+As águas drenadas passam a correr junto à base dos acostamentos até esgotar
+a capacidade da camada drenante, quando serão captadas pelos drenos laterais
+de base que as conduzirão a lugar de deságue seguro, atravessando os
+acostamentos.
+
+Sobre este aspecto vale a pena destacar a discussão trazida por Cedergren
+(1980), ao realçar que a maioria dos materiais normalmente utilizados na
+construção de acostamentos e de bases são de graduação relativamente densa
+e de baixa permeabilidade, não oferecendo drenagem muito eficiente. Na
+esperança de melhorar tal drenagem, alguns projetistas de pavimento utilizaram
+nos acostamentos materiais granulares, tratados ou não e muito permeáveis.
+
+Este autor relata que um estudo do noroeste dos Estados Unidos utiliza um lastro
+de pedregulhos com diâmetros variando de 6 mm a 38 mm nos acostamentos,
+em algumas áreas que necessitavam de drenagem. Um outro estado do sul tem
+feito uso de lençol drenante permeável sob os acostamentos de alguns
+pavimentos, onde estavam ocorrendo severos danos provocados pelo excesso
+de água, pois os engenheiros sentiram, de maneira evidente, que uma boa
+drenagem dos acostamentos reduziria os problemas causados pelo excesso de
+umidade.
+
+A fim de permitir uma rápida identificação e lembrança dos tipos de dispositivo
+de drenagem subsuperficial discutido neste capítulo, apresenta-se a tabela 2.1,
+que traz um breve resumo dos tipos de dispositivos e suas respectivas funções.
+                                                                                             22
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+               Tabela 2.1 – Resumo dos elementos de drenagem subsuperficial.
+Elemento            Função hidráulica / estrutural
+                    Captar a água infiltrada, conduzi-la até os drenos rasos longitudinais,
+Camada              prover adequado suporte ao pavimento.
+drenante            Pode ser estabilizada ou tratada com ligante hidráulico ou asfáltico.
+                    Pode ser aplicada isoladamente ou com outra camada.
+                    Tubo coletor                   Tubo perfurado ou fendilhado.
+                                                   Receber a água da camada drenante e
+                                                   transportá-la até os tubos de saída lateral.
+Dreno        raso
+                    Cego                           Constituído essencialmente de brita.
+longitudinal
+                    Tubo de saída lateral          Coletar a água do dreno longitudinal e
+                                                   efetuar lançamento final em local e cota
+                                                   adequados.
+                    Constituída de agregados de graduação densa, estabilizada ou não, ou
+                    substituída por geotêxtil.
+Camada              Evitar o agulhamento e manter separados os materiais da camada
+separadora          drenante e do subleito constituído de material mais fino.
+                    Reduzir a migração de finos e consequente colmatação da camada
+                    drenante.
+                    Constituído preferencialmente de agregado drenante.
+Dreno        raso
+                    Coletar a água que percola longitudinalmente no pavimento nas regiões de
+transversal
+                    baixa declividade.
+                    Constituído de material granular, estabilizado ou não.
+Dreno lateral de
+                    Coletar a água da camada drenante e efetuar lançamento lateral e final em
+base
+                    substituição aos drenos rasos longitudinais.
+                                     Fonte: SUZUKI, 2013.
+                                                                                    23
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+3. Drenagem Profunda
+
+Como já discutido nos primeiros capítulos, a água das chuvas tem normalmente
+dois caminhos: parte escorre sobre a superfície dos solos e parte se infiltra,
+podendo formar lençóis subterrâneos.
+
+É claro que estas situações não são únicas e distintas, havendo variação das
+condições em função das graduações que tornam os solos mais ou menos
+permeáveis ou impermeáveis, criando condições próprias para cada região,
+influenciadas pelo tipo de solo, topografia e clima.
+
+Há ainda um terceiro aspecto pelo qual a água se apresenta: a "franja capilar",
+resultante da ascensão capilar a partir dos lençóis d'água, obedecendo às leis
+da capilaridade. A influência produzida pela "franja capilar" deve ser eliminada,
+ou reduzida, pelos rebaixamentos dos referidos lençóis freáticos.
+
+De um modo ou de outro, há sempre a necessidade indiscutível de manter-se o
+lençol freático a profundidades de 1,50 a 2,00 metros do subleito das rodovias,
+dependendo do tipo de solo da área considerada, e para atender este propósito
+os dispositivos de drenagem profunda são bastante úteis.
+
+Assim, de modo a evitar confusão entre o sistema de drenagem apresentado no
+capítulo anterior e o que será apresentado neste capítulo, é conveniente que se
+destaque que o sistema de drenagem profunda serve para controlar e rebaixar
+o nível do lençol freático subterrâneo, enquanto o sistema de drenagem
+subsuperficial tem por objetivo remover rapidamente o excesso de água livre que
+se infiltra pela superfície e bordas laterais do pavimento.
+
+Na sequência serão abordados os principais tipos de dispositivos de drenagem
+profunda, tratando-se de cada um deles de forma isolada.
+                                                                                         24
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   3.1 DRENO LONGITUDINAL PROFUNDO - DLP
+
+Os drenos profundos têm por objetivo principal interceptar o fluxo da água
+subterrânea através do rebaixamento do lençol freático, impedindo-o de atingir
+o subleito, tal como pode ser visualizado na figura 3.1.
+
+
+
+
+   Figura 3.1 – Esquema com detalhe do rebaixamento do lençol freático ocasionado pela
+                      implantação de drenos longitudinais profundos.
+
+Os drenos profundos são instalados, preferencialmente, em profundidades da
+ordem de 1,50 a 2,00 m, tendo por finalidade captar e aliviar o lençol freático e,
+consequentemente, proteger o corpo estradal.
+
+Os DLPs devem ser instalados nos trechos em corte, nos terrenos planos que
+apresentem lençol freático próximo do subleito, bem como nas áreas
+eventualmente saturadas, próximas ao pé dos taludes (BRASIL, 2006).
+
+Podem, também, ser instalados sob os aterros, quando ocorrer a possibilidade
+de aparecimento de água livre, bem como quando forem encontradas camadas
+permeáveis sobrepostas a outras impermeáveis, mesmo sem a presença de
+água na ocasião da pesquisa do lençol freático (BRASIL, 2006).
+
+Na avaliação deste autor, a instalação de drenos profundos em cortes, de forma
+generalizada, tal como sugere o parágrafo anterior (retirado do Manual de
+Drenagem de Rodovias - DNIT, 2006), pode ser desnecessária, haja vista que o
+lençol freático nem sempre alcança níveis elevados em todos eles,
+principalmente quando tem pequena extensão e pequena altura.
+
+Assim, no caso de uma implantação, a sugestão de drenos em cortes pode ser
+melhor avaliada pelos ensaios de campo, em especial os de determinação do
+nível do lençol freático e os de caracterização do subleito, devendo-se apenas
+                                                                                     25
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+ter o cuidado para a época em que tais ensaios foram executados, pois caso
+coincidam com período de estiagem e longas secas, seus resultados poderão
+estar camuflados.
+
+Para Jabôr (2019), o projetista deve seguir algumas recomendações para avaliar
+a necessidade ou não de drenagem longitudinal profunda quando se tratar de
+obras de implantação / pavimentação:
+
+   • Quando da execução da sondagem do subleito nos cortes, de acordo com
+o plano de sondagem elaborado pelo projetista de pavimentação, no momento
+da coleta de material, medir a umidade natural do solo para posterior
+comparação com a umidade ótima. Esta sondagem deverá ser realizada no
+período chuvoso da região em estudo, mas não deverá ser feita com chuva.
+   • Caso a sondagem e a visita a campo por parte do projetista, por motivos
+contratuais, sejam realizadas na estação seca, recomenda-se que na ida a
+campo, o projetista identifique algumas pessoas que utilizam diariamente,
+durante o ano todo o trecho em estudo, para que possa mostrar os locais que no
+período chuvoso apresentem atoleiros e agarrador, pois são indicadores de
+presença de lençol freático ou excesso de umidade no corte. Estas informações
+obtidas no local, associada aos resultados de sondagem, com o tipo do solo e
+seu comportamento com a presença de água, irá auxiliar em muito no
+desenvolvimento do projeto.
+   • Quando na execução da sondagem do subleito nos cortes encontrar
+presença de água (NA), deverão ser feitas 04 medidas da altura do N.A para
+verificação de sua variação que é um dado importante para análise, por parte do
+projetista, para se determinar a solução de drenagem mais adequada para o
+local:
+
+   - 1ª medição no momento da execução da sondagem;
+
+   - 2ª medição 24 horas após a 1ª leitura;
+
+   - 3ª medição 48 horas após a 1ª leitura;
+
+   - 4ª medição 72 horas após a 1ª leitura.
+                                                                                     26
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Após a execução do furo de sondagem e a identificação do NA e realizada a 1ª
+leitura, deverá ser colocada sobre a abertura do furo uma proteção (tamponar)
+para impedir que sejam jogados materiais que possam comprometer as leituras
+seguintes. Estas leituras são importantes, pois caso haja uma variação brusca
+significativa da altura do NA entre a 1ª leitura e 4ª leitura, somente a implantação
+do dreno profundo longitudinal não resolverá o problema, ou seja, a solução de
+dreno profundo longitudinal somente será insuficiente para proteção do
+pavimento. Nos casos onde for verificada nas leituras uma variação brusca do
+NA, a solução para proteção da estrutura do pavimento deverá ser colchão
+drenante (camada bloqueadora), mais os drenos profundos longitudinais nas
+laterais que irão trabalhar, além de coletores das águas do colchão drenante,
+também como interceptadores das águas provenientes do lençol freático no
+corte.
+
+   • Solicitar o ensaio de granulometria por sedimentação do solo para fins de
+estudo da faixa granulométrica ideal do material de enchimento da vala do dreno
+profundo longitudinal. Este estudo faz-se necessário principalmente nos
+segmentos onde serão projetados drenos profundos longitudinais, com a
+indicação de areia para enchimento da vala. A areia a ser indicada no projeto
+deverá ter uma faixa granulométrica que tenha permeabilidade suficiente para
+interceptar e escoar um determinado volume de água, porém não deve permitir
+a realização do fenômeno de erosão interna do solo, causada pelo deslocamento
+da água em material poroso, cujos vazios sejam maiores que as partículas do
+solo. Vê-se facilmente, portanto, que a granulometria do filtro está estreitamente
+ligada à do solo a ser drenado.
+   • O material filtrante será definido segundo estudos de BERTRAN –
+TERZAGHI, devendo atender as relações de permeabilidade e piping, e serem
+isentos de impurezas orgânicas e torrões de argila. Como material drenante,
+poderão ser utilizados produtos resultantes da britagem e classificação de rocha
+sã, areias e pedregulhos naturais ou seixos rolados, desde que isentos de
+impurezas orgânicas e torrões de argila.
+                                                                                    27
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   • O dreno profundo sem selo é indicado quando a etapa construtiva do
+pavimento é realizada imediatamente após a execução do dreno profundo. Caso
+haja uma descontinuidade nas etapas construtivas, o que é muito comum,
+recomenda-se a utilização do dreno profundo com selo, a fim de evitar que o
+material filtrante e/ou drenante fique exposto às intempéries e corra o risco de
+ser contaminado por solo carreado pela chuva ou até mesmo por poeira.
+   • A vala do dreno, quando o solo for de predominância siltosa ou arenosa e
+o material de enchimento for de brita, deverá ser envolvido com manta geotêxtil
+não tecida, que terá a finalidade de formar um pré-filtro de forma a impedir o
+carreamento de partículas do solo para dentro do dreno, garantindo a sua
+eficácia. É indicado nos locais com presença de N.A.
+   • Quando o solo na vala de escavação do dreno profundo longitudinal, no
+corte, for constituído por solo puramente argiloso, não haverá necessidade da
+utilização de manta geotêxtil não tecida para trabalhar como pré-filtro, pois se
+trata de solo coesivo onde não haverá perda e carreamento de finos no
+escoamento do fluxo do lençol freático em quantidade que possa causar a sua
+colmatação (preenchimento dos vazios do material drenante da vala por
+partículas finas de solo, reduzindo e até mesmo eliminando a sua
+permeabilidade).
+   • O material do selo será constituído de solo predominantemente argiloso.
+
+Já nos casos de restauração, além dos ensaios citados acima, pode-se recorrer
+aos resultados das medições das deflexões e ao inventário da superfície do
+pavimento, além das condições visuais e do histórico do pavimento, que irão
+ajudar bastante na análise do diagnóstico, já que os defeitos associados ao
+excesso de umidade poderão nortear na escolha de soluções, sendo algumas
+delas possivelmente ligadas à drenagem subterrânea ou profunda.
+
+Os materiais empregados na execução dos drenos profundos diferenciam-se de
+acordo com as suas funções, podendo ser dos seguintes tipos:
+                                                                                     28
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   • Materiais filtrantes: areia, agregados britados, geotêxtil, etc. Sua função é
+a de permitir o escoamento da água sem carrear finos e consequentemente
+evitar a colmatação do dreno.
+   • Materiais drenantes: britas, cascalho grosso lavado, etc. Sua função é a
+de captar e ao mesmo tempo conduzir as águas a serem drenadas, devendo
+apresentar uma granulometria adequada à vazão escoada.
+   • Materiais condutores: tubos de concreto (porosos ou perfurados),
+cerâmicos (perfurados), de fibrocimento, de materiais plásticos (corrugados,
+flexíveis perfurados, ranhurados) e metálicos.
+
+Há casos em que não são colocados tubos no interior dos drenos, quando então
+são chamados de " drenos cegos”.
+
+O Álbum de Projetos-tipo de Dispositivos de Drenagem do DNIT (BRASIL, 2018)
+relaciona pelo menos oito tipos de drenos longitudinais profundos para corte em
+solo e cinco tipos para corte em rocha, conforme pode-se notar nas figuras 3.2
+e 3.3.
+
+Nota-se, na primeira figura, que os modelos DPS-01 a DPS-04 são preenchidos
+com material filtrante e contam com tubo de PVC ou PEAD, sendo que o DPS-
+01 e o DPS-03 são providos de selos de argila no topo, ao passo que os modelos
+DPS-03 e DPS-04 tem seus tubos envolvidos com material de proteção.
+
+Por sua vez, os modelos DPS-05 a DPS-08 são preenchidos com material
+drenante envoltos com geotêxtil, contando com tubulação de PEAD ou concreto
+apenas nos modelos DPS-07 e DPS-08. Já os modelos DPS-07 e DPS-05 são
+providos sem selo de argila no seu topo.
+
+Na segunda figura, aparecem os modelos de drenos longitudinais profundos
+propostos para cortes em material de 3ª categoria. Os modelos DPR-01 a DPR-
+04 são preenchidos com material drenante, ao passo que o modelo DPR-05, em
+material filtrante. Os modelos DPR-01, DPR-02 e DPR-05 são providos de
+tubulação, enquanto os demais são cegos.
+                                                                                    29
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Para proporcionar o adequado deságue dos drenos DPSs ou dos drenos DPRs,
+recomenda-se adotar bocas de saída, podendo ser do modelo BSD-01 ou BSD-
+02, tal como mostra a figura 3.4
+                                                                                                                           30
+
+
+                                               CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.2 – Modelos de drenos longitudinais profundos para corte em solo catalogados no DNIT (BRASIL, 2018).
+                                                                                                                           31
+
+
+                                               CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.3– Modelos de drenos longitudinais profundos para corte em rocha catalogados no DNIT (BRASIL, 2018).
+                                                                                                                    32
+
+
+                                        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.4– Modelos de bocas de saída para drenos profundos catalogados no DNIT (BRASIL, 2018)
+                                                                                         33
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+A seguir são apresentados alguns casos de aplicação de drenos profundos em
+obras de infraestrutura rodoviária, como pode ser visualizado nas figuras 3.5 a
+3.7.
+
+
+
+
+ Figura 3.5 – Implantação de dreno tipo DPS-   Figura 3.6 – Implantação de dreno tipo DPS-
+ 02 nas obras de duplicação da BR-304/RN.      02 nas obras de duplicação da BR-304/RN.
+            (Fonte: Próprio autor).                       (Fonte: Próprio autor).
+                                                                                          34
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.7 – Implantação de dreno longitudinal profundo com material drenante. (Fonte: Notas
+                                     de aula, JABÔR).
+
+Além dos modelos de drenos profundos catalogados no DNIT, vale a pena
+destacar outros tipos de dispositivos comercializados em nosso país e com uso
+já consolidado nas obras de infraestrutura, como é o caso do MacDrain,
+desenvolvido pela empresa MACCAFERRI.
+
+Trata-se de geocompostos formados por um núcleo drenante, ligado
+termicamente a um ou dois geotêxteis, que podem ser não tecidos calandrados
+e agulhados, ou laminados com um filme impermeabilizante.
+
+Dentre os tipos de dispositivos que compõem a família MacDrain, pode-se
+destacar o MacDrain Trincheira Drenante (TD), que corresponde a um dreno
+sintético que é capaz de captar, conduzir e escoar o excesso de água
+proveniente da chuva, sistemas de irrigação, rebaixar o lençol freático, dentre
+outros. Sua instalação é simples e prática, pois já traz incorporada uma bolsa
+com guia para acondicionamento do tubo dreno (adquirido à parte), sendo
+necessário somente a abertura da vala (que costuma ser feita com uma
+valetadeira), posicionamento do dreno e o reaterro para a construção do sistema
+drenante. Alguns casos de aplicação deste dispositivo podem ser visualizados
+nas figuras 3.8 e 3.9.
+                                                                                     35
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   Figura 3.8 – MacDrain TD aplicado na SP-323, Bebedouro/SP. (Fonte: MACCAFERRI /
+                                  Concessionária Tebe).
+
+A quantidade, o tipo e a localização dos drenos são objeto de dimensionamento,
+o que foge ao escopo deste manual, mas algumas sugestões para sua
+implantação podem ser encontradas em algumas bibliografias, como é o caso
+da publicação Drenagem dos Pavimentos de Rodovias e Aeródromos
+(CEDERGREN, 1980), conforme pode ser visualizado na figura 3.10.
+
+Em 3.10 (a), a estrutura foi provida de um dreno longitudinal ao longo do bordo
+esquerdo, para controlar a percolação proveniente do terreno lateral elevado.
+Em 3.10 (b), que traz um exemplo de rodovia simples, situada abaixo do nível
+d´água normal, requer drenos longitudinais relativamente profundos em ambos
+os lados, para assegurar adequado controle do lençol freático. Já em 3.10 (c),
+que traz um exemplo de pista dupla com múltiplas faixas, há necessidade de três
+linhas de drenos longitudinais para evitar que o lençol d´água se eleve e penetre
+na estrutura.
+                                                                                            36
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+     Figura 3.9 – MacDrain TD aplicado na Rodovia Transbrasiliana, Lins/SP. (Fonte:
+                     MACCAFERRI / Concessionária Via Rondon).
+
+
+
+
+  Figura 3.10 – Recomendação para disposição de drenos longitudinais profundos. (a) –
+construção em meia encosta; (b) - rodovia estreita, em terreno plano; (c) – rodovia larga, em
+                      terreno plano. (Fonte: CEDERGREN, 1980).
+                                                                                       37
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+TOME NOTA
+Mais        informações        podem        ser     consultadas        em
+https://www.maccaferri.com/br/produtos/geocomposto-macdrain/macdrain-td/
+
+
+   3.2 DRENO ESPINHA DE PEIXE
+
+São dispositivos de drenagem profunda destinados à drenagem de grandes
+áreas, pavimentadas ou não, normalmente usados em série, em sentido oblíquo
+em relação ao eixo longitudinal da rodovia ou da área a ser drenada.
+
+Geralmente são de pequena profundidade e, por este motivo, sem tubos, embora
+possam eventualmente ser usados com tubos.
+
+Podem ser exigidos em cortes, quando os drenos longitudinais forem
+insuficientes para a drenagem da área.
+
+Podem ser projetados em terrenos que receberão aterros e nos quais o lençol
+freático estiver próximo da superfície, como também nos aterros onde o solo
+natural for impermeável.
+
+Conforme as condições existentes, podem desaguar livremente ou em drenos
+longitudinais, conforme pode-se ver na figura 3.11.
+
+
+
+
+   Figura 3.11 – Geometria usual de drenos espinhas de peixe, com descarga em drenos
+                          longitudinais. (Fonte: BRASIL, 2006).
+                                                                                        38
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Alguns autores sugerem disposição diferente para as “espinhas” do dreno. Na
+figura 3.12, percebe-se que, a partir do eixo, há um afastamento de “L/2” entre
+drenos, alternadamente. Nesta figura, há uma tabela com recomendação para o
+ângulo α (formado entre o eixo da rodovia e o eixo da “espinha”) e para o
+espaçamento L (entre as “espinhas”), função da declividade longitudinal do
+greide da rodovia, i %.
+
+
+
+
+  Figura 3.12 – Geometria com espaçamento entre as “espinhas”, descarregando em lados
+                            alternados. (Fonte: JABÔR, 2019).
+                                                                                         39
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+A fim de ilustrar alguns casos de aplicação de drenos espinhas de peixe, são
+apresentadas as figuras 3.13 e 3.14.
+
+
+
+
+Figura 3.13 – Dreno espinha de peixe instalado em rodovia de Minas Gerais. (Fonte: Notas de
+                                       aula, JABÔR).
+
+
+
+
+           Figura 3.14 – Dreno espinha de peixe instalado em campo de futebol.
+                                                                                         40
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+   3.3 COLCHÃO DRENANTE
+
+O objetivo do colchão drenante é drenar as águas situadas a pequena
+profundidade do corpo estradal e seu emprego será recomendado quando o
+volume não possa ser drenado pelos drenos "espinha de peixe".
+
+O emprego de colchão drenante é recomendado nos seguintes casos:
+
+   • Nos cortes em rocha;
+   • Nos cortes onde o lençol freático estiver próximo ao greide de
+terraplenagem;
+   • Na base dos aterros onde houver água livre próximo ao terreno natural; e
+   • Nos aterros constituídos sobre terrenos impermeáveis.
+
+Quando houver necessidade de alívio ou descarga das águas que por eles fluem,
+devem ser implantados drenos profundos.
+
+Para exemplificar alguns casos de aplicação destes dispositivos em obras de
+infraestrutura, são apresentadas as figuras 3.15 e 3.16.
+
+
+
+
+Figura 3.15 – Colchão drenante de areia executado junto a trecho com ocorrência de material
+       de 3ª categoria nas obras de duplicação da BR-304/RN. (Fonte: Próprio autor).
+                                                                                        41
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.16 – Colchão drenante de areia executado junto de trecho com surgência de água no
+           subleito, nas obras de duplicação da BR-304/RN. (Fonte: Próprio autor).
+
+Uma situação particular para a qual deve-se fazer destaque, diz respeito a obras
+de duplicação, onde pode ocorrer a descoberta de colchão drenante sob a
+plataforma existente, no momento de sua escavação. Assim, ainda que as
+condições verificadas em campo não ensejem a aplicação de um colchão
+drenante, se este for encontrado na plataforma existente, é recomendável que
+esta camada seja estendida sob a nova plataforma que será implantada ao lado,
+ou então se preveja outro dispositivo de drenagem profunda, a exemplo de um
+dreno profundo longitudinal, para fazer a captação e lançamento da água que
+flui dentro dela, evitando seu confinamento por ocasião de construção da nova
+plataforma adjacente, como pode ser notado na figura 3.17.
+                                                                                        42
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Figura 3.17 – Colchão drenante de areia encontrado sob a plataforma existente na BR-304/RN.
+                                   (Fonte: Próprio autor).
+
+
+
+   3.4 DRENO HORIZONTAL PROFUNDO - DHP
+
+Os drenos sub-horizontais são normalmente instalados nos taludes de corte ou
+aterro, no sentido ortogonal ao eixo da plataforma, visando proporcionar o
+escoamento das águas retiradas dos maciços, com o objetivo de aliviar o
+empuxo e evitar o comprometimento da sua estabilidade, tal como pode ser
+visualizado na figura 3.18.
+
+
+
+
+       .
+                 Figura 3.18 – Esquema de DHP instalado em talude de corte.
+
+Os DHPs ajudam a prevenir e corrigir o escorregamento de taludes onde a causa
+determinante da instabilidade é a elevação do nível do lençol freático ou do nível
+piezométrico de lençóis confinados, sendo em muitos casos a solução mais
+                                                                                          43
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+vantajosa, do ponto de vista econômico, a se recorrer. Eles captam as águas
+evitando que aflorem ou mesmo se aproximem das faces dos taludes, tal como
+pode ser observado na figura 3.19.
+
+
+
+
+ Figura 3.19 – Afloramento de água nas faces de talude de corte em trecho da Ferrovia Norte-
+                      Sul, junto de Mara Rosa/GO. (Fonte: próprio autor).
+
+Os drenos sub-horizontais são constituídos por tubos providos de ranhuras ou
+orifícios na sua parte superior, envolvidos com manta geotêxtil ou por tela de
+nylon, introduzidos em perfurações executadas na parede do talude, com ângulo
+de inclinação de aproximadamente 5º em relação à horizontal. Os tubos são
+normalmente de 11/4 “ a 2” e os orifícios são abertos nos maciços com 21/2” a 4”.
+Alguns destes detalhes são apresentados na figura 3.20, que inclusive
+representa o modelo de dispositivo catalogado no Álbum de Projetos-tipo de
+Dispositivos de Drenagem do DNIT (BRASIL, 2018).
+
+A figura 3.21 traz o detalhe de um dreno sub-horizontal típico. Seu tubo drena a
+água do lençol, aliviando as pressões nos poros e/ou mudando a direção do fluxo
+d´água, orientando-se assim a percolação para uma direção que contribui para
+o aumento da estabilidade.
+
+Em solos ou rochas permeáveis ou muito fraturadas, a vazão pode ser grande,
+enquanto que em solos menos permeáveis a vazão pode ser pequena ou nula,
+embora o alívio de pressão esteja presente. Neste caso, as vazões podem ser
+                                                                                     44
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+tão pequenas que a água recolhida evapora ao longo de seu caminho no interior
+do tubo, sendo, porém, seu efeito positivo (BRASIL, 2006).
+
+
+
+
+      Figura 3.20 – Projeto-tipo de DHP proposto pelo DNIT. (Fonte: BRASIL, 2018).
+
+
+
+
+       Figura 3.21 – Elementos de um dreno sub-horizontal. (Fonte: BRASIL, 2006).
+
+De acordo com o Manual de Drenagem de Rodovias, para se projetar uma
+bateria de drenos sub-horizontais é necessário, primeiramente, caracterizar-se
+geotecnicamente o maciço, por meio de sondagens adequadas, verificando-se
+                                                                                    45
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+em seguida em que caso se enquadra o material do talude. Para isso,
+distinguem-se três situações:
+
+   •   Rochas ou solos heterogêneos com relação à permeabilidade;
+   •   Materiais essencialmente homogêneos com relação à permeabilidade;
+   •   Escorregamentos relativamente "impermeáveis" cobrindo formações mais
+       permeáveis e saturadas, com nível piezométrico elevado.
+
+No primeiro caso, a drenagem tem o objetivo de interceptar o maior número
+possível de veios permeáveis ou bolsões permeáveis, como normalmente ocorre
+em rochas sedimentares ou metamórficas fraturadas (gnaisses bandeados, por
+exemplo), sendo necessário levantar o sistema de faturamento e as direções das
+fraturas. A direção dos drenos deve ser tal que intercepte cada família de
+fraturas, com o maior número possível de fraturas interceptadas por dreno. Pode
+ser necessário, em alguns casos, dispor os drenos em forma de leque,
+irradiando-os de um único ponto na superfície do talude, em um ou vários locais.
+
+No caso de rochas ou solos homogêneos quanto à permeabilidade, podem-se
+utilizar ábacos existentes para uma primeira estimativa do número, comprimento
+e espaçamento dos drenos, de modo a atingir-se a redução desejada das poro-
+pressões.
+
+No terceiro caso, o comprimento dos drenos deve ser tal que a camada saturada
+de alta permeabilidade seja interceptada ao longo de um trecho perfurado do
+tubo com comprimento razoável. Deve ser considerada a necessidade de utilizar
+o dreno dotado de trecho perfurado apenas nesta camada mais profunda, de
+modo a não se irrigar camadas mais superficiais, não saturadas, com a água que
+corre pelo tubo sob pressão.
+
+A quantidade e espaçamento entre tubos é resultado de dimensionamento, mas
+este assunto foge ao escopo deste manual, razão pela qual não serão
+apresentados maiores detalhes aqui. Mas, caso o aluno tenha interesse no
+aprofundamento, poderá encontrar mais detalhes no Manual de Drenagem de
+Rodovias do DNIT.
+                                                                                    46
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Com relação ao processo de execução, pode-se destacar que os DHPs são
+executados por processo semelhante ao utilizado nos poços para rebaixamento
+do lençol freático, sendo que a sua instalação ocorre na direção horizontal. A
+técnica executiva deve passar pelos seguintes passos:
+
+   •   Preparação e montagem do DHP;
+   •   Perfuração do maciço;
+   •   Instalação do tubo;
+   •   Ligação do DHP com a rede de drenagem existente e tamponamento do
+       furo com selo de argila ou argamassa;
+   •   Manutenção e limpeza periódica do dreno.
+
+Dentre os processos de escavação e cravação dos drenos sub-horizontais, vale
+a pena destacar o processo de rotopercussão e a sonda rotativa.
+
+De acordo com Jabôr (2019), o processo de rotopercussão consiste da seguinte
+sequência:
+
+   • É executado um furo no terreno, usando uma perfuratriz a rotopercussão
+com broca de “3”. Este equipamento permite a execução de furos com até 25,0
+m de comprimento, sem revestimento.
+   • A perfuratriz deve ser provida de comandos independentes, sendo um
+para rotação, outro para percussão e o comando para avanço, sendo este último,
+geralmente hidráulico.
+   • O operador, que deverá ser altamente qualificado, deve coordenar as três
+operações para evitar o fechamento do furo. Além destas operações, ele deverá
+cuidar da regulagem da circulação da água para lavagem do furo.
+   • Após a execução do furo, de acordo com os itens anteriores, será
+introduzido o tubo, que deverá estar revestido com o geotêxtil.
+
+Este tubo terá comprimento mínimo de 9,0 m, é composto de vários elementos
+com comprimento aproximado de 6,0 m, introduzidos sucessivamente no furo e
+colados entre si (ponta e bolsa) nas extremidades.
+                                                                                     47
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+Durante a colocação de tubo, poderão ocorrer alguns desmoronamentos
+internos, sendo, então, necessário a retirada do tubo para que se introduza outro
+de menor diâmetro, e quando com esse processo não se conseguir limpá-lo,
+fura-se novamente com a perfuratriz.
+
+O tempo necessário para a execução é de aproximadamente 06:00 horas por
+dreno.
+
+Já no processo que faz uso de sonda rotativa, recomendado para terrenos com
+pouco suporte e onde o furo pode se fechar rapidamente, deve-se observar a
+seguinte sequência executiva:
+
+   • O furo é executado através de um processo rotativo com ferramenta
+cortante (vídia ou diamante). Tal equipamento permite, caso haja necessidade,
+a colocação de revestimento com diâmetro levemente superior ao do furo.
+   • A introdução do revestimento é feita também, pelo sistema rotativo,
+utilizando-se de ferramenta igualmente cortante.
+   • Após a execução do furo, de acordo com os itens anteriores, se o terreno
+permitir, retira-se o revestimento, sendo, então, necessário que o furo fique
+aberto por um período de 30 a 40 minutos, tempo suficiente para que se coloque
+o dreno.
+   • Caso o operador observe a necessidade de se colocar o dreno antes da
+retirada do revestimento por problemas de desmoronamento ou fechamento do
+furo, deve-se introduzir o dreno normalmente por dentro do revestimento e,
+posteriormente, retirar-se o revestimento, com cuidado para não danificar a tela
+e o geotêxtil.
+                                                                                      48
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 6
+
+
+
+
+4. REFERÊNCIAS BIBLIOGRÁFICAS
+BRASIL. Álbum de Projetos-tipo de Dispositivos de Drenagem. Rio de Janeiro, IPR, 5 ed.,
+DNIT, 2018.
+
+BRASIL. Manual de Drenagem de Rodovias. Rio de Janeiro, IPR, 2 ed., DNIT, 2006.
+
+CEDERGREN, Harry R. Drenagem dos Pavimentos de Rodovias e Aeródromos. Rio de
+Janeiro, Livros Técnicos e Científicos, IPR, 1980.
+
+JABÔR, Marcos Augusto. Drenagem de Rodovias: Estudos Hidrológicos e Projetos de
+Drenagem. Apostila, 2019.
+
+SILVA, Paulo Fernando A. Manual de Patologia e Manutenção de Pavimentos. São Paulo,
+PINI, 2 ed. 2008.
+
+SUZUKI, Carlos Yukio. AZEVEDO, Ângela Martins. KABBACH, Felipe Issa. Drenagem
+Subsuperficial de Pavimentos: Conceitos e Dimensionamento. São Paulo, Oficina de
+Textos, 2013.

@@ -1,0 +1,411 @@
+QI EGV IBRE E emma Ra
+
+12 ANÁLISE TÉCNICA FINAL Nº 56/2019 — CPN/CGCIT/DIREX
+
+IDENTIFICAÇÃO DA OBRA
+
+- Assunto: Análise de Composição de Custo Não Existente no SICRO.
+
+- Natureza: Obra de Engenharia.
+Proposta de preço novo para um serviço de conservação a ser utilizado
+
+«iiliiáio: futuramente por meio do Contrato ne 682/2019, como forma de evitar
+o carreamento de detritos na rodovia, evitando o desgaste prematuro
+da sinalização horizontal e revestimento - Novo P.A.T.O.
+
+- Rodovia/UF: BR-342/ES
+
+- Contrato: 682/2019
+
+- Edital: 000462/2018-17 - Menor Preço - Pregão Eletrônico
+
+- PNV: 342 BES 0290 ao 342 BES 0300
+
+- Lote: Único
+
+- Empresa: Rodocon Construções Rodoviárias Ltda |
+
+- Processo: 50617.001314/2018-97 |
+
+- Demandante: | Diretoria Executiva. |
+
+CONTROLE DAS ANÁLISES
+
+ANÁLISES
+12 ANÁLISE 22 ANÁLISE 32º ANÁLISE
+CONCLUÍDA EM: CONCLUÍDA EM: CONCLUÍDA EM:
+26/11/2019
+
+1. INTRODUÇÃO
+
+O Contrato de Prestação de Serviços que entre si celebram o DNIT e a FGV/IBRE, cujo objetivo é a
+execução de serviços técnicos especializados referentes à manutenção e criação de composições
+de custos do Sistema de Custos Referenciais de Obras — SICRO, a realização de pesquisa nacional
+de insumos em todas as unidades da federação, a revisão e o cálculo dos índices de reajustamento
+de obras rodoviárias, ferroviárias e hidroviárias, ao apoio técnico à Coordenação-Geral de Custos
+de Infraestrutura e Transportes.
+
+Não fazem parte do escopo deste projeto quaisquer considerações e/ou interpretações legais,
+
+regulatórias, fiscais ou contábeis, cabendo ao DNIT validar as recomendações feitas pela
+FUNDAÇÃO GETULIO VARGAS — FGV com seus assessores em tais áreas. Este trabalho não constitui
+
+o Pao Lo
+
+“7 FGV IBRE Hi
+
+identificação de riscos, desenho, documentação e teste de controles relacionados ao Ato
+Sarbanes-Oxley ou qualquer outro ato regulatório nacional ou internacional.
+
+Todas as decisões relativas a cumprimento de lei e/ou regulamentação serão tomadas
+exclusivamente pelo DNIT, seu departamento jurídico e/ou por terceiros que ela determinar, sem
+qualquer influência da FUNDAÇÃO GETULIO VARGAS - FGV, que recebeu os parâmetros a serem
+observados de acordo com a interpretação do DNIT, sem que a FUNDAÇÃO GETULIO VARGAS -
+FGV realizasse qualquer interpretação legal e/ou regulatória.
+
+A presente análise tem por objetivo a avaliação e aprovação da nova composição de preço não
+existente no SICRO, em atendimento às determinações preconizadas na Instrução de Serviço nº
+15, publicada no Boletim Administrativo nº 051, de 18 a 22 de dezembro de 2006 e a Instrução de
+Serviço nº 22, publicada no Boletim Administrativo nº 052, de 27 a 31 de dezembro de 2010, bem
+como do Memorando Circular nº 39/2011-DIREX.
+
+No caso específico de revisões de projeto em fase de obras, em respeito ao Memorando nº
+37/2003-DIT, as composições de custos unitários não constantes do SICRO devem ser elaboradas
+respeitando-se os valores de insumos e da parcela de bonificação e despesas indiretas (BDI)
+definidos no contrato, adotando-se, caso não existam na proposta, os custos dos sistemas
+referenciais oficiais (SICRO ou SINAPI) ou cotação de preços.
+
+Todos os custos de insumos contratuais e o detalhamento do BDI devem ser apresentados por
+meio de cópias das composições de custos unitários já existentes no contrato, devendo ser
+anexada uma declaração da Superintendência Regional ou Diretoria afeta atestando a correção
+dos valores adotados na composição.
+
+Entretanto, em respeito ao Decreto nº 7.983/2013, o qual estabelece regras e critérios para
+elaboração do orçamento de referência de obras e serviços de engenharia, contratados e
+executados com recursos dos orçamentos da União, e dá outras providências, mais
+especificamente em seu Art. 4º onde estabelece que “O custo global de referência dos serviços e
+obras de infraestrutura de transportes será obtido a partir das composições dos custos unitários
+previstas no projeto que integra o edital de licitação, menores ou iguais aos seus
+correspondentes nos custos unitários de referência do Sistema de Custos Referenciais de Obras -
+Sicro, cuja manutenção e divulgação caberá ao Departamento Nacional de Infraestrutura de
+Transportes - DNIT, excetuados os itens caracterizados como montagem industrial ou que não
+possam ser considerados como de infraestrutura de transportes”, o preço unitário advindo das
+condições contratuais deverá ser comparado ao de referência do DNIT.
+
+Caso o preço unitário advindo da aplicação do Memorando nº 37/2003-DIT mostre-se superior ao
+de referência do DNIT, será aplicado um fator de redução ao preço unitário do serviço de modo a
+enquadrá-lo no valor limite preconizado no Decreto nº 7.983/2013, não impedindo que a setorial
+responsável pela aprovação da revisão de projeto proceda a aplicação de desconto adicional
+eventualmente necessário à garantia do equilíbrio econômico-financeiro do contrato.
+
+“7 FGV IBRE [NA
+
+Importa também destacar a necessidade de respeito, tanto em projeto, quanto em revisão, das
+determinações preconizadas no Memorando Circular nº 12/2012-DIREX, de 09 de março de 2012,
+que estabelece que:
+
+“Para serviços não constantes do Sicro 2, onde o custo de referência for por meio de
+cotações de preços de mercado, compostas de forma a permitir a execução total do serviço,
+adotar-se-á obrigatoriamente o BDI (Bonificação e Despesas Indiretas) diferenciado de
+15,0% (quinze por cento), por analogia ao percentual utilizado para aquisição de materiais
+betuminosos (Portaria DNIT nº 349, de 06 de março de 2010)”.
+
+Reforça-se ainda que, em consonância às determinações contidas na Instrução de Serviço nº
+12/2010, “os percentuais de incidência a título de ISSQN a serem aplicados na composição das
+despesas fiscais do orçamento deverão ter como base as alíquotas adotadas pelos Municípios
+situados na área de execução das obras/serviços estabelecidos no momento da elaboração do
+projeto.” (grifo nosso)
+
+Por fim, importa destacar que a definição da natureza dos insumos (extraída, produzida ou
+comercial) e as consequentes distâncias de transporte adotadas na análise de preços novos
+realizadas no âmbito dessa Coordenação de Preços Novos são atribuições do ente responsável
+pela elaboração/aprovação do projeto ou aquelas informadas pelo setor solicitante.
+
+2. OBSERVAÇÕES GERAIS
+
+2.1. As distâncias médias de transportes não serão objeto dessa análise, devendo ser avaliadas
+pela respectiva Superintendência Regional;
+
+2.2. De acordo com os entendimentos e orientações desta CGCIT, exarados inclusive no
+Memorando Circular nº 322/2014-CGCIT/DIREX, mais especificamente em seus parágrafos 27 e
+28, conclui-se pela necessidade de que os custos de referência dos insumos, principalmente dos
+materiais que compõem a faixa A da Curva ABC, sejam preferencialmente definidos em função
+de cotações de preços no local da obra, lançando-se então os custos e distâncias de transportes,
+a partir do conhecimento da origem definida para os referidos materiais. Nas situações que não
+permitam a definição do preço praticado no local da obra, admite-se a utilização do preço médio
+de referência divulgado pelo SICRO, sem, entretanto, incluir qualquer custo complementar
+advindo do transporte comercial, uma vez que a origem (posição no espaço) da informação é
+desconhecida, e uma vez que a metodologia de pesquisa de preços dos insumos SICRO já é
+realizada prevendo a inclusão do custo de frete dos materiais. Diante do exposto acima e
+considerando a boa técnica de engenharia, esta CPN/CGCIT entende que a projetista deve realizar
+cotações de mercado para os principais insumos da obra (mesmo aqueles que possuem preço de
+referência no SICRO), demonstrando assim o custo destes materiais no local de execução da obra,
+bem como a inclusão ou não do custo de transporte nas respectivas cotações, para somente
+então prever as devidas parcelas de transporte;
+
+Ta Lo
+
+wº FGV IBRE [MDA
+
+2.3. De acordo com o disposto no Memorando Circular nº 03/2016-DIREX, de 02 de fevereiro
+de 2016, a partir de dezembro/2015 os orçamentos de obras de infraestrutura no âmbito do DNIT
+devem ser elaborados nas duas condições de recolhimento de tributos previdenciários possíveis:
+condição onerada e condição desonerada. Após comparação entre ambos, deve-se escolher a
+condição mais vantajosa para a Administração Pública. Não há necessidade de se apresentar a
+esta CPN/CGCIT os dois orçamentos, mas tão somente aquele mais vantajoso.
+
+2.4. Em relação aos preços novos avaliados por esta Coordenação, no que couber a necessidade
+de aplicação das parcelas de FIT e FIC - em que os serviços estejam sujeitos efetivamente às suas
+interferências -, entende-se que também cabe ao orçamentista ou a área técnica demandante a
+sua classificação e definição, não sendo, neste momento, objeto de análise.
+
+3. ANÁLISE TÉCNICA DO SERVIÇO
+
+Tabela - Nova Composição
+(Mês-Base: Março/2018 — Estado: Espírito Santo)
+
+(Regime: Sem Desoneração)
+
+Composição | Descrição |
+PN 01 | Tratamento anti-pó - material fresado. |
+
+3.1.  COMPOSIÇÃO-PN 01
+
+Descrição: Tratamento anti-pó - material fresado.
+Unidade: m?
+
+1º ANÁLISE TÉCNICA — (SEI 1958371)
+
+123.1.1. -Acomposição de preço unitário do serviço “Tratamento anti-pó — material fresado”,
+constante no Planilha Tratamento Anti-pó com Material fresado (SEI 1958371) foi realizada
+através da apropriação de equipamentos (Caminhão tanque distribuidor de asfalto com
+capacidade de 6.000 | - 7 KW / 136 KW; Rolo compactador de pneus autopropelido de 27t
+— 85 KW; Tanque de estocagem de asfalto com capacidade de 30.000 |; Vassoura mecânica
+rebocável; Motoniveladora — 93 KW e Rolo compactador pé de carneiro vibratório
+autopropelido de 11,6 t — 82 KW), mão de obra (servente), materiais (Material fresado e
+emulsão asfáltica RR-2C) e atividade auxiliar (Imprimação com asfalto diluído).
+
+123.1.2. A composição de preço nova foi baseada na composição referencial SICRO
+“4011358 — Tratamento superficial simples com emulsão — brita comercial”.
+
+123.1.3. Dando continuidade à análise, em verificação ao processo verificou-se o despacho
+/ SER — ES/UL — Colatina — ES, de 22 de outubro de 2019, assinado por Bruno Barbiero
+Moraes, Analista em Infraestrutura de Transportes, neste extrai-se que, “O serviço aqui
+
+= 0
+
+fi
+wº FGV IBRE [NNE
+
+proposto será utilizado em breve no Contrato 682/2019 como forma de evitar o
+carreamento de detritos para a rodovia, evitando o desgaste prematuro da sinalização
+horizontal e revestimento”. E com a informação do contrato, verificou-se que este faz parte
+do processo 50617.001234/2018-31.
+
+123.1.4. Neste processo, consegue-se visualizar os documentos Edital nº 463/2018-17 —
+PATO BR-342 (SEI 2379657). A fim de comparação, os valores considerados no orçamento
+paradigma serão valores de referência SICRO.
+
+123.1.5. No mesmo processo citado no item 12 3.1.6. Encontra-se, também, o documento
+Proposta de Preços e Habilitação — RODOCON (SEI 2783866) também foram verificados
+valores SICRO.
+
+123.1.6. Levando em consideração o histórico do processo em tela, expõe-se que não cabe
+a esta CPN/CGCIT definição em relação à solução técnica proposta.
+
+123.1.7. Porém, foi realizada uma pesquisa em composições aprovadas anteriormente, por
+esta CPN/CGCIT, com a utilização de material fresado foram encontradas composições para
+tratamento anti-pó e execução de limpa rodas com material fresado.
+
+123.1.8. E em expedita pesquisa realizada em sítios na internet verifica-se que a utilização
+de material fresado para fim de execução de limpa rodas se trata de uma prática usual.
+
+123.1.9. A fim de proporcionar celeridade ao andamento do processo sugere-se as
+composições abaixo.
+
+12 3.1.10. A primeira composição foi baseada em uma composição anteriormente aprovada
+por esta CPN/CGCIT:
+
+“7 FGV IBRE Hi
+
+SISTEMA DE CUSTOS REFERENCIAIS DE OBRAS -SICAO Espisto Santo FI
+
+Custo Unitário de Referência Marçoi2D18 Produção da equipe 134,52829 mº
+
+PNO! Tratamento anti-pó - material fresado - espessura 7 cm
+Uuilização Tusto Horáiio
+à ár
+
+A - EQUIPAMENTOS Quantidade Sa Tea Opera Leandro Susto Horário Total
+ESSZ Moonwoladaa=S3RW TOMO E o TEA)
+cn ARS 10000 00000 167594 sas! 198.7594|
+Custo horátio total de equipamentos 274,6024
+B=MADDEOBRA Quantidade Unidade Tusto Horário Tusto Horário Total
+P5624 Servente 800000 h 15,3023 Eid]
+Custo horário total de mão de obra s7.014
+Custo horário total de execução IT2.4198
+Tusto unhário total de execução 2.7663]
+Custo do FIC 9,0000]
+Custo do FIT 0.00% 0.0000
+T-MATERIAL Quantidade Unidade Prego Unitário Tusto Unitário
+MatorialForado USO m 0,0000
+Custo unitário total de material 0.0000
+D- ATIVIDADES AUXILIARES Quantidade Unidade Custo Unitário Tusto Unitário
+Custo total de atividades auxiliares 0.0000
+Subtotal 0.0000]
+E-TEMPOFKO Código Quantidade Unidade Tusto Unitário Custo Unitário
+Material fresado - Caminhão basculante Om Saes 0,09000 Ê 14400 0044
+Custo unitário total de tempo fino 0.044
+F - MOMENTO DE TRANSPORTE Quantidade Unidado ———EL Custo Unitário
+
+53439 5914374 5914369
+
+Custo unitário total de transporte
+
+123.1.11.
+
+Custo unitário direto total
+
+Sendo que as premissas levadas em consideração foram:
+
+Foi baseada na composição referencial SICRO “2003859 — Colchão drenante com
+espalhamento e compactação mecânicos — brita produzida.
+
+A PEM desta composição em relação a qual se baseou foi alterada em razão da
+espessura considerada de 7 cm, conforme informada no Despacho (DNIT) UL —
+Colatina — ES (SEI 1958382).
+
+O caminhão basculante para transporte do material fresado foi considerado nos
+itens E — Tempo fixo e F— Momento de transporte.
+
+E a segunda composição, uma adaptação da composição proposta:
+
+=
+
+m
+wº FGv IBRE ERES
+
+SISTEMA DE CUSTOS REFERENCIAIS DE OBRAS - SICRO Espírito Snato 0.00440
+Custo Unitário de Referência MarçolZ0 18 Produção da equipe 1.857.50000 m*
+
+PNO! Tratamento anti-pó - material fresado - espessura 7 cm
+
+E —  Ailização Custo Horário
+A - EQUIPAMENTOS Quantidade jo Utdização  — CustoHoráio Custo Horário Total
+Taminnão tanque disuibuidor de asialio com
+ES Deda ODOI= EF TSS 10000 10000  OM0O0 H50030 481231 145,0030]
+emos; soorenada deneeconaoneNodeE! vga) 0,530 0400 n9425 35 mw3,834]
+Tanque de estocagem de asfalo com
+ESSO Dado do SO OOO! 20000 10000 OO000 205256  u25m ateste]
+E9S77 Trator agícola- TT 10000 OST 04300 G1SMS 31442 60,064]
+E3544 Vassoutamecânica rebocável 1o000 OS100 04300 SIO 33229 43182]
+E3524  Motoniveladora - 83hkW 10000 04100 OSSO as 787582 Sra
+Custo horário total de equipamentos 475,0451
+B -MÃO DE OBR Quantidade Unidade Custo Horário Custo Horário Total
+PSEZd Servemo 8,00000 h 16,3023 1304232
+Custo horário total de mão de obra 190,4232
+Custo horário total de execução 605 ,4683
+usto unitário total de execução 0,3242]
+Custo do FIL 0,004
+Custo do FIT 0,007 0,0000]
+T=MATERIAL Quantidade Unidade Prego Unitário Custo Unitário
+Materiallezado 0, mé 0,000 0,000
+M2037 Emulsão astábica PR-2C 0000
+
+Custo unitário total de matori. 0,0000
+
+Custo total de atividades auxiliares 0,0000
+
+Jubtota 0,0000
+
+— TEMPO FIXO digo Quantidade Unidad Custo Unitário Custo Unitário
+
+Material hrezado - Caminhão basculante 10 m' Ssu6s1 0,01000 ' 14400 00144)
+
+Custo unitári empo fine o 9144
+
+F - MOMENTO DE TRANSPORTE Quantidade Unidade RP P Custo Unitário
+Material hesado - Caminhão basculante 10 m" 0,01000 t S9uas3  S3MIM 554399
+
+0,0000)
+
+Custo unitário total de transport: 0,0000
+
+Custo unitário direto total [)
+
+e Sendo que as premissas levadas em consideração foram:
+
+o A partir das informações do Despacho (DNIT) UL — Colatina — ES (SEI 1958382),
+foram retirados os itens a) a d) os quais podem ser explicitadas no orçamento como
+composições principais, como por exemplo as composições referenciais SICRO
+“4413984 - Regularização de bota-fora com espalhamento, compactação e
+execução de hidrossemeadura” ou “4011209 - Regularização do subleito”, de
+acordo com a necessidade do local de execução.
+
+o A retirada da composição auxiliar “4011351 — Imprimação com asfalto diluído” a
+qual deve ser tratada como composição principal.
+
+o Na composição proposta havia sido retirado o equipamento “E9577 Trator agrícola
+— 77 KW” o mesmo retornou à composição pois o mesmo está vinculado ao
+equipamento “E9544 — Vassoura mecânica rebocável”.
+
+o A PEM foi mantida, visto que o equipamento líder “E9509 - Caminhão tanque
+distribuidor de asfalto com capacidade de 6.000 | - 7 kW / 136 kW” da composição
+na qual se baseou, permanece como líder.
+
+o A alteração em relação a qual a composição em que se baseou, da retirada do
+equipamento “E9583 - Distribuidor de agregados rebocável com capacidade de 1,9
+m?” e inserção do equipamento “E9524 — Motoniveladora” foi mantida, apenas
+
+a 719 —
+
+wº FGV IBRE [NNDE
+
+sendo alterados os valores de utilizações operativa e improdutiva, os quais foram
+calculados de acordo com a PEM da composição.
+
+123.1.12. A fim de adequar o nome do serviço exatamente ao serviço a ser executado,
+adotou-se a descrição do serviço como “Tratamento anti-pó - material fresado - espessura
+7 cm”.
+
+12 3.1.13. Sendo que a escolha de qual composição deverá atender exatamente ao serviço a
+ser executado de acordo com a necessidade da obra. E o preço final não pode ser apontado
+por esta CPN/CGCIT pois o valor de DMT não foi informado.
+
+1º 3.1.14. Caso as composições acima sugeridas não atendam as prerrogativas necessárias à
+execução do serviço, devem ser enviadas as Especificações Particulares do Serviço, como a
+metodologia executiva e a descrição de atividades, deve-se apresentar os tempos para
+execução de cada atividade, as especificações dos equipamentos envolvidos (capacidade de
+carga, alimentação); Projeto Básico ou Executivo; bem como as memórias de cálculo para
+as quantidades e as Produções de Equipe Mecânica (PEM).
+“7 FGV IBRE Ha
+
+4. CONCLUSÃO:
+
+Concluído a verificação, informamos que, respeitadas as correções propostas nos termos
+descritos nesta Análise Técnica, o novo serviço proposto não constante no SICRO se encontra
+em condições de aprovação.
+
+É imprescindível também destacar que as composições de preços unitários analisadas no âmbito
+da Coordenação-Geral de Custos de Infraestrutura de Transportes (CGCIT) são definidas em função
+de premissas estabelecidas e validadas pelos entes responsáveis pela aprovação do projeto ou da
+revisão.
+
+Caso durante a execução das obras identifique-se situações adversas que impliquem mudanças
+significativas nas premissas estabelecidas para a modelagem referencial dos serviços e que, por
+isso, venha a restringir o adequado desenvolvimento das atividades como planejado,
+descaracterizando de forma substancial o método executivo e, assim, porventura causando até
+mesmo um desequilíbrio econômico-financeiro entre as partes, recomenda-se ao fiscal do
+contrato a anotação de tais alterações no Diário de Obra e, caso necessário, encaminhe estas
+considerações para nova análise e eventual aprovação da nova composição de preço unitário.
+
+Em 26/11/2019.
+
+Análise Técnica,
+
+Eng.º Laura Rodrigues de Oliveira
+CREA 15601 /D-DF
+Contrato nº 559/2018 — DNIT
+FUNDAÇÃO GETÚLIO VARGAS — FGV/IBRE
+
+Tg Lo

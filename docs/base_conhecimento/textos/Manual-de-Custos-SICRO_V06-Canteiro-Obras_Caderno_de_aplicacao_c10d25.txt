@@ -1,0 +1,1743 @@
+Sistema de Custos Referenciais de
+         Obras – SICRO
+
+
+Caderno de aplicação
+ Canteiro de obras
+  Departamento Nacional de Infraestrutura de Transportes
+                      Diretoria Geral
+          Diretoria de Planejamento e Pesquisa
+Coordenação-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+Sistema de Custos Referenciais de
+         Obras – SICRO
+                     Versão 1.0
+           Mês de referência: julho de 2023
+
+
+
+Caderno de aplicação
+ Canteiro de obras
+                      Caderno de Aplicação - Canteiro de Obras
+
+
+                               APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo
+o desenvolvimento técnico das áreas de custos do extinto Departamento
+Nacional de Estradas e Rodagem (DNER) e do Departamento Nacional de
+Infraestrutura de Transportes (DNIT) na formação de preços referenciais de
+obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos
+de Infraestrutura de Transportes preserva o conhecimento e a experiência
+acumulados desde a edição das primeiras tabelas referenciais de preços,
+passando pelo pioneirismo na conceituação e aplicação das composições de
+custos, até as mais recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da
+divulgação dos relatórios sintéticos e analíticos valorados de composições de
+custos e insumos, juntamente com a publicação da 1ª edição do Manual de
+Custos de Infraestrutura de Transportes e das Produções de Equipes Mecânicas
+dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual
+de Custos de Infraestrutura de Transportes. Os conteúdos encontram-se
+dispostos conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes
+     mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+
+Os cadernos técnicos apresentam as condições de contorno adotadas nos
+cálculos dos consumos dos materiais e da produção horária dos serviços, suas
+respectivas memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para
+elaboração de orçamentos baseados no SICRO, estabelecendo diretrizes
+básicas para tomada de decisão e exemplos práticos que ilustram o emprego
+das diferentes ferramentas que integram o sistema.
+
+
+
+
+                                         i
+                     Caderno de Aplicação - Canteiro de Obras
+
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está
+dividido em oito volumes:
+
+   ▪ Volume 01 - Metodologia e Conceitos;
+   ▪ Volume 02 - Mão de Obra;
+   ▪ Volume 03 - Preços Referenciais;
+   ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+   ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+   ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+   ▪ Volume 07 - Administração Local;
+   ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de
+Infraestrutura de Transportes, pode produzir orçamentos para obras de
+infraestrutura de transportes que incorporam as nuances dos casos concretos,
+ao tempo que observam a eficiência associada à otimização dos recursos
+envolvidos característica da engenharia.
+
+                       CAIO SARAVY CARDOSO
+        Coordenador-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+                                        ii
+                                Caderno de Aplicação - Canteiro de Obras
+
+
+                                          LISTA DE TABELAS
+
+Tabela 1 - Cronograma físico da obra - construção rodoviária........................... 3
+Tabela 2 - Classificação das obras de construção e restauração rodoviária ..... 4
+Tabela 3 - Classificação dos serviços nas obras de arte especiais.................... 4
+Tabela 4 - Quantidade de profissionais na obra - construção rodoviária ........... 5
+Tabela 5 - Resumo de parâmetros para dimensionamento ............................... 8
+Tabela 6 - Resumo das áreas dimensionadas ................................................. 11
+Tabela 7 - Áreas de referência do canteiro principal ........................................ 11
+Tabela 8 - Áreas equivalentes cobertas do canteiro principal .......................... 12
+Tabela 9 - Áreas de referência do canteiro complementar ............................... 15
+Tabela 10 - Áreas cobertas do canteiro complementar .................................... 15
+Tabela 11 - Áreas cobertas da usina de asfalto ............................................... 20
+Tabela 12 - Quantidade de profissionais na obra - intervenção pontual contínua
+            ...................................................................................................... 22
+Tabela 13 - Resumo de parâmetros para dimensionamento - intervenção
+            pontual .......................................................................................... 24
+Tabela 14 - Quantidade de contêineres para as instalações por critério .......... 25
+Tabela 15 - Resumo dos contêineres - intervenção pontual contínua .............. 25
+Tabela 16 - Áreas cobertas do canteiro para intervenções pontuais ................ 26
+Tabela 17 - Quantitativos e custos dos contêineres ......................................... 28
+
+
+
+
+                                                         iii
+                            Caderno de Aplicação - Canteiro de Obras
+
+
+                                               SUMÁRIO
+
+1       INTRODUÇÃO .................................................................................... 1
+2       APLICAÇÃO DA METODOLOGIA ..................................................... 2
+2.1     Construção rodoviária ...................................................................... 2
+2.1.1   Classificação da obra .......................................................................... 4
+2.1.2   Caracterização da mão de obra .......................................................... 5
+2.1.3   Definição dos fatores de ajuste ........................................................... 7
+2.1.4   Infraestrutura física e áreas de referência do canteiro principal .......... 8
+        Dimensionamento da infraestrutura física do canteiro principal .......... 8
+        Definição das áreas de referência do canteiro principal .................... 11
+        Fatores de equivalência de áreas do canteiro principal ..................... 12
+        Custo do canteiro de obras principal – CCOP .................................... 13
+2.1.5   Infraestrutura física e áreas de referência do canteiro complementar 14
+        Definição das áreas de referência do canteiro complementar ........... 14
+        Fatores de equivalência de áreas do canteiro complementar ........... 15
+        Custo do canteiro de obras complementar – CCOC .......................... 16
+2.1.6   Instalações industriais ...................................................................... 17
+        Central de britagem - 80 m³/h ............................................................ 18
+        Usina misturadora de solos - 300 t/h ................................................. 19
+        Usina de asfalto a quente - 120 t/h .................................................... 20
+        Custo específico das instalações industriais – CII ............................. 21
+2.1.7   Custo total do canteiro de obras e instalações industriais – CCO ..... 21
+2.2     Intervenção pontual do tipo contínua ............................................ 22
+2.2.1   Caracterização da mão de obra ........................................................ 22
+2.2.2   Definição do fator de ajuste ............................................................... 24
+2.2.3   Infraestrutura física e áreas de referência para intervenções pontuais
+         .......................................................................................................... 24
+        Definição das áreas de referência em contêineres ............................ 24
+2.2.4   Custo total do canteiro de obras para intervenções pontuais – CIP .. 27
+
+
+
+
+                                                      iv
+                     Caderno de Aplicação - Canteiro de Obras
+
+
+1   INTRODUÇÃO
+
+Neste volume, exemplifica-se o cálculo dos custos de canteiro de obras no
+contexto da orçamentação de obras de infraestrutura de transportes, com o
+intuito de orientar a utilização da metodologia detalhada no Manual Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+
+O documento apresenta o número de funcionários para cálculo das áreas de
+referência, o detalhamento dos custos do canteiro de obras, entre outras
+informações relevantes. A referência adotada é o mês-base de julho de 2023.
+
+Cabe ressaltar que o exemplo abordado neste documento se refere a uma obra
+fictícia, idealizada para proporcionar melhor compreensão aos usuários do
+SICRO.
+
+
+
+
+                                        1
+                         Caderno de Aplicação - Canteiro de Obras
+
+
+2     APLICAÇÃO DA METODOLOGIA
+
+Os exemplos de obras utilizadas para compor este volume viabilizam a aplicação
+da metodologia de dimensionamento do canteiro de obras.
+
+A subseção 2.1 apresenta uma construção rodoviária que incorpora uma obra
+de arte especial, evidenciando a combinação de duas naturezas de obra distintas
+em um único projeto.
+
+A subseção 2.2 exemplifica uma obra de intervenção pontual, caracterizada pela
+possibilidade de dimensionar um canteiro de obras compacto, de forma a evitar
+que os custos inviabilizem financeiramente sua execução. Essa natureza de obra
+se aplica aos modos rodoviário, hidroviário e ferroviário, e abarca obras de menor
+vulto, quando comparadas às obras de pequeno porte das demais naturezas.
+
+2.1       Construção rodoviária
+
+Nesta seção, apresenta-se um exemplo de aplicação da metodologia de canteiro
+de obras desenvolvida para o SICRO, utilizando uma obra fictícia da natureza de
+obra rodoviária como referência.
+
+O presente projeto possui as seguintes características:
+
+      ▪ natureza da obra: construção rodoviária;
+      ▪ extensão do segmento: 50 km de pista simples;
+      ▪ extensão da obra de arte especial – OAE: 180 m;
+      ▪ prazo para conclusão da OAE: 10 meses;
+      ▪ prazo contratual: 30 meses;
+      ▪ distância entre o canteiro e a cidade mais próxima: 30 km em leito natural;
+      ▪ custo total estimado da obra (sem BDI): R$ 100.000.000,00;
+      ▪ tipo de instalação do canteiro de obras: provisório;
+      ▪ instalações industriais previstas: central de britagem, usina fixa
+        misturadora de solos e usina de asfalto a quente;
+      ▪ unidade da federação: São Paulo;
+      ▪ mês-base: julho de 2023;
+           - Custo Médio da Construção Civil por metro quadrado – CMCC (sem
+             desoneração): R$ 1.939,08;
+      ▪    modo de contratação: contratação integrada.
+
+As demais informações necessárias para o cálculo dos custos de referência do
+canteiro de obras são extraídas do cronograma físico-financeiro disposto na
+tabela 1.
+
+
+
+
+                                            2
+Caderno de Aplicação - Canteiro de obras ;
+
+Tabela 1 - Cronograma físico da obra - construção rodoviária
+
+CRONOGRAMA FÍSICO
+
+Item Discriminação 8 9 10 11 12 13 14 15 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+1 Serviços preliminares EEN |
+
+141 Elaboração de projetos
+
+12 Instalação e desinstalação do canteiro de obras
+
+13 Manutenção do canteiro de obras
+
+14 Mobilização e desmobilização
+
+2 Terraplenagem
+
+Drenagem superficial e subterrânea
+
+Obras de arte correntes
+
+Pavimentação
+
+Aquisição de materiais betuminosos
+
+Transporte de materiais betuminosos
+
+Sinalização
+
+ojojv/o/a/a)/w
+
+Obras complementares
+
+10 Proteção ambiental
+
+11 Obras de arte especiais
+
+: DNIT
+                              Caderno de Aplicação - Canteiro de obras
+
+
+2.1.1 Classificação da obra
+
+A classificação do porte da obra é baseada no prazo de execução dos serviços
+para a extensão de 50 km do segmento rodoviário em construção. De acordo
+com o cronograma físico do empreendimento, conforme apresentado na tabela
+1, observa-se que a mobilização e a implantação dos canteiros de obras têm
+início no 7º mês, com a conclusão dos trabalhos prevista para o final do 30º mês,
+resultando no período de execução igual a 24 meses.
+
+O porte da obra é definido pela extensão de pista simples executada por ano
+(km/ano), a qual é igual a 25 km/ano no empreendimento em questão. Segundo
+a classificação estabelecida na subseção 2.2.1 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição e
+apresentada na tabela 2, a obra se caracteriza como médio porte.
+
+       Tabela 2 - Classificação das obras de construção e restauração rodoviária
+                                                         Porte da obra
+  Natureza das obras
+                               Pequeno porte             Médio porte               Grande porte
+                         Até 15 km de pista        De 15 a 30 km de pista    Acima de 30 km de pista
+Construção rodoviária
+                         simples por ano           simples por ano           simples por ano
+                         Até 20 km de pista        De 20 a 40 km de pista    Acima de 40 km de pista
+Restauração rodoviária
+                         simples por ano           simples por ano           simples por ano
+
+
+De acordo com as informações contidas no projeto, está prevista a construção
+de uma Obra de Arte Especial – OAE, que, por não constituir o objeto principal
+do empreendimento, caracteriza-se como uma obra complementar.
+
+A execução dessa OAE implica na necessidade de complementação das áreas
+das instalações de referência do canteiro de obras da construção rodoviária, em
+função do seu porte.
+
+Considerando a extensão de 180 metros e o período de execução de 10 meses
+identificado na tabela 1, obtém-se a relação de 216 m/ano. Portanto, conforme
+os critérios estabelecidos na subseção 2.2.2 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, e
+apresentados na tabela 3, essa obra é classificada como médio porte.
+
+            Tabela 3 - Classificação dos serviços nas obras de arte especiais
+                                                             Porte da obra
+       Natureza das obras
+                                      Pequeno porte          Médio porte             Grande porte
+Construção de obras de arte         Até 150 m de pista   De 150 a 300 m de       Acima de 300 m de
+especiais                           simples por ano      pista simples por ano   pista simples por ano
+Recuperação, reforço e
+                                    Até 200 m de pista   De 200 a 400 m de       Acima de 400 m de
+alargamento de obras de arte
+                                    simples por ano      pista simples por ano   pista simples por ano
+especiais
+
+
+
+
+                                                  4
+                             Caderno de Aplicação - Canteiro de obras
+
+
+2.1.2 Caracterização da mão de obra
+
+Para definir as áreas das diferentes instalações cobertas dos canteiros-tipo, é
+necessário considerar o número máximo de profissionais envolvidos no projeto,
+ou seja, o quantitativo de pessoal no período de pico da obra.
+
+Essa análise baseia-se nos quantitativos de mão de obra especificados na tabela
+4, obtidos no dispositivo Caderno de Aplicação - Administração Local apenso ao
+Manual de Custos de Infraestrutura de Transportes - Volume 07: Administração
+Local - 2ª Edição. As quantidades abrangem tanto a mão de obra ordinária
+quanto a equipe da administração local.
+
+            Tabela 4 - Quantidade de profissionais na obra - construção rodoviária
+                                                           Quantidade média dimensionada de
+                  Tipo de mão de obra                                profissionais
+                                                                       (un/mês)
+Ordinária                                                                189
+Parcela fixa da administração local                                      32
+Parcela vinculada da administração local                                 15
+Parcela variável da administração local                                  27
+
+
+A subseção 2.5 do Manual de Custos de Infraestrutura de Transportes - Volume
+06: Canteiro de Obras - 2ª Edição apresenta as diretrizes para determinação do
+quantitativo de profissionais utilizado para o dimensionamento do canteiro.
+
+Na ausência do histograma de mão de obra, este exemplo adota o fator de 1,33
+aplicado à média mensal de funcionários da mão de obra ordinária e à parcela
+variável da administração local. O cálculo dos parâmetros de mão de obra
+necessários é detalhado nas alíneas subsequentes.
+
+a) número de funcionários da parcela fixa da administração local – NPF
+
+Conforme informado na tabela 4, o número de funcionários da parcela fixa é igual
+a:
+
+                                      NPF = 32 funcionários/mês
+
+b) número de funcionários da mão de obra ordinária no mês de pico – NMO
+
+O número de funcionários da mão de obra ordinária no mês de pico, na ausência
+de um histograma, é calculado pelo produto entre a média mensal da mão de
+obra ordinária e o fator 1,33, conforme dado a seguir:
+
+                                                        ̅̅̅̅̅
+                                          NMO = 1,33 x NMO
+
+                                           NMO = 1,33 x 189
+
+                                  NMO = 252 funcionários/mês
+
+
+
+
+                                                  5
+                      Caderno de Aplicação - Canteiro de obras
+
+
+c) número de funcionários da parcela variável da administração local no mês de
+   pico – NPV
+
+O número de funcionários da parcela variável da administração local no mês de
+pico, na ausência do histograma, é calculado pelo produto entre o número de
+funcionários da parcela variável e o fator 1,33, conforme expresso a seguir:
+
+                                             ̅̅̅̅
+                               NPV = 1,33 x NPV
+
+                                 NPV = 1,33 x 27
+
+                          NPV = 36 funcionários/mês
+
+d) número de funcionários das parcelas fixa e vinculada – NPF-V
+
+O número de funcionários da parcela fixa e vinculada da administração local é
+obtido pelo somatório das duas parcelas:
+
+                               NPF-V = NPF + NPVIN
+
+                                 NPF-V = 32 + 15
+
+                          NPF-V = 47 funcionários/mês
+
+e) número de funcionários alojados no canteiro de obras – NFA
+
+O número de funcionários alojados no canteiro de obras é determinado pelo
+somatório de 50% dos profissionais da parcela variável da administração local e
+da mão de obra ordinária, ambas no mês de pico, acrescido de todos os
+profissionais das parcelas fixa e vinculada da administração local, conforme
+detalhado a seguir:
+
+                          NFA = 50% (NMO + NPV) + NPF-V
+
+                            NFA = 50% (252 + 36) + 47
+
+                            NFA = 191 funcionários/mês
+
+f) número máximo de funcionários – NMAX
+
+O número máximo de funcionários é obtido pela soma da mão de obra ordinária
+e de todas as parcelas da administração local no mês de pico da obra:
+
+                             NMAX = NPF-V + NPV + NMO
+
+                               NMAX = 47 + 36 + 252
+
+                           NMAX = 335 funcionários/mês
+
+
+
+
+                                         6
+                      Caderno de Aplicação - Canteiro de obras
+
+
+2.1.3 Definição dos fatores de ajuste
+
+Os fatores de ajuste são compostos por: o padrão de construção predefinido –
+k1, o mobiliário e aparelhagem dos laboratórios – k2 e a distância do canteiro de
+obras aos centros fornecedores de insumos para a instalação do canteiro – k3.
+
+a) Fator de Ajuste do Padrão de Construção – k1
+
+O fator k1 é usado para adequar orçamentos aos padrões de construção
+definidos pela classificação dos canteiros fixos montados in loco. Seus valores
+estão detalhados na subseção 3.2.4 do Manual de Custos de Infraestrutura de
+Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+
+No presente exemplo, o padrão de construção é classificado como provisório,
+resultando em um fator igual a:
+
+                                    k1 = 0,80
+
+b) Fator de Ajuste de Mobiliário e Aparelhagem – k2
+
+O fator k2 refere-se aos custos de mobiliário e aparelhagens dos laboratórios,
+sendo definido em função da natureza e do porte da obra, conforme detalhado
+na subseção 3.2.5 do Manual de Custos de Infraestrutura de Transportes -
+Volume 06: Canteiro de Obras - 2ª Edição.
+
+A obra principal do exemplo de aplicação é uma construção rodoviária de médio
+porte, o que implica no fator igual a:
+
+                                    k2 = 1,05
+
+Ademais, a execução da obra de arte especial de médio porte implica em um
+fator k2 igual a:
+
+                                    k2 = 1,04
+
+c) Fator de Ajuste da Distância do Canteiro aos Centros Fornecedores – k3
+
+O fator k3 refere-se à variação dos custos relacionada à distância de transporte
+entre o canteiro de obras e os centros fornecedores dos insumos necessários
+para sua instalação.
+
+Na subseção 3.2.6 do Manual de Custos de Infraestrutura de Transportes -
+Volume 06: Canteiro de Obras - 2ª Edição apresenta as equações de cálculo
+desse fator, dadas em função da distância do canteiro aos centros fornecedores
+(DT) e das diferenças de condição do pavimento.
+
+Conforme os dados do projeto, a distância entre o canteiro e a cidade mais
+próxima é de 30 km em leito natural. Assim, o fator k3 é igual a:
+
+                              k3 = 1 + 0,0014 x DT
+
+
+                                         7
+                              Caderno de Aplicação - Canteiro de obras
+
+
+                                        k3 = 1 + 0,0014 x 30
+
+                                               k3 = 1,042
+
+2.1.4    Infraestrutura física e áreas de referência do canteiro principal
+
+Com os parâmetros definidos nas subseções precedentes, procede-se ao
+dimensionamento do canteiro principal. A tabela 5 apresenta a síntese dos dados
+necessários para essa etapa.
+
+                     Tabela 5 - Resumo de parâmetros para dimensionamento
+                                    Variável                              Quantidades
+Parcela fixa – NPF                                                       32 funcionários
+Mão de obra ordinária no mês de pico – NMO                               252 funcionários
+Parcela variável no mês de pico – NPV                                    36 funcionários
+Parcelas fixa e vinculada – NPF-V                                        47 funcionários
+Funcionários alojados – NFA                                              191 funcionários
+Máximo de funcionários – NMAX                                            335 funcionários
+Padrão de construção – k1                                                     0,80
+Mobiliário e aparelhagem – k2: construção rodoviária                          1,05
+Mobiliário e aparelhagem – k2: OAE                                            1,04
+Distância do canteiro aos centros fornecedores – k3                           1,042
+CMCC                                                                       R$ 1.939,08
+
+
+          Dimensionamento da infraestrutura física do canteiro principal
+
+Para o dimensionamento da infraestrutura física do canteiro de obras principal,
+são utilizadas as equações estabelecidas na subseção 3.1.1 do Manual de
+Custos de Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª
+Edição.
+
+a) escritório e seção técnica
+
+Para a determinação da área coberta da instalação do escritório e da seção
+técnica, utiliza-se a seguinte equação:
+
+                                    AE-ST = 57,95 + 4,50 × NPF
+
+onde:
+
+AE-ST representa a área do escritório e seção técnica, em metros quadrados;
+NPF representa o número de funcionários da parcela fixa da administração local.
+
+Aplicando a variável NPF, apresentada na tabela 5, obtém-se a área:
+
+                                     AE-ST = 57,95 + 4,50 × 32
+
+
+
+
+                                                      8
+                       Caderno de Aplicação - Canteiro de obras
+
+
+                                AE-ST = 201,95 m²
+
+b) instalações sanitárias e vestiário
+
+Para a determinação da área coberta das instalações sanitárias e do vestiário,
+utiliza-se a seguinte equação:
+
+                            AI-V = 0,77 × (NMO + NPV)
+
+onde:
+
+AI-V representa a área das instalações sanitárias e vestiário, em metros
+quadrados;
+NMO representa o número de funcionários da mão de obra ordinária no mês de
+pico;
+NPV representa o número de funcionários da parcela variável da administração
+local no mês de pico.
+
+Aplicando as variáveis dispostas na tabela 5, obtém-se a área:
+
+                             AI-V = 0,77 × (252 + 36)
+
+                                 AI-V = 221,76 m²
+
+c) local para refeição e cozinha
+
+Para a determinação da área coberta da instalação para refeição e cozinha,
+utiliza-se a seguinte equação:
+
+                          ALR-C = 1,55 × (50% × NMAX)
+
+onde:
+
+ALR-C representa a área do local para refeição e cozinha, em metros quadrados;
+NMAX representa o número máximo de funcionários.
+
+Aplicando a variável NMAX, apresentada na tabela 5, obtém-se a área:
+
+                           ALR-C = 1,55 × (50% × 335)
+
+                                ALR-C = 259,63 m²
+
+d) alojamento e residências
+
+Para a determinação da área coberta do alojamento, utiliza-se a seguinte
+equação:
+
+                        AAL = 3,11 × 50% × (NMO + NPV)
+
+onde:
+
+AAL representa a área do alojamento, em metros quadrados;
+
+
+                                          9
+                      Caderno de Aplicação - Canteiro de obras
+
+
+NMO representa o número de funcionários da mão de obra ordinária no mês de
+pico;
+NPV representa o número de funcionários da parcela variável da administração
+local no mês de pico.
+
+Aplicando as variáveis apresentadas na tabela 5, obtém-se a área:
+
+                        AAL = 3,11 × 50% × (252 + 36)
+
+                                AAL = 447,84 m²
+
+Para a determinação da área coberta das residências, utiliza-se a seguinte
+equação:
+
+                               ARES = 8,46 × NPF-V
+
+onde:
+
+ARES representa a área das residências, em metros quadrados;
+NPF-V representa o número de funcionários das parcelas fixa e vinculada da
+administração local.
+
+Aplicando a variável NPF-V, apresentada na tabela 5, obtém-se a área:
+
+                                ARES = 8,46 × 47
+
+                                ARES = 397,62 m²
+
+e) instalações adicionais
+
+Para a determinação da área coberta do ambulatório, utiliza-se a seguinte
+equação:
+
+                               AAMB = 0,25 × NMAX
+
+onde:
+
+AAMB representa a área do ambulatório, em metros quadrados;
+NMAX representa o número máximo de funcionários.
+
+Aplicando a variável NMAX, apresentada na tabela 5, obtém-se a área:
+
+                               AAMB = 0,25 × 335
+
+                                AAMB = 83,75 m²
+
+Para a determinação da área coberta de recreação, utiliza-se a seguinte
+equação:
+
+
+
+
+                                        10
+                               Caderno de Aplicação - Canteiro de obras
+
+
+
+                                     AAR = 1,50 × (50% × NFA)
+
+onde:
+
+AAR representa a área de recreação, em metros quadrados;
+NFA representa o número de funcionários alojados no canteiro.
+
+Aplicando a variável NFA, apresentada na tabela 5, obtém-se a área:
+
+                                     AAR = 1,50 × (50% × 191)
+
+                                           AAR = 143,25 m²
+
+f) resumo das áreas dimensionadas
+
+A tabela 6 apresenta o resumo das áreas dimensionadas para as instalações
+cobertas.
+
+                             Tabela 6 - Resumo das áreas dimensionadas
+                                                                           Área
+                    Instalações cobertas
+                                                                           (m2)
+Escritório e seção técnica                                                201,95
+Instalações sanitárias e vestiário                                        221,76
+Local para refeição e cozinha                                             259,63
+Alojamento                                                                447,84
+Residências                                                               397,62
+Ambulatório                                                                83,75
+Área de recreação                                                         143,25
+
+
+          Definição das áreas de referência do canteiro principal
+
+As áreas correspondentes às demais instalações do canteiro de obras são
+estabelecidas com base nos critérios de ocupação, considerando a natureza e o
+porte da obra. Uma vez que o projeto se refere a uma construção rodoviária de
+médio porte, as áreas de referência são extraídas da tabela 19 do Manual de
+Custos de Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª
+Edição e apresentadas na tabela 7.
+
+                       Tabela 7 - Áreas de referência do canteiro principal
+                                                                     Áreas de referência
+                    Instalações                   Unidade
+                                                                            (m²)
+Almoxarifado                                          m²                   152,66
+Depósito de cimento                                   m²                   121,00
+Oficina                                               m²                   337,86
+Topografia                                            m²                   42,08
+Guarita                                               m²                    6,10
+
+
+
+
+                                                 11
+                              Caderno de Aplicação - Canteiro de obras
+
+
+          Fatores de equivalência de áreas do canteiro principal
+
+Os itens a seguir detalham a aplicação dos Fatores de Equivalência de Áreas
+Cobertas – FEAC e Fatores de Equivalência de Áreas Descobertas – FEAD para
+definição das áreas cobertas e descobertas.
+
+a) áreas cobertas
+
+As áreas cobertas equivalentes são definidas pela aplicação da Equação 11 do
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição e do FEAC indicado na tabela 33 do mesmo documento.
+
+A tabela 8 expõe os resultados obtidos para o exemplo em análise.
+
+                 Tabela 8 - Áreas equivalentes cobertas do canteiro principal
+                                        Áreas cobertas                   Áreas cobertas x FEAC
+             Instalações                                    FEAC
+                                             (m²)                                 (m²)
+Escritório e seção técnica                  201,95          70,00%              141,37
+Instalações sanitárias e vestiário          221,76          70,00%              155,23
+Local para refeição e cozinha               259,63          70,00%              181,74
+Alojamento                                  447,84          70,00%              313,49
+Residências                                 397,62          70,00%              278,33
+Ambulatório                                 83,75           60,00%               50,25
+Área de recreação                           143,25          50,00%               71,63
+Almoxarifado                                152,66          50,00%               76,33
+Depósito de cimento                         121,00          50,00%               60,50
+Oficina                                     337,86          50,00%              168,93
+Topografia                                  42,08           60,00%               25,25
+Guarita                                      6,10           70,00%               4,27
+                                Total      2.415,50            -               1.527,32
+
+
+b) áreas descobertas
+
+As áreas descobertas são determinadas por meio da aplicação das Equações 8
+e 9 do Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro
+de Obras - 2ª Edição. O percentual que relaciona as áreas cobertas edificadas
+às áreas totais dos terrenos, especificamente para uma construção rodoviária de
+médio porte, pode ser encontrado na tabela 20 do mesmo manual.
+
+Para a definição da área total do terreno, utiliza-se a seguinte equação:
+
+                                                      AC
+                                             AT =
+                                                      RCT
+
+onde:
+
+AT representa a área total do terreno, em metros quadrados;
+
+
+
+                                                     12
+                      Caderno de Aplicação - Canteiro de obras
+
+
+AC representa a área coberta, em metros quadrados;
+RCT representa o percentual de relação entre as áreas cobertas edificadas e as
+áreas totais dos terrenos.
+
+Aplicando as variáveis, obtém-se:
+
+                                        2.415,50
+                                 AT =
+                                          40%
+
+                                AT = 6.038,75 m²
+
+A área descoberta é determinada pela diferença entre a área total do terreno e
+a área coberta, conforme a equação:
+
+                                  AD = AT - AC
+
+onde:
+
+AD representa a área descoberta, em metros quadrados;
+AT representa a área total do terreno, em metros quadrados;
+AC representa a área coberta, em metros quadrados.
+
+Aplicando as variáveis, obtém-se:
+
+                           AD = 6.038,75 - 2.415,50
+
+                                AD = 3.623,25 m²
+
+Por fim, conforme detalhado na subseção 3.2.2 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, o Fator
+de Equivalência de Áreas Descobertas – FEAD aplicado neste caso é de 5,00%.
+Este fator é aplicado no cálculo do custo total do canteiro de obras.
+
+        Custo do canteiro de obras principal – CCOP
+
+O custo do canteiro de obras principal é determinado pela equação a seguir,
+conforme estabelecido na subseção 3.6.3 do Manual de Custos de Infraestrutura
+de Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+                            n                        n
+
+   CCOP = [(k1 x k2 x k3 x ∑ ACi x FEACi ) + (∑ ADi x FEAD)] x CMCC
+                          i=1                       i=1
+
+onde:
+
+CCOP representa o custo total do canteiro de obras principal, em reais;
+k1 representa o Fator de Ajuste do Padrão de Construção;
+k2 representa o Fator de Ajuste de Mobiliário e Aparelhagem;
+k3 representa o Fator de Ajuste da Distância do Canteiro aos Centros
+Fornecedores;
+
+
+                                        13
+                       Caderno de Aplicação - Canteiro de obras
+
+
+ACi representa as áreas das edificações cobertas com vedação lateral, em
+metros quadrados;
+FEACi representa os Fatores de Equivalência de Áreas Cobertas;
+ADi representa as áreas descobertas ou sem vedação lateral, em metros
+quadrados;
+FEAD representa o Fator de Equivalência de Áreas Descobertas;
+CMCC representa o Custo Médio da Construção Civil por metro quadrado, em
+reais por metro quadrado.
+
+Aplicando as variáveis, obtém-se:
+
+        CCOP = [(0,80 x 1,05 x 1,042 x 1.527,32) + (3.623,25 x 5%)] x R$ 1.939,08
+
+                                CCOP = R$ 2.943.514,03
+
+2.1.5   Infraestrutura física e áreas de referência do canteiro complementar
+
+No contrato exemplificado, a execução da obra de arte especial exige a
+complementação de áreas no canteiro principal. Entretanto, as áreas variáveis
+do canteiro principal, destinadas a escritório, seção técnica, refeitórios, cozinha,
+alojamentos, instalações sanitárias, vestiários, ambulatório, área de recreação e
+residências, foram dimensionadas considerando a totalidade dos funcionários
+envolvidos na construção da obra de arte especial. Portanto, não é necessário
+incluir essas instalações no cálculo do canteiro complementar.
+
+Dado que essa construção não representa o foco central do projeto, optou-se,
+para este exemplo prático, por uma redução de 50% nas áreas de referência das
+instalações do canteiro de obra de arte especial de médio porte, exceto pela
+guarita. Essa proporção foi definida com base nas características específicas do
+empreendimento, reforçando a importância da atuação do orçamentista na
+análise das condições de execução simultânea de serviços de diferentes
+naturezas, de modo a identificar possíveis sobreposições, supressões ou
+complementações nas áreas previstas para o canteiro complementar.
+
+É importante ressaltar que o percentual mencionado é meramente ilustrativo e
+que o usuário tem a flexibilidade de adotar um percentual mais apropriado,
+considerando as particularidades do seu canteiro complementar.
+
+         Definição das áreas de referência do canteiro complementar
+
+A tabela 9 apresenta as áreas de referência para o canteiro complementar, de
+acordo com a tabela 23 do Manual de Custos de Infraestrutura de Transportes -
+Volume 06: Canteiro de Obras - 2ª Edição. Além disso, são apresentadas as
+áreas cobertas reduzidas, resultantes da supressão de 50% das áreas principais,
+em conformidade com a abordagem adotada neste exemplo prático, que
+evidencia a importância da atuação do orçamentista para evitar sobreposições e
+assegurar o dimensionamento adequado das áreas do canteiro complementar.
+
+
+
+
+                                         14
+                             Caderno de Aplicação - Canteiro de obras
+
+
+                  Tabela 9 - Áreas de referência do canteiro complementar
+                                                                            Áreas cobertas
+                                                      Áreas cobertas
+             Instalações               Unidade                                reduzidas
+                                                           (m²)
+                                                                                 (m²)
+Almoxarifado                              m2              125,76                62,88
+Depósito de cimento                       m2              245,36                122,68
+Oficina                                   m2              98,98                 49,49
+Topografia                                m2              40,63                 20,32
+Guarita                                   m2               6,10                  6,10
+
+
+          Fatores de equivalência de áreas do canteiro complementar
+
+Consoante ao realizado para o canteiro principal, procede-se com o cálculo das
+áreas cobertas e descobertas, a partir da aplicação dos Fatores de Equivalência
+de Áreas Cobertas – FEAC e Fatores de Equivalência de Áreas Descobertas –
+FEAD.
+
+a) áreas cobertas
+
+As áreas cobertas equivalentes são definidas pela aplicação da Equação 11 do
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição e do FEAC indicado na tabela 33 do mesmo documento.
+
+A tabela 10 expõe os resultados obtidos para o exemplo em análise.
+
+                      Tabela 10 - Áreas cobertas do canteiro complementar
+                                   Áreas cobertas                       Áreas cobertas x FEAC
+          Instalações                                      FEAC
+                                        (m²)                                     (m²)
+Almoxarifado                           62,88              50,00%                31,44
+Depósito de cimento                    122,68             50,00%                61,34
+Oficina                                49,49              50,00%                24,75
+Topografia                             20,32              60,00%                12,19
+Guarita                                 6,10              70,00%                4,27
+                           Total       261,47                -                 133,99
+
+
+b) áreas descobertas
+
+As áreas descobertas são determinadas por meio da aplicação das Equações 8
+e 9 do Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro
+de Obras - 2ª Edição. O percentual que relaciona as áreas cobertas edificadas
+às áreas totais dos terrenos, especificamente para uma construção de OAE de
+médio porte, pode ser encontrado na tabela 24 do mesmo documento.
+
+Para a definição da área total do terreno, utiliza-se a seguinte equação:
+
+                                                    AC
+                                          AT =
+                                                    RCT
+
+
+
+
+                                                 15
+                      Caderno de Aplicação - Canteiro de obras
+
+
+onde:
+
+AT representa a área total do terreno, em metros quadrados;
+AC representa a área coberta, em metros quadrados;
+RCT representa o percentual de relação entre as áreas cobertas edificadas e as
+áreas totais dos terrenos.
+
+Aplicando as variáveis, obtém-se:
+
+                                          261,47
+                                   AT =
+                                           35%
+                                  AT = 747,06 m²
+
+A área descoberta é determinada pela diferença entre a área total do terreno e
+a área coberta, conforme a equação:
+
+                                   AD = AT - AC
+
+onde:
+
+AD representa a área descoberta, em metros quadrados;
+AT representa a área total do terreno, em metros quadrados;
+AC representa a área coberta, em metros quadrados.
+
+Aplicando as variáveis, obtém-se:
+
+                                AD = 747,06 - 261,47
+
+                                  AD = 485,59 m²
+
+Por fim, conforme detalhado na subseção 3.2.2 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, o Fator
+de Equivalência de Áreas Descobertas – FEAD aplicado neste caso é de 5,00%.
+Este fator é aplicado no cálculo do custo total do canteiro de obras.
+
+        Custo do canteiro de obras complementar – CCOC
+
+O custo do canteiro de obras complementar é determinado pela equação a
+seguir, conforme estabelecido na subseção 3.6.3 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+                            n                        n
+
+   CCOC = [(k1 x k2 x k3 x ∑ ACi x FEACi ) + (∑ ADi x FEAD)] x CMCC
+                           i=1                      i=1
+
+onde:
+
+CCOC representa o custo total do canteiro de obras complementar, em reais;
+k1 representa o Fator de Ajuste do Padrão de Construção;
+k2 representa o Fator de Ajuste de Mobiliário e Aparelhagem;
+
+
+                                          16
+                         Caderno de Aplicação - Canteiro de obras
+
+
+k3 representa o Fator de Ajuste da Distância do Canteiro aos Centros
+Fornecedores;
+ACi representa as áreas das edificações cobertas com vedação lateral, em
+metros quadrados;
+FEACi representa os Fatores de Equivalência de Áreas Cobertas;
+ADi representa as áreas descobertas ou sem vedação lateral, em metros
+quadrados;
+FEAD representa o Fator de Equivalência de Áreas Descobertas;
+CMCC representa o Custo Médio da Construção Civil por metro quadrado, em
+reais por metro quadrado.
+
+Aplicando as variáveis, obtém-se:
+
+    CCOC = [(0,80 x 1,04 x 1,042 x 133,99) + (485,59 x 5%)] x R$ 1.939,08
+
+                                   CCOC = R$ 272.326,97
+
+2.1.6 Instalações industriais
+
+No contexto específico deste exemplo, a proposta de localização, as distâncias
+abrangentes e o fluxo de insumos no canteiro de obras e nas instalações
+industriais, fundamentais para a realização dos serviços de construção
+rodoviária, inviabilizam a supressão de instalações ou a otimização das áreas de
+referência de escritórios, laboratórios, refeitórios, vestiários, almoxarifados,
+oficinas e guaritas.
+
+Portanto, o custo das instalações industriais é determinado pela equação a
+seguir, conforme estabelecido na subseção 3.6.2 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+                     n                                          n       n
+                                                     P
+ CII = k1 x k2 x k3 x (∑ ACi x FEACi x CMCC) + k2 x ( x ∑ QCi x CCi ) + ∑ CDIi
+                                                     n
+                    i=1                                        i=1     i=1
+
+
+onde:
+
+CII representa o custo específico das instalações industriais, em reais;
+k1 representa o Fator de Ajuste do Padrão de Construção;
+k2 representa o Fator de Ajuste de Mobiliário e Aparelhagem;
+k3 representa o Fator de Ajuste da Distância do Canteiro aos Centros
+Fornecedores;
+ACi representa as áreas das edificações cobertas com vedação lateral das
+instalações industriais, em metros quadrados;
+FEACi representa os Fatores de Equivalência de Áreas Cobertas;
+CMCC representa o Custo Médio da Construção Civil por metro quadrado, em
+reais por metro quadrado;
+P representa o prazo da obra, em meses;
+n representa a vida útil do contêiner, em meses;
+QCi representa a quantidade de contêineres proposta nas instalações industriais;
+CCi representa o custo dos contêineres, em reais;
+
+
+
+                                           17
+                      Caderno de Aplicação - Canteiro de obras
+
+
+CDIi representa os custos associados ao tratamento das áreas e às montagens
+das instalações industriais, obtidas por meio das composições de custos, em
+reais.
+
+No caso das instalações industriais em que apenas contêineres estão previstos,
+a primeira parcela da equação acima não é aplicada, resultando na seguinte
+equação:
+                                       n                 n
+                                P
+                    CII = k2 x ( x ∑ QCi x CCi ) + ∑ CDIi
+                                n
+                                     i=1                i=1
+
+Nas instalações que preveem a utilização de contêineres, o insumo
+correspondente deve ser definido com base na área de referência estabelecida no
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição.
+
+As subseções a seguir apresentam as especificidades relacionadas às seguintes
+instalações industriais:
+
+    ▪ central de britagem - 80 m3/h;
+    ▪ usina misturadora de solos - 300 t/h;
+    ▪ usina de asfalto a quente - 120 t/h.
+
+        Central de britagem - 80 m³/h
+
+Consoante ao conteúdo disposto na subseção 3.4 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, a
+central de britagem é classificada como instalação industrial tipo IV, cujas áreas
+referenciais estão descritas na tabela 38 do mesmo documento.
+
+Ao consultar essas referências, verifica-se que a central de britagem requer
+exclusivamente a seguinte instalação:
+
+    ▪ escritório e vestiário em contêiner com área de 14,86 m²:
+      - insumo SICRO: "M0059 - Contêiner com revestimento térmico, janela
+        e banheiro - L = 2,44 m e C = 6,09 m (1 TEU)".
+
+Os custos associados à preparação do terreno e à montagem e desmontagem
+da central de britagem são contemplados pela composição de custos "Instalação
+da central de britagem com capacidade de 80 m3/h - Código SICRO: 0903807".
+
+Por fim, considerando que a central de britagem é constituída exclusivamente
+por contêineres, aplica-se a versão reduzida da equação (vide subseção 2.1.6).
+Além disso, o Fator de Ajuste de Mobiliário e Aparelhagem – k2 é definido em
+função da natureza e porte da obra, sendo igual a 1,05 para construções
+rodoviárias de médio porte.
+
+
+
+
+                                           18
+                      Caderno de Aplicação - Canteiro de obras
+
+
+Diante disso, tem-se a seguinte aplicação:
+                                       n                  n
+                                 P
+                   CIICB = k2 x ( x ∑ QCi x CCi ) + ∑ CDIi
+                                 n
+                                      i=1                i=1
+
+                           24
+          CIICB = 1,05 x (    x 1 x R$ 69.624,72 ) + R$ 101.869,29
+                          120
+
+                            CIICB = R$ 116.490,48
+
+Destaca-se que a vida útil de referência adotada para contêineres é de 10 anos,
+correspondendo a 120 meses, conforme apresentado na subseção 3.6.2 do
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição.
+
+        Usina misturadora de solos - 300 t/h
+
+Consoante ao conteúdo disposto na subseção 3.4 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, a usina
+misturadora de solos é classificada como instalação industrial tipo V, cujas áreas
+referenciais estão descritas na tabela 38 do mesmo documento.
+
+Ao consultar essas referências, verifica-se que a usina requer as seguintes
+instalações:
+
+    ▪ laboratório em contêiner com área de 14,86 m²:
+      - insumo SICRO: "M0042 - Contêiner com janela - L = 2,44 m e C = 6,09
+        m (1 TEU)".
+
+    ▪ local para refeição e vestiário em contêiner com área de 14,86 m²:
+      - insumo SICRO: "M0059 - Contêiner com revestimento térmico, janela
+        e banheiro - L = 2,44 m e C = 6,09 m (1 TEU)".
+    ▪ guarita em contêiner com área de 7,44 m²:
+      - insumo SICRO: "M0071 - Contêiner com 3 janelas para guarita - L =
+        2,44 m e C = 3,05 m (1/2 TEU)".
+
+Os custos associados à preparação do terreno e à montagem e desmontagem
+da usina são contemplados pela composição de custos "Instalação da usina
+misturadora de solos com capacidade de 300 t/h - Código SICRO: 0903808".
+
+Por fim, considerando que a usina de solos é constituída exclusivamente por
+contêineres, aplica-se a versão reduzida da equação (vide subseção 2.1.6).
+Além disso, o Fator de Ajuste de Mobiliário e Aparelhagem – k2 é definido em
+função da natureza e porte da obra, sendo igual a 1,05 para construções
+rodoviárias de médio porte.
+
+
+
+
+                                           19
+                              Caderno de Aplicação - Canteiro de obras
+
+
+Diante disso, tem-se a seguinte aplicação:
+                                                n                   n
+                                       P
+                        CIIUMS = k2 x ( x ∑ QCi x CCi ) + ∑ CDIi
+                                       n
+                                               i=1                  i=1
+
+                    24
+CIIUMS = 1,05 x [       x (1 x R$ 51.110,09 + 1 x R$ 69.624,72 + 1 x R$ 29.513,21)] + R$ 106.343,04
+                    120
+
+                                    CIIUMS = R$ 137.895,12
+
+Destaca-se que a vida útil de referência adotada para contêineres é de 10 anos,
+correspondendo a 120 meses, conforme apresentado na subseção 3.6.2 do
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição.
+
+             Usina de asfalto a quente - 120 t/h
+
+Consoante ao conteúdo disposto na subseção 3.4 do Manual de Custos de
+Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição, a usina
+de asfalto a quente é classificada como instalação industrial tipo VII, cujas áreas
+referenciais estão descritas na tabela 38 do mesmo documento.
+
+Ao consultar essas referências, verifica-se que a usina requer as seguintes
+instalações:
+
+    ▪ escritório em estrutura provisória ou permanente;
+    ▪ laboratório em estrutura provisória ou permanente;
+    ▪ almoxarifado em estrutura provisória ou permanente;
+    ▪ local para refeição e vestiário em estrutura provisória ou permanente;
+    ▪ guarita em contêiner com área de 7,44 m²:
+          - insumo SICRO: "M0071 - Contêiner com 3 janelas para guarita - L =
+            2,44 m e C = 3,05 m (1/2 TEU)".
+    ▪ oficina em estrutura provisória ou permanente.
+
+Neste exemplo, adotou-se o padrão provisório para as instalações, sendo
+necessário determinar as áreas equivalentes por meio da aplicação do FEAC.
+As áreas e os respectivos fatores estão apresentados na tabela 11.
+                         Tabela 11 - Áreas cobertas da usina de asfalto
+                                          Áreas cobertas                  Áreas cobertas x FEAC
+               Instalações                                    FEAC
+                                               (m²)                                (m²)
+Escritório                                     9,11           70,00               6,38
+Laboratórios                                  94,36           60,00               56,62
+Almoxarifado                                  41,68           50,00               20,84
+Local para refeição e vestiário               69,38           70,00               48,57
+Oficina                                       18,10           50,00               9,05
+                                  Total       232,63            -                141,45
+
+
+
+
+                                                    20
+                      Caderno de Aplicação - Canteiro de obras
+
+
+Os custos associados à preparação do terreno e à montagem e desmontagem
+da usina são contemplados pela composição de custos "Instalação da usina de
+asfalto a quente capacidade de 120 t/h - Código SICRO: 0903810".
+
+Em função das particularidades da obra, pode ser necessário incluir os custos
+relacionados a elementos que integram a instalação industrial, como rampa de
+lavagem, posto de combustível e depósito de óleo para a oficina. Para tais
+situações, são disponibilizadas composições de custos específicas no sistema.
+
+Considerando que a usina de asfalto contém tanto contêineres quanto
+montagens in loco, aplica-se a equação completa para o cálculo das instalações
+industriais:
+
+                       n                                         n        n
+                                                        P
+ CIIAUQ = k1 x k2 x k3 x (∑ ACi x FEACi x CMCC) + k2 x ( x ∑ QCi x CCi ) + ∑ CDIi
+                                                        n
+                      i=1                                        i=1      i=1
+
+
+               CIIAUQ = 0,80 x 1,05 x 1,042 x (141,45 x R$ 1.939,08)
+                           24
+                + 1,05 x (      x 1 x R$ 29.513,21) + R$ 184.734,34
+                           120
+
+                               CIIAUQ = R$ 431.006,42
+
+        Custo específico das instalações industriais – CII
+
+Com a definição dos custos de cada instalação, calcula-se o custo específico
+das instalações industriais, conforme demonstrado a seguir:
+
+                            CII = CIICB + CIIUMS + CIIAUQ
+
+            CII = R$ 116.490,48 + R$ 137.895,12 + R$ 431.006,42
+
+                               CII = R$ 685.392,02
+
+2.1.7 Custo total do canteiro de obras e instalações industriais – CCO
+
+Por fim, o custo total do canteiro de obras é dado pela soma dos custos do
+canteiro de obras principal – CCOP, do canteiro de obras complementar – CCOC
+e das instalações industriais – CII:
+
+                               CCO = CCOP + CCOC + CII
+
+             CCO = R$ 2.943.514,03 + R$ 272.326,97 + R$ 685.392,02
+
+                                 CCO = R$ 3.901.233,02
+
+
+
+
+                                         21
+                             Caderno de Aplicação - Canteiro de obras
+
+
+2.2    Intervenção pontual do tipo contínua
+
+Nesta seção, apresenta-se um exemplo de aplicação da metodologia de canteiro
+de obras desenvolvida para o SICRO, utilizando uma obra fictícia da natureza de
+obra de intervenção pontual do tipo contínua.
+
+O presente projeto possui as seguintes características:
+
+      ▪ tipo de serviço: execução de obras de melhoramentos físicos e
+        operacionais para a correção de segmento rodoviário;
+      ▪ extensão do segmento: 3 km;
+      ▪ prazo contratual: 13 meses;
+      ▪ previsão de canteiro de obras sem alojamento para a mão de obra;
+      ▪ tipo de instalação do canteiro de obras: contêineres;
+      ▪ unidade da federação: São Paulo;
+
+      ▪ mês-base: julho de 2023;
+        - Custo Médio da Construção Civil por metro quadrado – CMCC (sem
+          desoneração): R$ 1.939,08;
+      ▪ modo de contratação: pregão eletrônico.
+
+É importante destacar que, conforme indicado na subseção 3.1.2.5 do Manual
+de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª
+Edição, os módulos 1, 2 e 3 possuem natureza exclusivamente demonstrativa.
+O propósito deste exemplo é evidenciar a flexibilidade que o orçamentista possui
+na elaboração do canteiro de obras para a intervenção pontual planejada.
+
+2.2.1 Caracterização da mão de obra
+
+Para definir as áreas das diferentes instalações cobertas dos canteiros-tipo, é
+necessário considerar o número máximo de profissionais envolvidos no projeto,
+ou seja, o quantitativo de pessoal no período de pico da obra.
+
+Essa análise baseia-se nos quantitativos de mão de obra obtidos no dispositivo
+Caderno de Aplicação - Administração Local apenso ao Manual de Custos de
+Infraestrutura de Transportes - Volume 07: Administração Local - 2ª Edição. As
+quantidades abrangem tanto a mão de obra ordinária quanto a equipe da
+administração local, conforme apresentado na tabela 12.
+      Tabela 12 - Quantidade de profissionais na obra - intervenção pontual contínua
+                                                      Quantidade dimensionada de profissionais
+                 Tipo de mão de obra
+                                                                     (un/mês)
+Ordinária                                                               42
+Parcela fixa da administração local                                     3,25
+Parcela vinculada da administração local                                 4
+Parcela variável da administração local                                  2
+
+
+
+                                               22
+                      Caderno de Aplicação - Canteiro de obras
+
+
+Na subseção 2.5 do Manual de Custos de Infraestrutura de Transportes - Volume
+06: Canteiro de Obras - 2ª Edição apresenta as diretrizes para determinação do
+quantitativo de profissionais utilizado para o dimensionamento do canteiro.
+
+Na ausência do histograma de mão de obra, este exemplo adota o fator de 1,33
+aplicado à média mensal de funcionários da mão de obra ordinária e à parcela
+variável da administração local. O cálculo dos parâmetros de mão de obra
+necessários é detalhado nas alíneas subsequentes.
+
+a) número de funcionários da parcela fixa da administração local – NPF
+
+Conforme informado na tabela 12, o número de funcionários da parcela fixa é
+igual a:
+
+                         NPF = 3,25 funcionários/mês
+
+b) número de funcionários da mão de obra ordinária no mês de pico – NMO
+
+O número de funcionários da mão de obra ordinária no mês de pico, na ausência
+de um histograma, é calculado pelo produto entre a média mensal da mão de
+obra ordinária e o fator 1,33, conforme dado a seguir:
+
+                                             ̅̅̅̅̅
+                               NMO = 1,33 x NMO
+
+                                NMO = 1,33 x 42
+
+                          NMO = 56 funcionários/mês
+
+c) número de funcionários da parcela variável da administração local no mês de
+   pico – NPV
+
+O número de funcionários da parcela variável da administração local no mês de
+pico, na ausência do histograma, é calculado pelo produto entre o número de
+funcionários da parcela variável e o fator 1,33, conforme expresso a seguir:
+                                             ̅̅̅̅
+                               NPV = 1,33 x NPV
+
+                                 NPV = 1,33 x 2
+
+                           NPV = 3 funcionários/mês
+
+d) número de funcionários das parcelas fixa e vinculada – NPF-V
+
+O número de funcionários da parcela fixa e vinculada da administração local é
+obtido pelo somatório das duas parcelas:
+
+                               NPF-V = NPF + NPVIN
+
+                                 NPF-V = 3,25 + 4
+
+                         NPF-V = 7,25 funcionários/mês
+
+
+
+                                        23
+                             Caderno de Aplicação - Canteiro de obras
+
+
+e) número máximo de funcionários – NMAX
+
+O número máximo de funcionários é obtido pela soma da mão de obra ordinária
+e de todas as parcelas da administração local no mês de pico:
+
+                                     NMAX = NPF-V + NPV + NMO
+
+                                           NMAX = 7,25 + 3 + 56
+
+                                     NMAX = 67 funcionários/mês
+
+2.2.2 Definição do fator de ajuste
+
+Em obras classificadas como intervenções pontuais, é aplicado exclusivamente
+o fator referente ao mobiliário e aparelhagem dos laboratórios – k2. O valor desse
+fator é obtido na tabela 35 do Manual de Custos de Infraestrutura de Transportes
+- Volume 06: Canteiro de Obras - 2ª Edição, sendo igual a 1,13.
+
+2.2.3 Infraestrutura física e áreas de referência para intervenções pontuais
+
+Com os parâmetros definidos nas subseções precedentes, procede-se ao
+dimensionamento do canteiro. A tabela 13 apresenta a síntese dos dados
+necessários para essa etapa.
+
+    Tabela 13 - Resumo de parâmetros para dimensionamento - intervenção pontual
+                                Variável                                 Quantidades
+Parcela fixa – NPF                                                      3,25 funcionários
+Mão de obra ordinária no mês de pico – NMO                              56 funcionários
+Parcela variável no mês de pico – NPV                                    3 funcionários
+Parcelas fixa e vinculada – NPF-V                                       7,25 funcionários
+Máximo de funcionários – NMAX                                           67 funcionários
+Mobiliário e aparelhagem – k2                                                 1,13
+CMCC                                                                      R$ 1.939,08
+
+
+          Definição das áreas de referência em contêineres
+
+A especificação dos contêineres para cada instalação do canteiro de obras é
+determinada pela capacidade de acomodação das instalações, conforme
+abordado na subseção 3.1.2.5 do Manual de Custos de Infraestrutura de
+Transportes - Volume 06: Canteiro de Obras - 2ª Edição.
+
+Nesse sentido, a tabela 14 apresenta a quantidade de contêineres necessários
+para o exemplo em questão.
+
+
+
+
+                                                  24
+                               Caderno de Aplicação - Canteiro de obras
+
+
+             Tabela 14 - Quantidade de contêineres para as instalações por critério
+
+                        Área
+    Instalação                    Capacidade               Critério de ocupação                Quantidade
+                        (m²)
+Escritório             14,86       2 pessoas                                                      1,00
+                                                 Parcelas fixa e vinculada = 3,25 + 4 = 7,25
+Seção técnica          14,86       3 pessoas                                                      2,00
+                                                 50% do número máximo de funcionários =
+Local para refeição    29,72      48 pessoas                                                      1,00
+                                                 34
+Cozinha                29,72       1 pessoa      Definido para 1 pessoa                           1,00
+Instalações
+                                                 Parcela variável + mão de obra ordinária
+sanitárias e           14,86      20 pessoas                                                      3,00
+                                                 (ambas no mês de pico) = 56 + 3 = 59
+vestiário
+Ambulatório            14,86       2 pessoas     Área total = 0,25 x 67 = 16,75 m²                2,00
+Guarita                 7,44       1 pessoa      Definido para 1 pessoa                           1,00
+
+
+Para o almoxarifado, depósito de cimento e oficinas, a definição da quantidade
+de contêineres é fundamentada na projeção do consumo de insumos ao longo
+da obra.
+
+Por fim, no que tange aos laboratórios, a previsão de controle tecnológico para
+os laboratórios de solos, asfalto e cimento influencia a necessidade de mais de
+um contêiner. No entanto, devido ao reduzido volume de materiais a serem
+ensaiados, é possível estimar apenas dois contêineres.
+
+Cumpre destacar que, embora as características da obra em questão se
+enquadrem nos parâmetros definidos para a aplicação do módulo 1, conforme
+evidenciado na subseção 2.2, os módulos 1, 2 e 3 apresentados no Manual de
+Custos de Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª
+Edição possuem caráter meramente demonstrativo.
+
+Assim, as quantidades de contêineres foram intencionalmente diferenciadas, de
+modo a ilustrar a liberdade que o orçamentista dispõe na definição e
+dimensionamento do canteiro de obras para intervenções pontuais. Tal
+abordagem visa demonstrar que, ainda que a metodologia forneça referências
+padronizadas, é possível adequar a configuração das instalações às
+particularidades e demandas de cada obra.
+
+A tabela 15 detalha as instalações do canteiro e seus respectivos contêineres.
+
+               Tabela 15 - Resumo dos contêineres - intervenção pontual contínua
+                      Código                                                                   Quantidade
+    Instalação                                           Contêiner
+                      SICRO                                                                       (un)
+                                 Contêiner com revestimento térmico, janela e banheiro - L
+Escritório             M0059                                                                      1,00
+                                 = 2,44 m e C = 6,09 m (1 TEU)
+                                 Contêiner com revestimento térmico, janela e banheiro - L
+Seção técnica          M0059                                                                      2,00
+                                 = 2,44 m e C = 6,09 m (1 TEU)
+                                 Contêiner com janela - L = 4,88 m e C = 6,09 m (1 TEU
+Local de refeição      M0057                                                                      1,00
+                                 duplo)
+                                 Contêiner com janela e 2 banheiros - L = 4,88 m e C =
+Cozinha                M0058                                                                      1,00
+                                 6,09 m (1 TEU duplo)
+
+
+
+
+                                                    25
+                              Caderno de Aplicação - Canteiro de obras
+
+
+           Tabela 15 - Resumo dos contêineres - intervenção pontual contínua (2/2)
+                         Código                                                                Quantidade
+    Instalação                                            Contêiner
+                         SICRO                                                                    (un)
+Instalações                       Contêiner com 2 banheiros - L = 2,44 m e C = 6,09 m (1
+                         M0041                                                                       3,00
+sanitárias e vestiário            TEU)
+                                  Contêiner com revestimento térmico, janela e banheiro - L
+Ambulatório              M0059                                                                       2,00
+                                  = 2,44 m e C = 6,09 m (1 TEU)
+                                  Contêiner com 3 janelas para guarita - L = 2,44 m e C =
+Guarita                  M0071                                                                       1,00
+                                  3,05 m (1/2 TEU)
+Almoxarifado             M0042    Contêiner com janela - L = 2,44 m e C = 6,09 m (1 TEU)             1,00
+Depósito de
+                         M0042    Contêiner com janela - L = 2,44 m e C = 6,09 m (1 TEU)             1,00
+cimento
+Oficinas                 M0042    Contêiner com janela - L = 2,44 m e C = 6,09 m (1 TEU)             1,00
+Laboratórios             M0042    Contêiner com janela - L = 2,44 m e C = 6,09 m (1 TEU)             2,00
+
+
+a) fator de equivalência de áreas do canteiro de obras
+
+Conforme descrito na subseção 3.2.3 do Manual de Custos de Infraestrutura de
+Transportes - Volume 06: Canteiro de Obras - 2ª Edição, no caso de utilização
+exclusiva de contêineres, utiliza-se o Fator de Equivalência de Áreas Totais –
+FEAT.
+
+Neste contexto, os itens a seguir apresentam um detalhamento do cálculo das
+áreas cobertas e descobertas do canteiro de obras.
+
+b) áreas cobertas
+
+O cálculo das áreas cobertas é realizado pelo somatório das áreas dos
+contêineres definidos para cada instalação, conforme apresentado na tabela 16.
+               Tabela 16 - Áreas cobertas do canteiro para intervenções pontuais
+                                                          Área do contêiner          Área coberta total
+        Instalação                Quantidade
+                                                                (m2)                       (m2)
+Escritório                            1,00                      14,86                       14,86
+Seção técnica                         2,00                      14,86                       29,72
+Local para refeição                   1,00                      29,72                       29,72
+Cozinha                               1,00                      29,72                       29,72
+Instalações sanitárias e
+                                      3,00                      14,86                       44,58
+vestiário
+Ambulatório                           2,00                      14,86                       29,72
+Guarita                               1,00                       7,44                         7,44
+Almoxarifado                          1,00                      14,86                       14,86
+Depósito de cimento                   1,00                      14,86                       14,86
+Oficinas                              1,00                      14,86                       14,86
+Laboratórios                          2,00                      14,86                       29,72
+                                                                           Total            260,06
+
+
+
+
+                                                     26
+                       Caderno de Aplicação - Canteiro de obras
+
+
+c) áreas descobertas
+
+As áreas descobertas são determinadas por meio da aplicação das Equações 8
+e 9 do Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro
+de Obras - 2ª Edição. O percentual que relaciona as áreas cobertas edificadas
+às áreas totais dos terrenos, especificamente para uma intervenção pontual
+contínua, pode ser encontrado na tabela 31 do mesmo manual.
+
+Para a definição da área total do terreno, utiliza-se a seguinte equação:
+
+                                           AC
+                                    AT =
+                                           RCT
+
+onde:
+
+AT representa a área total do terreno, em metros quadrados;
+AC representa a área coberta, em metros quadrados;
+RCT representa o percentual de relação entre as áreas cobertas edificadas e as
+áreas totais dos terrenos.
+
+Aplicando as variáveis, obtém-se:
+
+                                          260,06
+                                   AT =
+                                          23,40%
+
+                                 AT = 1.111,37 m²
+
+A área descoberta é determinada pela diferença entre a área total do terreno e
+a área coberta, conforme a equação:
+
+                                     AD = AT - AC
+
+onde:
+
+AD representa a área descoberta, em metros quadrados;
+AT representa a área total do terreno, em metros quadrados;
+AC representa a área coberta, em metros quadrados.
+
+Aplicando as variáveis, obtém-se:
+
+                             AD = 1.111,37 - 260,06
+
+                                 AD = 851,31 m²
+
+2.2.4 Custo total do canteiro de obras para intervenções pontuais – CIP
+
+O custo total do canteiro de obras de intervenções pontuais é determinado pela
+equação a seguir, conforme delineado na subseção 3.6.4 do Manual de Custos
+de Infraestrutura de Transportes - Volume 06: Canteiro de Obras - 2ª Edição:
+
+
+
+                                          27
+                            Caderno de Aplicação - Canteiro de obras
+
+
+                                       n
+                      P
+                CIP =   × (k2 × ∑ QCi x CCi ) + AT × FEAT × CMCC
+                      n
+                                      i=1
+
+onde:
+
+CIP representa o custo total do canteiro de obras para intervenções pontuais
+exclusivamente em contêineres, em reais;
+P representa o prazo da obra, em meses;
+n representa a vida útil do contêiner, em meses;
+k2 representa o Fator de Ajuste de Mobiliário e Aparelhagem;
+QCi representa a quantidade de contêineres do canteiro;
+CCi representa o custo dos contêineres, em reais;
+AT representa a área total do terreno, em metros quadrados;
+FEAT representa o Fator de Equivalência de Áreas Totais;
+CMCC representa o Custo Médio da Construção Civil por metro quadrado, em
+reais por metro quadrado.
+
+Destaca-se que a vida útil de referência adotada para contêineres é de 10 anos,
+correspondendo a 120 meses, conforme apresentado na subseção 3.6.2 do
+Manual de Custos de Infraestrutura de Transportes - Volume 06: Canteiro de
+Obras - 2ª Edição.
+
+Para facilitar a aplicação dos cálculos, a tabela 17 resume os quantitativos dos
+contêineres, juntamente com os respectivos custos associados.
+
+                     Tabela 17 - Quantitativos e custos dos contêineres
+                                                                            Custo
+Código                                                                                 Custo total
+                        Descrição                    Unidade Quantidade    unitário
+SICRO                                                                                     (R$)
+                                                                             (R$)
+         Contêiner com 2 banheiros - L = 2,44 m e
+ M0041                                                   un     3,00       71.842,50    215.527,51
+         C = 6,09 m (1 TEU)
+         Contêiner com janela - L = 2,44 m e C =
+ M0042                                                   un     5,00       51.110,09    255.550,47
+         6,09 m (1 TEU)
+         Contêiner com janela - L = 4,88 m e C =
+ M0057                                                   un     1,00      101.718,25    101.718,25
+         6,09 m (1 TEU duplo)
+         Contêiner com janela e 2 banheiros - L =
+ M0058                                                   un     1,00      106.186,80    106.186,80
+         4,88 m e C = 6,09 m (1 TEU duplo)
+       Contêiner com revestimento térmico,
+ M0059 janela e banheiro - L = 2,44 m e C = 6,09         un     5,00       69.624,72    348.123,59
+       m (1 TEU)
+         Contêiner com 3 janelas para guarita - L
+ M0071                                                   un     1,00       29.513,21     29.513,21
+         = 2,44 m e C = 3,05 m (1/2 TEU)
+                                                                               Total 1.056.619,83
+
+
+Aplicando as variáveis, obtém-se:
+
+            13
+  CIP =        × (1,13 × R$ 1.056.619,83) + 1.111,37 × 1,00% × R$ 1.939,08
+           120
+
+                                     CIP = R$ 150.898,23
+
+
+                                                    28

@@ -1,0 +1,104 @@
+GUIA PRÁTICO · @PATOLUCASENG
+Checklist de Contratação do PATO
+
+Documentação técnica da supervisora — do inventário de campo à planilha orçamentária. Baseado na Resolução DNIT nº 8/2023.
+  1    Definição do objeto
+  2    Inventário dos elementos geradores   · Anexos II e III
+  3    Classificação dos serviços
+  4    Grupos por desempenho e níveis de esforço
+  5    Quantificação e caracterização dos DSM
+  6    Materiais, fontes e transportes
+  7    Cálculos complementares e meio ambiente
+  8    Administração local, canteiro e mobilização
+  9    Sinalização e segurança
+  10    Orçamentação e consolidação
+
+☐ | Identificar rodovias, trechos, subtrechos e extensões que integrarão o PATO
+☐ | Consultar o SNV vigente e registrar sua versão
+O Sistema Nacional de Viação muda; registrar a versão evita divergência de referência.
+☐ | Definir o tipo de rodovia: pavimentada ou com revestimento primário
+Define se o índice aplicável é o ICM ou o ICMNP.
+☐ | Definir a duração pretendida do contrato, em períodos múltiplos de um ano
+☐ | Elaborar o cadastro do trecho (Anexo II) e o inventário dos elementos geradores (Anexo III)
+☐ | Cadastrar detalhadamente TODOS os elementos que gerarão serviços
+☐ | Registrar a localização de cada elemento por quilômetro e coordenada
+Não usar estacas — elas se perdem e não são rastreáveis.
+☐ | Elaborar a planilha-resumo do inventário
+Conferir extensões, áreas, volumes, quantidades e unidades.
+☐ | NÃO reproduzir automaticamente quantitativos de PATOs anteriores
+Cada etapa exige levantamento próprio; copiar é vício recorrente apontado em auditoria.
+☐ | Verificar a compatibilidade entre cadastro de campo, registro fotográfico, inventário, planilha-resumo e memória de cálculo
+☐ | Documentar a metodologia de levantamento utilizada
+☐ | Identificar pontos notáveis e elementos relevantes
+☐ | Identificar interferências ambientais e áreas que possam exigir autorização ou licenciamento
+☐ | Classificar em grupos: conservação por desempenho, corretiva rotineira, preventiva periódica, emergencial e DSM
+☐ | Verificar se os serviços constam no Manual de Conservação Rodoviária
+Para não previstos, demonstrar o enquadramento como conservação rodoviária.
+☐ | Avaliar separadamente as intervenções funcionais no pavimento
+Verificar critérios e limites do Anexo V.
+☐ | Confirmar que os DSM não ultrapassam 25% do valor global do orçamento inicial
+☐ | Verificar que os serviços não caracterizam restauração ou melhoria incompatível com o PATO
+☐ | Verificar a necessidade de intervenções emergenciais ou de urgência
+☐ | Identificar os serviços que serão mecanizados; justificar tecnicamente qualquer serviço manual
+☐ | Para roçada, priorizar a roçada mecanizada
+☐ | Pavimentadas: incluir OBRIGATORIAMENTE o grupo de conservação da faixa de domínio e limpeza dos dispositivos de drenagem
+☐ | Não pavimentadas: avaliar grupo de pista, drenagem e OAE; verificar enquadramento no PMNP
+☐ | Criar item específico para cada grupo, adotar frequência mensal e formar o preço pela soma dos serviços
+☐ | Prever insumos e transportes necessários à completa execução dos serviços
+☐ | Verificar os códigos referenciais do SICRO indicados no Anexo XIV
+☐ | Conservação da pista: elaborar a memória de cálculo do NE com base no Índice do Pavimento e no histórico do trecho
+☐ | Elaborar planilha com os serviços e seus níveis de esforço
+☐ | Justificar tecnicamente NE diferentes dos referenciais e do histórico
+Apresentar levantamentos e critérios objetivos que os sustentem.
+☐ | Roçada, capina, corte e limpeza de gramadas: calcular inicialmente conforme a DNIT 182/2018-PRO
+☐ | Calcular os quantitativos com base no inventário atualizado e na memória do Índice do Pavimento
+☐ | Aplicar os níveis de esforço aos elementos geradores de conservação
+☐ | Identificar claramente: fórmula, unidade, extensão, área, volume, frequência e nível de esforço
+☐ | Conferir se os quantitativos representam TODO o período contratual
+☐ | Evitar duplicidade entre serviços por desempenho e serviços medidos por unidade executada
+☐ | Verificar sobreposição entre conservação rotineira, periódica, emergencial e DSM
+☐ | Quantificar os DSM por memória de cálculo direta, SEM aplicar níveis de esforço
+☐ | Justificativa obrigatória e localização exata de cada DSM
+Croquis, plantas, cortes, desenhos, levantamentos, ensaios e registros fotográficos.
+☐ | Utilizar, quando aplicável, o modelo de solução de pista e acostamento do Anexo IV
+☐ | Demonstrar que a solução é plenamente caracterizada e não transfigura o objeto contratual
+☐ | Pesquisar fontes: brita, pedra, areia, solos, água, betuminosos e massa asfáltica comercial
+☐ | Elaborar croqui de ocorrência de materiais e DMTs (Anexo IX)
+Identificar fornecedor, localização, coordenadas, tipo de acesso e distâncias.
+☐ | Incluir os pedágios incidentes nos trajetos
+☐ | Elaborar o quadro comparativo do binômio de transporte
+Verificar as premissas de transporte do Anexo VIII.
+☐ | Avaliar o emprego de caminhões basculantes de 10 m³ e prever reaproveitamento de material fresado quando cabível
+☐ | Identificar o ponto de descarte de resíduos e entulho
+☐ | Elaborar o cálculo do Fator de Interferência de Tráfego (FIT)
+☐ | Elaborar o mapa das estações pluviométricas e justificar as estações adotadas (FIC)
+☐ | Realizar pesquisas de mercado quando necessárias
+☐ | Elaborar as composições de custos unitários não constantes do SICRO
+Apresentar memória de cálculo dos coeficientes adotados.
+☐ | Identificar normas e especificações aplicáveis a cada serviço
+☐ | Avaliar aspectos ambientais e verificar licenciamento e Responsabilidade Técnica
+☐ | Dimensionar a Administração Local conforme a metodologia do SICRO Vol. 07
+☐ | Prever 0,25 engenheiro supervisor e dimensionar o respectivo veículo leve de forma proporcional
+☐ | Excluir a secretária da parcela fixa
+☐ | Adotar o modelo referencial de canteiro em construção provisória (SICRO Vol. VII, Anexo XII)
+☐ | Definir localização e estrutura do canteiro; dimensionar instalações industriais quando aplicáveis
+☐ | Elaborar a memória de cálculo do canteiro
+☐ | Elaborar as composições de mobilização e desmobilização
+Relacionar equipamentos e veículos; calcular distâncias e custos; evitar duplicidade com a Adm. Local.
+☐ | Prever sinalização temporária de obras e controle temporário de tráfego (Anexo XIII)
+☐ | Prever sinalização horizontal necessária à abertura ao tráfego
+☐ | Atender à Instrução de Serviço DNIT nº 23/2019
+☐ | Quando o trecho não for coberto pelo BR-Legal, prever a sinalização própria
+☐ | Prever capina em raio de três metros a partir do eixo, quando aplicável
+☐ | Utilizar preferencialmente a penúltima data-base do SICRO
+Garantir que a data-base tenha a vigência mínima exigida.
+☐ | Elaborar orçamento onerado E desonerado; comparar os cenários e adotar o regime mais vantajoso
+☐ | Aplicar BDI conforme os normativos; aplicar BDI diferenciado quando cabível (Anexo XI)
+☐ | Extrair os insumos asfálticos das composições e inseri-los separadamente na planilha
+☐ | Separar serviços auxiliares e respectivos transportes; não incluir mão de obra/equipamento diretamente na planilha
+☐ | Elaborar a Curva ABC (Anexo XXI) e a distribuição percentual do orçamento por grupo
+☐ | Conferir arredondamentos, unidades, códigos SICRO, planilha PATO e orçamento
+☐ | Organizar a planilha do PATO com composição de preço para todos os itens
+☐ | Compatibilizar o cronograma físico-financeiro com o orçamento
+☐ | Elaborar o Relatório de Apresentação
+Incluir o mês da data-base do orçamento e o demonstrativo do BDI.

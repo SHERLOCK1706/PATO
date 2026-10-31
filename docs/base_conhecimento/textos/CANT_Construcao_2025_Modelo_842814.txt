@@ -1,0 +1,71 @@
+[aba CANTEIRO_CONSTRUTIVO]
+INSTALAÇÃO DE CANTEIRO DE OBRAS E ACAMPAMENTO - MÉTODO CONSTRUTIVO
+1 - Quantidade de Funcionários nos Canteiros
+Parcela fixa:
+Quantidade | Função
+Engenheiro Supervisor
+1 | Motorista de ônibus - mensalista
+1 | Auxiliar Administrativo
+1 | Almoxarife
+1 | Faxineiro
+Parcela vinculada:
+Quantidade | Função
+1 | Encarregado de conservação rodoviária
+2 | Encarregado de turma
+Parcela variável:
+Quantidade | Função
+1 | Laboratorista
+2 | Auxiliar de laboratório
+1 | Técnico florestal
+Número de funcionários da parcela fixa da administração local (NPF): | 4
+Número de funcionários das parcelas fixa e vinculada da administração local (NPF-V): | 7
+Número de funcionários da parcela variável da administração local no mês de pico (NPV): | 4
+Mão de obra ordinária no mês pico
+Número de funcionários da mão de obra ordinária no mês de pico (NMO): | 0
+Número de funcionários alojados no canteiro (NFA): | 4
+Número máximo de funcionários  (NMAX) | 11
+2 - Dimensionamento de Instalações do Canteiro
+Canteiro | Àreas (m²)
+Dimensionamento das Áreas Variáveis
+Escritório e seção técnica | AE-ST (m²) = 57,95 + 4,5 x NPF | 75.95
+Refeitório e cozinha | AR-C (m²) = 1,55 x 50% NMAX | 8.525
+Alojamentos | AAL (m²) = 3,11 x 50% (NMO + NPV) | 6.22
+Banheiros e vestiário | AB-V (m²) = 0,77 x (NMO + NPV) | 3.08
+Áreas Fixas de Referência do Canteiro
+Almoxarifado | Àrea de Referência | 29.54
+Oficina | Àrea de Referência | 37.1
+Guarita | Àrea de Referência | 5.29
+Área Total: | 165.70499999999998
+3 - Relação entre as áreas cobertas e a áreas totais dos terreno
+Àrea coberta | 165.70499999999998
+Área Total do Terreno | 331.40999999999997
+Área descoberta | 165.70499999999998
+Tabela 44 - Manual de Custos de Infraestrutura de Transportes - Canteiro de Obras - Volume 06 - 2025 - 2ª Ed.
+4 - Áreas equivalentes | Und | Áreas de Ref. | FEAC (%) | Áreas Equiv.
+Escritório e seção técnica | m² | 75.95 | 0.7 | 53.16
+Refeitório e cozinha | m² | 8.525 | 0.7 | 5.96
+Alojamentos | m² | 6.22 | 0.7 | 4.35
+Banheiros e vestiário | m² | 3.08 | 0.7 | 2.15
+Almoxarifado | m² | 29.54 | 0.5 | 14.77
+Oficina | m² | 37.1 | 0.5 | 18.55
+Guarita | m² | 5.29 | 0.7 | 3.7
+Total | 102.64
+Tabela 33 - Manual de Custos de Infraestrutura de Transportes - Canteiro de Obras - Volume 06 - 2025 - 2ª Ed.
+5 - Custo Total de Referência do Canteiro
+k1 (fator de ajuste do padrão de construção) | 0.8
+k2 (fator mobiliário) | 1.11
+DMT pavimentada entre os centros fornecedores ao canteiro de obras | 0
+DMT com revestimento primário entre os centros fornecedores ao canteiro de obras | 0
+k3  (fator de ajuste da distância do canteiro aos centros fornecedores) | 1
+AD (área descoberta) | 102.64
+FEAD (fator de equivalência de áreas descobertas) | 0.05
+CMCC onerado
+CMCC desonerado
+VERSÃO ONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0
+VERSÃO DESONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0

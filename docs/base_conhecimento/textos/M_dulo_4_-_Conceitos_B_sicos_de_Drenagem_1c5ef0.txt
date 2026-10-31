@@ -1,0 +1,1623 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+Conceitos Básicos
+de Hidrologia e
+Drenagem para
+Projetos Rodoviários
+
+
+
+Módulo
+             4
+Conceitos Básicos de
+Drenagem.
+
+- Drenagem rodoviária;
+- Origem das águas no pavimento e
+principais danos;
+- Elementos constituintes e fases de
+interesse;
+- Drenagem superficial.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático, cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção.
+Desta forma, tendo em vista o contido no Processo
+nº 50600.008060/2022-01, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como
+o ceder a outros órgãos e entidades federais.
+                                SUMÁRIO
+1.      INTRODUÇÃO ...................................................................................................................... 1
+
+2.      DRENAGEM DE RODOVIAS ................................................................................................ 2
+     2.1    ORIGEM DAS ÁGUAS NOS PAVIMENTOS ................................................................ 3
+       2.1.1 Principais fontes e mecanismos de danos ................................................................ 4
+       2.1.2 Infiltração através da superfície do pavimento .......................................................... 5
+       2.1.3 Infiltração através das bordas do pavimento ou dos acostamentos ......................... 8
+       2.1.4 Capilaridade ............................................................................................................ 12
+     2.2       PRINCIPAIS DANOS CAUSADOS PELA AÇÃO DAS ÁGUAS ................................. 14
+     2.3    ELEMENTOS CONSTITUINTES E FASES DE INTERESSE .................................... 19
+       2.3.1 Drenagem superficial............................................................................................... 23
+       2.3.2 Drenagem de transposição de talvegue.................................................................. 23
+       2.3.3 Drenagem do pavimento (subsuperficial)................................................................ 24
+       2.3.4 Drenagem subterrânea ou profunda ....................................................................... 24
+       2.3.5 Drenagem de travessia urbana ............................................................................... 24
+
+3.      DRENAGEM SUPERFICIAL ............................................................................................... 25
+     3.1    VALETAS .................................................................................................................... 25
+       3.1.1.    Valetas de proteção de corte .............................................................................. 25
+       3.1.2 Valetas de proteção de aterro .................................................................................... 29
+     3.2    SARJETAS .................................................................................................................. 30
+       3.2.1 Sarjetas de proteção de corte .................................................................................... 30
+       3.2.2 Sarjetas de proteção de aterro (meios-fios) ............................................................... 33
+       3.2.3 Sarjetas de canteiro central ........................................................................................ 35
+       3.2.4 Transposição de segmentos de sarjeta ..................................................................... 37
+     3.3       ENTRADA/SAÍDA D´ÁGUA ........................................................................................ 39
+     3.4       DESCIDAS D´ÁGUA ................................................................................................... 41
+     3.5       DISSIPADOR DE ENERGIA ....................................................................................... 44
+
+4.      REFERÊNCIAS BIBLIOGRÁFICAS .................................................................................... 46
+                                                                                     1
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   1. INTRODUÇÃO
+
+O objetivo deste módulo é apresentar os principais conceitos relacionados à
+drenagem de rodovias, bem como os elementos necessários à elaboração do
+projeto e as disciplinas correlatas e que interferem nas tomadas de decisão e
+escolha dos tipos de dispositivos.
+
+Abordará também a ação das águas sobre os pavimentos, as interferências e
+problemas decorrentes de sua presença e permanência nas camadas que
+compõem a estrutura de uma rodovia, principalmente quando associada ao
+efeito do tráfego.
+
+Serão apresentados os principais elementos necessários à elaboração de um
+projeto de drenagem, além dos dados que devem ser considerados como pré-
+requisitos, inclusive aqueles vinculados a outras disciplinas.
+
+É de fundamental importância que se tenha uma noção clara de que, para o
+desenvolvimento de um projeto de drenagem, outras disciplinas como geometria
+e pavimentação estejam em fase de elaboração ou até concluídas, haja vista
+que o comportamento do traçado e do greide, as seções transversais de
+terraplenagem e/ou de pavimentação, o número de faixas e/ou de pistas, dentre
+outros, irão interferir na escolha das soluções.
+
+Deve-se ter em mente que o projeto de drenagem deve ser concebido com a
+finalidade de captar e conduzir, para um local de deságue seguro, toda a água
+precipitada sobre a plataforma e áreas adjacentes, bem como das águas que se
+infiltram nas suas camadas, garantindo que o tráfego flua de forma adequada e
+segura mesmo sobre a incidência de chuvas.
+
+Como fontes principais de consulta, além do conteúdo apresentado neste
+material, sugere-se que o aluno leia o Manual de Drenagem de Rodovias
+(BRASIL, 2006) e outros livros sobre o tema, com destaque para:
+
+- Drenagem de Rodovias e Ferrovias (Antônio Lopes Pereira, 1959);
+                                                                                      2
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+- Drenagem Superficial e Subterrânea de Estradas (Renato G. Michelin, 1973);
+
+- Drenagem dos Pavimentos de Rodovias e Aeródromos (Harry R. Cedergren,
+1980);
+
+- Drenagem Subsuperficial de Pavimentos (Carlos Yukio Suzuki, 2013);
+
+- Manual Prático de Drenagem (Paulo Roberto Dias Morales, 2003);
+
+- Manual Técnico de Drenagem e Esgoto Sanitário (ABTC, 2008);
+
+- Tubos de Concreto (Pedro Jorge Chama Neto, 2004).
+
+
+
+
+   2. DRENAGEM DE RODOVIAS
+
+Um projeto de drenagem é concebido com o objetivo de prover a rodovia de
+dispositivos capazes de captar e conduzir adequadamente as águas superficiais
+e profundas de modo a preservar a sua estrutura, bem como possibilitar o tráfego
+de forma segura durante a incidência das precipitações mais intensas.
+
+Tal drenagem consistirá de um sistema formado por diferentes dispositivos cuja
+principal função será captar as águas precipitadas sobre a plataforma rodoviária
+e adjacências, conduzindo-as de forma adequada e garantido seu deságue em
+local seguro.
+
+Segundo Morales (2003), a drenagem faz parte da infraestrutura de um projeto
+viário, seja urbano ou rural, e sua má concepção, projeto ou execução podem
+apresentar prejuízos incalculáveis para o país.
+
+É bem possível que muitos dos que leem este manual já tenham ouvido a
+pergunta: “Qual o pior inimigo de uma estrada? ”. É igualmente provável que
+muitos tenham ouvido, como resposta, que é a água este pior inimigo.
+
+É fato que em uma rodovia, o efeito do tráfego associado à presença da água,
+principalmente quando está no interior das camadas do pavimento e por longo
+período, produz danos significativos e minora seu tempo de vida útil. Também é
+                                                                                     3
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+fato que o seu efeito será tanto menos danoso quanto menor for o período em
+que a água permanecer sobre ou no interior da plataforma, bem como quanto
+menor for a sua quantidade. (CEDERGREN, 1980).
+
+Assim, de nada adianta a existência de um primoroso projeto geométrico, de
+terraplenagem e de pavimentação, se a componente drenagem não estiver muito
+bem equacionada.
+
+De acordo com Suzuki et. al. (2013), um dos problemas relacionados ao
+desempenho pífio dos pavimentos é a aplicação de cargas do tráfego quando os
+materiais constituintes da estrutura de uma estrada estão sob condição saturada.
+
+Também é importante ter em mente que a escolha e o dimensionamento dos
+dispositivos de drenagem serão feitos com base nos resultados e dados obtidos
+dos estudos hidrológicos, sendo um, pré-requisito para o outro. Assim, o estudo
+hidrológico não só precisa estar pronto ou em fase de finalização, bem como que
+seus dados sejam o quanto mais precisos possível, para que se consiga elaborar
+um bom projeto de drenagem.
+
+Antes de se partir para a elaboração do projeto e para o detalhamento dos
+elementos que poderão constituí-lo, torna-se importante entender a origem da
+água livre nos pavimentos e os problemas que ela provoca, o que será feito na
+sequência.
+
+
+
+2.1   ORIGEM DAS ÁGUAS NOS PAVIMENTOS
+
+A umidade excessiva nas camadas da estrutura em uma estrada pode ser
+proveniente de diversas fontes, sendo as mais comuns a infiltração, percolação
+por capilaridade e movimento em forma de vapor d´água.
+
+A água pode surgir no interior do pavimento por ocasião de infiltrações
+superficiais devido às juntas, trincas, bordas e outros defeitos na superfície
+(principalmente no revestimento) que podem facilitar o ingresso d´água no
+interior da plataforma. Ela também pode subir por percolação do nível freático
+                                                                                       4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+elevado ou entrar lateralmente pelos bordos do pavimento e valetas dos
+acostamentos, como pode ser visualizado na figura 2.1 (Suzuki et.al, 2013).
+
+
+
+
+      Figura 2.1 – Origens da água presente na estrutura de um pavimento rodoviário.
+
+Para entender melhor essas fontes e origens, se tratará de cada uma
+isoladamente na sequência.
+
+   2.1.1 Principais fontes e mecanismos de danos
+As precipitações pluviométricas são a maior fonte de água que penetra na
+estrutura dos pavimentos rodoviários, podendo ocasionar infiltrações, tanto pela
+superfície como pelas bordas da junção pista-acostamento.
+
+A água presente no interior da estrutura de uma rodovia tem influência no
+comportamento e desempenho dos materiais de cada camada constituinte do
+pavimento. Com o passar do tempo, o excesso de água passa a influenciar
+negativamente sobre a serventia, embora os danos causados pela infiltração da
+água no pavimento não apareçam instantaneamente.
+
+O processo de deterioração da estrutura e da redução da vida útil do pavimento
+é gradual e pode passar despercebido, principalmente quando as patologias não
+surgem de forma imediata e não possibilitam a sua identificação visual.
+                                                                                               5
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Deste modo, o engenheiro projetista deve estar atento a alguns sinais ou
+evidências que podem revelar a causa principal das patologias, com destaque
+para: resíduos secos apresentando-se como manchas nas imediações de
+trincas, juntas de construção e nos bordos da pista, além do desnivelamento
+entre placas, no caso de pavimentos rígidos, ou ainda devido a presença de
+vegetação ou surgência de água nesses locais, conforme se exemplifica por
+meio de um caso identificado no trecho da BR-304/RN, entre as cidades de Assu
+e Lajes, evidenciado na figura 2.2.
+
+
+
+
+ Figura 2.2 – Trecho da BR-304/RN onde pode ser notada a presença de manchas causadas
+     pela lixiviação de partículas sólidas do interior do pavimento. (Fonte: próprio autor).
+
+A prevenção da infiltração é um aspecto muito relevante em regiões de clima
+temperado, onde pode haver o congelamento das águas livres no interior do
+pavimento em função da exposição a baixas temperaturas.
+
+   2.1.2 Infiltração através da superfície do pavimento
+Em pavimentos rígidos, a maior parcela da infiltração ocorre através das juntas
+longitudinais e transversais, além das trincas presentes nas placas de concreto
+de cimento Portland.
+
+Quando o acostamento dos pavimentos é composto por concreto asfáltico (CA)
+e as faixas de rolamento são executadas em placas de concreto de cimento
+Portland (CCP), a exemplo do que ocorre em vários trechos da BR-101 e da BR-
+232, a junção pista-acostamento é outro ponto significativo de infiltração,
+                                                                                           6
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+principalmente quando não é devidamente tratado ou mantido, conforme pode
+ser visualizado nas figuras 2.3 e 2.4.
+
+
+
+
+ Figura 2.3 – Trecho da BR-101/RN onde o acostamento foi executado com CA e as faixas de
+                         rolamento em CCP. (Fonte: próprio autor).
+
+
+
+
+ Figura 2.4 – Trecho da BR-232/PE onde o acostamento foi executado com CA e as faixas de
+                         rolamento em CCP. (Fonte: próprio autor).
+                                                                                      7
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Já nos pavimentos asfálticos, as juntas de construção e as trincas que surgem
+ao longo do tempo na camada de revestimento são os pontos críticos de
+infiltração.
+
+O surgimento de trincas na superfície, tanto de pavimentos de concreto como de
+asfaltos, acaba sendo um processo contínuo, que depende das características
+dos materiais empregados na construção e da intensidade do tráfego que solicita
+o pavimento. Esse fenômeno será intensificado e potencializado quando a água
+estiver presente, tornando difícil a previsão e estimativa do volume de água que
+se infiltra pela abertura das trincas.
+
+A quantidade de juntas ou trincas, bem como a capacidade de vazão destas, são
+as principais responsáveis pelo volume de água que se infiltra através da
+superfície do pavimento, relacionando-o também com a intensidade e duração
+das precipitações.
+
+Com relação a estas, pode-se destacar que as precipitações de grande
+intensidade apresentam, de modo geral, curta duração e grande parte de suas
+águas escoam pela superfície do pavimento (ao invés de penetrar) por ocasião
+de sua baixa permeabilidade. Já as precipitações de baixa intensidade
+costumam ocorrer por períodos mais longos, fornecendo suprimento de água
+constante por longos períodos, favorecendo a infiltração mesmo que a estrutura
+do pavimento apresente reduzida permeabilidade.
+
+Dessa forma, para determinação da infiltração pela superfície do pavimento, são
+consideradas mais críticas as precipitações com curto período de retorno e longa
+duração, com intensidade variando de baixa a moderada.
+
+A quantidade de água que se infiltra no pavimento depende também das
+características geométricas da pista, como a declividade longitudinal e
+transversal, e da permeabilidade dos materiais constituintes.
+
+A declividade longitudinal tem influência na infiltração da água pela superfície,
+uma vez que impõe escoamento em direção obliqua à borda do pavimento,
+expondo o fluxo a uma distância maior e, possivelmente, a uma quantidade maior
+                                                                                     8
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+de trincas, ocasionando maior índice de infiltração. Já a declividade transversal
+tem influência no volume de infiltração em função da velocidade que a água pode
+desenvolver na superfície e atingir as cotas mais baixas dos acostamentos.
+
+Outro parâmetro diretamente relacionado à infiltração é a permeabilidade dos
+materiais integrantes da estrutura do pavimento, dado que, caso o sistema não
+seja capaz de remover toda a água que se infiltra pela superfície, a estrutura
+atinge grau de saturação elevado.
+
+   2.1.3 Infiltração através        das    bordas      do    pavimento      ou    dos
+         acostamentos
+A infiltração de água pela borda do pavimento ocorre, principalmente, por conta
+dos seguintes mecanismos: variação da carga hidráulica, que provoca o
+deslocamento da água; e a capilaridade.
+
+As rodovias mais sujeitas à infiltração por meio das bordas são aquelas que
+apresentam baixa declividade longitudinal (com destaque para os greides planos
+e os pontos baixos de greides ondulados), em razão da maior dificuldade que a
+água encontra para escoar superficialmente.
+
+Tanto nos pavimentos asfálticos como nos de concreto, as juntas entre as faixas
+de rolamento e o acostamento são o principal local de infiltração das águas e
+quando os materiais constituintes destes são distintos, a água livre na estrutura
+pode desencadear processos de deterioração acelerados pela diferença de
+trabalhabilidade dos materiais envolvidos.
+
+TOME NOTA
+VÍDEO MOSTRANDO SAÍDA DE ÁGUA DO INTERIOR DO PAVIMENTO
+ATRAVÉS DA JUNTA PISTA-ACOSTAMENTO, QUANDO DA PASSAGEM DO
+TRÁFEGO (LINK).
+
+
+
+
+A falta de revestimento nos acostamentos (ou ainda a sua existência, mas em
+condições muito precárias) permite que uma parcela significativa da água se
+                                                                                            9
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+infiltre na estrutura do pavimento, reduzindo sua capacidade estrutural. Além
+disso, a presença de vegetação na região contígua ao pavimento sem
+acostamento revestido pode formar uma barreira ao escoamento superficial,
+restringindo seu fluxo no interior da rodovia, facilitando a infiltração e
+promovendo a saturação do solo contíguo ao pavimento. Para ilustrar tal
+situação são apresentadas as figuras 2.5 e 2.6, que mostram segmentos
+rodoviários onde o acostamento já não apresenta camada de revestimento
+asfáltico e onde a vegetação promove barreiramento e mantém a água “presa”
+no interior da rodovia.
+
+
+
+
+ Figura 2.5 – Trecho da BR-354/MG próximo à cidade de Formiga/MG. (Fonte: próprio autor).
+                                                                                           10
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   Figura 2.6 – Trecho da BR-104/PE próximo à cidade de Caruaru. (Fonte: próprio autor).
+
+
+
+Os acostamentos revestidos também podem proporcionar infiltração pelas
+bordas do pavimento, porém, com menor intensidade se comparado ao caso dos
+acostamentos não revestidos.
+
+A água também pode se infiltrar lateralmente por meio de dispositivos de
+drenagem superficial, como sarjetas e valetas sem revestimento impermeável,
+ou mesmo quando estes são executados em concreto, mas encontram-se
+danificados e a situação será potencializada quando tais dispositivos estiverem
+localizados em trechos de corte. As juntas entre acostamento e alguns destes
+dispositivos também constituem pontos propícios para a infiltração lateral.
+
+Alguns destes casos podem ser visualizados nas figuras 2.7 e 2.8.
+                                                                                     11
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+ Figura 2.7 – Sarjeta danificada em trecho da BR-354/MG próximo à cidade de Bambuí/MG.
+                                   (Fonte: próprio autor).
+
+
+
+
+ Figura 2.8 – Sarjeta danificada em trecho da BR-354/MG próximo à cidade de Bambuí/MG.
+                                   (Fonte: próprio autor).
+
+Outro caso a ser considerado é a interferência de restauração sobre as
+estruturas de pavimento existentes, ou mesmo a exposição de camadas de
+pavimentos em construção. Mesmo que por intervalos curtos, tais intervenções
+podem provocar o acúmulo de água na plataforma ou em regiões contíguas,
+favorecendo o aumento do teor de umidade das camadas inferiores da rodovia.
+                                                                                    12
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Devido à gravidade da situação, a sinergia entre as solicitações de tráfego, as
+características dos materiais e o aumento da umidade podem acelerar o
+processo de deterioração do pavimento, reduzindo sua vida útil.
+
+   2.1.4 Capilaridade
+A ação da capilaridade é decorrente de uma tensão de sucção que promove a
+migração da água entre locais com teores de umidade distintos, de um meio com
+teor de umidade mais elevado para outro com teor de umidade menor.
+
+Ela ocorre devido à ação da tensão superficial nos vazios do solo acima da linha
+de saturação. A distribuição granulométrica e a densidade do solo determinam a
+região de alcance da ascensão capilar. O movimento da água livre pela
+capilaridade ocorre nos vazios dos solos, que podem ser associados a tubos
+capilares por estarem interconectados, ainda que de forma irregular.
+
+Quando o solo seco é posto em contato com a água, esta é sugada para o interior
+do solo. A altura que a água atingirá no seu interior depende do diâmetro dos
+vazios, sendo a ascensão capilar função do volume de vazios e da granulometria
+do material. Existe uma altura em que o grau de saturação será constante,
+embora não seja atingida a saturação total.
+
+O movimento da água no interior do solo também pode ser descrito pelo
+esquema apresentado na figura 2.9. Se os tubos capilares fossem de diâmetro
+constante, o nível da água subiria a uma mesma altura em todos os pontos da
+massa de solo exposta à água. O solo estaria saturado abaixo do nível d´água e
+acima desta até uma distância “hc”, determinada em função do diâmetro dos
+tubos capilares. Além desta distância, o solo se encontraria seco.
+                                                                                    13
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+              Figura 2.9 – Modelo conceitual de ascensão capilar em solos.
+
+No entanto, conforme dito, os vazios irregulares e a altura da ascensão capilar
+não são constantes. Dessa forma, apenas uma pequena altura acima do nível
+d´água fica saturada pela capilaridade (hc). Acima dessa altura, os vazios são
+parcialmente preenchidos pela água, razão pela qual o solo fica apenas
+parcialmente saturado (úmido).
+
+De acordo com a figura anterior, os solos nunca são encontrados totalmente
+secos em estado natural e sempre apresentam uma quantidade de água retida
+nos vazios, correspondente à umidade de equilíbrio (Medina e Motta, apud
+Suzuki, 2013). Isso ocorre por que a parcela da água precipitada que se infiltra
+na estrutura de um pavimento fica retida como parte do material. Dessa forma,
+solos como areias finas e siltes podem apresentar elevado grau de saturação,
+mesmo distante do nível d´água. Também quando ocorre o rebaixamento do
+lençol freático em uma massa de solo, certa quantidade de água fica
+armazenada nos vazios, formando meniscos e ficando retida na camada do
+pavimento.
+
+A água proveniente da ascensão capilar não pode ser drenada pela ação da
+gravidade e para o controle do seu movimento é recomendada a implantação de
+                                                                                    14
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+algum dispositivo, como uma camada drenante ou de bloqueio, para interceptar
+o fluxo d´água.
+
+
+
+2.2   PRINCIPAIS DANOS CAUSADOS PELA AÇÃO DAS ÁGUAS
+
+
+A razão completa da deterioração e falência dos pavimentos é muito complexa,
+haja visto que muitos fatores colaboram para isto. A idade e a oxidação das
+películas de asfalto, por exemplo, colaboram na deterioração dos revestimentos
+de concreto asfáltico e de bases. Já em pavimentos de CCP, alguns processos
+de deterioração e fadiga, sob deformações repetidas, são importantes fatores
+que contribuem para o seu trincamento e desintegração, por exemplo. Ao passo
+que algumas das ações mais prejudiciais ocorrem mais rapidamente quando há
+água em excesso nos espaços entre as camadas sucessivas dos pavimentos de
+CA, ou ainda nos poros destes pavimentos, bem como em juntas e trincas dos
+pavimentos de CCP, ou mesmo nos limites entre as placas e as sub-bases
+(CEDERGREN, 1980).
+
+É consenso que a água é um dos fatores que lideram os danos causados nos
+pavimentos e a maioria destes é causada pelas poropressões e movimentação
+da água livre no interior de sua estrutura.
+
+De um modo geral, os efeitos danosos da água livre sobre a estrutura de um
+pavimento podem ser assim resumidos (SUZUKI et. al, 2013):
+
+   • Redução da resistência dos materiais granulares não estabilizados e do
+solo do subleito;
+   • Bombeamento nos pavimentos de concreto com consequente formação
+de vazios, de degraus, trincamento e deterioração dos acostamentos;
+   • Bombeamento dos finas da base granular dos pavimentos flexíveis pela
+perda de suporte da fundação, devido à elevada pressão hidrodinâmica gerada
+pelo movimento do tráfego;
+                                                                                    15
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   • Comportamento e desempenho insatisfatório dos solos expansivos devido
+à presença de água;
+   • Trincamento dos revestimentos (asfáltico e CCP) em função do contato
+direto com a água.
+
+À medida que a água contida nas bases e sub-bases cresce, ocorre uma redução
+da capacidade de suporte e um crescimento da perda de serventia dos
+pavimentos. Quando a água livre preenche completamente estas camadas e
+também os vazios e espaço ou aberturas nos limites entre as camadas, as rodas
+pesadas dos veículos (principalmente comerciais) aplicada à superfície destes
+pavimentos, produzem impactos sobre a água que são semelhantes a uma ação
+do tipo golpe de aríete (CEDERGREN, 1980).
+
+As pressões pulsantes da água que podem surgir nessas ocasiões, sob o
+impacto das rodas, não causam somente erosão e ejeção de material para fora
+dos pavimentos, mas também podem desprender capas asfálticas de bases e
+sub-bases estabilizadas com betume. As ações das águas podem desintegrar
+bases estabilizadas com cimento, enfraquecer bases granulares pelo rearranjo
+da estrutura interna dos materiais de granulação fina das misturas de agregado,
+sobrecarregar subleitos onde as espessuras totais forem inadequadas, e causar
+diversas outras ações prejudiciais (CEDERGREN, 1980).
+
+Um veículo movendo-se sobre um pavimento rígido desenvolve pressões entre
+a parte inferior da placa e o subleito, o que faz com que a água, se estiver
+presente, escoe na direção em que vai escapar. A magnitude da pressão é,
+logicamente, dependente da deflexão da placa e do grau de confinamento da
+água. Esta poderá, no início, escapar somente pelas juntas e trincas abertas,
+mas com o passar do tempo, se obtiver condições suscetíveis de bombeamento,
+ela geralmente abrirá uma via de escape entre o acostamento e os bordos do
+pavimento (CEDERGREN, 1980).
+
+Em pavimentos executados sobre subleitos constituídos por solos finos, este
+fluxo de água sob a placa faz com que os finos do solo se misturem com a água,
+que, ao escapar, os carreia com ela formando, então, um espaço vazio sob a
+                                                                                       16
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+placa do pavimento, que se torna progressivamente maior com a repetição do
+tráfego.
+
+Nos primeiros estágios desse processo de bombeamento, o escape da água ou
+lama entre o acostamento e os bordos da rodovia é, em geral, confinado a
+poucos centímetros da junta transversal ou da trinca aberta. Porém, à medida
+que o bombeamento progride, um canal de escape se desenvolve ao longo de
+todo o comprimento da placa do pavimento. À medida que o processo cresce
+nos bordos, um maior volume de água pode atingir o subleito, aumentando o
+volume e intensidade do bombeamento.
+
+Já a água livre nos pavimentos de concreto asfáltico contribui para o
+fissuramento por retração, para a oxidação e perda da flexibilidade, que poderão
+levar ao trincamento e à deterioração geral dos revestimentos e bases
+estabilizadas.
+
+Embora sejam diversos os defeitos que podem surgir nas rodovias por ocasião
+da presença da água, alguns tipos são mais recorrentes e estão relacionados a
+comportamentos bem característicos. Assim, separando por tipo de pavimento,
+tem-se:
+
+       • Pavimentos asfálticos (CA): os defeitos relacionados com a umidade
+caracterizam-se pela elevada deflexão na superfície, baixo raio de curvatura da
+bacia de deformação, trincamento por fadiga, redução da capacidade de suporte
+e desagregação.
+       • Pavimento rígido (CCP): os defeitos relacionados com a umidade são a
+instabilidade do subleito, bombeamento dos finos e consequente perda de
+suporte, além de anomalias do tipo trinca de canto.
+
+Uma relação mais pormenorizada dos defeitos associados à presença d´água
+em cada um destes tipos de pavimento pode ser consultada nas tabelas 2.1 e
+2.2.
+                                                                                                                                                 17
+
+
+                                                                CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+                        Tabela 2.1 – Defeitos recorrentes em pavimentos asfálticos relacionados com a presença d´água.
+
+ Manifestação       Problema       Problema climático      Problema relacionado          Carregamento          Início do defeito estrutural
+                  relacionado à                                 ao material               associado         Asfalto           Base        Sub-base
+                     umidade
+   Abrasão             Não                 Não                    Agregado                   Não              Sim            Não           Não
+  Exsudação            Não         Acentua-se em altas             Betume                    Não              Sim            Não           Não
+                                      temperaturas
+Desintegração         Não                  Não                    Agregado               Ligeiramente         Sim            Não           Não
+Intemperismo          Não               Umidade                    Betume                    Não              Sim            Não           Não
+ Inchamento         Excesso          Congelamento                 Umidade                     Sim             Não            Sim           Sim
+ Corrugação       Ligeiramente      Rel. entre clima e         Mistura instável               Sim             Sim            Sim           Sim
+                                         sucção
+Escorregamento        Não          Acentua-se em altas     Mistura instável; perda           Sim              Sim            Não           Não
+                                      temperaturas               de ligante
+Afundamento de     Excesso em      Sucção e materiais         Propriedades de                Sim              Sim             Sim          Sim
+ trinca de roda      grandes                                   compactação
+                    camadas
+  Ondulação         Excesso        Sucção e materiais       Expansão da argila               Não        Não inicialmente     Não           Sim
+                                                               suscetível ao
+                                                               congelamento
+  Depressão         Excesso        Sucção e materiais         Assentamento                   Sim              Não            Não           Sim
+    Panelas         1excesso         Congelamento                 Umidade                    Sim              Não            Sim           Sim
+ Trincamento          Sim          Perda de resistência    Propriedades térmicas             Sim            Falha de         Sim           Sim
+ longitudinal                         com o degelo                                                        construção
+ Trincamento      Sim, drenagem           Não              Possível problema de              Sim          Sim, mistura        Sim          Sim
+     jacaré                                                       mistura
+ Trincamento          Sim           Baixa temperatura      Propriedades térmicas             Não        Sim, susceptível      Sim          Sim
+  transversal                         gelo – degelo                                                      à temperatura
+ Trincamento          Sim           Sucção, perda de        Sensível à umidade               Não        Sim, fortemente       Sim          Sim
+    retração                            umidade
+ Trincamento          Sim                  Não                Perda de ligante               Sim        Sim, no ligante      Não           Não
+  parabólico
+                                                          Fonte: SUZUKI et. al., 2013.
+                                                                                                                                                      18
+
+
+                                                                 CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+                           Tabela 2.2 – Defeitos recorrentes em pavimentos rígidos relacionados com a presença d´água.
+
+ Manifestação         Problema       Problema climático     Problema relacionado         Carregamento           Início do defeito estrutural
+                    relacionado à                                ao material              associado          Placa          Sub-base       Subleito
+                       umidade
+Esborcinamento      Possivelmente            Não                Possivelmente                Não              Sim             Não           Não
+  Escamação              Sim           Ciclos de gelo –       Influência química             Não            Sim, no           Não           Não
+                                            degelo                                                        acabamento
+  Trincamento           Sim            Ciclos de gelo –           Agregado                   Não              Sim             Não           Não
+                                            degelo
+  Fissuração            Sim                  Não             Rico em argamassa               Não         Sim, superfície      Não           Não
+                                                                                                              fraca
+Levantamento /          Não             Temperatura         Propriedades térmicas            Não               Sim            Não           Não
+  Alçamento
+Bombeamento             Sim               Umidade            Presença de finos na            Sim              Não              Sim          Sim
+                                                               base sensível a
+                                                                   umidade
+    Degrau              Sim          Umidade e sucção           Deformação de                Sim              Não              Sim          Sim
+                                                                assentamento
+ Empenamento        Possivelmente        Umidade e                   Não                     Não              Sim             Não           Não
+                                        temperatura
+Puncionamento /         Sim                Sim             Deformação seguida de             Sim              Não              Sim          Sim
+    Quebras                                                      fissuração
+  localizadas
+     Junta          Produz dano        Possivelmente         Finos apropriados /             Não             Junta            Não           Não
+                       depois                                Limpeza das juntas
+Trincas de canto        Sim                  Sim                  Devido ao                  Sim              Não              Sim          Sim
+                                                               bombeamento
+Trinca diagonal /       Sim            Possivelmente        Ocorre com o aumento             Sim              Não              Sim          Sim
+  transversal /                                                  da umidade
+  longitudonal
+                                                           Fonte: SUZUKI et. al., 2013
+                                                                                    19
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+2.3   ELEMENTOS CONSTITUINTES E FASES DE INTERESSE
+
+Para o desenvolvimento de um projeto de drenagem deve-se ter em mente que
+alguns outros parâmetros de projeto já necessitam estar previamente definidos,
+ou mesmo que outras disciplinas correlatas estejam em tal nível de avanço que
+possibilitem o conhecimento macro por parte do projetista.
+
+Assim, a definição do traçado final da rodovia é imperiosa para se poder definir
+todos os locais onde os dispositivos de transposição de talvegue serão
+necessários. De modo análogo, o conhecimento prévio do greide e das seções
+transversais da rodovia são importantes para a definição dos locais em que a
+drenagem superficial poderá ser necessária, pois a simples definição de uma
+seção com abaulamento para os dois lados, a partir do eixo, ou para um único
+lado, poderá demandar dispositivos de drenagem superficial de um ou em ambos
+os bordos da rodovia.
+
+
+TOME NOTA
+Para fins de orientação, recomenda-se que o aluno consulte alguns manuais do
+DNIT, que poderão auxiliar na definição da interdependência entre disciplinas,
+na forma de apresentação, bem como de seus conteúdos, a citar como
+exemplos: as Diretrizes Básicas para Elaboração de Estudos e Projetos
+Rodoviários – Escopos Básicos e Instruções de Serviço (DNIT/IPR-726); as
+Diretrizes Básicas para Elaboração de Estudos e Projetos Rodoviários –
+Instrução para apresentação de Relatórios (DNIT/IPR-727; as Diretrizes Básicas
+para Elaboração de Estudos e Projetos Rodoviários – Instruções para
+Acompanhamento e Análise; além do Guia de Análise de Projetos Rodoviários.
+
+Para fins de ilustração, pode-se aqui recorrer ao Guia de Análises de Projeto
+Rodoviários do DNIT, que em sua seção 2.3, traz detalhes sobre as verificações
+de conformidade, roteiro de análise e inter-relação entre disciplinas para o caso
+específico do projeto de drenagem. Sobre este último, por sinal, a referida
+publicação cita que as disciplinas antecessoras que irão subsidiar a elaboração
+do projeto de drenagem são aquelas constantes na figura 2.10.
+                                                                                            20
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+       Figura 2.10 – Digrama de interdependência da disciplina projeto de drenagem e OAC.
+
+Por sua vez, na instrução de serviço IS-210, constante nas Diretrizes Básicas
+para Elaboração de Estudos e Projetos Rodoviários – Escopos Básicos e
+Instruções de Serviço (BRASIL, 2006), aparece a relação de elementos básicos
+e condicionantes para a elaboração do projeto de drenagem, a saber:
+   • Estudos hidrológicos: elaborados para o projeto de engenharia,
+necessários para a determinação da descarga em cada ponto e indispensáveis
+para a fixação das seções a adotar e as condições de escoamento.
+   • Projetos geométricos, de terraplenagem e de pavimentação, fase de
+projeto básico, elaborados para o projeto de engenharia, definirão as obras de
+drenagem a projetar, bem como os estudos complementares a realizar.
+   • Estudos topográficos elaborados em sua fase de projeto básico para o
+projeto de engenharia, deverão ser complementados a fim de definir a
+implantação das obras de drenagem, utilizando medidas específicas para este
+fim.
+       • Estudos geotécnicos elaborados em sua fase de projeto básico para o
+projeto de engenharia, deverão ser complementados a fim de definir e
+caracterizar materiais e condições de fundação das obras a serem projetadas.
+       • No caso de rodovia já implantada, os dispositivos de drenagem existentes
+serão cadastrados e vistoriados, verificando-se a suficiência de vazão e o estado
+                                                                                    21
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+de conservação. Os dispositivos identificados como problemáticos serão objeto
+de estudos específicos com o objetivo de proceder ao reparo ou substituição
+daqueles que se encontrem danificados.
+
+Na fase de concepção é importante que sejam estudadas as diversas
+alternativas de solução, considerando os aspectos de exequibilidade, condições
+de funcionamento, materiais a utilizar e sua disponibilidade no mercado,
+métodos e equipamentos, além de aspectos arquitetônicos e paisagísticos,
+quando for o caso.
+
+Uma vez listadas as alternativas possíveis de serem implementadas, deverá
+ocorrer o pré-dimensionamento, com base nas normas e especificações
+vigentes, devendo-se levar em consideração a possibilidade de aproveitamento
+e padronização de soluções, dos materiais e mão-de-obra.
+
+Na sequência, devem ser estimadas as quantidades e calculados os custos das
+possíveis alternativas, a fim de que se possa escolher a mais adequada do ponto
+de vista técnico e econômico, ou também do ponto de vista administrativo e
+estético.
+
+A escolha da solução definitiva poderá considerar a inclusão de uma diversidade
+de dispositivos de drenagem existentes, muitos deles elencados no Manual de
+Drenagem de Rodovias do DNIT, e que serão inicialmente agrupados por
+famílias, para serem posteriormente detalhados em separados, nos capítulos e
+módulos seguintes deste curso.
+
+Para fins didáticos e de modo a permitir uma identificação prévia dos diversos
+tipos de dispositivos de drenagem que podem ser encontrados em uma rodovia,
+apresentam-se as figuras 2.11 e 2.12, que destacam, dentre outros, os
+dispositivos de drenagem superficial, subsuperficial, profunda e de transposição
+de talvegue.
+                                                                                             22
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+     Figura 2.11 – Croqui com identificação de dispositivos de drenagem superficial e de
+                         transposição de talvegue em uma rodovia.
+
+
+
+
+Figura 2.12 – Croqui com identificação de dispositivos de drenagem superficial, subsuperficial e
+                                   profunda em uma rodovia.
+                                                                                    23
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   2.3.1     Drenagem superficial
+A drenagem superficial é constituída por dispositivos cuja função é interceptar e
+captar, conduzindo a um local de deságue seguro, as águas precipitadas sobre
+o corpo estradal e em suas áreas adjacentes, resguardando a segurança e a
+estabilidade, sendo os principais tipos:
+
+   •   Valetas de proteção de corte;
+   •   Valetas de proteção de aterro;
+   •   Sarjetas de corte;
+   •   Sarjetas de aterro;
+   •   Sarjeta/Valeta de canteiro central;
+   •   Dispositivos de transposição de sarjeta/valeta;
+   •   Descida d’água;
+   •   Saídas d’água;
+   •   Caixas coletoras;
+   •   Bueiros de greide;
+   •   Dissipadores de energia;
+   •   Escalonamento de taludes;
+   •   Corta-rios;
+   • Drenagem de alívio de muros de arrimo.
+
+   2.3.2     Drenagem de transposição de talvegue
+A drenagem de transposição de talvegue é constituída por dispositivos que tem
+a função de eliminar águas pertencentes à bacia que, por imperativos
+hidrológicos, devam ser desviadas para não comprometer a estrutura da rodovia.
+Os principais dispositivos que fazem parte desta família são:
+
+   • Bueiros;
+   • Pontes e pontilhões.
+                                                                                    24
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   2.3.3     Drenagem do pavimento (subsuperficial)
+A drenagem subsuperficial é constituída por dispositivos cuja função é defender
+o pavimento das águas que possam danificá-lo, originárias de infiltrações diretas
+das precipitações pluviométricas e aquelas provenientes de lençóis d’água
+subterrâneos. Dentre os principais tipos de dispositivos, pode-se citar.:
+
+   • Camada drenante;
+   • Drenos rasos longitudinais;
+   • Drenos laterais de base;
+   • Drenos transversais.
+
+   2.3.4     Drenagem subterrânea ou profunda
+A drenagem subterrânea é formada por dispositivos capazes de interceptar e
+rebaixar o lençol d’água subterrâneo para impedir a deterioração progressiva dos
+suportes das camadas dos terraplenos e pavimentos. Alguns dos dispositivos
+que constituem esta família são:
+
+   • Drenos profundos;
+   • Drenos espinha de peixe;
+   • Colchão drenante;
+   • Drenos suborizontais;
+   • Valetões laterais;
+   • Drenos verticais.
+
+   2.3.5     Drenagem de travessia urbana
+A drenagem de travessia urbana deve promover de forma satisfatória o
+escoamento das águas das áreas urbanas, assegurando o trânsito público e
+protegendo a rodovia e propriedades particulares dos efeitos danosos das
+chuvas intensas. Os principais tipos de dispositivos que integram esta família,
+são:
+
+   • Sarjetas;
+   • Bocas-de-lobo;
+   • Poços-de-visita.
+                                                                                    25
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   3. DRENAGEM SUPERFICIAL
+
+Os dispositivos de drenagem superficial têm a função de captação ou
+interceptação e remoção das águas precipitadas sobre as estradas e áreas
+adjacentes, que escoam superficialmente.
+
+As águas superficiais devem ser removidas ou conduzidas para fora do corpo
+estradal, ou para locais apropriados de deságue seguro, para evitar a sua
+acumulação na estrada, bem como para proporcionar estabilidade aos maciços
+de terra que constituem a infraestrutura e não causar erosão nos terrenos
+marginais.
+
+De acordo com Michelin (1973), a água superficial pode surgir descendo as
+encostas e taludes ou escoando sobre a pista de rolamento e a drenagem
+superficial deverá evitar que essa água atinja ou permaneça por muito tempo
+sobre a estrada, motivo pelo qual se constroem os dispositivos de drenagem
+superficial. Estes irão coletar e remover a água, evitando que ela se infiltre ou se
+acumule.
+
+No entanto, além dos dispositivos propriamente ditos, o projetista deve escolher
+a declividade e os revestimentos impermeáveis mais adequados, contribuindo
+assim para uma maior eficiência da drenagem superficial.
+
+O sistema de drenagem superficial é composto por diversos dispositivos, os
+quais serão detalhados a seguir.
+
+
+
+   3.1 VALETAS
+
+3.1.1. Valetas de proteção de corte
+As valetas de proteção de corte têm como objetivo interceptar as águas que
+escorrem pelo terreno natural a montante, impedindo-as de atingir o talude de
+corte. Podem ser revestidas de grama, pedra arrumada, pedra argamassada,
+concreto, solo-cimento ou do próprio solo compactado.
+                                                                                        26
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+As valetas de proteção serão construídas em todos os trechos em corte onde o
+escoamento superficial proveniente dos terrenos adjacentes possa atingir o
+talude, comprometendo a estabilidade do corpo estradal. Para permitir uma
+melhor visualização desta situação, apresenta-se a figura 3.1.
+
+Normalmente são construídas paralelamente as cristas dos cortes a uma
+distância entre 2,0 m e 3,0 m da linha de off-set, com seção transversal
+trapezoidal, triangular ou retangular, moldadas in loco de forma manual e/ou
+mecânica, devendo o material resultante da escavação ser colocado entre a
+valeta e a crista do corte e apiloado manualmente, conforme indicado na figura
+3.2.
+
+
+
+
+ Figura 3.1 – Valeta trapezoidal de corte executada nas obras de duplicação da BR-304/RN.
+                                    (Fonte: Próprio autor).
+
+
+
+
+             Figura 3.2 – Valeta de proteção de corte. (Fonte: BRASIL, 2006).
+
+Na escolha do tipo de seção deve-se observar que as triangulares criam plano
+preferencial de escoamento d'água, por isso são pouco recomendadas para
+                                                                                       27
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+grandes vazões. Por motivo de facilidade de execução, a seção a adotar nos
+cortes em rocha deverá ser a retangular. Já as valetas com forma trapezoidal
+são as mais recomendáveis por apresentarem maior eficiência hidráulica.
+
+Os revestimentos da valeta de corte deverão ser escolhidos de acordo com a
+velocidade do escoamento (conforme tabela 3.1) e conforme a natureza do
+material do solo. Em princípio, convém sempre revestir as valetas, sendo isso
+obrigatório quando elas forem abertas em terreno permeável, para evitar que a
+infiltração provoque instabilidade no talude do corte. Atenção especial deve ser
+dado ao revestimento da valeta triangular, pois, pela própria forma da seção, há
+uma tendência mais acentuada à erosão e infiltração.
+
+Os tipos de revestimentos mais recomendados são: concreto, alvenaria de tijolo
+ou pedra, pedra arrumada e vegetação.
+
+         Tabela 3.1 – Velocidades máximas admitidas conforme o tipo de revestimento.
+          COBERTURA SUPERFICIAL                        VALORES MÁXIMOS (m/s)
+ Grama comum firmemente implantada                             1,50 – 1,80
+ Tufos de grama com solo exposto                               0,60 – 1,20
+ Argila                                                        0,80 – 1,30
+ Argila coloidal                                               1,30 – 1,80
+ Lodo                                                          0,35 – 0,85
+ Areia fina                                                    0,30 – 0,40
+ Areia média                                                   0,35 – 0,45
+ Cascalho fino                                                 0,50 – 0,80
+ Silte                                                         0,70 – 1,20
+ Alvenaria de tijolos                                              2,50
+ Concreto de cimento Portland                                      4,50
+ Aglomerados consistentes                                          2,00
+ Revestimento betuminoso                                       3,00 – 4,00
+                    Fonte: Manual de Drenagem de Rodovias. (BRASIL, 2006)
+
+Os tipos de valetas de corte catalogadas no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 m linear
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: VPC-01 e VPC-02, com
+revestimento em grama; VPC-03 e VPC-04, com revestimento em concreto.
+
+Como recomendação de cunho prático, sugere-se o uso das valetas de memores
+dimensões para os trechos em corte de menor extensão e onde a contribuição
+                                                                                           28
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+tende a ser menor, seja pelo tamanho da área a ser drenagem, seja pela baixa
+intensidade pluviométrica média observada na região em estudo.
+
+Na prática, normalmente ocorre a necessidade de retirada da água da valeta de
+proteção de corte para a sarjeta ou para a caixa coletora de um bueiro de greide,
+devido às seguintes particularidades:
+
+   • Quando, nos cortes muito extensos e de pequena declividade, o
+comprimento crítico da valeta for atingido, o que obrigaria a construção de seção
+com grandes dimensões;
+   • Quando o terreno a montante da valeta apresentar um talvegue
+secundário bem definido, ocasionando a concentração de água num único local;
+   • Quando o perfil longitudinal da valeta se apresentar sinuoso com vários
+pontos baixos, obrigando, para que haja um escoamento contínuo, a grandes
+profundidades da valeta.
+
+Nesses casos, o dispositivo de saída d´água da valeta de proteção de corte para
+a plataforma é comumente denominado de descida d'água e será tratada mais à
+frente, mas antecipa-se a figura 3.3 para permitir a identificação de uma das
+situações onde ela normalmente pode se tornar necessária.
+
+
+
+
+Figura 3.3 Descida d´água implantada para captar contribuição de valeta de proteção de corte.
+                                                                                    29
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   3.1.2 Valetas de proteção de aterro
+À semelhança da valeta de corte, a valeta de proteção de aterro consiste em
+dispositivo destinado a interceptar e conduzir as águas precipitadas sobre as
+áreas adjacentes e que escoam a montante dos aterros, visando impedir que
+elas atinjam o corpo estradal (pé do aterro), direcionando-as aos bueiros. Além
+disso, têm a finalidade de receber as águas das sarjetas e valetas de corte,
+conduzindo-as com segurança ao dispositivo de transposição de talvegues.
+
+Podem ser revestidas de grama, pedra arrumada, pedra argamassada, concreto,
+solo-cimento ou o próprio solo compactado. Normalmente são construídas
+paralelamente ao pé do talude de aterro, a uma distância entre 2,0 m e 3,0 m da
+linha de offsets, com seção transversal trapezoidal, triangular ou retangular,
+moldadas in loco de forma manual e/ou mecânica. O material resultante da
+escavação deve ser colocado entre a valeta e o pé do talude de aterro, apiloado
+manualmente com o objetivo de suavizar a interseção das superfícies do talude
+e do terreno natural, conforme pode ser visualizado na figura 3.4.
+
+
+
+
+            Figura 3.4 – Valeta de proteção de aterro. (Fonte: BRASIL, 2006).
+
+Os tipos de valetas de aterro catalogadas no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 m linear
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: VPA-01 e VPA-02, com
+revestimento em grama; VPA-03 e VPA-04, com revestimento em concreto.
+
+Michelin (1973) recomenda que, se para a construção de valeta revestida em
+concreto for necessária a preparação do subleito com solo, este deve ser,
+                                                                                             30
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+preferencialmente, de baixa expansão e colocado no lugar fortemente
+compactado e que uma junta de expansão, de cerca de 1cm de largura, seja
+executada a cada 40 m e preenchida com um asfalto de baixa penetração ou
+material similar.
+
+Esta junta, por sinal, tem sua execução recomendada nos demais dispositivos
+de drenagem superficial revestidos em concreto, a fim de se evitar trincamento
+ou fissuração excessiva. Também é uma boa prática de engenharia adotar a
+execução alternada de segmentos da valeta, a fim de promover juntas secas,
+quando o tipo de processo executivo escolhido é o manual, tal como pode ser
+visualizado na figura 3.5.
+
+
+
+
+  Figura 3.5 – Valeta trapezoidal de concreto executada in loco e em segmentos alternados.
+                                     (Fonte: próprio autor).
+
+
+
+   3.2 SARJETAS
+
+   3.2.1 Sarjetas de proteção de corte
+As sarjetas de corte são dispositivos de drenagem construídos lateralmente às
+pistas de rolamento, destinados a captar e conduzir as águas precipitadas sobre
+a plataforma rodoviária, taludes de corte e áreas laterais da rodovia até o ponto
+de passagem corte-aterro, ou em direção aos bueiros de greide, caixas
+coletoras, valetas de aterro ou talvegues naturais.
+                                                                                    31
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+O Manual de Drenagem de Rodovias indica a implantação das sarjetas em todos
+os cortes, sendo construídas à margem dos acostamentos, terminando em
+pontos de saída convenientes (pontos de passagem de corte para aterro ou
+caixas coletoras). No entanto, este autor recomenda uma avaliação mais
+criteriosa, pois por certo, a depender da extensão do corte, de sua altura, bem
+como da área da pista que gera contribuição, certamente seu uso poderá ser
+dispensado em alguns casos, a citar como exemplo, os cortes de pequena altura
+e pequena extensão.
+
+Normalmente, as sarjetas são construídas junto aos acostamentos, com seção
+transversal triangular, retangular, semicircular ou trapezoidal, moldadas in loco
+de forma manual e/ou mecânica.
+
+A sarjeta de seção triangular é um dos modelos de uso mais difundido, pois,
+além de apresentar uma razoável capacidade de vazão, conta a seu favor com
+o importante fato da redução dos riscos de acidentes.
+
+De acordo com a figura 3.6, a sarjeta deve ter, do lado do acostamento, a
+declividade de 25 %, ou seja, 1:4, e do lado do talude, a mesma declividade dele.
+
+
+
+
+            Figura 3.6 – Sarjeta de proteção de corte. (Fonte: BRASIL, 2006).
+
+Os valores extremos da distância da borda do acostamento ao fundo da sarjeta
+(L1), situam-se entre os valores de 1,0 a 2,0 metros, de acordo com a seção de
+vazão necessária. Mantendo as declividades transversais estabelecidas, o
+aumento de L1 fornecerá um acréscimo de L2, H e LT, e consequentemente um
+acréscimo na capacidade hidráulica da sarjeta. Quando para o valor máximo de
+L1 = 2,00 m, a seção da vazão ainda for insuficiente, deverá então ser adotada
+seção tipo trapezoidal ou retangular, com dimensões convenientes para atender
+à descarga de projeto.
+                                                                                     32
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Quando a sarjeta triangular de máximas dimensões permitidas não mais for
+suficiente para atender à descarga de projeto, deve-se adotar a sarjeta de seção
+trapezoidal. Já nos casos em que sua implantação estiver prevista para um corte
+em material rochoso, é preferível a adoção da sarjeta de seção retangular,
+devido à maior facilidade de execução.
+
+Tendo em vista a localização da sarjeta junto ao pé do talude de corte, cuidados
+especiais quanto à erosão devem ser levados em conta, pois deslizamentos de
+talude podem provocar paralisações no tráfego e consequentes prejuízos
+significativos.
+
+Na execução do revestimento das sarjetas de corte, devem ser obedecidas a
+especificação de serviço DNIT-018/2006-ES. Apresentam-se, entretanto,
+algumas indicações complementares que devem ser seguidas:
+
+   • Quando o revestimento for de pedra argamassada, o diâmetro máximo
+deve ser de 0,10 m, rejuntada com argamassa de cimento e areia no traço de
+1:4.
+   • Quando for de concreto, o revestimento deverá ser dosado racionalmente
+para uma resistência mínima à compressão simples Fck = 15 Mpa a 28 dias.
+   • A espessura mínima para a sarjeta de concreto triangular é de 0,08 m e
+para a retangular e trapezoidal é de 0,10 m.
+   • A sarjeta deverá ser moldada no local com formas de metal ou de outro
+material que proporcionem bom acabamento.
+   • As formas (guias) serão espaçadas de 3,00 m em 3,0 m.
+   • A concretagem envolverá um plano executivo, prevendo o lançamento do
+concreto em lances alternados.
+   • Os segmentos intermediários serão executados após o início do processo
+de cura dos demais, redundando em juntas “secas”.
+   • A intervalos de 12,0 m serão executadas juntas de dilatação preenchidas
+com argamassa asfáltica.
+   • Quando a sarjeta de concreto moldada no local se situar sobre uma base
+granular drenante, antes do lançamento do concreto deverá o local ser forrado
+                                                                                    33
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+com material impermeável que evite o preenchimento dos vazios da camada
+drenante pela penetração do concreto.
+   • Deverá haver uma perfeita união entre a face da sarjeta de concreto e o
+pavimento do acostamento, evitando-se penetração d´água na sua junção.
+
+Os tipos de sarjetas de corte catalogadas no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 m linear
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: STC-01 a STC-08, com
+revestimento em concreto e seção triangular; STG-01 a STG-04, com
+revestimento em grama e seção triangular; SZC-01 e SZC-02, com revestimento
+em concreto e seção trapezoidal; SZG-01 e SZG-02, com revestimento em
+grama e seção trapezoidal.
+
+   3.2.2 Sarjetas de proteção de aterro (meios-fios)
+As sarjetas ou meios-fios de aterro são dispositivos destinados a conduzir
+longitudinalmente as águas precipitadas sobre a pista de rolamento para os
+bueiros de greide ou saídas d’água, impedindo que escoem pelo talude do aterro,
+provocando pontos de erosão. As sarjetas de aterro são normalmente
+executadas em alvenaria de pedra argamassada ou em concreto simples,
+podendo ser constituída de guia e calha, ou somente de guia, com moldagem in
+loco de forma manual e/ou mecânica. Para uma melhor visualização, apresenta-
+se a figura 3.7, onde está sendo instalada a forma metálica para execução de
+meio-fio de forma manual.
+
+O Manual de Implantação Básica do antigo DNER (BRASIL, 1996) recomenda a
+implantação de meio-fio nos casos em que o aterro tem altura superior a 4,5 m
+e quando sua declividade longitudinal for superior a 4,5 %. No entanto, este autor
+recomenda uma avaliação mais conservadora, haja vista que já foram
+constatados diversos casos de erosão na superfície de taludes com altura e
+declividade inferiores, ou mesmo onde a proteção vegetal da face do talude não
+foi adequadamente executada, devendo o projetista estar atento ao tipo de solo
+e à velocidade de escoamento.
+                                                                                        34
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+  Figura 3.7 – Meio-fio tipo MFC-05 em execução nas obras de duplicação da BR-304/RN.
+                                   (Fonte: Próprio autor).
+
+Já o Manual de Drenagem de Rodovias (BRASIL, 2006) recomenda o uso destes
+dispositivos nos seguintes casos:
+
+   • Trechos onde a velocidade das águas provenientes da pista provoque
+      erosão na borda da plataforma;
+   • Trechos onde, em conjunto com a terraplenagem, for mais econômica a
+      utilização da sarjeta, aumentando com isso a altura necessária para o
+      primeiro escalonamento de aterro;
+   • Interseções, para coletar e conduzir as águas provenientes dos ramos,
+      ilhas, etc.
+
+Os meios-fios também podem ter a função de limitar a área da plataforma,
+principalmente onde se torna necessária a orientação de tráfego, como canteiro
+central ou interseções, complementando de forma importante a função de
+orientação da drenagem superficial e da segurança da via.
+
+Os tipos de meios-fios catalogados no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 m linear
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: MFC-01 a MFC-08.
+
+Embora a escolha de cada tipo não esteja detalhada no Manual de Drenagem
+de Rodovias, algumas recomendações de cunho prático podem auxiliar na
+decisão. Assim, nas rodovias onde as plataformas são mais largas e providas de
+                                                                                    35
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+duas ou mais faixas de rolamento, além de acostamentos, recomenda-se a
+escolha do tipo MFC-01. Já nos trechos onde a largura da plataforma é reduzida
+e/ou não é provida de acostamentos, recomenda-se o uso do tipo MFC-03. Já
+nas delimitações, como ilhas e agulhas, o MFC-05 mostra-se mais adequado.
+
+Sobre este modelo vale a pena destacar que seu uso só é recomendado junto a
+plataforma rodoviária quando o alagamento temporário do acostamento é
+possível, haja vista que o mesmo é desprovido de calha própria.
+
+Quanto o dispositivo for previsto junto a acessos, como os das propriedades
+privadas, recomenda-se o uso de modelo que tenha a guia rebaixada, como é o
+caso do MFC-02, MFC-04 e MFC-06.
+
+Algumas experiências de campo levam a sugerir o modelo MFC-07 para uso em
+locais onde o acesso de veículos, principalmente de fiscalização e operação,
+deve ser facilitado. Já o modelo tipo MFC-08, para os locais onde o transpasse
+frequente de veículos, criando acessos irregulares, precisou ser inibido.
+
+   3.2.3 Sarjetas de canteiro central
+As sarjetas de canteiro central, conforme ilustrado nas figuras 3.8 e 3.9, são
+dispositivos destinados a captar e conduzir longitudinalmente, entre as pistas
+opostas de uma rodovia de pista dupla, as águas precipitadas sobre as pistas de
+rolamento e área central da rodovia, direcionando-as para caixas coletoras e
+bueiros de greide. Podem ser revestidas de grama, pedra arrumada, pedra
+argamassada, concreto ou solo-cimento. Normalmente são construídas com
+seção transversal triangular ou trapezoidal, moldadas in loco de forma manual
+e/ou mecânica.
+
+
+
+
+              Figura 3.8 – Sarjeta de canteiro central (Fonte: BRASIL, 2018).
+                                                                                   36
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+              Figura 3.9 – Sarjeta de canteiro central de formato triangular.
+
+Os tipos de sarjetas de canteiro central catalogadas no DNIT, suas dimensões,
+tipos de revestimentos e consumos médios de materiais para execução de 1,0
+m linear poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: SCC-01 e SCC-02, com
+revestimento em concreto e seção triangular; SCC-03 e SCC-04, com
+revestimento em concreto e seção trapezoidal.
+
+O local de implantação da sarjeta, dentro do canteiro central, deverá levar em
+conta as cotas das duas plataformas adjacentes, de tal maneira que, quando
+estas forem coincidentes ou apresentarem pequena diferença, a sarjeta poderá
+ser projetada no meio do canteiro; ao passo que, quando estas cotas
+apresentarem grande diferença, provocando um desnível acentuado, a sarjeta
+deve ser implantada junto ao bordo da rodovia de cota mais baixa, conforme
+pode ser observado na figura 3.10.
+                                                                                              37
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+  Figura 3.10 – Posicionamento da sarjeta dentro do canteiro central (Fonte: BRASIL, 2006).
+
+
+
+NOTA: Quando os taludes de corte ou de aterro precisarem ser
+escalonados, poderão ser previstos alguns dos modelos de valetas ou
+sarjetas apresentadas até aqui, sendo as mais usuais as de seção
+trapezoidal. Quando aplicados, tais dispositivos costumam ser chamados
+de sarjetas de banqueta, justamente por estarem implantados nas
+banquetas ou bermas dos taludes.
+   3.2.4 Transposição de segmentos de sarjeta
+São dispositivos destinados a dar acesso a propriedades ou vias laterais
+secundárias à rodovia, permitindo a passagem dos veículos sobre as sarjetas,
+sem causar danos ao dispositivo ou a interrupção do fluxo canalizado, tal como
+pode ser visualizado na figura 3.11.
+
+As transposições de segmentos de sarjeta distinguem-se basicamente em dois
+tipos, a saber:
+
+   • Tubos de concreto, tipo de encaixe macho e fêmea, envolvidos por berço
+e cobertura de concreto simples, conforme figura 3.12;
+   • Laje de grelha de concreto armado, pré-moldada, conforme figura 3.13.
+                                                                                     38
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Figura 3.11 – Transposição de segmento de sarjeta tipo TSS-02 implantado na BR-226/RN.
+                                 (Fonte: Próprio autor).
+
+
+
+
+     Figura 3.12 – Transposição de segmento de sarjeta tipo TSS-1 (BRASIL, 2018).
+                                                                                         39
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   Figura 3.13 – Transposição de segmento de sarjeta tipo TSS-2 (Fonte: BRASIL, 2018).
+
+
+
+   3.3 ENTRADA/SAÍDA D´ÁGUA
+
+As saídas d'água, também conhecidas como entradas d'água, são dispositivos
+destinados a conduzir as águas coletadas por sarjetas ou valetas, lançando-as
+nas descidas d'água. São, portanto, dispositivos de transição entre as sarjetas
+ou valetas e as descidas d'água, realizando o acoplamento de um com o outro,
+tal como mostra a figura 3.14.
+
+
+
+
+           Figura 3.14 – Detalhe de entrada d´água implantado na BR-101/RN.
+                                  (Fonte: Próprio autor).
+                                                                                     40
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+Localizam-se normalmente na borda da plataforma, junto aos acostamentos ou
+em alargamentos próprios para sua execução, nos pontos onde é atingido o
+comprimento crítico do dispositivo, nos pontos baixos das curvas verticais
+côncavas, junto às pontes, pontilhões e viadutos e, algumas vezes, nos pontos
+de passagem de corte para aterro.
+
+As saídas d`água devem ter uma seção tal que permita uma rápida captação das
+águas que escoam pela borda da plataforma conduzindo-as às descidas d'água
+e o rebaixamento gradativo da seção, conforme mostrado nas figuras 3.15 e
+3.16, constituindo um método eficiente de melhoria do mecanismo de captação.
+
+
+
+
+ Figura 3.15 – Saída d´água recomendada para trecho de greide em rampa (Fonte: BRASIL,
+                                        2006).
+                                                                                         41
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   Figura 3.16 – Saída d´água recomendada para trecho de greide em ponto baixo (Fonte:
+                                    BRASIL, 2006).
+
+
+
+
+Os tipos de descidas catalogadas no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 unidade
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos: EDA-01 e EDA-03, para
+trechos em rampa ou onde o fluxo tem um único sentido de escoamento; EDA-
+02 e EDA-04, para pontos baixos ou onde o fluxo tem dois sentidos de
+escoamento.
+
+
+
+   3.4 DESCIDAS D´ÁGUA
+
+As descidas d'água tem como objetivo principal conduzir as águas captadas por
+outros dispositivos de drenagem, quando estes atingem seu comprimento crítico,
+ou ainda deflúvios gerados em pequenos talvegues, promovendo o deságue em
+                                                                                       42
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+uma caixa coletora, em outro dispositivo de drenagem superficial ou no solo, tal
+como pode ser visualizado na figura 3.17.
+
+
+
+
+Figura 3.17 – Detalhe de descida d´água em execução na BR-304/RN. (Fonte: Próprio autor).
+
+Nos trechos em cortes, as descidas d'água normalmente recebem contribuições
+de valetas de corte, levando a água para o nível da plataforma, despejando-a
+em outro dispositivo.
+
+Nos trechos em aterro, as descidas d'água conduzem as águas provenientes dos
+meios-fios até o off-set dos pés dos taludes, desaguando em um dissipador de
+energia ou no terreno natural.
+
+As descidas d'água também atendem, no caso de cortes e aterros, às sarjetas
+ou valetas de banquetas quando é atingido seu comprimento crítico e em pontos
+baixos.
+
+Outro uso recorrente das descidas d´água ocorre quando a saída do bueiro não
+coincide com o off-set e o seu deságue ocorre na face do talude de aterro. Assim
+a descida irá conduzir o fluxo pelo talude até a cota do terreno natural.
+
+As descidas d'água podem ser do tipo rápido ou em degraus. A escolha entre
+um e outro tipo será função da velocidade limite do escoamento para que não
+provoque erosão, das características geotécnicas dos taludes, do terreno
+natural, da necessidade da quebra de energia do fluxo d'água e dos dispositivos
+de amortecimento na saída.
+                                                                                      43
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+A descida d'água, por se localizar em um ponto bastante vulnerável na rodovia,
+principalmente nos aterros, requer que cuidados especiais sejam tomados para
+se evitar desníveis causados por caminhos preferenciais durante as chuvas
+intensas e consequentes erosões que podem levar ao colapso toda a estrutura,
+como mostrado na figura 3.18.
+
+
+
+
+ Figura 3.18 – Colapso do conjunto entrada d´água e descida d´água na BR-354/MG (Fonte:
+                                       próprio autor).
+
+Os tipos de descidas d´água catalogadas no DNIT, suas dimensões, tipos de
+revestimentos e consumos médios de materiais para execução de 1,0 m linear
+poderão ser consultados no Álbum de Projetos-Tipo de Dispositivos de
+Drenagem (BRASIL, 2018), sendo os principais tipos:
+
+   • DAR-01: descida d´água tipo rápida, com seção em meia-cana de
+concreto;
+   • DAR-02 e DAR-03: descida d´água tipo rápida, com seção retangular,
+sendo a primeira em concreto simples e a segunda em concreto armado;
+   • DAR-04: descida d´água tipo rápida, com seção em meia-cana, executada
+com chapas metálicas corrugadas;
+   • DCD-01 a DCD-04: descidas d´água em degraus, de seção retangular e
+normalmente usadas em cortes, sendo as de números ímpares executadas em
+concreto simples e as de números pares, em concreto armado;
+                                                                                    44
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   • DAD-01 a DAD-18: descidas d´água em degraus, de seção retangular e
+normalmente usadas em aterros, sendo as de números ímpares executadas em
+concreto simples e as de números pares, em concreto armado. Cada modelo se
+acopla melhor a um tipo específico de dispositivo, podendo-se consultar o álbum
+de drenagem para esta verificação.
+
+   3.5 DISSIPADOR DE ENERGIA
+
+Dissipadores de energia são dispositivos que têm a função de reduzir a energia
+de fluxos d’água concentrados por outros dispositivos de drenagem,
+promovendo a redução de velocidade de escoamento, minimizando os efeitos
+erosivos quando da disposição final junto ao terreno natural. Podem ser do tipo
+localizado ou contínuo, sendo este grupo o mais usual.
+
+O dissipador do tipo contínuo tem como objetivo, mediante a dissipação de
+energia, diminuir a velocidade da água continuamente ao longo de seu percurso,
+de modo a evitar o fenômeno da erosão em locais que possam comprometer a
+estabilidade do corpo estradal.
+
+Localizam-se, em geral, ao final das descidas d´água ou das sarjetas e valetas,
+ou ainda no deságue de bueiros. Conforme sejam destinados para uso em
+conjunto com um desses dispositivos, poderão ser assim nomeados:
+
+   • DES-01 a DES-04: dissipadores de energia aplicáveis a saída de sarjetas
+e valetas, construídos em pedra-de-mão, argamassa e concreto;
+   • DEB-01 a DEB-13: dissipadores de energia aplicáveis à saída de bueiros
+tubulares e descidas d´água de aterro, construído em pedra-de-mão, argamassa
+e concreto (para saber o tipo que melhor se adapta a cada tipo de dispositivo,
+recomenda-se consultar o álbum de dispositivos);
+   • DED-01: dissipador de energia aplicável a saída de descida d´água de
+aterro tipo rápida, construído em concreto.
+
+Para exemplificar alguns modelos, são apresentadas as figuras 3.19 e 3.20.
+                                                                                      45
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+               Figura 3.19 – Croqui com detalhe de dissipador de energia.
+
+
+
+
+Figura 3.20 – Dissipador de energia em construção nas obras de duplicação da BR-304/RN.
+                                  (Fonte: próprio autor).
+                                                                                       46
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 4
+
+
+
+
+   4. REFERÊNCIAS BIBLIOGRÁFICAS
+
+BRASIL. Álbum de Projetos-tipo de Dispositivos de Drenagem. Rio de Janeiro, IPR, 5 ed.,
+DNIT, 2018.
+
+BRASIL. Diretrizes Básicas para Estudos e Projetos Rodoviários: Escopos Básicos/
+Instruções de Serviço. Rio de Janeiro, IPR, 3 ed. DNIT, 2006.
+
+BRASIL. Manual de Drenagem de Rodovias. Rio de Janeiro, IPR, 2 ed. DNIT, 2006.
+
+BRASIL. Manual de Implantação Básica. Rio de Janeiro, IPR, 2 ed., DNER, 1996.
+
+MORALES, Paulo Roberto Dias. Manual Prático de Drenagem. Rio de Janeiro, IME, 1 ed.,
+2003.
+
+CEDERGREN, Harry R. Drenagem dos Pavimentos de Rodovias e Aeródromos. Rio de
+Janeiro, Livros Técnicos e Científicos, IPR, 1980.
+
+MICHELIN, Renato G. Drenagem Superficial e Subterrânea de Estradas. Porto Alegre, 1973.
+
+SUZUKI, Carlos Yukio. AZEVEDO, Ângela Martins. KABBACH, Felipe Issa. Drenagem
+Subsuperficial de Pavimentos: Conceitos e Dimensionamento. São Paulo, Oficina de
+Textos, 2013.

@@ -1,0 +1,75 @@
+GUIA PRÁTICO · @PATOLUCASENG
+Checklist de Revisão e Auditoria do PATO
+
+Roteiro minucioso para conferir um PATO pronto — cada ponto é uma verificação que resiste ao controle.
+  1    Conformidade normativa e escopo
+  2    Inventário e levantamento de campo
+  3    Quantificação e níveis de esforço
+  4    DSM — verificação específica
+  5    Materiais, transportes e composições
+  6    Custos: SICRO, Adm. Local, canteiro e BDI
+  7    Planilha, Curva ABC e cronograma
+  8    Medição, prazos e defesa técnica
+Conteúdo técnico independente sobre PATO e manutenção rodoviária DNIT · @patolucaseng
+☐ | As referências normativas citadas estão vigentes?
+Resolução DNIT nº 8/2023, INs, acórdãos e SICRO na versão correta.
+☐ | Todos os serviços orçados são elegíveis ao PATO?
+Nada de CREMA, PROARTE, BR-Legal ou restauração/melhoria incompatível.
+☐ | Os serviços não previstos no Manual têm enquadramento demonstrado?
+☐ | As intervenções funcionais respeitam os critérios e limites do Anexo V?
+☐ | Os DSM ficam dentro dos 25% do valor global do orçamento inicial?
+☐ | A nomenclatura está padronizada?
+Acórdãos com nº, normas com sufixo (005/2003-TER, 182/2018-PRO).
+☐ | A duração do contrato está em períodos múltiplos de um ano?
+☐ | O cadastro do trecho e o inventário seguem os modelos dos Anexos II e III?
+☐ | Cada elemento gerador está localizado por km e coordenada (não por estaca)?
+☐ | Há compatibilidade entre cadastro, fotos, inventário, planilha-resumo e memória?
+Divergência entre essas peças é o principal alvo de glosa.
+☐ | Os quantitativos NÃO foram copiados de PATOs anteriores?
+Conferir se há levantamento próprio e datado desta etapa.
+☐ | A metodologia de levantamento está documentada?
+☐ | As interferências ambientais e áreas de licenciamento foram identificadas?
+☐ | Cada quantitativo tem memória de cálculo rastreável e reproduzível?
+☐ | Estão identificados fórmula, unidade, extensão, área, volume, frequência e NE?
+☐ | A memória do NE se apoia no Índice do Pavimento e no histórico do trecho?
+☐ | NE diferentes dos referenciais estão tecnicamente justificados?
+Com levantamentos e critérios objetivos, não por arbítrio.
+☐ | Roçada/capina foi calculada conforme a DNIT 182/2018-PRO?
+☐ | Os quantitativos representam todo o período contratual?
+☐ | Não há duplicidade entre serviços por desempenho e serviços medidos por unidade?
+☐ | Não há sobreposição entre rotineira, periódica, emergencial e DSM?
+☐ | Os DSM foram quantificados por memória de cálculo direta (sem NE)?
+☐ | Cada DSM tem justificativa obrigatória e localização exata?
+☐ | A caracterização traz croquis, plantas, cortes, ensaios ou fotos, conforme o caso?
+☐ | A solução está plenamente caracterizada e não transfigura o objeto?
+☐ | O somatório dos DSM foi reconferido contra o limite de 25%?
+☐ | As fontes de materiais estão pesquisadas e o croqui de DMT (Anexo IX) está completo?
+Fornecedor, coordenadas, tipo de acesso e distâncias por tipo de leito.
+☐ | Os pedágios e o binômio de transporte (Anexo VIII) foram considerados?
+☐ | O FIT e o mapa de estações pluviométricas (FIC) estão elaborados e justificados?
+☐ | As CPU fora do SICRO têm memória de cálculo dos coeficientes?
+☐ | Os insumos asfálticos foram extraídos e lançados separadamente na planilha?
+☐ | Os serviços auxiliares e transportes estão separados corretamente?
+☐ | As composições SICRO estão na base correta (mês e UF) e na data-base adequada?
+☐ | Cada código SICRO de 7 dígitos confere com a tabela oficial?
+Conferência dígito a dígito — erro de OCR/digitação é comum.
+☐ | Os fatores de ajuste (FIC, FIT, empolamento, momento de transporte) estão bem aplicados?
+☐ | A Adm. Local traz 0,25 engenheiro supervisor e exclui a secretária da parcela fixa?
+☐ | O canteiro segue o modelo provisório (SICRO Vol. VII, Anexo XII) com memória de cálculo?
+☐ | Mobilização/desmobilização não duplicam custos já na Adm. Local?
+☐ | O BDI está aderente aos normativos e ao Acórdão nº 2.622/2013? BDI diferenciado justificado?
+☐ | Os orçamentos onerado e desonerado foram comparados e adotou-se o mais vantajoso?
+☐ | Todos os itens da planilha têm composição de preço associada?
+☐ | Os preços unitários batem exatamente com as composições (sem divergência)?
+☐ | A Curva ABC (Anexo XXI) foi elaborada e os itens de maior peso foram examinados?
+☐ | A distribuição percentual do orçamento por grupo está coerente?
+☐ | Arredondamentos, unidades e códigos foram conferidos na planilha e no orçamento?
+☐ | O cronograma físico-financeiro está compatível com o orçamento?
+☐ | Os critérios de medição estão claros o suficiente para evitar pagamento indevido?
+☐ | O controle tecnológico (QE) e seus documentos de suporte estão previstos?
+☐ | Os prazos e a vigência estão consistentes?
+Período mínimo entre o fim dos serviços e o fim do contrato.
+☐ | Há Nota Técnica e Relatório de Apresentação consolidando a proposta?
+☐ | Cada decisão técnica tem documento de suporte anexado?
+Pareceres, memórias e referências normativas.
+☐ | O orçamento é defensável perante o TCU/órgão de controle?

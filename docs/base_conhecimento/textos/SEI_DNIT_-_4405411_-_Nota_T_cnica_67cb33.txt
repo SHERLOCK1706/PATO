@@ -1,0 +1,147 @@
+10/02/2023 15:45                                                  SEI/DNIT - 4405411 - Nota Técnica
+
+
+
+
+  NOTA TÉCNICA Nº: 27/2019/CGMRR/DIR/DNIT SEDE
+  PROCESSO Nº: 50008.001363/2019-89
+  REFERÊNCIA: LICITAÇÃO: PREGÃO ELETRÔNICO
+  OBJETO: LOTE 02
+   1.                 DOS FATOS
+   1.1.          O presente documento contém a análise dos documentos submetidos no presente processo
+   cujo objeto é a Contratação de Empresa para Execução de Serviços de Manutenção
+   (Conservação/Recuperação) Rodoviária referente ao Plano Anual de Trabalho e Orçamento – P.A.T.O.
+   (SEI nº 4426989), na rodovia BR-156/AP, Trecho: Cachoeira Santo Antônio – Fronteira Brasil/Guiana
+   (Ponte Internacional), conforme demanda encaminhada no Documento de Formalização da Demanda 2
+   (SEI nº 4397238) e em razão dos apontamentos feitos Despacho nº 03393/2019/PFE-DNIT/PGF/AGU
+   (4298880), onde verificou-se também a necessidade de realizar uma nova avaliação e/ou revisão do
+   P.A.T.O do segmento rodoviário discriminado na Tabela 1:
+                                              Tabela 1: Informações sobre o trecho
+                                         Cachoeira Santo Antônio - Fronteira Brasil/Guiana (Ponte
+            Trecho
+                                         Internacional)
+                                         ENT. AP-480 (Rio Cajari - Canta Clara) - ENT. AP-030(A)
+            Subtrecho
+                                         (Camaipi-Rio Vila Nova)
+            Segmento                     km 164,20 ao km 212,15
+            Extensão                     47,95 km
+            Código PNV-2019              156BAP0050 - 156BAP0090
+            Orçamento                    R$ 17.870.023,14
+   1.2.           A Portaria Nº 4.530 de 28 de junho de 2019, suspendeu no âmbito da Superintendência
+   Regional do DNIT no Estado do Amapá os efeitos da Portaria nº 1.477, de 1º de março de 2019,
+   delegando, ainda, a essa Regional do Pará as competências daquela, previstas nos artigos 157 ao 171 do
+   Regimento Interno do DNIT. Diante da suspensão das atribuições da portaria nº 1.477, restou retornada
+   à esta Coordenação-Geral as atribuições quanto aos atos preparatórios para prosseguimento ao certame
+   licitatório com os documentos necessários à DIREX/CGCL.
+   2.                 DA ANÁLISE TÉCNICA
+   2.1.           Com base nas planilhas do inventário de elementos geradores de conservação e dos serviços
+   elencados na planilha orçamentária, depreende-se que se trata de manutenção em segmento não
+   pavimentado da rodovia BR-156/AP e cuja premissa de intervenções divide as ações de manutenção no
+   seguintes itens:
+                         a) Conservação Corretiva Rotineira: reconformação de plataforma; roçada com roçadeira
+                         costal e roçada mecanizada; desobstrução e limpeza de bueiro; desmatamento,
+                         destocamento e limpeza; hidrossemeadura.
+                         b) Conservação Preventiva Periódica: recomposição de revestimento primário; serviços
+                         de manutenção/demolição/reconstrução nas pontes de madeira.
+                         c) Conservação Emergencial: recomposição mecanizada de aterro.
+                         d) Serviços de Melhoramento: enrocamento de pedra jogada;instalação de placas em
+                         aço; execução de bueiros.
+                         e) Serviços Auxiliares: placa de obra; instalação de canteiro de obras; administração
+                         local, mobilização e desmobilização de equipamentos.
+   2.1.1.     Baseando-se na definição dos grupos de ações apresentada na Instrução de Serviço nº
+   08/DG/DNIT SEDE, de 22 de março de 2019, nota-se que os serviços encontram-se adequadamente
+   agrupados.
+
+https://sei.dnit.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=4791017&infra_siste…   1/3
+10/02/2023 15:45                                                  SEI/DNIT - 4405411 - Nota Técnica
+
+   2.1.2.         Ainda conforme a Instrução de Serviço nº 08/DG/DNIT SEDE, de 22 de março de 2019, no
+   que tangem os Demais Serviços de Manutenção (DSM), tem-se que neste P.A.T.O. a percentagem de DSM
+   encontra-se inferior ao valor limite expresso na Instrução de Serviço citada, a saber 25% do valor global
+   do orçamento. A percentagem referente à cada grupo de ações encontra-se na Tabela 2, sendo os custos
+   dos transportes distribuídos nos respectivos serviços:
+                       Tabela 2: Detalhamento do orçamento por grupo de ações de manutenção
+                             Grupo de ações              Orçamento parcial        Percentagem
+                                                            R$ 394.308,31
+                   Conservação Corretiva Rotineira                                   2,2 %
+                   Conservação Preventiva Periódica                     R$ 13.694.540,88                  76,6 %
+                   Conservação Emergencial                               R$ 714.935,00                    4,0 %
+                   Serviços de Melhoramento (DSM)                       R$ 1.235.372,98                   6,9 %
+                   Serviços Auxiliares                                    1.830.866,05                    10,2 %
+                                                          Total           17.870.023,14                    100%
+
+   2.2.           Avaliação dos Níveis de esforços do P.A.T.O: verifica-se que a maioria dos serviços
+   encontra-se em conformidade com o manual. Para os serviços cujo níveis de esforços não estão definidos
+   no manual ou para o serviço que ultrapassou o nível de esforço máximo (recomposição mecanizada de
+   aterro) há planilhas contendo as memórias de cálculo justificando os quantitativos anuais que serviram de
+   base para a elaboração do orçamento.
+   2.3.           Avaliação e/ou revisão do Orçamento Referencial: parte-se do pressuposto que os dados e
+   as informações de campo, como a localização das jazidas e dos insumos, dimensões dos elementos de
+   drenagem e sinalização ou mesmo as considerações e prerrogativas relativas ao conhecimento da situação
+   da via in loco e a consequente escolha adequada dos serviços e seus quantitativos estejam corretos. Desta
+   forma, foram analisados os serviços conforme metodologia do SICRO, sendo retificados os seguintes
+   apontamentos na versão 2 da planilha disponibilizada neste processo (4045059). Os serviços a preços
+   novos relacionados à manutenção/reconstrução de pontes de madeira foram previamente aprovados pela
+   Coordenação Geral de Custos de Infraestrutura, conforme Anexos SEI nº 4041826 e nº 3863483, Processo
+   50600.025942/2019-28. Assim, na versão atual (versão 3) do Plano de Trabalho (4426989) encontram-se
+   os seguintes ajustes:
+   2.3.1.             Inserção da mobilização/desmobilização dos contêineres referentes à instalação do canteiro
+   de obras.
+   Justificativa: Apesar de contabilizados no cálculo do custo de instalação de canteiro de obras, há a
+   necessidade de realizar a mobilização/desmobilização dos contêineres, que não estava sendo considerada.
+   2.3.2.        Inserção do caminhão tanque com capacidade de 10.000l no item
+   mobilização/desmobilização de equipamentos para a execução do serviço de "Recomposição de
+   revestimento primário com material de jazida", código SICRO 4915611.
+   Justificativa: Foi necessária a inserção do caminhão tanque para execução do referido serviço pelo fato de
+   não estar sendo computado na composição SICRO 4915611 e necessário para realizar o ajuste de umidade
+   do material a ser compactado.
+   2.3.3.        Inserção do serviço SICRO 5915467 "Transporte de água com caminhão tanque de 10.000 l
+   rodovia - com revestimento primário" para a execução do transporte da água a ser empregada no serviço
+   SICRO 4915611. A DMT adotada para a execução do serviço foi fornecida pela Superintendência
+   Regional do DNIT no Amapá com base nas fontes de captação e nos locais de execução do serviço.
+   2.3.4.             Correções conceituais sobre a administração local: parcela fixa e parcela variável.
+   Justificativa: Foram reavaliadas as considerações sobre os profissionais necessários na parcela fixa e
+   variável da administração local para, então, estar em conformidade com o Manual de Custos de
+   Infraestrutura de Transportes, Volume 08 - Administração Local. Introduziu-se a memória de cálculo da
+   quantidade de frentes de serviço necessárias para a parcela variável, com base nos serviços listados neste
+   Plano de Trabalho.
+
+
+https://sei.dnit.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=4791017&infra_siste…   2/3
+10/02/2023 15:45                                                  SEI/DNIT - 4405411 - Nota Técnica
+
+   2.4.           Em face das modificações realizadas para adequação à metodologia SICRO o orçamento
+   final deste Plano Anual de Trabalho e Orçamento é R$ 17.870.023,14 (dezessete milhões, oitocentos e
+   setenta mil vinte e três reais e quatorze centavos), sendo o orçamento na condição onerada o mais
+   vantajoso para a administração, conforme pode ser verificado na P.A.T.O. (4426989).
+   3.                 DA FUNDAMENTAÇÃO LEGAL
+   3.1.          A presente análise do Plano Anual de Trabalho e Orçamento - P.A.T.O. tem como
+   fundamento os preceitos, disposições e rotinas contidas na Instrução de Serviço DG/DNIT nº 08 (Processo
+   50600.615804/2017-73) de 22/03/2019 e publicada no Boletim Administrativo nº 065 de 04/04/2019, o
+   Manual de Conservação Rodoviária do DNIT - Publicação IPR 710 (2005), assim como Acórdãos,
+   jurisprudências e demais instrumentos referentes ao assunto.
+   4.                 CONCLUSÃO
+   4.1.           Do exposto, entende-se cumpridos os requisitos técnicos complementares necessários ao
+   regular trâmite do certame licitatório.
+                                                                                         Brasília/DF, 11 de novembro de 2019.
+
+                    Documento assinado eletronicamente por Vagner Ferreira de Souza, Coordenador de Programação
+                    e Serviços-Substituto(a), em 11/11/2019, às 09:59, conforme horário oficial de Brasília, com
+                    fundamento no art. 6º, § 1º, do Decreto nº 8.539, de 8 de outubro de 2015.
+
+                    A autenticidade deste documento pode ser conferida no site
+                    https://sei.dnit.gov.br/sei/controlador_externo.php?
+                    acao=documento_conferir&id_orgao_acesso_externo=0, informando o código verificador 4405411 e
+                    o código CRC 31CEC377.
+
+
+  Referência: Processo nº 50008.001363/2019-89                                                                                   SEI nº 4405411
+
+                                                                                           Setor de Autarquias Norte | Quadra 3 | Lote A
+                                                                                           CEP 70040-902
+                                                                                           Brasília/DF | (061) 3315-4319
+
+
+
+
+https://sei.dnit.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=4791017&infra_siste…       3/3

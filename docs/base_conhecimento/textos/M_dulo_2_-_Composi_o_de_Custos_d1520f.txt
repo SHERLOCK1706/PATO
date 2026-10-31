@@ -1,0 +1,712 @@
+INTRODUÇÃO À
+ORÇAMENTAÇÃO DE
+OBRAS RODOVIÁRIAS
+
+Módulo
+
+2
+
+Composição de Custos
+
+Conteudista:
+
+Betânia Alves Paulino
+
+Instituto de
+Pesquisas em
+Transportes Brasília, outubro de 2021.
+
+SUMÁRIO
+1.     Conceitos importantes                                           3
+2.     Composição de Custos                                            6
+3.     Classificação das Composições de Custos                         8
+4.     Insumo — equipamentos                                           9
+     3.1.   Tempo produtivo e improdutivo                              9
+     3.2.   Fatores de correção ajustam a produção dos equipamentos   10
+     3.3.   Ciclo dos equipamentos                                    12
+4.     Demais Insumos                                                 15
+     4.1.   Insumo — Mão de Obra                                      15
+     4.2.   Insumo — Materiais                                        15
+     4.3.   Insumo — Transportes                                      16
+5.     Preços Novos                                                   17
+6.     Textos Complementares                                          21
+7.     Referências Bibliográficas                                     22
+                                                                                    3
+
+                       INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+
+  1. Conceitos importantes
+Antes de iniciar, é importante diferenciar “Custo” de “despesa”
+
+Custo é a soma de todos os gastos incorridos e necessários para a produção e/ ou
+a prestação de serviços, incluindo todos os insumos (equipamentos, mão de obra,
+materiais etc.), bem como todo o dispêndio com a infraestrutura necessária para a
+produção da obra em questão.
+
+Despesa é o valor gasto pela empresa (administração central) em impostos, tributos,
+lucros etc. alocados para obtenção do produto (obra).
+
+Os custos têm a capacidade de serem atribuídos ao produto final, enquanto as
+despesas são de caráter geral, de difícil vinculação aos produtos obtidos.
+
+
+
+Figura 19 — Conceitos de custos e despesas
+
+
+
+
+                                                   Discretizado (planilhado) item
+                                                       de serviço na planilha
+                                                      orçamentária — caráter
+                                    Custos                    analítico
+
+
+
+   Custos X Despesas
+
+
+
+                                   Despesas                 Rateio (%)
+                                                     Formação do preço de venda
+                                                          Caráter sintético
+                                                                                              4
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+
+Figura 20 — Composição dos custos diretos
+
+
+
+
+                                         Custos Diretos
+
+
+
+
+                                                                 Atividades
+   Equipamentos       Mão de obra           Materiais                                 Transportes
+                                                                 auxiliares
+
+
+
+
+Figura 21 — Composição dos custos indiretos
+
+
+
+
+                                             Custos
+                                            Indiretos
+
+
+
+                                                                      Mobilização e
+             Canteiros de obras        Administração local
+                                                                     desmobilização
+
+
+
+Figura 22 — Composição das despesas
+
+
+
+
+                                                Despesas
+
+
+
+
+           Administração            Gastos                                    Pagamentos de
+                                                             Lucro
+             Central              Financeiros                                    Tributos
+                                                                              5
+
+                 INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+Outro conceito importante é o “Custo de Referência”, que é o Custo máximo que a
+Administração Pública se dispõe a reconhecer por um serviço prestado pelo
+contratado. Ele deve ser genérico e não considerar peculiaridades de um
+empreendimento específico.
+                                                                                     6
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+  2. Composição de Custos
+
+A Composição de custos pode ser definida como a transcrição analítica de um
+serviço que permite a definição qualitativa e quantitativa dos insumos necessários à
+sua execução. Neste caso, ela sempre deve retratar um procedimento executivo
+específico e ter como objetivo tradução dos serviços propostos em valores
+financeiros.
+
+É uma ferramenta que permite definir qualitativa e quantitativamente as quantidades
+e os consumos dos insumos (mão de obra, equipamentos, materiais, atividades
+auxiliares e transportes), ponderados por seus custos unitários, acrescidos da
+parcela de bonificação e despesas indiretas, resultando no preço final do serviço.
+
+São cinco os tipos de insumos que podem integrar uma composição de custo.
+
+Figura 23 — Insumos que compõem os custos
+
+
+
+                                               Equipamentos
+
+
+
+                                                Mão de obra
+                      Composição de custo
+
+
+
+
+                                                 Materiais
+
+
+
+                                            Atividades Auxiliares
+
+
+
+                                                Transportes
+
+
+
+O formato (unidade) das composições de custos pode ocorrer de três formas.
+
+A composição de custo horária incide no custo horário do serviço que expresse a
+descrição, quantidades, custos de mão de obra, utilizações produtivas e
+improdutivas dos equipamentos, necessários à execução do serviço em determinada
+unidade de tempo, normalmente em hora.
+                                                                                 7
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+A composição de custo unitária consiste no detalhamento do serviço expressando
+a descrição, as quantidades, as produções e os custos unitários da mão de obra, dos
+materiais e dos equipamentos necessários à execução de uma unidade de serviço.
+
+As composições de custos mistas constituem a forma mais adequada para
+modelar serviços cíclicos que envolvam patrulhas coordenadas de diferentes
+equipamentos, como ocorre normalmente nas atividades de terraplenagem e de
+pavimentação. Por sua natureza analítica e por estar amplamente difundido no meio
+técnico, o formato misto foi mantido em todas as composições do SICRO.
+
+Figura 24 — Formas de composição de custos
+                                                                                  8
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+  3. Classificação das Composições de Custos
+As composições de custos podem ser classificadas, quanto a sua utilização nos
+orçamentos, em dois tipos básicos, a saber:
+
+   •   Principais;
+   •   Auxiliares.
+
+As composições de custos principais são aquelas que representam os serviços
+essenciais de uma determinada obra e contém o percentual de BDI aplicado e os
+custos relativos aos transportes dos materiais. As composições principais constam
+da relação de serviços que compõem a planilha orçamentária do projeto ou do
+contrato e são passíveis de medição e pagamento.
+
+Em virtude de contar com a aplicação do BDI e dos custos relativos ao transporte
+dos insumos, as composições principais podem ser também denominadas
+“composições de preços unitários”.
+
+Já as composições auxiliares são aquelas elaboradas para contemplar as atividades
+de produção de insumos ou de execução de partes do serviço. Os serviços
+considerados auxiliares não recebem a incidência direta do BDI, sendo este aplicado
+apenas ao do custo final do serviço principal.
+
+Para melhor ilustrar uma composição auxiliar, tem-se o exemplo da composição de
+custo Sicro 4011463 – concreto asfáltico – faixa C – areia e brita comerciais, que
+utiliza como atividade auxiliar a composição 6416078 – usinagem de concreto
+asfáltico – faixa C – areia e brita comerciais:
+
+No SICRO, em virtude da parcela de BDI ter sido excluída das composições de
+custos de referência divulgadas, todas as composições podem ser classificadas
+como principais e são diferenciadas apenas quando inseridas em um orçamento
+específico.
+                                                                                 9
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+  4. Insumo — equipamentos
+Vamos tratar do primeiro tipo de insumo, os equipamentos.
+
+O custo horário de um equipamento equivale à soma de todos os custos
+compreendidos em sua utilização, definidos em função das condições de trabalho,
+do tipo de equipamento, das características específicas do serviço e relacionados
+em uma unidade de tempo.
+
+Os equipamentos normalmente realizam operações consideradas repetitivas, o que
+significa dizer que trabalham em ciclos.
+
+O conjunto de movimentos que o equipamento realiza, desde sua partida em uma
+determinada posição, até seu retorno a uma posição semelhante considera-se ciclo.
+O tempo decorrido entre duas passagens seguidas do equipamento é designado
+duração do ciclo. Ele determina o intervalo durante o qual o equipamento realiza
+certa quantidade de serviço.
+
+
+     3.1. Tempo produtivo e improdutivo
+
+
+O SICRO considera dois períodos de tempo diferentes durante a atuação dos
+equipamentos. A esse modelo adotado no cálculo das composições dá-se o nome
+de hora produtiva e hora improdutiva.
+
+No decorrer da hora produtiva, o equipamento encontra-se destinado ao serviço, com
+seus motores ou acionadores em funcionamento.
+
+Na hora improdutiva, o equipamento fica parado, com o motor desligado e em
+espera, aguardando que algum outro membro da patrulha mecânica conclua seu
+trabalho, de modo a garantir frente para que ele possa atuar.
+                                                                                   10
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+Figura 25 — Tempo produtivo e improdutivo
+
+
+
+
+     3.2. Fatores de correção ajustam a produção dos equipamentos
+
+
+Os fatores de correção ajustam a produção dos equipamentos e podem ser
+classificados como:
+
+   ● Fator de eficiência — tempo
+
+Tem a função de representar o tempo de produção efetiva em relação ao tempo
+de produção nominal dos equipamentos.
+
+   ✓ Tempo para regulagem dos equipamentos;
+
+   ✓ Tempo para aquecimento ou resfriamento de equipamentos;
+
+   ✓ Tempo de deslocamento para frentes de serviço.
+
+Fatores adotados, segundo o Manual de Custos de Infraestrutura de Transportes,
+Volume 1:
+
+   ✓ Obras de construção e recuperação = 0,83 (50 min / 60 min = 0,83), com
+       ajustes sendo realizados por meio do fator de interferência do tráfego (FIT);
+                                                                               11
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+   ✓ Obras de conservação = 0,75 (45 min / 60 min = 0,75), com ajustes sendo
+       realizados por meio do fator de interferência do tráfego (FIT).
+
+   ● Fator de conversão — volume
+
+É um fator de ajuste na capacidade dos equipamentos.
+É obtido a partir da relação entre volumes, quais sejam: volume medido ou pago
+(volume de corte) e o volume manipulado pelos equipamentos que dispõem de
+caçambas, reservatórios ou implementos equivalentes (volume de material solto).
+No caso específico dos serviços de terraplenagem de pavimentação, o Fator de
+Conversão consiste na relação entre o volume do material em sua condição
+natural ou compactada e o volume deste mesmo material que está sendo
+manipulado (solto).
+
+
+Figura 26 — Cálculo do fator de conversão — volume
+
+
+
+
+      Fator de
+   empolamento:
+     1/fator de
+     conversão
+
+
+
+
+EXEMPLO:
+Em síntese, o volume em condição natural (55,55 m³), após transportado (69,40 m³)
+e descarregado na obra, será menor em razão de sua compactação (50,00 m³).
+                                                                                12
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+   ● Fator de carga — peso
+
+O Fator de Carga consiste na relação entre a capacidade efetiva do equipamento e
+sua capacidade geométrica ou nominal, associado a uma carga máxima que é
+função do peso específico do conteúdo e das especificações do equipamento.
+
+Fatores adotados:
+
+   ✓ Materiais de 1ª categoria = 0,90;
+
+   ✓ Materiais de 2ª categoria = 0,80;
+
+   ✓ Materiais de 3ª categoria = 0,70.
+
+A capacidade do implemento e dos chassis não muda, logo, faz-se necessário ajuste
+no volume carregado em função das propriedades físicas do material escavado ou
+transportado.
+
+
+     3.3. Ciclo dos equipamentos
+
+
+Normalmente, os equipamentos realizam operações consideradas repetitivas, ou
+seja, trabalham em ciclos. Entende-se por ciclo o conjunto de ações ou movimentos
+que o equipamento realiza desde sua partida, de uma determinada posição, até seu
+retorno a uma posição semelhante, que marca o início de um novo ciclo.
+
+O tempo decorrido entre duas passagens consecutivas do equipamento é
+denominado “duração do ciclo” ou “tempo total do ciclo”, que determina um intervalo
+durante o qual o equipamento realiza certa quantidade de serviço.
+
+A quantificação do serviço realizado durante um ciclo e seu tempo total de duração
+é fundamental para se determinar a produção horária do equipamento, para se
+dimensionar e equilibrar o restante dos equipamentos que com ele formam patrulha,
+bem como se para calcular a produção da própria patrulha.
+
+O dimensionamento da equipe mecânica, quando existem ciclos de produção, é
+realizado por meio do cálculo das produções de equipes mecânicas (PEM).
+                                                                                 13
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+A produção das equipes mecânicas corresponde normalmente a de seu
+equipamento principal ou líder da patrulha, o qual condiciona a atuação do conjunto
+de equipamentos, em função de suas diferentes capacidades e produções.
+
+A determinação da produção das equipes mecânicas constitui elemento fundamental
+para formação dos custos unitários dos serviços. O custo unitário de execução é a
+relação entre o custo horário de execução de determinado serviço e a produção
+calculada na mesma unidade de tempo.
+
+A produção mecânica dos equipamentos pode ser determinada por métodos teóricos
+ou empíricos e que levam em consideração os seguintes fatores:
+
+   •   Informação de fabricantes;
+   •   Informações de catálogos dos equipamentos;
+   •   Experiência de profissionais;
+   •   Informações de aferições de produções de serviço no campo;
+   •   Critérios técnicos fundamentados em conceitos de engenharia.
+
+Pode-se verificar mais informações sobre “ciclos” nos itens 4.2, 4.3 e 4.4 do Volume
+01 do Manual de Custos de Infraestrutura de Transportes
+
+O método de cálculo dos custos do insumo “Equipamentos” está detalhado no
+capítulo 6 do Volume 01 do Manual de Custos de Infraestrutura de Transportes e
+será tratado no módulo 3 deste curso
+
+
+
+TOME NOTA
+
+A determinação do líder da equipe mecânica de um serviço é condicionada ao
+atendimento de alguns critérios:
+
+   ●   O líder não para;
+
+   ●   Não atendendo à condição anterior, o líder será o equipamento de maior valor;
+
+   ●   Em igualdade de significância de valor, será líder o insumo ou atividade que
+       conduza a uma menor produção da equipe;
+                                                                                       14
+
+                 INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+●   Quando a atividade principal apresentar dependência da atividade auxiliar,
+    como ocorre nos casos de usinagem de materiais, e a produção da atividade
+    auxiliar é menor que a produção dos equipamentos responsáveis pela
+    principal, é eleito como líder do serviço principal o líder do serviço auxiliar;
+
+●   Equipamentos acessórios, que pouco participam do serviço (caminhão
+    tanque) ou de pouco valor (grade de discos), não devem ser considerados
+    como líderes;
+
+●   A liderança da equipe pode também ser definida pela mão de obra na
+    ocorrência de uma ou mais das seguintes situações:
+
+       o   Equipamentos não estão presentes integralmente na atividade;
+
+       o   Equipamentos são apenas acessórios;
+
+       o   Não são utilizados equipamentos no serviço.
+
+●   No caso em que todos os insumos operativos não trabalhem continuamente
+    no ciclo produtivo, a produção do serviço a ser considerada deve ser a da
+    equipe como um todo, como é o caso de serviços em ambientes confinados
+    em que todos os participantes ficam em espera até sua vez de operar os seus
+    respectivos equipamentos.
+                                                                               15
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+4. Demais Insumos
+
+     4.1. Insumo — Mão de Obra
+
+
+O dimensionamento da mão de obra envolve quantificação e a definição de todas as
+categorias profissionais necessárias à execução do serviço e são definidos em
+função de quatro parcelas, a saber: salários, encargos sociais, complementares e
+adicionais.
+
+Estes custos consideram condições normais de jornada e ambiente de trabalho. Em
+casos excepcionais, poderão ainda ser aplicados os conceitos e legislações
+relacionados aos adicionais noturno, de insalubridade e de periculosidade.
+
+O método de cálculo dos custos do insumo “Mão de obra” está detalhado no capítulo
+5 do Volume 01 do Manual de Custos de Infraestrutura de Transportes e será tratado
+no módulo 3 deste curso.
+
+
+      4.2. Insumo — Materiais
+
+
+O consumo dos materiais advém das especificações de serviço ou dos projetos de
+engenharia, assim como os traços das misturas ou mesmo taxas de aplicação.
+
+Importa destacar que o projetista tem autonomia para editar os parâmetros e
+consumos previstos no SICRO com o intuito de ajustar as composições de custos
+às condições particulares de um caso concreto.
+
+
+
+O método de cálculo dos custos do insumo “Materiais” está detalhado no capítulo 7
+do Volume 01 do Manual de Custos de Infraestrutura de Transportes e será tratado
+no módulo 3 deste curso.
+                                                                               16
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+     4.3. Insumo — Transportes
+
+
+As obras de infraestrutura utilizam variados veículos para o transporte de seus
+materiais e insumos. No caso específico dos serviços de terraplenagem executados
+na infraestrutura rodoviária ou ferroviária, esse custo é significante.
+
+Destaca-se que o fator econômico também induz, em algumas situações, a utilização
+de transporte intermodal por meio da combinação de rodovias e ferrovias, de
+rodovias e hidrovias e de ferrovias e hidrovias, principalmente em transportes a
+longas distâncias, ainda que considerados os custos e as dificuldades advindos de
+eventuais transbordos.
+
+Assim, esses custos apropriam-se tempos fixos relacionados à carga, descarga e
+manobras, além de momentos de transporte quando couber.
+
+O método de cálculo dos custos do insumo “Operações de Transportes” está
+detalhado no capítulo 8 do Volume 01 do Manual de Custos de Infraestrutura de
+Transportes e será tratado no módulo 3 deste curso
+                                                                                  17
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+5. Preços Novos
+E se as composições necessárias ao orçamento da obra não constarem no SICRO?
+Há que se solicitar ao DNIT a elaboração de um “Preço Novo”.
+
+E se o projeto apresentar alterações, a partir da incorporação, retirada ou
+substituição de insumo cuja especificação gere a descaracterização, a alteração do
+equilíbrio entre os equipamentos constantes da patrulha mecânica, ou a alteração
+da produção horária do serviço ou do quantitativo de mão de obra?
+
+
+
+Nestes casos, deve-se observar a Instrução de Serviço/DG nº 44, de 16/08/2021.
+Ela regulamenta os procedimentos de análise e homologação de composições de
+custo unitário (CCU) de serviços não constantes do SICRO ou outro sistema de
+custos que o suceda. Nestes casos, também há a elaboração de um Preço Novo.
+
+
+
+Dessa forma, a elaboração de um “Preço Novo” pode ser solicitada quando
+comprovadamente o serviço não esteja contemplado no SICRO ou no SINAPI. Ele
+se aplica a Projetos Básicos e Executivos e nas Revisões de Projeto em Fase
+de Obras (RPFO). No caso de delegações de competência, aplica-se também nos
+convênios, termos de compromisso e nas cooperações técnicas.
+
+   ✓ Ele precisa ser devidamente justificado;
+
+   ✓ Obrigatoriamente    analisado   pela    Coordenação-Geral      de   Custos   de
+      Infraestrutura de Transportes/CGCIT.
+
+Ainda segundo a Instrução de Serviço/DG nº 44 de 16/08/2021, a CCU não constante
+do SICRO deve apresentar os itens abaixo para ser analisada e homologada:
+
+   ✓ Especificação complementar ou particular (etapas e sequência executiva,
+      critérios de medição e pagamento);
+
+   ✓ Descrição dos equipamentos (marca, modelo, potência, capacidade);
+                                                                                    18
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+   ✓ Pesquisa de mercado (cotação) — mínimo de 3 (três) cotações por item,
+      devidamente atestadas;
+
+   ✓ Memória de cálculo da Produção de Equipe Mecânica — PEM (ou tempos
+      de cada etapa na sequência executiva); do custo horário do equipamento; da
+      mão de obra empregada;
+
+   ✓ Planilha orçamentária e curva ABC (é um método de categorização, cujo
+      objetivo é determinar os materiais mais relevantes da obra).
+
+Entre outros, conforme a Instrução de Serviço/DG nº 44 de 16/08/2021, é importante
+destacar que não se caracterizam como preços novos:
+
+
+
+  TOME NOTA
+
+   ✓ I — serviços que constem do SICRO, mas que tenham o consumo de
+      materiais alterado em função de condicionantes de projeto, tais como: traço
+      de misturas betuminosas, misturas de solos, taxas de armadura, etc.;
+   ✓ II — serviços constantes do SINAPI, respeitados o mês-base e a unidade da
+      federação a que se referem, bem como a aplicação da parcela de bonificação
+      e despesas indiretas BDI, segundo os critérios constantes do SICRO;
+   ✓ III — serviços afetos à engenharia consultiva, desde que não sejam
+      caracterizados por atividade cíclica ou patrulha mecânica de equipamentos,
+      ou mesmo aqueles que seguem metodologia própria para a definição de
+      custos de referência, conforme estabelecido pela Resolução DNIT nº 11, de
+      21 de agosto de 2020, ou em outro instrumento que venha sucedê-la ou
+      complementá-la;
+   ✓ IV    —   canteiros   de   obras,   instalações   industriais,   mobilização   e
+      desmobilização de equipamentos, administração local ou qualquer outro custo
+      indireto que seja definido a partir de elementos de projeto, os quais devem
+      observar a metodologia constante do Manual de Custos de Infraestrutura de
+      Transportes do DNIT;
+   ✓ V — aquisição e transporte de materiais asfálticos, os quais possuem
+      metodologia específica para estimativa de custos, conforme consta na
+                                                                                   19
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+      Portaria/DG nº 1.977/2017 e na Portaria nº 434/2017, ou em outro instrumento
+      que venha a sucedê-los ou complementá-los; e
+   ✓ VI — serviços relacionados às interferências em obras de infraestrutura de
+      transportes e cuja responsabilidade de estimativa de custos recai sobre as
+      empresas concessionárias e/ou permissionárias de serviços públicos, ou a
+      quem elas deleguem.
+
+No caso de Revisão de Projetos em Fase de Obras — RPFO, há a necessidade de
+se apresentar 2 (duas) composições para cada preço novo:
+
+   1. Com valores dos insumos da proposta da contratada;
+
+   2. Com valores dos insumos do orçamento referencial (licitação).
+
+A composição de custos unitários (CCU) aprovada sempre será aquela estruturada
+conforme item 1, entretanto caso o preço unitário resultante seja superior ao da
+estrutura do item 2, deve-se aplicar um fator de redução*.
+
+(*) Não impedindo que a setorial responsável pela aprovação da revisão de projeto
+proceda a aplicação de desconto adicional eventualmente necessário à garantia do
+equilíbrio econômico-financeiro do contrato.
+
+
+
+O Decreto Presidencial nº 7.983/2013 estabelece regras e critérios para elaboração
+do orçamento de referência de obras e serviços de engenharia, contratados e
+executados com recursos dos orçamentos da União, e dá outras providências,
+conforme artigos abaixo:
+
+      “(...) Art. 3º O custo global de referência de obras e serviços de engenharia,
+      exceto os serviços e obras de infraestrutura de transporte, será obtido a partir
+      das composições dos custos unitários previstos no projeto que integra o edital
+      de licitação, menores ou iguais à mediana de seus correspondentes nos
+      custos unitários de referência do Sistema Nacional de Pesquisa de Custos e
+      Índices da Construção Civil — SINAPI, excetuados os itens caracterizados
+      como montagem industrial ou que não possam ser considerados como de
+      construção civil.
+                                                                           20
+
+            INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+Art. 4º O custo global de referência dos serviços e obras de infraestrutura de
+transportes será obtido a partir das composições dos custos unitários
+previstas no projeto que integra o edital de licitação, menores ou iguais aos
+seus correspondentes nos custos unitários de referência do Sistema de
+Custos Referenciais de Obras — SICRO, cuja manutenção e divulgação
+caberá ao Departamento Nacional de Infraestrutura de Transportes — DNIT,
+excetuados os itens caracterizados como montagem industrial ou que não
+
+possam ser considerados como de infraestrutura de transportes. (..)”
+                                                                                21
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+6. Textos Complementares
+Manuais de Custos de Infraestrutura de Transportes — Volume 01 — Metodologia e
+Conceitos — 3. Inovações Metodológicas, 4. Composições de Custos e 5. Mão de
+Obra.     Disponível   em    https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-
+pesquisa/custos-e-pagamentos/custos-e-pagamentos-dnit/sistemas-de-
+custos/sicro/manuais-de-custos-de-infraestrutura-de-transportes/manuais-de-
+custos-de-infraestrutura-de-transportes.
+
+BRASIL.      DEPARTAMENTO         NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES — DNIT. Instrução Normativa nº 44/DNIT SEDE, de 16 de agosto
+de 2021. Disponível em https://www.gov.br/dnit/pt-br/central-de-conteudos/atos-
+normativos/tipo/instrucao-normativa/2021/in-44-2021-dpp-ba-155-de-17-08-
+2021.pdf. Acesso em 9 de novembro de 2021.
+                                                                                22
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 2
+
+
+
+7. Referências Bibliográficas
+
+BRASIL. Constituição da República Federativa do Brasil de 1988. Disponível em
+http://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm. Acesso em 18 de
+outubro de 2021.
+
+BRASIL.     DEPARTAMENTO          NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES         —     DNIT.    Sistemas     de    Custos.     Disponível   em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos. Acesso em 18 de
+outubro de 2021.
+
+BRASIL.     DEPARTAMENTO          NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES — DNIT. Diretoria Executiva. Coordenação-Geral de Custos de
+Infraestrutura de Transportes. Manual de Custos de Infraestrutura de Transportes.
+1ª Edição — Brasília, 2017. Volume 01: Metodologia e Conceitos.
+
+BRASIL.     DEPARTAMENTO          NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES — DNIT. Instrução Normativa nº 44/DNIT SEDE, de 16 de agosto
+de 2021. Disponível em https://www.gov.br/dnit/pt-br/central-de-conteudos/atos-
+normativos/tipo/instrucao-normativa/2021/in-44-2021-dpp-ba-155-de-17-08-
+2021.pdf. Acesso em 9 de novembro de 2021.

@@ -1,0 +1,37 @@
+[aba CANTEIRO_CONTEINER]
+INSTALAÇÃO DE CANTEIRO DE OBRAS E ACAMPAMENTO - CONTEINERS
+1 - Quantidade de Conteiners
+Descrição | Área (m²) | Tipo | Quantidade | Preço unitário | Preço parcial
+Escritório e seção técnica | 29.74 | M0066 | 1 | 0
+Refeitório e cozinha | 59.44 | M0057 | 1 | 0
+M0058 | 1 | 0
+Alojamentos | 44.58 | M0059 | 3 | 0
+Banheiros e vestiário | 14.86 | M0041 | 1 | 0
+Residências | 14.86 | M0059 | 1 | 0
+Ambulatório* | 29.74 | M0066 | 1 | 0
+Almoxarifado | 29.72 | M0057 | 1 | 0
+Depósito de cimento | 29.72 | M0057 | 1 | 0
+Oficina | 44.58 | M0042 | 1 | 0
+M0042 | 1 | 0
+M0059 | 1 | 0
+Guarita | 7.44 | M0071 | 1 | 0
+Total: | 0
+Tabela 21 - Manual de Custos de Infraestrutura de Transportes - Canteiro de Obras - Volume 06 - 2025 - 2ª Ed.
+2 - Custo total do Canteiro
+Prazo da obra em meses
+Vida útil referencial dos contêineres | 120
+Extensão da rodovia em kmf
+Cp | 1
+k2 (fator mobiliário) | 1.11
+AT (área total) | 609.36
+FEAT (fator de equivalência de áreas totais) | 0.03
+CMCC onerado
+CMCC desonerado
+VERSÃO ONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0
+VERSÃO DESONERADA
+Custo Total do Canteiro de obras e suas instalações: | 0
+BDI:
+Preço Total do Canteiro de obras e suas instalações: | 0

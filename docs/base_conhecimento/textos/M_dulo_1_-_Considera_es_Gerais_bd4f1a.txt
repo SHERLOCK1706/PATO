@@ -1,0 +1,897 @@
+INTRODUÇÃO À
+ORÇAMENTAÇÃO DE
+OBRAS RODOVIÁRIAS
+
+
+Módulo 1
+Considerações Gerais
+
+Conteudista:
+Betânia Alves Paulino
+
+
+
+
+Brasília, outubro de 2021.
+INTRODUÇÃO À
+ORÇAMENTAÇÃO DE
+OBRAS RODOVIÁRIAS
+
+Módulo
+
+1
+
+Considerações Gerais
+
+Conteudista:
+
+Betânia Alves Paulino
+
+Instituto de
+Pesquisas em
+Transportes Brasília, outubro de 2021.
+
+SUMÁRIO
+1.     Introdução                                   3
+2.     O que é o SICRO?                             3
+3.     Por que devemos utilizá-lo?                  3
+4.     Histórico do SICRO                           4
+5.     Estrutura do Manual de Custos de Infraestrutura de Transportes                     8
+6.     Detalhamento do SICRO                        10
+7.     Documentos Normativos                        11
+8.     Principais Inovações do SICRO                14
+     8.1.   Eliminação dos custos indiretos das composições                              14
+     8.2.   Eliminação da generalização de atividades                                    14
+     8.3.   Inclusão de composições de custos de carga, descarga e manobras              15
+     8.4.   Mudança na metodologia para definição dos custos de referência da mão de obra           16
+     8.5.   Criação do Fator de Influência de Chuvas (FIC) e do Fator de Interferência de Tráfego (FIT)
+            17
+     8.6. Eliminação da distinção entre composições de custos de construção e restauração
+     rodoviária no sistema, presentes no Sicro 2                                    18
+     8.7.   Alteração na metodologia de cálculo do custo horário dos equipamentos        18
+     8.8. Alteração da metodologia para definição dos custos de referência dos insumos da
+     pesquisa de preços                                                             19
+     8.9.   Eliminação da diferenciação de transporte local e comercial                  19
+     8.10. Inclusão de composições de custos dos modais ferroviário e aquaviário         20
+     8.11. Inclusão de metodologia para definição dos custos de referência para aquisição e
+     transporte de materiais asfálticos                                                21
+     8.12. Atualização das equações tarifárias de transporte rodoviário dos materiais asfálticos    22
+     8.13. Criação de equações tarifárias de transporte fluvial dos materiais asfálticos 23
+     8.14. Alteração na parcela de Benefícios e Despesas Indiretas (BDI)                 23
+     8.15. Metodologia para definição dos custos de Administração Local                  24
+     8.16. Metodologia para definição dos custos de Canteiros de Obras                   25
+9.     Texto Complementar                           26
+10. Referências Bibliográficas                      27
+                                                                                3
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+  1. Introdução
+
+O material aqui apresentado é baseado no Manual de Custos de Infraestrutura de
+Transportes, que é disponibilizado gratuitamente pelo Departamento Nacional de
+Infraestrutura de Transportes — DNIT em seu sítio eletrônico.
+
+Todavia, o seu objetivo é apresentar uma síntese das técnicas e das boas práticas
+de como são formados os preços referenciais das obras públicas.
+
+Ademais, destacamos que o orçamentista deve sempre observar a legislação
+vigente, incluindo leis, decretos, portarias e ofícios, além das atualizações das
+normas da Associação Brasileira de Normas Técnicas — ABNT e do Instituto de
+Pesquisas em Transportes — IPR, que também são mencionadas no sentido de
+embasar e esclarecer o conteúdo apresentado.
+                                                                                3
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+  2. O que é o SICRO?
+O Sistema de Custos Referenciais de Obras – SICRO é uma ferramenta criada
+pelo Departamento Nacional de Infraestrutura de Transportes – DNIT, com o objetivo
+de definir e mensurar os custos referenciais contemplando os valores de insumos e
+serviços de obras de infraestrutura de transportes de modo pormenorizado. O SICRO
+possibilita estabelecer detalhadamente os custos de referência para obras de
+infraestrutura.
+
+TOME NOTA
+
+O que se denomina SICRO é a terceira versão do sistema, implantada em 2017 e
+que sucedeu o Sicro 2. A opção de não continuar a numeração (criando um eventual
+SICRO 3) se deve ao fato de se estabelecer um processo de melhoria contínua.
+Desta forma, o usuário deve sempre se atentar em buscar a versão mais recente do
+SICRO.
+                                                                                     3
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+  3. Por que devemos utilizá-lo?
+Seu uso é indispensável para a definição dos custos de referência de obras de
+infraestrutura de transportes.
+
+A importância do então denominado Sicro 2 para a elaboração de orçamentos de
+obras de infraestrutura de transportes, com recursos da União, foi amplificada em
+2010 com a exigência de sua utilização prevista na Lei de Diretrizes Orçamentárias
+— LDO. Posteriormente, o Decreto Presidencial nº 7.983/2013 manteve a
+necessidade de sua utilização para definição dos custos de referência de obras de
+infraestrutura de transportes.
+
+O art. 4º do Decreto nº 7.983, de 8 de abril de 2013, que estabelece regras e critérios
+para elaboração do orçamento de referência de obras de engenharia, contratados e
+executados com recursos dos orçamentos da União, e dá outras providências, traz
+o seguinte:
+
+
+      “(...)
+      Art. 4º O custo global de referência dos serviços e obras de infraestrutura de
+      transportes será obtido a partir das composições dos custos unitários
+      previstas no projeto que integra o edital de licitação, menores ou iguais aos
+      seus correspondentes nos custos unitários de referência do Sistema de
+      Custos Referenciais de Obras — SICRO, cuja manutenção e divulgação
+      caberá ao Departamento Nacional de Infraestrutura de Transportes — DNIT,
+      excetuados os itens caracterizados como montagem industrial ou que não
+      possam ser considerados como de infraestrutura de transportes.
+
+      (...)”
+                                                                            4
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+  4. Histórico do SICRO
+O esquema abaixo apresenta os principais marcos associados ao desenvolvimento
+dos sistemas de custos do extinto DNER e do atual DNIT.
+                                                                                                                               5
+
+
+
+Figura 1 — Período de 1946 a 1998
+
+
+              1946                          1972                                   1992
+              Implantação das               Lançamento do Manual                   Organização   da
+              primeiras tabelas                                                                                  Implantação
+                                            de Composições de                      Gerência      de
+              de preços do DNER                                                                                  do SICRO 1
+                                            Custos Rodoviários                     Custos
+                                                                                   Rodoviários
+
+
+
+
+                             1963                        1980                                         1998
+
+                             Tabela Geral                Atualização do Manual de Composições         Revisão do Manual de
+                             de Preços                   de Custos Rodoviários                        Composições de Custos
+                                                                                                      Rodoviários
+                                                                                                                                  6
+
+
+
+Figura 2 — Período de 2000 a 2014
+
+           2000                                    2003                                    2012
+           Implantação   do                        Publicação do Manual de                 Contratação da Fundação
+           SICRO 2                                 Custos Rodoviários                      Getúlio Vargas — FGV
+
+
+
+
+                          2001                                                                                2014
+                                                                 2007 – 2011
+                          Criação do DNIT                                                                     Criação da Câmara
+                                                                 Versão original desenvolvida
+                                                                                                              Técnica do SICRO
+                          (Lei nº 10.233 de 5 de                 pelo CENTRAN e objeto de
+                          junho de 2001)                         termo de cooperação com o
+                                                                 DNIT (SINCTRAN e SICRO 3)
+                                                                                                       7
+
+
+
+Figura 3 — Período de 2015 a 2018
+
+
+
+
+           2015                               2017
+
+                                              Abr/2017              Abr/2017
+           Dez/2015 a Abr/2016
+                                              Aprovação      pela   Implantação do SICRO
+           Consulta Pública (120
+                                              Diretoria Colegiada
+           dias)
+                                              do DNIT
+
+
+
+
+                           2016                                                2018
+                           Mai/2016      a    Abr/2017                         Set/2018 Seminário de
+                           Consolidação            das                         Consolidação do SICRO
+                           contribuições ao sistema —
+                           Consulta Pública e Controle
+                           Externo
+                                                                                  8
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+  5. Estrutura do Manual de Custos de
+     Infraestrutura de Transportes
+O Manual de Custos de Infraestrutura de Transportes compõe a síntese de todo o
+desenvolvimento técnico das áreas de custos do DNIT na formação de preços
+referenciais de obras públicas.
+
+Pode ser acessado pelo seguinte link:
+
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos/sicro/manuais-de-
+custos-de-infraestrutura-de-transportes/manuais-de-custos-de-infraestrutura-de-
+transportes
+
+
+
+A publicação encontra-se organizada nos seguintes volumes, conteúdos e tomos:
+
+Volume 01 — Metodologia e Conceitos
+
+Volume 02 — Pesquisa de Preços
+
+Volume 03 — Equipamentos
+
+Volume 04 — Mão de Obra
+
+   ● Tomo 01 — Parâmetros do CAGED
+   ● Tomo 02 — Encargos Sociais
+   ● Tomo 03 — Encargos Complementares
+   ● Tomo 04 — Consolidação dos Custos de Mão de Obra
+
+Volume 05 — Materiais
+
+Volume 06 — Fator de Influência de Chuvas
+
+   ● Tomo 01 — Índices Pluviométricos — Região Norte
+   ● Tomo 02 — Índices Pluviométricos — Região Nordeste
+   ● Tomo 03 — Índices Pluviométricos — Região Centro-Oeste
+   ● Tomo 04 — Índices Pluviométricos — Região Sudeste
+                                                                           9
+
+                INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+  ● Tomo 05 — Índices Pluviométricos — Região Sul
+
+Volume 07 — Canteiros de Obras
+
+  ● Tomo 01 — Módulos Básicos e Projetos Tipo (A3)
+
+Volume 08 — Administração Local
+
+Volume 09 — Mobilização e Desmobilização
+
+Volume 10 — Manuais Técnicos
+
+     Conteúdo 01 — Terraplenagem
+
+     Conteúdo 02 — Pavimentação/Usinagem
+
+     Conteúdo 03 — Sinalização Rodoviária
+
+     Conteúdo 04 — Concretos, Agregados, Armações, Fôrmas e Escoramentos
+
+     Conteúdo 05 — Drenagem e Obras de Arte Correntes
+
+     Conteúdo 06 — Fundações e Contenções
+
+     Conteúdo 07 — Obras de Arte Especiais
+
+     Conteúdo 08 — Manutenção e Conservação Rodoviária
+
+     Conteúdo 09 — Ferrovias
+
+     Conteúdo 10 — Hidrovias
+
+     Conteúdo 11 — Transportes
+
+     Conteúdo 12 — Obras Complementares e Proteção Ambiental
+
+Volume 11 — Composições de Custos
+
+Volume 12 — Produções de Equipes Mecânicas
+                                                                                 10
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+  6. Detalhamento do SICRO
+
+Para uso do SICRO, faz-se necessário obter as tabelas de preços dos insumos e
+composições.
+
+As atualizações das tabelas de preços são trimestrais e podem ser acessadas
+diretamente no site no DNIT pelo seguinte link:
+
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos.
+
+
+
+Ao acessar o link, o usuário poderá escolher a região geográfica, o estado e o mês
+de referência. O arquivo, disponibilizado de forma compactada, é constituído dos
+seguintes relatórios:
+
+   ✓ Relatório Analítico de Composições de Custos;
+
+   ✓ Relatório Sintético de Composições de Custos;
+
+   ✓ Relatório Sintético de Equipamentos — com desoneração;
+
+   ✓ Relatório Sintético de Equipamentos;
+
+   ✓ Relatório Sintético de Mão de Obra — com desoneração;
+
+   ✓ Relatório Sintético de Mão de Obra;
+
+   ✓ Relatório Sintético de Materiais.
+
+
+
+
+Dica
+Vale destacar que são fornecidas as listagens de composições com e sem
+desoneração de preços para equipamentos e mão de obra. O relatório analítico
+das composições de custo é elaborado na versão sem desoneração. Caso se
+pretenda obtê-lo com desoneração, será necessário calcular usando a metodologia
+apropriada. Para isto, consulte o Manual de Custos de Infraestrutura de Transportes.
+                                                                                    11
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+  7. Documentos Normativos
+Para se elaborar um orçamento, deve-se consultar as normas disponíveis sobre o
+assunto. Devido às constantes atualizações, deve-se atentar sempre a entrada em
+vigor de outros documentos normativos (verificar portal (sítio) do DNIT ou o Diário
+Oficial da União na Imprensa Nacional) e/ou as revogações pertinentes.
+
+A lista a seguir é apenas exemplificativa para demonstrar os normativos vigentes em
+novembro de 2021:
+
+✓ Ofício-Circular nº 136.962/2021/ASSESSORIA/DPP/DNIT SEDE, 1º de outubro
+   de 2021
+
+      ● Repercussão do Ajuste da Meta Selic (6,25% a.a.) no SICRO e na
+          Engenharia Consultiva.
+
+✓ Instrução de Serviço DG/DNIT nº 13/2019
+
+      ● Revoga a IS DG/DNIT nº 09/2016 (diretrizes para análise e aceitação de
+          anteprojetos no âmbito do RDCi) e define que novos atos sejam atendidos
+          conforme Portaria nº 496/2014/DG/DNIT.
+
+✓ Instrução de Serviço DG/DNIT nº 01/2019
+
+      ● Aplicação dos índices de reajustamento de obras no âmbito do DNIT.
+
+✓ Instrução Normativa DG/DNIT nº 04/2018
+
+      ● Fixa os procedimentos para revisão de projeto de engenharia de
+          infraestrutura rodoviária na fase de obras e inclusão, alteração ou exclusão
+          de escopo de obras e serviços em contratações integradas, no âmbito do
+          DNIT.
+
+✓ Memorando-Circular nº 3.952/2018 — DIREX
+
+      ● Taxas referenciais de BDI para edificações.
+
+✓ Memorando-Circular nº 491/2018/DIREX/DNIT SEDE
+                                                                               12
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+      ● Esclarecimentos a respeito dos procedimentos para definição de custos
+         de referência de canteiros e administração local de obras de conservação
+         e restauração rodoviária, inclusive Obras de Arte Especiais, sob a égide
+         do Novo SICRO.
+
+✓ Memorando-Circular nº 1.274/2017
+
+      ● Aplicação de BDI diferenciado em insumos comerciais oriundos de
+         usinagem.
+
+✓ Portaria nº 1.977, de 25 de outubro de 2017
+
+      ● Metodologia para aquisição e transporte de produtos asfálticos.
+
+✓ Memorando-Circular nº 03/2016
+
+      ● Correção do BDI diferenciado — Contribuição Previdenciária sobre a
+         Receita Bruta (CPRB 4,50%).
+
+✓ Portaria DG/DNIT nº 496/2014
+
+      ● Procedimento padrão para licitação e contratação de anteprojetos no
+         âmbito desta Autarquia.
+
+✓ Memorando nº 322/2014 — CGCIT/DIREX
+
+      ● Necessidade de se realizar pesquisa local (cotação) para os insumos de
+         maior relevância nos orçamentos de obras de infraestrutura de transportes
+         no âmbito do DNIT.
+
+✓ Memorando-Circular nº 12/2012 — DIREX
+
+      ● Aplicação de BDI diferenciado.
+
+✓ Instrução de Serviço DG/DNIT nº 22/2010
+
+      ● Análise de Preços Novos.
+
+✓ DNIT/IPR-739-2010
+
+      ● Diretrizes   básicas   para    elaboração    de   estudos    e    projetos
+         rodoviários/instruções para acompanhamento e análise.
+                                                                              13
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+✓ Instrução de Serviço DG/DNIT nº 13/2008
+
+      ● Estabelece diretrizes para avaliação e aprovação de projetos de
+         infraestrutura de transportes.
+
+✓ DNIT/IPR-726-2006
+
+      ● Diretrizes básicas para elaboração de estudos e projetos rodoviários
+         básicos/instruções de serviço.
+
+✓ DNIT/IPR-727-2006
+
+      ● Diretrizes básicas para elaboração de estudos e projetos rodoviários –
+         instruções para apresentação de relatórios.
+
+✓ Instrução de Serviço DG/DNIT nº 15/2006
+
+      ● Dispõe sobre rotina de procedimentos complementares relativos à
+         Elaboração de Projetos de Engenharia de Infraestrutura de Transportes a
+         serem analisados pelo DNIT.
+
+✓ Instrução Normativa nº 44/DNIT SEDE, de 16 de agosto de 2021
+
+      ● Dispõe sobre os critérios para submissão, análise e aprovação de
+         composições de custos unitários de serviços não constantes do Sistema
+         de Custos Referenciais de Obras — SICRO, também denominado de
+         procedimento de análise e aprovação de preços novos.
+
+✓ Instrução Normativa nº 59/DNIT SEDE, de 17 de setembro de 2021
+
+      ● Regulamenta a aplicação dos índices de reajustamentos de obras no
+         âmbito do DNIT.
+
+✓ Instrução Normativa nº 62/DNIT SEDE, de 17 de setembro de 2021
+
+      ● Regula critérios para utilização dos custos referenciais dispostos nos
+         sistemas de custos referenciais do DNIT, nos casos especiais que
+         disciplina.
+                                                                               14
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+  8. Principais Inovações do SICRO
+Neste item apresentamos as principais inovações apresentadas pelo SICRO em
+relação ao Sicro 2.
+
+   8.1.   Eliminação dos custos indiretos das composições
+
+
+Devido às dificuldades em se mensurar a influência de alguns custos indiretos nos
+serviços, optou-se pela sua exclusão das composições de custos, sendo mantidos
+apenas os componentes passíveis de medição direta.
+
+O SICRO excluiu os custos referentes a encarregados das composições de custos
+e os alocou em metodologia específica da Administração Local.
+
+Figura 4 — Exclusão de custos indiretos
+
+
+
+
+   8.2.   Eliminação da generalização de atividades
+
+
+A Composição de Custo Unitário (CCU) de um serviço detalha todos os insumos
+(equipamentos, mão de obra, materiais) e atividades auxiliares necessárias à
+execução de um determinado serviço. Seu custo unitário é o somatório dos custos
+de todos os insumos utilizados na execução de uma unidade.
+                                                                            15
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+Alguns equipamentos que participavam de forma eventual das atividades e que
+podiam ser alocados em novas composições ou em outras já existentes na base de
+dados foram excluídos das composições de custos originais.
+
+Figura 5 — Exclusão da generalização de atividades
+
+
+
+
+   8.3.   Inclusão de composições de custos de carga, descarga e manobras
+
+
+Tempo fixo, segundo o Manual de Custos de Infraestrutura de Transportes —
+Volume 01 — Metodologia e Conceitos, é definido como o tempo, medido em
+minutos, necessário às operações de carga, descarga e manobra de um
+equipamento.
+
+Os tempos fixos de equipamentos foram apropriados em composições de custos
+específicas no SICRO, incluídas nos serviços a que se destinam.
+                                                                                          16
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+Figura 6 — Tempo Fixo
+
+
+
+
+   8.4.   Mudança na metodologia para definição dos custos de referência da
+          mão de obra
+
+Figura 7 — Definição dos custos de mão de obra
+
+            SICRO 2                      SICRO
+
+               Pesquisa do piso              Pesquisa do piso salarial no Cadastro Geral de
+                 salarial nas               Empregados e Desempregados — CAGED — da
+             convenções coletivas          Secretaria de Trabalho do Ministério da Economia
+
+                24 categorias
+                profissionais                        109 categorias profissionais
+
+                                             Encargos sociais diferenciados por categoria
+               Encargos sociais                              profissional
+             trabalhistas comuns
+                  a todas as                 Encargos complementares (alimentação, EPI,
+                  categorias              ferramentas manuais, transporte para arejamento,
+                 profissionais                     exames médicos ocupacionais)
+                                             Encargos adicionais (cesta básica, assistência
+                                                       médica, seguro de vida)
+                                           Condições especiais de trabalho (extraordinário,
+                                                   noturno, insalubre, perigoso)
+                                                                                           17
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+   8.5.    Criação do Fator de Influência de Chuvas (FIC) e do Fator de
+           Interferência de Tráfego (FIT)
+
+
+A nova metodologia do SICRO proporcionou a inclusão de índices que impactam
+diretamente no custo de um projeto. São eles o Fator de Influência de Chuvas (FIC)
+e o Fator de Interferência do Tráfego (FIT).
+
+Fator de Influência de Chuvas (FIC): reflete as condições climáticas regionais, o que
+constitui fator fundamental para o planejamento de uma obra de infraestrutura de
+transportes.
+
+Fator de Interferência do Tráfego (FIT): demonstra o quanto o volume de tráfego local
+afeta a produção dos serviços, principalmente nas proximidades dos grandes
+centros.
+
+Esses fatores serão melhor detalhados no Módulo 4 deste curso.
+
+Figura 8 — Fator de Influência de Chuvas (FIC) e Fator de Interferência do Tráfego (FIT)
+                                                                                          18
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+   8.6.    Eliminação da distinção entre composições de custos de construção
+           e restauração rodoviária no sistema, presentes no Sicro 2
+
+
+   •   SICRO 2: Havia uma diferenciação entre os “Fatores de eficiência na
+       produção dos serviços (fe)” nas obras de construção e de restauração
+
+           •   Construção: fe = 0,83;
+
+           •   Restauração: fe = 0,75.
+
+
+
+   •   SICRO: O fator de eficiência não diferencia mais as composições de custos
+       dos serviços de construção e restauração, pois tem-se o FIT. Desta forma,
+       tem-se:
+
+           •   Construção: fe = 0,83;
+
+           •   Restauração: fe = 0,83.
+
+   8.7.    Alteração na metodologia de cálculo do custo horário dos
+           equipamentos
+
+Figura 9 — Custo horário dos equipamentos
+
+
+
+                                                 Onde:
+ CHP = Dh + Jh + Mh + Cc + Cmo + Ih
+                                            1.      CHP — Custo Horário Produtivo (R$/h);
+                              Parcelas      2.      CHI — Custo Horário Improdutivo (R$/h);
+                            inseridas no    3.      Dh — Depreciação horária (R$/h);
+                               SICRO        4.      Jh — Juros da oportunidade de capital (R$/h);
+                                            5.      Mh — Manutenção (R$/h);
+                                            6.      Cc — Custo de combustíveis, filtros, graxas e
+ CHI = Cmo + Ih + Dh + Jh
+                                                    lubrificantes (R$/h);
+                                            7.      Cmo — Custo da mão de obra de operação
+                                                    (R$/h);
+                                            8.      Ih — Impostos e seguros (R$/h).
+                                                                                 19
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+As principais inovações desta metodologia referem-se à revisão dos parâmetros de
+vida útil e de valor residual dos equipamentos e a inclusão de parcela de
+oportunidade do capital no custo horário produtivo e dos custos de propriedade no
+custo horário improdutivo dos equipamentos.
+
+
+
+   8.8.   Alteração da metodologia para definição dos custos de referência
+          dos insumos da pesquisa de preços
+
+
+Em substituição ao critério de menor preço, introduziu-se o tratamento estatístico à
+base de dados ampliada, respeitada a natureza do insumo, com exclusão de
+extremos, definição de preços médios e preenchimento por meio de extrapolações e
+imputações.
+
+Figura 10 — Custo referencial dos insumos da pesquisa de preço
+
+
+
+
+   8.9.   Eliminação da diferenciação de transporte local e comercial
+
+
+O Sicro 2 diferenciava os transportes locais e comerciais dos insumos. Considerava-
+se transporte local aquele realizado no âmbito da obra e comerciais aqueles
+associados ao deslocamento de materiais fora de seus limites.
+                                                                                   20
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+Entretanto, identificou-se que as condições reais de operações de transportes são
+influenciadas por outros fatores, como por exemplo, as condições de rolamento do
+caminho de serviço, ou o clima.
+
+O SICRO, então, adota o já citado fator de influência de chuvas (FIC), além de
+unificar o fator de eficiência (fe) dos momentos de transportes com valor igual a 0,83
+(50 min / 60 min).
+
+Figura 11 — Transporte local e comercial
+
+
+      SICRO 2                              SICRO
+
+
+  Transporte local
+
+     fe = 0,75                         Transporte
+
+                                      fe = 0,83 e FIC
+    Transporte
+     comercial
+
+     fe = 0,83
+
+
+
+
+   8.10. Inclusão de composições de custos dos modais ferroviário e
+         aquaviário
+
+
+O SICRO trouxe também a inclusão de algumas composições voltadas á
+orçamentação de obras ferroviárias e aquaviárias, mas que não serão tratadas neste
+curso.
+                                                                                21
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+Figura 12 — Modais ferroviários e aquaviário
+
+
+
+
+   8.11. Inclusão de metodologia para definição dos custos de referência
+         para aquisição e transporte de materiais asfálticos
+
+
+A nova metodologia para definição dos custos de referência de aquisição e
+transporte dos materiais asfálticos preserva a utilização dos preços médios
+disponibilizados pela Agência Nacional de Petróleo, Gás Natural e Biocombustíveis
+(ANP), porém, introduz conceitos relacionados à cadeia de produção do asfalto e
+seus derivados e determina a análise combinada do binômio “aquisição + transporte”
+para a definição dos custos de materiais asfálticos.
+
+Figura 13 — Transporte de materiais asfálticos
+                                                                                 22
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+    8.12. Atualização das equações tarifárias de transporte rodoviário dos
+          materiais asfálticos
+
+
+Segundo o Manual de Custos de Infraestrutura de Transportes — Volume 01 —
+Metodologia e Conceitos, as equações para o cálculo do custo do transporte
+rodoviário dos materiais asfálticos foram atualizadas em função da modernização
+dos equipamentos de transporte e armazenamento, da produção, carga e transporte
+e de alterações na legislação pertinente ao setor. A principal inovação refere-se à
+unificação das equações tarifárias, com o fim da distinção entre transporte a quente
+e a frio.
+
+Figura 14 — Tarifas dos transportes rodoviários dos materiais asfálticos
+                                                                                         23
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+   8.13. Criação de equações tarifárias de transporte fluvial dos materiais
+         asfálticos
+
+Figura 15 — Tarifa de transporte fluvial de materiais asfálticos
+
+
+                                                          Transporte a quente (R$)
+                                                         (24,3894 + 0,1603 X D) por
+                              Empurrador e balsas                tonelada
+                               especializadas com
+                              tanques isotérmicos          Transporte a frio (R$)
+                                                         (20,7256 + 0,1603 X D) por
+                                                                 tonelada
+    Transporte Fluvial
+                               Empurrador e balsas        Transporte a quente e a frio
+                               de convés com cavalo                  (R$)
+                                    mecânico e
+                                semirreboques com         (14,0630 + 0,1925 X D) por
+                                tanques isotérmicos               tonelada
+
+
+
+
+   Ver “Portaria nº 434, de 14 de março de 2017”, disponível em
+   https://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/20831298/do1-
+   2017-03-15-portaria-n-434-de-14-de-marco-de-2017-20831234
+
+
+
+
+   8.14. Alteração na parcela de Benefícios e Despesas Indiretas (BDI)
+
+
+A taxa de Benefícios e Despesas Indiretas (BDI) consiste no elemento orçamentário
+que se adiciona ao custo de uma obra para a obtenção de seu preço de venda.
+
+Na vigência do Sicro 2, a taxa de BDI era única. Entretanto, com as diferenciações
+dos custos, no SICRO, para instalação dos canteiros de obras e para administração
+local e as alterações incorridas no cálculo do custo horário dos equipamentos,
+observou-se a necessidade de se alterar as parcelas constituintes do BDI. A grande
+inovação encontra-se na diferenciação do BDI por faixas em função da natureza e
+do porte das obras.
+                                                                                24
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+Figura 16 — Taxa de BDI
+
+
+
+
+   8.15. Metodologia para definição dos custos de Administração Local
+
+
+A necessidade de se detalhar os custos envolvidos em uma obra ou serviço gerou o
+desenvolvimento de uma metodologia para definição dos custos de referência da
+administração local em função do porte e da natureza das obras, das características
+da mão de obra e da quantidade dos serviços envolvidos.
+
+Figura 17 — Custo da Administração Local
+                                                                                 25
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+   8.16. Metodologia para definição dos custos de Canteiros de Obras
+
+
+O SICRO apresenta uma metodologia para definição dos custos de referência para
+instalação dos canteiros de obras e das instalações industriais em função do porte e
+da natureza das obras.
+
+Figura 18 — Custo de canteiros de obras
+                                                                                  26
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+9. Texto Complementar
+Manuais de Custos de Infraestrutura de Transportes — Volume 01 — Metodologia
+e   Conceitos    —     1.   Introdução    e   2.    Conceitos.   Disponível       em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos/sicro/manuais-de-
+custos-de-infraestrutura-de-transportes/manuais-de-custos-de-infraestrutura-de-
+transportes.
+                                                                                27
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 1
+
+
+
+
+10. Referências Bibliográficas
+
+BRASIL. Constituição da República Federativa do Brasil de 1988. Disponível em
+http://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm. Acesso em 18 de
+outubro de 2021.
+BRASIL.     DEPARTAMENTO           NACIONAL      DE     INFRAESTRUTURA      DE
+TRANSPORTES         —      DNIT.     Sistemas   de    Custos.    Disponível em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos. Acesso em 18 de
+outubro de 2021.
+BRASIL.      DEPARTAMENTO          NACIONAL      DE     INFRAESTRUTURA        DE
+TRANSPORTES — DNIT. Diretoria Executiva. Coordenação-Geral de Custos de
+Infraestrutura de Transportes. Manual de Custos de Infraestrutura de Transportes.
+1ª Edição — Brasília, 2017. Volume 01: Metodologia e Conceitos. Disponível em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos/sicro/manuais-de-
+custos-de-infraestrutura-de-transportes/volume01metodologiaeconceitos.rar.
+Acessado em 28 de Janeiro de 2022

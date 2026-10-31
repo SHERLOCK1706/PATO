@@ -1,0 +1,1116 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+Conceitos Básicos
+de Hidrologia e
+Drenagem para
+Projetos Rodoviários
+
+
+
+Módulo
+             1
+Conceitos Básicos de
+Hidrologia.
+- Clima: conceitos e classificação;
+- Hidrologia: conceito e importância;
+- Etapas de um estudo hidrológico.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático, cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.008060/2022-01, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o
+ceder a outros órgãos e entidades federais.
+                              SUMÁRIO
+1.     INTRODUÇÃO ...................................................................................................................... 1
+
+2.     CLIMA E SUA CLASSIFICAÇÃO ........................................................................................ 2
+
+3.     HIDROLOGIA...................................................................................................................... 12
+     3.1      CICLO HIDROLÓGICO ............................................................................................... 13
+     3.2      PRECIPITAÇÃO .......................................................................................................... 15
+     3.3      ESCOAMENTO SUPERFICIAL E SUBTERRÂNEO .................................................. 18
+
+4.     ETAPAS DO ESTUDO HIDROLÓGICO............................................................................. 24
+
+5.     REFERÊNCIAS BIBLIOGRÁFICAS ................................................................................... 29
+                                                                                     1
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+1. INTRODUÇÃO
+
+O objetivo deste módulo é apresentar os principais conceitos relacionados à
+hidrologia, abordando de forma mais particular o ciclo hidrológico e as principais
+fases de interesse para o desenvolvimento de um estudo voltado à concepção
+ou projeto de uma rodovia.
+
+Também serão apresentados os principais elementos de projeto necessários à
+elaboração de um estudo hidrológico e os dados imprescindíveis e que podem
+ser considerados como pré-requisitos para a elaboração de um projeto de
+drenagem.
+
+É de fundamental importância que se tenha uma noção clara de que, para o
+desenvolvimento de um projeto de drenagem, tanto é necessário que o
+respectivo estudo hidrológico esteja concluído, bem como que seu conteúdo seja
+o mais consistente possível, de tal modo que o sucesso do projeto em si depende
+do cuidado e primor que se aplicam durante a elaboração do estudo.
+
+Deve-se ter em mente que o estudo hidrológico deve ser concebido com a
+finalidade de identificar, quantificar e qualificar as circunstâncias climáticas,
+pluviométricas e hídricas da área onde se localiza o trecho em estudo, bem como
+caracterizar as bacias de contribuição interceptadas pelo traçado e calcular as
+vazões máximas dessas bacias, visando o correto dimensionamento das obras
+de drenagem.
+
+Como fontes principais de consulta, além do conteúdo apresentado neste
+material, sugere-se que o aluno leia o Manual de Hidrologia Básica para
+Estruturas de Drenagem (BRASIL, 2005) e outros livros sobre o tema, com
+destaque para:
+
+- TUCCI, C. E. M. Hidrologia: Ciência e Aplicação. Rio Grande do Sul, 4 ed.,
+UFRGS, 2012;
+                                                                                     2
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+- GARCEZ, Lucas Nogueira; ALVAREZ, Guillermo Acosta. Hidrologia. São
+Paulo, 2 ed., Blucher, 2016;
+
+- VILLELA, Swami Marcondes; MATTOS, Arthur. Hidrologia Aplicada, São
+Paulo, 1 ed., Mcgraw Hill do Brasil, 1975.
+
+
+
+
+2. CLIMA E SUA CLASSIFICAÇÃO
+
+Pode-se entender por clima o conjunto de fenômenos associados às variações
+do tempo da atmosfera terrestre em determinado local. Por se tratar de um
+elemento da atmosfera, ele está em constante interação com os elementos e
+fenômenos que ocorrem em camadas como a hidrosfera e a biosfera, tanto
+alterando como sendo alterado por diversos componentes.
+
+O clima é influenciado por diferentes fatores e elementos climáticos, que
+contribuem para uma grande diversificação climática. Assim, dependendo da
+região do mundo e dos fatores que a influenciam, a atmosfera terá características
+totalmente diferentes.
+
+Atualmente, existem diferentes classificações climáticas que definem o clima de
+acordo com os seus principais elementos, dentre os quais destacamos: radiação,
+temperatura, pressão atmosférica e umidade. Uma das classificações mais
+utilizadas é a do geógrafo alemão Wladimir Petter Koppen, proposta em 1900 e
+aperfeiçoada por outros geógrafos a partir de então.
+
+De acordo com a classificação de Koppen, o planeta possui vários tipos e
+subtipos de clima, a saber:
+
+   • Clima equatorial: está presente nas zonas tropicais (Amazônia, África e
+Indonésia), próximas à linha do Equador. Apresenta temperaturas elevadas, com
+médias anuais em torno de 25° C, pequena amplitude térmica e muita umidade,
+com médias pluviométricas superiores a 2.000 milímetros por ano.
+                                                                                      3
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   • Clima tropical: ocorre na maior parte das regiões localizadas entre os
+trópicos de Capricórnio e de Câncer. Apresenta elevadas temperaturas, com
+médias anuais em torno de 20 ºC e duas estações bem definidas: uma quente e
+úmida (verão) e outra mais fria e seca (inverno). As médias de pluviosidade
+variam entre 1.000 mm e 2.000 mm por ano e dependem da região em que se
+encontram. Em virtude dessa variação de umidade, o clima tropical pode ser
+dividido em clima tropical úmido ou litorâneo e clima tropical continental ou clima
+tropical típico.
+
+
+   • Clima temperado: está presente em áreas de médias altitudes,
+correspondendo ao único tipo de clima que possui as quatro estações bem
+definidas. Possui temperaturas mais amenas, com médias anuais que variam em
+torno de 8 ºC e 15 ºC, e umidade que varia de acordo com a sua localização
+(quanto mais próximo ao litoral, mais úmido). Esse tipo de clima é dividido em
+clima temperado oceânico e clima temperado continental.
+
+
+   • Clima subtropical: está presente em áreas de transição entre o clima
+tropical e o clima temperado. Apresenta temperaturas mais amenas e grande
+amplitude térmica anual, com temperaturas negativas no inverno e acima dos 30
+ºC no verão. As estações do ano, apesar de não serem tão bem definidas como
+as do clima temperado, já começam a se delinear. As chuvas são bem distribuídas
+durante o ano e apresentam maior ocorrência durante o verão.
+
+
+   • Clima mediterrâneo: ocorre, principalmente, nas regiões próximas ao
+Mar Mediterrâneo. Apresenta duas estações bem definidas, sendo uma o verão
+(quente e seco) e a outra o inverno (chuvoso e menos quente). As médias de
+temperatura assemelham-se muito às do clima tropical, mas a quantidade de
+chuvas é ligeiramente menor no clima mediterrâneo.
+
+
+   • Clima frio ou subpolar: está presente nas regiões temperadas mais
+próximas aos polos e apresenta duas estações bem definidas. Um verão fresco,
+                                                                                     4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+com temperaturas em torno de 10 ºC, e inverno bastante rigoroso, com
+temperaturas negativas. O índice pluviométrico varia entre 100 mm e 1000 mm,
+sendo comum a precipitação em forma de flocos de neve durante o inverno.
+
+
+   • Clima frio de montanha: este tipo de clima corre em regiões com
+grandes cadeias de montanhas, como os Andes, o Himalaia, as Montanhas
+Rochosas e os Alpes. Caracteriza-se pelas baixas altitudes, com uma grande
+variação de temperatura conforme a altitude (quanto maior a altitude, menor a
+temperatura) e a presença de neves que nunca derretem.
+
+
+   • Clima polar ou glacial: está presente nas zonas polares ou em latitudes
+muito elevadas, próximas aos polos norte e sul. Apresenta temperaturas baixas
+durante o ano todo, com médias anuais próximas a -30 ºC, uma grande variação
+na duração do dia e da noite e baixa umidade, com um índice pluviométrico de
+menos de 200 mm anuais.
+
+
+   • Clima desértico: tipo de clima presente tanto em regiões temperadas
+quanto em regiões tropicais (norte da África, Oriente Médio, oeste dos Estados
+Unidos, norte do México, litoral do Chile e do Peru, Austrália e noroeste da Índia)
+e regiões de depressões. Apresenta uma grande amplitude térmica durante o dia
+(com temperaturas próximas aos 50 ºC durante o dia e temperaturas negativas
+durante a noite), baixa umidade, chuvas escassas e irregulares e índices
+pluviométricos inferiores a 250 mm por ano.
+
+
+   • Clima semiárido: localiza-se nas bordas dos desertos da América do
+Norte, América do Sul, Austrália, África e na região Nordeste do Brasil, que,
+embora não esteja próxima a um deserto, também possui esse tipo de clima em
+virtude da baixa umidade existente na região. O semiárido caracteriza-se pela
+presença de altas temperaturas, com médias anuais em torno de 27 ºC, baixa
+umidade, chuvas escassas e irregulares, e médias pluviométricas que variam em
+torno de 300 mm a 800 mm por ano.
+                                                                                      5
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+Na classificação proposta por Koppen, considera-se que a vegetação natural de
+cada grande região do planeta é essencialmente uma expressão do clima nela
+presente. Assim, as fronteiras entre regiões climáticas foram selecionadas para
+corresponder, tanto quanto possível, às áreas de predominância de cada tipo de
+vegetação, razão pela qual a distribuição global dos tipos climáticos e dos
+biomas apresenta elevada correlação.
+
+Na determinação dos tipos climáticos de Koppen-Geiger, são considerados a
+sazonalidade e os valores médios anuais e mensais da temperatura do ar e da
+precipitação. Cada grande grupo climático é denotado por um código, constituído
+por letra maiúsculas e minúsculas, cuja combinação revela os tipos e subtipos
+considerados. Para fins de ilustração, apresenta-se o mapa mundial com a
+classificação climática de Koppen-Geiger na figura 2.1 e o mapa brasileiro com
+a mesma classificação na figura 2.2.
+
+
+
+
+     Figura 2.1 – Mapa com a classificação climática de Koppen-Geiger para o mundo.
+                                                                                             6
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   Figura 2.2 – Mapa com a classificação climática de Koppen-Geiger para o Brasil. (Fonte:
+      https://www.infoescola.com/geografia/classificacao-climatica-de-koppen-geiger/).
+
+Deve-se revelar, no entanto, que a classificação climática proposta por estes
+autores não avaliam as diferenças existentes dentro de certos biomas, razão
+pela qual pode-se sugerir outras classificações para análises de áreas onde
+ocorre muita heterogeneidade.
+
+Para entender melhor esta classificação será apresentada a estrutura geral
+utilizada para fins de divisão do clima em grupos e subgrupos.
+
+Koppen e Geiger dividiram o clima em 5 grandes grupos (A, B, C, D e E) e depois
+em diversos tipos e subtipos. Cada clima é representado por um conjunto
+variável de letras (com 2 ou 3 caracteres), seguindo a notação apresentada na
+sequência:
+
+   • 1ª letra: uma maiúscula (A, B, C, D ou E) que denota a característica geral
+do clima de uma região, constituindo o indicador do grupo climático. Em linhas
+gerais, os climas mundiais se graduam de “A” a “E”, partindo do Equador em
+direção aos polos.
+                                                                                     7
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   • 2ª letra: uma minúscula, que estabelece o tipo de clima dentro do grupo e
+denota as particularidades do regime pluviométrico, ou seja, a quantidade e
+distribuição da precipitação. Nos grupos cuja primeira letra seja “B” ou “E”, a
+segunda letra será também maiúscula e representará a quantidade de
+precipitação total anual (no caso, “B”) ou a temperatura média anual do ar (no
+caso, “E”).
+   • 3ª letra: minúscula, denotando a temperatura média mensal do ar nos
+meses mais quentes (nos casos em que a primeira letra seja “C” ou “D”) ou a
+temperatura média anual do ar (no caso da primeira letra ser “B”).
+
+Para uma melhor compreensão apresenta-se a figura 2.3, contendo um resumo
+sinóptico da classificação.
+
+
+
+
+              Figura 2.3 – Resumo sinóptico da classificação de Koppen-Geiger.
+
+Assim, os tipos e subtipos de climas propostos nessa metodologia ficam
+estruturados da seguinte forma:
+
+   •   A – Clima tropical (climas megatérmicos das regiões tropicais e
+       subtropicais)
+       ✓       Af = clima tropical úmido ou clima equatorial;
+       ✓       Am = clima de monção;
+       ✓       Aw = clima tropical com estação seca de inverno;
+                                                                                  8
+
+     CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+    ✓     As = clima tropical com estação seca de verão.
+
+
+
+•   B – Clima árido (climas das regiões áridas e dos desertos das regiões
+    subtropicais e de média latitude)
+    ✓ BS = clima das estepes;
+
+         - BSh = clima das estepes quentes de baixa latitude e altitude;
+
+         - BSk = clima das estepes frias de média latitude e grande altitude.
+
+    ✓ BW = clima desértico;
+
+         - BWh = clima das regiões desérticas quentes de baixa latitude e
+         altitude;
+
+         - BWk = clima das regiões desérticas frias das latitudes médias ou
+         de grande altitude.
+
+
+
+•   C – Clima oceânico (climas das regiões oceânicas e marítimas e das
+    regiões costeiras ocidentais dos continentes)
+    ✓ Cf = clima temperado úmido sem estação seca;
+
+         - Cfa = clima temperado úmido com verão quente;
+
+         - Cfb = clima temperado úmido com verão temperado;
+
+         - Cfc = clima temperado úmido com verão curto e fresco.
+
+
+
+    ✓ Cw = clima temperado úmido com inverno seco;
+
+         - Cwa = clima temperado úmido com inverno seco e verão quente;
+
+         - Cwb = clima temperado úmido com inverno seco e verão
+    temperado;
+                                                                                  9
+
+     CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+            - Cwc = clima temperado úmido com inverno seco e verão curto e
+    fresco.
+
+
+
+    ✓ Cs = clima temperado úmido com verão seco (clima mediterrâneo);
+
+            - Csa = clima temperado úmido com verão seco e quente;
+
+            - Csb = clima temperado úmido com verão seco e temperado;
+
+            - Csc = clima temperado úmido com verão seco, curto e fresco.
+
+
+
+•   D – Clima continental ou temperado frio (climas das grandes regiões
+    continentais médias e alta altitude)
+    ✓ Df = clima temperado frio sem estação seca;
+
+            - Dfa = clima temperado frio sem estação seca e com verão quente;
+
+            - Dfb = clima temperado frio sem estação seca e com verão
+    temperado;
+
+            - Dfc = clima temperado frio sem estação seca e com verão curto e
+    fresco;
+
+            - Dfd = clima temperado frio sem estação seca e com inverno muito
+    frio.
+
+
+
+    ✓ Dw = clima temperado frio com inverno seca;
+
+            - Dwa = clima temperado frio com inverno seco e com verão quente;
+
+            - Dwb = clima temperado frio com inverno seco e com verão
+    temperado;
+
+            - Dwc = clima temperado frio com inverno seco e com verão curto e
+    fresco;
+                                                                                      10
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+              - Dwd = clima temperado frio com inverno seco e muito frio.
+
+
+
+   •     E – Clima glacial (climas das regiões circumpolares e das altas
+         montanhas)
+         ✓ ET = clima de trunda;
+         ✓ EF = clima das calotas polares;
+         ✓ EM = clima das altas montanhas.
+
+
+
+Restringindo-se à análise do clima para o Brasil, pode-se destacar os seguintes
+tipos:
+
+   • Clima equatorial úmido: é o tipo climático que envolve praticamente toda
+a faixa da Amazônia localizada no Brasil, sendo basicamente controlado pela
+massa de ar Equatorial Continental.
+
+Em função da grande quantidade de umidade emitida pela floresta amazônica
+através do processo de evapotranspiração, as amplitudes térmicas são baixas,
+haja vista que a maior presença de água no ar ajuda a conservar as
+temperaturas, com as médias térmicas mensais ao longo do ano variando entre
+24 ºC e 27 ºC. As chuvas são constantes, do tipo de convecção, pois o ar úmido
+e quente eleva-se e condensa-se diante das temperaturas menores das áreas
+mais elevadas da atmosfera. As médias pluviométricas permanecem com
+valores elevados, entre 1500 mm e 2500 mm por ano.
+
+   • Clima tropical seco e úmido: ocupa a maior área do país, envolvendo
+quase toda a região Centro-Oeste, o Centro-Sul do Tocantins, algumas faixas da
+região Nordeste e também partes do Sudeste brasileiro. É conhecido por
+apresentar duas estações bem definidas ao longo do ano: um quente e chuvosa
+e outra fria e seca.
+
+As temperaturas médias variam entre 20 ºC e 28 ºC, com um índice pluviométrico
+em torno de 1500 mm por ano.
+                                                                                    11
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   • Clima tropical seco: concentra-se em uma estreita área da região
+Nordeste do país, mais precisamente no sertão nordestino. Como o próprio nome
+indica, trata-se de um tipo climático quente e seco, quase árido (por isso a
+nomenclatura “semiárido”), com médias pluviométricas anuais não maiores do
+que 1000 mm, concentradas em poucos meses do ano.
+   • Clima litorâneo úmido: está presente ao longo do litoral brasileiro, entre
+os estados do Rio Grande do Norte e São Paulo. Nessa região há formas de
+relevo que barram a umidade dos ventos que circulam nos sentidos leste-oeste
+e norte-sul, provocando a ocorrência de chuvas orográficas e propiciando que o
+interior do país receba menos umidade ao longo do ano. As médias de
+pluviosidade variam entre 1500 mm e 2000 mm por ano.
+   • Clima subtropical úmido: abrange a porção sul do país, com um clima
+úmido e mais frio do que os demais. A massa de ar predominante é a Tropical
+Atlântica, com influência de massas polares durante o inverno, de modo que o
+encontro dessa frente polar com frentes quentes provoca as chamadas chuvas
+frontais. O índice médio de pluviosidade anual gira em torno de 1500 mm e as
+temperaturas médias variam entre 18 ºC e 22 ºC.
+
+
+
+Alternativamente pode-se visualizar o mapa temático de clima do Brasil
+elaborado pelo Instituto Brasileiro de Geografia e Estatística.
+
+
+
+
+TOME NOTA
+
+MAPA TEMÁTICO DE CLIMA DO BRASIL, disponível em
+http://geoftp.ibge.gov.br/informacoes_ambientais/climatologia/mapas/brasil/Map
+_BR_clima_2002.pdf
+                                                                                    12
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+3. HIDROLOGIA
+
+Segundo Meyer (1948), a Hidrologia é a ciência natural que trata dos fenômenos
+relativos à água em todos os seus estados, da sua distribuição e ocorrência na
+atmosfera, na superfície terrestre e no solo, e da relação desses fenômenos com
+a vida e com as atividades do homem.
+
+A hidrologia também pode ser conceituada como a ciência que estuda a água
+nos estados sólido, líquido e gasoso, bem como de sua ocorrência, distribuição
+e circulação na natureza.
+
+Sua importância é facilmente compreensível quando se considera o papel e a
+importância da água na vida humana, de tal maneira que seu conhecimento é
+imprescindível a profissionais das mais variadas áreas de formação, com
+destaque para o engenheiro, o agrônomo, o ecologista, o geógrafo e o geofísico.
+
+A correlação entre o progresso e o grau de utilização dos recursos hídricos
+evidencia também o importante papel da hidrologia na complementação dos
+conhecimentos necessários ao seu melhor aproveitamento. Isso parece ser
+ainda mais evidente quando se constata que, enquanto algumas regiões do
+Brasil sofrem com alagamentos, inundações e rupturas de encostas naturais em
+consequência de intensas e frequentes precipitações, em outras regiões
+ocorrem secas de nascentes, falta de água para agropecuária ou para o
+suprimento das necessidades humanas.
+
+Ainda que os fenômenos hidrológicos mais comuns, como as chuvas e o
+escoamento dos rios possam parecer suficientemente conhecidos, devido à
+regularidade com que se verificam, basta lembrar os efeitos catastróficos das
+grandes cheias e estiagens para constatar o inadequado domínio do homem
+sobre as leis naturais que regem aqueles fenômenos e a necessidade de se
+aprofundar o seu conhecimento.
+
+Apesar da abrangência do estudo desta ciência, nos interessa saber mais sobre
+o ciclo hidrológico e suas fases, o que será abordado na sequência.
+                                                                                           13
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+3.1 CICLO HIDROLÓGICO
+
+
+Entende-se como ciclo hidrológico a circulação contínua da água na atmosfera,
+nos estados sólido, líquido e gasoso. Esse movimento é mantido pela gravidade,
+pela energia solar, pelo efeito do vento e pelo próprio potencial de retenção de
+água do solo.
+
+Quando a água da chuva atinge a superfície terrestre, parte dessa água é
+infiltrada, parte escorre sobre a superfície para áreas mais baixas e, ainda, pode
+acumular-se em rios, lagos ou oceanos e evaporar-se.
+
+As raízes das plantas absorvem parte da água infiltrada no solo e a devolvem à
+atmosfera por meio da transpiração.
+
+Após a evaporação e a transpiração, processo intitulado evapotranspiração, as
+gotículas de água se condensam e formam as nuvens. Quando essas
+microgotículas se unem e se tornam maiores e mais pesadas, caem em forma
+de chuva, neve ou gelo, reiniciando o ciclo hidrológico, conforme pode-se ver na
+figura 3.1.
+
+
+
+
+       Figura 3.1 – Fases do ciclo hidrológico (Fonte: Cartilha Infiltração, UnB, 2010).
+                                                                                     14
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+Num ciclo hidrológico existe, portanto, um evento cíclico formado por
+evaporação, condensação, precipitação e escoamento. Dentre estes, pode-se
+dizer que as duas últimas são as fases de maior interesse para o estudo
+hidrológico voltado às obras de infraestrutura.
+
+Por questões didáticas, o ciclo hidrológico será tratado aqui por meio das
+seguintes etapas:
+
+        •    Precipitações atmosféricas;
+        •    Escoamento superficial; e
+        •    Escoamento subterrâneo.
+
+Da água que precipita sobre a superfície da Terra, parte escoa superficialmente
+e parte se infiltra. A água infiltrada no solo chama-se água subterrânea e pode
+ser encontrada relativamente livre ou aderida à superfície dos minerais.
+
+Fatores naturais, como clima, porosidade do solo, geomorfologia, cobertura
+vegetal, e fatores antrópicos, como desmatamento, impermeabilização da
+superfície do terreno causada pelo processo de urbanização ou construção de
+edificações, são fatores determinantes na taxa de infiltração do solo.
+
+Fatores climáticos, como temperatura, forma de precipitação (chuva e neve),
+intensidade e distribuição pluviométrica, interferem diretamente na relação entre
+o volume de água infiltrado e o que se escoa superficialmente.
+
+Logo,    a    interferência   do   homem      por   meio    de    desmatamentos       e
+impermeabilizações urbanas e rurais terminam por comprometer a capacidade
+de infiltração.
+
+A água que não se infiltra nem evapora escoa superficialmente, causando o
+aparecimento de erosões, alagamentos e inundações ou sobrecarregando o
+sistema de drenagem de águas pluviais.
+                                                                                    15
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+3.2 PRECIPITAÇÃO
+
+De acordo com a enciclopédia livre, em meteorologia, precipitação corresponde
+a qualquer tipo de fenômeno relacionado à queda de água do céu. Isso inclui
+neve, chuva e chuva de granizo.
+
+A precipitação é uma parte importante do ciclo hidrológico, sendo responsável
+por retornar a maior parte da água doce ao planeta, sendo assim a principal fonte
+de abastecimento dos sistemas hídricos.
+
+A variabilidade temporal e espacial da precipitação influencia o comportamento
+da disponibilidade hídrica de uma bacia, constituindo como um importante fator
+nos processos de escoamento superficial direto, infiltração, evaporação,
+transpiração, recarga dos aquíferos, sendo a base da vazão dos cursos de água,
+entre outros.
+
+As precipitações pluviométricas podem ser classificadas em três tipos:
+
+   • Chuva convectiva: origina-se de nuvens formadas mediante convecção
+livre, em que ocorre resfriamento adiabático, formando-se nuvens de grande
+desenvolvimento vertical, ou seja, quando o ar úmido se aquece na vizinhança
+do solo, propiciando a formação de camadas de ar ao perder o equilíbrio, ocorre
+uma brusca ascensão local do ar menos denso que atinge o estado de
+condensação formando nuvens, e muitas vezes, precipitações, conforme
+mostrado na figura 3.2.
+
+   As chuvas convectivas são características das regiões equatoriais, local de
+ventos fracos e os movimentos de ar são essencialmente verticais, mas também
+podem ocorrer em regiões temperadas por ocasião do verão (tempestades
+violentas). No Brasil, essas chuvas ocorrem mais nas regiões tropicais.
+
+   Normalmente são chuvas de grande intensidade e de pequena duração,
+restritas a áreas pequenas e que podem provocar importantes inundações em
+pequenas bacias.
+                                                                                    16
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+          Figura 3.2 – Representação esquemática de uma chuva convectiva.
+
+• Chuva ciclônica ou frontal: origina-se a partir do encontro de massas de
+ar com diferentes características de temperatura e umidade. A massa que
+avança sobre a outra, faz que ocorra a “convecção forçada”, com a massa de
+ar quente e úmida se sobrepondo à massa fria e seca. Nas regiões de
+convergência na atmosfera, o ar quente e úmido é impetuosamente
+impulsionado para cima, resultando no seu resfriamento e na condensação do
+vapor de água, de forma a produzir chuvas, conforme pode-se visualizar na
+figura 3.3.
+
+Estes tipos de chuva normalmente têm grande duração e abrangência,
+atingindo     grandes áreas com         intensidade    média.    Elas       podem   vir
+acompanhadas por ventos fortes com circulação ciclônica, além de produzir
+cheia em grandes bacias. No Brasil, essas chuvas são frequentes na região
+Sul.
+                                                                                 17
+
+     CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+         Figura 3.3 – Representação esquemática de uma chuva ciclônica.
+
+• Chuva orográfica ou de relevo: ocorre em regiões com barreiras
+orográficas naturais, ou seja, em regiões com grandes variações de altitude
+(serra e montanhas), que forçam o ar quente e úmido a elevar-se, provocando
+convecção     forçada,    que     resulta    no    resfriamento     adiabático    e
+consequentemente em chuva em face de barlavento. Suas principais
+características são a grande intensidade e em períodos intermitentes,
+abrangendo pequenas áreas. No Brasil, ocorrem frequentemente na Serra do
+Mar, conforme mostra a figura 3.4.
+
+
+
+
+         Figura 3.4 – Representação esquemática de uma chuva orográfica.
+                                                                                    18
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+Já com relação ao parâmetro intensidade, as chuvas podem ser classificadas,
+de acordo com a Organização Mundial de Metrologia em:
+
+   •   Chuva fraca: menos de 2,5 mm/h;
+   •   Chuva moderada: de 2,5 mm/h a 10 mm/h;
+   •   Chuva forte: de 10 mm/h a 50 mm/h;
+   •   Chuva muito forte/extrema: a partir de 50 mm/h.
+
+3.3 ESCOAMENTO SUPERFICIAL E SUBTERRÂNEO
+
+Os escoamentos são em geral definidos em: superficial, que representa o fluxo
+sobre a superfície do solo e pelos seus múltiplos canais; subsuperficial, que
+alguns autores definem como o fluxo que se dá junto às raízes da cobertura
+vegetal e; subterrâneo, que é o fluxo devido à contribuição do aquífero.
+
+
+Em geral, os escoamentos superficial e subterrâneo correspondem a maior parte
+do total, ficando o escoamento subsuperficial contabilizado no superficial ou no
+subterrâneo.
+
+
+Mesmo sabendo que o escoamento é uma das fases do ciclo hidrológico, quando
+esta é analisada em separado, podem ser distinguidas três etapas ou fases:
+
+
+   • Fase 01: após um período de estiagem, a vegetação e o solo estão com
+pouca umidade e os cursos d’água existentes estão sendo alimentados pelo
+lençol d’água subterrâneo que mantém a vazão de base dos mesmos. Quando
+uma nova precipitação se inicia, boa parte da água é interceptada pela
+vegetação e a chuva que chega ao chão se infiltra no solo. Exceto pela parcela
+de chuva que cai diretamente sobre o curso d'água, não existe nenhuma
+contribuição para o escoamento nesta fase e parte da água retida pela vegetação
+é evaporada, como pode-se notar na figura 3.5.
+                                                                                        19
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+ Figura 3.5 – Esquema representativo do escoamento superficial na etapa 01. (Fonte: UFBA –
+                          Departamento de Hidráulica e Saneamento).
+
+
+
+   • Fase 02: Com a continuidade da precipitação, a capacidade de retenção
+da vegetação é esgotada e a água cai sobre o solo. Se a precipitação persistir,
+a capacidade de infiltração do solo pode ser excedida e a água começa a se
+acumular em depressões rasas, que em seguida se unem formando um filme de
+água sobre o solo, começando, então, a mover-se como escoamento superficial
+na direção dos pontos mais baixos do terreno. A água infiltrada no solo também
+começa a percolar na direção dos aquíferos subterrâneos. Se a chuva continuar
+persistindo, o escoamento superficial ocorrerá de forma contínua para os
+talvegues e cursos d´água.
+
+
+Com isso, o nível do lençol freático poderá subir, fornecendo uma contribuição
+extra de água subterrânea ao escoamento. Na maioria dos casos, a contribuição
+das águas subterrâneas para o escoamento superficial, devido à recarga pela
+chuva, ocorre quando a precipitação já cessou, devido à baixa velocidade do
+escoamento subterrâneo, conforme mostra a figura 3.6.
+
+
+   • Fase 03: Quando a precipitação para, o escoamento superficial
+rapidamente cessa, embora a evaporação e a infiltração continuam a retirar água
+da vegetação e de poças na superfície do solo.
+                                                                                        20
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+O nível do rio está agora mais alto do que no início da precipitação. A água que
+se infiltrou nas margens do rio é lentamente liberada à medida em que o nível do
+rio baixa até o nível em que permanece nos períodos secos, conforme pode-se
+notar na figura 3.7.
+
+
+
+
+ Figura 3.6 – Esquema representativo do escoamento superficial na etapa 02. (Fonte: UFBA –
+                          Departamento de Hidráulica e Saneamento).
+
+
+
+
+ Figura 3.7 – Esquema representativo do escoamento superficial na etapa 03. (Fonte: UFBA –
+                        Departamento de Hidráulica e Saneamento).
+                                                                                    21
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+Das fases do ciclo hidrológico relacionadas no capítulo anterior, talvez a mais
+importante para o engenheiro seja, de fato, a do escoamento superficial, pois a
+maioria dos estudos hidrológicos está ligada ao aproveitamento da água
+superficial e à proteção contra os fenômenos provocados pelo seu
+deslocamento.
+
+
+A quantidade de água precipitada que escoa pela superfície é influenciada tanto
+por fatores de natureza climática como por fatores de natureza fisiográfica.
+
+
+Dentre os fatores climáticos destacam-se a intensidade e a duração da
+precipitação. Quanto maior for a intensidade da chuva, mais rápido o solo atingirá
+a sua capacidade de infiltração, provocando um excesso que escoará
+superficialmente. A duração também é diretamente proporcional ao escoamento,
+pois para chuvas de intensidade constante, haverá maior oportunidade de
+escoamento quanto maior for a duração.
+
+
+Outro fator climático importante é o da precipitação antecedente, pois uma
+precipitação que ocorre quando o solo está úmido devido a uma chuva anterior,
+terá maior facilidade de escoamento.
+
+
+Dentre os fatores fisiográficos, os mais importantes são: o tamanho, a forma, o
+relevo, a permeabilidade e a capacidade de infiltração do solo, além da
+topografia e da cobertura vegetal da área de contribuição, também conhecida
+como bacia de contribuição.
+
+
+A influência da área é clara, pois sua extensão está relacionada à maior ou
+menor quantidade de água que ela pode captar. De modo geral,
+desconsiderando a interferência dos demais fatores, quanto maior for a área de
+uma bacia de contribuição, maior será a descarga produzida.
+
+
+A forma e o relevo da bacia também produzirão interferências nas descargas
+produzidas, a ponto de bacias com mesmas áreas, mas com formatos e relevos
+                                                                                         22
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+distintos, poderem produzir não só descargas com diferentes comportamentos,
+mais também com picos distintos, mas isto será visto em maiores detalhes no
+módulo 3.
+
+
+O tipo de revestimento ou o tipo de cobertura vegetal também interfere
+sobremaneira no volume de descarga produzido em uma bacia de contribuição.
+Quanto mais densa for a cobertura vegetal de uma bacia, por exemplo, maior o
+retardamento produzido no escoamento superficial e maiores as perdas por
+evapotranspiração. Já nas bacias mais próximas de área urbanas, onde
+costumam ocorrer antropização e impermeabilização das áreas, tem-se o
+aumento das vazões geradas.
+
+
+Já a permeabilidade do solo influi diretamente na capacidade de infiltração.
+Quanto mais permeável for o solo, maior será a quantidade de água que ele pode
+absorver, diminuindo assim a ocorrência de excesso de precipitação. Por outro
+lado, quanto menos permeável ele for, menor será a infiltração e maior a parcela
+que escoará superficialmente. Valores referenciais de permeabilidade podem ser
+consultadas na tabela 3.1.
+
+                Tabela 3.1 – Valores típicos de permeabilidade de solos.
+              Permeabilidade                          Tipo de solo         K (cm/s)
+   Selos permeáveis           Alta                    Pedregulhos            > 10-3
+                              Alta                        Areias           10-3 a 10-5
+                             Baixa                   Siltes e Argilas      10-5 a 10-7
+  Solos impermeáveis      Muito baixa                     Argila           10-7 a 10-9
+                           Baixíssima                     Argila             < 10-9
+                                 (Fonte: PINTO, 2006)
+
+Outros fatores importantes são as obras hidráulicas construídas nas bacias, tal
+como uma barragem que, acumulando a água em um reservatório, reduz as
+vazões máximas do escoamento superficial e retarda a sua propagação.
+
+
+A influência destes fatores, principalmente os fisiográficos, sobre as descargas
+de contribuição das bacias serão melhor percebidos quando forem abordados
+os assuntos sobre tempo de concentração e coeficientes de escoamento
+                                                                                    23
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+superficial. Embora estes assuntos só estejam contemplados nos módulos
+futuros, eles serão calculados ou coletados em tabelas a partir de alguns
+parâmetros de entrada, quer seja o tipo de solo, ou o tipo de cobertura vegetal,
+que correspondem justamente ao que está sendo tratado neste capítulo.
+
+
+Deste modo, a fim de permitir a consulta por parte dos alunos, são
+disponibilizados links para acesso a alguns mapas temáticos de solo, relevo e
+vegetação do Brasil, que auxiliarão nas escolhas de alguns parâmetros
+necessários aos cálculos das descargas das bacias.
+
+
+
+
+                          MAPA TEMÁTICO DE SOLO
+(https://geoftp.ibge.gov.br/informacoes_ambientais/pedologia/mapas/bras
+                                    il/solos.pdf)
+
+
+
+
+                        MAPA TEMÁTICO DE RELEVO
+(https://geoftp.ibge.gov.br/informacoes_ambientais/geomorfologia/mapas/
+                             brasil/relevo_2006.pdf)
+
+
+
+
+                      MAPA TEMÁTICO DE VEGETAÇÃO
+(https://geoftp.ibge.gov.br/informacoes_ambientais/vegetacao/mapas/bras
+                                 il/vegetacao.pdf)
+                                                                                    24
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+4. ETAPAS DO ESTUDO HIDROLÓGICO
+
+Embora não se tenha adquirido, até aqui, todos os conhecimentos necessários
+à elaboração dos estudos hidrológicos voltados para um projeto rodoviário, é
+importante saber, previamente, quais são estes dados e como eles deverão ser
+tratados.
+
+
+Assim, na parte final deste primeiro módulo, serão relacionados os requisitos
+mínimos exigidos pelo Departamento Nacional de Infraestrutura de Transportes
+– DNIT para a concepção do referido estudo e as formas de apresentação.
+
+
+Para tal, é necessário consultar a instrução de serviço – IS 203, constante das
+Diretrizes Básicas para Elaboração de Estudos e Projetos Rodoviários: Escopos
+Básicos/ Instruções de Serviço (BRASIL, 2006), que rege o tema em questão.
+
+
+De acordo com tal instrução, é necessário identificar, preliminarmente, em qual
+fase se encontra o projeto: fase preliminar, ou fase definitiva. Posteriormente,
+deve-se verificar quais dados devem constar do estudo a ser entregue.
+
+
+Assim, na fase preliminar, o estudo hidrológico deverá contemplar os seguintes
+objetivos:
+   •   Coleta de dados hidrológicos;
+   •   Definição das bacias de contribuição.
+
+
+Dentre os principais dados acerca da hidrologia e das áreas de contribuição
+esperados nesta fase, destacam-se:
+
+
+   • Coleta de dados hidrológicos junto aos órgãos oficiais, estudos existentes,
+que permitam a caracterização climática, pluviométrica, fluviométrica e
+geomorfológica da região, e mais especificamente, da área em que se localiza o
+trecho em estudo;
+                                                                                    25
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   • Coleta de elementos que permitam a definição das dimensões e demais
+características físicas das bacias de contribuição (forma, declividade, tipo de
+solo, recobrimento vegetal), tais como: levantamentos aerofotogramétricos,
+cartas geográficas, levantamentos radamétricos, levantamentos fitopedológicos
+e/ou outras cartas disponíveis;
+   • Coleta de elementos que permitam a identificação das modificações
+futuras que ocorrerão nas bacias, tais como projetos, planos diretores e
+tendências de ocupação.
+
+
+No tocante aos dados hidrológicos, a coleta de informações deverá contemplar
+a seguinte sistemática:
+
+
+   •   Pluviometria (coleta de dados de chuva)
+       ✓     Mapa da rede hidrográfica básica da área compreendida pelo
+       projeto;
+       ✓     Mapa das bacias de contribuição, numeradas sequencialmente;
+       ✓     Coleta de dados de chuva dos postos ou estações hidrológicas
+       localizadas na área e apresentados em mapa, identificando as entidades
+       responsáveis pela coleta e os respectivos períodos de observação;
+       ✓     Caracterização       dos   instrumentos      medidores      tais   como:
+       pluviômetros, pluviógrafos, réguas linimétricas, e outros;
+       ✓     Escolha criteriosa do posto que caracteriza o regime pluviométrico
+       do trecho, justificando o aspecto hidrológico;
+       ✓     Na ausência absoluta de posto na região, indicação precisa das
+       fontes que forneceram os dados pluviométricos, os mapas isoietas, atlas
+       meteorológico, com os respectivos autores;
+       ✓     Cálculo dos seguintes elementos: média anual de chuvas da
+       região, média mensal, número de dias de chuva por mês, total anual,
+       alturas máximas e mínimas, registro de chuvas e respectivos
+       pluviogramas, precipitação total, indicação do trimestre mais chuvoso e
+       mais seco, precipitação máxima em 24 horas.
+                                                                                    26
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   •   Fluviometria
+       ✓         Coleta de elementos para elaboração dos fluviogramas com as
+       alturas d’água médias, máximas e mínimas mensais, dos principais rios
+       da região;
+       ✓         Registro de cheia máxima dos cursos d’água menores, desprovidos
+       de medidores, o qual deverá ser feito por meio de vestígios e informações
+       locais;
+       ✓         Apresentação de mapa contendo os postos fluviométricos da
+       região de interesse para o projeto, com identificação das entidades que
+       os operam e os calendários de observação;
+       ✓         Fluviogramas das alturas máximas, médias e mínimas mensais
+       e/ou outros necessários;
+       ✓         Curvas de frequência de níveis e curvas de descargas;
+       ✓         Levantamentos topo-hidrológicos nas travessias dos principais
+       cursos d’água, que possibilitem a elaboração de plantas compatíveis para
+       o projeto de implantação de pontes ou bueiros celulares de grandes
+       dimensões.
+
+
+Já na fase definitiva, o estudo hidrológico deve ser complementado com as
+seguintes informações:
+   • Processamento de dados pluviométricos - Os dados pluviométricos
+deverão ser apresentados de modo a se obter:
+       ✓ Curvas de intensidade – duração – frequência para os tempos de
+       recorrência de 5, 10, 15, 25, 50 e 100 anos;
+       ✓ Curvas de altura – duração – frequência para os tempos de
+       recorrência de 5, 10, 15, 25, 50 e 100 anos;
+       ✓ Histogramas das precipitações pluviométricas mensais mínimas,
+       médias e máximas;
+       ✓ Histogramas com as distribuições mensais dos números de dias de
+       chuva mínimos, médios e máximos.
+                                                                                   27
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+   • Processamento de dados fluviométricos - Os dados fluviométricos
+deverão ser apresentados de modo a se obter:
+      ✓ Tabela contendo os valores extremos das vazões médias diárias
+      (m3/s), em caso de disponibilidade de réguas linimétricas nos cursos
+      d’água em local próximo da obra de arte a ser projetada;
+      ✓ Tabela contendo as cotas das máximas cheias observadas na região,
+      no caso de não se dispor de régua linimétrica.
+
+
+   • Análise dos dados processados
+      ✓ Período de recorrência: os tempos de recorrência serão fixados em
+      função do tipo de obras, fatores técnicos-econômicos e de risco a vidas
+      humanas, sendo propostos os valores constantes na tabela 4.1.
+
+               Tabela 4.1 - Tempos de recorrência recomendados pelo DNIT
+                      Espécie                Período de recorrência (anos)
+                Drenagem superficial                     5 a 10
+               Drenagem subsuperficial                     10
+                                                    15 (como canal)
+                  Bueiros tubulares
+                                                   25 (como orifício)
+                                                    25 (como canal)
+                  Bueiros celulares
+                                                   50 (como orifício)
+                      Pontilhão                            50
+                       Ponte                              100
+                                  (Fonte: DNIT, 2006).
+
+      ✓ Tempo de concentração: deverá ser avaliado por metodologia e
+      modelos usuais e que apresentam resultados compatíveis e que
+      considerem o maior número de parâmetros fisiográficos das áreas de
+      contribuição, a citar como exemplos, o comprimento e declividade do
+      talvegue principal, a área da bacia, seu recobrimento vegetal e o uso da
+      terra.
+      ✓        Coeficiente de deflúvio: deverão ser fixados só após análise da
+      utilização das áreas de montante, particularmente nos casos de
+      modificação violenta da permeabilidade das bacias.
+
+
+   • Determinação das descargas das bacias
+                                                                                   28
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+A metodologia a seguir, na determinação das descargas das bacias, dependerá
+da disponibilidade de dados fluviométricos e do número de anos de observação,
+bem como do tamanho da bacia e da importância do conhecimento da forma do
+fluviograma.
+
+
+Como regra geral, as descargas das bacias de contribuição deverão ser
+calculadas em função da sua área, devendo-se considerar os seguintes limites:
+   ✓ Método Racional: para bacias com área até 4km²;
+   ✓ Método Racional corrigido: para bacias com área entre 4km² e 10km²;
+   ✓ Método do Hidrograma Unitário Triangular: para bacias com área superior
+      a 10km².
+                                                                                            29
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 1
+
+
+
+
+5. REFERÊNCIAS BIBLIOGRÁFICAS
+BRASIL. Manual de Hidrologia Básica para Estruturas de Drenagem. Rio de Janeiro, IPR, 2
+ed., 2005.
+
+BRASIL. Diretrizes Básicas para Elaboração de Estudos e Projetos Rodoviários: Escopos
+Básicos/ Instruções de Serviço. Rio de Janeiro, IPR, 3 ed, 2006.
+
+CAMAPUM, José. Cartilha infiltração. Brasília, 2010. 36 p.: 15 x 22 cm. (Série Geotecnia,
+UnB; v. 2).
+
+MEYER. A.F. The elements of hydrology. Nova Iorque, John Wiley and Sons, 2. Ed., 6. Imp.,
+1948.
+
+PINTO, Carlos de Souza. Curso Básico de Mecânica dos Solos. Rio de Janeiro, Oficina de
+Textos, 3ª ed, 2006.

@@ -1,0 +1,439 @@
+INTRODUÇÃO À
+ORÇAMENTAÇÃO DE
+OBRAS RODOVIÁRIAS
+
+
+
+
+Módulo
+          5
+Composição de Custos
+
+
+
+
+Benefícios e Despesas Indiretas —
+                 BDI
+
+
+
+
+Conteudista:
+Betânia Alves Paulino
+
+
+Brasília, outubro de 2021.
+SUMÁRIO
+1.    Definição                                                                    3
+2.    Lucro                                                                        6
+3.    Despesas Indiretas: administração central                                    8
+4.    Despesas Indiretas: despesas financeiras                                     9
+5.    Despesas Indiretas: seguros e garantias contratuais                          9
+6.    Despesas Indiretas: riscos                                                  10
+7.    Tributos: Programa de Integração Social — PIS                               10
+8.    Tributos: Contribuição para o Financiamento da Seguridade Social — COFINS   11
+9.    Tributos: Imposto sobre Serviço de Qualquer Natureza — ISSQN                12
+10.     Textos Complementares                                                     13
+11.     Referências Bibliográficas                                                14
+                                                                                3
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  1. Definição
+Segundo o Manual de Custos de Infraestrutura de Transportes — Volume 01, página
+173, a taxa de Benefícios e Despesas Indiretas — BDI consiste no elemento
+orçamentário que se adiciona ao custo de uma obra ou serviço para a obtenção de
+seu preço de venda.
+
+Os elementos abaixo representam as parcelas constituintes dos benefícios e
+despesas indiretas — BDI.
+
+Figura 57 — Elementos constituintes dos Benefícios e Despesas Indiretas (BDI)
+
+
+
+
+A expressão matemática para o cálculo dos benefícios e despesas indiretas (BDI) é
+a seguinte:
+
+                                          𝑃𝑉
+                                  𝐵𝐷𝐼 = (    − 1)
+                                         𝐶𝐷
+
+                                        1 + 𝐶𝐷
+                          𝐵𝐷𝐼 (%) = (           ) − 1 𝑋 (100)
+                                        1 − 𝑆𝑃𝑉
+                                                                                 4
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+Em que:
+
+
+   •   PV representa as parcelas do BDI que é função do Preço de Venda;
+   •   CD representa as parcelas do BDI que é função do Custo Direto.
+
+
+O preço de venda (PV) remunera a transferência de domínio do bem. Ele é uma
+função do custo direto (CD) total dos serviços acrescido das respectivas parcelas
+dos benefícios e despesas indiretas (BDI).
+
+
+Figura 58 — Componentes do Preço de Venda
+
+
+
+
+            Função do Custo            Função do Preço de
+                Direto                      Venda
+
+
+               Administração Central        Despesas Financeiras
+
+
+
+                 Lucro Operacional                 Riscos
+
+
+                                             Seguros e garantias
+                                                contratuais
+
+
+                                                  Tributos
+
+
+
+
+Esclarece-se que, na vigência do Sicro 2, a administração local constituía parcela
+dos benefícios e despesas indiretas — BDI. Entretanto, ela foi suprimida por força
+de determinação constante do Acórdão 2.622/2013 — TCU — Plenário. No SICRO
+atual, ela deve ser considerada à parte.
+5
+
+it d
+IP Pesquisas em no . .
+Transportes INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+Figura 58 — Supressão do BDI pelo Acordão 2.622/2013 — TCU — Plenário
+COMPOSIÇÃO DA PARCELA DE BDI (BONIFICAÇÃO E DESPESAS INDIRETAS)
+
+Portaria nº 645, de 11 de junho de 2012, publicada no Diário Oficial de União de 12 de junho de 2012
+
+Suprimida por
+força de
+
+ação oca 7 | Q
+[C - Custos Financeiros 1,38% sobre (PV - Lucro Operacional) 1,28 1,52
+
+determinação D - Riscos 0,5% sobre CD 039 050
+E - Seguros e Garantias Contratuais (2,5% na sobre 5% do PV) 025 0,32
+constante do e fis do
+
+di CE E
+2.622/2013 -
+é IF - Lucro Operacional 7,2% do PV 7,20 912
+TCU - Plenário
+
+Sub-Total 2 7,20 9,12
+
+G-PIS [0,55% do PV 0,65 0,82
+
+|H - COFINS 3,00% do PV 3,00 380
+
+|-ISSQN 2.50% do PV. 250 31
+
+Sub-Total 3 615 779
+
+                                                                                6
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  2. Lucro
+O desenvolvimento de quaisquer atividades empresariais, seja no ramo da
+engenharia ou da prestação de serviços, pressupõe sua justa remuneração
+financeira, a qual denomina-se lucro.
+
+O lucro consiste na parcela destinada a remunerar os fatores de produção
+constituintes da obra, como capacidade administrativa para gestão de contrato e a
+condução de obra, representada pelas estruturas organizacionais da empresa e pelo
+conjunto de normas e procedimentos que utiliza.
+
+Além do mais, o lucro também remunera o emprego do conhecimento tecnológico e
+o investimento em formação e treinamento de pessoal.
+
+Figura 59 — Concepção de lucro
+
+
+
+
+                                  Capacidade
+                                 Administrativa
+
+
+
+
+           Investimento                                 Conhecimento
+                                        Lucro
+           em Formação                                   Tecnológico
+
+
+
+
+                                  Treinamento
+                                   de Pessoal
+                                                                                           7
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+Tabela 61 — Valores de referência para o lucro
+
+
+
+
+                                                                           Variação em
+                                                                            função do
+                                                                           porte da obra
+
+
+
+
+                                                                            Exclusão da
+                                                                           oportunidade
+                                                                             de capital
+
+
+
+
+ Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 176
+                                                                                        8
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  3. Despesas Indiretas: administração central
+As despesas da administração central são aquelas necessárias para a manutenção
+da estrutura da sede principal da empresa, responsável por concentrar a
+administração de todo o complexo de obras e serviços. Também devem ser
+calculadas em função do custo direto.
+
+Tabela 60 — Valores de referência para a administração central
+
+
+
+                                                                          Variação em
+                                                                           função da
+                                                                            natureza
+
+
+
+
+  Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 174
+
+
+TOME NOTA
+As despesas com administração central são influenciadas por diversos fatores, tais
+como:
+
+   ✓ Porte da empresa;
+
+   ✓ Estrutura organizacional;
+
+   ✓ Política de negócios;
+
+   ✓ Condições geográficas e logísticas das obras;
+
+   ✓ Volume de obras que a empresa executa ao mesmo tempo.
+                                                                                               9
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  4. Despesas Indiretas: despesas financeiras
+As despesas financeiras referem-se à necessidade de financiamento da obra, por
+parte do executor, que ocorre quando os desembolsos mensais acumulados forem
+superiores às receitas acumuladas. São calculadas em função do preço de venda.
+
+As despesas realizadas, a necessidade de financiamento prevista ou utilizada para
+cobrir o desembolso de recursos do capital de giro entre o pagamento realizado e o
+efetivo recebimento dos serviços prestados.
+
+Figura 60 — Cálculo das Despesas Financeiras
+                                                            Não remunera eventuais
+                      1
+     𝐷𝐹 = [(1 + 𝑆𝐸𝐿𝐼𝐶)12 − 1]                               paralisações ou atrasos
+
+
+
+
+  5. Despesas Indiretas: seguros e garantias
+  contratuais
+São despesas provenientes de exigências contidas nos editais de licitação para
+garantia da manutenção da oferta e do fiel cumprimento dos objetos pactuados nos
+contratos. São calculadas em função do preço de venda.
+
+Figura 61 — Parâmetros para calcular o custo de seguros e garantias contratuais
+
+
+                                                     Custo de             Execução de
+                            0,25% sobre            mercado de            5,0% do valor
+         SICRO
+                                o PV               uma apólice             global do
+                                                    por 2 anos              contrato
+
+
+ Pode sofrer alteração em função da modalidade de contratação e dos prazos de execução. Cabe ao gestor
+ a sua definição.
+                                                                             10
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  6. Despesas Indiretas: riscos
+Consiste em uma reserva para cobrir eventuais acréscimos de custos da obra não
+recuperáveis contratualmente. Pode ser diretamente influenciado pela modalidade
+de contratação. Também são calculadas em função do preço de venda. E definido
+por uma Matriz de Gerenciamento de Riscos elaborada especificadamente para a
+obra em questão.
+
+
+
+
+  7. Tributos: Programa de Integração Social
+  — PIS
+Calculados sobre o preço de venda, consiste em uma contribuição tributária de
+caráter social, que tem por objetivo financiar o pagamento do seguro-desemprego,
+abono e participação da receita dos órgãos e entidades.
+
+Figura 62 — Referências para cálculo do PIS
+
+
+
+                       Regime não cumulativo       1,65% sobre PV
+
+      PIS
+
+                         Regime cumulativo         0,65% sobre PV
+                                                                           11
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  8. Tributos: Contribuição para o
+  Financiamento da Seguridade Social —
+  COFINS
+Calculados sobre o preço de venda, consiste em uma contribuição tributária de
+caráter social, que tem por objetivo financiamento da seguridade social,
+abrangendo áreas fundamentais como a previdência, a assistência social e a
+saúde pública.
+
+Figura 63 — Referências para cálculo da COFINS
+
+
+
+                          Regime não cumulativo      7,60% sobre PV
+
+       COFINS
+
+                            Regime cumulativo        3,00% sobre PV
+                                                                                  12
+
+                       INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  9. Tributos: Imposto sobre Serviço de
+  Qualquer Natureza — ISSQN
+Calculados sobre o preço de venda, consiste em um tributo urbano, de competência
+dos municípios, que incide sobre os serviços especializados desempenhados por
+empresas ou profissionais autônomos.
+
+O percentual de ISSQN utilizado pelo SICRO consiste apenas em um referencial
+médio. O percentual de ISSQN a ser adotado nos orçamentos deve ser aquele
+proveniente das alíquotas dos municípios na área de influência das obras,
+respeitadas as deduções legais de materiais da base de cálculo do tributo, se for
+autorizado por lei municipal.
+
+Exemplo de aplicação para uma rodovia que abrange vários municípios:
+
+Figura 64 — Simulação de Aplicação do ISSQN
+
+
+ MUNICÍPIO                  RODOVIA     EXTENSÃO (km)   PROPORÇÃO (%)   ALÍQUOTA (%)
+
+ Mafra                                  29,27           22,86           2,00
+
+ Três Barras                            21,83           17,04           5,00
+
+ Canoinhas                              13,89           10,84           3,00
+
+ Bela Vista do Toldo        BR-280/SC   4,13            3,22            5,00
+
+ Canoinhas                              13,71           10,70           3,00
+
+ Irineópolis                            23,85           18,62           5,00
+
+ Porto União                            21,42           16,72           2,50
+
+                                                                        Média ponderada
+ Extensão total do trecho               128,10          100,00%
+                                                                        = 3,64%
+                                                                                  13
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  10.          Textos Complementares
+Manuais de Custos de Infraestrutura de Transportes — Volume 01 — Metodologia e
+Conceitos      —   14.   Benefícios   e   Despesas    Indiretas.   Disponível     em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos/sicro/manuais-de-
+custos-de-infraestrutura-de-transportes/manuais-de-custos-de-infraestrutura-de-
+transportes.
+
+Ofício nº 136962/2021/ASSESSORIA/DPP/DNIT SEDE, de 1º de outubro de 2021.
+Disponível         em        https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-
+pesquisa/custos-e-pagamentos/custos-e-pagamentos-dnit/sistemas-de-
+custos/bdi/OfcioCircularn136962_2021_ASSERIA_DPP_DNITSEDE.pdf.
+                                                                                14
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 5
+
+
+
+
+  11.         Referências Bibliográficas
+BRASIL. Constituição da República Federativa do Brasil de 1988. Disponível em
+http://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm. Acesso em 18 de
+outubro de 2021.
+
+BRASIL.     DEPARTAMENTO          NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES         —     DNIT.    Sistemas     de    Custos.     Disponível   em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos. Acesso em 18 de
+outubro de 2021.
+
+BRASIL.     DEPARTAMENTO          NACIONAL       DE    INFRAESTRUTURA          DE
+TRANSPORTES — DNIT. Diretoria Executiva. Coordenação-Geral de Custos de
+Infraestrutura de Transportes. Manual de Custos de Infraestrutura de Transportes.
+1ª Edição — Brasília, 2017. Volume 01: Metodologia e Conceitos.

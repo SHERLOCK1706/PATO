@@ -1,0 +1,10 @@
+[aba TRANSPORTES_CONSERVA]
+QUADRO DE TRANSPORTES
+CÓDIGO | SERVIÇO PRINCIPAL | SERVIÇO AUXILIAR | MATERIAL | QUANT. ANUAL | UNID. | F. UTILIZAÇÃO | PESO | REFERÊNCIA | DMT | MOMENTO
+TRABALHO | FATOR | UND. | (t) | Origem | Destino | (km) | TRANSP. (tkm)
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+TOTAL: | 0

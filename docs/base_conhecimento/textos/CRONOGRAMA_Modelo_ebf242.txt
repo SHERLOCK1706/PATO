@@ -1,0 +1,5 @@
+[aba CRONOGRAMA]
+CÓDIGO | TAREFA  OU  SERVIÇO | TRABALHO | PREÇO | Mês 01 | Mês 02 | Mês 03 | Mês 04 | Mês 05 | Mês 06 | Mês 07 | Mês 08 | Mês 09 | Mês 10 | Mês 11 | Mês 12
+QUANT. | UNID. | UNITÁRIO | % | % | % | % | % | % | % | % | % | % | % | %
+Valores em R$ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0

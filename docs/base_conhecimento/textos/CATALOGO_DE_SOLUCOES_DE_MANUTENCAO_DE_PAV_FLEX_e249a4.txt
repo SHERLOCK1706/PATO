@@ -1,0 +1,2177 @@
+ DNIT – Departamento Nacional de Infraestrutura
+ DPP – Diretoria de Planejamento e Pesquisa
+ CGPLAN – Coordenação Geral de Planejamento e
+ Programação de Investimentos
+
+
+
+
+Relatório Técnico –Catálogo de Soluções
+de Manutenção para Pavimentos Flexíveis
+
+
+                    Relatório RT-002/2014
+                             Revisão 03
+
+
+
+ Elaborado por:
+
+
+                  Consórcio Dynatest Engemap
+                        Contrato 0000366/2012
+
+
+
+
+                         Março de 2015
+SUMÁRIO
+
+
+1.   APRESENTAÇÃO .................................................................................................................. 1
+
+2.   SISTEMAS DE GERÊNCIA DE PAVIMENTOS (SGP) .............................................................. 1
+
+     2.1     BREVE HISTÓRICO DE SISTEMAS DE GERÊNCIA DE PAVIMENTO NO BRASIL                                                    2
+     2.2     ASPECTOS RELEVANTES DOS SISTEMAS DE GERÊNCIA DE PAVIMENTOS                                                        3
+     2.3     ATUAL SISTEMA DE GERÊNCIA DE PAVIMENTOS DO DNIT                                                                   3
+     2.4     REMODELAGEM DO SGP EM DESENVOLVIMENOT                                                                             8
+
+3.   CATÁLOGO DE SOLUÇÕES................................................................................................... 8
+
+     a)      Parâmetros de Tráfego                                                                                             9
+     b)      Parâmetros Estruturais (Dados Deflectométricos)                                                                   15
+     c)      Parâmetros Funcionais                                                                                             21
+     e)      Catálogo de Solução do DNIT                                                                                       30
+                                                                                                                                    ii
+
+
+
+
+ÍNDICE DE FIGURAS
+
+Figura 1 – Tela de dados disponíveis de levantamentos ................................................................. 4
+Figura 2 – Tela de segmentação homogênea.................................................................................. 5
+Figura 3 – Tela de segmentação do SNV......................................................................................... 6
+Figura 4 – Modelo de Relatório ..................................................................................................... 7
+Figura 5 - Células do Catálogo de Soluções do DNIT ..................................................................... 23
+Figura 6 - Catálogo de Soluções do DNIT ...................................................................................... 31
+Figura 7 - Catálogo de Soluções de Pavimentação do DNIT ........................................................... 35
+Figura 8 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 1 ....................... 36
+Figura 9 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 2 ....................... 37
+Figura 10 - Memória de Cálculo das Soluções de Pavimentação do DNIT – Cenário3 ..................... 38
+Figura 11 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 4 ..................... 39
+Figura 12 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 5 ..................... 40
+Figura 13 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 6 ..................... 41
+                                                                                             iii
+
+
+
+
+ÍNDICE DE TABELAS
+
+Tabela 1- Equações para cálculo do Fator de Equivalência pelos métodos USACE e AASHTO         9
+Tabela 2 - Síntese da pesquisa de tráfego realizada pelo Exército em 2011                    12
+Tabela 3 - Categorias de veículos para estudos econômicos                                    13
+Tabela 4 - Cálculo do fator de veículo pelo método da AASHTO                                 14
+Tabela 5 - Cálculo do fator de veículo pelo método do USACE                                  14
+Tabela 6 - Categorias de veículos para estudos econômicos                                    15
+Tabela 7 - Espessura de reforço em conformidade com a norma DNER-PRO 11/79                   17
+Tabela 8 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo I      18
+Tabela 9 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo II     19
+Tabela 10 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo III   20
+Tabela 11 - Espessura de reforço pela norma DNER-PRO 159/85                                  22
+     1.    APRESENTAÇÃO
+
+O objeto do presente Relatório Técnico 002/14 é apresentar a proposta de um novo
+catálogo de soluções de recuperação para pavimentos flexíveis para rodovias do DNIT, a ser
+empregado no âmbito do planejamento rodoviário, em especial no Sistema de Gerência de
+Pavimentos (SGP).
+
+A modelagem deste novo catálogo de soluções objetiva conceber uma sistemática gerencial
+de análise que utilize critérios compatíveis com os empregados nos projetos rodoviários
+desenvolvidos no órgão ou mesmo à luz das diretrizes e normativas do mesmo, de forma
+que as soluções de manutenção que venham a ser concebidas e planejadas tenham maior
+aderência com as indicações de projetos que efetivamente são realizadas nas rodovias
+federais brasileiras.
+
+Este catálogo foi elaborado de acordo com a norma DNER-PRO 11/79 “Avaliação estrutural
+dos pavimentos flexíveis - Procedimento “B”” e com o Manual de Soluções Técnico-
+Gerenciais para Rodovias Federais.
+
+Também foram realizadas análises contemplando a norma DNER-PRO 269/94 “Projeto de
+restauração de pavimentos flexíveis - TECNAPAV”, para verificação da sensibilidade a outro
+método de dimensionamento de reforço estrutural – em complementação ao PRO 11/79,
+bem como o critério de correção de irregularidade da norma DNER-PRO 159/85 “Projeto de
+restauração de pavimentos flexíveis e semirrígidos”.
+
+Complementarmente foi elaborado um catálogo para pavimentos novos e/ou reconstruções
+de pavimentos, atendendo ao Método do DNER, conforme apresentado no Manual de
+Pavimentação, de 2006, na publicação IPR-719.
+
+
+
+
+2.        SISTEMAS DE GERÊNCIA DE PAVIMENTOS (SGP)
+
+Os pavimentos rodoviários representam um valioso patrimônio cuja conservação e
+manutenção oportunas são essenciais para a sua preservação. Qualquer interrupção ou
+redução na intensidade ou na frequência dos serviços necessários à manutenção desse
+patrimônio implicará em aumentos substanciais nos custos de operação dos veículos e na
+necessidade de investimentos cada vez mais vultosos para recuperação da malha rodoviária.
+
+O objetivo principal de um sistema gerencial de pavimentos é alcançar a melhor aplicação
+possível para os recursos públicos disponíveis e oferecer um transporte rodoviário seguro,
+compatível e econômico. Um sistema de gerência de pavimentos compreende, portanto, o
+
+                                                                                        1
+planejamento, a programação dos investimentos, o projeto, as obras de manutenção e a
+avaliação periódica dos pavimentos (IPR/DNIT, 2000).
+
+Ressalta-se que a elaboração de um sistema gerencial exige uma análise profunda e um
+adequado conhecimento do ambiente envolvente.
+
+A classificação das diferentes intervenções admitidas para a análise implica na definição de
+prioridades através do emprego de métodos de programação e a aplicação de critérios com
+vista a medir a sua influência através de cálculos estatísticos e experimentais.
+
+       2.1    BREVE HISTÓRICO DE SISTEMAS DE GERÊNCIA DE PAVIMENTO NO BRASIL
+
+No Brasil, o crescente interesse no desenvolvimento e aplicação de sistemas gerenciais,
+pelos diversos órgãos rodoviários, recebeu maior ímpeto a partir de 1983 por uma série de
+fatores, dentre os quais se destacam:
+
+       Maior evidência da necessidade de manutenção oportuna e adequada da rede
+        rodoviária, devido ao envelhecimento da malha após a fase de construção de
+        grandes projetos rodoviários;
+       Órgãos de financiamento, como o Banco Mundial, passaram a incentivar, com a força
+        de credores, um emprego mais racional dos recursos obtidos através de
+        empréstimos;
+       Maior limitação de recursos energéticos e de materiais para emprego em
+        pavimentos, ao lado de orçamentos relativamente restritos em face das extensões de
+        rodovias deterioradas;
+       Reconhecimento do efeito direto da condição dos pavimentos nos custos
+        operacionais dos veículos;
+       Conscientização em relação ao impacto ambiental relacionado a obras rodoviárias;
+       Desenvolvimento de tecnologia (métodos e equipamentos) mais avançada para
+        avaliação de pavimentos;
+       Avanços tecnológicos capazes de tornar possível o equacionamento do processo de
+        gerência de pavimentos.
+
+Em 1983, o DNER contava com uma rede rodoviária pavimentada de aproximadamente
+40.000 km, dos quais cerca de 26% encontravam-se em condições precárias. Estudos
+realizados pela Diretoria de Planejamento já indicavam uma grande necessidade de se
+adotar um programa de investimentos em médio prazo que reduzisse esse índice.
+
+As organizações financeiras internacionais já vinham cobrando do órgão um programa,
+baseado em informações objetivas, referente ao estado de deterioração da rede, com
+recursos financeiros necessários para sua manutenção e uma previsão dos benefícios
+econômicos da aplicação oportuna desses recursos. Foi criado então, em 1983, um grupo
+
+
+                                                                                          2
+permanente de técnicos, representantes das diversas áreas do DNER, constituindo a
+Comissão Permanente de Gerência de Pavimentos (CPGP).
+
+Outras iniciativas deste porte se detiveram no âmbito estadual em unidades federativas em
+diversas regiões do país na década de 1990, sendo implantados sistemas de gestão de
+manutenção e bancos de dados rodoviários. Ainda nesta década, a iniciativa privada, com o
+advento das concessões no país, passou a ter grande interesse no conhecimento e na
+previsão de desempenho de pavimentos com o objetivo de antever, racionalizar e otimizar
+os recursos de manutenção com análises consistentes e estruturadas empregando um
+software aplicado a uma base de dados atualizada da malha.
+
+       2.2    ASPECTOS RELEVANTES DOS SISTEMAS DE GERÊNCIA DE PAVIMENTOS
+
+Os dados armazenados e utilizados no SGP consistem, basicamente, em informações
+referentes ao sistema de rodovias obtidas no processo de monitoramento dos pavimentos,
+dados de tráfego e informações sobre serviços e custos de obras. Sendo as principais
+vantagens de sua utilização:
+
+       Organização de dados;
+       Armazenamento de dados históricos de monitoramento dos pavimentos;
+       Controle de acesso às informações;
+       Rápido diagnóstico da malha e de segmentos;
+       Planejamento rodoviário de forma sistemática e compatível com as normativas do
+        DNIT;
+       Interface com HDM.
+
+       2.3    ATUAL SISTEMA DE GERÊNCIA DE PAVIMENTOS DO DNIT
+
+O atual Sistema de Gerência de Pavimentos do DNIT foi totalmente reestruturado em 1996 e
+remodelado em 2001. Em 2007 foi feita sua integração com o software HDM-4. O banco de
+dados do SGP é basicamente alimentado com os dados de tráfego, condição estrutural,
+irregularidade e defeitos do pavimento, por segmentos homogêneos, respeitando-se os
+limites da divisão em trechos do atual Sistema Nacional de Viação – SNV.
+Junto à equipe técnica da CGPLAN foram levantadas as principais características do atual
+Sistema de Gerência de Pavimentos do DNIT. Também foram apresentados o modelo de
+dados e as principais funcionalidades do sistema, entre as quais podemos destacar a
+comunicação do atual SGP com o Modelo HDM-4 - versão 1.3, a criação de segmentos
+homogêneos, a representação de dados de irregularidade (IRI), levantamento visual
+contínuo (LVC), deflectometria (FWD), volumes de tráfego (VMD) e relatórios de projeção de
+desempenho. Destaca-se que atualmente a malha está segmentada de 20 em 20 metros
+quanto aos dados cadastrados.
+
+
+
+                                                                                        3
+Os dados presentes no sistema são provenientes de levantamentos da malha rodoviária
+federal, referenciando-os ao segmentos do Sistema Nacional de Viação (SNV), antigo Plano
+Nacional de Viação (PNV). O sistema não contempla integrações com outros sistemas,
+permintindo apenas a exportação dos dados em formato padronizado.
+
+As Figuras 1, 2, 3 e 4 apressentam telas do referido sistema.
+
+
+
+
+                   Figura 1 – Tela de dados disponíveis de levantamentos
+
+
+
+
+                                                                                      4
+Fr
+5 Definição de tabelas para Segmento Homogêneo
+
+EI---$) Levantamentos realizados em 2000
+E IRI, Extensão: 45773,40
+E Lvc, Extensão: 45902,60
+E FWD, Extensão: 45903,60
+
+B GS Levantamentos realizados em 2007
+
+E IRI, Extensão: 54078,80
+E Lvc, Extensão: 54515,20
+E FWD, Extensão: 54415,30
+N
+E IRI, Extensão: 53449,70
+E Lvc, Extensão: 53532,00
+E FWD, Extensão: 58177,50
+3-4) Levantamentos realizados em 2011
+E IRI, Extensão: 5529272
+E Lvc, Extensão: 55292,58
+E FWD, Extensão: 55292,58
+
+Legenda
+à Indica o levantamento usado para gerar o
+Segmento Homogênio
+
+Levantamentos de 100% da malha.
+
+Indica os levantamentos parciais.
+
+Ss
+
+Tipo de levantamento
+
+Ocultar legenda
+
+bo E [mtos]
+
+Segmento Gerado. o E]
+Ger. Visualizar
+
+Descrição do Segmento :
+
+Malha 2008 PNV 2008 ”
+
+Classe de Superfície : [FLEXÍVEL =
+
+Filtro | Faixas de Enquadramento | Opções |
+
+Aplicar as seguintes restrições
+ur BR
+
+CEM - Desmarcar
+
+DIAL Marcar TODAS as BR's tudo
+
+[DAM
+
+CIA Desmarcar TODAS as BR's
+
+CIBA
+LICE Restrições:
+
+LIDF
+DIES
+LIGO
+LIMA
+LIMG
+LIMS
+LIMT
+CIPA
+LIPB
+DIPE
+DPI
+CIPR
+CIR
+LIRN
+LIRO
+LIRR
+LIRS
+Ds -
+
+[” Selecionar Estados pelas BRs
+
+TODA A MALHA
+
+Mm,
+
+Figura 2 — Tela de segmentação homogênea
+83: Consulta PNV ESSES
+
+&——S) PNY: 2000 codigo versão [br uf num prv localini »
+aa4> PNY: 2006 D |251BDF0E5O 2011 251 DF 0550 ENTR DEI
+ga 4> PNY: 2007 4TSBDFOTOO 2011 473 DF G100 ENTR DF“
+gi.) PNY: 2008 aTSBDFOTOZ 2011 473 DF 102 ENTR DF
+ge) PNV: 2010 ATSBDFOTO6 201 473 DF 0106 ENTR VICIK
+8-6 ERRO aTSBDFONIO 2011 473 DF no ENTR DFA
+174BRODISO 2011 174 RO 0150 ENTR BA-3
+174BROO15S 2011 174 RO 0155 INÍCIO PIST
+T74BRODIEO 2011 174 RO 0160 ENTR BR3
+T74BRODIES 2011 174 RO 165 FIM PISTA
+174BRODI7O 2011 174 RO 0170 FIM DO TRE
+3T9BRD0225 2011 319 RO 0225 DIVAM/RO
+31SBRO0230 201 EE RO 0230 IGARAPÉ D
+3198R00270 201 EE RO 0270 DIVAM/RO
+Jul "E
+Tipo de Gráfico: [Torta 2] Tamanho: [10 Posição: =] Salvar Gráficos 8)
+Estatísticas
+PNV: 2011 NÃO PAVIMENTADA
+
+BM Leio Natural-ext 1.895,40 km
+31% EB Em obra impl. - Ext: 197,70 km
+IE implantada - ext 6.654,50 im
+
+Em obra pav. - Ext: 3.984,00 km
+
+IE Plnejada - Ext 41.760,20 km
+EB Pavimentada - Ext: 56.731,10 km
+E fiPaviment - Ext 12.545,00km
+
+PAVMENTADA O
+
+IH Dupicaga - Ext: 2.829,80 km
+HE Emobra dupic. - Ext 823,40 km
+E Simoes - 2x 52.067,90 km
+
+Figura 3 — Tela de segmentação do SNV
+                             Figura 4 – Modelo de Relatório
+
+O cadastro de dados da malha rodoviária é feito a partir dos contratos de levantamento de
+campo, representado a cada 20 metros, sendo realizados, sempre que possível, anualmente.
+Estes levantamentos de campo contemplam parte da estrutura de Planejamento e Gestão
+da Malha Rodoviária Federal Pavimentada.
+
+A integração com o HDM (Highway Developement Management) é feita atualmente por
+meio da exportação dos dados do sistema em formato padronizado para importação no
+modelo HDM. A partir do tratamento dos dados no software HDM-4, o relatório gerado é
+novamente importado para a base de dados do atual SGP.
+
+
+
+
+                                                                                       7
+         2.4     REMODELAGEM DO SGP EM DESENVOLVIMENOT
+
+A remodelagem do Sistema de Gerência de Pavimentos (SGP), cuja conclusão está prevista
+para o mês de março de 2015, tem como enfoque principal a construção de um aplicativo
+operado por estações de trabalho que acessem uma base de dados centralizada em um
+servidor, sendo este acesso realizado em rede.
+
+A interface é amigável ao usuário, permitindo a consulta e o tratamento de dados para fins
+gerenciais de forma consistente e gerando interfaces que permitem seu inter-
+relacionamento com a atual base de dados, com o programa de análise econômica de
+investimentos em rodovias (HDM-4).
+
+O software permite acesso e pesquisa dos dados via intranet, respeitando as regras de
+segurança da informação através de níveis de acesso do usuário cadastrado, centralizando a
+base de conhecimento (banco de dados), mas universalizando a informação, permitindo que
+cada especialista desenvolva consultas e análises referentes a um trecho ou à malha.
+
+O Sistema de Gerência de Pavimentos, tecnicamente, é baseado em três modelos distintos:
+
+         Matrizes de Soluções: responsáveis pela indicação das intervenções a serem adotadas a
+          partir da condição presente do pavimento;
+         Estimativa de Custos: a partir das intervenções indicadas, deve ser realizada a estimativa de
+          investimento para fins gerenciais;
+         Previsão do Desempenho: permite que seja prevista, com HDM, a evolução das condições
+          funcionais, estruturais e de demanda dos diversos segmentos rodoviários a partir dos
+          indicadores atuais, sendo indispensável para fins de planejamento;
+
+Através da interface com o HDM-4 é possível também realizar a priorização de investimentos
+(modelagem econômica), indicando ao gestor os trechos que devem ser priorizados a partir
+do retorno econômico associado às estimativas de investimento das intervenções previstas.
+
+É proposta para a remodelagem do SGP, uma matriz de planejamento gerencial,
+devidamente compatibilizada com as diretrizes de projeto do órgão, que permite definir o
+tipo e custo dos serviços e obras de manutenção dos segmentos viários da malha federal.
+
+
+3.        CATÁLOGO DE SOLUÇÕES
+
+A proposta do novo catálogo de soluções gerenciais para a manutenção dos trechos
+pavimentados está fundamentada em parâmetros de tráfego, na condição estrutural e na
+condição funcional dos pavimentos.
+
+Para a idealização da matriz, os parâmetros supracitados foram organizados em faixas
+numéricas, que facilitam a utilização e definição das soluções a serem adotadas em cada
+cenário.
+                                                                                                     8
+a) Parâmetros de Tráfego
+
+Os métodos de projetos de pavimentação e restauração dos pavimentos preconizados pelo
+Departamento Nacional de Infraestrutura de Transportes (DNIT) objetivam se adequar uma
+estrutura de pavimento às solicitações de tráfego previstas, de forma a permitir o adequado
+deslocamento dos usuários pelas rodovias.
+
+Nos métodos de projeto nacionais, todo o tráfego previsto ao longo do horizonte de projeto
+é convertido em termos de solicitações equivalentes do eixo padrão rodoviário (um eixo
+simples de rodagem dupla com carga de 8,2t, denominado Número “N”.
+
+Na determinação do Número “N” são considerados certos fatores relacionados com a
+composição do tráfego e referidos a cada categoria de veículo, definida em função da carga
+transportada e do número de eixos dos veículos.
+
+Tem-se, portanto, que o número “N” tem influência direta do volume de tráfego atuante,
+determinado a partir do Volume Médio Diário (VMD), e do perfil da frota e das cargas por
+eixo, representado pelo Fv.
+
+O fator de veículos (Fv) é um multiplicador que permite a determinação do número de eixos
+equivalentes ao eixo padrão a partir do volume de veículos que trafega durante o período de
+projeto. Este fator pode ser calculado pelo produto do fator de eixo pelo fator de carga.
+
+O fator de veículo depende, portanto, do tipo de eixo e de sua respectiva carga, sendo as
+equações para a determinação dos mesmos, apresentada na Tabela 1, conforme
+apresentado no “Manual de Restauração de Pavimentos Asfálticos”, de 2006, na publicação
+IPR-720, do DNIT, onde P é o peso bruto total sobre o eixo, em tf.
+
+     Tabela 1- Equações para cálculo do Fator de Equivalência pelos métodos USACE e AASHTO
+                                                   Faixa de
+   Método          Tipo de Eixo          Código                     Equações (P em tf)
+                                                   Cargas (t)
+
+                                                       <8       FV = 2,0782x10-4 x P4,0175
+                Dianteiro Simples e
+                                         ES / ED
+                 Traseiro Simples
+                                                       >8       FV = 1,8320x10-6 x P6,2542
+
+                                                      < 11      FV = 1,592x10-4 x P3,472
+    USACE         Tandem Duplo            ETD
+                                                      > 11      FV = 1,528x10-6 x P5,484
+
+                                                      < 18      FV = 8,0359x10-5 x P3,3549
+                  Tandem Triplo           ETT
+                                                      > 18      FV = 1,3229x10-7 x P5,5789
+
+
+
+                                                                                             9
+                                                     Faixa de
+   Método          Tipo de Eixo          Código                     Equações (P em tf)
+                                                     Cargas (t)
+
+               Simples de Rodagem
+                                             ES      Independe FV = (P/7,77)4,32
+                     Simples
+
+               Simples de Rodagem
+                                             ED      Independe FV = (P/8,17)4,32
+                      Dupla
+   AASHTO
+                  Tandem Duplo
+                                             ETD     Independe FV = (P/15,08)4,14
+                 (Rodagem Dupla)
+
+                   Tandem Triplo
+                                             ETT     Independe FV = (P/22,95)4,14
+                 (Rodagem Dupla)
+
+Nota: o emprego de um ou outro método de cálculo (USACE ou AASHTO) se dá em função do modelo
+ou método utilizado no projeto.
+
+Tem-se, portanto, que o aumento da carga por eixo, para um dado volume de tráfego diário
+e sua respectiva composição, implica num incremento exponencial do número “N”, que é o
+parâmetro primordial de projeto e para análise de desempenho de um pavimento.
+
+Assim, para poder se definir um número “N” para cada segmento, a ser analisado no âmbito
+da gerência de pavimentos, deve-se conhecer tanto o volume de tráfego, especialmente o
+tráfego comercial – visto que a operação de veículos de passeio gera um carregamento cujo
+dano é desprezível, de acordo com os citados manuais do DNIT.
+
+Face à complexidade associada à determinação do número “N” optou-se pela escolha do
+volume médio diário de tráfego comercial (VMDc), como parâmetro do catálogo,
+associando-se um parâmetro de fácil obtenção e diretamente relacionado ao tráfego
+equivalente e/ou as solicitações impostas ao pavimento.
+
+Neste ponto, têm-se como premissa do catálogo de soluções proposto os valores de VMDc
+dividido em cinco faixas distintas, a saber:
+
+      Faixa 1: VMDc < 800 - Tráfego baixo
+      Faixa 2: 800 < VMDc < 1600 – Tráfego variando de baixo a médio
+      Faixa 3: 1600 < VMDc < 2400 – Tráfego médio
+      Faixa 4: 2400 < VMDc < 3200 – Tráfego alto
+      Faixa 5: VMDc > 3200 – Tráfego muito alto
+
+
+
+
+                                                                                         10
+Os valores propostos são referenciais iniciais, de forma a se ter um equilíbrio na distribuição
+do tráfego em operação nas cinco faixas de tráfego, tendo em vista os dados de tráfego do
+SGP do DNIT.
+
+Com o objetivo de se determinar o número “N” associado a cada uma das faixas de tráfego
+em questão fez-se necessária a utilização das informações de contagens volumétricas e
+classificatórias de tráfego promovidas pelo Ministério dos Transportes, em parceria com o
+Exército Brasileiro, nas rodovias federais ao longo do ano de 2011. Tais informações foram
+disponibilizadas pelo DNIT, estão sintetizados na Tabela 2 e apresentam as seguintes
+características:
+
+      57,3% do tráfego composto por veículos de passeio, tais como automóveis,
+       utilitários, vans e caminhonetes;
+      4,8 % do tráfego composto por motocicletas;
+      5,1% do tráfego composto por ônibus;
+      39,4% do tráfego composto por caminhões, dos quais 5,5 % (ou 15,6% do total) são
+       veículos combinados.
+
+
+
+
+                                                                                            11
+                    Tabela 2 - Síntese da pesquisa de tráfego realizada ao longo do ano de 2011
+                                                                                     Volume                         %
+
+
+
+
+                                                                          Classe
+                                             T IP O S D E V E Í C ULO S            C o ns o lida do         C o n so l i d a d o
+
+
+                                                                                   163 postos               163 postos
+
+           Motos
+                                                                          M                   81.523                           4,8%
+             PASSEIO E
+
+
+
+                                                                          P1                 824.531                        48,6%
+              LEVES
+
+
+
+
+                                                                          P2                  34.342                           2,0%
+
+                                                                          P3                 112.841                           6,6%
+
+                                                                          O1                  34.139                           2,0%
+                    ÔNIBUS
+
+
+
+
+                                                                 2C
+
+
+
+
+                                                                 3CB
+                                                                          O2                  15.906                           0,9%
+                                                                 4CB
+                                                                          O3                    2.062                          0,1%
+                                                                   2C
+
+                                                                          C1                  87.022                           5,1%
+                                                                   3C
+
+                                                                          C2                 138.659                           8,2%
+                             LEVES
+
+
+
+
+                                                                   4C
+
+                                                                          C3                    2.373                          0,1%
+
+                                                                          C4                    5.672                          0,3%
+
+                                                                          C5                    6.144                          0,4%
+                                                   3Q4
+                                                                          R1                          456                      0,0%
+                                                           2C2
+
+                                                                          R2                          478                      0,0%
+                             REBOQUES
+
+
+
+
+                                                           2C3
+
+                                                                          R3                          257                      0,0%
+                                                           3C2
+
+                                                                          R4                          710                      0,0%
+        CAMINHÕES
+
+
+
+
+                                                           3C3
+
+                                                                          R5                          569                      0,0%
+                                                           3D4
+
+                                                                          R6                          575                      0,0%
+                                                                  2S1
+
+                                                                          S1                    3.230                          0,2%
+                                                                  2S2
+
+                                                                          S2                  23.209                           1,4%
+                             SEMI-REBOQUES
+
+
+
+
+                                                                  2S3
+
+                                                                          S3                 100.915                           5,9%
+                                                                  3S1
+
+                                                                          S4                    1.581                          0,1%
+                                                                  3S2
+
+                                                                          S5                  10.192                           0,6%
+                                                                 3S3
+
+
+                                                                          S6                 120.278                           7,1%
+                                                          3T4
+                        SEMI-REBOQUES
+
+
+
+
+                                                                          SE1                 73.850                           4,4%
+                           ESPECIAIS
+
+
+
+
+                                                          3T6
+                                                                          SE2                 13.664                           0,8%
+
+                                                                          SE3                   2.000                          0,1%
+                                                         TOTAIS                           1.697.180                      100,0%
+
+Encontra-se em andamento uma pesquisa para calibração do HDM-4 para a malha federal
+brasileira, para fins de gerência de pavimentos e estudos técnico-econômicos. Nesta
+pesquisa, objeto do contrato N°456/2012-UASG 393003, propõem-se o emprego de treze
+tipos distintos de categorias de tráfego, como apresentado na Tabela 3:
+                                                                                                                                      12
+                    Tabela 3- Categorias de veículos para estudos econômicos
+
+          Código        Código
+ Código
+          DNER/      Ministério dos                            Descrição
+  HDM
+           DNIT       Transportes
+
+
+   M         -     M                   Moto
+
+   P1        -     P1 e P2             Automóvel
+
+   P3        -     P3                  Utilitário
+
+   O1        -     O1, O2 e O3         Ônibus
+
+   C1       2C     C1                  Caminhão trucado de dois eixos
+
+   C2       3C     C2, C3, C4 e C5     Caminhão trucado de três eixos
+
+   R1       3Q4    R1                  Reboque de sete eixos
+
+   R2       2C2    R2 e R3             Reboque de quatro eixos
+
+   R4       3C2    R4                  Reboque de cinco eixos
+
+   R5       3C3    R5 e R6             Reboque de seis eixos
+
+   S3       2S3    S1, S2, S3 e S4     Semi-reboque de cinco eixos
+
+   S6       3S3    S5 e S6             Semi-reboque de seis eixos
+
+  SE1       3T4    SE1, SE2 e SE3      Semi-reboque especial de sete eixos
+
+
+
+Nos estudos e projeto desenvolvidos em rodovias brasileiras, quando não se dispõe de
+dados de pesagens representativos, nem de estudos econômicos específicos, em geral são
+realizadas considerações acerca da taxa de veículos carregados e de veículos vazios. Para fins
+de gerenciamento e planejamento rodoviário, consideraram-se, no presente estudo, 70% e
+30%, respectivamente tendo em vista dados de balanças de rodovias concedidas no estado
+de São Paulo.
+
+Para a determinação dos fatores de veículos representativos, em termos gerenciais, da frota
+circulante na malha rodoviária nacional, os dados das contagens das pesquisas realizadas
+pelo Exército foram convertidos nas categorias propostas no âmbito da calibração do HDM-
+                                                                                           13
+4. Nesta conversão, tendo em vista que há a necessidade de se reduzir o número de
+categorias de veículos, os tipos de veículos categorizados pelo Exército foram agrupados em
+função do número e tipo de eixos, conforme apresentado na Tabela 3. Também foi arbitrado
+que 70% desta frota opera na carga máxima legal e que 30% da mesma circula vazia. Tais
+considerações levam a fatores de veículo determinados pelo método da AASHTO e da USACE
+de 2,43 e 9,10, respectivamente, como demonstrado nas Tabelas 4 e 5.
+
+                                     Tabela 4 - Cálculo do fator de veículo pelo método da AASHTO
+                                                                CÁLCULO DOS FATORES DE VEÍCULO - AASHTO
+
+                     Malha: Federal
+                  Descrição: Veículos típicos - tipos TNM
+
+
+
+        Hipótese:                 % Veículos - Máx. Legal          70%                      % Veículos - Vazios            30%           % Veículos - Máx. c/ Tol.       0%
+
+
+                                                    Configuração de Eixos           Volume                                    Fatores de Veículos - AASHTO
+                                nº de                                                            Distrib.
+   Categoria         Tipo                                                            Médio                              Individual                            Total
+                                Eixos                                                              (%)
+                                            ESRS       ESRD        ETD       ETT     Diário                 Carregado     Vazio       Excesso Carregado       Vazio    Excesso
+    Ônibus            O1          2           1             1       0         0      52.107        8,1%        2,72        0,14         3,72       0,22         0,01    0,30
+  Cam. Leves          C1          2           1             1       0         0      87.022       13,5%        2,72        0,14         3,72       0,37         0,02    0,50
+ Cam. Médios          C2          3           1             0       1         0     152.849       23,7%        1,97        0,11         2,66       0,47         0,03    0,63
+                      S3          5           1             1       0         1     128.935       20,0%        4,28        0,22         5,84       0,86         0,04    1,17
+ Semi-Reboques        S6          6           1             0       1         1     130.470       20,3%        3,53        0,19         4,78       0,72         0,04    0,97
+                     SE1          7           1             0       3         0      89.514       13,9%        5,25        0,30         7,09       0,73         0,04    0,99
+                      R2          4           1             3       0         0       734          0,1%        7,51        0,38         10,27      0,01         0,00    0,01
+                      R1          5           1             2       1         0       456          0,1%        6,76        0,35         9,21       0,00         0,00    0,01
+   Reboques
+                      R4          5           1             2       1         0       710          0,1%        6,76        0,35         9,21       0,01         0,00    0,01
+                      R5          6           1             1       2         0      1.145         0,2%        6,01        0,32         8,15       0,01         0,00    0,01
+                                                                            Total   643.943       100,0%                                           3,39         0,18    4,60
+                                                                                                                                                      FV AASHTO         2,43
+
+
+
+
+                                      Tabela 5 - Cálculo do fator de veículo pelo método do USACE
+                                                                CÁLCULO DOS FATORES DE VEÍCULO - USACE
+
+                    Malha: Federal
+                 Descrição: Veículos típicos - tipos TNM
+
+
+
+       Hipótese:                 % Veículos - Máx. Legal           70%                  % Veículos - Vazios                30%           % Veículos - Máx. c/ Tol.       0%
+
+
+                                                   Configuração de Eixos            Volume                                        Fatores de Veículos - USACE
+                               nº de                                                             Distrib.
+  Categoria         Tipo                                                             Médio                              Individual                            Total
+                               Eixos                                                               (%)
+                                           ESRS       ESRD         ETD      ETT      Diário                 Carregado     Vazio       Excesso Carregado       Vazio    Excesso
+   Ônibus           2CB          2           1              1       0        0      52.107        8,1%        3,57         0,15         5,54       0,29         0,01    0,45
+ Cam. Leves          2C          2           1              1       0        0      87.022        13,5%       3,57         0,15         5,54       0,48         0,02    0,75
+ Cam. Médios         3C          3           1              0       1        0      152.849       23,7%       8,83         0,29        13,08       2,10         0,07    3,11
+                    2S3          5           1              1       0        1      128.935       20,0%       12,87        0,56        19,46       2,58         0,11    3,90
+Semi-Reboques       3S3          6           1              0       1        1      130.470       20,3%       18,13        0,70        27,00       3,67         0,14    5,47
+                   3S2S2         7           1              0       3        0      89.514        13,9%       25,92        0,82        38,50       3,60         0,11    5,35
+                    2C2          4           1              3       0        0        734         0,1%        10,15        0,42        15,88       0,01         0,00    0,02
+                    2C3          5           1              2       1        0        456         0,1%        15,41        0,55        23,42       0,01         0,00    0,02
+  Reboques
+                    3C2          5           1              2       1        0        710         0,1%        15,41        0,55        23,42       0,02         0,00    0,03
+                    3C3          6           1              1       2        0       1.145        0,2%        20,66        0,69        30,96       0,04         0,00    0,06
+                                                                            Total   643.943      100,0%                                           12,79         0,47    19,14
+                                                                                                                                                      FV USACE          9,10
+
+
+
+
+A partir deste estudo, pôde-se associar um número “N” pelo método do USACE para o
+horizonte de 10 anos para cada uma das faixas de volume médio diário de tráfego propostos
+na matriz, para fins de pré-dimensionamento das soluções de manutenção. Tais valores são
+apresentados na Tabela 6.
+
+
+
+                                                                                                                                                                                14
+                    Tabela 6 - Categorias de veículos para estudos econômicos
+
+                                                                   Número “N” USACE para 10
+  Faixa (#)          VMDc                   Descrição
+                                                                       anos associado
+
+       1             < 800                Tráfego baixo                         1,3 x 107
+
+       2          800 a 1.600       Tráfego de baixo a médio                    2,3 x 107
+
+       3         1.600 a 2.400           Tráfego médio                          3,9 x 107
+
+       4         2.400 a 3.200             Tráfego alto                         5,2 x 107
+
+       5            > 3.200             Tráfego muito alto                      1,3 x 108
+Nota: Fator de Veículo USACE de 8,82.
+
+b) Parâmetros Estruturais (Dados Deflectométricos)
+
+O segundo parâmetro selecionado para compor o catálogo de soluções foi a deflexão, mas
+não puramente a medida da deflexão sob a ação da carga, e sim a relação entre a deflexão
+característica e a deflexão admissível – por representar melhor a condição estrutural do
+pavimento como um todo, independente de variações no volume de tráfego e com
+possibilidade de se adequar o horizonte de análise ao se recalcular a deflexão admissível.
+
+Assim, a relação entre a deflexão característica (Dc) - definida como sendo a deflexão média
+acrescida de um desvio padrão – e a deflexão admissível (Dadm) foi dividida em quatro
+faixas representativas de diferentes níveis de esforços para recuperação estrutural do
+pavimento em conformidade com a norma DNER PRO 11/79:
+
+      Faixa 1: Dc/Dadm < 1,1 – Pavimento sem problemas estruturais;
+      Faixa 2: 1,1 < Dc/Dadm < 1,5 – Pavimento com deficiência estrutural leve;
+      Faixa 3: 1,5 < Dc/Dadm < 2,0 – Pavimento com problemas estruturais;
+      Faixa 4: Dc/Dadm > 2,0 – Pavimento com grandes problemas estruturais;
+
+Utilizou-se como referência para a avaliação estrutural do pavimento as normas do PRO
+011/79 e PRO-269/94 (neste caso para os três tipos possíveis de subleito), que define com
+base nos critérios de deformabilidade, a vida restante ou o reforço necessário para garantir
+a vida útil do pavimento. No presente estudo considerou-se, em todos os casos, que a
+deflexão de projeto equivale a deflexão característica, visto que este valor estatisticamente
+corresponde a 85% de representatividade. Em relação a deflexão de projeto utilizou-se o
+mesmo valor da deflexão admissível, visto que o emprego de fatores de segurança nesta
+etapa pode ser interpretado como superdimensionamento.
+                                                                                            15
+Com base nos dados deflectométricos, é possível estabelecer as espessuras de reforço
+estrutural a serem adotadas, cujas análises são realizadas com base nos quatros cenários
+distintos citados, tomando-se como critérios os parâmetros de tráfego e os parâmetros
+estruturais, conforme mostrado a seguir:
+
+       Dimensionamento em conformidade com a norma DNER PRO 011/79;
+       Dimensionamento em conformidade com a norma DNER PRO 269/94, sendo o
+        subleito do tipo I;
+       Dimensionamento em conformidade com a norma DNER PRO 269/94, sendo o
+        subleito do tipo II;
+       Dimensionamento em conformidade com a norma DNER PRO 269/94, sendo o
+        subleito do tipo III.
+
+Para o dimensionamento preconizado pela norma do DNER PRO 011/79 é realizado o
+diagnóstico do pavimento com base em critérios deflectométricos ou de resistência, que
+avaliam a qualidade estrutural do pavimento analisado e propõem as medidas corretivas. A
+Tabela 7 demonstra as espessuras mínimas de reforço a serem adotadas para cada faixa de
+deflexão, variando-se também as faixas de tráfego.
+
+Em síntese na Tabela 7 para as distintas faixas de tráfego estipulou-se o número “N” e,
+consequentemente, a deflexão admissível (Dadm) associados. A determinação da deflexão
+característica (Dc) de forma a ter as espessuras de reforço associadas, ocorreu a partir das
+diferentes relações Dc/Dadm pré-fixadas.
+
+
+
+
+                                                                                         16
+               Tabela 7 - Espessura de reforço em conformidade com a norma DNER-PRO 11/79
+                                              Espessuras de Reforço Necessárias - DNER-PRO-011
+ VMDc         Relação      Dc           N        Dadm                    Qualidade     Necessidade        Critério para            Medidas                 HR
+                                                              Hipótese
+Com ercial   Dc/Dadm    (0,01 m m )   USACE     (0,01 m m )              Estrutural   de Est. Compl.   Cálculo de Reforço         Corretvas               (cm)
+     800        0,9       51,6        1,3E+07     57,4           I          Boa            Não                   -              A penas superficiais       0,0
+     800        1,1       63,1        1,3E+07     57,4          IIA       Regular          Não            Deflecto métrico           Refo rço              1,5
+     800        1,5       86,1        1,3E+07     57,4          IIA       Regular          Não            Deflecto métrico           Refo rço              7,0
+     800        2,0       114,7       1,3E+07     57,4          IIA       Regular          Não            Deflecto métrico           Refo rço             12,0
+     800        3,0       172,1       1,3E+07     57,4          IIA       Regular          Não            Deflecto métrico           Refo rço             19,0
+     800        3,1       177,8       1,3E+07     57,4          IV           Má            Sim              Resistência      Refo rço o u Reco nstrução   19,5
+   1.600        0,9       45,7        2,6E+07     50,8           I          Boa            Não                   -              A penas superficiais       0,0
+   1.600        1,1       55,9        2,6E+07     50,8          IIA       Regular          Não            Deflecto métrico           Refo rço              1,5
+   1.600        1,5       76,2        2,6E+07     50,8          IIA       Regular          Não            Deflecto métrico           Refo rço              7,0
+   1.600        2,0       101,6       2,6E+07     50,8          IIA       Regular          Não            Deflecto métrico           Refo rço             12,0
+   1.600        3,0       152,3       2,6E+07     50,8          IIA       Regular          Não            Deflecto métrico           Refo rço             19,0
+   1.600        3,1       157,4       2,6E+07     50,8          IV           Má            Sim              Resistência      Refo rço o u Reco nstrução   19,5
+   2.400        0,9       42,6        3,9E+07     47,3           I          Boa            Não                   -              A penas superficiais       0,0
+   2.400        1,1       52,0        3,9E+07     47,3          IIA       Regular          Não            Deflecto métrico           Refo rço              1,5
+   2.400        1,5       70,9        3,9E+07     47,3          IIA       Regular          Não            Deflecto métrico           Refo rço              7,0
+   2.400        2,0       94,6        3,9E+07     47,3          IIA       Regular          Não            Deflecto métrico           Refo rço             12,0
+   2.400        3,0       141,8       3,9E+07     47,3          IIA       Regular          Não            Deflecto métrico           Refo rço             19,0
+   2.400        3,1       146,6       3,9E+07     47,3          IV           Má            Sim              Resistência      Refo rço o u Reco nstrução   19,5
+   3.200        0,9       40,5        5,2E+07     44,9           I          Boa            Não                   -              A penas superficiais       0,0
+   3.200        1,1       49,4        5,2E+07     44,9          IIA       Regular          Não            Deflecto métrico           Refo rço              1,5
+   3.200        1,5       67,4        5,2E+07     44,9          IIA       Regular          Não            Deflecto métrico           Refo rço              7,0
+   3.200        2,0       89,9        5,2E+07     44,9          IIA       Regular          Não            Deflecto métrico           Refo rço             12,0
+   3.200        3,0       134,8       5,2E+07     44,9          IIA       Regular          Não            Deflecto métrico           Refo rço             19,0
+   3.200        3,1       139,3       5,2E+07     44,9          IV           Má            Sim              Resistência      Refo rço o u Reco nstrução   19,5
+   8.000        0,9       34,4        1,3E+08     38,3           I          Boa            Não                   -              A penas superficiais       0,0
+   8.000        1,1       42,1        1,3E+08     38,3          IIA       Regular          Não            Deflecto métrico           Refo rço              1,5
+   8.000        1,5       57,4        1,3E+08     38,3          IIA       Regular          Não            Deflecto métrico           Refo rço              7,0
+   8.000        2,0       76,5        1,3E+08     38,3          IIA       Regular          Não            Deflecto métrico           Refo rço             12,0
+   8.000        3,0       114,8       1,3E+08     38,3          IIA       Regular          Não            Deflecto métrico           Refo rço             19,0
+   8.000        3,1       118,6       1,3E+08     38,3          IV           Má            Sim              Resistência      Refo rço o u Reco nstrução   19,5
+
+
+
+Para o dimensionamento com base na norma DNER PRO 269/94 é considerada a
+deformação elástica recuperável do subleito e das camadas constituintes do pavimento, que
+estão sob a ação de cargas repetitivas. As camadas do subleito por sua vez, são classificadas
+quanto a sua resiliência, em solos do tipo I, tipo II e tipo III, em função do seu percentual de
+silte (S) na fração fina, que passa na peneira nº 200, e do valor do Índice de Suporte
+Califórnia (ISC ou CBR) correspondente.
+
+As Tabelas 8, 9 e 10 demonstram as espessuras mínimas a serem adotadas para cada faixa
+de deflexão, variando-se também as faixas de tráfego e o tipo de subleito. Em síntese, tal
+qual na Tabela 7, para as distintas faixas de tráfego estipulou-se o número “N” e,
+consequentemente, a deflexão admissível (Dadm) associados. A determinação da deflexão
+característica (Dc) de forma a ter as espessuras de reforço associadas, ocorreu a partir das
+diferentes relações Dc/Dadm pré-fixadas.
+
+
+
+
+                                                                                                                                                             17
+     Tabela 8 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo I
+                    Espessuras de Reforço Necessárias - DNER-PRO-269 - Solo tipo 1
+ VMDc         Relação      Dc           N        Dadm         Tipo     Dadm           Hef     Solução para   HR
+Com ercial   Dc/Dadm    (0,01 m m )   USACE     (0,01 m m )   Subl.   ( 0 ,0 1m m )   (cm)   Recapeamento    (cm)
+     800        0,9       58,3        1,3E+07     64,8          1       64,8          8,1         Caso 4     0,0
+     800        1,1       71,2        1,3E+07     64,8          1       64,8          5,6         Caso 4     3,0
+     800        1,5       97,2        1,3E+07     64,8          1       64,8          2,6         Caso 1     7,0
+     800        2,0       129,5       1,3E+07     64,8          1       64,8          0,5         Caso 1     10,0
+     800        3,0       194,3       1,3E+07     64,8          1       64,8          -1,6        Caso 2     12,5
+     800        3,1       200,8       1,3E+07     64,8          1       64,8          -1,7        Caso 2     13,0
+   1.600        0,9       51,2        2,6E+07     56,9          1       56,9          10,1        Caso 4     0,0
+   1.600        1,1       62,5        2,6E+07     56,9          1       56,9          7,2         Caso 4     3,0
+   1.600        1,5       85,3        2,6E+07     56,9          1       56,9          3,7         Caso 1     7,5
+   1.600        2,0       113,7       2,6E+07     56,9          1       56,9          1,4         Caso 1     10,5
+   1.600        3,0       170,6       2,6E+07     56,9          1       56,9          -1,0        Caso 2     14,0
+   1.600        3,1       176,2       2,6E+07     56,9          1       56,9          -1,2        Caso 2     14,0
+   2.400        0,9       47,4        3,9E+07     52,7          1       52,7          11,3        Caso 4     0,0
+   2.400        1,1       57,9        3,9E+07     52,7          1       52,7          8,2         Caso 4     2,5
+   2.400        1,5       79,0        3,9E+07     52,7          1       52,7          4,5         Caso 1     7,5
+   2.400        2,0       105,4       3,9E+07     52,7          1       52,7          1,9         Caso 1     11,0
+   2.400        3,0       158,0       3,9E+07     52,7          1       52,7          -0,6        Caso 2     14,5
+   2.400        3,1       163,3       3,9E+07     52,7          1       52,7          -0,8        Caso 2     15,0
+   3.200        0,9       44,9        5,2E+07     49,9          1       49,9          12,3        Caso 4     0,0
+   3.200        1,1       54,9        5,2E+07     49,9          1       49,9          9,0         Caso 4     2,5
+   3.200        1,5       74,9        5,2E+07     49,9          1       49,9          5,1         Caso 1     8,0
+   3.200        2,0       99,8        5,2E+07     49,9          1       49,9          2,4         Caso 1     11,5
+   3.200        3,0       149,7       5,2E+07     49,9          1       49,9          -0,3        Caso 2     15,0
+   3.200        3,1       154,7       5,2E+07     49,9          1       49,9          -0,5        Caso 2     15,5
+   8.000        0,9       37,8        1,3E+08     42,0          1       42,0          15,6        Caso 4     0,0
+   8.000        1,1       46,2        1,3E+08     42,0          1       42,0          11,7        Caso 4     2,0
+   8.000        1,5       63,0        1,3E+08     42,0          1       42,0          7,1         Caso 1     8,0
+   8.000        2,0       84,0        1,3E+08     42,0          1       42,0          3,9         Caso 1     12,5
+   8.000        3,0       126,0       1,3E+08     42,0          1       42,0          0,7         Caso 2     17,0
+   8.000        3,1       130,2       1,3E+08     42,0          1       42,0          0,5         Caso 2     17,0
+
+
+
+
+                                                                                                                    18
+     Tabela 9 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo II
+                    Espessuras de Reforço Necessárias - DNER-PRO-269 - Solo tipo 2
+ VMDc         Relação      Dc           N        Dadm         Tipo     Dadm           Hef     Solução para   HR
+Com ercial   Dc/Dadm    (0,01 m m )   USACE     (0,01 m m )   Subl.   ( 0 ,0 1m m )   (cm)   Recapeamento    (cm)
+     800        0,9       58,3        1,3E+07     64,8          2       64,8          9,1         Caso 4     0,0
+     800        1,1       71,2        1,3E+07     64,8          2       64,8          6,6         Caso 4     2,5
+     800        1,5       97,2        1,3E+07     64,8          2       64,8          3,6         Caso 1     7,0
+     800        2,0       129,5       1,3E+07     64,8          2       64,8          1,5         Caso 1     9,5
+     800        3,0       194,3       1,3E+07     64,8          2       64,8          -0,6        Caso 1     12,5
+     800        3,1       200,8       1,3E+07     64,8          2       64,8          -0,7        Caso 2     12,5
+   1.600        0,9       51,2        2,6E+07     56,9          2       56,9          11,0        Caso 4     0,0
+   1.600        1,1       62,5        2,6E+07     56,9          2       56,9          8,2         Caso 4     2,5
+   1.600        1,5       85,3        2,6E+07     56,9          2       56,9          4,7         Caso 1     7,0
+   1.600        2,0       113,7       2,6E+07     56,9          2       56,9          2,3         Caso 1     10,5
+   1.600        3,0       170,6       2,6E+07     56,9          2       56,9          0,0         Caso 2     13,5
+   1.600        3,1       176,2       2,6E+07     56,9          2       56,9          -0,2        Caso 2     14,0
+   2.400        0,9       47,4        3,9E+07     52,7          2       52,7          12,3        Caso 4     0,0
+   2.400        1,1       57,9        3,9E+07     52,7          2       52,7          9,2         Caso 4     2,5
+   2.400        1,5       79,0        3,9E+07     52,7          2       52,7          5,5         Caso 1     7,5
+   2.400        2,0       105,4       3,9E+07     52,7          2       52,7          2,9         Caso 1     11,0
+   2.400        3,0       158,0       3,9E+07     52,7          2       52,7          0,3         Caso 2     14,5
+   2.400        3,1       163,3       3,9E+07     52,7          2       52,7          0,2         Caso 2     14,5
+   3.200        0,9       44,9        5,2E+07     49,9          2       49,9          13,2        Caso 4     0,0
+   3.200        1,1       54,9        5,2E+07     49,9          2       49,9          10,0        Caso 4     2,0
+   3.200        1,5       74,9        5,2E+07     49,9          2       49,9          6,0         Caso 1     7,5
+   3.200        2,0       99,8        5,2E+07     49,9          2       49,9          3,3         Caso 1     11,0
+   3.200        3,0       149,7       5,2E+07     49,9          2       49,9          0,6         Caso 2     15,0
+   3.200        3,1       154,7       5,2E+07     49,9          2       49,9          0,5         Caso 2     15,0
+   8.000        0,9       37,8        1,3E+08     42,0          2       42,0          16,6        Caso 4     0,0
+   8.000        1,1       46,2        1,3E+08     42,0          2       42,0          12,7        Caso 4     1,5
+   8.000        1,5       63,0        1,3E+08     42,0          2       42,0          8,1         Caso 1     8,0
+   8.000        2,0       84,0        1,3E+08     42,0          2       42,0          4,9         Caso 1     12,0
+   8.000        3,0       126,0       1,3E+08     42,0          2       42,0          1,6         Caso 2     16,5
+   8.000        3,1       130,2       1,3E+08     42,0          2       42,0          1,4         Caso 2     17,0
+
+
+
+
+                                                                                                                    19
+    Tabela 10 - Espessura de reforço pela norma DNER-PRO 269/94 nos casos de subleito tipo III
+                    Espessuras de Reforço Necessárias - DNER-PRO-269 - Solo tipo 3
+ VMDc         Relação      Dc           N        Dadm         Tipo     Dadm           Hef     Solução para   HR
+Com ercial   Dc/Dadm    (0,01 m m )   USACE     (0,01 m m )   Subl.   ( 0 ,0 1m m )   (cm)   Recapeamento    (cm)
+     800        0,9       58,3        1,3E+07     64,8          3       64,8          12,2        Caso 4     0,0
+     800        1,1       71,2        1,3E+07     64,8          3       64,8          9,7         Caso 4     1,5
+     800        1,5       97,2        1,3E+07     64,8          3       64,8          6,7         Caso 1     5,5
+     800        2,0       129,5       1,3E+07     64,8          3       64,8          4,6         Caso 1     8,0
+     800        3,0       194,3       1,3E+07     64,8          3       64,8          2,5         Caso 1     11,0
+     800        3,1       200,8       1,3E+07     64,8          3       64,8          2,4         Caso 1     11,0
+   1.600        0,9       51,2        2,6E+07     56,9          3       56,9          14,2        Caso 4     0,0
+   1.600        1,1       62,5        2,6E+07     56,9          3       56,9          11,3        Caso 4     1,0
+   1.600        1,5       85,3        2,6E+07     56,9          3       56,9          7,8         Caso 1     6,0
+   1.600        2,0       113,7       2,6E+07     56,9          3       56,9          5,5         Caso 1     9,0
+   1.600        3,0       170,6       2,6E+07     56,9          3       56,9          3,1         Caso 1     12,5
+   1.600        3,1       176,2       2,6E+07     56,9          3       56,9          2,9         Caso 1     12,5
+   2.400        0,9       47,4        3,9E+07     52,7          3       52,7          15,4        Caso 4     0,0
+   2.400        1,1       57,9        3,9E+07     52,7          3       52,7          12,3        Caso 4     1,0
+   2.400        1,5       79,0        3,9E+07     52,7          3       52,7          8,6         Caso 1     6,0
+   2.400        2,0       105,4       3,9E+07     52,7          3       52,7          6,0         Caso 1     9,5
+   2.400        3,0       158,0       3,9E+07     52,7          3       52,7          3,5         Caso 2     13,0
+   2.400        3,1       163,3       3,9E+07     52,7          3       52,7          3,3         Caso 2     13,0
+   3.200        0,9       44,9        5,2E+07     49,9          3       49,9          16,4        Caso 4     0,0
+   3.200        1,1       54,9        5,2E+07     49,9          3       49,9          13,1        Caso 4     1,0
+   3.200        1,5       74,9        5,2E+07     49,9          3       49,9          9,2         Caso 1     6,0
+   3.200        2,0       99,8        5,2E+07     49,9          3       49,9          6,5         Caso 1     10,0
+   3.200        3,0       149,7       5,2E+07     49,9          3       49,9          3,8         Caso 2     13,5
+   3.200        3,1       154,7       5,2E+07     49,9          3       49,9          3,6         Caso 2     13,5
+   8.000        0,9       37,8        1,3E+08     42,0          3       42,0          19,7        Caso 4     0,0
+   8.000        1,1       46,2        1,3E+08     42,0          3       42,0          15,8        Caso 4     0,0
+   8.000        1,5       63,0        1,3E+08     42,0          3       42,0          11,2        Caso 1     6,5
+   8.000        2,0       84,0        1,3E+08     42,0          3       42,0          8,0         Caso 1     11,0
+   8.000        3,0       126,0       1,3E+08     42,0          3       42,0          4,8         Caso 2     15,0
+   8.000        3,1       130,2       1,3E+08     42,0          3       42,0          4,6         Caso 2     15,5
+
+
+
+
+                                                                                                                    20
+c) Parâmetros Funcionais
+
+Na seleção dos parâmetros funcionais, para efeito de planejamento e gerência da rede viária
+federal, foram selecionados como representativos a irregularidade longitudinal e o
+trincamento, isto porque:
+
+      A irregularidade longitudinal é o parâmetro do pavimento que apresenta maior
+       influência nos custos operacionais dos veículos e, portanto, é de fundamental
+       importância para o planejamento e projeto de manutenção de uma rede viária;
+
+      O grau de trincamento de um pavimento tem influência direta nos custos de
+       correções de manutenção e permite identificar o momento em que a taxa de
+       deterioração de um pavimento irá ocorrer de forma mais significativa em função da
+       infiltração de água na infraestrutura.
+
+Com relação aos parâmetros de irregularidade longitudinal, foi realizada a divisão em três
+faixas de forma a distinguir os pavimentos em suas condições:
+
+      Faixa 1: IRI < 2,5 m/km – Pavimento sem problemas funcionais (ótimo e bom);
+      Faixa 2: 2,5 < IRI < 4 m/km – Pavimento com certas deficiências funcionais (regular);
+      Faixa 3: IRI > 4 m/km – Pavimento com grandes problemas funcionais (ruim).
+
+Utilizou-se, como referência para o cálculo da espessura de reforço funcional em função da
+irregularidade longitudinal, a norma do PRO 159/85, que é baseada em critérios de
+desempenho pavimento. O valor de IRI admissível adotado é de 2,25 m/km, que
+corresponde a 90% do IRI do padrão CREMA que é de 2,5m/km (com intervalo de confiança
+de 95%).
+
+A Tabela 11 demonstra as espessuras mínimas a serem adotadas para cada faixa de
+irregularidade longitudinal.
+
+
+
+
+                                                                                         21
+                 Tabela 11 - Espessura de reforço pela norma DNER-PRO 159/85
+                             IRI        QI       IRI adm    QI adm      HR
+
+                            (m/km)   (cont/km)   (m/km)    (cont/km)   (cm)
+
+                 Faixa 01
+                             2,7        35        2,25        29        0,9
+
+
+
+                             3,0        39        2,25        29        1,6
+                 Faixa 02
+
+                             3,5        46        2,25        29        2,6
+
+
+                             4,0        52        2,25        29        3,7
+
+
+
+                             4,5        59        2,25        29        4,7
+
+
+
+                             5,0        65        2,25        29        5,8
+                 Faixa 03
+
+
+                             5,5        72        2,25        29        6,8
+
+
+
+                             6,0        73        2,25        29        7,0
+
+
+
+
+Para a elaboração do catálogo de soluções do DNIT, os valores de trincamento foram
+separados em duas faixas:
+
+      Faixa 1: TR < 10% - Trincamento baixo, sem problemas funcionais;
+      Faixa 2: TR > 10% – Trincamento que pode indicar problemas funcionais.
+
+A primeira faixa representa trechos com pouco ou nenhum trincamento, podendo ser
+associado aos mesmos uma baixa necessidade de correções superficiais ou simplesmente
+rejuvenescimento e impermeabilização da plataforma. Já a segunda faixa de valores está
+associada a pavimentos que requerem intervenções preliminares de maior vulto
+previamente as obras de recapeamento.
+
+d) Concepção da Matriz de Solução
+
+A matriz de solução deve ser analisada a partir da correspondência entre os parâmetros de
+tráfego, os parâmetros deflectométricos e os parâmetros funcionais. A elaboração da matriz
+com as faixas escolhidas para cada tipo de parâmetro tem o objetivo da obtenção da solução
+mais compatível e adequada para cada cenário ou segmento estudado.
+
+De forma a facilitar a visualização e a justificativa de solução adotada para cada cenário, as
+células foram numeradas, conforme apresentado na Figura 5.
+
+
+
+
+                                                                                           22
+                                                Tráfego                  VMDc <= 800                                 800 < VMDc <= 1600                                                    1600 < VMDc <= 2400                                                           2400 < VMDc <= 3200                                                                      VMDc > 3200
+
+
+
+
+                                                                                                                             1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                             1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                                                                                                           1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                      1,1 < Dc/Dadm <= 1,5
+                                                                                                                                                                                                                    1,5 < Dc/Dadm <= 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                  1,5 < Dc/Dadm <= 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                              1,5 < Dc/Dadm <= 2
+                           Condição Funcional
+
+
+
+
+                                                                  Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                    Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                          Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                                                                                                        Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                     Dc/Dadm <= 1,1
+                                                                                   Dc/Dadm > 1,1
+
+
+
+
+                                                                                                                                                     Dc/Dadm > 1,5
+
+
+
+
+                                                                                                                                                                                                                                          Dc/Dadm > 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                       Dc/Dadm > 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                   Dc/Dadm > 2
+                                                     Estrutura
+IRI <= 2,5 m/km
+
+
+
+
+                                                TR <= 10         1111              1211            2111                     2211                    2311                 3111               3211                    3311                 3411           4111              4211                    4311                 4411          5111             5211                   5311                  5411
+
+
+
+
+                                                TR > 10          1112              1212            2112                     2212                    2312                 3112               3212                    3312                 3412           4112              4212                    4312                 4412          5112             5212                   5312                  5412
+2,5 m/km < IRI <= 4 m/km
+
+
+
+
+                                                TR <= 10         1121              1221            2121                     2221                    2321                 3121               3221                    3321                 3421           4121              4221                    4321                 4421          5121             5221                   5321                  5421
+
+
+
+
+                                                TR > 10          1122              1222            2122                     2222                    2322                 3122               3222                    3322                 3422           4122              4222                    4322                 4422          5122             5222                   5322                  5422
+
+
+
+
+                                                TR <= 10         1131              1231            2131                     2231                    2331                 3131               3231                    3331                 3431           4131              4231                    4331                 4431          5131             5231                   5331                  5431
+IRI > 4 m/km
+
+
+
+
+                                                TR > 10          1132              1232            2132                     2232                    2332                 3132               3232                    3332                 3432           4132              4232                    4332                 4432          5132             5232                   5332                  5432
+
+
+
+
+                                                                                                                                                                     Figura 5 - Células do Catálogo de Soluções do DNIT
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                 23
+Esta elaboração da matriz de soluções foi realizada para os quatro cenários de
+dimensionamento estrutural em questão, conforme apresentado anteriormente. A Tabela
+13 demonstra as espessuras mínimas a serem adotadas para cada faixa de deflexão:
+
+          Tabela 13: Síntese das espessuras de reforço pelas normas DNER-PRO 11 e PRO 269.
+                                                  Espessuras de Reforço Necessárias
+           Cenário                         PRO-11                                       PRO-269                              Sintese
+  VMD        N        Relação    Dc         Dadm       HR        Dc         Dadm                  HR (cm)                    HR (cm)
+           USACE     Dc/Dadm (0,01 m m ) (0,01 m m )   (cm)   (0,01 m m ) (0,01 m m )    Tipo 1    Tipo 2   Tipo 3   Média   Mínimo    Máximo
+                        0,9     51,6        57,4        0,0     58,3         64,8          0,0       0,0      0,0      0,0      0,0      0,0
+                        1,1     63,1        57,4        1,5     71,2         64,8          3,0       2,5      1,5      2,1      1,5      3,0
+                        1,5     86,1        57,4        7,0     97,2         64,8          7,0       7,0      5,5      6,6      5,5      7,0
+    800   1,3E+07
+                        2,0    114,7        57,4       12,0     129,5        64,8         10,0       9,5      8,0      9,9      8,0     12,0
+                        3,0    172,1        57,4       19,0     194,3        64,8         12,5      12,5     11,0     13,8     11,0     19,0
+                        3,1    177,8        57,4       19,5     200,8        64,8         13,0      12,5     11,0     14,0     11,0     19,5
+                        0,9     45,7        50,8        0,0     51,2         56,9          0,0       0,0      0,0      0,0      0,0      0,0
+                        1,1     55,9        50,8        1,5     62,5         56,9          3,0       2,5      1,0      2,0      1,0      3,0
+                        1,5     76,2        50,8        7,0     85,3         56,9          7,5       7,0      6,0      6,9      6,0      7,5
+  1.600   2,6E+07
+                        2,0    101,6        50,8       12,0     113,7        56,9         10,5      10,5      9,0     10,5      9,0     12,0
+                        3,0    152,3        50,8       19,0     170,6        56,9         14,0      13,5     12,5     14,8     12,5     19,0
+                        3,1    157,4        50,8       19,5     176,2        56,9         14,0      14,0     12,5     15,0     12,5     19,5
+                        0,9     42,6        47,3        0,0     47,4         52,7          0,0       0,0      0,0      0,0      0,0      0,0
+                        1,1     52,0        47,3        1,5     57,9         52,7          2,5       2,5      1,0      1,9      1,0      2,5
+                        1,5     70,9        47,3        7,0     79,0         52,7          7,5       7,5      6,0      7,0      6,0      7,5
+  2.400   3,9E+07
+                        2,0     94,6        47,3       12,0     105,4        52,7         11,0      11,0      9,5     10,9      9,5     12,0
+                        3,0    141,8        47,3       19,0     158,0        52,7         14,5      14,5     13,0     15,3     13,0     19,0
+                        3,1    146,6        47,3       19,5     163,3        52,7         15,0      14,5     13,0     15,5     13,0     19,5
+                        0,9     40,5        44,9        0,0     44,9         49,9          0,0       0,0      0,0      0,0      0,0      0,0
+                        1,1     49,4        44,9        1,5     54,9         49,9          2,5       2,0      1,0      1,8      1,0      2,5
+                        1,5     67,4        44,9        7,0     74,9         49,9          8,0       7,5      6,0      7,1      6,0      8,0
+  3.200   5,2E+07
+                        2,0     89,9        44,9       12,0     99,8         49,9         11,5      11,0     10,0     11,1     10,0     12,0
+                        3,0    134,8        44,9       19,0     149,7        49,9         15,0      15,0     13,5     15,6     13,5     19,0
+                        3,1    139,3        44,9       19,5     154,7        49,9         15,5      15,0     13,5     15,9     13,5     19,5
+                        0,9     34,4        38,3        0,0     37,8         42,0          0,0       0,0      0,0      0,0      0,0      0,0
+                        1,1     42,1        38,3        1,5     46,2         42,0          2,0       1,5      0,0      1,3      0,0      2,0
+                        1,5     57,4        38,3        7,0     63,0         42,0          8,0       8,0      6,5      7,4      6,5      8,0
+  8.000   1,3E+08
+                        2,0     76,5        38,3       12,0     84,0         42,0         12,5      12,0     11,0     11,9     11,0     12,5
+                        3,0    114,8        38,3       19,0     126,0        42,0         17,0      16,5     15,0     16,9     15,0     19,0
+                        3,1    118,6        38,3       19,5     130,2        42,0         17,0      17,0     15,5     17,3     15,5     19,5
+
+
+
+Posteriormente, a matriz foi preenchida com as soluções compatíveis para cada faixa
+adotada na planilha anterior, ou seja, considerando-se o VMD, a relação entre Dc/Dadm, o
+IRI e o trincamento. Foi possível estabelecer soluções para cada célula de análise da matriz,
+conforme justificativas apresentadas na sequência:
+
+         Para as células 1111, 2111, 3111, 4111, 5111 adotou-se a solução de MICRO: não há
+          problemas estruturais e funcionais;
+         Para as células 1112, 2112, 3112, 4112 adotou-se a solução de FSp + MICRO: não há
+          problemas estruturais, a irregularidade longitudinal é baixa e os problemas de trincamento
+          são sanados com a proposição de fresagem e recomposição;
+         Para a célula 5112 adotou-se a solução de FSp + H4pol: não há problemas estruturais, a
+          irregularidade longitudinal é baixa e os problemas de trincamento são sanados com a
+          proposição de fresagem e recomposição e executa-se um recapeamento delgado com
+          mistura de elevado desempenho em função do tráfego previsto;
+         Para as células 1211, 2211, 3211 e 4211 adotou-se a solução de H4: pequenos problemas
+          estruturais, baseados na tabela do PRO 011, cuja solução varia de 1,1 a 7,0 cm;
+
+
+
+
+                                                                                                                                           24
+   Para as células 1221, 2221, 3221 e 4221 adotou-se a solução de H4: pequenos problemas
+    estruturais, baseados na tabela do PRO 011, cuja solução varia de 1,1 a 7,0 cm.
+    Adicionalmente, há pequenas deficiências funcionais, enquadrando-se na faixa 02 do PRO-
+    159/85, cujo reforço varia de 0,9 a 3,7 cm;
+   Para as células 2121, 3121, 4121 adotou-se a solução de H4: pequenas deficiências
+    funcionais, enquadrando-se na faixa 02 do PRO-159/85;
+   Para as células 1212, 2212, 3212 e 4212 adotou-se a solução de FSp + H4: pequenos
+    problemas estruturais, baseados na tabela do PRO 011, cuja solução varia de 1,1 a 7,0 cm. Os
+    problemas de trincamento são sanados com a proposição de fresagem e recomposição;
+   Para as células 5211, 5121 e 5221 adotou-se a solução de H4pol: pequenos problemas
+    estruturais, baseados na tabela do PRO 011, cuja solução varia de 1,1 a 7,0 cm. Devido ao
+    elevado volume de tráfego justifica a utilização de polímero, haja vista que a adição deste
+    aumenta a durabilidade da estrutura, melhorando sua resistência à tração;
+   Para as células 5112 e 5212 adotou-se a solução de FSp + H4pol: pequenos problemas
+    estruturais, baseados na tabela do PRO 011, cuja solução varia de 1,1 a 7,0 cm. Devido ao
+    elevado volume de tráfego justifica a utilização de polímero, haja vista que a adição deste
+    aumenta a durabilidade da estrutura, melhorando sua resistência à tração. O trincamento é
+    sanado com a proposição de fresagem e recomposição;
+   Para as células 2311, 2321 adotou-se a solução de H7: pavimento com problemas estruturais,
+    com tráfego de veículos variando de baixo a médio;
+   Para a célula 2312 adotou-se a solução de Fsp + H7: pavimento com problemas estruturais,
+    com tráfego de veículos variando de baixo a médio. O trincamento é sanado com a
+    proposição de fresagem e recomposição;
+   Para as células 3311 e 3321 adotou-se a solução de H9: pavimento apresenta problemas
+    estruturais, com tráfego de veículos médio. A solução de reforço está compatível com o
+    preconizado nas normas;
+   Para a célula 3312 adotou-se a solução de Fsp + H9: pavimento apresenta problemas
+    estruturais, com tráfego de veículos médio. A solução de reforço está compatível com o
+    preconizado nas normas. O trincamento é sanado com a proposição de fresagem e
+    recomposição;
+   Para a célula 3411 adotou-se a solução de H10: pavimento apresentando deficiência
+    estrutural elevada, com tráfego de veículos médio. A solução de reforço está compatível com
+    o preconizado nas normas;
+   Para a célula 3412 adotou-se a solução de Fsp + H10: pavimento apresentando deficiência
+    estrutural de elevada a crítica, com volume de tráfego médio. A solução de reforço está
+    compatível com o preconizado nas normas. O trincamento é sanado com a proposição de
+    fresagem e recomposição;
+   Para a célula 3421 adotou-se a solução de H12: pavimento apresentando deficiência
+    estrutural de elevada a crítica, com tráfego de veículos médio. A solução de reforço está
+    compatível com o preconizado nas normas. Adicionalmente, o valor de irregularidade
+    longitudinal enquadra-se na faixa 02, que se caracteriza por apresentar certas deficiências
+    funcionais;
+
+
+
+
+                                                                                             25
+   Para as células 4411, 4421, 5411 e 5421 adotou-se a solução de H10pol: pavimento
+    apresentando deficiência estrutural de elevada a crítica. Devido ao elevado volume de
+    tráfego justifica a utilização de polímero, haja vista que a adição deste aumenta a
+    durabilidade da estrutura, melhorando sua resistência à tração;
+   Para as células 4412 e 5412 adotou-se a solução de Fsp + H10pol: pavimento apresentando
+    deficiência estrutural elevada de elevada a crítica. Devido ao elevado volume de tráfego
+    justifica a utilização de polímero, haja vista que a adição deste aumenta a durabilidade da
+    estrutura, melhorando sua resistência à tração. O trincamento é sanado com a proposição de
+    fresagem e recomposição;
+   Para as células 4311, 5311, 5321 e 4321 adotou-se a solução de H8pol: pavimento apresenta
+    problemas estruturais. A solução de reforço está compatível com o preconizado nas normas.
+    Devido ao elevado volume de tráfego justifica a utilização de polímero, haja vista que a
+    adição deste aumenta a durabilidade da estrutura, melhorando sua resistência à tração.
+   Para as células 4312 e 5312 adotou-se a solução de Fsp + H8pol: pavimento apresenta
+    problemas estruturais. A solução de reforço está compatível com o preconizado nas normas.
+    Devido ao elevado volume de tráfego justifica a utilização de polímero, haja vista que a
+    adição deste aumenta a durabilidade da estrutura, melhorando sua resistência à tração. O
+    trincamento é sanado com a proposição de fresagem e recomposição;
+   Para a célula 1121 adotou-se a solução de REP + TSD: segmento sem problemas estruturais.
+    Adota-se a reperfilagem como camada niveladora da irregularidade que varia de média a
+    alta. O TSD é adotado como camada final de rolamento, pois possui melhor macrotextura
+    para o rolamento que a reperfilagem;
+   Para a célula 1122 adotou-se a solução de Fsp +REP + TSD: segmento sem problemas
+    estruturais. Adota-se a reperfilagem como camada niveladora da irregularidade que varia de
+    média a alta. O TSD é adotado como camada final de rolamento, pois possui melhor
+    macrotextura para o rolamento que a reperfilagem. Os problemas funcionais de trincamento
+    são sanados com a execução de fresagem parcial e recomposição;
+   Para a célula 1222 adotou-se a solução de Fsp +REP + H4: segmento com volume de tráfego
+    baixo, apresentando problemas estruturais, que baseados na tabela do PRO 011, a solução
+    de reforço estrutural varia de 1,1 a 7,0 cm. Adicionalmente, há deficiências funcionais,
+    adotando-se a reperfilagem como camada niveladora da irregularidade que varia de média a
+    alta. Os problemas funcionais de trincamento são sanados com a execução de fresagem
+    parcial e recomposição;
+   Para as células 2122 e 3122 adotou-se a solução de Fsp +TSD + H4: segmento com volume de
+    tráfego variando de baixo a médio. Apresenta deficiências funcionais, com valores de
+    irregularidade longitudinal considerados de médio a ruim, enquadrando-se na faixa 02 do
+    PRO-159/85, justificando o reforço estrutural de 4 cm. O TSD é proposto como camada de
+    bloqueio de reflexão de trincas para o revestimento. Os problemas funcionais de
+    trincamento são sanados com a execução de fresagem parcial e recomposição;
+
+
+
+
+                                                                                            26
+   Para as células 2222 e 3222 adotou-se a solução de Fsp +TSD + H5: segmento com volume de
+    tráfego variando de baixo a médio. Apresenta pequenos problemas estruturais, que
+    baseados na concepção do PRO 011 a solução varia de 1,1 a 7,0 cm. Adicionalmente possui
+    deficiências funcionais, com valores de irregularidade longitudinal considerados de médio a
+    ruim. O TSD é proposto como camada de bloqueio de reflexão de trincas da base para o
+    revestimento. Os problemas funcionais de trincamento são sanados com a execução de
+    fresagem parcial e recomposição;
+   Para a célula 2322 adotou-se a solução de Fsp +TSD + H7: pavimento com problemas
+    estruturais, com volume de tráfego variando de baixo a médio. Possui deficiências
+    funcionais, com valores de irregularidade longitudinal considerados de médio a ruim. O TSD
+    é proposto como camada de bloqueio de reflexão de trincas da base para o revestimento. Os
+    problemas funcionais de trincamento são sanados com a execução de fresagem parcial e
+    recomposição;
+   Para a célula 3322 adotou-se a solução de Fsp +TSD + H9: pavimento com problemas
+    estruturais, com volume de tráfego médio. A solução de reforço está compatível com o
+    preconizado nas normas. Possui deficiências funcionais, com valores de irregularidade
+    longitudinal considerados de médio a ruim. O TSD é proposto como camada de bloqueio de
+    reflexão de trincas da base para o revestimento. Os problemas funcionais de trincamento são
+    sanados com a execução de fresagem parcial e recomposição;
+   Para a célula 1132 adotou-se a solução de FS3+TSD+H4: segmento com problemas funcionais
+    críticos tanto de irregularidade longitudinal quanto de trincamento, propondo-se a fresagem
+    total e recomposição. O TSD é proposto como camada de bloqueio de reflexão de trincas da
+    base para o revestimento.
+   Para as células 1131 e 1231 adotou-se a solução de REP+H4: adota-se a reperfilagem como
+    camada niveladora da irregularidade, pois esta se apresenta muito alta. A espessura adotada
+    está em conformidade com a norma do PRO 159/85;
+   Para as células 2131 e 3131 adotou-se a solução de REP+H5: adota-se a reperfilagem como
+    camada niveladora da irregularidade, pois esta se apresenta muito alta. O segmento
+    caracteriza-se por apresentar volume médio de tráfego e a espessura de reforço adotada
+    está em conformidade com a norma do PRO 159/85;
+   Para a célula 4131 adotou-se a solução de REP+H5: adota-se a reperfilagem como camada
+    niveladora da irregularidade, pois esta se apresenta muito alta. O segmento caracteriza-se
+    por apresentar elevado volume de tráfego e a espessura de reforço adotada está em
+    conformidade com a norma do PRO 159/85;
+   Para as células 2231, 3231 e 4231 adotou-se a solução de REP+H6: pavimento com
+    deficiências funcionais e estruturais. Adota-se a reperfilagem como camada niveladora da
+    irregularidade, pois esta se apresenta muito alta. A espessura adotada tem o intuito de
+    proteger o subleito, pois as deflexões estão regulares;
+   Para a célula 2331 adotou-se a solução de REP+H8: pavimento com problemas estruturais,
+    com volume de tráfego variando de baixo a médio. Possui deficiências funcionais, com
+    valores de irregularidade longitudinal elevados, adotando-se a reperfilagem como camada
+    niveladora da irregularidade. A espessura adotada tem o intuito de proteger o subleito, pois
+    as deflexões estão elevadas;
+
+
+
+
+                                                                                             27
+   Para a célula 3331 adotou-se a solução de REP + H10: pavimento com problemas estruturais,
+    com volume de tráfego médio. A solução de reforço está compatível com o preconizado nas
+    normas. Possui deficiências funcionais, com valores de irregularidade longitudinal elevados,
+    adotando-se a reperfilagem como camada niveladora da irregularidade;
+   Para as células 4122 e 4222 adotou-se a solução de Fsp +TSD + H5: segmento com alto
+    volume de tráfego. Apresenta pequenos problemas estruturais, que baseados na concepção
+    do PRO 011 a solução varia de 1,1 a 7,0 cm. Adicionalmente possui deficiências funcionais,
+    com valores de irregularidade longitudinal considerados de médio a ruim, justificando o
+    reforço estrutural de 5cm. O TSD é proposto como camada de bloqueio de reflexão de
+    trincas da base para o revestimento. Os problemas funcionais de trincamento são sanados
+    com a execução de fresagem parcial e recomposição;
+   Para as células 4322 e 5322 adotou-se a solução de Fsp +TSD + H8pol: pavimento apresenta
+    problemas estruturais. A solução de reforço está compatível com o preconizado nas normas.
+    O elevado volume de tráfego justifica a utilização de polímero, haja vista que a adição deste
+    aumenta a durabilidade da estrutura, melhorando sua resistência à tração. O TSD é proposto
+    como camada de bloqueio de reflexão de trincas da base para o revestimento. Os problemas
+    funcionais de trincamento são sanados com a execução de fresagem parcial e recomposição;
+   Para a célula 2132 adotou-se a solução de Fsp +TSD + H5: segmento com volume de tráfego
+    variando de baixo a médio. Apresenta críticas deficiências funcionais, com valores de
+    irregularidade longitudinal elevados, justificando o reforço estrutural de 5cm. O TSD é
+    proposto como camada de bloqueio de reflexão de trincas para o revestimento. Adota-se a
+    fresagem total do pavimento devido aos altos valores de trincamento e irregularidade;
+   Para a célula 2232 adotou-se a solução de Fsp +TSD + H6: segmento com volume de tráfego
+    variando de baixo a médio. Apresenta críticas deficiências funcionais e estruturalmente, o
+    pavimento apresenta condições deflectométrica ruins. O TSD é proposto como camada de
+    bloqueio de reflexão de trincas para o revestimento. Adota-se a fresagem total do pavimento
+    devido aos altos valores de trincamento e irregularidade;
+   Para as células 3132 e 4132 adotou-se a solução de Fs5 +TSDpol + H5: segmento com volume
+    de tráfego variando de médio a alto. Possui deficiências funcionais, com valores críticos de
+    irregularidade longitudinal e trincamento, justificando o reforço estrutural de 5cm. O TSD é
+    proposto como camada de bloqueio de reflexão de trincas da base para o revestimento. Os
+    problemas funcionais de trincamento são sanados com a execução de fresagem total e
+    recomposição;
+   Para a células 3232 e 4232 adotou-se a solução de Fs5 +TSDpol + H6: segmento com volume
+    de tráfego variando de médio a alto. Estruturalmente, o pavimento apresenta condições
+    deflectométricas ruins. Possui deficiências funcionais, com valores críticos de irregularidade
+    longitudinal e trincamento. O TSD é proposto como camada de bloqueio de reflexão de
+    trincas da base para o revestimento. Os problemas funcionais de trincamento são sanados
+    com a execução de fresagem total e recomposição;
+
+
+
+
+                                                                                               28
+   Para as células 5122 e 5222 adotou-se a solução de Fsp +TSD + H4pol: pequenos problemas
+    estruturais, cuja solução varia de 1,1 a 7,0 cm, sendo a norma do PRO-11/79. Devido ao
+    elevado volume de tráfego e deficiências funcionais, com valores de irregularidade
+    longitudinal variando de médio e alto, justifica-se a utilização de reforço estrutural com
+    polímero, haja vista que a adição deste aumenta a durabilidade da estrutura, melhorando
+    sua resistência à tração. O TSD é proposto como camada de bloqueio de reflexão de trincas
+    da base para o revestimento. Os problemas funcionais de trincamento são sanados com a
+    execução de fresagem parcial e recomposição;
+   Para a célula 5131 adotou-se a solução de REP+H5pol: adota-se a reperfilagem como camada
+    niveladora da irregularidade, pois esta apresenta-se muito alta. O segmento caracteriza-se
+    por apresentar elevado volume de tráfego, a espessura de reforço adotada está em
+    conformidade com a norma do PRO 159/85 e a utilização de polímero é justificada haja vista
+    que a adição deste aumenta a durabilidade da estrutura, melhorando sua resistência a
+    tração;
+   Para a célula 5231 adotou-se a solução de REP+H6pol: adota-se a reperfilagem como camada
+    niveladora da irregularidade, pois esta se apresenta muito alta. O segmento caracteriza-se
+    por apresentar elevado volume de tráfego, com características estruturais regulares, e
+    deficiências funcionais, com valores de irregularidade longitudinais elevados, sendo que a
+    utilização de polímero no reforço estrutural de 6cm é justificada, haja vista que a adição
+    deste aumenta a durabilidade da estrutura, melhorando sua resistência a tração;
+   Para a célula 5132 adotou-se a solução de Fs5 +TSD + H4pol: pequenos problemas
+    estruturais, cuja solução varia de 1,1 a 7,0 cm, sendo a norma do PRO-11/79. Devido ao
+    elevado volume de tráfego e deficiências funcionais, com valores de irregularidade
+    longitudinal elevados, justifica-se a utilização de polímero, haja vista que a adição deste
+    aumenta a durabilidade da estrutura, melhorando sua resistência à tração. O TSD é proposto
+    como camada de bloqueio de reflexão de trincas da base para o revestimento. Os problemas
+    funcionais de trincamento são sanados com a execução de fresagem parcial e recomposição;
+   Para a célula 1232 adotou-se a solução de Fs5 +TSDpol + H6: m função o baixo volume de
+    tráfego não são propostas soluções de reconstrução total. Estruturalmente, o pavimento
+    apresenta condições deflectométricas ruins. Possui deficiências funcionais, com valores
+    críticos de irregularidade longitudinal e trincamento. O TSD é proposto como camada de
+    bloqueio de reflexão de trincas da base para o revestimento. Os problemas funcionais de
+    trincamento são sanados com a execução de fresagem total e recomposição
+   Para a célula 2332 adotou-se a solução de REC3: propõe-se a reconstrução do pavimento
+    devido à elevada deficiência estrutural e funcional, com deflexões, trincamento e
+    irregularidades longitudinais elevados;
+   Para as células 3431, 3432, 3332 adotou-se a solução de REC4: propõe-se a reconstrução do
+    pavimento devido à elevada deficiência estrutural e funcional, com deflexões e
+    irregularidades longitudinais altas;
+   Para a célula 3422 adotou-se a solução de REC4: propõe-se a reconstrução do pavimento
+    devido à elevada deficiência estrutural e funcional, com deflexões e trincamento altos, além
+    de irregularidade longitudinal regular.
+
+
+
+
+                                                                                             29
+      Para as células 4332, 4432 adotou-se a solução de REC4: propõe-se a reconstrução do
+       pavimento devido à elevada deficiência estrutural e funcional, com deflexões, trincamento e
+       irregularidades longitudinais elevados;
+      Para as células 4331, 4431 adotou-se a solução de REC4: propõe-se a reconstrução do
+       pavimento devido à elevada deficiência estrutural e funcional, com deflexões e
+       irregularidades longitudinais altas.
+      Para a célula 4422 adotou-se a solução de REC4: propõe-se a reconstrução do pavimento
+       devido à elevada deficiência estrutural e funcional, com deflexões e trincamento altos, além
+       de irregularidade longitudinal regular.
+      Para a célula 5422 adotou-se a solução de REC5: propõe-se a reconstrução do pavimento
+       devido à elevada deficiência estrutural e funcional, com deflexões e trincamento altos, além
+       de irregularidade longitudinal regular;
+      Para as células 5331, 5431 adotou-se a solução de REC5: propõe-se a reconstrução do
+       pavimento devido à elevada deficiência estrutural e funcional, com deflexões e
+       irregularidades longitudinais altas;
+      Para as células 5232, 5332 e 5432 adotou-se a solução de REC6: propõe-se a reconstrução do
+       pavimento devido à elevada deficiência estrutural e funcional, com deflexões, trincamento e
+       irregularidade longitudinal elevada.
+
+
+
+e) Catálogo de Solução do DNIT
+
+Face às considerações expostas anteriormente, o catálogo de soluções proposto para a
+recuperação dos pavimentos do DNIT é apresentado na Figura 6, sendo o mesmo
+apresentado com espessuras que atendem na média ao dimensionamento pelo método
+DNER-PRO 11.
+
+
+
+
+                                                                                                30
+                                                   Tráfego                     VMDc <= 800                                    800 < VMDc <= 1600                                                     1600 < VMDc <= 2400                                                                  2400 < VMDc <= 3200                                                                                        VMD > 3200
+
+
+
+
+                                                                                                                                      1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                                       1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                                                                                                                            1,1 < Dc/Dadm <= 1,5
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                     1,1 < Dc/Dadm <= 1,5
+                                                                                                                                                                                                                                1,5 < Dc/Dadm <= 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                       1,5 < Dc/Dadm <= 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                               1,5 < Dc/Dadm <= 2
+                              Condição Funcional
+
+
+
+
+                                                                        Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                             Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                                    Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                                                                                                                         Dc/Dadm <= 1,1
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                 Dc/Dadm <= 1,1
+                                                                                           Dc/Dadm > 1,1
+
+
+
+
+                                                                                                                                                               Dc/Dadm > 1,5
+
+
+
+
+                                                                                                                                                                                                                                                       Dc/Dadm > 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                               Dc/Dadm > 2
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                       Dc/Dadm > 2
+                                                        Estrutura
+   IRI <= 2,5 m/km
+
+
+
+
+                                                   TR <= 10              Mi                H4                 Mi                      H4                       H7                    Mi                H4                       H9                     H10                Mi                H4                        Hpol8                   Hpol10              Mi                Hpol4                     Hpol8                   Hpol10
+
+
+
+
+                                                   TR > 10            FSp+Mi             FSp+H4            FSp+Mi                   FSp+H4                   FSp+H7               FSp+Mi             FSp+H4                   FSp+H9                 FSp+H10           FSp+Mi             FSp+H4                    FSp+Hpol8               FSp+Hpol10        FSp+Hpol4           FSp+Hpol4                 FSp+Hpol8               FSp+Hpol10
+   2,5 m/km < IRI <= 4 m/km
+
+
+
+
+                                                   TR <= 10          REP+TSD               H4                H4                       H4                       H7                   H4                 H4                       H9                     H12               H4                 H4                        Hpol8                   Hpol10            Hpol4               Hpol4                     Hpol8                   Hpol10
+
+
+
+
+                                                                                                                                                                                                                                                                                                                   FSp+TSD+Hp                                FSp+TSDpol+ FSp+TSDpol+ FSp+TSDpol+
+                                                   TR > 10          FSp+REP+TSD FSp+REP+H4 FSp+TSD+H4 FSp+TSD+H5 FSp+TSD+H7 FSp+TSD+H4 FSp+TSD+H5 FSp+TSD+H9                                                                                          REC4           FSp+TSD+H5 FSp+TSD+H5                                                    REC4                                                                                    REC6
+                                                                                                                                                                                                                                                                                                                       ol8                                      Hpol4       Hpol4       Hpol8
+
+
+
+
+                                                   TR <= 10           REP+H4             REP+H4            REP+H5                  REP+H6                    REP+H8               REP+H5             REP+H6                   REP+H10                 REC4             REP+H5             REP+H6                      REC4                    REC4           REP+Hpol5            REP+Hpol6                   REC5                    REC6
+   IRI > 4 m/km
+
+
+
+
+                                                                                                                                                                                FS5+TSDpol+ FS5+TSDpol+                                                              FS5+TSDpol+ FS5+TSDpol+                                                                 FS5+TSDpol+
+                                                   TR > 10          FS3+TSD+H4 FS5+TSD+H6 FS5+TSD+H5 FS5+TSD+H6                                               REC3                                                             REC4                   REC4                                                            REC4                    REC4                                  REC5                      REC5                    REC6
+                                                                                                                                                                                    H5          H6                                                                       H5          H6                                                                         Hpol4
+
+
+
+
+                                                                                                                                                                               Figura 6 - Catálogo de Soluções do DNIT
+                                                                                                                                                                      Soluções:
+Parâmetros de entrada:                                                                                                                                                Mi: Micro revestimento asfáltico a frio
+IRI: Irregularidade Longitudinal (mm/m)                                                                                                                               H"X": Reforço estrutural em concreto asfáltico com "X" cm de espessura
+TR: Percentual da área trincada (%)                                                                                                                                   Hpol"X": Reforço estrutural em concreto asfáltico modificado por polímero com "X"cm de espessura
+VMDc: Volume médio diário de tráfego, bidirecional                                                                                                                    REP: Reperfilagem com aplicação de concreto asfáltico com 2cm de espessura
+Dc: Deflexão característica (0,02 mm)                                                                                                                                 FS: Fresagem contínua e 5cm de espessura com reposição em 5cm em concreto asfáltico
+Dadm: Deflexão admissível (0,02 mm), determinado pelo método PRO-11                                                                                                   FSp: Fresagem parcial - descontínua, de 5cm de espessura nas áreas trincadas com reposição de 5cm em concreto asfáltico
+                                                                                                                                                                      TSD: Tratamento superficial duplo
+                                                                                                                                                                      TSDpol: Tratamento superficial duplo com emulsão modificada por polímero
+                                                                                                                                                                      REC"X": Reconstrução, em que "X" varia de 1 a 5, ou seja, em cinco cenários distintos das soluções de reconstrução - em                                                                                                                                                        31
+                                                                                                                                                                      conformidade com o catálogo sugerido para pavimentos novos
+Observa-se que, na concepção deste catálogo, foram consideradas as seguintes premissas
+técnicas:
+
+      Foi considerada a espessura mínima de reforço em concreto asfáltico de 4 cm;
+      Em todas as soluções considerou-se que o recapeamento deve ser estendido para os
+       acostamentos a fim de não se criar (ou aumentar) o degrau em relação a pista;
+      Considerou-se uso obrigatório de ligante modificado por polímero em soluções de
+       reforço estrutural nas quais o VMDc é superior a 3.200, bem como em segmentos
+       com tráfego nas faixas intermediárias e condição estrutural crítica;
+
+Neste ponto o catálogo gerencial contempla os benefícios técnicos associados a execução de
+concreto asfáltico modificado por polímero em detrimento as misturas convencionais, em
+especial: o aumento da flexibilidade e elasticidade às baixas temperaturas; a melhoria da
+resistência à fluência, trincas e deformações permanentes a altas temperaturas; a menor
+sensibilidade do módulo de rigidez a variações de temperaturas; o aumento da resistência a
+tração e melhores resultados em termos de vida de fadiga. Em termos numéricos foram
+considerados os ganhos pelo emprego deste tipo de material tal como atribuído na Instrução
+de Serviço Nº 007, de 15 de Abril de 1998, do DNER/DNIT.
+
+Na adoção deste catálogo, recomenda-se:
+
+      A previsão de reparos superficiais e profundos;
+      A fresagem parcial e recomposição das áreas deterioradas previamente às soluções
+       de recapeamento (atividade desnecessária nas soluções de reconstrução, reciclagem
+       e fresagem total);
+      Para locais com espessura de revestimento asfáltico elevada, superior a 15 cm,
+       recomenda-se estudar o emprego de soluções alternativas de reciclagem e/ou
+       fresagens profundas;
+      Recomenda-se buscar os dados históricos de intervenções na rodovia, desde a sua
+       implantação, passando pelas atividades de manutenção especial e rotineira, de
+       forma a adequar as soluções planejadas às reais necessidades da rodovia;
+      É importante verificar se há no segmento situações excepcionais de cargas que
+       podem levar a esforços pontuais de maior impacto, estudando-se soluções especiais
+       para estes casos.
+      Para estudos mais detalhados, ou mesmo emprego de outros métodos de
+       dimensionamento, no âmbito do planejamento e gerência viária, pode-se estimar o
+       módulo in situ do subleito a partir das informações da bacia de deflexão medida com
+       o FWD e utilizando-se a correlação da AASHTO, com emprego do fator de correção,
+       sendo associados os seguintes conceitos a subleito:
+           o Módulo de resiliência de até 600 kgf/cm2 = subleito tipo III;
+           o Módulo de resiliência entre 600 e 1.300 kgf/cm2 = subleito tipo II;
+           o Módulo de resiliência acima 1.300 kgf/cm2 = subleito tipo I.
+
+
+                                                                                       32
+Estes valores de módulo foram obtidos a partir dos estudos realizados por Preussler (1983)
+associados a valores de tensão desvio da ordem de 1,0 kgf/cm2.
+
+Por fim, é válido o conceito de “soluções alternativas e/ou equivalentes”, ou seja, soluções
+que constituem tipos de obras de recuperação do pavimento que podem substituir os tipos
+especificados nas matrizes, e que apresentam desempenho técnico compatível com as
+necessidades locais. Dentre as soluções alternativas e/ou equivalentes que podem ser
+estudadas destacam-se:
+
+       i) As obras tipo MICRO referenciadas poderão ser substituídas por Tratamento
+          Superficial Duplo com Ligantes Asfálticos Modificados – TSDp.
+
+       ii) Constituem soluções de recuperação do pavimento, para quaisquer soluções
+           indicadas no Catálogo, recapeamentos com camada de CBUQp - Concreto
+           Betuminoso usinado a quente, com ligantes modificados dos tipos: SMA (Stone
+           Matrix Asphalt) e Micro a quente. Sendo todas em conformidade com as
+           especificações do DNIT, observando-se as necessidades prévias de correções
+           geométricas por fresagens, impermeabilizações e camadas de bloqueio de trincas.
+
+       iii) A Fresagem e Recomposição poderá ser substituída pela Reciclagem do
+           Revestimento (RR), in situ ou em usina.
+
+       iv) O emprego de concreto asfáltico modificado por polímero ou por borracha pode
+           ser utilizado em substituição ao concreto asfáltico com ligante convencional com
+           ganhos de resistência e de vida de fadiga.
+
+       v) O emprego de concreto asfáltico modificado por polímero pode ser substituído
+          pelo concreto asfáltico modificado por borracha.
+
+       vi) Em segmentos com elevado grau de deterioração do revestimento, em especial
+           trincamento, podem ser empregadas soluções integradas com SAMI ou Grelhas
+           precedendo o recapeamento asfáltico.
+
+       vii) As soluções de Reconstrução foram contempladas no catálogo por serem de
+           emprego universal na correção dos problemas, mas podem ser substituídas por
+           soluções de reciclagem profunda, in situ ou em usina, desde que justificada em
+           estudos específicos associados aos materiais existentes e condições técnicas e
+           operacionais locais.
+
+A matriz de solução proposta para a reconstrução do pavimento existente está
+fundamentada em parâmetros de tráfego e na condição estrutural do subleito, de forma a se
+ter soluções de pavimentação que atendam ao estabelecido no Método de
+dimensionamento do Pavimento Novo do DNIT.
+
+
+                                                                                         33
+O CBR do subleito deve ser determinado por ensaios, pesquisas ou correlações, por ser um
+dos parâmetros imprescindíveis que definem as espessuras das camadas no método de
+dimensionamento do DNIT.
+
+Em termos de tráfego, o número “N” - pelo critério USACE, calculado com base no VDM da
+rodovia para o horizonte de projeto de 10 anos, foi dividido em cinco cenários:
+
+      Cenário 1     N < 5,0 x 106
+      Cenário 2:    5,0 x 106 < N < 1,0 x 107
+      Cenário 3:    1,0 x 107 < N < 2,0 x 107
+      Cenário 4:    2,0 x 107 < N < 5,0 x 107
+      Cenário 5:    5,0 x 107< N < 1,0 x 108
+      Cenário 6:    N > 1,0 x 108
+
+No presente estudo, está sendo proposta a implantação de pavimentos flexíveis e
+pavimentos semirrígidos. Os pavimentos flexíveis são propostos para as vias com Número
+“N” inferior a 5,0 x 107, enquanto que os semirrígidos para pavimentos com Número “N”
+igual ou superior a esse valor, conforme recomendação da Instrução de Projeto de
+Pavimentação do Departamento de Estradas de Rodagem (DER) de São Paulo, visto que não
+há uma definição clara nas normas do DNIT a respeito dos critérios para a utilização do
+pavimento semirrígido.
+
+O emprego de materiais naturais exige estudos específicos de fontes de materiais e
+caracterização das mesmas, sendo que para se ter um catálogo referencial cujo emprego
+possa ser realizado de forma mais ampla e irrestrita optou-se pela utilização de material
+pétreo britado nas situações de tráfego equivalente de projeto superior a 1,0 x 10 7.
+
+Adicionalmente, preveem-se as espessuras mínimas de revestimentos conforme
+especificado no método do DNIT, com a consideração adicional do emprego de ligante com
+polímero para os trechos com tráfego superior a 1,0 x 108.
+
+Para estes cenários de tráfego, e os com duas hipóteses de materiais típicos para o subleito,
+foram dimensionados pavimentos novos pelo método do DNIT, sendo o catálogo
+apresentado na Figura 7 e a memória de cálculo apresentada na sequência.
+
+
+
+
+                                                                                          34
+                                  Matriz de Solução de Reconstrução / Pavimento Novo
+                                                                                      Tratamento
+         Duplicação             Tráfego N USACE          Código       Revestimento                    Base      Sub-base             Reforço
+                                                                                      Superficial
+                         1,00E+02     N<     5,00E+06     REC1         5 cm de CBUQ    Impr + PL       Solo
+                                                                                                      Estab.
+                         5,00E+06     <N<    1,00E+07     REC2       7,5 cm de CBUQ   Impr + PL(2x)   20 cm
+         Pavimento                                                                                                 Solo      20 cm se CBR < 6%
+          Flexível                                                                                     BGS        20 cm
+                         1,00E+07     <N<    2,00E+07     REC3        10 cm de CBUQ   Impr + PL(2x)
+                                                                                                      15 cm
+                                                                                                       BGS
+                         2,00E+07     <N<    5,00E+07     REC4        10 cm de CBUQ   Impr + PL(2x)
+                                                                                                      20 cm
+                                                                                     Impr + TSD +
+                         5,00E+07     <N     1,00E+08     REC5      12,5 cm de CBUQ                                          20 cm se CBR < 5%
+         Pavimento                                                                     PL(3x)         BGTC         BGS
+         Semi Rígido                                                                 Impr + TSD +     20 cm       20 cm
+                         1,00E+08     <N                  REC6      12,5 cm de CBUQp
+                                                                                       PL(3x)
+
+       Legenda:
+                  CBUQ   Concreto Betuminoso Usinado a Quente                                         Reforço   Rachão / Solo Estabilizado
+              CBUQp      Concreto Betuminoso Usinado a Quente com polímero                              Impr    Imprimação
+                   BGS   Brita Graduada Simples                                                            PL   Pintura de Ligação
+                  BGTC   Brita Graduada Tratada com Cimento                                              PLp    Pintura de Ligação com polímero
+                    SB   Solo-Brita                                                                      TSD    Tratamento Superficial Duplo
+
+                                              Figura 7 - Catálogo de Soluções de Pavimentação do DNIT
+
+Nota1: para as situações de tráfego baixo podem ser estudas alternativas empregando TSD como camada de rolamento.
+Nota2: para as situações de tráfego elevado podem ser estudas alternativas empregando pavimento rígido.
+
+
+
+                                                                                                                                                  35
+                           Método do DNIT - Cenário 1
+
+CBR baixo (<6%)
+
+                                 ( o pe ra ç õ e s
+                       N             do e ixo        5,00E+06
+Dados de Entrada                    pa drã o )
+                      CBR             (%)               5
+
+  Parâmetros          H2 0            (cm)             27,2
+                      H1 2            (cm)             37,0
+   a verificar       Hpr oj.          (cm)             62,4
+
+Dimesionamento     Material             H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                      (cm)                      (cm)   (cm)      (cm)
+Revestimento         CBUQ               5              2,0      10,0    10,0
+Base               Solo estab.         20              1,0      20,0    30,0     27,2      SIM
+Sub-base              Solo             20              1,0      20,0    50,0     37,0      SIM
+Reforço               Solo             20              0,8      16,0    66,0     62,4      SIM
+
+
+CBR intermediário (>6%)
+
+                                 ( o pe ra ç õ e s
+                       N             do e ixo        5,00E+06
+Dados de Entrada                    pa drã o )
+                      CBR             (%)               8
+
+  Parâmetros          H2 0            (cm)             27,2
+                      H8              (cm)             47,1
+   a verificar       Hpr oj.          (cm)             47,1
+
+Dimesionamento     Material             H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                      (cm)                      (cm)   (cm)      (cm)
+Revestimento         CBUQ               5              2,0      10,0    10,0
+Base               Solo estab.         20              1,0      20,0    30,0     27,2      SIM
+Sub-base              Solo             20              1,0      20,0    50,0     47,1      SIM
+Reforço               Solo                             0,8      0,0     50,0     47,1      SIM
+
+    Figura 8 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 1
+
+
+
+
+                                                                                                 36
+                           Método do DNIT - Cenário 2
+
+CBR baixo (<6%)
+
+                                 ( o pe ra ç õ e s
+                       N             do e ixo        1,00E+07
+Dados de Entrada                    pa drã o )
+                      CBR             (%)               5
+
+  Parâmetros          H2 0            (cm)             28,2
+                      H1 2            (cm)             38,2
+   a verificar       Hpr oj.          (cm)             64,5
+
+Dimesionamento     Material             H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                      (cm)                      (cm)   (cm)      (cm)
+Revestimento         CBUQ              7,5             2,0      15,0    15,0
+Base               Solo estab.         20              1,0      20,0    35,0     28,2      SIM
+Sub-base              Solo             20              1,0      20,0    55,0     38,2      SIM
+Reforço               Solo             20              0,8      16,0    71,0     64,5      SIM
+
+
+CBR intermediário (>6%)
+
+                                 ( o pe ra ç õ e s
+                       N             do e ixo        1,00E+07
+Dados de Entrada                    pa drã o )
+                      CBR             (%)               8
+
+  Parâmetros          H2 0            (cm)             28,2
+                      H8              (cm)             48,7
+   a verificar       Hpr oj.          (cm)             48,7
+
+Dimesionamento     Material             H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                      (cm)                      (cm)   (cm)      (cm)
+Revestimento         CBUQ              7,5             2,0      15,0    15,0
+Base               Solo estab.         20              1,0      20,0    35,0     28,2      SIM
+Sub-base              Solo             20              1,0      20,0    55,0     48,7      SIM
+Reforço               Solo                             0,8      0,0     55,0     48,7      SIM
+
+    Figura 9 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 2
+
+
+
+
+                                                                                                 37
+                          Método do DNIT - Cenário 3
+
+CBR baixo (<6%)
+
+                              ( o pe ra ç õ e s
+                      N           do e ixo        2,00E+07
+Dados de Entrada                 pa drã o )
+                     CBR           (%)               5
+
+  Parâmetros         H2 0          (cm)             29,1
+                     H1 2          (cm)             39,5
+   a verificar      Hpr oj.        (cm)             66,7
+
+Dimesionamento     Material          H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                   (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ           10,0             2,0      20,0    20,0
+Base                 BGS            15              1,0      15,0    35,0     29,1      SIM
+Sub-base            Solo            20              1,0      20,0    55,0     39,5      SIM
+Reforço             Solo            20              0,8      16,0    71,0     66,7      SIM
+
+
+CBR intermediário (>6%)
+
+                              ( o pe ra ç õ e s
+                      N           do e ixo        2,00E+07
+Dados de Entrada                 pa drã o )
+                     CBR           (%)               8
+
+  Parâmetros         H2 0          (cm)             29,1
+                     H8            (cm)             50,4
+   a verificar      Hpr oj.        (cm)             50,4
+
+Dimesionamento     Material          H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                   (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ           10,0             2,0      20,0    20,0
+Base                 BGS            15              1,0      15,0    35,0     29,1      SIM
+Sub-base            Solo            20              1,0      20,0    55,0     50,4      SIM
+Reforço             Solo                            0,8      0,0     55,0     50,4      SIM
+
+    Figura 10 - Memória de Cálculo das Soluções de Pavimentação do DNIT – Cenário3
+
+
+
+
+                                                                                              38
+                          Método do DNIT - Cenário 4
+
+CBR baixo (<6%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        5,00E+07
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               5
+
+  Parâmetros         H2 0           (cm)             30,4
+                     H1 2           (cm)             41,3
+   a verificar      Hpr oj.         (cm)             69,7
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ            10,0             2,0      20,0    20,0
+Base                 BGS             20              1,0      20,0    40,0     30,4      SIM
+Sub-base            Solo             20              1,0      20,0    60,0     41,3      SIM
+Reforço             Solo             20              0,8      16,0    76,0     69,7      SIM
+
+
+CBR intermediário (>6%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        5,00E+07
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               8
+
+  Parâmetros         H2 0           (cm)             30,4
+                     H8             (cm)             52,6
+   a verificar      Hpr oj.         (cm)             52,6
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ            10,0             2,0      20,0    20,0
+Base                 BGS             20              1,0      20,0    40,0     30,4      SIM
+Sub-base            Solo             20              1,0      20,0    60,0     52,6      SIM
+Reforço             Solo                             0,8      0,0     60,0     52,6      SIM
+
+    Figura 11 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 4
+
+
+
+
+                                                                                               39
+                          Método do DNIT - Cenário 5
+
+CBR baixo (<5%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        1,00E+08
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               4
+
+  Parâmetros         H2 0           (cm)             31,5
+                     H1 2           (cm)             42,7
+   a verificar      Hpr oj.         (cm)             82,4
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ            12,5             2,0      25,0    25,0
+                     TSD              2              0,0      0,0     25,0
+Base                BGTC             20              1,4      28,0    53,0     31,5      SIM
+Sub-base             BGS             20              1,0      20,0    73,0     42,7      SIM
+Reforço             Solo             20              0,8      16,0    89,0     82,4      SIM
+
+
+CBR intermediário (>6%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        1,00E+08
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               7
+
+  Parâmetros         H2 0           (cm)             31,5
+                     H7             (cm)             59,0
+   a verificar      Hpr oj.         (cm)             59,0
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQ            12,5             2,0      25,0    25,0
+                     TSD              2              0,0      0,0     25,0
+Base                BGTC             20              1,4      28,0    53,0     31,5      SIM
+Sub-base             BGS             20              1,0      20,0    73,0     59,0      SIM
+Reforço             Solo                             0,8      0,0     73,0     59,0      SIM
+
+    Figura 12 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 5
+
+
+
+
+                                                                                               40
+                          Método do DNIT - Cenário 6
+
+CBR baixo (<5%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        2,00E+08
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               4
+
+  Parâmetros         H2 0           (cm)             32,5
+                     H1 2           (cm)             44,2
+   a verificar      Hpr oj.         (cm)             85,2
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQp           12,5             2,0      25,0    25,0
+                      TSD             2              0,0      0,0     25,0
+Base                 BGTC            20              1,4      28,0    53,0     32,5      SIM
+Sub-base              BGS            20              1,0      20,0    73,0     44,2      SIM
+Reforço              Solo            20              0,8      16,0    89,0     85,2      SIM
+
+
+CBR intermediário (>6%)
+
+                               ( o pe ra ç õ e s
+                      N            do e ixo        2,00E+08
+Dados de Entrada                  pa drã o )
+                     CBR            (%)               7
+
+  Parâmetros         H2 0           (cm)             32,5
+                     H7             (cm)             61,0
+   a verificar      Hpr oj.         (cm)             61,0
+
+Dimesionamento     Material           H               K       Heq.   Hacum.   Hmínimo   Aceito
+                                    (cm)                      (cm)   (cm)      (cm)
+Revestimento        CBUQp           12,5             2,0      25,0    25,0
+                      TSD             2              0,0      0,0     25,0
+Base                 BGTC            20              1,4      28,0    53,0     32,5      SIM
+Sub-base              BGS            20              1,0      20,0    73,0     61,0      SIM
+Reforço              Solo                            0,8      0,0     73,0     61,0      SIM
+
+    Figura 13 - Memória de Cálculo das Soluções de Pavimentação do DNIT - Cenário 6
+
+
+
+
+                                                                                               41

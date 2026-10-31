@@ -1,0 +1,244 @@
+  DNIT
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+                   ANEXO 01/2017
+
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Manual de Custos de Infraestrutura de Transportes
+     Volume 01 - Metodologia e Conceitos
+
+
+
+
+      9. FATOR DE INTERFERÊNCIA DO TRÁFEGO
+
+
+
+
+                      121
+                     Manual de Custos de Infraestrutura de Transportes
+                          Volume 01 - Metodologia e Conceitos
+
+
+9. FATOR DE INTERFERÊNCIA DO TRÁFEGO
+
+     Introdução
+
+Durante a execução de obras em rodovias já existentes, o volume de tráfego é um
+fator reconhecido de redução de produção dos serviços. As restrições ao tráfego se
+acentuam e se mostram particularmente relevantes quando se trata de obras mais
+próximas aos perímetros urbanos.
+
+Em função dessa interferência, o Sicro 2 adotava uma redução de 11,0% no fator de
+eficiência dos serviços de construção em relação ao fator aplicado para os serviços
+de restauração. Entretanto, nem sempre a interferência do tráfego ocorria de forma a
+justificar a magnitude do referido fator de eficiência.
+
+Objetivando qualificar a utilização dos fatores de eficiência, o SICRO propõe a
+utilização de um Fator de Interferência de Tráfego - FIT a ser aplicado diretamente no
+orçamento da obra para adequação dos preços a essa situação.
+
+Somente durante a elaboração do projeto será possível identificar o volume médio
+diário de veículos, a presença de centros urbanos que caracterizem a interferência do
+tráfego local e os serviços sujeitos efetivamente a esta interferência.
+
+Nesse momento, torna-se possível a aplicação do FIT apenas sobre o custo unitário
+de execução de alguns serviços (mão de obra e equipamentos), mantendo-se,
+entretanto, inalterados os custos dos materiais.
+
+Em situações excepcionais, onde forem observados volumes médios diários de
+veículos e a presença de centros urbanos que apontem para a insuficiência do valor
+máximo do FIT modelado pelo SICRO para cobrir os custos devido às interferências
+de tráfego, torna-se necessária a realização de estudos e aferições locais para a
+comprovação das reais perdas de produção dos serviços.
+
+     Aplicação do Fator de Interferência de Tráfego
+
+O Fator de Interferência de Tráfego deve ser aplicado às obras em cuja execução haja
+necessidade de interditar a pista ou de desenvolver medidas de segurança para
+prevenção de acidentes, tais como observado nas seguintes obras:
+
+     Restauração rodoviária;
+     Construção de terceira faixa;
+     Melhoramentos e adequação de capacidade;
+     Duplicação de rodovia, quando a nova pista for contígua à pista original;
+     Conservação na pista.
+
+     Parâmetros Necessários
+
+O Fator de Interferência de Tráfego a ser aplicado no orçamento de um determinado
+projeto pode ser estimado por meio do conhecimento de dois parâmetros, a saber:
+volume médio diário de tráfego e proximidade de centros urbanos.
+
+
+                                           123
+                      Manual de Custos de Infraestrutura de Transportes
+                           Volume 01 - Metodologia e Conceitos
+
+
+        Volume Médio Diário de Tráfego (VMD)
+
+O volume médio diário de tráfego consiste no registro médio da movimentação de
+veículos em uma determinada seção de uma rodovia no período de 1 dia (24 horas).
+O conhecimento deste parâmetro, durante a fase de elaboração do projeto, constitui
+parâmetro relevante para a avaliação da distribuição de tráfego, para a definição da
+demanda de uma via e para a programação de melhorias básicas.
+
+No caso específico dos orçamentos elaborados em função da metodologia do SICRO,
+a magnitude do volume médio diário de tráfego de uma determinada rodovia resulta
+na aplicação de um Fator de Interferência de Tráfego que varia até 15,0%,
+exclusivamente sobre as parcelas de equipamentos e mão de obra, ou seja, sobre o
+custo unitário de execução dos serviços.
+
+As faixas de volume médio diário de tráfego foram determinadas em função da análise
+dos resultados de contagem de tráfego realizada pelo CENTRAN em todo o território
+nacional nos meses de novembro e dezembro de 2005. Os resultados das contagens
+de tráfego nas rodovias federais foram consolidados em faixas em função do número
+de ocorrências, conforme apresentado na Tabela 44.
+
+     Tabela 44 - Síntese dos resultados da contagem de tráfego realizada pelo CENTRAN
+
+                              Volume Médio              Número de
+                             Diário de Tráfego          Ocorrências
+
+                       De 0 a 500                          1.129
+
+                       De 500 a 1.000                       337
+
+                       De 1.000 a 2.000                     457
+
+                       De 2.000 a 3.000                     285
+
+                       De 3.000 a 5.000                     383
+
+                       De 5.000 a 8.000                     325
+
+                       De 8.000 a 20.000                    166
+
+                       De 20.000 a 33.000                   48
+
+
+O volume médio diário de 2.000 veículos corresponde à movimentação de
+aproximadamente 1 veículo por minuto, o que resulta em uma interferência de tráfego
+considerada baixa. Para volumes iguais ou superiores a este limite, deve-se proceder
+o cálculo da parcela do FIT, conforme equação linear representada no Gráfico 01.
+
+Já para as situações em que os segmentos das rodovias registram movimentações
+médias superiores a 11.000 veículos por dia, considera-se a ocorrência de alta
+interferência do tráfego na execução dos serviços, o que resultaria na necessidade de
+aplicação de um Fator de Interferência de Tráfego limitado a 15,0%.
+
+
+
+
+                                            124
+                     Manual de Custos de Infraestrutura de Transportes
+                          Volume 01 - Metodologia e Conceitos
+
+
+       Proximidade dos Centros Urbanos
+
+A redução da produção mecânica de serviços em áreas urbanas pode ocorrer em
+função de congestionamentos, do tráfego de pedestres, bicicletas e motocicletas, de
+vandalismos e roubos, de restrições aos horários e locais de trabalho e de
+interferências com as redes públicas de água, esgoto, energia e telefonia.
+
+A redução das velocidades médias e a perda de produção em áreas urbanas já foi
+reconhecida inclusive em relatórios de auditoria de órgãos de controle. O Acórdão nº
+2450/2009-TCU-Plenário, por exemplo, entendeu como razoável a redução das
+velocidades médias de operação dos caminhões basculantes, quando comparadas às
+condições normais de uma rodovia e à proximidade de áreas urbanas.
+
+As observações e as aferições de campo realizadas pelo CENTRAN, no âmbito dos
+planos de trabalho e termos de cooperação anteriores celebrados com o DNIT,
+também apontaram para a ocorrência de perdas de produção associadas à
+proximidade de centros urbanos.
+
+Dessa forma, os custos de interferência de tráfego em função da proximidade de
+centros urbanos são estimados em um percentual de 5,0%.
+
+     Cálculo do Fator de Interferência de Tráfego
+
+O cálculo do Fator de Interferência de Tráfego - FIT encontra-se condicionado ao
+conhecimento do volume médio diário de tráfego do segmento em que será executada
+a obra e da eventual proximidade de centros urbanos, conforme representado no
+Gráfico 01 e nas relações estabelecidas abaixo:
+
+    Se VMD < 2.000 → FIT = 0%;
+    Se 2.000 ≤ VMD ≤ 11.000 → FIT = [(VMD - 2.000) / 600] %;
+    Se VMD > 11.000 → FIT = 15%.
+
+                   Gráfico 01 - Modelo matemático para cálculo do FIT
+
+
+
+
+Em caso de ocorrência concomitante de segmentos com elevado volume médio diário
+de tráfego, associado à proximidade de centros urbanos, o SICRO admite a aplicação
+no orçamento de um Fator de Interferência de Tráfego de até 20%.
+
+                                           125
+                     Manual de Custos de Infraestrutura de Transportes
+                          Volume 01 - Metodologia e Conceitos
+
+
+No Sicro 2, a redução da eficiência era aplicada apenas nas obras de restauração e
+conservação apenas nos serviços de pavimentação, de drenagem, de obras de arte
+correntes, de obras de arte especiais, de sinalização e de obras complementares.
+
+No SICRO, a aplicação do FIT incidirá sobre todos os serviços que estejam sujeitos
+efetivamente à interferência do tráfego, cabendo ao orçamentista sua classificação e
+definição em função do volume médio diário e da proximidade de centros urbanos.
+
+No caso da elaboração de projetos que envolvam segmentos com comportamento
+heterogêneo em termos de volume médio diário de tráfego, recomenda-se definir um
+fator de interferência de tráfego médio em função da ponderação dos fatores de
+interferência obtidos nas diferentes seções em relação à extensão total do trecho.
+
+De forma análoga, a definição da parcela do FIT, a ser aplicada no orçamento, em
+função da proximidade de centros urbanos, deve ser realizada em função da
+ponderação da extensão dos segmentos sob influência dos referidos centros urbanos
+em relação à extensão total do segmento de projeto.
+
+     Exemplos de Aplicação
+
+        Obras de Restauração Rodoviária
+
+Código SICRO 4011287 - Base de solo melhorado com 4% de cimento e mistura na
+pista com material de jazida
+
+FIT= 16,0%: sendo 15 % decorrente do VMD > 11.000 e considerando que 20% do
+segmento está em área urbana (0,2 x 5% = 1%).
+
+Referência: Rio de Janeiro
+
+Mês-base: Janeiro de 2017
+
+Custo unitário de execução                  = R$ 4,7875
+Custo unitário de execução das
+atividades auxiliares                       = R$ 0,7963/m³ x 1,05626 m³ = R$ 0,8411
+Custo unitário de tempo fixo com
+caminhão carroceria de 15 t                 = R$ 22,2150/t x 0,08552 t = R$ 1,8998
+Custo unitário de tempo fixo com
+caminhão basculante de 10 m³                = R$ 1,3715/t x 1,98049 t = R$ 2,7162
+Total                                       = R$ 10,2446
+Adicional FIT (0,16 x R$ 10,2446)           = R$ 1,6391
+
+Observação:
+
+Durante a elaboração do orçamento, quando conhecidas as distâncias de transportes,
+deve-se acrescentar a parcela do FIT referente aos momentos de transportes.
+
+
+
+
+                                           126
+

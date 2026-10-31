@@ -1,0 +1,45 @@
+[aba BINOMIO_ANP]
+CUSTO DO MATERIAL BETUMINOSO - BINÔMIO DE AQUISIÇÃO E TRANSPORTE
+COM BASE NA PORTARIA Nº 1977 DE 25 DE OUTUBRO DE 2017 E PORTARIA COMPLEMENTAR Nº 434 DE 14 DE MARÇO DE 2017
+MATERIAL BETUMINOSO - XXXX | Data Base/ UF
+ORIGEM ¹ | UF | LOCAL | FLU | PAV | RP | LN | ICMS (%) | COFINS (%) | PIS/PASEP (%) | BDI (%) | AQUISIÇÃO ANP | VALOR | VALOR
+(D) | (D1) | (D2) | (D3) | (R$/KG) | PEDÁGIO | BALSA
+R-1/D-1
+R-2/D-2
+R-3/D-3
+Transporte Rodoviário = 26,939 + (0,253 x D1) + (0,299xD2) + (0,412 x D3)
+Transporte Fluvial = 20,7256 + 0,1603 x D
+RODOVIÁRIO | JULHO/2014 | 270.237
+FLUVIAL | NOVEMBRO/2016 | 303.752 | Fator de correção rodoviário: | -1
+PATO | Data base | Fator de correção fluvial: | -1
+(R-1) s/ ICMS | (R-2) s/ ICMS | (R-3) s/ ICMS
+Aquisição | 0 | R$/T | Aquisição | 0 | R$/T | Aquisição | 0 | R$/T
+Transporte | 0 | R$/T | Transporte | 0 | R$/T | Transporte | 0 | R$/T
+(R-1) c/ ICMS | (R-2) c/ ICMS | (R-3) c/ ICMS
+Aquisição | 0 | R$/T | Aquisição | 0 | R$/T | Aquisição | 0 | R$/T
+Transporte | 0 | R$/T | Transporte | 0 | R$/T | Transporte | 0 | R$/T
+(R-1) s/ BDI | (R-2) s/ BDI | (R-3) s/ BDI
+Quantidade - MB | 1 | T | Quantidade - MB | 1 | T | Quantidade - MB | 1 | T
+Quant. Viagens | 1 | UN | Quant. Viagens | 1 | UN | Quant. Viagens | 1 | UN
+Pedágio | 0 | R$/T | Pedágio | 0 | R$/T | Pedágio | 0 | R$/T
+Balsa | 0 | R$/T | Balsa | 0 | R$/T | Balsa | 0 | R$/T
+(R-1) c/ BDI | (R-2) c/ BDI | (R-3) c/ BDI
+Aquisição | 0 | R$/T | Aquisição | 0 | R$/T | Aquisição | 0 | R$/T
+Transporte + | 0 | R$/T | Transporte + | 0 | R$/T | Transporte + | 0 | R$/T
+Pedágio + Balsa | Pedágio + Balsa | Pedágio + Balsa
+(R-1) TOTAL | (R-2) TOTAL | (R-3) TOTAL
+Aquisição | 0 | R$ | Aquisição | 0 | R$ | Aquisição | 0 | R$
+Total Transporte | 0 | R$ | Total Transporte | 0 | R$ | Total Transporte | 0 | R$
+Total | 0 | R$ | Total | 0 | R$ | Total | 0 | R$
+1. Trata-se da origem do material betuminoso, Refinaria ou Distribuidora[aba PEDAGIO]
+CUSTO DO PEDÁGIO
+ORIGEM | ESTADO | DESTINO | DISTÂNCIA (KM) | CUSTO PEDÁGIO POR VEÍCULO | ÍNDICE DE REAJ (li) | ÍNDICE DE REAJ (lo) | FATOR K | CUSTO PEDÁGIO POR VEÍCULO + K
+REV. PRIMÁRIO | PAVIMENTADO | R$
+#DIV/0! | #DIV/0!
+#DIV/0! | #DIV/0!
+#DIV/0! | #DIV/0!
+CUSTO DO BALSA
+ORIGEM | ESTADO | DESTINO | DISTÂNCIA (KM) | CUSTO BALSA POR VEÍCULO (R$) | ÍNDICE DE REAJ (li) | ÍNDICE DE REAJ (lo) | FATOR K | CUSTO BALSA POR VEÍCULO + K
+#DIV/0! | #DIV/0!
+#DIV/0! | #DIV/0!
+#DIV/0! | #DIV/0!

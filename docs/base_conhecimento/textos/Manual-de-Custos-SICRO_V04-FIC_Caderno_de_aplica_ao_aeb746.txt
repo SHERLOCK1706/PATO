@@ -1,0 +1,2092 @@
+Sistema de Custos Referenciais de
+Obras — SICRO
+
+Caderno de aplicação
+Fator de Influência de
+Chuvas (FIC)
+
+DNIT: "innuspontes
+
+  Departamento Nacional de Infraestrutura de Transportes
+                      Diretoria Geral
+          Diretoria de Planejamento e Pesquisa
+Coordenação-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+Sistema de Custos Referenciais de
+         Obras – SICRO
+                     Versão 1.0
+           Mês de referência: julho de 2023
+
+
+
+Caderno de aplicação
+Fator de Influência de
+    Chuvas (FIC)
+              Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                                APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo
+o desenvolvimento técnico das áreas de custos do extinto Departamento
+Nacional de Estradas e Rodagem (DNER) e do Departamento Nacional de
+Infraestrutura de Transportes (DNIT) na formação de preços referenciais de
+obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos
+de Infraestrutura de Transportes preserva o conhecimento e a experiência
+acumulados desde a edição das primeiras tabelas referenciais de preços,
+passando pelo pioneirismo na conceituação e aplicação das composições de
+custos, até as mais recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da
+divulgação dos relatórios sintéticos e analíticos valorados de composições de
+custos e insumos, juntamente com a publicação da 1ª edição do Manual de
+Custos de Infraestrutura de Transportes e das Produções de Equipes Mecânicas
+dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual
+de Custos de Infraestrutura de Transportes. Os conteúdos encontram-se
+dispostos conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes
+     mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+
+Os cadernos técnicos apresentam as condições de contorno adotadas nos
+cálculos dos consumos dos materiais e da produção horária dos serviços, suas
+respectivas memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para
+elaboração de orçamentos baseados no SICRO, estabelecendo diretrizes
+básicas para tomada de decisão e exemplos práticos que ilustram o emprego
+das diferentes ferramentas que integram o sistema.
+
+
+
+
+                                          i
+              Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está
+dividido em oito volumes:
+
+   ▪ Volume 01 - Metodologia e Conceitos;
+   ▪ Volume 02 - Mão de Obra;
+   ▪ Volume 03 - Preços Referenciais;
+   ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+   ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+   ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+   ▪ Volume 07 - Administração Local;
+   ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de
+Infraestrutura de Transportes, pode produzir orçamentos para obras de
+infraestrutura de transportes que incorporam as nuances dos casos concretos,
+ao tempo que observam a eficiência associada à otimização dos recursos
+envolvidos característica da engenharia.
+
+                       CAIO SARAVY CARDOSO
+        Coordenador-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+                                          ii
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+
+                                      LISTA DE TABELAS
+
+Tabela 1 - Serviços e quantidades - construção rodoviária ................................ 3
+Tabela 2 - Fator de intensidade de chuvas no estado de São Paulo ................. 9
+Tabela 3 - Serviços paralisados na chuva ........................................................ 10
+Tabela 4 - Serviços classificados na Etapa 1 ................................................... 13
+Tabela 5 - Serviços classificados na Etapa 2 ................................................... 13
+Tabela 6 - Serviços classificados na Etapa 3 ................................................... 14
+Tabela 7 - Serviços classificados na Etapa 4 ................................................... 14
+Tabela 8 - Serviços classificados na Etapa 5 ................................................... 15
+Tabela 9 - Coeficiente de deflúvio ou runoff – C .............................................. 16
+Tabela 10 - Fator de retenção – fr .................................................................... 19
+Tabela 11 - Resumo dos fatores e valor do FIC para cada serviço .................. 23
+Tabela 12 - Custos com incidência do FIC ....................................................... 29
+
+
+
+
+                                                    iii
+                 Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                                              SUMÁRIO
+
+1         INTRODUÇÃO .................................................................................... 1
+2         APLICAÇÃO DA METODOLOGIA ..................................................... 2
+2.1       Construção Rodoviária ..................................................................... 2
+2.1.1     Fator de intensidade de chuvas (nd) ................................................... 8
+2.1.2     Fator de natureza da atividade – fa ..................................................... 9
+2.1.2.1   Serviços paralisados na chuva (fa = 1) ................................................ 9
+2.1.3     Coeficiente de deflúvio ou runoff (C) ................................................. 12
+2.1.3.1   Etapas de execução da obra ............................................................. 12
+2.1.3.2   Valores referenciais ........................................................................... 16
+2.1.4     Fator de retenção – fr ........................................................................ 18
+2.1.5     Cálculo do Fator de Influência de Chuvas – FIC ............................... 21
+2.1.5.1   Escavação, carga e transporte em material de 1ª categoria - DMT de
+          50 m - Código SICRO: 5501710 ........................................................ 21
+2.1.5.2   Base estabilizada granulometricamente com mistura de solos na pista
+          com material de jazida - Código SICRO: 4011221 ............................ 22
+2.1.5.3   Concreto asfáltico - faixa C - areia e brita comerciais - Código SICRO:
+          4011463............................................................................................. 22
+2.1.5.4   Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h -
+          areia e brita comerciais - Código SICRO: 1107890 ........................... 22
+2.1.5.5   Demais serviços com incidência do FIC ............................................ 22
+2.1.6     Aplicação do Fator de Influência de Chuvas – FIC............................ 27
+2.1.6.1   Escavação, carga e transporte em material de 1ª categoria - DMT de
+          50 m - Código SICRO: 5501710: ....................................................... 27
+2.1.6.2   Base estabilizada granulometricamente com mistura de solos na pista
+          com material de jazida - Código SICRO: 4011221: ........................... 28
+2.1.6.3   Concreto asfáltico - faixa C - areia e brita comerciais - Código SICRO:
+          4011463:............................................................................................ 28
+2.1.6.4   Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h -
+          areia e brita comerciais - Código SICRO: 1107890 ........................... 29
+2.1.6.5   Demais serviços com incidência do FIC ............................................ 29
+
+
+
+
+                                                     iv
+              Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+
+1   INTRODUÇÃO
+
+Neste volume, exemplifica-se a aplicação do Fator de Influência de Chuvas –
+FIC no contexto da orçamentação de obras de infraestrutura de transportes, com
+o intuito de orientar a utilização da metodologia detalhada no Manual de Custos
+de Infraestrutura de Transportes - Volume 04: Fator de Influência de Chuvas
+(FIC) - 2ª Edição.
+
+O documento apresenta os dados de projeto e descreve as etapas seguidas para
+aplicação da metodologia em questão. A estrutura das composições de custos
+unitárias e seus respectivos custos são baseados no mês-base de julho de 2023.
+
+Cabe ressaltar que o exemplo abordado neste volume se refere a uma obra
+fictícia, idealizada para proporcionar melhor compreensão aos usuários do
+Sistema de Custos Referenciais de Obras (SICRO).
+
+
+
+
+                                          1
+                 Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+2     APLICAÇÃO DA METODOLOGIA
+
+A obra utilizada para compor este volume é uma construção rodoviária e viabiliza
+a aplicação da metodologia do Fator de Influência de Chuvas – FIC.
+
+Conforme apresentado no Manual de Custos de Infraestrutura de Transportes -
+Volume 04: Fator de Influência de Chuvas (FIC) - 2ª Edição, o FIC é aplicável às
+composições de custos de serviços cuja execução é interrompida devido a
+precipitações. Esses serviços são particularmente sensíveis às chuvas, as quais
+podem impactar significativamente o progresso das atividades em um local
+específico. Assim, no âmbito do SICRO, apenas os serviços que são paralisados
+durante as chuvas devem incorporar o FIC em suas composições de custos.
+
+Em posse da relação de serviços afetados pela ocorrência de chuvas, é
+necessário considerar as condições contextuais das atividades, tais como: tipo
+e textura do solo, declividade da seção transversal do terreno e tipo de cobertura.
+Essas informações permitirão a definição dos parâmetros para o cálculo dos
+seguintes fatores e coeficiente:
+
+      ▪ fator de intensidade de chuvas – nd;
+      ▪ fator de natureza da atividade – fa;
+      ▪ coeficiente de deflúvio ou Runoff – C;
+      ▪ fator de retenção – fr.
+
+Cabe destacar que o SICRO apresenta valores referenciais para os fatores
+mencionados e para o FIC, por composição de custos e por Unidade Federativa
+– UF. No entanto, caso seja necessário criar ou ajustar composições de custos
+específicas para determinado orçamento, deve-se adotar a metodologia descrita
+no Manual de Custos de Infraestrutura de Transportes - Volume 04: Fator de
+Influência de Chuvas (FIC) - 2ª Edição.
+
+2.1    Construção Rodoviária
+
+O projeto utilizado no exemplo de aplicação possui as seguintes características:
+
+      ▪ natureza da obra: construção rodoviária;
+      ▪ extensão do segmento: 50 km de pista simples;
+      ▪ prazo contratual: 30 meses;
+      ▪ unidade da federação: São Paulo;
+      ▪ mês-base: julho de 2023.
+
+A tabela 1 apresenta os serviços que serão executados ao longo da obra,
+contemplando serviços preliminares, de terraplenagem, de pavimentação, de
+drenagem, de obras de arte especiais, de sinalização e proteção ambiental.
+
+
+
+
+                                             2
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                 Tabela 1 - Serviços e quantidades - construção rodoviária
+
+Código
+                                     Descrição                                 Unidade   Quantidade
+SICRO
+1. Serviços preliminares
+    -     Instalação dos canteiros de obras e acampamentos                       un         1,00
+    -     Manutenção dos canteiros de obras e acampamentos                      mês         22,00
+    -     Mobilização e desmobilização de equipamentos e pessoal                 un         1,00
+          Projeto básico/executivo para implantação/pavimentação de
+    -                                                                            un         1,00
+          rodovia pista simples
+2. Terraplenagem
+          Desmatamento, destocamento e limpeza de área com árvores de
+5501700                                                                          m2      1.500.000,00
+          diâmetro até 0,15 m
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m                    un       15.000,00
+          Escavação, carga e transporte em material de 1ª categoria - DMT de
+5501710                                                                          m3       15.000,00
+          50 m
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502135 de 50 a 200 m - caminho de serviço em revestimento primário -            m3      300.000,00
+        com escavadeira e caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502136 de 200 a 400 m - caminho de serviço em revestimento primário -           m3      450.000,00
+        com escavadeira e caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502137 de 400 a 600 m - caminho de serviço em revestimento primário -           m3      400.000,00
+        com escavadeira e caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502138 de 600 a 800 m - caminho de serviço em revestimento primário -           m3      200.000,00
+        com escavadeira e caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502139 de 800 a 1.000 m - caminho de serviço em revestimento primário -         m3      300.000,00
+        com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria - DMT
+5502187                                                                          m3       20.000,00
+          de 50 m
+        Escavação, carga e transporte de material de 2ª categoria - DMT
+5502611 de 50 a 200 m - caminho de serviço em revestimento primário -            m3       30.000,00
+        com escavadeira e caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 2ª categoria - DMT
+5502612 de 200 a 400 m - caminho de serviço em revestimento primário -           m3       10.000,00
+        com escavadeira e caminhão basculante de 14 m³
+          Escavação e transporte de material de 3ª categoria - DMT de 0 a
+5502663                                                                          m3       15.000,00
+          50 m
+        Escavação, carga e transporte de material de 3ª categoria - DMT
+5502768 de 50 a 200 m - caminho de serviço em revestimento primário -            m3       25.000,00
+        com caminhão basculante de 12 m³
+        Escavação, carga e transporte de material de 3ª categoria - DMT
+5502769 de 200 a 400 m - caminho de serviço em revestimento primário -           m3       15.000,00
+        com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal                          m3      1.125.000,00
+5503041 Compactação de aterros a 100% do Proctor intermediário                   m3      375.000,00
+4413984 Regularização de bota-fora com espalhamento e compactação                m3      150.000,00
+
+
+
+
+                                                  3
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+              Tabela 1 - Serviços e quantidades - construção rodoviária (2/6)
+
+Código
+                                       Descrição                              Unidade   Quantidade
+SICRO
+3. Pavimentação
+4011209 Regularização do subleito                                               m2      700.000,00
+          Sub-base estabilizada granulometricamente com mistura de solos
+4011228                                                                         m3      140.000,00
+          na pista com material de jazida
+          Base estabilizada granulometricamente com mistura de solos na
+4011221                                                                         m3      105.000,00
+          pista com material de jazida
+4011351 Imprimação com asfalto diluído                                          m2      625.000,00
+4011353 Pintura de ligação                                                      m2      375.000,00
+4011370 Tratamento superficial duplo com emulsão - brita comercial              m2      250.000,00
+4011458 Concreto asfáltico - faixa B - areia extraída e brita produzida          t      45.000,00
+4011463 Concreto asfáltico - faixa C - areia e brita comerciais                  t      45.000,00
+4. Aquisição de materiais betuminosos
+    -     Aquisição de CAP 50/70                                                 t       4.500,00
+    -     Aquisição de asfalto diluído CM-30                                     t        750,00
+    -     Aquisição de emulsão asfáltica RR-2C                                   t       1.187,50
+5. Transporte de materiais betuminosos
+    -     Transporte de CAP 50/70                                                t       4.500,00
+    -     Transporte de asfalto diluído CM-30                                    t        750,00
+    -     Transporte de emulsão asfáltica RR-2C                                  t       1.187,50
+6. Drenagem superficial e subterrânea
+          Valeta de proteção de cortes com revestimento de concreto -
+2003309                                                                         m       30.000,00
+          VPCC 120-30 - escavação mecânica - areia e brita comerciais
+          Valeta de proteção de aterros com revestimento vegetal - VPAG
+2003311                                                                         m       15.000,00
+          120-30 - escavação mecânica
+          Valeta de proteção de aterros com revestimento de concreto -
+2003315                                                                         m       10.000,00
+          VPAC 120-30 - escavação mecânica - areia e brita comerciais
+        Sarjeta triangular de canteiro central de concreto - STCC 100-25
+2003975 moldada no local com extrusora e concreto usinado - areia e brita       m       45.000,00
+        comerciais
+          Dreno longitudinal profundo para corte em solo - DPS 01 - tubo
+2003572                                                                         m       40.000,00
+          PEAD e areia comercial
+          Boca de saída para dreno longitudinal profundo - BSD 02 - tubo de
+2003921                                                                         un        350,00
+          PEAD - areia e brita comerciais
+          Meio-fio de concreto - MFC 05 moldado no local com extrusora e
+2003947                                                                         m        3.000,00
+          concreto usinado - areia e brita comerciais
+          Meio-fio de concreto - MFC 03 moldado no local com extrusora e
+2003943                                                                         m       50.000,00
+          concreto usinado - areia e brita comerciais
+2003385 Entrada para descida d'água - EDA 01 - areia e brita comerciais         un        900,00
+2003387 Entrada para descida d'água - EDA 02 - areia e brita comerciais         un        100,00
+          Descida d'água de aterros tipo rápido - DAR 03 - areia e brita
+2003393                                                                         m        6.000,00
+          comerciais
+          Descida d'água de cortes em degraus - DCD 04 - areia e brita
+2003403                                                                         m         250,00
+          comerciais
+2003443 Dissipador de energia - DES 02 - areia e pedra de mão comerciais        un        100,00
+2003445 Dissipador de energia - DES 03 - areia e pedra de mão comerciais        un        150,00
+
+
+
+                                                   4
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+              Tabela 1 - Serviços e quantidades - construção rodoviária (3/6)
+
+Código
+                                      Descrição                               Unidade   Quantidade
+SICRO
+          Descida d'água de aterros em degraus - DAD 08 - areia e brita
+2003419                                                                         m         50,00
+          comerciais
+          Descida d'água de aterros em degraus - DAD 10 - areia e brita
+2003423                                                                         m         40,00
+          comerciais
+          Dissipador de energia - DEB 06 - areia, brita e pedra de mão
+2003459                                                                         un        40,00
+          comerciais
+          Dissipador de energia - DEB 08 - areia, brita e pedra de mão
+2003463                                                                         un        20,00
+          comerciais
+4805765 Escavação de vala em material de 3ª categoria                           m3       1.000,00
+          Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo
+2003589                                                                         m        2.500,00
+          PEAD e brita comercial
+2003734 Caixa coletora de talvegue - CCT 04 - areia e brita comerciais          un        10,00
+7. Obras de arte correntes
+4805757 Escavação mecânica de vala em material de 1ª categoria                  m3      30.000,00
+          Escavação manual em material de 1ª categoria na profundidade de
+4805751                                                                         m3      15.000,00
+          1a2m
+4815671 Reaterro e compactação com soquete vibratório                           m3       6.000,00
+          Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m
+1600404                                                                         m        2.500,00
+          em valas e bueiros
+          Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão
+0804037                                                                         m         400,00
+          comerciais
+          Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão
+0804045                                                                         m        1.000,00
+          comerciais
+          Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão
+0804205                                                                         m        1.500,00
+          comerciais
+          Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão
+0804309                                                                         m         200,00
+          comerciais
+          Corpo de BSCC 2,00 x 2,00 m - moldado no local - altura do aterro
+0705183                                                                         m         30,00
+          0,00 a 1,00 m - areia e brita comerciais
+          Corpo de BSCC 2,00 x 2,00 m - moldado no local - altura do aterro
+0705185                                                                         m         20,00
+          1,00 a 2,50 m - areia e brita comerciais
+          Corpo de BSCC 2,00 x 2,00 m - moldado no local - altura do aterro
+0705187                                                                         m         250,00
+          2,50 a 5,00 m - areia e brita comerciais
+          Corpo de BSCC 2,00 x 2,00 m - moldado no local - altura do aterro
+0705189                                                                         m         200,00
+          5,00 a 7,50 m - areia e brita comerciais
+          Corpo de BSCC 2,00 x 2,00 m - moldado no local - altura do aterro
+0705191                                                                         m         60,00
+          7,50 a 10,00 m - areia e brita comerciais
+          Corpo de BSCC 2,50 x 2,50 m - moldado no local - altura do aterro
+0705201                                                                         m         30,00
+          2,50 a 5,00 m - areia e brita comerciais
+          Corpo de BSCC 2,50 x 2,50 m - moldado no local - altura do aterro
+0705199                                                                         m         30,00
+          1,00 a 2,50 m - areia e brita comerciais
+          Boca de BSTC D = 1,00 m - esconsidade 0° - areia e brita
+0804121                                                                         un        30,00
+          comerciais - alas retas
+          Boca de BSTC D = 1,20 m - esconsidade 15° - areia e brita
+0804147                                                                         un        10,00
+          comerciais - alas retas
+          Boca de BSTC D = 1,20 m - esconsidade 30° - areia e brita
+0804153                                                                         un        10,00
+          comerciais - alas retas
+
+
+
+
+                                                  5
+                    Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                 Tabela 1 - Serviços e quantidades - construção rodoviária (4/6)
+
+Código
+                                         Descrição                                 Unidade   Quantidade
+SICRO
+           Boca de BDTC D = 1,50 m - esconsidade 0° - areia e brita
+0804273                                                                              un        50,00
+           comerciais - alas retas
+           Boca de BTTC D = 1,50 m - esconsidade 0° - areia e brita
+0804357                                                                              un        10,00
+           comerciais - alas retas
+0705233 Boca de BSCC 2,00 x 2,00 m - esconsidade 0° - areia e brita comerciais       un        10,00
+           Boca de BSCC 2,00 x 2,00 m - esconsidade 15° - areia e brita
+0705235                                                                              un        10,00
+           comerciais
+           Boca de BSCC 2,00 x 2,00 m - esconsidade 45° - areia e brita
+0705239                                                                              un        20,00
+           comerciais
+0705241 Boca de BSCC 2,50 x 2,50 m - esconsidade 0° - areia e brita comerciais       un        10,00
+8. Sinalização
+8.1. Sinalização vertical
+           Placa de regulamentação em aço D = 0,60 m - película
+5213440                                                                              un        250,00
+           retrorrefletiva tipo I + SI - fornecimento e implantação
+           Placa de advertência em aço, lado de 0,60 m - película
+5213464                                                                              un        50,00
+           retrorrefletiva tipo I + SI - fornecimento e implantação
+        Suporte metálico galvanizado para placa de advertência ou
+5213863 regulamentação - lado ou diâmetro de 0,60 m - fornecimento e                 un        300,00
+        implantação
+8.2. Sinalização horizontal
+5213401 Pintura de faixa com tinta acrílica - espessura de 0,6 mm                    m2      15.000,00
+5213405 Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm         m2       3.000,00
+           Balizador de concreto - areia e brita comerciais - fornecimento e
+5213368                                                                              un        300,00
+           implantação
+           Tacha refletiva em plástico injetado - monodirecional tipo I -
+5219612                                                                              un      10.500,00
+           fornecimento e colocação
+           Tacha refletiva em plástico injetado - bidirecional tipo I -
+5219605                                                                              un       5.500,00
+           fornecimento e colocação
+           Tachão refletivo em plástico injetado - bidirecional - fornecimento e
+5213362                                                                              un        500,00
+           colocação
+9. Obras complementares
+3713604 Defensa semimaleável simples - fornecimento e implantação                    m       30.000,00
+           Cerca com 4 fios de arame liso galvanizado e mourão de madeira
+3713613                                                                              m       10.000,00
+           a cada 2,5 m e esticador a cada 50 m
+10. Proteção ambiental
+4413905 Hidrossemeadura                                                              m2      200.000,00
+4413996 Enleivamento                                                                 m2      20.000,00
+           Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40
+4413990                                                                              un        100,00
+           x 0,40 x 0,40 m
+11. Obras de arte especiais (extensão da ponte - 180 m)
+11.1. Infraestrutura
+           Escavação manual de base alargada de tubulão a céu aberto em
+6106183                                                                              m3        100,00
+           material de 1ª categoria na profundidade de 10 a 15 m
+           Escavação manual de fuste de tubulão a céu aberto em material de
+6106222                                                                              m3        300,00
+           1ª categoria na profundidade de 10 a 15 m
+
+
+
+
+                                                       6
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+               Tabela 1 - Serviços e quantidades - construção rodoviária (5/6)
+
+Código
+                                      Descrição                                 Unidade   Quantidade
+SICRO
+          Armação de fuste de tubulão em aço CA-50 com apoio de
+6106220                                                                           kg      24.000,00
+          guindaste - fornecimento, preparo e colocação
+          Concreto autoadensável com silicato de alumínio fck = 20 MPa -
+1100658                                                                           m3        400,00
+          confecção em central dosadora de 30 m³/h - areia e brita comerciais
+11.2. Mesoestrutura
+          Concreto fck = 25 MPa - confecção em central dosadora de 30
+1119528                                                                           m3        250,00
+          m³/h - areia e brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão                           m3        250,00
+          Lançamento mecânico de concreto com bomba rebocável com
+1106088                                                                           m3        250,00
+          capacidade de 30 m³/h - confecção em central dosadora de 30 m³/h
+          Fôrmas de compensado plastificado 12 mm - uso geral - utilização
+3108013                                                                           m2        700,00
+          de 3 vezes - confecção, instalação e retirada
+0407819 Armação em aço CA-50 - fornecimento, preparo e colocação                  kg      26.200,00
+          Escoramento com pontaletes D = 15 cm - utilização de 3 vezes -
+2108171                                                                           m3       5.000,00
+          confecção, instalação e retirada
+          Aparelho de apoio de neoprene fretado para estruturas moldadas
+0307731                                                                          dm³        312,50
+          no local - fornecimento e instalação
+11.3. Superestrutura
+          Concreto fck = 30 MPa - confecção em central dosadora de 30
+1107890                                                                           m3        700,00
+          m³/h - areia e brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão                           m3        700,00
+          Lançamento mecânico de concreto com bomba rebocável com
+1106088                                                                           m3        700,00
+          capacidade de 30 m³/h - confecção em central dosadora de 30 m³/h
+          Fôrmas de compensado plastificado 12 mm - uso geral - utilização
+3108013                                                                           m2       2.000,00
+          de 3 vezes - confecção, instalação e retirada
+0407819 Armação em aço CA-50 - fornecimento, preparo e colocação                  kg      55.000,00
+4507956 Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação               kg      35.000,00
+          Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm -
+4507768                                                                           un        360,00
+          fornecimento e instalação
+          Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7
+4507830                                                                           m        5.400,00
+          mm - fornecimento, instalação e injeção de nata de cimento
+3806426 Lançamento de pré-laje com utilização de guindauto                         t        500,00
+          Lançamento de viga pré-moldada de até 500 kN com utilização de
+3806420                                                                           un        30,00
+          guindaste
+11.4. Laje de transição
+          Concreto fck = 25 MPa - confecção em central dosadora de 30
+1119528                                                                           m3        30,00
+          m³/h - areia e brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão                           m3        30,00
+          Lançamento mecânico de concreto com bomba rebocável com
+1106088                                                                           m3        30,00
+          capacidade de 30 m³/h - confecção em central dosadora de 30 m³/h
+          Fôrmas de compensado resinado 10 mm - uso geral - utilização de
+3107995                                                                           m2        20,00
+          1 vez - confecção, instalação e retirada
+0407819 Armação em aço CA-50 - fornecimento, preparo e colocação                  kg       2.500,00
+          Concreto magro - confecção em betoneira e lançamento manual -
+1106057                                                                           m3        20,00
+          areia e brita comerciais
+
+
+
+
+                                                  7
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+              Tabela 1 - Serviços e quantidades - construção rodoviária (6/6)
+
+ Código
+                                     Descrição                            Unidade   Quantidade
+ SICRO
+11.5. Acabamentos
+          Barreira simples de concreto, armada, pré-moldada (perfil New
+3719529                                                                     m         375,60
+          Jersey) - L > 3,00 m e H = 810 mm
+2007971 Dreno de PVC D = 100 mm para OAE - fornecimento e instalação        m         27,00
+
+
+Os itens a seguir detalham os parâmetros necessários para o cálculo do FIC nas
+composições de custos em que é aplicável, com base nas orientações fornecidas
+no Manual de Custos de Infraestrutura de Transportes - Volume 04: Fator de
+Influência de Chuvas (FIC) - 2ª Edição.
+
+2.1.1 Fator de intensidade de chuvas (nd)
+
+Os valores apropriados para o fator de intensidade de chuvas – nd estão
+diretamente relacionados à média dos dias em que a obra é efetivamente
+paralisada devido à ocorrência de precipitações, excluindo-se domingos,
+feriados e dias com falhas. Ressalta-se que os fatores de intensidade de chuvas
+são diferenciados em dois tipos: nd padrão e nd geotécnico.
+
+O nd padrão é calculado considerando a precipitação apenas em 8 horas de
+trabalho, sendo empregado para os grupos de serviços do SICRO que não
+contemplam atividades majoritariamente relacionadas à compactação e
+movimentação de solos. O nd geotécnico, por sua vez, é calculado levando em
+consideração a precipitação ocorrida ao longo das 24 horas do dia, sendo
+aplicado nos grupos de composições de custos que contemplam atividades de
+compactação e movimentação de solos, haja vista a execução dessas atividades
+serem impactadas pela precipitação ocorrida fora do expediente de trabalho.
+
+Salienta-se que o SICRO considera a aplicação do nd geotécnico para os grupos
+de serviços indicados a seguir:
+
+    ▪ contenções;
+    ▪ estacas;
+    ▪ gabião;
+    ▪ pavimentação e Usinagem;
+    ▪ solo reforçado com fita;
+    ▪ terraplenagem;
+    ▪ tirantes;
+    ▪ tubulões; e
+    ▪ túnel.
+
+Os valores de referência, calculados por Unidade Federativa – UF e utilizados
+para o cálculo do FIC, estão disponíveis no Manual de Custos de Infraestrutura
+de Transportes - Volume 04: Fator de Influência de Chuvas (FIC) - 2ª Edição.
+
+
+
+                                                 8
+                Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+Para este exemplo, utilizam-se os valores de referência para o estado de São
+Paulo, conforme apresentado na tabela 2.
+
+          Tabela 2 - Fator de intensidade de chuvas no estado de São Paulo
+       Região                Estado                nd padrão            nd geotécnico
+
+      Sudeste               São Paulo               0,03143                  0,11205
+
+
+Embora o SICRO apresente o FIC calculado com base nos fatores de
+intensidade de chuvas da respectiva UF, também são disponibilizados os valores
+de nd correspondentes a cada mesobacia do estado, tanto para o nd padrão
+quanto para o nd geotécnico. Dessa forma, o usuário pode utilizar valores
+específicos, ajustados às condições particulares de cada obra. Nesse sentido,
+caso a obra estivesse localizada integralmente na mesobacia do Paranapanema,
+por exemplo, tornar-se-ia possível adotar o nd padrão de 0,03201 e o nd
+geotécnico de 0,11235.
+
+2.1.2 Fator de natureza da atividade – fa
+
+O fator de natureza da atividade – fa indica se há ou não interrupção dos serviços
+durante as precipitações, sendo igual a 1 ou 0, respectivamente.
+
+A classificação dos serviços é realizada por meio do tipo de composição de
+custos, tipo de serviço e do local de execução das atividades. Além disso, o
+processo de avaliação deve estar associado à verificação das normas e boas
+práticas de segurança e engenharia.
+
+Destaca-se que devido à natureza binária (0 ou 1) desse fator, pode-se inferir
+que todas as composições de custos com o FIC calculado no SICRO têm,
+consequentemente, valor de fa igual a 1.
+
+2.1.2.1 Serviços paralisados na chuva (fa = 1)
+
+Os serviços paralisados na presença de chuva abrangem uma variedade de
+atividades, conforme critérios estabelecidos no Manual de Custos de
+Infraestrutura de Transportes - Volume 04: Fator de Influência de Chuvas (FIC)
+- 2ª Edição.
+
+Como exemplo, considera-se a composição de custos "Concreto asfáltico - faixa
+C - areia e brita comerciais - Código SICRO: 4011463", uma CCU mista, pois
+contém parcelas horária e unitária, e que representa um serviço realizado a céu
+aberto. Conforme a norma DNIT ES 031/2006: Pavimentos Flexíveis - Concreto
+Asfáltico, esse serviço não pode ser executado durante a chuva. Portanto, a
+atividade é interrompida em caso de precipitações, resultando no fa igual a 1.
+Adicionalmente, devido à paralisação do serviço principal, a usinagem do concreto
+asfáltico, empregada como atividade auxiliar, também é interrompida,
+apresentando fa igual a 1.
+
+
+
+
+                                            9
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+Ressalta-se que, para os casos em que a composição de custos contenha
+atividade auxiliar que não possa ser realizada durante a chuva, e essa atividade
+for executada em sequência com as demais da composição principal, considera-
+se que todo o serviço é paralisado.
+
+Para fins de exemplificação, os cálculos relacionados às atividades auxiliares não
+foram detalhados, embora tenham sido integralmente considerados.
+
+Posto isso, dentre os serviços dispostos na tabela 1, são apresentados na tabela
+3 aqueles que são paralisados na ocorrência de chuva. No orçamento em
+questão, um total de 68 composições de custos possuem fator de natureza da
+atividade igual a 1.
+                            Tabela 3 - Serviços paralisados na chuva
+ Código
+                                                    Descrição
+ SICRO
+5501700 Desmatamento, destocamento e limpeza de área com árvores de diâmetro até 0,15 m
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m
+5501710 Escavação, carga e transporte em material de 1ª categoria - DMT de 50 m
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 50 a 200 m - caminho de
+5502135
+          serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 200 a 400 m - caminho
+5502136
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 400 a 600 m - caminho
+5502137
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 600 a 800 m - caminho
+5502138
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 800 a 1.000 m - caminho
+5502139
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+5502187 Escavação, carga e transporte de material de 2ª categoria - DMT de 50 m
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 50 a 200 m - caminho de
+5502611
+          serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 200 a 400 m - caminho
+5502612
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 50 a 200 m - caminho de
+5502768
+          serviço em revestimento primário - com caminhão basculante de 12 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 200 a 400 m - caminho
+5502769
+          de serviço em revestimento primário - com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal
+5503041 Compactação de aterros a 100% do Proctor intermediário
+4413984 Regularização de bota-fora com espalhamento e compactação
+4011209 Regularização do subleito
+4011228 Sub-base estabilizada granulometricamente com mistura de solos na pista com material de jazida
+4011221 Base estabilizada granulometricamente com mistura de solos na pista com material de jazida
+4011351 Imprimação com asfalto diluído
+4011353 Pintura de ligação
+4011370 Tratamento superficial duplo com emulsão - brita comercial
+4011458 Concreto asfáltico - faixa B - areia extraída e brita produzida
+
+
+
+
+                                                   10
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                         Tabela 3 - Serviços paralisados na chuva (2/3)
+
+Código
+                                                     Descrição
+SICRO
+4011463 Concreto asfáltico - faixa C - areia e brita comerciais
+          Sarjeta triangular de canteiro central de concreto - STCC 100-25 moldada no local com
+2003975
+          extrusora e concreto usinado - areia e brita comerciais
+2003572 Dreno longitudinal profundo para corte em solo - DPS 01 - tubo PEAD e areia comercial
+          Meio-fio de concreto - MFC 05 moldado no local com extrusora e concreto usinado - areia e
+2003947
+          brita comerciais
+          Meio-fio de concreto - MFC 03 moldado no local com extrusora e concreto usinado - areia e
+2003943
+          brita comerciais
+2003393 Descida d'água de aterros tipo rápido - DAR 03 - areia e brita comerciais
+2003459 Dissipador de energia - DEB 06 - areia, brita e pedra de mão comerciais
+2003463 Dissipador de energia - DEB 08 - areia, brita e pedra de mão comerciais
+2003589 Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo PEAD e brita comercial
+4805757 Escavação mecânica de vala em material de 1ª categoria
+4805751 Escavação manual em material de 1ª categoria na profundidade de 1 a 2 m
+4815671 Reaterro e compactação com soquete vibratório
+1600404 Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m em valas e bueiros
+0804037 Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão comerciais
+0804045 Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão comerciais
+0804205 Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais
+0804309 Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais
+          Placa de regulamentação em aço D = 0,60 m - película retrorrefletiva tipo I + SI - fornecimento
+5213440
+          e implantação
+          Placa de advertência em aço, lado de 0,60 m - película retrorrefletiva tipo I + SI - fornecimento
+5213464
+          e implantação
+          Suporte metálico galvanizado para placa de advertência ou regulamentação - lado ou
+5213863
+          diâmetro de 0,60 m - fornecimento e implantação
+5213401 Pintura de faixa com tinta acrílica - espessura de 0,6 mm
+5213405 Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm
+5219612 Tacha refletiva em plástico injetado - monodirecional tipo I - fornecimento e colocação
+5219605 Tacha refletiva em plástico injetado - bidirecional tipo I - fornecimento e colocação
+5213362 Tachão refletivo em plástico injetado - bidirecional - fornecimento e colocação
+3713604 Defensa semimaleável simples - fornecimento e implantação
+3713613 Cerca com 4 fios de arame liso galvanizado e mourão de madeira a cada 2,5 m e esticador a cada 50 m
+4413905 Hidrossemeadura
+4413996 Enleivamento
+4413990 Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40 x 0,40 x 0,40 m
+          Escavação manual de base alargada de tubulão a céu aberto em material de 1ª categoria na
+6106183
+          profundidade de 10 a 15 m
+          Escavação manual de fuste de tubulão a céu aberto em material de 1ª categoria na
+6106222
+          profundidade de 10 a 15 m
+          Concreto autoadensável com silicato de alumínio fck = 20 MPa - confecção em central
+1100658
+          dosadora de 30 m³/h - areia e brita comerciais
+
+
+
+
+                                                   11
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                        Tabela 3 - Serviços paralisados na chuva (3/3)
+
+ Código
+                                                  Descrição
+ SICRO
+1119528 Concreto fck = 25 MPa - confecção em central dosadora de 30 m³/h - areia e brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão
+          Lançamento mecânico de concreto com bomba rebocável com capacidade de 30 m³/h -
+1106088
+          confecção em central dosadora de 30 m³/h
+          Aparelho de apoio de neoprene fretado para estruturas moldadas no local - fornecimento e
+0307731
+          instalação
+1107890 Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h - areia e brita comerciais
+4507956 Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação
+4507768 Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm - fornecimento e instalação
+          Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7 mm - fornecimento,
+4507830
+          instalação e injeção de nata de cimento
+3806426 Lançamento de pré-laje com utilização de guindauto
+3806420 Lançamento de viga pré-moldada de até 500 kN com utilização de guindaste
+1106057 Concreto magro - confecção em betoneira e lançamento manual - areia e brita comerciais
+2007971 Dreno de PVC D = 100 mm para OAE - fornecimento e instalação
+
+
+Os serviços não listados na tabela 3 não são interrompidos em caso de chuva e,
+portanto, não têm incidência do FIC.
+
+2.1.3 Coeficiente de deflúvio ou runoff (C)
+
+O coeficiente de deflúvio representa o escoamento da água sobre a superfície e
+é calculado pela razão entre o volume escoado e o volume de precipitação. Os
+valores desse coeficiente dependem, principalmente, do tipo de superfície e da
+declividade do terreno, além de requererem a avaliação das etapas de execução
+da obra.
+
+2.1.3.1 Etapas de execução da obra
+
+Para determinação do coeficiente de deflúvio e do fator de retenção é necessário
+classificar os serviços em cinco etapas distintas, conforme estabelecido no
+Manual de Custos de Infraestrutura de Transportes - Volume 04: Fator de
+Influência de Chuvas (FIC) - 2ª Edição. Essa classificação é realizada apenas
+para os serviços com fa = 1, ou seja, que são paralisados com a chuva.
+
+a) Etapa 1- Desde a implantação até o final do desmatamento
+
+Os serviços classificados na etapa 1 são aqueles executados em terrenos
+originais, em vegetação natural e em materiais não alterados. Essa etapa se
+estende desde o início da implantação até a conclusão do processo de
+desmatamento. No contexto da obra em análise, os serviços que se enquadram
+nessa etapa são apresentados na tabela 4.
+
+
+
+
+                                                 12
+                 Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                         Tabela 4 - Serviços classificados na Etapa 1
+
+Código
+                                                 Descrição
+SICRO
+5501700 Desmatamento, destocamento e limpeza de área com árvores de diâmetro até 0,15 m
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m
+
+
+b) Etapa 2 - Após o desmatamento até a regularização do subleito
+
+A etapa 2 abrange todas as atividades executadas após a finalização da fase de
+desmatamento até a regularização do subleito. Na tabela 5 são elencados os
+serviços que compõem essa etapa no contexto da obra em análise.
+
+                         Tabela 5 - Serviços classificados na Etapa 2
+ Código
+                                                  Descrição
+ SICRO
+5501710 Escavação, carga e transporte em material de 1ª categoria - DMT de 50 m
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 50 a 200 m - caminho de
+5502135
+          serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 200 a 400 m - caminho
+5502136
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 400 a 600 m - caminho
+5502137
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 600 a 800 m - caminho
+5502138
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 800 a 1.000 m - caminho
+5502139
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+5502187 Escavação, carga e transporte de material de 2ª categoria - DMT de 50 m
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 50 a 200 m - caminho de
+5502611
+          serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 200 a 400 m - caminho
+5502612
+          de serviço em revestimento primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 50 a 200 m - caminho de
+5502768
+          serviço em revestimento primário - com caminhão basculante de 12 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 200 a 400 m - caminho
+5502769
+          de serviço em revestimento primário - com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal
+5503041 Compactação de aterros a 100% do Proctor intermediário
+4413984 Regularização de bota-fora com espalhamento e compactação
+4011209 Regularização do subleito
+4805757 Escavação mecânica de vala em material de 1ª categoria
+4805751 Escavação manual em material de 1ª categoria na profundidade de 1 a 2 m
+4815671 Reaterro e compactação com soquete vibratório
+0804037 Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão comerciais
+0804045 Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão comerciais
+0804205 Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais
+0804309 Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais
+4413905 Hidrossemeadura
+
+
+
+
+                                                13
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                       Tabela 5 - Serviços classificados na Etapa 2 (2/2)
+
+ Código
+                                                     Descrição
+ SICRO
+4413996 Enleivamento
+           Escavação manual de base alargada de tubulão a céu aberto em material de 1ª categoria na
+6106183
+           profundidade de 10 a 15 m
+           Escavação manual de fuste de tubulão a céu aberto em material de 1ª categoria na
+6106222
+           profundidade de 10 a 15 m
+
+
+c) Etapa 3 - Após a regularização do subleito até a impermeabilização da
+base/sub-base
+
+Na etapa 3 são classificados os serviços que demandam uma superfície
+devidamente regularizada ou compactada para garantir a qualidade da
+execução. Essa etapa é subsequente à conclusão da regularização do subleito,
+sendo finalizada na impermeabilização da base e/ou sub-base.
+
+A tabela 6 apresenta os serviços incluídos nessa etapa dentro do contexto da
+obra em análise.
+                          Tabela 6 - Serviços classificados na Etapa 3
+
+ Código
+                                                      Descrição
+ SICRO
+            Sub-base estabilizada granulometricamente com mistura de solos na pista com material de
+ 4011228
+            jazida
+            Base estabilizada granulometricamente com mistura de solos na pista com material de
+ 4011221
+            jazida
+ 4011351    Imprimação com asfalto diluído
+ 4011353    Pintura de ligação
+ 2003572    Dreno longitudinal profundo para corte em solo - DPS 01 - tubo PEAD e areia comercial
+ 2003393    Descida d'água de aterros tipo rápido - DAR 03 - areia e brita comerciais
+ 2003459    Dissipador de energia - DEB 06 - areia, brita e pedra de mão comerciais
+ 2003463    Dissipador de energia - DEB 08 - areia, brita e pedra de mão comerciais
+ 2003589    Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo PEAD e brita comercial
+ 1600404    Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m em valas e bueiros
+
+
+d) Etapa 4 - Após a impermeabilização da base/sub-base, incluindo
+manutenção e conservação
+
+A etapa 4 compreende os serviços destinados às fases finais da obra, após a
+conclusão da impermeabilização da base e/ou sub-base. A tabela 7 lista todos
+os serviços presentes nessa etapa no contexto da obra exemplificada.
+                          Tabela 7 - Serviços classificados na Etapa 4
+ Código
+                                                      Descrição
+ SICRO
+ 4011370    Tratamento superficial duplo com emulsão - brita comercial
+ 4011458    Concreto asfáltico - faixa B - areia extraída e brita produzida
+
+
+
+
+                                                    14
+                 Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                      Tabela 7 - Serviços classificados na Etapa 4 (2/2)
+
+ Código
+                                                     Descrição
+ SICRO
+ 4011463   Concreto asfáltico - faixa C - areia e brita comerciais
+           Sarjeta triangular de canteiro central de concreto - STCC 100-25 moldada no local com
+ 2003975
+           extrusora e concreto usinado - areia e brita comerciais
+           Meio-fio de concreto - MFC 05 moldado no local com extrusora e concreto usinado - areia e
+ 2003947
+           brita comerciais
+           Meio-fio de concreto - MFC 03 moldado no local com extrusora e concreto usinado - areia e
+ 2003943
+           brita comerciais
+ 5213401   Pintura de faixa com tinta acrílica - espessura de 0,6 mm
+ 5213405   Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm
+ 5219612   Tacha refletiva em plástico injetado - monodirecional tipo I - fornecimento e colocação
+ 5219605   Tacha refletiva em plástico injetado - bidirecional tipo I - fornecimento e colocação
+ 5213362   Tachão refletivo em plástico injetado - bidirecional - fornecimento e colocação
+ 3806426   Lançamento de pré-laje com utilização de guindauto
+ 3806420   Lançamento de viga pré-moldada de até 500 kN com utilização de guindaste
+
+
+e) Etapa 5 - Serviços manuais e outros
+
+Por fim, a etapa 5 é composta por serviços realizados manualmente por um ou
+mais profissionais, ainda que haja a previsão de uso de equipamento manual ou
+equipamentos auxiliares à atividade, desde que permitam o retorno imediato
+após a precipitação. No contexto da obra em questão, os serviços que integram
+essa etapa estão detalhados na tabela 8.
+
+                         Tabela 8 - Serviços classificados na Etapa 5
+ Código
+                                                     Descrição
+ SICRO
+           Placa de regulamentação em aço D = 0,60 m - película retrorrefletiva tipo I + SI -
+ 5213440
+           fornecimento e implantação
+           Placa de advertência em aço, lado de 0,60 m - película retrorrefletiva tipo I + SI -
+ 5213464
+           fornecimento e implantação
+           Suporte metálico galvanizado para placa de advertência ou regulamentação - lado ou
+ 5213863
+           diâmetro de 0,60 m - fornecimento e implantação
+ 3713604   Defensa semimaleável simples - fornecimento e implantação
+           Cerca com 4 fios de arame liso galvanizado e mourão de madeira a cada 2,5 m e esticador
+ 3713613
+           a cada 50 m
+ 4413990   Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40 x 0,40 x 0,40 m
+           Concreto autoadensável com silicato de alumínio fck = 20 MPa - confecção em central
+ 1100658
+           dosadora de 30 m³/h - areia e brita comerciais
+ 1119528   Concreto fck = 25 MPa - confecção em central dosadora de 30 m³/h - areia e brita comerciais
+ 1100657   Adensamento de concreto por vibrador de imersão
+           Lançamento mecânico de concreto com bomba rebocável com capacidade de 30 m³/h -
+ 1106088
+           confecção em central dosadora de 30 m³/h
+
+
+
+
+                                                   15
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                       Tabela 8 - Serviços classificados na Etapa 5 (2/2)
+
+ Código
+                                                     Descrição
+ SICRO
+            Aparelho de apoio de neoprene fretado para estruturas moldadas no local - fornecimento e
+ 0307731
+            instalação
+            Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h - areia e brita
+ 1107890
+            comerciais
+ 4507956    Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação
+ 4507768    Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm - fornecimento e instalação
+            Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7 mm - fornecimento,
+ 4507830
+            instalação e injeção de nata de cimento
+ 1106057    Concreto magro - confecção em betoneira e lançamento manual - areia e brita comerciais
+ 2007971    Dreno de PVC D = 100 mm para OAE - fornecimento e instalação
+
+
+2.1.3.2 Valores referenciais
+
+Partindo dos valores de coeficiente de deflúvio por etapa da obra, declividade e
+Unidade Federativa, estabelecidos no Manual de Custos de Infraestrutura de
+Transportes - Volume 04: Fator de Influência de Chuvas (FIC) - 2ª Edição,
+resulta-se nos dados apresentados na tabela 9.
+
+                        Tabela 9 - Coeficiente de deflúvio ou runoff – C
+Código
+                                            Descrição                                       Etapa    C
+SICRO
+5501700 Desmatamento, destocamento e limpeza de área com árvores de diâmetro até 0,15 m        1    0,35
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m                                  1    0,35
+5501710 Escavação, carga e transporte em material de 1ª categoria - DMT de 50 m                2    0,73
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 50 a 200 m
+5502135 - caminho de serviço em revestimento primário - com escavadeira e caminhão             2    0,73
+        basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 200 a 400
+5502136 m - caminho de serviço em revestimento primário - com escavadeira e                    2    0,73
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 400 a 600
+5502137 m - caminho de serviço em revestimento primário - com escavadeira e                    2    0,73
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 600 a 800
+5502138 m - caminho de serviço em revestimento primário - com escavadeira e                    2    0,73
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 800 a
+5502139 1.000 m - caminho de serviço em revestimento primário - com escavadeira e              2    0,73
+        caminhão basculante de 14 m³
+5502187 Escavação, carga e transporte de material de 2ª categoria - DMT de 50 m                2    0,73
+        Escavação, carga e transporte de material de 2ª categoria - DMT de 50 a 200 m
+5502611 - caminho de serviço em revestimento primário - com escavadeira e caminhão             2    0,73
+        basculante de 14 m³
+        Escavação, carga e transporte de material de 2ª categoria - DMT de 200 a 400
+5502612 m - caminho de serviço em revestimento primário - com escavadeira e                    2    0,73
+        caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 50 a 200 m -
+5502768                                                                                        2    0,73
+          caminho de serviço em revestimento primário - com caminhão basculante de 12 m³
+
+
+
+
+                                                   16
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                      Tabela 9 - Coeficiente de deflúvio ou runoff – C (2/3)
+Código
+                                             Descrição                                         Etapa    C
+SICRO
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 200 a 400 m -
+5502769                                                                                         2      0,73
+          caminho de serviço em revestimento primário - com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal                                         2      0,73
+5503041 Compactação de aterros a 100% do Proctor intermediário                                  2      0,73
+4413984 Regularização de bota-fora com espalhamento e compactação                               2      0,73
+4011209 Regularização do subleito                                                               2      0,73
+          Sub-base estabilizada granulometricamente com mistura de solos na pista com
+4011228                                                                                         3      0,70
+          material de jazida
+          Base estabilizada granulometricamente com mistura de solos na pista com
+4011221                                                                                         3      0,70
+          material de jazida
+4011351 Imprimação com asfalto diluído                                                          3      0,70
+4011353 Pintura de ligação                                                                      3      0,70
+4011370 Tratamento superficial duplo com emulsão - brita comercial                              4      0,95
+4011458 Concreto asfáltico - faixa B - areia extraída e brita produzida                         4      0,95
+4011463 Concreto asfáltico - faixa C - areia e brita comerciais                                 4      0,95
+          Sarjeta triangular de canteiro central de concreto - STCC 100-25 moldada no
+2003975                                                                                         4      0,95
+          local com extrusora e concreto usinado - areia e brita comerciais
+          Dreno longitudinal profundo para corte em solo - DPS 01 - tubo PEAD e areia
+2003572                                                                                         3      0,70
+          comercial
+          Meio-fio de concreto - MFC 05 moldado no local com extrusora e concreto
+2003947                                                                                         4      0,95
+          usinado - areia e brita comerciais
+          Meio-fio de concreto - MFC 03 moldado no local com extrusora e concreto
+2003943                                                                                         4      0,95
+          usinado - areia e brita comerciais
+2003393 Descida d'água de aterros tipo rápido - DAR 03 - areia e brita comerciais               3      0,70
+2003459 Dissipador de energia - DEB 06 - areia, brita e pedra de mão comerciais                 3      0,70
+2003463 Dissipador de energia - DEB 08 - areia, brita e pedra de mão comerciais                 3      0,70
+          Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo PEAD e brita
+2003589                                                                                         3      0,70
+          comercial
+4805757 Escavação mecânica de vala em material de 1ª categoria                                  2      0,73
+4805751 Escavação manual em material de 1ª categoria na profundidade de 1 a 2 m                 2      0,73
+4815671 Reaterro e compactação com soquete vibratório                                           2      0,73
+1600404 Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m em valas e bueiros         3      0,70
+0804037 Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão comerciais                   2      0,73
+0804045 Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão comerciais                   2      0,73
+0804205 Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                   2      0,73
+0804309 Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                   2      0,73
+          Placa de regulamentação em aço D = 0,60 m - película retrorrefletiva tipo I + SI
+5213440                                                                                         5      1,00
+          - fornecimento e implantação
+          Placa de advertência em aço, lado de 0,60 m - película retrorrefletiva tipo I + SI
+5213464                                                                                         5      1,00
+          - fornecimento e implantação
+          Suporte metálico galvanizado para placa de advertência ou regulamentação -
+5213863                                                                                         5      1,00
+          lado ou diâmetro de 0,60 m - fornecimento e implantação
+5213401 Pintura de faixa com tinta acrílica - espessura de 0,6 mm                               4      0,95
+5213405 Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm                    4      0,95
+          Tacha refletiva em plástico injetado - monodirecional tipo I - fornecimento e
+5219612                                                                                         4      0,95
+          colocação
+
+
+
+
+                                                    17
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                      Tabela 9 - Coeficiente de deflúvio ou runoff – C (3/3)
+Código
+                                              Descrição                                   Etapa    C
+SICRO
+          Tacha refletiva em plástico injetado - bidirecional tipo I - fornecimento e
+5219605                                                                                    4      0,95
+          colocação
+5213362 Tachão refletivo em plástico injetado - bidirecional - fornecimento e colocação    4      0,95
+3713604 Defensa semimaleável simples - fornecimento e implantação                          5      1,00
+          Cerca com 4 fios de arame liso galvanizado e mourão de madeira a cada 2,5 m
+3713613                                                                                    5      1,00
+          e esticador a cada 50 m
+4413905 Hidrossemeadura                                                                    2      0,73
+4413996 Enleivamento                                                                       2      0,73
+          Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40 x 0,40 x
+4413990                                                                                    5      1,00
+          0,40 m
+          Escavação manual de base alargada de tubulão a céu aberto em material de 1ª
+6106183                                                                                    2      0,73
+          categoria na profundidade de 10 a 15 m
+          Escavação manual de fuste de tubulão a céu aberto em material de 1ª categoria
+6106222                                                                                    2      0,73
+          na profundidade de 10 a 15 m
+          Concreto autoadensável com silicato de alumínio fck = 20 MPa - confecção em
+1100658                                                                                    5      1,00
+          central dosadora de 30 m³/h - areia e brita comerciais
+          Concreto fck = 25 MPa - confecção em central dosadora de 30 m³/h - areia e
+1119528                                                                                    5      1,00
+          brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão                                    5      1,00
+          Lançamento mecânico de concreto com bomba rebocável com capacidade de
+1106088                                                                                    5      1,00
+          30 m³/h - confecção em central dosadora de 30 m³/h
+          Aparelho de apoio de neoprene fretado para estruturas moldadas no local -
+0307731                                                                                    5      1,00
+          fornecimento e instalação
+          Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h - areia e
+1107890                                                                                    5      1,00
+          brita comerciais
+4507956 Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação                        5      1,00
+          Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm - fornecimento e
+4507768                                                                                    5      1,00
+          instalação
+          Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7 mm -
+4507830                                                                                    5      1,00
+          fornecimento, instalação e injeção de nata de cimento
+3806426 Lançamento de pré-laje com utilização de guindauto                                 4      0,95
+3806420 Lançamento de viga pré-moldada de até 500 kN com utilização de guindaste           4      0,95
+          Concreto magro - confecção em betoneira e lançamento manual - areia e brita
+1106057                                                                                    5      1,00
+          comerciais
+2007971 Dreno de PVC D = 100 mm para OAE - fornecimento e instalação                       5      1,00
+
+
+2.1.4 Fator de retenção – fr
+
+O fator de retenção dos solos – fr refere-se ao percentual de água precipitada
+que efetivamente fica retida na superfície, a qual prejudica a execução do
+serviço. Esse fator varia de acordo com a classificação dos serviços em etapas,
+realizada na subseção 2.1.3.1, e o tipo de solo predominante em cada Unidade
+Federativa.
+
+
+
+
+                                                     18
+                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+Dessa forma, com base nos valores referenciais estabelecidos no Manual de
+Custos de Infraestrutura de Transportes - Volume 04: Fator de Influência de
+Chuvas (FIC) - 2ª Edição, a tabela 10 apresenta os fatores de retenção aplicáveis
+a cada serviço interrompido devido à chuva no orçamento em análise.
+
+                                 Tabela 10 - Fator de retenção – fr
+Código
+                                             Descrição                                       Etapa    fr
+SICRO
+5501700 Desmatamento, destocamento e limpeza de área com árvores de diâmetro até 0,15 m       1      0,75
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m                                 1      0,75
+5501710 Escavação, carga e transporte em material de 1ª categoria - DMT de 50 m               2      0,75
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 50 a 200 m
+5502135 - caminho de serviço em revestimento primário - com escavadeira e caminhão            2      0,75
+        basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 200 a 400
+5502136 m - caminho de serviço em revestimento primário - com escavadeira e                   2      0,75
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 400 a 600
+5502137 m - caminho de serviço em revestimento primário - com escavadeira e                   2      0,75
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 600 a 800
+5502138 m - caminho de serviço em revestimento primário - com escavadeira e                   2      0,75
+        caminhão basculante de 14 m³
+        Escavação, carga e transporte de material de 1ª categoria - DMT de 800 a
+5502139 1.000 m - caminho de serviço em revestimento primário - com escavadeira e             2      0,75
+        caminhão basculante de 14 m³
+5502187 Escavação, carga e transporte de material de 2ª categoria - DMT de 50 m               2      0,75
+        Escavação, carga e transporte de material de 2ª categoria - DMT de 50 a 200 m
+5502611 - caminho de serviço em revestimento primário - com escavadeira e caminhão            2      0,75
+        basculante de 14 m³
+        Escavação, carga e transporte de material de 2ª categoria - DMT de 200 a 400
+5502612 m - caminho de serviço em revestimento primário - com escavadeira e                   2      0,75
+        caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 50 a 200 m -
+5502768                                                                                       2      0,75
+          caminho de serviço em revestimento primário - com caminhão basculante de 12 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 200 a 400 m -
+5502769                                                                                       2      0,75
+          caminho de serviço em revestimento primário - com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal                                       2      0,75
+5503041 Compactação de aterros a 100% do Proctor intermediário                                2      0,75
+4413984 Regularização de bota-fora com espalhamento e compactação                             2      0,75
+4011209 Regularização do subleito                                                             2      0,75
+          Sub-base estabilizada granulometricamente com mistura de solos na pista com
+4011228                                                                                       3      1,00
+          material de jazida
+          Base estabilizada granulometricamente com mistura de solos na pista com
+4011221                                                                                       3      1,00
+          material de jazida
+4011351 Imprimação com asfalto diluído                                                        3      1,00
+4011353 Pintura de ligação                                                                    3      1,00
+4011370 Tratamento superficial duplo com emulsão - brita comercial                            4      1,00
+4011458 Concreto asfáltico - faixa B - areia extraída e brita produzida                       4      1,00
+4011463 Concreto asfáltico - faixa C - areia e brita comerciais                               4      1,00
+          Sarjeta triangular de canteiro central de concreto - STCC 100-25 moldada no
+2003975                                                                                       4      1,00
+          local com extrusora e concreto usinado - areia e brita comerciais
+
+
+
+
+                                                   19
+                    Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                               Tabela 10 - Fator de retenção – fr (2/3)
+Código
+                                               Descrição                                          Etapa    fr
+SICRO
+2003572 Dreno longitudinal profundo para corte em solo - DPS 01 - tubo PEAD e areia comercial      3      1,00
+          Meio-fio de concreto - MFC 05 moldado no local com extrusora e concreto
+2003947                                                                                            4      1,00
+          usinado - areia e brita comerciais
+          Meio-fio de concreto - MFC 03 moldado no local com extrusora e concreto
+2003943                                                                                            4      1,00
+          usinado - areia e brita comerciais
+2003393 Descida d'água de aterros tipo rápido - DAR 03 - areia e brita comerciais                  3      1,00
+2003459 Dissipador de energia - DEB 06 - areia, brita e pedra de mão comerciais                    3      1,00
+2003463 Dissipador de energia - DEB 08 - areia, brita e pedra de mão comerciais                    3      1,00
+2003589 Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo PEAD e brita comercial     3      1,00
+4805757 Escavação mecânica de vala em material de 1ª categoria                                     2      0,75
+4805751 Escavação manual em material de 1ª categoria na profundidade de 1 a 2 m                    2      0,75
+4815671 Reaterro e compactação com soquete vibratório                                              2      0,75
+1600404 Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m em valas e bueiros            3      1,00
+0804037 Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão comerciais                      2      0,75
+0804045 Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão comerciais                      2      0,75
+0804205 Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                      2      0,75
+0804309 Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                      2      0,75
+          Placa de regulamentação em aço D = 0,60 m - película retrorrefletiva tipo I + SI
+5213440                                                                                            5      1,00
+          - fornecimento e implantação
+          Placa de advertência em aço, lado de 0,60 m - película retrorrefletiva tipo I + SI
+5213464                                                                                            5      1,00
+          - fornecimento e implantação
+          Suporte metálico galvanizado para placa de advertência ou regulamentação -
+5213863                                                                                            5      1,00
+          lado ou diâmetro de 0,60 m - fornecimento e implantação
+5213401 Pintura de faixa com tinta acrílica - espessura de 0,6 mm                                  4      1,00
+5213405 Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm                       4      1,00
+5219612 Tacha refletiva em plástico injetado - monodirecional tipo I - fornecimento e colocação    4      1,00
+5219605 Tacha refletiva em plástico injetado - bidirecional tipo I - fornecimento e colocação      4      1,00
+5213362 Tachão refletivo em plástico injetado - bidirecional - fornecimento e colocação            4      1,00
+3713604 Defensa semimaleável simples - fornecimento e implantação                                  5      1,00
+          Cerca com 4 fios de arame liso galvanizado e mourão de madeira a cada 2,5 m
+3713613                                                                                            5      1,00
+          e esticador a cada 50 m
+4413905 Hidrossemeadura                                                                            2      0,75
+4413996 Enleivamento                                                                               2      0,75
+4413990 Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40 x 0,40 x 0,40 m           5      1,00
+          Escavação manual de base alargada de tubulão a céu aberto em material de 1ª
+6106183                                                                                            2      0,75
+          categoria na profundidade de 10 a 15 m
+          Escavação manual de fuste de tubulão a céu aberto em material de 1ª categoria
+6106222                                                                                            2      0,75
+          na profundidade de 10 a 15 m
+          Concreto autoadensável com silicato de alumínio fck = 20 MPa - confecção em
+1100658                                                                                            5      1,00
+          central dosadora de 30 m³/h - areia e brita comerciais
+          Concreto fck = 25 MPa - confecção em central dosadora de 30 m³/h - areia e
+1119528                                                                                            5      1,00
+          brita comerciais
+1100657 Adensamento de concreto por vibrador de imersão                                            5      1,00
+          Lançamento mecânico de concreto com bomba rebocável com capacidade de
+1106088                                                                                            5      1,00
+          30 m³/h - confecção em central dosadora de 30 m³/h
+
+
+
+
+                                                      20
+                  Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+                             Tabela 10 - Fator de retenção – fr (3/3)
+Código
+                                           Descrição                                    Etapa    fr
+SICRO
+          Aparelho de apoio de neoprene fretado para estruturas moldadas no local -
+0307731                                                                                  5      1,00
+          fornecimento e instalação
+          Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h - areia e
+1107890                                                                                  5      1,00
+          brita comerciais
+4507956 Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação                      5      1,00
+          Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm - fornecimento e
+4507768                                                                                  5      1,00
+          instalação
+          Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7 mm -
+4507830                                                                                  5      1,00
+          fornecimento, instalação e injeção de nata de cimento
+3806426 Lançamento de pré-laje com utilização de guindauto                               4      1,00
+3806420 Lançamento de viga pré-moldada de até 500 kN com utilização de guindaste         4      1,00
+          Concreto magro - confecção em betoneira e lançamento manual - areia e brita
+1106057                                                                                  5      1,00
+          comerciais
+2007971 Dreno de PVC D = 100 mm para OAE - fornecimento e instalação                     5      1,00
+
+
+2.1.5 Cálculo do Fator de Influência de Chuvas – FIC
+
+O Fator de Influência de Chuvas é calculado pela aplicação da Equação 8 do
+Manual de Custos de Infraestrutura de Transportes - Volume 04: Fator de
+Influência de Chuvas (FIC) - 2ª Edição, transcrita a seguir:
+
+                             FIC = fa × {1 + [(1 - C) × fr]} × nd
+
+onde:
+
+FIC representa o fator de influência de chuvas;
+fa representa o fator da natureza da atividade;
+C representa o coeficiente de deflúvio ou runoff;
+fr representa o fator de retenção;
+nd representa o fator de intensidade das chuvas.
+
+Para fins de exemplificação, são aplicados os fatores correspondentes aos
+serviços listados a seguir. Ressalta-se que o fator fa é igual a 1, uma vez que
+todos os serviços são afetados pela chuva.
+
+2.1.5.1 Escavação, carga e transporte em material de 1ª categoria - DMT de
+        50 m - Código SICRO: 5501710
+
+O serviço em questão é classificado na etapa 2, pois é executado após o
+desmatamento e antes da regularização do subleito. Outrossim, tratando-se de
+um serviço de terraplenagem, aplica-se o nd geotécnico. Considerando a
+Unidade Federativa de São Paulo como referência, obtém-se C = 0,73 e fr =
+0,75, resultando em um FIC igual a:
+
+                      FIC = 1 × {1 + [(1 - 0,73) × 0,75]} × 0,11205
+
+                                          FIC = 0,13474
+
+
+                                                  21
+              Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+2.1.5.2 Base estabilizada granulometricamente com mistura de solos na pista
+        com material de jazida - Código SICRO: 4011221
+
+O serviço de base estabilizada granulometricamente é classificado na etapa 3,
+uma vez que é realizado após a regularização do subleito e antes da
+impermeabilização da camada. Ademais, tratando-se de um serviço de
+pavimentação, aplica-se o nd geotécnico, assim como para a atividade auxiliar
+de escavação e carga de material de jazida. Considerando a Unidade Federativa
+de São Paulo como referência, obtém-se C = 0,70 e fr = 1,00, resultando em um
+FIC igual a:
+
+                 FIC = 1 × {1 + [(1 - 0,70) × 1,00]} × 0,11205
+
+                                  FIC = 0,14567
+
+2.1.5.3 Concreto asfáltico - faixa C - areia e brita comerciais - Código SICRO:
+        4011463
+
+O serviço de revestimento com emprego de concreto asfáltico a quente está
+classificado na etapa 4, pois acontece após a conclusão da impermeabilização
+da base e/ou sub-base. Outrossim, tratando-se de um serviço de pavimentação,
+aplica-se o nd geotécnico, assim como para a atividade auxiliar de usinagem do
+concreto asfáltico. Considerando a Unidade Federativa de São Paulo como
+referência, obtém-se C = 0,95 e fr = 1,00, resultando em um FIC igual a:
+
+                 FIC = 1 × {1 + [(1 - 0,95) × 1,00]} × 0,11205
+
+                                  FIC = 0,11766
+
+2.1.5.4 Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h -
+        areia e brita comerciais - Código SICRO: 1107890
+
+Por fim, a execução de concreto com confecção em central dosadora está
+classificada na etapa 5, pois as condições de contorno do serviço independem
+dos demais parâmetros estabelecidos para o coeficiente de deflúvio. Outrossim,
+tratando-se de um serviço do grupo de concreto, aplica-se o nd padrão.
+Considerando a Unidade Federativa de São Paulo como referência, obtém-se C
+= 1,00 e fr = 1,00, resultando em um FIC igual a:
+
+                 FIC = 1 × {1 + [(1 - 1,00) × 1,00]} × 0,03143
+
+                                  FIC = 0,03143
+
+2.1.5.5 Demais serviços com incidência do FIC
+
+A tabela 11 apresenta os valores de FIC correspondentes a todas as
+composições de custos cuja equipe é paralisada na ocasião de chuvas, as quais
+foram listadas na tabela 3.
+
+
+
+
+                                         22
+                                                   Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+                                              Tabela 11 - Resumo dos fatores e valor do FIC para cada serviço
+Código
+                                                              Descrição                                                           nd      fa    C      fr     FIC
+SICRO
+5501700 Desmatamento, destocamento e limpeza de área com árvores de diâmetro até 0,15 m                                         0,11205   1    0,35   0,75   0,16668
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m                                                                   0,11205   1    0,35   0,75   0,16668
+5501710 Escavação, carga e transporte em material de 1ª categoria - DMT de 50 m                                                 0,11205   1    0,73   0,75   0,13474
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 50 a 200 m - caminho de serviço em revestimento
+5502135                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 200 a 400 m - caminho de serviço em revestimento
+5502136                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 400 a 600 m - caminho de serviço em revestimento
+5502137                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 600 a 800 m - caminho de serviço em revestimento
+5502138                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria - DMT de 800 a 1.000 m - caminho de serviço em
+5502139                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          revestimento primário - com escavadeira e caminhão basculante de 14 m³
+5502187 Escavação, carga e transporte de material de 2ª categoria - DMT de 50 m                                                 0,11205   1    0,73   0,75   0,13474
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 50 a 200 m - caminho de serviço em revestimento
+5502611                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria - DMT de 200 a 400 m - caminho de serviço em revestimento
+5502612                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 50 a 200 m - caminho de serviço em revestimento
+5502768                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com caminhão basculante de 12 m³
+          Escavação, carga e transporte de material de 3ª categoria - DMT de 200 a 400 m - caminho de serviço em revestimento
+5502769                                                                                                                         0,11205   1    0,73   0,75   0,13474
+          primário - com caminhão basculante de 12 m³
+5502978 Compactação de aterros a 100% do Proctor normal                                                                         0,11205   1    0,73   0,75   0,13474
+5503041 Compactação de aterros a 100% do Proctor intermediário                                                                  0,11205   1    0,73   0,75   0,13474
+
+
+
+
+                                                                                  23
+                                                     Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+                                             Tabela 11 - Resumo dos fatores e valor do FIC para cada serviço (2/4)
+Código
+                                                                  Descrição                                                        nd      fa    C      fr     FIC
+SICRO
+4413984 Regularização de bota-fora com espalhamento e compactação                                                                0,03143   1    0,73   0,75   0,03779
+4011209 Regularização do subleito                                                                                                0,11205   1    0,73   0,75   0,13474
+4011228 Sub-base estabilizada granulometricamente com mistura de solos na pista com material de jazida                           0,11205   1    0,70   1,00   0,14567
+4011221 Base estabilizada granulometricamente com mistura de solos na pista com material de jazida                               0,11205   1    0,70   1,00   0,14567
+4011351 Imprimação com asfalto diluído                                                                                           0,11205   1    0,70   1,00   0,14567
+4011353 Pintura de ligação                                                                                                       0,11205   1    0,70   1,00   0,14567
+4011370 Tratamento superficial duplo com emulsão - brita comercial                                                               0,11205   1    0,95   1,00   0,11766
+4011458 Concreto asfáltico - faixa B - areia extraída e brita produzida                                                          0,11205   1    0,95   1,00   0,11766
+4011463 Concreto asfáltico - faixa C - areia e brita comerciais                                                                  0,11205   1    0,95   1,00   0,11766
+          Sarjeta triangular de canteiro central de concreto - STCC 100-25 moldada no local com extrusora e concreto usinado -
+2003975                                                                                                                          0,03143   1    0,95   1,00   0,03300
+          areia e brita comerciais
+2003572 Dreno longitudinal profundo para corte em solo - DPS 01 - tubo PEAD e areia comercial                                    0,03143   1    0,70   1,00   0,04086
+2003947 Meio-fio de concreto - MFC 05 moldado no local com extrusora e concreto usinado - areia e brita comerciais               0,03143   1    0,95   1,00   0,03300
+2003943 Meio-fio de concreto - MFC 03 moldado no local com extrusora e concreto usinado - areia e brita comerciais               0,03143   1    0,95   1,00   0,03300
+2003393 Descida d'água de aterros tipo rápido - DAR 03 - areia e brita comerciais                                                0,03143   1    0,70   1,00   0,04086
+2003459 Dissipador de energia - DEB 06 - areia, brita e pedra de mão comerciais                                                  0,03143   1    0,70   1,00   0,04086
+2003463 Dissipador de energia - DEB 08 - areia, brita e pedra de mão comerciais                                                  0,03143   1    0,70   1,00   0,04086
+2003589 Dreno longitudinal profundo para corte em rocha - DPR 01 - tubo PEAD e brita comercial                                   0,03143   1    0,70   1,00   0,04086
+4805757 Escavação mecânica de vala em material de 1ª categoria                                                                   0,03143   1    0,73   0,75   0,03779
+4805751 Escavação manual em material de 1ª categoria na profundidade de 1 a 2 m                                                  0,03143   1    0,73   0,75   0,03779
+4815671 Reaterro e compactação com soquete vibratório                                                                            0,03143   1    0,73   0,75   0,03779
+1600404 Remoção de tubos de concreto com diâmetro de 0,40 m a 1,00 m em valas e bueiros                                          0,03143   1    0,70   1,00   0,04086
+0804037 Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão comerciais                                                    0,03143   1    0,73   0,75   0,03779
+
+
+
+
+                                                                                    24
+                                                     Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+                                             Tabela 11 - Resumo dos fatores e valor do FIC para cada serviço (3/4)
+Código
+                                                                  Descrição                                                        nd      fa    C      fr     FIC
+SICRO
+0804045 Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão comerciais                                                    0,03143   1    0,73   0,75   0,03779
+0804205 Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                                                    0,03143   1    0,73   0,75   0,03779
+0804309 Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão comerciais                                                    0,03143   1    0,73   0,75   0,03779
+5213440 Placa de regulamentação em aço D = 0,60 m - película retrorrefletiva tipo I + SI - fornecimento e implantação            0,03143   1    1,00   1,00   0,03143
+5213464 Placa de advertência em aço, lado de 0,60 m - película retrorrefletiva tipo I + SI - fornecimento e implantação          0,03143   1    1,00   1,00   0,03143
+          Suporte metálico galvanizado para placa de advertência ou regulamentação - lado ou diâmetro de 0,60 m - fornecimento
+5213863                                                                                                                          0,03143   1    1,00   1,00   0,03143
+          e implantação
+5213401 Pintura de faixa com tinta acrílica - espessura de 0,6 mm                                                                0,03143   1    0,95   1,00   0,03300
+5213405 Pintura de setas e zebrados com tinta acrílica - espessura de 0,6 mm                                                     0,03143   1    0,95   1,00   0,03300
+5219612 Tacha refletiva em plástico injetado - monodirecional tipo I - fornecimento e colocação                                  0,03143   1    0,95   1,00   0,03300
+5219605 Tacha refletiva em plástico injetado - bidirecional tipo I - fornecimento e colocação                                    0,03143   1    0,95   1,00   0,03300
+5213362 Tachão refletivo em plástico injetado - bidirecional - fornecimento e colocação                                          0,03143   1    0,95   1,00   0,03300
+3713604 Defensa semimaleável simples - fornecimento e implantação                                                                0,03143   1    1,00   1,00   0,03143
+3713613 Cerca com 4 fios de arame liso galvanizado e mourão de madeira a cada 2,5 m e esticador a cada 50 m                      0,03143   1    1,00   1,00   0,03143
+4413905 Hidrossemeadura                                                                                                          0,03143   1    0,73   0,75   0,03779
+4413996 Enleivamento                                                                                                             0,03143   1    0,73   0,75   0,03779
+4413990 Plantio de muda de arbusto com altura até 0,50 m em cova de 0,40 x 0,40 x 0,40 m                                         0,03143   1    1,00   1,00   0,03143
+6106183 Escavação manual de base alargada de tubulão a céu aberto em material de 1ª categoria na profundidade de 10 a 15 m       0,11205   1    0,73   0,75   0,13474
+6106222 Escavação manual de fuste de tubulão a céu aberto em material de 1ª categoria na profundidade de 10 a 15 m               0,11205   1    0,73   0,75   0,13474
+          Concreto autoadensável com silicato de alumínio fck = 20 MPa - confecção em central dosadora de 30 m³/h - areia e
+1100658                                                                                                                          0,03143   1    1,00   1,00   0,03143
+          brita comerciais
+1119528 Concreto fck = 25 MPa - confecção em central dosadora de 30 m³/h - areia e brita comerciais                              0,03143   1    1,00   1,00   0,03143
+1100657 Adensamento de concreto por vibrador de imersão                                                                          0,03143   1    1,00   1,00   0,03143
+
+
+
+
+                                                                                     25
+                                                    Caderno de Aplicação - Fator de Influência de Chuvas - FIC
+
+
+
+                                            Tabela 11 - Resumo dos fatores e valor do FIC para cada serviço (4/4)
+Código
+                                                                Descrição                                                           nd      fa    C      fr     FIC
+SICRO
+          Lançamento mecânico de concreto com bomba rebocável com capacidade de 30 m³/h - confecção em central dosadora
+1106088                                                                                                                           0,03143   1    1,00   1,00   0,03143
+          de 30 m³/h
+0307731 Aparelho de apoio de neoprene fretado para estruturas moldadas no local - fornecimento e instalação                       0,03143   1    1,00   1,00   0,03143
+1107890 Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h - areia e brita comerciais                               0,03143   1    1,00   1,00   0,03143
+4507956 Cordoalha CP 190 RB D = 12,7 mm - fornecimento e instalação                                                               0,03143   1    1,00   1,00   0,03143
+4507768 Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm - fornecimento e instalação                                        0,03143   1    1,00   1,00   0,03143
+4507830 Bainha metálica redonda D = 50 mm para 6 cordoalhas D = 12,7 mm - fornecimento, instalação e injeção de nata de cimento   0,03143   1    1,00   1,00   0,03143
+3806426 Lançamento de pré-laje com utilização de guindauto                                                                        0,03143   1    0,95   1,00   0,03300
+3806420 Lançamento de viga pré-moldada de até 500 kN com utilização de guindaste                                                  0,03143   1    0,95   1,00   0,03300
+1106057 Concreto magro - confecção em betoneira e lançamento manual - areia e brita comerciais                                    0,03143   1    1,00   1,00   0,03143
+2007971 Dreno de PVC D = 100 mm para OAE - fornecimento e instalação                                                              0,03143   1    1,00   1,00   0,03143
+
+
+
+
+                                                                                   26
+                 Caderno de Aplicação - Fator de influência de chuvas
+
+
+2.1.6 Aplicação do Fator de Influência de Chuvas – FIC
+
+O Fator de Influência de Chuvas – FIC calculado na subseção 2.1.5.4 deve ser
+aplicado ao custo unitário improdutivo da composição de custos, o qual é obtido
+pela Equação 9 do Manual de Custos de Infraestrutura de Transportes - Volume
+04: Fator de Influência de Chuvas (FIC) - 2ª Edição, transcrita a seguir:
+
+                                Cht,mdo + ∑(Qequip × Chi,equip )
+                         Ci =
+                                             P
+
+onde:
+
+Ci representa o custo unitário improdutivo na composição de custos, em reais
+por unidade do serviço;
+Cht,mdo representa o custo horário total de mão de obra na composição de custos,
+em reais por hora;
+Qequip representa a quantidade do equipamento na composição de custos;
+Chi,equip representa o custo horário improdutivo do equipamento, em reais por
+hora;
+P representa a produção horária do serviço, em unidade do serviço por hora.
+
+Logo, o custo do FIC passa a ser representado pela Equação 10 do referido
+Manual:
+
+                                    CFIC = FIC × Ci
+
+onde:
+
+CFIC representa o custo do FIC na composição de custos, em reais por unidade
+do serviço;
+FIC representa o fator de influência de chuvas;
+Ci representa o custo unitário improdutivo na composição de custos, em reais
+por unidade do serviço.
+
+Seguindo os mesmos exemplos apresentados na subseção 2.1.5, são
+detalhados a seguir a aplicação do FIC em cada serviço.
+
+2.1.6.1 Escavação, carga e transporte em material de 1ª categoria - DMT de
+        50 m - Código SICRO: 5501710:
+
+O serviço em epígrafe tem sua parcela horária composta da seguinte forma:
+
+   ▪ E9541 - Trator sobre esteiras com lâmina - 259 kW: 1 unidade;
+   ▪ P9824 - Servente: 1 unidade.
+
+Dessa forma, o custo unitário improdutivo da composição de custos e o custo do
+FIC são obtidos:
+
+                         27,1040 + (1,00 × 304,0518)
+                  Ci =                               = 1,1571
+                                   286,19
+
+
+
+                                            27
+                 Caderno de Aplicação - Fator de influência de chuvas
+
+
+
+                       CFIC = 0,13474 × 1,1571 = 0,1559
+
+2.1.6.2 Base estabilizada granulometricamente com mistura de solos na pista
+        com material de jazida - Código SICRO: 4011221:
+
+O serviço em epígrafe tem sua parcela horária composta da seguinte forma:
+
+    ▪ E9571 - Caminhão tanque com capacidade de 10.000 l - 188 kW: 1 unidade;
+    ▪ E9518 - Grade de 24 discos rebocável de D = 60 cm (24"): 1 unidade;
+    ▪ E9524 - Motoniveladora - 93 kW: 1 unidade;
+    ▪ E9762 - Rolo compactador de pneus autopropelido de 27 t - 85 kW: 1
+      unidade;
+    ▪ E9685 - Rolo compactador pé de carneiro vibratório autopropelido por
+      pneus de 11,6 t - 82 kW: 1 unidade;
+    ▪ E9577 - Trator agrícola sobre pneus - 77 kW: 1 unidade;
+    ▪ P9824 - Servente: 1 unidade.
+
+Tendo em vista a quantidade de equipamentos presentes na CCU, a parcela do
+custo unitário improdutivo associada aos equipamentos será calculada
+separadamente:
+
+∑ (Qequip × Chi,equip ) = (1,00 × 84,8794) + (1,00 × 3,3107) + (1,00 × 123,2241) +
+         (1,00 × 117,4334) + (1,00 × 88,9322) + (1,00 × 47,4678) = 465,2476
+
+Dessa forma, o custo unitário improdutivo da composição de custos e o custo do
+FIC são obtidos:
+
+                             27,1040 + 465,2476
+                      Ci =                      = 3,2632
+                                   150,88
+
+                       CFIC = 0,14567 × 3,2632 = 0,4754
+
+2.1.6.3 Concreto asfáltico - faixa C - areia e brita comerciais - Código SICRO:
+        4011463:
+
+O serviço em epígrafe tem sua parcela horária composta da seguinte forma:
+
+    ▪ E9762 - Rolo compactador de pneus autopropelido de 27 t - 85 kW: 1
+      unidade;
+    ▪ E9681 - Rolo compactador liso tandem vibratório autopropelido de 10,4 t
+      - 82 kW: 1 unidade;
+    ▪ E9545 - Vibroacabadora de asfalto sobre esteiras - 82 kW: 1 unidade;
+    ▪ P9824 - Servente: 8 unidades.
+
+
+
+
+                                         28
+                      Caderno de Aplicação - Fator de influência de chuvas
+
+
+Dessa forma, o custo unitário improdutivo da composição de custos e o custo do
+FIC são obtidos:
+
+          216,8320 + [(1,00 × 117,4334) + (1,00 × 98,8954) + (1,00 × 209,1892)]
+ Ci =
+                                         99,60
+
+                                           Ci = 6,4493
+
+                             CFIC = 0,11766 × 6,4493 = 0,7588
+
+2.1.6.4 Concreto fck = 30 MPa - confecção em central dosadora de 30 m³/h -
+        areia e brita comerciais - Código SICRO: 1107890
+
+O serviço em epígrafe tem sua parcela horária composta da seguinte forma:
+
+    ▪ E9584 - Carregadeira de pneus com capacidade de 1,72 m³ - 113 kW: 1
+      unidade;
+    ▪ E9599 - Central de concreto com capacidade de 30 m³/h - dosadora RS:
+      1 unidade;
+    ▪ E9779 - Grupo gerador - 113 kVA: 1 unidade;
+    ▪ P9824 - Servente: 2 unidades.
+
+Dessa forma, o custo unitário improdutivo da composição de custos e o custo do
+FIC são obtidos:
+
+            54,2080 + [(1,00 × 93,5405) + (1,00 × 60,5319) + (1,00 × 8,0313)]
+    Ci =
+                                         24,90
+
+                                           Ci = 8,6872
+
+                             CFIC = 0,03143 × 8,6872 = 0,2730
+
+2.1.6.5 Demais serviços com incidência do FIC
+
+Por fim, os cálculos foram aplicados às demais composições de custos presentes
+na tabela 3, cujos resultados podem ser observados na tabela 12.
+
+                           Tabela 12 - Custos com incidência do FIC
+ Código
+                                     Descrição                                  Ci         CFIC
+ SICRO
+           Desmatamento, destocamento e limpeza de área com árvores de
+5501700                                                                       R$ 0,2337   R$ 0,0390
+           diâmetro até 0,15 m
+5501702 Destocamento de árvores com diâmetro maior que 0,30 m                R$ 43,1638   R$ 7,1945
+           Escavação, carga e transporte em material de 1ª categoria - DMT
+5501710                                                                       R$ 1,1571   R$ 0,1559
+           de 50 m
+        Escavação, carga e transporte de material de 1ª categoria - DMT
+5502135 de 50 a 200 m - caminho de serviço em revestimento primário -         R$ 1,9965   R$ 0,2690
+        com escavadeira e caminhão basculante de 14 m³
+
+
+
+
+                                                 29
+                    Caderno de Aplicação - Fator de influência de chuvas
+
+
+                       Tabela 12 - Custos com incidência do FIC (2/4)
+
+Código
+                                      Descrição                                Ci         CFIC
+SICRO
+          Escavação, carga e transporte de material de 1ª categoria -
+5502136   DMT de 200 a 400 m - caminho de serviço em revestimento            R$ 2,4159   R$ 0,3255
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria -
+5502137   DMT de 400 a 600 m - caminho de serviço em revestimento            R$ 2,4159   R$ 0,3255
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria -
+5502138   DMT de 600 a 800 m - caminho de serviço em revestimento            R$ 2,4159   R$ 0,3255
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 1ª categoria -
+5502139   DMT de 800 a 1.000 m - caminho de serviço em revestimento          R$ 2,4159   R$ 0,3255
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria -
+5502187                                                                      R$ 3,0726   R$ 0,4140
+          DMT de 50 m
+          Escavação, carga e transporte de material de 2ª categoria -
+5502611   DMT de 50 a 200 m - caminho de serviço em revestimento             R$ 3,4919   R$ 0,4705
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 2ª categoria -
+5502612   DMT de 200 a 400 m - caminho de serviço em revestimento            R$ 3,4919   R$ 0,4705
+          primário - com escavadeira e caminhão basculante de 14 m³
+          Escavação, carga e transporte de material de 3ª categoria -
+5502768   DMT de 50 a 200 m - caminho de serviço em revestimento            R$ 11,9724   R$ 1,6132
+          primário - com caminhão basculante de 12 m³
+          Escavação, carga e transporte de material de 3ª categoria -
+5502769   DMT de 200 a 400 m - caminho de serviço em revestimento           R$ 11,9724   R$ 1,6132
+          primário - com caminhão basculante de 12 m³
+5502978   Compactação de aterros a 100% do Proctor normal                    R$ 2,2290   R$ 0,3003
+5503041   Compactação de aterros a 100% do Proctor intermediário             R$ 4,8760   R$ 0,6570
+4413984   Regularização de bota-fora com espalhamento e compactação          R$ 1,3668   R$ 0,0517
+4011209   Regularização do subleito                                          R$ 0,5148   R$ 0,0694
+          Sub-base estabilizada granulometricamente com mistura de
+4011228                                                                      R$ 3,2632   R$ 0,4754
+          solos na pista com material de jazida
+          Base estabilizada granulometricamente com mistura de solos
+4011221                                                                      R$ 3,2632   R$ 0,4754
+          na pista com material de jazida
+4011351   Imprimação com asfalto diluído                                     R$ 0,1814   R$ 0,0264
+4011353   Pintura de ligação                                                 R$ 0,1360   R$ 0,0198
+4011370   Tratamento superficial duplo com emulsão - brita comercial         R$ 1,3613   R$ 0,1602
+4011458   Concreto asfáltico - faixa B - areia extraída e brita produzida    R$ 6,4493   R$ 0,7588
+4011463   Concreto asfáltico - faixa C - areia e brita comerciais            R$ 6,4493   R$ 0,7588
+          Sarjeta triangular de canteiro central de concreto - STCC 100-
+2003975   25 moldada no local com extrusora e concreto usinado - areia e     R$ 3,5561   R$ 0,1174
+          brita comerciais
+          Dreno longitudinal profundo para corte em solo - DPS 01 - tubo
+2003572                                                                     R$ 28,9135   R$ 1,1814
+          PEAD e areia comercial
+          Meio-fio de concreto - MFC 05 moldado no local com extrusora
+2003947                                                                      R$ 1,2287   R$ 0,0405
+          e concreto usinado - areia e brita comerciais
+          Meio-fio de concreto - MFC 03 moldado no local com extrusora
+2003943                                                                      R$ 1,5450   R$ 0,0510
+          e concreto usinado - areia e brita comerciais
+
+
+
+
+                                                  30
+                     Caderno de Aplicação - Fator de influência de chuvas
+
+
+                       Tabela 12 - Custos com incidência do FIC (3/4)
+
+Código
+                                     Descrição                                Ci           CFIC
+SICRO
+          Descida d'água de aterros tipo rápido - DAR 03 - areia e brita
+2003393                                                                      R$ 0,6505    R$ 0,0266
+          comerciais
+          Dissipador de energia - DEB 06 - areia, brita e pedra de mão
+2003459                                                                    R$ 101,7376    R$ 4,1570
+          comerciais
+          Dissipador de energia - DEB 08 - areia, brita e pedra de mão
+2003463                                                                    R$ 106,0308    R$ 4,3324
+          comerciais
+          Dreno longitudinal profundo para corte em rocha - DPR 01 -
+2003589                                                                     R$ 24,7853    R$ 1,0127
+          tubo PEAD e brita comercial
+4805757   Escavação mecânica de vala em material de 1ª categoria             R$ 4,0321    R$ 0,1524
+          Escavação manual em material de 1ª categoria na
+4805751                                                                     R$ 67,7600    R$ 2,5607
+          profundidade de 1 a 2 m
+4815671   Reaterro e compactação com soquete vibratório                     R$ 17,7590    R$ 0,6711
+          Remoção de tubos de concreto com diâmetro de 0,40 m a
+1600404                                                                      R$ 6,8080    R$ 0,2782
+          1,00 m em valas e bueiros
+          Corpo de BSTC D = 1,00 m PA1 - areia, brita e pedra de mão
+0804037                                                                     R$ 64,9643    R$ 2,4550
+          comerciais
+          Corpo de BSTC D = 1,20 m PA1 - areia, brita e pedra de mão
+0804045                                                                     R$ 81,2054    R$ 3,0688
+          comerciais
+          Corpo de BDTC D = 1,50 m PA1 - areia, brita e pedra de mão
+0804205                                                                    R$ 211,1346    R$ 7,9788
+          comerciais
+          Corpo de BTTC D = 1,50 m PA1 - areia, brita e pedra de mão
+0804309                                                                    R$ 316,7019   R$ 11,9682
+          comerciais
+          Placa de regulamentação em aço D = 0,60 m - película
+5213440                                                                     R$ 49,8754    R$ 1,5676
+          retrorrefletiva tipo I + SI - fornecimento e implantação
+          Placa de advertência em aço, lado de 0,60 m - película
+5213464                                                                     R$ 49,8754    R$ 1,5676
+          retrorrefletiva tipo I + SI - fornecimento e implantação
+          Suporte metálico galvanizado para placa de advertência ou
+5213863   regulamentação - lado ou diâmetro de 0,60 m - fornecimento e      R$ 29,8834    R$ 0,9392
+          implantação
+5213401   Pintura de faixa com tinta acrílica - espessura de 0,6 mm          R$ 1,9777    R$ 0,0653
+          Pintura de setas e zebrados com tinta acrílica - espessura de
+5213405                                                                      R$ 9,7903    R$ 0,3231
+          0,6 mm
+          Tacha refletiva em plástico injetado - monodirecional tipo I -
+5219612                                                                      R$ 4,9801    R$ 0,1643
+          fornecimento e colocação
+          Tacha refletiva em plástico injetado - bidirecional tipo I -
+5219605                                                                      R$ 4,9801    R$ 0,1643
+          fornecimento e colocação
+          Tachão refletivo em plástico injetado - bidirecional -
+5213362                                                                     R$ 11,7178    R$ 0,3867
+          fornecimento e colocação
+3713604   Defensa semimaleável simples - fornecimento e implantação          R$ 4,1060    R$ 0,1291
+          Cerca com 4 fios de arame liso galvanizado e mourão de
+3713613                                                                     R$ 10,8416    R$ 0,3408
+          madeira a cada 2,5 m e esticador a cada 50 m
+4413905   Hidrossemeadura                                                    R$ 0,8476    R$ 0,0320
+4413996   Enleivamento                                                       R$ 5,4208    R$ 0,2049
+          Plantio de muda de arbusto com altura até 0,50 m em cova de
+4413990                                                                      R$ 4,5066    R$ 0,1416
+          0,40 x 0,40 x 0,40 m
+          Escavação manual de base alargada de tubulão a céu aberto
+6106183                                                                    R$ 379,2454   R$ 51,0995
+          em material de 1ª categoria na profundidade de 10 a 15 m
+
+
+
+
+                                                   31
+                    Caderno de Aplicação - Fator de influência de chuvas
+
+
+                      Tabela 12 - Custos com incidência do FIC (4/4)
+
+Código
+                                   Descrição                               Ci           CFIC
+SICRO
+          Escavação manual de fuste de tubulão a céu aberto em
+6106222                                                                R$ 379,2454    R$ 51,0995
+          material de 1ª categoria na profundidade de 10 a 15 m
+          Concreto autoadensável com silicato de alumínio fck = 20
+1100658   MPa - confecção em central dosadora de 30 m³/h - areia e       R$ 8,6872     R$ 0,2730
+          brita comerciais
+          Concreto fck = 25 MPa - confecção em central dosadora de
+1119528                                                                  R$ 8,6872     R$ 0,2730
+          30 m³/h - areia e brita comerciais
+1100657   Adensamento de concreto por vibrador de imersão                R$ 3,0960     R$ 0,0973
+          Lançamento mecânico de concreto com bomba rebocável
+1106088   com capacidade de 30 m³/h - confecção em central dosadora     R$ 11,5799     R$ 0,3640
+          de 30 m³/h
+          Aparelho de apoio de neoprene fretado para estruturas
+0307731                                                                 R$ 27,2081     R$ 0,8552
+          moldadas no local - fornecimento e instalação
+          Concreto fck = 30 MPa - confecção em central dosadora de
+1107890                                                                  R$ 8,6872     R$ 0,2730
+          30 m³/h - areia e brita comerciais
+          Cordoalha CP 190 RB D = 12,7 mm - fornecimento e
+4507956                                                                  R$ 0,3880     R$ 0,0122
+          instalação
+          Ancoragem ativa com 6 cordoalhas aderentes D = 12,7 mm -
+4507768                                                                 R$ 25,6860     R$ 0,8073
+          fornecimento e instalação
+          Bainha metálica redonda D = 50 mm para 6 cordoalhas D =
+4507830   12,7 mm - fornecimento, instalação e injeção de nata de       R$ 11,0618     R$ 0,3477
+          cimento
+3806426   Lançamento de pré-laje com utilização de guindauto            R$ 27,9815     R$ 0,9234
+          Lançamento de viga pré-moldada de até 500 kN com
+3806420                                                               R$ 2.212,8289   R$ 73,0234
+          utilização de guindaste
+          Concreto magro - confecção em betoneira e lançamento
+1106057                                                                 R$ 78,0590     R$ 2,4534
+          manual - areia e brita comerciais
+          Dreno de PVC D = 100 mm para OAE - fornecimento e
+2007971                                                                 R$ 13,5520     R$ 0,4259
+          instalação
+
+
+
+
+                                               32

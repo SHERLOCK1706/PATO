@@ -1,0 +1,525 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Misturas asfálticas:
+Conceituação, Materiais
+e Dosagem
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Brasília, maio de 2022.
+DNIT A Misturas asfálticas:
+
+Conceituação,
+Materiais e Dosagem
+
+Módulo
+
+Tipos de
+Revestimentos
+Asfálticos
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Instituto de Brasília, maio de 2022.
+Pesquisas em
+Transportes
+
+                                                     LISTA DE FIGURAS
+Figura 1 - Curvas granulométricas de diferentes misturas a quente ................................................................................ 2
+Figura 2 – Ação da Camada Porosa de Atrito .................................................................................................................. 4
+Figura 3 - Esqueleto Mineral SMA .................................................................................................................................... 5
+Figura 4 - Composições granulométricas comparativas entre um SMA e um CA ........................................................... 5
+Figura 5 - Comparativo Faixa C e Gap-Graded ................................................................................................................ 6
+Figura 6 - Exemplo de aplicação de microrrevestimento asfáltico ................................................................................. 10
+Figura 7 - Exemplo de fresadora e de serviço de fresagem em uma rodovia .................................................................. 8
+Figura 8 - Esquemas de tratamentos superficiais........................................................................................................... 11
+Figura 9 - Etapas construtivas do tratamento superficial simples .................................................................................. 12
+                                                 SUMÁRIO
+1.     TIPOS DE REVESTIMENTOS ASFÁLTICOS ...................................................................................................... 1
+2.     MISTURAS USINADAS ......................................................................................................................................... 1
+     2.1      MISTURAS USINADAS A QUENTE ............................................................................................................ 1
+       2.1.1.        Concreto Asfáltico Denso (CA) .................................................................................................................. 2
+       2.1.2.        Areia Asfalto Usinada a Quente (AAUQ) ................................................................................................... 3
+       2.1.3.        Camada Porosa de Atrito (CPA) ................................................................................................................ 3
+       2.1.4.        Stone Matrix Asphalt - SMA ...................................................................................................................... 4
+       2.1.5.        Gap - Graded ............................................................................................................................................. 6
+     2.2      MISTURAS USINADAS A FRIO ................................................................................................................... 6
+3.     MISTURAS ASFÁLTICAS RECICLADAS ........................................................................................................... 7
+4.     MISTURAS IN SITU - USINAS MÓVEIS .............................................................................................................. 8
+           2.4.1         Lama Asfáltica ....................................................................................................................................... 9
+           2.4.2         Microrrevestimento asfáltico................................................................................................................ 9
+5.     TRATAMENTOS SUPERFICIAIS ....................................................................................................................... 10
+6.     REFERÊNCIAS ...................................................................................................................................................... 13
+                                                                                   1
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+
+
+   1. TIPOS DE REVESTIMENTOS ASFÁLTICOS
+          Os pavimentos rodoviários são estruturas de múltiplas camadas, sendo o
+revestimento a camada que se destina a receber a carga dos veículos e mais
+diretamente a ação climática (BERNUCCI et al., 2008).
+
+          São três os principais tipos de pavimentos em uso na atualidade. O mais
+usual, principalmente no Brasil é o pavimento flexível, que é construído a partir de
+bases granulares com o revestimento com material asfáltico. Também existe o
+pavimento semirrígido, que se diferencia por ter uma base cimentada, mantendo o
+revestimento flexível com material asfáltico. O terceiro tipo envolve os Pavimentos
+Rígidos, em que o revestimento é constituído por placas rígidas de concreto.
+
+          Neste curso, tratamos dos revestimentos flexíveis, construídos com
+materiais asfálticos, que aqui serão denominados revestimentos asfálticos. Sua
+fabricação pode ser realizada em uma usina específica (misturas usinadas), fixa ou
+móvel, ou ainda preparadas na própria pista (para tratamentos superficiais).
+
+          Os revestimentos são também identificados quanto ao tipo de ligante: a
+quente com uso de Cimento Asfáltico de Petróleo – CAP ou a frio com uso de
+Emulsões Asfálticas de Petróleo - EAP.
+
+
+
+
+   2. MISTURAS USINADAS
+          A mistura de agregados e ligantes é realizada em usina estacionária,
+posteriormente é transportada por caminhões até a pista e lançada em
+vibroacabadora. Em seguida, a massa é compactada até atingir um grau de
+compactação que resista às deformações permanentes e elásticas decorrentes da
+passagem do tráfego.
+
+
+
+        2.1    MISTURAS USINADAS A QUENTE
+
+          As misturas usinadas “a quente” podem ser abertas, descontínuas ou
+densas/contínuas.
+                                                                                  2
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+A mistura usinada aberta possui granulometria uniforme com agregados quase que
+exclusivamente do mesmo tamanho. O esqueleto mineral possui muitos vazios
+interconectados, o que possibilita a percolação de água no interior da mistura. Um
+exemplo é a camada porosa de atrito (CPA) ou mistura asfáltica drenante.
+
+          A mistura usinada descontínua possui a granulometria com grãos de
+maiores dimensões em quantidade dominante completados por agregados finos. A
+curva granulométrica é descontínua em algumas peneiras. Como exemplos: a Stone
+Matrix Asphalt - SMA e a mistura Gap-Graded (sem agregados de certa graduação).
+
+          A mistura densa, ou contínua, possui uma granulometria bem contínua e
+bem graduada. O esqueleto mineral possui poucos vazios devido à variação
+granulométrica. Os agregados menores preenchem os vazios dos agregados maiores.
+O exemplo principal é o Concreto Asfáltico (CA).
+
+          A Figura 1 mostra o gráfico de três diferentes curvas granulométricas de
+misturas do tipo SMA, CA e CPA.
+
+              Figura 1 - Curvas granulométricas de diferentes misturas a quente
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008
+
+
+
+        2.1.1. Concreto Asfáltico Denso (CA)
+
+          O concreto asfáltico convencional é uma mistura executada a quente, em
+usina apropriada, com características específicas, composta de agregado graduado,
+material de enchimento (fíler), se necessário, e CAP, espalhada e compactada a
+quente. As especificações do serviço estão em NORMA DNIT 031-2006-ES.
+                                                                                       3
+
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+           O concreto asfáltico especial pode ser do tipo modificado por polímero ou
+com asfalto-borracha ou ser produzido com asfalto duro, em mistura de módulo
+elevado, conhecida como Enrobé à Module Élevé - EME.
+
+           As misturas devem ter ligante suficiente para cobrir os agregados,
+apresentar vazios pós-compactação de 3 a 5 % (rolamento) e de 4 a 6 % (camada
+intermediária) e apresentar teor de asfalto entre 4,5 e 6 %.
+
+         2.1.2. Areia Asfalto Usinada a Quente (AAUQ)
+
+           Outro tipo de mistura comumente utilizada, quando não se consegue obter
+agregados graúdos, é a mistura Areia Asfalto Usinada a Quente. Ela utiliza como
+revestimento uma argamassa de areia e ligante que terá menor resistência às
+deformações permanentes e maior consumo de ligante. Para esta mistura pode-se,
+preferencialmente, utilizar o CAP (a quente) ou a EAP (a frio). As especificações do
+serviço para ligantes convencionais e com polímero estão em NORMA DNIT 032/2005
+- ES.
+
+         2.1.3. Camada Porosa de Atrito (CPA)
+
+           CPA ou Revestimento Asfáltico Drenante é uma mistura aberta, com
+grande porcentagem de vazios com ar não preenchidos, possui entre 18 e 25 % de
+vazios de ar e segue as especificações de serviço conforme norma DNER-ES 386/99
+- Pré - misturado a quente com asfalto polímero - camada porosa de atrito.
+
+           O CPA deve ser utilizado como camada de rolamento e aplicado sobre uma
+camada densa e estrutural. Ele promove o aumento da aderência pneu-pavimento em
+dias de chuva, reduz a lâmina d’água na superfície de rolamento, reduz as distâncias
+de frenagem e o spray (borrifo) de água dos pneus dos veículos, aumentando as
+distâncias de visibilidade, além de reduzir a reflexão da luz dos faróis noturnos. A ação
+da CPA em um revestimento asfáltico de um aeroporto é esboçada na Figura 2.
+                                                                                     4
+
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+                            Figura 2 – Ação da Camada Porosa de Atrito
+
+
+
+
+                               Fonte: Adaptado de INFRAERO, 2020.
+
+            A CPA é uma mistura drenante, pois permite a passagem de líquidos
+através de sua estrutura. As misturas apresentam vazios interconectados que
+permitem que ocorra a percolação da água através da superfície. E é também uma
+mistura porosa porque apresenta vazios que permitem a entrada de água, mas estes
+não estão conectados. Assim, os fluidos penetram na estrutura, que funciona como
+uma camada de retenção e são eliminados apenas por evaporação.
+
+            Os ligantes empregados para CPA devem apresentar baixa suscetibilidade
+térmica e alta resistência ao envelhecimento. O uso do ligante com polímero é uma
+exigência técnica e os agregados também devem estar dentro das especificações.
+
+          2.1.4. Stone Matrix Asphalt - SMA
+
+            A Matriz Pétrea de Asfalto, ou SMA, tem o objetivo de maximizar o contato
+entre os agregados graúdos, aumentando a interação grão a grão. A mistura
+descontínua possui um grande número de vazios preenchida com mástique asfáltico
+(areia, fíler, ligante e fibras).
+
+            A mistura possui teor de ligante entre 6 e 7,5 %, volume de vazios entre 4
+e 6 %, superfície rugosa formando pequenos canais que auxiliam na drenabilidade.
+Pode ser utilizada como camada de rolamento ou camada de ligação.
+                                                                                    5
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+                             Figura 3 - Esqueleto Mineral SMA
+
+
+
+
+                                  Fonte: GARCIA, 2016.
+
+
+         Figura 4 - Composições granulométricas comparativas entre um SMA e um CA
+
+
+
+
+                              Fonte: BERNUCCI et al., 2008.
+
+
+
+          O uso de SMA é recomendado em vias de alta frequência de caminhões,
+interseções, em áreas de carregamento e descarregamento de cargas, em rampas,
+pontes, paradas de ônibus, pistas de aeroporto, estacionamentos e portos.
+
+          A mistura do tipo SMA possui boa estabilidade a elevadas temperaturas,
+boa flexibilidade a baixas temperaturas, uma elevada resistência ao degaste, possui
+elevada adesividade entre agregados minerais e o ligante, boa resistência à
+derrapagem devido à macrotextura da superfície de rolamento, reduz o spray (borrifo)
+de água e também reduz o nível de ruído entre pneu e pavimento.
+
+          O SMA é especificado pela norma alemã ZTV Asphalt StB 94/2001, e
+apresenta 4 faixas de granulometria utilizadas. Para tráfego pesado são utilizadas as
+                                                                                 6
+
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+faixas granulométricas denominadas de 0/11S e 0/8S. A mistura é especificada ainda
+pela norma americana AASHTO MP 8-02 (BERNUCCI et al., 2008).
+
+        2.1.5. Gap - Graded
+
+          A mistura do tipo Gap-Graded possui graduação com intervalo (gap) -
+descontínua densa, com faixa granulométrica especial com macrotextura superficial
+aberta ou rugosa, mas sem um teor de vazios elevado. Seu uso vem sendo feito com
+ligante do tipo asfalto-borracha e é empregado como camada estrutural do
+revestimento ou como camada de rolamento.
+
+                      Figura 5 - Comparativo Faixa C e Gap-Graded
+
+
+
+
+                    Fonte: (Adaptado de ABEDA, PETROBRAS; 2009)
+
+          Na Figura 5 é possível verificar o aspecto de uma mistura típica Gap-
+graded, executada na Califórnia-EUA, em comparação da Faixa C do DNIT 031/2006-
+ES.
+
+
+
+        2.2    MISTURAS USINADAS A FRIO
+
+          As misturas do tipo pré-misturadas a frio (PMF) são compostas por
+   agregados graúdos, miúdos e de enchimento, adicionadas de emulsão asfáltica de
+   petróleo (EAP). Elas são indicadas para ruas e estradas de baixo volume de
+   tráfego ou ainda como camada intermediária e em operações de conservação e
+   manutenção.
+
+          As camadas de PMF podem ser espalhadas e compactadas à temperatura
+   ambiente (espessuras entre 30 e 70 mm). A execução do PMF é feita com
+   equipamentos mais simples, possui boa trabalhabilidade à temperatura ambiente,
+   boa adesividade, possui fácil estocagem e apresenta flexibilidade elevada.
+                                                                              7
+
+            MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+Pode -se utilizar misturas mais densas com graduação contínua - bem graduada e
+com baixo volume de vazios ou uma mistura mais aberta - com graduação uniforme
+e elevado número de vazios.
+
+       As especificações para PMF com emulsão catiônica convencional podem
+ser obtidas na NORMA DNIT 153/2010 - ES. Já as especificações para utilização
+de emulsões modificadas por polímero podem ser obtidas na norma DNER-ES
+390/99.
+
+
+
+
+3. MISTURAS ASFÁLTICAS RECICLADAS
+       Quando ocorre a necessidade de restaurar a capacidade de carga de um
+pavimento deteriorado estruturalmente, pode-se colocar espessuras adicionais de
+camadas no pavimento ou fresá-lo (corte com equipamento adequado), totalmente
+ou em parte, para execução de nova camada de revestimento asfáltico. O material
+gerado no corte, também conhecido como RAP (Reclaimed Asphalt Pavement),
+pode ser aproveitado na reciclagem.
+
+       Atualmente, há resoluções que dispõe sobre o reaproveitamento do RAP
+nas obras do DNIT. O reaproveitamento do RAP eventualmente produzido no
+empreendimento deve ser incluído em projeto e aplicado nas camadas de
+pavimento a serem construídas ou na execução de novos concretos asfálticos.
+
+       A reciclagem de pavimento é o processo de reutilização de misturas
+asfálticas envelhecidas e deterioradas para produção de novas misturas,
+aproveitando os agregados e ligantes remanescentes, provenientes da fresagem,
+com acréscimo de agentes rejuvenescedores, espuma de asfalto, CAP ou EAP
+novos, quando necessários, e também com adição de aglomerantes hidráulicos
+(BERNUCCI et al., 2008).
+
+       As fresadoras são maquinários especializados em processar o corte no
+pavimento, utilizando pontas (bits) cortantes pela presença de diamantes nas
+mesmas. A Figura 6 mostra o reaproveitamento do material recolhido em caminhão
+e a ranhura na superfície resultante do corte com os bits fresadores.
+                                                                                 8
+
+            MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+       Figura 6 - Exemplo de fresadora e de serviço de fresagem em uma rodovia
+
+
+
+
+                           Fonte: BERNUCCI et al., 2008.
+
+
+
+       A reciclagem pode ser efetuada a quente com utilização de CAP, agente
+rejuvenescedor (AR) e agregados fresados aquecidos. Pode também ser realizada
+a frio com EAP, agente rejuvenescedor emulsionado (ARE) e agregados fresados
+à temperatura ambiente.
+
+       A reciclagem do pavimento pode ser realizada na usina, em processo a
+quente ou a frio, com transporte do material fresado para a usina. Ela também
+pode ser realizada no local (in situ), com mistura do material fresado no local do
+corte, seja a quente (com CAP) ou a frio (com EAP), por equipamento específico.
+A reciclagem também pode ser realizada no local (in situ) com espuma de asfalto,
+conforme detalhado no Módulo 2, item 4.
+
+       As especificações DNIT 166/2013-ES e DNIT 169/2014-ES indicam os
+requisitos a serem atendidos pela reciclagem utilizando asfalto espuma no local ou
+em usina, respectivamente. A especificação DNIT 167/2013-ES traz os requisitos
+para a reciclagem no local com uso de cimento Portland.
+
+
+
+
+4. MISTURAS IN SITU - USINAS MÓVEIS
+       As misturas in situ são realizadas por usinas móveis especiais que
+promovem a mistura agregados-ligante imediatamente antes da colocação do
+pavimento. O uso das usinas é indicado em casos de selagem e restauração de
+algumas características funcionais. São misturas relativamente fluidas, como a
+lama asfáltica e o microrrevestimento.
+                                                                              9
+
+             MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+     2.4.1 Lama Asfáltica
+
+       A lama asfáltica é uma mistura fluida de agregados minerais, material de
+enchimento, fíler, água, EAP e, em alguns casos, aditivos. Muito utilizada para
+recuperação funcional de pavimentos deteriorados, pode ser empregada como
+camada de selagem, impermeabilização e na conservação dos pavimentos.
+
+       A mistura é processada em usinas especiais móveis, com silos de
+agregados e emulsões asfálticas catiônicas de ruptura lenta (geralmente LA-1C,
+LA-2C, RL-1C, LAN, LAR-C), depósitos de água e fíler; que se misturam e são
+espalhadas em espessuras de 3 a 4mm. Após 2 ou 3h de execução, a
+compactação pode ser realizada pelo tráfego após a lama asfáltica ter adquirido
+consistência suficiente para resistir sem desagregar.
+
+As especificações técnicas para sua execução podem ser obtidas na NORMA
+DNIT 150/2010-ES.
+
+     2.4.2   Microrrevestimento asfáltico
+
+       O microrrevestimento pode ser considerado uma evolução das lamas
+asfálticas. Possui o mesmo princípio, porém utiliza emulsões modificadas com
+polímero para aumentar a sua vida útil. Ele é processado em uma mistura a frio,
+em usina especial, agregados minerais, fíler, água, emulsão com polímero,
+eventualmente fibras e aditivos.
+
+       Para sua produção utiliza-se geralmente EAP de ruptura controlada
+modificada por polímero. Inicialmente faz-se a mistura dos agregados com a
+emulsão agindo como lenta e, após espalhamento, sua ruptura deve ser rápida
+para permitir a liberação do tráfego em pouco tempo.
+                                                                              10
+
+            MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+            Figura 7 - Exemplo de aplicação de microrrevestimento asfáltico
+
+
+
+
+                            Fonte: BERNUCCI et al., 2008.
+
+       O microrrevestimento é utilizado para recuperação funcional de pavimentos
+deteriorados, capa selante, revestimento de pavimentos de baixo volume de
+tráfego e como camada intermediária de antirreflexão de trincas em projetos de
+reforço estrutural (BERNUCCI et al., 2008).
+
+       As especificações técnicas podem ser obtidas na NORMA DNIT 035/2018-
+ES - Microrrevestimento asfáltico - Especificação de serviço.
+
+
+
+
+5. TRATAMENTOS SUPERFICIAIS
+       Os tratamentos superficiais são revestimentos, obtidos por penetração do
+agregado ao ligante. O tratamento simples inicia-se com a aplicação de uma
+camada de ligante em pista, que receberá o agregado espalhado por equipamento
+específico (distribuidor de agregados). O pavimento recebe então compactação e
+o ligante penetra de baixo para cima no agregado (penetração “invertida”),
+conforme Figura 8 e Figura 9.
+
+       As outras múltiplas camadas se dão da mesma forma: pela aplicação do
+ligante que penetra de baixo para cima na primeira camada e, nas demais
+camadas, a penetração é tanto “invertida” como “direta”. Nos tratamentos de
+camadas múltiplas em geral, a camada é de agregados de tamanhos maiores e
+eles vão reduzindo sua granulometria à medida que constituem nova camada.
+                                                                            11
+
+             MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+        O tratamento superficial tem como função proporcionar uma camada de
+rolamento de pequena espessura, porém de alta resistência ao desgaste,
+impermeabilizar o pavimento e proteger a infraestrutura do pavimento,
+proporcionar um revestimento antiderrapante e de alta flexibilidade que possa
+acompanhar as deformações relativamente grandes da infraestrutura (BERNUCCI
+et al., 2008).
+
+        Por ter espessuras entre 5 e 20 mm, o tratamento não aumenta
+substancialmente a estrutura do pavimento e também não corrige irregularidades
+da pista.
+
+                   Figura 8 - Esquemas de tratamentos superficiais
+
+
+
+
+                           Fonte: BERNUCCI et al., 2008.
+                                                                                          12
+
+             MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+              Figura 9 - Etapas construtivas do tratamento superficial simples
+
+
+
+
+                              Fonte: BERNUCCI et al., 2008.
+
+TOME NOTA:
+
+Os tratamentos podem ser classificados pela quantidade de camadas sucessivas
+de ligantes e agregados:
+   ▪ TSS: Tratamento Superficial Simples;
+   ▪ TSD: Tratamento Superficial Duplo;
+   ▪ TST: Tratamento Superficial Triplo.
+
+       São      ainda   considerados       tratamentos      superficiais     para   pequenas
+espessuras:
+
+   ▪   a capa selante por penetração, que consiste em selar um revestimento
+       betuminoso por espalhamento de ligante betuminoso, com ou sem
+       cobertura de agregado miúdo;
+
+   ▪   o tratamento superficial primário (TAP), para controle de poeira (antipó),
+       recomendado para estradas de terra ou de revestimento primário, recebe o
+       espalhamento do ligante de baixa viscosidade e cobertura de agregado
+       miúdo;
+
+   ▪   o macadame betuminoso por penetração (direta) em aplicações
+       sucessivas de agregado e ligante betuminoso, por espalhamento.
+       Geralmente aplicada em duas camadas, inicia-se pelo agregado mais
+       graúdo e tem espessura acabada maior que 20 mm. É mais utilizado como
+       base ou binder, em espessuras maiores que 50 mm.
+                                                                                                  13
+
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 3
+
+
+            As especificações técnicas para execução dos tratamentos superficiais
+   podem ser obtidas nas normativas DNIT 146/2012-ES, DNIT 147/2012-ES e DNIT
+   148/2012-ES,       para    tratamentos      superficiais   simples,     duplos    e       triplos,
+   respectivamente. E para os tratamentos com uso de asfalto polímero, as
+   normativas são: DNER-ES 391/99, DNER-ES 392/99 e DNER-ES 393/99.
+
+
+
+
+   6. REFERÊNCIAS
+
+ABEDA - ASSOCIAÇÃO BRASILEIRA DE EMPRESAS DISTRIBUIDORAS DE ASFALTO. Manual
+Básico de Emulsões Asfálticas. Rio de Janeiro, ABEDA, 2001. 2ª ed. 2010
+
+ABEDA – PETROBRAS. Emulsões Asfálticas. Programa Asfalto na Universidade, 2009.
+
+BERNUCCI, et al. Pavimentação Asfáltica – Formação Básica para Engenheiros. 2008.
+
+GARCIA, E. S. H. Comportamento dos materiais empregados na pavimentação: Misturas Asfálticas.
+2016. 54p. Notas de Aula.
+
+INFRAERO.        Reforma      do    Aeroporto     de   Congonhas.      2020.    Disponível       em:
+https://www4.infraero.gov.br/obras-na-pista-de-congonhas. Acesso em: 15 mai. 2022.
+
+THIVES, L. P. Comportamento dos materiais empregados na pavimentação: Ligantes Asfálticos. 2016.
+16 p. Notas de Aula.

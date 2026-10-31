@@ -1,0 +1,216 @@
+                                          <(
+
+                                          ~I              PEÇA                                   SEÇÃO
+
+                                           I   Es t aca                {030 x 0,30) m
+
+                                               Tra n s ve rs in a      {0,30 x 0,30) m
+                                               Li nha D'água           {0,20 x 0,20) m
+
+                                               Ba l a ncins            {0,30 x 0,30) m
+
+                                               Co ntra ve nta m e nto {0,20 x 0,08) m
+
+                                               Mão Fran cesa           {0,20 x 0,20) m
+
+                                               Lo nga ri na s          {0,30 x 0,30) m
+
+                                               Pra n chet as           {0,20 x 0,08) m
+
+                                               Guard a Ro das          {0,30 x 0,30) m
+
+                                               Des li za nt es         {0,30 x 0,08) m
+EIXO DA RÓDOVIA
+                                               Gu a rd a Co rp o       {{ Co rrim ão {0,15 x 0,05) + {Ba Ia úst re 0,20 x 0,08)) m
+
+              ATRACAMENTO COM VERGA%"
+                OU CABO DE AÇO DE~" P/
+        Á      ATERRO ACIMA DE 2,00 (OU
+        1\'     OUTRA SOLOÇÃO TÉCNICA
+                ........
+            \
+                \
+                           \
+                               \
+                                   \
+
+
+
+
+                                                                PROJETO DE PONTE DE MADEIRA- VÃO 6m
+                                                                              PLANTA
+                                                                                                                        FL: 1/5
+                                                    DNIT- DEPARTAMENTO NACIONAL DE INFRAESTRUTURA D
+                                                    TRANSPORTES                                                       ESCALA: 1:50
+                                                    COORDENAÇÃO DE ENGENHARIA/SRDNIT/AM
+                                                    ENG. CIVIL EDSON MOREIRA CAVALCANTE                               DATA: JAN/18
+                                  MO                                         0,00
+
+
+
+
+                   ,...,   1,00
+
+
+
+
+ATERRO
+
+
+
+                                                     CETALHE 1.1   I
+
+
+
+
+         v
+
+                                                                                                      I         I
+                                        I        I
+                                        I        I
+             I I
+                                        I        I
+             11
+                                       --4L 1:!!!
+              '                        -r+r- ~                                                        I
+                                                                                                      I
+                                                                                                                I
+                                                                                                                I
+                                        ~ -1                                                          I         I
+                                         I I                                                         --4L
+                                            11                                                       -r+r-
+                                            '                                                         ~-~
+                                                                                                          I I
+                                                                                                          11
+
+                                                                                                           '
+
+
+
+                                                                               PROJETO DE PONTE DE MADEIRA- VÃO 6m
+                                                                                          VISTA LATERAL
+                                                                                                                               FL: 2/5
+                                                                       DNIT - DEPARTAMENT NA I NAL DE INFRAE        RUTURAD
+                                                                       TRANSPORTES                                            ESCALA: 1:75
+                                                                       COORDENAÇÃO DE ENGENHARIAISRDNIT/AM
+                                                                       ENG. CIVIL EDSON MOREIRA CAVALCANTE                    DATA: JAN/18
+                                   5,00
+                                             CORRIMÂ O
+
+
+
+
+LONGARI
+
+
+
+
+                             LINHA D'ÁGUA
+
+
+
+          TI
+          L---...i
+                     1+-r
+                      ! !
+                      ~--~
+                                            1+-r
+                                             ! !
+                                             ~--~
+                                                         1+-r
+                                                          ! !
+                                                          1----l
+          \ f         \ I                    \ I          \ I
+           \ f         \ f                    \ f         \ f
+           \I         \I                     \I            \I
+             v         v                      v             v            PROJETO DE PONTE DE MADEIRA- VÃO 6m
+                                                                                      CORTE/1.-A
+                                                                                                                FL: 3/5
+
+                                                                   TRANSPORTES                                 ESCALA: 1 :50
+                                                                   COORDENAÇÃO DE ENGENHARIAISRDNIT/AM
+                                                                   ENG. CIVIL EDSON MOREIRA CAVALCANTE         DATA: JAN/18
+                   1,50                     1,50
+
+                   CORRIMÃO
+
+
+      o
+      LO
+      o                                            0,20
+                   BALAUSTRE
+CXJ               PRANCHETAS
+o
+o
+
+
+
+                                                      - - -LONGARINA
+
+
+
+
+                                                 BA
+
+
+                  ~-- I
+                                       TRANSVERSINA
+
+
+           0,50   ~            2,00                       0,50
+
+
+                                      VENTAMENTO 0,20x0,08
+
+
+
+
+                                                          PROJETO DE PONTE DE MADEIRA- VÃO 6m
+                                                                      DETALHE 1-1
+                                                                                                 FL: 4/5
+                                               DNIT- DEPARTAMENTO ACIONA DE INFRAESTRUTURA D
+                                               TRANSPORTES                                      ESCALA: 1 :20
+                                               COORDENAÇÃO DE ENGENHARIA/SRDNIT/AM
+                                                                                                DATA: JAN/18
+                                               ENG. CIVIL EDSON MOREIRA CAVALCANTE
+                                            MEMORIA DE CALCULO- FERRAGENS PARA PONTE DE MADEIRA
+
+                                                  FERRAGENS PARA PONTE DE MADEIRA(VAO DE 6,00 m)
+                                                                 PERNETES AÇO CA-50
+                                                        Quantidades Comprimento do                 Comp. Total de    Comp. Total de
+                                       Comprimento da                               Diametro                                             Fator        Peso
+PEÇA DE MADEIRA                  UND                    de pernetes      pernete                      pernete       pernete por peça
+                                           peça
+                                                            und            (m)          ~               (m)                (m)          ( kg/m)        ( kg)
+Transversinas (seção)            m          5,00            4,00           0,60        5/8"            2,400              0,480           1,548       0,7430
+Balancins (seção)                m          2,50            8,00           0,60        5/8"            4,800              1,920           1,548       2,9722
+Longarinas (vão)                 m          6,00           16,00           0,60        5/8"            9,600              1,600           1,548       2,4768
+Guarda rodas (vão)               m          6,00            6,00           0,50        5/8"            3,000              0,500           1,548       0,7740
+Deslizantes (vão)                m          6,00           36,00           0,40       5/16"            14,400             2,400           0,383       0,9192
+Contraventamento (seção)         m          7,50            8,00           0,50        5/8"            4,000              0,533           1,548       0,8256
+Linha d"água (seção)             m          5,00            8,00           0,50        5/8"            4,000              0,800           1,548       1,2384
+Mão francesa (seção)             m          8,00            2,00           0,30        5/8"            0,600              0,075           1,548       0,11 61
+Guarda corpo- Alas (balaústre)   m          6,00           24,00           0,20       5/16"            4,800              0,800           0,383       0,3064
+Guarda corpo (vão) (balaústre)   m          6,00           32,00           0,15       5/16"            4,800              0,800           0,383       0,3064
+Alas                             m"        11 ,00          12,00           0,50        5/8"            6,000              0,545           1,548       0,8444
+                                                                                                                                             TOTAL        11,52
+                                                                    PREGOS
+                                                                                                   QUANTIDADE DE                       DIMENSÃO
+                                                                                   COMPRIMENTO                        PESO/UND                        PESO
+PEÇA DE MADEIRA                                                                                       PREGO/M                          DO PREGO
+                                                                                       ( m)             (m)                (m)            (mm)         ( kg)
+Deslizantes                                                                            1,00             2,000            0,0714         (25 X 72)     0,1429
+Pranchetas                                                                             1,00             1,600            0,0400         (24 X 60)     0,0640
+Guarda corpo (corrimão)                                                                1,00             3,330            0,0082         (24 X 60)     0,0273
+                                                                                                                                             TOTAL         0,21
+
+
+
+
+                                                                                                          PROJETO DE PONTE DE MADEIRA- VÃO 6m
+                                                                                                                      FERRAGENS
+                                                                                                                                                         FL: 5/5
+                                                                                                   DNIT- DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE
+                                                                                                   TRANSPORTES                                         ESCALA: IND.
+                                                                                                   COORDENAÇÃO DE ENGENHARIA/SRDNIT/AM
+                                                                                                   ENG. CIVIL EDSON MOREIRA CAVALCANTE                 DATA: JAN/18

@@ -1,0 +1,355 @@
+                                BOLETIM ADMINISTRATIVO
+   EDIÇÃO Nº 198               Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+                                     DIREÇÃO SUPERIOR
+
+                                   DIRETORIA COLEGIADA
+
+             INSTRUÇÃO NORMATIVA Nº 10/DNIT SEDE, DE 9 DE OUTUBRO DE 2024
+
+                                                      Dispõe sobre a utilização dos parâmetros
+                                                      estabelecidos no Sistema de Custos
+                                                      Referenciais de Obras – SICRO para fins de
+                                                      estimativa de valores para a contratação de
+                                                      serviços e obras de engenharia de
+                                                      infraestrutura de transportes no âmbito do
+                                                      Departamento Nacional de Infraestrutura
+                                                      de Transportes.
+
+              A DIRETORIA COLEGIADA DO DEPARTAMENTO NACIONAL DE INFRAESTRUTURA
+DE TRANSPORTES - DNIT, representada pelo Diretor-Geral, no uso das atribuições que lhe foram
+conferidas pelos arts. 12 e 173 do Regimento Interno aprovado pela Resolução/CONSAD nº 39,
+de 17/11/2020, publicada no DOU de 19/11/2020, o disposto no Decreto nº 7.983, de 8 de abril
+de 2013, e no art. 23, § 2º, inciso I da Lei nº 14.133, de 1º/4/2021, o Relato nº 158/2024/ ACE -
+DPP/DPP/DNIT SEDE, o qual foi incluído na Ata da 39ª Reunião Ordinária da Diretoria Colegiada,
+realizada em 8/10/2024, e tendo em vista o constante no processo nº 50600.016254/2024-34,
+resolve:
+
+                                         CAPÍTULO I
+                                DAS DISPOSIÇÕES PRELIMINARES
+
+Objeto e âmbito de aplicação
+
+               Art. 1º Os serviços e obras de engenharia de infraestrutura de transportes, no
+âmbito do Departamento Nacional de Infraestrutura de Transportes, terão os seus valores
+estimados por meio da utilização de parâmetros estabelecidos no Sistema de Custos Referenciais
+de Obras - SICRO, consoante o disposto no art. 23, § 2º, inciso I da Lei Federal nº 14.133, de 2021.
+
+             Parágrafo único. As diretrizes constantes desta Instrução Normativa se aplicam a
+todas as fases de um empreendimento de infraestrutura de transportes desde o seu
+planejamento até a sua execução.
+
+Definições
+
+               Art. 2º Para fins desta Instrução Normativa, considera-se:
+
+               I - SICRO: Sistema de Custos Referenciais de Obras previsto como repositório para
+a definição de estimativas de valores para a contratação de serviços e obras de engenharia de
+infraestrutura de transportes;
+
+
+
+                                                 5
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198               Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+               II - especificação ou descrição do objeto: conjunto de elementos necessários e
+suficientes, com nível de precisão adequado, apto à caracterização do bem ou serviço e à
+definição das respectivas unidades de fornecimento;
+               III - preços de referência ou estimado: parâmetro que deve refletir o preço
+compatível com os valores praticados pelo mercado, considerados os preços constantes de banco
+de dados públicos;
+               IV - binômio: preço final do insumo ou serviço que contempla o valor de aquisição
+e o respectivo valor de transporte da origem da informação ao canteiro de obras ou ao ponto de
+aplicação, conforme o caso;
+               V - orçamento paradigma: orçamento elaborado a partir dos parâmetros e
+premissas constantes do SICRO e da atuação do engenheiro orçamentista de forma a incorporar
+aspectos locais que retratem as condições de contorno de um empreendimento específico;
+               VI - pesquisa local de preços: pesquisa de preço para a aquisição de insumos ou
+contratação de serviços, que observa a potencial economia de escala e as peculiaridades do local
+de execução do objeto;
+               VII - preço CIF: preço em que os custos referentes ao transporte do insumo até a
+obra são absorvidos pelo respectivo fornecedor;
+               VIII - preço FOB: preço em que os custos referentes ao transporte do insumo até
+a obra ocorrem às expensas do executor;
+               IX - planilha comparativa de preços: documento que compila os binômios
+formados a partir dos valores dos insumos coletados na pesquisa local de preços, bem como os
+valores de referência ou estimados obtidos a partir dos relatórios de preços de insumos
+divulgados pelo SICRO;
+               X - preço paradigma: preço máximo para aquisição de insumo ou para contratação
+de serviço que a Administração Pública está disposta a reconhecer, ao final de toda a avaliação
+técnica e econômica realizada por profissional habilitado;
+               XI - relatório técnico elaborado por profissional habilitado: registros efetuados
+pelo orçamentista que reúnam a pesquisa de preço, a planilha comparativa de preços e as
+justificativas técnicas que levaram à definição do preço paradigma reconhecido pela
+Administração Pública para os devidos fins; e
+               XII - orçamentista: profissional habilitado responsável pela elaboração de
+orçamento de obra de engenharia, conforme consta da Lei nº 5.194, de 24 de dezembro de 1966,
+a qual regula o exercício das profissões de Engenheiro, Arquiteto e Engenheiro-Agrônomo, e dá
+outras providências.
+
+                                         CAPÍTULO II
+                                    DO PREÇO PARADIGMA
+
+Elementos que integram o SICRO
+
+               Art. 3º Para fins de aplicação desta Instrução Normativa, entende-se por Sistema
+de Custos Referenciais de Obras - SICRO o repositório das diretrizes e premissas metodológicas
+definidas nos seguintes documentos:
+
+
+
+
+                                               6
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198              Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+               I - Manuais de Custos de Infraestrutura de Transportes;
+               II - Relatórios integrantes da divulgação periódica do SICRO e da Tabela de
+Consultoria;
+               III - Cadernos Técnicos;
+               IV - Relatório de Ocorrências;
+               V - Notas Revisionais;
+               VI - Preços Novos aprovados no âmbito da Coordenação-Geral de Custos de
+Infraestrutura de Transportes;
+               VII - Tabela de Preços de Consultoria;
+               VIII - Metodologia de precificação dos materiais betuminosos;
+               IX - Relatórios do Custo Médio Gerencial; e
+               X - demais orientações e instruções emitidas por meio de atos normativos, de
+comunicados e de informativos divulgados internamente e no sítio eletrônico do Departamento
+Nacional de Infraestrutura de Transportes.
+
+Pesquisa de preços em mercado local
+
+               Art. 4º O SICRO, consoante o Manual de Custos de Infraestrutura de Transportes,
+preconiza a realização de pesquisa local de preços para os itens mais relevantes constantes da
+curva ABC de insumos quando da elaboração de um orçamento, dado que os preços de referência
+divulgados por esse sistema de custos são obtidos a partir da aplicação de tratamento de
+estatísticos e metodologias de fechamento de preços coletados em campo, por instituto de
+pesquisa especializado, os quais podem, eventualmente, não incorporar a potencial economia
+de escala e as peculiaridades do local de execução do objeto nos casos concretos, conforme
+preceitua o art. 23 da Lei nº 14.133/2021.
+
+Descrição e especificação técnica do objeto
+
+              Art. 5º Para a realização da cotação local dos preços deverão ser observadas as
+especificações técnicas ou descrições do objeto a ser adquirido ou contratado e informados,
+contendo, no mínimo, os seguintes elementos:
+
+              I - a compatibilidade com o serviço a que se destina;
+              II - a marca e modelo solicitado;
+              III - o quantitativo total do insumo e a potencial economia de escala;
+              IV - a unidade de medida de fornecimento ou comercialização;
+              V - o local de execução do objeto;
+              VI - o transporte dos insumos ao canteiro ou ao ponto de aplicação, se incluso ou
+não no preço; e
+              VII - as condições comerciais praticadas, incluindo prazos e locais de entrega,
+instalação e montagem do bem, execução do serviço, formas de pagamento e garantias exigidas,
+quando couberem.
+
+
+
+
+                                              7
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198              Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+               §1º O orçamentista deve elaborar e encaminhar a planilha padrão, pré-prenchida,
+a todos os fornecedores a serem consultados, contendo todos os elementos necessários e
+suficientes descritos no Art. 7º desta Instrução Normativa.
+
+              §2º É desejável que o orçamentista desmembre, no caso de cotações de serviços,
+as diferentes parcelas integrantes desses, de forma que eventuais comparações entre os
+fornecedores restem claras e objetivas.
+
+Escolha dos fornecedores
+
+             Art. 6º A escolha dos fornecedores deve considerar a compatibilidade entre a
+capacidade de fornecimento e a quantidade de insumos a serem adquiridos.
+
+              §1º Deverá ser verificado se as empresas pesquisadas atuam no ramo compatível
+ao objeto, bem como se possuem as licenças necessárias para a comercialização dos insumos ou
+serviços de engenharia.
+
+Informações necessárias para a pesquisa de preços
+
+              Art. 7º A pesquisa direta com fornecedores deve ser feita mediante solicitação
+formal de cotação, por ofício ou e-mail, contendo, no mínimo, as seguintes informações:
+
+              I - dados do requerente da pesquisa de preço;
+              II - prazo de resposta sugerido ao fornecedor, compatível com a complexidade do
+objeto;
+               III - obtenção de propostas formais, contendo, no mínimo:
+               a) descrição do objeto, valor unitário e total;
+               b) número do Cadastro Nacional da Pessoa Jurídica - CNPJ do proponente e/ou
+identificação do proponente;
+               c) endereço físico e eletrônico e/ou telefone de contato;
+               d) data de emissão; e
+               e) nome completo e/ou identificação do responsável.
+               IV - informações aos fornecedores das especificidades da contratação, com vistas
+à melhor caracterização das condições comerciais praticadas para o objeto a ser contratado, se
+for o caso; e
+               V - registro, nos autos do processo da contratação correspondente, da relação de
+fornecedores que foram consultados e não enviaram propostas como resposta à solicitação.
+
+Número mínimo de cotações e ateste
+
+             Art. 8º A pesquisa de preços deve conter, no mínimo, 3 (três) cotações de
+fornecedores distintos no mercado local.
+
+
+
+
+                                              8
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198               Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+             §1º Na ausência de um mínimo de 3 (três) fornecedores para o insumo ou serviço
+de engenharia no mercado local, deverá ser realizado o maior número possível de cotações.
+
+               §2º Os casos em que as cotações restarem frustradas por ausência de resposta
+por parte dos fornecedores também devem constar do relatório técnico elaborado por
+profissional habilitado.
+
+              §3º O servidor ou agente público em atuação no âmbito do DNIT deve emitir
+ateste:
+
+              I - quanto ao atendimento das condições preconizadas no art. 6º desta Instrução
+Normativa;
+              II - quanto à ausência de resposta por parte dos fornecedores, quando couber; e
+              III - quanto à inexistência do número mínimo de 3 (três) fornecedores, quando
+couber.
+
+Análise da pesquisa local de preços
+
+              Art. 9º O responsável pela pesquisa local de preços deve analisar as informações
+obtidas com o intuito de identificar eventuais inconsistências ou mesmo a necessidade de ajustes
+dos preços, verificando:
+
+                I - se a planilha comparativa de preços das cotações não incorpora eventual
+duplicidade nos transportes em função das condições de retirada ou entrega previstas pelo
+fornecedor;
+                II - se os preços coletados no mercado local se referem à condição de negociação
+à vista e incorporam todos os tributos necessários a sua comercialização;
+                III - eventuais diferenças entre unidades comerciais e técnicas, essas últimas
+constantes do SICRO, foram ajustadas na planilha comparativa de preços das cotações; e
+                IV - eventuais diferenças nas quantidades das propostas;
+
+             §1º O orçamentista deve realizar o tratamento dos dados da coleta de preços de
+maneira a equiparar tecnicamente as propostas de fornecedores distintos, tornando-as
+comparáveis entre si.
+
+             §2º Para fins de comparação de preços de insumos cotados, esses deverão ser
+ajustados a uma mesma data-base, a partir da utilização dos respectivos índices de
+reajustamento de obras.
+
+               §3º Quando a data da cotação não tiver índice de reajustamento publicado deve-
+se adotar o último índice publicado.
+
+
+
+
+                                               9
+                               BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198               Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+
+
+               §4º Caso seja necessário ajustar o preço de um insumo a uma data-base específica
+e esse conste de serviços ou famílias diferentes em um mesmo contrato, deve-se adotar o índice
+de reajustamento correspondente ao serviço de maior relevância no orçamento para o caso em
+análise.
+
+Comparação dos binômios
+
+               Art. 10. O orçamentista deve realizar a comparação entre o custo do binômio
+obtido a partir da pesquisa local de preços de insumos e aquele proveniente dos preços de
+referência de insumos constantes do SICRO, adotando a alternativa mais vantajosa ao erário para
+fins de elaboração de orçamento paradigma.
+
+              §1º Para fins de seleção do binômio mais vantajoso, deve-se adotar a origem do
+preço de referência para os insumos divulgados pelo SICRO a partir do centro da sede do
+município, ou da área metropolitana da capital da unidade de federação.
+
+              §2º Para a formação do binômio a partir dos valores obtidos na pesquisa local de
+preços, o orçamentista deve incluir o respectivo transporte somente para os casos de preço FOB.
+
+               §3º Caso o orçamentista entenda que o binômio obtido a partir do preço de
+referência divulgado pelo SICRO não observa a potencial economia de escala e as peculiaridades
+do local de execução do objeto, ou mesmo o nível de preço praticado pelo mercado local, aos
+quais o empreendimento está submetido, deverá adotar o binômio mais vantajoso ao erário
+proveniente da pesquisa local de preços, desde que apresente as justificativas que subsidiam a
+tomada de decisão.
+
+               §4º Para os casos em que forem obtidas cotações no mercado local, a planilha
+comparativa de preços deve ser encaminhada, por meio de correio eletrônico constante do sítio
+do DNIT na internet, à Coordenação-Geral de Custos de Infraestrutura de Transportes, com a
+finalidade de subsidiar a manutenção da pesquisa de preços de insumos do SICRO.
+
+               §5º Esgotados os procedimentos previstos no Art. 8º, e, caso se conclua pela
+impossibilidade da realização de cotações locais, o orçamentista deve adotar o binômio obtido a
+partir do preço de referência divulgado pelo SICRO, respeitados os critérios estabelecidos no §1º
+deste artigo.
+
+              §6º Para os casos em que o insumo não encontre correspondência no SICRO, o
+orçamentista deve adotar o binômio mais vantajoso ao erário proveniente da pesquisa local de
+preços.
+
+
+
+
+                                               10
+                              BOLETIM ADMINISTRATIVO
+  EDIÇÃO Nº 198              Brasília-DF, sexta-feira, 11 de outubro de 2024
+
+
+
+                                       CAPÍTULO III
+                              DAS DISPOSIÇÕES GERAIS E FINAIS
+
+Vigência
+
+              Art. 11. Esta Instrução Normativa entrará em vigor na data da sua publicação
+
+                                 FABRÍCIO OLIVEIRA GALVÃO
+                                        Diretor-Geral
+
+
+
+
+                      PORTARIA Nº 4955, DE 09 DE OUTUBRO DE 2024
+
+
+              A DIRETORIA COLEGIADA DO DEPARTAMENTO NACIONAL DE INFRAESTRUTURA
+DE TRANSPORTES – DNIT, representada pelo Diretor-Geral, no uso das atribuições que lhe foram
+conferidas pelos arts. 12 e 173 do Regimento Interno, aprovado pela Resolução/CONSAD nº 39,
+de 17/11/2020, publicada no DOU de 19/11/2020, e o disposto no Processo nº
+50601.000914/2024-55, resolve:
+
+               Art. 1º DELEGAR Competência plena e as responsabilidades decorrentes ao
+Superintendente Regional do DNIT no estado do Amazonas para realização dos procedimentos
+licitatórios em todas as suas fases, bem como aprovar, lavrar, assinar e publicar o respectivo
+contrato cujo objeto está descrito abaixo, conforme o Relato Conjunto nº 172/2024/
+DIR/DIREX/DNIT SEDE, o qual foi incluído na Ata da 39ª Reunião Ordinária da Diretoria Colegiada
+realizada em 8/10/2024.
+
+              Delimitação do Objeto: Contratação de empresa para execução dos serviços de
+operação de travessia das pontes sobre o Rio Curuçá (km 23,11) e ponte sobre o Rio Autaz Mirim
+(km 24,60), bem como aprovar, lavrar, assinar e publicar o respectivo contrato.
+
+              Extensão total: Rio Curuçá (km 23,11) e Rio Autaz Mirim (km 24,60).
+
+              Art. 2º Esta Portaria entra em vigor na data de sua publicação.
+
+                               FABRICIO DE OLIVEIRA GALVÃO
+                                       Diretor-Geral
+
+
+
+
+                                              11

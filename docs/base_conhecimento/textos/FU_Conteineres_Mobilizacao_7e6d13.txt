@@ -1,0 +1,67 @@
+[aba Referencia_Conteineres]
+Contêineres e Estruturas Modulares SICRO — dimensões e preços (RO 07/2025 - Relatório Sintético de Materiais)
+Código | Descrição | Tipo (TEU) | Largura
+L (m) | Comprimento
+C (m) | Área AE
+(m²) = L×C | Massa/tara
+ME (kg) | Preço unitário
+de referência (R$) | Fonte
+M0041 | Contêiner com 2 banheiros | 1 TEU | 2.44 | 6.09 | 14.8596 | 2250 | 104554.2428 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0042 | Contêiner com janela | 1 TEU | 2.44 | 6.09 | 14.8596 | 2250 | 46176.5515 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0059 | Contêiner com revestimento térmico, janela e banheiro | 1 TEU | 2.44 | 6.09 | 14.8596 | 2250 | 66136.2515 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0057 | Contêiner com janela | 1 TEU duplo | 4.88 | 6.09 | 29.7192 | 4500 | 152940.4856 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0058 | Contêiner com janela e 2 banheiros | 1 TEU duplo | 4.88 | 6.09 | 29.7192 | 4500 | 157955.4856 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0066 | Contêiner com revestimento térmico, janela e banheiro | 2 TEU | 2.44 | 12.9 | 31.476 | 3850 | 144414.9856 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0060 | Contêiner com janela | 3/4 TEU | 2.44 | 4.58 | 11.1752 | 1775 | 65938.7428 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0065 | Contêiner com janela e banheiro | 3/4 TEU | 2.44 | 4.58 | 11.1752 | 1775 | 83992.7428 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0071 | Contêiner com 3 janelas para guarita | 1/2 TEU | 2.44 | 3.05 | 7.442 | 1300 | 52318.0772 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0291 | Estrutura modular com 2 banheiros | 1 TEU | 2.44 | 6.06 | 14.7864 | 2250 | 88426.1015 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0292 | Estrutura modular com janela | 1 TEU | 2.44 | 6.06 | 14.7864 | 2250 | 73409.2208 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0295 | Estrutura modular com revestimento térmico, janela e banheiro | 1 TEU | 2.44 | 6.06 | 14.7864 | 2250 | 81618.7758 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0293 | Estrutura modular com janela | 1 TEU duplo | 4.88 | 6.06 | 29.5728 | 4500 | 148591.1751 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0294 | Estrutura modular com janela e 2 banheiros | 1 TEU duplo | 4.88 | 6.06 | 29.5728 | 4500 | 149140.2081 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0296 | Estrutura modular com revestimento térmico, janela e banheiro | 2 TEU | 2.44 | 12.19 | 29.7436 | 3850 | 156330.8936 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+M0297 | Estrutura modular com 3 janelas para guarita | 1/2 TEU | 2.44 | 3.05 | 7.442 | 1300 | 44763.7154 | RO 07/2025 - Relatório Sintético de Materiais (DNIT/SICRO)
+⚠ A coluna "Massa/tara (kg)" foi PRÉ-PREENCHIDA com ESTIMATIVAS de mercado/ISO para contêineres 20 e 40 pés (interpolação para 1/2 e 3/4 TEU, tamanhos não-padronizados). NÃO é dado oficial do Manual DNIT nem do Relatório Sintético de Materiais — nenhum dos dois traz peso de contêiner. Passe o mouse na célula para ver a fonte, e substitua pelo dado real do fabricante sempre que possível.
+Área AE = Largura × Comprimento (dimensões exatas do RO 07/2025 - Relatório Sintético de Materiais, Rondônia, julho/2025).
+"Estrutura modular" é um item alternativo ao "Contêiner" no mesmo relatório, com dimensões e preços próprios (levemente diferentes no comprimento).[aba Calculo_FU]
+Cálculo do Fator de Utilização (FU) — Mobilização de Contêineres (Manual DNIT, Volume 08, Equações 2, 3 e 4)
+Legenda: células AMARELAS = preencher com seus dados. Células brancas = calculadas automaticamente (fórmulas).
+Código
+(selecione) | Descrição
+(automático) | Área do
+contêiner
+AE (m²) | Massa do
+contêiner
+ME (kg) | Área útil do
+transportador
+AET (m²) | Carga útil do
+transportador
+CET (kg) | FUA
+(AE/AET) | FUC
+(ME/CET) | FU
+(=MAX(FUA;FUC))
+M0057 | Contêiner com janela | 29.7192 | 2300 | 32 | 27000 | 0.928725 | 0.0851851851851852 | 0.928725
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+Fórmulas (Manual de Custos DNIT — Volume 08, seção 3.4.3):
+FUA = AE / AET   (Equação 2 — área do contêiner ÷ área útil do transportador)
+FUC = ME / CET   (Equação 3 — massa do contêiner ÷ carga útil do transportador)
+FU  = MAIOR valor entre FUA e FUC   (Equação 4)
+Área (AE) vem automaticamente da aba Referencia_Conteineres (dimensões exatas do RO 07/2025 - Relatório Sintético de Materiais).
+Preencha "Massa do contêiner (ME)" com o dado do fabricante — não consta em nenhum documento do Manual DNIT ou do Relatório Sintético.
+Preencha "Área útil (AET)" e "Carga útil (CET)" do veículo transportador escolhido (ex.: carreta prancha, munck etc.).
+Se o contêiner exceder a capacidade dimensional do transportador, o FU pode ser maior que 1 (indicando necessidade de fragmentação/outro veículo).

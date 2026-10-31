@@ -1,0 +1,1434 @@
+Sistema de Custos Referenciais de
+         Obras – SICRO
+
+
+Caderno de aplicação
+Fator de Interferência
+   de Tráfego (FIT)
+  Departamento Nacional de Infraestrutura de Transportes
+                      Diretoria Geral
+          Diretoria de Planejamento e Pesquisa
+Coordenação-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+Sistema de Custos Referenciais de
+         Obras – SICRO
+                     Versão 1.0
+           Mês de referência: julho de 2023
+
+
+
+
+Caderno de aplicação
+Fator de Interferência
+   de Tráfego (FIT)
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                                APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo
+o desenvolvimento técnico das áreas de custos do extinto Departamento
+Nacional de Estradas e Rodagem (DNER) e do Departamento Nacional de
+Infraestrutura de Transportes (DNIT) na formação de preços referenciais de
+obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos
+de Infraestrutura de Transportes preserva o conhecimento e a experiência
+acumulados desde a edição das primeiras tabelas referenciais de preços,
+passando pelo pioneirismo na conceituação e aplicação das composições de
+custos, até as mais recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da
+divulgação dos relatórios sintéticos e analíticos valorados de composições de
+custos e insumos, juntamente com a publicação da 1ª edição do Manual de
+Custos de Infraestrutura de Transportes e das Produções de Equipes Mecânicas
+dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual
+de Custos de Infraestrutura de Transportes. Os conteúdos encontram-se
+dispostos conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes
+     mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+
+Os cadernos técnicos apresentam as condições de contorno adotadas nos
+cálculos dos consumos dos materiais e da produção horária dos serviços, suas
+respectivas memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para
+elaboração de orçamentos baseados no SICRO, estabelecendo diretrizes
+básicas para tomada de decisão e exemplos práticos que ilustram o emprego
+das diferentes ferramentas que integram o sistema.
+
+
+
+
+                                           i
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está
+dividido em oito volumes:
+
+   ▪ Volume 01 - Metodologia e Conceitos;
+   ▪ Volume 02 - Mão de Obra;
+   ▪ Volume 03 - Preços Referenciais;
+   ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+   ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+   ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+   ▪ Volume 07 - Administração Local;
+   ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de
+Infraestrutura de Transportes, pode produzir orçamentos para obras de
+infraestrutura de transportes que incorporam as nuances dos casos concretos,
+ao tempo que observam a eficiência associada à otimização dos recursos
+envolvidos característica da engenharia.
+
+                       CAIO SARAVY CARDOSO
+        Coordenador-Geral de Custos de Infraestrutura de Transportes
+
+
+
+
+                                           ii
+                    Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+
+
+                                          LISTA DE FIGURAS
+
+Figura 1 - Mapa de situação da obra e seus pontos de acesso ......................... 6
+Figura 2 - Diagrama linear de ocorrências ......................................................... 7
+Figura 3 - Composição de custos - Código SICRO: 4011276 .......................... 23
+Figura 4 - Composição de custos - Código SICRO: 6416040 .......................... 24
+
+
+                                           LISTA DE TABELAS
+
+Tabela 1 - Serviços - conservação rodoviária .................................................... 2
+Tabela 2 - Lista dos insumos presentes na parcela de momento de transportes
+            ........................................................................................................ 8
+Tabela 3 - Quadro de DMTs dos insumos ........................................................ 12
+Tabela 4 - Valores de VMDf obtidos pelo estudo de tráfego ............................ 13
+Tabela 5 - Valores de VMDf e de DMT nos segmentos de transporte dos insumos
+            ...................................................................................................... 15
+Tabela 6 - Composições de custos com atraso A1 ........................................... 16
+Tabela 7 - Atraso A1 ......................................................................................... 17
+Tabela 8 - Composições de custos com atraso A2 ........................................... 18
+Tabela 9 - Atraso A2 ......................................................................................... 19
+Tabela 10 - Tabela de DMT com FIT ............................................................... 21
+Tabela 11 - Lista de serviços adotada para uso do FIT ................................... 22
+
+
+
+
+                                                          iii
+               Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                                             SUMÁRIO
+
+1         INTRODUÇÃO .................................................................................... 1
+2         APLICAÇÃO DA METODOLOGIA ..................................................... 2
+2.1       Conservação rodoviária .................................................................... 2
+2.1.1     Levantamento de dados ...................................................................... 8
+2.1.1.1   Distância Média de Transporte – DMT .............................................. 11
+2.1.1.2   Volume Médio Diário – VMD ............................................................. 13
+2.1.1.3   Operações de sinalização de obra .................................................... 15
+2.1.2     Cálculo dos atrasos ........................................................................... 16
+2.1.2.1   Atraso devido à operação de “PARE” e “SIGA” - Atraso A1............... 16
+2.1.2.2   Atraso devido ao tráfego em vias urbanas - Atraso A2 ...................... 18
+2.1.3     Cálculo do Fator de Interferência de Tráfego – FIT ........................... 20
+2.1.4     Aplicação do Fator de Interferência de Tráfego – FIT ....................... 22
+
+
+
+
+                                                   iv
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+1   INTRODUÇÃO
+
+Neste volume, exemplifica-se a aplicação do Fator de Interferência de Tráfego –
+FIT no contexto da orçamentação de obras de infraestrutura de transportes, com
+o intuito de orientar a utilização da metodologia detalhada no Manual de Custos
+de Infraestrutura de Transportes - Volume 05: Fator de Interferência de Tráfego
+(FIT) - 2ª Edição.
+
+O documento apresenta os quantitativos de serviços aplicáveis à obra, dados de
+projeto, detalhamento dos custos relativos aos possíveis atrasos, entre outras
+informações. A referência adotada é o mês-base de julho de 2023.
+
+Cabe ressaltar que o exemplo abordado neste documento se refere a uma obra
+fictícia, idealizada para proporcionar melhor compreensão aos usuários do
+Sistema de Custos Referenciais de Obras (SICRO).
+
+
+
+
+                                           1
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2     APLICAÇÃO DA METODOLOGIA
+
+O exemplo utilizado para compor este volume é uma obra de conservação
+rodoviária e viabiliza a aplicação da metodologia do Fator de Interferência do
+Tráfego – FIT.
+
+2.1    Conservação rodoviária
+
+O projeto utilizado como exemplo possui as seguintes características:
+
+      ▪ natureza da obra: conservação rodoviária;
+      ▪ segmento: BR-YYY km 7,60 ao km 78,00;
+      ▪ extensão total: 70,4 km de rodovia pavimentada de pista simples;
+      ▪ número de faixas: 2;
+      ▪ prazo contratual: 24 meses;
+      ▪ unidade de federação: São Paulo;
+      ▪ mês-base: julho 2023.
+
+As demais informações necessárias para o cálculo dos custos de referência do
+FIT devem ser extraídas da planilha de serviços apresentada na tabela 1, do
+mapa de situação e do diagrama linear de ocorrências, representados nas
+figuras 1 e 2.
+
+Com base nas informações apresentadas, procede-se com as seguintes etapas:
+
+      ▪ levantamento de dados;
+      ▪ cálculo dos atrasos;
+      ▪ cálculo do FIT;
+      ▪ aplicação do FIT no orçamento.
+
+                         Tabela 1 - Serviços - conservação rodoviária
+ Código
+                                       Descrição                         Unidade Quantidade
+ SICRO
+1. Conservação da faixa de domínio e limpeza de drenagem e OAC
+1.1. Serviços relativos a dispositivos de drenagem
+4915708 Limpeza de sarjeta e meio-fio                                        m    356.820,00
+4915709 Limpeza de valeta de corte                                           m    14.682,00
+4915710 Limpeza de vala de drenagem                                          m     1.260,00
+4915711 Limpeza de descida d'água                                            m     2.246,00
+4915712 Limpeza de bueiro                                                   m³     5.137,20
+4915713 Desobstrução de bueiro                                              m³     5.137,20
+4915724 Caiação mecanizada com fixador de cal                               m²    59.336,00
+
+
+
+
+                                                     2
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                         Tabela 1 - Serviços - conservação rodoviária (2/4)
+
+Código
+                                        Descrição                             Unidade Quantidade
+SICRO
+1.2. Serviços relativos ao controle da vegetação
+4915776 Roçada com roçadeira costal                                             ha      546,46
+4915743 Corte e limpeza de áreas gramadas                                       m²    119.864,00
+4915744 Capina manual                                                           m²     71.364,00
+5915324 Transporte com caminhão carroceria de 5 t - rodovia pavimentada         tkm      3,70
+1.3. Serviços relativos à limpeza da faixa de domínio
+          Remoção de animais de grande porte mortos em rodovia - carga e
+4915785                                                                          t      29,79
+          descarga com guindauto
+          Remoção de animais de pequeno porte mortos em rodovia - carga
+4915786                                                                          t       5,96
+          manual
+          Remoção de grãos, agregados e solos derramados na pista em
+4915698                                                                          t      372,40
+          rodovias
+          Remoção de vidros, caixas e engradados derramados na pista em
+4915699                                                                          t      59,96
+          rodovia
+          Remoção de vestígios de óleo ou graxa na superfície do
+4915760                                                                         m²      260,68
+          revestimento do pavimento
+          Remoção de sucatas derramadas em rodovia - cinta com utilização
+4915794                                                                          t      18,62
+          de 100 vezes
+4915795 Remoção de emborrachados de pneus em rodovia                             t      11,17
+4915799 Remoção de espécimes arbóreos de até 20 m tombados na pista              t      186,20
+          Transporte com caminhão carroceria com capacidade de 7 t e com
+5914614                                                                         tkm    1.173,06
+          guindauto de 20 t.m - rodovia pavimentada
+          Transporte com caminhão basculante de 14 m³ - rodovia
+5915321                                                                         tkm    1.862,00
+          pavimentada
+5915324 Transporte com caminhão carroceria de 5 t - rodovia pavimentada         tkm     385,43
+2. Serviços relativos à manutenção de buracos e defeitos na pista
+          Remendo profundo com imprimação com emulsão asfáltica -
+4915631                                                                         m³     1.136,13
+          demolição mecânica e corte com serra
+4915623 Solo brita para base de remendo profundo - brita comercial              m³      908,90
+4915757 Tapa buraco com pintura de ligação - demolição com serra corta piso     m³     2.859,20
+3. Serviços auxiliares
+4915801 Mistura betuminosa                                                       t     87.234,54
+4011353 Pintura de ligação                                                      m²    876.580,00
+4. Conservação corretiva rotineira
+0407819 Armação em aço CA-50 - fornecimento, preparo e colocação                kg     1.210,06
+          Concreto fck = 20 MPa - confecção em betoneira e lançamento
+1107892                                                                         m³      660,83
+          manual - areia e brita comerciais
+          Fôrmas de tábuas de pinho para dispositivos de drenagem -
+3103302                                                                         m²      856,44
+          utilização de 3 vezes - confecção, instalação e retirada
+          Escavação manual em material de 1ª categoria na profundidade de
+4805750                                                                         m³     3.724,00
+          até 1 m
+          Recomposição de guarda-corpo com agregados comerciais -
+3815706                                                                         m       158,00
+          instalação
+4915718 Limpeza de placa de sinalização                                         m²     2.288,00
+4915719 Recomposição de placa de sinalização                                    m²      686,40
+
+
+
+                                                    3
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                      Tabela 1 - Serviços - conservação rodoviária (3/4)
+
+Código
+                                        Descrição                                Unidade Quantidade
+SICRO
+4915733 Recomposição manual de aterro com material de jazida                       m³     1.303,40
+4915766 Poda de árvores com 7,5 m a 10 m de altura                                 m      11.735,15
+          Recomposição total de cerca com mourão de concreto seção
+4915728                                                                            m³      372,40
+          triangular - areia e brita comerciais
+          Recomposição parcial de cerca com mourão de concreto seção
+4915729                                                                            m       186,20
+          triangular - mourão - areia e brita comerciais
+          Enrocamento de pedra jogada - pedra de mão comercial -
+1505860                                                                            m³      20,00
+          fornecimento e assentamento
+          Enrocamento de pedra arrumada manualmente - pedra de mão
+1505879                                                                            m³      20,00
+          comercial - fornecimento e assentamento
+          Tubo de concreto PA1 comercial para drenagem - D = 0,60 m -
+2003822                                                                            m       20,00
+          fornecimento e instalação
+          Tubo de concreto PA1 comercial para drenagem - D = 0,80 m -
+2003826                                                                            m       144,00
+          fornecimento e instalação
+          Tubo de concreto PA1 comercial para drenagem - D = 1,00 m -
+2003830                                                                            m       16,00
+          fornecimento e instalação
+3713604 Defensa semimaleável simples - fornecimento e implantação                  m       72,00
+          Ancoragem de defensa semimaleável simples - fornecimento e
+3713605                                                                            m       37,24
+          implantação
+3713705 Remoção de defensa metálica                                                m       40,00
+5213571 Placa em aço - película I + III - fornecimento e implantação               m²      37,24
+          Suporte para placa de sinalização em madeira de lei tratada 8 x 8 cm
+5216111                                                                            und     40,00
+          - fornecimento e implantação
+5. Conservação preventiva periódica
+4915672 Limpeza de ponte                                                           m      5.160,00
+4915703 Correção de defeitos com mistura betuminosa                                m³      372,40
+          Correção de defeitos por fresagem descontínua do revestimento
+4915705                                                                            m³      372,40
+          asfáltico - espessura de 5 cm
+4915656 Fresagem contínua de revestimento asfáltico - espessura de 4 cm            m³     20.275,60
+4011464 Concreto asfáltico - faixa C - massa comercial                              t     61.635,12
+4011459 Concreto asfáltico - faixa B - areia e brita comerciais                     t     17.298,24
+          Microrrevestimento a frio com emulsão modificada com polímero de
+4011410                                                                            m²     2.800,00
+          1,5 cm - faixa III - brita comercial
+6. Conservação de emergência
+4915734 Recomposição mecanizada de aterro com material de jazida                   m³     11.172,00
+4915735 Remoção manual de barreira em solo                                         m³     3.724,00
+4915737 Remoção mecanizada de barreira em solo                                     m³     11.172,00
+4915738 Remoção mecanizada de barreira em rocha                                    m³      931,00
+7. Sinalização horizontal
+          Pintura de faixa com tinta acrílica emulsionada em água - espessura
+5214001                                                                            m²     21.471,00
+          de 0,3 mm
+          Pintura de faixa com tinta acrílica emulsionada em água - espessura
+5213403                                                                            m²     51.826,50
+          de 0,5 mm
+
+
+
+
+                                                    4
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                      Tabela 1 - Serviços - conservação rodoviária (4/4)
+
+Código
+                                        Descrição                                    Unidade Quantidade
+SICRO
+          Pintura de setas e zebrados com tinta acrílica emulsionada em água
+5213407                                                                                m²       2.379,85
+          - espessura de 0,5 mm
+          Tacha refletiva em plástico injetado - monodirecional tipo I - com um
+5213359                                                                                und     15.894,00
+          pino - fornecimento e colocação
+          Tacha refletiva em plástico injetado - bidirecional tipo I - com um pino
+5213360                                                                                und      7.946,00
+          - fornecimento e colocação
+8. Sinalização de obra temporária
+        Placa de regulamentação para sinalização de obras montada em
+5212558 suporte metálico móvel, R1 lado 0,414 m - utilização de 600 ciclos -         und.dia    438,00
+        fornecimento, 01 implantação e 01 retirada diária
+        Placa de regulamentação para sinalização de obras montada em
+5212557 suporte metálico móvel - D = 1,00 m - utilização de 600 ciclos -             und.dia    1.026,00
+        fornecimento, 01 implantação e 01 retirada diária
+        Placa de advertência para sinalização de obras montada em suporte
+5212560 metálico móvel, lado 1,00 m - utilização de 600 ciclos - fornecimento,       und.dia    732,00
+        01 implantação e 01 retirada diária
+        Placa para sinalização de obras montada em cavalete metálico - 1,00 x
+5212556 1,00 m - utilização de 600 ciclos - fornecimento, 01 implantação e 01        und.dia    196,00
+        retirada diária
+          Cone plástico para canalização de trânsito - utilização de 150 ciclos -
+5213835                                                                              und.dia   15.426,00
+          fornecimento, 01 implantação e 01 retirada diária
+        Cilindro canalizador de tráfego com base quadrada de 111 x 56 x 56
+5213838 cm - utilização de 600 ciclos - fornecimento, 01 implantação e 01            und.dia    1.570,00
+        retirada diária
+        Cavalete em polietileno zebrado com faixa refletiva - H = 1,00 m -
+5213383 utilização de 600 ciclos - fornecimento, 01 implantação e 01 retirada        und.dia    620,00
+        diária
+          Operação de sinalização por bandeirola de tecido ou com placa
+5213850                                                                                h        3.000,00
+          metálica
+9. Demais serviços de manutenção
+4915598 Reconformação da plataforma                                                    m²      102.800,00
+4011212 Varredura da superfície para execução de revestimento asfáltico                m²      245.990,00
+4011353 Pintura de ligação                                                             m²      131.600,00
+4011464 Concreto asfáltico - faixa C - massa comercial                                  t       4.737,60
+4011459 Concreto asfáltico - faixa B - areia e brita comerciais                         t       6.316,80
+4915801 Mistura betuminosa                                                              t      11.054,40
+4915667 Remoção mecanizada de revestimento asfáltico                                   m³       1.721,93
+4915669 Remoção mecanizada de camada granular do pavimento                             m³       7.379,70
+4011209 Regularização do subleito                                                      m²      24.599,00
+4011276 Base ou sub-base de brita graduada com brita comercial                         m³       7.379,70
+4011352 Imprimação com emulsão asfáltica                                               m²      24.599,00
+
+
+
+
+                                                    5
+                   Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                  Figura 1 - Mapa de situação da obra e seus pontos de acesso
+
+
+
+
+Fonte: FGV IBRE
+
+
+
+
+                                                 6
+Caderno de Aplicação - Fator de Interferência de Tráfego — FIT
+
+Figura 2 - Diagrama linear de ocorrências
+
+cal
+
+Pedreira Fornecedores de cimento e
+Usina de CBUQ comercial
+2,00 km
+Cidade 5 — BR-XXX
+4,20 km
+km 32,60 km 4,70 km 0,00 e
+=
+o
+a
+E)
+
+Fonte: FGV IBRE
+
+Perímetro Urbano (via urbana pavimentada)
+
+Extensão da obra
+
+Representação pista simples (rodovia rural pavimentada)
+
+Trecho em revestimento primário (RP)
+
+Término Areal Canteiro
+
+1,00 km 1,50 km
+
+a BRYYY
+
+SP-XXX
+
+Cidade 1
+
+BR-ZZZ
+
+Lo
+
+4,80 km
+km 78,00 km 75,20 km 62,00 km 32,00 km 27,20
+Extensão
+da obra
+7
+
+Cidade 2
+
+DNIT
+                    Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2.1.1 Levantamento de dados
+
+No cálculo do Fator de Interferência do Tráfego – FIT, diversos dados do projeto
+são consultados, como: quadros de insumos, tabelas de Distâncias Médias de
+Transporte – DMT, diagrama linear de ocorrências, mapa de situação, Volume
+Médio Diário – VMD, detalhes do projeto de sinalização, entre outros.
+
+Ademais, é necessária a análise dos serviços previstos para a obra, com o
+objetivo de identificar os insumos sobre os quais o FIT será aplicado. Deve-se
+considerar que esse fator remunera os atrasos no transporte, em vias
+pavimentadas, dos insumos com custo livre de frete, denominados Free On
+Board – FOB, ou seja, quando o transporte é de responsabilidade do executor
+do serviço.
+
+A análise dos serviços concentra-se, primordialmente, na identificação dos
+insumos incluídos na parcela de momento de transporte das Composições de
+Custos Unitários – CCUs. Durante essa etapa, é importante também avaliar as
+atividades auxiliares, visto que o transporte tanto dessas atividades quanto dos
+insumos a elas relacionados deve ser considerado.
+
+No exemplo em questão, a tabela 2 exibe a lista de insumos presentes na
+"Parcela F - Momento de Transportes" das composições de custos listadas na
+tabela 1.
+
+     Tabela 2 - Lista dos insumos presentes na parcela de momento de transportes
+Código
+                                              Descrição                                         Unidade
+SICRO
+          Fabricação de mourão de concreto esticador - seção triangular de 15 cm - areia e
+3716133                                                                                           un
+          brita comercias
+          Fabricação de mourão de concreto suporte - seção triangular de 11 cm - areia e
+3716135                                                                                           un
+          brita comerciais
+3816118 Guarda-corpo de concreto - fabricação - areia e brita comerciais                          m
+4016096 Escavação e carga de material de jazida com escavadeira hidráulica de 1,56 m³             m³
+5213416 Placa em aço nº 16 galvanizado com película retrorrefletiva tipo I + I - confecção        m²
+5219544 Cavalete em perfil metálico para placa de sinalização - 1,00 m x 1,00 m - confecção       un
+5219546 Suporte metálico móvel para placa de sinalização - confecção                              un
+6416037 Usinagem de agregados para microrrevestimento a frio - faixa III - brita comercial        m³
+6416040 Usinagem de brita graduada com brita comercial em usina de 300 t/h                        m³
+6416143 Usinagem de concreto asfáltico - faixa B - areia e brita comerciais                        t
+ M0004    Aço CA 50                                                                               kg
+ M0005    Brita 0                                                                                 m³
+ M0014    Aço CA 60                                                                               kg
+ M0028    Areia média                                                                             m³
+ M0030    Aditivo plastificante e retardador de pega para concreto e argamassa                    kg
+ M0047    Cone de sinalização em polietileno - H = 75 cm e base quadrada de 40 x 40 cm            un
+          Cilindro canalizador de tráfego em polietileno - H = 117 cm e base quadrada de 60 x
+ M0051                                                                                            un
+          60 cm
+
+
+
+
+                                                   8
+                Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+  Tabela 2 - Lista dos insumos presentes na parcela de momento de transportes (2/3)
+
+Código
+                                            Descrição                                     Unidade
+SICRO
+M0069 Arame farpado em aço galvanizado - D = 1,60 mm                                        m
+M0072 Arame liso em aço galvanizado - D = 2,10 mm (14 BWG)                                  kg
+M0075 Arame liso recozido em aço-carbono - D = 1,24 mm (18 BWG)                             kg
+M0082 Areia média lavada                                                                    m³
+M0083 Argamassa pré-dosada para grauteamento                                                kg
+         Corrente de elo soldado em aço galvanizado com acabamento polido - D = 3,18 mm
+M0162                                                                                       m
+         (1/8”)
+M0163 Gonzo com aba em aço galvanizado - D = 12,7 mm (1/2”)                                 un
+M0164 Tubo em aço galvanizado - E = 1,50 mm e seção de 20 x 20 mm                           m
+M0166 Tubo em aço galvanizado - E = 2,25 mm e D = 20 mm (3/4”)                              m
+M0167 Tela de poliamida industrial - E = 0,40 mm e malha de 1,6 mm                          m²
+M0168 Abraçadeira de poliamida - E = 3,6 mm e C = 200 mm                                    un
+M0169 Roda em aço e pneu com câmara de ar 83/203 mm (3,25”/8”) para carrinho de mão         un
+M0191 Brita 1                                                                               m³
+M0192 Brita 2                                                                               m³
+M0222 Filer calcário                                                                        kg
+M0284 Caibro de pinho - L = 7,5 cm e E = 7,5 cm                                             m
+M0290 Tábua - E = 2,5 cm e L = 10 cm                                                        m
+M0310 Peça de madeira - L = 7,5 cm e E = 2,5 cm                                             m
+M0344 Cal hidratada - a granel                                                              kg
+M0366 Cantoneira em aço ASTM A36 galvanizado                                                kg
+M0424 Cimento Portland CP II - 32 - saco                                                    kg
+M0560 Desmoldante para fôrmas de madeira                                                     l
+M0717 Tinta à base de resina epóxi bicomponente para fundo preparador de pintura             l
+M0718 Tinta esmalte à base de resina epóxi bicomponente                                      l
+M0771 Cavalete em polietileno zebrado com faixa refletiva                                   un
+M0783 Massa asfáltica comercial - capa de rolamento                                          t
+M0787 Suporte em aço-carbono galvanizado tipo perfil C para placa de sinalização            kg
+         Conjunto para fixação de placas em aço galvanizado composto por barra chata,
+M0789                                                                                       kg
+         abraçadeira, parafusos, porcas e arruelas
+         Parafuso de cabeça sextavada em aço galvanizado tipo autoatarrachante com
+M1079                                                                                       un
+         arruela de vedação - D = 6,3
+M1097 Pedra de mão ou rachão                                                                m³
+M1103 Pedrisco                                                                              m³
+M1135 Pó de pedra                                                                           m³
+M1205 Prego de ferro                                                                        kg
+M1358 Sarrafo em madeira de terceira - E = 2,5 cm e L = 5 cm                                m
+M1367 Chapa fina em aço galvanizado                                                         kg
+M1397 Eletrodo revestido E60XX                                                              kg
+M1429 Tábua de pinho de terceira - E = 2,5 cm                                               m²
+
+
+
+
+                                                  9
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+   Tabela 2 - Lista dos insumos presentes na parcela de momento de transportes (3/3)
+
+Código
+                                              Descrição                             Unidade
+SICRO
+ M1662 Suporte em madeira de eucalipto tratado - seção de 8 x 8 cm                    m
+ M1968 Defensa metálica semimaleável simples                                          un
+ M2036 Tinta à base de resina acrílica emulsionada em água para demarcação viária      l
+ M2037 Microesferas refletivas de vidro tipo I-B                                      kg
+ M2038 Microesferas refletivas de vidro tipo II-A                                     kg
+ M2041 Adesivo à base de resina poliéster                                             kg
+ M2128 Tinta esmalte sintético acetinado                                               l
+ M2167 Tubo de concreto armado PA1 - D = 0,60 m                                       m
+ M2171 Tubo de concreto armado PA1 - D = 0,80 m                                       m
+ M2175 Tubo de concreto armado PA1 - D = 1,00 m                                       m
+ M3153 Tinta em pó à base de resina poliéster                                         kg
+ M3235 Película retrorrefletiva tipo I                                                m²
+ M3237 Película retrorrefletiva tipo III                                              m²
+ M3506 Material demolido - madeira                                                     t
+ M3507 Revestimento asfáltico                                                          t
+ M3508 Camada granular (base ou sub-base)                                              t
+ M3509 Material demolido - remendo profundo                                            t
+ M3512 Material demolido - concreto armado                                             t
+ M3514 Solo                                                                            t
+ M3515 Grãos, agregados e solos derramados na pista                                    t
+ M3719 Blocos de rocha ou matacões                                                     t
+ M3801 Animais de grande porte mortos em rodovia                                       t
+ M3802 Animais de pequeno porte mortos em rodovia                                      t
+ M3803 Emborrachados de pneus espalhados em rodovia                                    t
+ M3804 Espécimes arbóreos de até 20 m tombados na pista                                t
+ M3806 Sucatas derramadas em rodovia                                                   t
+ M3813 Vidros, caixas e engradados derramados na pista                                 t
+ M3821 Tacha refletiva em plástico injetado bidirecional com um pino - tipo I         un
+ M3829 Tacha refletiva em plástico injetado monodirecional com um pino - tipo I       un
+ M3920 Diluente para tinta epóxi bicomponente ou tricomponente                         l
+ M3949 Desmoldante para fôrmas metálicas                                               l
+
+
+O FIT aplica-se ao transporte dos insumos que atendem aos requisitos definidos
+no Manual de Custos de Infraestrutura de Transportes - Volume 05: Fator de
+Interferência de Tráfego (FIT) - 2ª Edição. Dessa forma, cabe ao responsável
+identificar os insumos sobre os quais o FIT será aplicado, assegurando que
+esses estejam adequadamente apresentados na tabela de Distâncias Médias de
+Transporte – DMT do projeto.
+
+Neste exemplo, são priorizados os insumos e atividades auxiliares de maior
+relevância para o transporte, sendo esses detalhados na tabela de DMT.
+
+
+                                                    10
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+As informações citadas até o momento são predecessoras ao cálculo do FIT e
+devem ser obtidas no projeto. Com base nesse levantamento, são identificados
+os seguintes dados:
+
+   ▪ tabela de Distâncias Médias de Transporte – DMT;
+   ▪ Volume Médio Diário de tráfego por faixa – VMDf;
+   ▪ dados das operações de sinalização.
+
+2.1.1.1 Distância Média de Transporte – DMT
+
+No exemplo apresentado, a tabela 3 exibe o quadro de DMTs, elemento
+disponível no projeto, definido com base no mapa de situação e no diagrama
+linear de ocorrências, conforme representado nas figuras 1 e 2.
+
+A figura 1 apresenta interseções do segmento da obra com áreas urbanas, e,
+com mais detalhes na figura 2, observa-se que as rodovias utilizadas para
+transporte de insumos possuem perímetros urbanos, o que implica na redução
+da velocidade de transporte dos insumos que transitam por essas regiões,
+exigindo sua devida caracterização.
+
+Para exemplificar o cálculo aplicado neste projeto, consideraram-se, nas
+distâncias de transporte entre origem e destino fixos (i.e., insumos com origens
+no areal, cidade 4 e pedreira com destino ao canteiro), os valores indicados na
+figura 2, obtidos pela soma das extensões correspondentes. Contudo, nos casos
+em que o transporte envolve a extensão da frente de serviço, a DMT deve ser
+ponderada.
+
+Adicionalmente, como a extensão da frente de serviço abrange um perímetro
+urbano inserido na extensão da obra, torna-se necessário diferenciar as
+distâncias médias correspondentes à rodovia rural e à via urbana. Dessa forma,
+o cálculo da DMT pavimentada entre canteiro e frente de serviço, cuja extensão
+total é de 70,40 km, foi estruturado pela divisão da frente de serviço em quatro
+partes, conforme indicado na figura 2.
+
+A seguir, apresenta-se um exemplo da aplicação do cálculo da média ponderada
+da DMT para o transporte da massa asfáltica comercial.
+
+   ▪ entre km 78,00 e km 62,00:
+
+                                       78 - 62
+                          (78 - 62) × (       )
+                                          2
+                    DMT =                       = 1,82 km
+                                  70,40
+
+   ▪ entre km 62,00 e km 32,00:
+
+                                       62 - 32
+                          (62 - 32) × (       )
+                                          2
+                    DMT =                       = 6,39 km
+                                  70,40
+
+
+
+
+                                          11
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+    ▪ entre km 32,00 e km 27,20 (perímetro urbano - cidade 3):
+
+                                                                     32 - 27,2
+                           (32 - 27,2) × [(62 - 32) + (                       )]
+                                                                         2
+               DMT =                                                               = 2,21 km
+                                                  70,40
+
+    ▪ entre km 27,20 e km 7,60:
+
+                                                 27,2 - 7,6
+                  (27,2 - 7,6) × [(62 - 27,2) + (           )]
+                                                     2
+            DMT =                                              = 12,42 km
+                                    70,40
+
+Assim, a soma das DMTs referentes à rodovia rural na extensão da obra resulta
+em 20,63 km, enquanto a DMT correspondente ao perímetro urbano é de 2,21
+km. Com base nesses valores, a Distância Média de Transporte em rodovia rural
+pavimentada – DMTr da massa asfáltica comercial, cujo a origem é a usina
+localizada no km 4,7 da BR-XXX, e destino é a frente de serviço, é calculada da
+seguinte forma:
+
+                                   DMTr = 4,7 + 20,63 = 25,33 km
+
+Ademais, a Distância Média de Transporte em via urbana pavimentada – DMTu
+da massa asfáltica comercial abrange tanto a cidade 4, situada fora da extensão
+da obra, quanto a DMT do perímetro urbano da cidade 3, inserido na frente de
+serviço e cujo valor foi previamente definido. O cálculo é realizado da seguinte
+forma:
+
+                                   DMTu = 14,4 + 2,21 = 16,61 km
+
+Dessa forma, as distâncias de transporte dos demais insumos estão
+apresentadas na tabela 3, com as vias pavimentadas divididas em DMTr e
+DMTu.
+                              Tabela 3 - Quadro de DMTs dos insumos
+                                                                                          DMT (km)
+            Serviço                   Insumo       Origem       Destino                              P
+                                                                            LN     RP
+                                                                                            DMTr         DMTu
+                                    Areia média Areal         Canteiro       -     2,50     13,20        0,00
+Conservação corretiva rotineira     Cimento
+                                                   Cidade 4 Canteiro         -     1,50     16,00        10,20
+                                    Portland
+Conservação corretiva rotineira,
+manutenção de buracos e
+defeitos na pista, conservação      Brita 1        Pedreira Canteiro         -     3,50     20,70        14,40
+preventiva periódica e serviços
+de manutenção
+DMT - Distância Média de Transporte;
+LN - Leito Natural;
+RP - Revestimento primário;
+P - Pavimentada;
+DMTr - Distância Média de Transporte em rodovia rural pavimentada;
+DMTu - Distância Média de Transporte em via urbana.
+
+
+
+
+                                                      12
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                           Tabela 3 - Quadro de DMTs dos insumos (2/2)
+
+                                                                                         DMT (km)
+           Serviço                 Insumo          Origem       Destino                             P
+                                                                          LN      RP
+                                                                                           DMTr         DMTu
+Conservação corretiva
+rotineira e serviços de         Brita 2          Pedreira     Canteiro     -      3,50     20,70        14,40
+manutenção
+                                Cal hidratada    Cidade 4     Canteiro     -      1,50     16,00        10,20
+                                Pó de pedra      Pedreira     Canteiro     -      3,50     20,70        14,40
+Conservação preventiva
+                                Pedrisco         Pedreira     Canteiro     -      3,50     20,70        14,40
+periódica e serviços de
+manutenção                      Brita 0          Pedreira     Canteiro     -      3,50     20,70        14,40
+                                Material                      Frente de
+                                                 Canteiro                  -      1,50     20,63           2,21
+                                usinado                       serviço
+                                Massa            Usina de
+Conservação preventiva                                        Frente de
+                                asfáltica        CBUQ                      -      2,00     25,33        16,61
+periódica                                                     serviço
+                                comercial        comercial
+Conservação preventiva
+                                Revestimento
+periódica, manutenção de                     Frente de
+                                asfáltico                     Canteiro     -      1,50     20,63           2,21
+buracos e defeitos na pista                  serviço
+                                removido
+e serviços de manutenção
+DMT - Distância Média de Transporte;
+LN - Leito Natural;
+RP - Revestimento primário;
+P - Pavimentada;
+DMTr - Distância Média de Transporte em rodovia rural pavimentada;
+DMTu - Distância Média de Transporte em via urbana.
+
+
+2.1.1.2 Volume Médio Diário – VMD
+
+O VMD é preferencialmente definido por meio de estudos de tráfego realizados
+durante a fase de projeto. No entanto, na ausência desses estudos, esse
+parâmetro pode ser obtido em bases de dados disponíveis, conforme descrito na
+subseção 2.3 do Manual de Custos de Infraestrutura de Transportes - Volume
+05: Fator de Interferência de Tráfego (FIT) - 2ª Edição.
+
+Ressalta-se que para aplicação do FIT utiliza-se o Volume Médio Diário por
+faixa – VMDf. No caso do projeto exemplificado, o estudo de tráfego identificou
+variações nos valores de VMDf, o que resultou na divisão da obra em dois
+segmentos distintos. Essa diferenciação, conforme apresentada na tabela 4,
+decorre da existência de um perímetro urbano localizado entre o quilômetro
+27,20 e 32,00 da extensão em análise.
+
+                   Tabela 4 - Valores de VMDf obtidos pelo estudo de tráfego
+
+                                                                     Extensão total
+Segmento parcial              Inicial                Final                                         VMDf
+                                                                         (km)
+    Segmento 1                km 7,60              km 27,20               19,60                    1.580
+    Segmento 2              km 32,00               km 78,00               46,00                    1.665
+
+
+
+
+                                                      13
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+De acordo com as diretrizes estabelecidas na subseção 3.1.2 do Manual de
+Custos de Infraestrutura de Transportes - Volume 05: Fator de Interferência de
+Tráfego (FIT) - 2ª Edição, no caso de valores distintos de VMD por faixa, deve-
+se calcular a média ponderada dos segmentos pela aplicação da seguinte
+equação:
+
+                                         ∑(DTri × VMDfi )
+                           VMDfmp =
+                                             ∑DTri
+
+onde:
+
+VMDfmp representa a média ponderada dos Volumes Médios Diários por faixa,
+em unidades por dia;
+DTri representa a Distância de Transporte em rodovia rural pavimentada do
+segmento correspondente a cada VMD, em quilômetros;
+VMDfi representa o Volume Médio Diário por faixa, em unidades por dia.
+
+Para exemplificação, são demonstrados a seguir os cálculos referentes ao
+transporte do insumo produzido pela composição de custos “Usinagem de brita
+graduada com brita comercial em usina de 300 t/h - Código SICRO: 6416040”,
+aplicada como atividade auxiliar na composição principal “Base ou sub-base de
+brita graduada com brita comercial - Código SICRO: 4011276”. Adicionalmente,
+apresenta-se o cálculo relativo ao transporte do insumo “M0191 - Brita 1”
+utilizado na composição de custos de usinagem.
+
+Com base na tabela 3 e no diagrama linear de ocorrências exibido na figura 2,
+verifica-se que o transporte para o canteiro dos materiais provenientes da
+pedreira (i.e., pó de pedra, pedrisco e britas) ocorre além dos limites do
+segmento de obra definido. Na área onde se localiza a pedreira não foram
+realizados estudos específicos de tráfego para a determinação do VMDf, de
+forma que devem ser adotados como referência os valores correspondentes ao
+segmento de obra mais próximo, no caso, o segmento parcial 2.
+Consequentemente, o transporte da brita 1 ocorre em segmento com valor de
+VMDf único, sem necessidade de ponderação.
+
+Entretanto, o transporte da brita graduada usinada, destinado à aplicação na
+frente de serviço, atravessa os segmentos parciais 1 e 2, que apresentam
+diferentes valores de VMD por faixa, tornando necessário o cálculo da média
+ponderada para representar adequadamente essa variação.
+
+Portanto, para o transporte da brita graduada usinada, obtém-se o VMDf médio
+por meio da aplicação na equação acima dos dados da tabela 4:
+
+                         (19,60 × 1.580) + (46,00 × 1.665)
+             VMDfmp =                                      = 1.640
+                                   19,60 + 46,00
+
+Ao estender essa análise aos demais insumos listados na tabela 3, obtém-se os
+valores de VMDf apresentados na tabela 5.
+
+
+
+
+                                          14
+                   Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+     Tabela 5 - Valores de VMDf e de DMT nos segmentos de transporte dos insumos
+
+                                                                                   DMTr    DMTu
+               Serviço                       Insumo         Origem      Destino                    VMDf
+                                                                                   (km)    (km)
+                                        Areia média        Areal       Canteiro    13,20   0,00    1.665
+Conservação corretiva rotineira
+                                        Cimento Portland Cidade 4      Canteiro    16,00   10,20   1.665
+Conservação corretiva rotineira e
+manutenção de buracos e defeitos        Brita 1            Pedreira    Canteiro    20,70   14,40   1.665
+na pista
+Conservação corretiva rotineira         Brita 2            Pedreira    Canteiro    20,70   14,40   1.665
+                                        Cal hidratada      Cidade 4    Canteiro    16,00   10,20   1.665
+
+Conservação preventiva periódica e      Pó de pedra        Pedreira    Canteiro    20,70   14,40   1.665
+serviços de manutenção                  Pedrisco           Pedreira    Canteiro    20,70   14,40   1.665
+                                        Brita 0            Pedreira    Canteiro    20,70   14,40   1.665
+Conservação preventiva periódica e      Material                       Frente de
+                                                           Canteiro                20,63   2,21    1.640
+serviços de manutenção                  usinado                        serviço
+                                                        Usina de
+                                        Massa asfáltica                Frente de
+Conservação preventiva periódica                        CBUQ                       25,33   16,61   1.640
+                                        comercial                      serviço
+                                                        comercial
+Conservação preventiva periódica,
+                                        Revestimento       Frente de
+manutenção de buracos e defeitos                                       Canteiro    20,63   2,21    1.640
+                                        asfáltico          serviço
+na pista e serviços de manutenção
+DMTr - Distância Média de Transporte em rodovia pavimentada;
+DMTu - Distância Média de Transporte em via urbana pavimentada;
+VMDf - Volume Médio Diário de tráfego por faixa.
+
+
+É importante destacar que os valores de VMDf apresentados na tabela 5 se
+referem apenas às extensões em rodovias rurais pavimentadas.
+
+2.1.1.3 Operações de sinalização de obra
+
+Para a execução de atividades que envolvem intervenções na pista ou no
+acostamento, é fundamental planejar a sinalização da obra de forma a controlar
+o tráfego e alertar os usuários sobre as condições atípicas na rodovia. Dessa
+forma, é imprescindível que seja elaborado um projeto de sinalização
+respeitando os normativos do DNIT.
+
+No caso do presente exemplo, foram utilizadas as diretrizes estabelecidas no
+Manual de Sinalização de Obras e Emergências em Rodovias (DNIT, 2010).
+Esse manual contempla diferentes modelos de projetos-tipo de sinalização, entre
+os quais se destaca a sinalização para pista simples com alternância de tráfego,
+também conhecida como operação "PARE" e "SIGA".
+
+Com base na lista de serviços apresentada na tabela 1, identifica-se os serviços
+relacionados à sinalização temporária da obra, como por exemplo a composição
+de custos “Operação de sinalização por bandeirola de tecido ou com placa
+metálica - Código SICRO: 5213850”.
+
+
+
+
+                                                      15
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2.1.2 Cálculo dos atrasos
+
+Concluída a etapa de levantamento de dados, procede-se com o cálculo dos
+atrasos que resultam em aumento no tempo de transporte devido à interferência
+de tráfego para cada insumo listado na tabela 3.
+
+2.1.2.1 Atraso devido à operação de “PARE” e “SIGA” - Atraso A1
+
+Para o cálculo do atraso devido à operação de “PARE” e “SIGA”, devem ser
+observados os seguintes critérios estabelecidos no Manual de Custos de
+Infraestrutura de Transportes - Volume 05: Fator de Interferência de Tráfego
+(FIT) - 2ª Edição:
+
+    ▪ o orçamento deve prever os serviços de sinalização de ocupação de área
+      da pista ou acostamento;
+    ▪ o segmento da obra deve ser em rodovia pavimentada;
+    ▪ o transporte do insumo deve passar pela extensão da obra.
+
+Em análise ao quadro de DMT, verificam-se os insumos cujo transporte passa
+pela extensão em obra, a fim de identificar as composições de custos que
+atendem aos critérios supracitados. A tabela 6 apresenta as referidas CCUs.
+
+                       Tabela 6 - Composições de custos com atraso A1
+ Código
+                                                    Descrição
+ SICRO
+          Argamassa de cimento e areia 1:3 - confecção em betoneira e lançamento manual - areia
+1109669
+          comercial
+          Concreto fck = 20 MPa - confecção em betoneira e lançamento manual - areia e brita
+1107892
+          comerciais
+          Concreto fck = 25 MPa - confecção em betoneira e lançamento manual - areia e brita
+1107896
+          comerciais
+          Concreto fck = 25 MPa para pré-moldados (mourões) - confecção em betoneira e lançamento
+1116127
+          manual - areia e brita comerciais
+4915623 Solo brita para base de remendo profundo - brita comercial
+6416040 Usinagem de brita graduada com brita comercial em usina de 300 t/h
+6416143 Usinagem de concreto asfáltico - faixa B - areia e brita comerciais
+6416037 Usinagem de agregados para microrrevestimento a frio - faixa III - brita comercial
+4011464 Concreto asfáltico - faixa C - massa comercial
+4915705 Correção de defeitos por fresagem descontínua do revestimento asfáltico - espessura de 5 cm
+4915656 Fresagem contínua de revestimento asfáltico - espessura de 4 cm
+4915667 Remoção mecanizada de revestimento asfáltico
+4915757 Tapa buraco com pintura de ligação - demolição com serra corta piso
+4011276 Base ou sub-base de brita graduada com brita comercial
+4011459 Concreto asfáltico - faixa B - areia e brita comerciais
+          Microrrevestimento a frio com emulsão modificada com polímero de 1,5 cm - faixa III - brita
+4011410
+          comercial
+
+
+
+
+                                                   16
+                   Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+O atraso em decorrência das operações de “PARE” e “SIGA” é determinado pela
+aplicação da Equação 2 do Manual de Custos de Infraestrutura de Transportes -
+Volume 05: Fator de Interferência de Tráfego (FIT) - 2ª Edição, transcrita a
+seguir:
+
+                                       A1 = 70 + 0,0035 × VMDf
+
+onde:
+
+A1 representa o atraso devido à operação de “PARE” e “SIGA”, em segundos;
+VMDf representa o Volume Médio Diário por faixa.
+
+Prosseguindo com os exemplos abordados anteriormente, para a brita graduada
+usinada obteve-se o seguinte valor para de A1:
+
+                               A1 = 70 + 0,0035 × 1.640 = 75,74 s
+
+O atraso A1 foi calculado para todos os insumos da tabela 3 que atendem os
+critérios de aplicação desse atraso, cujos resultados estão dispostos na tabela 7.
+
+                                            Tabela 7 - Atraso A1
+                                                                                                     Atrasos
+               Serviço                        Insumo                 Origem      Destino     VMDf
+                                                                                                      A1 (s)
+                                        Areia média          Areal               Canteiro    1.665    75,83
+Conservação corretiva rotineira
+                                        Cimento Portland     Cidade 4            Canteiro    1.665    75,83
+Conservação corretiva rotineira,
+manutenção de buracos e defeitos
+                                   Brita 1                   Pedreira            Canteiro    1.665    75,83
+na pista, conservação preventiva
+periódica e serviços de manutenção
+Conservação corretiva rotineira e
+                                        Brita 2              Pedreira            Canteiro    1.665    75,83
+serviços de manutenção
+                                        Cal hidratada        Cidade 4            Canteiro    1.665    75,83
+                                        Pó de pedra          Pedreira            Canteiro    1.665    75,83
+Conservação preventiva periódica        Pedrisco             Pedreira            Canteiro    1.665    75,83
+e serviços de manutenção
+                                        Brita 0              Pedreira            Canteiro    1.665    75,83
+                                                                                 Frente de
+                                        Material usinado     Canteiro                        1.640    75,74
+                                                                                 serviço
+                                        Massa asfáltica      Usina de CBUQ       Frente de
+Conservação preventiva periódica                                                             1.640    75,74
+                                        comercial            comercial           serviço
+Conservação preventiva periódica,       Revestimento
+manutenção de buracos e defeitos        asfáltico            Frente de serviço   Canteiro    1.640    75,74
+na pista e serviços de manutenção       removido
+VMDf - Volume Médio Diário de tráfego por faixa.
+
+
+
+
+                                                        17
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2.1.2.2 Atraso devido ao tráfego em vias urbanas - Atraso A2
+
+O Manual de Custos de Infraestrutura de Transportes - Volume 05: Fator de
+Interferência de Tráfego (FIT) - 2ª Edição estabelece os seguintes critérios para
+o cálculo do atraso devido ao tráfego em vias urbanas:
+
+    ▪ a via urbana deve ser pavimentada;
+    ▪ a DMT deve ser caracterizada como Distância Média de Transporte em
+      via urbana – DMTu.
+
+As composições de custos impactadas pelo atraso A2, apresentadas na tabela
+8, são aquelas para as quais os insumos têm valores de DMTu estabelecidos.
+                       Tabela 8 - Composições de custos com atraso A2
+ Código
+                                                    Descrição
+ SICRO
+          Argamassa de cimento e areia 1:3 - confecção em betoneira e lançamento manual - areia
+1109669
+          comercial
+          Concreto fck = 20 MPa - confecção em betoneira e lançamento manual - areia e brita
+1107892
+          comerciais
+          Concreto fck = 25 MPa - confecção em betoneira e lançamento manual - areia e brita
+1107896
+          comerciais
+          Concreto fck = 25 MPa para pré-moldados (mourões) - confecção em betoneira e lançamento
+1116127
+          manual - areia e brita comerciais
+4915623 Solo brita para base de remendo profundo - brita comercial
+6416040 Usinagem de brita graduada com brita comercial em usina de 300 t/h
+6416143 Usinagem de concreto asfáltico - faixa B - areia e brita comerciais
+6416037 Usinagem de agregados para microrrevestimento a frio - faixa III - brita comercial
+4011459 Concreto asfáltico - faixa B - areia e brita comerciais
+4011464 Concreto asfáltico - faixa C - massa comercial
+4915705 Correção de defeitos por fresagem descontínua do revestimento asfáltico - espessura de 5 cm
+4915656 Fresagem contínua de revestimento asfáltico - espessura de 4 cm
+4915667 Remoção mecanizada de revestimento asfáltico
+4915757 Tapa buraco com pintura de ligação - demolição com serra corta piso
+4011276 Base ou sub-base de brita graduada com brita comercial
+          Microrrevestimento a frio com emulsão modificada com polímero de 1,5 cm - faixa III - brita
+4011410
+          comercial
+
+
+De acordo com as diretrizes estabelecidas no Manual de Custos de Infraestrutura
+de Transportes - Volume 05: Fator de Interferência de Tráfego (FIT) - 2ª Edição,
+a velocidade média de operação padrão é de 60 km/h para rodovias rurais
+pavimentadas, enquanto para vias urbanas, a velocidade média de operação é
+de 30 km/h.
+
+Caso o orçamentista considere necessário ajustar a velocidade padrão
+estabelecida, essa alteração pode ser implementada por meio da Equação 3 do
+referido Manual, desde que seja acompanhada de justificativa técnica.
+
+
+
+                                                   18
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+O atraso devido ao tráfego em vias urbanas é determinado pela aplicação da
+Equação 4 do Manual de Custos de Infraestrutura de Transportes - Volume 05:
+Fator de Interferência de Tráfego (FIT) - 2ª Edição, transcrita a seguir:
+
+                                            A2 = Fc × DMTu
+
+onde:
+
+A2 representa o atraso devido ao tráfego nas vias urbanas pavimentadas, em
+segundos;
+Fc representa o fator de conversão referencial no âmbito do FIT para vias
+urbanas pavimentadas, em segundos por quilômetro;
+DMTu representa a Distância Média de Transporte em vias urbanas
+pavimentadas, em quilômetros.
+
+O cálculo do atraso A2 é exemplificado para o insumo “M0191 - Brita 1”, o qual
+atende aos critérios de aplicação da equação acima, resultando no seguinte
+valor:
+
+                                     A2 = 60 × 14,40 = 864,00
+
+Cabe ressaltar que o material “M0082 - Areia média” não sofre incidência do
+atraso A2, porque seu percurso de transporte não atravessa segmentos urbanos.
+
+O atraso A2 foi calculado para todos os insumos da tabela 3 que atendem os
+critérios de aplicação desse atraso. Os resultados estão dispostos na tabela 9.
+
+                                          Tabela 9 - Atraso A2
+
+                                                                                    DMTu    Atrasos
+              Serviço                        Insumo          Origem      Destino
+                                                                                    (km)     A2 (s)
+Conservação corretiva rotineira        Cimento Portland     Cidade 4    Canteiro    10,20   612,00
+Conservação corretiva rotineira e
+manutenção de buracos e defeitos       Brita 1              Pedreira    Canteiro    14,40   864,00
+na pista
+Conservação corretiva rotineira        Brita 2              Pedreira    Canteiro    14,40   864,00
+                                       Cal hidratada        Cidade 4    Canteiro    10,20   612,00
+                                       Pó de pedra          Pedreira    Canteiro    14,40   864,00
+Conservação preventiva periódica e Pedrisco                 Pedreira    Canteiro    14,40   864,00
+serviços de manutenção
+                                   Brita 0                  Pedreira    Canteiro    14,40   864,00
+                                                                        Frente de
+                                       Material usinado     Canteiro                2,21    132,60
+                                                                        serviço
+                                                            Usina de
+                                       Massa asfáltica                  Frente de
+Conservação preventiva periódica                            CBUQ                    16,61   996,60
+                                       comercial                        serviço
+                                                            comercial
+Conservação preventiva periódica,
+                                       Revestimento         Frente de
+manutenção de buracos e defeitos                                        Canteiro    2,21    132,60
+                                       asfáltico removido   serviço
+na pista e serviços de manutenção
+DMTu - Distância Média de Transporte em via urbana.
+
+
+
+
+                                                       19
+             Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2.1.3 Cálculo do Fator de Interferência de Tráfego – FIT
+
+O Fator de Interferência de Tráfego – FIT é determinado pela Equação 7 do
+Manual de Custos de Infraestrutura de Transportes - Volume 05: Fator de
+Interferência de Tráfego (FIT) - 2ª Edição, transcrita a seguir:
+
+                                            (A1 + A2)
+                               FIT = 1 +
+                                           DMTp × Fp
+
+onde:
+
+FIT representa o Fator de Interferência de Tráfego aplicado aos serviços de
+transporte de insumos;
+A1 representa o atraso devido à operação de “PARE” e “SIGA”, em segundos;
+A2 representa o atraso devido ao tráfego nas vias urbanas pavimentadas, em
+segundos;
+DMTp representa a Distância Média de Transporte total pavimentada dos
+insumos, em quilômetros;
+Fp representa o fator padrão referencial no âmbito do FIT, em segundos por
+quilômetro, cujo valor padrão é igual a 60 s/km.
+
+A aplicação da equação acima é exemplificada para o transporte da massa
+asfáltica.
+
+   ▪ M0783 - Massa asfáltica comercial - capa de rolamento:
+
+                                 (75,74 + 996,60)
+                   FIT = 1 +                        = 1,4261
+                               (25,33 + 16,61) × 60
+
+É importante destacar que o FIT é calculado para cada insumo transportado,
+considerando as condições específicas de transporte e os critérios previamente
+definidos. Além disso, nem todos os insumos serão afetados pelos dois tipos de
+atraso, sendo necessária a avaliação caso a caso. Posto isso, os valores
+correspondentes ao FIT para cada insumo do exemplo estão apresentados na
+tabela 10.
+
+
+
+
+                                           20
+                                                         Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+
+                                                                          Tabela 10 - Tabela de DMT com FIT
+                                                                                                                     DMT (km)                          Atrasos
+                      Serviço                                 Insumo             Origem         Destino                         P           VMDf                       FIT
+                                                                                                           LN   RP                                  A1 (s)   A2 (s)
+                                                                                                                        DMTr        DMTu
+                                                        Areia média          Areal             Canteiro    -    2,50    13,20       0,00    1.665   75,83     0,00    1,0957
+Conservação corretiva rotineira
+                                                        Cimento Portland     Cidade 4          Canteiro    -    1,50    16,00       10,20   1.665   75,83    612,00   1,4375
+Conservação corretiva rotineira e manutenção de
+                                                        Brita 1              Pedreira          Canteiro    -    3,50    20,70       14,40   1.665   75,83    864,00   1,4463
+buracos e defeitos na pista
+Conservação corretiva rotineira                         Brita 2              Pedreira          Canteiro    -    3,50    20,70       14,40   1.665   75,83    864,00   1,4463
+                                                        Cal hidratada        Cidade 4          Canteiro    -    1,50    16,00       10,20   1.665   75,83    612,00   1,4375
+                                                        Pó de pedra          Pedreira          Canteiro    -    3,50    20,70       14,40   1.665   75,83    864,00   1,4463
+Conservação preventiva periódica e serviços de          Pedrisco             Pedreira          Canteiro    -    3,50    20,70       14,40   1.665   75,83    864,00   1,4463
+manutenção
+                                                        Brita 0              Pedreira          Canteiro    -    3,50    20,70       14,40   1.665   75,83    864,00   1,4463
+                                                                                               Frente de
+                                                        Material usinado     Canteiro                      -    1,50    20,63       2,21    1.640   75,74    132,60   1,1520
+                                                                                               serviço
+                                                        Massa asfáltica      Usina de CBUQ     Frente de
+Conservação preventiva periódica                                                                           -    2,00    25,33       16,61   1.640   75,74    996,60   1,4261
+                                                        comercial            comercial         serviço
+Conservação preventiva periódica, manutenção de
+                                                Revestimento       Frente de
+buracos e defeitos na pista e serviços de                                                      Canteiro    -    1,50    20,63       2,21    1.640   75,74    132,60   1,1520
+                                                asfáltico removido serviço
+manutenção
+DMT - Distância Média de Transporte;
+LN - Leito natural;
+RP - Revestimento primário;
+P - Pavimentada;
+DMTr - Distância Média de Transporte em rodovia rural pavimentada;
+DMTu - Distância Média de Transporte em via urbana pavimentada;
+VMDf - Volume Médio Diário de tráfego por faixa;
+A1 - Atraso correspondente às operações de “PARE” e “SIGA”;
+A2 - Atraso correspondente ao centro urbano;
+FIT - Fator de Interferência de Tráfego.
+
+
+
+
+                                                                                          21
+                 Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+2.1.4 Aplicação do Fator de Interferência de Tráfego
+
+As composições de custos nas quais os insumos com aplicação do FIT estão
+inseridos são apresentadas na tabela 11.
+                    Tabela 11 - Lista de serviços adotada para uso do FIT
+ Código
+                                                    Descrição
+ SICRO
+          Argamassa de cimento e areia 1:3 - confecção em betoneira e lançamento manual - areia
+1109669
+          comercial
+1107892 Concreto fck = 20 MPa - confecção em betoneira e lançamento manual - areia e brita comerciais
+1107896 Concreto fck = 25 MPa - confecção em betoneira e lançamento manual - areia e brita comerciais
+          Concreto fck = 25 MPa para pré-moldados (mourões) - confecção em betoneira e lançamento
+1116127
+          manual - areia e brita comerciais
+4915623 Solo brita para base de remendo profundo - brita comercial
+6416040 Usinagem de brita graduada com brita comercial em usina de 300 t/h
+6416143 Usinagem de concreto asfáltico - faixa B - areia e brita comerciais
+6416037 Usinagem de agregados para microrrevestimento a frio - faixa III - brita comercial
+4011464 Concreto asfáltico - faixa C - massa comercial
+4915705 Correção de defeitos por fresagem descontínua do revestimento asfáltico - espessura de 5 cm
+4915656 Fresagem contínua de revestimento asfáltico - espessura de 4 cm
+4915667 Remoção mecanizada de revestimento asfáltico
+4915757 Tapa buraco com pintura de ligação - demolição com serra corta piso
+4011276 Base ou sub-base de brita graduada com brita comercial
+4011459 Concreto asfáltico - faixa B - areia e brita comerciais
+          Microrrevestimento a frio com emulsão modificada com polímero de 1,5 cm - faixa III - brita
+4011410
+          comercial
+
+
+O FIT incide sobre a parcela de momento de transporte, devendo ser aplicado
+ao insumo correspondente para o cálculo do custo unitário de transporte. Essa
+aplicação é restrita ao transporte em vias pavimentadas, de modo que nos
+segmentos com revestimento primário e leito natural, o custo de transporte é
+calculado sem a aplicação do FIT.
+
+O cálculo do custo unitário do momento de transporte é obtido pela soma dos
+custos das operações realizadas em leito natural (LN), revestimento primário
+(RP) e pavimentado (P), conforme a seguinte expressão:
+
+ CMT = ∑[(Qt × CCUi × DMT)LN + (Qt × CCUi × DMT)RP + (Qt × CCUi × DMT × FIT)P ]
+
+onde:
+
+CMT representa o custo unitário do momento de transporte;
+Qt representa a quantidade do insumo transportado;
+CCUi representa o custo unitário para cada operação;
+DMT representa a Distância Média de Transporte para cada operação;
+FIT representa o Fator de Interferência de Tráfego aplicado aos serviços de
+transporte.
+
+
+
+                                                   22
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+
+Como ilustração, utilizando a composição “Base ou sub-base de brita graduada
+com brita comercial - Código SICRO: 4011276” e aplicando a equação acima na
+atividade auxiliar “Usinagem de brita graduada com brita comercial em usina de
+300 t/h - Código SICRO: 6416040”, presente na parcela de momento de
+transporte, obtém-se o resultado apresentado na figura 3.
+
+CMT = (2,20 x 1,08 x 0,00) + (2,20 × 0,87 × 1,50) + (2,20 × 0,70 × 22,84 × 1,1520)
+
+                                        CMT = 43,3910
+
+                  Figura 3 - Composição de custos - Código SICRO: 4011276
+
+
+
+
+Fonte: FGV IBRE
+
+
+De modo similar, utilizando a composição “Usinagem de brita graduada com brita
+comercial em usina de 300 t/h- Código SICRO: 6416040” e aplicando a equação
+ao insumo “M0191 - Brita 1”, presente na parcela de momento de transporte,
+obtém-se o seguinte resultado:
+
+ CMT = (0,2205 x 1,08 x 0,00) + (0,2205 × 0,87 × 3,50) + (0,2205 × 0,70 × 35,10 × 1,4463)
+
+                                         CMT = 8,5070
+
+Ainda na supracitada composição de custos, é necessário calcular o custo de
+transporte para os demais insumos presentes na parcela de momento de
+transporte: brita 0, brita 2 e pó de pedra. Os resultados estão dispostos na figura 4.
+
+
+
+
+                                               23
+                  Caderno de Aplicação - Fator de Interferência de Tráfego – FIT
+
+
+                  Figura 4 - Composição de custos - Código SICRO: 6416040
+
+
+
+
+Fonte: FGV IBRE
+
+
+
+
+                                               24

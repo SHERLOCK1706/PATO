@@ -1,0 +1,1079 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Misturas asfálticas:
+Conceituação, Materiais
+e Dosagem
+
+Conteudista:
+
+Letícia Alberto Borges Madureira
+
+Brasília, fevereiro de 2023.
+Misturas asfálticas:
+Conceituação,
+Materiais e Dosagem
+
+
+
+
+Módulo
+
+           1
+Conceitos Gerais
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.007878/2022-07, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o
+ceder a outros órgãos e entidades federais
+
+
+
+
+Brasília, fevereiro de 2023.
+                                                      LISTA DE FIGURAS
+Figura 1 - Esquema simplificado da Produção de Asfalto (3 estágios de destilação) ...................................................... 4
+Figura 2 - Classificação SARA da estrutura por cromatografia ........................................................................................ 6
+Figura 3 - Representação esquemática dos componentes dos asfaltos .......................................................................... 7
+Figura 4 - Modelo de Micelas de Yen ............................................................................................................................... 7
+Figura 5 - Especificações dos Cimentos Asfálticos de Petróleo (CAP) - Classificação por penetração .......................... 9
+Figura 6 - Ensaio de penetração ..................................................................................................................................... 11
+Figura 7 - Ensaio do Ponto de Amolecimento ................................................................................................................ 12
+Figura 8 - Viscosímetro Saybolt ...................................................................................................................................... 15
+Figura 9 - Gráfico da Curva x Temperatura .................................................................................................................... 16
+Figura 10 - Ensaio de determinação de viscosidade Brookfield ..................................................................................... 17
+Figura 11 - Diferentes spindles utilizados no Viscosímetro Brookfield ........................................................................... 18
+Figura 12 - Ensaio de ductilidade ................................................................................................................................... 20
+Figura 13 - Modelos de equipamentos para ensaio do Ponto de Fulgor ........................................................................ 21
+Figura 14 - Estufa de filme rotativo ou película delgada rotacional (RTFOT) ................................................................ 23
+Figura 15 - Envelhecimento do ligante durante a mistura com o agregado em usina, estocagem, transporte, aplicação
+no campo durante vários anos de serviço ...................................................................................................................... 23
+Figura 16 - Ensaio de solubilidade .................................................................................................................................. 25
+                                                   LISTA DE TABELAS
+Tabela 1 - Limites estabelecidos para penetração, conforme NORMA DNIT 095/2006 EM ......................................... 11
+Tabela 2 - Limites estabelecidos para ponto de amolecimento, conforme NORMA DNIT 095/2006 EM ...................... 12
+Tabela 3 - Limites estabelecidos para índice de suscetibilidade térmica, conforme NORMA DNIT 095/2006 EM ....... 13
+Tabela 4- Índice de suscetibilidade térmica .................................................................................................................... 14
+Tabela 5 - Limites estabelecidos para Viscosidade Saybolt-Furol, conforme NORMA DNIT 095/2006 EM ................. 16
+Tabela 6 - Limites estabelecidos para Viscosidade Brookfield, conforme NORMA DNIT 095/2006 EM ....................... 19
+Tabela 7 - Limites estabelecidos para ductilidade, conforme NORMA DNIT 095/2006 EM .......................................... 20
+Tabela 8 - Limites estabelecidos para Ponto de Fulgor, conforme NORMA DNIT 095/2006 EM .................................. 21
+Tabela 9 - Limites estabelecidos após RTFOT, conforme NORMA DNIT 095/2006 EM ............................................... 24
+Tabela 10 - Limites estabelecidos conforme NORMA DNIT 095/2006 EM .................................................................... 25
+                                                   SUMÁRIO
+1.      APRESENTAÇÃO ................................................................................................................................................... 1
+2.      TERMOS TÉCNICOS .............................................................................................................................................. 2
+3.      IMPORTÂNCIA DOS LIGANTES ASFÁLTICOS ................................................................................................ 2
+4.      ORIGEM E PRODUÇÃO DE ASFALTO ............................................................................................................... 3
+5.      CARACTERÍSTICAS, ESTRUTURA E COMPORTAMENTO DO ASFALTO .................................................. 5
+6.      ESPECIFICAÇÕES BRASILEIRAS ....................................................................................................................... 8
+7.      ENSAIOS DE CARACTERIZAÇÃO .................................................................................................................... 10
+     7.1        DETERMINAÇÃO DA PENETRAÇÃO – NORMA DNIT 155/2010-ME .................................................. 10
+     7.2   DETERMINAÇÃO DO PONTO DE AMOLECIMENTO - MÉTODO DO ANEL E BOLA – NORMA DNIT
+     131/2010-ME .............................................................................................................................................................. 11
+     7.3        ÍNDICE DE SUSCETIBILIDADE TÉRMICA - IST (NORMA DNIT 095/2006 EM) ................................ 13
+     7.4  DETERMINAÇÃO DA VISCOSIDADE SAYBOLT-FUROL À ALTA TEMPERATURA - MÉTODO DA
+     PELÍCULA DELGADA (ABNT-MB 517) (NORMA DNER-ME 004/94) .............................................................. 14
+     7.5  ENSAIO DE DETERMINAÇÃO DA VISCOSIDADE EM TEMPERATURAS ELEVADAS USANDO UM
+     VISCOSÍMETRO ROTACIONAL (ABNT NBR 15184) ......................................................................................... 17
+     7.6        DETERMINAÇÃO DE DUCTILIDADE (DNER-ME 163/98) .................................................................... 19
+     7.7        DETERMINAÇÃO DOS PONTOS DE FULGOR E DE COMBUSTÃO (DNER-ME 148/94) .................. 20
+     7.8        DETERMINAÇÃO DO ENVELHECIMENTO DE CURTO PRAZO (RTFOT) – ASTM D 2872 ............. 22
+     7.9        DETERMINAÇÃO DA SOLUBILIDADE EM TRICLOROETILENO (ABNT NBR 14855) .................... 24
+8.      REFERÊNCIAS ...................................................................................................................................................... 25
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+
+   1. APRESENTAÇÃO
+          O desenvolvimento de cursos autoinstrucionais pelo Instituto de Pesquisas
+Rodoviárias - IPR, disponibilizados de maneira assíncrona, sem o acompanhamento
+de um tutor, atende ao Plano Educacional proposto para o ano de 2022. Desta forma,
+o participante acessa os materiais e conteúdos disponíveis de acordo com seu ritmo
+e com sua disponibilidade de tempo, atendendo ao prazo estipulado para conclusão
+do curso e conclusão das avaliações propostas.
+
+          Assim, o Curso de Misturas Asfálticas - Conceituação, Materiais e
+Dosagem tem o objetivo de promover a independência do aluno, desenvolvendo
+temáticas de maneira simples e objetiva, possibilitando que o domínio dos conceitos
+básicos sobre o assunto o torne apto à realização de cursos de aperfeiçoamento
+(síncronos e/ou presenciais).
+
+          Ao concluir o curso o aluno terá tido a oportunidade de conhecer melhor a
+teoria básica envolvida no processo de escolha de ligantes asfálticos, manipulação e
+dosagem das misturas asfálticas pelo método Marshall e Superpave.
+
+
+
+
+                                                                             Página 1
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+
+   2. TERMOS TÉCNICOS
+
+     Antes de iniciar o curso, é importante conhecermos alguns conceitos importantes:
+
+ Aglomerante         Ligante, aglutinante, Binder
+ Aglutinante         Material ativo utilizado para ligar componentes de uma mistura
+                     Família de materiais com diversas aplicações, extraído do
+                     petróleo ou encontrado na natureza. (DNIT)
+ Asfalto             Material aglutinante de consistência variável de cor pardo-
+                     escura ou negra, uma mistura de hidrocarbonetos derivados de
+                     petróleo de forma natural ou por destilação, cujo principal
+                     componente é o betume.
+                     Outro nome para designar o asfalto.
+                     Mistura de hidrocarbonetos pesados obtidos em estado natural
+ Betume              ou por diferentes processos, de consistência variável, com
+                     poder aglutinante e impermeabilizante, sendo completamente
+                     solúvel em CS2.
+                     Material que tem a propriedade de aglutinar partículas sólidas
+ Ligante
+                     para formar uma massa coesa.
+ Ligante
+ betuminoso          Ligante que contém Betume (asfalto).
+ (asfáltico)
+                     Ligante sem adição de outro produto a não ser materiais em
+                     porcentagem pequena, destinados a regular o início da pega ou
+ Ligante simples
+                     a alterar a progressão da resistência. Ex.: Gesso, cal, cimento
+                     Portland.
+
+
+
+   3. IMPORTÂNCIA DOS LIGANTES
+      ASFÁLTICOS
+
+           O asfalto é um material de grande valia para a construção. É um dos mais
+antigos e o mais utilizado pelo homem, podendo ser considerado um dos mais
+versáteis produtos da natureza (IA, 1989 versão em português, 2001).
+
+           Os registros mais antigos são de 3000 a.C., quando ele era usado para
+conter vazamentos de águas em reservatórios, já passando pouco depois a
+pavimentar estradas no Oriente Médio. No início era produzido a partir de piche
+retirado de lagos pastosos. Somente a partir de 1909 iniciou-se o emprego de asfalto
+
+
+
+
+                                                                                  Página 2
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+derivado do petróleo. No Brasil, a primeira rodovia asfaltada do país foi a Rio-
+Petrópolis, em 1928, durante o governo Washington Luís.
+
+            Seu uso atual vai desde a agricultura, passando pelas edificações,
+ferrovias, é utilizado na hidráulica e no controle de erosões, assim como na indústria,
+na recreação e, principalmente, na pavimentação de estradas e rodovias. Noventa e
+cinco por cento (95%) dos 65.568 km das rodovias federais brasileiras são
+pavimentadas com asfalto.
+
+            O uso é difundido porque, entre outras características, permite flexibilidade
+controlável, é impermeabilizante, é durável, é resistente às intempéries, e pode ser
+utilizado em diversas combinações de esqueleto mineral, com ou sem aditivos, o que
+favorece o seu uso em todas as condições geológicas e geotécnicas.
+
+
+
+
+   4. ORIGEM E PRODUÇÃO DE ASFALTO
+
+            Na antiguidade, o asfalto foi utilizado como argamassa nas edificações e
+blocos de pavimento, calafetagem de navios e em várias aplicações de
+impermeabilização.
+
+            Os povos da mesopotâmia utilizavam o asfalto na formulação de tintas e
+vernizes, argamassas impermeabilizantes para construção e até como medicamento
+(ABEDA, 2010). Estes primeiros asfaltos ocorriam na natureza e eram prontamente
+utilizáveis. Esse asfalto mole, hoje conhecido como asfalto natural, pode ser
+encontrado em depósitos da Ilha Trinidad, do Lago Bermudez, na Venezuela, e em
+extensas ocorrências de “areias alcatroadas” no Oeste do Canadá. Também
+aparecem encrustados em poros de rochas, denominadas rochas asfálticas (gilsonita
+e asfaltita).
+
+            A descoberta do asfalto refinado do óleo cru do petróleo no começo do
+século XX, associado à indústria automobilística em expansão, promoveu a expansão
+da indústria petroleira e, consequentemente, da pavimentação rodoviária.
+
+            O asfalto é resultante do beneficiamento do petróleo. Quase todo o asfalto
+em uso atualmente é proveniente do processamento do petróleo bruto ou cru (crude).
+A composição dos petróleos sofre variação, dependendo da origem, do tipo de
+
+
+                                                                                 Página 3
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+petróleo e do seu processo de produção. Cada petróleo tem diferentes quantidades
+de resíduos de cimentos asfálticos (CAP) e outras frações destiláveis.
+
+             No mundo são encontrados mais de 1500 tipos de petróleo. Uma pequena
+parte é apropriada para a produção de asfaltos, que se distinguem por uma maior ou
+menor presença de asfalto em sua composição. Os melhores petróleos para a
+produção de asfalto encontrados são os venezuelanos (Boscan e Bachaquero).
+
+             O beneficiamento, ou refino, pode ocorrer em uma, duas ou três etapas.
+Em sua primeira etapa, de destilação atmosférica, são retirados o GLP (Gás Liquefeito
+de Petróleo), o Nafta, o querosene, o diesel e alguns resíduos atmosféricos.
+
+             Os resíduos atmosféricos provenientes da primeira etapa vão para uma
+segunda etapa, a de destilação a vácuo. Nela se separam as parcelas de gasóleo
+leve, pesada, além de um resíduo de vácuo.
+
+             Caso haja uma terceira etapa (Figura 1), a de desasfaltação por solvente,
+utilizam-se alcanos de baixa massa molar (normalmente o propano ou o butano) para
+obtenção do resíduo asfáltico. Se não houver a terceira etapa, o resíduo de vácuo
+passa por avaliação dentro de especificações para ser comercializado como ligante
+asfáltico.
+
+         Figura 1 - Esquema simplificado da Produção de Asfalto (3 estágios de destilação)
+
+
+
+
+                           Fonte: PINTO, S. 1998 apud NEGRÃO, 2006.
+
+
+
+
+                                                                                             Página 4
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+          No Brasil, a empresa responsável por fornecer os asfaltos básicos,
+conhecidos como Cimento Asfáltico de Petróleo - CAP e Asfalto Diluído de Petróleo –
+ADP é a Petróleo Brasileiro S/A - PETROBRAS. Estes asfaltos são produzidos em
+refinarias, transportados e vendidos ao mercado consumidor ou podem servir de
+insumo para que os Distribuidores privados produzam asfaltos e emulsões asfálticas
+especiais, que serão abordados no Módulo 2 deste curso.
+
+
+
+   5. CARACTERÍSTICAS, ESTRUTURA E
+      COMPORTAMENTO DO ASFALTO
+
+          O Cimento Asfáltico de Petróleo - CAP é um derivado de petróleo utilizado
+como ligante dos agregados minerais na produção de misturas asfálticas. É um
+material semissólido à temperatura ambiente, de cor marrom a preta com
+propriedades adesivas, termoplástico, impermeável à água, viscoelástico e pouco
+reativo. Possui a temperatura associada a todas as suas propriedades físicas. Por isso
+é necessário que seja aquecido para que ele tenha a consistência adequada ao uso
+como revestimento asfáltico.
+
+          O CAP possui uma complexa composição química, variando com o petróleo
+e o processo de produção. Após seu refinamento, o ligante asfáltico resultante possui
+entre 90 e 95% de hidrocarbonetos e entre 5 e 10 % de heteroátomos (Enxofre,
+Oxigênio, Nitrogênio e alguns metais).
+
+          Os cimentos asfálticos de petróleo (CAPs) não devem conter água, porque
+espumam com o aquecimento, causando até explosões.
+
+          A combinação química dos elementos é extremamente complexa e há
+grande dificuldade em relacionar sua composição com as propriedades do material
+quando submetido à deformação ou à força de cisalhamento (reológicas).
+
+          Segundo a American Society for Testing and Materials - ASTM, atualmente
+denominada ASTM International, as frações do asfalto são divididas em: saturadas,
+nafteno-aromáticas, polar-aromáticas e asfaltenos. Para a realização deste método
+emprega-se a ASTM D 4124-01.
+
+
+
+
+                                                                              Página 5
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+          A classificação europeia é feita de modo similar, com a denominação
+SARA. A separação dos constituintes é realizada por cromatografia de camada fina
+com detecção por ionização de chama. O ligante é inicialmente colocado em solução
+de heptano normal (n-heptano). Dessa solução é possível separar a parte sólida, que
+é denominada Asfaltenos, e a parte líquida denominada Maltenos. Realiza-se a
+cromatografia da parte solúvel do material restante e ele é classificado em saturados,
+aromáticos e resinas pela coloração resultante do ensaio.
+
+          Os saturados apresentam coloração clara, transparente; os aromáticos são
+de coloração amarelada/alaranjada e as resinas apresentam coloração marrom/preta,
+conforme Figura 2.
+
+                 Figura 2 - Classificação SARA da estrutura por cromatografia
+
+
+
+
+                          Fonte: Adaptado de HANDLE et al., 2016.
+
+          Os componentes do asfalto (Figura 3) se combinarão de diferentes formas,
+a depender do petróleo de origem e do processo de refino a que foi submetido. A
+fração Saturada na composição do petróleo varia entre 5 e 20 %. A fração Aromática
+varia entre 45 e 60 %. A fração das Resinas varia entre 15 e 25 %. Já a fração de
+Asfaltenos entre 5 e 25 %.
+
+
+
+
+                                                                                Página 6
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+             Figura 3 - Representação esquemática dos componentes dos asfaltos
+
+
+
+
+                     Fonte: SHELL, 2003 apud BERNUCCI et al., 2008.
+
+          Os asfaltenos são altamente polarizáveis e de elevado peso molecular. A
+elevada concentração de asfaltenos torna o asfalto mais duro. As resinas possuem
+natureza polar e são fortemente adesivas. Os aromáticos são não polares e possuem
+baixo peso molecular. Os saturados são óleos viscosos não polarizáveis. As diferentes
+combinações destes compostos resultarão em diferentes estruturas, atualmente
+explicada por dois modelos.
+
+                                Figura 4 - Modelo de Micelas de Yen
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+          O modelo de Yen considera que o asfalto é uma dispersão coloidal. Os
+asfaltenos estarão pepitizados pelas resinas, permitindo a dispersão dos asfaltenos
+no meio intermicelar (composto por óleos saturados e aromáticos). A proporção resina
+e aromático que comanda o comportamento reológico do ligante asfáltico.
+
+
+
+                                                                                 Página 7
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+          Quando há uma proporção adequada de moléculas de resinas e de
+aromáticos, suficiente para pepitizar os asfaltenos e dispersá-los no meio intermicelar,
+as micelas terão boa mobilidade e o asfalto passa a ter comportamento do tipo solução
+(SOL). O comportamento gelatinoso (GEL) se dá quando não há o equilíbrio entre
+resinas e aromáticos. A maioria dos ligantes asfálticos utilizados é do tipo SOL-GEL.
+Uma estrutura intermediária entre os dois comportamentos.
+
+          Asfaltos    de   composições    químicas    diferentes   podem    apresentar
+características físicas similares, desde que derivados de óleos diferentes. Desta
+forma, é impossível definir por meio da composição química o comportamento do
+ligante visando seu desempenho na pavimentação. E, por muitas vezes, o modelo de
+Yen não se mostrou coerente com os resultados obtidos por ensaios de cromatografia
+por exclusão de tamanho, microscópio eletrônico e ressonância nuclear magnética.
+
+          O modelo proposto pelo SHRP (Strategic Highway Research Program),
+também denominado de modelo americano, considera que há numerosos tipos
+possíveis de interação entre as moléculas dos ligantes. O programa identificou
+grupamentos ácidos e básicos juntos (substâncias anfóteras) que vão controlar a
+viscosidade do ligante. O modelo estrutural classifica os compostos constituintes do
+CAP em polares e não polares, ligados por forças intra e intermoleculares, que são
+responsáveis pela formação de redes tridimensionais que explicam as características
+viscoelásticas do ligante asfáltico (BERNUCCI et al., 2008).
+
+
+
+
+   6. ESPECIFICAÇÕES BRASILEIRAS
+
+          O Cimento Asfáltico de Petróleo - CAP é especificado pela NORMA DNIT
+095/2006 (Cimentos asfálticos de petróleo - Especificação de Material). O CAP é o
+asfalto obtido especialmente para apresentar as qualidades e consistências próprias
+para o uso direto na construção de pavimentos. Eles são classificados, conforme sua
+penetração, em CAP-30/45, CAP-50/70, CAP-85/100 e CAP-150/200.                    Essa
+classificação é dada pela RESOLUÇÃO ANP Nº 897, de 24/11/2022, que pode ser
+consultada em:
+
+          https://www.in.gov.br/web/dou/-/resolucao-anp-n-897-de-18-de-novembro-
+de-2022-445759308.
+
+
+                                                                                Página 8
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+           Para     especificá-los     é    necessário     conhecer      alguns     ensaios     de
+caracterização: o ensaio de penetração, o ensaio de ponto de amolecimento, a
+especificação de Índice de Susceptibilidade Térmica - IST, a viscosidade Saybolt
+Furol, a viscosidade Brookfield, o ensaio de ductilidade, a determinação do ponto de
+fulgor, e a simulação o envelhecimento do ligante (RTFOT).
+
+           Os limites são estabelecidos em norma conforme Figura 5, adaptada da
+NORMA DNIT 095/2006 - EM. Quando de sua atualização (2006), a norma levou em
+consideração a classificação do CAP por penetração e a consideração do ponto de
+amolecimento mínimo e a ductilidade mínima, além da faixa aceitável do índice de
+suscetibilidade térmica e a inclusão dos ensaios RTFOT e Brookfield.
+
+Figura 5 - Especificações dos Cimentos Asfálticos de Petróleo (CAP) - Classificação por penetração.
+
+
+
+
+                                 Fonte: Adaptado de DNIT, 2006.
+
+
+
+
+                                                                                           Página 9
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+
+
+      7. ENSAIOS DE CARACTERIZAÇÃO
+
+            7.1   DETERMINAÇÃO DA PENETRAÇÃO – NORMA DNIT
+                  155/2010-ME
+
+             O ensaio de penetração mede a consistência do asfalto utilizado no Brasil
+para a classificação dos CAPs. A penetração é a profundidade, em décimos de
+milímetros, que uma agulha de massa padronizada (100 g) penetra numa amostra de
+volume padronizado de ligante, num tempo de cinco segundos na temperatura de 25
+ºC.
+
+             Cada ensaio realiza três medidas individuais de penetração. A média dos
+três valores é utilizada e a diferença entre elas não pode exceder o limite especificado
+em norma.
+
+             Este ensaio sozinho não caracteriza perfeitamente a qualidade do CAP,
+mas é utilizado como parâmetro de classificação.
+
+
+
+TOME NOTA:
+
+         Ensaios de penetração com valores abaixo de 15 (0,1 mm) estão associados a
+          asfaltos envelhecidos e quebradiços;
+
+         O grau de dureza do CAP é tanto maior quanto menor for a penetração da
+          agulha. Assim, um CAP 50/70 é mais duro que um CAP 85/100.
+
+
+
+
+                                                                               Página 10
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                              Figura 6 - Ensaio de penetração
+
+
+
+
+                             Fonte: Adaptado de THIVES, 2016.
+
+          A Tabela 01 mostra os limites para penetração que constam na NORMA
+DNIT 095/2006 EM.
+
+     Tabela 1 - Limites estabelecidos para penetração, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                                    Fonte: Adaptado de DNIT, 2006.
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+
+https://youtu.be/ONulC87xDPY
+
+
+
+        7.2     DETERMINAÇÃO DO PONTO DE AMOLECIMENTO -
+                MÉTODO DO ANEL E BOLA – NORMA DNIT 131/2010-
+                ME
+
+          O ensaio do ponto de amolecimento é utilizado para fazer uma estimativa
+da susceptibilidade térmica do asfalto. Ele determina a temperatura na qual o asfalto
+amolece quando é aquecido em condições padronizadas. O ponto de amolecimento
+é a mais baixa temperatura na qual uma esfera padronizada, atravessando um anel
+cheio de asfalto, percorre uma distância de 25,4 mm e toca a placa de referência.
+
+
+                                                                                   Página 11
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+           O conjunto (anel com asfalto + esfera) é colocado dentro de um banho de
+água, em um béquer aquecido a uma taxa controlada de 5 ºC/minuto. Quando o
+ligante amolece o suficiente para não mais suportar o peso da esfera, esta e o asfalto
+deslocam-se em direção ao fundo do béquer. A temperatura é marcada no instante
+em que a mistura amolecida toca a placa do fundo do conjunto padrão de ensaio.
+
+           O teste é conduzido com duas amostras do mesmo material. Se a diferença
+de temperatura entre estas amostras exceder a 2 ºC o ensaio deve ser refeito. As
+condições de realização do ensaio também o fez ser conhecido como o ensaio do
+“anel e bola”.
+
+                         Figura 7 - Ensaio do Ponto de Amolecimento
+
+
+
+
+                                    Fonte: THIVES, 2016.
+
+
+
+
+           A Tabela 02 mostra os limites para o ponto de amolecimento que constam
+na NORMA DNIT 095/2006 EM.
+
+
+
+Tabela 2 - Limites estabelecidos para ponto de amolecimento, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                               Fonte: Adaptado de DNIT, 2006.
+
+
+
+
+                                                                                   Página 12
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+
+
+Abaixo estão listados dois links de acessos a vídeos explicativos do ensaio:
+
+   1. https://youtu.be/H6EWOqI0yyA
+
+   2. https://youtu.be/nIrcry5uXB8
+
+
+
+
+         7.3     ÍNDICE DE SUSCETIBILIDADE TÉRMICA - IST (NORMA
+                 DNIT 095/2006 EM)
+
+           O índice de suscetibilidade térmica do CAP é a avaliação da sensibilidade
+do CAP às variações de temperatura. Os dados de temperatura e penetração se
+alinham em uma curva numa escala decimal.
+
+           A Tabela 03 mostra os limites para o índice de suscetibilidade térmica que
+constam na NORMA DNIT 095/2006 EM.
+
+  Tabela 3 - Limites estabelecidos para índice de suscetibilidade térmica, conforme NORMA DNIT
+                                           095/2006 EM
+
+
+
+
+                                 Fonte: Adaptado de DNIT, 2006.
+
+           Dessa forma, a norma de especificação do CAP, a DNIT 095/2006 EM,
+estabelece que o índice deve ser calculado conforme equação (1) ou dados da Tabela
+4. Os dados utilizados para o cálculo do IST são obtidos pelos ensaios de Ponto de
+amolecimento e de Penetração.
+
+
+
+                    (500)(log 𝑃𝐸𝑁)+(20)(𝑇℃)−1951
+            𝐼𝑆𝑇 =                                                               (1)
+                      120−(50)(log 𝑃𝐸𝑁)+(𝑇℃)
+
+
+Onde:
+(𝑇 ℃)= Ponto de amolecimento;
+𝑃𝐸𝑁= penetração a 25 ºC, 100 g, 5 seg.
+
+
+
+
+                                                                                       Página 13
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                        Tabela 4- Índice de suscetibilidade térmica
+
+
+
+
+                                   Fonte: DNIT, 2006.
+
+TOME NOTA:
+
+      Valores superiores a +0,7 estão associados a CAPs oxidados, enquanto
+       valores inferiores a -1,5 estão relacionados a CAPs sensíveis a elevadas
+       temperaturas.
+
+
+
+         7.4   DETERMINAÇÃO DA VISCOSIDADE SAYBOLT-FUROL À
+               ALTA TEMPERATURA - MÉTODO DA PELÍCULA
+               DELGADA (ABNT-MB 517) (NORMA DNER-ME 004/94)
+
+          O ensaio de viscosidade Saybolt-Furol tem a finalidade de medir a
+consistência dos materiais asfálticos em estado líquido. O equipamento conhecido
+como Viscosímetro Saybolt (Figura 8) é utilizado para realização do ensaio que deve
+ser executado a várias temperaturas, conforme especificação.
+
+
+
+
+                                                                           Página 14
+              MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                           Figura 8 - Viscosímetro Saybolt
+
+
+
+
+                         Fonte: Adaptado de THIVES, 2016.
+
+
+
+         O tempo que 60 ml de asfalto leva para fluir através de um orifício a uma
+determinada temperatura (25º a 170 ºC) é denominado VSF.
+
+         A finalidade da determinação do VSF a diferentes temperaturas é para
+quantificar as temperaturas de trabalho do asfalto, quais sejam: temperatura de
+aquecimento do ligante, temperatura de aquecimento do agregado e temperatura de
+compactação da mistura. Após a realização do ensaio é possível traçar a curva:
+Temperatura versus Viscosidade.
+
+         A curva Temperatura versus Viscosidade possibilita determinar as
+viscosidades para compactação na pista e para usinagem. Na Figura 9 observa-se
+que a T1 é a temperatura do CAP que corresponde a uma VSF de 155 s. A T2
+representa a temperatura do CAP que corresponde a uma VSF de 125 s. A T3
+representa a temperatura do CAP que corresponde a uma VSF de 95 s e a T4
+representa a temperatura do CAP que corresponde a uma VSF de 75 s.
+
+
+
+
+                                                                          Página 15
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                          Figura 9 - Gráfico da Curva x Temperatura
+
+
+
+
+                             Fonte: Adaptado de THIVES, 2016.
+
+
+
+          A Tabela 05 mostra os limites para a Viscosidade Saybolt-Furol que
+constam na NORMA DNIT 095/2006 EM.
+
+Tabela 5 - Limites estabelecidos para Viscosidade Saybolt-Furol, conforme NORMA DNIT 095/2006
+                                               EM
+
+
+
+
+                               Fonte: Adaptado de DNIT, 2006.
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+
+https://youtu.be/Y7zY7yzZD-Q
+
+
+
+
+                                                                                     Página 16
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+        7.5      ENSAIO DE DETERMINAÇÃO DA VISCOSIDADE EM
+                 TEMPERATURAS ELEVADAS USANDO UM
+                 VISCOSÍMETRO ROTACIONAL (ABNT NBR 15184)
+
+             O ensaio de determinação da viscosidade em temperaturas elevadas
+usando um viscosímetro rotacional, como por exemplo, o viscosímetro Brookfield, é
+utilizado para caracterizar a rigidez/fluidez do CAP. A medição da viscosidade é feita
+pela avaliação do torque necessário para rodar uma haste, também denominado
+spindle, imerso na amostra na temperatura do ensaio a uma velocidade constante.
+
+             Diferente da viscosidade de Saybolt-Furol, que é uma medida empírica, a
+viscosidade Brookfield é uma medida científica. A Norma descreve o procedimento
+para   determinação      da   viscosidade      aparente     de    asfaltos   a   temperaturas
+compreendidas entre 38 °C e 260 °C, usando um viscosímetro rotacional e um sistema
+de aquecimento acoplado ao controlador de temperatura para manter a temperatura
+de ensaio.
+
+                  Figura 10 - Ensaio de determinação de viscosidade Brookfield
+
+
+
+
+                                     Fonte: THIVES, 2016.
+
+
+
+
+                                                                                     Página 17
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+               Figura 11 - Diferentes spindles utilizados no Viscosímetro Broookfield
+
+
+
+
+                       Fonte: Adaptado de AMETEK BROOKFIELD, 2022.
+
+
+
+
+TOME NOTA:
+
+      O equipamento pode ser aplicado com vários tipos de hastes (spindles) e para
+       cada tipo de material ou faixa de temperatura é preciso especificar a rotação e
+       o número correto do spindle.
+
+
+
+            O ensaio de determinação da Viscosidade Brookfield é indicado para medir
+a viscosidade de CAPs convencionais, asfaltos modificados por polímeros
+elastoméricos e asfalto-borracha. Essas variações do CAP serão abordadas no
+Módulo 2.
+
+            A partir do ensaio é possível obter o gráfico de temperatura versus
+viscosidade para projeto de mistura asfáltica. O valor obtido é uma medida de
+viscosidade dinâmica expressa em centiPoise (cP).
+
+            A Tabela 06 mostra os limites para a Viscosidade Brookfield que constam
+na NORMA DNIT 095/2006 EM.
+
+
+
+
+                                                                                        Página 18
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+Tabela 6 - Limites estabelecidos para Viscosidade Brookfield, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                               Fonte: Adaptado de DNIT, 2006.
+
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+
+https://youtu.be/3C9qSpObpZw
+
+
+
+         7.6    DETERMINAÇÃO DE DUCTILIDADE (DNER-ME 163/98)
+
+
+           A ductilidade é a propriedade que o material tem de suportar grandes
+deformações sem ruptura. Quanto mais dúctil o material, mais flexível ele é.
+
+           Para a realização do ensaio considera-se a distância, em centímetros, que
+a amostra em condições especificadas e padronizadas, submetida a uma tração, se
+rompe. O objetivo do ensaio é avaliar a resistência à tração do ligante. O ensaio
+também é empregado para retorno elástico de asfaltos modificados.
+
+           A ductilidade é dada pelo alongamento, em centímetros, obtido antes da
+ruptura de uma amostra de CAP com uma seção de aproximadamente 1 cm², em
+banho de água a 25 ºC, submetida pelos dois extremos à tração de 5 cm/minuto.
+
+
+
+
+                                                                                    Página 19
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                              Figura 12 - Ensaio de ductilidade
+
+
+
+
+                                   Fonte: THIVES, 2016.
+
+          A Tabela 07 mostra os limites para a ductilidade que constam na NORMA
+DNIT 095/2006 EM.
+
+     Tabela 7 - Limites estabelecidos para ductilidade, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                              Fonte: Adaptado de DNIT, 2006.
+
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+
+https://youtu.be/elynBV4u80M
+
+
+
+        7.7     DETERMINAÇÃO DOS PONTOS DE FULGOR E DE
+                COMBUSTÃO (DNER-ME 148/94)
+
+          O Ponto de Fulgor é um ensaio ligado a segurança de manuseio do asfalto
+durante o transporte, estocagem e usinagem. A menor temperatura em que os
+vapores emanados durante o aquecimento do material asfáltico se inflamam por
+
+
+
+                                                                                    Página 20
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+contato a uma chama padronizada é denominada Ponto de Fulgor (Bernucci et al.,
+2008). Este ensaio também é conhecido como ensaio do Ponto de Fulgor no vaso
+aberto Cleveland.
+
+          A Tabela 08 mostra os limites para o Ponto de Fulgor que constam na
+NORMA DNIT 095/2006 EM.
+
+   Tabela 8 - Limites estabelecidos para Ponto de Fulgor, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                               Fonte: Adaptado de DNIT, 2006.
+
+          Temperaturas muito baixas de              Ponto de Fulgor podem indicar
+contaminação por frações leves, como de solventes ou combustíveis.
+
+          O ensaio determina a classificação de segurança quanto aos riscos de
+armazenagem, manuseio e também de transporte de produtos combustíveis.
+
+             Figura 13 - Modelos de equipamentos para ensaio do Ponto de Fulgor
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+
+
+
+TOME NOTA:
+
+      Valores de Pontos de Fulgor de CAP são normalmente superiores a 230 ºC.
+
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+
+https://youtu.be/VxIuAe8tZ4Y
+
+
+
+
+                                                                                    Página 21
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+        7.8      DETERMINAÇÃO DO ENVELHECIMENTO DE CURTO
+                 PRAZO (RTFOT) – ASTM D 2872
+
+            O ensaio RTFOT (Rolling Thin-Film Oven Test) simula o envelhecimento
+do ligante no curto prazo. O ensaio permite a formação de películas bem delgadas,
+de aproximadamente 1,25 mm em cilindros de vidro com 35 g de ligante (Figura 14).
+O envelhecimento é provocado no ligante por oxidação e evaporação em ação
+contínua.
+
+            Uma injeção de ar contínua, a cada 3 a 4 segundos, é soprada no ligante
+enquanto este é continuamente girado dentro de um recipiente de vidro a 163 ºC por
+85 minutos. Posteriormente, os ensaios de penetração, ponto de amolecimento,
+ductilidade e viscosidade são novamente realizados com a amostra envelhecida para
+efeito de comparação.
+
+            A variação máxima da massa, conforme equação (2), é apresentada em
+porcentagem, sendo definida como:
+                 (𝑀𝑖𝑛𝑖𝑐𝑖𝑎𝑙 −𝑀𝑓𝑖𝑛𝑎𝑙 )
+            𝑀=                                                        (2)
+                   𝑀𝑖𝑛𝑖𝑐𝑖𝑎𝑙 𝑥100
+
+
+Onde:
+𝑀𝑖𝑛𝑖𝑐𝑖𝑎𝑙 = massa inicial antes do ensaio de RTFOT;
+𝑀𝑓𝑖𝑛𝑎𝑙 = massa final após o ensaio de RTFOT.
+
+
+
+            A Penetração retida é definida, conforme equação (3), como:
+                             𝑃𝐸𝑁
+            𝑃𝐸𝑁𝑟𝑒𝑡𝑖𝑑𝑎 = (𝑃𝐸𝑁 𝑓𝑖𝑛𝑎𝑙 ) 𝑥100                             (3)
+                                   𝑖𝑛𝑖𝑐𝑖𝑎𝑙
+
+
+Onde:
+𝑃𝐸𝑁𝑖𝑛𝑖𝑐𝑖𝑎𝑙 = Penetração inicial antes do ensaio de RTFOT;
+𝑃𝐸𝑁𝑓𝑖𝑛𝑎𝑙 = Penetração final após o ensaio de RTFOT.
+
+
+
+            O ensaio determina a perda por evaporação ou o ganho de peso por
+oxidação.
+
+
+
+
+                                                                            Página 22
+               MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+         Figura 14 - Estufa de filme rotativo ou película delgada rotacional (RTFOT)
+
+
+
+
+                               Fonte: BERNUCCI et al., 2008.
+
+          A Figura 15 mostra um exemplo de um gráfico de medida do efeito do
+envelhecimento em algumas fases de utilização do ligante, tendo sido utilizado como
+referência a avaliação do seu efeito nas características físicas que levam ao
+endurecimento do ligante, que é verificado pela diminuição da penetração e aumento
+do ponto de amolecimento e da viscosidade (BERNUCCI et al., 2008).
+
+          Figura 15 - Envelhecimento do ligante durante a mistura com o agregado em usina,
+          estocagem, transporte, aplicação no campo durante vários anos de serviço
+
+
+
+
+          Fonte: WHITEOAK, 1980, apud SHELL, 2003, apud BERNUCCI et al., 2008
+
+
+
+
+          A Tabela 09 mostra os limites estabelecidos para as amostras após o
+ensaio RTFOT que constam na NORMA DNIT 095/2006 EM.
+
+
+                                                                                       Página 23
+                MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+
+
+       Tabela 9 - Limites estabelecidos após RTFOT, conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                              Fonte: Adaptado de DNIT, 2006.
+
+
+
+Um vídeo explicativo do ensaio pode ser observado por meio do link:
+https://youtu.be/793uQ29cqys
+
+
+
+         7.9    DETERMINAÇÃO DA SOLUBILIDADE EM
+                TRICLOROETILENO (ABNT NBR 14855)
+
+           O ensaio de solubilidade é realizado dissolvendo uma amostra de asfalto
+em solvente sendo então filtrada através de um canudinho perfurado que é ligado ao
+topo de um frasco ligado ao vácuo (BERNUCCI et al., 2008).
+
+           A fração solúvel é o constituinte ativo do ligante asfáltico. Dessa forma, o
+ensaio determina o grau de pureza do asfalto (teor de betume). A porção insolúvel,
+que fica retida no filtro, é constituída de impurezas.
+
+           A Figura 16 ilustra o ensaio de solubilidade em tricloroetileno.
+
+
+
+
+                                                                                 Página 24
+                 MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+                                Figura 16 - Ensaio de solubilidade
+
+
+
+
+                                      Fonte: VIANA, 2015.
+
+
+
+            A Tabela 10 mostra os limites estabelecidos solubilidade que constam na
+NORMA DNIT 095/2006 EM.
+
+
+              Tabela 10 - Limites estabelecidos conforme NORMA DNIT 095/2006 EM
+
+
+
+
+                                 Fonte: Adaptado de DNIT, 2006.
+
+
+
+
+   8. REFERÊNCIAS
+ABEDA - ASSOCIAÇÃO BRASILEIRA DE EMPRESAS DISTRIBUIDORAS DE ASFALTO. Manual
+Básico de Emulsões Asfálticas. Rio de Janeiro, ABEDA, 2001. 2ª ed. 2010
+
+AMETEK,        Brookfield.      LV      e      RV_HA_HB         Spindles.     Disponível      em:
+https://www.brookfieldengineering.com/products/accessories/spindles-cones-cups-chambers/lv-
+spindles. Acesso em 20 abr. 2022.
+
+BERNUCCI, et al. Pavimentação Asfáltica – Formação Básica para Engenheiros. 2008.
+
+
+
+
+                                                                                        Página 25
+                  MISTURAS ASFÁLTICAS: CONCEITUAÇÃO, MATERIAIS, DOSAGEM - Módulo 1
+
+
+CERATTI, J. A. P.; BERNUCCI, L. L. B.; SOARES, J. B. Utilização de ligantes asfálticos em serviços
+de pavimentação. Rio de Janeiro: ABEDA, 2015. Disponível em: http://www.abeda.org.br/livros/
+
+CONFEDERAÇÃO NACIONAL DOS TRANSPORTES. Anuário Estatístico dos Transportes, 2020.
+Disponível em: https://anuariodotransporte.cnt.org.br/2020/. Acesso em 15 abr. 2022.
+
+HANDLE et al. The bitumen microstructure: a fluorescent approach. Mater Struct 49, 167–180 (2016).
+https://doi.org/10.1617/s11527-014-0484-3
+
+IA – INSTITUTO DO ASFALTO. Manual de asfalto. Rio de Janeiro: IA, 2001.
+
+NEGRÃO, D. P. Estudo de Asfaltos Modificados por Polímeros do Tipo RET para Aplicações em
+Pavimentos. Dissertação de Mestrado. Escola Politécnica da Universidade de São Paulo. São Paulo.
+2006.
+
+REIS, R. M. M.; TEIXEIRA, L. H.; CONSTANTINO, R.; OMENA, W. Manual Básico de Emulsões
+Asfálticas. Rio de Janeiro, ABEDA, 2001. 2ª ed. 2010. Disponível em: http://www.abeda.org.br/livros/
+
+THIVES, L. P. Comportamento dos materiais empregados na pavimentação: Ligantes Asfálticos. 2016.
+16 p. Notas de Aula.
+
+VIANA, H. M. F. Aula prática de pavimentação. 2015. Notas de Aula. Disponível em:
+https://engftc.files.wordpress.com/2015/09/pavimentac3a7c3a3o-notas-de-aula-prc3a1tica.pdf. Acesso
+em 26 abr. 2022.
+
+
+
+
+                                                                                            Página 26

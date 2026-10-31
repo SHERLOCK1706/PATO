@@ -1,0 +1,1076 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+  Conceitos Básicos
+  de Hidrologia e
+  Drenagem para
+  Projetos Rodoviários
+
+
+
+  Módulo
+               3
+Bacias Hidrográficas.
+- Conceito e importância;
+- Delimitação de bacias de contribuição e
+suas características;
+- Métodos para cálculo das descargas de
+contribuição.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL DE
+2022, o servidor que optar por receber a GECC relativa à
+elaboração de material didático, cede, tacitamente e em
+caráter irrevogável, a titularidade dos direitos patrimoniais
+relativos aos materiais produzidos em decorrência dessa
+percepção. Desta forma, tendo em vista o contido no
+Processo nº 50600.008060/2022-01, o DNIT poderá revisar
+o material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o ceder
+a outros órgãos e entidades federais.
+                                SUMÁRIO
+1.      INTRODUÇÃO ...................................................................................................................... 1
+
+2.      Bacia Hidrográfica ................................................................................................................. 2
+     2.1    CARACTERÍSTICAS FISIOGRÁFICAS ........................................................................ 5
+       2.1.1 Forma da Bacia ......................................................................................................... 5
+       2.1.2 Fator de forma ........................................................................................................... 6
+       2.1.3 Coeficiente de compacidade ..................................................................................... 7
+       2.1.4 Tipos de solo ............................................................................................................. 8
+
+3.      DELIMITAÇÃO DE BACIAS HIDROGRÁFICAS E SUAS CARACTERÍSTICAS ................. 9
+
+4.      MÉTODOS PARA CÁLCULO DAS DESCARGAS ............................................................. 13
+     4.1       MÉTODO RACIONAL ................................................................................................. 13
+     4.2       MÉTODO RACIONAL CORRIGIDO ........................................................................... 17
+     4.3       MÉTODO DO HIDROGRAMA UNITÁRIO TRIANGULAR - hut ................................. 18
+
+5.      REFERÊNCIAS BIBLIOGRÁFICAS .................................................................................... 26
+                                                                                     1
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   1. INTRODUÇÃO
+O ponto de partida para a escolha e definição dos dispositivos de drenagem em
+um projeto de infraestrutura corresponde à descarga de contribuição.
+
+Trate-se de dispositivos de drenagem superficial, profunda ou de transposição
+de talvegues, o seu dimensionamento toma como premissa o volume de água
+ou descarga que terá de escoar.
+
+E para se alcançar ou obter o valor da descarga, precisa-se de parâmetros como
+intensidade de chuva ou precipitação, além dos parâmetros físicos da bacia de
+contribuição.
+
+Como parte destes parâmetros foram tratados nos módulos anteriores, o que se
+pretende explorar neste módulo é a bacia de contribuição, propriamente dito.
+
+Será apresentado seu conceito e se abrirá discussão sobre alguns de seus
+parâmetros, como área, comprimento e declividade do talvegue, descarga
+gerada e seu comportamento.
+
+Também serão apresentados, de forma sucinta, alguns procedimentos e
+metodologias empregadas para obtenção ou delimitação das bacias de
+contribuição, sem explorar o assunto na sua completude, haja vista a
+complexidade do tema e limitação do escopo deste curso.
+
+Finalmente, serão apresentadas as principais metodologias adotadas no DNIT
+para o cálculo das descargas de contribuição, além dos parâmetros envolvidos
+em cada uma delas.
+                                                                                     2
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   2. Bacia Hidrográfica
+
+De acordo com Magalhães (1989), a bacia hidrográfica corresponde a uma área
+onde a precipitação é coletada e conduzida para seu sistema de drenagem
+natural, ou seja, uma área composta de um sistema de drenagem natural onde
+o movimento de água superficial inclui todos os usos da água e do solo
+existentes na localidade.
+
+Bacia hidrográfica também pode ser definida como a área ou região de
+drenagem de um rio principal ou de seus afluentes, ou ainda, como a porção do
+espaço em que as águas das chuvas, das montanhas, subterrâneas ou de outros
+rios escoam em direção a um determinado curso d´água ou mesmo para os
+oceanos.
+
+As bacias hidrográficas (também chamadas de bacias de drenagem ou bacias
+de contribuição) são separadas umas das outras por estruturas do relevo, sendo
+usualmente chamadas de divisores de água e que normalmente estão
+associadas a morros, montanhas, serras, picos e chapadas.
+
+É muito comum que as bacias menores, normalmente associadas a afluentes de
+rios, despejem dentro de bacias maiores, que correspondem à bacia do curso
+d´água principal, e estes irão descarregar, posteriormente, nos oceanos.
+
+Os principais elementos contribuintes de uma bacia hidrográfica são: nascente,
+rio principal, divisor de águas, afluentes e foz ou exutória, conforme pode ser
+visualizado na figura 2.1.
+                                                                                              3
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+ Figura 2.1 – Exemplificação de uma bacia hidrográfica e seus principais elementos. (Fonte:
+            https://mundoeducacao.uol.com.br/geografia/bacia-hidrografica.htm)
+
+Cada um destes elementos constituintes pode ser melhor entendido a partir dos
+seguintes conceitos:
+
+   • Nascente: local onde se inicia a bacia hidrográfica. Geralmente é o ponto
+mais elevado do relevo e também onde se encontra a principal nascente do rio.
+   • Rio Principal: rio de maior volume e extensão da bacia e que normalmente
+ recebe contribuições dos afluentes.
+   • Divisor de água: estruturas do relevo que têm o papel de dividir as áreas
+ das bacias. Normalmente são morros, serras, picos, montanhas ou outras
+ estruturas elevadas do relevo.
+   • Afluente: rios menores que deságuam no rio principal e que têm a função
+ de abastecê-lo.
+   • Foz: local de deságue natural da bacia hidrográfica.
+
+O comportamento de uma bacia hidrográfica sofre influência de uma série de
+fatores, podendo-se destacar aqui aqueles associados ao clima ou a fisiografia.
+
+   • Fatores climáticos: relativos aos efeitos da chuva e da evapotranspiração,
+   que apresentam variações ao longo do ano, de acordo com a climatologia
+   local;
+                                                                                     4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   • Fatores fisiográficos: associados às características da bacia e do leito do
+  rio principal.
+
+Diversos estudos mostram que há uma diferença marcante entre uma bacia de
+drenagem pequena e outra grande e isto não está associado exclusivamente ao
+seu tamanho. Para uma pequena bacia de drenagem, por exemplo, os caudais
+são influenciados principalmente pelas condições climáticas da localidade, bem
+como pelas características físicas do solo e da cobertura vegetal, que por sua
+vez são afetadas pela intervenção do homem. Assim, no estudo hidrológico de
+uma bacia tida como pequena, é dada maior atenção à própria bacia.
+
+Já para uma bacia grande, o efeito do armazenamento no leito do curso d’água
+torna-se muito pronunciado, de tal modo que nela predomina o estudo
+hidrológico do curso d’água, efetuando-se medidas diretas dos caudais em
+pontos predeterminados e estudos estatísticos das vazões, os quais são muitas
+vezes estendidos e extrapolados.
+
+No caso de bacias pequenas, ao contrário das bacias grandes, as medidas
+diretas não têm valor significante porque o homem, alterando no tempo as
+condições físicas da cobertura do solo, por onde a água se escoa, modifica as
+condições de escoamento independentemente de variações dos fatores
+climáticos locais.
+
+Usando unicamente o tamanho da bacia como critério de classificação, o
+projetista pode incorrer em erros, pois, frequentemente, duas bacias do mesmo
+tamanho podem se comportar de modo inteiramente diverso sob o ponto de vista
+hidrológico. Uma característica distinta da pequena bacia é o fato de que o efeito
+do escoamento superficial na bacia afeta muito mais o valor do caudal máximo
+do que o efeito do armazenamento no curso de água. Tal efeito é, todavia, muito
+pronunciado nas grandes bacias.
+
+Deste modo, para se compreender melhor o efeito destes fatores sobre o
+comportamento de uma bacia e do seu escoamento, apresentam-se na
+sequência, algumas das suas principais características fisiográficas, uma vez
+que os fatores climáticos já foram tratados anteriormente.
+                                                                                         5
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   2.1      CARACTERÍSTICAS FISIOGRÁFICAS
+
+As características fisiográficas de uma bacia podem ser obtidas a partir dos
+dados constantes em mapas, fotografias aéreas ou mesmo imagens de satélite.
+Dentre as principais características pode-se citar a forma, a área, o comprimento,
+a declividade, o tipo de solo e a sua ocupação.
+
+2.1.1 FORMA DA BACIA
+A forma da bacia não costuma ser usada de maneira direta em hidrologia. No
+entanto, parâmetros que refletem a forma da bacia são usados ocasionalmente
+e têm base conceitual.
+
+As bacias hidrográficas têm uma variedade infinita de formas, que supostamente
+refletem o comportamento hidrológico da bacia. Em uma bacia circular, por
+exemplo, toda a água escoada tende a alcançar a saída da bacia ao mesmo
+tempo, produzindo um pico de descarga, tal como pode ser visualizado na figura
+2.2, que denota o comportamento do escoamento em uma bacia com tal formato.
+
+
+
+
+     Figura 2.2 – Bacia com formato arredondado e comportamento esperado para seu
+  escoamento. (Fonte: Notas de aula - Departamento de Hidráulica e Saneamento / UFBA).
+
+
+Já em uma bacia com formato elíptico, onde a saída localiza-se na ponta do
+maior eixo e considerando que sua área pode ser tomada como igual à da bacia
+circular, o escoamento será mais distribuído no tempo, produzindo, portanto,
+uma enchente menor, como pode ser visualizado na figura 2.3.
+                                                                                          6
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+  Figura 2.3 – Bacia com formato elíptico e comportamento esperado para seu escoamento.
+         (Fonte: Notas de aula - Departamento de Hidráulica e Saneamento / UFBA).
+
+Há também as bacias do tipo radial ou ramificada, que são formadas por
+conjuntos de sub-bacias alongadas que convergem para um mesmo curso
+principal. Neste caso, uma chuva uniforme em toda a bacia origina cheias nas
+sub-bacias, que vão se somar, mas não simultaneamente, no curso principal.
+Portanto, a cheia crescerá, estacionará, ou diminuirá a medida em que forem se
+fazendo sentir as contribuições das diferentes sub-bacias, podendo ocorrer mais
+de um pico de descarga, como mostrado na figura 2.4.
+
+
+
+
+Figura 2.4 – Bacia ramificada e comportamento esperado para seu escoamento. (Fonte: Notas
+                de aula - Departamento de Hidráulica e Saneamento / UFBA).
+
+
+2.1.2 FATOR DE FORMA
+O fator de forma é um índice indicativo da tendência para enchentes de uma
+bacia. Uma bacia com um fator de forma baixo é menos sujeita a enchentes que
+outra de mesmo tamanho, porém com maior fator de forma. Isso se deve ao fato
+de que numa bacia estreita e longa, com fator de forma baixo, há menos
+possibilidade de ocorrência de chuvas intensas cobrindo simultaneamente toda
+sua extensão, assim como a contribuição dos tributários atinge o curso d’água
+principal em vários pontos ao longo do mesmo, afastando-se, portanto, da
+                                                                                     7
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+condição ideal da bacia circular discutida anteriormente, na qual a concentração
+de todo o deflúvio se dá num só ponto.
+
+O fator de forma corresponde à relação entre a largura média e o comprimento
+axial da bacia. Mede-se o comprimento da bacia quando se segue o curso d’água
+mais longo desde a desembocadura até a cabeceira mais distante da bacia. A
+largura média, por sua vez, é obtida quando se divide a área pelo comprimento
+da bacia. Assim, para se calcular o fator de forma de uma bacia, pode-se fazer
+uso da seguinte equação:
+
+
+                                          𝐿
+                                  𝐾𝑓 = 𝐿𝑚 , onde:
+
+      - Kf = fator de forma (adimensional);
+      - Lm = largura média da bacia, calculada pela fórmula abaixo.
+
+                                       𝐿𝑚= 𝐴
+                                              𝐿
+      - A = área da bacia;
+      - L = comprimento axial da bacia.
+
+Se a segunda equação for substituída na primeira, se obtém a equação final:
+                                       𝐾𝑓= 𝐴
+                                              𝐿2
+
+
+
+
+2.1.3 COEFICIENTE DE COMPACIDADE
+Este coeficiente é um número adimensional que varia com a forma da bacia,
+independentemente do seu tamanho. Quanto mais irregular for a bacia, maior
+será o coeficiente de compacidade. Um coeficiente mínimo, igual à unidade,
+corresponderia a uma bacia circular. Se os outros fatores forem mantidos iguais,
+a tendência para maiores enchentes é tanto mais acentuada quanto mais
+próximo da unidade for o valor desse coeficiente.
+
+
+O coeficiente de compacidade corresponde à relação entre o perímetro da bacia
+e o perímetro de um círculo de área igual ao da bacia, podendo ser expressa
+pela seguinte fórmula:
+                                                                                     8
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+                                          𝑃
+                                  𝐾𝑐 = 2.𝜋.𝑅 , onde:
+
+      - Kc = coeficiente de compacidade;
+      - P = perímetro da bacia.
+Sabendo que em um círculo a área pode ser obtida pela expressão a seguir, e
+isolando o valor de “R” nessa expressão, pode-se obter a seguinte notação final
+para o coeficiente de compacidade:
+
+                                                                 2   𝐴
+               A = π * R2                                    R = √𝜋
+
+
+             - A = Área da bacia circular
+
+
+                                            0,28. 𝑃
+                                   𝐾𝑐 =       2
+                                              √𝐴
+
+
+2.1.4 TIPOS DE SOLO
+A correta identificação dos tipos de solo, tanto das camadas mais superficiais
+como das subsuperficiais e, até certo ponto, das camadas mais profundas, irá
+permitir sua classificação associada ao maior ou menor grau de permeabilidade,
+característica esta que afeta diretamente o comportamento das cheias.
+
+Assim, em uma bacia onde predominam solos classificados como impermeáveis
+(ver tabela 3.1 do módulo 1), citando como exemplos os solos siltosos, argilosos
+e com grande presença de rochas, grande parcela da precipitação irá escoar
+superficialmente, gerando descargas maiores e com pico concentrado. Ao passo
+que, em uma bacia onde predominam solos classificados como permeáveis, a
+exemplo dos solos pedregulhosos e arenosos, uma parcela menor da
+precipitação deverá escoar superficialmente, gerando descargas menores e com
+um comportamento “achatado”, tal como pode ser visualizado na figura 2.5.
+                                                                                           9
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+ Figura 2.5 – Comportamento da descarga em função do tipo de solo predominante em uma
+ bacia de contribuição (Fonte: Notas de aula - Departamento de Hidráulica e Saneamento /
+                                          UFBA).
+
+
+
+
+   3. DELIMITAÇÃO DE BACIAS HIDROGRÁFICAS E SUAS
+      CARACTERÍSTICAS
+
+Nas obras de infraestrutura, mais especificamente implantação de rodovias ou
+ferrovias, ocorrerá que o seu traçado irá interceptar alguns cursos d´água,
+podendo este ser o rio principal e/ou um de seus afluentes.
+
+No ponto que ocorre tal interceptação, será necessário prover algum elemento
+de transposição de talvegue, tal como um bueiro ou uma ponte, que passará a
+ser encarado como o ponto de exutória de uma nova bacia cujos limites agora
+foram afetados pelo traçado da rodovia ou ferrovia. Esta nova bacia,
+correspondente à bacia de contribuição da obra de transposição projetada, terá
+seus limites definidos pela plataforma rodoviária/ferroviária juntamente com os
+divisores de água situados à sua montante.
+
+A delimitação de bacias hidrográficas pode ser feita tanto de forma manual,
+valendo-se de cartas topográficas impressas ou digitais, bem como por meio de
+programas computacionais, mas como a proposta do presente curso é
+apresentar as noções básicas da disciplina, serão apresentadas algumas
+orientações apenas para o caso da delimitação das bacias através de cartas
+topográficas.
+                                                                                    10
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+A delimitação de cada bacia hidrográfica é feita numa carta topográfica, seguindo
+as linhas das cristas das elevações circundantes da seção do curso d’água que
+foi interceptado pelo traçado da rodovia ou ferrovia.
+
+
+É justamente nesta interseção que se localizará a exutória e esta será
+considerada como ponto de partida para o processo de delimitação. O processo
+poderá ser completado por meio da seguinte sequência de passos, seguindo as
+orientações de Sperling (2007):
+
+
+   • O primeiro passo é definir o ponto inicial (exutória) a partir do qual será
+feita a delimitação da bacia. A exutória está situado na parte mais baixa do trecho
+do curso d’agua principal.
+   • Reforçar a marcação do curso d’agua principal e dos tributários (os quais
+cruzam as curvas de nível, das mais altas para as mais baixas para definição
+dos fundos de vale). O uso de cores distintas para diferenciar o corpo d´água
+principal de seus afluentes é uma boa prática.
+   • A delimitação da bacia hidrográfica inicia a partir da exutória, conectando
+os pontos mais elevados, tendo por base as curvas de nível. O limite da bacia
+circunda o curso d’agua e as nascentes de seus tributários.
+   • Nos topos dos morros deve-se verificar se a chuva que cair do lado de
+dentro do limite realmente escoará sobre o terreno, rumo às partes baixas
+cruzando perpendicularmente as curvas de nível em direção ao curso d´água em
+estudo. Se a inclinação do terreno estiver voltada para a direção oposta às
+drenagens, é porque pertence a outra bacia. Importante destacar que dentro da
+bacia poderá haver locais com cotas mais altas do que as cotas dos pontos que
+definem o divisor de águas da bacia.
+   • Para facilitar a definição dos limites, deve-se diferenciar os talvegues dos
+divisores de águas. Os talvegues são depressões (vales), representados
+graficamente, onde as curvas de nível apresentam a curvatura contrária ao
+sentido da inclinação do terreno, indicando que nestes locais ocorre
+concentração de escoamento. Os divisores de água são representados pelo
+                                                                                              11
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+inverso de um talvegue, no qual as curvas de nível apresentam curvatura voltada
+para o sentido da inclinação do terreno, sobre a qual as águas escoam no sentido
+ortogonal às curvas em direção aos talvegues.
+   •   A delimitação da bacia deve retornar ao ponto inicial definido como
+       exutória.
+
+
+Para fins de ilustração do que se espera obter ao final deste processo, se
+apresenta a figura 3.1. Nela pode ser notado o limite da bacia, em linha vermelha
+e os cursos d´agua, em linha azul. O curso d´água principal está demarcado com
+uma linha mais grossa, distinguindo-o dos afluentes.
+
+
+
+
+   Figura 3.1 – Bacia delimitada através de uma carta topográfica. (Fonte: Sperling, 2007).
+                                                                                    12
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+Algo que facilitará no processo de delimitação é a correta identificação dos
+elementos disponíveis nas cartas topográficas, com destaque para as curvas de
+nível, as cotas do relevo, bem como a sua qualidade e escala. Além destes, o
+conhecimento prévio do comportamento da representação dos principais
+acidentes geográficos e o comportamento das curvas de nível para cada caso
+ajudará o aluno na identificação e distinção das diversas bacias de contribuição
+e seus elementos, como o traçado dos cursos d´água, que normalmente estão
+bem identificados nas cartas.
+
+
+TOME NOTA
+Algumas fontes que podem ser consultadas para fins de obtenção destas cartas
+são o Instituto Brasileiro de Geografia e Estatística – IBGE (www.ibge.goc.br –
+geociências), além do Exército Brasileiro.
+                                                                                     13
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   4. MÉTODOS PARA CÁLCULO DAS DESCARGAS
+
+Na literatura nacional e internacional podem ser encontradas diferentes
+metodologias para cálculo das descargas de bacias de contribuição. Dentre os
+métodos mais conhecidos, pode-se citar, por exemplo, o racional, o index-área,
+o hidrograma unitário sintético ou triangular. No entanto, nos projetos elaborados
+e analisados pelo DNIT, conforme preconiza a IS-203 (DNIT, 2006), é
+recomendado o uso de apenas três métodos: racional, racional-corrigido e
+hidrograma unitário triangular (HUT).
+
+Como regra geral, a escolha do método de cálculo das descargas das bacias de
+contribuição deve ser feita com base na sua área, devendo-se considerar os
+seguintes limites:
+
+   •   Método Racional: para bacias com área até 4 km²;
+   •   Método Racional corrigido: para bacias com área entre 4 km² e 10 km²;
+   •   Método do Hidrograma Unitário Triangular: para bacias com área superior
+       a 10 km².
+
+
+   4.1     MÉTODO RACIONAL
+
+
+Devido à simplicidade da sua fórmula de cálculo, este método é, dentre todos os
+métodos de avaliação de descargas de projeto para os sistemas de drenagem,
+aquele que é utilizado com maior frequência, não só no Brasil, mas em todo o
+mundo, principalmente nas bacias de pequeno porte ou em áreas urbanas.
+
+A aplicação deste método para o cálculo da descarga de bacias encontra vasto
+campo de discussão entre os hidrólogos.
+
+De acordo com Vem Te Chow (apud TORRICO, 1975), o método racional é
+recomendável para cálculo de descarga de bacias com área entre 40 ha (ou 0,4
+km²) e 81 ha (ou 0,81 km³) e para tempos de recorrência entre 5 e 10 anos.
+
+Já segundo Linsley, Korler e Paulhus (apud TORRICO, 1975), este método deve
+ser usado para cálculo de descarga de bacias com área até 40 ha (ou 0,4 km²),
+                                                                                    14
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+com precaução para não exceder 486 ha (ou 0,48 km²), sem limite associado
+aos tempos de recorrência.
+
+Por sua vez, o California Division Highways (apud TORRICO, 1975) sugere o
+uso do método racional para o cálculo da descarga em bacias com área até 40,5
+km², associados a tempos de recorrência de 50 até 100 anos.
+
+Pode-se ainda encontrar referência para uso do método em bacias com área até
+2 km², conforme destacado por Tucci et. al. (2007). Ainda conforme este mesmo
+autor, os princípios básicos deste método são:
+
+   • Duração da precipitação intensa de projeto igual ao tempo de
+      concentração;
+   • Adota um coeficiente único de perdas, denominado “C”, estimado com
+      base nas características das bacias (tal coeficiente também costuma ser
+      chamado de run-off ou coeficiente de deflúvio);
+   • Não avalia o volume da cheia e a distribuição temporal das vazões.
+
+Deste modo, no estabelecimento do valor da descarga pelo método racional,
+admite-se que a precipitação sobre a área é constante e uniformemente
+distribuída sobre a superfície da bacia. Para considerar que todos os pontos da
+bacia contribuem na formação do deflúvio, é estabelecido que a duração de
+chuva deve ser igual ou maior que o seu tempo de concentração e, como a
+intensidade da chuva decresce com o aumento da duração, a descarga máxima
+resulta de uma chuva com duração igual ao tempo de concentração da bacia.
+
+Apesar destas diferentes abordagens, será considerado o uso do método
+racional para cálculo de descargas de bacias com área até 4,0 km², no caso de
+projetos rodoviários no âmbito do DNIT (conforme orientação da IS-203),
+adotando-se, para tal, a seguinte fórmula:
+
+                            Q = 0,278 * C * I * A, sendo:
+      - Q = vazão máxima em m³/s;
+      - C = coeficiente de perdas, ou coeficiente run-off (tabelado);
+      - A = área da bacia em km²;
+                                                                                    15
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+      - I = intensidade de precipitação em mm/h.
+
+
+
+Há uma diversidade de tabelas disponíveis em diferentes bibliografias com os
+valores admissíveis para o coeficiente run-off. Tomando por base o conteúdo do
+Manual de Hidrologia Básica do DNIT (DNIT, 2005) e do livro Hidrologia (TUCCI
+et al, 2007), fica a sugestão de uso das tabelas 4.1 a 4.3.
+
+
+É importante ter em mente que o coeficiente de deflúvio representa
+essencialmente a relação entre a vazão e a precipitação que lhe deu origem, o
+que envolve além do volume da precipitação vertida, a avaliação do efeito da
+variação da intensidade da chuva e das perdas por retenção e infiltração do solo
+durante a tempestade de projeto.
+
+
+                         Tabela 4.1 – Valores do coeficiente C.
+                 Superfície                              Coeficiente run-off (C)
+                                                       Intervalo       Valor sugerido
+ PAVIMENTO
+  Asfalto                                             0,70 – 0,95            0,83
+ Concreto                                             0,80 – 0,95            0,88
+ Calçadas                                             0,75 – 0,85            0,80
+ Telhados                                             0,75 – 0,95            0,85
+ COBERTURA – GRAMA SOLO ARENOSO
+ Plano (2 %)                                          0,05 – 0,10            0,08
+ Médio (2 % a 7 %)                                    0,10 – 0,15            0,13
+ Alta (7 %)                                           0,15 – 0,20            0,18
+ COBERTURA – GRAMA SOLO PESADO
+ Plano (2 %)                                          0,13 – 0,17            0,15
+ Médio (2 % a 7 %)                                    0,18 – 0,22            0,20
+ Alta (7 %)                                           0,25 – 0,35            0,30
+                            Fonte: ASCE, apud TUCCI, 2007.
+
+
+
+
+                 Tabela 4.2 – Valores do coeficiente C para áreas rurais.
+                         Tipo de área                                       “C”
+ TOPOGRAFIA
+                                                                                     16
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+Terreno plano, declividade de 0,2 – 0,6 m/km                             0,30
+Terreno, declividade de 3- 4 m/km                                        0,20
+Morros, declividade de 50 a 50 m/km                                      0,10
+SOLO
+Argila impermeável                                                       0,10
+Permeabilidade média                                                     0,20
+Arenoso                                                                  0,40
+COBERTURA
+Áreas cultivadas                                                         0,10
+Árvores                                                                  0,20
+                         Fonte: WILLIAMS, apud TUCCI, 2007.
+
+                          Tabela 4.3 – Valores do coeficiente C.
+          Descrição das áreas das bacias tributárias                Intervalo do
+                                                                   coeficiente “C”
+COMÉRCIO
+ Áreas centrais                                                      0,70 – 0,95
+ Áreas da periferia do centro                                        0,50 – 0,70
+RESIDENCIAL
+ Áreas de uma única família                                          0,30 – 0,50
+ Multiunidades, isoladas                                             0,40 – 0,60
+ Multiunidades, ligadas                                              0,60 – 0,75
+ Residencial (suburbana)                                             0,25 – 0,40
+Áreas de apartamentos                                                0,50 – 0,70
+INDUSTRIAL
+ Áreas leves                                                         0,50 – 0,80
+ Áreas densas                                                        0,60 – 0,90
+ Parques, cemitérios                                                 0,10 – 0,25
+ Playgrounds                                                         0,20 – 0,35
+ Pátio e espaço de serviço de estradas de ferro                      0,20 – 0,40
+ Terrenos baldios                                                    0,10 – 0,30
+                                   Fonte: DNIT, 2005.
+                                                                                     17
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   4.2      MÉTODO RACIONAL CORRIGIDO
+
+O método racional tem sido usado de preferência para bacias de pequena área,
+mas nada indica que não seja aplicável a bacias maiores, como usualmente é
+usado em projetos rodoviários em outros países. Naturalmente, para bacias
+maiores torna-se necessário corrigir as precipitações através do fator de redução
+para a área, uma vez que a distribuição na superfície da bacia não é uniforme e
+por isso é denominado normalmente
+como fator de distribuição.
+
+
+Desta consideração é que deriva o método racional corrigido e sua expressão
+acaba diferindo daquela adotada no método anterior em função apenas do
+acréscimo do fator de distribuição. Com isso, a notação passa a ser:
+
+                          Q = 0,278 * C * I * A * n, sendo:
+      - Q = vazão máxima em m³/s;
+      - C = coeficiente de perdas, ou coeficiente run-off (tabelado);
+      - A = área da bacia em km²;
+      - I = intensidade de precipitação em mm/h.
+      - n = coeficiente de distribuição, calculado conforme a expressão a seguir.
+
+
+                                    n = A-0,1, sendo:
+      - A = área da bacia em ha (situadas em áreas rurais). Ou,
+
+
+                                    n = A-0,15, sendo:
+      - A = área da bacia em ha (situadas em áreas urbanas).
+
+
+
+Alguns autores sugerem o cálculo do coeficiente de distribuição por meio de
+outra expressão, sendo ela:
+                                          1
+                                𝜃 = (100∗𝐴)1/𝑛, sendo:
+                                                                                     18
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+        - A = área da bacia em km²;
+        - n = 4, para pequenas declividades, inferiores a 0,5 % (Burki Ziegle);
+        - n = 5, médias declividades, entre 0,5 % e 1,0 % (MC Math);
+        - n = 6, fortes declividades, superiores a 1 % (Brix).
+
+
+   4.3     MÉTODO DO HIDROGRAMA UNITÁRIO TRIANGULAR -
+           HUT
+
+O método do hidrograma unitário triangular, desenvolvido pelo U.S. Soil
+Conservation Service, pode ser aplicado para obtenção das relações
+chuva/deflúvio em bacias com até 2.500 km². Para áreas maiores que este valor,
+as bacias podem ser divididas ou decompostas em sub-bacias, com áreas até
+2.500 km² (TORRICO, 1975).
+
+Já se sabe que a resposta de uma bacia a um evento de chuva depende das
+características físicas da bacia e das características do evento, como a duração
+e a intensidade da chuva. Chuvas mais intensas tendem a gerar mais
+escoamento e hidrogramas mais pronunciados, enquanto que chuvas menos
+intensas tendem a gerar hidrogramas mais atenuados, com menor vazão de
+pico.
+
+Para fins de simplificação, admite-se que existe uma relação linear entre a chuva
+efetiva, que corresponde à parcela da chuva que gera escoamento superficial, e
+a vazão. Associada a esta relação surge a teoria do hidrograma unitário, que
+nada mais é que o hidrograma de escoamento direto causado por uma chuva
+efetiva unitária (de valor unitário, como 1 mm, ou 1 cm, para fins de
+exemplificação). Tal teoria considera que a precipitação efetiva e unitária tem
+intensidade constante ao longo de sua duração e distribui-se uniformemente
+sobre toda a área de drenagem.
+
+Também se admite que a bacia hidrográfica tem um comportamento linear e isto
+permite a aplicação dos princípios da proporcionalidade e da superposição.
+
+De acordo com o princípio da proporcionalidade, para uma chuva efetiva de uma
+dada duração, o volume de chuva (que é igual ao volume escoado
+                                                                                    19
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+superficialmente) é proporcional à intensidade dessa chuva. Assim, o
+hidrograma que resultaria de uma precipitação efetiva de 2 mm seria duas vezes
+maior que aquele resultante de uma chuva de 1 mm.
+
+Já de acordo com o princípio da superposição, as vazões de um hidrograma de
+escoamento superficial, produzidas por chuvas efetivas sucessivas, podem ser
+encontradas somando as vazões dos hidrogramas de escoamento superficial
+correspondentes à cada chuva efetiva individual. Deste modo, o hidrograma de
+resposta de duas chuvas unitárias sucessivas pode ser obtido por meio da soma
+dos seus hidrogramas unitários deslocados no tempo por uma diferença “D”.
+
+Se estes dois princípios forem aplicados, será possível calcular os hidrogramas
+resultantes de eventos complexos a partir do hidrograma unitário e este cálculo
+será feito através da convolução. Em matemática, particularmente na área de
+análise funcional, convolução é um operador linear que, a partir de duas funções,
+produz uma terceira, que mede a soma do produto dessas funções ao longo da
+região subentendida pela superposição delas em função do deslocamento
+existente entre elas.
+
+No hidrograma unitário, a vazão em um intervalo de tempo “t” será calculada a
+partir da convolução entre as funções Pef (chuva efetiva) e h (ordenadas do
+hidrograma unitário discreto), assumindo as seguintes notações:
+
+                        𝑄𝑡 = ∑𝑡𝑖=1 𝑃𝑒𝑓𝑖 ∗ ℎ𝑡−𝑖+1 , para t < k;
+                  𝑄𝑡 = ∑𝑡𝑖=𝑡−𝑘+1 𝑃𝑒𝑓𝑖 ∗ ℎ𝑡−𝑖+1 , para t > k; sendo:
+
+
+       - Qt é a vazão do escoamento superficial no intervalo de tempo t;
+       - h é a vazão por unidade de chuva efetiva do hidrograma unitário;
+       - Pef é a precipitação efetiva do bloco i;
+       - k é o número de ordenadas do hidrograma unitário, que pode ser obtido por k =
+n – m +1, sendo “m” o número de pulsos de precipitação e “n” o número de valores de
+vazões do hidrograma.
+
+Se esta convolução for representada na forma matricial ficará mais fácil observar
+como ela evolui. Assim, se for considerada uma chuva efetiva formada por 3
+blocos (m = 3) de duração D cada um, ocorrendo em sequência, e uma bacia
+                                                                                            20
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+cujo hidrograma unitário para a chuva de duração D é dado por 9 ordenadas (k
+= 9) de duração D cada uma, a aplicação da convolução para calcular as vazões
+Qt na exutório da bacia seria conforme a figura 4.1.
+
+
+
+
+  Figura 4.1 – Notação matricial da convolução proposta. (Fonte: Collischonn – IPH/UFRGS)
+
+Segundo o Soil Conservation Service, o hidrograma unitário adimensional
+curvilíneo, representado na figura 4.2, e que foi desenvolvido por Víctor Mockus,
+foi deduzido da média de um grande número de hidrogramas unitários naturais
+de bacias com tamanhos muito variados e situações geográficas diversas.
+
+Dividindo as ordenadas do hidrograma unitário pela sua descarga máxima e as
+abscissas pelo tempo de ponta Tp, resulta o hidrograma adimensional cujo ponto
+de inflexão no ramo de descida fica 1,70 Tp após o início da chuva unitária e a
+base é igual a 5 Tp.
+
+Nessa metodologia, o tempo de concentração da bacia é igual ao tempo entre o
+fim da chuva e o ponto de inflexão no ramo descendente do hidrograma unitário.
+O atraso da onda ou "Lag" é definido como sendo o tempo entre o centro da
+chuva unitária e o pico do hidrograma unitário, valendo 0,6 Tc para condições
+                                                                                           21
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+médias de bacia hidrográfica e deflúvios com distribuição aproximadamente
+uniforme sobre a área.
+
+
+
+
+Figura 4.2 – Hidrograma unitário adimensional e triangular (Fonte: Manual de Hidrologia Básica
+                         para Estruturas de Drenagem, DNIT/2005)
+
+Também se recomenda que a "duração unitária" da chuva usada com o
+hidrograma unitário seja próxima de 0,20 Tp, não devendo ter valores maiores
+que 0,25 Tp. Recomenda-se a adoção de durações unitárias até um quinto do
+tempo de concentração, para reduzir o trabalho de cálculo.
+
+O próprio Soil Conservation Service recomenda a substituição do hidrograma
+adimensional curvilíneo por um hidrograma triangular cuja forma se adapta
+razoavelmente ao primeiro, conforme mostra a figura anterior. O tempo de base
+Tb desse hidrograma triangular é igual a 8/3 do tempo de ponta Tp e sua forma
+mais simplificada não necessita da apresentação adimensional, sendo obtida a
+partir do tempo de concentração Tc e da duração unitária Du.
+
+Obtém-se a descarga de ponta Qp, ou a ordenada máxima do hidrograma
+unitário, observando-se que a área do triângulo representa o volume escoado da
+bacia para um deflúvio de 1 mm.
+                                                                                       22
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+Assim, os parâmetros do hidrograma unitário triangular para uma chuva efetiva
+Pef igual a 1 mm de altura no tempo unitário “D” poderão ser obtidos por meio
+das seguintes expressões:
+
+           0,208∗𝐴
+µ(𝑇𝑝) =              ➔ vazão de pico por mm de chuva efetiva (m³/s/mm);
+             𝑇𝑝
+
+A = área da bacia (km²);
+       𝐷
+𝑇𝑝 =       + 0,6𝑇𝑐 ➔ tempo de pico (horas);
+       2
+     𝑇𝑐
+𝐷 = 5 ➔ tempo unitário (horas);
+
+𝑇𝑟 = 1,67𝑇𝑝 ➔ tempo de retorno (horas);
+𝑇𝑏 = 2,67𝑇𝑝 ➔ tempo base (horas).
+
+
+Para a composição do hidrograma total será necessário multiplicar as ordenadas
+do hidrograma unitário pelos excessos de precipitação ou deflúvios em cada
+intervalo de tempo igual à duração unitária D, obtendo-se os hidrogramas
+parciais triangulares, que somados (mantendo-se as devidas defasagens),
+fornecem o hidrograma total da enchente.
+
+As ordenadas do hidrograma unitário devem, por isso, corresponder às
+abscissas com intervalos iguais à duração unitária. As ordenadas dos
+hidrogramas parciais, que serão assim também espaçadas de “D”, serão
+somadas com deslocamento de um intervalo “D”, cada vez que se considere o
+acréscimo de precipitação efetiva seguinte.
+
+É bastante comum que os cálculos do hidrograma sejam processados em
+planilhas eletrônicas, a exemplo da que está apresentada na figura 4.3,
+desenvolvida no Microsoft Excel e aplicada em um caso real para cálculo de
+descarga em bacia com área de aproximadamente 40 km². Nela pode-se
+observar que os parâmetros de entrada, como o tempo de concentração, o
+tempo de base, o tempo de pico, além da duração unitária, por exemplo, estão
+processados na parte superior da planilha, ao passo que os cálculos da chuva
+efetiva e a convolução, na forma matricial, aparecem na parte intermediária e
+final da planilha.
+                                                                                      23
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+As expressões complementares que auxiliaram na elaboração da planilha
+mostrada na figura a pouco citada foram obtidas do Manual de Hidrologia Básica
+para Estruturas de Drenagem (DNIT, 2005) e do Manual Técnico de Drenagem
+e Esgoto Sanitário (JABOR et al, 2008) e estão transcritas na sequência:
+
+Qi = Pef(i)*µ1 + Pef(i-1)*µ2 + Pef(i-2)*µ3+ ....+Pef1*µ1;
+            5080
+        (𝑃+      +50,8)2
+             𝐶𝑁
+𝑃𝑒𝑓 =      20320           ; sendo:
+        𝑃+       −203,2
+             𝐶𝑁
+
+
+Qi = vazão do escoamento superficial associada ao intervalo de tempo considerado;
+
+Pef = precipitação efetiva;
+
+µi = vazão por unidade de chuva efetiva (ou µTp);
+
+P = altura pluviométrica associada ao intervalo de tempo considerado e ao tempo de
+recorrência definido;
+
+CN = número do complexo solo vegetação.
+
+Escolhe-se o valor de CN, variável de 0 a 100, conforme a permeabilidade do
+solo, a cobertura vegetal, a textura da superfície e a umidade antecedente do
+solo, que fornecem a orientação para escolha do CN, para diversos tipos de
+cobertura vegetal, tratamento agrícola e para diversos grupos hidrológicos de
+solos, classificados de acordo com sua permeabilidade.
+
+Em razão das obras de engenharia não dependerem essencialmente da forma
+de utilização dos solos na produção agrícola, adota-se uma classificação
+simplificada para exprimir a influência da superfície do terreno na formação dos
+deflúvios. Apresenta-se dessa forma a tabela 4.1 que melhor atende aos
+objetivos de um projeto rodoviário.
+                                                                                                             24
+
+     CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+    Nome do Curso Dágua :                     Riacho das Porteiras
+         BACIA                                         CARACTERÍSTICAS DA BACIA
+                                     ÁREA COMP.          DIF.DE       Valor    Valor    Valor      Tem po
+       No              ESTACA        A(km ²) TALV.       NÍVEL          de K   de CN de TR           de
+                                              L(km )     ∆H (m )                        (anos) Conc.(h)
+       58         5235+15,07          39,7     11,5           110,0      4      65         100      3,31
+                                    CÁLCULO DOS PARÂMETROS DO HUT
+    DD = 0,2 Tc (hora) =>                     0,66
+    Tp = 0,5 DD + 0,6 Tc (hora) =>            2,32
+    TR = 1,67 Tp (hora) =>                    3,87
+    Tb = 2,67 Tp (hora) =>                    6,19
+             2,08 .𝐴                          35,59
+     Q=                (m3/s/cm)
+               𝑇𝑝
+
+
+
+
+                                     CÁLCULO DA CHUVA EFETIVA (Pe)
+
+                  5080
+              𝑃−       +50,8 2
+                   𝐶𝑁
+     Pe =        20320            (m3/s/cm)             RELAÇÃO P/P0 =         0,98
+              𝑃+       −203,2
+                  𝐶𝑁
+
+                             DETERMINAÇÃO DOS INCREMENTOS DE CHUVA
+       DT               HUT                  PRECIPITAÇÕES (m m ) (*)                 Pe
+     (hora)         (m ³/s/cm )         P (m m )         P Corrig.(m m )       (m m )      (cm )    Incr.
+
+      0,66           10,1             74,7                73,2                 11,50       1,15     1,15
+      1,32           20,2             95,4                93,5                 21,55       2,16     1,01
+      1,98           30,4            107,5                105,3                28,32       2,83     0,68
+      2,64           32,6            116,1                113,8                33,45       3,35     0,51
+      3,30           26,6            122,7                120,3                37,60       3,76     0,42
+      3,96           20,5            128,2                125,6                41,09       4,11     0,35
+      4,62           14,4            132,8                130,1                44,10       4,41     0,30
+      5,28             8,4           136,8                134,0                46,76       4,68     0,27
+      5,94             2,3           140,3                137,5                49,13       4,91     0,24
+       DT                                INCREMENTOS DE CHUVA                                      VAZÃO
+     (hora)         1,15     1,01     0,68     0,51    0,42   0,35      0,30   0,27        0,24    (m ³/s)
+      0,66       11,64                                                                              11,64
+      1,32       23,29 10,18                                                                        33,46
+      1,98       34,93 20,35 6,85                                                                   62,14
+      2,64       37,54 30,53 13,71             5,19                                                 86,97
+      3,30       30,56 32,81 20,56 10,39               4,20                                         98,53
+      3,96       23,58 26,71 22,10 15,58               8,40   3,53                                  99,92
+      4,62       16,60 20,61 17,99 16,75 12,61                7,07      3,05                        94,68
+      5,28          9,62     14,51 13,88 13,63 13,55 10,60              6,10   2,69                 84,59
+      5,94          2,64      8,41 9,77 10,52 11,03 11,39               9,14   5,39        2,40     70,70
+                                                                   Q máx.(m 3/s) => 99,92
+Figura 4.3 – Modelo de planilha com processamento da descarga pelo método do HUT.
+                                (Fonte: Próprio autor).
+                                                                                          25
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   Tabela 4.1 – Número de curva (CN) para diferentes condições de complexo hidrológico.
+                              Solo – Cobertura Vegetal
+ Cobertura Vegetal           Condições          de   Grupo hidrológico do solo
+                             retenção superficial    A      B       C        D
+ Terreno não cultivado
+                       Pobre                             77       86       91        94
+ com pouca vegetação
+                       Pobre                             72       81       88        91
+ Terreno cultivado
+                       Boa                               51       67       76        80
+                       Pobre                             68       79       86        89
+ Pasto
+                       Boa                               39       61       74        80
+                       Pobre                             45       66       77        83
+ Mata ou bosque
+                       Boa                               25       55       70        77
+                       Pobre                             74       80       87        90
+ Área urbana
+                       Boa                               70       76       83        86
+      Fonte: Manual de Hidrologia Básica para Estruturas de Drenagem (DNIT, 2005).
+
+Nesta tabela, os quatro grupos hidrológicos do solo são relacionados com a
+permeabilidade relativa das camadas inferiores, após um período prolongado de
+chuvas intensas, independentemente da cobertura vegetal, conforme descrito
+em seguida:
+
+   • GRUPO A - Potencialidade mínima para formação de deflúvio superficial.
+Inclui areias em camadas espessas com muito pouco silte e argila e também
+loess profundo muito permeável.
+   • GRUPO B - Principalmente solos arenosos menos espessos que no grupo
+A e loess menos profundo ou menos agregado que no grupo A, porém
+apresentam infiltração acima da média, após intenso umedecimento prévio.
+   • GRUPO C - Compreende solos pouco profundos e solos contendo
+bastante argila e coloides, no entanto, menos que no grupo D. O grupo apresenta
+infiltração abaixo da média, após pré-saturação.
+   • GRUPO D - Potencial máximo para formação do deflúvio superficial. O
+grupo inclui em sua maioria, argilas de alto valor de expansão, incluindo também
+alguns solos pouco profundos, com sub-horizontes quase impermeáveis,
+próximos da superfície. Qualquer tipo de solo em terreno plano, com fraca rede
+de drenagem, acaba enquadrando-se nesse grupo, após um período prolongado
+de chuvas que eleva o nível do lençol freático para a superfície.
+                                                                                       26
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 3
+
+
+
+
+   5. REFERÊNCIAS BIBLIOGRÁFICAS
+BRASIL. Manual de Hidrologia Básica para Estruturas de Drenagem. Rio de Janeiro, IPR, 2
+ed. DNIT, 2005.
+
+BRASIL. Diretrizes Básicas para Estudos e Projetos Rodoviários: Escopos Básicos/
+Instruções de Serviço. Rio de Janeiro, IPR, 3 ed. DNIT, 2006.
+
+GIMENEZ, Alírio Brasil. FIGUEIREDO, Antônio Domingues. SILVA, Cláudio Oliveira.
+LANGENDONCK, Francisco Van. ROMERO, José Roberto Hortêncio. JABÔR, Marcos
+Augusto. TSUTIYA, Milton Yomoyuki. DEBS, Mounir Khalil El. NETO, Pedro Jorge Chama.
+BANNOKI, Regina. Manual Técnico de Drenagem e Esgoto Sanitário. São Paulo, ABTC, 1
+ed, 2008.
+
+JABÔR, Marcos Augusto. Drenagem de Rodovias – Estudos Hidrológicos e Projeto de
+Drenagem. Notas de aula, 2019.
+
+LE COLLISCHONN, Walter; LE TASSI, Rutinéia de. Introdução Hidrologia. Porto Alegre,
+Editora da Universidade UFRGS, 2008.
+
+MAGALHÂES, A.; LORENA, M. Hydraulic Designe of Labyrinth Weirs. Report nº 736, National
+Laboratory of Civil Engineering, Lisbon, Portugal, 1989.
+
+VON SPERLING, M. Introdução a qualidade das águas e o tratamento de esgotos. Belo
+Horizonte, Departamento de Engenharia Sanitária e Ambiental, 2007.
+
+TORRICO, José Jaime Taborga. Práticas Hidrológicas. Rio de Janeiro, TRANSCON, 2 ed.,
+1975.

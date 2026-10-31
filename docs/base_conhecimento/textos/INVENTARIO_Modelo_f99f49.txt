@@ -1,0 +1,374 @@
+[aba RESUMO_INVENT]
+RODOVIA:
+TRECHO:
+SUBTRECHO: | SNV VERSÃO:
+SEGMENTO: | DATA DO INVENTÁRIO
+EXTENSÃO: | UNIDADE LOCAL
+RESUMO DO INVENTÁRIO
+Plataforma e Faixa de Domínio | Drenagem e Obras de Arte | Segurança
+Comprimento Equivalente de Faixa de Pista por Tipo de Revestimento (kmf) | Comprimento de Drenagem de Plataforma por Tipo
+de Revestimento (m) | Área de Placas (m²)
+CP | CA | TS | NP | Meios - Fios (m)
+C
+Quantidade de Suporte por Tipo de Material (un)
+Comprimento de Faixa de Acostamento por Tipo de Revestimento (kmfa) | Sarjetas | MD | Madeira | MT | Metálico
+CP | CA | TS | NP | C | NR
+PL | Polimérico
+Comprimento de Cerca (km) | Comprimento de Cerca | Comprimento de Drenagem Fora da Plataforma por Tipo de Revestimento (m)
+Valeta de Proteção de Cortes (m)
+C | NR | Quantidade de Tacha / Tachão Refletivos (und)
+M | Monodirecional Tipo III | B | Bidirecional Tipo III
+Área de Roçada com Roçadeira Costal (ha) | Comprimento de Cerca | Valeta de Proteção de Aterros (m)
+C | NR
+Comprimento de Guarda-corpo por Tipo de Material (m)
+C | Concreto | M
+Área de Roçada Mecanizada (ha) | Comprimento de Cerca | Descidas D'Agua (m) | Comprimento de Cerca
+C
+Comprimento de Defensas (m) | Comprimento de Cerca
+C
+Área de Capina (m²) | Comprimento de Cerca | Volume de Bueiro (m³) | Comprimento de Cerca
+Comprimento de Barreira New Jersey (m) | Comprimento de Cerca
+C
+Área Gramada (m²) | Comprimento de Cerca | Área de Caiação (m²) | Comprimento de Cerca
+Obra de Arte Especial - OAE (m) | Comprimento de Cerca
+Observações:
+Responsável - Cargo e Função[aba CAD_SEG]
+ORIENTAÇÃO PARA CADASTRO DE SEGMENTO
+1, Refere-se ao tipo de pista possível de ser cadastrada
+Pista Simples
+Pista Dupla Crescente
+Marginal Esquerda
+Marginal Direita
+CADASTRO DO SEGMENTO
+SNV | TIPO DE PISTA | LOCALIZAÇÃO
+KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL
+LAT | LONG | LAT | LONG[aba CAD_PISTA]
+ORIENTAÇÕES PARA INVENTÁRIO DA PISTA
+1 - Revestimento da pista e da faixa adicional inventariadas conforme Manual de Conservação Rodoviária (Brasil, 2005):
+- Concreto Asfáltico
+- Cimento Portland
+- Tratamento Superficial
+- Não Pavimentado
+2 - O n de faixas refere-se à quantidade de faixas excluindo as faixas adicionais, quando presentes.
+A largura total da pista refere-se à largura da pista excluindo a largura das faixas adicionais, quando presentes.
+3 - Refere-se à localização da Faixa Adicional no sentido do inventário da rodovia:
+- Esquerdo
+- Direito
+- Ambos os Lados
+4 - A largura total da faixa adicional refere-se às larguras das faixas adicionais, considerando os dois lados quando aplicável.
+CADASTRO DE PISTA
+LOCALIZAÇÃO | PISTA | FAIXA ADICIONAL | Extensão da Pista (KM) | Km de Faixa | Observações
+SNV | TIPO DE PISTA 1 | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Revestimento da Pista (km) | N de Faixa 2 | Largura Total (m) | Revestimento da Faixa Adicional | Lado 3 | Largura Total (m) 4
+LAT | LONG | LAT | LONG[aba CAD_ACOST]
+ORIENTAÇÕES PARA INVENTÁRIO DO ACOSTAMENTO
+1 - Revestimento do acostamento inventariado conforme Manual de Conservação Rodoviária (Brasil, 2005):
+- Concreto Asfáltico
+- Cimento Portland
+- Tratamento Superficial
+- Não Pavimentado
+2 - Quando o trecho não contar com acostamento em um dos lados, não registrar largura do acostamento deste lado. Quando o trecho não possuir acostamento nos dois lados, não registrar o elemento.
+CADASTRO DE ACOSTAMENTO
+LOCALIZAÇÃO | Revestimento da Pista (km) | Largura do Acostamento (m) 2 | Extensão de
+Acostamento
+(km) | kmf de
+Acostamento | Observações
+SNV | TIPO DE PISTA 1 | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Esquerdo | Direito
+LAT | LONG | LAT | LONG[aba CAD_MFC]
+ORIENTAÇÕES PARA INVENTÁRIO DO MEIO FIO
+1 - A condição do Meio Fio a ser inventariado pode ser classificada como:
+- Satisfatória
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de Meio Fio.
+2 - Tipos de Meio Fio, disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro. 2018 n. p. (IPR. Publ., 736).
+Caso o trecho apresente necessidade de implantação de Meio Fio, preencher com "A definir" ou com o Tipo de Meio Fio.
+3 - A largura do Meio Fio refere-se à largura projetada (somatório das dimensões visíveis) do Meio Fio para o serviço de Caiação.
+4 - Área de Capina definida como 0,20 x (extensão do Meio Fio).
+CADASTRO DE MEIO FIO
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão
+(m) | Largura 3
+(m) | Área da
+Superfície
+para
+Caiação (m²) | Área de
+Capina 4
+(m²) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG
+…[aba CAD_SAR]
+ORIENTAÇÕES PARA INVENTÁRIO DA SARJETA
+1 - A condição da Sarjeta a ser inventariada pode ser classificada como:
+- Satisfatória
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação", caso o trecho apresente necessidade de implantação de Sarjeta.
+2 - Tipos de Sarjeta, disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro. 2018 n. p. (IPR, Publ., 736).
+Caso o trecho apresente necessidade de implantação de Sarjeta, preencher com "A definir" ou com o Tipo de Sarjeta.
+3 - A largura da Sarjeta refere-se à largura projetada (somatório das dimensões visíveis) da Sarjeta para o serviço de Caiação.
+4 - Área de Capina definida como 0,20 x (extensão da Sarjeta)
+CADASTRO DE SARJETA
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão
+(m) | Largura3
+(m) | Área da
+Superfície
+para
+Caiação (m²) | Área de
+Capina4
+(m²) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG[aba CAD_VAL]
+ORIENTAÇÕES PARA INVENTÁRIO DA VALETA
+1 - A condição da Valeta a ser inventariada pode ser classificada como:
+- Satisfatória
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de Valeta.
+2 - Tipos de Valeta, disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro, 2018 n. p. (IPR. Publ., 736).
+Caso o trecho apresente necessidade de implantação de Valeta, preencher com "A definir" ou com o Tipo de Valeta.
+CADASTRO DE VALETA
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão
+(m) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG[aba CAD_DAR]
+ORIENTAÇÕES PARA INVENTÁRIO DA DESCIDA D'ÁGUA
+1 - A condição da Descida d'Água a ser inventariada pode ser classificada como:
+- Satisfatória
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de Descida d'Água.
+2 - Tipos de Descida D'Água disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro, 2018 n. p. (IPR. Publ., 736). Caso o local apresente necessidade de implantação de Descida d'Água, preencher com "A definir" ou com o Tipo de Descida d'Água.
+CADASTRO DE DESCIDA D'ÁGUA
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão
+(m) | Observações
+SNV | TIPO DE PISTA | KM | COORDENADA | Lado (E/D)
+LAT | LONG[aba CAD_EDA]
+ORIENTAÇÕES PARA INVENTÁRIO DA  ENTRADA PARA DESCIDA D'ÁGUA
+1 - A condição da Entrada para Descida d'Água a ser inventariada pode ser classificada como:
+- Satisfatória
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de Entrada para Descida d'Água.
+2 - Tipos de Entrada para Descida D'Água disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro, 2018 n. p. (IPR, Publ., 736). Caso o local apresente necessidade de implantação de Entrada para Descida d'Água, preencher com "A definir" ou com o Tipo de Entrada para Descida d'Água.
+CADASTRO DA ENTRADA PARA DESCIDA D'ÁGUA
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão
+(m) | Observações
+SNV | TIPO DE PISTA | KM | COORDENADA | Lado (E/D)
+LAT | LONG[aba CAD_OAC]
+ORIENTAÇÕES PARA INVENTÁRIO DAS OBRAS DE ARTE CORRENTE - OAC
+1 - A condição da OAC a ser inventariada pode ser classificada como:
+- SATISFATÓRIA
+- Demolir e Recompor
+- Recompor
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de OAC.
+2 - Posição da OAC refere-se ao eixo da Rodovia: Transversal ou Longitudinal.
+3 - Tipos de OAC disponíveis no Álbum de projetos – Tipo de Dispositivos de Drenagem - 5. ed. - Rio de Janeiro, 2018 n. p. (IPR, Publ., 736). Caso o trecho apresente necessidade de implantação de OAC, preencher com "A definir" ou com o Tipo de OAC.
+4 - A dimensão da OAC refere-se ao:
+- Diâmetro, em metros, para elementos do tipo Bueiro Tubular de Concreto e Bueiro Metálico.
+- Lado, em metros, para elementos do tipo Bueiro Celular de Concreto.
+Caso o trecho apresente necessidade de implantação de OAC, preencher com "A definir" ou com a Dimensão da OAC.
+5 - Refere-se à quantidade de linhas de OAC de acordo com o tipo do elemento inventariado.
+Caso o trecho apresente necessidade de implantação de OAC, preencher com "A definir" ou com a Quantidade de Linhas da OAC.
+6 - Refere-se à esconsidade da OAC em relação à pista, Caso o trecho apresente necessidade de implantação de OAC, preencher com "A definir" ou com a Esconsidade da OAC.
+7 - Pode indicar a finalidade da OAC para auxílio do cálculo do orçamento da limpeza e desobstrução da mesma.
+CADASTRO DE OBRAS DE ARTE CORRENTE - OAC
+LOCALIZAÇÃO | Condição 1 | Posição 2 | Tipo 3 | Dimensão 4 (m) | Linhas 5 | Esconsidade 6 (º) | Largura da Pista SNV (m) | Extensão da
+OAC
+(m) | Volume 7
+(m³) | Observações 7
+SNV | TIPO DE PISTA | KM | COORDENADA
+LAT | LONG
+0
+0
+0
+0[aba CAD_OAE]
+ORIENTAÇÕES PARA INVENTÁRIO DAS OBRAS DE ARTE ESPECIAL - OAE
+1 - Utilizar mais de uma linha para a mesma OAE, caso necessite.
+2 - A condição do Dispositivo de Segurança Lateral a ser inventariado pode ser classificada como:
+- Satisfatória, quando pelo menos 50% do elemento apresenta condição satisfatória.
+- Recompor, quando até 50% do elemento apresenta necessidade de recomposição.
+- Indicação de Necessidade de Implantação, caso o local apresente necessidade de implantação de Dispositivo de Segurança Lateral.
+3 - Tipos de Dispositivo de Segurança Lateral:
+- Guarda Corpo de Concreto - GCC
+- Guarda Corpo Metálico -GCM
+- Barreira New Jersey - BNJ
+Caso o local apresente necessidade de implantação de Dispositivo de Segurança Lateral, preencher com "A definir" ou com o Tipo do Dispositivo de Segurança Lateral.
+4 - Refere-se à posição do Dispositivo de Segurança Lateral em relação à OAE: Interno ou Externo.
+5 - Refere-se ao lado do Dispositivo de Segurança Lateral presente na OAE: Direito ou Esquerdo.
+6 - Considera-se a extensão total da OAE para dimensão da extensão do Dispositivo de Segurança Lateral.
+7 - Se o tipo de dispositivo for GCC, utiliza-se o fator de conversão de 1,35 m²/m de extensão total do elemento. Se o tipo de dispositivo for BNJ, utiliza-se o fator de conversão de 1,80 m²/m de extensão total do elemento.
+CADASTRO DE OBRAS DE ARTE ESPECIAL - OAE
+LOCALIZAÇÃO | Extensão
+Total da
+Ponte
+(m) | Dispositivo de Segurança Lateral 1 | Área da Superfície
+para Caiação7
+(m²) | Foto | Observações 7
+Nº | Nome 1 | SNV | TIPO DE PISTA | KM | COORDENADA | Condição2 | Tipo 3 | Posição 4 | Lado 5 | Extensão 6 (m)
+LAT | LONG
+0 | 0
+0 | 0[aba CAD_CERCA]
+ORIENTAÇÕES PARA INVENTÁRIO DE CERCA
+1, A condição da Cerca a ser inventariada pode ser classificada como:
+- Existente, quando identificada a presença deste elemento,
+- Indicação de Necessidade de Implantação, quando o trecho apresentar necessidade de implantação de Cerca,
+2, Tipos de Cerca:
+- Cerca com Mourão de Madeira (CMM)
+- Cerca com Mourão de Concreto seção Triangular (CMCT)
+- Cerca com Mourão de Concreto seção Quadrada (CMCQ)
+Caso o trecho apresente necessidade de implantação de Cerca, preencher com "A definir" ou com o Tipo de Cerca,
+CADASTRO DE CERCAS
+LOCALIZAÇÃO | Condição 1 | Tipo 2 | Extensão (m) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG
+0
+0
+0
+0[aba CAD_ROCADA]
+ORIENTAÇÕES PARA INVENTÁRIO DA ÁREA DE ROÇADA
+1 -  Tipo de roçada a ser utilizada: Mecanizada ou Roçadeira Costal.
+CADASTRO DA ÁREA DE ROÇADA
+LOCALIZAÇÃO | Tipo 1 | Largura
+(m) | Extensão (m) | Área
+(ha) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG[aba CAD_GRAMA]
+CADASTRO DE ÁREA GRAMADA
+LOCALIZAÇÃO | Largura (m) | Extensão (m) | Área (m²) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG[aba CAD_DEFENSA]
+ORIENTAÇÕES PARA INVENTÁRIO DA DEFENSA E ANCORAGEM
+1 - A condição da Defensa ou Ancoragem a ser inventariada pode ser classificada como:
+- Satisfatória
+- Remover e Recompor
+- Recompor
+A condição "Remover" refere-se à condição de remover defensas ou ancoragens que não apresentem condições adequadas de uso.
+A condição "Recompor" refere-se à condição de recompor uma defensa ou ancoragem já existente e que não apresente condições adequadas de uso ou que já foi removida.
+2 - Refere-se ao elemento inventariado: Defensa ou Ancoragem.
+3 - Tipos de Defensa ou Ancoragem:
+- Defensa Maleável Dupla (DMD)
+- Defensa Maleável Simples (DMS)
+- Defensa Semimaleável Dupla (DSD)
+- Defensa Semimaleável Simples (DSS)
+CADASTRO DA DEFENSA E ANCORAGEM
+LOCALIZAÇÃO | Condição 1 | Defensa ou Ancoragem 2 | Tipo 3 | Extensão (m) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Lado (E/D)
+LAT | LONG | LAT | LONG[aba CAD_SINV]
+ORIENTAÇÕES PARA INVENTÁRIO DA SINALIZAÇÃO VERTICAL
+1 - A condição da Sinalização Vertical a ser inventariada pode ser classificada como:
+- Placa Satisfatória e Suporte Satisfatório
+- Placa Satisfatória e Recompor Suporte
+- Recompor Placa e Suporte Satisfatório
+- Recompor Placa e Recompor Suporte
+- Indicação de Necessidade de Implantação, caso o trecho apresente necessidade de implantação de Sinalização Vertical.
+2 - Consideração do tipo de Sinalização Vertical de acordo com o Manual Brasileiro de Sinalização de Trânsito do CONTRAN, volumes I, II e III:
+- Regulamentação
+- Advertência
+- Indicação
+Caso o trecho apresente necessidade de implantação de Sinalização Vertical, preencher com "A definir".
+3 - Caso o local apresente necessidade de implantação de Sinalização Vertical, a Dimensão da Placa deve ser definida em escritório.
+4 - Tipos de Suporte:
+- Madeira (MD)
+- Metálico (MT)
+- Polimérico (PL)
+Caso o trecho apresente necessidade de implantação de Sinalização Vertical, preencher com "A definir".
+5 - Área de Capina para limpeza de uma área de 3 metros de raio ao redor de cada placa de Sinalização Vertical.
+CADASTRO DE  SINALIZAÇÃO VERTICAL
+LOCALIZAÇÃO | Condição 1 | Tipo de Placa 2 | Dimensões 3 | Suporte 4 | Área da
+Placa
+(m²) | Capina 5
+(m²) | Observações
+SNV | TIPO DE PISTA | KM | COORDENADA | Lado (E/D) | Circular | Retangular/Losangular
+LAT | LONG | Diâmetro (m) | Largura (m) | Altura (m) | Tipo | Qtde[aba CAD_TACHA]
+ORIENTAÇÕES PARA INVENTÁRIO DA  TACHA / TACHÃO
+1 - A condição da Tacha ou do Tachão pode ser classificada como:
+- Existente
+- Indicação de Necessidade de Implantação, quando o trecho apresentar indicação de necessidade de implantação de tacha ou tachão.
+2 - A posição da Tacha ou do Tachão refere-se em relação à pista no sentido inventariado: Eixo, Bordo Direito ou Bordo Esquerdo.
+3 - Consideração do elemento inventariado de acordo com o SICRO:
+- Tacha
+- Tachão
+Caso o trecho apresente necessidade de implantação de Tacha ou Tachão, preencher com "A definir" ou com o Material do elemento.
+4 - Consideração dos Materiais da Tacha e do Tachão, conforme SICRO:
+- Plástico Injetado
+- Resina Sintética
+- Metálica
+Caso o trecho apresente necessidade de implantação de Tacha ou Tachão, preencher com "A definir" ou com o Material do elemento.
+5 - Consideração da Direção e do Tipo da Tacha e do Tachão, conforme SICRO:
+- Monodirecional tipo I
+- Monodirecional tipo II
+- Monodirecional tipo III
+- Monodirecional tipo IV
+- Bidirecional tipo I
+- Bidirecional tipo II
+- Bidirecional tipo III
+- Bidirecional tipo IV
+Caso o trecho apresente necessidade de implantação de Tacha ou Tachão, preencher com "A definir" ou com a direção e o Tipo do elemento.
+6 - Consideração da Cadência da Tacha e do Tachão, conforme orientações do BR-Legal.
+Caso o trecho apresente necessidade de implantação de Tacha ou Tachão, preencher com "A definir" ou com a cadência do elemento.
+CADASTRO DE TACHA / TACHÃO
+LOCALIZAÇÃO | Condição 1 | Posição 2 | Tipo de Tacha/Tachão | Cadência 6
+(un/m) | Extensão (m) | Quantidade
+(un) | Observações
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL
+LAT | LONG | LAT | LONG | Tacha ou  Tachão 3(m) | Material 4 | Direção - Tipo 5[aba CAD_SINZ]
+ORIENTAÇÕES PARA INVENTÁRIO DE SINALIZAÇÃO HORIZONTAL - INSCRIÇÕES NO PAVIMENTO
+1 - Consideração dos tipos de Inscrições no Pavimento de acordo com o Manual Brasileiro de Sinalização de Trânsito do CONTRAN, volume IV:
+- Setas
+- Zebrados
+CADASTRO DE INSCRIÇÕES DE PAVIMENTO
+LOCALIZAÇÃO | Tipo de Inscrição no Pavimento 1 | Área da Inscrição (m²) | Observações
+SNV | TIPO DE PISTA | KM | COORDENADA
+LAT | LONG[aba CAD_SINH]
+ORIENTAÇÕES PARA INVENTÁRIO DAS MARCAS LONGITUDINAIS
+1. A posição da Marca Longitudinal refere-se em relação à pista no sentido inventariado: Eixo, Bordo Direito ou Bordo Esquerdo.
+2. Consideração do tipo de Linha de acordo com o Manual Brasileiro de Sinalização de Trânsito do CONTRAN, volume IV:
+- Linha Simples Contínua (LBO)
+- Linha Simples Seccionada (LFO-2;LCO)
+- Linha Dupla Contínua (LFO-3)
+- Linha Contínua / Seccionada (LFO-4)
+- Linha Dupla Seccionada
+3. A largura das linhas da sinalização horizontal e a cadência para sinalização horizontal tracejada ou seccionada deverão ser preenchidas de acordo com o Manual Brasileiro de Sinalização de Trânsito do CONTRAN, volume IV:
+CADASTRO DE SINALIZAÇÃO HORIZONTAL - MARCAS LONGITUDINAIS
+LOCALIZAÇÃO | Posição 1 | Tipo de Linha 2 | Largura da
+Linha3
+(m) | Extensão
+(m) | Área da
+Linha
+(m²)
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Cadência 3
+t : e
+LAT | LONG | LAT | LONG[aba CAD_FUNC]
+ORIENTAÇÕES PARA INVENTÁRIO DA INTERVENÇÃO FUNCIONAL DA PISTA E DO ACOSTAMENTO
+1. Indicação dos locais que a Intervenção Funcional da Pista e do Acostamento abrange:
+- Não se aplica.
+- Direito.
+- Esquerdo.
+- Ambos os Lados.
+2. Tipos de Solução para Intervenção Funcional da Pista e do Acostamento de acordo com a resolução do PATO:
+- I – microrrevestimento em 2 (duas) camadas (e = 1,5 cm) para rejuvenescimento.
+- II – reperfilagem (CBUQ massa fina e = 2,0 cm), para eliminar irregularidade elevada.
+- III – fresagem com recomposição de CBUQ, na espessura do pavimento existente, em locais de trincamento tipos FC-2, FC-3, instabilidade de massa, irregularidade elevada ou trilha de roda;
+- IV – TSD sem polímero em trechos com tráfego médio a baixo, VMD comercial até 2.000 (dois mil).
+- V – TSD com polímero em trechos de tráfego elevado, VMD comercial superior a 2.000 (dois mil), a critério do DNIT.
+CADASTRO DE INTERVENÇÃO FUNCIONAL DA PISTA E ACOSTAMENTO
+LOCALIZAÇÃO | Indicação do Local da Intervenção
+Funcional¹ | Tipo da Solução² | Área de Intervenção (m²) | Observação
+SNV | TIPO DE PISTA | KM INICIAL | KM FINAL | COORDENADA INICIAL | CORDENADA FINAL | Pista | Acostamento | 3ª Faixa
+LAT | LONG | LAT | LONG
+ÁREA TOTAL DA INTERVENÇÃO FUNCIONAL (ATIF): | 0
+ÁREA TOTAL DO SEGMENTO (ATS):
+ATIF / ATS: | #DIV/0![aba CAD_DSM]
+ORIENTAÇÕES PARA INVENTÁRIO DA OCORRÊNCIA DSM
+1. Indicação dos locais que a Ocorrência DSM abrange:
+- Não se aplica.
+- Direito.
+- Esquerdo.
+- Ambos os Lados.
+2. Descrição da Ocorrência DSM para auxílio dos quantitativos em escritório dos serviços necessários.
+CADASTRO DE OCORRÊNCIA PARA DSM
+Localização | Indicação do Local da Ocorrência DSM1 | Descrição da Ocorrência DSM2 | Largura da Ocorrência DSM
+(m) | Comprimento da Ocorrência DSM 
+(m) | Área da Ocorrência DSM 
+(m²) | Foto
+SNV | Tipo de Pista | KM inicial | KM final | Coordenada Inicial | Coordenada Final | Pista | Acostamento | 3ª Faixa
+LAT | LONG | LAT | LONG

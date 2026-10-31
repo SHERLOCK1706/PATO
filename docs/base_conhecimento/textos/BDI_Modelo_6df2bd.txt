@@ -1,0 +1,50 @@
+[aba BDI]
+CONSERVAÇÃO E MANUTENÇÃO
+BONIFICAÇÕES E DESPESAS INDIRETAS - BDI
+DESCRIÇÃO DAS PARCELAS | VERSÃO ONERADA
+Despesas Indiretas | % sobre o PV | % sobre o CD
+Administração Central | Variavel - f(CD) | #DIV/0! | 9
+Despesas Financeiras | #DIV/0! | #DIV/0!
+Seguros e Garantias Contratuais | 0.25 | 0.25 | #DIV/0!
+Riscos | 0.5 | 0.5 | #DIV/0!
+Subtotal 1 | #DIV/0! | #DIV/0!
+Benefícios | % sobre PV | % sobre CD
+Lucro | Variavel - f(CD) | #DIV/0! | 12
+Subtotal 2 | #DIV/0! | 12
+Tributos | % sobre PV | % sobre CD
+PIS | 0.65 | 0.65 | #DIV/0!
+COFINS | 3 | 3 | #DIV/0!
+ISSQN* | #DIV/0! | #DIV/0! | #DIV/0!
+Contribuição Previdenciária sobre a Receita Bruta (CPRB)** | 0 | 0 | #DIV/0!
+Subtotal 3 | #DIV/0! | #DIV/0!
+TOTAL: | #DIV/0! | #DIV/0!
+DESCRIÇÃO DAS PARCELAS | VERSÃO DESONERADA
+Despesas Indiretas | % sobre o PV | % sobre o CD
+Administração Central | Variavel - f(CD) | #DIV/0! | 9
+Despesas Financeiras | 0 | #DIV/0! | #DIV/0!
+Seguros e Garantias Contratuais | 0,25% do PV | 0.25 | #DIV/0!
+Riscos | 0,50% do PV | 0.5 | #DIV/0!
+Subtotal 1 | #DIV/0! | #DIV/0!
+Benefícios | % sobre PV | % sobre CD
+Lucro | Variavel - f(CD) | #DIV/0! | 12
+Subtotal 2 | #DIV/0! | 12
+Tributos | % sobre PV | % sobre CD
+PIS | 0.65 | 0.65 | #DIV/0!
+COFINS | 3 | 3 | #DIV/0!
+ISSQN* | #DIV/0! | #DIV/0! | #DIV/0!
+Contribuição Previdenciária sobre a Receita Bruta (CPRB)** | 2.7 | 2.7 | #DIV/0!
+Subtotal 3 | #DIV/0! | #DIV/0!
+TOTAL: | #DIV/0! | #DIV/0!
+PV = Preço de Venda
+CD = Custo Direto
+SELIC (XXX/20XX) = XX% a.a
+DF = [(1+SELIC)^(1/12)-1] sobre (PV - Lucro), o que resulta em DF = X,XX% sobre (PV - Lucro)
+Observações:
+(*) Limite máximo adotado de 5%, valor variável em função da legislação de cada município. O valor real do ISSQN a ser adotado nos orçamentos dos projetos aprovados pelo DNIT deve ser aquele proveniente das alíquotas dos municípios situados na área de influência das obras.
+(**) No Art. 9º-A da Lei nº 14.973/2024 estabelece que, sobre a Contribuição Previdenciária sobre a Receita Bruta – CPRB adotada para as empresas de construção de obras de infraestrutura, enquadradas nos grupos 421, 422, 429 e 431 da CNAE 2.0, cuja alíquota é de 4,50%, deverão ser aplicadas bases de cálculos específicas a cada ano. Desse modo, durante o regime de transição deverão ser adotadas as alíquotas indicadas a seguir:
+▪ 80% de 4,50% em 2025, resultando na alíquota de 3,60%;
+▪ 60% de 4,50% em 2026, resultando na alíquota de 2,70%;
+▪ 40% de 4,50% em 2027, resultando na alíquota de 1,80%.[aba ISSQN]
+IMPOSTO SOBRE SERVIÇO DE QUALQUER NATUREZA - ISSQN
+MUNICÍPIO | KM INICIAL | KM FINAL | EXTENSÃO (KM) | ISSQN
+TOTAL ISSQN: | #DIV/0!

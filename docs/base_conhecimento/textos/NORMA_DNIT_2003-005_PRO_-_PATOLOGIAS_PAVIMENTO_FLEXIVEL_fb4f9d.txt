@@ -1,0 +1,467 @@
+                                                                                      NORMA DNIT 005/2003 - TER
+
+          DNIT                                              Defeitos nos pavimentos flexíveis e semi-rígidos
+                                                                             Terminologia
+
+    MINISTÉRIO DOS TRANSPORTES
+                                                               Autor: Diretoria de Planejamento e Pesquisa / IPR
+DEPARTAMENTO NACIONAL DE INFRA-                                Processo: 50.600.004.023/2002-72
+  ESTRUTURA DE TRANSPORTES
+                                                               Origem: Revisão da norma DNER-TER 001/78
+                                                               Aprovação pela Diretoria Executiva do DNIT na reunião de 06/08/2003
+    DIRETORIA DE PLANEJAMENTO E
+              PESQUISA
+
+
+        INSTITUTO DE PESQUISAS                            Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que
+              RODOVIÁRIAS                                 citada a fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda
+                                                          comercial.
+      Rodovia Presidente Dutra, km 163
+      Centro Rodoviário – Vigário Geral                                                                                                        Nº total de
+    Rio de Janeiro – RJ – CEP 21240-330                                                     Palavras-chave:
+                                                                                                                                                páginas
+         Tel/fax: (0xx21) 3371-5888                                          Pavimentação, deformação, defeitos, terminologia                      12
+
+
+
+Resumo                                                                                     Prefácio
+
+Este documento define os termos técnicos empregados                                        A presente Norma foi preparada pela Diretoria de
+em defeitos que ocorrem nos pavimentos flexíveis e                                         Planejamento e Pesquisa, para servir como documento
+semi-rígidos e serve para padronizar a linguagem                                           base na utilização de termos técnicos rodoviários,
+adotada na elaboração das normas, manuais, projetos e                                      referentes a defeitos nos pavimentos flexíveis e semi-
+textos relativos aos pavimentos flexíveis e semi-rígidos.                                  rígidos. Está baseada na norma DNIT 001/2002 – PRO
+                                                                                           e cancela e substitui a norma DNER - TER 001/78.
+Abstract
+                                                                                           1       Objetivo
+This document defines technical terms referring to
+distress in flexible and semi-rigid pavements and aims                                     Esta terminologia define os termos empregados em
+standardizing the language used in the making of                                           defeitos que ocorrem nos pavimentos flexíveis e semi-
+standards, manuals, proposals and other texts about                                        rígidos.
+flexible and semi-rigid pavements.
+                                                                                           2       Referências bibliográficas
+Sumário
+                                                                                           Os documentos relacionados neste item serviram de
+Prefácio ...................................................................... 1
+                                                                                           base à elaboração desta Norma e contêm disposições
+1      Objetivo .............................................................. 1           que, ao serem citadas no texto, se tornam parte
+
+2      Referências bibliográficas .................................. 1                     integrante desta Norma. As edições apresentadas são
+                                                                                           as que estavam em vigor na data desta publicação,
+3      Definições .......................................................... 2
+                                                                                           recomendando-se que sempre sejam consideradas as
+Anexo A (normativo)                                                                        edições mais recentes, se houver.
+Quadro resumo dos defeitos -
+codificação e classificação ......................................... 4                            a)    AUTRET,       P.;      BROUSSE,      J.     VIZIR:
+
+Anexo B (informativo)                                                                                    méthode     assistée par       ordinateur    pour
+Representação esquemática dos defeitos ocorrentes                                                        l’estimation des besoins en entretien d‘un
+na superfície dos pavimentos flexíveis e semi-rígidos 5
+                                                                                                         réseau routier. Paris: LCPC, 1991.
+Anexo C (informativo)
+Representação fotográfica – defeitos nos pavimentos 6                                              b)    DOMINGUES,          F.   A.   A.   Manual    para
+                                                                                                         identificação de defeitos de revestimentos
+Índice Geral................................................................ 12
+DNIT 005/2003-TER                                                                                                               2
+
+               asfálticos de pavimentos. São Paulo: F. A.         3.1.2.1 Trinca isolada
+               A. Domingues, 1993.
+                                                                         a)   Trinca transversal
+        c)     ENECON; INGEROUTE; RIO GRANDE DO
+               SUL. Departamento Autônomo de Estradas                         Trinca   isolada       que      apresenta     direção
+
+               de Rodagem. Catálogo das deteriorações                         predominantemente ortogonal ao eixo da
+
+               dos pavimentos. Porto Alegre, 1978.                            via. Quando apresentar extensão de até
+                                                                              100 cm é denominada trinca transversal
+        d)     NATIONAL          RESEARCH         COUNCIL.
+                                                                              curta. Quando a extensão for superior a
+               Strategic   Highway     Research      Program.
+                                                                              100 cm denomina-se trinca transversal
+               Distress identification manual for the long-
+                                                                              longa.
+               term     pavement     performance       project.
+               Washington. D.C., 1993.                                   b)   Trinca longitudinal
+
+        e)     PEREIRA, A. M. Um método expedito de                           Trinca   isolada       que      apresenta     direção
+
+               avaliação de pavimentos flexíveis e semi-                      predominantemente paralela ao eixo da via.
+
+               rígidos. Rio de Janeiro: IPR, 1976. ( IPR.                     Quando apresentar extensão de até 100
+
+               Publ., 607 ).                                                  cm é denominada trinca longitudinal curta.
+                                                                              Quando a extensão for superior a 100 cm
+        f)     PINTO,      S.;     PREUSSLER,         E.    S.
+                                                                              denomina-se trinca longitudinal longa.
+               Pavimentação         rodoviária:      conceitos
+               fundamentais sobre pavimentos flexíveis. 2.               c)   Trinca de retração
+
+               ed. Rio de Janeiro: S. Pinto, 2002.                            Trinca isolada não atribuída aos fenômenos
+                                                                              de fadiga e sim aos fenômenos de retração
+3       Definições
+                                                                              térmica ou do material do revestimento ou
+                                                                              do material de base rígida ou semi-rígida
+3.1     Fenda
+                                                                              subjacentes ao revestimento trincado.
+Qualquer descontinuidade na superfície do pavimento,
+                                                                  3.1.2.2 Trinca interligada
+que conduza a aberturas de menor ou maior porte,
+apresentando-se sob diversas formas, conforme adiante
+                                                                         a)   Trinca tipo “Couro de Jacaré”
+descrito.
+                                                                              Conjunto     de       trincas    interligadas    sem
+3.1.1 Fissura                                                                 direções preferenciais, assemelhando-se
+                                                                              ao aspecto de couro de jacaré. Essas
+Fenda de largura capilar existente no revestimento,                           trincas podem apresentar, ou não, erosão
+posicionada longitudinal, transversal ou obliquamente ao                      acentuada nas bordas.
+eixo da via, somente perceptível a vista desarmada de
+                                                                         b)   Trinca tipo “Bloco”
+uma distância inferior a 1,50 m.
+
+NOTA:        As fissuras são fendas incipientes que ainda                     Conjunto         de       trincas       interligadas
+
+             não      causam     problemas   funcionais     ao                caracterizadas pela configuração de blocos
+
+             revestimento, não sendo assim consideradas                       formados     por        lados     bem       definidos,
+
+             quanto à gravidade nos métodos atuais de                         podendo,     ou       não,      apresentar    erosão
+
+             avaliação das condições de superfície.                           acentuada nas bordas.
+
+
+3.1.2 Trinca                                                      3.2    Afundamento
+
+
+Fenda existente no revestimento, facilmente visível a             Deformação permanente caracterizada por depressão
+
+vista desarmada, com abertura superior à da fissura,              da superfície do pavimento, acompanhada, ou não, de
+
+podendo apresentar-se sob a forma de trinca isolada ou            solevamento, podendo apresentar-se sob a forma de
+
+trinca interligada.                                               afundamento plástico ou de consolidação.
+
+NOTA:        Ver Notas 1 e 2 do Anexo A.
+DNIT 005/2003-TER                                                                                                                 3
+
+3.2.1 Afundamento plástico                                          3.6    Desgaste
+
+
+Afundamento causado pela fluência plástica de uma ou                Efeito do arrancamento progressivo do agregado do
+mais   camadas       do   pavimento    ou     do    subleito,       pavimento, caracterizado por aspereza superficial do
+acompanhado de solevamento. Quando ocorre em                        revestimento e provocado por esforços tangenciais
+extensão de até 6 m é denominado afundamento                        causados pelo tráfego.
+plástico local; quando a extensão for superior a 6 m e
+estiver localizado ao longo da trilha de roda é                     3.7    Panela ou buraco
+
+denominado afundamento plástico da trilha de roda.
+                                                                    Cavidade que se forma no revestimento por diversas
+
+3.2.2 Afundamento de consolidação                                   causas (inclusive por falta de aderência entre camadas
+                                                                    superpostas, causando o desplacamento das camadas),
+Afundamento     de    consolidação     é    causado      pela       podendo alcançar as camadas inferiores do pavimento,
+consolidação diferencial de uma ou mais camadas do                  provocando a desagregação dessas camadas.
+pavimento ou subleito sem estar acompanhado de
+solevamento. Quando ocorre em extensão de até 6 m é                 3.8    Remendo
+
+denominado      afundamento     de    consolidação      local;
+                                                                    Panela preenchida com uma ou mais camadas de
+quando a extensão for superior a 6m e estiver localizado
+                                                                    pavimento na operação denominada de “tapa-buraco”.
+ao longo da trilha de roda é denominado afundamento
+de consolidação da trilha de roda.
+                                                                    3.8.1 Remendo profundo
+
+3.3    Ondulação ou Corrugação
+                                                                    Aquele em que há substituição do revestimento e,
+                                                                    eventualmente, de uma ou mais camadas inferiores do
+Deformação      caracterizada    por       ondulações      ou
+                                                                    pavimento. Usualmente, apresenta forma retangular.
+corrugações transversais na superfície do pavimento.
+
+                                                                    3.8.2 Remendo superficial
+3.4    Escorregamento
+
+                                                                    Correção,     em     área   localizada,    da    superfície   do
+Deslocamento do revestimento em relação à camada
+                                                                    revestimento,       pela    aplicação     de    uma    camada
+subjacente do pavimento, com aparecimento de fendas
+                                                                    betuminosa.
+em forma de meia-lua.
+
+                                                                    3.9    Codificação e classificação
+3.5    Exsudação
+
+                                                                    No    Anexo     A     (normativo)   são        apresentadas       a
+Excesso de ligante betuminoso na superfície do
+                                                                    classificação das trincas e a codificação adotada para
+pavimento, causado pela migração do ligante através do
+                                                                    todos os defeitos definidos nesta Norma.
+revestimento.
+
+
+                                                   _________________ /Anexo A
+DNIT 005/2003-TER                                                                                                          4
+
+                                                Anexo A (normativo)
+                                 Quadro resumo dos defeitos – Codificação e Classificação
+                                                                                                          CLASSE DAS
+                                     FENDAS                                        CODIFICAÇÃO
+                                                                                                            FENDAS
+
+                                     Fissuras                                               FI            -      -         -
+
+                                                         Curtas                         TTC          FC-1       FC-2      FC-3
+   Trincas no                       Transversais
+                       Trincas                           Longas                          TTL         FC-1       FC-2      FC-3
+ revestimento
+  geradas por         Isoladas                           Curtas                         TLC          FC-1       FC-2      FC-3
+  deformação                        Longitudinais
+  permanente                                             Longas                          TLL         FC-1       FC-2      FC-3
+excessiva e/ou
+                                                         Sem erosão acentuada
+  decorrentes                                                                               J             -     FC-2       -
+ do fenômeno          Trincas                            nas bordas das trincas
+                                    “Jacaré”
+    de fadiga       Interligadas                         Com erosão acentuada
+                                                                                            JE            -      -        FC-3
+                                                         nas bordas das trincas
+
+                       Trincas      Devido à retração térmica ou dissecação da
+                                                                                        TRR          FC-1       FC-2      FC-3
+   Trincas no         Isoladas      base (solo-cimento) ou do revestimento
+  revestimento
+ não atribuídas                                          Sem erosão acentuada
+                                                                                         TB               -     FC-2       -
+ ao fenômeno          Trincas                            nas bordas das trincas
+    de fadiga                       “Bloco”
+                    Interligadas                         Com erosão acentuada
+                                                                                        TBE               -               FC-3
+                                                         nas bordas das trincas
+
+
+                                          OUTROS DEFEITOS                                                     CODIFICAÇÃO
+
+                                                         Devido à fluência plástica de uma ou mais
+                                           Local                                                                  ALP
+                                                         camadas do pavimento ou do subleito
+                      Plástico
+                                                         Devido à fluência plástica de uma ou mais
+                                          da Trilha                                                               ATP
+                                                         camadas do pavimento ou do subleito
+ Afundamento
+                                                         Devido à consolidação diferencial ocorrente em
+                                           Local                                                                  ALC
+                        De                               camadas do pavimento ou do subleito
+                    Consolidação                         Devido à consolidação diferencial ocorrente em
+                                          da Trilha                                                               ATC
+                                                         camadas do pavimento ou do subleito
+
+Ondulação/Corrugação - Ondulações transversais causadas por instabilidade da mistura betuminosa
+                                                                                                                     O
+constituinte do revestimento ou da base
+Escorregamento (do revestimento betuminoso)                                                                          E
+Exsudação do ligante betuminoso no revestimento                                                                      EX
+Desgaste acentuado na superfície do revestimento                                                                     D
+“Panelas” ou buracos decorrentes da desagregação do revestimento e às vezes de camadas inferiores                    P
+
+                                                                     Remendo Superficial                             RS
+                      Remendos
+                                                                      Remendo Profundo                               RP
+
+NOTA 1: Classe das trincas isoladas
+
+            FC-1:         são trincas com abertura superior à das fissuras e menores que 1,0mm.
+
+            FC-2:         são trincas com abertura superior a 1,0mm e sem erosão nas bordas.
+
+            FC-3:         são trincas com abertura superior a 1,0mm e com erosão nas bordas.
+
+NOTA 2: Classe das trincas interligadas
+
+            As trincas interligadas são classificadas como FC-3 e FC-2 caso apresentem ou não erosão nas bordas.
+
+
+                                                _________________ /Anexo B
+DNIT 005/2003-TER 5
+
+Anexo B (informativo)
+
+Representação esquemática dos defeitos ocorrentes na superfície dos pavimentos flexíveis e semi-rígidos
+
+TRINCAS AFUNDAMENTOS
+
+; i di
+Trinca Isolada Trincas Interligadas
+
+Longitudinal Eco
+Afundamento
+Trincas Interligadas org
+Jacaré Afundamento
+Local
+
+=
+
+Corte BB CorteAA
+
+Trinca Isolada — — — as pic
+Transversal RETA SA
+
+OUTROS DEFEITOS
+
+BE Escorregamento
+i «a de Revestimento
+Remendo Ondulação ZE Betuminoso
+Corrugação AN
+Exsudação
+———
+Desgaste
+
+/Anexo C
+DNIT 005/2003-TER                                                               6
+
+                                    Anexo C (informativo)
+
+                          Representação fotográfica – defeitos nos pavimentos
+
+
+
+
+                                  Foto 01: trinca isolada – transversal
+
+
+
+
+                                  Foto 02: trinca isolada – longitudinal
+
+
+
+
+Fonte: DAER – RS, 1978.
+DNIT 005/2003-TER                                                     7
+
+
+
+
+                          Foto 03: trinca interligada – tipo jacaré
+
+
+
+
+                          Foto 04: trinca interligada – tipo bloco
+
+
+
+
+Fonte: DAER – RS, 1978.
+DNIT 005/2003-TER                                                 8
+
+
+
+
+                         Foto 05: afundamento de trilha de roda
+
+
+
+
+                              Foto 06: afundamento local
+
+
+
+
+Fonte: DAER –RS, 1978.
+DNIT 005/2003-TER                                   9
+
+
+
+
+                            Foto 07: ondulação
+
+
+
+
+                          Foto 08: escorregamento
+
+
+
+
+Fonte: DAER – RS, 1978.
+DNIT 005/2003-TER                                      10
+
+
+
+
+                             Foto 09: esxudação
+
+
+
+
+                          Foto 10: defeitos diversos
+
+
+
+
+Fonte: DAER – RS, 1978.
+DNIT 005/2003-TER                                           11
+
+
+
+
+                              Foto 11: panela / buraco
+
+
+
+
+                                 Foto 12: desgaste
+
+
+
+
+Fonte: DAER – RS, 1978.
+
+
+                          _________________ /Índice Geral
+DNIT 005/2003-TER                                                                                                            12
+
+Índice Geral
+
+Abstract                      ............................ 1      Índice geral                    ............................ 12
+
+Afundamento                   3.2 ....................... 2       Objetivo                        1 .......................... 1
+
+Afundamento de consolidação   3.2.2 .................... 3        Ondulação ou Corrugação         3.3 ....................... 3
+
+Afundamento plástico          3.2.1. ................... 3        Panela ou Buraco                3.7 ....................... 3
+
+Anexo A (normativo)                                               Prefácio                        ............................ 1
+Quadro resumo dos
+defeitos – codificação e                                          Referências bibliográficas      2 .......................... 1
+classificação                 ............................ 4
+                                                                  Remendo                         3.8 ....................... 3
+Anexo B (informativo)
+Representação esquemática                                         Remendo profundo                3.8.1 .................... 3
+dos defeitos ocorrentes na
+superfície dos pavimentos
+                                                                  Remendo superficial             3.8.2 .................... 3
+flexíveis e semi-rígidos      ............................ 5
+                                                                  Resumo                          ............................ 1
+Anexo C (informativo)
+Representação fotográfica –
+defeitos nos pavimentos       ............................ 6      Sumário                         ............................ 1
+
+Codificação e classificação   3.9 ....................... 3       Trinca                          3.1.2 .................... 2
+
+Definições                    3 .......................... 2      Trinca de retração              3.1.2.1(c) ............. 2
+
+Desgaste                      3.6 ....................... 3       Trinca interligada              3.1.2.2 ................. 2
+
+Escorregamento                3.4 ....................... 3       Trinca isolada                  3.1.2.1 ................. 2
+
+Exsudação                     3.5 ....................... 3       Trinca longitudinal             3.1.2.1(b) ............. 2
+
+Fenda                         3.1 ....................... 2       Trinca tipo “Bloco”             3.1.2.2(b) ............. 2
+
+Fissura                       3.1.1 .................... 2        Trinca tipo “Couro de jacaré”   3.1.2.2(a) ............. 2
+
+                                                                  Trinca transversal              3.1.2.1(a) ............. 2
+
+                                                      _________________

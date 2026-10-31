@@ -1,0 +1,1182 @@
+           Sinalização Viária
+
+
+
+
+Conteudista:
+Ítalo Marques Filizola
+
+
+
+
+Brasília, agosto de 2022.
+SINALIZAÇÃO VIÁRIA
+
+
+
+
+Módulo
+             2
+Aspectos Legais e
+Normativos
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.007882/2022-67. Desta forma, o DNIT
+poderá revisar o material cedido, adaptá-lo e utilizá-
+lo livremente em outros eventos que venha a
+promover, bem como o ceder a outros órgãos e
+entidades federais.
+                                   SUMÁRIO
+1       INTRODUÇÃO .............................................................................................................................. 3
+
+2       CONSTITUIÇÃO FEDERAL E O CÓDIGO DE TRÂNSITO BRASILEIRO ................................... 4
+     2.1       CONSTITUIÇÃO FEDERAL .................................................................................................. 4
+     2.2    CÓDIGO DE TRÂNSITO BRASILEIRO ................................................................................ 5
+       2.2.1 Competências dos órgãos executivos rodoviários ............................................................ 5
+       2.2.2 Aspectos legais da Sinalização Viária no CTB ................................................................. 7
+
+3       A LEI DE CRIAÇÃO DO DNIT ...................................................................................................... 9
+
+4       PNATRANS ................................................................................................................................. 11
+
+5       MANUAL BRASILEIRO DE SINALIZAÇÃO DE TRÂNSITO ...................................................... 13
+
+6       MANUAIS E ESPECIFICAÇÕES DE MATERIAIS IPR .............................................................. 17
+     6.1   MANUAL DE SINALIZAÇÃO DE OBRAS E EMERGÊNCIAS EM RODOVIAS -
+     PUBLICAÇÃO IPR – 738 ................................................................................................................ 18
+     6.2       MANUAL DE SINALIZAÇÃO RODOVIÁRIA - PUBLICAÇÃO IPR – 743 ........................... 19
+     6.3    ESPECIFICAÇÃO DE MATERIAL – IPR ............................................................................ 22
+       6.3.1 EM 276/00 ....................................................................................................................... 22
+       6.3.2 EM 368/00 ....................................................................................................................... 23
+       6.3.3 EM 372/00 ....................................................................................................................... 23
+       6.3.4 EM 373/00 ....................................................................................................................... 23
+
+7       NORMAS ABNT NBR.................................................................................................................. 24
+     7.1       NORMAS PARA ESTUDO DE ACIDENTES ...................................................................... 24
+     7.2       NORMAS PARA SEGURANÇA NO TRÁFEGO ................................................................. 25
+     7.3       NORMAS PARA SINALIZAÇÃO VERTICAL VIÁRIA ......................................................... 26
+     7.4       NORMAS PARA SINALIZAÇÃO HORIZONTAL ................................................................. 28
+     7.5       NORMAS PARA SINALIZAÇÃO SEMAFÓRICA ................................................................ 30
+     7.6       NORMAS REFERENTES A MATERIAIS............................................................................ 31
+
+8.      REFERÊNCIAS BIBLIOGRÁFICAS ............................................................................................ 32
+                                                                                   3
+
+                                                 SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+1 INTRODUÇÃO
+
+Este módulo aborda aspectos legais e normativos relacionados à sinalização e à
+segurança rodoviária.
+
+Sendo o trânsito seguro uma garantia estabelecida na Carta Magna, seguida de Leis
+ordinárias e normativos infralegais, a Sinalização Viária possui amplo escopo legal e
+normativo no Brasil, cabendo aos técnicos que atuam na área, conhecimento, e
+buscar os meios necessários para seu cumprimento.
+
+Os manuais técnicos editados pelo Conselho Nacional de Trânsito – Contran, pelo
+Instituto de Pesquisa em Transportes – IPR, e pela Instrução Normativa Nº 17/DNIT
+SEDE, de 15 de Agosto de 2022 que Estabelece critérios e procedimentos a serem
+utilizados na elaboração e atualização de projetos, na contratação e na execução do
+novo Programa Nacional de Segurança e Sinalização Rodoviária - BR-LEGAL 2, são
+mencionados para conhecimento e referência para eventuais consultas. De igual
+modo, as Normas Técnicas NBR ABNT relacionadas à Sinalização e a Segurança
+Viária são mencionadas para eventuais consultas e referência.
+                                                                                   4
+
+                                                   SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+2 CONSTITUIÇÃO FEDERAL E O CÓDIGO DE
+    TRÂNSITO BRASILEIRO
+
+2.1 CONSTITUIÇÃO FEDERAL
+A Emenda Constitucional nº 82, de 16 de julho de 2014 inclui o § 10 ao art. 144 da
+Constituição Federal, de modo a disciplinar a segurança viária no âmbito dos
+Estados, do Distrito Federal e dos Municípios, conforme citação a seguir:
+
+        "Art. 144.
+
+        (...)
+
+        § 10. A segurança viária, exercida para a preservação da ordem pública e
+        da incolumidade das pessoas e do seu patrimônio nas vias públicas:
+
+        - Compreende a educação, engenharia e fiscalização de trânsito, além de
+        outras atividades previstas em lei, que assegurem ao cidadão o direito à
+        mobilidade urbana eficiente; e
+
+        - Compete, no âmbito dos Estados, do Distrito Federal e dos Municípios,
+        aos respectivos órgãos ou entidades executivos e seus agentes de
+        trânsito, estruturados em Carreira, na forma da lei."
+
+
+
+Agora prevista em nossa Carta Magna, a segurança viária passou a ser trabalhada
+de forma indissociável da Segurança Pública, como dever da Administração pública,
+em todos os níveis federativos (União, Estados e Municípios), direito e
+responsabilidade de todos. Tal destaque revela-se de maior importância, ainda mais
+se levarmos em conta que estamos em plena Década Mundial de Ações para a
+Segurança no Trânsito, proposta pela Organização das Nações Unidas, e ratificada
+pelo Brasil, para o período de 2021 a 2030.
+                                                                                         5
+
+                                                       SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+2.2 CÓDIGO DE TRÂNSITO BRASILEIRO
+O segundo aspecto legal a ser destacado no âmbito da segurança viária é o Código
+de Trânsito Brasileiro - CTB, instituído pela Lei 9.503/1997.
+
+O parágrafo 2º do artigo 1º do CTB dispõe:
+
+        “§ 2º. O trânsito, em condições seguras, é um direito de todos e dever dos
+        órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes
+        cabendo, no âmbito das respectivas competências, adotar as medidas
+        destinadas a assegurar esse direito.”
+
+No anexo das definições e conceitos, parte integrante da Lei 9.503/97, há a definição
+de trânsito como movimentação e imobilização de veículos, pessoas e animais nas
+vias terrestres.
+
+2.2.1 Competências dos órgãos executivos rodoviários
+O CTB apresenta em seu artigo 21 as competências dos órgãos executivos
+rodoviários da união, estados e municípios:
+
+        “Art. 21 Compete aos órgãos e entidades executivos rodoviários da União,
+        dos Estados, do Distrito Federal e dos Municípios, no âmbito de sua
+        circunscrição:
+
+        I - Cumprir e fazer cumprir a legislação e as normas de trânsito, no âmbito
+        de suas atribuições;
+
+        II - Planejar, projetar, regulamentar e operar o trânsito de veículos, de
+        pedestres e de animais, e promover o desenvolvimento da circulação e da
+        segurança de ciclistas;
+
+        II - Implantar, manter e operar o sistema de sinalização, os dispositivos e
+        os equipamentos de controle viário;
+
+        IV - Coletar dados e elaborar estudos sobre os acidentes de trânsito e suas
+        causas;
+
+        V - Estabelecer, em conjunto com os órgãos de policiamento ostensivo de
+        trânsito, as respectivas diretrizes para o policiamento ostensivo de trânsito;
+
+        VI - Executar a fiscalização de trânsito, autuar, aplicar as penalidades de
+        advertência, por escrito, e ainda as multas e medidas administrativas
+        cabíveis, notificando os infratores e arrecadando as multas que aplicar;
+
+        VII - arrecadar valores provenientes de estada e remoção de veículos e
+        objetos, e escolta de veículos de cargas superdimensionadas ou
+        perigosas;
+                                                                                     6
+
+                                                    SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+       VIII - fiscalizar, autuar, aplicar as penalidades e medidas administrativas
+       cabíveis, relativas a infrações por excesso de peso, dimensões e lotação
+       dos veículos, bem como notificar e arrecadar as multas que aplicar;
+
+       IX - fiscalizar o cumprimento da norma contida no art. 95, aplicando as
+       penalidades e arrecadando as multas nele previstas;
+
+       X - implementar as medidas da Política Nacional de Trânsito e do
+       Programa Nacional de Trânsito;
+
+       XI - promover e participar de projetos e programas de educação e
+       segurança, de acordo com as diretrizes estabelecidas pelo CONTRAN;
+
+       XII - integrar-se a outros órgãos e entidades do Sistema Nacional de
+       Trânsito para fins de arrecadação e compensação de multas impostas na
+       área de sua competência, com vistas à unificação do licenciamento, à
+       simplificação e à celeridade das transferências de veículos e de
+       prontuários de condutores de uma para outra unidade da Federação;
+
+       XIII - fiscalizar o nível de emissão de poluentes e ruído produzidos pelos
+       veículos automotores ou pela sua carga, de acordo com o estabelecido no
+       art. 66, além de dar apoio às ações específicas dos órgãos ambientais
+       locais, quando solicitado;
+
+       XIV - vistoriar veículos que necessitem de autorização especial para
+       transitar e estabelecer os requisitos técnicos a serem observados para a
+       circulação desses veículos.
+
+O Departamento Nacional de Infraestrutura de Transportes (DNIT) é o órgão
+executivo rodoviário da União, devendo observar as premissas elencadas neste
+artigo. Assim, circunscrição (área de atuação territorial) desta autarquia são as
+rodovias federais não concedidas. Quando uma rodovia federal é concedida à
+administração privada, a circunscrição passa à Agência Nacional de Transportes
+Terrestres – ANTT.
+
+
+
+TOME NOTA 1
+
+ Embora seja comum mencionar que o DNIT possua jurisdição sobre as rodovias
+ federais, o termo mais adequado seria “circunscrição”, ou mesmo “competência”, uma
+ vez que, segundo o Dicionário Michaelis, jurisdição refere-se ao poder legal
+ concedido para ministrar e aplicar a justiça e o direito, ou ainda, o poder do estado
+ para editar e aplicar leis.
+                                                                                 7
+
+                                                SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+TOME NOTA 2
+
+ Em outras esferas de governo, como nos estados, podemos citar como exemplo de
+ órgãos executivos rodoviários estaduais: o DER-DF, DER-SP, DER-PB, DER-RO,
+ DAER-RS, DEIT-RR, GOINFRA, SEINFRA-AM. Ou seja, embora a maioria use a
+ sigla DER, nem todos os órgãos seguem este padrão, ou não possuem competência
+ somente sobre rodovias estaduais, acumulando outras atribuições e funções.
+
+
+
+
+2.2.2 Aspectos legais da Sinalização Viária no CTB
+O CTB em seu Art. 12 estabelece que cabe ao Conselho Nacional de Trânsito
+(Contran), aprovar, complementar ou alterar os dispositivos de sinalização e os
+dispositivos e equipamentos de trânsito.
+
+De tal modo, somente o Contran tem a competência de definir os padrões da
+sinalização viária e dispositivos de segurança viária, cabendo aos demais órgãos e
+entidades somente detalhar os critérios técnicos de aplicação e execução, sempre
+respeitando a regulamentação do Contran.
+
+Por sua vez, o Art. 80 do CTB dispõe que, sempre que necessário, será colocada ao
+longo da via, sinalização prevista neste Código e em sua legislação complementar,
+destinada a condutores e pedestres, vedando a utilização de qualquer outra.
+
+Outro aspecto importante é o Art. 88, que determina que nenhuma via pavimentada
+poderá ser entregue após sua construção, ou reaberta ao trânsito após a realização
+de obras ou de manutenção, enquanto não estiver devidamente sinalizada, vertical
+e horizontalmente, de forma a garantir as condições adequadas de segurança na
+circulação.
+                                                                                  8
+
+                                                 SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+Fique atento
+O art. 89 do CTB estabelece que a sinalização tem a seguinte ordem de prevalência:
+  I.   as ordens do agente de trânsito sobre as normas de circulação e outros sinais;
+ II.   as indicações do semáforo sobre os demais sinais;
+III.   as indicações dos sinais sobre as demais normas de trânsito.
+Um exemplo prático disso: se o agente de trânsito ordenar a parada do veículo,
+mesmo que a indicação do semáforo esteja verde, o condutor deve atender à ordem
+de parada.
+                                                                                      9
+
+                                                      SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+3 A LEI DE CRIAÇÃO DO DNIT
+
+O DNIT foi criado através da Lei nº 10.233, de 5 de junho de 2001, como pessoa
+jurídica de direito público, submetido ao regime de autarquia, vinculado ao Ministério
+da Infraestrutura, com objetivo de implementar, em sua esfera de atuação, a política
+formulada para a administração da infraestrutura do Sistema Federal de Viação
+(atualmente em vigor conforme a Lei nº 12.379, de 6 de janeiro de 2011),
+compreendendo sua operação, manutenção, restauração ou reposição, adequação
+de capacidade, e ampliação mediante construção de novas vias e terminais, segundo
+os princípios e diretrizes estabelecidos nesta Lei.
+
+A autarquia tem por objetivo implementar a política de infraestrutura de transportes
+terrestres e aquaviários, contribuindo para o desenvolvimento sustentável do país.
+Os recursos para a execução das obras são da União. Ou seja, o órgão é gestor e
+executor, sob a circunscrição do Ministério da Infraestrutura, das vias navegáveis,
+ferrovias e rodovias federais, instalações de vias de transbordo e de interface
+intermodal e instalações portuárias fluviais e lacustres.
+
+O DNIT tem como missão implementar a política de infraestrutura de transportes
+terrestres e aquaviários, estabelecer padrões, normas e especificações técnicas
+para a elaboração de projetos e execução de obras viárias e em sua esfera de
+atuação, exercer, diretamente ou mediante convênio, além das competências
+previstas no Art. 21 do CTB (conforme visto no item 2.2.1).
+
+Para o cumprimento de suas atribuições o DNIT estabeleceu um Mapa Estratégico
+que mostra graficamente, de maneira simples, a estratégia que o DNIT deve seguir
+para alcançar a sua visão de longo prazo. Essa estratégia é composta por objetivos
+estratégicos que consistem em desafios de longo prazo que o DNIT almeja superar.
+10
+
+| P Instituto de
+Pesquisas em = .
+Transportes SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+Figura 1 — Mapa Estratégico DNIT 2021/2022
+
+MAPA
+
+ESTRATÉGICO
+
+BO
+
+Governança
+a erfe 3 governança, integridade Integração
+
+a estratégia e gestão cos
+
+* Fortalecer o relacionamento institucional
+
+Eficiência
+$5%| « Assegurar a celeridade e qualidade nas
+q] é As a ce e
+POR fiscalizações e contrataçõ
+
+Informações
+ão das
+
+mizar 9 rmações
+
+» Pessoas j
+aa .p, a :
+
+GA or ns ho da coqninicias Gestão
+rganizacionais « Aprimorar a qualidade das obras,
+projetos, e gestão patrim
+
+eo onível - E 5 .G 5)
+Sn * Elevar o nível de serviços das vias de transporte ($) + Contribuir para a segurança dos Assegurar a manutenção das vias
+
+transporte
+
+Planejar a ampliação da malha viária usuários
+
+Valores
+ito à vida
+ompromi
+xcelência
+
+Visão
+Ser reconhecido até 2
+strutura
+de ex
+
+Missão
+implemer
+nfraestrutur
+
+aquaviários, contribuindo para o
+envolvimento sustentável di
+
+ão
+
+pela
+transportes
+cia na América
+
+arência
+
+de umair
+om padrô
+Latina
+
+den ega
+s rodoviário, ferroviário e aquaviário
+
+abilidade socioambienta
+
+Fonte: DNIT, 2022
+
+                                                                                   11
+
+                                                    SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+4 PNATRANS
+
+A Lei federal nº 13.614, de 11 de janeiro de 2018, que instituiu o Plano Nacional de
+Redução de Mortes e Lesões no Trânsito (PNATRANS), incluiu o Art. 326-A ao CTB
+de forma que as ações dos integrantes do Sistema Nacional de Trânsito (SNT)
+fossem direcionadas para o cumprimento de metas anuais de redução de índices de
+mortos por grupo de veículos e de índice de mortos por grupo de habitantes no
+âmbito das vias federais, estaduais e municipais.
+
+O PNATRANS estava no escopo das ações da Década de Ação pela Segurança no
+Trânsito, no período de 2011 a 2020, onde o objetivo primordial era que cada país
+membro elaborasse um plano para definir políticas, programas, ações e metas para
+reduzir a quantidade de mortos em acidentes de trânsito em 50 % no período de dez
+anos (de 2018 a 2028), como meta global.
+
+Atualmente, estamos na Segunda Década de Ação pela Segurança no Trânsito
+2021-2030, sendo uma oportunidade de aprender com os sucessos e lições de anos
+anteriores.
+
+Além da meta global, o PNATRANS também define metas específicas que guiam a
+tomada de decisões a curto, médio e longo prazo, conforme ilustrado na Figura 2.
+
+                        Figura 2 – Metas específicas PNATRANS
+
+
+
+
+                               Fonte: PNATRANS, 2021.
+                                                                                   12
+
+                                                    SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+O Plano de ações envolve seis Pilares de atuação:
+
+   •    Pilar 1: Gestão da Segurança no Trânsito;
+
+   •    Pilar 2: Vias Seguras;
+
+   •    Pilar 3: Segurança Veicular;
+
+   •    Pilar 4: Educação para o Trânsito;
+
+   •    Pilar 5: Atendimento às Vítimas; e
+
+   •    Pilar 6: Normatização e Fiscalização.
+
+Cada Pilar tem suas ações agrupadas com seus respectivos produtos, indicativos e
+metas mensuráveis, que estão compilados em planilha on-line, em endereço virtual
+da planilha do plano de ações.
+
+
+
+       O PNTRANS pode ser visualizado na íntegra no documento disponível em
+       https://www.gov.br/infraestrutura/pt-br/assuntos/transito/arquivos-
+       senatran/Anexo_I_pnatrans.pdf .
+                                                                                    13
+
+                                                    SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+5 MANUAL BRASILEIRO DE SINALIZAÇÃO DE
+    TRÂNSITO
+
+O CTB estabeleceu no Art. 336, que se aplicavam os sinais de trânsito previstos em
+seu Anexo II até a aprovação pelo Contran no novo padrão de sinalização.
+
+A partir disso, o Contran iniciou o trabalho em desenvolver os diversos volumes do
+Manual Brasileiro de Sinalização de Trânsito, ainda em atendimento ao previsto no
+inciso XI, Art. 12 do CTB:
+
+        “Art. 12. Compete ao CONTRAN
+
+        (...)
+
+        XI - aprovar, complementar ou alterar os dispositivos de sinalização e os
+        dispositivos e equipamentos de trânsito.”
+
+Assim, a Resolução Contran Nº 973, de 18 de julho de 2022 institui o Regulamento
+de Sinalização Viária. Em vigor a partir de 1° de agosto de 2022, este regulamento
+é constituído pelos volumes do Manual Brasileiro de Sinalização de Trânsito (MBST),
+os quais dispõem, especificamente, acerca das seguintes modalidades de
+sinalização, conforme relação abaixo e
+
+Figura 3:
+
+   •   Volume I - Sinalização Vertical de Regulamentação;
+
+   •   Volume II - Sinalização Vertical de Advertência;
+
+   •   Volume III - Sinalização Vertical de Indicação;
+
+   •   Volume IV - Sinalização Horizontal;
+
+   •   Volume V - Sinalização Semafórica;
+
+   •   Volume VI – Dispositivos Auxiliares;
+
+   •   Volume VII - Sinalização Temporária;
+
+   •   Volume VIII – Sinalização Cicloviária
+                                                                                     14
+
+                                                      SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+  •   Volume IX – Cruzamentos Rodoferroviários;
+
+Os volumes do Manual Brasileiro de Sinalização de Trânsito podem ser baixados
+ao se clicar no respectivo item (Ctrl + click para abrir e baixar o arquivo).
+
+
+           Figura 3 – Volumes dos Manuais Brasileiros de Sinalização de Trânsito
+                                                                               15
+
+                                                SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+De modo geral, a Coletânea do MBST apresenta considerações sobre as
+sinalizações/dispositivos abordados, compreendendo:
+
+   •   Definição e função;
+
+   •   Aspectos legais;
+
+   •   Abrangência;
+
+   •   Formas e cores;
+
+   •   Dimensões;
+
+   •   Padrões alfanuméricos (quando aplicáveis);
+
+   •   Retrorrefletividade e iluminação;
+
+   •   Manutenção e conservação;
+
+   •   Posicionamento na via;
+
+   •   Materiais;
+
+   •   Suportes (quando aplicáveis).
+
+O MBST ainda detalha, para cada tipo de sinalização/dispositivo considerado:
+
+   •   Significado;
+
+   •   Princípios de utilização/colocação;
+
+   •   Posicionamento na via;
+
+   •   Exemplos de aplicação;
+
+   •   Relacionamento com outras sinalizações (se for o caso);
+
+   •   Enquadramento legal (se for o caso).
+
+As informações apresentadas e a disposição dos manuais podem variar em função
+do tipo de sinalização/dispositivo abordado. O Volume V – Sinalização Semafórica,
+por exemplo, apresenta um formato bem distinto devido às características técnicas
+deste tipo de sinalização viária.
+                                                                              16
+
+                                               SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+Deve ser ressaltado que, devido às disposições do Código de Trânsito Brasileiro –
+CTB, o Manual Brasileiro de Sinalização de Trânsito, em seus nove volumes, tem
+força de Lei, devendo ser seguidos integralmente, pois podem incorrer em
+responsabilização do projetista, caso não sejam observados.
+
+Diversos aspectos do MBST serão mencionados e comentados ao longo dos
+Módulos 3 e 4.
+
+
+
+
+Fique atento
+
+O Manual Brasileiro de Sinalização de Trânsito - MBST, por ser regulamentado por
+norma infralegal, tem validade legal, prevalecendo sobre normas e manuais técnicos
+(salvo indicação expressa do próprio MBST).
+                                                                                    17
+
+                                                     SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+6 MANUAIS                  E         ESPECIFICAÇÕES                          DE
+   MATERIAIS IPR
+
+O Instituto de Pesquisas em Transportes – IPR foi fundado em 29 de agosto de
+1957, vinculado ao Conselho Nacional de Desenvolvimento Científico e
+Tecnológico – CNPq.
+
+Em 17 de novembro de 1972, o IPR passou a estar vinculado ao Departamento
+Nacional de Estradas de Rodagem – DNER, passando a elaborar pesquisas no
+campo rodoviário.
+
+Com a criação do DNIT em 05 de maio de 2001, o IPR passou a fazer parte
+deste, dando continuidade aos trabalhos de pesquisa, desenvolvimento
+tecnológico, normatização, elaboração de manuais técnicos na área rodoviária.
+
+Ao longo dos vários anos a coletânea de normas, especificação de materiais e
+manuais do IPR foi sendo acrescido com documentos que servem de referência
+técnica em todo Brasil, dentre os quais destacamos, no escopo da Sinalização e
+Segurança Rodoviária:
+
+                               Figura 4 – Manuais IPR
+
+
+
+
+                                  Fonte: IPR, 2022
+
+
+
+   •   IPR 702 - Manual de resgate de acidentados;
+   •   IPR 703 - Guia de redução de acidentes com base em medidas de
+       engenharia de baixo custo;
+   •   IPR 733 - Custos de acidentes de trânsito nas rodovias federais - sumário
+       executivo;
+   •   IPR 738 - Manual de sinalização de obras e emergências em rodovias;
+                                                                                    18
+
+                                                  SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+   •   IPR 741 - Manual de projeto e práticas operacionais para segurança nas
+       rodovias;
+   •   IPR 743 - Manual de sinalização rodoviária;
+   •   EM 276/00 - Tinta para sinalização rodoviária horizontal, à base de resina
+       acrílica emulsionada em água;
+   •   EM 368/00 - Tinta para sinalização horizontal rodoviária à base de resina
+       acrílica e/ou vinílica;
+   •   EM 372/00 - Material termoplástico para sinalização horizontal rodoviária;
+   •   EM 373/00 - Microesferas de vidro retrorrefletivas para sinalização
+       horizontal rodoviária.
+
+
+Devido ao enfoque na sinalização relacionada à segurança viária, enfocaremos
+resumidamente nas Publicações IPR 738 e 743, além das Especificações de
+materiais – EM 276, 368, 372 e 373. Porém, as demais publicações podem ser
+acessadas clicando nos links da relação que se segue à Figura 4 – Manuais IPR.
+
+
+
+
+6.1 MANUAL DE SINALIZAÇÃO DE OBRAS E EMERGÊNCIAS
+       EM RODOVIAS - PUBLICAÇÃO IPR – 738
+
+
+O Manual de Sinalização de Obras e Emergências em Rodovias foi publicado
+em 2010, já sobre a vigência do Anexo do II Regulamentado pela Resolução
+Contran nº 160/2004. Já em 2017, foi publicado o Volume VII do MBST –
+Sinalização Temporária (MBST VII), pelo Contran. Assim, embora seja um
+manual tecnicamente adequado, as premissas do IPR 738 são válidas somente
+quando não conflitarem com o disposto nos normativos do Contran. Porém,
+devemos ressaltar que o manual do Contran cita o manual do IPR em diversas
+oportunidades.
+
+As diferenças entre os Manuais do IPR e Contran são diversas, motivo pelo qual
+é difícil esgotar todas elas no escopo do presente curso. Assim, destacaremos
+alguns aspectos do IPR 738, os quais julgamos ter caráter complementar e
+consistente com o MBST VII:
+                                                                                    19
+
+                                                 SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+   •    O Capítulo 2 apresenta Considerações Gerais sobre sinalização de Obras
+        e Emergências, motivo pelo qual sugerimos a leitura integral deste
+        capítulo.
+
+   •    O Capítulo 3 apresenta diretrizes de projeto, segurança, fluidez e
+        procedimentos básicos. Recomendamos sua leitura integral, verificando e
+        comparando com o disposto no MBST VII.
+
+   •    O Capítulo 7 apresenta 37 Projetos-Tipo para sinalização de obras e
+        emergência, de onde recomendamos sua aplicação naquilo que não
+        conflitar com os Projetos-Tipo do MBST VII.
+
+Os demais aspectos técnicos pertinentes da Publicação IPR 738 serão
+desenvolvidos ao longo dos Módulos 3 e 4.
+
+
+
+
+6.2 MANUAL DE SINALIZAÇÃO RODOVIÁRIA - PUBLICAÇÃO
+       IPR – 743
+
+
+O Manual de Sinalização Rodoviária foi publicado em 2010, já sobre a vigência
+do Anexo do II regulamentado pela Resolução Contran nº 160/2004 e em meio
+à publicação dos diversos Volumes do MBST pelo Contran. Em certos
+momentos, a este manual se aproxima das disposições do Manual on Uniform
+Traffic Control Devices – MUTCD, elaborado pela Federal Highway
+Administration (FHWA), dos Estados Unidos da América.
+
+Ainda assim, como a Publicação IPR 743 tem enfoque na sinalização rodoviária,
+naquilo em que não conflitar com disposto nos normativos do Contran, pode ser
+observada sem prejuízo aos padrões legalmente estabelecidos.
+
+Novamente, as diferenças entre os Manuais do IPR e Contran são diversas,
+motivo pelo qual é difícil esgotar todas elas no escopo do presente curso. Assim,
+destacaremos alguns aspectos do IPR 743, os quais julgamos ter caráter
+complementar e consistente com os vários volumes do MBST.
+                                                                                               20
+
+                                                        SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+Podemos mencionar os exemplos de aplicação da sinalização vertical, voltados
+para o ambiente rodoviário, como o exemplo da Figura 5.
+
+                Figura 5 – Aproximação com ilha tipo gota e ilha triangular
+
+
+
+
+                                    Fonte: DNIT, 2010
+
+De maneira similar, os exemplos para sinalização horizontal, estão voltados para
+o ambiente rodoviário, como na Figura 6.
+
+           Figura 6 – Sinalização horizontal para entrada de ramo de uma faixa
+
+
+
+
+                                    Fonte: DNIT, 2010
+
+
+
+Já o Capítulo 5, “Projeto de Sinalização”, sistematiza como este deve ser
+elaborado, abordando os seguintes tópicos:
+
+   •   Levantamento      de    dados     –     compreendendo        projeto   geométrico,
+       levantamento      topográfico         planialtimétrico,    cadastro       rodoviário,
+                                                                                     21
+
+                                                  SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+       informações sobre os locais concentradores de acidentes, informações de
+       guias, mapas e imagens de satélite e inspeção do trecho.
+   •   Desenvolvimento do Projeto – compreendendo a descrição das atividades
+       iniciais, identificação e definição das zonas com restrição de visibilidade
+       de ultrapassagem e lançamento dos elementos de projeto.
+   •   Notas de Serviço – sugerindo a elaboração de planilha contendo
+       orientações para instalação no campo da sinalização projetada e auxiliar
+       no levantamento de quantidades dos serviços propostos.
+   •   Especificações técnicas – discorrendo que o projeto deve ser
+       acompanhado de um documento definindo as características técnicas dos
+       materiais a serem utilizados na sinalização.
+   •   Relatório de Projeto – dispondo que todo o serviço desenvolvido deve ser
+       apresentado através de um relatório de projeto, contendo textos, quadros
+       e desenhos.
+   •   Verificação em campo – dispondo que, com o projeto em mãos, deve-se
+       proceder a uma verificação de campo antes da implantação da
+       sinalização, de forma a serem detectadas possíveis necessidades de
+       correção, ajustes ou remanejamentos.
+Finalmente, o Capítulo 6 apresenta exemplos de projeto de Sinalização
+incluindo:
+
+  •    Segmento crítico com curva acentuada e ponte estreita;
+  •    Travessia urbana;
+  •    Interseção em nível;
+  •    Interseção em desnível em rodovia de Classe I-B, com rodovia de Classe
+       I-A;
+  •    Interconexão de vias expressas.
+
+
+   As soluções dos exemplos de projeto de sinalização são adequadas
+   tecnicamente, fazendo-se a ressalva de que devem ser realizados os ajustes
+   necessários para adequar os mesmos ao disposto no MBST. Ver o exemplo
+   da Figura 7.
+                                                                                       22
+
+                                                       SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+             Figura 7 – Segmento crítico com curva acentuada e ponte estreita
+
+
+
+
+                                   Fonte: DNIT, 2010
+
+
+
+
+6.3 ESPECIFICAÇÃO DE MATERIAL – IPR
+Dentre as diversas Especificações de Material – EM elaboradas pelo IPR,
+destacamos as EM 276/00, 368/00, 372/00 e 373/00, por se tratarem de
+materiais utilizados em sinalização viária.
+
+6.3.1 EM 276/00
+A Especificação de Material 276/00 – Tinta para sinalização horizontal rodoviária
+à base de resina acrílica emulsionada em água, apresenta as características
+exigidas para tinta para sinalização horizontal rodoviária à base de resina acrílica
+emulsionada em água, além dos critérios a serem adotados para aceitação e
+rejeição. Além disso, fixa os requisitos básicos e essenciais exigíveis na
+homologação e recebimento de tinta retrorrefletiva para sinalização horizontal
+rodoviária à base de resina acrílica emulsionada em água, fornecida
+separadamente das microesferas de vidro.
+                                                                                      23
+
+                                                   SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+6.3.2 EM 368/00
+A Especificação de Material EM 368/00 – Tinta para sinalização horizontal
+rodoviária à base de resina acrílica e/ou vinílica apresenta as características
+exigidas para tinta, para sinalização horizontal rodoviária à base de resina
+acrílica e/ou vinílica, além dos critérios a serem adotados para aceitação e
+rejeição. Estabelece também os requisitos básicos e essenciais exigíveis na
+homologação e no recebimento de tinta retrorrefletiva para sinalização horizontal
+rodoviária à base de resina acrílica e/ou vinílica de secagem física por
+evaporação de solvente, fornecida separadamente das microesferas de vidro.
+
+6.3.3 EM 372/00
+A Especificação de Material EM 372 – Material termoplástico para sinalização
+horizontal rodoviária apresenta as características exigidas para material
+termoplástico para sinalização horizontal rodoviária, além dos critérios a serem
+adotados para aceitação e rejeição.
+
+6.3.4 EM 373/00
+A Especificação de Material EM – 373/00 – Microesferas de vidro retrorrefletivas
+para sinalização horizontal rodoviária apresenta as características exigidas para
+microesferas retrorrefletivas de vidro para sinalização horizontal rodoviária, além
+dos critérios a serem adotados para aceitação e rejeição - fixar os requisitos
+básicos e essenciais exigíveis na homologação e no recebimento de
+microesferas destinadas ao uso em tintas e materiais termoplásticos para
+sinalização horizontal rodoviária.
+                                                                                  24
+
+                                                SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+7 NORMAS ABNT NBR
+
+A Associação Brasileira de Normas Técnicas – ABNT, dentre as diversas
+Normas Brasileiras (NBR), edita uma série de normas voltadas para Transportes
+e Tráfego.
+
+O Comitê ABNT/CB-016 - Transportes e Tráfego tem como escopo a
+normalização no campo de transporte e tráfego compreendendo transporte de
+carga e de passageiros, sinalização viária, pesquisa de tráfego e comportamento
+no trânsito, no que concerne à terminologia, requisitos, métodos de ensaio e
+generalidades.
+
+Na finalidade deste Curso serão abordadas brevemente as principais normas
+relacionadas ao estudo de acidentes, sinalização e segurança no tráfego. O
+intuito não é esgotar todos os normativos, nem discorrer detalhadamente sobre
+seus aspectos técnicos, mas sim, dar a noção sobre as mesmas e sua aplicação,
+caso seja necessária referência futura.
+
+
+       Atualmente, os servidores do DNIT têm acesso às Normas da ABNT pela
+       TARGET Gedweb, no endereço eletrônico https://www.gedweb.com.br.
+
+Devemos ressaltar que o MBST, em diversos momentos, especifica Normas
+ABNT NBR como critério mínimo de atendimento.
+
+7.1 NORMAS PARA ESTUDO DE ACIDENTES
+A seguir estão relacionadas as principais normas utilizadas no estudo de
+acidentes de trânsito:
+
+   •    ABNT NBR 10696 - Símbolos gráficos dos diagramas de acidentes dos
+        relatórios de acidentes de trânsito. Estabelece os símbolos gráficos a
+        serem usados nos diagramas de acidentes (diagramas de colisão) e nos
+        boletins de ocorrência em estudo e levantamentos de acidentes de
+        trânsito.
+                                                                                          25
+
+                                                        SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+   •   ABNT NBR 10697 - Pesquisa de sinistros de trânsito — Terminologia.
+       Define os termos técnicos utilizados na preparação e execução de
+       pesquisas relativas a sinistros de trânsito e na elaboração de relatórios
+       estatísticos e operacionais.
+
+7.2 NORMAS PARA SEGURANÇA NO TRÁFEGO
+A seguir estão relacionadas as principais normas utilizadas para dispositivos de
+segurança no tráfego:
+
+   •   ABNT NBR 6971 - Segurança no tráfego – Defensas metálicas –
+       Implantação. Especifica as características requeridas para defensas
+       metálicas, quanto à sua implantação.
+
+   •   ABNT NBR 7394 - Segurança no tráfego — Balizador em suporte plástico.
+       Especifica os requisitos mínimos exigíveis para o projeto construtivo e
+       implantação de balizador de plástico nas vias.
+
+   •   ABNT NBR 7941 - Segurança no tráfego – Dispositivo antiofuscante. Esta
+       Norma tem por objetivo definir e caracterizar os diversos sistemas e tipos
+       de dispositivos antiofuscantes para proteção visual dos usuários das
+       estradas e ruas brasileiras, indicando as condições de seu uso, fixando
+       características   básicas      e   específicas     dos   materiais,   principais
+       necessidades construtivas, funcionais e de sua instalação.
+
+   •   ABNT NBR 14885 - Segurança no tráfego - Barreiras de concreto. Esta
+       Norma especifica os requisitos mínimos exigíveis para projeto construtivo
+       e implantação de barreiras de concreto para segurança no tráfego.
+
+   •   ABNT NBR 15486 - Segurança no tráfego - Dispositivos de contenção
+       viária – Diretrizes. Esta Norma estabelece diretrizes para o projeto de
+       dispositivos de contenção viária.
+
+   •   ABNT NBR 16330 - Segurança no tráfego — Cavaletes e barreiras para
+       sinalização viária tipos I, II e III. Especifica os requisitos mínimos exigíveis
+       para o fornecimento e recebimento de dispositivos de sinalização viária
+       temporária, cavaletes (suportes) e barreiras para sinalização viária.
+                                                                                  26
+
+                                                  SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+   •   ABNT NBR 16331 - Segurança no tráfego — Barreira plástica de
+       canalização. Especifica os requisitos mínimos exigíveis para o
+       fornecimento e recebimento de dispositivo de sinalização temporária –
+       barreira plástica de canalização.
+
+   •   ABNT NBR 16658 – Segurança no tráfego do Cilindro delimitador –
+       Requisitos. Estabelece os requisitos para cilindro delimitador.
+
+7.3 NORMAS PARA SINALIZAÇÃO VERTICAL VIÁRIA
+A seguir estão relacionadas as principais normas utilizadas para sinalização
+vertical:
+
+   •   ABNT NBR 11904 - Placas de aço zincado para sinalização viária. Esta
+       Norma especifica os requisitos exigíveis para placas de aço zincado para
+       sinalização viária.
+
+   •   ABNT NBR 13275 - Sinalização vertical viária - Chapas planas de
+       poliéster reforçado com fibras de vidro, para confecção de placas de
+       sinalização – Requisitos e métodos de ensaio. Especifica os requisitos
+       mínimos e estabelece os métodos de ensaio para o recebimento de
+       chapas de poliéster reforçado com fibra de vidro, planas e opacas,
+       fabricadas por processo de laminação contínua, destinadas à confecção
+       de placas de sinalização viária.
+
+   •   ABNT NBR 14428 - Sinalização vertical viária - Pórticos e semipórticos
+       zincados - Projeto, montagem e manutenção. Esta Norma estabelece os
+       princípios gerais para o projeto, montagem e manutenção de pórticos e
+       semipórticos de sinalização vertical viária, utilizados para fixação de
+       placas de sinalização aérea e painéis de mensagem variável.
+
+   •   ABNT NBR 14429 - Sinalização vertical viária - Pórticos e semipórticos
+       zincados por imersão a quente — Requisitos. Especifica os requisitos
+       mínimos exigíveis para o recebimento de pórticos e semipórticos
+       metálicos zincados por imersão a quente.
+                                                                                   27
+
+                                                SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+•   ABNT NBR 14890 - Sinalização vertical viária - Suportes metálicos em
+    aço para placas — Requisitos. Especifica os requisitos mínimos para os
+    suportes metálicos em aço para fixação de placas de sinalização vertical
+    viária.
+
+•   ABNT NBR 14891 - Sinalização vertical viária - Placas. Esta Norma
+    estabelece diretrizes para o uso de materiais no projeto e implantação de
+    placas de sinalização vertical viária.
+
+•   ABNT NBR 14962 - Sinalização vertical viária - Suportes metálicos em
+    aço para placas – Projeto e implantação. Esta Norma estabelece os
+    requisitos para suportes metálicos em aço para fixação de placas de
+    sinalização vertical viária quanto ao projeto construtivo e sua implantação.
+
+•   ABNT NBR 15426 - Sinalização vertical viária - Método de medição da
+    retrorrefletividade utilizando retrorrefletômetro portátil. Estabelece um
+    método para a medição da retrorrefletividade em materiais retrorrefletivos
+    utilizando retrorrefletômetro portátil. Este método é utilizado para medição
+    em campo e também nos materiais antes de sua aplicação.
+
+•   ABNT NBR 15591 - Sinalização vertical viária - Estrutura e fixação de
+    placas em poliéster reforçado com fibras de vidro. Especifica os requisitos
+    mínimos para a estruturação e fixação de placas de sinalização viária,
+    utilizando como substrato chapas planas em poliéster reforçado com
+    fibras de vidro e a estrutura formada de perfis metálicos.
+
+•   ABNT NBR 16033 - Sinalização vertical viária - Suporte polimérico de
+    materiais reciclados — Requisitos e métodos de ensaio. Especifica os
+    requisitos mínimos para os suportes poliméricos de materiais reciclados,
+    destinados às instalações de placas de sinalização, regulamentação,
+    advertência e informação.
+                                                                                    28
+
+                                                   SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+7.4 NORMAS PARA SINALIZAÇÃO HORIZONTAL
+
+
+A seguir estão relacionadas as principais normas utilizadas para a sinalização
+horizontal:
+
+   •   ABNT NBR 7396 - Sinalização horizontal viária — Material para
+       sinalização – Terminologia. Define os termos empregados para materiais
+       usados na sinalização horizontal viária.
+
+   •   ABNT NBR 13699 - Sinalização horizontal viária — Tinta à base de resina
+       acrílica emulsionada em água. Esta Norma especifica os requisitos para
+       as tintas à base de resina acrílica emulsionadas em água, destinadas à
+       sinalização horizontal viária, fornecidas separadamente das microesferas
+       de vidro.
+
+   •   ABNT NBR 14636 - Sinalização horizontal viária — Tachas refletivas
+       viárias — Requisitos. Especifica as características mínimas exigíveis para
+       as tachas refletivas destinadas à sinalização horizontal viária.
+
+   •   ABNT NBR 14644 - Sinalização vertical viária — Películas — Requisitos.
+       Esta Norma especifica os requisitos mínimos para qualificação e
+       aceitação das películas utilizadas na sinalização vertical viária.
+
+   •   ABNT NBR 14723 - Sinalização horizontal viária — Avaliação da
+       retrorrefletividade utilizando equipamento manual com geometria de 15
+       m. Esta Norma estabelece os procedimentos para avaliação da
+       retrorrefletividade inicial e residual em sinalização horizontal viária,
+       utilizando-se retrorrefletômetro manual com geometria de 15 m.
+
+   •   ABNT NBR 15402 - Sinalização horizontal viária — Termoplásticos —
+       Procedimentos para execução da demarcação e avaliação. Esta Norma
+       estabelece os procedimentos para a execução de sinalização horizontal
+       viária com termoplástico, bem como para a avaliação de sua aplicação.
+                                                                                    29
+
+                                                SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+•   ABNT NBR 15405 - Sinalização horizontal viária — Tintas —
+    Procedimentos para execução da demarcação e avaliação. Estabelece os
+    procedimentos para a execução de sinalização horizontal viária com
+    tintas, bem como a avaliação de sua aplicação.
+
+•   ABNT NBR 15543 - Sinalização horizontal viária - Termoplástico alto
+    relevo, aplicado pelo processo de extrusão mecânica. Especifica os
+    requisitos de desempenho e de execução de termoplástico alto relevo
+    aplicado pelo processo de extrusão mecânica para sinalização horizontal
+    viária.
+
+•   ABNT NBR 15576 - Sinalização horizontal viária - Tachões refletivos
+    viários - Requisitos e métodos de ensaios. Esta Norma especifica as
+    características mínimas exigíveis para os tachões refletivos destinados à
+    sinalização horizontal viária.
+
+•   ABNT NBR 15741 - Sinalização horizontal viária - Laminado elastoplástico
+    para sinalização - Requisitos e métodos de ensaio. Esta Norma especifica
+    os requisitos mínimos para fornecimento e aplicação de laminado
+    elastoplástico para sinalização horizontal viária longitudinal e transversal,
+    incluindo    demarcações         de   palavras/símbolos/setas/números      e
+    pictogramas.
+
+•   ABNT NBR 15870 - Sinalização horizontal viária — Plástico a frio à base
+    de resinas metacrílicas reativas — Fornecimento e aplicação. Especifica
+    os requisitos mínimos exigíveis para o fornecimento e aplicação dos
+    sistemas plástico a frio para sinalização horizontal, à base de resinas
+    metacrílicas reativas e agente endurecedor.
+                                                                                    30
+
+                                                 SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+   •   ABNT NBR 16184 - Sinalização horizontal viária — Esferas e
+       microesferas de vidro - Requisitos e métodos de ensaio. Especifica os
+       requisitos e métodos de ensaio para as esferas e microesferas de vidro
+       usadas em material para sinalização horizontal viária.
+
+   •   ABNT NBR 16410 - Sinalização horizontal viária — Avaliação da
+       retrorrefletividade utilizando equipamento dinâmico com geometria de 15
+       m ou 30 m. Estabelece os procedimentos para avaliação da
+       retrorrefletividade inicial e residual em sinalização horizontal viária
+       longitudinal, utilizando-se retrorrefletômetro dinâmico com geometria de
+       15 m ou 30 m.
+
+7.5 NORMAS PARA SINALIZAÇÃO SEMAFÓRICA
+A seguir estão relacionadas as principais normas utilizadas para a sinalização
+semafórica:
+
+   •   ABNT NBR 7995 - Sinalização semafórica - Grupo focal semafórico em
+       alumínio. Especifica os requisitos mínimos para o fornecimento dos
+       grupos focais semafóricos em alumínio e seus componentes.
+
+   •   ABNT NBR 15889 - Sinalização semafórica viária — módulo semafórico
+       com base em diodos emissores de luz (LED) — requisitos e métodos de
+       ensaio. Estabelece os requisitos mínimos e os métodos de ensaio para
+       módulo semafórico com base em diodos emissores de luz (LED) a ser
+       utilizado em grupos focais de semáforos veiculares e de pedestres.
+
+   •   ABNT NBR 16653 - Sinalização semafórica viária — Controladores
+       eletrônicos. Estabelece os requisitos técnicos e funcionais para efeito de
+       fornecimento de controladores semafóricos eletrônicos.
+                                                                                31
+
+                                               SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+7.6 NORMAS REFERENTES A MATERIAIS
+Segue uma breve relação de normas ABNT NBR referentes a materiais e que
+podem ser utilizadas subsidiariamente às demais normas de sinalização e
+dispositivos de segurança:
+
+   •   ABNT NBR 6323 - Galvanização de produtos de aço ou ferro fundido –
+       Especificação
+
+   •   ABNT NBR 7397 - Produto de aço ou ferro fundido revestido de zinco por
+       imersão a quente - Determinação da massa do revestimento por unidade
+       de área - Método de ensaio
+
+   •   ABNT NBR 7823 - Alumínio e suas ligas - Chapas - Propriedades
+       mecânicas
+
+   •   ABNT NBR 7556 - Alumínio e suas ligas - Chapas – Requisitos
+                                                                                                 32
+
+                                                          SINALIZAÇÃO RODOVIÁRIA - Módulo 2
+
+
+
+
+8. REFERÊNCIAS BIBLIOGRÁFICAS
+
+BRASIL. Constituição da República Federativa do Brasil de 1988. Disponível em
+http://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm. Acesso em 18/04/2022.
+BRASIL. DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES — DNIT.
+Mapa Estratégico 2021/2022. Disponível em https://www.gov.br/dnit/pt-br/assuntos/governanca-
+estrategia-e-riscos/eixos-da-governanca/gestao-estrategica/mapa-estrategico-2021-2022. Acessado
+em 23/05/2022.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Executiva. Instituto de
+Pesquisas Rodoviárias. Manual de sinalização de obras e emergências em rodovias. 2ª Edição. Rio
+de Janeiro, 2010.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Executiva. Instituto de
+Pesquisas Rodoviárias. Manual de sinalização rodoviária. 3ª Edição. Rio de Janeiro, 2010.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. BR-LEGAL 2. Disponível em
+https://www.gov.br/dnit/pt-br/assuntos/infraestrutura-rodoviaria/br-legal-2. Acesso em 29 de
+Novembro de 2022.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Executiva. Instituto de
+Pesquisas Rodoviárias. Instituto de Pesquisas em Transportes - IPR. Disponível em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/ipr . Acessado em 28/05/2022.
+
+BRASIL. Ministério da Infraestrutura. Plano Nacional de Redução de Mortes e Lesões no Trânsito
+2021. Disponível em https://www.gov.br/infraestrutura/pt-br/assuntos/transito/arquivos-
+senatran/Anexo_I_pnatrans.pdf. Acesso em 12/05/2022.
+
+MICHAELIS. Dicionário Brasileiro da língua portuguesa. Disponível em https://michaelis.uol.com.br/.
+Acessado em 11/05/2022.
+
+TARGET. Gedweb. Sistema de Gestão de Normas e Documentos Regulatórios. Disponível em
+https://www.gedweb.com.br/home/ Acesso em 19 de maio de 2022.

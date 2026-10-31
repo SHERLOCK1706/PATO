@@ -1,0 +1,260 @@
+[aba BD]
+CÓDIGO | DESCRIÇÃO | UNIDADE | CUSTO
+ONERADO | CUSTO
+DESONERADO
+407819 | #REF! | #REF! | 18.63 | #REF! | #REF!
+804039 | #REF! | #REF! | 1154.15 | #REF! | #REF!
+804191 | #REF! | #REF! | 2232.12 | #REF! | #REF!
+804393 | #REF! | #REF! | 4001.47 | #REF! | #REF!
+804417 | #REF! | #REF! | 5578.79 | #REF! | #REF!
+1106057 | #REF! | #REF! | 625.61 | #REF! | #REF!
+1107892 | #REF! | #REF! | 641.6 | #REF! | #REF!
+1109671 | #REF! | #REF! | 626.41 | #REF! | #REF!
+1505860 | #REF! | #REF! | 257.64 | #REF! | #REF!
+1505877 | #REF! | #REF! | 241.37 | #REF! | #REF!
+1505879 | #REF! | #REF! | 405.51 | #REF! | #REF!
+1600895 | #REF! | #REF! | 22.46 | #REF! | #REF!
+1600896 | #REF! | #REF! | 24.04 | #REF! | #REF!
+1600898 | #REF! | #REF! | 17.34 | #REF! | #REF!
+1600989 | #REF! | #REF! | 465.28 | #REF! | #REF!
+1619003 | #REF! | #REF! | 84.02 | #REF! | #REF!
+1619004 | #REF! | #REF! | 9.77 | #REF! | #REF!
+2003373 | #REF! | #REF! | 90.44 | #REF! | #REF!
+2003393 | #REF! | #REF! | 516.02 | #REF! | #REF!
+3103302 | #REF! | #REF! | 109.24 | #REF! | #REF!
+4011353 | #REF! | #REF! | 0.41 | #REF! | #REF!
+4011410 | #REF! | #REF! | 6.17 | #REF! | #REF!
+4011463 | #REF! | #REF! | 231.32 | #REF! | #REF!
+4413013 | #REF! | #REF! | 119.55 | #REF! | #REF!
+4413996 | #REF! | #REF! | 13.31 | #REF! | #REF!
+4415684 | #REF! | #REF! | 6.62 | #REF! | #REF!
+4805757 | #REF! | #REF! | 9.73 | #REF! | #REF!
+4815671 | #REF! | #REF! | 25.87 | #REF! | #REF!
+4915613 | #REF! | #REF! | 0.24 | #REF! | #REF!
+4915626 | #REF! | #REF! | 2.97 | #REF! | #REF!
+4915631 | #REF! | #REF! | 345.1 | #REF! | #REF!
+4915632 | #REF! | #REF! | 493.04 | #REF! | #REF!
+4915656 | #REF! | #REF! | 89.63 | #REF! | #REF!
+4915657 | #REF! | #REF! | 75.82 | #REF! | #REF!
+4915658 | #REF! | #REF! | 66.73 | #REF! | #REF!
+4915659 | #REF! | #REF! | 60.41 | #REF! | #REF!
+4915660 | #REF! | #REF! | 55.86 | #REF! | #REF!
+4915662 | #REF! | #REF! | 113.82 | #REF! | #REF!
+4915663 | #REF! | #REF! | 94.75 | #REF! | #REF!
+4915664 | #REF! | #REF! | 83.9 | #REF! | #REF!
+4915665 | #REF! | #REF! | 76.4 | #REF! | #REF!
+4915666 | #REF! | #REF! | 71.01 | #REF! | #REF!
+4915672 | #REF! | #REF! | 6.71 | #REF! | #REF!
+4915698 | #REF! | #REF! | 20.28 | #REF! | #REF!
+4915699 | #REF! | #REF! | 35.15 | #REF! | #REF!
+4915703 | #REF! | #REF! | 163.18 | #REF! | #REF!
+4915705 | #REF! | #REF! | 142.39 | #REF! | #REF!
+4915708 | #REF! | #REF! | 1.12 | #REF! | #REF!
+4915711 | #REF! | #REF! | 2.24 | #REF! | #REF!
+4915712 | #REF! | #REF! | 33.58 | #REF! | #REF!
+4915713 | #REF! | #REF! | 100.74 | #REF! | #REF!
+4915724 | #REF! | #REF! | 2.61 | #REF! | #REF!
+4915733 | #REF! | #REF! | 64.31 | #REF! | #REF!
+4915734 | #REF! | #REF! | 20.36 | #REF! | #REF!
+4915735 | #REF! | #REF! | 20.86 | #REF! | #REF!
+4915737 | #REF! | #REF! | 8.23 | #REF! | #REF!
+4915742 | #REF! | #REF! | 675.83 | #REF! | #REF!
+4915744 | #REF! | #REF! | 1.16 | #REF! | #REF!
+4915757 | #REF! | #REF! | 536.02 | #REF! | #REF!
+4915764 | #REF! | #REF! | 454.11 | #REF! | #REF!
+4915765 | #REF! | #REF! | 252.29 | #REF! | #REF!
+4915766 | #REF! | #REF! | 148.07 | #REF! | #REF!
+4915767 | #REF! | #REF! | 97.31 | #REF! | #REF!
+4915768 | #REF! | #REF! | 22.27 | #REF! | #REF!
+4915775 | #REF! | #REF! | 1091.77 | #REF! | #REF!
+4915776 | #REF! | #REF! | 1199.59 | #REF! | #REF!
+4915786 | #REF! | #REF! | 257.44 | #REF! | #REF!
+4915794 | #REF! | #REF! | 831.07 | #REF! | #REF!
+4915795 | #REF! | #REF! | 499.74 | #REF! | #REF!
+4915799 | #REF! | #REF! | 52.92 | #REF! | #REF!
+5214001 | #REF! | #REF! | 17.45 | #REF! | #REF!
+5501700 | #REF! | #REF! | 0.74 | #REF! | #REF!
+5501701 | #REF! | #REF! | 54.44 | #REF! | #REF!
+5915015 | #REF! | #REF! | 27.73 | #REF! | #REF!
+5915459 | #REF! | #REF! | 10.36 | #REF! | #REF!
+6416078 | #REF! | #REF! | 213.12 | #REF! | #REF!
+TRANSPORTES
+5914464 | #REF! | #REF! | 1.19 | #REF! | #REF!
+5914479 | #REF! | #REF! | 0.96 | #REF! | #REF!
+5915014 | #REF! | #REF! | 1.72 | #REF! | #REF!
+5915320 | #REF! | #REF! | 1.03 | #REF! | #REF!
+5915321 | #REF! | #REF! | 0.92 | #REF! | #REF!
+SINALIZAÇÃO DE OBRAS TEMPORÁRIAS
+5212556 | #REF! | #REF! | 1.47 | #REF! | #REF!
+5212557 | #REF! | #REF! | 1.55 | #REF! | #REF!
+5212558 | #REF! | #REF! | 1.59 | #REF! | #REF!
+5212560 | #REF! | #REF! | 1.76 | #REF! | #REF!
+5213383 | #REF! | #REF! | 0.82 | #REF! | #REF!
+5213835 | #REF! | #REF! | 0.84 | #REF! | #REF!
+5213838 | #REF! | #REF! | 6.47 | #REF! | #REF!
+5213850 | #REF! | #REF! | 33.58 | #REF! | #REF!
+INDIRETOS
+903810 | #REF! | #REF! | 207254.72 | #REF! | #REF!
+PREÇOS NOVOS
+4915623A | MACADAME HIDRÁULICO PARA BASE DE REMENDO PROFUNDO - PEDRA COMERCIAL | m³ | 256.58 | #REF! | #REF!
+PN02 | TRANSPORTE COM CAMINHÃO BASCULANTE COM CAÇAMBA ESTANQUE COM CAPACIDADE DE 28 M³ - RODOVIA EM REVESTIMENTO PRIMÁRIO | tkm | 0.93 | #REF! | #REF!
+PN03 | TRANSPORTE COM CAMINHÃO BASCULANTE COM CAÇAMBA ESTANQUE COM CAPACIDADE DE 28 M³ - RODOVIA PAVIMENTADA | tkm | 0.84 | #REF! | #REF!
+DIVERSOS
+ADM | ADMINISTRAÇÃO LOCAL | mês | #REF! | #REF! | #REF! | #REF!
+CAN | INSTALAÇÃO DO CANTEIRO DE OBRAS E ACAMPAMENTOS | un | #REF! | #REF! | #REF! | #REF!
+INSIND | INSTALAÇÃO INDUSTRIAL - USINA DE ASFALTO A QUENTE | un | #REF! | #REF! | #REF! | #REF!
+MOB | MOBILIZAÇÃO DE PESSOAL E EQUIPAMENTOS DE GRANDE PORTE | un | #REF! | #REF! | #REF! | #REF!
+DESMOB | DESMOBILIZAÇÃO DE PESSOAL E EQUIPAMENTOS DE GRANDE PORTE | un | #REF! | #REF! | #REF! | #REF!
+GD | CONSERVAÇÃO DA FAIXA DE DOMÍNIO E LIMPEZA DE DISPOSITIVOS DE DRENAGEM | mês | #REF! | #REF! | #REF! | #REF!
+MATERIAIS BETUMINOSOS
+AM1943 | AQUISIÇÃO DE CIMENTO ASFÁLTICO CAP-50/70 | t | #REF! | #REF! | #REF! | #REF!
+AM2092 | AQUISIÇÃO DE EMULSÃO ASFÁLTICA EAI | t | #REF! | #REF! | #REF! | #REF!
+AM1950 | AQUISIÇÃO DE EMULSÃO ASFÁLTICA RC-1C-E | t | #REF! | #REF! | #REF! | #REF!
+AM1946 | AQUISIÇÃO DE EMULSÃO ASFÁLTICA RR-1C | t | #REF! | #REF! | #REF! | #REF!
+AM3900 | AQUISIÇÃO DE EMULSÃO ASFÁLTICA RR-1C-E | t | #REF! | #REF! | #REF! | #REF!
+TM1943 | TRANSPORTE DE CIMENTO ASFÁLTICO CAP-50/70 | t | #REF! | #REF! | #REF! | #REF!
+TM2092 | TRANSPORTE DE EMULSÃO ASFÁLTICA EAI | t | #REF! | #REF! | #REF! | #REF!
+TM1950 | TRANSPORTE DE EMULSÃO ASFÁLTICA RC-1C-E | t | #REF! | #REF! | #REF! | #REF!
+TM1946 | TRANSPORTE DE EMULSÃO ASFÁLTICA RR-1C | t | #REF! | #REF! | #REF! | #REF!
+TM3900 | TRANSPORTE DE EMULSÃO ASFÁLTICA RR-1C-E | t | #REF! | #REF! | #REF! | #REF![aba VMD]
+VOLUME MÉDIO DIÁRIO
+SEGMENTO | ORIGEM | DESTINO | EXT. (KM) | % | VMDf
+CRESCENTE | DECRESCENTE
+01 | 0 | #DIV/0!
+02 | 0 | 0 | #DIV/0![aba VMDf]
+VOLUME MÉDIO DIÁRIO FAIXA
+INSUMO | ORIGEM | DESTINO | EXTENSÃO (KM) | SENTIDO | SEG1 | SEG2 | VMDf
+LOCAL | KM | LOCAL | KM | EXT. (KM) | % | VMDc | VMDd | EXT. (KM) | % | VMDc | VMDd
+CONSERVAÇÃO RODOVIÁRIA
+AREIA MÉDIA | AREAL | USINA | 0 | 0 | #DIV/0! | 0 | 0 | 0 | #DIV/0! | 0 | 0 | AREIA MÉDIAAREALUSINA | #DIV/0! | 0
+AREIA MÉDIA | AREAL | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | AREIA MÉDIAAREALPISTA | #DIV/0!
+AREIA MÉDIA LAVADA | AREAL | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | AREIA MÉDIA LAVADAAREALPISTA | #DIV/0!
+BRITA 0 | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 0PEDREIRAPISTA | #DIV/0!
+BRITA 0 | PEDREIRA | USINA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 0PEDREIRAUSINA | #DIV/0!
+BRITA 1 | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 1PEDREIRAPISTA | #DIV/0!
+BRITA 1 | PEDREIRA | USINA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 1PEDREIRAUSINA | #DIV/0!
+BRITA 2 | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 2PEDREIRAPISTA | #DIV/0!
+BRITA 4 | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | BRITA 4PEDREIRAPISTA | #DIV/0!
+PEDRA DE MÃO | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | PEDRA DE MÃOPEDREIRAPISTA | #DIV/0!
+PEDRISCO | PEDREIRA | USINA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | PEDRISCOPEDREIRAUSINA | #DIV/0!
+PÓ DE PEDRA | PEDREIRA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | PÓ DE PEDRAPEDREIRAPISTA | #DIV/0!
+PÓ DE PEDRA | PEDREIRA | USINA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | PÓ DE PEDRAPEDREIRAUSINA | #DIV/0!
+MISTURA BETUMINOSA | USINA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | MISTURA BETUMINOSAUSINAPISTA | #DIV/0![aba FIT]
+FATOR DE INTERFERÊNCIA DE TRÁFEGO - FIT
+CÓDIGO | SERVIÇO | INSUMO | ORIGEM | DESTINO | OCULTAR | KM-i | KM-f | SENTIDO | DMTp (km) | INTERF. | DMTr (km) | DMTu (km) | VMDf | Atraso A1 (s) | Atraso A2 (s) | FIT
+CONSERVAÇÃO RODOVIÁRIA
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0!
+85 | 38 | SIM | #REF! | 0 | #DIV/0![aba TRANSPORTES]
+QUADRO DE TRANSPORTES
+CÓDIGO | DISCRIMINAÇÃO | MATERIAL | QUANT. ANUAL | UNID. | F. UTILIZAÇÃO | PESO | REFERÊNCIA | OCULTAR | DMT | FIT | MOMENTO
+TRABALHO | FATOR | UND. | (t) | Origem | Destino | (km) | TRANSP.(tkm)
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/t | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+t/ | 0 | 0
+TOTAL: | 0

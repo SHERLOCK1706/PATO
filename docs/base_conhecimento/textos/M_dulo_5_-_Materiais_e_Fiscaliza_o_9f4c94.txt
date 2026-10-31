@@ -1,0 +1,1484 @@
+         Sinalização Viária
+
+
+
+
+Conteudista:
+Ítalo Marques Filizola
+
+
+
+
+Brasília, agosto de 2022.
+SINALIZAÇÃO VIÁRIA
+
+
+
+
+Módulo
+             5
+Caracterização dos
+Materiais e Fiscalização
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo
+nº50600.007882/2022-67. Desta forma, o DNIT
+poderá revisar o material cedido, adaptá-lo e utilizá-
+lo livremente em outros eventos que venha a
+promover, bem como o ceder a outros órgãos e
+entidades federais.
+                                  SUMÁRIO
+1      INTRODUÇÃO .............................................................................................................................. 3
+
+2      CONCEITOS PARA SINALIZAÇÃO VIÁRIA ................................................................................ 4
+    2.1       CROMATICIDADE ................................................................................................................ 4
+    2.2       ILUMINÂNCIA E LUMINÂNCIA ............................................................................................. 5
+    2.3    REFLEXÃO ESPECULAR E REFLEXÃO DIFUSA .............................................................. 6
+      2.3.1 Reflexão especular ............................................................................................................ 6
+      2.3.2 Reflexão difusa .................................................................................................................. 7
+    2.4       RETRORREFLEXÃO ............................................................................................................ 8
+
+3      SINALIZAÇÃO VERTICAL ............................................................................................................ 9
+    3.1       PELÍCULAS ........................................................................................................................... 9
+    3.2       SOBRELAMINAÇÃO ANTI-GRAFFITI ................................................................................ 10
+    3.3    MÉTODO PARA COMPOSIÇÃO DOS SINAIS .................................................................. 11
+      3.3.1 Sinais Impressos ............................................................................................................. 11
+      3.3.2 Sinais de recorte .............................................................................................................. 12
+      3.3.3 Sinais de Serigrafia ......................................................................................................... 12
+    3.4    SUBSTRATOS .................................................................................................................... 13
+      3.4.1 Tipos de Substratos......................................................................................................... 13
+      3.4.2 Modulação ....................................................................................................................... 13
+    3.5    SUPORTES ......................................................................................................................... 14
+      3.5.1 Suporte em placas de solo .............................................................................................. 15
+      3.5.2 Suporte em placas aéreas .............................................................................................. 16
+    3.6       MANUTENÇÃO E FISCALIZAÇÃO DA SINALIZAÇÃO VERTICAL ................................... 17
+
+4      SINALIZAÇÃO HORIZONTAL .................................................................................................... 19
+    4.1       DESEMPENHO DA SINALIZAÇÃO HORIZONTAL ............................................................ 20
+    4.2    MATERIAIS PARA SINALIZAÇÃO HORIZONTAL ............................................................. 20
+      4.2.1 Tintas acrílicas à base de solvente ................................................................................. 21
+      4.2.2 Tintas acrílicas à base d’água ......................................................................................... 21
+      4.2.3 Termoplástico .................................................................................................................. 22
+      4.2.4 Termoplástico pré-formado ............................................................................................. 22
+      4.2.5 Plástico a frio ................................................................................................................... 23
+    4.3       MICROESFERAS ................................................................................................................ 23
+    4.4    ESCOLHA DO MATERIAL .................................................................................................. 25
+      4.4.1 Pintura de 24 (vinte e quatro) meses .............................................................................. 25
+      4.4.2 Pintura de 12 (doze) meses ............................................................................................ 26
+    4.5    MANUTENÇÃO E FISCALIZAÇÃO DA SINALIZAÇÃO HORIZONTAL ............................. 26
+      4.5.1 Cuidados em pavimentos flexíveis .................................................................................. 26
+      4.5.2 Cuidados em pavimentos rígidos .................................................................................... 27
+      4.5.3 Compatibilidade de diferentes materiais ......................................................................... 28
+      4.5.4      Retrorrefletividade inicial e final ...................................................................................... 29
+
+5     DISPOSITIVOS AUXILIARES ..................................................................................................... 30
+    5.1       TACHAS .............................................................................................................................. 30
+    5.2       TACHÕES ........................................................................................................................... 32
+    5.3       FISCALIZAÇÃO E MANUTENÇÃO DE TACHAS E TACHÕES ......................................... 34
+    5.4       CILINDROS DELIMITADORES .......................................................................................... 35
+
+6     DEFENSAS METÁLICAS E DISPOSITIVOS DE CONTENÇÃO................................................ 36
+    6.1       DEFENSAS METÁLICAS, TERMINAIS E TRANSIÇÕES .................................................. 36
+    6.2       Fiscalização e manutenção de dispositivos de contenção ................................................. 38
+    6.3       BARREIRA DE CONCRETO .............................................................................................. 41
+
+7     REFERÊNCIAS BIBLIOGRÁFICAS ............................................................................................ 42
+                                                                                  3
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+1 INTRODUÇÃO
+
+Este módulo, inicialmente aborda conceitos importantes para a sinalização viária,
+com o intuito de facilitar a compreensão quanto aos materiais utilizados.
+
+Em seguida, serão abordadas as diretrizes gerais utilizadas para a definição dos
+materiais comumente adotados em projeto e alguns dos aspectos relacionados à
+definição de materiais no escopo do Programa BR-LEGAL 2.
+
+Na etapa seguinte, serão discutidas as questões a serem observadas quando da
+implantação de um projeto em campo, garantindo o desempenho e a durabilidade
+adequados, para que o sistema projetado performe da maneira para o qual foi
+desenhado.
+
+Por fim, a manutenção é fundamental para que os sistemas implantados continuem
+a desempenhar sua função, dentro dos prazos e da qualidade especificada em
+projeto, evitando acidentes, trazendo conforto e segurança para os usuários e
+evitando gastos desnecessários que podem onerar a manutenção rodoviária.
+                                                                                      4
+
+                                                           SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+2 CONCEITOS PARA SINALIZAÇÃO VIÁRIA
+
+A visualização das cores e forma com que a luz é percebida pelo olho humano são
+aspectos fundamentais para a sinalização viária. Visando a melhor compreensão dos
+aspectos importantes para conhecimento de materiais, fiscalização e manutenção,
+serão apresentadas noções de cromaticidade, iluminância, luminância, reflexão
+especular e difusa, e retrorreflexão.
+
+2.1 CROMATICIDADE
+A sinalização viária possui cores padronizadas, justamente para que os usuários
+consigam identificar e distingui-las adequadamente. Para todas as cores disponíveis
+para sinalização vertical são utilizadas as Coordenadas de Cromaticidade, conforme
+descrito no CIE 1931 – Sistema colorimétrico padrão (Figura 1).
+
+                           Figura 1 – Diagrama de cromaticidade
+
+
+
+
+A ABNT NBR 14644 estabelece os requisitos para películas de sinalização vertical
+viária. As cores previstas são: branca, amarela, laranja, verde, vermelha, azul,
+                                                                                                 5
+
+                                                                SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+marrom,     amarelo     lima-limão    fluorescente,      amarela      fluorescente e      laranja
+fluorescente.
+
+Por exemplo, na Tabela 1 a cor vermelha possui 4 pares de coordenadas cromáticas,
+que definem uma área no Diagrama de cromaticidade onde a cor estará definida.
+
+                 Tabela 1 – Coordenadas de cromaticidade da cor vermelha
+
+ Par                    1                    2                   3                   4
+ coordenada       x           y        x           y        x          y       x           y
+ vermelho       0,648       0,351    0,735       0,265   0,629       0,565   0,281       0,346
+
+
+
+As cores das películas de sinalização viária devem atender ao disposto na Norma
+ABNT NBR 14644, garantindo que elas sejam identificadas corretamente pela
+grande maioria de usuários da via, excetuando-se aqueles com determinados tipos
+de discromatopsia (daltonismo).
+
+2.2 ILUMINÂNCIA E LUMINÂNCIA
+Simplificadamente, iluminância é a quantidade de luz emitida por uma fonte
+luminosa. Luminância é a quantidade de luz que é refletida em uma superfície, em
+um certo ângulo (Figura 2).
+
+                              Figura 2 – Luminância e iluminância
+
+
+
+
+                                      Fonte: Foxlux, 2022
+                                                                                           6
+
+                                                                SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+2.3 REFLEXÃO ESPECULAR E REFLEXÃO DIFUSA
+
+2.3.1 Reflexão especular
+
+Como visto no item 2.2, a luz, ou o raio de luz, ao encontrar uma superfície
+(obstáculo), sofre reflexão.
+
+Quando a superfície é plana e lisa, como por exemplo, num espelho plano, todos os
+raios que incidirem com a mesma direção, serão refletidos com o mesmo ângulo.
+Raios paralelos que incidirem sobre uma superfície plana e lisa, como mostra a Figura
+3, continuarão paralelos após a reflexão. A reflexão nessas superfícies lisas é
+
+chamada de reflexão especular (Figura 3).
+
+                               Figura 3 – Reflexão especular.
+
+
+
+
+As películas de sinalização viária, são planas e lisas, passíveis de ocorrência de
+reflexão especular quando o farol do veículo incide sobre elas. Por isso é necessário
+que as placas de solo tenham um ângulo de 93° a 95° em relação ao eixo da via para
+evitar que a luz do farol refletida ofusque o condutor do veículo (Figura 4).
+
+                     Figura 4 – Ângulo de instalação das placas de solo
+
+
+
+
+De modo similar, para evitar a reflexão especular em placas suspensas sobre a via,
+deve-se inclinar as mesmas em um ângulo de 3° a 5° em relação ao eixo vertical
+(Figura 5).
+                                                                                         7
+
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                     Figura 5 - Ângulo de instalação das placas aéreas
+
+
+
+
+2.3.2 Reflexão difusa
+
+A reflexão difusa ocorre quando a superfície onde a luz incide for irregular ou rugosa,
+como na sinalização horizontal, por exemplo. Nesse caso, os raios de luz que
+chegam na superfície são refletidos em diferentes ângulos para quem olha a
+superfície, retornando apenas uma pequena fração ao emissor, conforme pode ser
+visto na Figura 6.
+
+                                Figura 6 – Reflexão difusa
+
+
+
+
+Assim, como a superfície da sinalização horizontal reflete pouca luz de volta ao
+veículo, se faz necessária a adição de microesferas para que se produza luminância
+suficiente para sensibilizar os olhos dos condutores no período noturno (Figura 7).
+
+                           Figura 7 – Microesfera refletindo a luz
+                                                                                            8
+
+                                                                 SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+2.4 RETRORREFLEXÃO
+A retrorreflexão, diferentemente da reflexão especular e difusa, devolve os raios de
+luz refletidos para a fonte de origem, no formato de um cone de luz.
+
+Em termos práticos, no caso da sinalização viária, a luz dos faróis do veículo é
+retrorrefletida de volta para a fonte emissora (automóvel), mas de maneira indireta,
+sem causar o ofuscamento que a reflexão especular causaria, conforme pode ser
+visto na Figura 8.
+
+                                    Figura 8 – Retrorreflexão
+
+
+
+
+Ou seja, a sinalização retrorrefletiva reflete a luz do farol de volta ao veículo, incluindo
+o condutor no “cone de luz”.
+
+A Retrorreflexão, ou Retrorrefletância (RL), é expressa em cd/lx/m² (candelas por lux
+por metro quadrado). Quanto maior for seu valor, maior é a quantidade de luz que
+volta ao emissor. A Figura 9 ilustra a visualização noturna de diversas sinalizações
+horizontais com retrorrefletâncias variadas (da maior para a menor).
+
+           Figura 9 – Sinalização horizontal com diferentes valores de retrorrefletância
+                                                                                        9
+
+                                                             SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+3 SINALIZAÇÃO VERTICAL
+
+A sinalização vertical deve estar sempre visível, apresentando o mesmo formato,
+dimensões e cores nos períodos diurnos e noturno, de modo a transmitir
+adequadamente as mensagens aos usuários atendendo a finalidade para qual foram
+projetadas.
+
+Assim, deve ser garantido que seu suporte permita a visibilidade e estabilidade do
+sinal, que o substrato da placa permita a manutenção de sua forma e que a película
+mantenha a cromaticidade das cores e da retrorrefletância residual no período
+definido em projeto.
+
+3.1 PELÍCULAS
+A sinalização vertical composta por películas retrorrefletivas deve seguir um padrão
+de utilização em função do posicionamento do sinal na via terrestre para que os
+sinais possam ser claramente lidos pelos usuários. Esse padrão baseia-se na
+legibilidade dos sinais em função do tipo de película refletiva utilizada e luminância
+da placa de acordo com o posicionamento da mesma. A
+
+Figura 10 mostra exemplos de película para sinalização viária.
+
+                   Figura 10 – Exemplos de películas de sinalização viária
+
+
+
+
+No padrão estabelecido pelo BR-LEGAL, os projetos deverão especificar os tipos de
+películas das placas com retrorrefletividade aplicada para o fundo e para as legendas
+e os pictogramas de acordo com a ABNT NBR 14891 - Sinalização vertical viária —
+Placas.
+                                                                                  10
+
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+As películas Tipo I, II e III vão apresentando desempenhos de retrorrefletância
+crescentes. Por exemplo, a película vermelha, para um ângulo de observação de
+0,2° e de entrada de - 4°, apresenta 14 cd/lx/m² de retrorreflexão inicial. A Tipo II
+apresenta 45 cd/lx/m² e a Tipo III 65 cd/lx/m². Deve-se ressaltar que a
+retrorrefletividade varia também em função de sua cor, mesmo considerando o
+mesmo Tipo de película. Geralmente, da maior para a menor, a ordem é: branca,
+amarela, laranja, vermelha, verde, azul e marrom.
+
+Deve-se ainda destacar que a cor preta, quando utilizada, deverá ser sem
+refletividade, totalmente opaca, correspondendo à película Tipo IV.
+
+As películas Tipo V são não retrorrefletivas e translúcidas, sendo utilizadas na
+fabricação de sinais de tráfego produzidos em processos de impressão, recorte
+eletrônico ou sobreposição.
+
+As películas Tipo VI são aplicadas em Sinalização Temporária, possuindo maior
+retrorreflexão inicial que os tipos anteriores.
+
+Os demais Tipos, de VII a X, vão apresentando valores crescentes de
+retrorrefletância. Geralmente, películas Tipo X são utilizadas em placas suspensas
+sobre a via, pois a quantidade de luz emitida pelos faróis que chega nas placas
+suspensas é menor do que a que chega nas placas instalas lateralmente à via.
+
+3.2 SOBRELAMINAÇÃO ANTI-GRAFFITI
+Uma das formas de aumentar a durabilidade da sinalização vertical é o uso de filmes
+adesivos transparentes de sobrelaminação anti-graffiti. Eles atuam como uma
+barreira eficaz ao dano causado pela tinta spray, batom, pincel atômico e adesivos.
+Este material foi projetado para aplicação sobre os sinais de trânsito prontos.
+
+O filme permite a limpeza fácil com o uso de solventes leves, devendo possuir a
+mesma durabilidade da película retrorrefletiva em que será aplicado.
+
+A Figura 11 mostra exemplos de aplicação e de limpeza de um sinal utilizando este
+tipo de sobrelaminação.
+                                                                                         11
+
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                     Figura 11 – Película de sobrelaminação anti-graffiti
+
+
+
+
+3.3 MÉTODO PARA COMPOSIÇÃO DOS SINAIS
+
+3.3.1 Sinais Impressos
+
+As películas para confecção de placas de sinalização podem ser impressas em
+métodos como serigrafia (manual ou automatizada) ou plotagem. Nesses casos, os
+sinais devem possuir tratamento contra ação dos raios ultravioletas (UV) para atingir
+durabilidade entre 07 e 10 anos. A Figura 12 mostra a impressão dos sinais.
+
+                         Figura 12 – Impressora e sinais impressos
+                                                                                     12
+
+                                                           SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+3.3.2 Sinais de recorte
+
+É o tipo mais comum para confecção de sinalização vertical. Neste processo, as
+películas são recortadas manualmente, ou por um plotter de recorte eletrônico, onde
+as mesmas, em diferentes cores, vão sendo aplicadas sobre o substrato até compor
+a mensagem do sinal desejado. A Figura 13 mostra um sinal sendo confeccionado
+por recorte manual.
+
+                   Figura 13 – Confecção de sinal com serigrafia manual
+
+
+
+
+3.3.3 Sinais de Serigrafia
+
+Similar aos sinais impressos, o sinal tem a mensagem composta pela aplicação de
+tintas apropriadas sobre películas de sinalização, porém utilizando técnicas de
+serigrafia, que podem ser manuais ou automatizadas. Neste caso, também deve ser
+prevista proteção contra raios UV. A Figura 14 mostra um sinal sendo confeccionado
+por serigrafia manual.
+
+                   Figura 14 – Confecção de sinal com serigrafia manual
+                                                                                   13
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+3.4 SUBSTRATOS
+Para que o sinal viário permaneça legível, estável e durável, o substrato onde as
+películas forem aplicadas deve possuir propriedades mecânicas adequadas e
+resistência ao intemperismo.
+
+3.4.1 Tipos de Substratos
+
+Os tipos mais comuns de substratos utilizados em sinalização viária são:
+
+  •   Aço Zincado – conforme norma ABNT NBR 11904;
+  •   Aço Carbono a frio – conforme norma ABNT NBR 15993;
+  •   Chapas melamínico-fenólicas de alta pressão - conforme norma ABNT NBR
+      15649;
+  •   Chapas de alumínio composto – conforme norma ABNT NBR 16179;
+  •   Chapas de poliéster reforçado com fibras de vidro - ABNT NBR 13275.
+
+
+
+No âmbito do Programa BR-LEGAL 2 os substratos especificados são as chapas de
+aço zincado e as Alumínio Composto (ACM), conforme especificações da Tabela 2.
+
+                      Tabela 2 – Substratos previstos no BR-LEGAL
+
+
+
+
+3.4.2 Modulação
+
+Conforme visto no Módulo 4, sinais de Indicação e os sinais compostos tem seu
+tamanho definido em função da velocidade da via, que determina a altura dos
+caracteres da mensagem a ser escrita, em conjunto dos demais elementos que
+compõem a placa.
+
+Comercialmente, é comum encontrar chapas de aço em dimensões de 1,0 x 2,0 m,
+eventualmente até de 1,5 x 2,5 m. Todavia, placas compostas e indicativas no padrão
+rodoviário excedem estas dimensões facilmente.
+                                                                                 14
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+Um erro comum é reduzir a altura, ou estreitar os caracteres para que a mensagem
+se encaixe no espaço disponível. Conforme visto no Módulo 4, isto prejudicará a
+leitura e a compreensão da mensagem a ser transmitida aos usuários, sendo,
+portanto, soluções vedadas.
+
+O correto neste caso é modular a placa em uma estrutura, unindo diversas chapas
+para composição da dimensão necessária do sinal. A
+
+Figura 15 mostra uma placa de 4,0 x 3,0 modulada com chapas de 1,0 x 1,0.
+
+
+
+                    Figura 15 – Placa Modulada (dimensões em mm)
+
+
+
+
+3.5 SUPORTES
+Os suportes devem ser dimensionados para permitir a instalação das placas, de
+modo que elas fiquem visíveis para os usuários da via, mantendo sua posição e
+                                                                                    15
+
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+estabilidade, sem se deslocar, ou girar, mesmo quando houver uma carga de vento
+aplicada sobre elas.
+
+3.5.1 Suporte em placas de solo
+
+Os tipos mais comuns de suporte para placas de solo, utilizados em Sinalização
+viária são:
+
+  •   Madeira de lei, ou madeira tratada com preservativos hidrossolúveis –
+      conforme Lei Nº 4.797, de 20 de outubro de 1965 e Decreto Nº 58.016, de 18
+      de março de 1966;
+  •   Metálicos em aço – conforme normas ABNT NBR 14890 e 14962;
+  •   Material polimérico reciclado – conforme norma ABNT NBR 16033.
+
+
+
+Os suportes de fixação das placas de solo no Programa BR-LEGAL 2 deverão seguir
+a Tabela 3.
+
+                    Tabela 3 – Suporte das placas de solo no BR-LEGAL
+
+
+
+
+Na elaboração do projeto deverão ser previstos o dimensionamento da fundação da
+sinalização vertical, informando o diâmetro, a profundidade e especificação do
+concreto compatível com o tipo de sinalização e suportes utilizados de acordo com
+as características do terreno.
+                                                                                  16
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+O sistema de fixação, parafusos, arruelas, porcas e outros elementos metálicos
+devem atender a ABNT NBR 7397 - Produto de aço ou ferro fundido, revestido de
+zinco por imersão a quente - Determinação da massa do revestimento por unidade
+de área - Método de ensaio.
+
+
+
+
+3.5.2 Suporte em placas aéreas
+
+Os materiais dos pórticos e semipórticos deverão seguir as especificações da ABNT
+NBR 14428 - Sinalização vertical viária — Pórticos e semipórticos zincados – Projeto,
+montagem e manutenção e da ABNT NBR 14429 - Sinalização vertical viária —
+Pórticos e semipórticos zincados por imersão a quente – Requisitos.
+
+Por se tratarem de elementos estruturais, o projetista/empresa executora deve
+apresentar, no momento da implantação para o acompanhamento da fiscalização,
+projeto estrutural do elemento-tipo utilizado, com a ART (Anotação de
+Responsabilidade Técnica), junto ao CREA ou CAU.
+
+Os modelos mais comuns no mercado e com previsão de uso no Programa BR-
+LEGAL são os seguintes:
+
+   •   Semipórtico metálico, Bandeira Simples (BS) de vão de 8,30 m - Vento 35 m/s
+       - Área de Exposição até 12,45 m²;
+
+   •   Semipórtico metálico, Bandeira Dupla (BD) de vão de 2 x 8,30 m - Vento 35
+       m/s - Área de Exposição até 2 x 12,45 m²;
+
+   •   Pórtico metálico de vão de 15,90 m - Vento 35 m/s - Área de Exposição até
+       23,85 m².
+
+Nos locais em que a instalação de pórticos e semipórticos não se mostrar
+tecnicamente viável, poderão ser utilizados braços projetados de aço carbono SAE
+1010/1020, galvanizado a quente, grau C, de seção cônica octogonal, com costuras
+e pontas lisas, conforme Norma ABNT NBR 8.261:2019, ou norma que a suceder. O
+modelo a ser utilizado será o suporte metálico com vão de 4,50 m - Vento 35 m/s -
+Área de Exposição até 4,50 m².
+                                                                                 17
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+  TOME NOTA
+ Pode-se verificar a possibilidade de instalação de placas suspensas sobre a via
+ utilizando a estrutura de OAEs, passarelas, ou postes de iluminação pública nos
+ trechos urbanos.
+
+
+
+
+3.6 MANUTENÇÃO E FISCALIZAÇÃO DA SINALIZAÇÃO VERTICAL
+Durante os serviços de instalação da sinalização vertical é importante realizar as
+seguintes verificações antes de sua instalação no local:
+
+   •   Diagramação – avaliar se a placa está diagramada conforme projeto, incluindo
+       cores, elementos e dimensões;
+   •   Verificação das películas – verificar se as películas são as especificadas em
+       projeto, se estão devidamente aderidas ao substrato, se não há bolhas,
+       descolamentos, arranhões, manchas ou outros defeitos que possam
+       atrapalhar a leitura das placas;
+   •   Suportes – verificar se os mesmos são os especificados em projeto, se estão
+       dentro dos parâmetros de deformação e alinhamento e se suas cores são
+       neutras (branco, cinza, preto, etc.).
+Durante a instalação, deve ser avaliada a existência de interferências como postes
+de iluminação, OAEs, pontos de ônibus, sinalização existente, ocupações
+irregulares, taludes de corte e aterro, dentre outros. Eventuais ajustes em campo
+podem ser necessários, e as modificações, via de regra, podem ser consignadas em
+projeto “as built”.
+
+Devem também ser observados os seguintes aspectos durante a instalação das
+placas:
+
+   •   Engaste ou fundação – devem ser adequados para o posicionamento correto
+       dos sinais, permitindo sua estabilidade. Caso haja fundação, como em pórticos
+       e semipórticos, deve solicitar ART ou RRT do profissional responsável pelo
+       projeto.
+   •   Altura mínima – verificar se as alturas mínimas citadas no Módulo 3 estão
+       sendo atendidas, uma vez que distâncias menores podem fazer que as placas
+                                                                                       18
+
+                                                             SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+      sejam atingidas e danificadas pelo tráfego, principalmente em placas
+      suspensas. Em áreas urbanas, as placas em alturas inadequadas ficam mais
+      sujeitas ao vandalismo, e ainda podem ferir pedestres que passam sob elas.
+  •   Afastamento lateral mínimo – verificar se os afastamentos citados no Módulo
+      3 estão sendo atendidos, uma vez que distâncias menores podem fazer que
+      as placas sejam atingidas e danificadas pelo tráfego, ou ainda pelas roçadeiras
+      mecanizadas;
+  •   Fixação no suporte – deve ser verificado se os parafusos de fixação e
+      longarinas estão devidamente apertados ou afixados para que a placa não
+      solte, gire, ou fique em outra posição inadequada.
+  •   Posicionamento e alinhamento – verificar se as placas estão implantadas nos
+      locais adequados, possuindo alinhamento vertical, se não há interferências na
+      sua visualização, se os ângulos de 93° a 95° (placas de solo) e 3 a 5° (placas
+      suspensas) estão atendidos.
+
+
+A Manutenção e Conservação Preliminar será utilizada para corrigir os problemas
+nas rodovias que não necessitam do Projeto Executivo aprovado, mas que se fazem
+necessários para a manutenção da segurança em situações já tratadas por contratos
+ou programas anteriores. Tais serviços são especificados na Tabela 4:
+
+           Tabela 4 – Manutenção e conservação preliminar da sinalização vertical
+                                                                                         19
+
+                                                               SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+Na manutenção periódica da sinalização vertical devem ser realizados serviços de
+capina e limpeza de placas em todos os trechos do SNV do contrato, estendendo-se
+até o fim do período contratual, de forma ininterrupta, em sucessivos períodos de 4
+(quatro) meses, denominados ciclos, conforme serviços especificados na Tabela 5
+
+                 Tabela 5 – Serviços de manutenção e conservação periódicos
+
+
+
+
+Serviços de manutenção e conservação adicionais compreendem atividades de
+caráter continuado e corriqueiro, necessários para manter a sinalização vertical em
+boas condições, conforme Tabela 6.
+
+              Tabela 6 – Serviços adicionais de manutenção da sinalização vertical
+
+
+
+
+Para avaliação relativa à medição da retrorrefletividade e a especificação do
+retrorrefletômetro, estão descritos na ABNT NBR 15426 - Método de medição da
+retrorrefletividade utilizando retrorrefletômetro portátil.
+
+As películas refletivas deverão apresentar os valores mínimos de coeficiente de
+retrorreflexão constantes na ABNT NBR 14644 - Sinalização vertical viária –
+Películas – Requisitos.
+
+Quando for detectado o fim da vida útil dos materiais, atingindo valores inferiores de
+retrorreflexão aos especificados na norma ABNT NBR 15426 – Método de medição
+da retrorrefletividade utilizando retrorrefletômetro portátil.
+                                                                                20
+
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+4 SINALIZAÇÃO HORIZONTAL
+
+A sinalização horizontal deve estar sempre visível, devendo ser reconhecida e
+compreendida pelos usuários, atendendo a finalidade para qual foram projetadas.
+Como tem a propriedade de transmitir as mensagens aos usuários sem que estes
+desviem a atenção do leito viário, elas devem sempre ser mantidas em boas
+condições de visibilidade, independentemente dos períodos do dia, ou mesmo
+condições climáticas adversas.
+
+
+
+
+4.1 DESEMPENHO DA SINALIZAÇÃO HORIZONTAL
+Pelo fato de a sinalização horizontal ser aplicada diretamente no pavimento, nas
+mais diversas condições de conservação, e por estar sujeita ao desgaste por atrito,
+vários fatores podem afetar sua durabilidade:
+
+  •   Geometria da via – O desgaste na demarcação pode ser mais intenso em
+      curvas e pistas de rolamento estreitas, se comparado a trechos em tangente e
+      pistas de rolamento largas.
+  •   Natureza do tráfego – As vias de transporte com grande composição de
+      veículos de grande porte e carga, apresentam naturalmente um desgaste
+      maior do que aquelas onde os veículos de passeio representam a maior
+      composição do tráfego.
+  •   Volume médio diário – O tráfego mais intenso provoca maior número de
+      passagens dos pneus nas demarcações e, portanto, maior desgaste.
+  •   Meio ambiente – O desgaste da demarcação em uma zona industrial química
+      será potencialmente maior que a de uma região de fazendas. As vias à beira-
+      mar podem sofrer o efeito de “jateamento” da areia pelo efeito dos ventos e a
+      abrasão adicional da areia em conjunto com o atrito dos pneus. Locais onde
+      existem muitos acessos terrosos, sem a limpa-rodas, também estão mais
+      sujeitos a um maior desgaste. Ou seja, nestes casos, o desgaste da
+      demarcação ocorrerá com intensidade, ainda que o volume de tráfego seja
+      baixo.
+                                                                                 21
+
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+  •   Tipo e estado de conservação do pavimento – As demarcações em
+      pavimentos tradicionais com substrato fechado oferecem maior durabilidade
+      do que as demarcações em pavimentos com substrato aberto (pavimentos
+      drenantes), que são mais utilizados atualmente por oferecer maior segurança.
+
+
+
+4.2 MATERIAIS PARA SINALIZAÇÃO HORIZONTAL
+Em geral, as tintas para sinalização horizontal são uma composição líquida
+pigmentada que, após a secagem, se converte em uma película sólida, opaca,
+aderida ao pavimento. Basicamente as tintas são constituídas de solventes, resinas,
+pigmentos e aditivos.
+
+Existem diversos tipos de materiais para sinalização horizontal. Cada tipo possui
+propriedades específicas que podem determinar as situações mais indicadas para
+sua aplicação.
+
+As tintas mais comuns para sinalização horizontal rodoviária são:
+
+  •   Acrílica à base de solvente;
+  •   Acrílica à base d’água;
+  •   Plástico a frio;
+  •   Termoplástico;
+  •   Termoplástico pré-formado.
+
+
+
+4.2.1 Tintas acrílicas à base de solvente
+
+São tintas que possuem solventes orgânicos em sua composição, possuindo rápida
+secagem, forte aderência ao pavimento, flexibilidade, além de ótima resistência à
+abrasão. Apresentam ótima retenção de microesferas, proporcionando maior
+retrorrefletividade noturna. Todavia, com a presença de solventes orgânicos,
+possuem odor forte e são inflamáveis, exigindo maior cuidado em seu manejo e
+aplicação, sendo agressivas ao meio ambiente.
+
+A tinta à base de solvente reage menos com contaminações de óleos e graxas e tem
+maior resistência à frenagem dos veículos, absorvendo menos a borracha dos pneus
+que marcam a tinta a longo prazo, por isso são mais indicadas para uso em trechos
+                                                                                   22
+
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+urbanos e em trechos sujeitos à frenagem dos veículos (como interseções, faixas de
+pedestre e ondulações transversais).
+
+4.2.2 Tintas acrílicas à base d’água
+
+Utilizam água como diluente, não produzindo danos ao pavimento e não agredindo
+o meio ambiente. Por não serem inflamáveis e de baixa toxidade, os riscos aos
+trabalhadores durante seu manejo e aplicação são reduzidos.
+
+Possuem boa aderência em pisos asfálticos em bom estado de conservação e
+apresentam boa retenção de cor. O tempo de secagem é relativamente rápido. Deve-
+se ter cuidado na sua aplicação, pois absorvem mais poeira e sujeira no tempo de
+secagem.
+
+4.2.3 Termoplástico
+
+Termoplásticos são misturas em proporções adequadas de ligante, partículas
+granulares, pigmento e microesferas de vidro. Diferentemente dos outros materiais
+para sinalização horizontal, devem ser aquecidas para sua aplicação.
+
+Os termoplásticos podem ser aplicados mecanicamente por extrusão, ou aspersão.
+Quando sua aplicação é manual, são utilizadas sapatas de arrasto.
+
+Devido às suas propriedades mecânicas e à sua espessura seca, possuem elevada
+durabilidade, se comparado às tintas acrílicas. Podem ainda ser aplicadas em alto-
+relevo, produzindo efeito sonoro, ou melhorando a visibilidade da sinalização em
+pista molhada, pois as ranhuras drenam a água, dificultando que se forme uma
+lâmina d’água cobrindo a sinalização, o que prejudica a retrorrefletância. A Figura 16
+mostra o termoplástico em alto-relevo.
+                                                                                      23
+
+                                                            SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                  Figura 16 – Termoplásticos por extrusão, em alto-relevo
+
+
+
+
+4.2.4 Termoplástico pré-formado
+
+São lâminas de termoplástico, modulares, com espessura uniforme em toda
+superfície. Por já apresentarem formas pré-definidas, são muito utilizadas em
+demarcação de faixas de pedestres, linhas e pictogramas aplicados em asfalto ou
+concreto.
+
+Possuem secagem ultrarrápida e são altamente duráveis e resistentes, sua
+aplicação é rápida, com uso de maçarico, que provê aquecimento indireto para a
+fusão do termoplástico.
+
+A Figura 17 exemplifica o uso de um pictograma em termoplástico pré-formado.
+
+                  Figura 17 – Termoplásticos por extrusão, em alto-relevo
+
+
+
+
+4.2.5 Plástico a frio
+
+É um tipo de tinta que dispensa o uso de solventes, onde seu endurecimento é
+resultado do catalisador. É um material moderno de alta durabilidade, porém com
+alto custo unitário. Possui uma grande variedade de aplicações possíveis, de acordo
+com os quatro tipos disponíveis:
+                                                                                        24
+
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+  •   Tipos I e II – Indicados para faixas contínuas longitudinais com alto tráfego de
+      veículos. Aplicação mecânica por aspersão (a proporção de catalisador
+      utilizada é o que diferencia estes dois tipos);
+  •   Tipo lll – Para pintura de áreas de metragem, ciclofaixas, preenchimento de
+      vagas. Aplicação do manual por sapata de arrasto. Espessura de 1,0 mm a
+      3,00 mm;
+  •   Tipo IV – Utilizada para pintura de faixa de pedestres, linhas de retenção,
+      setas, zebrados, legendas. Aplicadas por extrusão. Espessura: 1,5 mm a 3,0
+      mm. Possuem microesferas em sua formulação.
+
+
+
+4.3 MICROESFERAS
+Conceitualmente, são pequenas esferas de vidro com diâmetro menor que 1,0 mm.
+Passam a se chamar esferas de vidro quando seu diâmetro for superior a 1,0 mm.
+São aplicadas na sinalização horizontal para proporcionar retrorrefletância, conforme
+visto no item 2.3.2.
+
+A Figura 18 mostra microesferas aplicadas na tinta de sinalização horizontal.
+
+                 Figura 18 – Microesferas aplicadas na sinalização horizontal
+
+
+
+
+A retrorreflexão é produzida com o ancoramento da microesfera na tinta. A Figura 19
+mostra a foto de uma microesfera com cerca de 60% de ancoramento, ao lado do
+desenho esquemático do ancoramento e o respectivo efeito de retrorreflexão.
+
+                 Figura 19 – Microesferas aplicadas na sinalização horizontal
+                                                                                  25
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+
+As microesferas podem ser classificadas em 3 tipos:
+
+  •   Tipo I-A (INTERMIX) – são incorporadas às massas termoplásticas durante a
+      fabricação de modo a permanecerem internas à película aplicada, permitindo
+      a retrorrefletância apenas após o desgaste da superfície, quando as
+      microesferas de vidro se tornam expostas;
+  •   Tipo I-B (PREMIX) – são incorporadas à tinta logo antes de sua aplicação, de
+      modo a permanecerem internas à película aplicada, tornando-se expostas
+      apenas após o desgaste da superfície;
+  •   Tipo II (DROP-ON) – aplicadas por aspersão concomitantemente com a tinta
+      ou termoplástico, de modo a permanecerem na superfície da película aplicada,
+      permitindo a imediata retrorrefletância da demarcação.
+
+
+
+4.4 ESCOLHA DO MATERIAL
+Conforme visto no item 4.1, o desempenho dos materiais para sinalização depende
+de uma série de fatores que podem influenciar na escolha do material a ser utilizado.
+
+No escopo do programa BR-LEGAL, as especificações técnicas relativas às
+demarcações e aos dispositivos auxiliares deverão ter seus materiais definidos
+segundo a classificação dos trechos do Sistema Nacional de Viação (SNV),
+consoante os níveis definidos na Tabela 7.
+
+O enquadramento nos níveis apresentados deve ser feito utilizando-se o VMDa
+fornecido pelo DNIT.
+                                                                                          26
+
+                                                               SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                          Tabela 7 – Condições de solução por nível
+
+
+
+
+Definido o nível de enquadramento do SNV, a solução de pintura pode ser de 24
+(vinte e quatro) meses e 12 (doze) meses.
+
+
+
+
+4.4.1 Pintura de 24 (vinte e quatro) meses
+
+A solução de pintura 24 (vinte e quatro) meses pode ser aplicada às Marcas
+Longitudinais, Transversais, de Canalização, de Delimitação e Controle de Parada
+e/ou Estacionamento e inscrições no pavimento. Deverá seguir as especificações da
+Tabela 8.
+
+         Tabela 8 – Tipo de solução por nível para pintura de 24 (vinte e quatro) meses
+
+
+
+
+As microesferas a serem utilizadas serão microesferas de vidro refletivas tipo I-B e
+II-A, devendo atender à norma ABNT NBR 16.184.
+
+
+
+
+4.4.2 Pintura de 12 (doze) meses
+
+Este tipo de solução, também denominada sinalização horizontal de curta duração,
+deverá ser utilizada nas situações em que estejam previstas intervenções no
+segmento em período inferior a 24 (vinte e quatro) meses, de forma a manter o
+segmento sinalizado até a execução da intervenção e posterior aplicação da
+sinalização de longa duração - 24 (vinte e quatro) meses.
+                                                                                     27
+
+                                                           SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+Não haverá serviços como pinturas manuais ou aplicação de dispositivos auxiliares.
+Portanto, a pintura de 12 (doze) meses refere-se, apenas, à pintura mecânica de
+marcas longitudinais no eixo e nos bordos do pavimento, seguindo as
+especificações da Tabela 9.
+
+                   Tabela 9 – Tipo de Solução para pintura de 12 meses
+
+
+
+
+4.5 MANUTENÇÃO               E     FISCALIZAÇÃO               DA         SINALIZAÇÃO
+     HORIZONTAL
+Como a sinalização horizontal é aplicada diretamente sobre o pavimento, antes da
+sua execução deve ser verificado se ele está devidamente curado, seco, limpo e
+descontaminado.
+
+O fato de a pintura ser em pavimento novo, ou ser repintura da sinalização horizontal
+em pavimentos antigos, bem como o pavimento ser asfáltico ou de concreto, exigirá
+cuidados específicos para situação.
+
+4.5.1 Cuidados em pavimentos flexíveis
+
+No caso de pintura sobre pavimentos asfálticos (flexíveis), podem ocorrer problemas
+de sangramento da pintura se o pavimento não estiver completamente curado.
+
+O asfalto tem um tempo de cura de aproximadamente 30 dias, dependendo do tipo,
+das condições climáticas e do uso. Durante este período o asfalto libera compostos
+orgânicos que atacam a pintura, processo conhecido como sangramento
+(afloramento de betume para a superfície da camada de tinta). Por este motivo é que
+se recomenda executar a sinalização provisória, temporária antes da liberação do
+tráfego e execução da sinalização definitiva.
+
+Se houver realmente necessidade de se pintar o pavimento antes da cura completa,
+uma solução paliativa é aplicar uma fina camada (0,2 mm) de tinta preta antes de se
+aplicar a pintura final, isto diminuirá os efeitos do sangramento da tinta da pintura
+final, uma vez que a tinta preta é que sofrerá o ataque dos compostos liberados do
+asfalto novo.
+                                                                                    28
+
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+Em serviços de repintura é necessário verificar se o mesmo não se encontra
+impregnado com óleos, gasolina e outros compostos orgânicos provenientes de
+vazamentos de veículos que trafegam na via. Neste caso, pode ser necessária uma
+descontaminação através de lavagem com detergente/desengraxante de ação
+profunda e jato d’água para garantir a perfeita aderência da pintura ao pavimento.
+
+Se o pavimento asfáltico estiver muito desgastado, é possível que existam muitas
+rachaduras e até mesmo desplacamentos, indicando a proximidade de uma
+restauração do mesmo. Nestes casos, mesmo que o VMD indique o uso de
+termoplástico ou plástico a frio, recomenda-se considerar a utilização de soluções
+mais baratas e de menor durabilidade, tais como tintas acrílicas. Como exemplo,
+remete-se à solução de pintura de 12 dose meses, especificada no item 4.4.2
+
+4.5.2 Cuidados em pavimentos rígidos
+
+Em pavimentos de concreto novo o cimento Portland tem um tempo de cura de 28
+dias, durante os quais o filme de proteção para conservação de água (curing) não
+pode ser retirado. Assim, antes da pintura, é necessário a retirada do curing através
+de jato de água sob alta pressão ou jato de vapor.
+
+Independentemente do tipo de pintura a ser aplicada, é necessário avaliar a
+porosidade do concreto e a sua alcalinidade (pH), pois a alcalinidade pode romper o
+filme de tinta. Se o pH do concreto estiver acima de 8 ele é considerado alcalino. A
+correção do pH é feita através de lavagem do concreto com solução de ácido
+muriático em água na proporção de 1:30.
+
+Em pavimento de concreto antigo há necessidade de se tomar as mesmas
+precauções que tomadas no caso de pavimentos asfálticos antigos, conforme visto
+no item 4.5.1.
+
+Em pavimentos de concreto cepilhado, além das recomendações citadas acima, há
+necessidade de se retirar os resíduos, o pó e a aplicação de primer (verniz selante)
+com espessura de 0,2 mm, a fim de garantir bom desempenho da pintura final.
+
+Em pavimentos de concreto novo, ainda é recomendado a aplicação de promotor de
+aderência, como primer, se a sinalização horizontal for termoplástico e verniz
+selante, no caso de aplicação de tinta acrílica ou plástico a frio.
+                                                                                        29
+
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+4.5.3 Compatibilidade de diferentes materiais
+
+Em repinturas sobre a sinalização horizontal definitiva, o material que está para ser
+coberto pela sinalização nova influenciará a aderência da pintura nova, podendo
+causar desplacamentos, descolamentos e outros defeitos.
+
+A Tabela 10 indica a compatibilidade entre diferentes materiais em situações de
+repintura.
+
+              Tabela 10 – Compatibilidade de materiais de sinalização horizontal
+
+
+
+
+4.5.4 Retrorrefletividade inicial e final
+
+O principal critério para aceitação do serviço de sinalização horizontal e a eventual
+necessidade de repintura periódica é a retrorrefletividade. O procedimento relativo à
+avaliação da retrorrefletividade e a especificação do equipamento utilizado
+(retrorrefletômetro) está descrito nas normas:
+
+  •    ABNT NBR 14723 – Avaliação da retrorrefletividade utilizando equipamento
+      manual com geometria de 15 m;
+  •   ABNT NBR 16307 – Avaliação da retrorrefletividade utilizando equipamento
+      manual com geometria de 30 m;
+  •   ABNT NBR 16410 – Sinalização horizontal viária – Avaliação da
+      retrorrefletividade utilizando equipamento dinâmico com geometria de 15 m ou
+      30 m.
+                                                                                        30
+
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+A retrorrefletância inicial e residual são definidas nas normas ABNT NBR 14723,
+NBR 16307 e NBR 16410. A avaliação da retrorrefletância inicial deve ser realizada
+em até 15 dias após a aplicação na via. A retrorrefletância residual é aquela realizada
+após este período de 15 dias.
+
+A retrorrefletância inicial e residual estabelecidas para o Programa BR-LEGAL 2
+variam conforme a cor, segundo especificado na Tabela 11.
+
+              Tabela 11 – Compatibilidade de materiais de sinalização horizontal
+
+
+
+
+Caso a sinalização não esteja inserida no escopo do programada BR-LEGAL, como
+um P.A.T.O., por exemplo, recomenda-se fazer uma leitura com periodicidade anual
+para definir o planejamento e cronograma dos serviços de manutenção para o
+exercício financeiro.
+                                                                                       31
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+5 DISPOSITIVOS AUXILIARES
+
+Embora exista um enorme rol de dispositivos auxiliares, onde vários já foram
+apresentados no Módulo 3, nos itens a seguir serão detalhados aspectos daqueles
+mais comumente utilizados na sinalização rodoviária: tachas, tachões e cilindros
+delimitadores.
+
+5.1 TACHAS
+As tachas podem ser confeccionadas em plástico injetado, metal, resina de poliéster
+ou sintética de alta resistência mecânica. A cor do corpo varia em função da marca
+viária que complementa, sendo branca ou amarela, excetuando-se a metálica que
+mantém a cor original do material.
+
+Os tipos de corpo da tacha são os seguintes:
+
+  •   tipo A: resina com lente retrorrefletiva permanente ou substituível;
+  •   tipo B: plástico injetado com lente retrorrefletiva permanente ou substituível;
+  •   tipo C: metálico, com lente retrorrefletiva refletivo permanente ou substituível.
+
+
+O elemento refletivo pode ser dos seguintes tipos:
+
+  •   tipo I: lente retrorrefletiva sem revestimento antiabrasivo;
+  •   tipo II: lente retrorrefletiva com revestimento antiabrasivo ou composto
+      antiabrasivo;
+  •   tipo III: lente retrorrefletiva com revestimento antiabrasivo (face de vidro);
+  •   tipo IV: lente retrorrefletiva de esferas de vidro espelhado.
+
+
+Sua fixação no pavimento é química (cola adesiva), ou química-mecânica (cola
+adesiva + pino de fixação).
+
+As tachas especificadas deverão atender aos requisitos estabelecidos na ABNT NBR
+14363 – Tachas refletivas viárias – Requisitos.
+
+A Figura 20 apresenta exemplo de tachas com os corpos tipo A e B.
+                                                                                      32
+
+                                                            SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                 Figura 20 – Exemplos de tachas (dimensões em milímetros)
+
+
+
+
+                                 Fonte: ABNT NBR 14363
+
+Para o programa BR-LEGAL 2, a implantação de tachas deverá seguir o preconizado
+na Tabela 7 – Condições de solução por nível, adequada às soluções da Tabela 12.
+
+                            Tabela 12 – Tipo de tacha por nível
+
+
+
+
+As tachas refletivas utilizadas deverão atender aos requisitos e dimensões
+estabelecidos na norma ABNT NBR 14.636. Além disso, o refletivo deve ter no
+mínimo 6,5 cm de largura e 1,5 cm de altura.
+
+A cadência de implantação da tacha colocada junto à marca longitudinal seccionada
+branca ou amarela deverá seguir a cadência das marcas, assim sendo, será
+implantada no meio de todos os intervalos entre segmentos de pintura, no eixo da
+linha simples.
+
+Nos demais casos a cadência das tachas deve seguir o disposto na Tabela 13.
+                                                                                   33
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                    Tabela 13 – Cadências das tachas – demais casos
+
+
+
+
+Situações especiais (B) são considerados os locais que estão a 150 m antes dos
+pontos onde é obrigatória a utilização das placas de advertência A-1, A-2, A-3, A-4,
+A-5, A-18 e aproximação de Obras de Arte Especiais (OAEs). Os casos não citados
+são considerados Situação normal (A).
+
+Também devem ser observados os seguintes aspectos na implantação das tachas:
+
+  •   Não devem ser implantadas sobre a sinalização horizontal, sempre que houver
+      espaço para tal;
+  •   Deverão ser implantadas junto à linha de bordo deslocadas para o lado externo
+      em cerca de 5 cm de forma a propiciar futuras intervenções na demarcação;
+  •   Deverão ser implantadas no espaço entre as linhas, quando duplas contínuas,
+      ou no meio dos segmentos sem pintura, quando as linhas forem seccionadas;
+  •   De acordo com Manual Brasileiro de Sinalização de Trânsito Volume VI –
+      Dispositivos auxiliares, é vedada a utilização de tachas aplicadas
+      transversalmente à via pública.
+
+
+
+5.2 TACHÕES
+Os tachões podem ser confeccionados em plástico injetado, metal, resina de
+poliéster ou sintética de alta resistência mecânica. A cor do corpo sempre será
+amarela. A cor do refletivo deve acompanhar a marca que complementa. A Figura
+21 apresenta um exemplo de tachão e suas dimensões.
+
+Os tachões especificados deverão atender aos requisitos estabelecidos na ABNT
+NBR 15576 - Sinalização horizontal viária - Tachões refletivos viários - Requisitos e
+métodos de ensaios.
+                                                                                   34
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+                          Figura 21 – Tachão e suas dimensões
+
+
+
+
+Os tachões são classificados de acordo com o elemento refletivo:
+
+  •   tipo I: tachão com elemento refletivo prismático em plástico injetado;
+  •   tipo II: tachão com elemento refletivo de esferas de vidro espelhado.
+
+
+Os tachões devem ser fixados no pavimento por meio químico-mecânico (cola
+adesiva + pino duplo). Os pinos devem se apresentar na forma de parafusos de
+cabeça tipo francesa, em aço-carbono galvanizado, apresentando roscas em sua
+parte externa, em dimensões compatíveis com as do tachão, que assegurem sua
+perfeita fixação. O adesivo integrante do sistema de fixação não pode agredir o
+pavimento e deve seguir as exigências do fabricante.
+
+O Programa BR-LEGAL 2 veda a utilização de tachões em qualquer segmento
+rodoviário. Nos locais em que houver tachões implantados deverá ser prevista sua
+remoção e substituição por cilindros delimitadores no eixo da via, com corpo e
+elemento retrorrefletivo na mesma cor da faixa da sinalização.
+
+Todavia, os contratos no escopo do Programa BR-LEGAL ainda prevê que a
+utilização de tachões em trechos com escolas lindeiras às rodovias. Também está
+possibilitada a aplicação em algumas situações excepcionais, desde que justificada
+tecnicamente e seja validada em ata pelo fiscal. Neste caso, os tachões deverão ser
+aplicados na cadência de 1 a cada 2 metros.
+                                                                                   35
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+5.3 FISCALIZAÇÃO E MANUTENÇÃO DE TACHAS E TACHÕES
+Para a fiscalização de serviço de instalação de tachas e tachões, deve ser verificado
+inicialmente:
+
+  •   Se os dispositivos apresentam dimensões, cores do corpo e do refletivo
+      corretos;
+  •   Se o corpo não apresenta arestas cortantes ou cantos vivos;
+  •   Se o elemento refletivo está presente e íntegro;
+  •   Se há presença dos pinos, quando previsto no modelo (tachas). Tachões
+      sempre devem apresentar pinos duplos.
+
+
+Durante a execução observar:
+
+  •   A cadência e posicionamento especificados em projeto;
+  •   Se o dispositivo está 5 cm afastado da linha de bordo (quando possível);
+  •   Se os elementos refletivos estão posicionados do lado correto;
+  •   Se a fixação no pavimento foi adequada, impendo giro, ou que o dispositivo
+      fique assentado completamente sobre o pavimento.
+
+
+Como o corpo de tachas e tachões fica acima do nível do pavimento, eles estão
+sujeitos ao impacto direto dos pneus do veículo que trafegam pela rodovia,
+principalmente quando estão instalados sobre as marcas viárias longitudinais.
+Assim, estão sujeitos à quebra do corpo e dos elementos refletivos, fazendo com
+que percam sua função.
+
+Quando houver a quebra do corpo, ou do elemento refletivo, a tacha ou o tachão
+devem ser substituídos. Excetua-se os tipos de tachas onde o elemento refletivo
+pode ser substituído. Caso haja o pino de fixação, ele deve ser removido do solo. Se
+não for possível a remoção do pino, ele deve ser batido até que fique no nível do
+pavimento.
+
+Caso os elementos refletivos estejam íntegros, mas com acúmulo de poeira, pode-
+se verificar a possibilidade da lavagem dos elementos refletivos.
+                                                                                         36
+
+                                                               SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+Pode-se programar a periodicidade de substituição, os tachões em conjunto com a
+da sinalização horizontal. Porém, sempre devem ser realizadas as substituições,
+conforme se entender necessário.
+
+
+
+
+5.4 CILINDROS DELIMITADORES
+Os cilindros devem ser colocados paralelos ao fluxo veicular, afastados 0,20 m da
+borda interna. Quando instalado no eixo deve ser colocado no ponto médio das
+faixas da via.
+
+As situações de aplicação dos cilindros delimitadores constam na Tabela 14.
+
+                 Tabela 14 – Situações de aplicação dos cilindros delimitadores
+
+
+
+
+Nos trechos em que estiver prevista a implantação de cilindros delimitadores, não
+deverá ser prevista a utilização de tachas.
+
+A instalação do cilindro delimitador não poderá representar perigo em caso de
+choque com veículos e deverá resistir aos esforços naturais de serviço. Além de que
+nenhum dos elementos do dispositivo deverá apresentar partes agressivas ou
+perigosas aos veículos e pedestres.
+                                                                                       37
+
+                                                             SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+
+6 DEFENSAS METÁLICAS E DISPOSITIVOS
+    DE CONTENÇÃO
+
+6.1 DEFENSAS METÁLICAS, TERMINAIS E TRANSIÇÕES
+A necessidade de instalação de defensas metálicas deve considerar as diretrizes
+estabelecidas na ABNT NBR 15486 - Segurança no tráfego - Dispositivos de
+contenção viária – Diretrizes.
+
+A instalação destes dispositivos está de acordo com a ABNT NBR 6971 –
+Defensas metálicas – Implantação.
+
+A IN 17/22 recomenda a utilização das soluções de dispositivos de segurança
+longitudinais (defensas metálicas), conforme níveis de contenção descritos na
+Tabela 15, a seguir.
+
+                  Tabela 15 – Dispositivos de segurança longitudinais
+                                                                                       38
+
+                                                             SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+Para dispositivos de segurança pontuais (terminais), a IN 17/22 recomenda a
+utilização das soluções de dispositivos conforme especificações descritas na
+Tabela 16.
+
+                  Tabela 16 – Dispositivos de segurança longitudinais
+
+
+
+
+Nas diretrizes do programa BR-LEGAL 2 (IN 17/22), as defensas deverão ser
+dotadas de elementos refletivos na totalidade de sua extensão, sendo que:
+
+
+
+  •   trecho em tangente – o refletivo de defensa constitui-se de um suporte
+      metálico, que deve atender as especificações e dimensões da ABNT NBR
+      6.971:2012 - Figura B - 23 - Delineador tipo com elemento refletivo
+      (película). O refletivo será do tipo III, de acordo com a ABNT NBR
+      14.644:2021. Serão implantados um a cada 16 m.
+  •   para trecho em curva, o refletivo de defensa constitui-se de uma chapa
+      metálica corrugada com espessura média de 1 mm com as dimensões
+      aproximadas de 10 cm de largura por 86 cm de comprimento com
+      elemento refletivo (película). O refletivo será do tipo X, de acordo com a
+      ABNT NBR 14.644:2021. Será implantado um a cada 8 m.
+
+
+
+O Tipo mais comum utilizado de defensas é o sistema semimaleável, onde uma
+lâmina de aço galvanizado por imersão a quente é fixada com sistema de postes
+C-150, calço e espaçador. A Figura 22 apresenta uma defensa semimaleável do
+tipo simples.
+                                                                                    39
+
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+                      Figura 22 – Defensa semimaleável simples
+
+
+
+
+As defensas metálicas para desempenharem adequadamente sua função
+devem ser instaladas em conjunto de dispositivos de transição e terminais
+absorvedores de energia, conforme mencionado no Módulo 3 deste curso.
+
+
+
+
+6.2 Fiscalização e manutenção de dispositivos de contenção
+Antes da instalação das defensas metálicas deve-se verificar o projeto e se
+extensões e dispositivos de transição previstos em planta são adequados para
+a realidade em campo.
+
+Durante a execução, deve observar se os postes foram cravados de maneira a
+manter seu alinhamento vertical e que a parte superior da lâmina fique a 750 mm
+da superfície do pavimento (Figura 23). De outro modo, a defensa pode não ser
+capaz de conter e redirecionar veículos errantes.
+                                                                                      40
+
+                                                           SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+       Figura 23 – Instalação de defensa semimaleável simples (dimensões em mm)
+
+
+
+
+As lâminas são instaladas com suas extremidades superpostas de modo que a
+lâmina posterior fique por trás da lâmina anterior, no sentido contrário do tráfego
+(Figura 24). Isto minimiza a possibilidade de que a lâmina se solte e empale o
+veículo desgovernado, no caso de colisão.
+
+                   Figura 24 – Superposição adequada para lâminas
+
+
+
+
+Outro aspecto importante a ser observado é que a face da defensa não pode
+estar atrás do meio-fio (se este estiver presente). Caso contrário, o meio-fio pode
+lançar o veículo para o ar, fazendo com que a defensa não tenha o desemprenho
+adequado.
+                                                                                    41
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+Após a instalação: porcas, parafusos, arruelas, plaquetas e demais
+componentes devem estar devidamente afixados e estáveis.
+
+Terminais Absorvedores de Energia devem estar homologados de acordo com
+normas internacionais. Deve-se observar se a sua classe de homologação é
+suficiente para atender à velocidade diretriz da via e ao veículo de projeto.
+Quando montados, devem atender estritamente ao manual do fabricante, sob
+pena de não desempenharem a finalidade para qual foram projetados.
+
+Dispositivos de Transição devem estar montados de acordo com a ABNT NBR
+6971 – Defensas metálicas – Implantação.
+
+Quanto aos aspectos de manutenção dos sistemas de contenção, quaisquer
+lâminas, postes, terminais e transições devem ser substituídos em até 10 dias
+úteis. Uma vez que o sistema como um todo deve estar íntegro para garantir a
+proteção completa prevista em projeto.
+
+É muito comum o furto de lâminas, devido ao seu valor comercial, ou para
+estabelecer acessos irregulares. Assim, a fiscalização do trecho deve estar
+atenta para recorrência destes casos e comunicar os furtos à Polícia Rodoviária
+Federal - PRF, por se tratar de dano ao patrimônio público.
+
+Alguns modelos de terminais absorvedores de energia podem ser reparados
+após impactados. Nesses casos, e caso o contrato possua quantitativo de kits
+de reparo, pode ser avaliada o uso de tal possibilidade, visto que o custo do kit
+é menor que de um terminal novo.
+
+Alguns modelos de terminais também possuem cabos de aço e partes passíveis
+de furto. Assim como as lâminas, o reparo deve ser o mais rápido possível e a
+PRF comunicada no caso de recorrência.
+                                                                                 42
+
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+6.3 BARREIRA DE CONCRETO
+As barreiras de concreto simples, armado ou protendido devem atender as
+disposições da ABNT NBR 15486 no que tange aos níveis de contenção. Só
+devem ser aceitos modelos ensaiados e aprovados pelas NCHRP 350/MASH ou
+EN 1317-2. Os modelos barreira de concreto aceitos são aqueles previstos na
+ABNT NBR 14885 – Barreiras de Concreto.
+
+As barreiras podem ser pré-moldadas, desde que os diversos componentes
+sejam solidarizados na montagem, atendendo à ABNT NBR 15486.
+
+No caso de barreiras moldadas in loco, devem ser executadas juntas de retração
+do tipo seção enfraquecida, contidas em um mesmo plano transversal da
+barreira, por serragem ou moldagem de sulco, com abertura máxima de 10 mm
+e profundidade de 30 mm a 50 mm, em todo o contorno do perfil.
+
+O Concreto deve ter Fck de 30, ou 35 Mpa, de acordo com o perfil adotado (ver
+ABNT NBR 14885 para referência). De igual modo, deve-se verificar a ABNT
+NBR 14885, para os perfis que possuírem armadura.
+
+Eventuais defeitos oriundos das operações de execução das barreiras, como
+abatimento de bordas, fissuras, desnivelamentos, cavidades e depressões, por
+exemplo, devem ser corrigidos imediatamente.
+
+Quaisquer segmentos danificados por impactos devem ser reconstruídos, com
+emendas de concretagem conforme a ABNT NBR 14885.
+                                                                                               43
+
+                                                                SINALIZAÇÃO VIÁRIA - Módulo 5
+
+
+
+
+7 REFERÊNCIAS BIBLIOGRÁFICAS
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 6971: Segurança no tráfego –
+Defensas metálicas – Implantação. 2ª Edição. Rio de Janeiro, 2012.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 14363: Sinalização horizontal
+viária — Tachas retrorrefletivas viárias — Requisitos. 3ª Edição. Rio de Janeiro, 2021.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 14644: Sinalização viária —
+Películas — Requisitos. 4ª Edição. Rio de Janeiro, 2021.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 14885: Segurança no tráfego —
+Barreiras de concreto. 3ª Edição. Rio de Janeiro, 2016.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 14891: Sinalização vertical viária
+— Placas. 3ª Edição. Rio de Janeiro, 2021.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 15486: Segurança no tráfego —
+Dispositivos de contenção viária — Diretrizes de projeto e ensaios de impacto. 2ª Edição. Rio de
+Janeiro, 2016.
+
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 15576: Sinalização horizontal
+viária — Tachões refletivos viários — Requisitos e métodos de ensaio. 2ª Edição. Rio de Janeiro,
+2015.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Colegiada. Instrução
+Normativa n° 64 - Dispõe sobre critérios e procedimentos a serem adotados no Programa Nacional
+de Segurança e Sinalização Rodoviária - BR-LEGAL e dá outras providências. Brasília, 2021.
+
+BRASIL. Conselho Nacional de Trânsito. Manual Brasileiro de Sinalização de Trânsito Volume III –
+Sinalização Vertical de Indicação. Brasília, 2014.
+
+FOXLUX. As unidades de medida da luz. Disponível em https://www.foxlux.com.br/blog/dicas/as-
+unidades-de-medida-da-luz/ . Acesso em 17 de junho de 2022.
+
+LOJA     VIÁRIA.      Tipos     de    Tintas     para   demarcação      viária.   Disponível   em
+http://www.blog.lojaviaria.com.br/materiais-para-download/ . Acesso em 20 de julho de 2022.
+
+MOREIRA, Hélio; MENEGON, Roberto. Sinalização Horizontal. São Paulo, 2003.
+
+SINASC. Manual técnico de produtos e serviços. Florianópolis, 2017.
+
+VIACOLOR; DNIT. Sinalização Horizontal – Compatibilidade das demarcações. Itupeva, 2014.

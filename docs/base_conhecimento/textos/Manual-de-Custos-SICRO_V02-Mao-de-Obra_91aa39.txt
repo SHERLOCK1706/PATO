@@ -1,0 +1,4014 @@
+          DNIT
+                   MANUAL DE CUSTOS DE
+          INFRAESTRUTURA DE TRANSPORTES
+                           MÃO DE OBRA
+
+
+                            VOLUME 02
+
+
+                               2ª Edição
+                              BRASÍLIA-DF
+                                  2025
+
+
+
+                   MINISTÉRIO DOS TRANSPORTES
+     DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                         DIRETORIA-GERAL
+               DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES
+José Renan Vasconcelos Calheiros Filho
+
+
+DIRETOR-GERAL DO DNIT
+Fabricio de Oliveira Galvão
+
+
+DIRETOR DE PLANEJAMENTO E PESQUISA
+Luiz Guilherme Rodrigues de Mello
+
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Caio Saravy Cardoso
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+         MÃO DE OBRA
+
+
+          VOLUME 02
+SEGUNDA EDIÇÃO – Brasília, 2025
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 490/2021-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 647/2024-00)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Caio Saravy Cardoso
+Eng.º Rodrigo Bezerra Marques
+Eng.º Renan Abreu de Moura
+Eng.º Pedro Henrique Dantas de Medeiros
+Eng.º Gleydson Viegas de Oliveira
+
+PRIMEIRA EDIÇÃO – Brasília, 2017
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015-00)
+
+COMISSÃO DE SUPERVISÃO:
+MSc. Eng.º Luiz Heleno Albuquerque Filho
+Eng.º Paulo Moreira Neto
+Eng.º Caio Saravy Cardoso
+
+PRIMEIRAS VERSÕES
+EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+Elaboração: CENTRAN
+Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Silvio Mourão (Brasília)
+Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+
+                   Brasil. Departamento Nacional de Infraestrutura de Transportes.
+            Diretoria-Geral. Diretoria de Planejamento e Pesquisa. Coordenação-Geral de
+                                Custos de Infraestrutura de Transportes.
+
+           Manual de Custos de Infraestrutura de Transportes - Volume 02 - Mão de Obra.
+                               2ª Edição - Brasília - DF, 2025. 94p.
+
+            1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias - Construções -
+            Estimativa e Custo - Manuais. 3 Aquavias - Construções - Estimativa e Custo - Manuais.
+                                              I. Série. II. Título.
+
+
+
+Reprodução permitida desde que citado o DNIT como fonte.
+Impresso no Brasil / Printed in Brazil
+                 MINISTÉRIO DOS TRANSPORTES
+  DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+
+
+
+            MANUAL DE CUSTOS DE
+  INFRAESTRUTURA DE TRANSPORTES
+                     MÃO DE OBRA
+
+
+                       VOLUME 02
+
+
+
+
+                          2ª Edição
+                           Brasília
+                             2025
+MINISTÉRIO DOS TRANSPORTES – MT
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES – DNIT
+DIRETORIA-GERAL – DG
+DIRETORIA DE PLANEJAMENTO E PESQUISA – DPP
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES – CGCIT
+
+
+Setor de Autarquias Norte
+Quadra 03 Lote A, Ed. Núcleo dos Transportes
+CEP: 70040-902 – Brasília – DF
+Telefone: (061) 3315-4700
+E-mail: cgcit.sicro@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+            Volume 02: Mão de obra
+
+
+Segunda Edição: 2025
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 490/2021-00 e 647/2024-00
+Aprovado pela Diretoria Colegiada do DNIT em 21/10/2025 (Relato nº 191/2025)
+Processo SEI nº 50600.027352/2017-78
+
+
+Primeira Edição: 2017
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 327/2012-00 e 462/2015-00
+Aprovado pela Diretoria Colegiada do DNIT em 25/04/2017 (Relato nº 38/2017)
+Processo SEI nº 50600.027352/2017-78
+
+
+
+
+Impresso no Brasil / Printed in Brazil
+                                 APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto Departamento Nacional de
+Estradas e Rodagem (DNER) e do Departamento Nacional de Infraestrutura de
+Transportes (DNIT) na formação de preços referenciais de obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos de
+Infraestrutura de Transportes preserva o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da divulgação
+dos relatórios sintéticos e analíticos valorados de composições de custos e insumos,
+juntamente com a publicação da 1ª edição do Manual de Custos de Infraestrutura de
+Transportes e das Produções de Equipes Mecânicas dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual de
+Custos de Infraestrutura de Transportes. Os conteúdos encontram-se dispostos
+conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+Os cadernos técnicos apresentam as condições de contorno adotadas nos cálculos
+dos consumos dos materiais e da produção horária dos serviços, suas respectivas
+memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para elaboração de
+orçamentos baseados no SICRO, estabelecendo diretrizes básicas para tomada de
+decisão e exemplos práticos que ilustram o emprego das diferentes ferramentas que
+integram o sistema.
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está dividido
+em oito volumes:
+
+    ▪ Volume 01 - Metodologia e Conceitos;
+    ▪ Volume 02 - Mão de Obra;
+    ▪ Volume 03 - Preços Referenciais;
+    ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+    ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+    ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+    ▪ Volume 07 - Administração Local;
+    ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de Infraestrutura
+de Transportes, pode produzir orçamentos para obras de infraestrutura de transportes
+que incorporam as nuances dos casos concretos, ao tempo que observam a eficiência
+associada à otimização dos recursos envolvidos característica da engenharia.
+
+
+                             CAIO SARAVY CARDOSO
+           Coordenador-Geral de Custos de Infraestrutura de Transportes
+                                   LISTA DE FIGURAS
+
+Figura 1 - Organograma do manual de custos de mão de obra ................................ 14
+Figura 2 - Metodologia de cálculo dos salários referenciais do SICRO ..................... 23
+                                         LISTA DE TABELAS
+
+Tabela 1 - Encargos sociais do Grupo A ................................................................... 28
+Tabela 2 - Encargos trabalhistas do Grupo B............................................................ 30
+Tabela 3 - Variáveis utilizadas no cálculo dos encargos ........................................... 33
+Tabela 4 - Encargos trabalhistas do Grupo C ........................................................... 43
+Tabela 5 - Distribuição de calorias por refeição ........................................................ 53
+Tabela 6 - Valores aplicados por adicional de hora extra e noturna .......................... 67
+Tabela 7 - Valores a serem pagos por adicional de insalubridade e periculosidade . 68
+Tabela 8 - Condições de insalubridade tratadas nos anexos da NR-15 .................... 69
+Tabela 9 - Parcelas das condições de trabalho......................................................... 70
+Tabela 10 - Valores do FAE por grau de insalubridade ............................................. 76
+Tabela 11 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos
+            encargos do Grupo A ............................................................................. 77
+Tabela 12 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos
+            encargos do Grupo B ............................................................................. 78
+Tabela 13 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos
+            encargos do Grupo C ............................................................................. 78
+Tabela 14 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos
+            encargos do Grupo D ............................................................................. 79
+Tabela 15 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos
+            encargos sociais e trabalhistas .............................................................. 79
+Tabela 16 - Impactos nos percentuais por situação de trabalho ............................... 81
+                                                   SUMÁRIO
+
+1         INTRODUÇÃO ........................................................................................... 13
+2         CONCEITOS .............................................................................................. 17
+2.1       Dados oficiais utilizados no cálculo de salários referenciais .............. 17
+2.2       Convenção Coletiva de Trabalho ............................................................ 18
+2.3       Premissas adotadas no cálculo de salários e encargos referenciais .. 18
+2.3.1     Diferença entre categorias horistas e mensalistas ..................................... 18
+2.3.2     Horas trabalháveis e horas trabalhadas ..................................................... 19
+2.3.3     Posto de trabalho ....................................................................................... 20
+2.4       Salário mínimo e salário-base ................................................................. 20
+3         METODOLOGIA ........................................................................................ 23
+3.1       Salários referenciais................................................................................. 23
+3.1.1     Coleta de dados ......................................................................................... 24
+3.1.2     Tratamento de dados ................................................................................. 24
+3.1.3     Cálculo de salários referenciais .................................................................. 25
+3.2       Encargos sociais e trabalhistas .............................................................. 27
+3.2.1     Grupo A ...................................................................................................... 28
+3.2.2     Grupo B ...................................................................................................... 30
+3.2.2.1   B1 - Repouso semanal remunerado ........................................................... 34
+3.2.2.2   B2 - Feriados e dias santificados nacionais................................................ 35
+3.2.2.3   B3 - Férias gozadas ................................................................................... 36
+3.2.2.4   B4 - Auxílio-enfermidade ............................................................................ 37
+3.2.2.5   B5 - Auxílio-acidente de trabalho ................................................................ 38
+3.2.2.6   B6 - Licença-paternidade............................................................................ 39
+3.2.2.7   B7 - 13º salário ........................................................................................... 40
+3.2.2.8   B8 - Faltas justificadas................................................................................ 41
+3.2.2.9   B9 - Férias sobre a licença-maternidade .................................................... 41
+3.2.3     Grupo C ...................................................................................................... 43
+3.2.3.1   C1 - Aviso-prévio indenizado ...................................................................... 43
+3.2.3.2   C2 - Aviso-prévio trabalhado ...................................................................... 44
+3.2.3.3   C3 - Férias indenizadas .............................................................................. 45
+3.2.3.4   C4 - Depósito por rescisão sem justa causa .............................................. 46
+3.2.3.5   C5 - Indenização adicional ......................................................................... 46
+3.2.4     Grupo D ...................................................................................................... 47
+3.2.4.1   D1 - Reincidência do Grupo A sobre o Grupo B ......................................... 47
+3.2.4.2   D2 - Reincidência do Grupo A sobre o aviso-prévio trabalhado e
+          reincidência do FGTS sobre o aviso-prévio indenizado ............................. 47
+3.2.5     Cálculo do percentual total de encargos sociais e trabalhistas .................. 48
+3.2.6     Desoneração da mão de obra .................................................................... 49
+3.2.7     Incidência dos percentuais de insalubridade e periculosidade ................... 50
+3.2.7.1   Não cumulatividade dos adicionais de insalubridade e periculosidade ...... 50
+3.2.7.2   Categorias profissionais com adicionais de insalubridade e periculosidade
+          ................................................................................................................... 50
+3.2.8     Cálculo dos encargos sociais e trabalhistas ............................................... 51
+3.3       Encargos complementares ...................................................................... 51
+3.3.1     Alimentação de pessoal.............................................................................. 52
+3.3.2     Transporte de pessoal ................................................................................ 54
+3.3.3     Ferramentas manuais ................................................................................. 55
+3.3.4     Equipamentos de proteção individual ......................................................... 56
+3.3.5     Consultas médicas ocupacionais ............................................................... 57
+3.3.6     Cálculo dos encargos complementares ...................................................... 59
+3.4       Encargos adicionais ................................................................................. 59
+3.4.1     Cesta básica ............................................................................................... 60
+3.4.2     Seguro de vida e auxílio-funeral ................................................................. 61
+3.4.3     Assistência médica e odontológica ............................................................. 61
+3.4.4     Desgaste orgânico e adicional de confinamento ........................................ 62
+3.4.5     Cálculo dos encargos adicionais ................................................................ 62
+3.5       Cálculo dos encargos totais .................................................................... 63
+3.6       Cálculo do custo referencial de mão de obra ........................................ 63
+4         CONDIÇÕES ESPECIAIS DE TRABALHO ............................................... 66
+4.1       Condições especiais de trabalho estabelecidas pela CLT ................... 66
+4.1.1     Trabalho extraordinário e trabalho noturno................................................. 66
+4.1.2     Insalubridade e periculosidade ................................................................... 67
+4.2       Condições especiais de trabalho estabelecidas pelas CCTs ............... 69
+4.3       Parametrização dos valores de adicionais passíveis de alteração ...... 70
+4.3.1     Insalubridade .............................................................................................. 70
+4.3.2     Periculosidade ............................................................................................ 72
+4.3.3     Definição de condições de insalubridade e periculosidade ........................ 72
+4.3.4     Hora noturna............................................................................................... 72
+4.3.5     Hora extra ................................................................................................... 73
+4.4        Encargos sociais e trabalhistas .............................................................. 75
+4.4.1      Adicional de insalubridade .......................................................................... 75
+4.4.2      Adicional de hora extra ............................................................................... 76
+4.4.3      Impacto dos adicionais de insalubridade e hora extra ................................ 77
+4.4.4      Encargos sociais e trabalhistas totais ......................................................... 81
+4.5        Encargos complementares e adicionais ................................................ 83
+4.6        Condições especiais de trabalho estabelecidas pela CLT nos
+           encargos totais e no custo ...................................................................... 83
+4.6.1      Cálculo dos encargos totais em condições especiais ................................. 83
+4.6.2      Cálculo do custo da mão de obra em condições especiais ........................ 84
+5          CONSIDERAÇÕES FINAIS ....................................................................... 86
+REFERÊNCIAS BIBLIOGRÁFICAS ......................................................................... 88
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+                                             1      INTRODUÇÃO
+
+
+
+
+                       12                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+1       INTRODUÇÃO
+
+No âmbito do Sistema de Custos Referenciais de Obras (SICRO), a mão de obra
+corresponde às categorias profissionais adotadas na formação dos custos diretos e
+indiretos das obras. Nos custos diretos, a mão de obra consiste nos trabalhadores
+envolvidos na execução dos serviços, sendo apropriada nas composições de custos
+unitários do sistema. No caso dos custos indiretos, a mão de obra diz respeito aos
+profissionais designados para administração local, instalação e manutenção de
+canteiros de obras e mobilização e desmobilização de equipamentos e pessoal.
+
+Os custos referenciais de mão de obra são calculados em função de quatro parcelas:
+salários, encargos sociais e trabalhistas, encargos complementares e encargos
+adicionais. Os salários referenciais são obtidos com base nos salários básicos
+nominais registrados no Cadastro Geral de Empregados e Desempregados (CAGED).
+Os encargos sociais e trabalhistas são determinados em conformidade com a
+legislação vigente, enquanto os encargos complementares, por sua vez, são definidos
+de acordo com a natureza da atividade, observando as Normas Regulamentadoras
+(NRs) do trabalho. Por fim, os encargos adicionais representam benefícios aos quais
+os profissionais têm direito, em atenção a convenções coletivas.
+
+Para melhor compreensão do documento, a Figura 1 a seguir apresenta um
+organograma do sumário, exibindo os títulos das seções até o nível 3, de modo a
+permitir a visualização dos principais conceitos abordados, assim como a metodologia
+utilizada para definição dos preços referenciais.
+
+
+
+
+                                            13                           DNIT/DPP/CGCIT
+      Manual de Custos de Infraestrutura de Transportes
+                 Volume 02 - Mão de Obra
+
+
+
+
+Figura 1 - Organograma do manual de custos de mão de obra
+
+
+
+                             14                             DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+Volume 02 - Mão de Obra
+
+Cálculo dos encargos
+totais
+
+Cálculo do custo
+referencial de mão de
+obra
+
+Metodologia
+
+Condições especiais de
+trabalho estabelecidas
+pela CLT
+
+Condições especiais de
+trabalho estabelecidas
+pelas CCTs
+
+Parametrização dos
+valores de adicionais
+passíveis de alteração
+
+Encargos sociais e
+trabalhistas
+
+Condições Especiais de Trabalho
+
+Encargos
+complementares e
+adicionais
+
+Condições especiais de
+
+trabalho estabelecidas
+
+pela CLT nos encargos
+totais e no custo
+
+Considerações Finais
+
+Figura 1 (conclusão)
+Fonte: FGV IBRE
+
+15 DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+                                                2    CONCEITOS
+
+
+
+
+                       16                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 02 - Mão de Obra
+
+
+
+2       CONCEITOS
+
+Este capítulo apresenta os principais conceitos relacionados aos custos referenciais
+de mão de obra das categorias profissionais constantes do SICRO, além dos dados
+oficiais utilizados, dos tópicos relacionados às Convenções Coletivas de Trabalho
+(CCTs), das premissas mais relevantes adotadas no cálculo dos salários e encargos
+referenciais e, por fim, das diferenças entre salário mínimo e salário-base.
+
+2.1     Dados oficiais utilizados no cálculo de salários referenciais
+
+Os salários referenciais são definidos a partir do levantamento e tratamento de dados
+do CAGED do Ministério do Trabalho e Emprego (MTE), base que reúne todas as
+movimentações de profissionais sob o regime da Consolidação das Leis do Trabalho
+(CLT). Criado em 1965, o CAGED é um dos instrumentos mais importantes para
+monitorar e acompanhar o comportamento do mercado de trabalho formal no país.
+Suas informações incluem dados sobre os trabalhadores contratados e desligados,
+como salários no momento da admissão e do desligamento, sexo, idade, ocupação,
+setor de atividade econômica, entre outros.
+
+O CAGED utiliza a Classificação Brasileira de Ocupações (CBO), publicada pelo MTE,
+a qual classifica as diversas ocupações existentes no mercado de trabalho brasileiro.
+A CBO fornece uma descrição detalhada das atribuições, habilidades e requisitos de
+cada ocupação, facilitando a padronização e o reconhecimento das atividades
+profissionais no país.
+
+A seleção dos dados do CAGED é efetuada com base na Classificação Nacional de
+Atividades Econômicas (CNAE), desenvolvida pelo Instituto Brasileiro de Geografia e
+Estatística (IBGE) em parceria com outros órgãos governamentais. A CNAE visa
+categorizar as atividades econômicas realizadas pelas empresas para fins
+estatísticos, fiscais e administrativos. Sua estrutura é hierárquica, composta por
+seções, divisões, grupos, classes e subclasses, cada uma identificada por um código
+numérico, o que permite padronização na coleta e no tratamento de dados
+econômicos.
+
+
+
+
+                                                17                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+2.2      Convenção Coletiva de Trabalho
+
+Segundo o art. 611 do Decreto-Lei nº 5.452 (BRASIL, 1943), a Convenção Coletiva
+de Trabalho é o acordo de caráter normativo no qual dois ou mais sindicatos
+representativos de categorias econômicas e profissionais estabelecem condições de
+trabalho aplicáveis às relações individuais de trabalho, conforme as respectivas
+representações.
+
+No SICRO, as CCTs são utilizadas na definição de pisos salariais e dos encargos
+adicionais. São consideradas as convenções das categorias profissionais da
+construção pesada vigentes em cada uma das capitais das 27 Unidades da Federação
+(UFs). Algumas dessas CCTs também abordam as condições especiais de trabalho
+tratadas no presente manual, podendo determinar percentuais diferentes para os
+adicionais de hora extra, hora noturna, insalubridade ou periculosidade, a depender
+da UF.
+
+As CCTs têm prazo de vigência determinado, podendo apresentar atualizações
+periódicas. Portanto, a cada mês-base do SICRO é necessário verificar a existência
+de novas convenções relacionadas às categorias profissionais em cada uma das 27
+UFs.
+
+A pesquisa das CCTs homologadas e vigentes em cada UF é realizada por meio do
+Sistema de Negociações Coletivas de Trabalho (MEDIADOR), disponível no portal do
+MTE (MTE, 2025). Essa ferramenta permite a consulta de acordo com as
+especificidades dos sindicatos ou UFs de interesse.
+
+2.3      Premissas adotadas no cálculo de salários e encargos referenciais
+
+Este tópico apresenta as premissas adotadas para classificar as categorias de mão
+de obra em horistas ou mensalistas, abordando também os conceitos de horas
+trabalháveis, horas efetivamente trabalhadas e de posto de trabalho.
+
+2.3.1    Diferença entre categorias horistas e mensalistas
+
+No SICRO, as categorias profissionais podem ser classificadas como horistas ou
+mensalistas. Uma categoria é considerada horista quando o seu salário é calculado
+em função das horas trabalhadas, de modo que, no período de um mês, o salário total
+
+                                             18                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+varia de acordo com a quantidade de horas de serviço. No caso dos mensalistas, o
+salário tem um valor mensal fixo.
+
+Outra diferença diz respeito ao Descanso Semanal Remunerado (DSR), instituído pela
+Lei nº 605 (BRASIL, 1949), de 5 de janeiro de 1949, que estabelece que todo
+empregado tem direito ao DSR de 24 horas consecutivas, de preferência aos
+domingos, e nos feriados civis e religiosos, segundo a tradição local. Para
+mensalistas, o DSR já é incorporado ao valor do salário, enquanto para os horistas o
+descanso deve ser incorporado aos encargos trabalhistas, tanto na jornada normal de
+trabalho, quanto nas horas extraordinárias habitualmente prestadas, que também
+devem integrar o DSR.
+
+Diante disso, é necessário considerar para as categorias horistas algumas parcelas
+de encargos sociais e trabalhistas referentes ao DSR, as quais são abordadas na
+subseção 3.2.2.
+
+
+Embora existam diferenças entre as categorias profissionais horista e mensalista, o
+custo da mão de obra para o contratante tende a ser equivalente, desde que
+observado o limite de 44 horas semanais e aplicados os mesmos parâmetros de
+cálculo em ambas as situações.
+
+No que se refere à diferença entre categorias horistas e mensalistas, cabe destacar
+que, nas composições de custo, a mão de obra é usualmente expressa em valores
+horários, embora determinadas categorias sejam apresentadas em valores mensais.
+Considerando as diferenças existentes no cálculo dos encargos sociais e trabalhistas
+entre essas modalidades, os custos são disponibilizados em ambas as unidades, de
+modo a assegurar maior precisão e facilitar a usabilidade do sistema.
+
+2.3.2   Horas trabalháveis e horas trabalhadas
+
+As horas trabalháveis correspondem a todas as horas da jornada normal de trabalho,
+considerando apenas os dias úteis e excluindo domingos e feriados.
+
+As horas efetivamente trabalhadas, por sua vez, representam aquelas que um
+trabalhador trabalha em média, correspondente às horas trabalháveis descontadas
+das ausências remuneradas previstas em lei, como férias, faltas abonadas, auxílio-
+enfermidade, auxílio-acidente, licença-paternidade e licença-maternidade.
+
+                                            19                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+Dessa forma, o cálculo do custo de mão de obra inclui todas as despesas inerentes a
+ausências do profissional previstas em lei, já que não são descontadas de seu salário
+por serem direito amparado na legislação.
+
+2.3.3   Posto de trabalho
+
+No âmbito do SICRO, a premissa do posto de trabalho estabelece que, caso o
+trabalhador designado para uma função específica não compareça ao trabalho, sua
+posição deverá ser ocupada por outro funcionário. Assim, assegura-se que sempre
+haverá um profissional disponível durante as horas trabalháveis, sendo a reposição
+obrigatória em caso de ausência.
+
+As ausências previstas por lei incluem férias, faltas abonadas, auxílio-enfermidade,
+auxílio-acidente, licença-paternidade e licença-maternidade. Como já mencionado,
+essas ausências explicam a diferença entre as horas trabalháveis e as horas
+efetivamente trabalhadas. Dentre elas, apenas as férias são conhecidas com
+antecedência, pois o empregador tem ciência de que após um ano o trabalhador terá
+esse direito. As demais ausências são de natureza eventual.
+
+A diferença entre as horas trabalháveis e as horas efetivamente trabalhadas é
+devidamente custeada nas parcelas de encargos, garantindo a reposição do
+profissional por outro de capacitação equivalente.
+
+Para tanto, o cálculo dos encargos considera o posto de trabalho e não o trabalhador
+individual, aplicando as horas globais trabalhadas ao invés das horas trabalháveis.
+
+2.4     Salário mínimo e salário-base
+
+No presente manual, o termo “salário mínimo” refere-se ao menor valor que o
+trabalhador formal pode receber pelos serviços executados durante um mês.
+
+O salário mínimo foi instituído no Brasil na década de 30, por meio da Lei nº 185
+(BRASIL, 1936), de 14 de janeiro de 1936, e do Decreto-Lei nº 399 (BRASIL, 1938),
+de 30 de abril de 1938. Atualmente, ele é direito constitucional de trabalhadores
+urbanos e rurais assegurado no art. 7 da Constituição Federal de 1988 (BRASIL,
+1988), devendo ser reajustado periodicamente para preservar o poder aquisitivo dos
+trabalhadores.
+
+                                            20                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+Já o termo “salário-base” refere-se ao valor pactuado entre a empresa e o funcionário
+no momento de sua admissão, sem os acréscimos resultantes de gratificações,
+prêmios ou participação nos lucros da empresa. Esse valor serve como base para o
+cálculo das deduções obrigatórias por lei, como a Previdência Social e o Imposto de
+Renda Retido na Fonte (IRRF), além de possíveis contribuições sindicais.
+
+
+
+
+                                            21                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+                                           3        METODOLOGIA
+
+
+
+
+                       22                            DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+3       METODOLOGIA
+
+Este capítulo apresenta a metodologia utilizada para calcular os salários referenciais
+das categorias de mão de obra do SICRO, assim como os encargos sociais e
+trabalhistas, encargos complementares e encargos adicionais.
+
+3.1     Salários referenciais
+
+A metodologia de cálculo dos salários referenciais do SICRO baseia-se, sobretudo,
+nos dados oficiais divulgados no CAGED sobre os salários nominais do mercado de
+trabalho formal brasileiro. Por envolver a análise de grandes volumes de dados, ela
+pode ser sintetizada em três etapas consecutivas: (1) coleta de dados, (2) tratamento
+de dados e (3) cálculo de salários referenciais. A Figura 2 ilustra a relação entre essas
+etapas e elenca as atividades realizadas em cada uma delas.
+
+
+
+
+            Figura 2 - Metodologia de cálculo dos salários referenciais do SICRO
+                                       Fonte: FGV IBRE
+
+
+
+
+                                             23                             DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+Os itens adiante discorrem sobre a metodologia representada na Figura 2.
+
+3.1.1    Coleta de dados
+
+Os salários referenciais das categorias profissionais do SICRO são obtidos por meio
+do levantamento dos valores nominais de mercado divulgados no CAGED para as
+movimentações de admissão e desligamento. De posse dos dados do CAGED, é
+possível acessar os salários básicos nominais de registro em carteira profissional de
+forma individualizada, permitindo que os resultados sejam apresentados em função
+dos valores totais registrados no período pesquisado. São levantados os dados do
+CAGED referentes às admissões e aos desligamentos no período de 12 meses para
+todas as UFs e para cada uma das categorias profissionais do SICRO.
+
+São selecionadas apenas as movimentações salariais referentes a profissionais com
+carga horária igual a 44 horas semanais e empresas com mais de 50 funcionários, de
+modo que a metodologia se aproxime da realidade das empresas executoras das
+obras de infraestrutura de transportes.
+
+Ainda na etapa de coleta, a seleção dos dados é realizada considerando as empresas
+correspondentes à Seção F - Construção da CNAE 2.0, Divisões 41 - Construção de
+Edifícios, 42 - Obras de Infraestrutura e 43 - Serviços Especializados para Construção.
+
+Como o CAGED utiliza a Classificação Brasileira de Ocupações, as categorias do
+SICRO são relacionadas às respectivas categorias profissionais da CBO, de forma a
+selecionar as movimentações necessárias para o cálculo de cada uma delas.
+
+Para algumas categorias de mão de obra do SICRO, não é possível estabelecer uma
+relação direta com a Classificação Brasileira de Ocupações. Nessas situações, a
+correlação é definida indiretamente a partir de uma categoria de base relacionada
+diretamente com a CBO. As categorias sem relação direta são denominadas de
+derivadas.
+
+3.1.2    Tratamento de dados
+
+No decorrer da etapa de tratamento de dados, são efetuadas operações de triagem e
+transformação com o objetivo de adequar a base do CAGED ao cenário retratado pelo
+SICRO.
+
+                                            24                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+Os valores abaixo do salário mínimo nacional são desprezados, uma vez que não
+estão de acordo com a legislação. No caso das categorias horistas, o salário mínimo
+é dividido por 220 para se obter o limite salarial por hora.
+
+Como o levantamento do CAGED abrange o período de 12 meses, os dados utilizados
+referem-se a diferentes meses-base, necessitando, portanto, de ajustes monetários
+para uniformizar o mês de referência. Para tanto, são adotados os percentuais de
+reajuste estipulados nas Convenções Coletivas de Trabalho de cada UF.
+
+Ainda, algumas categorias do SICRO podem apresentar pisos salariais definidos por
+leis específicas, como os profissionais diplomados em engenharia, química,
+arquitetura, agronomia e veterinária, os quais têm seu piso salarial definido pela Lei
+nº 4.950-A (BRASIL, 1966a), de 22 de abril de 1966. Em consequência, os valores
+inferiores aos pisos legais também são desconsiderados da amostra de cálculo.
+
+Além da triagem pelo piso salarial, aplica-se um valor de teto para todas as categorias
+profissionais com objetivo de minimizar a influência de movimentações com nível
+salarial discrepante. O teto é definido por meio da soma de sua respectiva média
+salarial a 5 vezes o seu desvio padrão.
+
+3.1.3   Cálculo de salários referenciais
+
+Os critérios de cálculo da média salarial das categorias de mão de obra do SICRO
+dependem principalmente do número de movimentações registradas no CAGED no
+período de 12 meses para determinada categoria profissional em determinada UF. Se
+o tamanho da amostra for igual ou superior a dez movimentações, adota-se a média
+salarial da UF. Do contrário, utiliza-se a média dos salários regionais da categoria
+profissional. Nos casos em que a amostra regional também for inferior a dez
+movimentações, emprega-se a média nacional no cálculo.
+
+A abrangência da amostra de cálculo é determinada quando da implantação da
+categoria de mão de obra no SICRO. Uma vez definida, ela é mantida constante com
+o propósito de estabilização dos níveis dos salários, evitando que flutuações pontuais
+das movimentações do CAGED influenciem nas médias salariais calculadas.
+
+
+
+
+                                             25                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+Algumas categorias podem apresentar como critério de cálculo a média salarial sem
+distinção de CNAE, devido à natureza da atividade e ao pequeno número de registros
+nas bases do CAGED.
+
+Ademais, as categorias de mão de obra do SICRO podem ter seus salários
+referenciais definidos com base em critérios específicos, tais como a média salarial
+de determinado quartil da amostra, o valor exato de um percentil da amostra e a média
+salarial multiplicada por um fator de minoração ou majoração.
+
+A Seção F da CNAE 2.0 compreende a Divisão 41 - Construção de Edifícios, Divisão
+42 - Obras de Infraestrutura e Divisão 43 - Serviços Especializados para Construção.
+Análises dos dados do CAGED permitiram identificar que o Grupo 42.1 - Construção
+de Rodovias, Ferrovias, Obras Urbanas e Obras de Arte Especiais e o Grupo 42.2 -
+Obras de Infraestrutura para Energia Elétrica, Telecomunicações, Água, Esgoto e
+Transporte por Dutos, pertencentes à Divisão 42, apresentam níveis salariais
+geralmente superiores aos demais de toda a Seção F.
+
+Diante disso, aplica-se um fator de equiparação, denominado fator de infraestrutura,
+de forma a representar mais adequadamente o comportamento salarial de obras de
+infraestrutura de transportes. O fator é obtido ao nível nacional por meio do quociente
+entre a média salarial de cada categoria dos Grupos 42.1 e 42.2 e a sua respectiva
+média salarial em toda a Seção F.
+
+A metodologia de cálculo também prevê o abrandamento de variações nos salários
+referenciais, valendo-se da média móvel simples dos três últimos resultados logo após
+a aplicação do fator de infraestrutura.
+
+Determinadas categorias de mão de obra do SICRO podem apresentar pisos salariais
+estabelecidos em CCTs. Portanto, se o valor calculado for menor do que aqueles
+estabelecidos nas CCTs, o piso salarial da categoria de mão de obra é adotado como
+salário referencial.
+
+Na prática, o salário referencial de determinada categoria do SICRO deve ser sempre
+o maior entre o valor calculado a partir do CAGED e os pisos estipulados em lei ou na
+CCT da categoria.
+
+
+
+                                              26                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+As CCTs estão sujeitas a atualizações que podem alterar os valores dos pisos, assim
+como as categorias passíveis de recebimento. Também podem ser publicadas ou
+alteradas leis que definam valores para grupos específicos de profissionais. As
+atualizações das CCTs podem ser encontradas no portal do MTE, tal como indicado
+na subseção 2.2.
+
+3.2      Encargos sociais e trabalhistas
+
+Os encargos sociais e trabalhistas representam as contribuições pagas pelo
+empregador e incidem diretamente sobre os salários, de acordo com a legislação
+vigente. Os encargos sociais são considerados como contribuições indiretas e os
+encargos trabalhistas como as contribuições realizadas diretamente ao trabalhador.
+
+No SICRO, os encargos diferenciam-se conforme as categorias profissionais, o
+regime trabalhista (horista ou mensalista) e as UFs. Como citado na subseção 2.3.1,
+as parcelas referentes ao DSR não são aplicáveis às categorias mensalistas, uma vez
+que esse valor está incluído no salário dessas categorias.
+
+Os parâmetros utilizados nos cálculos dos encargos sociais e trabalhistas são
+baseados em dados do CAGED e da Relação Anual de Informações Sociais (RAIS),
+ambos do MTE, do Anuário Estatístico da Previdência Social (AEPS) do Ministério da
+Previdência Social (MPS) e do Censo do IBGE.
+
+Para as categorias derivadas, isto é, que não possuem equivalência direta com a
+CBO, são adotados parâmetros e encargos sociais e trabalhistas calculados para suas
+respectivas categorias de base.
+
+O levantamento dos dados para o cálculo dos encargos sociais e trabalhistas é
+realizado por meio do CAGED, obedecendo aos mesmos critérios estabelecidos no
+cálculo dos salários, a saber: período de coleta de 12 meses e carga horária igual a
+44 horas semanais. Excetua-se o tempo médio de permanência no emprego, o qual é
+obtido por meio da RAIS.
+
+Os cálculos para encargos sociais e trabalhistas são distribuídos em quatro grupos,
+quais sejam:
+
+      ▪ Grupo A;
+
+                                            27                           DNIT/DPP/CGCIT
+                               Manual de Custos de Infraestrutura de Transportes
+                                          Volume 02 - Mão de Obra
+
+
+
+      ▪ Grupo B;
+      ▪ Grupo C;
+      ▪ Grupo D.
+
+No Grupo A, os encargos sociais são iguais para todos os regimes de trabalho e
+categorias profissionais em todas as UFs, com exceção do Serviço Social da Indústria
+da Construção Civil (SECONCI).
+
+Para os demais grupos, os encargos variam de acordo com a categoria de mão de
+obra, a UF e o regime de trabalho.
+
+3.2.1      Grupo A
+
+Os encargos sociais do Grupo A representam as obrigações que incidem diretamente
+sobre os salários, sendo regulamentadas de acordo com a legislação específica,
+conforme resumo apresentado na Tabela 1. Devido à sua natureza, esses encargos
+são comuns a todas as categorias profissionais, regimes de trabalho e UFs, com
+exceção do SECONCI.
+
+                                   Tabela 1 - Encargos sociais do Grupo A
+              Parcela de                                                                  Fator        Fator
+Item                                             Legislação aplicada
+             contribuição                                                               (horista)   (mensalista)
+                                   Decreto nº 3.048/1999 e art. 22 da Lei nº
+                                   8.212/1991
+ A1     Previdência Social                                                              20,00%        20,00%
+                                   (Não se aplica em opção de desoneração da
+                                   folha)
+        Fundo de Garantia do
+ A2     Tempo de Serviço           Lei nº 8.036/1990                                     8,00%         8,00%
+        (FGTS)
+ A3     Salário-educação           Decreto nº 6.003/2006                                 2,50%         2,50%
+                                   Decreto-Lei nº 9.403/1946, Lei nº 8.036/1990,
+        Serviço Social da
+ A4                                Decreto-Lei nº 1.861/1981 e art. 1º do Decreto nº     1,50%         1,50%
+        Indústria (SESI)
+                                   1.867/1981
+        Serviço Nacional de
+                                   Decreto-Lei nº 4.048/1942, Decreto-Lei nº
+        Aprendizagem Industrial
+                                   4.936/1942, Decreto-Lei nº 6.246/1944, Decreto-
+        (SENAI) / Serviço
+ A5                                Lei nº 1.861/1981, Decreto nº 1.867/1981, art. 1º,    1,60%         1,60%
+        Brasileiro de Apoio às
+                                   alterado pela Lei nº 8.154/1990, Lei nº
+        Micro e Pequenas
+                                   8.029/1990 e Decreto nº 99.570/1990
+        Empresas (SEBRAE)
+        Instituto Nacional de      Lei nº 2.613/1955, Decreto-Lei nº 1.146/1970,
+ A6     Colonização e Reforma      art. 1º do Decreto-Lei nº 1.110/1970, Decreto-Lei     0,20%         0,20%
+        Agrária (INCRA)            nº 582/1969
+        Seguro de Acidentes do
+ A7                                Art. 22 da Lei nº 8.212/1991                          3,00%         3,00%
+        Trabalho (SAT)
+
+
+
+
+                                                         28                                    DNIT/DPP/CGCIT
+                           Manual de Custos de Infraestrutura de Transportes
+                                      Volume 02 - Mão de Obra
+
+
+                                           Tabela 1 (conclusão)
+             Parcela de                                                             Fator        Fator
+Item                                          Legislação aplicada
+            contribuição                                                          (horista)   (mensalista)
+                                 Somente em localidades onde exista ambulatório
+ A8    SECONCI                   do SECONCI, de acordo com as CCTs de cada         1,00%         1,05%
+                                 UF
+                                 Aplica-se apenas para insalubridade:
+                                  ▪ Aposentadoria após 25 anos: C10=0%,
+       Financiamento de              D10=0%, E10=6% e F10=6%;
+ A9    Aposentadoria Especial     ▪ Aposentadoria após 20 anos: C10=0%,               -             -
+       (FAE)                         D10=0%, E10=9% e F10=9%;
+                                  ▪ Aposentadoria após 15 anos: C10=0%,
+                                     D10=0%, E10=12% e F10=12%.
+                                                             Total do Grupo A     37,80%         37,85%
+
+
+Com referência ao item A9 acima, a Lei nº 8.213 (BRASIL, 1991b), de 24 de julho de
+1991, prevê em seu art. 57 que:
+
+                           A aposentadoria especial será devida, uma vez cumprida a carência exigida
+                           nesta Lei, ao segurado que tiver trabalhado sujeito a condições especiais que
+                           prejudiquem a saúde ou a integridade física, durante 15 (quinze), 20 (vinte)
+                           ou 25 (vinte e cinco) anos, conforme dispuser a lei.
+
+
+O mesmo art. 57, em seu § 6º, dispõe que:
+
+                           O benefício previsto neste artigo será financiado com os recursos
+                           provenientes da contribuição de que trata o inciso II do art. 22 da Lei no 8.212,
+                           de 24 de julho de 1991, cujas alíquotas serão acrescidas de doze, nove ou
+                           seis pontos percentuais, conforme a atividade exercida pelo segurado a
+                           serviço da empresa permita a concessão de aposentadoria especial após
+                           quinze, vinte ou vinte e cinco anos de contribuição, respectivamente. (grifo
+                           nosso)
+
+
+Conforme disposto no § 7º do art. 57 da Lei nº 8.213 (BRASIL, 1991b), “o acréscimo
+de que trata o parágrafo anterior incide exclusivamente sobre a remuneração do
+segurado sujeito às condições especiais referidas no caput”.
+
+As seguintes contribuições da empresa são previstas no inciso II do art. 22 da Lei nº
+8.212 (BRASIL, 1991a):
+
+                           a) 1% (um por cento) para as empresas em cuja atividade preponderante o
+                                risco de acidentes do trabalho seja considerado leve;
+                           b) 2% (dois por cento) para as empresas em cuja atividade preponderante
+                                esse risco seja considerado médio;
+
+
+
+                                                     29                                   DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+                       c) 3% (três por cento) para as empresas em cuja atividade preponderante
+                          esse risco seja considerado grave.
+
+
+A Seção XIII da CLT, que trata das atividades insalubres ou perigosas, prevê no art.
+192 que:
+
+                       O exercício de trabalho em condições insalubres, acima dos limites de
+                       tolerância estabelecidos pelo Ministério do Trabalho, assegura a percepção
+                       de adicional respectivamente de 40% (quarenta por cento), 20% (vinte por
+                       cento) e 10% (dez por cento) do salário-mínimo da região, segundo se
+                       classifiquem nos graus máximo, médio e mínimo.
+
+
+Na maior parte dos casos, no entanto, cada ano em atividade insalubre representa um
+aumento de 40% na contagem do tempo para homens e 20% para as mulheres, o que
+proporciona aposentadorias aos 25 anos de atividades especiais.
+
+Para o Financiamento da Aposentadoria Especial, além das contribuições da empresa
+em 1%, 2% ou 3%, conforme o grau de risco da atividade, deve-se considerar as
+contribuições do segurado sujeito às seguintes condições especiais:
+
+   ▪ 6%, conforme atividade exercida pelo segurado, que permita a concessão de
+        aposentadoria especial após 25 anos de contribuição;
+   ▪ 9%, conforme atividade exercida pelo segurado, que permita a concessão de
+        aposentadoria especial após 20 anos de contribuição;
+   ▪ 12%, conforme atividade exercida pelo segurado, que permita a concessão de
+        aposentadoria especial após 15 anos de contribuição.
+
+3.2.2    Grupo B
+
+No Grupo B, os encargos trabalhistas são as obrigações incidentes sobre o período
+em que não ocorre a prestação direta de serviço, mas pelo qual o funcionário tem
+direito à remuneração, conforme legislação específica apresentada na Tabela 2.
+
+                         Tabela 2 - Encargos trabalhistas do Grupo B
+ Item        Parcela de contribuição                           Legislação aplicada
+        Repouso semanal remunerado        Art. 67 da CLT e Lei nº 605/1949 (§ 2º do art. 7º)
+  B1
+        (domingos)                        (Não se aplica para mensalistas)
+
+
+
+
+                                               30                                     DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                        Volume 02 - Mão de Obra
+
+
+                                           Tabela 2 (conclusão)
+Item          Parcela de contribuição                                Legislação aplicada
+                                                Art. 70 da CLT
+                                                Art. 1º da Lei nº 605/1949 e Decreto Lei nº 86/1966
+                                                Lei nº 9.093/1995
+B2     Feriados e dias santificados nacionais
+                                                Lei nº 9.335/1996
+                                                Lei nº 10.607/2002 (versão mais recente da lei)
+                                                (Não se aplica para mensalistas)
+B3     Férias gozadas (30 dias)                 Arts. 129, 130 e 142 da CLT
+       Auxílio-enfermidade (15 primeiros        Art. 131 da CLT e Decreto nº 3.048/1999
+B4
+       dias)                                    (Não se aplica para horas extras)
+       Auxílio-acidente de trabalho (15         Art. 131 da CLT e Lei nº 9.528/1997
+B5
+       primeiros dias)                          (Não se aplica a horas extras)
+                                                Art. 131 da CLT e art. 7º, inciso XIX, da Constituição
+       Licença-paternidade (5 dias
+B6                                              Federal/1988
+       consecutivos)
+                                                (Não se aplica a horas extras)
+B7     13º salário                              Lei nº 4.090/1962
+                                                Arts. 473 e 822 da CLT:
+                                                   ▪ 2 dias consecutivos em caso de falecimento do cônjuge,
+                                                     ascendente, descendente, irmão ou pessoa que,
+                                                     declarada em sua Carteira de Trabalho e Previdência
+                                                     Social, viva sob sua dependência econômica;
+                                                   ▪ 3 dias consecutivos em virtude de casamento;
+                                                   ▪ 5 dias consecutivos em caso de nascimento de filho, de
+                                                     adoção ou de guarda compartilhada;
+                                                   ▪ 1 dia a cada 12 meses de trabalho, em caso de doação
+                                                     voluntária de sangue devidamente comprovada;
+                                                   ▪ 2 dias consecutivos ou não, para fins de se alistar eleitor,
+                                                     nos termos da lei respectiva;
+                                                   ▪ no período em que tiver de cumprir as exigências do
+                                                     Serviço Militar referidas na letra “c” do art. 65 da Lei nº
+                                                     4.375/1964;
+                                                   ▪ nos dias em que estiver comprovadamente realizando
+                                                     provas de exame vestibular para ingresso em
+                                                     estabelecimento de ensino superior;
+                                                   ▪ pelo tempo que se fizer necessário, quando tiver que
+B8     Faltas justificadas                           comparecer a juízo;
+                                                   ▪ pelo tempo que se fizer necessário, quando, na
+                                                     qualidade de representante de entidade sindical, estiver
+                                                     participando de reunião oficial de organismo internacional
+                                                     do qual o Brasil seja membro;
+                                                   ▪ pelo tempo necessário para acompanhar sua esposa ou
+                                                     companheira em até 6 consultas médicas, ou em exames
+                                                     complementares, durante o período de gravidez;
+                                                   ▪ 1 dia por ano para acompanhar filho de até 6 anos em
+                                                     consulta médica;
+                                                   ▪ 3 dias a cada 12 meses de trabalho em caso de
+                                                     realização de exames preventivos de câncer
+                                                     devidamente comprovados.
+                                                (Não se aplica para horas extras)
+                                                Por determinação de lei específica:
+                                                  ▪ dias de greves devidamente reconhecidos por
+                                                    determinação judicial;
+                                                  ▪ dias reconhecidamente de calamidade pública.
+                                                (Não se aplica para horas extras)
+                                                Constituição Federal/1988: licença remunerada de 120 dias,
+B9     Férias sobre a licença-maternidade
+                                                conforme também estipulado na CLT em seu art. 392
+
+
+
+
+                                                     31                                      DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+Ao contrário dos encargos sociais do Grupo A, os do Grupo B podem ser calculados
+de forma específica para cada categoria profissional e UF do SICRO.
+
+A definição dos encargos trabalhistas desse grupo é obrigatoriamente precedida pelo
+cálculo dos seguintes parâmetros médios1:
+
+    ▪ dias no ano: considera ano bissexto a cada 4 anos, resultando em 365,25 dias;
+    ▪ domingos no ano: considera os 365,25 dias no ano, divididos por 7 dias da
+       semana, resultando em 52,18 dias;
+    ▪ número de feriados no ano sem ser domingo: valor calculado pela média de
+       feriados nacionais, estaduais e das capitais de todas as Unidades da
+       Federação, que não sejam domingo, resultando em 14,45 dias. A coleta dos
+       dados de feriados foi realizada em um período de 8 anos com a intenção de
+       assegurar que todos os dias da semana fossem contemplados pelas datas dos
+       feriados, sem que a média fosse afetada por um ano com muitos feriados no
+       domingo, ou com nenhum;
+    ▪ dias úteis no ano: considera os 365,25 dias no ano, subtraídos os domingos e
+       feriados, resultando em 298,62 dias;
+    ▪ dias úteis no mês: considera os 298,62 dias úteis no ano, divididos por 12
+       meses, resultando em 24,89 dias;
+    ▪ jornada diária de trabalho: considera as 44 horas de trabalho semanais,
+       divididas pelos 6 dias de trabalho, resultando em 7,333 horas por dia;
+    ▪ horas contábeis: considera as 7,333 horas por dia de trabalho, multiplicadas
+       por 30 dias, conforme o art. 64 do Decreto-Lei nº 5.452 (BRASIL, 1943),
+       resultando em 220 horas;
+    ▪ horas trabalháveis: considera os 24,89 dias úteis no mês, multiplicados pelas
+       7,333 horas da jornada diária de trabalho, resultando em 182,49 horas;
+    ▪ horas globais trabalháveis no ano: considera as 182,49 horas trabalháveis no
+       mês, multiplicadas por 12 meses, resultando em 2.189,88 horas.
+
+Ressalta-se que, com a publicação da Lei nº 13.467 (BRASIL, 2017), de 13 de julho
+de 2017, que trata da reforma trabalhista, o tempo despendido pelo empregado no
+
+
+
+
+1 Devido a arredondamentos, podem haver pequenas diferenças nos valores calculados.
+
+
+
+                                              32                               DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                        Volume 02 - Mão de Obra
+
+
+
+percurso casa-trabalho-casa não é computado na jornada de trabalho. Dessa forma,
+não é considerado nos cálculos de horas de trabalho.
+
+Na sequência, são apresentadas as instruções e formulações necessárias para
+calcular os encargos trabalhistas do Grupo B, conforme cada categoria profissional do
+SICRO e UF. As variáveis empregadas nas equações são listadas na Tabela 3, em
+conjunto de suas siglas, origens e eventuais observações, visando facilitar a
+compreensão do conteúdo elucidado. As informações da tabela também são válidas
+para os encargos dos demais grupos.
+
+                       Tabela 3 - Variáveis utilizadas no cálculo dos encargos
+ Sigla                            Variável                          Unidade      Origem       Observação
+         Parcela de encargos referente ao Fundo de Garantia por
+  A2                                                                   %            Lei           8%
+         Tempo de Serviço, no valor de 8%
+         Percentual de beneficiados com auxílio-acidente de                     Calculado -
+ BAA                                                                   %                       Por CNAE
+         trabalho                                                                 AEPS
+  CC     Custo da consulta de acordo com a AMB                       R$/un         AMB              -
+ CHO     Custo horário produtivo do veículo transportador            R$/h         SICRO             -
+ CON     Número de consultas                                           un        Calculado    Por categoria
+  DA     Dias no ano                                                dia/ano      Calculado    365,25 dias
+         Dias remunerados pelo empregador do auxílio-acidente de
+ DAA                                                                dia/ano         Lei         15 dias
+         trabalho
+ DAJ     Número de dias de ausência justificada                     dia/ano      Estimado      2 dias/ano
+ DAP     Número de dias de aviso-prévio                               dia           Lei         30 dias
+  DEP Multa rescisória de depósito do Fundo de Garantia por
+                                                                       %            Lei           40%
+ FGTS Tempo de Serviço, no valor de 40%
+  DF     Dias em férias no ano                                        dia           Lei         30 dias
+ DFF     Dias em férias exceto domingos e feriados                    dia       Pesquisado          -
+ DLM     Dias de licença-maternidade concedido                      dia/filho       Lei         120 dias
+ DLP     Número de dias de licença-paternidade                      dia/filho       Lei          5 dias
+                                                                                                  300
+ DMT     Distância média total de transporte                       km/viagem     Adotado
+                                                                                               km/viagem
+ DOM     Domingos no ano                                            dia/ano      Calculado     52,18 dias
+ DRS     Dias de repouso semanal remunerado                        dia/semana       Lei       1 dia/semana
+  DS     Dias da semana                                            dia/semana        -           7 dias
+ DSJ     Percentual de dispensados sem justa causa                     %         Adotado         100%
+ DUA     Dias úteis no ano                                          dia/ano      Calculado    298,62 dias
+ HAE     Horas em auxílio-enfermidade                                h/ano       Calculado          -
+  HF     Horas em férias exceto domingos e feriados                  h/ano       Calculado          -
+ HFA     Horas em faltas abonadas                                    h/ano       Calculado          -
+  HM     Horas em licença-maternidade                                h/ano       Calculado    Por categoria
+  HP     Horas em licença-paternidade                                h/ano       Calculado    Por categoria
+
+
+                                                      33                                  DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 02 - Mão de Obra
+
+
+                                              Tabela 3 (conclusão)
+ Sigla                           Variável                        Unidade       Origem        Observação
+ HT1      Horas trabalhadas no ano                                   h/ano     Calculado     Por categoria
+          Horas trabalhadas no ano sem considerar licença-
+ HT2                                                                 h/ano     Calculado     Por categoria
+          paternidade
+          Horas trabalhadas no ano sem considerar licença-
+ HT3                                                                 h/ano     Calculado     Por categoria
+          maternidade
+ HTA      Horas globais trabalháveis no ano                          h/ano     Calculado    2.189,88 h/ano
+ HTM      Horas globais trabalháveis no mês                          h/mês     Calculado     182,49 h/mês
+  IFP     Idade fértil                                          ano/pessoa     Adotado      34 anos/pessoa
+ JDT      Jornada diária de trabalho                                 h/dia     Calculado      7,333 h/dia
+  MA      Meses no ano                                           mês/ano       Calculado      12 mês/ano
+  MB      Mês anterior ao mês-base da correção salarial              mês          Lei           1 mês
+  MF      Meses de férias no ano                                 mês/ano          Lei         1 mês/ano
+ NAD      Número de auxílios-doença concedidos                        un        AEPS        Por localidade
+ NCE      Número de contribuintes empregados                          un        AEPS        Por localidade
+ NFA      Número de feriados no ano sem ser domingo               dia/ano      Calculado      14,45 dias
+  NP      Número de passageiros                                   pessoa       Adotado        46 pessoas
+ PNH      Percentual de homens na função                              %        CAGED         Por categoria
+ PNHF Proporção de homens na função em idade fértil                   %        CAGED         Por categoria
+ PNM      Percentual de mulheres na função                            %        CAGED         Por categoria
+PNMF Proporção de mulheres na função em idade fértil                  %        CAGED         Por categoria
+ PRE      Tempo de permanência da categoria profissional             mês         RAIS        Por categoria
+ QAT      Quantidade de acidentes de trabalho da CNAE                 un        AEPS          Por CNAE
+ QCE      Quantidade de contribuintes empregados da CNAE              un        AEPS          Por CNAE
+ RJT      Redução na jornada diária de trabalho                  h/dia/mês        Lei       2 horas/dia/mês
+ TFE      Taxa de fecundidade estadual                          filho/pessoa    Censo       Por localidade
+   V      Velocidade média de transporte                             km/h      Adotado         60 km/h
+  VA      Número de viagens por ano                             viagem/ano     Adotado     52,18 viagens/ano
+
+
+3.2.2.1        B1 - Repouso semanal remunerado
+
+O percentual referente ao repouso semanal remunerado é obtido por meio da
+Equação 1. A parcela B1 não se aplica a mensalistas.
+
+              PRE
+            (     × DA) - DF     MA
+              MA
+           [                 ] ×     × DRS × JDT
+                   DS            PRE
+B1 =                                                                  × 100                                  (1)
+                                       HT1
+
+
+         {                                                      }
+
+
+                                                      34                                   DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+onde:
+
+B1 é a parcela do encargo trabalhista referente ao repouso semanal remunerado (%);
+
+PRE é o tempo de permanência da categoria profissional (mês);
+
+MA são os meses no ano (mês/ano);
+
+DA são os dias no ano (dia/ano);
+
+DF são os dias em férias no ano (dia/ano);
+
+DS são os dias da semana (dia/semana);
+
+DRS são os dias de repouso semanal remunerado (dia/semana);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+3.2.2.2   B2 - Feriados e dias santificados nacionais
+
+A fim de se calcular o percentual referente aos feriados, desconsiderando a
+coincidência entre férias, deve-se utilizar a Equação 2. A parcela B2 não se aplica a
+mensalistas.
+
+       PRE            PRE - 1      MA
+      (    ) × NFA × (        ) ×(     ) × JDT
+        MA             PRE         PRE
+B2 = [                                        ] × 100                               (2)
+                       HT1
+
+
+onde:
+
+B2 é a parcela do encargo trabalhista referente aos feriados e dias santificados
+nacionais (%);
+
+PRE é o tempo de permanência da categoria profissional (mês);
+
+MA são os meses no ano (mês/ano);
+
+NFA é o número de feriados no ano sem ser domingo (dia/ano);
+
+
+
+                                            35                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+3.2.2.3   B3 - Férias gozadas
+
+O cálculo dos encargos trabalhistas referentes às férias gozadas é baseado na
+remuneração dos 30 dias de ausência somando ao terço constitucional, conforme a
+Equação 3:
+
+                                 PRE
+                                (    ) -1     HTA            1
+                                  MA                                                  (3)
+                         B3 = {[          ] ×     × MF × (1 + )} × 100
+Se PRE ≥ 12        →               PRE        HT1            3
+
+
+
+
+Se PRE< 12         →     B3 = 0
+
+onde:
+
+B3 é a parcela do encargo trabalhista referente às férias gozadas (%);
+
+PRE é o tempo de permanência da categoria profissional (mês);
+
+MA são os meses no ano (mês/ano);
+
+HTA são as horas globais trabalháveis no ano (h/ano);
+
+HT1 são as horas trabalhadas no ano (h/ano);
+
+MF são os meses de férias no ano (mês/ano).
+
+Para permanência igual ou superior a 12 meses, considera-se 1 período de férias
+gozadas por ano. Para permanência inferior a 12 meses, é considerado o valor igual
+a 0.
+
+O tempo de permanência é dividido por 12, referente aos meses do ano, e seu valor
+inteiro é considerado no cálculo das férias gozadas. A parcela atinente aos meses
+incompletos para o período de 1 ano é utilizada no cálculo das férias indenizadas.
+
+
+
+
+                                              36                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+3.2.2.4     B4 - Auxílio-enfermidade
+
+O auxílio-enfermidade é concedido pela Previdência Social ao trabalhador que precisa
+se afastar por um período superior a 15 dias consecutivos. Desse modo, os
+afastamentos de até 15 dias são arcados pelo próprio empregador.
+
+Como é comum a ausência no trabalho por períodos inferiores a 15 dias, tais
+afastamentos não são incluídos nas estatísticas da Previdência Social. De forma a
+considerar também essas ocorrências, são acrescentados 2 dias de ausência por
+motivo de doença ao ano.
+
+O cálculo do percentual de auxílio-enfermidade é obtido a partir dos dados originários
+do Anuário Estatístico da Previdência Social (AEPS) do Ministério da Previdência
+Social (MPS).
+
+A parcela B4 não se aplica a horas extras.
+
+1º Passo - Determinação do número de dias de auxílio-enfermidade por meio da
+Equação 4:
+
+           NAD
+DAE = (        ) × DAD                                                               (4)
+           NCE
+
+onde:
+
+DAE é o número de dias de auxílio-enfermidade (dia/ano);
+
+NAD é o número de auxílios-doença concedidos (un);
+
+NCE é o número de contribuintes empregados (un);
+
+DAD é o número de dias de auxílio-doença pagos pelo empregador (dia/ano).
+
+2º Passo - Determinação do auxílio-enfermidade por meio da Equação 5:
+
+         (DAE + 2) × JDT
+B4 = [                   ] × 100                                                     (5)
+              HT1
+
+onde:
+
+
+
+                                             37                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+B4 é a parcela do encargo trabalhista referente ao auxílio-enfermidade (%);
+
+DAE é o número de dias de auxílio-enfermidade (dia/ano);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+3.2.2.5     B5 - Auxílio-acidente de trabalho
+
+Em casos de acidentes de trabalho, o empregador arca com os custos dos primeiros
+15 dias de afastamento.
+
+O cálculo da porcentagem de beneficiados com o auxílio é realizado a partir de dados
+originários do AEPS do MPS, conforme o número de acidentes de trabalho e de
+contribuintes empregados.
+
+O encargo referente ao auxílio-acidente de trabalho é obtido por meio da Equação 6.
+A parcela B5 não se aplica a horas extras.
+
+         (BAA × DAA) × JDT
+B5 = [                    ] × 100                                                    (6)
+                HT1
+
+
+onde:
+
+B5 é a parcela do encargo trabalhista referente ao auxílio-acidente de trabalho (%);
+
+BAA é o percentual de beneficiados com o auxílio-acidente de trabalho (%);
+
+DAA são os dias do auxílio-acidente de trabalho remunerados pelo empregador
+(dias/ano);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+
+
+
+                                             38                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+3.2.2.6     B6 - Licença-paternidade
+
+A licença-paternidade equivale ao período de 5 dias de afastamento do homem após
+o nascimento do filho. A fim de se calcular esse encargo, considera-se a taxa de
+fecundidade de cada uma das UFs, conforme registrado no Censo do IBGE.
+
+Por meio do CAGED, também são levantados os percentuais referentes ao número
+de homens e mulheres na função e o número de homens e mulheres em idade fértil.
+A idade fértil considerada no âmbito do SICRO abrange o período de 15 a 49 anos,
+sendo igual a 34 anos por pessoa (49 - 15). Os dados abrangem as informações de
+cada categoria profissional e UF, conforme metodologia apresentada a seguir.
+
+A parcela B6 não se aplica a horas extras.
+
+1º Passo - Determinação do percentual da taxa de fecundidade na construção civil por
+meio da Equação 7:
+
+          TFE
+PTF =                                                                                (7)
+          IFP
+
+onde:
+
+PTF é a taxa de fecundidade na construção civil (filho/ano);
+
+TFE é a taxa de fecundidade de determinado estado (filho/pessoa);
+
+IFP é a idade fértil (ano/pessoa).
+
+2º Passo - Determinação do número de dias de licença-paternidade ao ano por meio
+da Equação 8:
+
+CLP = PTF × DLP                                                                      (8)
+
+onde:
+
+CLP é o número de dias de licença-paternidade ao ano (dia/ano);
+
+PTF é a taxa de fecundidade na construção civil (filho/ano);
+
+DLP é o número de dias de licença-paternidade concedidos por lei (dia/filho).
+
+
+                                             39                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+3º Passo - Determinação do número de dias de licença por meio da Equação 9:
+
+NDL = CLP × PNH × PNHF                                                                (9)
+
+onde:
+
+NDL é o número de dias de licença (dia/ano);
+
+CLP é o número de dias de licença-paternidade ao ano (dia/ano);
+
+PNH é o percentual de homens na função (%);
+
+PNHF é a proporção de homens na função em idade fértil (%).
+
+4º Passo - Determinação da licença-paternidade por meio da Equação 10:
+
+        NDL × JDT
+B6 =              × 100                                                              (10)
+          HT2
+
+onde:
+
+B6 é a parcela do encargo trabalhista referente à licença-paternidade (%);
+
+NDL é o número de dias de licença (dia/ano);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT2 são as horas trabalhadas no ano sem considerar licença-paternidade (h/ano).
+
+3.2.2.7     B7 - 13º salário
+
+O 13º salário corresponde ao pagamento de um mês adicional ao trabalhador para
+cada ano inteiro de trabalho efetivo. O percentual referente a essa parcela é obtido
+por meio da Equação 11:
+
+        1    HTA
+B7 =       ×     × 100                                                               (11)
+        12   HT1
+
+onde:
+
+B7 é a parcela do encargo trabalhista referente ao 13º salário (%);
+
+
+
+                                              40                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+HTA são as horas globais trabalháveis no ano (h/ano);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+3.2.2.8    B8 - Faltas justificadas
+
+De acordo com o art. 43 da CLT, o trabalhador pode se ausentar sem perder a
+remuneração nos casos de morte de cônjuge, casamento, doação de sangue, serviço
+militar e alistamento eleitoral, conforme apresentado na Tabela 2. Para fins de cálculo,
+essas ocorrências são estimadas em 2 dias por ano.
+
+O percentual referente às faltas justificadas é obtido por meio da Equação 12. A
+parcela B8 não se aplica a horas extras.
+
+        DAJ × JDT
+ B8 =             × 100                                                             (12)
+          HT1
+
+onde:
+
+B8 é a parcela do encargo trabalhista referente às faltas justificadas (%);
+
+DAJ é o número de dias de ausência justificada (dia/ano);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano).
+
+3.2.2.9    B9 - Férias sobre a licença-maternidade
+
+A licença maternidade equivalente ao período de 120 dias é assegurada por lei às
+trabalhadoras, e, durante o referido período, o salário é mantido sob responsabilidade
+da Previdência Social. Ao empregador, cabe arcar com os custos alusivos às férias e
+ao adicional de férias no período do afastamento.
+
+Os percentuais referentes ao número de homens e mulheres na função e o número
+de homens e mulheres em idade fértil são levantados analogamente ao efetuado para
+a licença-paternidade.
+
+
+
+
+                                             41                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+Para apurar o percentual referente à parcela de férias sobre a licença-maternidade,
+também é necessário calcular a taxa de fecundidade por meio de dados do IBGE,
+utilizando os valores de cada UF.
+
+O encargo relativo às férias sobre a licença-maternidade é obtido por meio da
+Equação 13:
+
+                                         1
+                           DLM DF × (1 + 3)
+B9 = [(PTF × PNM × PNMF) ×    ×             × JDT] × 100                           (13)
+                           DA      HT3
+
+
+onde:
+
+B9 é a parcela do encargo trabalhista referente às férias sobre a licença-maternidade
+(%);
+
+PTF é a taxa de fecundidade na construção civil (filho/ano);
+
+PNM é a fração de mulheres na função (%);
+
+PNMF é a proporção de mulheres em idade fértil (%);
+
+DLM são os dias de licença-maternidade concedido (dia/filho);
+
+DA são os dias no ano (dia/ano);
+
+DF são os dias em férias no ano (dia/ano);
+
+HT3 são as horas trabalhadas no ano sem considerar licença-maternidade (h/ano);
+
+JDT é a jornada diária de trabalho (h/dia).
+
+
+
+
+                                            42                           DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                        Volume 02 - Mão de Obra
+
+
+
+3.2.3     Grupo C
+
+O Grupo C aborda os encargos trabalhistas referentes ao desligamento profissional
+do funcionário, os quais se caracterizam por não sofrerem incidência dos encargos do
+Grupo A. Eles são definidos conforme a legislação apresentada na Tabela 4.
+
+                                Tabela 4 - Encargos trabalhistas do Grupo C
+Item           Parcela de contribuição                               Legislação aplicada
+ C1     Aviso-prévio indenizado                 § 1º do art. 487 da CLT
+                                                Art. 488 da CLT e art. 7º, inciso XXI, da Constituição
+ C2     Aviso-prévio trabalhado
+                                                Federal/1988
+ C3     Férias indenizadas                      Decreto-Lei nº 1.535/1977
+ C4     Depósito por rescisão sem justa causa   Art. 1º da Lei Complementar nº 110/2001
+ C5     Indenização adicional                   Art. 9º da Lei nº 7.238/1984
+
+
+De forma similar à metodologia adotada para o Grupo B, são apresentadas a seguir
+as instruções necessárias para calcular encargos trabalhistas do Grupo C, conforme
+cada categoria profissional e UF do SICRO. Cabe recapitular que as variáveis
+utilizadas nas equações se encontram na Tabela 3, em conjunto de suas siglas,
+origens e eventuais observações.
+
+3.2.3.1       C1 - Aviso-prévio indenizado
+
+Existem dois tipos de aviso-prévio: o indenizado e o trabalhado. O pagamento do
+aviso-prévio indenizado de 30 dias corresponde a 90% dos casos e apresenta-se
+como a situação mais comum, sendo um direito amparado constitucionalmente ao
+trabalhador e por disposições da CLT. A Lei nº 12.506 (BRASIL, 2011a), de 11 de
+outubro de 2011, prevê o acréscimo de 3 dias por ano de serviço prestado na mesma
+empresa até o máximo de 60 dias, totalizando até 90 dias.
+
+O percentual da remuneração referente ao aviso-prévio indenizado é calculado em
+função do período de permanência médio de cada categoria profissional, utilizando as
+Equações 14, 15, 16, 17 e 18:
+
+Se PRE ≤ 12 meses (aviso-prévio indenizado de 30 dias):
+
+         1
+C1 =        × DSJ × 0,9 × 100                                                                            (14)
+        PRE
+
+
+
+                                                     43                                     DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+Se 12 < PRE ≤ 24 (aviso-prévio indenizado de 33 dias):
+
+        1,1
+C1 =        × DSJ × 0,9 × 100                                                       (15)
+        PRE
+
+Se 24 < PRE ≤ 36 (aviso-prévio indenizado de 36 dias):
+
+        1,2
+C1 =        × DSJ × 0,9 × 100                                                       (16)
+        PRE
+
+Se 36 < PRE ≤ 48 (aviso-prévio indenizado de 39 dias):
+
+        1,3
+C1 =        × DSJ × 0,9 × 100                                                       (17)
+        PRE
+
+Se PRE > 48 (aviso-prévio indenizado de 42 dias):
+
+        1,4
+C1 =        × DSJ × 0,9 × 100                                                       (18)
+        PRE
+
+onde:
+
+C1 é a parcela de encargos referente ao aviso-prévio indenizado (%);
+
+PRE é o tempo de permanência da categoria profissional (mês);
+
+DSJ é o percentual de dispensados sem justa causa (%).
+
+3.2.3.2     C2 - Aviso-prévio trabalhado
+
+O aviso-prévio trabalhado representa a redução de 2 horas diárias na jornada de
+trabalho, sem prejuízo do salário, por 30 dias. Por ser a situação menos comum,
+assume-se que o aviso trabalhado corresponde a 10% dos casos.
+
+O percentual de encargo relacionado ao aviso-prévio trabalhado é apresentado por
+meio da Equação 19:
+
+        RJT DSJ
+ C2 =      ×    × 0,1 × 100                                                        (19)
+        JDT PRE
+
+onde:
+
+
+
+                                             44                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+C2 é a parcela de encargo referente ao aviso-prévio trabalhado (%);
+
+RJT é a redução na jornada diária de trabalho (h/dia/mês);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+DSJ é o percentual de dispensados sem justa causa (%);
+
+PRE é o tempo de permanência da categoria profissional (mês).
+
+3.2.3.3    C3 - Férias indenizadas
+
+As férias indenizadas correspondem ao número de meses incompletos às férias e às
+férias já adquiridas, porém não gozadas.
+
+O cálculo referente à parcela de remuneração de férias indenizadas é realizado por
+meio das Equações 20 e 21, em conformidade com as metodologias apresentadas a
+seguir.
+
+Se PRE > 12 meses:
+
+        MF        1    HTA
+C3 =        × (1 + ) ×     × DSJ × 100                                             (20)
+        PRE       3    HT1
+
+Se PRE ≤ 12 meses:
+
+        MF       1    HTA
+C3 =       × (1 + ) ×     × DSJ × 100                                              (21)
+        MA       3    HT1
+
+onde:
+
+C3 é a parcela de encargos referente a férias indenizadas (%);
+
+MF são os meses de férias no ano (mês/ano);
+
+PRE é o tempo de permanência da categoria profissional (mês);
+
+HTA são as horas globais trabalháveis no ano (h/ano);
+
+HT1 são as horas trabalhadas no ano (h/ano);
+
+DSJ é o percentual de dispensados sem justa causa (%);
+
+                                            45                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+MA são os meses no ano (mês/ano).
+
+3.2.3.4    C4 - Depósito por rescisão sem justa causa
+
+No SICRO, assume-se que 100% dos desligamentos ocorrem sem justa causa.
+Portanto, apenas os desligamentos sem justa causa são considerados no cálculo.
+
+O percentual referente à parcela de depósito por rescisão sem justa causa é obtido
+por meio da Equação 22:
+
+C4 = {DEPFGTS × [A2 + (A2 × EGB)] × DSJ} × 100                                      (22)
+
+onde:
+
+C4 é a parcela de encargos referente ao depósito por rescisão sem justa causa (%);
+
+DEPFGTS é a multa rescisória de depósito do Fundo de Garantia por Tempo de
+Serviço, no valor de 40% (%);
+
+A2 é a parcela de encargos referente ao Fundo de Garantia por Tempo de Serviço,
+no valor de 8% (%);
+
+EGB são os encargos trabalhistas do Grupo B (%);
+
+DSJ é o percentual de dispensados sem justa causa (%).
+
+3.2.3.5    C5 - Indenização adicional
+
+De acordo com a Lei nº 7.238 (BRASIL, 1984), está previsto um percentual de um
+doze avos (8,33%) para trabalhadores demitidos sem justa causa no período de 30
+dias anteriores ao mês-base da correção salarial. Esse acordo é firmado por meio de
+CCT.
+
+O percentual referente à parcela de indenização adicional é obtido por meio da
+Equação 23:
+
+        DAP × JDT MB
+C5 =             ×    × DSJ × 100                                                   (23)
+          HT1      MA
+
+onde:
+
+
+                                             46                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+C5 é a parcela de encargos referente à indenização adicional (%);
+
+DAP é o número de dias de aviso-prévio (dia);
+
+JDT é a jornada diária de trabalho (h/dia);
+
+HT1 são as horas trabalhadas no ano (h/ano);
+
+MB é o mês anterior ao mês-base da correção salarial, igual a 1 (mês);
+
+MA são os meses no ano (mês/ano);
+
+DSJ é o percentual de dispensados sem justa causa (%).
+
+3.2.4     Grupo D
+
+O Grupo D é formado pelas reincidências de um grupo de encargos sobre outro, sendo
+dado por duas parcelas.
+
+3.2.4.1     D1 - Reincidência do Grupo A sobre o Grupo B
+
+O percentual de reincidência do Grupo A sobre o Grupo B é obtido por meio da
+Equação 24:
+
+D1 = (EGA × EGB) × 100                                                              (24)
+
+onde:
+
+D1 é a parcela de encargos referente à reincidência do Grupo A sobre o Grupo B (%);
+
+EGA são os encargos sociais do Grupo A (%);
+
+EGB são os encargos trabalhistas do Grupo B (%).
+
+3.2.4.2     D2 - Reincidência do Grupo A sobre o aviso-prévio trabalhado e
+            reincidência do FGTS sobre o aviso-prévio indenizado
+
+O percentual de reincidência da parcela D2 é obtido por meio da Equação 25:
+
+
+
+
+                                             47                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+D2 = [(C1 × A2) + (C2 × EGA)] × 100                                                 (25)
+
+onde:
+
+D2 é a parcela de encargo referente à reincidência do Grupo A sobre aviso-prévio
+trabalhado + reincidência do FGTS sobre aviso-prévio indenizado (%);
+
+C1 é a parcela de encargos referente ao aviso-prévio indenizado (%);
+
+A2 é a parcela de encargos referente ao Fundo de Garantia por Tempo de Serviço,
+no valor de 8% (%);
+
+C2 é a parcela de encargo referente ao aviso-prévio trabalhado (%);
+
+EGA são os encargos sociais do Grupo A (%).
+
+3.2.5   Cálculo do percentual total de encargos sociais e trabalhistas
+
+O cálculo do percentual total dos encargos sociais e trabalhistas é efetuado por meio
+da soma das parcelas dos Grupos A, B, C e D, conforme a Equação 26.
+
+PST = PA + PB + PC + PD                                                             (26)
+
+onde:
+
+PST é o percentual total dos encargos sociais e trabalhistas (%);
+
+PA é a soma das parcelas A1, A2, A3, A4, A5, A6, A7, A8 e A9 (%);
+
+PB é a soma das parcelas B1, B2, B3, B4, B5, B6, B7, B8 e B9 (%);
+
+PC é a soma das parcelas C1, C2, C3, C4, C5 (%);
+
+PD é a soma das parcelas D1 e D2 (%).
+
+No intuito de estabilizar os dados, assim como os salários, a metodologia prevê a
+aplicação do abrandamento nos encargos sociais e trabalhistas por meio da utilização
+da média móvel aritmética (ou média móvel simples), com exceção dos encargos do
+Grupo A referentes às leis sociais. Assim, posteriormente à obtenção do somatório
+dos percentuais dos encargos dos grupos B, C e D, é aplicada a média móvel
+
+
+                                             48                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+aritmética dos três últimos resultados dos somatórios dos encargos dos mesmos
+grupos e adicionado o somatório do Grupo A da referência.
+
+3.2.6    Desoneração da mão de obra
+
+A desoneração da mão de obra no setor de infraestrutura foi instituída pelo inciso VII
+do art. 7º da Lei nº 12.546 (BRASIL, 2011b), de 14 de dezembro de 2011, e
+regulamentada pela Lei nº 12.844 (BRASIL, 2013), de 19 de julho de 2013,
+contemplando os seguintes grupos da CNAE 2.0:
+
+    ▪ Grupo 42.1 - Construção de Rodovias, Ferrovias, Obras Urbanas e Obras de
+        Arte Especiais;
+    ▪ Grupo 42.2 - Obras de Infraestrutura para Energia Elétrica, Telecomunicações,
+        Água, Esgoto e Transporte por Dutos;
+    ▪ Grupo 42.9 - Construção de Outras Obras de Infraestrutura;
+    ▪ Grupo 43.1 - Demolição e Preparação de Terreno.
+
+A desoneração consiste no recolhimento da contribuição patronal por parte das
+empresas. Tal percentual, que antes era de 20% sobre a folha de pagamento, passa
+a ser de 2% sobre a receita bruta da empresa.
+
+Por meio da Lei nº 13.161 (BRASIL, 2015), de 31 de agosto de 2015, a alíquota da
+Contribuição Previdenciária sobre a Renda Bruta (CPRB) foi alterada de 1% a 4,5%
+para fins de compensação. Além disso, a lei liberou às empresas a opção de adotar o
+recolhimento da contribuição previdência diretamente na folha de pagamento, como
+realizado anteriormente, ou por meio da nova alíquota da CPRB.
+
+Com relação ao Grupo A dos encargos sociais e trabalhistas, apenas a parcela A1,
+referente à Previdência Social, é desconsiderada na desoneração. As demais se
+mantêm inalteradas.
+
+Em 16 de setembro de 2024, foi publicada a Lei nº 14.973 (BRASIL, 2024), que
+mantém a desoneração da folha de pagamento até o final de 2024, retornando
+gradualmente a tributação no prazo de 3 anos, ou seja, a tributação em 2025 será 5%,
+em 2026 será de 10% e em 2027 será 15%, retornando assim ao patamar original de
+20% em 2028.
+
+
+                                             49                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+3.2.7     Incidência dos percentuais de insalubridade e periculosidade
+
+Os encargos sociais e trabalhistas para categorias com incidência de periculosidade
+são iguais aos das categorias em condições normais de trabalho. Já para categorias
+com incidência de insalubridade, eles são diferentes, pois há incidência da parcela A9
+- FAE no Grupo A.
+
+3.2.7.1     Não cumulatividade dos adicionais de insalubridade e periculosidade
+
+As atividades insalubres ou perigosas são abordadas no Capítulo V, da Seção XIII da
+CLT, sendo que o § 2º do art. 193 estabelece que “o empregado poderá optar pelo
+adicional de insalubridade que porventura lhe seja devido”.
+
+Essa condição é reforçada pelo art. 196 da CLT, que determina o seguinte:
+
+                       Os efeitos pecuniários decorrentes do trabalho em condições de
+                       insalubridade ou periculosidade serão devidos a contar da data da inclusão
+                       da respectiva atividade nos quadros aprovados pelo Ministro do Trabalho,
+                       respeitadas as normas do artigo 11.
+
+
+Segundo essa interpretação, caso se constate que a atividade exercida seja ao
+mesmo tempo insalubre e perigosa, o trabalhador poderá optar pelo adicional mais
+favorável, não cabendo o recebimento cumulativo de ambos.
+
+3.2.7.2     Categorias profissionais com adicionais de insalubridade e periculosidade
+
+Devido à natureza dos serviços tratados no SICRO, determinadas atividades
+demandam a aplicação de adicionais de insalubridade e periculosidade, em
+conformidade com as previsões das Normas Regulamentadoras do trabalho.
+
+No SICRO, o adicional de insalubridade, em conformidade com a NR-15 da Portaria
+MTE nº 3.214, de 8 de junho de 1978, alterada pela Portaria nº 426 de 7 de outubro
+de 2021, considera o acréscimo de 40%, grau máximo previsto, sobre o salário mínimo
+para as categorias com previsão de exposição a ambientes insalubres.
+
+No que se refere ao adicional de periculosidade, conforme a NR nº 16, de 8 de junho
+de 1978, alterada pela Portaria da Secretaria Especial de Previdência e Trabalho
+(SEPRT) nº 1.357, de 9 de dezembro de 2019, o acréscimo previsto considerado é de
+
+
+                                              50                               DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+30% sobre o salário referencial para os trabalhadores que atuam em áreas de
+manipulação regular de explosivos, em particular nos serviços de túneis, derrocagem
+(inclusive para os mergulhadores) e nas atividades de blaster.
+
+3.2.8   Cálculo dos encargos sociais e trabalhistas
+
+O cálculo do custo referencial dos encargos sociais e trabalhistas, com ou sem a
+incidência de insalubridade ou periculosidade, é efetuado por meio da Equação 27:
+
+EST = PST × (IP + SAL)                                                             (27)
+
+onde:
+
+EST é o custo referencial dos encargos sociais e trabalhistas (R$/un);
+
+PST é o percentual total dos encargos sociais e trabalhistas (%);
+
+IP é o valor da insalubridade ou periculosidade (R$/un);
+
+SAL é o valor do salário referencial (R$/un).
+
+Vale ressaltar que os adicionais de periculosidade ou insalubridade, quando
+existentes, incidem somente no valor em reais dos encargos sociais e trabalhistas.
+Portanto, os valores de insalubridade ou periculosidade não incidem nas demais
+parcelas de encargos complementares e de encargos adicionais.
+
+Além disso, é importante destacar que o percentual total dos encargos sociais e
+trabalhistas (PST) utilizado no cálculo supracitado, é obtido por meio da utilização da
+média móvel aritmética (ou média móvel simples) dos três últimos resultados dos
+somatórios dos encargos dos grupos B, C e D e adicionado o somatório do Grupo A
+da referência, conforme explicado na subseção 3.2.5.
+
+3.3     Encargos complementares
+
+Além dos encargos sociais e trabalhistas estabelecidos pela CLT e pela Constituição
+Federal de 1988, consideram-se ainda os encargos complementares. Eles são pagos
+
+
+
+
+                                            51                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+pelo empregador em função da natureza do trabalho e de Convenções Coletivas de
+Trabalho que regulamentam a atividade das categorias da construção civil e pesada.
+
+Os encargos considerados complementares são inerentes à execução dos trabalhos
+e, em alguns casos, visam resguardar a segurança do trabalhador e do empregador.
+Eles são divididos nas seguintes parcelas:
+
+    ▪ alimentação de pessoal;
+    ▪ transporte de pessoal;
+    ▪ ferramentas manuais;
+    ▪ equipamentos de proteção individual (EPIs);
+    ▪ consultas médicas ocupacionais.
+
+3.3.1   Alimentação de pessoal
+
+A alimentação de pessoal é obrigatória no levantamento de custos dos trabalhadores
+e apresenta relevância significativa devido ao impacto do fornecimento de alimentação
+para os trabalhadores alojados nas frentes de serviço de campo.
+
+Para as obras do Departamento Nacional de Infraestrutura de Transportes (DNIT),
+considera-se que as refeições serão preparadas em refeitório próprio no canteiro de
+obras, uma vez que essa é a situação mais comum. Prevê-se o fornecimento de cinco
+refeições diárias aos trabalhadores: café da manhã, almoço, lanche da tarde, jantar e
+ceia.
+
+De acordo com a Portaria MTE nº 193, de 5 de dezembro de 2006, os parâmetros
+nutricionais estabelecidos para a alimentação orientam que o almoço, o jantar e a ceia
+dos trabalhadores devem conter entre 30 e 40% do valor energético total diário (VET),
+correspondendo de 600 a 800 calorias, com a possibilidade de se acrescentarem 400
+calorias (20%) em relação ao VET de 2.000 calorias diárias.
+
+No caso do lanche e desjejum, deve-se oferecer refeições contendo de 300 a 400
+calorias, podendo-se acrescentar 400 calorias (20%) em relação ao VET diário de
+2.000 calorias. Essas refeições precisam corresponder de 15 a 20% do VET diário.
+
+
+
+
+                                            52                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+Ainda conforme a portaria, o percentual proteico-calórico das refeições deve
+permanecer entre 6 e 10%.
+
+No caso das obras do DNIT, devido ao tipo de atividade que os trabalhadores
+exercem, assume-se que o melhor valor para suprir as necessidades de VET diário
+consiste no seu limite máximo obrigatório, isto é, 3.200 calorias, segundo a
+distribuição por refeições apresentada na Tabela 5.
+
+                       Tabela 5 - Distribuição de calorias por refeição
+                 Refeição                                      Quantidade (kcal)
+Desjejum                                                             400
+Almoço                                                               800
+Lanche                                                               400
+Jantar                                                               800
+Ceia                                                                 800
+                    Total                                            3.200
+
+
+O custo da alimentação baseia-se em um cardápio elaborado por nutricionista para a
+região Sudeste, considerando um período de 15 dias. O cardápio está ajustado para
+VET diário de 3.200 calorias, seguindo as instruções do Programa de Alimentação do
+Trabalhador (PAT), bem como a distribuição da Tabela 5.
+
+A partir desse cardápio, definem-se os insumos utilizados para o preparo das
+refeições.
+
+Os preços desses insumos são pesquisados anualmente no estado do Rio de Janeiro.
+Entre os meses de pesquisa de campo, os valores são atualizados por meio de índice
+de reajustamento aderente aos insumos de alimentação.
+
+O custo de preparo, incluindo mão de obra, equipamentos de cozinha e manutenção
+do local, é estimado em 60% do valor dos alimentos. Tal estimativa baseia-se em
+estudos similares, em especial o documento denominado “Prestação de Serviços de
+Nutrição e Alimentação a Servidores e Empregados” dos Estudos Técnicos de
+Serviços Terceirizados (CADTERC) do estado de São Paulo.
+
+Portanto, o custo horário de alimentação é calculado em conformidade com os
+seguintes passos:
+
+
+
+                                             53                                DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+    ▪ divisão do custo total da lista de insumos alimentícios por 15, obtendo-se o
+        custo total diário dos alimentos;
+    ▪ multiplicação do custo total diário dos alimentos por 1,6, obtendo-se o custo
+        total diário da alimentação, incluindo alimentos e preparo;
+    ▪ divisão do custo total diário da alimentação por 7,333, obtendo-se o custo
+        horário da alimentação. Caso a mão de obra seja mensalista, esse valor deve
+        ser multiplicado por 182,49, obtendo-se o custo mensal de alimentação.
+
+Para estimar os custos de alimentação nas demais UFs, aplica-se sobre o valor de
+referência do Rio de Janeiro um fator de proporcionalidade obtido em função dos
+custos da cesta básica do Departamento Intersindical de Estatística e Estudos
+Socioeconômicos (DIEESE).
+
+3.3.2    Transporte de pessoal
+
+As obras do DNIT usualmente ocorrem fora dos grandes centros urbanos, logo, o
+cálculo dos custos relacionados ao transporte de pessoal considera que os
+trabalhadores passam a semana alojados no canteiro da obra, sem deslocamentos
+diários entre sua residência e o local do trabalho. Nos finais de semana, contudo,
+prevê-se o transporte para a cidade mais próxima para fins de arejamento, sem
+pernoite.
+
+O custo da parcela de transporte de pessoal é calculado a partir da Equação 28:
+
+        DMT               1   1
+CTP =       × CHO × VA ×    ×                                                        (28)
+         V               HTA NP
+
+onde:
+
+CTP é o custo de transporte de pessoal (R$/h);
+
+DMT é a distância média total de transporte (km/viagem);
+
+V é a velocidade média de transporte (km/h);
+
+CHO é o custo horário produtivo do veículo transportador (R$/h);
+
+VA é o número de viagens por ano (viagem/ano);
+
+
+                                              54                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+HTA são as horas globais trabalháveis no ano (h/ano);
+
+NP é número de passageiros (unidade).
+
+O veículo transportador adotado para o transporte é um ônibus com capacidade de
+46 passageiros. Seu custo horário produtivo é obtido em consonância com as
+premissas do Volume 01 do Manual de Custos de Infraestrutura de Transportes,
+sendo for formado pelos seguintes parâmetros:
+
+   ▪ custo de manutenção;
+   ▪ custo de depreciação;
+   ▪ custo de combustível;
+   ▪ custo da mão de obra de operação;
+   ▪ custo de seguros e impostos;
+   ▪ custo de oportunidade de capital.
+
+Além disso, assumem-se as seguintes premissas de cálculo:
+
+   ▪ distância média de 150 km do canteiro de obras até a cidade. Logo, a distância
+        média total de transporte é igual a 300 km;
+   ▪ velocidade média de transporte igual a 60 km/h, observando o padrão de
+        velocidade do SICRO para rodovias pavimentadas;
+   ▪ previsão de 52,18 viagens por ano, considerando 1 viagem semanal (ida e volta
+        no domingo), 365,25 dias por ano e 7 dias por semana;
+   ▪ número de passageiros por viagem igual a 46, considerando um ônibus com
+        capacidade de 46 passageiros.
+
+No caso de obras urbanas, nas quais não se mostre viável o alojamento direto dos
+funcionários no canteiro de obras, deve-se prever o custo do transporte de pessoal
+por meio do fornecimento de vale-transporte, a ser pesquisado no próprio local do
+empreendimento.
+
+3.3.3    Ferramentas manuais
+
+As ferramentas manuais são aquelas que exigem somente o esforço humano em seu
+uso, sendo diferenciadas em função da natureza dos serviços e das categorias
+profissionais que as utilizam. Desse modo, é definido um conjunto de ferramentas
+
+                                             55                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 02 - Mão de Obra
+
+
+
+manuais por cada categoria profissional. Para cada ferramenta, atribui-se uma
+frequência média de utilização, que varia segundo as atribuições da mão de obra,
+além de sua respectiva vida útil.
+
+Diante desses parâmetros, o cálculo do custo horário de ferramentas manuais é
+calculado de acordo com os passos adiante:
+
+    ▪ multiplicação do preço unitário de cada ferramenta por sua frequência média
+        de utilização;
+    ▪ divisão do valor calculado no passo anterior pela vida útil da ferramenta, em
+        horas, obtendo-se o custo horário da ferramenta;
+    ▪ soma dos custos horários das ferramentas que compõem o conjunto definido
+        para a categoria de mão obra, obtendo-se o custo horário total de ferramentas
+        manuais.
+
+Os preços unitários das ferramentas manuais são pesquisados anualmente no estado
+do Rio de Janeiro. Entre os meses de pesquisa de campo, os valores são atualizados
+por meio de índice de reajustamento aderente aos insumos.
+
+3.3.4    Equipamentos de proteção individual
+
+A NR-06 da Portaria MTE nº 3.214, de 8 de junho de 1978, alterada pela Portaria nº
+2.175, de 28 de julho de 2022, define equipamento de proteção individual como todo
+dispositivo ou produto de uso individual destinado ao trabalhador para proteção de
+riscos suscetíveis à sua segurança e saúde no trabalho.
+
+A empresa é obrigada a fornecer gratuitamente aos seus empregados os EPIs
+adequados ao risco das atividades desempenhadas, em perfeito estado de
+conservação e funcionamento, nas seguintes circunstâncias:
+
+    ▪ sempre que as medidas de ordem geral não ofereçam completa proteção
+        contra os riscos de acidentes ou de doenças profissionais e do trabalho;
+    ▪ enquanto as medidas de proteção coletiva estiverem sendo implantadas;
+    ▪ para atendimento de situações de emergência.
+
+
+
+
+                                                56                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+De forma similar à metodologia adotada para as ferramentas manuais, são definidos
+conjuntos de EPIs para cada categoria profissional, associando também as
+respectivas frequências médias de utilização vidas úteis de cada equipamento.
+
+O cálculo do custo horário de EPIs segue os mesmos passos delineados para as
+ferramentas manuais, quais sejam:
+
+   ▪ multiplicação do preço unitário de cada EPI por sua frequência média de
+        utilização;
+   ▪ divisão do valor calculado no passo anterior pela vida útil do EPI, em horas,
+        obtendo-se o custo horário do equipamento;
+   ▪ soma dos custos horários dos EPIs que compõem o conjunto definido para a
+        categoria de mão obra, obtendo-se o custo horário total de EPIs.
+
+Os preços unitários dos equipamentos de proteção individual são pesquisados
+anualmente no estado do Rio de Janeiro. Entre os meses de pesquisa de campo, os
+valores são atualizados por meio de índice de reajustamento aderente aos EPIs.
+
+3.3.5    Consultas médicas ocupacionais
+
+As consultas médicas ocupacionais são definidas na NR-07 da Portaria MTE nº 3.214,
+de 8 de junho de 1978, alterada pela Portaria SEPRT nº 6.734, de 9 de março de
+2021, que trata da obrigatoriedade de elaboração e implantação do Programa de
+Controle Médico de Saúde Ocupacional. A referida norma estabelece a necessidade
+de realização obrigatória de consultas em momentos específicos.
+
+As consultas médicas ocupacionais compreendem a avaliação clínica e a realização
+de exames complementares, de acordo com os termos específicos da NR-07,
+devendo ainda cumprir as diretrizes da NR-04 da Portaria MTE nº 3.214, de 8 de junho
+de 1978, alterada pela Portaria SEPRT nº 2.318, de 3 de agosto de 2022 , que trata
+de serviços especializados em engenharia de segurança e em medicina do trabalho,
+e da NR-15 da Portaria MTE nº 3.214, de 8 de junho de 1978, alterada pela Portaria
+nº 426 de 7 de outubro de 2021, que aborda as atividades e operações insalubres.
+
+
+
+
+                                             57                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+As consultas periódicas devem ocorrer a cada 2 anos para os trabalhadores entre 18
+anos e 45 anos de idade, e em menor período para os trabalhadores expostos a
+condições hiperbáricas, conforme estabelecido pela NR-15.
+
+No âmbito do SICRO, o número de consultas médicas necessárias para cada
+categoria profissional é definido:
+
+    ▪ 1 consulta na admissão;
+    ▪ 1 consulta na demissão;
+    ▪ 1 consulta periódica com frequência a depender da categoria profissional.
+
+Os encargos referentes às consultas médicas ocupacionais podem ser estimados por
+meio do levantamento dos custos de consultas na Associação Médica Brasileira
+(AMB/CBHPM). Os valores devem ser rateados de acordo com a quantidade e o
+tempo de permanência no emprego de cada categoria profissional, conforme
+metodologia apresentada a seguir:
+
+1º Passo - Definição do custo das consultas por meio da Equação 29:
+
+CCMO = CC × CON                                                                     (29)
+
+onde:
+
+CCMO é o custo das consultas médicas ocupacionais (R$);
+
+CC é o custo da consulta de acordo com a AMB (R$/un);
+
+CON é o número de consultas (un).
+
+2º Passo - Definição do custo mensal das consultas por meio da Equação 30:
+
+            CCMO
+CMCMO =                                                                             (30)
+             PRE
+
+onde:
+
+CMCMO é o custo mensal das consultas médicas ocupacionais (R$/mês);
+
+CCMO é o custo das consultas médicas ocupacionais (R$);
+
+
+
+                                             58                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+PRE é o tempo de permanência da categoria profissional (mês).
+
+3º Passo - Determinação do custo horário das consultas por meio da Equação 31:
+
+           CMCMO
+CHCMO =                                                                            (31)
+            HTM
+
+onde:
+
+CHCMO é o custo horário das consultas médicas ocupacionais (R$/h);
+
+CMCMO é o custo mensal das consultas médicas ocupacionais (R$/mês);
+
+HTM são as horas trabalháveis por mês (h/mês).
+
+3.3.6   Cálculo dos encargos complementares
+
+O cálculo dos encargos complementares é efetuado por meio da soma das parcelas
+de alimentação, transporte, ferramentas manuais, EPIs e consultas médicas
+ocupacionais, conforme a Equação 32:
+
+EC = A + T + F + E + CO                                                            (32)
+
+onde:
+
+EC é o custo referencial dos encargos complementares (R$/un);
+
+A é a parcela de alimentação de pessoal (R$/un);
+
+T é a parcela de transporte de pessoal (R$/un);
+
+F é a parcela de ferramentas manuais (R$/un);
+
+E é a parcela de EPIs (R$/un);
+
+CO é a parcela de consultas médicas ocupacionais (R$/un).
+
+3.4     Encargos adicionais
+
+Os encargos adicionais da mão de obra são os benefícios aos quais os trabalhadores
+têm direito, conforme determinações específicas de Convenções Coletivas de
+
+
+                                            59                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+Trabalho de diferentes regiões e entidades sindicais. Eles geram despesas a serem
+acrescentadas aos encargos sociais e trabalhistas e aos encargos complementares.
+
+A metodologia do SICRO estabelece os seguintes benefícios como encargos
+adicionais para composição do custo horário da mão de obra nas UFs cujas CCTs os
+obriguem:
+
+   ▪ cesta básica;
+   ▪ seguro de vida;
+   ▪ auxílio-funeral;
+   ▪ assistência médica e odontológica;
+   ▪ desgaste orgânico e adicional de confinamento.
+
+Cabe ressaltar que os encargos adicionais não se limitam aos adotados no SICRO
+como referência. Consequentemente, caso haja a necessidade de outros encargos
+adicionais de caráter obrigatório, eles devem ser incluídos no momento da
+orçamentação.
+
+3.4.1   Cesta básica
+
+A maioria das CCTs celebradas pelos sindicatos da construção pesada e/ou da
+construção civil estabelece a obrigatoriedade de fornecimento de cesta básica aos
+trabalhadores, a qual pode ser repassada em produtos, valor equivalente em vale ou
+tíquete-alimentação, independentemente do fornecimento da alimentação em serviço.
+
+Majoritariamente, as próprias convenções estipulam valores para o fornecimento da
+cesta básica, além dos percentuais para desconto em folha como contrapartida do
+trabalhador.
+
+O valor para o fornecimento da cesta básica é dividido pelas horas trabalháveis por
+mês, obtendo-se, assim, o custo horário de cesta básica.
+
+Nas UFs em que as CCTs não estabelecem essa obrigatoriedade, o custo de cesta
+básica não é considerado no cálculo dos encargos adicionais.
+
+
+
+
+                                              60                           DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 02 - Mão de Obra
+
+
+
+3.4.2      Seguro de vida e auxílio-funeral
+
+A maioria das convenções coletivas de trabalho prevê a concessão de benefícios de
+seguro de vida em grupo e de auxílio-funeral aos trabalhadores, com o
+estabelecimento de coberturas diferenciadas para morte, morte acidental, invalidez
+permanente total ou parcial por acidente, morte em casos de dependentes diretos e
+auxílio-funeral.
+
+No SICRO, adotam-se como referência para a pesquisa do seguro de vida e auxílio-
+funeral os parâmetros definidos pelo Sindicato da Construção Civil no Estado de São
+Paulo (SINDUSCON-SP), o qual apresenta coberturas específicas para morte ou
+invalidez permanente total/parcial, morte natural, morte de cônjuge e/ou filho(s) de até
+21 anos solteiro(s) e auxílio-funeral.
+
+Com base nos parâmetros estipulados pelo SINDUSCON-SP, o valor do seguro de
+vida mensal por indivíduo é pesquisado anualmente.
+
+Para as categorias horistas, o custo mensal de seguro de vida e auxílio-funeral é
+dividido pelas horas trabalháveis por mês, obtendo-se, então, o respectivo custo
+horário.
+
+Nas UFs em que as CCTs não estabelecem essa obrigatoriedade, o custo de seguro
+de vida e auxílio-funeral não é considerado no cálculo dos encargos adicionais.
+
+3.4.3      Assistência médica e odontológica
+
+O fornecimento de plano de assistência médica e odontológica aos trabalhadores é
+sugerido em diferentes Convenções Coletivas de Trabalho. Todavia, é necessário
+verificar em cada UF a sua obrigatoriedade, e não somente a recomendação de
+disponibilização.
+
+Nos casos em que o benefício for obrigatório, seu cálculo é realizado de modo
+semelhante ao descrito para o seguro de vida e auxílio-funeral. Isto é, realiza-se
+pesquisa de campo com periodicidade anual, considerando, no entanto, as
+particularidades de cobertura estipuladas na CCT de cada categoria.
+
+
+
+
+                                               61                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+3.4.4   Desgaste orgânico e adicional de confinamento
+
+Os encargos adicionais referentes a desgaste orgânico e adicional de confinamento
+são específicos das categorias de mergulhadores, em conformidade com sua
+respectiva CCT.
+
+No caso do desgaste orgânico, deve ser paga uma indenização às categorias de
+mergulhadores que, efetivamente, tenham se submetido a condições hiperbáricas. Já
+o adicional de confinamento incide sobre o salário mensal das categorias de
+mergulhadores, devendo ser somado à remuneração mensal, sem efeito cascata.
+
+Cabe ressaltar que se mantém a necessidade de aplicação dos adicionais de
+insalubridade e/ou periculosidade, quando da exposição dos mergulhadores em
+ambientes insalubres e/ou perigosos, em conjunto com os referidos adicionais.
+
+3.4.5   Cálculo dos encargos adicionais
+
+O cálculo dos encargos adicionais é efetuado por meio da soma das parcelas de cesta
+básica, seguro de vida e auxílio-funeral, assistência médica e odontológica, desgaste
+orgânico e adicional de confinamento, conforme a Equação 33:
+
+EA = CB + S + AM + DO + AC                                                         (33)
+
+onde:
+
+EA é o custo referencial dos encargos adicionais (R$/un);
+
+CB é a parcela de cesta básica (R$/un);
+
+S é a parcela de seguro de vida e auxílio-funeral (R$/un);
+
+AM é a parcela de assistência médica e odontológica (R$/un);
+
+DO é a parcela de desgaste orgânico (R$/un);
+
+AC é a parcela de adicional de confinamento (R$/un).
+
+
+
+
+                                            62                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+3.5     Cálculo dos encargos totais
+
+O cálculo dos encargos totais é efetuado por meio da soma das parcelas dos encargos
+sociais e trabalhistas, encargos complementares e encargos adicionais, conforme a
+Equação 34:
+
+ET = EST + EC+ EA                                                                  (34)
+
+onde:
+
+ET é o custo referencial dos encargos totais (R$/un);
+
+EST é o custo referencial dos encargos sociais e trabalhistas (R$/un);
+
+EC é o custo referencial dos encargos complementares (R$/un);
+
+EA é o custo referencial dos encargos adicionais (R$/un).
+
+Caso seja de interesse conhecer a representatividade dos encargos totais em relação
+ao salário referencial da categoria, basta utilizar a Equação 35:
+
+        ET
+PET =       × 100                                                                  (35)
+        SAL
+
+onde:
+
+PET é o percentual dos encargos totais em relação ao salário (%);
+
+ET é o custo referencial dos encargos totais (R$/un);
+
+SAL é o valor do salário referencial (R$/un).
+
+3.6     Cálculo do custo referencial de mão de obra
+
+O cálculo do custo referencial de mão de obra é realizado em função da soma do
+salário com os encargos totais e, quando aplicável, o valor da insalubridade ou
+periculosidade, segundo a Equação 36:
+
+CR = SAL + ET + IP                                                                 (36)
+
+onde:
+
+                                            63                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+CR é o custo referencial de mão de obra (R$/un);
+
+SAL é o valor do salário referencial (R$/un);
+
+ET é o custo referencial dos encargos totais (R$/un);
+
+IP é o valor da insalubridade ou periculosidade (R$/un).
+
+
+
+
+                                            64                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+             4         CONDIÇÕES ESPECIAIS DE TRABALHO
+
+
+
+
+                       65                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+4        CONDIÇÕES ESPECIAIS DE TRABALHO
+
+De modo geral, o SICRO considera condições normais de jornada de trabalho para o
+cálculo dos custos de referência de mão de obra.
+
+Todavia, além da jornada regular de trabalho, podem ocorrer condições específicas
+que resultem em custos adicionais. Esses custos devem ser considerados na
+elaboração do orçamento da obra, de acordo com as características locais dos
+serviços a serem executados, observando a aplicabilidade da legislação vigente e das
+determinações estabelecidas nas Convenções Coletivas de Trabalho.
+
+4.1      Condições especiais de trabalho estabelecidas pela CLT
+
+Esta seção aborda as condições especiais de trabalho relacionadas ao trabalho
+extraordinário, trabalho noturno e atividades insalubres ou perigosas. São
+apresentadas, ainda, as diretrizes para a aplicação dessas condições nos custos
+complementares de orçamentos elaborados com base no SICRO.
+
+4.1.1    Trabalho extraordinário e trabalho noturno
+
+A CLT, no art. 58, Seção II – da Jornada de Trabalho, estabelece que:
+
+                      A duração normal do trabalho, para os empregados em qualquer atividade
+                      privada, não excederá de 8 (oito) horas diárias, desde que não seja fixado
+                      expressamente outro limite.
+
+
+Para trabalhos que excedam esse limite, a CLT estabelece:
+
+      ▪ acréscimo de no máximo duas horas suplementares na duração normal do
+        trabalho;
+      ▪ valor da hora extra deve ser no mínimo 50% superior à hora normal;
+      ▪ caso seja determinado, por acordo ou CCT, que as horas extras de um dia
+        sejam compensadas pela diminuição em outro dia, sem exceder a soma das
+        jornadas semanais de trabalho previstas para um ano nem o limite máximo de
+        dez horas diárias, o adicional de hora extra poderá ser dispensado.
+
+Em casos de necessidade imperiosa, seja por motivo de força maior, seja para atender
+à realização ou à conclusão de serviços inadiáveis ou cuja inexecução possa acarretar
+
+
+                                             66                               DNIT/DPP/CGCIT
+                           Manual de Custos de Infraestrutura de Transportes
+                                      Volume 02 - Mão de Obra
+
+
+
+prejuízo, a duração do trabalho poderá exceder o limite legal ou estabelecido,
+independentemente da CCT ou acordo coletivo. Nesses casos, a remuneração da
+hora excedente deve ser pelo menos 25% superior à hora normal, e o trabalho não
+pode exceder 12 horas, desde que a lei não fixe expressamente outro limite (art. 61,
+§ 2º).
+
+Ressalta-se, ainda, que em atividades consideradas insalubres, as horas extras só
+poderão ser acordadas mediante licença prévia das autoridades competentes em
+matéria de higiene do trabalho.
+
+Com relação ao trabalho noturno, o art. 73 da CLT determina as seguintes condições:
+
+    ▪ deve ser realizado entre as 22 horas de um dia até as 5 horas do dia seguinte;
+    ▪ hora de trabalho noturno equivalente a 52 minutos e 30 segundos;
+    ▪ valor da hora noturna deve ser no mínimo 20% superior à hora diurna.
+
+Os valores aplicados por adicional são apresentados na Tabela 6.
+
+                  Tabela 6 - Valores aplicados por adicional de hora extra e noturna
+
+                                                               Valor da hora extra em
+  Horas normais        Horas extras     Valor da hora extra                               Valor da hora
+                                                               necessidade imperiosa
+ diárias (máximo)    diárias (máximo)        (mínimo)                                   noturna (mínimo)
+                                                                      (mínimo)
+                                        50% do valor da hora    25% do valor da hora    20% do valor da
+        8 horas           2 horas
+                                              normal                  normal              hora diurna
+
+
+Cabe destacar que entre 2 jornadas de trabalho deve haver um período mínimo de 11
+horas consecutivas para descanso. Além disso, é assegurado um descanso semanal
+de 24 horas consecutivas, que deve coincidir com o domingo (em todo ou em parte).
+
+O trabalho aos domingos, feriados nacionais e religiosos depende de permissão
+prévia da autoridade competente em matéria de trabalho.
+
+4.1.2      Insalubridade e periculosidade
+
+A CLT considera atividades ou operações insalubres aquelas que:
+
+                           (...) por sua natureza, condições ou métodos de trabalho, exponham os
+                           empregados a agentes nocivos à saúde, acima dos limites de tolerância
+                           fixados em razão da natureza e da intensidade do agente e do tempo de
+                           exposição aos seus efeitos.
+
+
+
+                                                   67                                   DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 02 - Mão de Obra
+
+
+
+O exercício de atividades em condições insalubres, quando ultrapassados os limites
+de tolerância fixados pelo Ministério do Trabalho, garante ao empregado o direito ao
+recebimento de adicional de insalubridade. Esse adicional corresponde a 40%, 20%
+ou 10% do salário mínimo da região, conforme a classificação das atividades nos
+graus máximo, médio ou mínimo, respectivamente, nos termos do art. 192 da CLT.
+
+Já as atividades ou operações perigosas são aquelas que, dada sua natureza ou
+processos de trabalho, acarretam risco considerável devido à exposição constante do
+trabalhador a inflamáveis, explosivos, energia elétrica, roubos ou outras espécies de
+violência física nas atividades profissionais de segurança pessoal ou patrimonial, ou
+no caso das atividades de trabalhador em motocicleta. Nesses casos, assegura-se ao
+empregado um adicional de 30% sobre o salário-base, sem os acréscimos resultantes
+de gratificações, prêmios ou participações nos lucros da empresa.
+
+Para as atividades que sejam concomitantemente insalubres e perigosas, o
+empregado deve optar por um dos adicionais, conforme disposto no art. 193 da CLT,
+não cabendo o recebimento cumulativo.
+
+Caso o risco à saúde ou à integridade física do empregado seja eliminado dentro dos
+termos previstos na Seção XIII da CLT, o trabalhador perde o direito ao recebimento
+dos adicionais de insalubridade ou periculosidade.
+
+Os valores a serem pagos pelos adicionais de insalubridade e periculosidade são
+apresentados na Tabela 7.
+
+      Tabela 7 - Valores a serem pagos por adicional de insalubridade e periculosidade
+                              Insalubridade
+                                                                                Periculosidade
+     Grau máximo               Grau médio              Grau mínimo
+40% do salário mínimo do 20% do salário mínimo do 10% do salário mínimo do   30% do salário-base da
+         local                    local                    local                   categoria
+
+
+As condições de insalubridade são definidas pela NR-15, que estabelece as atividades
+consideradas insalubres, bem como define os limites de tolerância para agentes
+físicos, químicos e biológicos. As condições de insalubridade tratadas em cada um
+dos anexos da NR-15 são apresentadas na Tabela 8.
+
+
+
+
+                                                 68                                DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 02 - Mão de Obra
+
+
+               Tabela 8 - Condições de insalubridade tratadas nos anexos da NR-15
+  Anexo da
+                                                           Condições
+   NR-15
+       1       Limites de tolerância para ruído contínuo ou intermitente
+       2       Limites de tolerância para ruídos de impacto
+       3       Limites de tolerância para exposição ao calor
+       4       Revogado
+       5       Radiações ionizantes
+       6       Trabalho sob condições hiperbáricas
+       7       Radiações não-ionizantes
+       8       Vibração
+       9       Frio
+      10       Umidade
+               Agentes químicos cuja insalubridade é caracterizada por limite de tolerância e inspeção no local
+      11
+               de trabalho
+      12       Limites de tolerância para poeiras minerais
+      13       Agentes químicos
+      13A      Benzeno
+      14       Agentes biológicos
+
+
+
+4.2         Condições especiais de trabalho estabelecidas pelas CCTs
+
+As CCTs da construção pesada costumam estabelecer percentuais diferenciados para
+pagamento de horas extraordinárias trabalhadas em dias normais das horas
+prestadas em sábados, dias de descanso ou feriados. Em geral, os valores partem do
+mínimo de 50% previsto na legislação, podendo alcançar percentuais superiores.
+
+Em relação ao adicional noturno, a maioria das CCTs trata apenas dos turnos de
+trabalho, adotando, quando estipulam valores, um aumento de 20% da hora normal
+no período compreendido entre as 22 horas de um dia até às 5 horas do dia seguinte,
+em consonância com a CLT. No entanto, em alguns casos podem ser previstos
+percentuais superiores.
+
+Quanto ao adicional de insalubridade, algumas CCTs podem definir percentuais
+distintos daqueles estabelecidos pela CLT, seja alterando os valores mínimos, médios
+e máximos, seja modificando a base de cálculo que, a depender do caso, deixa de ser
+o salário mínimo e passa a ser o salário-base do trabalhador.
+
+
+
+
+                                                      69                                    DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 02 - Mão de Obra
+
+
+
+4.3      Parametrização dos valores de adicionais passíveis de alteração
+
+Os adicionais de insalubridade ou periculosidade são inerentes à atividade e, portanto,
+independem do horário em que o trabalho é realizado. Dessa forma, esses
+acréscimos, quando previstos, afetarão as horas normais, extraordinárias ou noturnas.
+
+Por essa razão, o cálculo dos adicionais de periculosidade e insalubridade deve ser
+realizado previamente, de modo a permitir sua utilização nos cálculos das demais
+condições especiais.
+
+A Tabela 9 apresenta as parcelas que compõem cada uma das condições de trabalho
+abordadas neste manual.
+
+                           Tabela 9 - Parcelas das condições de trabalho
+
+                                                                          Adicional       Adicional
+         Condição de trabalho              Periculosidade Insalubridade
+                                                                           noturno      de hora extra
+Hora normal
+Hora noturna                                                                  ✓
+Hora normal com adicional de hora extra                                                      ✓
+Hora noturna com adicional de hora extra                                      ✓              ✓
+Hora normal com periculosidade                   ✓
+Hora normal com insalubridade                                  ✓
+Hora noturna com periculosidade                  ✓                            ✓
+Hora noturna com insalubridade                                 ✓              ✓
+Hora normal com adicional de hora extra
+                                                 ✓                                           ✓
+e periculosidade
+Hora normal com adicional de hora extra
+                                                               ✓                             ✓
+e insalubridade
+Hora noturna com adicional de hora extra
+                                                 ✓                            ✓              ✓
+e periculosidade
+Hora noturna com adicional de hora extra
+                                                               ✓              ✓              ✓
+e insalubridade
+
+
+4.3.1    Insalubridade
+
+Conforme as CCTs vigentes em cada Unidade da Federação, ou considerando
+possíveis alterações no enquadramento de atividades insalubres, o adicional de
+insalubridade pode ser adicionado, removido ou ter seu grau redefinido no cálculo da
+mão de obra, desde que fixado por autoridade regional competente em matéria de
+
+
+
+
+                                                     70                               DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+segurança e saúde do trabalhador, mediante comprovação por laudo técnico de
+engenheiro de segurança do trabalho ou médico do trabalho devidamente habilitados.
+
+Para tanto, é importante que o orçamentista conheça o grau de insalubridade −
+mínimo, médio ou máximo − e o percentual correspondente, sempre respeitando os
+limites legais de 10%, 20% ou 40%, respectivamente. Normalmente, o cálculo do
+adicional de insalubridade é realizado sobre o valor do salário mínimo, porém algumas
+CCTs estabelecem a aplicação sobre o salário-base da categoria, o que deve ser
+verificado caso a caso.
+
+O cálculo do valor horário do adicional de insalubridade é realizado em duas etapas.
+Primeiramente, determina-se o valor horário do salário a partir do valor mensal,
+conforme demostrado na Equação 37:
+
+          SM
+VHSM =                                                                              (37)
+          220
+
+onde:
+
+VHSM é o valor horário do salário mínimo vigente (ou salário-base da categoria, caso
+a CCT defina) (R$/h);
+
+SM é o valor do salário mínimo vigente (ou salário-base da categoria, caso a CCT
+defina) (R$/mês).
+
+Em seguida, a partir do valor horário do salário mínimo vigente (ou salário-base da
+categoria, caso a CCT defina), calcula-se o valor horário do adicional de insalubridade,
+aplicando-se o percentual de insalubridade definido para a categoria, conforme
+Equação 38:
+
+VHI = VHSM × AI                                                                     (38)
+
+onde:
+
+VHI é o valor horário do adicional de insalubridade (R$/h);
+
+VHSM é o valor horário do salário mínimo vigente (ou salário-base da categoria, caso
+a CCT defina) (R$/h);
+
+
+                                             71                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 02 - Mão de Obra
+
+
+
+AI é o percentual do adicional de insalubridade aplicado para a categoria (%).
+
+Como exemplo, para uma determinada categoria que faça jus ao grau máximo de
+insalubridade (40%), o valor horário do adicional de insalubridade (VHI) é obtido
+multiplicando o valor horário do salário (VHSM) por 0,4.
+
+4.3.2   Periculosidade
+
+Caso uma determinada categoria faça jus ao adicional de periculosidade e de
+insalubridade, é facultado ao trabalhador optar por um e somente um deles, conforme
+mencionado na subseção 3.2.7.1.
+
+Ao optar pelo adicional de periculosidade, deve-se acrescer 30% ao valor da hora
+normal de trabalho. Para obter o valor horário desse adicional, a partir do valor da hora
+de trabalho normal, utiliza-se Equação 39:
+
+VHP = VHN × 0,3                                                                      (39)
+
+onde:
+
+VHP é o valor horário do adicional de periculosidade (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h).
+
+4.3.3   Definição de condições de insalubridade e periculosidade
+
+A maioria das CCTs atribui às empresas a responsabilidade pelo enquadramento das
+atividades quanto ao grau de insalubridade e/ou periculosidade. Dessa forma, cabe
+ao orçamentista verificar os critérios vigentes em cada localidade para aplicação dos
+adicionais, obedecendo sempre às condições estabelecidas na legislação, nas NRs e
+nas CCTs aplicáveis.
+
+4.3.4   Hora noturna
+
+O orçamentista deve prever o trabalho em horário noturno para as categorias de mão
+de obra, que abrange o período das 22 horas de um dia até às 5 horas do dia seguinte.
+Para compensar o desgaste adicional decorrente do trabalho noturno, a legislação
+estabelece duas particularidades: redução da hora noturna, em que cada hora de
+
+
+                                              72                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+trabalho corresponde a 52 minutos e 30 segundos, e o pagamento de adicional
+noturno, geralmente de 20%, podendo variar conforme a CCT aplicável.
+
+O acréscimo salarial pela hora reduzida é calculado a partir da proporção entre a hora
+normal de 60 minutos e a hora reduzida de 52 minutos e 30 segundos, somado ao
+percentual do adicional noturno estabelecido.
+
+O valor do adicional de hora noturna é obtido a partir da Equação 40 a seguir:
+
+
+                          60
+VHNT = (VHN + VHIP) × {[(     ) × (1 + AN)] - 1}                                   (40)
+                         52,5
+
+
+onde:
+
+VHNT é o valor do adicional da hora de trabalho noturno (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h);
+
+VHIP é o valor horário do adicional de insalubridade (VHI) ou periculosidade (VHP),
+caso aplicável (R$/h);
+
+AN é o percentual do adicional noturno (%).
+
+Por exemplo, para uma categoria com adicional noturno de 20% sobre o valor da hora
+normal, o valor de AN é de 0,2.
+
+4.3.5   Hora extra
+
+O orçamentista pode prever situações excepcionais em que sejam necessárias a
+realização de horas extras. Para o cálculo, deve-se considerar o percentual médio das
+horas extras previstas, já que as CCTs de cada localidade estabelecem valores
+diferenciados para o trabalho em dias úteis, sábados, domingos ou feriados, com
+taxas que variam de 50% até 120% do valor da hora normal. A quantidade de horas
+extras deve ser indicada, observando-se o limite de duas horas diárias, salvo em
+casos que a CCT permita a realização de até quatro horas diárias.
+
+Para obter o percentual médio de hora extra, o orçamentista deve inicialmente calcular
+o fator aplicado para as horas extras, conforme a Equação 41, a seguir. A depender
+
+                                            73                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 02 - Mão de Obra
+
+
+
+da situação, o orçamentista pode trabalhar com até três fatores diferentes para uma
+mesma categoria, já que algumas CCTs determinam porcentagens para hora extra
+diferentes para trabalho em dias de semana, sábados, domingos ou feriados.41
+
+FHE = PHE                                                                           (41)
+
+onde:
+
+FHE é o fator aplicado para as horas extras (%);
+
+PHE é a porcentagem determinada para a hora extra (%).
+
+Por exemplo, se para horas extras realizadas em dias úteis o acréscimo for de 50%
+e, para sábados, de 75%, devem ser considerados dois fatores, FHE1 e FHE2, com
+valores de 0,5 e 0,75, respectivamente.
+
+Em seguida, calcula-se o percentual médio de horas extras, conforme a Equação 42,
+a seguir. A quantidade de horas extras deve ser diferenciada para os respectivos
+fatores, caso aplicável.
+
+        (HE1 × FHE1 ) +…+ (HEn × FHEn )
+PMHE = [                                ]                                           (42)
+                 HE1 +…+ HEn
+
+onde:
+
+PMHE é o percentual médio de horas extras (%);
+
+HE é a quantidade de horas extras realizadas no mês (h);
+
+FHE é o fator aplicado para as horas extras (%).
+
+Ainda no exemplo anterior, se em determinado mês são realizadas 20 horas durante
+os dias de semana normal e 6 horas aos sábados, os valores aplicados para HE1 e
+FHE1 são iguais a 20 e 0,5, enquanto para HE2 e FHE2 são iguais a 6 e 0,75,
+respectivamente.
+
+Com o valor do PMHE, o orçamentista pode estimar de forma mais precisa o custo da
+hora extra para determinada categoria. O valor em reais da hora extra é obtido a partir
+da soma dos valores da hora de trabalho normal, do adicional de insalubridade ou
+
+
+                                             74                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+periculosidade, quando aplicável, e do adicional noturno, caso a hora extra seja
+realizada nesse período, e multiplicar a soma pelo percentual médio de horas extras,
+conforme Equação 43:
+
+VAHE = (VHN + VHIP + VHNT) × PMHE                                                            (43)
+
+onde:
+
+VAHE é o valor do adicional de hora extra (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h);
+
+VHIP é o valor horário do adicional de insalubridade (VHI) ou periculosidade (VHP),
+caso aplicável (R$/h);
+
+VHNT é o valor do adicional da hora de trabalho noturno, caso aplicável (R$/h);
+
+PMHE é o percentual médio de horas extras (%).
+
+4.4     Encargos sociais e trabalhistas
+
+Das condições especiais de trabalho apresentadas no presente manual, apenas a
+insalubridade e o trabalho extraordinário influenciam a obtenção dos encargos sociais
+e trabalhistas. Os itens 4.4.2 e 4.4.3 detalham o modo que esses adicionais afetam os
+encargos, indicando as parcelas impactadas e os procedimentos de cálculo adotados
+em cada situação.
+
+4.4.1   Adicional de insalubridade
+
+Para as categorias de mão de obra que fazem jus ao adicional de insalubridade, deve
+ser calculado o Financiamento de Aposentadoria Especial (FAE).
+
+A Lei nº 8.213 (BRASIL, 1991b), em seu art. 57, dispõe que:
+
+                     A aposentadoria especial será devida, uma vez cumprida a carência exigida
+                     nesta lei, ao segurado que tiver trabalhado sujeito a condições especiais que
+                     prejudiquem a saúde ou a integridade física, durante 15 (quinze), 20 (vinte)
+                     ou 25 (vinte e cinco) anos, conforme dispuser a lei.
+
+
+
+
+                                             75                                 DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 02 - Mão de Obra
+
+
+
+As taxas percentuais do FAE variam de acordo com o grau de insalubridade da
+atividade. Diante disso, ao determinar o grau aplicável para uma determinada
+categoria, o fator correspondente deve ser inserido na parcela A9 dos cálculos de
+encargos sociais e trabalhistas, apresentado na Tabela 1. As taxas aplicadas por grau
+de insalubridade são apresentadas na Tabela 10
+
+                          Tabela 10 - Valores do FAE por grau de insalubridade
+
+     Grau mínimo de insalubridade      Grau médio de insalubridade    Grau máximo de insalubridade
+              6% de FAE                        9% de FAE                        12% de FAE
+
+
+
+O adicional de insalubridade impacta o valor total do Grupo A devido à parcela A9.
+Essa alteração, por sua vez, também afeta o cálculo das parcelas D1 e D2, que tratam,
+respectivamente, da reincidência das parcelas do Grupo A sobre as parcelas do Grupo
+B e do Grupo A sobre aviso-prévio trabalhado.
+
+Portanto, caso a categoria faça jus ao adicional de insalubridade, é necessário
+recalcular as parcelas envolvidas, bem como o percentual total dos encargos sociais
+e trabalhistas.
+
+Os graus de insalubridade são definidos pela NR-15, pelas CCTs e por laudos periciais
+realizados pelas empresas, conforme indicado nos itens 4.1.2, 4.2, 4.3.1 e na Tabela
+7.
+
+4.4.2      Adicional de hora extra
+
+Para as horas extras, não são aplicadas as parcelas do Grupo B referentes ao auxílio-
+enfermidade, auxílio-acidente de trabalho, licença-paternidade e faltas justificadas
+(parcelas B4, B5, B6 e B8, respectivamente), em conformidade com a
+Portaria nº 33/2012 da Secretaria Geral de Controle Externo (SEGECEX) do Tribunal
+de Contas da União (TCU), afetando diretamente o valor total do Grupo B.
+
+Como os valores das parcelas C4 e D1 utilizam o valor total do Grupo B em seus
+cálculos, torna-se necessário recalculá-las, assim como o valor total dos grupos
+impactados, a fim de se obter o percentual total dos encargos sociais e trabalhistas.
+
+
+
+
+                                                   76                               DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 02 - Mão de Obra
+
+
+
+Caso a categoria de mão de obra também faça jus ao recebimento do adicional de
+insalubridade, as parcelas afetadas por ambos os adicionais devem ser recalculadas
+para obter o percentual total de encargos sociais e trabalhistas.
+
+Em ambos os casos, o percentual calculado é aplicado apenas sobre os valores de
+hora extra.
+
+4.4.3    Impacto dos adicionais de insalubridade e hora extra
+
+A título de ilustração do impacto dos adicionais de insalubridade e hora extra no
+cálculo dos encargos sociais e trabalhistas, exemplifica-se o cenário da categoria de
+mão de obra relacionada ao servente.
+
+A Tabela 11 apresenta os efeitos nos itens do Grupo A, aplicados de forma separada
+ou concomitante.
+
+Tabela 11 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos encargos do
+                                         Grupo A
+                                                                   Hora normal com   Hora extra com
+ Item     Parcela de contribuição      Hora normal    Hora extra
+                                                                    insalubridade     insalubridade
+ A1[1]   Previdência Social              20,00%           20,00%       20,00%           20,00%
+  A2     FGTS                            8,00%            8,00%            8,00%         8,00%
+  A3     Salário-educação                2,50%            2,50%            2,50%         2,50%
+  A4     SESI                            1,50%            1,50%            1,50%         1,50%
+  A5     SENAI/SEBRAE                    1,60%            1,60%            1,60%         1,60%
+  A6     INCRA                           0,20%            0,20%            0,20%         0,20%
+  A7     SAT                             3,00%            3,00%            3,00%         3,00%
+ A8[2]   SECONCI                         1,00%            1,00%            1,00%         1,00%
+  A9     FAE                                -               -               6%            6%
+                               Total     37,80%           37,80%       43,80%           43,80%
+Nota 1: não se aplica em opção de desoneração da folha.
+Nota 2: o valor do SECONCI pode variar dependendo da UF ou da categoria.
+
+
+Percebe-se que apenas a insalubridade afeta o valor total dos encargos do Grupo A,
+por incidir na parcela A9 (FAE). O adicional de hora extra não exerce nenhum impacto
+nos itens desse grupo.
+
+Na Tabela 12, apresentam-se os impactos dos adicionais de insalubridade e hora
+extra nos itens do Grupo B, aplicados de forma separada ou concomitante.
+
+
+
+                                                     77                              DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                        Volume 02 - Mão de Obra
+
+
+Tabela 12 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos encargos do
+                                         Grupo B
+                                                  Hora      Hora     Hora normal com Hora extra com
+Item         Parcela de contribuição
+                                                 normal     extra     insalubridade   insalubridade
+ B1    Repouso semanal remunerado                18,86%    18,86%         18,86%           18,86%
+ B2    Feriados e dias santificados nacionais    5,22%      5,22%          5,22%           5,22%
+ B3    Férias gozadas                            8,00%      8,00%          8,00%           8,00%
+ B4    Auxílio-enfermidade                       0,90%        -            0,90%              -
+ B5    Auxílio-acidente de trabalho              0,31%        -            0,31%              -
+ B6    Licença-paternidade                       0,08%        -            0,08%              -
+ B7    13º salário                               9,26%      9,26%          9,26%           9,26%
+ B8    Faltas justificadas                       0,74%        -            0,74%              -
+ B9    Férias em licença-maternidade             0,00%      0,00%          0,00%           0,00%
+                                        Total    43,37%    41,34%         43,37%           41,34%
+
+
+Nesse caso, apenas o adicional de hora extra afeta o valor total dos encargos do
+Grupo B, uma vez que não se aplica às parcelas B4, B5, B6 e B8. O adicional de
+insalubridade não exerce impacto neste grupo.
+
+Na Tabela 13, são apresentados os impactos dos adicionais de hora extra e
+insalubridade nos itens do Grupo C, aplicados de forma separada ou concomitante.
+
+Tabela 13 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos encargos do
+                                         Grupo C
+                                                  Hora     Hora     Hora normal com    Hora extra com
+Item          Parcela de contribuição
+                                                 normal    extra     insalubridade      insalubridade
+ C1    Aviso-prévio indenizado                    3,17%    3,17%         3,17%             3,17%
+ C2    Aviso-prévio trabalhado                    0,08%    0,08%         0,08%             0,08%
+ C3    Férias indenizadas                         4,35%    4,35%         4,35%             4,35%
+ C4    Depósito por rescisão sem justa causa      4,59%    4,52%         4,59%             4,52%
+ C5    Indenização adicional                      0,93%    0,93%         0,93%             0,93%
+                                         Total   13,12%   13,05%         13,12%           13,05%
+
+
+Verifica-se que apenas o percentual do item C4 sofre alteração, uma vez que seu
+cálculo depende do valor total do Grupo B. Assim, o adicional de hora extra afeta
+indiretamente o percentual do Grupo C. O adicional de insalubridade não impacta os
+itens desse grupo.
+
+Na Tabela 14, são apresentados os impactos dos adicionais de insalubridade e hora
+extra nos itens do Grupo D, aplicados de forma separada ou concomitante.
+
+
+
+
+                                                     78                               DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 02 - Mão de Obra
+
+
+Tabela 14 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos encargos do
+                                         Grupo D
+                                                                               Hora normal      Hora extra
+                                                        Hora        Hora
+Item             Parcela de contribuição                                           com             com
+                                                       normal       extra
+                                                                              insalubridade   insalubridade
+ D1     Reincidência do Grupo A sobre o Grupo B        16,40%       15,63%       19,00%          18,11%
+        Reincidência do Grupo A sobre o aviso-
+ D2     prévio trabalhado e reincidência do FGTS       0,28%        0,28%        0,29%           0,29%
+        sobre o aviso-prévio indenizado
+                                              Total    16,68%       15,91%       19,29%          18,40%
+
+
+Como o Grupo D reflete as reincidências de encargos sociais e trabalhistas, seu valor
+é afetado em qualquer uma das situações apresentadas. Isso ocorre porque o
+adicional de hora extra influencia o Grupo B e o adicional de insalubridade impacta o
+Grupo A, ambos empregados no cálculo das parcelas do Grupo D.
+
+A Tabela 15 apresenta os impactos dos adicionais de insalubridade e hora extra ao
+valor total dos encargos sociais e trabalhistas, aplicados de forma separada ou
+concomitante.
+
+ Tabela 15 - Exemplo do impacto dos adicionais de insalubridade e hora extra nos encargos
+                                  sociais e trabalhistas
+
+                                                                                Hora normal    Hora extra
+                                                         Hora         Hora
+Item              Parcela de contribuição                                           com           com
+                                                        normal        extra
+                                                                               insalubridade insalubridade
+A1[1] Previdência Social                                20,00%       20,00%       20,00%         20,00%
+ A2     FGTS                                                8,00%     8,00%       8,00%          8,00%
+ A3     Salário-educação                                    2,50%     2,50%       2,50%          2,50%
+ A4     SESI                                                1,50%     1,50%       1,50%          1,50%
+ A5     SENAI/SEBRAE                                        1,60%     1,60%       1,60%          1,60%
+ A6     INCRA                                               0,20%     0,20%       0,20%          0,20%
+ A7     SAT                                                 3,00%     3,00%       3,00%          3,00%
+A8[2]   SECONCI                                             1,00%     1,00%       1,00%          1,00%
+ A9     FAE                                                   -         -           6%             6%
+                                    Total do Grupo A    37,80%       37,80%       43,80%         43,80%
+
+
+
+
+                                                       79                                  DNIT/DPP/CGCIT
+                              Manual de Custos de Infraestrutura de Transportes
+                                         Volume 02 - Mão de Obra
+
+
+                                               Tabela 15 (conclusão)
+                                                                                 Hora normal    Hora extra
+                                                           Hora        Hora
+Item                 Parcela de contribuição                                         com           com
+                                                          normal       extra
+                                                                                insalubridade insalubridade
+ B1    Repouso semanal remunerado                         18,86%       18,86%      18,86%        18,86%
+ B2    Feriados e dias santificados nacionais                 5,22%    5,22%       5,22%         5,22%
+ B3    Férias gozadas                                         8,00%    8,00%       8,00%         8,00%
+ B4    Auxílio-enfermidade                                    0,90%      -         0,90%            -
+ B5    Auxílio-acidente de trabalho                           0,31%      -         0,31%            -
+ B6    Licença-paternidade                                    0,08%      -         0,08%            -
+ B7    13º salário                                            9,26%    9,26%       9,26%         9,26%
+ B8    Faltas justificadas                                    0,74%      -         0,74%            -
+ B9    Férias em licença-maternidade                          0,00%    0,00%       0,00%         0,00%
+                                      Total do Grupo B    43,37%       41,34%      43,37%        41,34%
+ C1    Aviso-prévio indenizado                                3,17%    3,17%       3,17%         3,17%
+ C2    Aviso-prévio trabalhado                                0,08%    0,08%       0,08%         0,08%
+ C3    Férias indenizadas                                     4,35%    4,35%       4,35%         4,35%
+ C4    Depósito por rescisão sem justa causa                  4,59%    4,52%       4,59%         4,52%
+ C5    Indenização adicional                                  0,93%    0,93%       0,93%         0,93%
+                                      Total do Grupo C    13,12%       13,05%      13,12%        13,05%
+ D1    Reincidência do Grupo A sobre o Grupo B            16,40%       15,63%      19,00%        18,11%
+       Reincidência do Grupo A sobre o aviso-prévio
+ D2    trabalhado e reincidência do FGTS sobre o              0,28%    0,28%       0,29%         0,29%
+       aviso-prévio indenizado
+                                      Total do Grupo D    16,68%       15,91%      19,29%        18,40%
+          Total dos encargos sociais e trabalhistas       110,97%     108,10%     119,58%       116,59%
+Nota 1: não se aplica em opção de desoneração da folha.
+Nota 2: o valor do SECONCI pode variar dependendo da UF ou da categoria.
+
+
+Entre as situações exemplificadas, a hora normal com insalubridade apresenta o
+maior percentual de encargos sociais e trabalhistas devido à incidência do FAE (A9),
+que eleva os valores totais dos grupos A e D.
+
+A situação com apenas hora extra é a que apresenta o menor percentual de encargos
+sociais e trabalhistas, uma vez que, nesse caso, não existe a aplicação de encargos
+trabalhistas nas situações de auxílio-enfermidade (B4), auxílio de acidente de trabalho
+(B5), licença-paternidade (B6) e faltas justificadas (B8), diminuindo o valor dos Grupos
+B, C e D.
+
+
+
+
+                                                         80                                 DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 02 - Mão de Obra
+
+
+
+Para as condições especiais de trabalho, é necessário definir o percentual total de
+encargos sociais e trabalhistas para hora normal (PEHN), desde que a categoria faça
+jus ao recebimento do adicional de insalubridade.
+
+No exemplo em apreço, o PEHN é igual a 1,1958 (119,58%). Esse valor deve ser
+aplicado sobre os valores de hora normal, considerando apenas o impacto da
+insalubridade sobre as parcelas.
+
+Para o cálculo do adicional de hora extra, deve-se definir também o percentual total
+de encargos sociais e trabalhistas para hora extra (PEHE), desde que a categoria
+tenha direito ao adicional de insalubridade.
+
+No caso exemplificado, o PEHE é igual a 1,1659 (116,59%). Esse valor deve ser
+aplicado sobre os valores de hora extra, considerando os impactos da insalubridade
+e da hora extra sobre as parcelas.
+
+A Tabela 16 apresenta o resumo dos impactos no PEHN e no PEHE por situação de
+trabalho.
+
+                  Tabela 16 - Impactos nos percentuais por situação de trabalho
+              Situação                            PEHN                                PEHE
+Hora normal                       Não é afetado                       Não se aplica
+                                  Calcular os encargos sociais e
+Hora normal com insalubridade                                         Não se aplica
+                                  trabalhistas considerando o item A9
+                                                                      Calcular os encargos sociais e
+Hora extra                        Não se aplica                       trabalhistas retirando os itens B4,
+                                                                      B5, B6 e B8
+                                                                      Calcular os encargos sociais e
+                                  Calcular os encargos sociais e
+Hora extra com insalubridade                                          trabalhistas considerando o item A9
+                                  trabalhistas considerando o item A9
+                                                                      e retirando os itens B4, B5, B6 e B8
+
+
+4.4.4    Encargos sociais e trabalhistas totais
+
+Para a obtenção do valor horário dos encargos sociais e trabalhistas totais, os quais
+incluem tanto as horas normais quanto as horas extras de trabalho, aplica-se a
+Equação 44:
+
+VEST = [(VHN + VHIP + VHNT) × PEHN] + (VAHE × PEHE)                                                    (44)
+
+
+
+
+                                                   81                                   DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+onde:
+
+VEST é o valor horário dos encargos sociais e trabalhistas (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h);
+
+VHIP é o valor horário do adicional de insalubridade (VHI) ou periculosidade (VHP),
+caso aplicável (R$/h);
+
+VHNT é o valor do adicional da hora de trabalho noturno, caso aplicável (R$/h);
+
+PEHN é o percentual total de encargos sociais e trabalhistas (%);
+
+VAHE é o valor do adicional de hora extra (R$/h);
+
+PEHE é o percentual total de encargos sociais e trabalhistas para hora extra (%).
+
+A equação demonstra que os encargos aplicados sobre a hora extra são calculados
+separadamente dos demais valores (hora normal, adicional de insalubridade ou
+periculosidade e adicional noturno).
+
+Se a categoria receber apenas o adicional de hora extra, deve-se considerar dois
+percentuais totais de encargos sociais e trabalhistas: o percentual total de encargos
+sociais e trabalhistas (PEHN) e o percentual total de encargos sociais e trabalhistas
+para hora extra (PEHE).
+
+Nesse caso, o PEHN permanece inalterado. Já o PEHE deve ser calculado
+considerando o impacto do adicional de hora extra sobre as parcelas.
+
+Caso a categoria receba simultaneamente os adicionais de hora extra e insalubridade,
+deve-se recalcular os dois percentuais totais de encargos sociais e trabalhistas.
+
+Nessa circunstância, o PEHN precisa ser calculado considerando apenas o impacto
+da insalubridade sobre as parcelas, enquanto o PEHE deve ser calculado levando em
+consideração o impacto dos dois adicionais sobre as parcelas, sendo aplicado sobre
+o valor do adicional de hora extra.
+
+
+
+
+                                            82                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+4.5     Encargos complementares e adicionais
+
+No SICRO, também são considerados no cálculo do custo total da mão de obra os
+encargos complementares e adicionais, conforme metodologia elucidada nos itens
+3.2.8 e 3.4, respectivamente. Entretanto, esses encargos não sofrem influência dos
+adicionais de hora extra, trabalho noturno ou atividades em condições de
+insalubridade e periculosidade.
+
+4.6     Condições especiais de trabalho estabelecidas pela CLT nos encargos
+        totais e no custo
+
+Após a definição dos adicionais que são utilizados para cada categoria, calcula-se o
+valor dos encargos totais e, posteriormente, o valor do custo total da mão de obra.
+
+4.6.1   Cálculo dos encargos totais em condições especiais
+
+Os encargos totais resultam da soma de todos os encargos aplicáveis a determinada
+categoria, conforme indicado na Equação 45:
+
+VET = VEST + VEC + VEA                                                             (45)
+
+onde:
+
+VET é o valor horário dos encargos totais (R$/h);
+
+VEST é o valor horário dos encargos sociais e trabalhistas (R$/h);
+
+VEC é valor horário dos encargos complementares (R$/h);
+
+VEA é valor horário dos encargos adicionais (R$/h).
+
+Caso seja de interesse conhecer a representatividade dos encargos totais em relação
+ao salário da categoria, utiliza-se a Equação 46:
+
+        VET
+PET =       × 100                                                                  (46)
+        VHN
+
+onde:
+
+PET é o percentual dos encargos totais em relação ao salário (%);
+
+
+                                            83                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+VET é o valor horário dos encargos totais (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h).
+
+4.6.2   Cálculo do custo da mão de obra em condições especiais
+
+O custo da mão de obra em condições especiais é obtido pela soma do valor horário
+dos encargos totais com o valor da hora de trabalho normal, conforme a Equação 47:
+
+CT = VET + VHN + VHIP + VAHE + VHNT                                                (47)
+
+onde:
+
+CT é o custo horário total da mão de obra (R$/h);
+
+VET é o valor horário dos encargos totais (R$/h);
+
+VHN é o valor da hora de trabalho normal (R$/h);
+
+VHIP é o valor horário do adicional de insalubridade (VHI) ou periculosidade (VHP),
+caso aplicável (R$/h);
+
+VAHE é o valor do adicional de hora extra, caso aplicável (R$/h);
+
+VHNT é o valor do adicional da hora de trabalho noturno, caso aplicável (R$/h).
+
+
+
+
+                                            84                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+                               5         CONSIDERAÇÕES FINAIS
+
+
+
+
+                       85                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+5        CONSIDERAÇÕES FINAIS
+
+O Volume 02 do Manual de Custos de Infraestrutura de Transportes apresenta a
+metodologia e as premissas utilizadas no SICRO para calcular os custos referenciais
+de mão de obra.
+
+A metodologia contempla a decomposição do custo de mão de obra em quatro
+parcelas principais: salários, que representam a remuneração básica das categorias
+profissionais, conforme dados oficiais e pisos estabelecidos; encargos sociais e
+trabalhistas, que abrangem as contribuições obrigatórias previstas em lei, como INSS,
+FGTS e demais direitos assegurados pela CLT; encargos complementares, que
+incluem despesas relacionadas à execução do trabalho, como alimentação,
+transporte, fornecimento de EPIs e consultas médicas ocupacionais; e encargos
+adicionais, que correspondem a benefícios previstos em convenções coletivas, como
+cesta básica, seguro de vida, assistência médica e outros itens específicos.
+
+Além das condições ordinárias de jornada e ambiente de trabalho, o manual incorpora
+procedimentos para o tratamento de situações especiais, como atividades insalubres,
+perigosas, noturnas ou com horas extras. Essa flexibilidade metodológica permite que
+os custos referenciais se aproximem da diversidade de cenários encontrados nas
+obras de infraestrutura de transportes.
+
+No âmbito do SICRO também é considerada a premissa do posto de trabalho, que
+assegura que sempre haverá um profissional disponível durante as horas
+trabalháveis, sendo a reposição obrigatória em caso de ausências previstas por lei,
+que incluem férias, faltas abonadas, auxílio-enfermidade, auxílio-acidente, licença-
+paternidade e licença-maternidade. A diferença entre as horas trabalháveis e as horas
+efetivamente trabalhadas é custeada nas parcelas de encargos.
+
+Por fim, é importante ressaltar que eventuais alterações legislativas podem ocorrer
+após a publicação deste documento, com eventuais impactos na metodologia
+apresentada. Todavia, prezando para que os valores referenciais do SICRO estejam
+sempre em conformidade com a legislação e normativos vigentes, o DNIT mantém
+esforços de revisão e atualização constantes de seus parâmetros e formulações
+metodológicos. De todo modo, compete aos orçamentistas e demais usuários do
+presente manual verificar se o seu conteúdo está de acordo com as leis e normas em
+vigor.
+
+                                            86                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+           Volume 02 - Mão de Obra
+
+
+
+
+                               REFERÊNCIAS BIBLIOGRÁFICAS
+
+
+
+
+                       87                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+                        REFERÊNCIAS BIBLIOGRÁFICAS
+
+BRASIL. 1936. Lei nº 185, de 14 de janeiro de 1936. Institui as comissões de salario
+mínimo.                       Disponível                   em:                     <
+https://legislacao.presidencia.gov.br/atos/?tipo=LEI&numero=185&ano=1936&ato=2
+260zZE1UMVpXTa8e>. Acesso em: 19 set. 2024.
+
+BRASIL. 1938. Decreto-Lei nº 399, de 30 de abril de 1938. Aprova o regulamento
+para execução da Lei nº 185, de 14 de janeiro de 1936, que institui as Comissões de
+Salário Mínimo. Disponível em: < https://www2.camara.leg.br/legin/fed/declei/1930-
+1939/decreto-lei-399-30-abril-1938-348733-publicacaooriginal-1-
+pe.html#:~:text=Aprova%20o%20regulamento%20para%20execu%C3%A7%C3%A3
+o,de%20dar%20cumprimento%20ao%20art.> Acesso em: 19 set. 2024.
+
+BRASIL. 1942a. Decreto-Lei nº 4.048, de 22 de janeiro de 1942. Cria o Serviço
+Nacional de Aprendizagem dos Industriários (SENAI). Disponível em:
+<http://www.planalto.gov.br/ccivil_03/decreto-lei/1937-1946/del4048.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1942b. Decreto-Lei nº 4.936, de 7 de novembro de 1942. Amplia o âmbito
+de ação do Serviço Nacional de Aprendizagem dos Industriários, e dá outras
+providências. Disponível em: <http://www.planalto.gov.br/ccivil_03/decreto-lei/1937-
+1946/del4936.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1943. Decreto-Lei nº 5.452, de 1º de maio de 1943. Aprova a Consolidação
+das Leis do Trabalho. Disponível em: <http://www.planalto.gov.br/ccivil_03/decreto-
+lei/del5452.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1944. Decreto-Lei nº 6.246, de 5 de fevereiro de 1944. Modifica o sistema
+de cobrança da contribuição devida ao Serviço Nacional de Aprendizagem Industrial
+(SENAI). Disponível em: <http://www.planalto.gov.br/ccivil_03/decreto-lei/1937-
+1946/del6246.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1946. Decreto-Lei nº 9.403, de 25 de junho de 1946. Atribui à
+Confederação Nacional da Indústria o encargo de criar, organizar e dirigir o Serviço
+Social    da    Indústria,   e     dá    outras     providências.  Disponível   em:
+<https://www.planalto.gov.br/ccivil_03/decreto-lei/1937-1946/del9403.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1949. Lei nº 605, de 5 de janeiro de 1949. Repouso semanal remunerado
+e o pagamento de salário nos dias feriados civis e religiosos. Disponível em: <
+http://www.planalto.gov.br/ccivil_03/leis/l0605.htm >. Acesso em: 15 jun. 2022.
+
+BRASIL. 1955. Lei nº 2.613, de 23 de setembro de 1955. Autoriza a União a criar
+uma      Fundação    denominada       Serviço    Social   Rural.   Disponível  em:
+<http://www.planalto.gov.br/ccivil_03/leis/1950-1969/l2613.htm>. Acesso em: 15 jun.
+2022.
+
+BRASIL. 1962. Lei nº 4.090, de 13 de julho de 1962. Institui a Gratificação de Natal
+para            os              Trabalhadores.             Disponível           em:
+<http://www.planalto.gov.br/ccivil_03/leis/l4090.htm>. Acesso em: 15 jun. 2022.
+
+                                            88                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 1966a. Lei nº 4.950-A, de 22 de abril de 1966. Dispõe sobre a remuneração
+de profissionais diplomados em Engenharia, Química, Arquitetura, Agronomia e
+Veterinária. Disponível em: <http://www.planalto.gov.br/ccivil_03/leis/l4950a.htm>.
+Acesso em: 15 jun. 2022.
+
+BRASIL. 1966b. Decreto-Lei nº 86, de 27 de dezembro de 1966. Altera o art. 11 da
+Lei     nº   605,    de     5     de    janeiro     de   1949.    Disponível    em:
+<http://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/Del0086.htm>.    Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1969. Decreto-Lei nº 582, de 15 de maio de 1969. Estabelece medidas para
+acelerar a Reforma Agrária, dispõe sobre a organização e funcionamento do instituto
+Brasileiro de Reforma Agrária e dá outras providências. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/ decreto-lei/1965-1988/del0582.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1970a. Decreto-Lei nº 1.110, de 9 de julho de 1970. Cria o Instituto
+Nacional de Colonização e Reforma Agrária (INCRA), extingue o Instituto Brasileiro
+de Reforma Agrária, o Instituto Nacional de Desenvolvimento Agrário e o Grupo
+Executivo         da         Reforma           Agrária.        Disponível     em:
+<http://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del1110.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1970b. Decreto-Lei nº 1.146, de 31 de dezembro de 1970. Consolida os
+dispositivos sobre as contribuições criadas pela Lei número 2.613, de 23 de setembro
+de 1955. Disponível em: <http://www.planalto.gov.br/ccivil_03/decreto-lei/1965-
+1988/Del1146.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1977. Decreto-Lei nº 1.535, de 15 de abril de 1977. Altera o capítulo IV do
+título II da Consolidação das Leis do Trabalho, relativo a férias, e dá outras
+providências.    Disponível   em:     <https://www.planalto.gov.br/ccivil_03/decreto-
+lei/del1535.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1978a. Ministério do Trabalho e Emprego. Portaria nº 3.214, de 8 de junho
+de 1978. Aprova as Normas Regulamentadoras - NR - do Capítulo V, Título II, da
+Consolidação das Leis do Trabalho, relativas a Segurança e Medicina do Trabalho.
+Disponível em: <https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-
+trabalho/seguranca-e-saude-no-trabalho/sst-portarias/1978/portaria_3-
+214_aprova_as_nrs.pdf>. Acesso em: 08 jul. 2024.
+
+BRASIL. 1978b. Ministério do Trabalho e Emprego. Norma Regulamentadora nº 16,
+de 8 de junho de 1978. Atividades e Operações perigosas. Alterada pela Portaria
+SEPRT nº 1.357, de 09 de dezembro de 2019. Disponível em:
+<https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-
+social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-
+permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-
+regulamentadora-no-16-nr-16>. Acesso em: 08 jul. 2024.
+
+
+
+
+                                            89                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 1978c. Ministério do Trabalho e Emprego. Norma Regulamentadora nº 07,
+de 8 de junho de 1978. Programa de Controle Médico e Saúde Ocupacional -
+PCMSO. Alterada pela Portaria SEPRT nº 6.734, de 09 de março de 2021. Disponível
+em: <https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-
+social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-
+permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-
+regulamentadora-no-7-nr-7>. Acesso em: 08 jul. 2024.
+
+BRASIL. 1978d. Ministério do Trabalho e Emprego. Norma Regulamentadora nº 6,
+de 8 de junho de 1978. Atividades e Operações insalubres. Alterada pela Portaria
+MTP nº 426, de 07 de outubro de 2021. Disponível em: <https://www.gov.br/trabalho-
+e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-
+colegiados/comissao-tripartite-partitaria-permanente/normas-
+regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-
+15-nr-15>. Acesso em: 08 jul. 2024.
+
+BRASIL. 1978e. Ministério do Trabalho e Emprego. Norma Regulamentadora nº 6,
+de 8 de junho de 1978. Equipamento de Proteção Individual – EPI. Alterada pela
+Portaria MTP nº 2.175, de 28 de julho de 2022. Disponível em:
+<https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-
+social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-
+permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-
+regulamentadora-no-6-nr-6>. Acesso em: 08 jul. 2024.
+
+BRASIL. 1978f. Ministério do Trabalho e Emprego. Norma Regulamentadora nº 04,
+de 8 de junho de 1978. –Serviços Especializados em Segurança e em Medicina do
+Trabalho. Alterada pela Portaria SEPRT nº 2.318, de 03 de agosto de 2022. Disponível
+em: <https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-
+social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-
+permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-
+regulamentadora-no-4-nr-4>. Acesso em: 08 jul. 2024.
+
+BRASIL. 1981a. Decreto-Lei nº 1.861, de 25 de fevereiro de 1981. Altera a
+legislação referente às contribuições compulsórias recolhidas pelo IAPAS à conta de
+diversas entidades. Disponível em: <http://www.planalto.gov.br/ccivil_03/decreto-
+lei/1965-1988/del1861.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1981b. Decreto-Lei nº 1.867, de 25 de março de 1981. Dá nova redação
+ao Decreto-lei nº 1.861, de 25 de fevereiro de 1981. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/decreto-lei/1965-1988/del1867.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 1984. Lei nº 7.238, de 29 de outubro de 1984. Dispõe sobre a manutenção
+da correção automática semestral dos salários, de acordo com o Índice Nacional de
+Preços ao Consumidor - INPC, e revoga dispositivos do decreto-lei nº 2.065, de 26 de
+outubro de 1983. Disponível em: <http://www.planalto.gov.br/ccivil_03/leis/1980-
+1988/L7238.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1988. Constituição da República Federativa do Brasil de 1988. Disponível
+em: <http://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm>. Acesso em:
+15 jun. 2022.
+
+                                            90                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 1990a. Lei nº 8.029, de 12 de abril de 1990. Dispõe sobre a extinção e
+dissolução de entidades da administração Pública Federal. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/leis/l8029cons.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1990b. Lei nº 8.036, de 11 de maio de 1990. Dispõe sobre o Fundo de
+Garantia do Tempo de Serviço, e dá outras providências. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/leis/l8036consol.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1990c. Decreto nº 99.570, de 9 de outubro de 1990. Desvincula da
+Administração Pública Federal o Centro Brasileiro de Apoio à Pequena e Média
+Empresa (Cebrae), transformando-o em serviço autônomo. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/decreto/d99570.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1990d. Lei nº 8.154, de 28 de dezembro de 1990. Altera a redação do § 3º
+do art. 8º da Lei nº 8.029, de 12 de abril de 1990. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/leis/l8154.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1991a. Lei nº 8.212, de 24 de julho de 1991. Dispõe sobre a organização
+da Seguridade Social, institui Plano de Custeio, e dá outras providências. Disponível
+em: <http://www.planalto.gov.br/ccivil_03/leis/L8212cons.htm>. Acesso em: 15 jun.
+2022.
+
+BRASIL. 1991b. Lei nº 8.213, de 24 de julho de 1991. Dispõe sobre os Planos de
+Benefícios da Previdência Social e dá outras providências. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1995a. Lei nº 9.032, de 28 de abril de 1995. Dispõe sobre o valor do salário
+mínimo, altera dispositivos das Leis nºs 8.212 e 8.213, ambas de 24 de julho de 1991,
+e          dá           outras          providências.         Disponível          em:
+<http://www.planalto.gov.br/ccivil_03/leis/l9032.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1995b. Lei nº 9.093, de 12 de setembro de 1995. Dispõe sobre feriados.
+Disponível em: <http://www.planalto.gov.br/ccivil_03/leis/l9093.htm>. Acesso em: 15
+jun. 2022.
+
+BRASIL. 1996. Lei nº 9.335, de 10 de dezembro de 1996. Altera a Lei nº 9.093, de
+12 de setembro de 1995, que dispõe sobre feriados. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/leis/l9335.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1997. Lei nº 9.528, de 10 de dezembro de 1997. Altera dispositivos das Leis
+nºs 8.212 e 8.213, ambas de 24 de julho de 1991, e dá outras providências. Disponível
+em: <http://www.planalto.gov.br/ccivil_03/leis/l9528.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 1999. Decreto nº 3.048, de 8 de maio de 1999. Aprova o regulamento da
+Previdência    Social,    e      dá    outras    providências.  Disponível em:
+<http://www.planalto.gov.br/ccivil_03/decreto/d3048.htm>. >. Acesso em: 15 jun.
+2022.
+
+
+
+
+                                            91                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 2001. Lei Complementar nº 110, de 29 de junho de 2001. Institui
+contribuições sociais, autoriza créditos de complementos de atualização monetária
+em contas vinculadas do Fundo de Garantia do Tempo de Serviço - FGTS. Disponível
+em: <http://www.planalto.gov.br/ccivil_03/leis/lcp/lcp110.htm>. Acesso em: 15 jun.
+2022.
+
+BRASIL. 2002. Lei nº 10.607, de 19 de dezembro de 2002. Dá nova redação ao art.
+1o da Lei no 662, de 6 de abril de 1949, que “declara feriados nacionais os dias 1 o de
+janeiro, 1o de maio, 7 de setembro, 15 de novembro e 25 de dezembro”, e dá outras
+providências.                               Disponível                             em:
+<http://www.planalto.gov.br/ccivil_03/leis/2002/l10607.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 2006a. Ministério do Trabalho e Emprego. Portaria nº 193, de 5 de
+dezembro de 2006. Altera os parâmetros nutricionais do Programa de Alimentação
+do Trabalhador – PAT. Disponível em: <https://www.gov.br/trabalho-e-emprego/pt-
+br/servicos/empregador/programa-de-alimentacao-do-trabalhador-pat/arquivos-
+legislacao/portarias/pat_portaria_193_2006.pdf>. Acesso em: 08 jul. 2024.
+
+BRASIL. 2006b. Decreto nº 6.003, de 28 de dezembro de 2006. Regulamenta a
+arrecadação, a fiscalização e a cobrança da contribuição social do salário-educação,
+a que se referem o art. 212, § 5o, da Constituição, e as Leis nos 9.424, de 24 de
+dezembro de 1996, e 9.766, de 18 de dezembro de 1998, e dá outras providências.
+Disponível             em:           <http://www.planalto.gov.br/ccivil_03/_Ato2004-
+2006/2006/Decreto/D6003.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 2011a. Lei nº 12.506, de 11 de outubro de 2011. Dispõe sobre o aviso
+prévio       e       dá       outras        providências.       Disponível    em:
+<https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12506.htm>. Acesso
+em: 15 jun. 2022.
+
+BRASIL. 2011b. Lei nº 12.546, de 14 de dezembro de 2011. Institui o Regime
+Especial de Reintegração de Valores Tributários para as Empresas Exportadoras
+(Reintegra); dispõe sobre a redução do Imposto sobre Produtos Industrializados (IPI)
+à indústria automotiva; altera a incidência das contribuições previdenciárias devidas
+pelas empresas que menciona; altera as Leis nº 11.774, de 17 de setembro de 2008,
+nº 11.033, de 21 de dezembro de 2004, nº 11.196, de 21 de novembro de 2005, nº
+10.865, de 30 de abril de 2004, nº 11.508, de 20 de julho de 2007, nº 7.291, de 19 de
+dezembro de 1984, nº 11.491, de 20 de junho de 2007, nº 9.782, de 26 de janeiro de
+1999, e nº 9.294, de 15 de julho de 1996, e a Medida Provisória nº 2.199-14, de 24 de
+agosto de 2001; revoga o art. 1º da Lei nº 11.529, de 22 de outubro de 2007, e o art.
+6º do Decreto-Lei nº 1.593, de 21 de dezembro de 1977, nos termos que especifica;
+e           dá         outras          providências.          Disponível          em:
+<https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12546.htm>. Acesso
+em: 08 jul. 2024.
+
+BRASIL. 2012. Tribunal de Contas da União. Portaria-SEGECEX nº 33, de 7 de
+dezembro de 2012. Aprova revisão do Roteiro de Auditoria de Obras Públicas,
+declarando-o documento público, revoga suas versões anteriores, e dá outras
+providências.                                   Disponível                        em:
+<https://portal.tcu.gov.br/lumis/portal/file/fileDownload.jsp?fileId=8A8182A159B6EC1
+70159B7A9382B0701>. Acesso em: 15 jun. 2022.
+
+                                            92                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 2013. Lei nº 12.844, de 19 de julho de 2013. Amplia o valor do Benefício
+Garantia-Safra para a safra de 2011/2012; amplia o Auxílio Emergencial Financeiro,
+de que trata a Lei nº 10.954, de 29 de setembro de 2004, relativo aos desastres
+ocorridos em 2012; autoriza a distribuição de milho para venda a pequenos criadores,
+nos termos que especifica; institui medidas de estímulo à liquidação ou regularização
+de dívidas originárias de operações de crédito rural; altera as Leis nºs 10.865, de 30
+de abril de 2004, e 12.546, de 14 de dezembro de 2011, para prorrogar o Regime
+Especial de Reintegração de Valores Tributários para as Empresas Exportadoras -
+REINTEGRA e para alterar o regime de desoneração da folha de pagamentos, 11.774,
+de 17 de setembro de 2008, 10.931, de 2 de agosto de 2004, 12.431, de 24 de junho
+de 2011, 12.249, de 11 de junho de 2010, 9.430, de 27 de dezembro de 1996, 10.522,
+de 19 de julho de 2002, 8.218, de 29 de agosto de 1991, 10.833, de 29 de dezembro
+de 2003, 9.393, de 19 de dezembro de 1996, 12.783, de 11 de janeiro de 2013, 12.715,
+de 17 de setembro de 2012, 11.727, de 23 de junho de 2008, 12.468, de 26 de agosto
+de 2011, 10.150, de 21 de dezembro de 2000, 12.512, de 14 de outubro de
+2011, 9.718, de 27 de novembro de 1998, 10.925, de 23 de julho de 2004, 11.775, de
+17 de setembro de 2008, e 12.716, de 21 de setembro de 2012, a Medida Provisória
+nº 2.158-35, de 24 de agosto de 2001, e o Decreto nº 70.235, de 6 de março de 1972;
+dispõe sobre a comprovação de regularidade fiscal pelo contribuinte; regula a compra,
+venda e transporte de ouro; e dá outras providências. Disponível em:
+<https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12844.htm>. Acesso
+em: 08 jul. 2024.
+
+BRASIL. 2015. Lei nº 13.161, de 31 de agosto de 2015. Altera as Leis n º 12.546, de
+14 de dezembro de 2011, quanto à contribuição previdenciária sobre a receita bruta,
+12.780, de 9 de janeiro de 2013, que dispõe sobre medidas tributárias referentes à
+realização, no Brasil, dos Jogos Olímpicos de 2016 e dos Jogos Paraolímpicos de
+2016, 11.977, de 7 de julho de 2009, e 12.035, de 1º de outubro de 2009; e revoga
+dispositivos da Lei nº 11.196, de 21 de novembro de 2005, quanto à tributação de
+bebidas frias. Disponível em: <https://www.planalto.gov.br/ccivil_03/_ato2015-
+2018/2015/lei/l13161.htm>. Acesso em: 15 jun. 2022.
+
+BRASIL. 2017. Lei nº 13.467, de 13 de julho de 2017. Altera a Consolidação das Leis
+do Trabalho (CLT), aprovada pelo Decreto-Lei nº 5.452, de 1º de maio de 1943, e as
+Leis n º 6.019, de 3 de janeiro de 1974, 8.036, de 11 de maio de 1990, e 8.212, de 24
+de julho de 1991, a fim de adequar a legislação às novas relações de trabalho.
+Disponível             em:             <http://www.planalto.gov.br/ccivil_03/_ato2015-
+2018/2017/lei/l13467.htm>. Acesso em: 15 jun. 2022.
+
+
+
+
+                                            93                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 02 - Mão de Obra
+
+
+
+BRASIL. 2024. Lei nº 14.973, de 16 de setembro de 2024. Estabelece regime de
+transição para a contribuição substitutiva prevista nos arts. 7º e 8º da Lei nº 12.546,
+de 14 de dezembro de 2011, e para o adicional sobre a Cofins-Importação previsto no
+§ 21 do art. 8º da Lei nº 10.865, de 30 de abril de 2004; altera as Leis nºs 8.212, de
+24 de julho de 1991, 8.742, de 7 de dezembro de 1993, 10.522, de 19 de julho de
+2002, 10.779, de 25 de novembro de 2003, 10.865, de 30 de abril de 2004, 12.546,
+de 14 de dezembro de 2011, e 13.988, de 14 de abril de 2020; e revoga dispositivos
+dos Decretos-Lei nºs 1.737, de 20 de dezembro de 1979, e 2.323, de 26 de fevereiro
+de 1987, e das Leis nºs 9.703, de 17 de novembro de 1998, e 11.343, de 23 de agosto
+de 2006, e a Lei nº 12.099, de 27 de novembro de 2009. Disponível em:
+<http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm>. Acesso
+em: 26 set. 2025.
+
+MINISTÉRIO DO TRABALHO E EMPREGO. 2025. Sistema de Negociações
+Coletivas de Trabalho (MEDIADOR) - Portal do MTE. Disponível em:
+<https://www3.mte.gov.br/sistemas/mediador>. Acesso em: 26 set. 2025.
+
+
+
+
+                                            94                           DNIT/DPP/CGCIT

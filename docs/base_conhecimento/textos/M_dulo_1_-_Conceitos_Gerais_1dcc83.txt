@@ -1,0 +1,793 @@
+         Sinalização Viária
+
+
+
+
+Conteudista:
+Ítalo Marques Filizola
+
+
+
+
+Brasília, agosto de 2022.
+SINALIZAÇÃO VIÁRIA
+
+
+
+
+Módulo
+             1
+Conceitos gerais sobre
+Segurança Viária.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.007882/2022-67. Desta forma, o DNIT
+poderá revisar o material cedido, adaptá-lo e utilizá-
+lo livremente em outros eventos que venha a
+promover, bem como o ceder a outros órgãos e
+entidades federais.
+                                  SUMÁRIO
+1      INTRODUÇÃO .............................................................................................................................. 1
+2      A SEGURANÇA VIÁRIA ............................................................................................................... 2
+  2.1   CONCEITOS E DEFINIÇÕES ............................................................................................... 3
+  2.2   COMPORTAMENTO DO USUÁRIO ..................................................................................... 4
+  2.3   VIAS SEGURAS .................................................................................................................... 4
+  2.4   VEÍCULOS SEGUROS ......................................................................................................... 5
+3   SINISTRO DE TRÂNSITO ............................................................................................................ 7
+  3.1    TIPOS DE SINISTRO DE TRÂNSITO .................................................................................. 8
+    3.1.1 Atropelamento ................................................................................................................... 9
+    3.1.2 Sinistro pessoal de trânsito ............................................................................................... 9
+    3.1.3 Capotamento ..................................................................................................................... 9
+    3.1.4 Choque .............................................................................................................................. 9
+    3.1.5 Colisão ............................................................................................................................... 9
+    3.1.6 Colisão frontal .................................................................................................................... 9
+    3.1.7 Colisão lateral .................................................................................................................... 9
+    3.1.8 Colisão transversal ............................................................................................................ 9
+    3.1.9 Colisão traseira ................................................................................................................ 10
+    3.1.10   Engavetamento ........................................................................................................... 10
+    3.1.11   Queda .......................................................................................................................... 10
+    3.1.12   Tombamento ............................................................................................................... 10
+  3.2    CUSTOS DOS SINISTROS ................................................................................................ 10
+4   CLASSIFICAÇÃO VIÁRIA ........................................................................................................... 12
+    4.1  CLASSES E CARACTERÍSTICAS DE PROJETO ............................................................. 13
+5     POLOS GERADORES DE VIAGENS ......................................................................................... 14
+6      MODERAÇÃO DE TRÁFEGO E GESTÃO DE VELOCIDADE .................................................. 16
+  6.1   MODERAÇÃO DE TRÁFEGO ............................................................................................ 16
+  6.2   GESTÃO DA VELOCIDADE ............................................................................................... 17
+7   SISTEMAS SEGUROS ............................................................................................................... 18
+8      REFERÊNCIAS BIBLIOGRÁFICAS ............................................................................................ 20
+                                                                                 1
+
+
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+1 INTRODUÇÃO
+
+Este módulo aborda aspectos e conceitos gerais sobre Segurança Viária, sendo este
+o módulo introdutório.
+
+O curso, como um todo, trata de uma compilação de fontes distintas, relacionadas à
+Sinalização Rodoviária, sendo o seu objetivo apresentar uma síntese das técnicas e
+das boas práticas de como uma via deve ser adequadamente sinalizada para
+proporcionar conforto e segurança aos usuários que nela transitam.
+
+Além da parte conceitual, serão abordados aspectos legais, técnicos, normativos,
+bem como aspectos necessários para elaboração de projetos, sua implantação,
+fiscalização e manutenção.
+
+O assunto Sinalização Viária é muito extenso, contando um grande rol de normas e
+legislações, sendo complexo sintetizar todo assunto no escopo de um único curso.
+Assim, serão tratados os aspectos mais relevantes e importantes para o nivelamento
+do conhecimento, preparando o aluno para discussões mais aprofundadas
+futuramente.
+                                                                                 2
+
+
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+ 2 A SEGURANÇA VIÁRIA
+
+ A segurança no trânsito é uma preocupação global. Estimativas indicam
+ aproximadamente 1,3 milhões de vítimas fatais, além de um número entre 20 e 50
+ milhões de lesionados em sinistros de trânsito. Os impactos socioeconômicos podem
+ ser mensurados somente até uma certa escala, limitada por situações em que as
+ perdas humanas não podem ser mensuradas.
+
+ Prover vias seguras aos usuários é um fator importante na contribuição para o
+ aumento da segurança viária. Vias seguras, por sua vez, devem ser bem planejadas,
+ projetadas e construídas, passando por manutenções preventivas e corretivas, e
+ finalmente, bem sinalizadas, contando com dispositivos de contenção veicular
+ adequados.
+
+
+
+TOME NOTA
+
+A Segurança Viária compreende um conjunto de ações mais amplas de Segurança
+no Trânsito que compreendem os:
+   • Usuários;
+   • Veículos; e
+   • Vias.
+                                                                                        3
+                                                             SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+2.1 CONCEITOS E DEFINIÇÕES
+
+
+A Segurança Viária pode ser definida como o conjunto de métodos, ações e normas
+existentes, necessários para a circulação segura de pessoas e veículos nas
+rodovias, com a finalidade de prevenir e reduzir o risco de acidentes (MINFRA, 2020).
+Pode ser quantificada a partir do número de acidentes e lesões que ocorrem em
+relação à exposição (Manual de Medidas de Segurança Viária, 2015).
+
+Para atingir a Segurança Viária, a PAHO – Pan American Health Organization sugere
+o enfoque de Sistemas Seguros, conforme pode ser visualizado na Figura 1.
+
+                         Figura 1 – Enfoque Sistema Seguro
+
+
+
+
+                                Fonte: PAHO, 2018.
+                                                                                 4
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+Embora o enfoque de Sistemas Seguros deva considerar todos os fatores elencados
+na Figura 1, a abordagem desse curso será na Sinalização Viária como meio para
+promover Vias Seguras, cujo conceito será apresentado mais adiante.
+
+2.2 COMPORTAMENTO DO USUÁRIO
+
+Os usuários das vias devem lidar com uma razoável complexidade dos contextos
+viários: retas e curvas, trechos nivelados ou em rampa, interseções, cruzamentos,
+trechos com travessias de pedestres, estacionamentos, entrada e saída de veículos,
+desempenho veicular, condições climáticas (chuvas, lusco-fusco, neblina), etc. Além
+disso, seu desempenho pode variar em função de situações como idade, acuidade
+visual, uso de álcool, drogas, medicamentos, cansaço e sonolência, grau de
+instrução, costumes regionais/sociais, bem como a prática de condutas perigosas,
+falta de atenção e mesmo falta de habilidade/imperícia.
+
+Esse comportamento variado influencia de sobremaneira o desempenho do usuário
+ao conduzir um veículo, motorizado ou não, e mesmo como pedestre. Cabe ao
+projetista identificar estes comportamentos, considerá-los quando a elaboração de
+um projeto de sinalização viária, no contexto de um Sistema Seguro.
+
+Campanhas educativas e ações de fiscalização também podem mitigar as
+consequências de alguns comportamentos do usuário, porém não estão no escopo
+deste curso.
+
+2.3 VIAS SEGURAS
+
+O desenho das vias tem um importante impacto na segurança dos usuários. Assim,
+elas devem ser projetadas considerando a segurança de todos: condutores de
+veículos motorizados e não-motorizados e pedestres, animais silvestres, etc.
+
+A Via segura é aquela adequadamente dimensionada para seu horizonte de projeto,
+executada conforme os normativos técnicos vigentes, garantindo sua boa
+performance durante sua vida útil, adequadamente conservada, com sinalização
+clara, objetiva e que mantenha os usuários cientes das condições operacionais
+                                                                                  5
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+esperadas. Além disso, devem possuir dispositivos auxiliares e de contenção
+veicular corretamente projetados e instalados.
+
+Neste conceito, podemos mencionar as “Ruas Completas”, que são ruas
+desenhadas para dar segurança e conforto a todas as pessoas, de todas as idades,
+usuários de qualquer modo de transporte. A base do conceito é distribuir o espaço
+de maneira democrática entre todos os usuários, beneficiando a todos (WRI/Brasil,
+2108).
+
+Já o conceito das “Rodovias que perdoam”, aplicado em vias rurais, define que a via
+deve ser projetada de modo a prevenir ou minimizar as consequências dos acidentes
+de trânsito. Deve-se partir da premissa que erros humanos são inevitáveis. Assim,
+os elementos de projeto devem advertir ao condutor que corrija eventuais
+comportamentos inadequados, ou que reaja de modo adequado a um risco. E
+mesmo que ocorra o acidente, os sistemas de segurança devem minimizar suas
+consequências.
+
+2.4 VEÍCULOS SEGUROS
+
+Veículos seguros são aqueles que possuem sistemas de segurança ativa e passiva
+em conformidade com a legislação nacional, ou ainda atendendo a parâmetros
+internacionais.
+
+Os sistemas de segurança ativa são todos aqueles que atuam ativamente
+prevenindo a ocorrência de acidentes. Controle de tração e estabilidade, freios
+ABS/EBD (Anti-lock Braking System/Eletronic Braking Distribution), vetorização de
+torque, lembrete de uso do cinto de segurança, detector de fadiga, aviso de saída da
+pista/mudança de faixa involuntária, alerta de colisão frontal, frenagem de
+emergência autônoma, detecção de pontos cegos, são exemplos destes sistemas.
+
+Os sistemas de segurança passiva são aqueles que atuam após a ocorrência do
+acidente. Airbags, cintos de segurança com pré-tensionador, apoios de cabeça,
+dispositivos de retenção     infantil (cadeirinha),   carroceria   com   deformação
+programada, frenagem automática pós-colisão, são exemplos destes sistemas
+passivos.
+                                                                                  6
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+ Fique atento
+Pequenas colisões entre veículos antigos e novos resultam em grandes deformações
+nos pontos de contato dos veículos modernos e a carroceria praticamente intacta nos
+veículos antigos. Tais casos geralmente são apontados como exemplo de que os
+últimos são mais “resistentes”. Esta concepção não poderia estar mais equivocada. A
+carroceria com deformação programada utiliza aços de vários tipos para absorver e
+distribuir a energia de uma colisão, de modo que o habitáculo e seus ocupantes
+estejam melhor protegidos.
+
+Veja o teste realizado pelo Insurance Institute for Highway Safety - IIHS colidindo 2
+veículos com 50 anos de diferença de fabricação:
+
+IIHS - Teste de colisão em veículos com 50 anos de diferença de fabricação
+                                                                                    7
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+3 SINISTRO DE TRÂNSITO
+
+Segundo o Plano Nacional de Redução de Mortes e Lesões no Trânsito –
+PNATRANS (2021), em alinhamento aos conceitos da abordagem de Sistemas
+Seguros, entende-se que o uso do termo “acidente de trânsito” deve ser revisto. A
+palavra “acidente” remete, semanticamente, a algo inevitável ou que não poderia ter
+sido evitado.
+
+Ainda no fim de 2020, a revisão da norma NBR 10.697 – Pesquisa de sinistros de
+trânsito - Terminologia, da Associação Brasileira de Normas Técnicas (ABNT),
+atualizou o termo “acidentes de trânsito” para “sinistros de trânsito”. Assim, o novo
+texto determina a adoção do termo “sinistro” em pesquisas e relatórios estatísticos e
+operacionais sobre o tema.
+
+Todavia, por questões legais, o PNATRANS ainda utiliza o termo “acidentes de
+trânsito” até que ocorra a eventual alteração da legislação. Assim, para os fins deste
+curso, tanto o termo acidente, quanto sinistro, podem ser considerados válidos e
+equivalentes, sem prejuízo à compreensão do assunto.
+
+A situação dos acidentes de trânsito tende a se agravar ainda mais neste contexto
+de franca expansão da frota de veículos automotores que o país está vivendo desde
+o final do século passado. Destacam-se, nessa expansão da frota de veículos
+automotores, as vendas de motocicletas, que, por características intrínsecas,
+apresentam baixas condições de proteção aos usuários em caso de colisão e queda.
+Isso proporciona alto grau de severidade aos acidentes que envolvem esse tipo de
+veículo, aumentando as estatísticas de mortes e feridos graves.
+
+Não se pode calcular o que representa a perda de uma vida humana ou os danos
+psíquicos e estresses traumáticos aos quais as vítimas de trânsito e seus familiares
+são submetidos após eventos dessa natureza. Por outro lado, quando ocorre um
+acidente, há também a formação de custos econômico-financeiros que impactam
+diretamente as famílias, os governos e a sociedade em geral, os quais podem ser
+estimados por meio de metodologias específicas de cálculo.
+                                                                                       8
+                                                            SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+Os acidentes de trânsito são classificados da seguinte maneira:
+
+  •    Acidentes com vítimas fatais: acidentes em que há pelo menos um morto;
+  •    Acidentes com vítimas feridas: acidentes em que há pelo menos um ferido,
+       mas não mortos; e
+  •    Acidentes sem vítimas: acidentes em que todos os envolvidos saíram
+       ilesos.
+
+3.1 TIPOS DE SINISTRO DE TRÂNSITO
+
+São fatores adversos que constituem as causas dos acidentes e podem ser
+classificados em:
+
+   •   Fatores Humanos: são ações arriscadas do indivíduo no trânsito, quer na
+       condição de condutor de veículo que pode se envolver em um acidente, ou na
+       condição de pedestre arriscando-se a ser atropelado. Exemplos: desrespeitar
+       o sinal vermelho, dirigir com excesso de velocidade, dirigir alcoolizado...
+
+   •   Fatores humanos indiretos (subjetivo): imperícia, inabilitação, inexperiência,
+       cansaço, sonolência, estresse, agressividade, euforia, pressa, desatenção.
+
+   •   Fatores da via e ambiente: são características inseguras da via e/ou ambiente
+       no momento do acidente, que podem ter contribuído para a ocorrência de
+       acidentes. Exemplos: projetos de vias deficientes, sinalização incorreta,
+       estado da sinalização, condições climáticas, placa mal posicionada, buraco
+       na pista.
+
+   •   Fatores veiculares: são aqueles decorrentes de falhas no desempenho dos
+       veículos envolvidos no acidente, normalmente provocadas pelo seu péssimo
+       estado      de   conservação.   Exemplos:    farol     desregulado    provocando
+       ofuscamento, estouro de pneu.
+
+Nos próximos itens serão explicados cada tipo de acidente, conforme sua
+classificação.
+                                                                                  9
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+3.1.1 Atropelamento
+Sinistro em que o (s) pedestre (s) ou animal (is) sofre (m) o impacto de um veículo,
+estando pelo menos uma das partes em movimento.
+
+3.1.2 Sinistro pessoal de trânsito
+Todo sinistro em que o pedestre sofre lesões corporais ou danos materiais, desde
+que não haja participação de veículos ou ação criminosa.
+
+3.1.3 Capotamento
+Evento em que o veículo gira sobre si mesmo, em qualquer sentido, chegando a ficar
+com as rodas para cima, imobilizando-se em qualquer posição.
+
+3.1.4 Choque
+Colisão em que há impacto de um veículo contra qualquer objeto fixo ou móvel, mas
+sem movimento.
+
+3.1.5 Colisão
+Colisão em que um veículo em movimento sofre o impacto de outro veículo, também
+em movimento.
+
+3.1.6 Colisão frontal
+Colisão que ocorre frente a frente, quando os veículos transitam na mesma direção,
+em sentidos opostos.
+
+3.1.7 Colisão lateral
+Colisão que ocorre lateralmente, quando os veículos transitam na mesma direção,
+podendo ser no mesmo sentido ou em sentidos opostos.
+
+3.1.8 Colisão transversal
+Evento que ocorre transversalmente, quando os veículos transitam em direções que
+se cruzam, ortogonal ou obliquamente.
+                                                                                10
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+3.1.9 Colisão traseira
+Evento que ocorre de frente contra traseira ou traseira contra traseira, quando os
+veículos transitam no mesmo sentido ou em sentidos contrários, podendo pelo
+menos um deles estar em marcha à ré.
+
+3.1.10 Engavetamento
+Evento em que há impacto entre três ou mais veículos, em um mesmo sentido de
+circulação.
+
+3.1.11 Queda
+Evento em que há impacto em razão de queda livre do veículo, ou queda de pessoas
+ou cargas por ela transportadas.
+
+3.1.12 Tombamento
+Evento em que o veículo sai de sua posição normal, imobilizando-se sobre uma de
+suas laterais, sua frente ou sua traseira.
+
+3.2 CUSTOS DOS SINISTROS
+
+Além dos traumas causados às vítimas e aos familiares não passíveis de
+mensuração monetária, os sinistros de trânsito representam altos custos para toda
+a sociedade. É importante que os dirigentes públicos conheçam a estrutura e os
+processos de formação desses custos para que intensifiquem políticas adequadas
+de redução dos acidentes e de mitigação dos impactos negativos desses eventos
+sobre a sociedade.
+
+Os componentes associados aos custos de acidentes de trânsito podem ser divididos
+em três categorias:
+
+
+
+I.     Custos associados às pessoas:
+
+a)     Pré-hospitalares;
+
+b)     Hospitalares;
+                                                                            11
+                                                  SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+c)     Pós-hospitalares;
+
+d)     Perda de produção;
+
+e)     Remoção;
+
+f)     Custos previdenciários.
+
+II.    Custos associados aos veículos:
+
+a)     Remoção/pátio;
+
+b)     Danos materiais;
+
+c)     Perda de carga.
+
+III.   Custos associados às instituições e danos ao patrimônio:
+
+a)     Atendimento (SAMU e Polícias);
+
+b)     Danos patrimoniais.
+                                                                                         12
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+4 CLASSIFICAÇÃO VIÁRIA
+
+O Código de Trânsito Brasileiro estabelece a classificação das vias abertas à
+circulação:
+
+   a. Vias urbanas
+
+   → Via de trânsito rápido – aquela caracterizada por acessos especiais com trânsito livre,
+      sem interseções em nível, sem acessibilidade direta aos lotes lindeiros e sem
+      travessia de pedestres em nível.
+
+   → Via arterial – aquela caracterizada por interseções em nível, geralmente controlada
+      por semáforo, com acessibilidade aos lotes lindeiros e às vias secundárias e locais,
+      possibilitando o trânsito entre as regiões da cidade.
+
+   → Via coletora – aquela destinada a coletar e distribuir o trânsito que tenha necessidade
+      de entrar ou sair das vias de trânsito rápido ou arteriais, possibilitando o trânsito
+      dentro das regiões da cidade.
+
+   → Via local – aquela caracterizada por interseções em nível não semaforizadas,
+      destinada apenas ao acesso local ou a áreas restritas.
+
+
+
+
+   b. Vias rurais
+
+   → Rodovias – via rural pavimentada.
+
+   → Estradas – via rural não pavimentada.
+
+Especificamente nas rodovias, cada trecho deve ter suas características técnicas
+definidas para atender:
+
+  •   Volume de tráfego;
+  •   Composição de tráfego;
+  •   Velocidade;
+  •   Natureza e frequência de acessos a propriedades lindeiras;
+  •   Nível de serviço.
+                                                                                                 13
+                                                                 SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+  4.1 CLASSES E CARACTERÍSTICAS DE PROJETO
+
+  De acordo com o Manual de Projeto Geométrico de Rodovia Rurais do DNER, as
+  vias podem ser classificadas da seguinte maneira.
+
+
+
+
+Classe de projeto   Características                              Critério de classificação técnica
+                                                                 Adotada quando os volumes de tráfego
+                                                                 previstos para o horizonte de projeto
+                                                                 correspondem a níveis de serviço
+                    Elevado padrão técnico, com pista dupla e    inferiores a “C” em terreno plano ou
+           0
+                    controle total de acesso                     levemente ondulado e inferior a “D” em
+                                                                 terreno fortemente ondulado ou
+                                                                 montanhoso.
+
+
+                                                                 Adotada quando os volumes de tráfego
+                    Pista dupla com controle parcial de acesso
+                                                                 previstos para o horizonte de projeto
+           IA                                                    correspondem a níveis de serviço
+                                                                 inferiores a “C” em uma via de pista
+                                                                 simples.
+
+                                                                 Adotada para volume bidirecional do
+                                                                 horizonte     de   projeto   de    200
+           IB       Pista simples                                veículos/hora ou volume diário médio
+                                                                 bidirecional de 1.400 veículos mistos.
+
+
+                                                                 Adotada para volume diário médio
+           II       Pista simples                                bidirecional do horizonte de projeto
+                                                                 entre 700 e 1.400 veículos mistos.
+
+                                                                 Adotada para volume diário médio
+           III      Pista simples                                bidirecional do horizonte de projeto
+                                                                 entre 300 e 700 veículos mistos.
+
+                                                                 Adotada para volume diário médio
+           IV       Pista simples                                bidirecional do horizonte de projeto
+                                                                 inferior a 300 veículos mistos.
+                                                                                    14
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+5 POLOS GERADORES DE VIAGENS
+
+Os Polos Geradores de Viagens (PGVs) são empreendimentos de grande porte que
+atraem ou produzem grande número de viagens, causando reflexos negativos na
+circulação viária em seu entorno imediato e, em certos casos, prejudicando a
+acessibilidade de toda a região, além de agravar as condições de segurança de
+veículos e pedestres.
+
+A implantação e operação de PGVs comumente, causa impactos na circulação
+viária, requerendo uma abordagem sistêmica de análise e tratamento que leve em
+conta simultaneamente seus efeitos indesejáveis na mobilidade e acessibilidade de
+pessoas e veículos e o aumento da demanda de estacionamento em sua área de
+influência.
+
+Os impactos sobre a circulação ocorrem quando o volume de tráfego nas vias
+adjacentes e de acesso ao polo gerador de tráfego se eleva de modo significativo,
+devido ao acréscimo de viagens gerado pelo empreendimento, reduzindo os níveis
+de serviço e de segurança viária na área de influência.
+
+Tal situação produz muitos efeitos indesejáveis, tais como:
+
+   •   congestionamentos, que provocam o aumento do tempo de deslocamento dos
+       usuários do empreendimento e daqueles que estão de passagem pelas vias
+       de acesso ou adjacentes, além do aumento dos custos operacionais dos
+       veículos utilizados;
+   •   deterioração das condições ambientais da área de influência do polo gerador
+       de tráfego, a partir do aumento dos níveis de poluição, da redução do conforto
+       durante os deslocamentos e do aumento do número de acidentes,
+       comprometendo a qualidade de vida dos cidadãos;
+   •   conflitos entre o tráfego de passagem e o que se destina ao empreendimento
+       e dificuldade de acesso às áreas internas destinadas à circulação e ao
+       estacionamento, com implicações nos padrões de acessibilidade da área de
+       influência imediata do empreendimento.
+                                                                                  15
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+Com relação ao aumento da demanda de estacionamento, os efeitos serão
+indesejáveis se o projeto do polo gerador de tráfego deixar de prever um número
+suficiente de vagas de estacionamento em seu interior, conduzindo o usuário ao uso
+irregular da via pública e, consequentemente, restringindo a capacidade da via, visto
+que os veículos passam a ocupar espaços até então destinados à circulação,
+reduzindo a fluidez do tráfego.
+
+Toda essa situação é agravada quando as áreas de carga e descarga e de embarque
+e desembarque não são previstas no projeto ou são subdimensionadas, acarretando,
+mais uma vez, a utilização de espaços nas vias de acesso para tais atividades.
+                                                                                 16
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+6 MODERAÇÃO DE TRÁFEGO E GESTÃO DE
+      VELOCIDADE
+
+6.1 MODERAÇÃO DE TRÁFEGO
+
+A Moderação de Tráfego, tem como objetivo reduzir a velocidade e o volume do
+tráfego, mudando o comportamento dos motoristas de forma que estes conduzam
+seus veículos de maneira mais adequada às condições operacionais locais, ao invés
+de adaptar o ambiente às exigências dos veículos motorizados.
+
+De acordo com o Ministério das Cidades (2008), os principais objetivos da
+moderação do tráfego são:
+
+  •   Melhorar a segurança viária através da redução do número e da
+      severidade dos acidentes;
+  •   Reduzir o tráfego de passagem;
+  •   Reduzir a velocidade dos veículos;
+  •   Criar mais espaço para pedestres e ciclistas, sejam os moradores locais,
+      sejam os de passagem;
+  •   Melhorar as condições ambientais através da redução dos níveis de
+      ruídos, vibração, da emissão de gases de efeito local e estufa e da
+      implantação de ambientes mais aprazíveis aos deslocamentos dos
+      pedestres.
+Desta forma, observa-se que as medidas moderadoras de tráfego requalificam o
+ambiente urbano, melhorando a qualidade de vida e estimulando o uso do espaço
+público para o convívio social. Pode-se dizer que se trata de reverter o espaço
+público destinado aos veículos automotores às pessoas. Para tal, uma das
+ferramentas é a Gestão da Velocidade.
+
+O vídeo a seguir menciona a importância da gestão da velocidade na redução das
+fatalidades de trânsito:
+
+Reduza a velocidade - PAHO
+                                                                                   17
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+6.2 GESTÃO DA VELOCIDADE
+
+A Gestão da Velocidade é o gerenciamento da mesma por meio de um desenho
+viário consistente, acompanhado da definição de limites adequados e coerentes, boa
+administração da via, regulação e fiscalização destes limites, bem como educação
+dos condutores.
+
+Sua ação se dá, portanto, na infraestrutura viária, sinalização, operação, legislação,
+fiscalização e educação, envolvendo o esforço coordenado de diversos agentes do
+setor público e privado.
+
+Não se trata de simplesmente reduzir a velocidade regulamentada local, mas sim da
+redução da velocidade média, envolvendo ações mais amplas e complexas, com o
+objetivo final da redução no número de acidentes. Segundo a PAHO, uma redução
+de 5% na velocidade média pode resultar em uma redução de 30% do número de
+acidentes de trânsito fatais.
+
+
+
+    Este vídeo da Roads & Traffic Authority (Austrália) ilustra bem o efeito da
+    redução da velocidade em 5 km/h:
+
+    Versão Original:
+    RTA - 5 km/h fazem toda a diferença
+    Versão Dublada:
+    RTA - 5 km/h fazem toda a diferença
+                                                                                        18
+                                                              SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+7 SISTEMAS SEGUROS
+
+Sistemas Seguros reconhecem a segurança no trânsito como resultado da inter-
+relação de diversos componentes que formam um sistema.
+
+As dinâmicas nas ruas são influenciadas pela interação de diferentes variáveis:
+instituições, leis, regulamentos, usos do solo, infraestrutura, veículos e as pessoas –
+ou usuários da via. Esse sistema interfere na maneira como as pessoas se deslocam
+e influencia seus comportamentos – e, consequentemente, seu nível de exposição
+ao risco de uma colisão.
+
+Os princípios de um sistema seguro podem ser vistos na Figura 2 – Princípios de um
+sistema seguro de mobilidade.
+
+                 Figura 2 – Princípios de um sistema seguro de mobilidade
+
+
+
+
+                                Fonte PNATRANS, 2021.
+
+Para chegar aos objetivos de um Sistema Seguro, uma nova abordagem para tratar
+de segurança viária, conforme Figura 3.
+Instituto de
+Pesquisas em
+Transportes
+
+19
+SINALIZAÇÃO VIÁRIA - Módulo 1
+
+Figura 3 — Comparação da abordagem tradicional e de Sistema Seguro.
+
+Problema
+Causa
+
+Responsabilidade
+
+ABORDAGEM
+TRADICIONAL
+
+Risco de acidentes
+
+O comportamento humano
+
+Individual, de cada
+usuário da via
+
+ABORDAGEM DE
+SISTEMA SEGURO
+
+Mortes e lesões graves
+
+Os seres humanos cometem
+erros e são frágeis
+Compartilhada: desenho,
+operação, uso, fiscalização etc.
+
+Planejamento
+
+Demanda por
+Segurança no Trânsito
+
+Recursos
+
+Reativo
+
+As pessoas não
+querem segurança
+
+Salvar vidas custa caro
+
+Proativo
+
+As pessoas querem
+segurança
+
+Salvar vidas é custo-efetivo
+
+Objetivo
+
+Número ótimo/aceitável de
+mortos e feridos graves
+
+Fonte PNATRANS, 2021.
+
+Nenhuma morte ou
+lesão grave é aceitável
+
+                                                                                                   20
+                                                                  SINALIZAÇÃO VIÁRIA - Módulo 1
+
+
+
+
+8 REFERÊNCIAS BIBLIOGRÁFICAS
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 10697: Pesquisa de sinistros de
+trânsito — Terminologia. 3ª Edição. Rio de Janeiro, 2020.
+
+BRASIL. Código de Trânsito Brasileiro - Compilado. Disponível em
+http://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm. Acesso em 18/04/2022.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Executiva. Instituto de
+Pesquisas Rodoviárias – Manual de Projeto Geométrico de Rodovias Rurais. Rio de Janeiro, 1999.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. BR-LEGAL 2. Disponível em
+https://www.gov.br/dnit/pt-br/assuntos/infraestrutura-rodoviaria/br-legal-2. Acesso em 29 de
+Novembro de 2022.
+
+BRASIL. Ministério das Cidades. Secretaria Nacional de Transporte e da Mobilidade Urbana.
+Moderação de Tráfego – Medidas para Humanização da Cidade. Brasília, 2006.
+
+BRASIL. Ministério da Justiça. Departamento Nacional de Trânsito. Manual de procedimentos para
+o tratamento de polos geradores de tráfego. Brasília, 2001.
+
+BRASIL. Ministério da Infraestrutura. Plano Nacional de Redução de Mortes e Lesões no Trânsito.
+Disponível em https://www.gov.br/infraestrutura/pt-br/assuntos/transito/arquivos-
+senatran/Anexo_I_pnatrans.pdf. Acesso em 2 de abril de 2022.
+
+BRASIL. Ministério da Infraestrutura (2020). Segurança Viária. Disponível                          em
+https://www.gov.br/infraestrutura/pt-br/assuntos/transporte-terrestre/rodovias-
+federais/seguranca-viaria. Acesso em 29 de Novembro de 2022.
+FUNDAÇÃO MAPFRE. O Manual de Medidas de Segurança Viária – Edição revisada e ampliada.
+Madrid, 2015.
+
+Insurance Institute for Highway Safety, Highway Loss Data Institute. IIHS research bibliography.
+Disponível em https://www.iihs.org/topics/bibliography. Acessado em 27/04/2022.
+
+PAHO. Salvar vidas – Pacote de medidas técnicas para a segurança no trânsito. Organização Pan-
+Americana da Saúde/ Organização Mundial da Saúde. 2018.
+
+WRI Brasil. Afinal, o que são ruas completas? https://wribrasil.org.br/pt/blog/2018/07/afinal-o-que-
+sao-ruas
+completas#:~:text=Ruas%20completas%20s%C3%A3o%20ruas%20desenhadas,mais%20democr
+%C3%A1tica%2C%20beneficiando%20a%20todos. Acesso em 05/05/2022.

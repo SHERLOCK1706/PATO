@@ -1,0 +1,373 @@
+                                                                    Maio/2018                       NORMA DNIT 182/2018 - PRO
+
+
+          DNIT                                              Conservação Rodoviária - Determinação do Nível
+                                                                de Esforço de Roçada – Procedimento
+    MINISTÉRIO DOS TRANSPORTES,
+         PORTOS E AVIAÇÃO CIVIL                            Autor: Instituto de Pesquisas Rodoviárias - IPR
+                                                           Processo: 50600.005620/2015-39
+     DEPARTAMENTO NACIONAL DE
+                                                           Aprovação pela Diretoria Colegiada do DNIT na Reunião de 29/05/2018
+INFRAESTRUTURA DE TRANSPORTES
+
+              DIRETORIA GERAL
+                                                           Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que
+    DIRETORIA DE PLANEJAMENTO E                            citada a fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda
+                   PESQUISAS                               comercial.
+
+         INSTITUTO DE PESQUISAS
+                  RODOVIÁRIAS                                                           Palavras-chave:                              Total de páginas
+
+     Rodovia Presidente Dutra, km 163
+     Centro Rodoviário – Vigário Geral                     Esforços de Roçada, Pluviosidade, Serviços de Manutenção              e           7
+    Rio de Janeiro/RJ – CEP 21240-000                      Conservação Rodoviária, nd – fator de intensidade de chuva
+          E-mail: ipr@dnit.gov.br
+
+
+
+
+Resumo                                                                                    esforço de roçada para serviços de manutenção e
+                                                                                          conservação rodoviária.
+Este      documento           estabelece          a     metodologia           para
+determinação do nível de esforço de roçada para serviços
+                                                                                          1    Objetivo
+de conservação rodoviária.
+                                                                                          Estabelecer o nível de esforço de roçada para serviços
+Abstract                                                                                  de conservação rodoviária.
+
+This document presents the methodology for determining
+                                                                                          2    Definições
+the level of the vegetation cutting effort for road
+maintenance services.                                                                     Para os fins desta norma aplicam-se as definições a
+                                                                                          seguir:
+Sumário
+                                                                                          2.1 Nível de esforço
+
+Prefácio .......................................................................... 1     O nível de esforço de uma tarefa é a quantidade de
+1           Objetivo ............................................................. 1      trabalho que se pretende aplicar durante o ano a cada
+2           Definições ......................................................... 1        unidade de inventário correspondente a essa tarefa.
+3           Metodologia ...................................................... 2          É adotada nesta norma a definição dada pelo Manual de
+4           Formulação ....................................................... 2          Conservação Rodoviária do DNIT, Publicação IPR 710,
+5           Ferramentas ...................................................... 2          que define o nível de esforço relacionado ao serviço de
+Anexo A (Normativo) – Tabela 1 .................................... 3                     roçada, como Tipo 1: “Níveis de esforços baseados na
+Anexo B (Informativo) – Exemplo ................................... 5                     frequência        (tecnicamente         necessária        ou
+Anexo C (Informativo) – Bibliografia ............................... 6                    economicamente possível) de execução da tarefa”.
+Índice geral..................................................................... 7
+                                                                                          2.2 Fator de influência de chuvas (FIC)
+
+                                                                                          Em harmonia com o Manual de Custos de Infraestrutura
+Prefácio
+                                                                                          de Transportes, o FIC é um fator calculado em função do
+A presente Norma foi preparada pelo Instituto de                                          produto de quatro fatores distintos que interferem na
+Pesquisas          rodoviárias          –     IPR/DPP/DNIT,              visando          execução das obras.
+estabelecer a metodologia de determinação do nível de
+NORMA DNIT 182/2018 – PRO                                                                                                2
+
+2.3 Fator de Intensidade de chuvas (nd)                           4    Formulação
+
+Fator presente na formulação do FIC que expressa o                O valor do NERP é obtido por meio da equação 1:
+percentual médio de dias efetivamente paralisados em
+                                                                                                  1
+função da pluviosidade.                                                          ∑𝑖 (𝑁𝐸𝑅𝐸𝑖 ×         )
+                                                                                                  𝑑𝑖
+                                                                      𝑁𝐸𝑅𝑃 =                                  (𝑒𝑞. 1)
+                                                                                           1
+2.4 Nível de esforço de roçada do ponto (NERP)                                           ∑
+                                                                                           𝑑𝑖
+É o nível de esforço de roçada para o ponto médio do
+trecho rodoviário considerado, obtido pela metodologia
+estabelecida nesta norma.                                         Onde:
+
+2.5 Nível de esforço de roçada da estação (NERE)                  NERP é um número inteiro;
+
+É o nível de esforço de roçada associado a cada uma das           𝑁𝐸𝑅𝐸𝑖 é o nível de esforço de roçada associado à
+82 estações pluviométricas que se encontram na Tabela             estação considerada apresentado na Tabela 1;
+1 do Anexo A.
+                                                                  𝑑𝑖 é a distância em quilômetros entre o ponto médio do
+                                                                  trecho rodoviário e a estação pluviométrica considerada.
+3    Metodologia
+
+Consiste no estabelecimento de uma relação direta e               5    Ferramentas
+linear entre o fator de intensidade de chuvas (nd) e o nível
+                                                                  Encontra-se disponível na página do IPR para download
+de esforço de roçada. Para isso, são consideradas as
+                                                                  o arquivo Est-Pluv_NERP.kmz com as estações da
+mesmas 82 estações pluviométricas usadas no cálculo
+                                                                  Tabela 1. Assim, para a determinação das distâncias "𝒅𝒊 "
+do (nd). A cada estação pluviométrica está associado um
+                                                                  basta carregar o arquivo supracitado e        inserir as
+valor de NERE.
+                                                                  coordenadas geográficas do ponto médio do trecho no
+A Estação de Cunani, localizada no Município de                   “Google Earth”. No Anexo B encontra-se um exemplo de
+Calçoene-AP, possui o maior valor de (nd), e se vincula           aplicação do método.
+ao valor máximo de NERE. No outro extremo, com o
+menor valor de (nd) e consequentemente associado ao
+valor mínimo de NERE, encontra-se a estação homônima
+ao Município de Delmiro Gouvêia-AL.
+
+A quantidade de estações pluviométricas a serem
+consideradas no cálculo deve variar de duas a cinco
+estações, ou seja 2 ≤ 𝑖 ≤ 5, e serem necessariamente
+as mais próximas do ponto considerado, não
+necessariamente da mesma UF;
+
+Pode-se somar ou subtrair uma unidade ao NERP para
+considerar fatores relacionados à fertilidade do solo e/ou
+ao tipo de vegetação.
+
+
+
+
+                                                 _________________/ Anexo A
+NORMA DNIT 182/2018 – PRO                                                                                                                                       3
+
+
+                                                              Anexo A (Normativo) – Tabela 1
+
+                                       Tabela 1 – Estações Pluviométricas com valores de NERE associados.
+
+                                    Estação                                                                                       Entidade
+  Região              UF                         Nome da Estação         Latitude      Longitude           Município                             nd      NERE
+                                 Pluviométrica                                                                                   Operadora
+
+                                    967000            Rio Branco         9°58'33" S    67°48'0" W           Rio Branco              INMET      0,03744   5,8
+                      Acre
+                                    1067003          Vila Capixaba       10°34'33" S   67°40'36" W           Capixaba               CPRM       0,02546   4,3
+                                    8050000             Carmo            0°30'29" N    50°44'54" W            Macapá                CPRM       0,03308   5,3
+                     Amapá
+                                    8251001             Cunani           2°41'54" N    51°21'41" W           Calçoene               CPRM       0,08774   12,0
+                                    765000            Cachoeira           7°42'9" S     66°3'5" W             Lábrea               COHIDRO     0,04543   6,8
+                                    759000           Vila do Apuí         7°12'3" S    59°53'32" W        Novo Aripuanã            COHIDRO     0,05509   8,0
+                                    470002       Esteirão do Repouso      4°23'0" S    70°58'0" W         Atalaia do Norte         COHIDRO     0,05583   8,1
+                   Amazonas         8069004          Pirarara Poço        0°8'34" S    69°12'48" W   São Gabriel da Cachoeira       CPRM       0,07611   10,6
+                                    363000            Barro Alto         3°52'30" S    63°47'9" W              Coari               COHIDRO     0,04304   6,5
+                                    259000        Cachoeira Morena        2°6'52" S    59°20'7" W      Presidente Figueiredo        CPRM       0,03572   5,6
+                                    267001           Espírito Santo       2°45'0" S    67°34'0" W           Fonte Boa              COHIDRO     0,06215   8,8
+    Norte
+
+
+
+
+                                    247000             Badajós           2°30'46" S    47°46'5" W     São Domingos do Capim         CPRM       0,04139   6,3
+                                    555002        Km 1130 da BR163       6°40'17" S    55°29'45" W            Itaituba               UFC       0,04395   6,6
+                      Pará          152005             Almeirim          1°13'35" S    52°34'42" W           Almeirim               CPRM       0,04223   6,4
+                                     47003              Curuçá           0°44'15" S    47°51'13" W            Curuçá                CPRM       0,05177   7,6
+                                    352005            Brasil Novo        3°18'28" S    52°32'31" W           Altamira                UFC       0,04980   7,3
+                                    862000             Tabajara          8°55'56" S    62°3'14" W       Machadinho d'Oeste          CPRM       0,04426   6,6
+                    Rondônia        1160000         Marco Rondon         12°0'55" S    60°51'18" W        Pimenta Bueno             CPRM       0,03849   5,9
+                                    1063000        Escola Caramurú       10°30'18" S   63°38'46" W          Ariquemes               CPRM       0,05410   7,9
+                                    8360002       Fazenda Passarão       3°12'28" N    60°34'16" W           Boa Vista              CPRM       0,02703   4,5
+                    Roraima         8161001           Caracaraí          1°49'17" N    61°7'25" W            Caracaraí              CPRM       0,03490   5,5
+                                     61000       Santa Maria do Boiaçú   0°30'24" S    61°47'9" W          Rorainópolis             CPRM       0,04878   7,2
+                                    1148000        Fazenda Lobeira       11°31'53" S   48°17'41" W   São Valeiro da Natividade      CPRM       0,02720   4,5
+                    Tocantins
+                                    848000       Colinas do Tocantins     8°3'10" S    48°28'54" W     Colinas do Tocantins         CPRM       0,03527   5,5
+
+                     Distrito       1547013            Taquara           15°37'56" S   47°31'13" W            Brasília              CAESB      0,01966   3,6
+                     Federal        1547004             Brasília         15°47'24" S   47°55'22" W            Brasília              INMET      0,02543   4,3
+                                    1750001       Fazenda do Turno       17°4'45" S    50°17'22" W           Paraúna                CPRM       0,02520   4,3
+                      Goiás
+                                    1549001           Goianésia          15°19'45" S   49°7'18" W            Goianésia              CPRM       0,02632   4,4
+                                    1156000         Fazenda Itaubá                                           Tabaporã               CPRM       0,04125   6,3
+    CerntroOeste
+
+
+
+
+                                                                         11°28'17" S   56°26'0" W
+                                    1351000          Trecho Médio        14°5'17" S    51°41'56" W           Cocalinho              CPRM       0,03102   5,0
+                   Mato Grosso
+                                    1655001        Córrego Grande        16°36'29" S   55°12'23" W   Santo Antônio do Leverger      CPRM       0,03385   5,4
+                                    1456008         Rosário Oeste        14°50'3" S    56°24'42" W        Rosário Oeste            FURNAS      0,02655   4,5
+                                    1951003       Fazenda Pindorama      19°23'27" S   51°36'32" W           Paranaíba              CPRM       0,03005   4,9
+
+                   Mato Grosso      1956005           Bodoquena          19°52'15" S   56°59'1" W             Miranda               CPRM       0,02235   3,9
+                      do Sul        2254000            Caarapó           22°37'28" S   54°49'29" W           Caarapó                CPRM       0,02660   4,5
+                                    2055002            Palmeiras         20°26'56" S   55°25'51" W       Dois Irmãos Buriti         CPRM       0,02829   4,7
+
+                                    2352002          Quinta do Sol                                         Quinta do Sol         AGUASPARANÁ   0,03011   4,9
+                                                                         23°49'0" S    52°11'0" W
+                     Paraná
+                                    2549000           São Bento          25°56'0" S    49°47'0" W              Lapa                 COPEL      0,02775   4,6
+                                    2552001         Águas do Vere        25°46'26" S   52°55'58" W       São Jorge do Ivaí          COPEL      0,04590   6,8
+    Sul
+
+
+
+
+                   Rio Grande       3050002        Palmares do Sul       30°15'5" S    50°30'21" W        Palmares do Sul           CPRM       0,01998   3,7
+                     do Sul         2953030          Tupancireta          29°5'8" S    53°49'9" W           Tupancireta             CPRM       0,03925   6,0
+
+                     Santa          2750001       Campo Belo do Sul      27°53'56" S   50°45'13" W      Campo Belo do Sul           CPRM       0,02811   4,7
+                    Catarina        2651040         Ponte Serrada        26°55'14" S   51°55'41" W        Ponte Serrada             CPRM       0,04152   6,3
+NORMA DNIT 182/2018 – PRO                                                                                                                                     4
+
+                                                                      Anexo A (continuação)
+
+
+
+                                     Tabela 1 – Estações Pluviométricas com valores de NERE associados.
+
+                                 Estação                                                                                          Entidade
+  Região           UF                         Nome da Estação             Latitude      Longitude          Município                           nd      NERE
+                              Pluviométrica                                                                                      Operadora
+
+                 Espírito        1840000           Águia Branca           18°59'8" S    40°44'46" W        Águia Branca            CPRM      0,02295   4,0
+                  Santo          2041018          Usina Fortaleza         20°22'17" S   41°24'32" W         Muniz Freire           CPRM      0,02655   4,5
+                                 2044042      Carmo da Mata (Copasa)      20°33'45" S   44°52'3" W        Carmo da Mata            CPRM      0,02600   4,4
+                                 1844018         Ponte do Bicudo          18°12'4" S    44°34'38" W           Corinto              CPRM      0,02110   3,8
+               Minas Gerais      1941018             Itanhomi             19°9'42" S    41°51'44" W           Itanhomi             CPRM      0,01878   3,5
+                                 1542016           Serra Branca           15°38'12" S   42°56'37" W         Porteirinha            CPRM      0,01557   3,1
+    Sudeste
+
+
+
+
+                                 1847010           Iraí de Minas          18°58'55" S   47°27'27" W         IraídeMinas            CPRM      0,02554   4,3
+
+                  Rio de         2142022              Aldeia              21°57'5" S    42°21'22" W          Cantagalo             CPRM      0,02159   3,9
+                 Janeiro         2243004          Conservatória           22°17'15" S   43°55'46" W           Valença              CPRM      0,03002   4,9
+                                 2345067           Ponte Alta 1           23°19'45" S   45°8'25" W     São Luís do Paraitinga      CPRM      0,03204   5,1
+                                 2147117           Pirassununga           21°59'59" S   47°25'0" W         Pirassununga           DAEESP     0,02573   4,4
+                São Paulo
+                                 2151039              Lucélia             21°44'0" S     51°1'0" W            Lucélia             DAEESP     0,02442   4,2
+                                 2348088        Engenheiro Barcelar       23°52'59" S   48°46'20" W           Itapeva            CONTRUFAM   0,02405   4,2
+                                 935012             MuriciPonte           9°18'49" S    35°56'59" W            Murici              CPRM      0,01954   3,6
+                 Alagoas
+                                 937013          Delmiro Gouvêia          9°23'34" S    37°59'39" W       Delmiro Gouvêia          CPRM      0,00658   2,0
+                                 1539022        Camacan (Vargito)         15°25'31" S   39°29'34" W          Camacan               CPRM      0,02017   3,7
+                                 1144005        Fazenda Macambira         11°36'50" S   44°9'27" W           Cotegipe              CPRM      0,01853   3,5
+                                 1139022             Gavião II            11°28'27" S   39°47'5" W            Gavião               CPRM      0,00685   2,0
+                  Bahia          940024              Juazeiro             9°24'20" S    40°30'12" W          Juazeiro              CPRM      0,00766   2,1
+                                 1241001         Fazenda Iguaçú           12°56'5" S    41°3'57" W             Itaeté              CPRM      0,01228   2,7
+                                 1137043          Usina Altamira          11°46'6" S    37°48'13" W           Conde                ANA       0,01671   3,3
+                                 1739021        Cachoeira Grande          17°15'13" S   39°46'42" W            Prado               ANA       0,01819   3,4
+                                 339000             Amontada              3°21'48" S    39°49'46" W          Amontada              CPRM      0,01335   2,8
+                                 438011                Baú                 4°7'17" S    38°39'33" W          Pacatuba              CPRM      0,01983   3,6
+                  Ceará
+                                 638014                 Icó               6°24'32" S    38°51'49" W             Icó                CPRM      0,01410   2,9
+    Nordeste
+
+
+
+
+                                 440005               Croatá              4°24'59" S    40°54'15" W           Croatá               CPRM      0,00802   2,2
+                                 644003               Colinas              6°1'39" S    44°15'14" W           Colinas              CPRM      0,02309   4,0
+                Maranhão
+                                 444001              Coroatá               4°9'46" S    44°9'57" W            Coroatá              CPRM      0,03187   5,1
+                                 638032          Antenor Navarro           6°44'7" S    38°26'53" W   São João do Rio do Peixe     CPRM      0,01889   3,5
+                 Paraíba
+                                 735009              Mulungu               7°1'46" S    35°28'5" W            Mulungu              CPRM      0,01389   2,9
+                                 835138              Pirapama             8°16'45" S    35°3'48" W    Cabo de Santo Agostinho      CPRM      0,03228   5,2
+               Pernambuco        838004       Belém de São Francisco      8°45'54" S    38°57'38" W   Belém de São Francisco       CPRM      0,00845   2,2
+                                 840010         Fazenda São Bento         8°36'58" S    39°59'58" W   Santa Maria da Boa Vista     CPRM      0,00868   2,3
+                                 844008          Cristino Castro II       8°48'47" S    44°12'56" W       Cristino Castro          CPRM      0,01496   3,0
+                   Piauí
+                                 541002       Fazenda Boa Esperança       5°13'29" S    41°44'13" W       Castelo do Piauí         CPRM      0,02096   3,8
+
+               Rio Grande        537035          Fazenda Angicos          5°17'20" S    37°17'20" W          Mossoró               CPRM      0,00927   2,3
+                no Norte         637010          Açude Lagoinha           6°27'44" S    37°18'9" W      Jardim de Piranhas         CPRM      0,01358   2,9
+                                 1037049        Santa Rosa de Lima        10°39'10" S   37°11'34" W     Santa Rosa de Lima         CPRM      0,01807   3,4
+                 Segipe
+                                 1137017             Estância             11°16'0" S    37°26'35" W          Estância              CPRM      0,02437   4,2
+
+
+
+
+                                                                _________________/ Anexo B
+NORMA DNIT 182/2018 – PRO                                                                                                   5
+
+                                                Anexo B (Informativo) – Exemplo
+
+
+
+Determinação do NERP para um ponto médio do trecho na BR-381/MG
+
+Coordenadas do Ponto:
+
+Latitude 19° 5'4.44" S e Longitude 42°11'8.14" W
+
+Foram consideradas 5 estações pluviométricas conforme o quadro abaixo:
+
+                     Estação
+      UF                                Nome da Estação                Lat.               Long.           NERE    di (km)
+                  Pluviométrica
+
+                    1840000                Águia Branca             18°59'8" S        40°44'46" W         4,0     152,2
+ Espírito Santo
+                    2041018              Usina Fortaleza           20°22'17" S        41°24'32" W         4,5     162,7
+
+                    2044042       Carmo da Mata (Copasa)           20°33'45" S         44°52'3" W         4,4     323,5
+
+ Minas Gerais       1844018              Ponte do Bicudo            18°12'4" S        44°34'38" W         3,8     270,8
+
+                    1941018                  Itanhomi               19°9'42" S        41°51'44" W         3,5     35,5
+
+                         As distâncias "𝒅𝒊 " foram obtidas pela régua de medição do Google Earth
+
+Assim, obtém-se o NERP pela equação abaixo:
+
+                                         1             1            1             1           1
+                                  4×         + 4,5×        + 4,4×        + 3,8×       + 3,5×
+                                       152,2        162,7         323,5         270,8        35,5
+                         NERP =                                                                   = 3,8
+                                                1        1        1         1       1
+                                                     +        +        +        +
+                                              152,2 162,7 323,5 270,8 35,5
+
+
+
+Observação:
+
+Como o NERP deve ser um valor inteiro, ou seja, se 3,4 adota-se 3 e se 3,5 adota-se 4 e, conforme a Seção 3, pode-se somar
+ou subtrair uma unidade ao calculado pela equação 1 para considerar fatores relacionados à fertilidade do solo e/ou ao tipo
+de vegetação. Desta forma, o nível de esforço pode ser 4 ou 4 ± 1.
+
+
+
+
+                                                 ________________/ Anexo C
+NORMA DNIT 182/2018 – PRO                                                                                             6
+
+                                           Anexo C (Informativo) - Bibliografia
+
+
+
+   a)   BRASIL.      Departamento        Nacional      de             b)   ______.     Departamento     Nacional     de
+        Infraestrutura de Transportes. Diretoria Geral.                    Infraestrutura de Transportes. Diretoria de
+        Diretoria Executiva. Coordenação Geral de                          Planejamento e Pesquisa. Coordenação Geral
+        Custos de Infraestrutura de Transportes. Fator                     de Estudos e Pesquisa. Instituto de Pesquisas
+        de influência de chuvas. In: ______. Manual de                     Rodoviárias. 2. ed. Manual de conservação
+        custos de infraestrutura de transportes. Brasília,                 rodoviária. Rio de Janeiro, 2005. (IPR. Publ.
+        DF,     2017.     v.    6.    Disponível      em:                  710).
+        <http://www.dnit.gov.br/custos-e-
+        pagamentos/sicro/manuais-de-custos-de-
+        infraestrutura-de-transportes/manuais-de-
+        custos-de-infraestrutura-de-transportes>.
+        Acesso em: 14 ago. 2017.
+
+
+
+
+                                              _________________/Índice geral
+NORMA DNIT 182/2018 – PRO                                                                                                                                                      7
+
+                                                                                  Índice geral
+
+
+
+
+Abstract ............................................................. ............ 1       Índice geral ......................................................... ............ 7
+Anexo A (Normativo) – Tabela 1 ........................ ......... 1,3                       Metodologia .......................................................3 ...... 1,2
+Anexo B (Normativo) .......................................... ......... 1,5                Nível de esforço .................................................3.1........ 2
+Anexo C (Informativo) ........................................ ......... 1,6                Nível de esforço de roçada da estação (NERE) .3.5........ 2
+Definições .......................................................... 2 .......... 1        Nível de esforço de roçada do ponto (NERP) ....3.4........ 2
+Fator de influência de chuvas (FIC) ................... 3.2 ....... 2                       Objetivo .............................................................1 .......... 1
+Fator de Intensidade de chuvas (nd) ................. 3.3 ....... 2                         Prefácio ............................................................. ............ 1
+Ferramentas ...................................................... 5 ....... 1,3            Resumo ............................................................. ............ 1
+Formulação ....................................................... 4 ....... 1,3
+
+
+
+
+                                                                             ________________

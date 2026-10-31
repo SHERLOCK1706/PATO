@@ -1,0 +1,2230 @@
+        DNIT
+                MANUAL DE CUSTOS DE
+        INFRAESTRUTURA DE TRANSPORTES
+                   PREÇOS REFERENCIAIS
+
+
+                         VOLUME 03
+
+
+
+
+                            2ª Edição
+                           BRASÍLIA-DF
+                               2025
+
+
+
+                 MINISTÉRIO DOS TRANSPORTES
+   DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES
+José Renan Vasconcelos Calheiros Filho
+
+DIRETOR-GERAL DO DNIT
+Fabricio de Oliveira Galvão
+
+DIRETOR DE PLANEJAMENTO E PESQUISA
+Luiz Guilherme Rodrigues de Mello
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Caio Saravy Cardoso
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+      PREÇOS REFERENCIAIS
+
+
+          VOLUME 03
+SEGUNDA EDIÇÃO – Brasília, 2025
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 490/2021-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 647/2024-00)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Caio Saravy Cardoso
+Eng.º Rodrigo Bezerra Marques
+Eng.º Renan Abreu de Moura
+Eng.º Pedro Henrique Dantas de Medeiros
+Eng.º Gleydson Viegas de Oliveira
+
+PRIMEIRA EDIÇÃO – Brasília, 2017
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015-00)
+
+COMISSÃO DE SUPERVISÃO:
+MSc. Eng.º Luiz Heleno Albuquerque Filho
+Eng.º Paulo Moreira Neto
+Eng.º Caio Saravy Cardoso
+
+PRIMEIRAS VERSÕES
+EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+Elaboração: CENTRAN
+Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Silvio Mourão (Brasília)
+Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+                   Brasil. Departamento Nacional de Infraestrutura de Transportes.
+            Diretoria-Geral. Diretoria de Planejamento e Pesquisa. Coordenação-Geral de
+                                Custos de Infraestrutura de Transportes.
+
+              Manual de Custos de Infraestrutura de Transportes - Volume 03 - Preços
+                        Referenciais. 2ª Edição - Brasília - DF, 2025. 59p.
+
+           1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias - Construções -
+           Estimativa e Custo - Manuais. 3 Aquavias - Construções - Estimativa e Custo - Manuais.
+                                             I. Série. II. Título.
+
+
+
+
+Reprodução permitida desde que citado o DNIT como fonte.
+Impresso no Brasil / Printed n Brazil
+                 MINISTÉRIO DOS TRANSPORTES
+  DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+
+
+
+            MANUAL DE CUSTOS DE
+  INFRAESTRUTURA DE TRANSPORTES
+               PREÇOS REFERENCIAIS
+
+
+                       VOLUME 03
+
+
+
+
+                          2ª Edição
+                          BRASÍLIA
+                            2025
+MINISTÉRIO DOS TRANSPORTES – MT
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES – DNIT
+DIRETORIA-GERAL – DG
+DIRETORIA DE PLANEJAMENTO E PESQUISA – DPP
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES – CGCIT
+
+
+Setor de Autarquias Norte
+Quadra 03 Lote A, Ed. Núcleo dos Transportes
+CEP: 70040-902 – Brasília – DF
+Telefone: (061) 3315-4700
+E-mail: cgcit.sicro@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+            Volume 03: Preços Referenciais
+
+
+Segunda Edição: 2025
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 490/2021-00 e 647/2024-00
+Aprovado pela Diretoria Colegiada do DNIT em 21/10/2025 (Relato nº 191/2025)
+Processo SEI nº 50600.027352/2017-78
+
+
+Primeira Edição: 2017
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 327/2012-00 e 462/2015-00
+Aprovado pela Diretoria Colegiada do DNIT em 25/04/2017 (Relato nº 38/2017)
+Processo SEI nº 50600.027352/2017-78
+
+
+
+
+Impresso no Brasil / Printed in Brazil
+                                 APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto Departamento Nacional de
+Estradas e Rodagem (DNER) e do Departamento Nacional de Infraestrutura de
+Transportes (DNIT) na formação de preços referenciais de obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos de
+Infraestrutura de Transportes preserva o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da divulgação
+dos relatórios sintéticos e analíticos valorados de composições de custos e insumos,
+juntamente com a publicação da 1ª edição do Manual de Custos de Infraestrutura de
+Transportes e das Produções de Equipes Mecânicas dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual de
+Custos de Infraestrutura de Transportes. Os conteúdos encontram-se dispostos
+conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+Os cadernos técnicos apresentam as condições de contorno adotadas nos cálculos
+dos consumos dos materiais e da produção horária dos serviços, suas respectivas
+memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para elaboração de
+orçamentos baseados no SICRO, estabelecendo diretrizes básicas para tomada de
+decisão e exemplos práticos que ilustram o emprego das diferentes ferramentas que
+integram o sistema.
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está dividido
+em oito volumes:
+
+    ▪ Volume 01 - Metodologia e Conceitos;
+    ▪ Volume 02 - Mão de Obra;
+    ▪ Volume 03 - Preços Referenciais;
+    ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+    ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+    ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+    ▪ Volume 07 - Administração Local;
+    ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de Infraestrutura
+de Transportes, pode produzir orçamentos para obras de infraestrutura de transportes
+que incorporam as nuances dos casos concretos, ao tempo que observam a eficiência
+associada à otimização dos recursos envolvidos característica da engenharia.
+
+
+                             CAIO SARAVY CARDOSO
+           Coordenador-Geral de Custos de Infraestrutura de Transportes
+                                         LISTA DE FIGURAS
+
+Figura 1 - Organograma do manual de custos de preços referenciais ...................... 13
+Figura 2 - Representação do boxplot ........................................................................ 27
+                                                   SUMÁRIO
+
+1         INTRODUÇÃO ........................................................................................... 12
+
+2         CONCEITOS .............................................................................................. 16
+
+2.1       Preço referencial ...................................................................................... 16
+
+2.2       Pesquisa de preços .................................................................................. 16
+
+2.3       Esforço de pesquisa de preços ............................................................... 16
+
+2.4       Família de insumos, insumo líder e insumo liderado............................ 17
+
+3         PESQUISA DE PREÇOS ........................................................................... 19
+
+3.1       Análise e especificação de insumos....................................................... 19
+
+3.2       Desenho da amostra ................................................................................ 20
+
+3.3       Definição do tipo de transação e da região de pesquisa ...................... 20
+
+3.4       Elaboração do questionário e coleta de dados ..................................... 21
+
+3.5       Validação e armazenamento de preços coletados ................................ 22
+
+4         CÁLCULO DE PREÇOS REFERENCIAIS ................................................ 25
+
+4.1       Crítica dos preços coletados ................................................................... 25
+
+4.1.1     Crítica horizontal ......................................................................................... 25
+
+4.1.2     Crítica vertical ............................................................................................. 26
+
+4.2       Metodologias de cálculo .......................................................................... 28
+
+4.2.1     Preço coletado ............................................................................................ 28
+
+4.2.2     Preço referencial imputado ......................................................................... 28
+
+4.2.2.1   1º Processo - Unidade da Federação direcionadora .................................. 29
+
+4.2.2.2   2º Processo - Média da região com pelo menos 50% de preços ............... 29
+
+4.2.2.3   3º Processo - Média da Unidade da Federação de referência ................... 30
+
+4.2.3     Precificado por metodologia de parametrização ......................................... 31
+
+4.2.3.1   Cálculo do coeficiente de parametrização .................................................. 31
+
+4.2.3.2   Aplicação do fator K aos itens liderados ..................................................... 33
+4.2.4      Preço com frete metodológico .................................................................... 33
+
+4.2.4.1    Custo unitário do frete metodológico .......................................................... 34
+
+4.2.4.2    Custo unitário do frete metodológico com múltiplas origens....................... 40
+
+4.2.5      Metodologia de precificação de materiais agregados ................................. 41
+
+4.2.6      Metodologia de precificação do cimento Portland CP II ............................. 42
+
+4.2.7      Metodologia de precificação da cal hidratada ............................................. 43
+
+4.2.8      Metodologia de precificação de insumos madeireiros ................................ 44
+
+4.2.8.1    1º Processo - Média do preço por volume na mesma UF .......................... 45
+
+4.2.8.2    2º Processo - Média do preço por volume na mesma região ..................... 45
+
+4.2.8.3    3º Processo - Média do preço por volume na região mais adequada......... 46
+
+4.2.9      Precificado por estudo específico ............................................................... 46
+
+4.2.9.1    Metodologia de precificação de balsas, plataformas flutuantes e batelões
+           não propelidos ............................................................................................ 46
+
+4.2.9.2    Metodologia de precificação de dragas ...................................................... 47
+
+4.2.10     Precificado por extrapolação ou interpolação ............................................. 48
+
+4.2.11     Preço referencial estimado ......................................................................... 49
+
+4.2.12     Preço coletado atualizado por índice .......................................................... 49
+
+4.3        Análises e tratamentos dos preços de referência ................................. 50
+
+4.3.1      Análise de variação de preços entre pesquisas sucessivas ....................... 50
+
+4.3.2      Análise de ordenamento ............................................................................. 51
+
+4.3.3      Análise de amplitude percentual ................................................................. 51
+
+4.3.4      Tratamentos dos preços de referência ....................................................... 52
+
+4.3.4.1    Média móvel simples .................................................................................. 52
+
+4.3.4.2    Média móvel ponderada ............................................................................. 53
+
+5          CONSIDERAÇÕES FINAIS ....................................................................... 55
+
+REFERÊNCIAS BIBLIOGRÁFICAS ......................................................................... 57
+BIBLIOGRAFICA RECOMENDADA ........................................................................ 59
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                                               1    INTRODUÇÃO
+
+
+
+
+                       11                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+1       INTRODUÇÃO
+
+O Volume 03 do Manual de Custos de Infraestrutura de Transportes detalha as
+metodologias adotadas para estabelecer os preços referenciais dos materiais e
+equipamentos que integram o Sistema de Custos Referenciais de Obras (SICRO).
+
+Os preços referenciais são parâmetros objetivos e fundamentados que proporcionam
+transparência, qualidade, celeridade e economicidade às contratações públicas de
+produtos, obras e serviços, contribuindo para que os orçamentos respeitem níveis
+adequados de preço.
+
+Os preços referenciais são obtidos a partir de amostras de dados coletados em
+respondentes do mercado ou em bases de dados oficiais (públicas ou privadas),
+sendo necessário definir premissas para a seleção e crítica dos dados amostrais.
+Ademais, são aplicados tratamentos e metodologias que conferem ao preço de
+referência dos insumos um ordenamento qualitativo e quantitativo.
+
+Ressalta-se que os preços referenciais não incorporam volume de aquisição nem
+eventuais ganhos de escala. Tampouco captam a realidade dinâmica e competitiva
+do mercado no momento exato da transação e as particularidades de cada compra,
+obra ou serviço.
+
+Em síntese, a obtenção dos preços referenciais dos materiais e equipamentos do
+SICRO encontra-se estruturada em duas etapas: (1) pesquisa de preços e (2) cálculo
+de preços referenciais. Os capítulos subsequentes elucidam os conceitos, premissas
+e metodologias adotados em cada etapa.
+
+Para melhor compreensão do documento, a Figura 1 a seguir apresenta um
+organograma do sumário, exibindo os títulos das seções até o nível 3, de modo a
+permitir a visualização dos principais conceitos abordados, assim como a metodologia
+utilizada para definição dos preços referenciais.
+
+
+
+
+                                             12                           DNIT/DPP/CGCIT
+         Manual de Custos de Infraestrutura de Transportes
+                 Volume 03 - Preços Referenciais
+
+
+
+
+Figura 1 - Organograma do manual de custos de preços referenciais
+
+
+
+
+                                13                            DNIT/DPP/CGCIT
+Cálculo de Preços
+
+[êp)
+o
+1Q
+[6a
+U.
+Pad
+[0]
+e) À
+(75)
+=
+o
+ÕÓ
+
+Referenciais
+
+Manual de Custos de Infraestrutura de Transportes
+Volume 03 - Preços Referenciais
+
+Crítica dos preços
+coletados
+
+Metodologias de
+cálculo
+
+Análises e tratamentos
+dos preços de
+referência
+
+Figura 1 - (conclusão)
+Fonte: FGV IBRE
+
+14 DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                                                    2    CONCEITOS
+
+
+
+
+                       15                               DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+2       CONCEITOS
+
+Este capítulo apresenta os principais conceitos relacionados aos preços referenciais
+dos materiais e dos equipamentos constantes do SICRO. Os equipamentos
+representam o conjunto de máquinas ou aparelhos necessários à execução de
+determinado serviço, enquanto os materiais correspondem à matéria-prima utilizada
+na confecção do serviço.
+
+2.1     Preço referencial
+
+O preço referencial dos materiais e equipamentos do SICRO é obtido por meio de
+pesquisa e coleta de dados de mercado, em conjunto com a aplicação de
+metodologias de cálculo e de tratamento estatístico.
+
+Em virtude de sua natureza referencial, não contempla as características do preço
+transacional, como carga de negociação e informações reais para a efetivação da
+compra.
+
+2.2     Pesquisa de preços
+
+A pesquisa de preços corresponde ao processo de coleta de valores de
+comercialização de determinado insumo junto a diferentes empresas do mercado,
+conforme especificações técnicas previamente definidas. Trata-se de um dos
+procedimentos mais relevantes nas contratações públicas, pois possibilita capturar o
+nível de preço praticado pelo mercado para determinados bens e serviços. A pesquisa
+de preço contribui para minimizar os riscos de sobrepreço ou de preços inexequíveis
+nos certames licitatórios.
+
+A pesquisa de preços observa as condições comerciais praticadas, considerando
+locais de entrega, formas e prazos de pagamento, fretes, marcas, modelos, entre
+outros requisitos.
+
+2.3     Esforço de pesquisa de preços
+
+No âmbito deste manual, o termo “esforço de pesquisa de preços” diz respeito ao
+emprego de todos os meios tecnicamente possíveis para a coleta de preços de
+mercado de determinado insumo.
+
+
+                                             16                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+2.4      Família de insumos, insumo líder e insumo liderado
+
+No contexto do SICRO, entende-se por família de insumos o conjunto de itens que
+compartilham características similares, tais como funções e usos, matérias-primas,
+processos de produção, requisitos normativos e legais, segmentos de mercado,
+fornecedores e locais de comercialização.
+
+Além disso, é fundamental que os insumos de uma mesma família apresentem
+padrões de comportamento de preços compatíveis, especialmente no que se refere
+às tendências inflacionárias de curto e de longo prazo, bem como às variações
+sazonais.
+
+Dentro de cada família, elege-se um único insumo líder, enquanto os demais itens são
+classificados como liderados. A definição do insumo líder da família ampara-se,
+sempre que possível, nas seguintes premissas:
+
+      ▪ item de maior representatividade e capilaridade para a pesquisa de preços;
+      ▪ item que guarda proporção definida em peso, volume ou outra característica
+        técnica com os demais materiais da família;
+      ▪ item cujo estoque é compatível com as demandas das obras.
+
+
+
+
+                                             17                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                                    3       PESQUISA DE PREÇOS
+
+
+
+
+                       18                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+3        PESQUISA DE PREÇOS
+
+O procedimento de estruturação e execução da pesquisa de preços do SICRO
+compreende as seguintes etapas:
+
+      ▪ análise e especificação de insumos;
+      ▪ desenho da amostra;
+      ▪ definição do tipo de transação e da região de pesquisa;
+      ▪ elaboração do questionário e coleta de dados;
+      ▪ validação e armazenamento de preços coletados.
+
+3.1      Análise e especificação de insumos
+
+Esta etapa consiste na análise e especificação dos insumos que compõem as
+composições de custos unitários do SICRO. Cada item, seja material ou equipamento,
+é especificado por meio de fichas técnicas contendo suas principais características,
+tais como natureza, descrição, unidade, utilização, dimensões, embalagens e formas
+de comercialização.
+
+As fichas técnicas visam detalhar cada insumo ao nível adequado para a eficácia da
+pesquisa de preços em campo, assegurando definições claras e prevenindo
+inconsistências de preços decorrentes de problemas de especificação.
+
+No decorrer da análise e especificação, avaliam-se também as relações de
+similaridade entre os itens com o propósito de agrupá-los em famílias homogêneas. A
+formação de famílias de insumos permite, por exemplo, a parametrização de preços
+e a análise de ordenamento.
+
+Ainda nesta etapa, torna-se imprescindível a validação da correspondência entre as
+unidades comerciais utilizadas no mercado e as unidades técnicas adotadas nas
+composições de custos do SICRO. Como os preços são pesquisados de acordo com
+as unidades de medidas comerciais do mercado, é necessário convertê-los, sempre
+que couber, para as unidades técnicas do SICRO por meio de fatores de conversão.
+
+É importante verificar ainda a necessidade de substituição de insumos em virtude de
+obsolescência, inovações tecnológicas ou alterações de modelos. Qualquer mudança
+
+
+
+                                             19                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                               Volume 03 - Preços Referenciais
+
+
+
+de especificação de insumos é avaliada em consonância com as composições de
+custos do SICRO, de modo a manter a coesão do sistema como um todo.
+
+3.2      Desenho da amostra
+
+No âmbito do SICRO, a pesquisa de preços é realizada em estabelecimentos com
+capacidade de produzir ou comercializar os insumos compatíveis com a demanda das
+obras do Departamento Nacional de Infraestrutura de Transportes (DNIT), conforme
+a natureza de cada item. A identificação dos principais fornecedores do mercado é
+importante para delinear a amostra da pesquisa.
+
+Para tanto, realiza-se o mapeamento das empresas de cada setor específico e
+mercado geográfico. Catálogos e estudos setoriais publicados por entidades de
+pesquisa, nacionais ou internacionais, e organizações patronais, bem como
+informações do acervo do DNIT, podem ser utilizados a fim de contribuir na
+identificação dos principais fornecedores.
+
+Dada a natureza dos insumos do SICRO, a seleção de empresas a serem
+pesquisadas respeita a seguinte ordem:
+
+      ▪ produtores e fabricantes;
+      ▪ representantes e distribuidores;
+      ▪ grandes atacadistas.
+
+3.3      Definição do tipo de transação e da região de pesquisa
+
+O tipo de transação comercial pode influenciar significativamente a formação dos
+preços referenciais, sendo, portanto, primordial para obter níveis de preço aderentes
+à realidade dos empreendimentos do DNIT. Nesse sentido, a pesquisa de preços
+realizada para o SICRO retrata as seguintes condições de transação:
+
+      ▪ preço com pagamento à vista, desconsiderando possíveis descontos;
+      ▪ inclusão de impostos incidentes sobre o produto;
+      ▪ o custo do frete, se necessário, deve ser calculado sempre para a capital da
+        Unidade da Federação (UF);
+      ▪ promoções devem ser desconsideradas.
+
+
+
+                                              20                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+Nos casos em que os preços dos insumos forem coletados em moeda estrangeira, a
+conversão monetária utiliza-se a média trimestral da cotação, a fim de mitigar
+distorções associadas às variações diárias do câmbio.
+
+Quanto à região de pesquisa, são realizados esforços periódicos de coleta em todas
+as 27 Unidades da Federação. Em conformidade com as metodologias de cálculo de
+preços referenciais definidas para o SICRO, a pesquisa de preços está dividida em
+dois segmentos distintos, a saber:
+
+      ▪ itens de ampla comercialização: correspondem aos insumos de grande
+        capilaridade, com disponibilidade nas capitais de cada UF, sendo também
+        conhecidos como “produtos de prateleira”. Os esforços de pesquisa de preços
+        para esses insumos são estruturados do seguinte modo:
+        - Rio de Janeiro e São Paulo, ou outra UF de relevância no segmento de
+          mercado de determinado insumo: são realizados esforços de pesquisa nas
+          capitais para todos os itens, na periodicidade de publicação dos relatórios do
+          SICRO;
+        - demais Unidades da Federação: são realizados esforços de pesquisa nas
+          capitais somente para itens líderes de cada família, na periodicidade
+          apropriada à divulgação dos relatórios do SICRO.
+      ▪ itens de comercialização restrita: referem-se a insumos não disponíveis na
+        maioria das UFs, sendo comercializados diretamente pelos fabricantes ou
+        fornecedores. Nesse caso, os esforços de pesquisa são realizados na Unidade
+        da Federação do fabricante ou fornecedor para todos os itens, na periodicidade
+        apropriada à divulgação dos relatórios do SICRO.
+
+Independentemente da origem da pesquisa, os preços referenciais divulgados no
+âmbito do SICRO representam valores praticados nas capitais de cada UF.
+
+3.4      Elaboração do questionário e coleta de dados
+
+Todas as informações coletadas são definidas por meio de questionário próprio,
+desenhado para atender aos objetivos da pesquisa. Nesta etapa, coletam-se os dados
+cadastrais das empresas respondentes da pesquisa, bem como seu estágio na cadeia
+de comercialização (se produtora ou distribuidora do item informado), e validam-se
+todas as características dos itens pesquisados.
+
+                                             21                           DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                Volume 03 - Preços Referenciais
+
+
+
+A coleta de dados ocorre, em grande parte, mediante abordagem direta, isto é, por
+meio de pesquisa de campo presencial, e-mail ou contato telefônico. Entretanto, coleta
+de dados manual em sítios de internet, coleta de dados em nuvem, coleta de dados
+automatizada por meio de Interface de Programação de Aplicações (API) e consulta
+aos dados de outras bases podem contribuir para a precificação dos itens.
+
+Ressalta-se que a coleta de preços é realizada somente com empresas que produzem
+ou comercializam os itens de interesse após sua adesão voluntária à pesquisa. Os
+dados das empresas respondentes são armazenados, assim como seus respectivos
+preços.
+
+3.5       Validação e armazenamento de preços coletados
+
+A     validação   inicia-se   a   partir do    recebimento      dos dados   da   pesquisa,
+concomitantemente ao andamento da coleta de dados. Dessa forma, torna-se
+possível confirmar e retificar informações, ou mesmo modificar o plano de trabalho,
+incorporando ações corretivas.
+
+Durante o processo de validação, os preços coletados são confrontados com aqueles
+pesquisados anteriormente e/ou com preços fornecidos por empresas respondentes
+diferentes. Variações além de limites preestabelecidos implicam a retomada do
+contato com as empresas para confirmação dos valores e/ou justificativa das
+variações.
+
+Além dos preços, outras informações relevantes também passam por processo de
+conferência, tais como:
+
+      ▪ características da empresa respondente: deve-se avaliar se a empresa se
+        enquadra nos critérios de desenho da amostra, bem como se ela possui licença
+        de comercialização ativa;
+      ▪ data da pesquisa: deve-se verificar se a data coleta do preço está contida no
+        período previsto para a realização da pesquisa;
+      ▪ especificação: deve-se conferir se os preços coletados atendem às
+        especificações das fichas técnicas;
+
+
+
+
+                                               22                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                             Volume 03 - Preços Referenciais
+
+
+
+    ▪ incidências: deve-se verificar se as incidências tributárias e de frete estão
+      adequadas, bem como analisar a variação dos valores em relação à pesquisa
+      anterior.
+
+Uma vez efetuadas todas as validações, os dados coletados são armazenados,
+permitindo sua utilização no cálculo dos preços referenciais.
+
+
+
+
+                                            23                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                4       CÁLCULO DE PREÇOS REFERENCIAIS
+
+
+
+
+                       24                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                 Volume 03 - Preços Referenciais
+
+
+
+4        CÁLCULO DE PREÇOS REFERENCIAIS
+
+O cálculo dos preços referenciais do SICRO inicia-se com as atividades de crítica
+horizontal e vertical dos preços pesquisados, visando assegurar a qualidade da
+amostra, aplicando-se a metodologia de cálculo apropriada para cada insumo. Em
+seguida, são realizados análises e tratamentos com o propósito de validar os preços
+referenciais computados.
+
+Cabe reforçar que, conforme apresentado na subseção 3.3, os esforços de pesquisa
+de preços distribuem-se da seguinte maneira entre os insumos líderes e liderados:
+
+      ▪ líderes:
+        - itens de ampla comercialização: todas as capitais das 27 Unidades da
+           Federação;
+        - itens de comercialização restrita: Unidade da Federação do fabricante ou
+           fornecedor.
+      ▪ liderados:
+        - itens de ampla comercialização: capitais do Rio de Janeiro e São Paulo, ou
+           de outra UF de relevância no segmento de mercado;
+        - itens de comercialização restrita: Unidade da Federação do fabricante ou
+           fornecedor.
+
+4.1      Crítica dos preços coletados
+
+Com o objetivo de qualificar as amostras de cálculo e, consequentemente, promover
+confiabilidade aos preços referenciais do SICRO, os preços considerados válidos ao
+final da etapa de pesquisa passam pelo conjunto de críticas descrito a seguir.
+
+4.1.1    Crítica horizontal
+
+A crítica horizontal visa analisar a variação de preços por empresa respondente,
+comparando o preço atual e o anterior. Seu cálculo é realizado em conformidade com
+a Equação 1. Variações que excederem determinados limites devem ser avaliadas em
+busca de justificativas que as confirmem, ou que indiquem a necessidade de ajuste
+ou descarte do preço coletado.
+
+
+
+
+                                                25                           DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                    Volume 03 - Preços Referenciais
+
+
+             Pi, m, t
+Vi, m, t =              × 100                                                              (1)
+             Pi, m, t-1
+
+onde:
+
+Vi, m, t é a variação do preço do item i, no estabelecimento m, no tempo t (%);
+
+Pi, m, t é o preço unitário do item i, no estabelecimento m, no tempo t (R$);
+
+Pi, m, t-1 é o preço unitário do item i, no estabelecimento m, no tempo t - 1 (R$).
+
+4.1.2        Crítica vertical
+
+A crítica vertical, por sua vez, possui o intuito de identificar valores atípicos, ou valores
+extremos, no conjunto de preços coletados para cada item. O boxplot (também
+intitulado de gráfico de caixa) é uma ferramenta gráfica comumente utilizada para
+analisar a dispersão empírica de dados numéricos contínuos.
+
+Conforme ilustrado na Figura 2, o boxplot é constituído de cinco elementos principais:
+limite inferior, primeiro quartil (Q1), mediana, terceiro quartil (Q3) e limite superior. O
+quartil Q1 corresponde a 25% das menores observações, enquanto o quartil Q3
+representa 75% das menores observações. Logo, a caixa delimitada por esses dois
+quartis equivale a 50% das observações concentradas em torno da mediana,
+desconsiderando 25% das menores observações e 25% das maiores. A altura da
+caixa (i.e., a diferença entre Q3 e Q1) é conhecida como amplitude interquartil (AIQ).
+Os limites inferior e superior podem ser calculados em função das Equações 2 e 3.
+
+LI = Q1 - 1,5 × AIQ                                                                        (2)
+
+LS = Q3 + 1,5 × AIQ                                                                        (3)
+
+onde:
+
+LI é o ponto referente ao limite inferior;
+
+Q1 é o ponto referente ao primeiro quartil;
+
+AIQ é a amplitude interquartil (%);
+
+
+
+                                                   26                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+LS é o ponto referente ao limite superior;
+
+Q3 é o ponto referente ao terceiro quartil.
+
+
+
+
+                           Figura 2 - Representação do boxplot
+                                       Fonte: FGV IBRE
+
+
+Pela técnica do boxplot, quaisquer preços além dos limites inferior e superior são
+considerados valores extremos da amostra. As razões para comportamentos atípicos
+devem ser examinadas, com o propósito de reduzir a dispersão da amostra e torná-la
+mais consistente para o cálculo dos preços referenciais.
+
+Embora o boxplot seja uma técnica útil na identificação de valores atípicos, seus
+resultados não devem ser utilizados para a rejeição automática do dado. O descarte
+deve ocorrer somente se também houver evidências não-estatísticas de que o valor é
+falho.
+
+Portanto, os preços classificados como atípicos na crítica vertical são revisitados em
+busca de justificativas que os ratifiquem ou que sinalizem a necessidade de ajuste ou
+exclusão do preço coletado.
+
+
+
+
+                                              27                          DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                     Volume 03 - Preços Referenciais
+
+
+
+4.2        Metodologias de cálculo
+
+O SICRO é composto por uma gama diversificada de metodologias de cálculo de
+preços referenciais, as quais variam de acordo com a relação de liderança dos
+insumos (líder e liderado), além do tipo de comercialização (ampla e restrita). Também
+há metodologias de precificação específicas para determinadas famílias de insumos,
+como as dos materiais agregados e do cimento. O sistema abarca ainda metodologias
+para estimar valores referenciais de insumos sem êxito nos esforços de pesquisa de
+preços.
+
+4.2.1      Preço coletado
+
+Para itens com previsão de pesquisa de preços em determinada Unidade da
+Federação, o preço referencial é calculado por meio da média aritmética simples dos
+valores considerados válidos após o processo de crítica dos preços coletados,
+conforme indicado na Equação 4.
+
+            ni, j
+           ∑m = 1 Pi, j, m
+PCi, j =                                                                                    (4)
+                    ni, j
+
+
+onde:
+
+PCi, j é o preço unitário referencial coletado do item i, na Unidade da Federação j (R$);
+
+ni, j é o número de preços pesquisados do item i, na Unidade da Federação j;
+
+PCi, j, m é o preço unitário do item i, na Unidade da Federação j, no estabelecimento m
+(R$).
+
+4.2.2      Preço referencial imputado
+
+No caso de insumos de ampla comercialização, a metodologia de imputação é
+aplicada para itens líderes com previsão de pesquisa de preços, mas sem êxito na
+coleta, mesmo após todo esforço empreendido em campo. São adotados três
+processos não cumulativos de imputação, de modo que o segundo processo só é
+empregado se não for possível executar o primeiro; e o terceiro é utilizado apenas se
+não houver viabilidade de aplicar o segundo.
+
+
+
+                                                    28                           DNIT/DPP/CGCIT
+                               Manual de Custos de Infraestrutura de Transportes
+                                       Volume 03 - Preços Referenciais
+
+
+
+Já para os insumos de comercialização restrita, a metodologia de imputação é
+aplicada somente enquanto os parâmetros de cálculo do custo do frete (ver subseção
+4.2.4) ainda se encontram em definição. Nesse caso, os preços são imputados
+diretamente da Unidade da Federação do fabricante ou fornecedor.
+
+4.2.2.1      1º Processo - Unidade da Federação direcionadora
+
+Para cada insumo líder e Unidade da Federação, são definidas as UFs mais indicadas
+para a busca do preço, as quais são denominadas Unidades da Federação
+direcionadoras. Pode-se estabelecer mais de uma UF direcionadora para cada item
+por UF. Deve-se atentar, no entanto, para não haver “efeito cascata”, isto é, o preço
+definido em determinada UF por meio de imputação não deve ser utilizado para
+promover a imputação de preço em outra UF. A Equação 5 exemplifica processo de
+imputação em tela.
+
+PRIi, j = PCi, direc                                                                          (5)
+
+onde:
+
+PRIi, j é o preço unitário referencial imputado do item i, na Unidade da Federação j sem
+preço (R$);
+
+PCi, direc é o preço unitário referencial coletado do item i, na Unidade da Federação
+direcionadora (R$).
+
+Para Rio de Janeiro e São Paulo, cujos valores são utilizados na determinação dos
+fatores K da metodologia de parametrização (ver subseção 4.2.2), assume-se apenas
+a seguinte atribuição: São Paulo funciona como UF direcionadora do Rio, e vice-versa.
+
+4.2.2.2      2º Processo - Média da região com pelo menos 50% de preços
+
+Não havendo preço na UF direcionadora, deve-se imputar o preço médio da região da
+UF, desde que exista preço de referência para, pelo menos, 50% das UFs da região.
+A formulação do 2º processo de imputação é apresentada na Equação 6.
+
+                       ∑nj =UF1 PCi, j, r
+PRIi, j = ̅̅̅̅
+          PCi, r =                                                                            (6)
+                             nUF
+
+
+
+                                                      29                           DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                  Volume 03 - Preços Referenciais
+
+
+
+onde:
+
+PRIi, j é o preço unitário referencial imputado do item i, na Unidade da Federação j sem
+preço (R$);
+
+̅̅̅̅i, r é o preço unitário médio do item i, na região r (R$);
+PC
+
+nUF é o número de Unidades da Federação da região r com preço pesquisado;
+
+PCi, j, r é o preço unitário referencial coletado do item i, na Unidade da Federação j da
+região r (R$).
+
+A título de ilustração, seja um item em Minas Gerais cuja pesquisa de preços não
+obteve êxito, tampouco foi possível imputar preço via UF direcionadora; nesse caso,
+deve-se imputar o preço médio da região Sudeste, desde que se tenha ao menos 50%
+de preços nas Unidades da Federação da região, o que corresponde a duas UFs.
+
+4.2.2.3      3º Processo - Média da Unidade da Federação de referência
+
+Na impossibilidade de se atribuir o preço de acordo as premissas do processo anterior,
+deve-se imputar o preço da UF de referência, conforme ilustrado na Equação 7.
+
+PRIi, j = ̅̅̅̅
+          PCi, ref                                                                       (7)
+
+onde:
+
+PRIi, j é o preço unitário referencial imputado do item i, na Unidade da Federação j sem
+preço (R$);
+
+̅̅̅̅i, ref é o preço unitário médio do item i, na Unidade da Federação referência (R$).
+PC
+
+Para tanto, assume-se que o preço da UF referência é a média do preço do insumo i
+nas Unidades da Federação do Rio de Janeiro e São Paulo, ou outra UF de relevância
+no segmento de mercado, segundo a Equação 8.
+
+̅̅̅̅
+PCi, ref = média (PCi, RJ ; PCi, SP ; PCi, UF relevante )                                (8)
+
+onde:
+
+
+
+                                                  30                          DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                 Volume 03 - Preços Referenciais
+
+
+̅̅̅̅
+PCi, ref é o preço unitário médio do item i, na Unidade da Federação referência (R$);
+
+PCi, RJ é preço unitário referencial coletado do item i, no Rio de Janeiro (R$);
+
+PCi, SP é preço unitário referencial coletado do item i, em São Paulo (R$);
+
+PCi, UF relevante é preço unitário referencial coletado do item i, em determinada UF de
+relevância no segmento de mercado (R$).
+
+4.2.3       Precificado por metodologia de parametrização
+
+A metodologia de parametrização é utilizada na precificação dos itens liderados de
+ampla comercialização sem previsão de coleta de preços em determinada UF. O
+cálculo do preço referencial via parametrização ocorre em função da relação entre os
+preços dos itens liderado e líder na Unidade da Federação referência (i.e., Rio de
+Janeiro e São Paulo, ou outra UF de relevância no segmento de mercado).
+
+A metodologia em questão prevê a seguinte sequência de operações:
+
+     ▪ cálculo do coeficiente de parametrização (fator K);
+     ▪ aplicação do fator K aos itens liderados.
+
+4.2.3.1        Cálculo do coeficiente de parametrização
+
+Para cada família de insumos, o cálculo do fator K é obtido a partir da razão entre o
+preço do item liderado e do item líder da família na UF referência, conforme expresso
+na Equação 9.
+
+          ̅̅̅̅
+          PCl, ref, t
+Kl, t =                                                                                  (9)
+          ̅̅̅̅
+          PCL, ref, t
+
+onde:
+
+Kl, t é o coeficiente de parametrização do item liderado l, no tempo t;
+
+̅̅̅̅l, ref, t é o preço unitário médio do item liderado l, na UF referência, no tempo t (R$);
+PC
+
+̅̅̅̅
+PCL, ref, t é o preço unitário médio do item líder L, na UF referência, no tempo t (R$).
+
+
+
+                                                31                           DNIT/DPP/CGCIT
+                                Manual de Custos de Infraestrutura de Transportes
+                                        Volume 03 - Preços Referenciais
+
+
+
+Tanto para o item liderado quanto para o líder, assume-se que o preço unitário médio
+na UF referência é a média do preço nas Unidades da Federação do Rio de Janeiro e
+São Paulo, ou outra UF de relevância no segmento de mercado, tal como expresso
+na Equação 10.
+
+̅̅̅̅
+PCl (L), ref, t = média (PCl (L), RJ, t ; PCl (L), SP, t ; PCl (L), UF relevante, t )            (10)
+
+onde:
+
+̅̅̅̅
+PCl (L), ref, t é o preço unitário médio do item liderado l (ou líder L), na Unidade da
+Federação referência, no tempo t (R$);
+
+PCl (L), RJ, t é preço unitário referencial coletado do item liderado l (ou líder L), no Rio
+de Janeiro, no tempo t (R$);
+
+PCl (L), SP, t é preço unitário referencial coletado do item liderado l (ou líder L), em São
+Paulo, no tempo t (R$);
+
+PCl (L), UF relevante, t é preço unitário referencial coletado do item liderado l (ou líder L),
+em determinada UF de relevância no segmento de mercado, no tempo t (R$).
+
+De forma a suavizar possíveis variações bruscas nessas relações, aplica-se ao fator
+K o tratamento da média móvel, considerando os três últimos coeficientes de
+parametrização. O tratamento é apresentado na Equação 11.
+
+            Kl, t + Kl, t-1 + Kl, t-2
+K' l, t =                                                                                        (11)
+                       3
+
+onde:
+
+K' l, t é o coeficiente de parametrização do item liderado l, no tempo t, após tratamento;
+
+Kl, t é o coeficiente de parametrização do item liderado l, no tempo t;
+
+Kl, t-1 é o coeficiente de parametrização do item liderado l, no tempo t - 1;
+
+Kl, t-2 é o coeficiente de parametrização do item liderado l, no tempo t - 2.
+
+
+
+
+                                                         32                             DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                     Volume 03 - Preços Referenciais
+
+
+
+Destaca-se que o fator de parametrização é impactado quando há alterações dos itens
+líderes das famílias. Em tais situações, a série histórica para o tratamento da média
+móvel deve ser reiniciada.
+
+4.2.3.2       Aplicação do fator K aos itens liderados
+
+Uma vez calculado o fator K de cada item liderado de ampla comercialização sem
+previsão de coleta de preços em determinada UF, inclusive Rio de Janeiro e São
+Paulo, o cálculo do preço referencial é efetuado em consonância com Equação 12.
+
+PMPl, j, t = PCL, j, t × K' l, t                                                          (12)
+
+onde:
+
+PMPl, j, t é o preço unitário referencial parametrizado do item liderado l, na UF j sem
+pesquisa, no tempo t (R$);
+
+PCL, j, t é o preço unitário referencial coletado do item líder L, na UF j, no tempo t (R$);
+
+K' l, t é o coeficiente de parametrização do insumo liderado l, no tempo t, após
+tratamento.
+
+4.2.4     Preço com frete metodológico
+
+A metodologia de preço com frete metodológico é aplicada no cálculo dos preços
+referenciais de insumos de comercialização restrita, sejam eles líderes ou liderados
+de suas famílias, sejam eles materiais ou equipamentos.
+
+Em geral, os insumos abarcados por essa metodologia são comercializados por
+poucas empresas, e sua negociação tende a se localizar na origem de produção ou
+distribuição. Além do mais, costumam ser itens de alto valor agregado e vida útil
+prolongada.
+
+Dada sua natureza, os insumos de comercialização restrita não estão disponíveis em
+parcela predominante das Unidades da Federação brasileiras. Diante disso, a
+presente metodologia de precificação tem como objetivo adequar os preços
+referenciais do SICRO às práticas de mercado.
+
+
+
+                                                    33                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                 Volume 03 - Preços Referenciais
+
+
+
+Em suma, a metodologia consiste na estimativa do preço referencial em função do
+valor de aquisição do insumo coletado na empresa fabricante ou fornecedora, somado
+ao custo de frete previsto da origem (i.e., capital da UF do fabricante ou fornecedor)
+até o destino (i.e., capital de cada UF).
+
+No caso dos insumos com múltiplas origens, em que os fabricantes ou fornecedores
+estão alocados em Unidades da Federação distintas, define-se o preço referencial a
+partir    do     menor    binômio     aquisição-transporte,     considerando    as   diversas
+possibilidades de origem.
+
+O cálculo do preço referencial acrescido do frete metodológico é realizado por meio
+da Equação 13.
+
+PFMi, j = PCi, origem + CFi, j                                                           (13)
+
+onde:
+
+PFMi, j é o preço unitário referencial com frete metodológico do item i, na Unidade da
+Federação j de destino (R$);
+
+PCi, origem é o preço unitário referencial coletado do item i, na Unidade da Federação
+de origem (R$);
+
+CFi, j é o custo unitário do frete metodológico do item i, na Unidade da Federação j de
+destino (R$).
+
+Na sequência, são abordadas as parcelas que integram o cálculo do custo unitário do
+frete metodológico.
+
+4.2.4.1        Custo unitário do frete metodológico
+
+O custo do frete é calculado a partir da somatória de quatro diferentes parcelas, em
+conformidade com a Equação 14.
+
+CFi, j = CTi, j + CAi, j + GRISi + Ri, j                                                 (14)
+
+
+
+
+                                                34                             DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                Volume 03 - Preços Referenciais
+
+
+
+onde:
+
+CFi,j é o custo unitário do frete metodológico do item i, na Unidade da Federação j de
+destino (R$);
+
+CTi, j é o custo referente ao transporte do item i, na Unidade da Federação j de destino
+(R$);
+
+CAi, j é o custo adicional do item i referente à mão de obra, na Unidade da Federação
+j de destino (R$);
+
+GRISi é o custo referente à taxa de gerenciamento de risco do item i (R$);
+
+Ri, j é o custo referente ao fator de retorno do item i, na Unidade da Federação j de
+destino (R$).
+
+a) Custo referente ao transporte
+
+O custo de transporte inclui os gastos decorrentes do transporte, e seu cálculo é
+definido pela Equação 15.
+
+           DMTi, j
+CTi, j =           × CHPv × FUi, v                                                   (15)
+            Vv, j
+
+onde:
+
+CTi, j é o custo referente ao transporte do item i, na Unidade da Federação j de destino
+(R$);
+
+DMTi, j é a distância média de transporte do item i, entre a capital da UF de origem e
+a capital da UF de destino j (km);
+
+Vv, j é a velocidade média de tráfego do veículo transportador v, entre a capital da UF
+de origem e a capital da UF de destino j (km/h);
+
+CHPv é o custo horário produtivo do veículo transportador v (R$/h);
+
+FUi, v é o fator de utilização do item i, no veículo transportador v.
+
+
+
+
+                                               35                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                             Volume 03 - Preços Referenciais
+
+
+
+Em conformidade com as premissas do Volume 01 do Manual de Custos de
+Infraestrutura de Transportes, o custo horário produtivo dos equipamentos do SICRO
+é formado pela soma de parcelas relacionadas a custos de propriedade, manutenção
+e operação, tal como expresso na Equação 16.
+
+Chp = Dh + Mh + CC + Cmo + Ih + OC                                                (16)
+
+onde:
+
+Chp é o custo horário produtivo (R$/h);
+
+Dh é a depreciação horária (R$/h);
+
+Mh é o custo horário de manutenção (R$/h);
+
+CC é o custo horário de consumo de combustíveis (R$/h);
+
+Cmo é o custo horário com mão de obra de operação (R$/h);
+
+Ih é o custo horário com seguros e impostos (R$/h);
+
+OC é o custo horário de oportunidade de capital (R$/h).
+
+Já o fator de utilização representa a razão entre uma unidade do item e a capacidade
+total de transporte do veículo transportador. Seu cálculo requer a análise de
+dimensões e peso do insumo a ser transportado, bem como de eventuais embalagens
+comerciais e restrições de transporte. Tal análise deve ser relacionada à capacidade
+máxima de carga, em volume e peso, do veículo.
+
+As capacidades dos transportadores são determinadas em conformidade com os
+limites de peso máximo por eixo estabelecidos na Resolução nº 882 (CONTRAN,
+2021a), de 13 de dezembro de 2021, e na Deliberação nº 250 (CONTRAN, 2021b),
+de 31 de dezembro de 2021, ambas do Conselho Nacional de Trânsito (CONTRAN),
+bem como na Portaria nº 63 (DENATRAN, 2009), de 31 de março de 2009, e na
+Portaria nº 47 (DENATRAN, 2015), de 17 de abril de 2015, ambas do Departamento
+Nacional de Trânsito (DENATRAN).
+
+
+
+
+                                            36                           DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                                 Volume 03 - Preços Referenciais
+
+
+
+Destaca-se que o SICRO assume a hipótese de que veículos leves, caminhões e
+ônibus são autotransportáveis, isto é, realizam o próprio deslocamento entre os pontos
+de origem e destino. Logo, o fator de utilização desses insumos é igual a 1.
+
+Cabe ressaltar ainda que, para os implementos acoplados em caminhões, como
+tanques e carrocerias, considera-se que o transporte é realizado por meio do próprio
+veículo ao qual o implemento está acoplado. Portanto, o fator de utilização desses
+itens é igual a 0, uma vez que a parcela de frete já incide no caminhão ao qual o
+insumo está acoplado.
+
+b) Custo adicional referente à mão de obra
+
+A parcela de custo adicional de mão de obra incide apenas em alguns trajetos,
+conforme as premissas abaixo:
+
+    ▪ para trajetos iguais ou superiores a 6 horas, adiciona-se 1 motorista extra além
+        daquele incluído no custo horário produtivo do veículo transportador;
+    ▪ adiciona-se 1 pernoite por motorista a cada 12 horas de trajeto.
+
+Consequentemente, o custo adicional referente à mão de obra pode ser calculado por
+meio da Equação 17.
+
+CAi, j = (MAi, j + CHi, j ) × FUi, v                                                  (17)
+
+onde:
+
+CAi, j é o custo adicional do item i referente à mão de obra, na Unidade da Federação
+j de destino (R$);
+
+MAi, j é o custo de motorista adicional para o item i, na Unidade da Federação j de
+destino (R$);
+
+CHi, j é o custo de hospedagem para o item i, na Unidade da Federação j de destino
+(R$);
+
+FUi, v é o fator de utilização do item i, no veículo transportador v.
+
+O custo de motorista adicional é obtido por intermédio das Equações 18 e 19.
+
+
+                                                37                           DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                Volume 03 - Preços Referenciais
+
+
+
+     DMTi, j                          DMTi, j
+Se           ≥6     →      MAi, j =           × CMOv                                  (18)
+      Vv, j                            Vv, j
+
+     DMTi, j
+Se           <6     →      MAi, j = 0                                                 (19)
+      Vv, j
+
+
+onde:
+
+DMTi, j é a distância média de transporte do item i, entre a capital da UF de origem e
+a capital da UF de destino j (km);
+
+Vv, j é a velocidade média de tráfego do veículo transportador v, entre a capital da UF
+de origem e a capital da UF de destino j (km/h);
+
+MAi, j é o custo de motorista adicional para o item i, na Unidade da Federação j de
+destino (R$);
+
+CMOv é o custo horário com mão de obra de operação, no veículo transportador v
+(R$/h).
+
+Por sua vez, o custo de hospedagem pode ser representado pelas Equações 20 e 21.
+
+     DMTi, j
+Se           ≥ 12   →       CHi, j = QMi, j × QHi, j × VP                             (20)
+      Vv, j
+
+     DMTi, j
+Se           < 12   →       CHi, j = 0                                                (21)
+      Vv, j
+
+
+onde:
+
+DMTi, j é a distância média de transporte do item i, entre a capital da UF de origem e
+a capital da UF de destino j (km);
+
+Vv, j é a velocidade média de tráfego do veículo transportador v, entre a capital da UF
+de origem e a capital da UF de destino j (km/h);
+
+CHi, j é o custo de hospedagem para o item i, na Unidade da Federação j de destino
+(R$);
+
+
+
+                                               38                           DNIT/DPP/CGCIT
+                        Manual de Custos de Infraestrutura de Transportes
+                                Volume 03 - Preços Referenciais
+
+
+
+QMi, j é a quantidade de motoristas utilizados no transporte do item i, na Unidade da
+Federação j de destino;
+
+QHi, j é a quantidade de hospedagens no transporte do item i, em valor inteiro, na
+Unidade da Federação j de destino;
+
+VP é o valor unitário de cada hospedagem (R$).
+
+c) Custo referente à taxa de gerenciamento de risco
+
+O custo relativo à taxa de gerenciamento de risco representa a parcela do frete
+destinada a cobrir os valores específicos decorrentes das medidas contra o roubo de
+cargas. Seu cálculo é realizado de acordo com a Equação 22.
+
+
+                        TGRIS
+GRISi = PCi, origem ×                                                                (22)
+                         100
+
+onde:
+
+GRISi é o custo referente à taxa de gerenciamento de risco do item i (R$);
+
+PCi, origem é o preço unitário referencial coletado do item i, na Unidade da Federação
+de origem (R$);
+
+TGRIS é a taxa de gerenciamento de risco (%).
+
+A taxa de gerenciamento de risco referencial adotada no SICRO é igual a 0,30% do
+bem transportado, conforme tabelas da Associação Nacional do Transporte de Cargas
+e Logística (NTC&Logística).
+
+d) Custo referente ao fator de retorno
+
+Conforme o tipo de implemento utilizado no transporte do insumo e as condições de
+transporte, o veículo transportador pode, em alguns casos, retornar à sua origem
+carregando outros produtos, utilizando sua capacidade total ou parcial. Essa condição
+é contabilizada na metodologia pelo fator de retorno.
+
+Visto que o veículo transportador pode retornar à sua origem carregado (condição
+sem custo de retorno: peso 0) ou vazio (condição com custo de retorno: peso 1),
+
+                                               39                           DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                  Volume 03 - Preços Referenciais
+
+
+
+adota-se por padrão o fator médio de 0,5. Em termos de custo, esse fator simboliza o
+que o veículo transportador retorna carregado à sua origem em metade dos casos.
+Seu cálculo é realizado de acordo com a Equação 23.
+
+Ri, j = FR × (CTi, j + CAi, j )                                                                      (23)
+
+onde:
+
+Ri, j é o custo referente ao fator de retorno do item i, na Unidade da Federação j de
+destino (R$);
+
+FR é o fator de retorno (0,5);
+
+CTi, j é o custo referente ao transporte do item i, na Unidade da Federação j de destino
+(R$);
+
+CAi, j é o custo adicional do item i referente à mão de obra, na Unidade da Federação
+j de destino (R$).
+
+4.2.4.2      Custo unitário do frete metodológico com múltiplas origens
+
+O custo do frete metodológico com múltiplas origens é aplicável aos insumos cujos
+fabricantes ou fornecedores estão alocados em Unidades da Federação distintas. Os
+procedimentos de cálculo seguem as mesmas premissas e parâmetros elucidados
+previamente na subseção 4.2.4.1.
+
+O diferencial consiste em definir o preço referencial do insumo a partir do menor
+binômio aquisição-transporte, considerando as diversas possibilidades de origem
+existentes. A Equação 24 ilustra esse procedimento de cálculo.
+
+PFMi, j = mínimo [(PCi, UF 1 + CFi, UF 1 ); (PCi, UF 2 + CFi, UF 2 ); …; (PCi, UF n + CFi, UF n )]   (24)
+
+onde:
+
+PFMi, j é o preço unitário referencial com frete teórico do item i, na Unidade da
+Federação j de destino (R$);
+
+PCi, UF n + CFi, UF n é o binômio aquisição-transporte do item i, na Unidade da
+Federação de origem n (R$).
+
+                                                    40                                  DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                     Volume 03 - Preços Referenciais
+
+
+
+4.2.5    Metodologia de precificação de materiais agregados
+
+A metodologia de precificação dos materiais agregados do SICRO (i.e., areias e britas)
+segue as mesmas premissas estabelecidas neste manual, com a incorporação de
+especificidades referentes ao transporte desses insumos.
+
+Na definição da população-alvo e no desenho da amostra da pesquisa de preços,
+consideram-se somente as jazidas ativas e licenciadas, de acordo com informações
+publicadas pela Agência Nacional de Mineração (ANM). Além disso, a amostra é
+composta apenas por empresas com capacidade mínima de produção de 10.000
+t/ano.
+
+Os preços coletados para materiais agregados não contemplam o frete até a capital
+da Unidade da Federação, isto é, são pesquisados na condição “posto jazida”. O frete
+é acrescido posteriormente mediante a aplicação da metodologia descrita na
+subseção 4.2.4.1 deste manual.
+
+As distâncias médias de transporte adotadas no cálculo do frete teórico são
+levantadas a partir de dados constantes do Sistema de Informações Geográficas da
+Mineração (SIGMINE). Para tanto, realiza-se a geolocalização das jazidas que
+atendem ao critério de produção preestabelecido e que, inicialmente, estão
+circunscritas em um raio de 50 km da capital de cada uma das Unidades da
+Federação, limitadas ao número máximo de dez observações. O raio de referência
+pode ser ampliado caso o número mínimo de três observações não seja alcançado.
+
+Uma vez definidas as geolocalizações das jazidas, a distância média de transporte é
+calculada por meio da média aritmética das distâncias de cada uma das jazidas
+selecionadas à capital da Unidade da Federação, conforme a Equação 25.
+
+             ∑ni DRi, m, j
+DMTAi, j =                                                                                 (25)
+                 ni, j
+
+onde:
+
+DMTAi, j é a distância média de transporte do material agregado i, entre as jazidas de
+origem e a capital da UF de destino j (km);
+
+
+
+
+                                                    41                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+DRi, m, j é a distância rodoviária de transporte do material agregado i, entre a jazida m
+e a capital da UF de destino j (km);
+
+ni, j representa o número de jazidas geolocalizadas para o material agregado i, para a
+UF destino j, limitando-se ao mínimo de três e máximo de dez jazidas.
+
+As distâncias médias de transporte são calculadas separadamente para as areias e
+para as britas, atendendo às especificidades e particularidades de cada UF em
+relação à produção, à distribuição espacial, aos registros ativos de extração e às
+distâncias analisadas.
+
+4.2.6    Metodologia de precificação do cimento Portland CP II
+
+A metodologia de precificação do cimento Portland CP II (a granel e ensacado) segue
+as mesmas diretrizes estabelecidas neste manual, com a inclusão de especificidades
+referentes à produção e ao transporte desses insumos.
+
+A definição da população-alvo e o desenho da amostra da pesquisa de preços
+consideram particularidades e condicionantes relacionadas à produção do cimento,
+com a identificação dos estados brasileiros que possuem unidades produtoras em
+atividade. As informações sobre as unidades produtoras são atualizadas
+periodicamente a partir de dados da Associação Brasileira de Cimento Portland
+(ABCP) e do Sindicato Nacional da Indústria do Cimento (SNIC).
+
+A pesquisa de preços dos insumos em discussão é realizada para a capital de cada
+Unidade da Federação. No cálculo do preço de referência, são priorizados, sempre
+que disponíveis, os preços pesquisados em campo.
+
+Na impossibilidade de serem coletados preços em determinada UF, o preço
+referencial pode ser obtido a partir de dois modos distintos, a depender da existência
+de unidades produtoras de cimento em atividade:
+
+    ▪ UFs com unidades ativas de produção: o preço referencial é formado em função
+        do processo de imputação via UF direcionadora, a partir de uma UF que possua
+        unidades produtoras de cimento em atividade, sem a inclusão do custo do frete;
+
+
+
+
+                                             42                           DNIT/DPP/CGCIT
+                       Manual de Custos de Infraestrutura de Transportes
+                               Volume 03 - Preços Referenciais
+
+
+
+    ▪ UFs sem unidades ativas de produção: o preço referencial é calculado por meio
+        do processo de imputação via UF direcionadora, a partir de uma UF que possua
+        unidades produtoras de cimento em atividade, com a inclusão do custo do frete.
+
+No segundo caso, o custo do frete é calculado em conformidade com a metodologia
+descrita na subseção 4.2.4.1 deste manual, considerando a distância média de
+transporte rodoviário entre a capital da UF direcionadora de origem e a capital da UF
+imputada de destino.
+
+4.2.7    Metodologia de precificação da cal hidratada
+
+A metodologia de precificação cal hidratada (a granel e ensacada) segue as mesmas
+orientações contidas neste manual, com a adição de especificidades afetas à
+produção e ao transporte desses insumos. Ela se assemelha à metodologia exibida
+na subseção 4.2.6 para o cimento Portland CP II.
+
+No desenho da amostra da pesquisa de preços, são avaliados especificidades e
+requisitos sobre a produção da cal hidratada, levantando os estados brasileiros que
+possuem unidades produtoras em atividade.
+
+A pesquisa de preços dos insumos em tela é efetuada para as capitais das Unidades
+da Federação brasileiras. No cálculo do preço de referência do insumo líder da família,
+isto é, a cal ensacada, são utilizados, sempre que disponíveis, os preços provenientes
+da coleta de campo.
+
+Caso a pesquisa de campo não obtenha êxito em determinada UF, o preço referencial
+pode ser computado de duas maneiras, a depender da existência de unidades
+produtoras de cal hidratada em atividade:
+
+    ▪ UFs com unidades ativas de produção: o preço referencial é formado em função
+        do processo de imputação via UF direcionadora, a partir de uma UF que possua
+        unidades produtoras de cal hidratada em atividade, sem a inclusão do custo do
+        frete;
+    ▪ UFs sem unidades ativas de produção: o preço referencial é calculado por meio
+        do processo de imputação via UF direcionadora, a partir de uma UF que possua
+
+
+
+
+                                              43                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+        unidades produtoras de cal hidratada em atividade, com a inclusão do custo do
+        frete.
+
+Na segunda hipótese, o custo do frete é calculado mediante a aplicação da
+metodologia elucidada na subseção 4.2.4.1 deste manual, considerando a distância
+média de transporte rodoviário entre a capital da UF direcionadora de origem e a
+capital da UF imputada de destino.
+
+Já no cálculo do preço referencial do insumo liderado da família, isto é, a cal a granel,
+são priorizados, sempre que disponíveis, os preços pesquisados em campo. Todavia,
+na impossibilidade de serem coletados preços em determinada UF, o processo de
+cálculo ocorre conforme a metodologia explicitada na subseção 4.2.2 deste manual.
+
+4.2.8    Metodologia de precificação de insumos madeireiros
+
+A metodologia de precificação dos insumos madeireiros segue as mesmas diretrizes
+estabelecidas neste manual, com a inclusão das especificidades referentes aos tipos
+de peças, espécies e famílias desses insumos.
+
+No que tange à pesquisa de preços, são realizados esforços de coleta em todas as
+Unidades da Federação para todos os insumos madeireiros. Consequentemente, o
+cálculo dos preços referenciais desses insumos prioriza, sempre que disponíveis, os
+preços pesquisados.
+
+A metodologia de precificação delineada neste item é empregada somente na
+ausência de preços pesquisados. No caso específico dos insumos madeireiros, sua
+aplicação substitui o processo de parametrização dos itens liderados descrito na
+subseção 4.2.2 deste manual.
+
+Com base na categorização por famílias, os preços de referência dos insumos cuja
+pesquisa de campo não obteve sucesso são determinados a partir do preço por
+volume (R$/m³) dos demais insumos da mesma família, de acordo com a lógica
+adiante.
+
+
+
+
+                                             44                           DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                                  Volume 03 - Preços Referenciais
+
+
+
+4.2.8.1       1º Processo - Média do preço por volume na mesma UF
+
+Na ausência de preço pesquisado para determinado insumo madeireiro, o preço
+referencial é obtido por meio da média do preço por volume dos insumos pertencentes
+à mesma família com preços coletados na mesma UF, em conformidade com a
+Equação 26.
+
+          ̅̅̅̅f, j × Vi
+PEIi, j = PV                                                                           (26)
+
+onde:
+
+PEIi, j é o preço unitário referencial do item i, na Unidade da Federação j sem preço
+(R$);
+
+̅̅̅̅f, j é o preço médio por volume dos demais itens da família f com preço pesquisado,
+PV
+na Unidade da Federação j (R$/m³);
+
+Vi é o volume do item madeireiro i (m³).
+
+4.2.8.2       2º Processo - Média do preço por volume na mesma região
+
+Caso não exista ao menos um preço pesquisado para os insumos da mesma família
+em determinada UF, o preço referencial pode ser calculado a partir da média do preço
+por volume dos insumos pertencentes à família na mesma região da UF, de acordo
+com a Equação 27.
+
+PEIi, j = ̅̅̅̅
+          PVf, r × Vi                                                                  (27)
+
+onde:
+
+PEIi, j é o preço unitário referencial do item i, na Unidade da Federação j sem preço
+(R$);
+
+̅̅̅̅f, r é preço médio por volume dos demais itens da família f com preço pesquisado,
+PV
+na região r da UF sem preço (R$/m³);
+
+Vi é o volume do item madeireiro i (m³).
+
+
+
+
+                                                 45                           DNIT/DPP/CGCIT
+                           Manual de Custos de Infraestrutura de Transportes
+                                   Volume 03 - Preços Referenciais
+
+
+
+4.2.8.3       3º Processo - Média do preço por volume na região mais adequada
+
+Nas ocasiões em que não for possível coletar preços para pelo menos um item da
+família em determinada região, o preço referencial pode ser obtido em função do preço
+médio por volume da família na região mais adequada para cada uma daquelas sem
+preço coletado, segundo a Equação 28.
+
+          ̅̅̅̅f, r1 × Vi
+PEIi, j = PV                                                                            (28)
+
+onde:
+
+PEIi, j é o preço unitário referencial do item i, na Unidade da Federação j sem preço
+(R$);
+
+̅̅̅̅f, r1 é preço médio por volume dos demais insumos da família f com preço
+PV
+pesquisado, na região mais adequada para a UF sem preço (R$/m³);
+
+Vi é o volume do item madeireiro i (m³).
+
+4.2.9     Precificado por estudo específico
+
+Nos casos em que há restrições para a pesquisa de preços de determinado insumo
+no mercado, sempre que possível, são conduzidos estudos específicos para estimar
+o preço de referência adequado à realidade de cada insumo.
+
+A seguir, sintetizam-se os principais estudos adotados no cálculo dos preços
+referenciais do SICRO. Ressalta-se que as metodologias de precificação delineadas
+nesta subseção são empregadas somente na ausência de preços pesquisados.
+
+4.2.9.1       Metodologia de precificação de balsas, plataformas flutuantes e batelões
+              não propelidos
+
+Na ausência de preços coletados, a metodologia de precificação de balsas,
+plataformas flutuantes e batelões não propelidos prevê a estimativa do preço
+referencial em função do peso leve total dessas embarcações. O peso leve total
+consiste na soma do peso estrutural teórico e do peso correspondente a reforços
+transversais e demais complementos.
+
+
+
+                                                  46                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+Para estimar o peso estrutural teórico, consideram-se todos os elementos estruturais
+e os componentes necessários à operação da embarcação, excluindo os pesos
+referentes à carga, combustível, lastro e tripulação. As principais variáveis adotadas
+na estimativa do peso estrutural teórico são: comprimento longitudinal, largura da
+boca, altura do pontal e capacidade de carga de projeto.
+
+Sobre o peso estrutural teórico, consideram-se os acréscimos de peso de 20% para
+reforços transversais e de 10% para complementos, ou outfitting, referentes a
+âncoras, amarras e elementos de atracação.
+
+Uma vez calculado o peso leve total, as embarcações são precificadas a partir do
+preço referencial da chapa grossa em aço ASTM A36, bem como do custo unitário do
+serviço de beneficiamento de aço naval.
+
+4.2.9.2   Metodologia de precificação de dragas
+
+Na ausência de preços pesquisados, a metodologia de precificação das dragas
+constantes do SICRO baseia-se nos procedimentos para definição dos custos teóricos
+disponibilizados no Guia da Construction Industry Research and Information
+Association (CIRIA), o qual apresenta referenciais de custos para vários tipos de
+equipamentos de dragagem.
+
+Haja vista que os custos são apresentados em euro, é necessário convertê-los para
+real. Além disso, são adicionadas todas as incidências pertinentes, como taxas de
+importação e frete.
+
+O guia citado indica os parâmetros considerados nos custos teóricos conforme o tipo
+de draga, quais sejam:
+
+    ▪ dragas hopper: os parâmetros que influenciam o custo estimado teórico são
+      depreciação, manutenção, capacidade de dragagem e potência do motor para
+      dragagem e propulsão.
+    ▪ dragas de sucção: os parâmetros que influenciam o custo estimado teórico são
+      depreciação, manutenção, potência do motor para sucção e propulsão.
+    ▪ dragas backhoe: os parâmetros que influenciam no custo estimado teórico
+      são depreciação, manutenção, peso do pontal, potência de propulsão e
+      potência de escavação.
+
+                                             47                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                             Volume 03 - Preços Referenciais
+
+
+
+4.2.10 Precificado por extrapolação ou interpolação
+
+Em determinadas situações, o preço referencial dos insumos do SICRO sem êxito na
+pesquisa de campo, mesmo após todos os esforços de coleta, pode ser obtido por
+meio de técnicas matemáticas de interpolação ou extrapolação, em função de
+atributos que caracterizem os insumos da família, tais como peso, volume, diâmetro e
+potência. Necessariamente, a interpolação ou extrapolação deve ocorrer para
+insumos de uma mesma família, de modo que se utilizem os preços dos insumos com
+sucesso na pesquisa de campo para estimar os preços daqueles sem êxito na coleta.
+
+Os principais tipos de interpolação ou extrapolação adotados no SICRO são
+apresentados adiante:
+
+   ▪ linear: é o caso mais usual da interpolação ou extrapolação. Em essência, a
+      interpolação linear é efetuada por meio da técnica estatística de regressão
+      linear, cuja formulação geral é expressa por “y = β0 + β1 × x1 +…+ βk × xk ”, onde
+      y é a variável resposta (i.e., preço referencial); β0 é o intercepto da equação; βk
+      é o coeficiente estimado para a variável preditora k; e xk é a variável preditora
+      k (i.e., atributo do insumo ao qual o preço se correlaciona). Uma vez estimados
+      os coeficientes β com base nos preços coletados, pode-se calcular o preço
+      referencial dos insumos sem sucesso na pesquisa de campo a partir dos
+      valores das variáveis xk ;
+   ▪ Lagrange: a interpolação linear pode ser vista como um caso particular da
+      interpolação de Lagrange. Esse método é utilizado para encontrar um polinômio
+      que passa exatamente por um conjunto de pontos, sendo útil para aproximar
+      funções complexas a partir de um conjunto discreto de dados. No âmbito do
+      SICRO, o objetivo do emprego da técnica é determinar o preço faltante com
+      base em um polinômio de grau “n”.
+
+Não faz parte do propósito deste manual abordar as teorias acerca dos métodos
+matemáticos e estatísticos exemplificados acima. Mais além, as técnicas elencadas
+previamente não representam o rol de formulações passíveis de serem utilizadas na
+obtenção do preço referencial via técnicas de interpolação ou extrapolação.
+
+
+
+
+                                            48                           DNIT/DPP/CGCIT
+                                  Manual de Custos de Infraestrutura de Transportes
+                                          Volume 03 - Preços Referenciais
+
+
+
+4.2.11 Preço referencial estimado
+
+Em casos especiais, os insumos sem êxito na pesquisa de campo podem ter seus
+valores referenciais estimados por procedimentos diversos. Nesse sentido, são
+realizados estudos extras para se estimar os preços referenciais, tais como:
+
+     ▪ cálculos econométricos: os preços referenciais são preditos por meio de
+         modelos econométricos, valendo-se de diversas informações e características
+         dos itens. A adequação dos modelos é verificada com base nas estatísticas
+         encontradas e nos pressupostos teóricos;
+     ▪ estimativa por razão: o método compreende a obtenção de preços referenciais
+         a partir de sua relação com determinada variável qualitativa. Pode ser utilizado
+         quando se deseja estimar um resultado para outras regiões, outras unidades
+         de medida ou diferentes estágios da cadeia produtiva;
+     ▪ análise setorial: a precificação por meio de análise setorial requer uma
+         avaliação detalhada dos custos envolvidos na produção e distribuição, bem
+         como das margens de lucro praticadas no setor. Tal análise ajuda a identificar
+         fatores que impactam a formação dos preços, sendo importante para a
+         compreensão de como eles são formados e ajustados dentro de um setor
+         específico.
+
+4.2.12 Preço coletado atualizado por índice
+
+A metodologia de cálculo por meio de índice de reajustamento é aplicada para
+insumos com previsão de pesquisa, mas cuja coleta não foi realizada no mês de
+referência, seja por premissa metodológica de precificação, seja pela não obtenção
+de resposta quando da realização da pesquisa, seja pelo descadastramento de
+empresas da amostra de respondentes.
+
+Nesses casos, enquanto se providencia o reestabelecimento da coleta de campo, o
+preço referencial é calculado a partir da correção monetária do valor divulgado no mês
+de referência anterior, por meio da aplicação de índice de reajustamento específico
+ou setorial aderente ao insumo, em consonância com a Equação 29.
+
+                              I
+PCIi, j, t = PCi, j, t-1 × I i, t                                                              (29)
+                              i, t-1
+
+
+
+
+                                                         49                           DNIT/DPP/CGCIT
+                            Manual de Custos de Infraestrutura de Transportes
+                                    Volume 03 - Preços Referenciais
+
+
+
+onde:
+
+PCIi, j, t é o preço unitário referencial coletado atualizado por índice do item i, na
+Unidade da Federação j, no tempo t (R$);
+
+PCi, j é o preço unitário referencial coletado do item i, na Unidade da Federação j, no
+tempo t - 1 (R$);
+
+Ii, t é o índice de preço referente ao item i, no tempo t;
+
+Ii, 0 é o índice de preço referente ao item i, no tempo t - 1.
+
+4.3       Análises e tratamentos dos preços de referência
+
+Após o cálculo dos preços em cada umas das 27 Unidades da Federação, os valores
+passam por um conjunto de análises e tratamentos estatísticos a fim de validar os
+resultados obtidos, minimizar o impacto de variações bruscas, assegurar o
+ordenamento dos preços entre os itens da mesma família, dentre outras finalidades.
+
+Os itens subsequentes discutem as principais análises e tratamentos utilizados na
+formação dos preços referenciais do SICRO.
+
+4.3.1     Análise de variação de preços entre pesquisas sucessivas
+
+Trata-se da análise da série histórica dos preços de determinado insumo, dentro de
+cada Unidade da Federação, com o objetivo de verificar as variações ao longo do
+tempo e, sobretudo, as variações entre a referência vigente e a referência anterior,
+conforme apresentado na Equação 30.
+
+               PRi, j, t                                                                (30)
+ ∆Pi, j, t =               × 100
+               PRi, j, t-1
+
+onde:
+
+∆Pi, j, t é a variação do preço unitário referencial do item i, na Unidade da Federação j,
+no tempo t (%);
+
+PRi, j, t é o preço unitário referencial do item i, na Unidade da Federação j, no tempo t
+(R$);
+
+                                                   50                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+PRi, j, t-1 é o preço unitário referencial do item i, na Unidade da Federação j, no tempo
+t - 1 (R$).
+
+As variações que excedem limites específicos são analisadas, em busca de fatores
+econômicos ou mercadológicos que as justifiquem. Sempre que possível, as variações
+excedentes também são investigadas com as empresas respondentes da pesquisa
+de preços.
+
+4.3.2     Análise de ordenamento
+
+Para cada família de insumos, analisa-se o ordenamento dos preços calculados por
+Unidade da Federação. Haja vista que os insumos de uma mesma família devem
+guardar correspondência entre si segundo suas características, tais como peso,
+volume, dimensões e capacidade, a análise de ordenamento tem como objetivo
+identificar se o comportamento dos preços respeita a lógica esperada para a família.
+
+Por exemplo: em uma mesma família de tubos de concreto, espera-se que o preço
+referencial varie conforme o diâmetro dos tubos, de modo que um tubo de diâmetro
+menor não apresente um preço referencial superior ao de um tubo de diâmetro maior;
+na família de cimento Portland, espera-se que o valor unitário do cimento a granel seja
+inferior ao do cimento em saco.
+
+4.3.3     Análise de amplitude percentual
+
+A amplitude percentual dos preços referenciais é calculada em função da variação
+entre o preço máximo e mínimo de cada item, considerando os valores de todas as
+Unidades da Federação, conforme expresso na Equação 31.
+
+        (PRmaxi - PRmini )                                                         (31)
+ Ai =                      × 100
+            PRmini
+
+onde:
+
+Ai é a amplitude percentual dos preços referenciais do item i (%);
+
+PRmaxi é o maior preço unitário referencial do item i dentre todas as Unidades da
+Federação (R$);
+
+
+
+                                             51                           DNIT/DPP/CGCIT
+                             Manual de Custos de Infraestrutura de Transportes
+                                     Volume 03 - Preços Referenciais
+
+
+
+PRmini é o menor preço unitário referencial do item dentre todas as Unidades da
+Federação (R$).
+
+O cálculo da amplitude percentual auxilia na identificação de variações significativas
+de preços em âmbito nacional. Essa análise, em conjunto do conhecimento de
+dinâmicas estaduais de mercado, possibilita detectar eventuais anomalias na
+formação dos preços de referência.
+
+4.3.4     Tratamentos dos preços de referência
+
+De modo geral, os tratamentos são aplicados em insumos cujos preços referenciais
+calculados apresentaram variações altas entre duas referências consecutivas. Dentre
+as possíveis causas para variações abruptas, a mais frequente relaciona-se a
+mudanças na amostra de cálculo. A entrada, ou saída, de empresas respondentes da
+amostra pode impactar o nível de preço até então calculado, sobretudo no caso de
+amostras pequenas.
+
+Os principais tratamentos aplicados na suavização de variações são apresentados a
+seguir.
+
+4.3.4.1        Média móvel simples
+
+O tratamento por meio da Média Móvel Simples (MMS) é calculado considerando os
+preços referenciais publicados nas duas referências anteriores e o preço da referência
+atual, tal como demonstrado na Equação 32.
+
+               PRi, j, t-2 + PRi, j, t-1 + PRi, j, t
+MMSi, j, t =                                                                              (32)
+                               3
+
+onde:
+
+MMSi, j, t é o preço unitário referencial com tratamento por média móvel simples do
+item i, na Unidade da Federação j, no tempo t (R$);
+
+PRi, j, t-2 é o preço unitário referencial do item i, na Unidade da Federação j, no tempo
+t - 2 (R$);
+
+
+
+
+                                                       52                        DNIT/DPP/CGCIT
+                           Manual de Custos de Infraestrutura de Transportes
+                                   Volume 03 - Preços Referenciais
+
+
+
+PRi, j, t-1 é o preço unitário referencial do item i, na Unidade da Federação j, no tempo
+t - 1 (R$);
+
+PRi, j, t é o preço unitário referencial do item i, na Unidade da Federação j, no tempo t
+(R$).
+
+4.3.4.2        Média móvel ponderada
+
+Tal como efetuado para a MMS, o tratamento por meio da Média Móvel Ponderada
+(MMP) é realizado a partir dos preços referenciais divulgados nas duas referências
+predecessoras e o preço da referência atual. Na MMP, são aplicados pesos distintos
+para cada referência, quais sejam: para a referência atual t, adota-se peso 3; para a
+última referência publicada (t - 1), adota-se peso 2; e para a penúltima referência
+publicada (t - 2), adota-se peso 1. A Equação 33 ilustra o processo de cálculo da MMP.
+
+               (PRi, j, t-2 × 1) + (PRi, j, t-1 × 2) + (PRi, j, t × 3)
+MMPi, j, t =                                                                            (33)
+                                         6
+
+onde:
+
+MMPi, j, t é o preço unitário referencial com tratamento por média móvel ponderada do
+item i, na Unidade da Federação j, no tempo t (R$);
+
+PRi, j, t-2 é o preço unitário referencial do item i, na Unidade da Federação j, no tempo
+t - 2 (R$);
+
+PRi, j, t-1 é o preço unitário referencial do item i, na Unidade da Federação j, no tempo
+t - 1 (R$);
+
+PRi, j, t é o preço unitário referencial do item i, na Unidade da Federação j, no tempo t
+(R$).
+
+
+
+
+                                                    53                         DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                                 5       CONSIDERAÇÕES FINAIS
+
+
+
+
+                       54                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                             Volume 03 - Preços Referenciais
+
+
+
+5       CONSIDERAÇÕES FINAIS
+
+Os preços referenciais divulgados pelo Sistema de Custos Referenciais de Obras têm
+como objetivo representar os valores dos insumos praticados nas capitais das
+Unidades da Federação, constituindo um parâmetro relevante para a elaboração de
+orçamentos de obras de infraestrutura de transportes.
+
+Conforme apresentado no presente manual, são definidos a partir da coleta de
+informações junto ao mercado, aliada à aplicação de metodologias de cálculo e
+tratamentos estatísticos.
+
+Nesse sentido, é importante destacar que os preços referenciais não incorporam
+expectativas negociais nem eventuais ganhos de escala decorrentes de contratações
+específicas, tampouco consideram o transporte dos insumos para as frentes de
+serviço ou canteiro de obras.
+
+Diante disso, torna-se indispensável que o engenheiro orçamentista considere fatores
+como cronograma de execução, ganho de escala e exigências do projeto, além das
+particularidades regionais de cada empreendimento, quando da realização das
+pesquisas locais de mercado.
+
+Ressalta-se a importância do conhecimento da metodologia que fundamenta cada
+preço referencial, de modo a subsidiar tanto a tomada de decisão do engenheiro
+orçamentista quanto à necessidade de se realizar cotações adicionais.
+
+Por fim, o preço referencial de insumo divulgado pelo SICRO não deve ser
+interpretado como um limite superior na tomada de decisão do orçamentista ao
+comparar esse valor com os preços obtidos em pesquisas de mercado locais.
+Conforme apresentado ao longo deste volume, o preço referencial não contempla
+diversos fatores presentes em negociações reais, além de ser construído com base
+em procedimentos técnicos específicos que, embora metodologicamente sólidos,
+estão sujeitos às imperfeições inerentes a qualquer processo estimativo. Portanto,
+cabe ao orçamentista exercer julgamento crítico, considerando as particularidades do
+contexto local e os elementos que influenciam a formação de preços no mercado.
+
+
+
+
+                                            55                           DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                               REFERÊNCIAS BIBLIOGRÁFICAS
+
+
+
+
+                       56                           DNIT/DPP/CGCIT
+                      Manual de Custos de Infraestrutura de Transportes
+                              Volume 03 - Preços Referenciais
+
+
+
+                              REFERÊNCIAS BIBLIOGRÁFICAS
+
+CONSELHO NACIONAL DE TRÂNSITO (CONTRAN). 2021a. Resolução CONTRAN
+nº 882, de 13 de dezembro de 2021. Estabelece os limites de pesos e dimensões
+para veículos que transitem por vias terrestres, referenda a Deliberação CONTRAN
+nº 246, de 25 de novembro de 2021, e dá outras providências. Diário Oficial da União:
+seção 1, Brasília, DF, Ed. 242, p. 153, 24 dez. 2021.
+
+
+CONSELHO NACIONAL             DE TRÂNSITO           (CONTRAN).        2021b.    Deliberação
+CONTRAN nº 250, de 31 de dezembro de 2021. Altera a Resolução CONTRAN nº
+882, de 13 de dezembro de 2021, que estabelece os limites de pesos e dimensões
+para veículos que transitem por vias terrestres, e dá outras providências. Diário Oficial
+da União: Seção 1 - Extra E, Brasília, DF, Ed. 247-E, p. 1, 31 dez. 2021.
+
+
+DEPARTAMENTO NACIONAL DE TRÂNSITO (DENATRAN). 2009. Portaria
+DENATRAN nº 63, de 31 de março de 2009. Estabelece normas e procedimentos
+para o registro de veículos. Diário Oficial da União: seção 1, Brasília, DF, N. 62, p.
+43, 1 abr. 2009.
+
+
+DEPARTAMENTO NACIONAL DE TRÂNSITO (DENATRAN). 2015. Portaria
+DENATRAN nº 47, de 17 de abril de 2015. Altera a Portaria DENATRAN nº 63, de
+31 de março de 2009, que dispõe sobre a homologação de veículos e das
+combinações de veículos de transporte de cargas e de passageiros. Diário Oficial da
+União: seção 1, Brasília, DF, N. 74, p. 79, 20 abr. 2015.
+
+
+
+
+                                             57                                DNIT/DPP/CGCIT
+Manual de Custos de Infraestrutura de Transportes
+        Volume 03 - Preços Referenciais
+
+
+
+
+                                 BIBLIOGRAFIA RECOMENDADA
+
+
+
+
+                       58                           DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                             Volume 03 - Preços Referenciais
+
+
+
+                        BIBLIOGRAFICA RECOMENDADA
+
+ABREU, D.Q.F., FERREIRA, L.R. 2016. Projeto de um navio Roll-on Roll-off (Pure
+car and truck carrier). Universidade Federal do Rio de Janeiro. Projeto do Navio III –
+Relatório I. Dezembro de 2016.
+
+
+BRASIL. 2021a. Lei nº 14.133, de 1º de abril de 2021. Dispõe sobre normas gerais
+de licitação e contratação para as Administrações Públicas diretas, autárquicas e
+fundacionais da União, dos Estados, do Distrito Federal e dos Municípios. Disponível
+em:      <https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm>.
+Acesso em: 24 jul. 2024.
+
+
+BRAY, R. N. 2009. A guide to cost standards for dredging equipment 2009 - C684.
+Londres, UK: Construction Industry Research and Information Association (CIRIA).
+2009 Atualizado em 2018.
+
+
+MINISTÉRIO DA ECONOMIA. 2021b. Instrução Normativa SEGES/ME nº 65, de 7
+de julho de 2021. Dispõe sobre o procedimento administrativo para a realização de
+pesquisa de preços para aquisição de bens e contratação de serviços em geral, no
+âmbito da administração pública federal direta, autárquica e fundacional. Disponível
+em:        <https://www.gov.br/plataformamaisbrasil/pt-br/legislacao-geral/instrucoes-
+normativas/instrucao-normativa-seges-me-no-65-de-7-de-julho-de-2021>.          Acesso
+em: 24 jul. 2024.
+
+
+
+
+                                            59                           DNIT/DPP/CGCIT

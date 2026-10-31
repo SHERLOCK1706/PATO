@@ -1,0 +1,1118 @@
+INTRODUÇÃO À
+ORÇAMENTAÇÃO DE
+OBRAS RODOVIÁRIAS
+
+
+
+
+Módulo
+           3
+Custo Unitário de Insumos
+
+(Pesquisa de Mercado e Cálculo de
+Reajustamento)
+
+
+
+
+Conteudista:
+Betânia Alves Paulino
+
+
+Brasília, Fevereiro de 2022
+SUMÁRIO
+1.   Introdução:                                                                     3
+2.   Custo Unitário de Materiais                                                     4
+     a.   Local da Pesquisa de preços                                                5
+     b.   Cálculo do valor dos fretes                                                5
+     c.   Compatibilização de preços pesquisados                                     6
+     d.   Cálculo para reajustamento dos insumos                                     7
+3.   Custo Unitário de Equipamentos                                                  9
+     a.   Custo de propriedade — depreciação                                         9
+     b.   Custo de propriedade — oportunidade de capital                            11
+     c.   Custo de propriedade — seguros e impostos                                 13
+     d.   Custo de manutenção:                                                      14
+     e.   Custo de operação — consumo de combustível                                14
+     f.   Custo de operação — mão de obra de operação                               16
+     g.   Custo horário dos equipamentos                                            17
+4.   Custo Unitário de Mão de Obra                                                  18
+     a.   Salários                                                                  18
+     b.   Encargos sociais                                                          20
+     ●    Encargos Sociais — Grupo A                                                21
+     ●    Encargos Sociais — Grupo B                                                22
+     ●    Encargos sociais — Grupo C                                                23
+     ●    Encargos sociais — Grupo D                                                23
+     ●    Encargos sociais — horistas e mensalistas                                 24
+     ●    Encargos complementares (alimentação, transporte e ferramentas manuais)   26
+     ●    Encargos complementares (EPI, exames ocupacionais)                        28
+     ●    Encargos adicionais                                                       30
+     ●    Trabalho em condições especiais                                           31
+5.   Desoneração da mão de obra                                                     33
+6.   Textos Complementares                                                          34
+7.   Referências Bibliográficas                                                     35
+                                                                                 3
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   1. Introdução:
+Compor um custo custos consiste na modelagem da execução de determinado
+serviço objetivando identificar as principais informações do processo para sua
+precificação e custo requer o conhecimento de diversas informações. Entre
+essas informações, uma das mais importantes são os custos unitários, tratados
+neste módulo.
+
+Esses custos, junto a outras informações como: produção, consumos, taxas de
+utilização, atividades auxiliares, tempos de carga, descarga e manobras,
+momentos de transporte e BDI. Formação os custos finais a serem utilizados
+nas composições.
+
+Trataremos neste módulo sobre os custos unitários dos Materiais, Equipamentos
+e Mão de Obra.
+                                                                               4
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   2. Custo Unitário de Materiais
+Os materiais correspondem à matéria prima empregada na confecção de
+determinado bem ou serviço.
+
+Eles podem ser comercializados a granel, produzidos no local da obra ou
+individualizados por meio de embalagens. Os preços devem se referir ao
+pagamento à vista e considerar toda a carga tributária incidente sobre eles.
+
+Na figura a seguir podemos verificar algumas das considerações feitas na
+pesquisa de preços de insumos do SICRO.
+
+Figura 27 — Pesquisa de Preço de Insumos
+
+
+
+
+                                    Pagamento à
+                                       vista
+                  Qualidade
+               compatível com                            Sem
+                 as obras do                          promoções
+                    DNIT
+               (especificação)
+
+                                       Preços
+                                   pesquisados dos
+                                     materiais do
+                Evita-se               SICRO                  Carga
+                o varejo                                    tributária
+
+
+                         Produtores,
+                           grandes
+                        atacadistas e          Frete (CIF
+                       representantes           ou FOB)
+                       comerciais das
+                           fábricas
+
+
+
+
+FIQUE LIGADO
+Os preços devem se referir ao pagamento à vista e considerar toda a carga
+tributária incidente sobre eles.
+                                                                                 5
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Apresentamos a seguir alguns conceitos cujo conhecimento é importante para a
+definição dos custos dos materiais.
+
+   a. Local da Pesquisa de preços
+
+
+Os custos dos materiais são obtidos por meio de pesquisas de preços de
+mercado realizadas em todas as unidades da federação.
+
+
+Figura 28 — Custos dos materiais por pesquisa de mercado
+
+
+
+
+   b. Cálculo do valor dos fretes
+
+
+O transporte dos materiais pode ser realizado pelo fornecedor, caso em que o
+preço do insumo será caracterizado como Cost, Insurance and Freight — CIF
+(custo inclui seguro e frete), ficando o fornecedor responsável por todos os
+custos e riscos com a entrega dos materiais no canteiro de obras.
+
+
+Se o transporte for realizado pela empresa contratada para a execução da obra,
+o preço do frete será caracterizado como Free on Board — FOB (livre de frete)
+e a empresa assumirá todos os riscos e custos com o transporte dos insumos.
+                                                                               6
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Figura 29 — Cálculo do frete de materiais e equipamentos
+
+
+
+
+     Valor de                 Custo de
+                                                        Preço de
+    aquisição                   frete
+                                                       referência
+     na UFF                   previsto
+
+
+
+
+                 Unidade da Federação
+                 do Fabricante
+
+
+
+   c. Compatibilização de preços pesquisados
+
+
+Os preços pesquisados no mercado podem se apresentar em unidades
+comerciais diferentes das unidades do sistema de custos, tornando-se
+necessária sua adequada compatibilização. Deve-se sempre pesquisar e
+considerar a embalagem que permita o menor custo de aquisição do material.
+
+
+
+Por exemplo, a unidade comercial do Cimento Portland CP II — 32 é por saco
+de 50 kg. No SICRO, esse material tem a unidade técnica referenciada por
+quilograma — kg. Há que se prestar atenção a isso.
+
+
+
+Outra consideração importante é que a pesquisa de preços dos materiais,
+particularmente dos agregados em condição comercial e dos insumos mais
+relevantes na Curva ABC, deve ser obrigatoriamente realizada no local mais
+próximo da obra., (Memorando N° 322/2014-CGCIT/DIREX)
+
+
+
+Faz-se importante verificar se na determinação das quantidades dos materiais
+previstas no projeto foram observadas as capacidades de fornecimento dos
+estabelecimentos. Caso haja inconsistência, o projetista deve ser comunicado
+para se buscar outras alternativas.
+                                                                                                          7
+
+                       INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   A curva ABC também é conhecida por dois outros nomes: Lei de Pareto e Princípio 80–20. Os dois
+  nomes existem por ser uma ferramenta baseada no teorema de Vilfredo Pareto, um economista que
+   afirmou que 80% da riqueza de seu país, a Itália, estava concentrada nas mãos de apenas 20% da
+                                              população.
+
+Na construção civil, a análise é expandida para a análise de insumos, que são divididos em três grupos:
+                                     A, B e C, da seguinte forma:
+
+     ●   A: são os produtos ou serviços de custo mais alto, chegando a representar 50% do orçamento;
+                ●    B: insumos de valor intermediário, que são 30% do total do orçamento;
+         ●    C: os 20% restantes do orçamento, onde estão reunidos os insumos de menor custo.
+
+Assim, a curva permite visualizar o peso que cada insumo tem dentro do orçamento da obra, dando maior
+ou menor importância para os insumos em cada etapa, variando na compra, uso, armazenamento, entre
+                                                outros.
+
+
+
+
+    d.   Cálculo para reajustamento dos insumos
+
+
+Segundo aplicação e premissas da Instrução de Serviço DG/DNIT nº 01 —
+DG/DNIT SEDE, de 2 de janeiro de 2019, tem-se:
+
+                “(...) 1.2. Os índices de reajustamento indicam a variação mensal
+                de preços da cesta de negócios das diferentes famílias e são
+
+                calculadas a partir do mês-base de referência indicado. (...)”
+
+Com essa definição, tem-se a fórmula abaixo:
+
+Figura 30 — Fórmula para calcular o reajustamento dos insumos
+
+
+
+                                        Instrução de Serviço DG/DNIT nº 01/2019
+
+
+
+Em que:
+
+R = valor da parcela de reajustamento a ser calculada;
+
+Ii = Índice de preço referente ao mês de reajustamento;
+
+Io = Índice de preço verificado no mês-base do contrato;
+
+V = Valor, a preços iniciais, da parcela do contrato ou serviço a ser reajustado.
+                                                                                 8
+
+                  INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Os índices de reajustamento dos materiais podem ser encontrados no sítio do
+DNIT   (https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-
+e-pagamentos/custos-e-pagamentos-dnit/indices-de-reajustamentos).
+                                                                                 9
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   3. Custo Unitário de Equipamentos
+
+O custo horário de um equipamento (produtivo ou improdutivo) consiste na soma
+de todos os custos envolvidos em sua utilização, definidos em função das
+condições de trabalho, do tipo de equipamento, das características específicas
+do serviço e referenciados em uma determinada unidade de tempo.
+
+Figura 31 — Custo horário de equipamentos
+
+
+
+
+Apresentamos a seguir alguns conceitos cujo conhecimento é importante para a
+definição dos custos dos equipamentos.
+
+   a. Custo de propriedade — depreciação
+
+
+Consiste na parcela do custo operacional correspondente ao desgaste e à
+obsolescência do equipamento que ocorrem ao longo de sua vida útil.
+
+
+
+Parâmetros de cálculo:
+
+   ✓ Período de vida útil;
+
+   ✓ Valor de aquisição do equipamento novo;
+
+   ✓ Valor residual do equipamento.
+                                                                                   10
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+Permite que ao final da vida útil do equipamento, o custo de depreciação,
+somado ao valor residual dele, seja suficiente para aquisição de um
+equipamento novo.
+
+Figura 32 — Cálculo do custo da depreciação
+
+
+                 𝑉𝑎 − 𝑉𝑟       Método da
+Em que: 𝐷ℎ = 𝑛 𝑥 𝐻𝑇𝐴           linha reta
+
+   ✓ Dh representa a depreciação horária (R$/h);
+
+   ✓ Va representa o valor de aquisição do equipamento (R$);
+
+   ✓ Vr representa o valor residual (R$);
+
+   ✓ n representa a vida útil (anos);
+
+   ✓ HTA representa o total de horas trabalhadas por ano.
+
+
+
+As tabelas 29 e 30 constantes do Manual de Custos de Infraestrutura de
+Transportes — Volume 1, páginas 86 e 87, trazem as seguintes informações
+sobre as condições de trabalho:
+
+Tabela 29 — Condições de trabalho para as operações de escavação e carga
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 1, páginas 86.
+                                                                                              11
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Tabela 30 — Condições de Trabalho para as operações de transporte
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 1, páginas 87.
+
+
+   b. Custo de propriedade — oportunidade de capital
+
+
+Figura 32 — Cômputo do custo oportunidade de capital
+
+
+
+
+No Manual de Custos de Infraestrutura de Transportes (Volume 1, página 87)
+oportunidade     de    capital   (juros   sobre    o   capital    imobilizado      para   o
+desenvolvimento da atividade):
+
+       “(...) representam o custo, incorrido pelo empresário, pelo fato de aplicar
+       em um negócio específico, seu capital próprio ou o capital captado de
+
+       terceiros. (...)”
+                                                                                   12
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+A taxa de juros de oportunidade de capital (Jh) deve incidir sobre o valor médio
+do investimento em equipamento, durante a sua vida útil, sendo determinado por
+meio das seguintes expressões:
+
+Figura 33 — Cálculo da taxa de juros de oportunidade de capital (Jh)
+
+
+
+
+O SICRO, Sistema de Custos Referenciais de Obras – SICRO, bem como a
+Tabela de Preços de Engenharia Consultiva, adotam como referência a taxa
+Selic para fins de cálculo das despesas financeiras constantes do BDI e do custo
+de oportunidade de capital presente nos custos horários dos equipamentos.
+
+O Valor da SELIC é variável, portanto, deve-se sempre estar atento a essa
+questão. Veja por exemplo a variação da SELIC durante 10 anos, de 01/2012 a
+01/2022.
+                                                                                   13
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Figura 34 — Evolução da SELIC em 10 anos.
+
+
+
+
+   c. Custo de propriedade — seguros e impostos
+
+
+Para os veículos automotores, considera-se o Imposto de Propriedade de
+Veículos Automotores — IPVA e o Seguro Obrigatório.
+
+A incidência desses dois itens é da ordem de 2,5% sobre o investimento médio
+em veículos.
+
+Figura 35 — Cálculo dos seguros e impostos
+
+
+                                                      Para equipamentos de maior porte,
+
+                                                       não se considera a incidência de
+                                                      seguros e impostos, devido à baixa
+                                                      frequência de sinistros a que estão
+                                                                   sujeitos.
+                                                                                 14
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   d. Custo de manutenção:
+
+
+   ✓ Manutenção corretiva;
+
+   ✓ Manutenção preventiva;
+
+   ✓ Reparos;
+
+   ✓ Substituição de peças e componentes (lâminas, caçambas, garras,
+      escarificadores, etc.);
+
+   ✓ Custo do veículo lubrificador;
+
+   ✓ Perda de produção relativa a horas paralisadas para manutenção;
+
+   ✓ Mão de obra especializada para a manutenção (encarregado de oficina,
+      mecânicos, eletricistas, soldadores e ajudantes).
+
+   Figura 36 — Cálculo do custo de manutenção
+
+
+
+
+                                                    ✓ Fator k está relacionado a maior ou
+                                                      menor necessidade de manutenção dos
+                                                      equipamentos para uma operação
+                                                      eficiente
+
+
+
+
+   e. Custo de operação — consumo de combustível
+
+
+O consumo de combustível mostra-se bastante variável em função do tipo de
+equipamento e das condições de utilização, sendo normalmente adotados
+valores padronizados para grupos de equipamentos.
+                                                                                   15
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Figura 37 — Tipos de equipamentos e consumo de combustível
+
+
+
+
+1. Diesel                  2. Gasolina                  3. Elétricos
+
+
+
+
+            4. Caminhões                  5. Sem alimentação
+                                                própria
+
+
+
+
+O cálculo do custo horário de combustíveis, lubrificantes, filtros e graxas pode
+ser realizado por meio do produto da potência operacional do motor do
+equipamento, pelo fator de consumo do motor e pelo valor do combustível,
+conforme apresentado na expressão linear abaixo:
+
+Figura 38 — Cálculo do custo horário dos combustíveis
+                                                                                            16
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Tabela 35 — Coeficiente de consumo de combustíveis, lubrificantes, filtros e graxas
+
+
+
+
+ Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — páginas 93 e 94.
+
+Para maiores informações, acesse https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-
+pesquisa/custos-e-pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos/sicro/relatorio-
+de-parametros-de-equipamentos/janeiro-2021
+
+   f.   Custo de operação — mão de obra de operação
+
+
+A mão de obra de operação é constituída por motoristas e operadores de
+equipamentos.
+
+Ela pode ser classificada em diversas categorias, conforme a complexidade dos
+equipamentos em que atuam e com as diferentes escalas salariais praticadas no
+mercado de trabalho.
+
+Figura 38 — Variáveis para o cálculo do custo da mão de obra de operação
+
+
+                                                       Veículo leve
+
+                           Motorista
+                              s                          Caminhão
+
+                                                      Veículo especial
+            Operação
+                                                     Equipamento leve
+
+                           Operador
+                              es                    Equipamento pesado
+
+                                                    Equipamento especial
+                                                                                 17
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   g. Custo horário dos equipamentos
+
+
+
+O custo horário produtivo de um veículo ou equipamento é constituído pela soma
+das parcelas relacionadas aos custos de propriedade, de manutenção e de
+operação, seguindo as particularidades dos veículos ou equipamentos.
+
+
+
+Figura 39 – Cálculo do custo horário produtivo de equipamentos
+
+
+
+
+O custo horário improdutivo de um veículo ou equipamento é constituído pela
+soma dos custos de propriedade (depreciação, oportunidade de capital, seguros
+e impostos) e de mão de obra de operação, também seguindo as
+particularidades dos veículos e equipamentos.
+
+Figura 40 – Cálculo do custo horário improdutivo de equipamentos
+                                                                                     18
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   4. Custo Unitário de Mão de Obra
+Os custos de referência da mão de obra são definidos em função de quatro
+parcelas: salários, encargos sociais, complementares e adicionais. Estes custos
+consideram condições normais de jornada e ambiente de trabalho. Em casos
+excepcionais, poderão ser aplicados os conceitos e legislações relacionados aos
+adicionais noturno, de insalubridade e de periculosidade, dentre outros.
+
+Figura 41 — Itens que compõem o custo de mão de obra
+
+
+
+
+                                                Encargos
+                                                 Sociais
+               Salários
+                           Custo da mão de
+                                obra
+
+
+                                                    Encargos
+                                                 Complementares
+
+
+                          Encargos
+                          Adicionais
+
+
+
+
+Apresentamos a seguir alguns conceitos cujo conhecimento é importante para a
+definição dos custos de Mão de Obra.
+
+   a. Salários
+
+
+Os salários são definidos a partir do tratamento estatístico dos dados de salários
+de mercado constantes do Cadastro Geral de Empregados e Desempregados
+— CAGED da Secretaria de Trabalho do Ministério da Economia.
+
+Ele respeita os pisos e benefícios advindos de acordos e convenções coletivas
+de trabalho.
+                                                                                         19
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Os microdados do CAGED fornecem os salários básicos nominais de
+registros e desligamentos em carteira, individualizados para cada categoria
+profissional.
+
+Os salários médios são definidos para todas as unidades da federação.
+
+Há uma equivalência entre as categorias profissionais do SICRO e da
+Classificação Brasileira de Ocupações — CBO.
+
+
+
+TOME NOTA
+
+Para algumas categorias do SICRO não foi possível estabelecer equivalências
+diretas com a Classificação Brasileira de Ocupações — CBO. Nessas
+situações, torna-se necessária adoção de outros critérios para formação dos
+salários.
+
+Tabela 6 — Critérios de formação de salários de categorias sem equivalência direta com
+a CBO
+                                                                                    20
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   b. Encargos sociais
+
+
+Os encargos sociais representam as contribuições pagas pelo empregador e
+incidem diretamente sobre os salários, de acordo com a legislação vigente. No
+SICRO, os encargos são diferenciados em função das categorias profissionais,
+do regime trabalhista (horista ou mensalista) e das unidades da federação.
+
+Figura 42 — Encargos sociais
+
+
+
+
+                                          Encargos Sociais
+
+
+
+
+        Grupo A                 Grupo B                      Grupo C           Grupo D
+
+
+
+
+                               Obrigações
+                           incidentes sobre o           Desligamento
+    Obrigações que           período em que             profissional do    Reincidências de
+        incidem               não ocorre a             funcionário. Não     um grupo de
+   diretamente sobre       prestação direta do        sofrem incidências   encargos sociais
+        o salário          serviço, mas que o          dos encargos do       sobre outro
+                           funcionário faz jus             Grupo A
+                             à remuneração
+                                                                                    21
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Encargos Sociais — Grupo A
+Os encargos sociais que compõem o grupo A, podem ser identificados na tabela
+abaixo:
+
+Tabela 07 — Encargos sociais do Grupo A, legislação aplicada e fatores.
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 51.
+                                                                                    22
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Encargos Sociais — Grupo B
+Os encargos sociais que compõem o grupo B, podem ser verificados na tabela
+abaixo:
+
+Tabela 08 — Encargos sociais do Grupo B, legislação aplicada e fatores.
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 52.
+                                                                                    23
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Encargos sociais — Grupo C
+Os encargos sociais que compõem o grupo C, são detalhados na tabela abaixo:
+
+Tabela 11 — Encargos sociais do Grupo C e legislação aplicada.
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 58.
+
+
+
+
+   ●   Encargos sociais — Grupo D
+Os encargos sociais que compõem o grupo D, são apresentados na tabela
+abaixo:
+
+Tabela 13 — Encargos sociais do Grupo D para servente no Rio de Janeiro em 2014
+(exemplo).
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 62.
+                                                                                         24
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●    Encargos sociais — horistas e mensalistas
+Os encargos sociais destinados aos trabalhadores horistas, são descritos na
+tabela abaixo:
+
+Tabela 14 — Encargos sociais para horistas (exemplo para servente no Rio de Janeiro em
+2014)
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 63.
+                                                                                       25
+
+                      INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Os encargos sociais voltados para os trabalhadores mensalista, são observados
+na tabela abaixo:
+
+Tabela 15 — Encargos sociais para horistas (exemplo para Encarregado de turma no Rio
+de Janeiro em 2014)
+
+
+
+
+Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 64.
+                                                                                     26
+
+                     INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Encargos complementares (alimentação, transporte e ferramentas
+       manuais)
+
+
+Os encargos complementares são aqueles suportados pelo empregador em
+função da natureza do trabalho e de acordos e convenções coletivas que
+regulamentam a atividade das categorias da construção civil e pesada.
+
+O esquema a seguir representa quais são as parcelas constituintes desses
+encargos complementares.
+
+Figura 43 — Itens que compõem os encargos complementares
+
+
+
+                          Equipamento
+                           de Proteção                  Fique por dentro!
+                           Individual –
+                               EPI
+
+
+
+        Transporte                              Alimentação
+
+                            Encargos
+                         Complementares
+
+
+
+
+                Exames
+                                          Ferramentas
+                Médicos
+                                            Manuais
+              Ocupacionais
+
+
+
+
+Os custos referentes à alimentação dos funcionários devem ser definidos em
+função da previsão de 5 refeições diárias (café da manhã, almoço, lanche da
+tarde, jantar e ceia), preparadas em refeitório próprio no canteiro de obras, isto
+porque maioria das obras de infraestrutura do DNIT encontram-se deslocadas
+dos grandes centros urbanos, razão pelo qual se admite que os trabalhadores
+passam a semana alojados no canteiro da obra, sem deslocamentos diários
+entre sua residência e o local do trabalho.
+                                                                                         27
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Entretanto, nos finais de semana, deve-se considerar o transporte para a cidade
+mais próxima, sem pagamento de pernoite.
+
+Em caso de obras urbanas, em que não se preveja a possibilidade de alojamento
+direto dos funcionários nos canteiros, o orçamentista deve prever o custo com
+fornecimento de vale transporte, a ser pesquisado no próprio local da obra.
+
+Outro valor a ser considerado como Encargo Complementar se refere às
+ferramentas manuais, consideradas como aquelas que exigem somente o
+esforço humano para a sua utilização, sendo diferenciadas em função da
+natureza dos serviços e das categorias profissionais que as utilizam.
+
+Segundo a metodologia SICRO, houve uma definição dos conjuntos de
+ferramentas manuais utilizadas por cada categoria profissional, obtendo-se uma
+lista de 100 tipos diferentes de ferramentas.
+
+A definição dos custos horários por categoria profissional foi realizada em função
+da frequência média de utilização diária, da vida útil e do custo unitário de cada
+ferramenta, conforme apresentado na Tabela 18.
+
+Tabela 18 — Custo horário com ferramentas manuais para servente no Estado do Rio de
+Janeiro
+
+
+
+
+     Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 69.
+                                                                                     28
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Encargos complementares (EPI, exames ocupacionais)
+
+
+A Norma Regulamentadora NR-06 (Secretaria do Trabalho do Ministério da
+Economia) define equipamento de proteção individual como todo dispositivo ou
+produto, de uso individual, utilizado pelo trabalhador, destinado à proteção de
+riscos suscetíveis a sua segurança e saúde no trabalho.
+
+A empresa é obrigada a fornecer aos seus empregados, gratuitamente,
+equipamento de proteção individual adequado ao risco, em perfeito estado de
+conservação e funcionamento. Essa condição está relacionada diretamente ao
+pagamento, ou não, de adicional de insalubridade.
+
+De forma similar à metodologia adotada para as ferramentas manuais, foram
+considerados os equipamentos de proteção individual para cada categoria
+profissional.
+
+Tabela 19 — Custo horário de EPI para servente no Estado do Rio de Janeiro
+
+
+
+
+ Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 70.
+                                                                                     29
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+Já a Norma Regulamentadora NR-07 (Secretaria de Trabalho do Ministério da
+Economia) que trata da obrigatoriedade de elaboração e implantação do
+Programa de Controle Médico de Saúde Ocupacional (PCMSO).
+
+Figura 44 — Tipos de exames ocupacionais
+
+
+
+                                                Fique por dentro!
+                            Exame
+                          admissiona
+                               l
+
+
+         Exame
+                                          Exame
+       demissiona
+                                         periódico
+            l
+
+
+
+
+              Exame de             Exame de
+              mudança              retorno ao
+              de função             trabalho
+
+
+
+
+Tabela 20 — Estimativa de custos com exames médicos ocupacionais
+
+
+
+
+ Fonte: Manual de Custos de Infraestrutura de Transportes — Volume 01 — página 71.
+                                                                                30
+
+                        INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+    ●    Encargos adicionais
+
+
+Os encargos adicionais da mão de obra são caracterizados como benefícios a
+que fazem jus os trabalhadores, em função de determinações específicas de
+acordos ou convenções coletivas de trabalho de diferentes regiões e entidades
+sindicais representativas, os quais resultam em desembolsos que devem ser
+acrescidos aos encargos sociais e complementares.
+
+Por serem diferenciados, são contemplados no sistema apenas os encargos
+adicionais mais relevantes e recorrentes em cada unidade da federação. Este
+levantamento é realizado em função dos acordos e convenções coletivas de
+trabalho firmados entre os sindicatos da construção pesada e/ou da construção
+civil.
+
+
+
+Figura 45 — Itens que compõem os encargos adicionais
+
+
+
+                              Seguro de
+                                vida e
+                               auxílio
+                               funeral
+
+
+
+
+                             Encargos
+                             adicionais
+
+
+                                             Assistência
+         Cesta básica                         médica e
+                                            odontológica
+                                                                                  31
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+   ●   Trabalho em condições especiais
+
+
+Os custos da mão de obra definidos no SICRO são aqueles diretamente
+envolvidos na execução dos serviços ou na operação de equipamentos e/ou
+veículos em condições normais de jornada e de ambiente de trabalho, o que se
+mostra perfeitamente razoável para a obtenção de custos de referência.
+
+Os serviços de escavação em túneis, de escavação de tubulão sob ar
+comprimido e de transporte de materiais asfálticos já preveem em suas
+composições os custos associados às condições perigosas e insalubres destas
+atividades. Nas operações de desmonte a céu aberto, o blaster e seu auxiliar
+são também contemplados com o adicional de periculosidade diretamente no
+custo horário da mão de obra.
+
+Mas excepcionalmente, por motivos diversos, podem ser necessárias horas
+extraordinárias noturnas e outras atividades que se caracterizem como penosas,
+insalubres ou perigosas, que devem ser incluídos aos custos da obra durante a
+elaboração do orçamento, em função das características do local e dos serviços,
+observadas as legislações pertinentes e as determinações específicas
+preconizadas nas convenções coletivas de trabalho.
+
+
+
+
+O artigo 7º da Constituição Federal, inciso IX, determina que os trabalhadores
+urbanos e rurais têm direito à remuneração do trabalho noturno superior à do
+diurno.
+
+Com a exceção dos casos de revezamento semanal ou quinzenal, o artigo 73 da
+Consolidação das Leis do Trabalho — CLT considera como noturno o trabalho
+executado entre as 22 horas de um dia e as 5 horas do dia seguinte, e indica
+que a hora nesse período será computada como de 52 minutos e 30 segundos
+e paga com acréscimo de 20%, pelo menos, sobre a hora diurna, salvo se a
+Convenção Coletiva de Trabalho (CCT) ou o Acordo Coletivo (AC) definir
+percentual superior.
+                                                                                             32
+
+                    INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+A hora reduzida calculada pela proporção de 60 minutos sobre a hora de 52,5
+minutos equivale a um fator de 1,1428. Dessa forma, considerando-se ainda o
+adicional de 20%, obtém-se um acréscimo total da hora noturna em 37,14% que
+deve ser aplicado sobre o salário horário básico do trabalhador.
+
+
+     Custo da mão de obra = Salário + (Salário x %Encargos Totais) + (Salário x %Condições
+              Especiais) = Salário x (1 + %Encargos Totais + %Condições Especiais)
+                                                                                    33
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   5. Desoneração da mão de obra
+
+A referida desoneração consiste no recolhimento, por parte das empresas, da
+contribuição patronal, que antes era de 20,0% sobre folha de pagamento, para
+2,0% sobre a receita bruta da empresa.
+
+Posteriormente, por meio da Lei nº 13.161, de 31 de agosto de 2015, alterou-se
+a alíquota da Contribuição Previdenciária sobre a Renda Bruta — CPRB para
+4,5%, no caso específico das empresas de construção de obras de infraestrutura
+de transportes.
+
+Além disso, a referida lei facultou às empresas a opção de adotar o
+recolhimento da contribuição previdenciária diretamente na folha de pagamento,
+como realizado anteriormente, ou por meio de nova alíquota da CPRB.
+
+FIQUE LIGADO
+
+Atenção à entrada em vigor da nova Lei de Licitações e Contratos
+Administrativos, Lei nº 14.133, de 1º de abril de 2021, em especial o artigo 193,
+combinado com o artigo 191.
+                                                                                            34
+
+                       INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   6. Textos Complementares
+Manuais de Custos de Infraestrutura de Transportes — Volume 01 —
+Metodologia e Conceitos — 6. Equipamentos, 7. Materiais e 8. Operações de
+Transportes.                Disponível            em          https://www.gov.br/dnit/pt-
+br/assuntos/planejamento-e-pesquisa/custos-e-pagamentos/custos-e-
+pagamentos-dnit/sistemas-de-custos/sicro/manuais-de-custos-de-
+infraestrutura-de-transportes/manuais-de-custos-de-infraestrutura-de-
+transportes.
+
+Lei nº 14.133, de 1º de abril de 2021 — Lei de Licitações e Contratos
+Administrativos. Disponível em: http://www.planalto.gov.br/ccivil_03/_ato2019-
+2022/2021/lei/L14133.htm.
+
+Lei nº 13.161, de 31 de agosto de 2015 — Altera as Leis n º 12.546, de 14 de
+dezembro de 2011, quanto à contribuição previdenciária sobre a receita bruta,
+12.780, de 9 de janeiro de 2013, que dispõe sobre medidas tributárias referentes
+à realização, no Brasil, dos Jogos Olímpicos de 2016 e dos Jogos Paraolímpicos
+de 2016, 11.977, de 7 de julho de 2009, e 12.035, de 1º de outubro de 2009; e
+revoga dispositivos da Lei nº 11.196, de 21 de novembro de 2005, quanto à
+tributação             de         bebidas          frias.          Disponível        em:
+http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13161.htm.
+
+Lei nº 12.546/2011, de 14 de dezembro de 2011 — Institui o Regime Especial de
+Reintegração de Valores Tributários para as Empresas Exportadoras
+(Reintegra); dispõe sobre a redução do Imposto, sobre Produtos Industrializados
+(IPI) à indústria automotiva; altera a incidência das contribuições previdenciárias
+devidas        pelas        empresas        que        menciona.      Disponível     em:
+http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12546.htm.
+                                                                                35
+
+                   INTRODUÇÃO À ORÇAMENTAÇÃO DE OBRAS RODOVIÁRIAS - Módulo 3
+
+
+
+
+   7. Referências Bibliográficas
+BRASIL. Constituição da República Federativa do Brasil de 1988. Disponível
+em http://www.planalto.gov.br/ccivil_03/Constituicao/Constituicao.htm. Acesso
+em 18 de outubro de 2021.
+
+BRASIL.    DEPARTAMENTO         NACIONAL      DE    INFRAESTRUTURA         DE
+TRANSPORTES        —    DNIT.    Sistemas    de    Custos.   Disponível    em
+https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-e-
+pagamentos/custos-e-pagamentos-dnit/sistemas-de-custos. Acesso em 18 de
+outubro de 2021.
+
+BRASIL.    DEPARTAMENTO         NACIONAL      DE    INFRAESTRUTURA         DE
+TRANSPORTES — DNIT. Diretoria Executiva. Coordenação-Geral de Custos de
+Infraestrutura de Transportes. Manual de Custos de Infraestrutura de
+Transportes. 1ª Edição — Brasília, 2017. Volume 01: Metodologia e Conceitos.

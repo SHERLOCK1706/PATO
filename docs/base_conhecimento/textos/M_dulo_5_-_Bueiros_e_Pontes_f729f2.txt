@@ -1,0 +1,1454 @@
+Instituto de
+Pesquisas em
+Transportes
+
+Conceitos Básicos de
+Hidrologia e Drenagem
+para Projetos Rodoviários
+
+Conteudista:
+
+Eider Gomes de Azevedo Rocha
+
+Brasília, setembro de 2022.
+
+Conceitos Básicos
+de Hidrologia e
+Drenagem para
+Projetos Rodoviários
+
+
+
+Módulo
+            5
+Transposição de
+Talvegue.
+
+- Bueiros: conceito, classificação e
+tipos;
+- Pontes e pontilhões: conceito e
+classificação;
+- Detalhes construtivos e capacidade
+hidráulica.
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático, cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo nº
+50600.008060/2022-01, o DNIT poderá revisar o
+material cedido, adaptá-lo e utilizá-lo livremente em
+outros eventos que venha a promover, bem como o
+ceder a outros órgãos e entidades federais.
+                               SUMÁRIO
+1.     INTRODUÇÃO ...................................................................................................................... 1
+
+2.     BUEIROS OU OBRAS DE ARTE CORRENTES .................................................................. 2
+     2.1.     BUEIROS TUBULARES DE CONCRETO .................................................................... 5
+     2.2.     BUEIROS CELULARES DE CONCRETO .................................................................. 13
+     2.3.     BUEIROS METÁLICOS .............................................................................................. 20
+     2.4.     BUEIROS EM PEAD ................................................................................................... 28
+
+3.     PONTES E PONTILHÕES - OAE ....................................................................................... 36
+     3.1      PONTILHÃO ................................................................................................................ 36
+     3.2      PONTE ........................................................................................................................ 38
+
+4.     REFERÊNCIAS BIBLIOGRÁFICAS .................................................................................... 41
+                                                                                     1
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+1. INTRODUÇÃO
+O objetivo deste módulo é apresentar aos alunos os dispositivos de transposição
+de talvegues, com destaque para os bueiros (comumente chamados de obras
+de arte correntes), as pontes e os pontilhões (comumente chamados de obras
+de arte especiais).
+
+Tais dispositivos se mostram necessários quando as bacias interceptadas pelo
+traçado rodoviário geram contribuições que, por imperativos hidrológicos e
+topografia do terreno, têm que ser atravessadas sem comprometer a estrutura
+da estrada. Esse objetivo é alcançado com a introdução de uma ou mais linhas
+de bueiros sob os aterros ou construção de pontilhões ou pontes transpondo os
+cursos d'água.
+
+É fundamental que o profissional responsável pelo projeto de uma rodovia tenha
+ampla consciência da importância da drenagem na garantia da estabilidade da
+via a ser construída e, em consequência, estabeleça de maneira coerente,
+técnica e economicamente, o correto dimensionamento das obras de drenagem
+a serem implantadas.
+
+Também é importante que o projetista conheça os diferentes tipos de dispositivos
+de transposição de talvegue, em especial quanto aos bueiros e principalmente
+no que diz respeito aos materiais constituintes, formatos e dimensões.
+                                                                                     2
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+2. BUEIROS ou obras de arte correntes
+Os bueiros são obras destinadas a permitir a passagem livre das águas sob o
+corpo das estradas, sendo normalmente instalados no fundo do talvegue.
+
+Quando ele é assentado em local onde o traçado da rodovia intercepta o fluxo
+d'água e tem como função permitir a transposição deste fluxo de um lado para
+outro da rodovia, trata-se de um bueiro de grota. Já quando ele capta as águas
+coletadas por dispositivos de drenagem superficial, tal como sarjetas, valetas e
+descida d'água, de forma a permitir a sua transposição de um lado para outro da
+rodovia, trata-se de um bueiro de greide.
+
+Os bueiros são normalmente compostos por corpo e dispositivos de entrada e
+de saída, sendo as bocas os mais comuns. O corpo é a parte situada sob a
+plataforma rodoviária, enquanto que as bocas constituem os dispositivos de
+admissão e lançamento, a montante e a jusante, e são compostas de soleira,
+muro de testa e alas, conforme pode ser visualizado nas figuras 2.1 e 2.2
+
+
+
+
+        Figura 2.1 – Croqui com detalhamento do corpo e das bocas de um bueiro.
+                                                                                          3
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+    Figura 2.2 – Croqui com detalhamento das partes constituintes da boca de um bueiro.
+
+Em termos hidráulicos, os bueiros podem ser dimensionados como canais,
+vertedouros ou orifícios. A escolha do regime a adotar depende da possibilidade
+da obra poder ou não trabalhar com carga hidráulica à montante, que poderia
+proporcionar o transbordamento do curso d’água, causando danos aos aterros e
+pavimentos e inundação à montante do bueiro.
+
+Não sendo possível a carga à montante, o bueiro deve trabalhar livre como canal,
+que por sinal é a método de dimensionamento recomendado para novas obras.
+
+Por outro lado, caso a elevação do nível d'água à montante não traga nenhum
+risco ao corpo estradal, ou a terceiros, o bueiro pode ser dimensionado como
+orifício, respeitando-se, evidentemente, a cota do nível d'água máximo no lado
+de montante.
+
+Para bueiros trabalhando hidraulicamente como canais, a metodologia adotada
+é a referente ao escoamento em regime crítico, baseada na energia específica
+mínima igual à altura do bueiro.
+
+Para bueiros com carga à montante, o escoamento é considerado como canal
+em movimento uniforme, à seção plena, sem pressão interna.
+                                                                                         4
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+Existem diversos tipos de bueiros e eles podem ser classificados por meio de
+diferentes parâmetros, sendo os principais:
+
+   • Forma ou geometria da seção: os formatos mais comuns são o circular,
+onde destacam-se os bueiros tubulares, e o retangular ou quadrado, com
+destaque para os bueiros celulares. Mas também há os de seção lenticular,
+elíptica, ovoide e até especiais, quando tiverem seções diferentes das citadas
+anteriormente, como é o caso dos arcos semicirculares e dos bueiros tipo “bala”,
+por exemplo.
+
+
+   • Número de linhas: os bueiros são normalmente instalados em linhas
+simples, duplas ou triplas, mas podem ser encontradas combinações superiores
+a estas, cabendo, neste caso, se avaliar a faixa de alagamento que será
+provocada.
+
+
+   • Materiais de fabricação: o material mais comumente empregado para
+fabricação é o concreto de cimento Portland, mas existem bueiros metálicos, de
+polietileno da alta densidade (PEAD), alvenaria de pedras (com laje de concreto),
+PVC estruturado (Rib-loc), dentre outros.
+
+
+   • Esconsidade: de acordo com o ângulo formado entre o eixo longitudinal
+do bueiro e a normal ao eixo longitudinal da rodovia, o bueiro será classificado
+como normal (0º) ou como esconso (≠ 0º), tal como mostra a figura 2.3.
+
+
+
+
+   Figura 2.3 – Croqui com detalhamento de um bueiro normal e outro esconso à rodovia.
+                                                                                        5
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+   2.1. BUEIROS TUBULARES DE CONCRETO
+
+
+Os bueiros tubulares de concreto são os tipos de obras de arte correntes mais
+comuns nas transposições de talvegues.
+
+Em praticamente todos os subtrechos das rodovias federais poderão ser
+encontrados bueiros tubulares de concreto, quer sejam em linhas simples ou
+combinados. Sobre este aspecto é conveniente que o aluno se familiarize, por
+sinal, com as nomenclaturas que poderão ser atribuídas aos bueiros tubulares
+em função do número de linhas, a saber:
+
+- BSTC: Bueiro Simples Tubular de Concreto (1 linha de tubos);
+
+- BDTC: Bueiro Duplo Tubular de Concreto (2 linhas de tubos); e
+
+- BTTC: Bueiro Triplo Tubular de Concreto (3 linhas de tubos).
+
+Para uma rápida identificação e memorização desta nomenclatura se
+apresentam as figuras 2.4 a 2.6.
+
+
+
+
+    Figura 2.4 A – Esquema de um BSTC        Figura 2.4 B – BSTC instalado em rodovia
+           (Fonte: BRASIL, 2018).                      (Fonte: próprio autor).
+
+
+
+
+ Figura 2.5 A – Esquema de um BDTC (Fonte:   Figura 2.5 B – BDTC instalado em rodovia
+                BRASIL, 2018).                         (Fonte: próprio autor).
+                                                                                     6
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+               Figura 2.6 A – Esquema de um BTTC (Fonte: BRASIL, 2018)
+
+
+
+
+             Figura 2.6 B – BTTC instalado em rodovia (Fonte: próprio autor).
+
+
+
+O DNIT traz em seu catálogo bueiros em combinação de até três linhas e
+considera tubos de diâmetro variando de 0,6 m até 1,50 m. No entanto, segundo
+os normativos vigentes, os tubos para execução de bueiros para coleta de águas
+pluviais podem ter diâmetro variando desde 0,20 m a 2,00 m, conforme tabela
+2.1.
+
+Não é tão incomum serem encontrados bueiros tubulares instalados em linhas
+superiores a três, formando assim bueiros tubulares quádruplos, quíntuplos e até
+sêxtuplos, por exemplo. O cuidado que se deve ter aqui é com a faixa de
+alagamento que será provocada, mas não há uma proibição para combinações
+superiores a três linhas.
+                                                                                          7
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+  Tabela 2.1 – Dimensão dos tubos para águas pluviais com encaixe ponta e bolsa (PB) ou
+                                 macho e fêmea (MF).
+                                     Comprimento           Folga
+              Comprimento útil                                       Espessura mínima
+ Diâmetro                          mínimo da bolsa       máxima
+             mínimo do tubo - L                                         da parede - D
+ nominal -                          ou da fêmea - B         do
+    DN       Ponta e Macho e Ponta e Macho e encaixe -
+                                                                     Simples Armado
+              bolsa     fêmea      bolsa      fêmea          C
+    200        1000       950        50         20          30          30           -
+    300        1000       950        60         20          30          30          45
+    400        1000       950        65         20          30          40          45
+    500        1000       950        70         20          40          50          50
+    600        1000       950        75         20          40          55          60
+    700        1000       950        80         35          40           -          66
+    800        1000       950        80         35          40           -          72
+    900        1000       950        80         35          40           -          75
+   1000        1000       950        80         35          40           -          80
+   1100        1000       950        80         35          50           -          90
+   1200        1000       950        90         35          50           -          96
+   1300        1000       950        90         35          50           -         105
+   1500        1000       950        90         35          60           -         120
+   1750        1000       950       100         35          60           -         140
+   2000        1000       950       100         35          60           -         180
+                      Fonte: NBR-8890/2007 (Dimensões em mm).
+
+Mas esta não é a única classificação aplicável aos tubos de concreto. As
+nomenclaturas usadas para tubos de concreto também são definidas de acordo
+com sua finalidade, classe de resistência e presença de reforço estrutural, sendo
+elas:
+
+   •    Tubos de concreto destinados à condução de água pluvial:
+
+- Sem armação (simples): PS1 e PS2;
+
+- Com armação: PA1, PA2, PA3 e PA4.
+
+   •    Tubos de concreto destinados à condução de esgoto sanitário:
+
+- Sem armação (simples): ES;
+
+- Com armação: EA2, EA3 e EA4.
+
+As tabelas 2.2 e 2.3, extraídas da norma NBR-8890/2007, apresentam as
+resistências dos tubos simples e dos tubos armados, conforme sua classe de
+resistência.
+                                                                                                     8
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+   Tabela 2.2 – Resistência para tubos de concreto de águas pluviais e esgotos sanitários.
+                                        Água pluvial                     Esgoto sanitário
+ Diâmetro nominal                                                       Carga mínima de
+                             Carga mínima de ruptura (kN/m)
+                                                                          ruptura (kN/m)
+              Classe            PS1                    PS2                      ES
+        200                      16                     24                      36
+        300                      16                     24                      36
+        400                      16                     24                      36
+        500                      20                     30                      45
+        600                      24                     36                      54
+                                   Fonte: NBR-8890/2007.
+Tabela 2.3 – Compressão diametral de tubos armados e/ou reforçados com fibra de aço – por
+                                         classe.
+                            Água pluvial                                 Esgoto Sanitário
+                                                               Carga mínima
+             Carga mínima de
+                                                                  de fissura
+              fissura (tubos
+                                                             (tubos armados)
+  DN        armados) ou carga         Carga mínima de                              Carga mínima
+                                                              ou carga isenta
+           isenta de dano (tubo           ruptura                                    de ruptura
+                                                               de dano (tubo
+          reforçado com fibra) –
+                                                              reforçado com
+                   kN/m
+                                                                fibra) – kN/m
+ Class    PA    PA    PA     PA    PA      PA    PA    PA     EA      EA     EA   EA     EA    EA
+   e       1     2     3      4     1        2     3    4      2       3      4    2       3     4
+  300     12     18    27     36   18       27    41   54     18      27     36   27      41    54
+  400     16     24    36     48   24       36    54   72     24      36     48   36      54    72
+  500     20     30    45     60   30       45    68   90     30      45     60   45      68    90
+  600     24     36    54     72   36       54    81   108    36      54     72   54      81   108
+  700     28     42    63     84   42       63    95   126    42      63     84   63      95   126
+  800     32     48    72     96   48       72   108   144    48      72     96   72     108 144
+  900     36     54    81    108   54       81   122   162    54      81    108   81     122 162
+ 1000     40     60    90    120   60       90   135   180    60      90    120   90     135 180
+ 1100     44     66    99    132   66       99   149   198    66      99    132   99     149 198
+ 1200     48     72   108    144   72      108   162   216    72     108 144 108 162 216
+ 1500     60     90   135    180   90      135   203   270    90     135 180 135 203 270
+ 1750     70    105   158    210   105     158   237   315   105 158 210 158 237 315
+ 2000     80    120   180    240   120     180   270   360   120 180 240 180 270 360
+                         Fonte: NBR-8890/2007 (Dimensões em mm).
+
+Como os bueiros podem ter dois tipos de encaixe entre seus tubos, sendo um
+do tipo ponta e bolsa (PB) e o outro do tipo macho e fêmea (MF), é importante
+saber quais os diâmetros permitidos para cada tipo de encaixe, segundo as
+classificações já vistas. Estes detalhes estão apresentados na figura 2.7 e na
+tabela 2.4.
+                                                                                            9
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+  Figura 2.7 A – Tubo de concreto de encaixe   Figura 2.7 B – Tubo de concreto de encaixe
+   tipo macho e fêmea. (Fonte: ABTC, 2003)       tipo ponta e bolsa. (Fonte: ABTC, 2003)
+
+
+                           Tabela 2.4 – Tubos para águas pluviais.
+   Presença de                 Sem armação               Com armação / reforço estrutural
+       reforço
+     Classe de                   PS1 e PS2                     PA1, PA2, PA3 e PA4
+    resistência
+       Tipo de      Macho e fêmea        Ponta e bolsa   Macho e fêmea      Ponta e bolsa
+      encaixe
+    Diâmetros          500 e 600         De 200 a 600     De 500 a 2000     De 300 a 2000
+    permitidos
+  Comprimento             950                1000              950              1000
+  útil mínimo do
+        tubo
+  Fonte: Associação Brasileira dos Fabricantes de Tubos de Concreto - ABTC (Dimensões em
+                                             mm).
+
+TOME NOTA
+ A nomenclatura CA, comumente empregada para designar bueiros tubulares de
+ concreto armada, foi substituída por PA por ocasião da norma NBR-8890/2003.
+
+TOME NOTA
+ Todos os tubos devem trazer, em caracteres legíveis gravados no concreto ainda
+ fresco, o nome ou marca do fabricante, diâmetro nominal, a classe a que
+ pertencem ou a resistência do tubo, a data de fabricação e um número para
+ rastreamento de todas as suas características de fabricação.
+
+ Embora não seja o propósito deste curso abordar o dimensionamento dos
+ bueiros, é importante que o aluno tenha em mente qual é a capacidade de
+ descarga dos bueiros catalogados nos manuais do DNIT. Assim, considerando
+ o regime de escoamento crítico e o funcionamento como canal, devem ser
+ consideradas as vazões conforme a tabela 2.5.
+                                                                                           10
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+    Tabela 2.5 – Vazão, velocidade e declividade crítica de bueiros tubulares de concreto
+                                 trabalhando como canal.
+    Tipo          Diâmetro          Área           Vazão         Velocidade     Declividade
+                     (m)         molhada       crítica (m³/s) crítica (m/s)      crítica (%)
+                                crítica (m²)
+                    0,60            0,22            0,43             1,98            0,88
+                    0,80            0,39            0,88             2,29            0,80
+    BSTC            1,00            0,60            1,53             2,56            0,74
+                    1,20            0,87            2,42             2,80            0,70
+                    1,50            1,35            4,22             3,14            0,65
+
+                    1,00            1,20            3,07           2,56            0,74
+    BDTC            1,20            1,73            4,84           2,80            0,70
+                    1,50            2,71            8,45           3,14            0,65
+
+                    1,00           1,81         4,60          2,56                 0,74
+    BTTC            1,20            2,6         7,26          2,80                 0,70
+                    1,50           4,06        12,67          3,14                 0,65
+                 Fonte: Manual de Drenagem de Rodovias (BRASIL, 2006).
+
+Na tabela aparecem destacados os valores referentes à vazão suportada por
+cada tipo de bueiro, bem como os dados referentes ao BSTD de 1,0 m de
+diâmetro, por ser o tipo de OAC mais comum nas rodovias brasileiras.
+
+É importante ressaltar que estas são as descargas suportadas para os bueiros
+assentados nas declividades críticas informadas e trabalhando como canal. A
+variação deste parâmetro irá provocar alteração destes valores, bem como do
+regime de escoamento.
+
+Embora as novas OACs projetadas devam ser dimensionadas para trabalharem
+como canal, ao longo de sua vida útil é possível que ocorram chuvas com
+intensidades superiores àquelas consideradas no período de observação da
+estação hidrológica escolhida e, consequentemente, poderão ocorrer descargas
+maiores que as previstas.
+
+Assim, o funcionamento da OAC com o acúmulo de carga hidráulica não só é
+algo possível, como também esta condição deve ser “testada” durante a
+concepção de projeto, até porque os normativos condicionam que os bueiros
+tubulares sejam dimensionados como canal e verificados como orifício.
+
+Deste modo, também é importante que o aluno tenha em mente os valores da
+tabela 2.6, constando das descargas dos bueiros tubulares funcionando como
+orifício. Nela podem ser verificadas três situações de carga hidráulica à
+                                                                                             11
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+montante, sendo H=1,2D, H=1,5D e H=2D, onde “H” é a altura da lâmina d´água
+acumulada na montante e “D” o diâmetro da tubulação, tal como aparece na
+figura 2.8.
+
+Tabela 2.6 – Vazão, velocidade e carga hidráulica de bueiros tubulares de concreto e metálicos
+                                  trabalhando como orifício.
+             Diâmetro          H = 1,2D                H = 1,5D               H = 2,0D
+   Tipo
+                (m)          Q           V           Q          V           Q          V
+               0,60         0,67       2,37         0,75       2,65        0,86       3,06
+               0,80         1,37       2,73         1,54       3,06        1,77       3,53
+               1,00         2,40       3,06         2,65       3,42        3,10       3,95
+               1,10         3,05       3,21         3,41       3,58        3,93       4,14
+               1,20         3,79       3,35         4,23       3,74        4,89       4,32
+ BSTC          1,30         4,63       3,48         5,17       3,90        5,97       4,50
+ OU            1,40         5,57       3,62         6,23       4,04        7,19       4,67
+ BSTM          1,50         6,62       3,74         7,40       4,19        8,54       4,83
+               1,60         7,78       3,87         8,69       4,32       10,04       4,99
+               1,70         9,05       3,98        10,12       4,46       11,68       5,14
+               1,80        10,44       4,10        11,67       4,58       13,48       5,29
+               1,90        11,95       4,21        13,36       4,71       15,43       5,44
+               2,00        13,58       4,32        15,19       4,83       17,54       5,58
+
+               0,80         2,75       2,73        2,92       3,06        3,37        3,53
+               1,00         4,80       3,06        5,37       3,42        6,20        3,95
+               1,10         6,09       3,21        6,81       3,58        7,87        4,14
+               1,20         7,58       3,85        8,47       3,74        9,78        4,32
+               1,30         9,35       3,48       10,35       3,90       11,95        4,50
+ BDTC
+               1,40        11,14       3,62       12,45       4,04       14,38        4,67
+ OU
+               1,50        13,23       3,74       14,80       4,18       17,08        4,83
+ BDTM
+               1,60        15,55       3,84       17,39       4,32       20,08        4,99
+               1,70        18,10       3,98       20,23       4,46       23,36        5,14
+               1,80        20,88       4,10       23,34       4,58       26,95        5,25
+               1,90        23,90       4,21       26,72       4,71       30,85        5,44
+               2,00        27,17       4,32       30,37       4,83       35,07        5,58
+
+               1,00       7,20       3,06      8,05      3,42       9,30              3,95
+               1,10       9,14       3,21     10,22      3,58      11,80              4,14
+               1,20      11,36       3,35     12,70      3,74      14,67              4,32
+               1,30      13,88       3,48     15,52      3,90      17,92              4,50
+ BTTC          1,40      16,71       3,62     18,68      4,04      21,57              4,67
+ OU            1,50      19,85       3,74     22,19      4,18      25,63              4,83
+ BTTM          1,60      23,33       3,87     26,08      4,32      30,11              4,99
+               1,70      27,14       3,98     30,35      4,46      35,04              5,14
+               1,80      31,31       4,10     35,01      4,58      40,43              5,29
+               1,90      35,85       4,21     40,08      4,71      46,28              5,44
+               2,00      40,75       4,32     45,56      4,83      52,61              5,58
+                 Fonte: Manual de Drenagem de Rodovias (BRASIL, 2006).
+                                                                                       12
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+       Figura 2.8 – Esquema de bueiro com acúmulo de carga hidráulica à montante.
+
+No tocante ao processo de fabricação, torna-se importante destacar que os tubos
+utilizados para execução de bueiros de concreto são pré-moldados e este
+processo se dá por meio da moldagem em formas metálicas, onde o concreto é
+normalmente adensado por centrifugação ou por vibração.
+
+No caso do uso de equipamentos de vibrocompressão, este é normalmente
+instalado em fosso abaixo do nível do piso (para reduzir ruídos) e o concreto
+lançado pela parte superior. A alimentação do concreto costuma ocorrer por meio
+de correia transportadora, que o despeja dentro de um funil, direcionando-o para
+o interior da forma/molde metálico. Enquanto se enche o molde, o concreto
+lançado para fabricação do tubo sofre processo de vibração e após o enchimento
+total, além do processo de vibração, o tubo passa por um processo de
+compressão e compactação, através de anel giratório acionado por prensa
+hidráulica. A figura 2.9 permite a visualização deste procedimento.
+
+
+
+
+Figura 2.9 – Fabricação de tubo por processo de vibrocompressão (Fonte: Manual Técnico de
+                        Drenagem e Esgoto Sanitário – ABTC, 2008).
+
+Os tubos também podem ser fabricados por meio de equipamentos de
+compressão radial e neste caso as prensas de compressão radial ou prensas
+                                                                                     13
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+radiais possuem um molde exterior e um eixo rotatório hidráulico, dotado de um
+sistema com roletes que executam um movimento de rotação em alta velocidade,
+comprimindo o concreto que foi lançado na máquina contra o molde exterior,
+produzindo o tubo.
+
+   2.2. BUEIROS CELULARES DE CONCRETO
+
+Como o próprio nome sugere, estes tipos de bueiros são dispositivos construídos
+por células de concreto armado, podendo ser moldadas in loco ou pré-moldadas,
+normalmente com seção transversal quadrada, com lado variando de 1,0 m a 3,0
+m. Quando pré-moldados, recebem o nome de aduelas e sua seção pode
+também ser retangular, permitindo uma maior variedade de dimensões.
+
+De acordo com a própria definição da NBR-15396, as aduelas são estruturas
+pré-moldadas em concreto armado, fechada ou aberta, com ou sem mísula
+interna, com sistema de encaixe tipo macho-fêmea.
+
+De forma análoga aos bueiros tubulares, os celulares também podem ser
+executados em linhas simples, duplas ou triplas, cabendo uma nomenclatura
+específica para cada caso, a saber:
+
+- BSCC: Bueiro Simples Celular de Concreto (1 linha de células);
+
+- BDCC: Bueiro Duplo Celular de Concreto (2 linhas de células); e
+
+- BTCC: Bueiro Triplo Celular de Concreto (3 linhas de células).
+
+Para uma rápida identificação e memorização desta nomenclatura, se
+apresentam as figuras 2.10 a 2.12
+
+
+
+
+   Figura 2.10 A – Esquema de um BSCC.      Figura 2.10 B – BSCC instalado em rodovia.
+           (Fonte: BRASIL, 2006).                      (Fonte: próprio autor).
+                                                                                       14
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+   Figura 2.11 A – Esquema de um BDCC.        Figura 2.11 B – BDCC instalado em rodovia.
+           (Fonte: BRASIL, 2006).                        (Fonte: próprio autor).
+
+
+
+
+             Figura 2.12 A – Esquema de um BTCC. (Fonte: BRASIL, 2006)
+
+
+
+
+            Figura 2.12 B – BTCC instalado em rodovia. (Fonte: próprio autor).
+
+O DNIT traz, em seu catálogo, bueiros em combinação de até três linhas e
+considera células moldadas in loco, de seção quadrada, com lado variando de
+1,0 m a 3,0 m. Já quando se considera o bueiro pré-moldado, as dimensões vão
+variar de 1,0 m a 4,0 m, tanto com seções quadradas quanto retangulares,
+conforme tabela 2.7 e figura 2.13.
+
+Não é tão incomum serem encontrados bueiros celulares instalados em linhas
+superiores a três, formando assim bueiros celulares quádruplos, quíntuplos e até
+sêxtuplos, por exemplo. O cuidado que se deve ter aqui é com a faixa de
+                                                                                         15
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+alagamento que será provocada, mas não há uma proibição para combinações
+superiores a três linhas.
+
+                            Tabela 2.7 – Dimensão das aduelas.
+     Largura (b)             Altura (h)          Largura (b)               Altura (h)
+        1,00                    1,00                  -                         -
+        1,50                    1,00                1,00                      1,50
+        2,00                    1,00                1,00                      2,00
+        2,50                    1,00                1,00                      2,50
+        3,00                    1,00                1,00                      3,00
+        3,50                    1,00                1,00                      3,50
+        4,00                    1,00                1,00                      4,00
+        1,50                    1,50                  -                         -
+        2,00                    1,50                1,50                      2,00
+        2,50                    1,50                1,50                      2,50
+        3,00                    1,50                1,50                      3,00
+        3,50                    1,50                1,50                      3,50
+        4,00                    1,50                1,50                      4,00
+        2,00                    2,00                  -                         -
+        2,50                    2,00                2,00                      2,50
+        3,00                    2,00                2,00                      3,00
+        3,50                    2,00                2,00                      3,50
+        4,00                    2,00                2,00                      4,00
+        2,50                    2,50                  -                         -
+        3,00                    2,50                2,50                      3,00
+        3,50                    2,50                2,50                      3,50
+        4,00                    2,50                2,50                      4,00
+        3,00                    3,00                  -                         -
+        3,50                    3,00                3,00                      3,50
+        4,00                    3,00                3,00                      4,00
+        3,50                    3,50                  -                         -
+        4,00                    3,50                3,50                      4,00
+        4,00                    4,00                  -                         -
+                        Fonte: NBR-15396/2018 (Dimensões em m).
+
+
+
+
+ Figura 2.13 A – Aduela de seção transversal   Figura 2.13 B – Aduela de seção transversal
+               fechada (Fonte:                                aberta (Fonte:
+  https://www.abtc.com.br/tubos-e-aduelas).     https://www.abtc.com.br/tubos-e-aduelas).
+
+
+O projetista goza de maiores opções de escolha quando a OAC indicada é do
+tipo celular. Primeiramente, poderá escolher entre bueiros moldados in loco ou
+                                                                                    16
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+pré-moldados, e esta escolha envolve tanto questões de custo, tempo de
+execução e disponibilidade.
+
+Com relação aos dois últimos aspectos, é importante que o projetista tenha em
+mente que o tempo de execução de um bueiro celular pré-moldado é menor, se
+comparado com o correspondente moldado in loco. É que este demanda
+montagem das formas, corte, dobra e montagem da armadura, concretagem,
+cura e desforma, além do que, em condições normais de dosagem, a resistência
+característica do concreto só deverá ser atingida aos 28 dias de idade.
+
+Por outro lado, há que se considerar também a disponibilidade das aduelas no
+comércio local, haja vista que elas só são normalmente encontradas em grandes
+centros urbanos e a depender das dimensões desejadas, deverão ter sua
+fabricação solicitada para a obra em específico.
+
+Outra vantagem dos bueiros celulares pré-moldados frente aos moldados in loco,
+é a disponibilidade de seções retangulares, principalmente com a medida da
+base maior que a medida da altura, permitindo maiores capacidades de vazão e
+execução em aterros mais baixos.
+
+Outro aspecto interessante dos bueiros pré-moldados diz respeito à
+disponibilidade de aduelas abertas, tal como mostrado na figura 2.13 B. Com a
+partição das aduelas de maiores dimensões, obtém-se, por exemplo, peças de
+menor massa, o que facilita seu manuseio, transporte e instalação.
+
+Embora não seja o propósito deste curso abordar o dimensionamento dos
+bueiros, é importante que o aluno tenha em mente qual é a capacidade de
+descarga dos bueiros catalogados nos manuais do DNIT. Assim, considerando
+o regime de escoamento crítico e o funcionamento como canal, devem ser
+consideradas as vazões conforme a tabela 2.8.
+                                                                                           17
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+   Tabela 2.8 – Vazão, velocidade e declividade crítica de bueiros celulares de concreto
+                                trabalhando como canal.
+                                   Área
+                  Base x                          Vazão         Velocidade      Declividade
+    Tipo                        molhada
+                Altura (m)                    crítica (m³/s) crítica (m/s)       crítica (%)
+                               crítica (m²)
+                1,00 x 1,00        0,67             1,71            2,56             0,78
+                1,50 x 1,50        1,50             4,70            3,14             0,68
+                2,00 x 1,50        2,00             6,26            3,14             0,56
+                2,00 x 2,00        2,67             9,64            3,62             0,52
+                2,00 x 2,50        3,33            13,48            4,05             0,69
+   BSCC
+                2,00 x 3,00        4,00            17,72            4,43             0,76
+                2,50 x 2,50        4,17            16,85            4,05             0,58
+                3,00 x 1,50        3,00             9,40            3,14             0,44
+                3,00 x 2,00        4,00            14,47            3,62             0,47
+                3,00 x 2,50        5,00            20,22            4,05             0,51
+                3,00 x 3,00        6,00            26,58            4,43             0,54
+
+                2,00 x 1,50         4,00           12,53           3,14            0,56
+                2,00 x 2,00         5,33           19,29           3,62            0,62
+                2,00 x 2,50         6,67           26,96           4,05            0,69
+                2,00 x 3,00         8,00           35,44           4,43            0,76
+   BDCC         2,50 x 2,50         8,33           33,70           4,05            0,78
+                3,00 x 1,50         6,00           17,79           3,14            0,44
+                3,00 x 2,00         8,00           28,93           3,62            0,47
+                3,00 x 2,50        10,00           40,44           4,05            0,51
+                3,00 x 3,00        12,00           53,16           4,43            0,54
+
+                2,00 x 2,00       8,00        28,93          3,62                  0,62
+                2,00 x 2,50       1,00        40,44          4,05                  0,69
+                2,50 x 2,50      12,50        50,55          4,05                  0,68
+    BTCC
+                3,00 x 2,00      12,00        43,40          3,63                  0,47
+                3,00 x 2,50      15,00        60,66          4,05                  0,51
+                3,00 x 3,00      18,00        79,73          4,43                  0,54
+                Fonte: Manual de Drenagem de Rodovias (BRASIL, 2006).
+
+Na tabela aparecem destacados os valores referentes à vazão suportada por
+cada tipo de bueiro celular, bem como os dados referentes ao BTCC 3,0x3,0 m,
+por ser o tipo de bueiro celular com maior capacidade de descarga.
+
+É importante destacar que estas são as descargas suportadas para os bueiros
+assentados nas declividades críticas informadas e trabalhando como canal. A
+variação deste parâmetro irá provocar alteração destes valores, bem como do
+regime de escoamento.
+
+Embora as novas OACs projetadas devam ser dimensionadas para trabalharem
+como canal, ao longo de sua vida útil é possível que ocorram chuvas com
+intensidades superiores àquelas consideradas no período de observação da
+estação hidrológica escolhida e, consequentemente, poderão ocorrer descargas
+maiores que as previstas.
+                                                                                              18
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+Assim, o funcionamento da OAC com o acúmulo de carga hidráulica não só é
+algo possível, como também esta condição deve ser “testada” durante a
+concepção de projeto, até porque os normativos condicionem que os bueiros
+celulares sejam dimensionados como canal e verificados como orifício.
+
+Deste modo, também é importante que o aluno tenha em mente os valores da
+tabela 2.9, constando das descargas dos bueiros celulares funcionando como
+orifício. Nela podem ser verificadas três situações de carga hidráulica à
+montante, sendo H=1,2h, H=1,5h e H=2h, onde H é a altura da lâmina d´água
+acumulada na montante e h é a altura da célula.
+
+Tabela 2.9 – Vazão, velocidade e carga hidráulica de bueiros celulares de concreto trabalhando
+                                        como orifício.
+                        Altura (m)       H = 1,2h            H = 1,5h            H = 2,0h
+  Tipo      Base (m)
+                                       Q          V         Q         V        Q          V
+              1,00         1,00       3,06       3,06     3,42       3,42     3,95      3,95
+              1,50         1,50       8,43       3,74     9,42       4,19    10,88      4,83
+              2,00         1,50      11,23       3,74     12,56      4,19    14,50      4,83
+              2,00         2,00      17,30       4,32     19,34      4,83    22,33      5,58
+              2,00         2,50      24,17       4,83     27,02      5,40    31,20      6,24
+ BSCC         2,00         3,00      31,77       5,30     35,52      5,92    41,02      6,84
+              2,50         2,50      30,21       4,83     33,78      5,40    39,01      6,24
+              3,00         1,50      16,85       3,74     18,84      4,19    21,75      4,83
+              3,00         2,00      25,94       4,32     29,00      4,83    33,49      5,58
+              3,00         2,50      36,26       4,83     40,54      5,40    46,81      6,24
+              3,00         3,00      47,66       5,30     53,29      5,92    61,53      6,84
+
+              2,00         2,00       34,59     4,32    38,64      4,83     44,66      5,58
+              2,00         2,50       48,34     4,83    54,05      5,40     62,41      6,24
+              2,00         3,00       63,55     5,30    71,05      5,92     82,04      6,84
+ BDCC         2,50         2,50       60,43     4,83    81,07      5,40     93,61      6,24
+              3,00         2,00       51,89     4,32    58,01      4,83     66,98      5,58
+              3,00         2,50       72,51     4,83    81,07      5,40     93,61      6,24
+              3,00         3,00       95,32     5,30    106,57     5,92     123,06     6,84
+
+              2,00       2,00       51,89   4,32     58,01    4,83     66,98           5,58
+              2,00       2,50       72,51   4,83     81,07    5,40     93,61           6,24
+              2,50       2,50       90,64   4,83    101,34    5,40     117,02          6,24
+ BTCC
+              3,00       2,00       77,83   4,32     87,01    4,83     100,48          5,58
+              3,00       2,50      108,77   4,83    121,61    5,40     140,42          6,24
+              3,00       3,00      142,98   5,30    159,86    5,92     184,59          6,84
+                 Fonte: Manual de Drenagem de Rodovias (BRASIL, 2006).
+
+De acordo com o Manual Técnico de Drenagem e Esgoto Sanitário (2008), o
+processo mais comum encontrado no Brasil, pela simplicidade e menor valor de
+aquisição, quando comparado com os outros processos, é a fabricação das
+aduelas utilizando-se conjuntos vibratórios, onde normalmente os vibradores são
+                                                                                         19
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+fixados nas formas externas, em quantidade e localização convenientemente
+estudada, tal como mostra a figura 2.14.
+
+
+
+
+Figura 2.14 – Conjunto de formas metálicas e vibradores empregados na fabricação de aduelas
+de concreto (Fonte: http://www.tgm.ind.br/produtos/pluvial-e-saneamento/forma-metalica-para-
+                                     galeria-e-aduelas/).
+
+
+Normalmente as formas metálicas são moduladas, possibilitando a fabricação
+das peças com várias dimensões internas e diversas espessuras de parede.
+
+Por se tratar de peças maiores, é importante observar a necessidade de
+equipamento compatível em capacidade de carga para o manuseio destas peças
+dentro da fábrica, implicando também em estudo logístico para o transporte até
+as obras.
+
+TOME NOTA
+Vídeo da ABTC mostrando detalhes da fabricação dos tubos e aduelas de
+concreto (https://www.youtube.com/watch?v=LIsCBB2MyvA)
+                                                                                           20
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+   2.3. BUEIROS METÁLICOS
+
+Os bueiros metálicos são executados com chapas metálicas corrugadas ou não,
+normalmente com tratamento em aço galvanizado ou pintura epóxi, constituído
+de múltiplas chapas, aparafusadas entre si.
+
+A empresa ARMCOSTACO é a principal fabricante de chapas para bueiros
+metálicos em nosso país e seus catálogos detalham pelo menos dois tipos de
+produtos: o MP-100 e o MP-152.
+
+Esta nomenclatura deriva do comprimento de onda obtida da seção transversal
+da chapa corrugada, tal como mostram as figuras 2.14 e 2.15.
+
+
+
+
+  Figura 2.14 – Chapas do tipo MP-100 para bueiros metálicos (Fonte: Catálogo produtos -
+                                    ARMCOSTACO).
+                                                                                           21
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+  Figura 2.15 – Chapas do tipo MP-152 para bueiros metálicos (Fonte: Catálogo produtos -
+                                    ARMCOSTACO).
+
+
+
+As chapas do tipo MP-100 têm espessuras variando de 1,6 mm a 3,4 mm e
+podem ser montadas com diferentes geometrias, tal como mostra a figura 2.16.
+
+
+
+
+      Figura 2.16 A – Seção circular.             Figura 2.16 B – Seção semicircular.
+
+
+
+
+      Figura 2.16 C – Seção elíptica.               Figura 2.16 D – Seção lenticular.
+                                                                                    22
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Embora nem todos estes tipos sirvam para a confecção de OACs, como é o caso
+da seção semicircular, há uma grande variedade de tamanhos para as demais
+seções, permitindo a construção de estruturas de transposição de talvegues com
+grandes capacidades de descargas, haja vista terem grandes dimensões e
+poderem ser combinados em linhas, o que lhes permitem alcançar, certas vezes,
+a capacidade de descarga de OAEs de pequenos vãos.
+
+A fim de que o aluno possa consultar de forma rápida as principais informações
+técnicas sobre tipos e tamanhos de bueiros possíveis de serem montados com
+as chapas do tipo MP-100, são apresentadas as figuras 2.17 a 2.19, retiradas do
+catálogo do fabricante.
+
+O catálogo mostrado na figura 2.17 reúne os bueiros circulares metálicos, com
+diâmetro variando desde 0,60 m até 2,80 m, podendo ser construídos em linha
+simples ou em linhas múltiplas. Nele também podem ser encontradas as alturas
+mínimas e máximas de aterro sobre a geratriz superior da chapa, tanto para
+plataforma rodoviária, quanto ferroviária, função da espessura da chapa.
+
+Já o catálogo mostrado na figura 2.18 reúne os bueiros elípticos metálicos, com
+dimensões (vão x altura) variando desde 0,85 m x 0,75 m até 3,35 m x 3,05 m,
+podendo ser construídos em linha simples ou em linhas múltiplas. Nele também
+são encontradas as alturas mínimas e máximas de aterro sobre a geratriz
+superior da chapa, tanto para plataforma rodoviária, quanto ferroviária, função
+da espessura da chapa.Por sua vez, o catálogo mostrado na figura 2.19 reúne
+os bueiros lenticulares metálicos, com dimensões (vão x altura) variando desde
+1,00 m x 0,80 m até 3,05 m x 2,05 m, podendo ser construídos em linha simples
+ou em linhas múltiplas. Nele também constam as alturas mínimas e máximas de
+aterro sobre a geratriz superior da chapa, tanto para plataforma rodoviária,
+quanto ferroviária, de acordo com a espessura da chapa.
+                                                                                        23
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Figura 2.17 – Modelos de bueiros metálicos de seção circular construídos com chapas MP-100.
+                                  (Fonte: ARMCOSTACO).
+
+
+
+
+Figura 2.18 – Modelos de bueiros metálicos de seção elíptica construídos com chapas MP-100.
+                                 (Fonte: ARMCOSTACO).
+                                                                                        24
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+ Figura 2.19 – Modelos de bueiros metálicos de seção lenticular construídos com chapas MP-
+                               100. (Fonte: ARMCOSTACO).
+
+
+
+As chapas do tipo MP-152 têm espessuras variando de 2,7 mm a 7,2 mm e
+podem ser montadas com diferentes geometrias, tal como mostra a figura 2.20.
+Dentre elas, a primeira traz modelo concebido para condução de descargas
+hidráulicas, ao passo que as demais têm uso recomendado para passagem
+inferior de veículos, de pedestre e de gado.
+
+
+
+
+       Figura 2.20 A – Seção circular.               Figura 2.16 B – Seção em arco.
+                                                                                     25
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+  Figura 2.20 C – Passagem de pedestre e         Figura 2.20 D – Seção lenticular.
+                   gado.
+
+
+Embora nem todos estes tipos sirvam para a confecção de OACs, vale destacar
+que as seções para condução de descargas hidráulicas disponíveis nas chapas
+MP-152 suportam descargas maiores quando comparadas àquelas disponíveis
+nas chapas MP-100, sendo isto função principalmente das grandes dimensões
+alcançadas com chapas de maior espessura (maior que o dobro da maior
+espessura alcançada no outro modelo).
+
+Isto possibilita a construção de estruturas de transposição de talvegues com
+capacidades de descargas ainda maiores, podendo também ser combinadas em
+linhas, o que lhes permitem ultrapassar, certas vezes, a capacidade de descarga
+de OAEs de pequenos vãos.
+
+A fim de que o aluno possa consultar de forma rápida as principais informações
+técnicas sobre tipos e tamanhos de bueiros e demais estruturas possíveis de
+serem montadas com as chapas do tipo MP-152, são apresentadas as figuras
+2.21 a 2.24, retiradas do catálogo do fabricante.
+
+O catálogo mostrado na figura 2.21 reúne os bueiros circulares metálicos, com
+diâmetro variando desde 1,50 m até 7,25 m, podendo ser construídos em linha
+simples ou em linhas múltiplas. Nele também podem ser encontradas as alturas
+mínimas e máximas de aterro sobre a geratriz superior da chapa, tanto para
+plataforma rodoviária, quanto ferroviária, variando de acordo com a espessura
+da chapa.
+
+Já o catálogo mostrado na figura 2.22 reúne as passagens metálicas inferiores
+em formato de arco, com dimensões (vão x altura) variando desde 1,50 m x 0,80
+m até 7,35 m x 3,65 m, podendo ser construídos em linha simples ou em linhas
+                                                                                        26
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+múltiplas. Nele também são encontradas as alturas mínimas e máximas de aterro
+sobre a geratriz superior da chapa, tanto para plataforma rodoviária, quanto
+ferroviária, função da espessura da chapa.
+
+Por sua vez, o catálogo mostrado na figura 2.23 reúne as passagens inferiores
+para gado e pedestre, com dimensões (vão x altura) variando desde 2,20 m x
+2,25 m até 2,90 m x 3,10 m, podendo ser construídos em linha simples ou em
+linhas múltiplas. Nele também constam as alturas mínimas e máximas de aterro
+sobre a geratriz superior da chapa, tanto para plataforma rodoviária, quanto
+ferroviária, de acordo com a espessura da chapa.
+
+Já o catálogo mostrado na figura 2.24 reúne passagens inferiores com
+dimensões (vão x altura) variando desde 3,70 m x 3,50 m até 6,25 m x 5,50 m,
+podendo ser construídos em linha simples ou em linhas múltiplas. Nele também
+constam as alturas mínimas e máximas de aterro sobre a geratriz superior da
+chapa, tanto para plataforma rodoviária, quanto ferroviária, de acordo com a
+espessura da chapa.
+
+
+
+
+Figura 2.21 – Modelos de bueiros metálicos de seção circular construídos com chapas MP-152.
+                                  (Fonte: ARMCOSTACO).
+                                                                                        27
+
+       CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+ Figura 2.22 – Modelos de passagem inferior metálica de seção em arco construídos com
+                       chapas MP-152. (Fonte: ARMCOSTACO).
+
+
+
+
+Figura 2.23 – Modelos de passagem inferior metálica para pedestre e gado construídos com
+                        chapas MP-152. (Fonte: ARMCOSTACO).
+                                                                                       28
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Figura 2.24 – Modelos de passagem inferior metálica construídos com chapas MP-152. (Fonte:
+                                    ARMCOSTACO).
+
+
+
+
+Todos os bueiros e demais estruturas que podem ser concebidas com as chapas
+MP-100 e MP-152 são executados à céu aberto, embora o fabricante
+ARMCOSTACO tenha uma linha especial de chapas para execução de bueiros
+metálicos sem interrupção de tráfego, os chamados tunnel liner. Como o objetivo
+é trazer os conceitos básicos e as soluções usuais para drenagem, eles não
+serão apresentados aqui, mas caso o aluno tenha interesse em saber mais
+detalhes, poderá acessar a home page do fabricante.
+
+TOME NOTA
+Catálogo Tunnel Liner disponível em
+http://www.armcostaco.com.br/armco/upload/download/folder_TL_novaID.
+pdf.
+
+
+   2.4.      BUEIROS EM PEAD
+
+O PEAD é a abreviatura de polietileno de alta densidade, que corresponde a um
+material constituído por átomos de carbono e hidrogênio que se juntam para
+formar cadeias de polímeros com baixo grau de ramificação da macromolécula,
+                                                                                    29
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+o que permite um maior grau de cristalinidade e, consequentemente, maior
+densidade, rigidez, resistência mecânica, térmica e química.
+
+Embora o PEAD já tenha aplicação difundida em dispositivos de drenagem, seu
+uso era muito restrito a tubos de pequenos diâmetros e quase sempre
+empregados em drenos. No entanto, atualmente já existem tubos de grandes
+diâmetros fabricados com este material e em larga aplicação nas obras de
+transposição de talvegues.
+
+Mesmo que os catálogos e as composições de custo do DNIT não tragam os
+tubos em PEAD para construção de bueiros, é importante que os alunos
+obtenham informações sobre este produto e saibam de sua disponibilidade
+comercial, razão pela qual serão abordados neste manual.
+
+De acordo com Danieletto (2014), os tubos estruturados são produzidos com
+parede simples, normalmente corrugados, para aplicação como conduítes e
+drenos, bem como com parede dupla, com superfície interna lisa, em especial
+para condução de esgoto e água pluvial, em polietileno (PE), polipropileno (PP)
+e em PVC-U.
+
+Os tubos de parede dupla, por sua vez, são classificados em dois grupos:
+superfície externa lisa (tipo A) e superfície externa não lisa (tipo B). Esses tubos
+complementam os tubos sólidos nas aplicações a baixa ou sem pressão interna,
+com vantagens econômicas, menor peso e facilidade de instalação, sendo
+disponíveis em diâmetros de até 1,5 m no tipo B e 3,50 m no tipo A
+(DANIELETTO, 2014).
+
+Somando-se as inerentes vantagens dos plásticos, como resistência química à
+abrasão, leveza, desempenho hidráulico e elevada vida útil, os tubos
+estruturados vêm ganhando importantes participações no mercado mundial.
+
+Os tubos estruturados são designados pelo seu diâmetro nominal (DN) e sua
+rigidez circunferencial ou anelar nominal (SN – nominal ring stiffness), conforme
+mostram as tabelas 2.10 e 2.11.
+                                                                                              30
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+                   Tabela 2.10 – Diâmetros nominais de tubos estruturados.
+ Norma                              Diâmetro nominal interno (DN/DI)
+ ISO/EN              100, 125,150, 200, 225, 250, 300, 400, 500, 600, 800, 1000, 1200
+  ASTM         150, 200, 225, 250, 300, 375, 400, 450, 500, 600, 750, 800, 900, 1000, 1200,
+                                                   1500
+  SFS              1400, 1500, 1600, 1800, 2000, 2200, 2400, 2500, 2600, 2800, 3000
+  5906
+  DNIT       300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000,
+ 094 EM                      2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600
+
+ Norma                           Diâmetro nominal externo (DN/DI)
+ ISO/EN             110, 125, 1600, 200, 250, 315, 400, 500, 630, 800, 1000, 1200
+  ASTM                                           Não há
+   SFS                  1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000
+  5906
+Fonte: Manual de tubulações de polietileno e polipropileno (DANIELETTO, 2014). (Medidas em
+                                         milímetro).
+
+                 Tabela 2.11 – Classes de rigidez circunferencial padrão (SN).
+           DN (mm)                     ISSO 21138                      ASTM F2947
+            ≤ 500                      SN 4, 8 e 16                       SN 8
+            > 500                     SN 2, 4, 8 e 16                   SN 2 e 4
+      Fonte: Manual de tubulações de polietileno e polipropileno (DANIELETTO, 2014).
+
+Os tubos do tipo A, com superfície externa lisa, são tratados na ISO 21138, parte
+2, e na EN 13476, parte 2, e são divididos em:
+
+       •     A 1: parede formada por multicamadas (figura 2.25) ou parede com
+             seções axiais ocas (figura 2.26).
+       •     A 2: parede com seções espirais ou radiais ocas (figura 2.27).
+
+
+
+
+            Figura 2.25 – Tubos tipo A1 - multicamada. (Fonte: DANIELLETO, 2014).
+                                                                                       31
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+       Figura 2.26 – Tubos tipo A1 – parede oca axial. (Fonte: DANIELLETO, 2014).
+
+
+
+
+         Figura 2.27 – Tubos tipo A2 – parede oca espiralada ou radial - perfil box.
+                               (Fonte: DANIELLETO, 2014).
+
+
+
+Os tubos do tipo B, com superfície externa não lisa, são tratados na ISO 21138,
+parte 3, e na EN 13476, parte 3, contando com superfície externa nervurada ou
+corrugada, conforme pode-se notar nas figuras 2.28 a 2.30.
+                                                                                 32
+
+  CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Figura 2.28 – Tubos tipo B – nervurados ou corrugados de parede dupla – caso 1
+                          (Fonte: DANIELLETO, 2014).
+
+
+
+
+Figura 2.29 – Tubos tipo B – nervurados ou corrugados de parede dupla – caso 2
+                          (Fonte: DANIELLETO, 2014).
+                                                                                       33
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+      Figura 2.30 – Tubos tipo B – nervurados ou corrugados de parede dupla – caso 3
+                                (Fonte: DANIELLETO, 2014).
+
+
+Diferentemente dos tubos rígidos, os tubos flexíveis dependem fortemente do
+suporte lateral do solo, haja vista que a carga vertical sobre o tubo provoca sua
+deflexão, comprimindo o topo e a base do tubo, dando uma forma elíptica e a
+consequente expansão lateral. Esta é contida pelo suporte lateral do solo
+(pressão horizontal), tão maior quanto a deflexão do tubo, tendendo a um
+equilíbrio.
+
+Quanto mais flexível o tubo e menor sua rigidez (menor SDR), maior a
+importância relativa do tipo de solo e seu grau de compactação, sendo
+determinante para a resistência do tubo às cargas de aterro, como é mostrado
+na figura 2.31.
+
+Deste modo, é recomendável que sejam seguidas algumas diretrizes básicas
+para a execução do aterro:
+
+   • O material do aterro e o consequente grau de compactação são
+preponderantes para a resistência às cargas de colapso. Portanto, as boas
+técnicas usuais para tubos flexíveis devem ser obedecidas;
+   • Retirar pedras e outros materiais cortantes da vala antes do assentamento
+da tubulação. Solo coesivo, como a argila, deve ser substituído;
+                                                                                    34
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+   • Não arrasar ou assentar a tubulação sobre materiais ou pedras cortantes.
+Sulcos ou ranhuras nos tubos com mais de 10 % de espessura da parede são
+inadmissíveis;
+   • Em decorrência da análise das cargas de tráfego e aterro, o projetista
+deve definir e dimensionar o SDR ou rigidez do tubo (SN) e as especificações de
+solo, profundidade e grau de compactação do aterro.
+
+
+
+
+                 Figura 2.31 – Tubos de PEAD em aterro – cargas do aterro.
+                                (Fonte: DANIELLETO, 2014).
+
+
+No tocante ao assentamento dos tubos, é importante observar as boas técnicas
+e seguir os seguintes passos (vide figura 2.32):
+
+   • Berço e zona de suporte – executar uma zona de suporte lateral,
+adequadamente compactada, em toda a extensão do tubo, de tal forma a criar
+um berço de assentamento envolvendo de 120º a 180ºda superfície inferior do
+tubo.
+   • Reaterro inicial – compactar vigorosamente por meios mecânicos ou
+manuais em camadas de aproximadamente 20 cm até a geratriz superior do
+tubo.
+   • Camada de proteção (trincheira falsa) – reaterrar até aproximadamente
+30 cm acima da geratriz superior do tubo, sem compactação, apenas com leve
+adensamento hidráulico ou soquetes leves (o solo não deve conter pedras
+grandes).
+   • Recobrimento final – completar o aterro com compactação vigorosa,
+podendo-se usar nessa camada o material da própria escavação, desde que de
+boa qualidade.
+                                                                                     35
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Figura 2.32 – Cuidados na instalação dos tubos de PEAD (recomendações para o tubo SDR >
+                       17 ou SN < 16). (Fonte: DANIELLETO, 2014).
+
+
+Dentre os principais fabricantes nacionais de tubos estruturados de grandes
+diâmetros em PEAD e aplicáveis à transposição de talvegues destacam-se a
+TIGRE, a KANAFLEX e a ARMCOSTACO*.
+
+De acordo com o catálogo deste último fabricante, os tubos weholite (figura 2.34)
+são comercializados no país com diâmetros variando de 800 mm a 3000 mm e
+podem ser fornecidos em classes de rigidez SN2 e SN4, com comprimentos de
+6 m ou 12 m. Maiores detalhes podem ser visualizados na figura 2.33 e 2.34.
+
+
+
+
+             Figura 2.33 – Detalhe do perfil weholite. (Fonte: ARMCOSTACO).
+                                                                                       36
+
+           CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+      Figura 2.34 – Medidas e demais parâmetros dos tubos. (Fonte: ARMCOSTACO).
+
+
+TOME NOTA
+
+ Vídeo da KWH mostrando detalhes da fabricação dos tubos em PEAD
+(Link).
+
+
+
+3. PONTES E PONTILHÕES - OAE
+As obras de arte especiais – OAE são soluções indicadas para transposição de
+talvegues nos casos em que, por imposição da topografia e/ou da descarga de
+projeto, não é possível executar uma OAC.
+
+Neste caso, o projetista deverá recorrer a um pontilhão ou a uma ponte, sendo
+a diferenciação entre estes feita por ocasião do comprimento do vão da estrutura.
+Quando seu comprimento é de até 10 m, classifica-se a OAE como pontilhão.
+Caso o vão supere esta medida, deve ser considerada como ponte.
+
+
+
+   3.1 PONTILHÃO
+
+Os pontilhões, conforme exemplificado na figura 3.1, são OAEs usadas para
+transposição de talvegues associados a cursos d´água estreitos e de pequena
+vazão, onde os bueiros não mais suportam as descargas de contribuição, ou por
+imposição da topografia do terreno e do desenvolvimento planialtimétrico da
+rodovia.
+                                                                                     37
+
+        CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+             Figura 3.1 – Pontilhão instalado na BR-116/CE (Fonte: próprio autor).
+
+Os elementos necessários ao projeto dos pontilhões são os mesmos das pontes,
+com exceção do tempo de recorrência, que neste caso normalmente se
+considera 50 anos, correspondendo à metade do valor utilizado para as pontes.
+Esse valor está relacionado ao menor risco a temer com referência à destruição
+da obra ou interrupção do tráfego.
+
+Sobre este aspecto, é importante que o projetista faça uma análise criteriosa em
+relação aos parâmetros que devem ser adotados para o dimensionamento da
+OAE, haja vista que, por ocasião de uma variação pequena, da ordem de 1,0 m,
+como poderia ser verificada numa estrutura com 9,5 m de extensão e outro com
+10,5 m, o projetista seria induzido a adotar tempos de recorrência diferentes,
+usando 50 anos para o primeiro caso e 100 anos, para o segundo.
+
+O fato desta OAE está localizada em segmento com topografia acidentada, que
+impõe condições mais severas de acesso, manutenção e reconstrução, ou
+mesmo o fato de estar prevista em um único acesso rodoviário a um dado
+município, dentre outros, são aspectos que o projetista poderá considerar para
+propor um tempo de recorrência maior que 50 anos ou mesmo igual àquele
+adotado para as pontes, ainda que a estrutura seja classificada como um
+pontilhão.
+
+Outro ponto importante está associado às possíveis alterações do uso do solo
+das bacias de drenagem das OAEs, haja vista que estas normalmente possuem
+                                                                                       38
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+grandes áreas e talvegues extensos, que atravessam os limites territoriais de
+mais de um município, exigindo uma análise mais criteriosa e até um prognóstico
+do    futuro   uso   da    sua     bacia    de    contribuição,     evitando     possíveis
+subdimensionamentos.
+
+
+
+     3.2 PONTE
+
+As pontes, tal como exemplificado na figura 3.2, são OAEs destinadas à
+transposição de talvegue e de cursos d´água cuja descarga não mais são
+suportadas por obras de arte correntes ou mesmo por pontilhões.
+
+
+
+
+         Figura 3.2 – Ponte sobre o Rio Choró na BR-116/CE (Fonte: próprio autor).
+
+
+
+Por sua maior importância e pelas suas extensões, estas obras exigem
+estruturas mais complexas do que as usadas nos pontilhões e, por esta razão,
+no seu dimensionamento, os procedimentos de cálculo deverão ser mais
+rigorosos.
+
+Embora a instrução de serviço IS-203 sugira um tempo de recorrência de 100
+anos para o dimensionamento hidráulico das pontes, é razoável que surja a
+seguinte dúvida: este valor deve ser adotado, independentemente da extensão
+da ponte?
+                                                                                      39
+
+          CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+Na verdade, o próprio Manual de Drenagem de Rodovias (BRASIL, 2006)
+esclarece que o tempo de recorrência a adotar na determinação da descarga de
+projeto deve ser compatível com o porte da obra e sua vida útil, com a
+importância da rodovia e com o risco a temer de sua interrupção ou da destruição
+da obra, de vidas humanas e de propriedades adjacentes. Assim, o projetista
+tem a liberdade de adotar valores maiores que 100 anos, devendo apenas
+justificar os motivos de sua escolha.
+
+Embora fuja do escopo deste manual tratar do dimensionamento das OAEs, é
+importante que o aluno tenha conhecimento de pontos importantes que devem
+ser     considerados    e   quais    parâmetros      são   imprescindíveis     para    o
+dimensionamento hidráulico. Assim, diante da necessidade de se verificar tal
+dimensionamento, deve-se ter em mente a necessidade de obtenção dos
+seguintes elementos:
+
+      • Descarga do projeto, obtida pelos estudos hidrológicos, levando em conta
+o tempo de recorrência adotado e os métodos de cálculo recomendados para o
+caso, de preferência os estatísticos, sempre que possível;
+      • Declividade do leito do rio, ou do seu gradiente, determinada entre dois
+pontos distantes no mínimo de 200 m, sendo um a montante e outro a jusante
+do eixo da rodovia, do qual devem distar 100 m cada um;
+      • Levantamento de seções normais ao curso do rio no local de sua travessia
+pelo eixo da rodovia a montante e jusante;
+      • Fixação do coeficiente de Manning a adotar para o curso d`água após
+inspeção local e exame da tabela própria constante de Apêndice B, apresentado
+no capítulo 2 deste Manual.
+
+Outro aspecto importante a ser considerado é o fato de possíveis exigências de
+gabaritos de navegação, caso esta OAE esteja sendo projetada em trecho de rio
+ou curso d´água que seja navegável, tal como pode ser observado na figura 3.3,
+que mostra ponte sobre o Rio São Francisco em trecho onde o mesmo é
+percorrido por embarcações.
+                                                                                        40
+
+      CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+Figura 3.3 – Ponte sobre o Rio São Francisco no traçado da BR-116 no estado da Bahia.
+                                                                                       41
+
+         CONCEITOS BÁSICOS DE HIDROLOGIA E DRENAGEM PARA PROJETOS RODOVIÁRIOS - Módulo 5
+
+
+
+
+4. REFERÊNCIAS BIBLIOGRÁFICAS
+ASSOCIAÇAO BRASILEIRA DE NORMAS TÉCNICAS. NBR 8890: Tubo de concreto de seção
+circular para águas pluviais e esgotos sanitários - Requisitos e métodos de ensaio. Rio de
+Janeiro, 2007. 30 p.
+
+ASSOCIAÇAO BRASILEIRA DE NORMAS TÉCNICAS. NBR 15396: Aduelas (galerias
+celulares) de concreto armado pré-moldadas - Requisitos e métodos de ensaios. Rio de
+Janeiro, 2018. 15 p.
+
+BRASIL. Manual de Drenagem de Rodovias. Rio de Janeiro, IPR, 2 ed. DNIT, 2006.
+
+GIMENEZ, Alírio Brasil. FIGUEIREDO, Antônio Domingues. SILVA, Cláudio Oliveira.
+LANGENDONCK, Francisco Van. ROMERO, José Roberto Hortêncio. JABÔR, Marcos Augusto.
+TSUTIYA, Milton Yomoyuki. DEBS, Mounir Khalil El. NETO, Pedro Jorge Chama. BANNOKI,
+Regina. Manual Técnico de Drenagem e Esgoto Sanitário. São Paulo, ABTC, 1 ed, 2008.
+
+DANIELETTO, José Roberto B. Manual de Tubulações de Polietileno e Polipropileno. São
+Paulo, Linha aberta, 3 ed., 2014.

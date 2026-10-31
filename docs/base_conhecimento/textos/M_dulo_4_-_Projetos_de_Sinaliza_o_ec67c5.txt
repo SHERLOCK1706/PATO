@@ -1,0 +1,878 @@
+         Sinalização Viária
+
+
+
+
+Conteudista:
+Ítalo Marques Filizola
+
+
+
+
+Brasília, agosto de 2022.
+SINALIZAÇÃO VIÁRIA
+
+
+
+
+Módulo
+            4
+Projetos de Sinalização
+
+
+
+
+Conforme estabelece O Art. 11 da INSTRUÇÃO
+NORMATIVA Nº 03/DNIT SEDE, DE 1º DE ABRIL
+DE 2022, o servidor que optar por receber a GECC
+relativa à elaboração de material didático cede,
+tacitamente e em caráter irrevogável, a titularidade
+dos direitos patrimoniais relativos aos materiais
+produzidos em decorrência dessa percepção. Desta
+forma, tendo em vista o contido no Processo
+nº50600.007882/2022-67. Desta forma, o DNIT
+poderá revisar o material cedido, adaptá-lo e utilizá-
+lo livremente em outros eventos que venha a
+promover, bem como o ceder a outros órgãos e
+entidades federais.
+                                  SUMÁRIO
+1      INTRODUÇÃO .............................................................................................................................. 4
+
+2      PROGRAMA BR-LEGAL ............................................................................................................... 5
+
+3      PROJETOS DE SINALIZAÇÃO E SEGURANÇA ......................................................................... 7
+    3.1    PROJETO BÁSICO ............................................................................................................... 7
+      3.1.1 Apresentação .................................................................................................................... 7
+      3.1.2 Mapa de situação do lote .................................................................................................. 7
+      3.1.3 Diagrama unifilar ............................................................................................................... 7
+      3.1.4 Índice de acidentes ............................................................................................................ 8
+      3.1.5 Polos geradores de tráfego ............................................................................................... 8
+      3.1.6 Condições meteorológicas ................................................................................................ 8
+      3.1.7 Deficiências gerais ............................................................................................................ 8
+      3.1.8 Projetos pré-existentes ...................................................................................................... 8
+      3.1.9 Anotação ou Registro de Responsabilidade Técnica ....................................................... 8
+      3.1.10  Atas de reunião ............................................................................................................. 9
+      3.1.11  Características físicas e operacionais ........................................................................... 9
+      3.1.12  Dados de contagem de tráfego ..................................................................................... 9
+      3.1.13  Cadastro de elementos de projeto .............................................................................. 10
+      3.1.14  Planilhas de Necessidades ......................................................................................... 11
+      3.1.15  Pranchas de Projeto .................................................................................................... 12
+    3.2       PROJETO EXECUTIVO ...................................................................................................... 14
+    3.3       DIMENSIONAMENTOS ...................................................................................................... 15
+
+4      PROJETOS-TIPO PARA SITUAÇÕES COMUNS EM RODOVIAS ........................................... 17
+    4.1       INTERSEÇÃO TIPO GOTA ................................................................................................ 19
+    4.2       INTERSEÇÃO TIPO GOTA (SEM FAIXAS DE MUDANÇA DE VELOCIDADE) ............... 20
+    4.3       INTERSEÇÃO COM GIRO À ESQUERDA ......................................................................... 21
+    4.4       TRAVESSIA SINALIZADA DE PEDESTRES ..................................................................... 22
+    4.5       CURVA ACENTUADA ......................................................................................................... 23
+    4.6       PONTE ESTREITA.............................................................................................................. 24
+    4.7       ONDULAÇÃO TRANSVERSAL .......................................................................................... 25
+    4.8       APROXIMAÇÃO DE TRAVESSIAS URBANAS ................................................................. 26
+
+5      REFERÊNCIAS BIBLIOGRÁFICAS ............................................................................................ 27
+                                                                                 4
+
+                                                     SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+
+1     INTRODUÇÃO
+
+Inicialmente, este módulo apresenta brevemente, o Programa Nacional de
+Sinalização e Segurança Viária BR-LEGAL e BR-LEGAL 2, contextualizando a
+importância dos mesmos.
+
+Em seguida, serão apresentados resumidamente as diretrizes para elaboração
+de Projetos de Sinalização Viária, conforme escopo do Programa BR-LEGAL.
+
+Por fim, serão apresentados alguns projetos-tipo para situações comuns em
+rodovia, como referência na elaboração de soluções padronizadas na malha
+rodoviária federal. Caso seja necessário, os mesmos podem ser revistos e
+adaptados seguindo os critérios técnicos estabelecidos nos Manuais Brasileiros
+de Sinalização de Trânsito do CONTRAN, conforme a melhor técnica de
+engenharia para a situação em campo.
+                                                                                       5
+
+                                                            SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+
+2 PROGRAMA BR-LEGAL
+
+O BR-Legal é um programa concebido pelo DNIT, iniciado em 2013, com o
+objetivo de proporcionar o aumento da segurança em toda a malha rodoviária
+federal, através da implantação e manutenção da sinalização horizontal, vertical
+e dispositivos de segurança, promovendo uma maior fluidez do tráfego e
+desempenhando um papel fundamental em relação à prevenção de acidentes
+de trânsito.
+
+As soluções, materiais, a execução de projetos básico e executivo de
+engenharia, elevaram os padrões das soluções de sinalização e segurança viária
+das rodovias federais administradas pelo DNIT.
+
+De acordo com dados extraídos do Sistema Integrado de Operações Rodoviárias
+– SIOR, o número de acidentes nas rodovias federais reduziu de 186.000 para
+pouco mais de 64.000 acidentes em 2021 (Figura 1). Embora não se possa
+relacionar essa redução no número de acidentes em 1/3 exclusivamente ao BR-
+LEGAL, não se pode ignorar a contribuição do Programa à melhoria das
+condições operacionais e de segurança das rodovias federais.
+
+               Figura 1 – Acidentes nas rodovias federais de 2013 a 2021
+                                                                                 6
+
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+Mesmo o tribunal de Contas da União – TCU reconheceu a importância do
+programa conforme pode ser visto no link do vídeo a seguir.
+
+
+     Reportagem do Tribunal de Contas da União sobre o Programa BR-LEGAL:
+                      TCU - Segurança Viária e BR-LEGAL
+
+Ainda assim, todos os elementos que compõem a sinalização viária e os
+dispositivos de segurança possuem uma vida útil e um limite de garantia quanto
+à sua efetiva funcionalidade, necessitando de manutenção continuada, bem
+como adequação às características operacionais da via. Nesse sentido, surge o
+Programa BR‑LEGAL 2 como uma continuação dos aspectos positivos do
+programa anterior e seu aperfeiçoamento.
+
+
+
+
+      Fique atento
+   Para consultar ao histórico e as especificações dos programas do BR-LEGAL,
+   pode-se acessar os endereços a seguir:
+
+
+                              PROGRAMA BR-LEGAL
+
+                             PROGRAMA BR-LEGAL 2
+
+
+O BR-LEGAL, onde ainda estiver em execução, é normatizado pela Instrução
+Normativa nº 64/DNIT SEDE, 23 de setembro de 2021, ou norma que vier a lhe
+substituir.
+
+O BR-LEGAL 2 é normatizado pela Instrução Normativa n° 17/DNIT, de 15 de
+agosto de 2022, ou norma que vier a lhe substituir.
+                                                                                     7
+
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+
+3 PROJETOS DE SINALIZAÇÃO E
+  SEGURANÇA
+
+Considerando o andamento do Programa Nacional de Segurança e Sinalização
+Rodoviária - BR-LEGAL 2 e a necessidade da elaboração de projetos atendendo
+à Instrução Normativa n° 17/DNIT, de 15 de agosto de 2022, este capítulo
+discorre acerca das diretrizes gerais para elaboração de projetos de Sinalização
+viária.
+
+A elaboração dos projetos compreende duas etapas distintas, sucessivas e
+complementares: Projeto Básico e Projeto Executivo. Compreendem uma série
+de atividades explicitadas sucintamente nos próximos itens.
+
+
+
+
+3.1 PROJETO BÁSICO
+O Projeto Básico é composto pelo Memorial de Estudos Preliminares (Volumes
+i e II) e Pranchas de Projeto (Volume III), os quais serão explicados sucintamente
+nos itens a seguir:
+
+
+3.1.1 Apresentação
+Apresentação sucinta do lote e do conteúdo a ser apresentado nos volumes,
+bem como a relação dos segmentos contemplados pelo contrato.
+
+
+3.1.2 Mapa de situação do lote
+O mapa de situação do lote deve conter a identificação de todas as rodovias
+integrantes do contrato.
+
+
+3.1.3 Diagrama unifilar
+Deve ser elaborado esquema geral unifilar da malha rodoviária a ser sinalizada,
+configurada em nós e links, sendo “nó” a interseção de duas ou mais vias e o
+ponto de referência para a distribuição de viagens e “link” o trecho da rodovia
+compreendido entre dois nós.
+                                                                                    8
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+3.1.4 Índice de acidentes
+Devem ser extraídos no período mínimo de 05 (cinco) anos, de modo a permitir
+uma análise dos fatores causadores dos mesmos, e seu possível relacionamento
+com fatores alusivos à sinalização e segurança da via.
+
+Os dados podem ser oriundos do Sistema Integrado de Operações Rodoviárias
+(SIOR), Polícia Rodoviária Federal, ou Polícia Militar Rodoviária.
+
+
+3.1.5 Polos geradores de tráfego
+Devem ser identificados e localizados todos os Polos Geradores de Tráfego, tais
+como: hospitais, escolas, comércios, fazendas, usinas, indústrias, mineradoras,
+dentre outros.
+
+
+3.1.6 Condições meteorológicas
+As situações climáticas recorrentes que podem impactar a operação e
+segurança da via, tais como chuva, neblina e vento.
+
+A frequência e recorrência dessas condições climáticas devem ser identificadas
+e apontadas em projeto.
+
+
+3.1.7 Deficiências gerais
+Devem ser consideradas possíveis deficiências do trecho em estudo que não
+foram contempladas nos itens anteriores.
+
+
+3.1.8 Projetos pré-existentes
+Identificar existência prévia de projetos de sinalização, dispositivos de
+segurança, projeto geométrico, dentre outros, para o trecho em estudo, visando
+seu uso como elemento básico, ou para atualização de projeto;
+
+
+3.1.9 Anotação ou Registro de Responsabilidade Técnica
+Deve ser apresentado o registro da Anotação de Responsabilidade Técnica
+(ART) ou Registro de Responsabilidade Técnica (RRT).
+                                                                                       9
+
+                                                           SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+3.1.10        Atas de reunião
+As atas de todas as reuniões entre empresa projetista, supervisora e técnicos do
+DNIT devem fazer parte do Projeto Básico.
+
+
+3.1.11        Características físicas e operacionais
+Deverão ser caracterizados todos os segmentos homogêneos, devendo
+subdividi-los em características da pista, uso do solo lindeiro e perfil da rodovia,
+utilizando os intervalos entre 0,2 km e 3 km, de acordo com a Tabela 23 da IN
+17/21, reproduzida na Tabela 2.
+
+                          Tabela 1 –Segmentos homogêneos
+
+
+
+
+3.1.12        Dados de contagem de tráfego
+Os dados de contagem de tráfego fornecidos serão oriundos da Pesquisa
+Nacional de Tráfego (PNT) e do Plano Nacional de Contagem de Tráfego
+(PNCT), e referem-se ao Volume Médio Diário Anual (VMDa) de veículos.
+
+Caso não existam contagens de tráfego para o segmento SNV, devem ser
+realizadas contagens de tráfego volumétricas e classificatórias, com duração
+mínima de 24 (vinte e quatro) horas, durante um período de 7 (sete) dias
+corridos, onde a classificação dos veículos deve seguir o Manual de Estudos de
+Tráfego – IPR 723.
+                                                                                          10
+
+                                                                SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+3.1.13        Cadastro de elementos de projeto
+Deve ser realizado cadastro georreferenciado com precisão de 5 m para diversos
+elementos existentes em campo, visando a definição das soluções e sua
+inclusão em projeto, tais como:
+
+I - sinalização horizontal – contendo informações quanto à funcionalidade, tipo,
+material, localização, retrorrefletância residual, dentre outros;
+
+II – sinalização vertical - contendo informações quanto à manutenção ou
+necessidade de substituição, tipo, película, substrato, suportes, lado de
+instalação, retrorrefletância residual, dentre outros;
+
+III - dispositivos de segurança – cadastro das defensas, terminais e transições,
+contendo informações quanto à necessidade de manter, remover ou substituir,
+localização, quantidade de lâminas, função, dentre outros;
+
+IV - elementos presentes na faixa de domínio – devem ser relacionados
+elementos como postos de serviço, acessos, obstáculo fixos, outdoor, placas
+irregulares, corpos hídricos, taludes, ponto de parada de ônibus, etc.;
+
+V - obras de artes especiais e obras de artes correntes – compreendendo pontes,
+viadutos, passarelas, túneis e elementos de drenagem existentes na rodovia,
+contendo informações como extensão, largura, vão livre, guarda-corpo;
+
+VI – curvas horizontais – devem ser caracterizadas conforme a Tabela 2;
+
+                   Tabela 2 - Característica por tipo de curva horizontal
+
+
+
+
+VII – interseções – devem ser classificadas conforme critérios e terminologias do
+Manual de Projeto de Interseções – Publicação IPR 718;
+                                                                                     11
+
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+VIII - levantamento dos trechos com incidência de neblina – deve ser analisada
+a ocorrência de neblina, para que os projetos de sinalização possam se adequar
+às condições meteorológicas características de cada trecho;
+
+IX - levantamento das intervenções programadas – informações sobre
+intervenções programadas pelo DNIT e que podem afetar os serviços de
+sinalização nos segmentos constantes do contrato, identificando os momentos
+em que estas ocorrerão, tais como: duplicações, restaurações, reabilitações,
+CREMA, adequação de capacidade, dentre outros;
+
+X - levantamento das retrorrefletâncias – medição do desempenho da
+sinalização horizontal se dará por meio da avaliação da retrorrefletância,
+conforme procedimentos das normas ABNT NBR 16.410:2015, ABNT NBR
+16.307:2020, ABNT NBR 14.723:2020, DNIT 409/2017 - PRO ou as que vierem
+a substituí-las.
+
+
+
+
+3.1.14        Planilhas de Necessidades
+As Planilhas de Necessidades consistem na compilação que quantifica as
+necessidades de cada segmento, constando as soluções adequadas para o
+projeto de sinalização e dispositivos de segurança, diante dos estudos realizados
+no Memorial de Estudos Preliminares. Estas informações devem seguir os
+padrões estabelecidos nas planilhas modelo disponibilizadas pela CGMRR, de
+forma que possam ser introduzidas no Sistema de Supervisão Rodoviária
+Avançada (SUPRA) ou outro sistema/modelo disponibilizado pelo DNIT.
+
+As planilhas de necessidades são:
+
+I - planilhas de necessidades da sinalização horizontal;
+
+II - planilhas de necessidades da sinalização vertical;
+
+III- planilhas de necessidades dos dispositivos de segurança.
+                                                                                   12
+
+                                                         SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+3.1.15       Pranchas de Projeto
+As Pranchas de Projeto fazem parte do Volume III. Devem ser apresentadas em
+arquivo editável compatível com o programa AutoCad versão 2018 ou inferior,
+bem como em formato PDF, com camadas diferenciadas para cada forma de
+sinalização, modelo de prancha e arquivo para plotagem, em consonância com
+o disponibilizado na Biblioteca DNIT, além da indicação georreferenciada de
+todos os elementos projetados.
+
+O layout de apresentação dos desenhos deverá ser representado na escala de
+1:1000, em pranchas de tamanho A3, salvo em casos de segmentos com
+interferências, que deverão ser apresentadas na escala 1:500 em pranchas A0,
+A1 e A2, conforme a necessidade.
+
+As informações sobre Velocidade Regulamentada e VMD deverão ser indicadas
+nas legendas de todas as pranchas.
+
+Nos projetos poderá ser indicada a sequência de pranchas, conforme Erro! F
+onte de referência não encontrada.. Em vermelho é indicada a prancha
+sequencial à prancha assinalada em preto.
+
+                    Figura 2 – Sequenciamento de Pranchas
+
+
+
+
+O sentido do km deve ser crescente da esquerda para a direita nas pranchas.
+
+Para indicar a existência de taludes de corte ou aterro, deve-se utilizar a
+convenção conforme Erro! Fonte de referência não encontrada..
+
+                     Figura 3 – Indicação de cortes e aterros
+                                                                                    13
+
+                                                          SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+Para georreferenciamento das informações descritas nas pranchas, deverá ser
+utilizado Datum: SIRGAS 2000, com 6 (seis) casas decimais. Onde houver
+indicação de quilometragem, deverá ser utilizado duas casas decimais e
+separação por vírgula.
+
+A nomenclatura das placas deverá ser conforme a Tabela 3.
+
+                         Tabela 3 – Nomenclatura das placas
+
+
+
+
+O detalhamento das placas deverá ter diagramação e cores reproduzidas de
+acordo com o Manual Brasileiro de Sinalização de Trânsito (MBST), com
+exceção das placas a "remover" ou "substituir" que deverão ser exibidas em
+escala de cinza (grayscale). Nos casos de substituição, a placa a ser retirada
+deverá ser representada ao lado da que será inserida.
+
+No caso de sinalização horizontal, os dispositivos auxiliares (tachas e cilindros
+delimitadores) deverão ser apresentados com a coloração condizente com o
+preconizado no MBST.
+                                                                                  14
+
+                                                      SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+3.2 PROJETO EXECUTIVO
+O Projeto Executivo contempla o próprio Projeto Básico, acrescentado dos
+seguintes elementos:
+  •   VOLUME IV - Detalhamentos, planilhas de quantitativos e plano de
+      execução
+  I - projeto básico aprovado – conforme descrito no item 3.1;
+  II – detalhamentos – diagramação da sinalização vertical e detalhamento das
+  fundações dos suportes, modulações, estruturas de pórticos, semipórticos,
+  marcas e inscrições no pavimento, dos dispositivos auxiliares e de segurança,
+  bem como memórias de cálculo;
+  III - planilhas de quantitativos – representando com fidelidade as soluções
+  previstas no Projeto e especificações do Termo de Referência, conforme o
+  modelo do Apêndice V da IN 17/22;
+  IV - plano de execução – deverá conter o planejamento detalhado dos ciclos
+  de manutenção, de acordo com o Cronograma Físico-Financeiro, contendo os
+  segmentos de cada rodovia que serão atendidos em cada mês.
+
+
+  •   VOLUME V - Orçamento e cronograma
+  I - orçamento referencial ou adequação de quantitativos – deverá detalhar o
+  preço global de referência que expressa a descrição, quantidades e custos
+  unitários de todos os serviços, incluídas as respectivas composições de
+  custos unitários necessários à execução do contrato, de acordo com o SICRO
+  e Manual de Custos de Infraestrutura de Transportes do DNIT, nos moldes do
+  Apêndice VI da IN 17/22;
+  II - cronograma físico-financeiro - consiste na representação do planejamento
+  da execução dos serviços em campo, prevendo os gastos envolvidos
+  mensalmente no contrato, bem como os quantitativos a serem realizados na
+  execução do contrato, devendo ser elaborado nos moldes do Apêndice VII –
+  da IN 17/22.
+
+
+Todos os itens do Projeto Básico e Executivo possuem um modelo conforme
+Biblioteca DNIT e planilhas modelo disponibilizadas pela Coordenação-Geral de
+                                                                                     15
+
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+Manutenção e Restauração Rodoviária (CGMRR), devidamente acompanhadas
+de dicionário descrevendo como deverá ser preenchido cada campo. Os
+modelos em questão podem ser baixados no endereço eletrônico do BR-LEGAL
+2, mencionado no ”Fique atento” ao final do item 2. Programa BR-LEGAL.
+
+
+
+
+3.3 DIMENSIONAMENTOS
+Todo o projeto de sinalização deve ser dimensionado de acordo com os volumes
+do Manual Brasileiro de Sinalização de Trânsito (MBST), IN 17/22 e Manual de
+Sinalização Rodoviária – Publicação IPR 743.
+
+Relembramos que o Módulo 3 deste curso apresentou a sinalização viária e os
+dispositivos de contenção em seus aspectos básicos, podendo ser utilizado
+também para consultas.
+
+As definições e especificações para materiais de sinalização viária e dispositivos
+de segurança serão apresentadas no Módulo 5.
+
+No escopo do Programa BR-LEGAL 2, a IN 17/22 é o principal balizador para
+elaboração de projeto, devendo ser consultada inicialmente para definição dos
+parâmetros dimensionamento, ao passo que, quando necessário, a Instrução
+remeterá ao MBST, às normas da ABNT, ou ainda às normas e manuais do IPR.
+
+A Figura 4 apresenta o aspecto geral de uma prancha de Projeto
+Básico/Executivo de Sinalização no escopo do Programa BR-Legal 2.
+16
+
+IP q: instituto todo. SINALIZAÇÃO E SEGURANÇA VIÁRIA - Módulo 4
+
+esqui
+Trans portes
+
+Figura 4 — Exemplo de Projeto Básico/Executivo de Sinalização
+
+(6)
+
+«p
+
+37 :
+ê
+
+dent
+
+1
+am
+
+LEGENDA:
+
+.
+CANTEIRO (CONCRETO) EE tro-s:tinHa simpres continua EEE Lco:LINHA DE CONTINUIDADE se Pp
+CANTEIRO o (ro HENENEE 1r0-21INHA SIMPLES SECCIONADA gumes MFRIMARCAÇÃO DE FAXA REVERSÍVEL, “E
+E PistA PAviMENTADA (ASFALTO) BBB Lro-3:LINHA DUPLA CONTINUA NO CONTRA-FLUXO =
+PIST; FENTADA (CONCRETO) BEEN tros: CONTINUA /SECCIONADA EB MFE:MARCAÇÃO DE FAIXA EXCLUSNA
+O sta EE us SIMPLES CONTÍNUA mms MCIMARCAÇÃO AO: —e—
+ACOSTAMENTO EEE tus-2:nHa simpres seccionada BEBE Lonco DA VA —
+MENDES Orc: oBRA DE ARTE Espec O 1so:LiNHA DE BORDO “TITITIT TALUDE EXISTENTE Fr
+
+                                                                                     17
+
+                                                        SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+
+4 PROJETOS-TIPO PARA SITUAÇÕES
+  COMUNS EM RODOVIAS
+
+Neste capítulo, serão apresentados exemplos de projetos de sinalização viária
+para algumas das situações comuns em rodovias.
+
+Os mesmos devem ser tratados como modelos referenciais, não descartando a
+necessidade de ajustes em função das condições locais, interferências ou das
+necessidades específicas do segmento viário.
+
+Os conceitos explicitados a seguir serão aplicados nos projetos-tipo, sendo
+mencionados para a melhor compreensão e consolidação dos mesmos.
+
+De modo geral, a sinalização vertical em rodovias deve observar o afastamento
+mínimo de 50 m entre placas, para permitir a leitura e compreensão das
+mensagens. Em áreas urbanas pode não ser possível respeitar esta distância,
+sendo então recomendada a fixação das placas no mesmo suporte, placas
+suspensas sobre a via, ou ainda seu agrupamento em placas compostas.
+
+Para as situações de restrição/proibição de condições operacionais da via, deve-
+se, sempre que possível, avisar antecipadamente aos usuários dessa condição
+por meio da sinalização vertical de advertência. Em seguida, deve-se
+regulamentar a respectiva restrição ou proibição, por meio da sinalização vertical
+de regulamentação segundo os critérios do MBST. Por exemplo, no caso de uma
+restrição de altura sob uma OAE, deve-se utilizar o sinal A-37 antecedendo a
+restrição antes da última opção de saída da via, indicando a restrição de altura
+com o sinal R-15 instalado junto à OAE.
+
+Recomenda também relacionar a redução de velocidade quando a situação
+operacional da via assim exigir, seja ela uma curva, travessia de pedestres,
+perímetro urbano, ondulação transversal, interseção, etc. Pode-se repetir os
+sinais de advertência com informação complementar de distância. Assim, o
+condutor terá a explicação para a redução de velocidade, tendendo a observá-la
+e se preparando adequadamente para a situação de risco adiante.
+                                                                                    18
+
+                                                       SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+A Sinalização Indicativa deve manter o usuário ciente sobre sua posição em
+relação à rodovia e seus destinos, suas distâncias, bem como informar sobre
+postos de fiscalização, pedágios e demais serviços relacionados à via.
+Particularmente, a Sinalização Educativa deve indicar o comportamento
+adequado e seguro, reforçando os riscos e eventuais penalidades pelo não
+cumprimento da legislação de trânsito.
+
+Quanto à sinalização turística e de orientação, a partir do momento que uma
+localidade for mencionada em uma placa de sentido, ela deve ser continuamente
+indicada nas placas seguintes até que se chegue ao destino, ou à via que lhe dê
+acesso. Isso evita que o usuário tenha dúvida, se passou desapercebidamente
+pelo seu destino, ou perdeu seu acesso.
+
+A Sinalização Horizontal pode ser utilizada para reforçar a Sinalização Vertical,
+mas é obrigatória nos casos em que ela tem o poder de regulamentação (como
+nas faixas de proibição de ultrapassagem – salvo em vias de leito natural, onde
+o uso do sinal R-7 será obrigatório).
+
+Em um acesso, ou interseção, deve-se manter o condutor informado sobre a
+velocidade regulamentada, a direção e os destinos de suas saídas, a via que
+acessa, e as distâncias às localidades relevantes.
+
+Dispositivos auxiliares como tachas, balizadores e marcadores de alinhamento
+aumentam a percepção do usuário quanto ao alinhamento e os limites da via,
+principalmente em condições de visibilidade adversas como chuva, neblina e
+noite.
+
+Dispositivos de proteção contínua como defensas metálicas e barreiras de
+concreto, devem possuir terminais e saída e entrada (extremidades) adequados
+para não agravar as consequências de choque de veículos.
+
+Obras, situações de emergência e operações especiais devem ser devidamente
+tratadas com sinalização e dispositivos temporários. Caso a situação permaneça
+em período noturno, a sinalização vertical deve ser retrorrefletiva, devendo ser
+considerado o uso de dispositivos luminosos.
+19
+
+SINALIZAÇÃO VIÁRIA - Módulo 4
+
+Instituto de
+Pesquisas em
+Transportes
+
+IP?
+
+4.1 INTERSEÇÃO TIPO GOTA
+
+opcional
+
+500 m
+
+Cidade 2 00 km
+Cidade Leste 00 km
+
+2H10N 9pepio
+
+000-ua 8
+
+| E
+
+o
+
+23500 opepio & : S
+4 >310N epepio 2 Es
+
+USE A FAIXA
+DIREITA PARA
+CONVERSÃO
+
+EE Br-000
+
+E
+Cidade Norte s
+
+WY OO 21520 apepio
+Wy 00 Z 2pepio
+WY 00 9Pepid X9ud
+
+100 m
+e»
+20
+
+Instituto de
+| Pp Ee À pesquisas em SINALIZAÇÃO VIÁRIA - Módulo 4
+
+Transportes
+
+4.2 INTERSEÇÃO TIPO GOTA (SEM FAIXAS DE MUDANÇA DE VELOCIDADE)
+
+opcional
+
+Cidade 2 00 km
+Cidade Oeste 00 km
+
+GE Br-000
+Cidade Norte
+
+Próx. Cidade 00 km
+
+000-ua EE
+
+3310N SPepI>
+
+OVSHIANOI Viv
+OININVISOIY
+ON aauyndy
+
+2310N Spepid
+Wy 00 94597 apepio
+
+wy 00 2 apepid
+Wy 00 9PEPI) X94d
+21
+
+SINALIZAÇÃO VIÁRIA - Módulo 4
+
+Transportes
+
+Pesquisas em
+
+Instituto de
+
+IP?
+
+4.3 INTERSEÇÃO COM GIRO A ESQUERDA
+
+À | Próx. Cidade 00 km
+Cidade 2 00 km
+
+ONHOLIU Cidade Leste 00 km
+ns apepio
+
+000-ds KB
+
+500 m ou 1 km
+
+& 21550 apepia
+
+ONHO IN
+€ ins epepr
+
++ 00045 RP
+
+Cidade Sul
+RETORNO P
+
+500 m ou 1 km
+
+Cidade Sul
+RETORNO
+
+A 500 m Y
+
+22
+
+Pesquisas em
+Transportes
+
+Instituto de
+IP | SINALIZAÇÃO VIÁRIA - Módulo 4
+
+4.4 TRAVESSIA SINALIZADA DE PEDESTRES
+
+23
+
+Instituto de
+IP 4 Transportes” SINALIZAÇÃO VIÁRIA - Módulo 4
+
+4.5 CURVA ACENTUADA
+
+24
+
+Instituto de
+| Pp E ( Pesquisas em SINALIZAÇÃO VIÁRIA - Módulo 4
+
+Transportes
+
+4.6 PONTE ESTREITA
+
+Ponte sobre o
+Rio Curso dágua
+
+/450m
+
+D
+0)
+So
+os
+co
+“a
+So
+ao
+Ea
+
+a
+co
+5
+25
+Instituto de
+| ed 4 Transportes” SINALIZAÇÃO VIÁRIA - Módulo 4
+
+4.7 ONDULAÇÃO TRANSVERSAL
+
+Instituto de
+Pesquisas em
+Transportes
+
+4.8 APROXIMAÇÃO DE TRAVESSIAS URBANAS
+
+Cidade A 00 km
+Cldade B 00 km
+
+Próx. Cidade 00 km
+
+z
+sê o
+zxo / a
+ur ”
+Eis / B
+ARE q
+NG o
+og E
+oo2 o
+£ E
+>> a
+z &
+55: =
+50m
+=< >
+
+o
+<
+Fa)
+e
+o
+Fá
+[mm]
+
+Ra
+=
+[a
+
+ONvaan ONIIWjuad
+
+Área urbana
+
+26
+
+SINALIZAÇÃO VIÁRIA - Módulo 4
+
+100 m
+
+E
+z
+a
+o
+E
+a
+>
+f)
+z
+[=
+[5]
+
+NÃO CONSTRUA NA
+FAIXA DE DOMÍNIO:
+
+100 m
+
+                                                                                                 27
+
+                                                                 SINALIZAÇÃO VIÁRIA - Módulo 4
+
+
+
+
+5 REFERÊNCIAS BIBLIOGRÁFICAS
+BRASIL. DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES — DNIT.
+Sistema Integrado de Operações Rodoviárias. Disponível em https://servicos.dnit.gov.br/sior/.
+Acesso em 21 de maio de 2022.
+
+BRASIL. DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES — DNIT.
+Programa BR-LEGAL. Disponível em https://www.gov.br/dnit/pt-br/rodovias/operacoes-
+rodoviarias/programa-br-legal. Acesso em 23 de maio de 2022.
+
+BRASIL. DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES — DNIT. BR-
+LEGAL 2. Disponível em https://www.gov.br/dnit/pt-br/assuntos/infraestrutura-rodoviaria/br-legal-2.
+Acesso em 23 de maio de 2022.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Colegiada. Instrução
+Normativa n° 3/2021 - Estabelece critérios e procedimentos a serem utilizados na elaboração e
+atualização de projetos, na contratação, e na execução do novo Programa Nacional de Segurança e
+Sinalização Rodoviária – BR-LEGAL 2. Brasília, 2021.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Colegiada. Instrução
+Normativa n° 64/2021 - Dispõe sobre critérios e procedimentos a serem adotados no Programa
+Nacional de Segurança e Sinalização Rodoviária - BR-LEGAL e dá outras providências. Brasília,
+2021.
+
+BRASIL. Departamento Nacional de Infraestrutura de Transportes. Diretoria Executiva. Instituto de
+Pesquisas Rodoviárias – Manual de sinalização rodoviária. 3ª Edição. Rio de Janeiro, 2010.

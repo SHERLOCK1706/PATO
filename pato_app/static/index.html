@@ -423,7 +423,7 @@
     <div class="barra"><div class="chips" id="chipsOrc"></div>
       <div class="linha-botoes" style="margin:0 0 0 auto">
         <button class="btn" id="btnImpOrc" data-dica="Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO: itens, níveis de esforço, memórias de cálculo e preços informados; liga as quantidades ao inventário do projeto">Importar planilha PATO</button>
-        <button class="btn" id="btnAddOrc" data-dica="Inclui um serviço na planilha">+ Item</button>
+        <button class="btn" id="btnAddOrc" data-dica="Inclui um serviço ou um título (tópico) no fim da planilha — use o ＋ de cada linha para incluir no lugar certo">+ Serviço / título</button>
         <button class="btn" id="btnExpLic" data-dica="PATO final no modelo da planilha de licitação (70 abas, com croqui, CPU, binômios e inventário): preços do sistema no BD sem vínculos externos, base SICRO, níveis de esforço e correções de fórmula; confere o total recalculado com o do sistema">Exportar PATO de licitação</button>
         <button class="btn primario" id="btnExpOrc" data-dica="Gera o Excel: planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Exportar (Excel)</button>
       </div></div>
@@ -443,7 +443,7 @@
       <div class="caixa"><div class="bin-cab"><h3>Ficha de serviços</h3>
         <div class="linha-botoes" style="margin:0">
           <button class="btn" id="btnFichaGravar" data-dica="Grava a planilha PATO deste projeto (regras, níveis de esforço, quadro de transportes, sinalização, ADM/mobilização) como a ficha de serviços para os próximos projetos">Gravar este PATO como ficha</button>
-          <button class="btn" id="btnFichaLista" data-dica="Planilha (.xlsx/.csv) ou texto com os códigos dos serviços a usar (colunas opcionais: NE e quantidade). Marca na ficha os serviços da lista; códigos que não estão na ficha entram como serviços incluídos pela lista">Importar lista de serviços</button>
+          <button class="btn" id="btnFichaLista" data-dica="Ficha PATO (planilha PATO completa ou só a aba PATO) ou lista (.xlsx/.csv/.txt) com código e, se houver, item, NE e quantidade. Marca os serviços na ficha e ajusta o NE; ao montar, as quantidades continuam ligadas ao inventário e ao ICM/IP e são comparadas com as da ficha. Códigos que não estão na ficha entram como serviços incluídos">Importar ficha PATO / lista de serviços</button>
           <button class="btn primario" id="btnFichaMontar" data-dica="Substitui a planilha PATO do projeto pelos serviços marcados, com os níveis de esforço e valores informados; as quantidades saem do inventário, do ICM/IP, da extensão e do prazo do projeto e os transportes do croqui">Montar PATO pela ficha</button></div></div>
         <p class="nota">Marque os serviços do contrato e ajuste o nível de esforço. As quantidades são calculadas pelas regras do PATO de referência
           (<span id="fichaOrigem"></span>) com os dados <b>deste</b> segmento: inventário, levantamento ICM/IP, extensão, prazo, sinalização e croqui.

@@ -533,8 +533,12 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         return orc.incluir_item(pid, dados.get("apos"), dados)
 
     @app.delete("/api/projetos/{pid}/pato/itens/{iid}")
-    def o_remover(pid: int, iid: str):
-        return orc.remover_item(pid, iid)
+    def o_remover(pid: int, iid: str, com_itens: bool = False):
+        return orc.remover_item(pid, iid, com_itens)
+
+    @app.post("/api/projetos/{pid}/pato/itens/{iid}/mover")
+    def o_mover(pid: int, iid: str, dados: dict = Body(...)):
+        return orc.mover_item(pid, iid, int(dados.get("direcao") or 0))
 
     @app.put("/api/projetos/{pid}/pato/preco")
     def o_preco(pid: int, dados: dict = Body(...)):
@@ -606,7 +610,8 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     @app.post("/api/projetos/{pid}/pato/montar")
     def ficha_montar(pid: int, dados: dict = Body(default={})):
-        r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"), dados.get("extras"))
+        r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"), dados.get("extras"),
+                                   dados.get("conferir"))
         r.pop("resumo", None)
         return r
 

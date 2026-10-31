@@ -438,6 +438,14 @@ class Orcamentos:
         x = next((i for i in d["itens"] if i["id"] == iid), None)
         if not x:
             raise KeyError("Item não encontrado.")
+        novo_num = (campos.get("item") or "").strip()
+        if x["tipo"] == "titulo" and novo_num and novo_num != (x.get("item") or "").strip():
+            ant = (x.get("item") or "").strip()  # renumera os serviços e subtítulos do tópico (01.03.xx → 01.09.xx)
+            k = d["itens"].index(x)
+            for y in d["itens"][k + 1:self._bloco(d["itens"], k)]:
+                it = (y.get("item") or "").strip()
+                if ant and it.startswith(ant + "."):
+                    y["item"] = novo_num + it[len(ant):]
         for k in ("item", "codigo", "descricao", "unidade", "ne", "arred", "obs", "base", "preco_manual"):
             if k in campos:
                 v = campos[k]
@@ -469,12 +477,62 @@ class Orcamentos:
         self._gravar(pid, d)
         return self.calcular(pid)
 
-    def remover_item(self, pid: int, iid: str) -> dict:
+    @staticmethod
+    def _bloco(itens: list[dict], k: int) -> int:
+        """Fim (exclusivo) do bloco que começa em k: um título leva junto as linhas seguintes até o próximo título do
+        mesmo nível ou acima (pela numeração 01.02 → 01.02.xx)."""
+        x = itens[k]
+        if x["tipo"] != "titulo":
+            return k + 1
+        pref = (x.get("item") or "").strip()
+        nivel = pref.count(".")
+        j = k + 1
+        while j < len(itens):
+            y = itens[j]
+            it = (y.get("item") or "").strip()
+            if y["tipo"] == "titulo" and it.count(".") <= nivel and not it.startswith(pref + "."):
+                break
+            if pref and it and not it.startswith(pref + ".") and y["tipo"] != "titulo":
+                break
+            j += 1
+        return j
+
+    def remover_item(self, pid: int, iid: str, com_itens: bool = False) -> dict:
+        """Remove um serviço ou um título (com_itens=True: o título e os serviços/subtítulos do tópico)."""
         d = self.dados(pid)
-        refs = [y["item"] for y in d["itens"] if (y.get("base") or {}).get("ref") == iid]
+        k = next((i for i, y in enumerate(d["itens"]) if y["id"] == iid), None)
+        if k is None:
+            raise KeyError("Item não encontrado.")
+        fim = self._bloco(d["itens"], k) if com_itens else k + 1
+        ids = {y["id"] for y in d["itens"][k:fim]}
+        refs = [y["item"] for y in d["itens"] if (y.get("base") or {}).get("ref") in ids and y["id"] not in ids]
         if refs:
             raise ValueError("Outros itens usam a quantidade deste: " + ", ".join(refs))
-        d["itens"] = [y for y in d["itens"] if y["id"] != iid]
+        d["itens"] = d["itens"][:k] + d["itens"][fim:]
+        self._gravar(pid, d)
+        self.db.registrar(pid, "PATO: item removido", f"{len(ids)} linha(s)")
+        return self.calcular(pid)
+
+    def mover_item(self, pid: int, iid: str, direcao: int) -> dict:
+        """Sobe (-1) ou desce (+1) a linha — um título move o tópico inteiro — trocando com o bloco vizinho."""
+        d = self.dados(pid)
+        it = d["itens"]
+        k = next((i for i, y in enumerate(it) if y["id"] == iid), None)
+        if k is None:
+            raise KeyError("Item não encontrado.")
+        fim = self._bloco(it, k)
+        bloco = it[k:fim]
+        if direcao < 0 and k > 0:
+            ini_viz = k - 1  # bloco anterior: o título de mesmo nível mais próximo acima (ou a linha anterior)
+            if bloco[0]["tipo"] == "titulo":
+                for i in range(k - 1, -1, -1):
+                    if it[i]["tipo"] == "titulo" and self._bloco(it, i) == k:
+                        ini_viz = i
+                        break
+            d["itens"] = it[:ini_viz] + bloco + it[ini_viz:k] + it[fim:]
+        elif direcao > 0 and fim < len(it):
+            fim_viz = self._bloco(it, fim) if bloco[0]["tipo"] == "titulo" else fim + 1
+            d["itens"] = it[:k] + it[fim:fim_viz] + bloco + it[fim_viz:]
         self._gravar(pid, d)
         return self.calcular(pid)
 
@@ -588,13 +646,19 @@ class Orcamentos:
         for x in f["servicos"]:
             if x["tipo"] == "servico":
                 por_cod.setdefault(cp._cod(x.get("codigo") or ""), []).append(x)
-        sel, ne, extras = [], {}, []
+        sel, ne, extras, qtd = [], {}, [], {}
         for e in lista:
             achados = por_cod.get(cp._cod(e["codigo"])) or []
+            if e.get("item"):  # ficha PATO com a numeração: o item exato (AM/TM se repetem sob vários serviços)
+                exato = [x for x in achados if (x.get("item") or "").strip() == str(e["item"]).strip()]
+                achados = exato or ([] if any(y.get("item") for y in lista if y is not e and y["codigo"] == e["codigo"]) else achados)
             for x in achados:
                 sel.append(x["id"])
-                if e.get("ne") is not None:
+                # NE só onde a ficha pede o esforço do item (nos do ICM/IP o esforço é o do levantamento; AM/TM seguem o serviço)
+                if e.get("ne") is not None and not x.get("depende_de") and not x.get("ne_ip"):
                     ne[x["id"]] = e["ne"]
+                if e.get("quantidade") is not None and len(achados) == 1:
+                    qtd[x["id"]] = e["quantidade"]
                 for dep in f["servicos"]:  # itens que dependem do escolhido (AM/TM, transportes) vão junto
                     if dep.get("depende_de") == x["id"]:
                         sel.append(dep["id"])
@@ -620,10 +684,24 @@ class Orcamentos:
                 e["na_base"] = bool(c)
         except ValueError:
             pass
-        return dict(lidos=len(lista), selecionados=sorted(set(sel)), ne=ne, extras=extras, avisos=avisos)
+        return dict(lidos=len(lista), selecionados=sorted(set(sel)), ne=ne, extras=extras, avisos=avisos, quantidades=qtd)
+
+    def conferir_quantidades(self, pid: int, quantidades: dict) -> list[dict]:
+        """Quantidade da ficha enviada × quantidade calculada pelo sistema (inventário, ICM/IP, extensão, prazo): a
+        ligação é mantida; a diferença fica para conferência (e pode-se adotar a da ficha no item)."""
+        out = []
+        for x in self.calcular(pid)["itens"]:
+            if x["tipo"] != "servico" or x["id"] not in quantidades:
+                continue
+            ql, qs = nz.numero(quantidades[x["id"]]), x.get("quantidade") or 0.0
+            dif = (qs - ql) / ql if ql else None
+            out.append(dict(id=x["id"], item=x["item"], codigo=x.get("codigo"), descricao=x.get("descricao"),
+                            unidade=x.get("unidade"), quantidade_ficha=ql, quantidade_sistema=qs,
+                            fonte=x.get("base_fonte"), diferenca=dif, confere=dif is not None and abs(dif) <= 0.01))
+        return out
 
     def montar_pela_ficha(self, pid: int, selecionados: list | None = None, ne: dict | None = None,
-                          valores: dict | None = None, extras: list | None = None) -> dict:
+                          valores: dict | None = None, extras: list | None = None, conferir: dict | None = None) -> dict:
         """PATO do projeto a partir da ficha: serviços escolhidos, NE ajustado e valores a informar. As quantidades saem
         do inventário, do levantamento ICM/IP, da extensão e do prazo do projeto; os transportes, do croqui."""
         from . import ficha as fc
@@ -673,7 +751,8 @@ class Orcamentos:
             self.sv.transporte.aplicar_origens(pid)
         self.db.registrar(pid, "PATO: montado pela ficha de serviços", f"{n} serviços, {len(linhas)} linhas de transporte")
         tr = self.sincronizar_transportes(pid, gerar=not linhas)
-        return dict(servicos=n, transporte_linhas=len(linhas), ocorrencias_faltando=faltam, transporte=tr,
+        conf = self.conferir_quantidades(pid, conferir) if conferir else []
+        return dict(servicos=n, transporte_linhas=len(linhas), ocorrencias_faltando=faltam, transporte=tr, conferencia_qtd=conf,
                     resumo=self.resumo(pid))
 
     def sincronizar_transportes(self, pid: int, gerar: bool = False) -> dict:

@@ -135,3 +135,40 @@ def test_lista_de_servicos(proj, tmp_path):
     assert ("01.02.07.01", "5501700") in serv and ("01.08.01", "4011209") in serv
     sec = {x["secao"]: x for x in sv.orcamento.resumo(pid)["secoes"]}
     assert sec["01.08"]["nome"].startswith("Serviços incluídos") and sec["01.08"]["SD"] > 0
+
+
+def test_ficha_pato_enviada(proj):
+    """Ficha PATO (a própria planilha do modelo): serviços pelo item+código, NE e quantidade lidos; as quantidades
+    continuam ligadas ao inventário/IP e são conferidas com as da ficha."""
+    sv, pid, _ = proj
+    r = sv.orcamento.ficha_pela_lista(pid, str(MODELO_PADRAO))
+    assert r["lidos"] > 100 and len(r["selecionados"]) > 100 and len(r["quantidades"]) > 100
+    m = sv.orcamento.montar_pela_ficha(pid, r["selecionados"], r["ne"], None, r["extras"], r["quantidades"])
+    conf = m["conferencia_qtd"]
+    assert len(conf) > 100
+    ok = sum(1 for x in conf if x["confere"])
+    assert ok / len(conf) > 0.9, [(x["item"], x["quantidade_ficha"], x["quantidade_sistema"]) for x in conf if not x["confere"]][:10]
+    itens = {i["item"]: i for i in sv.orcamento.calcular(pid)["itens"] if i["tipo"] == "servico"}
+    assert any("invent" in (i.get("base_fonte") or "").lower() or (i.get("base") or {}).get("tipo") == "ip" for i in itens.values())
+
+
+def test_topicos_editaveis(proj):
+    """Títulos (tópicos) e serviços: incluir, editar, renumerar, mover e excluir."""
+    sv, pid, _ = proj
+    o = sv.orcamento
+    ultimo = o.dados(pid)["itens"][-1]["id"]
+    o.incluir_item(pid, ultimo, dict(tipo="titulo", item="01.09", descricao="SERVIÇOS ESPECIAIS"))
+    tit = next(x for x in o.dados(pid)["itens"] if x["item"] == "01.09")
+    o.incluir_item(pid, tit["id"], dict(tipo="servico", item="01.09.01", codigo="5501700", quantidade=100, ne=1))
+    sec = {x["secao"]: x for x in o.resumo(pid)["secoes"]}
+    assert sec["01.09"]["nome"] == "SERVIÇOS ESPECIAIS" and sec["01.09"]["SD"] > 0
+    o.editar_item(pid, tit["id"], dict(item="01.10", descricao="SERVIÇOS ESPECIAIS (RENOMEADO)"))
+    itens = o.dados(pid)["itens"]
+    assert any(x["item"] == "01.10.01" for x in itens) and not any(x["item"].startswith("01.09") for x in itens)
+    k = next(i for i, x in enumerate(itens) if x["id"] == tit["id"])
+    o.mover_item(pid, tit["id"], -1)  # o tópico inteiro sobe
+    itens = o.dados(pid)["itens"]
+    k2 = next(i for i, x in enumerate(itens) if x["id"] == tit["id"])
+    assert k2 < k and itens[k2 + 1]["item"] == "01.10.01"
+    o.remover_item(pid, tit["id"], com_itens=True)
+    assert not any(x["item"].startswith("01.10") for x in o.dados(pid)["itens"])

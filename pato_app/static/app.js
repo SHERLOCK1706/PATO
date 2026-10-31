@@ -1346,17 +1346,64 @@ async function carregarOrc() {
 }
 function renderOrcPlanilha() {
   const c = O_.c;
+  const acoes = i => `<span class="acoes-orc">
+      <button class="btn mini" data-novo="${esc(i.id)}" data-dica="Inclui um serviço ou um título (tópico) logo abaixo desta linha">＋</button>
+      <button class="btn mini" data-sobe="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Sobe o tópico inteiro (título e seus serviços)" : "Sobe a linha"}">↑</button>
+      <button class="btn mini" data-desce="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Desce o tópico inteiro" : "Desce a linha"}">↓</button>
+      <button class="btn mini perigo" data-exorc="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Exclui o título (pergunta se exclui também os serviços do tópico)" : "Exclui o serviço"}">×</button></span>`;
   $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Código</th><th>Discriminação</th><th class=n>Base</th><th class=n>NE</th><th class=n>Quantidade</th><th>Und</th>
     <th class=n>Preço SD</th><th class=n>Parcial SD</th><th class=n>Preço CD</th><th class=n>Parcial CD</th><th></th></tr>` + c.itens.map(i => i.tipo === "titulo"
-    ? `<tr class="titulo-orc"><td>${esc(i.item)}</td><td colspan=11>${esc(i.descricao)}</td></tr>`
+    ? `<tr class="titulo-orc"><td>${esc(i.item)}</td><td colspan=10>${esc(i.descricao)}</td>
+      <td style="white-space:nowrap"><button class="btn mini" data-edtit="${esc(i.id)}" data-dica="Edita a numeração e o nome do tópico">Editar</button>${acoes(i)}</td></tr>`
     : `<tr><td>${esc(i.item)}</td><td>${esc(i.codigo)}</td><td>${esc(i.descricao)}</td>
       <td class=n title="${esc(i.base_fonte || "")}">${q3(i.base_valor)}<br><small>${esc((i.base_fonte || "").slice(0, 38))}</small></td><td class=n>${(i.base || {}).tipo === "direta" ? "—" : q3(i.ne)}</td>
       <td class=n><b>${q3(i.quantidade)}</b></td><td>${esc(i.unidade || "")}</td>
       <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n>${reais(i.parcial_SD)}</td>
       <td class=n title="${esc(i.preco_fonte_CD || "")}">${reais(i.preco_CD)}</td><td class=n>${reais(i.parcial_CD)}</td>
-      <td><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Altera a base da quantidade (inventário, outro item, transporte, valor), o nível de esforço ou o preço">Editar</button></td></tr>`).join("")
+      <td style="white-space:nowrap"><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Altera numeração, código, descrição, a base da quantidade (inventário, IP, outro item, transporte, valor), o nível de esforço ou o preço">Editar</button>${acoes(i)}</td></tr>`).join("")
     + `<tr class="titulo-orc"><td colspan=8>TOTAL GERAL DO ORÇAMENTO</td><td class=n>${reais(c.totais.SD)}</td><td></td><td class=n>${reais(c.totais.CD)}</td><td></td></tr>`;
   $$("[data-edorc]").forEach(b => b.onclick = () => editarItemOrc(b.dataset.edorc));
+  $$("[data-edtit]").forEach(b => b.onclick = () => dialogoLinha(O_.c.itens.find(x => x.id === b.dataset.edtit), null));
+  $$("[data-novo]").forEach(b => b.onclick = () => dialogoLinha(null, b.dataset.novo));
+  const mover = (id, dir) => jpost(`${base_}${E.pid}/pato/itens/${id}/mover`, { direcao: dir }).then(carregarOrc).catch(erro);
+  $$("[data-sobe]").forEach(b => b.onclick = () => mover(b.dataset.sobe, -1));
+  $$("[data-desce]").forEach(b => b.onclick = () => mover(b.dataset.desce, 1));
+  $$("[data-exorc]").forEach(b => b.onclick = async () => {
+    const x = O_.c.itens.find(y => y.id === b.dataset.exorc);
+    let com = false;
+    if (x.tipo === "titulo") {
+      if (!confirm(`Excluir o título ${x.item} — ${x.descricao}?`)) return;
+      com = confirm("Excluir também os serviços e subtítulos deste tópico?\n(OK = excluir o tópico inteiro · Cancelar = excluir só o título)");
+    } else if (!confirm(`Excluir o serviço ${x.item} ${x.codigo || ""}?`)) return;
+    try { await api(`${base_}${E.pid}/pato/itens/${x.id}?com_itens=${com}`, { method: "DELETE" }); toast("Excluído"); carregarOrc(); } catch (e) { erro(e); }
+  });
+}
+// novo título/serviço (apos = id da linha acima) ou edição de um título
+function dialogoLinha(x, apos) {
+  const d = $("#dlg"), f = $("#dlgForm"), novo = !x;
+  const acima = apos ? O_.c.itens.find(y => y.id === apos) : null;
+  const sug = acima ? (acima.tipo === "titulo" ? acima.item + ".01" : (acima.item || "").replace(/(\d+)$/, m => String(+m + 1).padStart(m.length, "0"))) : "";
+  f.className = "form";
+  f.innerHTML = `<h3>${novo ? "Incluir linha" + (acima ? ` abaixo de ${esc(acima.item)}` : "") : `Editar título ${esc(x.item)}`}</h3><div class="campos">
+    ${novo ? `<label>Tipo <select name="tipo"><option value="servico">Serviço</option><option value="titulo">Título (tópico)</option></select></label>` : ""}
+    <label>Item (numeração) <input name="item" value="${esc(x ? x.item : sug)}" data-dica="Ex.: 01.03 (tópico) ou 01.03.05 (serviço). Os serviços de um tópico começam com a numeração dele"></label>
+    <label class="largo">Nome / discriminação <input name="descricao" value="${esc(x ? x.descricao : "")}" placeholder="ex.: CONSERVAÇÃO PREVENTIVA PERIÓDICA (vazio no serviço = descrição da base)"></label>
+    ${novo ? `<label>Código SICRO/próprio <input name="codigo" data-dica="Serviço: a descrição, a unidade e o preço vêm da base"></label>
+      <label>Quantidade (base) <input name="quantidade" type="number" step="any" data-dica="Depois, em Editar, ligue a quantidade ao inventário, ao IP ou a outro item"></label>
+      <label>Nível de esforço <input name="ne" type="number" step="any" value="1"></label>` : ""}</div>
+    <div class="linha-botoes"><button class="btn primario" value="ok">Salvar</button><button class="btn" value="cancelar" formnovalidate>Cancelar</button></div>`;
+  d.showModal();
+  d.onclose = async () => {
+    if (d.returnValue !== "ok") return;
+    const v = formObj(f);
+    try {
+      if (novo) {
+        if (v.tipo === "servico" && !v.codigo) return toast("Informe o código do serviço");
+        await jpost(`${base_}${E.pid}/pato/itens`, { ...v, apos, ne: v.ne || 1 });
+      } else await jpost(`${base_}${E.pid}/pato/itens/${x.id}`, { item: v.item, descricao: v.descricao }, "PUT");
+      toast("Planilha atualizada"); carregarOrc();
+    } catch (e) { erro(e); }
+  };
 }
 async function editarItemOrc(id) {
   const i = O_.c.itens.find(x => x.id === id), b = i.base || {};
@@ -1364,7 +1411,11 @@ async function editarItemOrc(id) {
   const itens = O_.c.itens.filter(x => x.tipo === "servico" && x.id !== id);
   const d = $("#dlg"), f = $("#dlgForm");
   f.className = "form";
-  f.innerHTML = `<h3>Item ${esc(i.item)} — ${esc(i.codigo)}</h3><p class="nota">${esc(i.descricao)}</p><div class="campos">
+  f.innerHTML = `<h3>Item ${esc(i.item)} — ${esc(i.codigo)}</h3><div class="campos">
+    <label>Item (numeração) <input name="item_num" value="${esc(i.item || "")}"></label>
+    <label>Código <input name="codigo" value="${esc(i.codigo || "")}" data-dica="Trocar o código troca a composição (preço) do serviço"></label>
+    <label class="largo">Discriminação <input name="descricao" value="${esc(i.descricao || "")}"></label>
+    <label>Unidade <input name="unidade" value="${esc(i.unidade || "")}"></label>
     <label>Base da quantidade <select name="tipo">${[["valor", "Valor informado"], ["inventario", "Medida do inventário"], ["item", "Outro item da planilha"], ["producao", "Produção da equipe × horas × dias"],
       ["extensao", "Extensão do segmento × fator"], ["contrato", "Rateio por ano de contrato (fator ÷ anos)"], ["ip", "Levantamento IP"], ["transporte", "Momento do quadro de transportes"], ["direta", "Quantidade direta"]]
       .map(([k, r]) => `<option value="${k}" ${b.tipo === k ? "selected" : ""}>${r}</option>`).join("")}</select></label>
@@ -1395,7 +1446,7 @@ async function editarItemOrc(id) {
       if (v.tipo === "producao") Object.assign(base, { dias: +v.dias || 1, horas: +v.horas || 8, producao_ref: b.producao_ref, fonte: "produção SICRO × 8 h × dias" });
       if (v.tipo === "extensao" || v.tipo === "contrato") Object.assign(base, { fator: +v.fext || 1 });
       if (v.tipo === "ip") Object.assign(base, { chaves: b.chaves, campo: b.campo, fator: b.fator });
-      await jpost(`${base_}${E.pid}/pato/itens/${id}`, { base, ne: v.ne, arred: v.arred, preco_manual: { SD: v.psd === "" ? null : +v.psd, CD: v.pcd === "" ? null : +v.pcd } }, "PUT");
+      await jpost(`${base_}${E.pid}/pato/itens/${id}`, { item: v.item_num, codigo: v.codigo, descricao: v.descricao, unidade: v.unidade, base, ne: v.ne, arred: v.arred, preco_manual: { SD: v.psd === "" ? null : +v.psd, CD: v.pcd === "" ? null : +v.pcd } }, "PUT");
       toast("Item atualizado"); carregarOrc();
     } catch (e) { erro(e); }
   };
@@ -1515,11 +1566,26 @@ $("#btnFichaMontar").onclick = async () => {
   const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
   const valores = Object.fromEntries($$("[data-fval]").filter(i => i.value !== "").map(i => [i.dataset.fval, +i.value]));
   $("#resOrc").innerHTML = '<p class="carregando">Montando a planilha PATO pela ficha…</p>';
-  try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores, extras: O_.lista?.extras || [] });
+  try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores, extras: O_.lista?.extras || [], conferir: O_.lista?.quantidades || null });
+    if (r.conferencia_qtd?.length) { O_.confQtd = r.conferencia_qtd; O_.sub = "planilha"; await carregarOrc(); mostrarConfQtd(); return; }
     $("#resOrc").innerHTML = `<p class="ok-msg">${r.servicos} serviços; ${r.transporte_linhas} linhas de transporte local do modelo.</p>` +
       (r.ocorrencias_faltando?.length ? `<p class="tag aviso">Ocorrências do quadro sem correspondente no croqui: ${esc(r.ocorrencias_faltando.join(", "))} — monte o croqui na aba Transporte.</p>` : "");
     O_.sub = "planilha"; carregarOrc(); } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
 };
+function mostrarConfQtd() {
+  const l = O_.confQtd || [], dif = l.filter(x => !x.confere);
+  $("#resOrc").innerHTML = `<div class="caixa"><h3>Quantidades: ficha enviada × calculadas pelo sistema</h3>
+    <p class="nota">A quantidade continua ligada ao inventário / ICM-IP / extensão / prazo deste projeto. ${l.length - dif.length} de ${l.length} conferem (até 1%).
+      Onde diverge, confira a fonte; “usar a da ficha” troca a base do item por quantidade direta (perde a ligação).</p>
+    ${dif.length ? `<div class="tabela-rolagem"><table class="tab"><tr><th>Item</th><th>Código</th><th>Discriminação</th><th class=n>Ficha</th><th class=n>Sistema</th><th class=n>Diferença</th><th>Fonte do sistema</th><th></th></tr>
+      ${dif.map(x => `<tr><td>${esc(x.item)}</td><td>${esc(x.codigo)}</td><td>${esc((x.descricao || "").slice(0, 50))}</td><td class=n>${q3(x.quantidade_ficha)}</td><td class=n>${q3(x.quantidade_sistema)}</td>
+        <td class=n>${x.diferenca == null ? "—" : pctN(x.diferenca)}</td><td><small>${esc(x.fonte || "")}</small></td>
+        <td><button class="btn mini" data-usaficha="${esc(x.id)}" data-q="${x.quantidade_ficha}" data-dica="Quantidade direta = valor da ficha">usar a da ficha</button></td></tr>`).join("")}</table></div>` : '<p class="ok-msg">Todas as quantidades conferem.</p>'}</div>`;
+  $$("[data-usaficha]").forEach(b => b.onclick = async () => {
+    try { await jpost(`${base_}${E.pid}/pato/itens/${b.dataset.usaficha}`, { base: { tipo: "direta", valor: +b.dataset.q, fonte: "ficha enviada" } }, "PUT");
+      O_.confQtd = O_.confQtd.filter(x => x.id !== b.dataset.usaficha); await carregarOrc(); mostrarConfQtd(); } catch (e) { erro(e); }
+  });
+}
 $("#btnFichaLista").onclick = async () => {
   const a = await escolherArquivo(".xlsx,.xlsm,.csv,.txt"); if (!a) return;
   const fd = new FormData(); fd.append("arquivo", a);
@@ -1527,7 +1593,7 @@ $("#btnFichaLista").onclick = async () => {
     const sel = new Set(r.selecionados);
     $$("[data-fsel]").forEach(c => c.checked = sel.has(c.dataset.fsel));
     Object.entries(r.ne || {}).forEach(([id, v]) => { const i = $(`[data-fne="${id}"]`); if (i) i.value = v; });
-    $("#fichaListaRes").innerHTML = `<p class="ok-msg">${r.lidos} códigos lidos: ${r.selecionados.length} serviços da ficha marcados.</p>` +
+    $("#fichaListaRes").innerHTML = `<p class="ok-msg">${r.lidos} linhas lidas: ${r.selecionados.length} serviços da ficha marcados${Object.keys(r.quantidades || {}).length ? ` · ${Object.keys(r.quantidades).length} quantidades serão conferidas com o inventário/IP ao montar` : ""}.</p>` +
       (r.avisos || []).map(a => `<p class="tag aviso">${esc(a)}</p>`).join("") +
       (r.extras.length ? `<p class="nota">Fora da ficha (entram em “01.08 Serviços incluídos pela lista” ao montar):</p><ul class="nota">${r.extras.map(e => `<li>${esc(e.codigo)} — ${esc(e.descricao || "")} ${e.na_base ? "" : '<span class="tag aviso">não está na base SICRO do projeto</span>'}</li>`).join("")}</ul>` : "");
   } catch (e) { erro(e); }
@@ -1546,8 +1612,7 @@ $("#btnImpOrc").onclick = async () => {
     $("#resOrc").innerHTML = `<p class="ok-msg">Importado: ${r.itens} linhas; ${r.vinculados} quantidades ligadas ao inventário do projeto.</p>`; O_.med = null; carregarOrc();
   } catch (e) { $("#resOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 };
-$("#btnAddOrc").onclick = () => dialogo("Incluir item na planilha PATO", [["item", "Item (ex.: 01.02.09)"], ["codigo", "Código SICRO ou próprio"], ["quantidade", "Quantidade (base)", "number"], ["ne", "Nível de esforço", "number"]],
-  async v => { await jpost(`${base_}${E.pid}/pato/itens`, { ...v, ne: v.ne || 1 }); toast("Item incluído"); carregarOrc(); });
+$("#btnAddOrc").onclick = () => dialogoLinha(null, O_.c?.itens?.length ? O_.c.itens[O_.c.itens.length - 1].id : null);
 $("#btnExpOrc").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };

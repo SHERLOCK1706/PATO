@@ -183,8 +183,10 @@ def ler_lista_servicos(caminho: str) -> list[dict]:
     if low.endswith((".xlsx", ".xlsm")):
         import openpyxl
         wb = openpyxl.load_workbook(caminho, read_only=True, data_only=True)
-        try:
-            for ws in wb.worksheets:
+        try:  # planilha PATO completa: só a aba PATO (as CPU também têm códigos)
+            abas = [ws for ws in wb.worksheets if nz.sem_acento(ws.title).upper().strip() in ("PATO", "FICHA", "FICHA PATO")] \
+                or wb.worksheets
+            for ws in abas:
                 linhas += [list(r) for r in ws.iter_rows(values_only=True)]
         finally:
             wb.close()
@@ -197,19 +199,29 @@ def ler_lista_servicos(caminho: str) -> list[dict]:
         except csv.Error:
             linhas = [re.split(r"[;\t,]", ln) for ln in txt.splitlines()]
     cod_rx = re.compile(r"^(\d{6,7}[A-Z]?|[A-Z]{2,4}\d{1,4}[A-Z]?)$")
-    col = dict()
-    for i, r in enumerate(linhas[:30]):
+    col: dict = {}
+    anterior: list[str] = []
+    for i, r in enumerate(linhas[:40]):
         rot = [nz.sem_acento(str(x or "")).upper().strip() for x in r]
-        for j, t in enumerate(rot):
-            if t.startswith("COD") and "cod" not in col:
-                col["cod"] = j
-            elif (t in ("NE", "N.E.") or "ESFORCO" in t) and "ne" not in col:
-                col["ne"] = j
-            elif t.startswith("QUANT") and "q" not in col:
-                col["q"] = j
-        if "cod" in col:
+        # cabeçalho em duas linhas (modelo PATO: "NÍVEL DE ESFORÇO / QUANT.", "QUANT. DE TRABALHO / QUANT.")
+        acima = [anterior[j] if j < len(anterior) else "" for j in range(len(rot))]
+        if any(t.startswith("COD") for t in rot):
+            for j, t in enumerate(rot):
+                cima = acima[j] or next((acima[k] for k in range(j, -1, -1) if acima[k]), "")
+                junto = f"{cima} {t}"
+                if t.startswith("COD") and "cod" not in col:
+                    col["cod"] = j
+                elif t == "ITEM" and "item" not in col:
+                    col["item"] = j
+                elif (t in ("NE", "N.E.") or "ESFORCO" in t or ("ESFORCO" in acima[j] and t.startswith("QUANT"))) and "ne" not in col:
+                    col["ne"] = j
+                elif "TRABALHO" in junto and t.startswith("QUANT"):
+                    col["q"] = j
+                elif t.startswith("QUANT") and "q" not in col and "INVENT" not in acima[j]:
+                    col["q"] = j
             linhas = linhas[i + 1:]
             break
+        anterior = rot
     out, vistos = [], set()
     for r in linhas:
         cels = [str(x).strip() if x is not None else "" for x in r]
@@ -217,12 +229,13 @@ def ler_lista_servicos(caminho: str) -> list[dict]:
             cands = [cels[col["cod"]]] if col["cod"] < len(cels) else []
         else:
             cands = [c for c in cels if cod_rx.match(c.upper())]
+        item = cels[col["item"]] if "item" in col and col["item"] < len(cels) else None
         for c in cands:
             c = c.upper().split(".")[0] if re.fullmatch(r"\d+\.0", c) else c.upper()
-            if not cod_rx.match(c) or c in vistos:
+            if not cod_rx.match(c) or (item, c) in vistos or (not item and c in vistos):
                 continue
-            vistos.add(c)
+            vistos.add((item, c) if item else c)
             ne = nz.numero(cels[col["ne"]]) if "ne" in col and col["ne"] < len(cels) else None
             q = nz.numero(cels[col["q"]]) if "q" in col and col["q"] < len(cels) else None
-            out.append(dict(codigo=c, ne=ne, quantidade=q))
+            out.append(dict(codigo=c, ne=ne, quantidade=q, item=item or None))
     return out

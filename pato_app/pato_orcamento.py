@@ -406,6 +406,7 @@ class Calculo:
     def calcular(self) -> dict:
         out, tot = [], {"SD": 0.0, "CD": 0.0}
         secoes: dict[str, dict] = {}
+        nomes = {x["item"]: (x.get("descricao") or "").strip() for x in self.d.get("itens", []) if x["tipo"] == "titulo"}
         for x in self.d.get("itens", []):
             if x["tipo"] == "titulo":
                 out.append(dict(x))
@@ -419,7 +420,7 @@ class Calculo:
                 r[f"parcial_{reg}"] = trunc(q * p, 2) if p is not None else None
                 tot[reg] += r[f"parcial_{reg}"] or 0.0
             sec = secao_do_item(x["item"])
-            s = secoes.setdefault(sec, dict(secao=sec, nome=SECOES.get(sec, sec), SD=0.0, CD=0.0, n=0))
+            s = secoes.setdefault(sec, dict(secao=sec, nome=SECOES.get(sec) or nomes.get(sec) or sec, SD=0.0, CD=0.0, n=0))
             s["SD"] += r["parcial_SD"] or 0.0
             s["CD"] += r["parcial_CD"] or 0.0
             s["n"] += 1

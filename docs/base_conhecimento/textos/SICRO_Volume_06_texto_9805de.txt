@@ -1,0 +1,1453 @@
+  DNIT
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+                      VOLUME 06
+        FATOR DE INFLUÊNCIA DE CHUVAS
+
+
+
+
+                          2017
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+Exmo. Sr. Maurício Quintella Malta Lessa
+
+DIRETOR GERAL DO DNIT
+Sr. Valter Casimiro Silveira
+
+DIRETOR EXECUTIVO DO DNIT
+Eng.º Halpher Luiggi Mônico Rosa
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Eng.º Luiz Heleno Albuquerque Filho
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+             VOLUME 06
+    FATOR DE INFLUÊNCIA DE CHUVAS
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 06 - Fator de Influência de Chuvas
+
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ EQUIPE TÉCNICA:
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012)
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015)
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ FISCALIZAÇÃO E SUPERVISÃO DO DNIT:
+ MSc. Eng.º Luiz Heleno Albuquerque Filho
+ Eng.º Paulo Moreira Neto
+ Eng.º Caio Saravi Cardoso
+
+B. PRIMEIRAS VERSÕES
+
+ EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+ Elaboração: CENTRAN
+ Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+ SUPERVISÃO DO DNIT:
+ Eng.º Silvio Mourão (Brasília)
+ Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+
+              Brasil, Departamento Nacional de Infraestrutura de Transportes.
+              Diretoria Executiva. Coordenação-Geral de Custos de Infraestrutura
+           de Transportes.
+              Manual de Custos de Infraestrutura de Transportes. 1ª Edição -
+           Brasília, 2017.
+
+           12v. em 74.
+
+
+           Volume 06: Fator de Influência de Chuvas
+
+           1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias -
+           Construções - Estimativa e Custo - Manuais. 3. Aquavias - Construções -
+           Estimativa e Custo - Manuais. I. Título.
+
+
+
+
+                                                 ii
+            Manual de Custos de Infraestrutura de Transportes
+               Volume 06 - Fator de Influência de Chuvas
+
+
+    MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA GERAL
+                    DIRETORIA EXECUTIVA
+   COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                       TRANSPORTES
+
+
+
+
+                 MANUAL DE CUSTOS DE
+            INFRAESTRUTURA DE TRANSPORTES
+
+                            VOLUME 06
+             FATOR DE INFLUÊNCIA DE CHUVAS
+
+                       1ª Edição - Versão 3.0
+
+
+
+
+                              BRASÍLIA
+                                2017
+
+                                   iii
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 06 - Fator de Influência de Chuvas
+
+
+        MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+    DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                          DIRETORIA GERAL
+                        DIRETORIA EXECUTIVA
+       COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                           TRANSPORTES
+
+
+
+
+Setor de Autarquias Norte, Bloco A, Edifício Núcleo dos Transportes, Edifício Sede do
+DNIT, Mezanino, Sala M.4.10
+Brasília - DF
+CEP: 70.040-902
+Tel.: (061) 3315-8351
+Fax: (061) 3315-4721
+E-mail: cgcit@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+Primeira edição: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES, 2017
+
+VOLUME 06: Fator de Influência de Chuvas
+
+
+
+
+Revisão:
+Fundação Getulio Vargas - FGV
+Contrato 327/2012-00 e 462/2015 (DNIT)
+Aprovado pela Diretoria Colegiada em 25/04/2017
+Processo Administrativo nº 50600.096538/2013-43
+
+Impresso no Brasil / Printed in Brazil
+
+Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que citada a
+fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda comercial.
+
+
+                                                 iv
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+                                  APRESENTAÇÃO
+
+O Manual de Custos de Infraestrutura de Transportes constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto DNER e do DNIT na formação
+de preços referenciais de obras públicas.
+
+Em consonância à história destes importantes órgãos, o Manual de Custos de
+Infraestrutura de Transportes abrange o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes, particularmente no que
+se refere às composições de custos de serviços ferroviários e hidroviários.
+
+Outras inovações relevantes no presente Manual de Custos de Infraestrutura de
+Transportes referem-se à metodologia para definição de custos de referência de
+canteiros de obras e de administração local e à diferenciação das taxas referenciais
+de bonificação e despesas indiretas em função da natureza e do porte das obras.
+Também merece registro a proposição de novas metodologias para o cálculo dos
+custos horários dos equipamentos e da mão de obra e para definição dos custos de
+referência para aquisição e transporte de produtos asfálticos.
+
+O Manual de Custos de Infraestrutura de Transportes encontra-se organizado nos
+seguintes volumes, conteúdos e tomos:
+
+Volume 01 - Metodologia e Conceitos
+
+Volume 02 - Pesquisa de Preços
+
+Volume 03 - Equipamentos
+
+Volume 04 - Mão de Obra
+           Tomo 01 - Parâmetros do CAGED
+           Tomo 02 - Encargos Sociais
+           Tomo 03 - Encargos Complementares
+           Tomo 04 - Consolidação dos Custos de Mão de Obra
+
+Volume 05 - Materiais
+
+Volume 06 - Fator de Influência de Chuvas
+           Tomo 01 - Índices Pluviométricos - Região Norte
+           Tomo 02 - Índices Pluviométricos - Região Nordeste
+           Tomo 03 - Índices Pluviométricos - Região Centro-Oeste
+           Tomo 04 - Índices Pluviométricos - Região Sudeste
+           Tomo 05 - Índices Pluviométricos - Região Sul
+
+
+
+
+                                            v
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+Volume 07 - Canteiros de Obras
+           Tomo 01 - Módulos Básicos e Projetos Tipo (A3)
+
+Volume 08 - Administração Local
+
+Volume 09 - Mobilização e Desmobilização
+
+Volume 10 - Manuais Técnicos
+   Conteúdo 01 - Terraplenagem
+   Conteúdo 02 - Pavimentação / Usinagem
+   Conteúdo 03 - Sinalização Rodoviária
+   Conteúdo 04 - Concretos, Agregados, Armações, Fôrmas e Escoramentos
+   Conteúdo 05 - Drenagem e Obras de Arte Correntes
+   Conteúdo 06 - Fundações e Contenções
+   Conteúdo 07 - Obras de Arte Especiais
+   Conteúdo 08 - Manutenção e Conservação Rodoviária
+   Conteúdo 09 - Ferrovias
+   Conteúdo 10 - Hidrovias
+   Conteúdo 11 - Transportes
+   Conteúdo 12 - Obras Complementares e Proteção Ambiental
+
+Volume 11 - Composições de Custos
+
+Volume 12 - Produções de Equipes Mecânicas
+
+
+
+
+                                            vi
+                        Manual de Custos de Infraestrutura de Transportes
+                           Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+                                          RESUMO
+
+O Manual de Custos de Infraestrutura de Transportes apresenta as metodologias, as premissas e as
+memórias adotadas para o cálculo dos custos de referência dos serviços necessários à execução de
+obras de infraestrutura de transportes e suas estruturas auxiliares.
+
+
+
+
+                                               vii
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+                                            ABSTRACT
+
+The Transport Infrastructure Costs Manual presents the methodologies, assumptions and calculation
+sheets adopted for defining the required service referential costs to implement transport infrastructure
+ventures and its auxiliary facilities.
+
+
+
+
+                                                   ix
+                                Manual de Custos de Infraestrutura de Transportes
+                                   Volume 06 - Fator de Influência de Chuvas
+
+
+                                               LISTA DE TABELAS
+
+Tabela 01 - Fator da natureza da atividade ................................................................. 8
+Tabela 02 - Fatores de permeabilidade dos solos....................................................... 9
+Tabela 03 - Fatores de escoamento superficial......................................................... 10
+Tabela 04 - Cálculo dos dias paralisados em função do registro do posto
+            pluviométrico .......................................................................................... 12
+Tabela 05 - Relação e descrição dos postos pluviométricos da Região Norte .......... 13
+Tabela 06 - Relação e descrição dos postos pluviométricos da Região Nordeste .... 14
+Tabela 07 - Relação e descrição dos postos pluviométricos da Região Centro-Oeste
+            ............................................................................................................... 15
+Tabela 08 - Relação e descrição dos postos pluviométricos da Região Sudeste ..... 16
+Tabela 09 - Relação e descrição dos postos pluviométricos da Região Sudeste ..... 16
+Tabela 10 - Fatores de intensidade de chuvas médios por unidade da federação ... 17
+Tabela 11 - Resumo dos dias paralisados para a Região Norte ............................... 21
+Tabela 12 - Resumo dos dias paralisados para a Região Nordeste ......................... 22
+Tabela 13 - Resumo dos dias paralisados para a Região Centro-Oeste .................. 23
+Tabela 14 - Resumo dos dias paralisados para a Região Sudeste ........................... 23
+Tabela 15 - Resumo dos dias paralisados para a Região Sul ................................... 24
+Tabela 16 - Relação dos postos pluviométricos para a Região Norte ....................... 28
+Tabela 17 - Relação dos postos pluviométricos para a Região Nordeste ................. 29
+Tabela 18 - Relação dos postos pluviométricos para a Região Centro-Oeste .......... 30
+Tabela 19 - Relação dos postos pluviométricos para a Região Sudeste .................. 31
+Tabela 20 - Relação dos postos pluviométricos para a Região Sul .......................... 31
+
+
+
+
+                                                              xi
+                          Manual de Custos de Infraestrutura de Transportes
+                             Volume 06 - Fator de Influência de Chuvas
+
+
+                                                SUMÁRIO
+
+1.     INTRODUÇÃO ............................................................................................... 3
+2.     METODOLOGIA............................................................................................. 7
+2.1.   Fator da Natureza da Atividade (fa) ............................................................. 7
+2.2.   Fator de Permeabilidade dos Solos (fp) ..................................................... 9
+       Fator de Escoamento Superficial (fe) ............................................................. 9
+       Fator de Intensidade de Chuvas (nd) ........................................................... 10
+3.     DIAS PARALISADOS EM FUNÇÃO DAS CHUVAS ................................... 21
+4.     POSTOS PLUVIOMÉTRICOS ..................................................................... 27
+
+
+
+
+                                                     xiii
+Manual de Custos de Infraestrutura de Transportes
+   Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+                                               1. INTRODUÇÃO
+
+
+
+
+                       1
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+1. INTRODUÇÃO
+
+As obras de engenharia de infraestrutura executadas ao ar livre são normalmente
+influenciadas pelas chuvas, em diversos graus de intensidade, e seus efeitos
+encontram-se fortemente associados à natureza e às propriedades do solo e do
+terreno, tais como, a textura, a granulometria, a permeabilidade, a declividade, a
+cobertura vegetal, entre outros.
+
+Com intuito de prever a influência da pluviometria e de outras condições climáticas
+desfavoráveis sobre a eficiência dos equipamentos, a produção das equipes
+mecânicas e a mão de obra, o SICRO propõe a utilização de um Fator de Influência
+de Chuvas - FIC a ser aplicado diretamente sobre o custo unitário de execução (mão
+de obra e equipamentos) de alguns serviços.
+
+As influências favoráveis da temperatura, dos ventos e da umidade relativa do ar no
+processo de secagem e evaporação dos materiais não serão consideradas na
+definição do Fator de Influência de Chuvas, em função desses efeitos se mostrarem
+notadamente de pouca significância e materialidade.
+
+
+
+
+                                            3
+Manual de Custos de Infraestrutura de Transportes
+   Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+                                             2. METODOLOGIA
+
+
+
+
+                       5
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+2. METODOLOGIA
+
+O Fator de Influência de Chuvas é definido em função do peso dos diversos fatores
+que interferem na execução das obras, de forma atenuante ou agravante, e será
+aplicado diretamente às composições de custos de alguns serviços.
+
+A metodologia desenvolvida pressupõe que o Fator de Influência de Chuvas é
+calculado em função de diferentes fatores, por unidade da federação, em consonância
+à expressão apresentada abaixo:
+
+                                FIC = fa × fp × fe × nd
+
+onde:
+
+fa representa o fator da natureza da atividade;
+fp representa o fator de permeabilidade do solo;
+fe representa o fator de escoamento superficial;
+nd representa o fator de intensidade das chuvas, que expressa o percentual médio de
+dias efetivamente paralisados em função das chuvas.
+
+2.1. Fator da Natureza da Atividade (fa)
+
+O Fator da Natureza da Atividade define o grau com que algumas atividades sofrem
+a influência da chuva na execução dos serviços.
+
+A Tabela 01 consiste na relação dos serviços considerados como sujeitos à influência
+significativa das chuvas, sendo também estimados fatores da natureza da atividade
+para cada um dos serviços descritos.
+
+
+
+
+                                            7
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 06 - Fator de Influência de Chuvas
+
+
+                        Tabela 01 - Fator da natureza da atividade
+
+                                                     Fator da Natureza da Atividade
+       Descrição dos Serviços
+                                           fa = 0,25       fa = 0,5    fa = 1,0       fa = 1,5
+Desmatamento e destocamento                      x
+Escavação, carga e transporte de
+                                                                                         x
+materiais de 1ª categoria
+Escavação, carga e transporte de
+                                                              x
+materiais de 2ª categoria
+Escavação, carga e transporte de
+                                                 x
+materiais de 3ª categoria
+Escavação, carga e transporte de solos
+                                                                                         x
+moles ou saturados
+Transporte em caminhos de terra                                                          x
+Compactação de aterros em solo                                                           x
+Compactação de material de bota-fora                                                     x
+Manutenção de caminhos de serviço                                                        x
+Reaterros                                                                                x
+Regularização de erosão                                                                  x
+Reforço do subleito                                                                      x
+Regularização do subleito                                                                x
+Sub-base de solo estabilizado                                                            x
+Base de solo estabilizado                                                                x
+Base de brita graduada                                        x
+Base de macadame hidráulico                                   x
+Base de solo cimento                                                                     x
+Base de solo melhorado com cimento                                                       x
+Base de solo-brita                                                                       x
+Sub-base de solo melhorado com
+                                                                                         x
+cimento
+Sub-base de concreto rolado                      x
+Sub-base de concreto de cimento
+                                                 x
+Portland
+Pavimento de concreto                                         x
+Misturas asfálticas                              x
+Micro revestimento                               x
+Tratamento superficial                           x
+Macadame betuminoso                              x
+Reciclagem de pavimentos                                                  x
+Escavação de valas                                                                       x
+Tapa-buraco, remendos                                                     x
+Regularização de taludes                                                                 x
+
+
+
+
+                                             8
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 06 - Fator de Influência de Chuvas
+
+
+Os serviços classificados no SICRO com fatores da natureza da atividade iguais a
+0,25, 0,50, 1,00 e 1,50 sofrem influência da chuva durante a sua execução. Os
+serviços com fator igual a 1,50 sofrem maior influência das chuvas regulares em
+relação à condição normal, enquanto aqueles classificados com fator 0,25 sofrem
+menor influência das chuvas.
+
+A classificação da natureza da atividade não tem por objetivo permitir a extrapolação
+das restrições de execução constantes das especificações técnicas dos serviços, ou
+seja, o fato de um serviço ser classificado com fator da natureza da atividade diferente
+de zero não faculta ao executor a sua realização em condições de chuva, caso as
+especificações de serviço não a permitam.
+
+2.2. Fator de Permeabilidade dos Solos (fp)
+
+A permeabilidade consiste na propriedade que representa uma maior ou menor
+dificuldade com que a percolação da água ocorre através dos poros dos solos. Nos
+materiais granulares não coesivos, como as areias, por exemplo, há uma grande
+porosidade o que facilita o fluxo de água através dos solos, enquanto que nos
+materiais finos e coesivos, como as argilas, ocorre exatamente o inverso.
+
+Consoante este conceito, a permeabilidade será considerada máxima em solos
+arenosos e mínima em solos argilosos. Dessa forma, a influência higroscópica do solo
+será considerada máxima em solos argilosos e mínima em solos arenosos, conforme
+fatores de permeabilidade apresentados na Tabela 02.
+
+                     Tabela 02 - Fatores de permeabilidade dos solos
+
+                              Classificação          Fator de
+                               dos Solos          Permeabilidade
+
+                            Areia                      0,50
+
+                            Areia Siltosa              0,65
+
+                            Areia Argilosa             0,75
+
+                            Argila Arenosa             0,75
+
+                            Argila Siltosa             0,85
+
+                            Argila                     1,00
+
+
+Na inexistência de informações a respeito da composição granulométrica do subleito
+ou dos materiais constituintes dos aterros e das camadas de pavimentação, deverá
+ser adotado um fator de permeabilidade igual a 0,75, que representa a ocorrência de
+solos argilo-arenosos ou areno-argilosos, reconhecidamente de grande distribuição
+espacial em todo o território nacional.
+
+        Fator de Escoamento Superficial (fe)
+
+O escoamento superficial pode ser definido como o movimento das águas na
+superfície terrestre, em virtude da intensidade e do período das precipitações terem
+ultrapassado a taxa de infiltração dos solos.
+
+
+                                              9
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+A presença da cobertura vegetal em campos, cerrados ou em áreas gramadas,
+contribui para diminuir o escoamento superficial. Na maioria das obras de
+infraestrutura de transportes, o terreno encontra-se livre da presença vegetal. Além
+disso, nas atividades relacionadas ao desmatamento, capina e roçada, a ocorrência
+de chuvas provoca pouca influência na produção dos serviços.
+
+A parcela de infiltração dos solos é inversamente proporcional à declividade do
+terreno, resultando no fato de que as regiões mais baixas tendem a sofrer maior
+influência das precipitações.
+
+A declividade, no sentido longitudinal, tem um efeito neutro sobre o fator de
+escoamento superficial, pois facilita a movimentação da água nas partes elevadas e
+dificulta nas partes inferiores do terreno.
+
+A influência do escoamento superficial mostra-se proporcionalmente menor que a
+causada pela natureza da atividade e pela permeabilidade dos solos.
+
+A Tabela 03 apresenta valores sugeridos para o fator de escoamento superficial
+quando analisada isoladamente a influência da declividade transversal do terreno.
+
+                      Tabela 03 - Fatores de escoamento superficial
+
+                              Declividade          Fator de
+                              Transversal        Escoamento
+                                  (%)             Superficial
+
+                                 D≤1                 1,00
+
+                                1<D<5                0,90
+
+                                 D≥5                 0,80
+
+
+Considerando que as declividades transversais e longitudinais ocorrem de forma
+simultânea e que a declividade transversal média das obras de infraestrutura de
+transportes situa-se normalmente na faixa entre 1% e 5%, sugere-se, na ausência de
+informações mais detalhadas de projeto, a adoção de um fator de escoamento
+superficial de 0,95.
+
+        Fator de Intensidade de Chuvas (nd)
+
+Da precipitação inicial que atinge o solo, parte da água sofre infiltração, parte fica
+retida em depressões ou aderente às partículas sólidas como película, posteriormente
+sujeita à evaporação, e parte se escoa pela superfície.
+
+Durante a ocorrência das chuvas, pode ocorrer a paralisação dos serviços em função
+de sua intensidade. Na maioria das obras descobertas, tão logo as precipitações se
+encerram, as atividades podem ser retomadas.
+
+
+
+
+                                            10
+                      Manual de Custos de Infraestrutura de Transportes
+                         Volume 06 - Fator de Influência de Chuvas
+
+
+Entretanto, chuvas de maior intensidade tendem a influenciar mais a dinâmica dos
+serviços após a sua ocorrência em função particularmente da ação da água absorvida
+pelo solo. Com intuito de minimizar os efeitos desta parcela absorvida pelo solo,
+recomendam-se as seguintes medidas para aumento do escoamento superficial:
+
+       Adoção de inclinações adequadas dos subleitos ou plataformas de trabalho e
+        de valas de drenagem. Inclinações de 1% a 2% podem garantir que apenas
+        uma parcela mínima da chuva seja absorvida;
+       Adoção de proteção das pistas de trabalho e dos depósitos de materiais a
+        serem utilizados com coberturas de lona ou plástico.
+
+O Fator de Intensidade de Chuvas é definido em função do valor médio dos dias
+efetivamente paralisados e calculado a partir das intensidades diárias das chuvas,
+consideradas apenas durante as oito horas do horário normal de trabalho,
+descontando-se os domingos.
+
+Em função da intensidade diária das chuvas registradas nos postos da Agência
+Nacional de Águas - ANA pode-se calcular o fator de intensidade relativo ao percentual
+médio de dias paralisados em função das chuvas para todas as unidades da
+federação, conforme as expressões apresentadas abaixo:
+
+                                      xi ≤ 5 → nd = 0
+
+                                     xi ≥ 20 → nd = 1
+
+                               nd = Σ ( xi ÷ 15 - 1 ÷ 3) ÷ n
+
+onde:
+
+nd é a média da soma das parcelas dos dias efetivamente paralisados;
+xi representa a intensidade da chuva em 8 horas do dia (chuva diária / 3), em mm;
+n é o número de dias no período considerado.
+
+A Tabela 04 apresenta, de forma ilustrativa, a memória de cálculo do fator de
+intensidade de chuvas (nd) em função do registro de um posto pluviométrico
+localizado na Fazenda Itaubá, no município de Tabaporã, estado do Mato Grosso,
+referente ao período de janeiro de 2013.
+
+
+
+
+                                            11
+                         Manual de Custos de Infraestrutura de Transportes
+                            Volume 06 - Fator de Influência de Chuvas
+
+
+   Tabela 04 - Cálculo dos dias paralisados em função do registro do posto pluviométrico
+
+                   Dia          Intensidade da Chuva (mm/dia)     Dias Paralisados
+
+                    1                         0
+                    2                        0,3
+                    3                         0
+                    4                        0,9
+                    5                        30,6                     0,34667
+                    6                         2                      Domingo
+                    7                         0
+                    8                        7,9
+                    9                        12,9
+                    10                       9,7
+                    11                       54,2                     0,87111
+                    12                       12,1
+                    13                       30                      Domingo
+                    14                       16,1                     0,02444
+                    15                       9,9
+                    16                       15,1                     0,00222
+                    17                        0
+                    18                        0
+                    19                       2,8
+                    20                       12,6                    Domingo
+                    21                        5
+                    22                        0
+                    23                       8,1
+                    24                       7,7
+                    25                        0
+                    26                       11,1
+                    27                        0                      Domingo
+                    28                       26,5                     0,25556
+                    29                        0
+                    30                       35,2                     0,44889
+                    31                       8,3
+                                                         Soma         1,94889
+                           Fator de Intensidade das Chuvas (nd)       0,06287
+
+
+As Tabelas 05 a 09 apresentam a relação de todos os postos pluviométricos cujos
+registros históricos foram utilizados no cálculo dos fatores de intensidade de chuvas.
+Os referidos postos foram organizados por região, por unidade da federação, por
+município, pelas entidades responsáveis pela operação e pela média dos fatores.
+
+
+                                                  12
+                                         Manual de Custos de Infraestrutura de Transportes
+                                            Volume 06 - Fator de Influência de Chuvas
+
+                         Tabela 05 - Relação e descrição dos postos pluviométricos da Região Norte
+
+                             Posto                      Nome do Posto                                           Entidade
+Região              UF                                                                        Localização                   FIC
+                         Pluviométrico                  Pluviométrico                                          Operadora
+                           00967000         Rio Branco                             Rio Branco                   INMET      0,03744
+          Acre
+                           01067003         Vila Capixaba                          Capixaba                     CPRM       0,02546
+                           08050000         Carmo                                  Macapá                       CPRM       0,03308
+          Amapá
+                           08251001         Cunani                                 Calçoene                     CPRM       0,08774
+                           00765000         Cachoeira                              Lábrea                      COHIDRO     0,04543
+                           00759000         Vila do Apuí                           Novo Aripuanã               COHIDRO     0,05509
+                           00470002         Estirão do Repouso                     Atalaia do Norte            COHIDRO     0,05583
+          Amazonas         08069004         Pirarara Poço                          São Gabriel da Cachoeira     CPRM       0,07611
+                           00363000         Barro Alto - São Raimundo do Ipuxuna   Coari                       COHIDRO     0,04304
+                           00259000         Cachoeira Morena                       Presidente Figueiredo        CPRM       0,03572
+                           00267001         Espírito Santo                         Fonte Boa                   COHIDRO     0,06215
+  Norte
+
+
+
+
+                           00247000         Badajós                                São Domingos do Capim        CPRM       0,04139
+                           00555002         Km 1130 da BR-163                      Itaituba                      UFC       0,04395
+          Pará             00152005         Almeirim                               Almeirim                     CPRM       0,04223
+                           00047003         Curuçá                                 Curuçá                       CPRM       0,05177
+                           00352005         Brasil Novo                            Altamira                      UFC       0,04980
+                           00862000         Tabajara                               Machadinho d'Oeste           CPRM       0,04426
+          Rondônia         01160000         Marco Rondon                           Pimenta Bueno                CPRM       0,03849
+                           01063000         Escola Caramurú                        Ariquemes                    CPRM       0,05410
+                           08360002         Fazenda Passarão                       Boa Vista                    CPRM       0,02703
+          Roraima          08161001         Caracaraí                              Caracaraí                    CPRM       0,03490
+                           00061000         Santa Maria do Boiaçú                  Rorainópolis                 CPRM       0,04878
+                           01148000         Fazenda Lobeira                        São Valeiro da Natividade    CPRM       0,02720
+          Tocantins
+                           00848000         Colinas do Tocantins                   Colinas do Tocantins         CPRM       0,03527
+
+
+
+
+                                                                   13
+                                                    Manual de Custos de Infraestrutura de Transportes
+                                                       Volume 06 - Fator de Influência de Chuvas
+
+                                   Tabela 06 - Relação e descrição dos postos pluviométricos da Região Nordeste
+                                        Posto                      Nome do Posto                                       Entidade
+Região                 UF                                                                             Localização                  FIC
+                                    Pluviométrico                  Pluviométrico                                      Operadora
+                                      00935012         Murici - Ponte                      Murici                      CPRM       0,01954
+             Alagoas
+                                      00937013         Delmiro Gouvêia                     Delmiro Gouvêia             CPRM       0,00658
+                                      01539022         Camacan (Vargito)                   Camacan                     CPRM       0,02017
+                                      01144005         Fazenda Macambira                   Cotegipe                    CPRM       0,01853
+                                      01139022         Gavião II                           Gavião                      CPRM       0,00685
+             Bahia                    00940024         Juazeiro                            Juazeiro                    CPRM       0,00766
+                                      01241001         Fazenda Iguaçú                      Itaeté                      CPRM       0,01228
+                                      01137043         Usina Altamira                      Conde                       CPRM       0,01671
+                                      01739021         Cachoeira Grande                    Prado                       CPRM       0,01819
+                                      00339000         Amontada                            Amontada                    CPRM       0,01335
+                                      00438011         Baú                                 Pacatuba                    CPRM       0,01983
+             Ceará
+                                      00638014         Icó                                 Icó                         CPRM       0,01410
+  Nordeste
+
+
+
+
+                                      00440005         Croatá                              Croatá                      CPRM       0,00802
+                                      00644003         Colinas                             Colinas                     CPRM       0,02309
+             Maranhão
+                                      00444001         Coroatá                             Coroatá                     CPRM       0,03187
+                                      00638032         Antenor Navarro                     São João do Rio do Peixe    CPRM       0,01889
+             Paraíba
+                                      00735009         Mulungu                             Mulungu                     CPRM       0,01389
+                                      00835138         Pirapama                            Cabo de Santo Agostinho     CPRM       0,03228
+             Pernambuco               00838004         Belém de São Francisco              Belém de São Francisco      CPRM       0,00845
+                                      00840010         Fazenda São Bento                   Santa Maria da Boa Vista    CPRM       0,00868
+                                      00844008         Cristino Castro II                  Cristino Castro             CPRM       0,01496
+             Piauí
+                                      00541002         Fazenda Boa Esperança               Castelo do Piauí            CPRM       0,02096
+                                      00537035         Fazenda Angicos                     Mossoró                     CPRM       0,00927
+             Rio Grande do Norte
+                                      00637010         Açude Lagoinha                      Jardim de Piranhas          CPRM       0,01358
+                                      01037049         Santa Rosa de Lima (Camboatá)       Santa Rosa de Lima          CPRM       0,01807
+             Sergipe
+                                      01137017         Estância                            Estância                    CPRM       0,02437
+
+
+                                                                            14
+                                                          Manual de Custos de Infraestrutura de Transportes
+                                                             Volume 06 - Fator de Influência de Chuvas
+
+                                      Tabela 07 - Relação e descrição dos postos pluviométricos da Região Centro-Oeste
+                                              Posto                      Nome do Posto                                        Entidade
+Região                     UF                                                                               Localização                   FIC
+                                          Pluviométrico                  Pluviométrico                                       Operadora
+                                            01547013         Taquara                             Brasília                     CAESB      0,01966
+                 Distrito Federal
+                                            01547004         Brasília                            Brasília                     INMET      0,02543
+                                            01750001         Fazenda Nova do Turvo               Paraúna                      CPRM       0,02520
+                 Goiás
+                                            01549001         Goianésia                           Goianésia                    CPRM       0,02632
+                                            01156000         Fazenda Itauba                      Tabaporã                     CPRM       0,04125
+  Centro-Oeste
+
+
+
+
+                                            01351000         Trecho Médio                        Cocalinho                    CPRM       0,03102
+                 Mato Grosso
+                                            01655001         Acima do Córrego Grande             Santo Antônio do Leverger    CPRM       0,03385
+
+                                            01456008         Rosário Oeste                       Rosário Oeste               FURNAS      0,02655
+                                            01951003         Fazenda Pindorama                   Paranaíba                    CPRM       0,03005
+                                            01956005         Bodoquena                           Miranda                      CPRM       0,02235
+                 Mato Grosso do Sul
+                                            02254000         Caarapó                             Caarapó                      CPRM       0,02660
+                                            02055002         Palmeiras                           Dois Irmãos Buriti           CPRM       0,02829
+
+
+
+
+                                                                                 15
+                                                Manual de Custos de Infraestrutura de Transportes
+                                                   Volume 06 - Fator de Influência de Chuvas
+
+                                Tabela 08 - Relação e descrição dos postos pluviométricos da Região Sudeste
+                                    Posto                     Nome do Posto                                      Entidade
+Região               UF                                                                          Localização                  FIC
+                                Pluviométrico                  Pluviométrico                                    Operadora
+                                  01840000        Águia Branca                        Águia Branca                CPRM       0,02295
+            Espírito Santo
+                                  02041018        Usina Fortaleza                     Muniz Freire                CPRM       0,02655
+                                  02044042        Carmo da Mata (Copasa)              Carmo da Mata               CPRM       0,02600
+                                  01844018        Ponte do Bicudo                     Corinto                     CPRM       0,02110
+            Minas Gerais          01941018        Itanhomi                            Itanhomi                    CPRM       0,01878
+                                  01542016        Serra Branca                        Porteirinha                 CPRM       0,01557
+  Sudeste
+
+
+
+
+                                  01847010        Iraí de Minas                       Iraí de Minas               CPRM       0,02554
+                                  02142022        Aldeia                              Cantagalo                   CPRM       0,02159
+            Rio de Janeiro
+                                  02243004        Conservatória                       Valença                     CPRM       0,03002
+                                  02345067        Ponte Alta 1                        São Luís do Paraitinga      CPRM       0,03204
+                                  02147117        Pirassununga                        Pirassununga               DAEE-SP     0,02573
+            São Paulo
+                                  02151039        Lucélia                             Lucélia                    DAEE-SP     0,02442
+                                  02348088        Engenheiro Barcelar                 Itapeva                  CONTRUFAM     0,02405
+
+                                Tabela 09 - Relação e descrição dos postos pluviométricos da Região Sudeste
+                                    Posto                     Nome do Posto                                      Entidade
+Região               UF                                                                          Localização                  FIC
+                                Pluviométrico                  Pluviométrico                                    Operadora
+                                  02352002        Quinta do Sol                       Quinta do Sol            AGUASPARANÁ   0,03011
+            Paraná                02549000        São Bento                           Lapa                        COPEL      0,02775
+                                  02552001        Águas do Vere Convencional          São Jorge do Ivaí           COPEL      0,04590
+  Sul
+
+
+
+
+                                  03050002        Palmares do Sul                     Palmares do Sul             CPRM       0,01998
+            Rio Grande do Sul
+                                  02953030        Tupancireta                         Tupancireta                 CPRM       0,03925
+                                  02750001        Campo Belo do Sul                   Campo Belo do Sul           CPRM       0,02811
+            Santa Catarina
+                                  02651040        Ponte Serrada                       Ponte Serrada               CPRM       0,04152
+
+
+
+
+                                                                        16
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+A Tabela 10 apresenta os fatores médios de intensidade de chuvas calculados para
+as diferentes unidades da federação em função dos valores médios observados nos
+postos pluviométricos.
+
+      Tabela 10 - Fatores de intensidade de chuvas médios por unidade da federação
+
+                                            Unidade da
+                            Região                            FIC
+                                            Federação
+
+                                     Acre                   0,03145
+
+                                     Amapá                  0,06041
+
+                                     Amazonas               0,05334
+
+                      Norte          Pará                   0,04583
+
+                                     Rondônia               0,04562
+
+                                     Roraima                0,03690
+
+                                     Tocantins              0,03124
+
+                                     Distrito Federal       0,02255
+
+                                     Goiás                  0,02576
+                      Centro-Oeste
+                                     Mato Grosso            0,03317
+
+                                     Mato Grosso do Sul     0,02682
+
+                                     Paraná                 0,03459
+
+                      Sul            Rio Grande do Sul      0,02961
+
+                                     Santa Catarina         0,03482
+
+                                     Espírito Santo         0,02475
+
+                                     Minas Gerais           0,02140
+                      Sudeste
+                                     Rio de Janeiro         0,02580
+
+                                     São Paulo              0,02656
+
+                                     Alagoas                0,01306
+
+                                     Bahia                  0,01434
+
+                                     Ceará                  0,01382
+
+                                     Maranhão               0,02748
+
+                      Nordeste       Paraíba                0,01639
+
+                                     Pernambuco             0,01647
+
+                                     Piauí                  0,01796
+
+                                     Rio Grande do Norte    0,01143
+
+                                     Sergipe                0,02122
+
+
+
+
+                                              17
+ Manual de Custos de Infraestrutura de Transportes
+    Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+3. DIAS PARALISADOS EM FUNÇÃO DAS CHUVAS
+
+
+
+
+                       19
+                       Manual de Custos de Infraestrutura de Transportes
+                          Volume 06 - Fator de Influência de Chuvas
+
+
+3. DIAS PARALISADOS EM FUNÇÃO DAS CHUVAS
+
+Em função da metodologia proposta e do levantamento de dados realizado, pode-se
+calcular a média de dias paralisados por unidade da federação e por posto
+pluviométrico pesquisado, conforme resumo apresentado nas Tabelas 11 a 15.
+
+              Tabela 11 - Resumo dos dias paralisados para a Região Norte
+                                                                       Média da
+                            Unidade da       Estação      Média da
+           Região                                                     Unidade da
+                            Federação     Pluviométrica   Estação
+                                                                      Federação
+
+                                            00967000       0,03744
+                     Acre                                                  0,03145
+                                            01067003       0,02546
+
+                                            08050000       0,03308
+                     Amapá                                                 0,06041
+                                            08251001       0,08774
+
+                                            00765000       0,04543
+
+                                            00759000       0,05509
+
+                                            00470002       0,05583
+
+                     Amazonas               08069004       0,07611         0,05334
+
+                                            00363000       0,04304
+
+                                            00259000       0,03572
+
+                                            00267001       0,06215
+
+                                            00247000       0,04139
+             Norte
+
+
+
+
+                                            00555002       0,04395
+
+                     Pará                   00152005       0,04223         0,04583
+
+                                            00047003       0,05177
+
+                                            00352005       0,04980
+
+                                            00862000       0,04426
+
+                     Rondônia               01160000       0,03849         0,04562
+
+                                            01063000       0,05410
+
+                                            08360002       0,02703
+
+                     Roraima                08161001       0,03490         0,03690
+
+                                            00061000       0,04878
+
+                                            01148000       0,02720
+                     Tocantins                                             0,03124
+                                            00848000       0,03527
+
+
+
+
+                                             21
+              Manual de Custos de Infraestrutura de Transportes
+                 Volume 06 - Fator de Influência de Chuvas
+
+
+Tabela 12 - Resumo dos dias paralisados para a Região Nordeste
+
+                                                               Média da
+                     Unidade da       Estação      Média da
+Região                                                        Unidade da
+                     Federação     Pluviométrica   Estação
+                                                              Federação
+
+                                     00935012      0,01954
+             Alagoas                                           0,01306
+                                     00937013      0,00658
+
+                                     01539022      0,02017
+
+                                     01144005      0,01853
+
+             Bahia                   01139022      0,00685     0,01434
+
+                                     00940024      0,00766
+
+                                     01241001      0,01228
+
+                                     00339000      0,01335
+
+                                     00438011      0,01983
+             Ceará                                             0,01382
+                                     00638014      0,01410
+
+                                     00440005      0,00802
+  Nordeste
+
+
+
+
+                                     00644003       0,2309
+             Maranhão                                          0,02748
+                                     00444001      0,03187
+
+                                     00638032      0,01889
+             Paraíba                                           0,01639
+                                     00735009      0,01389
+
+                                     00835138      0,03228
+
+             Pernambuco              00838004      0,00845     0,01647
+
+                                     00840010      0,00868
+
+                                     00844008      0,01496
+             Piauí                                             0,01796
+                                     00541002      0,02096
+
+                                     00537035      0,00927
+             Rio Grande do Norte                               0,01143
+                                     00637010      0,01358
+
+                                     01037049      0,01807
+             Sergipe                                           0,02122
+                                     01137017      0,02437
+
+
+
+
+                                     22
+                  Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Fator de Influência de Chuvas
+
+
+Tabela 13 - Resumo dos dias paralisados para a Região Centro-Oeste
+
+                                                                   Média da
+                       Unidade da         Estação      Média da
+ Região                                                           Unidade da
+                       Federação       Pluviométrica   Estação
+                                                                  Federação
+
+                                         01547013      0,01966
+                  Distrito Federal                                    0,02255
+                                         01547004      0,02543
+
+                                         01750001      0,02520
+                  Goiás                                               0,02576
+                                         01549001      0,02632
+
+                                         01156000      0,04125
+   Centro-Oeste
+
+
+
+
+                                         01351000      0,03102
+                  Mato Grosso                                         0,03317
+                                         01655001      0,03385
+
+                                         01456008      0,02655
+
+                                         01951003      0,03005
+
+                                         01956005      0,02235
+                  Mato Grosso do Sul                                  0,02682
+                                         02254000      0,02660
+
+                                         02055002      0,02829
+
+
+
+  Tabela 14 - Resumo dos dias paralisados para a Região Sudeste
+
+                                                                   Média da
+                       Unidade da         Estação      Média da
+ Região                                                           Unidade da
+                       Federação       Pluviométrica   Estação
+                                                                  Federação
+
+                                         01840000      0,02295
+                      Espírito Santo                                  0,02475
+                                         02041018      0,02655
+
+                                         02044042      0,02600
+
+                                         01844018      0,02110
+
+                       Minas Gerais      01941018      0,01878        0,02140
+
+                                         01542016      0,01557
+   Sudeste
+
+
+
+
+                                         01847010      0,02554
+
+                                         02142022      0,02159
+                      Rio de Janeiro                                  0,02580
+                                         02243004      0,03002
+
+                                         02345067      0,03204
+
+                                         02147117      0,02573
+                          São Paulo                                   0,02656
+                                         02151039      0,02442
+
+                                         02348088      0,02405
+
+
+
+
+                                        23
+              Manual de Custos de Infraestrutura de Transportes
+                 Volume 06 - Fator de Influência de Chuvas
+
+
+        Tabela 15 - Resumo dos dias paralisados para a Região Sul
+
+                                                                   Média da
+                Unidade da           Estação       Média da
+Região                                                            Unidade da
+                Federação         Pluviométrica    Estação
+                                                                  Federação
+
+                                    02352002       0,03011
+
+                   Paraná           02549000       0,02775         0,03459
+
+                                    02552001       0,04590
+  Sul
+
+
+
+
+                                    03050002       0,01998
+                 Rio Grande
+                                                                   0,02961
+                   do Sul
+                                    02953030       0,03925
+
+                                    02750001       0,02811
+               Santa Catarina                                      0,03482
+                                    02651040       0,04152
+
+
+
+
+                                    24
+Manual de Custos de Infraestrutura de Transportes
+   Volume 06 - Fator de Influência de Chuvas
+
+
+
+
+                           4. POSTOS PLUVIOMÉTRICOS
+
+
+
+
+                      25
+                     Manual de Custos de Infraestrutura de Transportes
+                        Volume 06 - Fator de Influência de Chuvas
+
+
+
+4. POSTOS PLUVIOMÉTRICOS
+
+As Tabelas 16 a 20 apresentam os dados consolidados dos postos pluviométricos
+utilizados para o cálculo dos fatores de influência de chuvas organizados por região.
+As referidas tabelas contêm a identificação dos postos, sua localização, suas
+coordenadas geográficas, as entidades responsáveis por sua operação e os
+respectivos fatores de influência de chuva médios por posto e unidade da federação.
+
+
+
+
+                                           27
+                                                   Manual de Custos de Infraestrutura de Transportes
+                                                      Volume 06 - Fator de Influência de Chuvas
+
+
+                                       Tabela 16 - Relação dos postos pluviométricos para a Região Norte
+
+          Unidade da              Média da   Média                                                                                          Entidade      Entidade
+Região                 Estação                             Nome da Estação           Latitude     Longitude               Município
+          Federação               Estação     UF                                                                                           Responsável   Operadora
+
+                       00967000   0,03744              Rio Branco                   -9°58'33"S    -67°48'0"    Rio Branco                    INMET        INMET
+          Acre                               0,03145
+                       01067003   0,02546              Vila Capixaba                -10°34'33"S   -67°40'36"   Capixaba                       ANA         CPRM
+                       08050000   0,03308              Carmo                         0°30'29"     -50°44'54"   Macapá                         ANA         CPRM
+          Amapá                              0,06041
+                       08251001   0,08774              Cunani                        2°41'54"     -51°21'41"   Calçoene                       ANA         CPRM
+                       00765000   0,04543              Cachoeira                     -7°42'9"      -66°3'5"    Lábrea                         ANA        COHIDRO
+                       00759000   0,05509              Vila do Apuí                  -7°12'3"     -59°53'32"   Novo Aripuanã                  ANA        COHIDRO
+                       00470002   0,05583              Estirão do Repouso            -4°23'0"     -70°58'0"    Atalaia do Norte               ANA        COHIDRO
+                       08069004   0,07611              Pirarara Poço                  0°8'34"     -69°12'48"   São Gabriel da Cachoeira       ANA         CPRM
+          Amazonas                           0,05334
+                                                       Barro Alto -
+                       00363000   0,04304                                            -3°52'30"    -63°47'9"    Coari                          ANA        COHIDRO
+                                                       São Raimundo do Ipixuna
+                       00259000   0,03572              Cachoeira Morena              -2°6'52"     -59°20'7"    Presidente Figueiredo          ANA         CPRM
+                       00267001   0,06215              Espírito Santo                -2°45'0"     -67°34'0"    Fonte Boa                      ANA        COHIDRO
+  Norte
+
+
+
+
+                       00247000   0,04139              Badajós                       -2°30'46     -47°46'5"    São Domingos do Capim          ANA         CPRM
+                       00555002   0,04395              KM 1130 BR-163                -6°40'17"    -55°29'45"   Itaituba                       ANA          UFC
+          Pará         00152005   0,04223    0,04583 Almeirim                        -1°31'35     -52°34'42    Almeirim                       ANA         CPRM
+                       00047003   0,05177              Curuçá                        -0°44'15"    -47°51'13"   Curuçá                         ANA         CPRM
+                       00352005   0,04980              Brasil Novo                   -3°18'28"    -52°32'31"   Altamira                       ANA          UFC
+                       00862000   0,04426              Tabajara                      -8°55'56"    -62°3'20"    Machadinho d'Oeste             ANA         CPRM
+          Rondônia     01160000   0,03849    0,04562 Marco Rondon                    -12°0'55"    -60°51'18"   Pimenta Bueno                  ANA         CPRM
+                       01063000   0,05410              Escola Caramurú              -10°30'18"    -63°38'46"   Ariquemes                      ANA         CPRM
+                       08360002   0,02703              Fazenda Passarão              3°12'28"     -60°34'16"   Boa Vista                      ANA         CPRM
+          Roraima      08161001   0,03490    0,03690 Caracaraí                       1°49'17"     -61°7'25"    Caracaraí                      ANA         CPRM
+                       00061000   0,04878              Santa Maria do Boiaçú         -0°30'24"    -61°47'9"    Rorainópolis                   ANA         CPRM
+                       01148000   0,02720              Fazenda Lobeira              -11°31'53"    -48°17'41"   São Valeiro da Natividade      ANA         CPRM
+          Tocantins                          0,03124
+                       00848000   0,03527              Colinas do Tocantins          -8°3'10"     -48°28'54"   Colinas do Tocantins           ANA         CPRM
+
+
+                                                                               28
+                                                          Manual de Custos de Infraestrutura de Transportes
+                                                             Volume 06 - Fator de Influência de Chuvas
+
+
+                                           Tabela 17 - Relação dos postos pluviométricos para a Região Nordeste
+               Unidade da              Média da   Média                                                                                     Entidade      Entidade
+Região                      Estação                                   Nome da Estação        Latitude    Longitude          Município
+               Federação               Estação     UF                                                                                      Responsável   Operadora
+                            00935012   0,01954              Murici - Ponte                   -9°18'49"   -35°56'59"   Murici                  ANA         CPRM
+             Alagoas                              0,01306
+                            00937013   0,00658              Delmiro Gouvéia                  -9°23'34"   -37°59'39"   Delmiro Gouvéia         ANA         CPRM
+                            01539022   0,02017              Camacan (Vargito)               -15°25'31"   -39°29'34"   Camacan                 ANA         CPRM
+                            01144005   0,01853              Fazenda Macambira               -11°36'50"   -44°9'27"    Cotegipe                ANA         CPRM
+                            01139022   0,00685              Gavião II                       -11°28'27"   -39°47'5"    Gavião                  ANA         CPRM
+             Bahia          00940024   0,00766    0,01434 Juazeiro                           -9°24'20"   -40°30'12"   Juazeiro                ANA         CPRM
+                            01241001   0,01228              Fazenda Iguaçú                   -12°56'5"   -41°3'57"    Itaeté                  ANA         CPRM
+                            01137043   0,01671              Usina Altamira                   -11°46'6"   -37°48'13"   Conde                   ANA         CPRM
+                            01739021   0,01819              Cachoeira Grande                -17°15'13"   -39°46'42"   Prado                   ANA         CPRM
+                            00339000   0,01335              Amontada                         -3°21'48"   -39°49'46"   Amontada                ANA         CPRM
+                            00438011   0,01983              Baú                              -4°7'17"    -38°39'33"   Pacatuba                ANA         CPRM
+             Ceará                                0,01382
+                            00638014   0,01410              Icó                              -6°24'32"   -38°51'49"   Icó                     ANA         CPRM
+                            00440005   0,00802              Croatá                           -4°24'59"   -40°54'15"   Croatá                  ANA         CPRM
+  Nordeste
+
+
+
+
+                            00644003   0,02309              Colinas                          -6°1'39"    -44°15'14"   Colinas                 ANA         CPRM
+             Maranhão                             0,02748
+                            00444001   0,031878             Coroatá                          -4°9'46"    -44°9'57"    Coroatá                 ANA         CPRM
+                                                                                                                      São João do Rio do
+                            00638032   0,01889              Antenor Navarro                  -6°44'7"    -38°26'53"                           ANA         CPRM
+             Paraíba                              0,01639                                                             Peixe
+                            00735009   0,01389              Mulungu                          -7°1'46"    -35°28'5"    Mulungu                 ANA         CPRM
+                                                                                                                      Cabo de Santo
+                            00835138   0,03228              Pirapama                         -8°16'45"   -35°3'48"                            ANA         CPRM
+                                                                                                                      Agostinho
+                                                                                                                      Belém de São
+             Pernambuco     00838004   0,00845    0,01647 Belém de São Francisco             -8°45'54"   -38°57'38"                           ANA         CPRM
+                                                                                                                      Francisco
+                                                                                                                      Santa Maria da Boa
+                            00840010   0,00868              Fazenda São Bento                -8°36'58"   -39°59'58"                           ANA         CPRM
+                                                                                                                      Vista
+                            00844008   0,01496              Cristino Castro II               -8°48'47"   -44°12'56"   Cristino Castro         ANA         CPRM
+             Piauí                                0,01796
+                            00541002   0,02096              Fazenda Boa Esperança            -5°13'29"   -41°44'13"   Castelo do Piauí        ANA         CPRM
+             Rio Grande do 00537035    0,00927    0,1143    Fazenda Angicos                  -5°17'20"   -37°17'20"   Mossoró                 ANA         CPRM
+             Norte         00637010    0,01358              Açude Lagoinha                   -6°27'44"   -37°18'9"    Jardim de Piranhas      ANA         CPRM
+                            01037049   0,01807    0,02122 Santa Rosa de Lima (Camboata)     -10°39'10"   -37°11'34"   Santa Rosa de Lima      ANA         CPRM
+             Sergipe
+                            01137017   0,02437              Estância                         -11°16'0"   -37°26'35"   Estância                ANA         CPRM
+
+
+                                                                                  29
+                                                                  Manual de Custos de Infraestrutura de Transportes
+                                                                     Volume 06 - Fator de Influência de Chuvas
+
+
+                                                 Tabela 18 - Relação dos postos pluviométricos para a Região Centro-Oeste
+
+                   Unidade da                  Média da   Média                                                                                     Entidade      Entidade
+Região                              Estação                               Nome da Estação         Latitude    Longitude           Município
+                   Federação                   Estação     UF                                                                                      Responsável   Operadora
+
+                                    01547013   0,01966              Taquara                      -15°37'56"   -47°31'13"   Brasília                  CAESB        CAESB
+                 Distrito Federal                         0,02255
+                                    01547004   0,02543              Brasília                     -15°47'24"   -47°55'22"   Brasília                  INMET        INMET
+
+                                    01750001   0,02520              Fazenda Nova do Turno         -17°4'45"   -50°17'22"   Paraúna                    ANA         CPRM
+                 Goiás                                    0,02576
+                                    01549001   0,02632              Goianésia                    -15°19'45"   -49°7'18"    Goianésia                  ANA         CPRM
+
+                                    01156000   0,04125              Fazenda Itaubá               -11°28'17"   -56°26'0"    Tabaporã                   ANA         CPRM
+  Centro-Oeste
+
+
+
+
+                                    01351000   0,03102              Trecho Médio                  -14°5'17"   -51°41'56"   Cocalinho                  ANA         CPRM
+                 Mato Grosso                              0,03317                                                          Santo Antônio do
+                                    01655001   0,03385              Acima do Córrego Grande      -16°36'29"   -55°12'23"                              ANA         CPRM
+                                                                                                                           Leverger
+                                    01456008   0,02655              Rosário Oeste                 -14°50'3"   -56°24'42"   Rosário Oeste            FURNAS       FURNAS
+
+                                    01951003   0,03005              Fazenda Pindorama            -19°23'27"   -51°36'32"   Paranaíba                  ANA         CPRM
+
+                 Mato Grosso        01956005   0,002235             Bodoquena                    -19°52'15"   -56°59'1"    Miranda                    ANA         CPRM
+                                                          0,02682
+                 do Sul             02254000   0,02660              Caarapó                      -22°37'28"   -54°49'29"   Caarapó                    ANA         CPRM
+
+                                    02055002   0,02829              Palmeiras                    -20°26'56"   -55°25'51"   Dois Irmãos do Buriti      ANA         CPRM
+
+
+
+
+                                                                                        30
+                                                           Manual de Custos de Infraestrutura de Transportes
+                                                              Volume 06 - Fator de Influência de Chuvas
+
+
+                                            Tabela 19 - Relação dos postos pluviométricos para a Região Sudeste
+
+              Unidade da                Média da   Média                                                                                      Entidade      Entidade
+Região                       Estação                                  Nome da Estação      Latitude    Longitude           Município
+              Federação                 Estação     UF                                                                                       Responsável   Operadora
+
+                             01840000   0,02295              Águia Branca                  -18°59'8"   -40°44'46"   Águia Branca                ANA         CPRM
+            Espírito Santo                         0,02475
+                             02041018   0,026557             Usina Fortaleza              -20°22'17"   -41°24'32"   Muniz Freire                ANA         CPRM
+                                                             Carmo da Mata
+                             02044042   0,02600                                           -20°33'45"   -44°52'3"    Carmo da Mata               ANA         CPRM
+                                                             (ETA - Copasa)
+                             01844018   0,02110              Ponte do Bicudo               -18°12'4"   -44°34'38"   Corinto                     ANA         CPRM
+            Minas Gerais     01941018   0,01878    0,02140 Itanhomi                        -19°9'42"   -41°51'44"   Itanhomi                    ANA         CPRM
+                             01542016   0,01557              Serra Branca                 -15°38'12"   -42°56'37"   Porteirinha                 ANA         CPRM
+  Sudeste
+
+
+
+
+                             01847010   0,02554              Iraí de Minas                -18°58'55"   -47°27'27"   Iraí de Minas               ANA         CPRM
+                             02142022   0,02159              Aldeia                        -21°57'5"   -42°22'21"   Cantagalo                   ANA         CPRM
+            Rio de Janeiro                         0,02580
+                             02243004   0,03002              Conservatória                -22°17'15"   -43°55'46"   Valença                     ANA         CPRM
+                             02345067   0,03204              Ponte Alta 1                 -23°19'45"   -45°8'25"    São Luís do Paraitinga      ANA         CPRM
+                             02147117   0,02573              Pirassununga                 -21°59'59"   -47°25'0"    Pirassununga                ANA        DAEE-SP
+            São Paulo        02151039   0,02442    0,02656 Lucélia                         -21°44'0"    -51°1'0"    Lucélia                   DAEE-SP      DAEE-SP
+                                                                                                                                                           CONSTRU
+                             02348088   0,02405              Engenheiro Barcelar          -23°52'59"   -48°46'20"   Itapeva                     ANA
+                                                                                                                                                             FAM
+
+                                               Tabela 20 - Relação dos postos pluviométricos para a Região Sul
+
+              Unidade da                Média da   Média                                                                                      Entidade      Entidade
+Região                       Estação                                  Nome da Estação      Latitude    Longitude           Município
+              Federação                 Estação     UF                                                                                       Responsável   Operadora
+                                                                                                                                                           AGUASPA
+                             02352002   0,03011              Quinta do Sol                 -23°49'0"   -52°11'0"    Quinta do Sol               ANA
+                                                                                                                                                            RANÁ
+            Paraná           02549000   0,02775    0,03459 São Bento                       -25°56'0"   -49°47'0"    Lapa                       COPEL        COPEL
+                             02552001   0,04590              Águas do Vere Convencional   -25°46'26"   -52°55'58"   São Jorge do Ivaí          COPEL        COPEL
+  Sul
+
+
+
+
+            Rio Grande       03050002   0,01998              Palmares do Sul               -30°15'5"   -50°30'21"   Palmares do Sul             ANA         CPRM
+                                                   0,02961
+            do Sul           02953030   0,03925              Tupancireta                   -29°5'8"    -53°49'9"    Tupancireta                 ANA         CPRM
+                             02750001   0,02811              Campo Belo do Sul             -27°53'56   -50°45'13"   Campo Belo do Sul           ANA         CPRM
+            Santa Catarina                         0,03482
+                             02651040   0,04152              Ponte Serrada                -26°55'14"   -51°55'41"   Ponte Serrada               ANA         CPRM
+
+
+
+
+                                                                                   31
+

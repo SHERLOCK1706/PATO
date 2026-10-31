@@ -1,0 +1,4382 @@
+  DNIT
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+                      VOLUME 04
+                     MÃO DE OBRA
+
+
+
+
+                          2017
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+Exmo. Sr. Maurício Quintella Malta Lessa
+
+DIRETOR GERAL DO DNIT
+Sr. Valter Casimiro Silveira
+
+DIRETOR EXECUTIVO DO DNIT
+Eng.º Halpher Luiggi Mônico Rosa
+
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Eng.º Luiz Heleno Albuquerque Filho
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+          VOLUME 04
+          MÃO DE OBRA
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ EQUIPE TÉCNICA:
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012)
+
+ Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015)
+
+MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+A. VERSÃO ATUAL
+
+ FISCALIZAÇÃO E SUPERVISÃO DO DNIT:
+ MSc. Eng.º Luiz Heleno Albuquerque Filho
+ Eng.º Paulo Moreira Neto
+ Eng.º Caio Saravi Cardoso
+
+B. PRIMEIRAS VERSÕES
+
+ EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+ Elaboração: CENTRAN
+ Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+ SUPERVISÃO DO DNIT:
+ Eng.º Silvio Mourão (Brasília)
+ Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+
+              Brasil, Departamento Nacional de Infraestrutura de Transportes.
+              Diretoria Executiva. Coordenação-Geral de Custos de Infraestrutura
+           de Transportes.
+              Manual de Custos de Infraestrutura de Transportes. 1ª Edição -
+           Brasília, 2017.
+
+           12v. em 74.
+
+
+           Volume 04: Mão de obra
+
+           1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias -
+           Construções - Estimativa e Custo - Manuais. 3. Aquavias - Construções -
+           Estimativa e Custo - Manuais. I. Título.
+
+
+
+
+                                                 ii
+            Manual de Custos de Infraestrutura de Transportes
+                       Volume 04 - Mão de Obra
+
+
+    MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA GERAL
+                    DIRETORIA EXECUTIVA
+   COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                       TRANSPORTES
+
+
+
+
+                 MANUAL DE CUSTOS DE
+            INFRAESTRUTURA DE TRANSPORTES
+
+                            VOLUME 04
+                          MÃO DE OBRA
+
+                      1ª Edição - Versão 3.0
+
+
+
+
+                             BRASÍLIA
+                               2017
+
+                                  iii
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+        MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+    DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                          DIRETORIA GERAL
+                        DIRETORIA EXECUTIVA
+       COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE
+                           TRANSPORTES
+
+
+
+
+Setor de Autarquias Norte, Bloco A, Edifício Núcleo dos Transportes, Edifício Sede do
+DNIT, Mezanino, Sala M.4.10
+Brasília - DF
+CEP: 70.040-902
+Tel.: (061) 3315-8351
+Fax: (061) 3315-4721
+E-mail: cgcit@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+Primeira edição: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES, 2017
+
+VOLUME 04: Mão de obra
+
+
+
+
+Revisão:
+Fundação Getulio Vargas - FGV
+Contratos 327/2012-00 e 462/2015 (DNIT)
+Aprovado pela Diretoria Colegiada em 25/04/2017
+Processo Administrativo nº 50600.096538/2013-43
+
+Impresso no Brasil / Printed in Brazil
+
+Direitos autorais exclusivos do DNIT, sendo permitida reprodução parcial ou total, desde que citada a
+fonte (DNIT), mantido o texto original e não acrescentado nenhum tipo de propaganda comercial.
+
+
+                                                 iv
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+                                    APRESENTAÇÃO
+
+O Manual de Custos de Infraestrutura de Transportes constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto DNER e do DNIT na formação
+de preços referenciais de obras públicas.
+
+Em consonância à história destes importantes órgãos, o Manual de Custos de
+Infraestrutura de Transportes abrange o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes, particularmente no que
+se refere às composições de custos de serviços ferroviários e hidroviários.
+
+Outras inovações relevantes no presente Manual de Custos de Infraestrutura de
+Transportes referem-se à metodologia para definição de custos de referência de
+canteiros de obras e de administração local e à diferenciação das taxas referenciais
+de bonificação e despesas indiretas em função da natureza e do porte das obras.
+Também merece registro a proposição de novas metodologias para o cálculo dos
+custos horários dos equipamentos e da mão de obra e para definição dos custos de
+referência para aquisição e transporte de produtos asfálticos.
+
+O Manual de Custos de Infraestrutura de Transportes encontra-se organizado nos
+seguintes volumes, conteúdos e tomos:
+
+Volume 01 - Metodologia e Conceitos
+
+Volume 02 - Pesquisa de Preços
+
+Volume 03 - Equipamentos
+
+Volume 04 - Mão de Obra
+           Tomo 01 - Parâmetros do CAGED
+           Tomo 02 - Encargos Sociais
+           Tomo 03 - Encargos Complementares
+           Tomo 04 - Consolidação dos Custos de Mão de Obra
+
+Volume 05 - Materiais
+
+Volume 06 - Fator de Influência de Chuvas
+           Tomo 01 - Índices Pluviométricos - Região Norte
+           Tomo 02 - Índices Pluviométricos - Região Nordeste
+           Tomo 03 - Índices Pluviométricos - Região Centro-Oeste
+           Tomo 04 - Índices Pluviométricos - Região Sudeste
+           Tomo 05 - Índices Pluviométricos - Região Sul
+
+
+
+
+                                               v
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+Volume 07 - Canteiros de Obras
+           Tomo 01 - Módulos Básicos e Projetos Tipo (A3)
+
+Volume 08 - Administração Local
+
+Volume 09 - Mobilização e Desmobilização
+
+Volume 10 - Manuais Técnicos
+   Conteúdo 01 - Terraplenagem
+   Conteúdo 02 - Pavimentação / Usinagem
+   Conteúdo 03 - Sinalização Rodoviária
+   Conteúdo 04 - Concretos, Agregados, Armações, Fôrmas e Escoramentos
+   Conteúdo 05 - Drenagem e Obras de Arte Correntes
+   Conteúdo 06 - Fundações e Contenções
+   Conteúdo 07 - Obras de Arte Especiais
+   Conteúdo 08 - Manutenção e Conservação Rodoviária
+   Conteúdo 09 - Ferrovias
+   Conteúdo 10 - Hidrovias
+   Conteúdo 11 - Transportes
+   Conteúdo 12 - Obras Complementares e Proteção Ambiental
+
+Volume 11 - Composições de Custos
+
+Volume 12 - Produções de Equipes Mecânicas
+
+
+
+
+                                           vi
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+
+
+                                          RESUMO
+O Manual de Custos de Infraestrutura de Transportes apresenta as metodologias, as premissas e as
+memórias adotadas para o cálculo dos custos de referência dos serviços necessários à execução de
+obras de infraestrutura de transportes e suas estruturas auxiliares.
+
+
+
+
+                                              vii
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+
+
+                                            ABSTRACT
+
+The Transport Infrastructure Costs Manual presents the methodologies, assumptions and calculation
+sheets adopted for defining the required service referential costs to implement transport infrastructure
+ventures and its auxiliary facilities.
+
+
+
+
+                                                   ix
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+                                LISTA DE FIGURAS
+
+Figura 01 - Síntese da metodologia para definição dos salários médios do SICRO . 18
+
+
+
+
+                                           xi
+                                Manual de Custos de Infraestrutura de Transportes
+                                           Volume 04 - Mão de Obra
+
+
+                                               LISTA DE TABELAS
+
+Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO ........... 7
+Tabela 02 - Critérios de formação de salários de categorias sem equivalência direta
+            com a CBO ............................................................................................ 14
+Tabela 03 - Vigência e reajuste das convenções coletivas de trabalho .................... 16
+Tabela 04 - Equivalência de categorias CBO - IBRE ................................................ 21
+Tabela 05 - Dados do Anuário Estatístico da Previdência Social (2012) .................. 22
+Tabela 06 - Taxa de fecundidade por unidade da federação (IBGE, 2010) .............. 23
+Tabela 07 - Encargos sociais do Grupo A, legislação aplicada e fatores .................. 25
+Tabela 08 - Encargos sociais do Grupo B e legislação aplicada ............................... 26
+Tabela 09 - Cálculo da média das horas trabalhadas (trabalhadores horistas e
+            mensalistas) ........................................................................................... 27
+Tabela 10 - Encargos sociais do Grupo B para servente no Rio de Janeiro ............. 33
+Tabela 11 - Encargos sociais do Grupo C e legislação aplicada............................... 33
+Tabela 12 - Encargos sociais do Grupo C para servente no Rio de Janeiro ............. 36
+Tabela 13 - Encargos sociais do Grupo D para servente no Rio de Janeiro ............. 37
+Tabela 14 - Encargos sociais para trabalhadores horistas (Servente - RJ -
+            Julho/2014) ............................................................................................ 38
+Tabela 15 - Encargos sociais do Grupo B e legislação aplicada ............................... 39
+Tabela 16 - Encargos sociais do Grupo B para encarregado de turma no Rio de
+            Janeiro ................................................................................................... 43
+Tabela 17 - Encargos sociais do Grupo C para servente no Rio de Janeiro ............. 46
+Tabela 18 - Encargos sociais do Grupo D para encarregados de turma no Rio de
+            Janeiro ................................................................................................... 47
+Tabela 19 - Encargos sociais para mensalistas (Encarregado de Turma - RJ -
+            Julho/2014) ............................................................................................ 48
+Tabela 20 - Distribuição de calorias por refeição ...................................................... 53
+Tabela 21 - Valores de cesta básica por região (DIEESE, Julho/2014) .................... 54
+Tabela 22 - Grupos de insumos utilizados para definição do custo da alimentação . 55
+Tabela 23 - Custo horário com ferramentas manuais para servente no Rio de Janeiro
+            ............................................................................................................... 57
+Tabela 24 - Custos horários com ferramentas manuais de diferentes categorias
+            profissionais ........................................................................................... 58
+Tabela 25 - Critérios para definição dos custos horários com ferramentas manuais 59
+Tabela 26 - Custo horário com EPI para servente no Rio de Janeiro ....................... 60
+Tabela 27 - Custos horários com equipamentos de proteção individual ................... 61
+Tabela 28 - Critérios para definição dos custos horários com EPI ............................ 62
+
+                                                             xiii
+                                Manual de Custos de Infraestrutura de Transportes
+                                           Volume 04 - Mão de Obra
+
+
+Tabela 29 - Síntese dos encargos adicionais e incidência nas convenções coletivas
+            .............................................................................................................. 67
+Tabela 30 - Custo estimado com cesta básica (menor valor) ................................... 70
+Tabela 31 - Custo estimado com cesta básica (valor médio) ................................... 70
+Tabela 32 - Custo estimado com cesta básica (maior valor) .................................... 70
+Tabela 33 - Custos estimados com seguro de vida e auxílio funeral ........................ 71
+Tabela 34 - Custo estimado com assistência médica e odontológica ....................... 72
+Tabela 35 - Categorias profissionais com adicionais de insalubridade e
+            periculosidade ....................................................................................... 78
+
+
+
+
+                                                            xiv
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+                                                  SUMÁRIO
+1.     INTRODUÇÃO ............................................................................................. 3
+2.     SALÁRIOS ................................................................................................... 7
+3.     ENCARGOS SOCIAIS E TRABALHISTAS ............................................... 21
+3.1.   Encargos Sociais para Trabalhadores Horistas .................................... 24
+       Grupo A ...................................................................................................... 24
+       Grupo B ...................................................................................................... 25
+       Grupo C ...................................................................................................... 33
+       Grupo D ...................................................................................................... 37
+       Resultados Finais ....................................................................................... 38
+3.2.   Encargos Sociais para Trabalhadores Mensalistas .............................. 39
+       Grupo A ...................................................................................................... 39
+       Grupo B ...................................................................................................... 39
+       Grupo C ...................................................................................................... 44
+       Grupo D ...................................................................................................... 47
+       Resultados Finais ....................................................................................... 48
+3.3.   Desoneração da Mão de Obra ................................................................. 49
+4.     ENCARGOS COMPLEMENTARES .......................................................... 53
+4.1.   Alimentação de Pessoal........................................................................... 53
+4.2.   Transporte de Pessoal ............................................................................. 55
+4.3.   Ferramentas Manuais ............................................................................... 57
+4.4.   Equipamentos de Proteção Individual - EPI ........................................... 59
+4.5.   Exames Médicos Ocupacionais .............................................................. 63
+5.     ENCARGOS ADICIONAIS ......................................................................... 67
+5.1.   Cesta Básica ............................................................................................. 69
+5.2.   Seguro de Vida e Auxílio Funeral ............................................................ 71
+5.3.   Assistência Médica/Odontológica .......................................................... 72
+6.     TRABALHO EM CONDIÇÕES ESPECIAIS .............................................. 75
+6.1.   Trabalho Extraordinário ........................................................................... 75
+6.2.   Trabalho Noturno ..................................................................................... 76
+6.3.   Trabalho Insalubre ................................................................................... 76
+6.4.   Trabalho Perigoso .................................................................................... 77
+6.5.   Categorias Profissionais com Adicionais de Insalubridade e
+       Periculosidade .......................................................................................... 78
+6.6.   Não Cumulatividade dos Adicionais de Insalubridade e Periculosidade
+       ................................................................................................................... 79
+
+                                                         xv
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+                                               1. INTRODUÇÃO
+
+
+
+
+                       1
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+1. INTRODUÇÃO
+
+Os custos de referência da mão de obra do SICRO são definidos em função do
+detalhamento de quatro parcelas, a saber: salários, encargos sociais, encargos
+complementares e encargos adicionais. Estes custos consideram condições normais
+de jornada e ambiente de trabalho. Casos excepcionais, onde haja a necessidade de
+previsão de horários especiais e/ou serviços que se caracterizam como penosos,
+insalubres ou perigosos também são tratados neste Manual de Custos.
+
+Os salários da mão de obra do SICRO têm sua referência estabelecida a partir do
+levantamento e tratamento dos dados do Cadastro Geral de Empregados e
+Desempregados - CAGED do Ministério do Trabalho e Emprego para as empresas
+correspondentes à Seção F - Construção da Classificação Nacional de Atividade
+Econômica CNAE 2.0, subclasses 2.1, nas divisões 41 - Construção de edifícios; 42 -
+Obras de infraestrutura e 43 - Serviços especializados para construção.
+
+O Volume 04 apresenta os conceitos e as premissas necessários ao cálculo dos
+salários médios das categorias profissionais do SICRO, dos encargos sociais,
+trabalhistas, complementares e adicionais. Também são apresentados os normativos
+legais e os critérios de aplicação de custos complementares para a realização de
+trabalhos em condições especiais em obras de infraestrutura (trabalho extraordinário,
+noturno, insalubre e perigoso).
+
+O Tomo 01 do Volume 04 apresenta os principais parâmetros extraídos da base de
+dados do CAGED e utilizados para cálculo dos encargos sociais e trabalhistas do
+SICRO. Estes parâmetros encontram-se estruturados em tabelas por unidade da
+federação e categoria profissional e referem-se ao mês-base de julho de 2014.
+
+O Tomo 02 do Volume 04 apresenta as memórias de cálculo dos encargos sociais de
+todas as categorias profissionais do SICRO (horistas e mensalistas), sem
+desoneração da mão da obra da parcela referente à Previdência Social. As referidas
+memórias referem-se ao Estado do Rio de Janeiro, no mês-base de julho de 2014.
+
+O Tomo 03 do Volume 04 apresenta os custos horários referentes a ferramentas
+manuais e equipamentos de proteção individual calculados para todas as categorias
+profissionais do SICRO. Além disso, são apresentados os custos com equipamentos
+de proteção individual para os profissionais mensalistas e informações necessárias
+ao cálculo do custo horário de alimentação.
+
+O Tomo 04 do Volume 04 apresenta a consolidação dos custos de mão de obra de
+todas as categorias profissionais do SICRO, sendo detalhadas as parcelas referentes
+a salários, encargos sociais, trabalhistas, complementares e adicionais para todas as
+unidades da federação. As referidas composições de custos de mão de obra (horárias
+e mensais) referem-se ao mês-base de julho de 2014.
+
+
+
+
+                                            3
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+                                                    2. SALÁRIOS
+
+
+
+
+                       5
+                             Manual de Custos de Infraestrutura de Transportes
+                                        Volume 04 - Mão de Obra
+
+
+2. SALÁRIOS
+
+Os salários referentes às categorias constantes nas composições do SICRO são
+obtidos por meio do levantamento dos salários nominais de mercado (considerando
+os valores referentes a salários de entrada e de desligamento) nos arquivos dos
+microdados do Cadastro Geral de Empregados e Desempregados - CAGED.
+
+De posse destes microdados do CAGED, torna-se possível o acesso aos salários
+básicos nominais de registro em carteira profissional, de forma individualizada, e
+permite que os resultados sejam apresentados em função dos valores totais
+registrados no período pesquisado.
+
+São levantados os dados do CAGED referentes a contratações e desligamentos do
+período de um ano para todas as unidades da federação e para cada uma das
+categorias profissionais do SICRO.
+
+Em função de o CAGED obedecer à Classificação Brasileira de Ocupações - CBO
+tornou-se necessário estabelecer relação entre as categorias do SICRO e as
+respectivas categorias profissionais da CBO, conforme demonstrado na Tabela 01:
+
+          Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO
+
+Código                  Categoria Profissional              Código          Categoria Profissional
+ CBO                            CBO                         SICRO                  SICRO
+
+414205   Apontador de mão de obra                            9804    Apontador
+
+715305   Armador de estrutura de concreto
+                                                             9805    Armador
+715315   Armador de estrutura de concreto armado
+
+411030   Auxiliar de pessoal
+                                                             9806    Auxiliar administrativo
+411005   Auxiliar de escritório
+
+717005   Demolidor de edificações
+
+717015   Poceiro (edificações)                               9892    Auxiliar de blaster
+
+717020   Servente de obras
+
+717005   Demolidor de edificações
+
+717015   Poceiro (edificações)                               9833    Auxiliar de laboratório
+
+717020   Servente de obras
+
+717005   Demolidor de edificações
+
+717015   Poceiro (edificações)                               9950    Auxiliar de topografia
+
+717020   Servente de obras
+
+711120   Detonador                                           9852    Blaster
+
+724105   Assentador de canalização (edificações)
+                                                             9807    Bombeiro hidráulico
+724115   Instalador de tubulações
+
+724105   Assentador de canalização (edificações)                     Bombeiro       hidráulico       com
+                                                             9929
+724115   Instalador de tubulações                                    periculosidade
+
+
+
+
+                                                    7
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+     Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (2/7)
+
+Código                 Categoria Profissional                  Código          Categoria Profissional
+ CBO                           CBO                             SICRO                  SICRO
+
+715505   Carpinteiro
+
+715525   Carpinteiro de Obras
+
+715530   Carpinteiro (telhados)
+                                                                9808    Carpinteiro
+715535   Carpinteiro de formas para concreto
+
+         Carpinteiro de obras civis de arte (pontes, túneis,
+715540
+         barragens)
+
+410105   Supervisor administrativo                              9883    Chefe do setor administrativo
+         Comandante da marinha mercante - Capitão de
+         cabotagem (comandante), Capitão de longo curso
+215115   (comandante), Primeiro oficial de náutica              9907    Comandante de longo curso
+         (comandante), Segundo oficial de náutica
+         (comandante)
+341305   Maquinista motorista fluvial                           9849    Condutor maquinista fluvial
+
+         Operador de draga - Operador de equipamento de         9913    Draguista
+782105
+         dragagem                                               9945    Draguista com periculosidade
+
+715610   Eletricista de instalações (edifícios)
+                                                                9810    Eletricista
+715615   Eletricista de instalações
+
+715610   Eletricista de instalações (edifícios)
+                                                                9953    Eletricista - mensalista
+715615   Eletricista de instalações
+
+715610   Eletricista de instalações (edifícios)
+                                                                9930    Eletricista com periculosidade
+715615   Eletricista de instalações
+
+410105   Supervisor administrativo                              9809    Encarregado administrativo
+
+                                                                9816    Encarregado de mergulhado
+
+781705   Mergulhador profissional (raso e profundo)             9860    Mergulhador
+
+                                                                9923    Mergulhador com periculosidade
+                                                                        Encarregado de conservação
+                                                                9916
+                                                                        rodoviária
+                                                                        Encarregado de obras de arte
+                                                                9869
+                                                                        especiais
+                                                                9893    Encarregado de pavimentação
+710205   Mestre (construção civil)                                      Encarregado de superestrutura
+                                                                9901
+                                                                        ferroviária
+                                                                9884    Encarregado de terraplenagem
+
+                                                                9875    Encarregado de turma
+
+                                                                9811    Encarregado especializado
+
+                                                                9812    Engenheiro
+
+214205   Engenheiro civil                                       9946    Engenheiro auxiliar
+
+                                                                9955    Engenheiro chefe
+                                                                        Engenheiro de segurança do
+214915   Engenheiro de segurança                                9864
+                                                                        trabalho
+
+
+
+                                                      8
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+     Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (3/7)
+
+Código                Categoria Profissional                   Código          Categoria Profissional
+ CBO                          CBO                              SICRO                  SICRO
+
+214405   Engenheiro mecânico                                    9891    Engenheiro mecânico
+
+514320   Faxineiro                                              9842    Faxineiro
+
+717005   Demolidor de edificações
+
+717015   Poceiro (edificações)                                  9927    Frentista de túnel com periculosidade
+
+717020   Servente de obras
+
+213405   Geólogo
+                                                                9836    Geólogo
+213410   Geólogo de engenharia
+         Imediato da marinha mercante - Capitão de
+         cabotagem (imediato), Capitão de longo curso
+215125                                                          9908    Imediato
+         (imediato), Primeiro oficial de náutica (imediato),
+         Segundo oficial de náutica (imediato)
+622010   Jardineiro                                             9815    Jardineiro
+
+         Técnico de laboratório de análises físico-químicas
+301110                                                          9858    Laboratorista
+         (materiais de construção)
+
+         Marinheiro de convés (marítimo e fluviário) –
+782705
+         contramestre fluvial, Marinheiro de convés
+                                                                9857    Marinheiro de convés
+         Moço de convés (marítimo e fluviário) – Marinheiro
+782715
+         de convés, Moço de convés
+
+         Marinheiro de convés (marítimo e fluviário) –
+782705
+         contramestre fluvial, Marinheiro de convés                     Marinheiro     de      convés   com
+                                                                9942
+         Moço de convés (marítimo e fluviário) – Marinheiro             periculosidade
+782715
+         de convés, Moço de convés
+
+782710   Marinheiro de máquinas
+         Moço de máquinas (marítimo e fluviário) -              9855    Marinheiro de máquinas
+782720   Marinheiro fluvial de máquinas, Moço de
+         máquinas
+                                                                9951    Médico de câmera hiperbárica
+225140   Médico do trabalho
+                                                                9851    Médico do trabalho
+
+341215   Mestre fluvial                                         9920    Mestre fluvial
+
+715545   Montador de andaimes (edificações)                     9830    Montador
+
+         Motorista de caminhão        (rotas   regionais   e
+782510
+         internacionais)                                        9866    Motorista de caminhão
+782515   Motorista operacional de guincho
+
+         Motorista de caminhão        (rotas   regionais   e
+782510                                                                  Motorista    de      caminhão   com
+         internacionais)                                        9956
+                                                                        periculosidade
+782515   Motorista operacional de guincho
+
+         Motorista de caminhão        (rotas   regionais   e
+782510                                                                  Motorista de veículo especial com
+         internacionais)                                        9934
+                                                                        periculosidade
+782515   Motorista operacional de guincho
+
+782305   Motorista de carro de passeio                          9870    Motorista de veículo leve
+
+
+
+
+                                                     9
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 04 - Mão de Obra
+
+
+     Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (4/7)
+
+Código               Categoria Profissional                  Código         Categoria Profissional
+ CBO                         CBO                             SICRO                 SICRO
+
+                                                                      Motorista de         veículo   leve   –
+782305   Motorista de carro de passeio                        9948
+                                                                      mensalista
+
+213440   Oceanógrafo                                          9837    Oceanógrafo
+
+         Oficial superior de máquinas da marinha mercante
+215205
+         - Chefe de máquinas da marinha mercante
+
+         Primeiro oficial de máquinas da marinha mercante
+215210                                                        9910    Oficial de máquinas
+         - Sub-chefe de máquinas da marinha mercante
+
+         Segundo oficial     de   máquinas   da   marinha
+215215
+         mercante
+         Oficial de quarto de navegação da marinha
+         mercante - Capitão de cabotagem, Capitão de
+215140                                                        9909    Oficial de náutica
+         longo curso, Primeiro oficial de náutica, Segundo
+         oficial de náutica
+717005   Demolidor de edificações
+
+717015   Poceiro (edificações)                                9814    Operacional
+
+717020   Servente de obras
+
+715415   Operador de central de concreto
+
+721405   Operador de central de usinagem
+
+782110   Operador de guindaste (fixo)                         9846    Operador de equipamento especial
+
+782115   Operador de guindaste móvel
+
+782120   Operador de máquina rodoferroviária
+
+715415   Operador de central de concreto
+
+721405   Operador de central de usinagem
+                                                                      Operador de equipamento especial
+782110   Operador de guindaste (fixo)                         9944
+                                                                      com periculosidade
+782115   Operador de guindaste móvel
+
+782120   Operador de máquina rodoferroviária
+
+711305   Operador de sonda de percussão
+
+723305   Operador de equipamento de secagem de pintura
+
+782125   Operador de monta-cargas (construção civil)
+
+782130   Operador de ponte rolante                            9843    Operador de equipamento leve
+
+782220   Operador de empilhadeira
+
+821435   Operador de jato abrasivo
+
+862150   Operador de máquinas fixas, em geral
+
+
+
+
+                                                   10
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+     Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (5/7)
+
+Código               Categoria Profissional                 Código         Categoria Profissional
+ CBO                         CBO                            SICRO                 SICRO
+
+711305   Operador de sonda de percussão
+
+723305   Operador de equipamento de secagem de pintura
+
+782125   Operador de monta-cargas (construção civil)
+                                                                     Operador de equipamento leve com
+782130   Operador de ponte rolante                           9939
+                                                                     insalubridade
+782220   Operador de empilhadeira
+
+821435   Operador de jato abrasivo
+
+862150   Operador de máquinas fixas, em geral
+
+711305   Operador de sonda de percussão
+
+723305   Operador de equipamento de secagem de pintura
+
+782125   Operador de monta-cargas (construção civil)
+                                                                     Operador de equipamento leve com
+782130   Operador de ponte rolante                           9938
+                                                                     periculosidade
+782220   Operador de empilhadeira
+
+821435   Operador de jato abrasivo
+
+862150   Operador de máquinas fixas, em geral
+
+711210   Operador de carregadeira
+
+         Operador de máquina perfuradora (minas e
+711225
+         pedreiras)
+
+         Operador de motoniveladora        (extração   de
+711235
+         minerais sólidos)
+
+711245   Operador de trator (minas e pedreiras)
+
+715115   Operador de escavadeira
+
+715120   Operador de máquina de abrir valas
+                                                             9845    Operador de equipamento pesado
+         Operador de máquinas de construção civil e
+715125
+         mineração
+
+715130   Operador de motoniveladora
+
+715135   Operador de pá carregadeira
+
+         Operador de pavimentadora (asfalto, concreto e
+715140
+         materiais similares)
+
+715145   Operador de trator de lâmina
+
+782135   Operador de pórtico rolante
+
+
+
+
+                                                  11
+                               Manual de Custos de Infraestrutura de Transportes
+                                          Volume 04 - Mão de Obra
+
+
+         Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (6/7)
+
+Código                     Categoria Profissional            Código            Categoria Profissional
+ CBO                               CBO                       SICRO                    SICRO
+
+711210    Operador de carregadeira
+
+          Operador de máquina perfuradora (minas e
+711225
+          pedreiras)
+
+          Operador de motoniveladora (extração de minerais
+711235
+          sólidos)
+
+711245    Operador de trator (minas e pedreiras)
+
+715115    Operador de escavadeira
+
+715120    Operador de máquina de abrir valas                          Operador de equipamento pesado com
+                                                              9932
+          Operador de máquinas de construção civil e                  periculosidade
+715125
+          mineração
+
+715130    Operador de motoniveladora
+
+715135    Operador de pá carregadeira
+
+          Operador de pavimentadora (asfalto, concreto e
+715140
+          materiais similares)
+
+715145    Operador de trator de lâmina
+
+782135    Operador de pórtico rolante
+
+715210    Pedreiro
+                                                              9821    Pedreiro
+715230    Pedreiro de edificações
+
+715210    Pedreiro
+                                                              9952    Pedreiro - mensalista
+715230    Pedreiro de edificações
+
+717005    Demolidor de edificações
+                                                                      Perfurador de tubulão a ar comprimido
+717015    Poceiro (edificações)                               9835
+                                                                      com insalubridade
+717020    Servente de obras
+
+341230    Piloto fluvial                                      9880    Piloto fluvial
+
+716610    Pintor de obras                                     9822    Pintor
+
+517410    Porteiro                                            9896    Porteiro
+
+252305    Secretária(o) executiva(o)                          9878    Secretária
+
+724440    Serralheiro                                         9823    Serralheiro
+
+717005    Demolidor de edificações
+                                                              9824    Servente
+717015    Poceiro (edificações)
+
+717020    Servente de obras
+
+717005    Demolidor de edificações
+                                                              9954    Servente - mensalista
+717015    Poceiro (edificações)
+
+717020    Servente de obras
+
+
+
+
+                                                     12
+                           Manual de Custos de Infraestrutura de Transportes
+                                      Volume 04 - Mão de Obra
+
+
+         Tabela 01 - Equivalência entre categorias profissionais do SICRO e da CBO (7/7)
+
+Código               Categoria Profissional              Código           Categoria Profissional
+ CBO                         CBO                         SICRO                   SICRO
+
+717005 Demolidor de edificações
+
+717015 Poceiro (edificações)                              9928    Servente com periculosidade
+
+717020 Servente de obras
+
+724305 Brasador
+
+724310 Oxicortador a mão e a máquina
+
+724315 Soldador                                           9825    Soldador
+
+724320 Soldador a oxigás
+
+724325 Soldador elétrico
+
+          Técnico em hidrografia - Auxiliar técnico de
+312315                                                    9972    Técnico de batimetria
+          hidrografia, Hidrotécnico
+
+311505 Técnico de meio ambiente                           9897    Técnico de meio ambiente
+
+351605 Técnico em segurança do trabalho                   9876    Técnico de segurança do trabalho
+
+322215 Técnico em enfermagem do trabalho                  9865    Técnico em enfermagem
+
+312105 Técnico de obras civis
+                                                          9867    Técnico especializado
+312205 Técnico de estradas
+
+311505 Técnico de meio ambiente
+                                                          9947    Técnico florestal
+321210 Técnico florestal
+
+312320 Topógrafo                                          9949    Topógrafo
+
+517420 Vigia                                              9827    Vigia
+
+
+Para algumas categorias profissionais do SICRO não foi possível estabelecer
+equivalências diretas com os salários médios obtidos em função da Classificação
+Brasileira de Ocupações. Nessas situações, torna-se necessária a adoção de outros
+critérios para formação dos salários, conforme exemplos apresentados na Tabela 02.
+
+
+
+
+                                                 13
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+Tabela 02 - Critérios de formação de salários de categorias sem equivalência direta com a CBO
+
+  Código
+                       Categoria Profissional                     Critério de Formação de Salário
+  SICRO
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9801     Ajudante
+                                                          (Código SICRO 9824)
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9802     Ajudante especializado
+                                                          (Código SICRO 9824) acrescido de 20%
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9892     Auxiliar de blaster
+                                                          (Código SICRO 9824)
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9833     Auxiliar de laboratório
+                                                          (Código SICRO 9824)
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9950     Auxiliar de topografia
+                                                          (Código SICRO 9824)
+
+                                                          Utilizar o salário do quartil inferior do Técnico
+   9903     Auxiliar técnico
+                                                          especializado (Código SICRO 9867)
+
+                                                          Utilizar o salário do Encarregado Especializado
+   9916     Encarregado de conservação
+                                                          (Código SICRO 9811)
+
+                                                          Utilizar o salário do Encarregado Especializado
+   9869     Encarregado de obras de arte especiais
+                                                          (Código SICRO 9811)
+
+                                                          Utilizar o salário do percentil 95 do Encarregado de
+   9816     Encarregado de mergulho
+                                                          mergulhador (Código SICRO 9816)
+
+                                                          Utilizar o salário do Encarregado Especializado
+   9893     Encarregado de pavimentação
+                                                          (Código SICRO 9811)
+
+                                                          Utilizar o salário do Encarregado Especializado
+   9884     Encarregado de terraplanagem
+                                                          (Código SICRO 9811)
+
+                                                          Utilizar o salário do Encarregado Especializado
+   9901     Encarregado de superestrutura ferroviária
+                                                          (Código SICRO 9811)
+
+                                                          Utilizar o salário do quartil inferior do Encarregado
+   9875     Encarregado de turma
+                                                          Especializado (Código SICRO 9811)
+
+                                                          Utilizar o salário do quartil superior do Encarregado
+   9840     Encarregado geral
+                                                          especializado (Código SICRO 9811)
+
+                                                          Utilizar o salário do quartil inferior do Engenheiro
+   9946     Engenheiro auxiliar
+                                                          (Código SICRO 9812)
+
+                                                          Utilizar o salário do quartil superior do Engenheiro
+   9955     Engenheiro chefe
+                                                          (Código SICRO 9812)
+
+                                                          Utilizar o salário médio do Engenheiro (Código
+   9819     Engenheiro supervisor
+                                                          SICRO 9812)
+
+                                                          Utilizar o salário do quartil superior do Servente
+   9885     Frentista de túnel
+                                                          (Código SICRO 9824)
+
+                                                          Utilizar o salário do Médico do trabalho (Código
+   9951     Médico de câmara hiperbárica
+                                                          SICRO 9851)
+
+
+
+
+                                                     14
+                           Manual de Custos de Infraestrutura de Transportes
+                                      Volume 04 - Mão de Obra
+
+
+Tabela 02 - Critérios de formação de salários de categorias sem equivalência direta com a CBO
+                                              (2/2)
+
+  Código
+                      Categoria Profissional                     Critério de Formação de Salário
+  SICRO
+
+                                                         Utilizar o salário do quartil inferior do Motorista de
+   9871     Motorista de veículo especial
+                                                         caminhão (Código SICRO 9866)
+
+                                                         Utilizar o salário do quartil superior do Servente
+   9835     Perfurador de tubulão a ar comprimido
+                                                         (Código SICRO 9824)
+
+                                                         Utilizar o salário do quartil superior do Servente
+   9853     Pré-marcador
+                                                         (Código SICRO 9824)
+
+                                                         Utilizar o salário do quartil inferior da Secretária
+   9878     Secretária
+                                                         Executiva (Código SICRO 9878)
+
+                                                         Utilizar o salário do quartil superior do Servente
+   9861     Selecionador de material pétreo
+                                                         (Código SICRO 9824)
+
+                                                         Utilizar o salário do Técnico de Meio Ambiente
+   9947     Técnico florestal
+                                                         (Código SICRO 9897)
+
+   9859     Trabalhador de via                           Utilizar o salário do Servente (Código SICRO 9824)
+
+
+
+A metodologia adotada considerou o levantamento e a análise de dados do CAGED
+apenas das empresas que possuíam mais de 50 (cinquenta) funcionários, com carga
+horária igual de 44 (quarenta e quatro) horas semanais e com salários básicos
+nominais superiores ao mínimo nacional.
+
+Apenas as empresas com mais de 50 funcionários foram consideradas no
+levantamento com objetivo de aproximar a metodologia da realidade das empresas
+executoras das obras de infraestrutura do DNIT.
+
+Os valores abaixo do salário mínimo nacional foram desprezados para não influenciar
+o resultado final, visto que salários nominais abaixo deste limite decorrem de
+lançamentos equivocados.
+
+Para as categorias com salário definido de forma horária (horistas), dividiu-se o salário
+médio por duzentos e vinte (número de horas legais trabalhadas no mês), obtendo-se
+o valor do salário médio/hora.
+
+As categorias profissionais foram divididas em grupos, havendo para cada grupo um
+teto salarial (calculado a partir de três vezes o desvio padrão positivo), evitando assim,
+como no corte do salário mínimo nacional, lançamentos de dados equivocados. A
+definição dos grupos foi dada por critérios de similaridade de função profissional,
+conforme apresentado abaixo:
+
+     Oficiais: blaster, carpinteiro, eletricista, montador, pintor, pedreiro, serralheiro,
+      soldador, etc;
+     Ajudantes: auxiliar de blaster, ajudante especializado, auxiliar de laboratório,
+      auxiliar de topografia, frentista de túnel, jardineiro, pré-marcador, selecionador
+      de material pétreo, servente, trabalhador de via, etc;
+
+                                                    15
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 04 - Mão de Obra
+
+
+    Operadores: de equipamento especial, de equipamento leve, de equipamento
+     pesado, etc;
+    Encarregados: especializado, geral, de turma, de terraplenagem, de
+     pavimentação, de superestrutura ferroviária, de conservação rodoviária, de
+     mergulho, etc;
+    Motoristas: de veículo leve, de veículo especial, de caminhão, etc;
+    Nível Superior: engenheiro, geólogo, médico de câmara hiperbárica, médico do
+     trabalho, etc;
+      Técnicos: armador, laboratorista, mergulhador, técnico de batimetria, de meio
+       ambiente, em enfermagem, em segurança do trabalho, especializado,
+       topógrafo, etc;
+    Administrativos: apontador, auxiliar de topografia, chefe do setor administrativo,
+     faxineiro, porteiro, secretária, vigia, etc.
+
+Em função do levantamento do CAGED abranger o período de um ano, os dados
+utilizados da base referem-se a diferentes meses-base, o que resulta na necessidade
+de aplicação de ajustes monetários para uniformização do mês-base de referência.
+
+Para este objetivo, foram utilizados acordos e convenções coletivas de trabalho,
+preferencialmente da construção pesada, com diferentes vigências dos pisos salariais
+e reajustes para cada unidade da federação, conforme apresentado na Tabela 03.
+
+            Tabela 03 - Vigência e reajuste das convenções coletivas de trabalho
+
+                     UF   Mês-Base    Vigência de Piso    Reajuste Definido
+
+                     AC   Maio         mar/14 a fev/15            -
+
+                     AL   Novembro     nov/13 a out/14           9
+
+                     AM   Setembro     set/13 a ago/14         9 ou 10
+
+                     AP   Novembro     nov/13 a out/14        8 ou 6,5
+
+                     BA   Março        mar/14 a fev/15           9
+
+                     CE   Abril        abr/14 a mar/15           11
+
+                     DF   Maio         mai/14 a abri/15       9, 7 ou 6
+
+                     ES   Setembro     set/13 a ago/14           9
+
+                    GO    Maio         mai/14 a abr/15            -
+
+                     MA   Novembro     nov/13 a out/14           8
+
+                    MG    Maio         mai/14 a abr/15          6,78
+
+                     MS   Maio         mai/13 a abr/15       8,5 ou 7,5
+
+                     MT   Agosto       ago/13 a jul/14           8,5
+
+                     PA   Novembro     nov/13 a out/14        8 ou 6,5
+
+
+
+
+                                              16
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+         Tabela 03 - Vigência e reajuste das convenções coletivas de trabalho (2/2)
+
+                    UF       Mês-Base    Vigência de Piso    Reajuste Definido
+
+                    PB      Janeiro       jan/14 a dez/14          8,25
+
+                    PE      Agosto        ago/13 a jul/14           10
+
+                     PI     Novembro      nov/13 a out/14            7
+
+                    PR      Junho         jun/13 a mai/14          10,5
+
+                    RJ      Fevereiro     fev/14 a jan/15       9, 7 ou 5,26
+
+                    RN      Novembro      nov/13 a out/14            8
+
+                    RO      Janeiro       jan/14 a abr/15           6,5
+
+                    RR      Setembro      set/13 a ago/14           10
+
+                    RS      Maio          mai/14 a abri/15           7
+
+                    SC      Setembro      set/13 a ago/14        7 ou 7,5
+
+                    SE      Março         mar/14 a fev/15            8
+
+                    SP      Maio          mai/14 a abri/15       9 ou 5,82
+
+                    TO      Setembro      set/13 a ago/14            9
+
+
+Os reajustes dos acordos e convenções coletivas de trabalho são aplicados para cada
+unidade da federação, observando as condições e os critérios de aplicabilidade, de
+acordo com o disposto em cada uma delas.
+
+Nos casos em que a amostra da categoria profissional na unidade da federação
+mostra-se inferior a 10 (dez) deve-se proceder a substituição dos valores obtidos pela
+média regional da categoria. Nos casos em que a categoria apresenta amostra inferior
+a 10 (dez) microdados na região, deve-se adotar a média nacional da categoria. O
+limite inferior calculado deve ser sempre superior ao piso estipulado na convenção
+coletiva da respectiva categoria profissional.
+
+Durante a análise dos dados do CAGED, identificou-se que o setor de infraestrutura
+de transportes, contemplado nas CNAEs 421, apresenta comportamento diferente
+daquele observado para as demais divisões da Seção F da CNAE 2.0. A Seção F
+compreende a construção de edifícios em geral (divisão 41), as obras de infraestrutura
+(divisão 42) e os serviços especializados para construção que fazem parte do
+processo de construção (divisão 43).
+
+Com objetivo de compatibilizar as informações destas diferentes divisões foi
+desenvolvido um fator de correção, visando melhor representar o grupo 421 -
+Construção de Rodovias, Ferrovias, Obras Urbanas e Obras de Arte Especiais,
+específico para as obras de infraestrutura de transportes. Para a obtenção deste fator
+de correção, procede-se o cálculo da média salarial de cada categoria do grupo 421,
+e, posterior divisão pela média salarial de toda a Seção F.
+
+
+
+
+                                                 17
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+Apenas para exemplificar a metodologia, observa-se que o fator de correção entre os
+salários de infraestrutura de transportes e a Seção F no mês-base de julho de 2014
+apresentou variação de 0,68 a 2,58, com média de 1,11. Levando-se em consideração
+que, na maioria dos casos, o setor de infraestrutura remunera melhor que a construção
+civil, definiu-se o limite inferior do fator de correção igual a 1,00. Esta variação será
+acompanhada ao longo do tempo com o objetivo de verificar a permanência desta
+relação ou possibilidade de simplificação do método proposto.
+
+Em função da natureza da atividade e do pequeno número de registros nas bases do
+CAGED, para as categorias profissionais do aquaviário foram considerados todos os
+registros sem distinção de CNAE e o cálculo é nacional.
+
+A metodologia de cálculo dos salários médios, explanada no presente item, pode ser
+sintetizada na Figura 01.
+      Figura 01 - Síntese da metodologia para definição dos salários médios do SICRO
+
+
+
+
+                                            18
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+         3. ENCARGOS SOCIAIS E TRABALHISTAS
+
+
+
+
+                      19
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+3. ENCARGOS SOCIAIS E TRABALHISTAS
+
+Os encargos sociais e trabalhistas de obras de infraestrutura são calculados
+individualmente para cada uma das categorias em cada unidade da federação.
+
+Para alguns códigos do SICRO, onde não foram encontrados correspondentes diretos
+na CBO, adotaram-se os parâmetros e encargos sociais calculados para categorias
+semelhantes, conforme apresentado na Tabela 04.
+                     Tabela 04 - Equivalência de categorias CBO - IBRE
+
+         Código
+                           Categoria Profissional          Encargos Sociais Adotados
+         SICRO
+
+          9801    Ajudante                               9824 - Servente
+
+          9802    Ajudante especializado                 9824 - Servente
+
+          9903    Auxiliar técnico                       9867 - Técnico especializado
+
+          9840    Encarregado geral                      9811 - Encarregado especializado
+
+          9819    Engenheiro supervisor                  9812 - Engenheiro
+
+          9885    Frentista de túnel                     9824 - Servente
+
+          9871    Motorista de veículo especial          9866 - Motorista de caminhão
+
+          9853    Pré-marcador                           9824 - Servente
+
+          9861    Selecionador de material pétreo        9824 - Servente
+
+          9859    Trabalhador de via                     9824 - Servente
+
+
+Foram levantados isoladamente os feriados nacionais, estaduais e municipais para as
+27 unidades da federação em um período de 8 (oito) anos - 2006 a 2013, obtendo-se
+uma média de horas, dias, feriados por mês e por ano.
+
+Para o cálculo do auxílio enfermidade e do auxílio acidente de trabalho, foram
+utilizados o número de contribuintes do INSS e o número de auxílios acidente de
+trabalho concedidos, conforme registrado no Anuário Estatístico da Previdência Social
+(AEPS, 2012), cujos valores são apresentados na Tabela 05.
+
+
+
+
+                                                    21
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+           Tabela 05 - Dados do Anuário Estatístico da Previdência Social (2012)
+
+                                  Número           Número de Auxílios
+                        UF
+                              de Contribuintes     Doença Concedido
+
+                        AC        124.608                2.386
+
+                        AL        491.992                19.514
+
+                        AP        116.351                1.906
+
+                        AM        674.720                12.394
+
+                        BA       2.633.757               65.757
+
+                        CE       1.583.399               42.493
+
+                        DF       1.009.577               31.709
+
+                        ES       1.116.149               40.295
+
+                        GO       1.702.468               57.900
+
+                        MA        701.409                16.368
+
+                        MT        946.906                31.365
+
+                        MS        718.933                32.223
+
+                        MG       5.974.341              263.627
+
+                        PA       1.181.912               24.509
+
+                        PB        607.741                21.201
+
+                        PR       3.474.021              129.050
+
+                        PE       1.805.965               48.393
+
+                        PI        406.018                14.534
+
+                        RJ       4.751.119              178.272
+
+                        RN        632.877                23.549
+
+                        RS       3.359.495              160.441
+
+                        RO        395.672                10.582
+
+                        RR         89.436                1.943
+
+                        SC       2.492.061              127.914
+
+                        SP       16.031.349             564.051
+
+                        SE        419.029                13.537
+
+                        TO        279.156                7.272
+
+
+Para o cálculo referente às licenças paternidade concedidas foi considerada a taxa de
+fecundidade de cada uma das unidades da federação, conforme registrado no Censo
+do Instituto Brasileiro de Estatística e Geografia de 2010. As respectivas taxas
+utilizadas são apresentadas na Tabela 06.
+
+
+
+
+                                              22
+            Manual de Custos de Infraestrutura de Transportes
+                       Volume 04 - Mão de Obra
+
+
+Tabela 06 - Taxa de fecundidade por unidade da federação (IBGE, 2010)
+
+                                       Taxa
+                      UF
+                                  de Fecundidade
+
+                      AC                2,95
+
+                       AL               2,22
+
+                      AP                2,48
+
+                      AM                2,59
+
+                      BA                2,05
+
+                      CE                1,99
+
+                      DF                1,75
+
+                      ES                1,80
+
+                      GO                1,87
+
+                      MA                2,56
+
+                      MT                2,08
+
+                      MS                2,04
+
+                      MG                1,79
+
+                      PA                2,50
+
+                      PB                1,95
+
+                      PR                1,86
+
+                      PE                1,92
+
+                       PI               1,99
+
+                       RJ               1,68
+
+                      RN                1,98
+
+                      RS                1,76
+
+                      RO                2,16
+
+                      RR                2,41
+
+                      SC                1,71
+
+                      SP                1,66
+
+                      SE                1,95
+
+                      TO                2,41
+
+
+
+
+                                  23
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+Por meio do CAGED, foram também levantados os percentuais referentes ao número
+de homens e mulheres na função e o número de homens e mulheres em idade fértil
+(15 - 49 anos). Tais dados foram pesquisados levando-se em consideração as
+informações de cada categoria profissional e unidade da federação. Estes dados são
+necessários para o cálculo da licença paternidade e férias sobre licença maternidade.
+
+O número de demitidos sem justa causa e o tempo médio de permanência no emprego
+foram levantados por meio do CAGED e utilizados no cálculo dos demais encargos.
+
+O levantamento dos dados para o cálculo dos encargos sociais foi realizado
+obedecendo-se os mesmos critérios estabelecidos no cálculo dos salários (12 meses
+e horas semanais iguais a 44).
+
+Para fins de ilustração, apresenta-se a seguir a memória de cálculo utilizada para a
+obtenção dos encargos sociais de horistas e mensalistas. Em caráter exemplificativo,
+os dados apresentados referem-se ao estado do Rio de Janeiro, utilizando-se os
+valores de servente para os cálculos dos encargos sociais do trabalhador horista e os
+de encarregado de turma para os cálculos do mensalista, para o mês-base de julho
+de 2014 (correspondendo aos dados do CAGED dos meses de agosto de 2013 a julho
+de 2014, conforme metodologia adotada).
+
+Os cálculos dos encargos sociais e trabalhistas do exemplo foram separados em
+quatro grupos, a saber:
+
+    Grupo A;
+    Grupo B;
+    Grupo C;
+    Grupo D.
+
+No Grupo A, os encargos sociais são iguais para todas as categorias profissionais em
+todas as unidades da federação, à exceção do SECONCI, e regimes de trabalho
+(horista e mensalista).
+
+Para os demais grupos, os encargos variam de acordo com a categoria de mão de
+obra, a unidade da federação e o regime de trabalho.
+
+3.1. Encargos Sociais para Trabalhadores Horistas
+
+       Grupo A
+
+O Grupo A representa as obrigações que incidem diretamente sobre os salários e que
+são regulamentadas de acordo com a legislação específica, conforme resumo
+apresentado na Tabela 07. Em virtude de sua natureza, estes encargos são comuns
+a todas as categorias profissionais, regimes de trabalho e unidades da federação,
+excetuando-se o SECONCI.
+
+
+
+
+                                           24
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+            Tabela 07 - Encargos sociais do Grupo A, legislação aplicada e fatores
+
+                 Parcela da
+  Item                                               Legislação Aplicada                         Fator (%)
+                Contribuição
+
+                                   Decreto nº 3.048, de 06/05/1999 e Art. 25 do Decreto nº
+   A1    Previdência Social                                                                       20,00%
+                                   3048/99, de 08/05/1999.
+
+   A2    FGTS                      Lei nº 8.036, de 11/05/1990.                                   8,00%
+
+   A3    Salário Educação          Lei nº 9.766, de 18/12/1998.                                   2,50%
+
+                                   Decreto-Lei nº 9.403/46, Lei nº 8.036/90, Decreto-Lei nº
+   A4    SESI                                                                                     1,50%
+                                   1.861/81 e Art. 1º do Decreto nº 1.867/81.
+
+                                   Decreto-Lei nº 4.048/42, Decreto-Lei nº 4.936/42, Decreto-
+                                   Lei nº 6.246/44, Decreto-Lei nº 1.861/81, Decreto nº
+   A5    SENAI/SEBRAE                                                                             1,60%
+                                   1.867/81, Art. 1º, alterado pela Lei nº 8.154/90, Lei nº
+                                   8.029/90 e Decreto nº 99.570/90.
+                                   Lei nº 2.613/55, Decreto-Lei nº 1.146/70, Art. 1º, Decreto-
+   A6    INCRA                     Lei nº 1.110/70, Lei Complementar nº 11/71, Decreto nº         0,20%
+                                   1.867/81, Lei nº 7.787/89 e Lei nº 10.256/2001.
+         Seguro Contra Risco e     Art. 26 regulamentado pelo Art. 22, item II, letra A da Lei
+   A7    Acidente de Trabalho      nº 8.212 de 24/07/91. Portaria nº 3.002/92 do Ministério do    3,00%
+         (INSS)                    Trabalho e Previdência Social.
+         SECONCI - Estados:
+                                   Somente em localidades onde exista ambulatório do
+         AM, TO, SE, MG, ES,
+   A8                              SECONCI, de acordo com as convenções coletivas de              1,00%
+         RJ, SP, PR, SC, MS,
+                                   trabalho de cada unidade da federação.
+         GO, DF
+                                                                           Total do Grupo A       37,80%
+
+
+         Grupo B
+
+O Grupo B representa as obrigações incidentes sobre o período em que não ocorre a
+prestação direta de serviço, mas que o funcionário faz jus à remuneração, conforme
+legislação específica apresentada na Tabela 08.
+
+
+
+
+                                                    25
+                               Manual de Custos de Infraestrutura de Transportes
+                                          Volume 04 - Mão de Obra
+
+
+                  Tabela 08 - Encargos sociais do Grupo B e legislação aplicada
+
+  Item        Parcela de Contribuição                                 Legislação Aplicada
+
+                                                  Art. 67 CLT e Lei nº 605 de 5 de janeiro de 1949 (parágrafo 2º
+  B1     Repouso Remunerado (Domingos)
+                                                  do art. 7º) - Apenas para trabalhadores horistas.
+                                                  Art. 70 da CLT;
+                                                  Art. 1º da Lei nº 605/ de 5/11/49 e Decreto Lei nº 86 de
+         Feriados e         Dias   Santificados   27/12/66;
+  B2
+         Nacionais                                Lei nº 9.093, de 12 de setembro de 1995;
+                                                  Lei nº 9.335, de 10 de dezembro de 1996;
+                                                  Lei nº 10.607 de 19/12/2002 (nova redação).
+
+  B3     Férias (30 dias)                         Decreto-Lei nº 1.535/77.
+
+         Auxílio Enfermidade (15 primeiros
+  B4                                              Decreto nº 3.048, de 06/05/1999.
+         dias)
+
+         Auxílio de Acidente de Trabalho (15
+  B5                                              Lei nº 9.528, de 10/12/1997.
+         primeiros dias)
+
+         Licença Paternidade         (5   dias
+  B6                                              Art. 7º, inciso XIX da Constituição Federal/1988.
+         consecutivos)
+
+  B7     13º Salário                              Lei nº 4090, de 13/07/1962.
+
+                                                  Art. 473 e 822 da CLT, alterado pelo Decreto-Lei nº 229, de
+                                                  28/02/67:
+                                                   2 dias consecutivos por morte de ascendente,
+                                                  descendente ou cônjuge;
+                                                   3 dias consecutivos em caso de casamento;
+                                                   2 dias a cada 12 meses para doação voluntária de sangue;
+                                                   2 dias para alistamento eleitoral;
+                                                   período em que estiver cumprindo às exigências do serviço
+                                                  militar.
+  B8     Faltas Justificadas
+
+                                                  Lei nº 1.060 de 05/03/1950
+                                                   1 dia por ano para internação de dependente;
+                                                   dias em que estiver a serviço da justiça como testemunha.
+
+                                                  Por determinação de lei específica:
+                                                   dias de greves devidamente reconhecidos                 por
+                                                  determinação judicial;
+                                                   dias reconhecidamente de calamidade pública.
+
+
+Diferentemente dos encargos sociais do Grupo A, os encargos relativos ao Grupo B
+podem ser calculados de forma específica para cada categoria profissional e unidade
+da federação do SICRO.
+
+A definição dos encargos sociais do Grupo B é obrigatoriamente precedida pelo
+cálculo da média das horas efetivamente trabalhadas por ano. Os resultados comuns
+a todas as categorias profissionais do SICRO no regime de contratação horário são
+apresentados na Tabela 09.
+
+
+
+
+                                                       26
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+  Tabela 09 - Cálculo da média das horas trabalhadas (trabalhadores horistas e mensalistas)
+
+                                 Descrição dos Itens               Unidade
+
+                    Dias no ano                                    365,25
+
+                    Domingos                                        52,25
+
+                    Feriados no ano sem ser domingo                14,375
+
+                    Dias úteis                                     298,625
+
+                    Horas globais trabalháveis (7,333 horas/dia)   2.189,82
+
+                    Horas globais/ mês trabalháveis                182,49
+
+                    Dias em férias, exceto domingos                 24,46
+
+                    Horas em férias exceto domingos e feriados     179,28
+
+                    Horas em faltas abonadas                       14,666
+
+                    Horas em licença paternidade                    1,636
+
+                    Horas em licença maternidade                    0,111
+
+                    Horas em auxílio-enfermidade                    4,13
+
+                    Horas trabalhadas no ano                       1.990,00
+
+                    Horas trabalhadas no ano sem considerar
+                                                                   1.991,63
+                    licença paternidade
+
+                    Horas trabalhadas no ano sem considerar
+                                                                   1.990,11
+                    licença maternidade
+
+
+Concluída a definição das horas trabalhadas por ano, apresentaremos a seguir, como
+exemplo, a memória de cálculo dos encargos sociais do Grupo B para os serventes
+no estado do Rio de Janeiro.
+
+B1 - Repouso Semanal Remunerado
+
+O percentual referente ao Repouso Semanal Remunerado é obtido por meio da
+seguinte expressão:
+
+                      PRE
+                    ((    ) × DA ) − F
+                       MA                              MA
+       B1 =                                        × (    ) × JDT       × 100 = 17,50%
+                                 DS                   PRE
+
+               ((                              )                    )
+
+
+
+
+                                                   27
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+onde:
+
+MA representa os meses do ano = 12 meses;
+DA representa os dias no ano = 365,25 dias (Média entre os anos de 2006 a 2013);
+PRE representa a rotatividade da categoria profissional = 11,03 meses;
+F representa o período de férias = 30 dias;
+DS representa os dias da semana = 7 dias;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00.
+
+B2 - Feriados
+
+Para a definição do número de feriados considerou-se isoladamente os feriados de
+cada unidade da federação e capital, além dos feriados nacionais.
+
+O percentual referente aos feriados, desconsiderando a coincidência entre férias, é
+obtido por meio da seguinte expressão:
+
+                PRE             PRE-1       MA
+               (    ) × NFA × (       ) × (    ) × JDT
+                 MA             PRE        PRE
+        B2 = (                                         ) × 100 = 4,81%
+                                HT1
+
+
+onde:
+
+PRE representa a rotatividade da categoria profissional = 11,03 meses;
+MA representa os meses do ano = 12 meses;
+NFA representa o número de feriados no ano = 14,38 feriados (Tabela 09);
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00.
+
+B3 - Férias
+
+O cálculo dos encargos sociais referente às férias baseia-se na remuneração dos 30
+dias de férias acrescido do terço constitucional, conforme expressões abaixo:
+
+                                                 1+ 1⁄3       HT
+                    Se PRE ≥ 12 → B3 =                    ×       × 100
+                                                  12          HT1
+
+
+                                Se PRE < 12 → B3 = 0
+onde:
+
+PRE representa a rotatividade da categoria profissional = 10,80 meses;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas;
+HT representa o número de horas trabalháveis no ano = 2.189,82 horas.
+
+Os valores referentes ao tempo médio de permanência no emprego (rotatividade) por
+categoria e por unidade da federação são obtidos por meio do CAGED.
+
+
+                                            28
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+Para permanência igual ou superior a 12 (doze) meses considera-se o valor
+correspondente a um período de férias gozadas ao ano. Para permanência inferior a
+12 (doze) meses, é considerado o valor de 0 (zero).
+
+O tempo médio de emprego é dividido por 12 (doze), referente aos meses do ano, e
+seu valor inteiro é considerado no cálculo das férias gozadas. A parcela referente aos
+meses incompletos para o período de um ano é utilizada para o cálculo das férias
+indenizadas.
+
+B4 - Auxílio Enfermidade
+
+O Auxílio Enfermidade é concedido pela Previdência Social ao trabalhador que fique
+afastado pelo período superior a 15 (quinze) dias consecutivos, ou seja, os
+afastamentos de até 15 (quinze) dias são arcados pelo próprio empregador.
+
+É comum a ausência no trabalho por períodos inferiores aos 15 dias e, portanto, estes
+afastamentos não são incluídos nas estatísticas da Previdência Social. Para
+considerar também essas ocorrências, acrescentam-se 2 (dois) dias de ausência por
+motivo de doença ao ano.
+
+O cálculo do percentual de Auxílio Enfermidade é realizado em função dos dados
+originários do Anuário Estatístico da Previdência Social - AEPS do Ministério da
+Previdência Social, conforme metodologia apresentada a seguir.
+
+1º Passo - Determinação do Percentual Obtido (PO)
+
+                           NAD          178.272
+                   PO =        × 100 =           × 100 = 3,75%
+                           NCE         4.751.119
+onde:
+
+NAD representa o número de auxílios doença concedidos = 178.272 (AEPS/2012);
+NCE representa o número de contribuintes empregados = 4.751.119 (AEPS/2012).
+
+2º Passo - Determinação do Número de Dias de Auxílio Enfermidade (DAE)
+
+                       DAE = PO × DAD = 3,75 % × 15 = 0,56
+onde:
+
+PO representa o percentual obtido;
+DAD representa o número de auxílio doença pagos pelo empregador = 15.
+
+3º Passo - Determinação do Auxílio Enfermidade
+
+                             ((DAE + 2) × JDT)
+                      B4 =                     × 100 = 0,94%
+                                   HT1
+onde:
+
+DAE representa o número de dias de Auxílio Enfermidade;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas.
+
+                                            29
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+B5 - Auxílio Acidente de Trabalho
+
+Em casos de acidentes de trabalho, o empregador arca com os custos dos primeiros
+15 dias. Segundo o Anuário Estatístico da Previdência Social de 2012, 8,95% dos
+contribuintes da previdência social ligados às atividades de construção civil foram
+beneficiados com a emissão de auxílio acidente de trabalho.
+
+A parcela de encargo social referente ao Auxílio Acidente de Trabalho é obtida por
+meio da seguinte expressão:
+
+                            ((BAA × 15) × JDT)
+                     B5 =                      × 100 = 0,49%
+                                   HT1
+
+onde:
+
+BAA representa a porcentagem de beneficiados com o auxílio = 8,95;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas.
+
+B6 - Licença Paternidade
+
+A licença paternidade equivale ao período de 5 (cinco) dias de afastamento do homem
+por motivo de nascimento do filho.
+
+O cálculo referente à parcela de remuneração da Licença Paternidade é realizado em
+função de parâmetros obtidos no CAGED e no IBGE, conforme metodologia
+apresentada a seguir.
+
+1º Passo - Determinação da Taxa de Fecundidade
+
+                              TFE           1,68
+                    PTF =           × 100 =      × 100 = 4,94%
+                            (49-15)         (34)
+
+onde:
+
+PTF representa o percentual da taxa de fecundidade;
+TFE representa a taxa de fecundidade no estado do Rio de Janeiro = 1,68 (IBGE).
+
+2º Passo - Determinação do número de dias de licença paternidade
+
+                       CLP = PTF × DLP = 5,60% × 5 = 0,25
+
+onde:
+
+CLP representa o número de dias de licença paternidade no ano;
+DLP representa o número de dias de licença paternidade concedidos por lei = 5.
+
+
+
+
+                                            30
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+3º Passo - Determinação do Número de Dias de Licença
+
+                     NDL = (DLP × PTF x PNH × PNHF) = 0,223
+
+onde:
+
+NDL representa o número de dias de licença;
+DLP representa o número de dias de Licença Paternidade no ano;
+PNH representa o percentual de homens na função = 97,425%;
+PNHF representa a proporção de homens na função em idade fértil = 92,273%.
+
+4º Passo - Determinação da Licença Paternidade
+
+                                  NDL × JDT
+                           B6 =             × 100 = 0,08%
+                                    HT2
+
+onde:
+
+NDL representa o número de dias de licença;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT2 representa o número de horas trabalhadas no ano sem considerar licença
+paternidade = 1.991,63 horas.
+
+B7 - 13º Salário
+
+O 13º salário corresponde ao pagamento de um mês adicional ao trabalhador para
+cada ano inteiro de trabalho efetivo. O percentual referente a esta parcela é obtido por
+meio da seguinte expressão:
+
+                                  1   HT
+                           B7 =     ×    × 100 = 9,17%
+                                  12 HT1
+
+onde:
+
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas;
+HT representa o número de horas trabalháveis no ano = 2.189,82 horas.
+
+B8 - Faltas Justificadas
+
+De acordo com o artigo 43 da Consolidação das Leis Trabalhistas, é justificável a
+ausência do trabalhador sem perda de remuneração, para os casos de morte de
+cônjuge, casamento, doação de sangue, serviço militar e alistamento eleitoral
+(conforme apresentado na Tabela 08). Para fins de cálculo, estas ocorrências foram
+estimadas em 2 (dois) dias ao ano.
+
+
+
+
+                                            31
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+O percentual referente à parcela de faltas justificadas é obtido por meio da seguinte
+expressão:
+
+                                     DAJ × JDT
+                              B8 =             × 100 = 0,74%
+                                       HT1
+onde:
+
+DAJ representa o número de dias de ausência justificada = 2 dias;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas.
+
+B9 - Férias Sobre a Licença Maternidade
+
+A licença maternidade equivalente ao período de 120 dias é assegurada às
+trabalhadoras por lei, ficando sob responsabilidade da Previdência Social o salário
+neste período. Ao empregador cabe arcar com os custos referentes às férias e ao
+adicional de férias no período do afastamento.
+
+Para apurar o percentual referente à parcela de remuneração das férias sobre licença
+maternidade é calculado, primeiramente, o percentual da taxa de fecundidade do
+IBGE (PTF), utilizando os valores de cada unidade da federação, conforme
+metodologia apresentada a seguir.
+
+O encargo referente às férias sobre a licença maternidade é obtido por meio da
+seguinte expressão:
+
+                                             DLM     30 + 10
+          B9 = (PTF × PNM × PNMF) ×                ×         × JDT = 0,01%
+                                            365,25    HT3
+
+onde:
+
+PTF representa a taxa de fecundidade na construção civil = 4,94%;
+PNM representa a fração de mulheres na função = 2,68%;
+PNMF representa a proporção de mulheres em idade fértil (15 - 49 anos) = 91,12%;
+DLM representa os dias de licença maternidade concedidos = 120 dias;
+HT3 representa o número de horas trabalhadas no ano sem considerar licença
+paternidade = 1.991,63 horas;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas.
+
+
+
+
+                                            32
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+A Tabela 10 constitui-se em quadro-resumo dos encargos sociais referentes ao Grupo
+B definidos para os serventes no Estado do Rio de Janeiro.
+
+         Tabela 10 - Encargos sociais do Grupo B para servente no Rio de Janeiro
+
+                      Item             Parcela de Contribuição         Fator (%)
+
+                       B1     Repouso Remunerado                        17,50%
+
+                       B2     Feriados e Dias Santificados               4,81%
+
+                       B3     Férias                                     0,00%
+
+                       B4     Auxílio Enfermidade                        0,94%
+
+                       B5     Auxílio de Acidente de Trabalho            0,49%
+
+                       B6     Licença Paternidade                        0,08%
+
+                       B7     13º Salário                                9,17%
+
+                       B8     Faltas Justificadas                        0,74%
+
+                       B9     Férias Sobre a Licença Maternidade         0,01%
+
+                                Total do Grupo B (Servente - RJ)        33,74%
+
+
+       Grupo C
+
+O Grupo C representa os encargos sociais referentes ao desligamento profissional do
+funcionário. São caracterizados por não sofrerem incidência dos encargos do Grupo
+A e são definidos conforme legislação apresentada na Tabela 11.
+
+               Tabela 11 - Encargos sociais do Grupo C e legislação aplicada
+
+        Item   Parcela de Contribuição                       Legislação Aplicada
+
+                                             Parágrafo 1º, Artigo 487 da CLT;
+        C1     Aviso Prévio Indenizado
+                                             Decreto nº 6.727 de 2009.
+
+                                             Art. 488 da CLT e art. 7º, inciso XXI da Constituição
+        C2     Aviso Prévio Trabalhado
+                                             Federal/88.
+
+        C3     Férias Indenizadas            Decreto-Lei nº 1.535, de 15/04/77.
+
+               Depósito por Rescisão
+        C4                                   Art. 1º da Lei Complementar nº 110, de 29/06/2001.
+               Sem Justa Causa
+
+                                             Art. 9º da Lei nº 7.238 - Indenização por dispensa
+        C5     Indenização Adicional
+                                             antes do dissídio coletivo.
+
+
+De forma similar à metodologia adotada para o Grupo B, apresentaremos, como
+exemplo, a memória de cálculo dos encargos sociais do Grupo C para os serventes
+no Estado do Rio de Janeiro.
+
+
+
+
+                                                    33
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+C1 - Aviso Prévio Indenizado
+
+Existem dois tipos de aviso prévio: o indenizado e o trabalhado. Por se constituir na
+situação mais comum, adotou-se que o aviso prévio indenizado corresponde a 90%
+dos casos.
+
+O pagamento do aviso prévio é direito amparado constitucionalmente ao trabalhador
+e por disposições da CLT, sendo equivalente a 30 (trinta) dias. A Lei nº 12.506/2011
+prevê o acréscimo de 3 (três) dias por ano de serviço prestado na mesma empresa
+até o máximo de 60 (sessenta) dias, perfazendo um total de até 90 (noventa) dias.
+
+O percentual da parcela de remuneração referente ao aviso prévio indenizado é
+calculado em função do período de permanência médio de cada categoria profissional,
+obtido no CAGED, utilizando as fórmulas abaixo:
+
+         Se PRE ≤ 12 meses (aviso prévio indenizado de 30 dias)
+
+                                    1
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 12 < PRE < 24 (aviso prévio indenizado de 33 dias)
+
+                                   1,1
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 24 < PRE < 36 (aviso prévio indenizado de 36 dias)
+
+                                   1,2
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 36 < PRE < 48 (aviso prévio indenizado de 39 dias)
+
+                                   1,3
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+onde:
+
+PRE representa a rotatividade da categoria profissional = 11,03 meses;
+DSJ representa o percentual de dispensados sem justa causa = 75,59%.
+
+Substituindo os valores na fórmula, teremos:
+
+                              1
+                     C1 =         × 0,7559 × 100 × 0,9 = 6,17%
+                            10,03
+
+
+
+
+                                           34
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+C2 - Aviso Prévio Trabalhado
+
+O Aviso Prévio Trabalhado representa à redução de 2 horas diárias na jornada de
+trabalho, sem prejuízo do salário, pelo período de 30 (trinta) dias. Por ser a situação
+menos comum, definiu-se que o aviso trabalhado corresponde a 10% dos casos.
+A fórmula utilizada para a obtenção do seu cálculo é apresentada abaixo:
+
+                              RJT DSJ
+                       C2 =      ×    × 100 × 0,1 = 0,19%
+                              JDT PRE
+onde:
+
+RJT representa a redução na jornada diária de trabalho = 2 horas;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+PRE representa a rotatividade da categoria profissional = 11,03 meses;
+DSJ representa a fração de funcionários dispensados sem justa causa = 75,59%.
+
+C3 - Férias Indenizadas
+
+As férias indenizadas correspondem ao número de meses incompletos às férias.
+
+O cálculo referente à parcela de remuneração de férias indenizadas é realizado por
+meio das expressões e metodologias apresentadas a seguir.
+
+1º Passo - Determinação do número de meses incompletos às férias
+
+                               PRE             PRE
+                     NMIF =        − INTEIRO (     ) = 0,9
+                                12              12
+onde:
+
+NMIF representa o número de meses incompletos às férias;
+PRE representa a rotatividade da categoria profissional = 11,03 meses.
+
+2º Passo - Determinação das Férias Indenizadas
+
+                (30 DIAS + 10 DIAS) × (NMIF × DSJ × JDT)
+         C3 =                                            × 100 = 10,24%
+                                  HT1
+onde:
+
+NMIF representa o número de meses incompletos às férias;
+DSJ representa a fração de funcionários dispensados sem justa causa = 75,59%;
+JDT representa a jornada diária de trabalho = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00.
+
+C4 - Depósito por Rescisão Sem Justa Causa
+
+O percentual referente à parcela de Depósito por Rescisão Sem Justa Causa é obtido
+por meio da seguinte expressão:
+
+            C4 = (FGTS × (0,08 + (0,08 × EGB)) × DSJ) × 100 = 4,04%
+
+
+                                            35
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+onde:
+
+FGTS representa a taxa do depósito no valor de 50% (40% FGTS e 10% referente à
+Lei Complementar nº 110 de 29/06/2001);
+EGB representa os encargos sociais do Grupo B = 33,74%;
+DSJ representa a fração de funcionários dispensados sem justa causa = 75,59%.
+
+C5 - Indenização Adicional
+
+De acordo com a Lei nº 7238/1984, determina-se a adoção do percentual de um doze
+avos (8,33%) para os trabalhadores demitidos sem justa causa no período de 30 dias
+anteriores ao mês-base da correção salarial obtido por meio de convenção coletiva de
+trabalho firmada entre os sindicatos patronais e de trabalhadores.
+
+O percentual referente à parcela de Indenização Adicional é obtido por meio da
+seguinte expressão:
+
+                            DAP × JDT   1
+                    C5 =              ×    × DSJ ×100 = 0,70%
+                              HT1       12
+
+onde:
+
+DAP representa o número de dias de aviso prévio = 30 dias;
+JDT representa a jornada diária de trabalho = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00;
+DSJ representa a fração de funcionários dispensados sem justa causa = 75,59%.
+
+A Tabela 12 constitui-se em resumo dos encargos sociais referentes ao Grupo C
+definidos para os serventes no Estado do Rio de Janeiro.
+
+         Tabela 12 - Encargos sociais do Grupo C para servente no Rio de Janeiro
+
+                  Item            Parcela de Contribuição            Fator (%)
+
+                   C1      Aviso Prévio Indenizado                    6,17%
+
+                   C2      Aviso Prévio Trabalhado                    0,19%
+
+                   C3      Férias Indenizadas                        10,24%
+
+                   C4      Depósito por Rescisão Sem Justa Causa      4,04%
+
+                   C5      Indenização Adicional                      0,70%
+
+                                  Total do Grupo C (Servente - RJ)   21,34%
+
+
+
+
+                                                   36
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 04 - Mão de Obra
+
+
+        Grupo D
+
+O Grupo D representa as reincidências de um grupo de encargos sociais sobre outro,
+sendo representado por duas parcelas.
+
+D1 - Reincidência do Grupo A sobre o Grupo B
+
+O percentual de reincidência do Grupo A sobre o Grupo B é obtido por meio da
+seguinte expressão:
+
+                              D1 = (EGA × EGB) × = 12,75%
+
+onde:
+
+EGA representa os encargos sociais do Grupo A = 37,80%;
+EGB representa os encargos sociais do Grupo B = 33,74%.
+
+D2 - Reincidência do Grupo A sobre Aviso Prévio Trabalhado + Reincidência do FGTS
+sobre Aviso Prévio Indenizado
+
+O percentual de reincidência desta parcela é obtido por meio da seguinte expressão:
+
+                     D2 = [(API × FGTS) + (APT × EGA)] × 100 = 0,57%
+
+onde:
+
+API representa o Aviso Prévio Indenizado (C1) = 6,17%;
+FGTS no valor de 8%;
+APT representa o Aviso Prévio Trabalhado (C2) = 0,19%;
+EGA representa os encargos sociais do Grupo A = 37,80%.
+
+A Tabela 13 constitui-se em resumo dos encargos sociais referentes ao Grupo D
+definidos para os serventes no Estado do Rio de Janeiro.
+
+         Tabela 13 - Encargos sociais do Grupo D para servente no Rio de Janeiro
+
+                  Item             Parcela de Contribuição             Fator (%)
+
+                  D1      Reincidência do Grupo A sobre o Grupo B      12,75%
+                          Reincidência do Grupo A sobre Aviso Prévio
+                  D2      Trabalhado + Reincidência do FGTS sobre       0,57%
+                          Aviso Prévio Indenizado
+                                    Total do Grupo D (Servente - RJ)   13,34%
+
+
+
+
+                                                37
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 04 - Mão de Obra
+
+
+       Resultados Finais
+
+A Tabela 14 apresenta os encargos sociais referentes a categoria de servente para o
+Estado do Rio de Janeiro.
+
+    Tabela 14 - Encargos sociais para trabalhadores horistas (Servente - RJ - Julho/2014)
+
+              Encargos Sociais Básicos                                Encargos (%)
+              Previdência Social                                        20,00%
+              FGTS                                                       8,00%
+              Salário Educação                                           2,50%
+              SESI                                                       1,50%
+              SENAI/SEBRAE                                               1,60%
+              INCRA                                                      0,20%
+              Seguro Contra Risco e Acidente de Trabalho (INSS)          3,00%
+              SECONCI                                                    1,00%
+                                                           Grupo A      37,80%
+              Encargos que Recebem Incidência de A                    Encargos (%)
+              Repouso Semanal Remunerado                                17,50%
+              Feriados                                                   4,81%
+              Auxílio-Enfermidade                                        0,94%
+              13º Salário                                                9,17%
+              Licença Paternidade                                        0,08%
+              Faltas Justificadas                                        0,74%
+              Auxílio Acidente de Trabalho                               0,49%
+              Férias Gozadas                                              0%
+              Férias sobre Licença Maternidade                           0,01%
+                                                           Grupo B      33,74%
+              Encargos que não Recebem Incidência Global de A         Encargos (%)
+              Aviso Prévio Indenizado                                    6,17%
+              Aviso Prévio Trabalhado                                    0,19%
+              Férias Indenizadas+1/3                                    10,24%
+              Depósito Rescisão Sem Justa Causa                          4,04%
+              Indenização Adicional                                      0,70%
+                                                           Grupo C      21,34%
+              Reincidências                                           Encargos (%)
+              Reincidência de A sobre B                                 12,75%
+
+              Reincidência de A sobre aviso Prévio Trabalhado +
+                                                                         0,57%
+              Reincidência de FGTS sobre Aviso Prévio Indenizado
+
+                                                           Grupo D      13,32%
+                                                              Total     106,20%
+
+
+
+
+                                                 38
+                              Manual de Custos de Infraestrutura de Transportes
+                                         Volume 04 - Mão de Obra
+
+
+3.2. Encargos Sociais para Trabalhadores Mensalistas
+
+        Grupo A
+
+Conforme anteriormente discutido, o Grupo A representa as obrigações que incidem
+diretamente sobre os salários e que são regulamentadas de acordo com a legislação
+específica, conforme apresentado na Tabela 07. Em virtude de sua natureza, estes
+encargos são comuns a todas as categorias profissionais, regimes de trabalho e
+unidades da federação, excetuando-se o SECONCI.
+
+        Grupo B
+
+O Grupo B representa as obrigações incidentes sobre o período em que não ocorre a
+prestação direta de serviço, mas que o funcionário faz jus à remuneração, conforme
+legislação específica apresentada na Tabela 15.
+
+                 Tabela 15 - Encargos sociais do Grupo B e legislação aplicada
+
+ Item        Parcela de Contribuição                                Legislação Aplicada
+
+  B1    Férias (30 dias)                        Decreto-Lei nº 1.535/77.
+
+        Auxílio Enfermidade (15 primeiros
+  B2                                            Decreto nº 3.048, de 06/05/1999.
+        dias)
+
+        Auxílio de Acidente de Trabalho (15
+  B3                                            Lei nº 9.528, de 10/12/1997.
+        primeiros dias)
+
+        Licença Paternidade         (5   dias
+  B4                                            Art. 7º, inciso XIX da Constituição Federal/1988.
+        consecutivos)
+
+  B5    13º Salário                             Lei nº 4090, de 13/07/1962.
+
+                                                Art. 473 e 822 da CLT, alterado pelo Decreto-Lei nº 229, de
+                                                28/02/67:
+                                                 2 dias consecutivos por morte de ascendente,
+                                                descendente ou cônjuge;
+                                                 3 dias consecutivos em caso de casamento;
+                                                 2 dias a cada 12 meses para doação voluntária de sangue;
+                                                 2 dias para alistamento eleitoral;
+                                                 período em que estiver cumprindo às exigências do
+                                                serviço militar.
+  B6    Faltas Justificadas
+
+                                                Lei nº 1.060 de 05/03/1950
+                                                 1 dia por ano para internação de dependente;
+                                                 dias em que estiver a serviço da justiça como testemunha.
+
+                                                Por determinação de lei específica:
+                                                 dias de greves devidamente reconhecidos              por
+                                                determinação judicial;
+                                                 dias reconhecidamente de calamidade pública.
+
+
+A definição dos encargos sociais do Grupo B é obrigatoriamente precedida pelo
+cálculo da média das horas efetivamente trabalhadas por ano. Os resultados comuns
+a todas as categorias profissionais no regime de contratação mensal são
+apresentados na Tabela 09.
+
+                                                     39
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+Apresentaremos a seguir, como exemplo, a memória de cálculo dos encargos sociais
+do Grupo B para os encarregados de turma no estado do Rio de Janeiro.
+
+B1 - Férias
+
+O cálculo dos encargos sociais referente às férias baseia-se na remuneração dos 30
+dias de férias acrescido do terço constitucional, conforme expressões abaixo:
+
+                                       1 + 1⁄3       HT
+              Se PRE ≥ 12 → B1 =                 ×       × 100 = 12,23%
+                                          12         HT1
+
+                               Se PRE < 12 → B1 = 0
+
+onde:
+
+PRE representa a rotatividade da categoria profissional = 20,69 meses;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas;
+HT representa o número de horas trabalháveis no ano = 2.189,82 horas.
+
+B2 - Auxílio Enfermidade
+
+O cálculo do percentual de Auxílio Enfermidade é realizado em função dos dados
+originários do Anuário Estatístico da Previdência Social - AEPS do Ministério da
+Previdência Social, conforme metodologia apresentada a seguir.
+
+1º Passo - Determinação do Percentual Obtido (PO)
+
+                           NAD          178.272
+                  PO =         × 100 =           × 100 = 3,75%
+                           NCE         4.751.119
+
+onde:
+
+NAD representa o número de auxílios doença concedidos = 178.272 (AEPS/2012);
+NCE representa o número de contribuintes empregados = 4.751.119 (AEPS/2012).
+
+2º Passo - Determinação do número de dias de auxílio enfermidade (DAE)
+
+                      DAE = PO × DAD = 3,75 % × 15 = 0,56
+
+onde
+
+DAD representa o número de auxílio doença pagos pelo empregador = 15.
+
+
+
+
+                                           40
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+3º Passo - Determinação do Auxílio Enfermidade
+
+                             ((DAE + 2) × JDT)
+                      B2 =                     × 100 = 0,94%
+                                   HT1
+
+onde:
+
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas.
+
+B3 - Auxílio Acidente de Trabalho
+
+Em casos de acidentes de trabalho, o empregador arca com os custos dos primeiros
+15 dias. Segundo o Anuário Estatístico da Previdência Social de 2012, 8,95% dos
+contribuintes da previdência social ligados às atividades de construção civil foram
+beneficiados com a emissão de auxílio acidente de trabalho.
+
+A parcela de encargo social referente ao auxílio acidente de trabalho é obtida por meio
+da seguinte expressão:
+
+                             ((BAA × 15) × JDT)
+                      B3 =                      × 100 = 0,49%
+                                    HT1
+
+onde:
+
+BAA representa a porcentagem de beneficiados com o auxílio = 8,95;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas.
+
+B4 - Licença Paternidade
+
+O cálculo referente à parcela de remuneração da Licença Paternidade é realizado em
+função de parâmetros obtidos no CAGED e no IBGE, conforme metodologia
+apresentada a seguir.
+
+1º Passo - Determinação da Taxa de Fecundidade
+
+                               TFE           1,68
+                    PTF =            × 100 =      × 100 = 4,94%
+                             (49-15)         (34)
+
+onde:
+
+PTF representa o percentual da taxa de fecundidade;
+TFE representa a taxa de fecundidade no estado do Rio de Janeiro = 1,68 (IBGE).
+
+
+
+
+                                            41
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+2º Passo - Determinação do Número de Dias de Licença
+
+                    NDL = (DLP × PTF x PNH × PNHF) = 0,2122
+
+onde:
+
+NDL representa o número de dias de licença;
+DLP representa o número de dias de Licença Paternidade concedidos por lei = 5;
+PTF representa o percentual da taxa de fecundidade na construção civil = 4,94%;
+PNH representa o percentual de homens na função = 95,99%;
+PNHF representa a proporção de homens na função em idade fértil = 89,52%.
+
+3º Passo - Determinação da Licença Paternidade
+
+                                  NDL × JDT
+                           B4 =             × 100 = 0,08%
+                                    HT2
+
+onde:
+
+NDL representa o número de dias de licença;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT2 representa o número de horas trabalhadas no ano sem considerar licença
+paternidade = 1.990,11 horas.
+
+B5 - 13º Salário
+
+O percentual referente à parcela do 13º salário é obtido por meio da seguinte
+expressão:
+
+                                  1   HT
+                           B5 =     ×    × 100 = 9,17%
+                                  12 HT1
+
+onde:
+
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas;
+HT representa o número de horas trabalháveis no ano = 2.189,82 horas.
+
+B6 - Faltas Justificadas
+
+O percentual referente à parcela de faltas justificadas é obtido por meio da seguinte
+expressão:
+
+                                     DAJ × JDT
+                              B6 =             × 100 = 0,74%
+                                       HT1
+
+onde:
+
+DAJ representa o número de dias de ausência justificada = 2 dias;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00 horas.
+
+
+                                            42
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+B7 - Férias Sobre a Licença Maternidade
+
+A licença maternidade equivalente ao período de 120 dias é assegurada às
+trabalhadoras por lei, ficando sob responsabilidade da Previdência Social o salário
+neste período. Ao empregador cabe arcar com os custos referentes às férias e ao
+adicional de férias no período do afastamento.
+
+O encargo referente às férias sobre a licença maternidade é obtido por meio da
+seguinte expressão:
+
+                                                DLM     30 + 10
+         B7 = (PTF × PNM × PNMF) ×                    ×         × JDT = 0,01%
+                                               365,25    HT3
+
+onde:
+
+PTF representa a taxa de fecundidade na construção civil = 4,94%;
+PNM representa a fração de mulheres na função = 4,94%;
+PNMF representa a proporção de mulheres em idade fértil (15 - 49 anos) = 97,92%;
+DLM representa os dias de licença maternidade concedidos = 120 dias;
+HT3 representa o número de horas trabalhadas no ano sem considerar licença
+paternidade = 1.991,63 horas;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas.
+
+A Tabela 16 constitui-se em quadro-resumo dos encargos sociais referentes ao Grupo
+B definidos para os encarregados de turma no Estado do Rio de Janeiro.
+
+   Tabela 16 - Encargos sociais do Grupo B para encarregado de turma no Rio de Janeiro
+
+                     Item          Parcela de Contribuição        Fator (%)
+
+                     B1      Férias                               12,23%
+
+                     B2      Auxílio Enfermidade                   0,95%
+
+                     B3      Auxílio de Acidente de Trabalho       0,49%
+
+                     B4      Licença Paternidade                   0,07%
+
+                     B5      13º Salário                           9,17%
+
+                     B6      Faltas Justificadas                   0,74%
+
+                     B7      Férias Sobre a Licença Maternidade    0,00%
+
+                   Total do Grupo B (Encarregado de turma - RJ)   23,64%
+
+
+
+
+                                               43
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+        Grupo C
+
+O Grupo C representa os encargos sociais referentes ao desligamento profissional do
+funcionário. São caracterizados por não sofrerem incidência dos encargos do Grupo
+A e são definidos conforme legislação apresentada na Tabela 11.
+
+De forma similar à metodologia adotada para o Grupo B, apresentaremos, como
+exemplo, a memória de cálculo dos encargos sociais do Grupo C para os
+encarregados de turma no Estado do Rio de Janeiro.
+
+C1 - Aviso Prévio Indenizado
+
+O pagamento do aviso prévio é direito amparado constitucionalmente ao trabalhador
+e por disposições da CLT, sendo equivalente a 30 (trinta) dias. A Lei nº 12.506/2011
+prevê o acréscimo de 3 (três) dias por ano de serviço prestado na mesma empresa
+até o máximo de 60 (sessenta) dias, perfazendo um total de até 90 (noventa) dias.
+
+O percentual da parcela de remuneração referente ao aviso prévio indenizado é
+calculado em função do período de permanência médio de cada categoria profissional,
+obtido no CAGED, utilizando as fórmulas abaixo:
+
+         Se PRE ≤ 12 meses (aviso prévio indenizado de 30 dias)
+
+                                    1
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 12 < PRE < 24 (aviso prévio indenizado de 33 dias)
+
+                                   1,1
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 24 < PRE < 36 (aviso prévio indenizado de 36 dias)
+
+                                   1,2
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+         Se 36 < PRE < 48 (aviso prévio indenizado de 39 dias)
+
+                                   1,3
+                            C1 =       × DSJ × 100 × 0,9
+                                   PRE
+
+onde:
+
+PRE representa a rotatividade da categoria profissional = 20,69 meses;
+DSJ representa o percentual de dispensados sem justa causa = 83,08%.
+
+Substituindo os valores na fórmula, teremos:
+
+                             1,1
+                     C1 =         × 0,8308 × 100 × 0,9 = 3,98%
+                            20,69
+
+
+                                           44
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+C2 - Aviso Prévio Trabalhado
+
+O aviso prévio trabalhado representa à redução de 2 horas diárias na jornada de
+trabalho, sem prejuízo do salário, pelo período de 30 (trinta) dias. Por ser a situação
+menos comum, definiu-se que o aviso trabalhado corresponde a 10% dos casos.
+
+A fórmula utilizada para a obtenção do seu cálculo é apresentada abaixo:
+
+                              RJT DSJ
+                       C2 =      ×    × 100 × 0,1 = 0,11%
+                              JDT PRE
+
+onde:
+
+RJT representa a redução na jornada diária de trabalho = 2 horas;
+JDT representa a jornada diária de trabalho = 44 horas / 6 dias = 7,33 horas;
+PRE representa a rotatividade da categoria profissional = 20,69 meses;
+DSJ representa a fração de funcionários dispensados sem justa causa = 83,08%.
+
+C3 - Férias Indenizadas
+
+O cálculo referente à parcela de remuneração de férias indenizadas é realizado por
+meio das expressões e metodologias apresentadas a seguir.
+
+1º Passo - Determinação do Número de Meses Incompletos às Férias
+
+                            PRE             PRE
+                  NMIF =        − INTEIRO (     ) = 0,7242
+                             12              12
+
+onde:
+
+NMIF representa o número de meses incompletos às férias;
+PRE representa a rotatividade da categoria profissional = 20,69 meses.
+
+2º Passo - Determinação das Férias Indenizadas
+
+                (30 DIAS + 10 DIAS) × (NMIF × DSJ × JDT)
+         C3 =                                            × 100 = 8,86%
+                                  HT1
+onde:
+
+NMIF representa o número de meses incompletos às férias;
+DSJ representa a fração de funcionários dispensados sem justa causa = 83,08%;
+JDT representa a jornada diária de trabalho = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00.
+
+
+
+
+                                            45
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+C4 - Depósito por Rescisão Sem Justa Causa
+
+O percentual referente à parcela de Depósito por Rescisão Sem Justa Causa é obtido
+por meio da seguinte expressão:
+
+           C4 = (FGTS × (0,08 + (0,08 × EGB)) × DSJ) × 100 = 4,11%
+
+onde:
+
+FGTS representa a taxa do depósito no valor de 50% (40% FGTS e 10% referente à
+Lei Complementar nº 110 de 29/06/2001);
+EGB representa os encargos sociais do Grupo B = 23,66%;
+DSJ representa a fração de funcionários dispensados sem justa causa = 83,08%.
+
+C5 - Indenização Adicional
+
+De acordo com a Lei nº 7238/1984, determina-se a adoção do percentual de um doze
+avos (8,33%) para os trabalhadores demitidos sem justa causa no período de 30 dias
+anteriores ao mês-base da correção salarial.
+
+O percentual referente à parcela de Indenização Adicional é obtido por meio da
+seguinte expressão:
+
+                            DAP × JDT   1
+                    C5 =              ×    × DSJ ×100 = 0,77%
+                              HT1       12
+onde:
+
+DAP representa o número de dias de aviso prévio = 30 dias;
+JDT representa a jornada diária de trabalho = 7,33 horas;
+HT1 representa o número de horas trabalhadas no ano = 1.990,00;
+DSJ representa a fração de funcionários dispensados sem justa causa = 83,08%.
+
+A Tabela 17 constitui-se em resumo dos encargos sociais referentes ao Grupo C
+definidos para os encarregados de turma no Estado do Rio de Janeiro.
+
+         Tabela 17 - Encargos sociais do Grupo C para servente no Rio de Janeiro
+
+                  Item            Parcela de Contribuição          Fator (%)
+
+                   C1      Aviso Prévio Indenizado                  3,98%
+
+                   C2      Aviso Prévio Trabalhado                  0,11%
+
+                   C3      Férias Indenizadas                       8,86%
+
+                   C4      Depósito por Rescisão Sem Justa Causa    4,11%
+
+                   C5      Indenização Adicional                    0,77%
+
+                  Total do Grupo C (Encarregados de turma - RJ)    17,83%
+
+
+
+
+                                                   46
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+        Grupo D
+
+O Grupo D representa as reincidências de um grupo de encargos sociais sobre outro,
+sendo representado por duas parcelas.
+
+D1 - Reincidência do Grupo A sobre o Grupo B
+
+O percentual de reincidência do Grupo A sobre o Grupo B é obtido por meio da
+seguinte expressão:
+
+                                D1 = (EGA × EGB) × = 8,94%
+
+onde:
+
+EGA representa os encargos sociais do Grupo A = 37,80%;
+EGB representa os encargos sociais do Grupo B = 23,66%.
+
+D2 - Reincidência do Grupo A sobre Aviso Prévio Trabalhado + Reincidência do FGTS
+sobre Aviso Prévio Indenizado
+
+O percentual de reincidência desta parcela é obtido por meio da seguinte expressão:
+
+                     D2 = [(API × FGTS) + (APT × EGA)] × 100 = 0,36%
+
+onde:
+
+API representa o Aviso Prévio Indenizado (C1) = 3,98%;
+FGTS representa o Fundo de Garantia por Tempo de Serviço = 8%;
+APT representa o Aviso Prévio Trabalhado (C2) = 0,11%;
+EGA representa os encargos sociais do Grupo A = 37,80%.
+
+A Tabela 18 constitui-se em resumo dos encargos sociais referentes ao Grupo D
+definidos para os encarregados de turma no Estado do Rio de Janeiro.
+
+   Tabela 18 - Encargos sociais do Grupo D para encarregados de turma no Rio de Janeiro
+
+                  Item              Parcela de Contribuição             Fator (%)
+
+                  D1       Reincidência do Grupo A sobre o Grupo B       8,94%
+                           Reincidência do Grupo A sobre Aviso Prévio
+                  D2       Trabalhado + Reincidência do FGTS sobre       0,36%
+                           Aviso Prévio Indenizado
+                         Total do Grupo D (Encarregado de turma - RJ)    9,30%
+
+
+
+
+                                                 47
+                         Manual de Custos de Infraestrutura de Transportes
+                                    Volume 04 - Mão de Obra
+
+
+       Resultados Finais
+
+Para fins de demonstração, a Tabela 19 apresenta os encargos sociais referentes a
+categoria de encarregado de turma para o Estado do Rio de Janeiro.
+
+  Tabela 19 - Encargos sociais para mensalistas (Encarregado de Turma - RJ - Julho/2014)
+
+         A                           Encargos Sociais Básicos                              (%)
+
+        A1     Previdência Social                                                         20,00%
+
+        A2     FGTS                                                                       8,00%
+
+        A3     Salário Educação                                                           2,50%
+
+        A4     SESI                                                                       1,50%
+
+        A5     SENAI/SEBRAE                                                               1,60%
+
+        A6     INCRA                                                                      0,20%
+
+        A7     Seguro Contra Risco e Acidente de Trabalho (INSS)                          3,00%
+
+        A8     Seconci                                                                    1,00%
+                                                                    Subtotal do Grupo A 37,80%
+
+         B                   Encargos que Recebem Incidência de A (%)                      (%)
+
+        B1     Auxílio-Enfermidade                                                        0,95%
+
+        B2     13º Salário                                                                9,17%
+
+        B3     Licença Paternidade                                                        0,07%
+
+        B4     Faltas Justificadas                                                        0,74%
+
+        B5     Auxílio Acidente de Trabalho                                               0,49%
+
+        B6     Férias Gozadas                                                             12,23%
+
+        B7     Férias em Licença Maternidade                                              0,00%
+                                                                    Subtotal do Grupo B 23,64%
+
+         C             Encargos que não Recebem Incidência Global de A (%)                 (%)
+
+        C1     Aviso Prévio Indenizado                                                    3,77%
+
+        C2     Aviso Prévio Trabalhado                                                    0,10%
+
+        C3     Férias Indenizadas+1/3                                                     13,04%
+
+        C4     Depósito Rescisão Sem Justa Causa                                          4,47%
+
+        C5     Indenização Adicional (LEI 7.238/84)                                       0,83%
+                                                                    Subtotal do Grupo C 22,22%
+
+         D                                    Reincidências                                (%)
+
+        D1     Reincidência de A sobre B                                                  8,94%
+
+               Reincidência de A sobre aviso Prévio Trabalhado + Reinicidência de
+        D2                                                                                0,34%
+               FGTS sobre Aviso Prévio Indenizado
+
+                                                                    Subtotal do Grupo D   9,28%
+
+                                                              Total dos Encargos Sociais 92,93%
+
+
+
+
+                                                 48
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+3.3. Desoneração da Mão de Obra
+
+A desoneração da mão de obra no setor de infraestrutura foi instituída pelo inciso VII
+do art. 7º da Lei nº 12.546/11, regulamentada pela Lei 12.844/13 e contemplou as
+seguintes atividades descritas nos grupos da Classificação Nacional de Atividade
+Econômica - CNAE 2.0:
+
+     421 - Construção de rodovias, ferrovias, obras urbanas e obras de arte
+      especiais;
+     422 - Obras de infraestrutura para energia elétrica, telecomunicações, água,
+      esgoto e transporte por dutos;
+     429 - Construção de outras obras de infraestrutura;
+     431 - Demolição e preparação de terreno.
+
+A referida desoneração consiste no recolhimento, por parte das empresas, da
+contribuição patronal, que antes era de 20% sobre a folha de pagamento, para 2%
+sobre a receita bruta da empresa.
+
+Posteriormente, por meio da Lei nº 13.161, de 31 de agosto de 2015, alterou-se a
+alíquota da Contribuição Previdência sobre a Renda Bruta - CPRB para 4,5%, no caso
+específico das empresas de construção de obras de infraestrutura de transportes.
+Além disso, a referida lei facultou às empresas a opção de adotar o recolhimento da
+contribuição previdência diretamente na folha de pagamento, como realizado
+anteriormente, ou por meio da nova alíquota da CPRB.
+
+Para o desenvolvimento da memória de cálculo referente aos encargos sociais
+(horista e mensalista) com desoneração, são excluídos os 20% referentes à
+Previdência Social (Grupo A), mantendo-se inalterados o restante da memória.
+
+
+
+
+                                            49
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+                   4. ENCARGOS COMPLEMENTARES
+
+
+
+
+                      51
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+4. ENCARGOS COMPLEMENTARES
+
+Além dos Encargos Sociais estabelecidos pela CLT e pela Constituição Federal,
+existem ainda os aqui denominados Encargos Complementares, que são suportados
+pelo empregador em função da natureza do trabalho e de acordos e convenções
+coletivas que regulamentam a atividade das categorias da construção civil e pesada.
+
+Os custos aqui considerados complementares são necessários para execução e
+segurança do trabalhador e do empregador, estando divididos em alimentação,
+transporte, ferramentas manuais, equipamentos de proteção individual e exames
+médicos admissionais, periódicos e demissionais.
+
+4.1. Alimentação de Pessoal
+
+Trata-se de item obrigatório no levantamento de custos dos trabalhadores, apresenta
+relevância significativa devido ao impacto do fornecimento de alimentação para
+aqueles de menor qualificação, alojados em frente de serviço de campo.
+
+Para o caso das obras do DNIT, considerou-se por se constituir na situação mais
+comum, que as refeições serão preparadas em refeitório próprio no canteiro de obras,
+sendo fornecidas cinco refeições diárias aos trabalhadores, a saber: café da manhã,
+almoço, lanche da tarde, jantar e ceia.
+
+De acordo com a Portaria MTE nº 193, de 05 de dezembro de 2006, os parâmetros
+nutricionais estabelecidos para a alimentação orientam que o almoço, o jantar e a ceia
+dos trabalhadores devem corresponder entre 30 e 40% do valor energético total diário
+- VET e conter de 600 a 800 calorias, podendo-se acrescentar 400 calorias (20%) em
+relação ao VET de 2.000 calorias diárias.
+
+Já para o lanche e o desjejum, deverão ser oferecidas refeições contendo 300 a 400
+calorias, podendo-se acrescentar 400 calorias (20%) em relação ao VET diário de
+2.000 calorias. Estas refeições devem corresponder a 15-20% do VET diário. Ainda,
+de acordo com a referida portaria, o percentual proteico-calórico das refeições deverá
+permanecer entre 6 a 10%.
+
+Para o caso das obras do DNIT e devido ao tipo de atividade que os trabalhadores
+exercem, definiu-se que o melhor valor para suprir as necessidades de VET diário
+consiste no seu limite máximo obrigatório, isto é, 3.200 calorias, conforme distribuição
+por refeições apresentada na Tabela 20.
+                     Tabela 20 - Distribuição de calorias por refeição
+
+                              Refeição        Quantidade (kcal)
+
+                           Desjejum                 400
+
+                           Almoço                   800
+
+                           Lanche                   400
+
+                           Janta                    800
+
+                           Ceia                     800
+
+                           Total                   3.200
+
+
+
+
+                                            53
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 04 - Mão de Obra
+
+
+Para o cálculo do custo da alimentação, tomou-se por base cardápio elaborado por
+nutricionista para a região sudeste para o período de 15 dias. Esse cardápio está
+ajustado para VET diário de 3200 calorias, em conformidade com as instruções do
+PAT - Programa de Alimentação do Trabalhador.
+
+De posse dos cardápios, consolidou-se a lista de insumos utilizados para o preparo
+das refeições, para os quais foram pesquisados preços no Estado do Rio de Janeiro.
+O custo de preparo, incluindo a mão de obra, equipamentos de cozinha e a
+manutenção do local, foi estimado em 60% do valor dos alimentos com base em
+estudos similares, em especial ao documento denominado “Prestação de Serviços de
+Nutrição e Alimentação a Servidores e Empregados” do CADTERC do Governo do
+Estado de São Paulo.
+
+Dessa forma, o custo de 1 dia de alimentação de um funcionário no Rio de Janeiro,
+na data base julho de 2014, foi calculado em R$ 11,57. O custo horário da alimentação
+correspondente é calculado dividindo-se esse valor por 7,33 (número de horas
+trabalhadas por dia), o que resulta no valor de R$ 1,58. Para a obtenção dos custos
+de alimentação nas demais unidades da federação, aplicou-se a proporcionalidade
+existente entre os custos da cesta básica do DIEESE, conforme apresentado na
+Tabela 21.
+
+            Tabela 21 - Valores de cesta básica por região (DIEESE, Julho/2014)
+
+                      Valor Médio                     Custo Diário   Custo Horário
+             Região                  Coeficiente K
+                      Cesta Básica                   da Alimentação da Alimentação
+
+              SE       R$ 353,12        1,000           R$ 11,57       R$ 1,58
+
+               S       R$ 352,50        0,998           R$ 11,55       R$ 1,58
+
+              NE       R$ 281,26        0,796           R$ 9,21        R$ 1,26
+
+               N       R$ 314,10        0,889           R$ 10,29       R$ 1,40
+
+              CO       R$ 317,27        0,898           R$ 10,39       R$ 1,42
+
+
+Com objetivo de racionalizar a pesquisa de preços dos insumos e a posterior
+atualização do cálculo do custo horário de alimentação, a lista completa de insumos
+foi dividida em grupos alimentícios da pirâmide alimentar, conforme detalhamento a
+seguir: carboidratos, verduras/legumes, frutas, carnes/ovos/grãos, laticínios,
+açúcares, gorduras e bebidas.
+
+Em etapa posterior, foram selecionados os insumos mais representativos, definindo-
+se o peso relativo de cada grupo alimentar no custo total da refeição, conforme
+apresentado na Tabela 22.
+
+Dessa forma, adotou-se como metodologia a realização da pesquisa mensal de
+preços para os insumos representativos e atualização do custo horário de alimentação
+para o Estado do Rio de Janeiro por meio da soma ponderada desses insumos.
+
+Com relação aos coeficientes obtidos a partir dos valores regionais da cesta básica
+do DIEESE (Tabela 22), definiu-se que sua atualização será realizada em período não
+superior a 12 meses.
+
+
+
+                                                54
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+      Tabela 22 - Grupos de insumos utilizados para definição do custo da alimentação
+
+                Grupo        Descrição          Alimento Representativo   Peso (%)
+
+                  0     Bebida                  Café                       4,95%
+
+                  1     Cereais e pães          Arroz e feijão            14,05%
+
+                  2     Frutas                  Laranja e mamão            3,16%
+
+                  3     Hortaliças (verduras)   Couve                      2,89%
+
+                  4     Leguminosas             Batata, cebola e chuchu    7,78%
+
+                  5     Carnes, aves e ovos     Carne (acém)              46,98%
+
+                  6     Leite e derivados       Leite                     16,85%
+
+                  7     Óleos e gorduras        Óleo de soja               1,19%
+
+                  8     Doces e açucares        Açúcar                     2,15%
+
+
+4.2. Transporte de Pessoal
+
+A maioria das obras do DNIT encontra-se deslocada dos grandes centros urbanos,
+razão pelo qual se admitiu, para cálculo dos custos relacionados ao transporte, que
+os trabalhadores passam a semana inteira alojados no canteiro da obra, sem
+deslocamentos diários entre sua residência e o local do trabalho. Entretanto, nos finais
+de semana, considerou-se o transporte para a cidade mais próxima para arejamento,
+sem pernoite.
+
+O custo de transporte dos trabalhadores foi definido em função da previsão de 1
+viagem semanal (ida e volta no domingo), em ônibus, adotando-se como referência
+uma distância média de 150 km do canteiro de obras até a cidade.
+
+O custo horário do transporte, composto por parcelas relacionadas à propriedade, à
+manutenção e à operação, foi calculado por meio do conhecimento de determinados
+parâmetros de entrada e parcelas, definidos para cada unidade da federação.
+
+a) Premissas de Cálculo:
+
+     1 viagem por final de semana: 365,25 / 7 = 52,18 viagens/ano;
+     Distância de ida e volta = 300 km;
+     Tempo de viagem = 5 horas (velocidade média de 60 km/h);
+     Valor de aquisição do ônibus = R$ 316.278,32 (RJ - Mês-base: Julho/2014).
+
+b) Custo de Manutenção:
+
+     Fator de manutenção (k) = 0,9;
+     Vida útil (n) = 7 anos;
+     Horas trabalhadas por ano (HTA) = 2.000;
+     Custo horário de manutenção = R$ 20,33/h;
+     Custo de manutenção por viagem = R$ 101,65.
+
+
+                                                55
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+c) Custo de Depreciação:
+
+    Valor Residual = 40%;
+    Custo horário de depreciação = R$ 13,55/h;
+    Custo de depreciação por viagem = R$ 67,75.
+
+d) Custo de Combustível:
+
+    Coeficientes de consumo = 0,18 l/kWh;
+    Potência = 175 kW;
+    Preço do combustível (diesel): R$ 2,06/l (RJ - Mês-base: Julho/2014);
+    Custo horário de combustível = R$ 64,89/h;
+    Custo de combustível por viagem: R$ 324,45.
+
+e) Custo da Mão de Obra de Operação:
+
+    Motorista de caminhão = R$ 19,33/h (RJ - Mês-base: Julho/2014);
+    Custo da mão de obra de operação por viagem = R$ 96,65.
+
+f) Custo de Seguros e Impostos:
+
+    Valor médio de investimento = R$ 180.730,47;
+    Custo horário de seguros e impostos = R$ 2,26/h;
+    Custo de seguros e impostos por viagem = R$ 11,30.
+
+g) Custo de Oportunidade de Capital:
+
+    Valor de aquisição do ônibus = R$ 316.278,32 (RJ - Mês-base: Julho/2014);
+    Vida útil (n) = 7 anos;
+    Horas trabalhadas por ano (HTA) = 2.000;
+    Taxa de juros = 6% ao ano;
+    Custo de oportunidade de capital por viagem = R$ 27,11.
+
+h) Custo Horário do Transporte:
+
+    Custo total por viagem = R$ 628,91;
+    Custo total de viagens por ano = 52,18 x R$ 628,91 = R$ 32.816,50;
+    Horas trabalháveis por ano = 2.189,82;
+    Número de passageiros = 42 (lotação de 47 passageiros, 10% de vacância);
+    Custo horário do transporte = R$ 0,36.
+
+
+
+
+                                           56
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+Os custos de aquisição do ônibus, do combustível e da mão de obra do motorista
+serão atualizados mensalmente para cada uma das 27 unidades da federação.
+
+Em obras urbanas, onde não se mostre viável o alojamento direto dos funcionários no
+canteiro de obras, o orçamentista deve prever o custo com fornecimento de vale
+transporte, a ser pesquisado no próprio local da obra.
+
+4.3. Ferramentas Manuais
+
+As ferramentas manuais são aquelas que exigem somente o esforço humano para a
+sua utilização, sendo diferenciadas em função da natureza dos serviços e das
+categorias profissionais que as utilizam.
+
+Consoante metodologia específica, foram definidos os conjuntos de ferramentas
+manuais utilizadas por cada categoria profissional, obtendo-se uma lista de 100 tipos
+diferentes de ferramentas manuais.
+
+A definição dos custos horários por categoria profissional foi realizada em função da
+frequência média de utilização diária, da vida útil e do custo unitário de cada
+ferramenta, conforme exemplo apresentado na Tabela 23, referente ao servente no
+Estado do Rio de Janeiro.
+
+    Tabela 23 - Custo horário com ferramentas manuais para servente no Rio de Janeiro
+
+                                                                         Custo        Custo Horário
+          Ferramentas Manuais           Frequência        Vida Útil
+                                                                      Unitário (R$)      (R$/h)
+
+     Alavanca-ponteiro com 180 cm          5%              2.000            118,77          0,00297
+
+     Cavadeira articulada                  10%             1.000              30,50         0,00305
+
+     Escada de madeira com 5 m             5%              2.000            494,90          0,01237
+
+     Enxada                                35%             2.000              27,92         0,00489
+
+     Machado                               5%              2.000              53,97         0,00135
+
+     Pá                                    20%             2.000              29,49         0,00294
+
+     Peneira para areia                    5%              1.000              17,44         0,00087
+
+     Picareta                              15%             2.000              45,13         0,00339
+
+                                              Total (RJ - Mês-Base: Julho/2014)             0,03183
+
+
+
+
+                                                     57
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 04 - Mão de Obra
+
+
+Para fins de demonstração, a Tabela 24 apresenta o resumo dos custos horários com
+ferramentas manuais calculados para diferentes categorias profissionais, tomando-se
+como referência o Estado do Rio de Janeiro, no mês-base de Julho/2014.
+
+ Tabela 24 - Custos horários com ferramentas manuais de diferentes categorias profissionais
+
+                        Código                            Custo Horário
+                                 Categoria Profissional
+                        SICRO                                (R$/h)
+
+                         9801    Ajudante                       0,03596
+
+                         9805    Armador                        0,03320
+
+                         9807    Bombeiro hidráulico            0,32665
+
+                         9808    Carpinteiro                    0,02661
+
+                         9810    Eletricista                    0,04556
+
+                         9815    Jardineiro                     0,04114
+
+                         9821    Pedreiro                       0,02251
+
+                         9822    Pintor                         0,04807
+
+                         9823    Serralheiro                    0,03785
+
+                         9824    Servente                       0,03183
+
+                         9825    Soldador                       0,02772
+
+                         9830    Montador                       0,32665
+
+                         9852    Blaster                        0,09171
+
+                         9859    Trabalhador de via             0,06217
+
+
+Com objetivo de racionalizar a pesquisa de preços para valoração do custo horário de
+ferramentas manuais, buscou-se identificar quais seriam as ferramentas a serem
+consideradas “líderes”.
+
+Com base na análise de orçamentos de obras do DNIT, concluiu-se que as categorias
+profissionais de servente, ajudante, carpinteiro, armador e pedreiro, nessa ordem, são
+as mais significativas no custo da mão de obra, desconsiderando-se os operadores
+de equipamentos que não utilizam ferramentas manuais.
+
+A partir da análise das ferramentas manuais utilizadas por estas categorias e seus
+respectivos pesos na formação destes custos, definiu-se a enxada, a tesoura para
+cortar vergalhão de 900mm e o metro de madeira duplo como líderes, conforme
+ponderações apresentadas na Tabela 25.
+
+
+
+
+                                               58
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+      Tabela 25 - Critérios para definição dos custos horários com ferramentas manuais
+
+    Ferramentas          Mão de Obra          Equipe de Obra                 Proporção     Peso
+                                                                Frequência
+      Manuais             Aplicável         (100 Trabalhadores)               do Custo Representativo
+
+ Enxada                9824 - Servente              49            35%         13,02%        58 %
+
+                        9801 - Ajudante             18             3%
+ Tesoura para cortar
+                                                                              5,74 %        25 %
+ vergalhão 900 mm
+                        9805 - Armador              10            10%
+
+                        9801 - Ajudante             18             5%
+
+                        9805 - Armador              10             5%
+ Metro de madeira
+                                                                               3,84%        17%
+ duplo
+                       9808 - Carpinteiro           14             5%
+
+                        9821 - Pedreiro             9              5%
+
+                                                                     Total    22,60%        100%
+
+
+Dessa forma, serão pesquisados mensalmente apenas os custos destas ferramentas
+manuais, definindo-se os custos das demais em função dos índices de relação entre
+eles. Em período não superior a 12 meses, a totalidade da lista de ferramentas será
+pesquisada e os índices novamente calibrados.
+
+4.4. Equipamentos de Proteção Individual - EPI
+
+A Norma Regulamentadora NR-06 da Portaria nº 3.214 do Ministério do Trabalho e
+Emprego, de 08 de junho de 1978, define equipamento de proteção individual como
+todo dispositivo ou produto, de uso individual, utilizado pelo trabalhador, destinado à
+proteção de riscos suscetíveis a sua segurança e saúde no trabalho.
+
+A empresa é obrigada a fornecer aos seus empregados gratuitamente equipamento
+de proteção individual adequado ao risco, em perfeito estado de conservação e
+funcionamento, nas seguintes circunstâncias:
+
+     Sempre que as medidas de ordem geral não ofereçam completa proteção
+      contra os riscos de acidentes ou de doenças profissionais e do trabalho;
+     Enquanto as medidas de proteção coletiva estiverem sendo implantadas;
+     Para atendimento de situações de emergência.
+
+De forma similar à metodologia adotada para as ferramentas manuais, foram
+considerados os equipamentos de proteção individual para cada categoria
+profissional, resultando em uma relação inicial com 21 itens.
+
+A definição dos custos horários por categoria profissional foi realizada em função da
+frequência média de utilização diária, da vida útil e do custo unitário dos equipamentos
+de proteção individual, conforme exemplo apresentado na Tabela 26, referente ao
+servente no Estado do Rio de Janeiro, no mês-base de Julho/2014.
+
+
+
+
+                                                    59
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+                Tabela 26 - Custo horário com EPI para servente no Rio de Janeiro
+
+                                                                Vida       Custo        Custo Horário
+    Equipamentos de Proteção Individual            Frequência
+                                                                Útil    Unitário (R$)      (R$/h)
+
+Capacete para proteção contra impactos               100%       5.000            8,91         0,00178
+
+Óculos para proteção contra partículas               100%       1.000            3,30         0,00330
+
+Respirador filtrante proteção vias respiratórias      10%       200              2,86         0,00143
+
+Luva para proteção das mãos - abrasão e
+                                                      40%       400              7,92         0,00792
+escoriação
+
+Calçado para proteção contra impactos e quedas
+                                                     100%       600             53,40         0,08901
+de objetos
+
+Bota de borracha - proteção contra umidade            5%        1.000           27,86         0,00139
+
+Capa de chuva - proteção contra umidade               5%        500             16,19         0,00162
+
+Dispositivo trava-queda para proteção contra
+                                                      2%        2.000         207,57          0,00208
+quedas
+
+Cinturão para riscos de queda em altura               2%        1.000           56,38         0,00113
+
+Calça de brim                                        100%       600             41,84         0,06974
+
+Camisa de brim                                       100%       600             37,99         0,06332
+
+                                                                                Total         0,24270
+
+
+
+
+                                                    60
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+Para fins de demonstração, a Tabela 27 apresenta o resumo dos custos horários com
+equipamento de proteção individual calculados para diferentes categorias, tomando-
+se como referência o Estado do Rio de Janeiro, no mês-base de Julho/2014.
+
+          Tabela 27 - Custos horários com equipamentos de proteção individual
+
+                 Código                                      Custo Horário
+                                   Categoria Profissional
+                 SICRO                                          (R$/h)
+
+                  9801    Ajudante                                 0,24270
+
+                  9802    Ajudante especializado                   0,24270
+
+                  9805    Armador                                  0,27261
+
+                  9807    Bombeiro hidráulico                      0,27261
+
+                  9808    Carpinteiro                              0,28952
+
+                  9810    Eletricista                              0,52555
+
+                  9815    Jardineiro                               0,24994
+
+                  9821    Pedreiro                                 0,27261
+
+                  9822    Pintor                                   0,28952
+
+                  9823    Serralheiro                              0,27261
+
+                  9824    Servente                                 0,24270
+
+                  9825    Soldador                                 0,31129
+
+                  9830    Montador                                 0,27261
+
+                          Perfurador de tubulão a ar
+                  9835                                             0,24270
+                          comprimido com insalubridade
+
+                  9836    Geólogo                                  0,09709
+
+                  9843    Operador de equipamento leve             0,23914
+
+                  9845    Operador de equipamento pesado           0,23014
+
+                  9846    Operador de equipamento especial         0,14114
+
+                  9852    Blaster                                  0,27261
+
+                  9853    Pré-marcador                             0,14114
+
+                  9859    Trabalhador de via                       0,24270
+
+                  9861    Selecionador de material pétreo          0,23014
+
+
+De forma similar ao tratamento dado para definição dos custos com ferramentas
+manuais, buscou-se identificar quais seriam os equipamentos de proteção individual
+considerados “líderes” na formação dos custos.
+
+
+
+
+                                                61
+                           Manual de Custos de Infraestrutura de Transportes
+                                      Volume 04 - Mão de Obra
+
+
+Com base na análise de orçamentos de obras do DNIT, concluiu-se que as categorias
+profissionais de servente, ajudante, carpinteiro, armador e pedreiro, nessa ordem, são
+as mais significativas no custo da mão de obra, desconsiderando-se os operadores
+de equipamentos que não utilizam ferramentas manuais.
+
+A partir da análise dos equipamentos de proteção individual utilizados por estas
+categorias e seus respectivos pesos, definiu-se os insumos classificados como
+líderes, com as respectivas ponderações apresentadas na Tabela 28.
+
+                  Tabela 28 - Critérios para definição dos custos horários com EPI
+
+    Equipamentos de        Mão de Obra     Equipe de Obra                   Proporção       Peso
+                                                               Frequência
+   Proteção Individual      Aplicável    (100 Trabalhadores)                do Custo    Representativo
+
+                           Ajudante              18              100%
+
+                           Servente              49              100%
+  Calçado para proteção
+  de impactos e quedas     Pedreiro              9               100%          35,3%        36,7%
+  de objetos
+                           Carpinteiro           14              100%
+
+                           Armador               10              100%
+
+                           Ajudante              18              100%
+
+                           Servente              49              100%
+
+  Calça de brim            Pedreiro              9               100%          27,7%        28,8%
+
+                           Carpinteiro           14              100%
+
+                           Armador               10              100%
+
+                           Ajudante              18              100%
+
+                           Servente              49              100%
+
+  Camisa de brim           Pedreiro              9               100%          25,2%        26,2%
+
+                           Carpinteiro           14              100%
+
+                           Armador               10              100%
+
+                           Ajudante              18               2%
+
+                           Servente              49               2%
+  Dispositivo    trava-
+  quedas para proteção     Pedreiro              9                30%          4,6%         4,8%
+  contra quedas
+                           Carpinteiro           14               30%
+
+                           Armador               10               30%
+
+                           Ajudante              18               40%
+
+                           Servente              49               40%
+  Luva para proteção das
+  mãos - abrasão e         Pedreiro              9                50%          3,4%         3,5%
+  escoriação
+                           Carpinteiro           14               50%
+
+                           Armador               10               50%
+
+                                                                    Total      96,2%       100,0%
+
+
+
+                                                 62
+                    Manual de Custos de Infraestrutura de Transportes
+                               Volume 04 - Mão de Obra
+
+
+4.5. Exames Médicos Ocupacionais
+
+Os exames médicos ocupacionais são definidos na Norma Regulamentadora NR-07
+da Portaria 3.214 do Ministério do Trabalho e Emprego, de 08/06/78, que trata da
+obrigatoriedade de elaboração e implantação do Programa de Controle Médico de
+Saúde Ocupacional. A referida norma estabelece a necessidade de realização
+obrigatória dos seguintes exames médicos:
+
+    Exame admissional;
+    Exame periódico;
+    Exame de retorno ao trabalho;
+    Exame de mudança de função;
+    Exame demissional.
+
+Os exames médicos ocupacionais compreendem a avaliação clínica e a realização de
+exames complementares, de acordo com os termos específicos da NR-07, devendo
+ainda ser observadas as diretrizes preconizadas na NR-04, que trata de serviços
+especializados em engenharia de segurança e em medicina do trabalho, e na NR-15,
+que trata de atividades e operações insalubres.
+
+Os exames periódicos devem ocorrer a cada dois anos para os trabalhadores entre
+18 anos e 45 anos de idade e, em menor período para os trabalhadores expostos a
+condições hiperbáricas, conforme preconizado na NR-15. Em respeito às convenções
+coletivas de trabalho do Rio de Janeiro e do Rio Grande do Norte, adotou-se um
+período de 6 meses para estas condições.
+
+O número de consultas médicas necessárias para cada categoria profissional foi
+definido da seguinte forma:
+
+    1 consulta na admissão;
+    1 consulta na demissão;
+    1 consulta periódica a cada 24 meses de permanência (taxa de rotatividade
+     média obtida nos dados do CAGED.
+
+Os encargos referentes aos exames médicos ocupacionais podem ser estimados por
+meio do levantamento dos custos de consultas na Associação Médica Brasileira -
+AMB. Estes valores devem ser rateados de acordo com a quantidade e o tempo de
+permanência no emprego de cada categoria profissional, conforme metodologia
+apresentada a seguir:
+
+1º Passo - Definição do Custo dos Exames (CE)
+
+                                  CE = CC × CON
+
+onde:
+
+CC representa o custo da consulta de acordo com a AMB;
+CON representa o número de consultas.
+
+
+                                          63
+                    Manual de Custos de Infraestrutura de Transportes
+                               Volume 04 - Mão de Obra
+
+
+2º Passo - Definição do Custo Mensal dos Exames (CM)
+
+                                               CE
+                                      CM =
+                                               TP
+onde:
+
+CE representa o custo dos exames;
+TP representa o tempo de permanência.
+
+3º Passo - Definição do Custo Horário dos Exames (CH)
+
+                                             CM
+                                     CH =
+                                             HTM
+
+onde:
+
+CM representa o custo mensal dos exames;
+HTM representa as horas trabalháveis por mês.
+
+Os encargos relativos aos exames médicos ocupacionais serão calculados
+mensalmente, de acordo com a variação do tempo de permanência na função
+(rotatividade obtida nos microdados do CAGED, conforme metodologia adotada). Os
+valores de referência dos exames médicos serão atualizados em função da tabela da
+Associação Médica Brasileira - AMB.
+
+
+
+
+                                          64
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+                               5. ENCARGOS ADICIONAIS
+
+
+
+
+                      65
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+5. ENCARGOS ADICIONAIS
+
+Os encargos adicionais da mão de obra são caracterizados como benefícios a que
+fazem jus os trabalhadores, em função de determinações específicas de acordos ou
+convenções coletivas de trabalho de diferentes regiões e entidades sindicais, os quais
+geram desembolsos que se acrescem aos encargos sociais e complementares.
+
+Com intuito de identificar todas as determinações para concessões de benefícios
+exclusivos aos trabalhadores representados, foi realizado um extenso levantamento
+entre as convenções coletivas de trabalho da construção pesada e/ou da construção
+civil e do mobiliário em cada unidade da federação. A síntese desta pesquisa
+encontra-se representada na Tabela 29.
+
+      Tabela 29 - Síntese dos encargos adicionais e incidência nas convenções coletivas
+
+      Benefícios Adicionais           Incidência        Síntese das Convenções Coletivas de Trabalho
+
+                                                   Coberturas em valores de R$ 5.000,00 até 40.000,00
+ Seguro de vida                          23        para morte/invalidez ou, em quantidade de pisos
+                                                   salários (de 10 a 36) e, subsídios preestabelecidos
+
+                                                   Coberturas de R$ 1.000,00 a R$ 9.350,00 e, de 2 a 3
+ Auxílio morte/funeral                   20
+                                                   pisos salariais, para despesas decorrentes de funeral
+
+                                                   Cestas em valores de R$ 58,00 até R$ 230,00 ou, em
+ Cesta básica                            17        produtos, com subsídios e faixas salariais
+                                                   preestabelecidas
+
+ Participação   nos      Lucros   e
+                                         16        Implantação conforme Lei 10.101/2000, art.2º
+ Resultados - PLR
+
+                                                   Auxílios de 5% a 15% do salário para conclusão de
+ Auxílio educação/qualificação           15        cursos de formação/qualificação e, disponibilização de
+                                                   locais e materiais para cursos de alfabetização
+
+                                                   De meio até um dia de licença remunerada para
+                                                   recebimento de PIS ou FGTS de emprego anterior,
+ Licença para receber PIS                10
+                                                   salvo quando existir convênio local com a Caixa
+                                                   Econômica Federal
+
+                                                   Diversos arrazoamentos sobre determinação ou
+                                                   recomendação para concessão de plano médico e
+ Assistência Médica-Odontológica          9
+                                                   odontológico ou outra forma de atendimento ao
+                                                   trabalhador
+
+                                                   Abonos de dias ou de saídas antecipadas em dias de
+ Auxílios a estudante                     9
+                                                   provas escolares
+
+                                                   Dispensas totalmente ou parcialmente remuneradas
+                                                   para comemoração no dia do trabalhador da construção
+ Dia trabalhador da construção            9        ou na segunda-feira do carnaval, com estabelecimentos
+                                                   de adicionais de hora extra em necessidades de
+                                                   trabalho
+
+                                                   Disponibilização de locais e materiais para práticas
+                                                   esportivas e de lazer/sociais, com transporte, jogos,
+ Recreação/lazer                          9
+                                                   livros, telefone, postagens de correspondências e
+                                                   outros
+
+
+
+
+                                                   67
+                            Manual de Custos de Infraestrutura de Transportes
+                                       Volume 04 - Mão de Obra
+
+
+   Tabela 29 - Síntese dos encargos adicionais e incidência nas convenções coletivas (2/2)
+
+        Benefícios Adicionais          Incidência     Síntese das Convenções Coletivas de Trabalho
+
+                                                    Auxílios complementares em afastamentos por
+                                                    acidente, abrangendo abonos de 1/2 a 1 salário,
+ Auxílio previdenciário complementar       7
+                                                    complementação do salário pago pelo INSS, cesta
+                                                    básica e despesa de viagem
+
+                                                    De 1 até 2 salários de indenização em aposentadorias
+ Prêmio aposentadoria                      7
+                                                    para períodos preestabelecidos de trabalho na empresa
+
+                                                    Valores a partir de R$ 35,00 ou percentuais sobre o
+ Prêmios assiduidade/permanência           5        salário para premiações por assiduidade ou tempo de
+                                                    permanência na empresa
+
+                                                    De 1 a 5 dias de folgas para visitas familiares, em
+ Visita familiar                           4        conformidade com a distância da residência e períodos
+                                                    contínuos preestabelecidos de trabalho em alojamentos
+
+                                                    Ressarcimentos     mensais      de   R$    290,15    e
+                                                    R$ 308,00/filho/mês ou, limite de 50% do piso/servente
+ Auxílio filho especial                    4
+                                                    ou, ainda, 2 dias de abono para acompanhamentos
+                                                    médicos
+
+                                                    Fornecimento gratuito de protetor solar em atividades
+ Protetor solar                            4
+                                                    expostas ao sol
+
+                                                    Participação da empresa em 50% de despesas com
+ Auxílio creche                            3        creche ou disponibilização de locais para guarda de
+                                                    crianças e amamentação
+
+                                                    Exames médicos semestrais para atividades insalubres,
+ Exame médico                              3        anual   para    todas   as     funções      ou    em
+                                                    admissões/demissões
+
+                                                    Folgas em dias úteis e/ou, 25% do salário em situações
+ Auxílio transferência                     3
+                                                    de transferências de local de trabalho
+
+ Cesta de páscoa/natalina                  2        Duas cestas básicas, específicas para as datas
+
+ Transporte no desligamento                1        Transporte até residência em rescisão contratual
+
+                                                    Produtos para recém-nascidos, conforme listagem
+ Cesta natalidade                          1
+                                                    definida na convenção coletiva de trabalho
+
+ Bicicletário                              1        Área coberta para guarda de bicicletas e motocicletas.
+
+
+Por se tratarem de situações diferenciadas, serão contemplados apenas os encargos
+adicionais considerados mais relevantes, segundo sua incidência, significância e
+possibilidade de quantificação e precificação por critério objetivo.
+
+Em consonância à recomendação constante do Acórdão 3293/2011-TCU-Plenário,
+serão considerados apenas os encargos obrigatórios, visto que algumas convenções
+coletivas mencionam o benefício, mas não destacam sua obrigatoriedade.
+
+
+
+
+                                                    68
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+Dessa forma, optou-se por adotar os seguintes benefícios como encargos adicionais
+para composição do custo horário da mão de obra, nas unidades da federação cujas
+convenções coletivas de trabalho as obriguem:
+
+    Cesta básica;
+    Seguro de vida;
+    Auxílio funeral;
+    Assistência médica e odontológica.
+
+5.1. Cesta Básica
+
+A maioria das convenções coletivas celebradas pelos sindicatos da construção
+pesada e/ou da construção civil estabelece a obrigatoriedade de fornecimento de
+cesta básica aos trabalhadores, em produtos ou, em valor equivalente em vale ou
+ticket alimentação, independentemente do fornecimento da alimentação em serviço.
+
+Nas unidades da federação Amazonas, Amapá, Pará, Rondônia, Alagoas, Bahia,
+Ceará, Maranhão, Paraíba, Pernambuco, Piauí, Rio Grande do Norte, Sergipe, Minas
+Gerais, Rio de Janeiro, São Paulo, Paraná, Mato Grosso do Sul e Mato Grosso foi
+considerado o custo de cesta básica com os valores e condições previstos nas
+respectivas convenções coletivas de trabalho.
+
+Nas demais unidades da federação e no Distrito Federal, onde não há
+obrigatoriedade, foi considerada a não existência de custo com cesta básica.
+
+Em grande parte das convenções foram estipulados valores para o fornecimento da
+cesta básica e percentuais para desconto em folha, a título de participação do
+trabalhador. O menor valor de cesta básica das convenções coletivas foi observado
+para o estado do Ceará, sendo definido um valor de R$ 60,00 para todos os
+trabalhadores com salário inferior a R$ 1.540,00 por mês.
+
+Já nos estados do Rio de Janeiro e Bahia, as convenções coletivas determinam a
+necessidade de pagamento de R$ 230,00 por mês, 99% subsidiado, para todos os
+trabalhadores a título de cesta básica.
+
+Para ilustrar a metodologia, as Tabelas 30, 31 e 32 constituem-se em resumos das
+simulações dos custos associados ao pagamento de cesta básica para diferentes
+categorias profissionais, tomando-se como referência os valores mínimo, médio e
+máximo observados nas convenções coletivas das 27 unidades da federação.
+
+
+
+
+                                              69
+                Manual de Custos de Infraestrutura de Transportes
+                           Volume 04 - Mão de Obra
+
+
+        Tabela 30 - Custo estimado com cesta básica (menor valor)
+
+                                             Custo estimado com Cesta Básica
+ Categoria                  Salário (1)                (Menor Valor)
+             Unidade
+Profissional                  (R$)        Custo Unitário       Custo         Percentual
+                                            Mensal (2)        Horário       sobre Salário
+
+Ajudante             h            6,05                60,00          0,33       5,4%
+
+Armador              h            7,20            -                  -            -
+
+Carpinteiro          h            7,27            -                  -            -
+
+Pedreiro             h            7,28            -                  -            -
+
+Apontador          mês       1.707,20             -                  -            -
+
+Encarregado        mês       4.002,73             -                  -            -
+
+
+        Tabela 31 - Custo estimado com cesta básica (valor médio)
+
+                                               Custo estimado com Cesta Básica
+ Categoria                  Salário (1)                  (Valor Médio)
+             Unidade
+Profissional                   (R$)       Custo Unitário      Custo          Percentual
+                                            Mensal (2)        Horário       sobre Salário
+
+Ajudante             h            6,05            126,34             0,69       11,5%
+
+Armador              h            7,20            126,34             0,69        9,6%
+
+Carpinteiro          h            7,27            126,34             0,69        9,5%
+
+Pedreiro             h            7,28            126,34             0,69        9,5%
+
+Apontador          mês        1.707,20            126,34             -           7,4%
+
+Encarregado        mês        4.002,73            126,34             -           3,2%
+
+
+         Tabela 32 - Custo estimado com cesta básica (maior valor)
+
+                                               Custo estimado com Cesta Básica
+ Categoria                  Salário (1)                  (Maior Valor)
+             Unidade
+Profissional                   (R$)       Custo Unitário      Custo          Percentual
+                                            Mensal (2)        Horário       sobre Salário
+
+Ajudante             h            6,05            227,70         1,25          20,6%
+
+Armador              h            7,20            227,70         1,25          17,3%
+
+Carpinteiro          h            7,27            227,70         1,25          17,2%
+
+Pedreiro             h            7,28            227,70         1,25          17,1%
+
+Apontador          mês       1.707,20             227,70         -             13,3%
+
+Encarregado        mês       4.002,73             227,70         -              5,7%
+
+(1)   Salário/Hora: Rio de Janeiro - Maio de 2014.
+(2)   Custos unitários mensais reajustados para Maio de 2014.
+
+
+
+
+                                          70
+                          Manual de Custos de Infraestrutura de Transportes
+                                     Volume 04 - Mão de Obra
+
+
+5.2. Seguro de Vida e Auxílio Funeral
+
+A maioria das convenções coletivas de trabalho prevê a concessão de benefícios de
+seguro de vida em grupo e de auxílio funeral aos trabalhadores, com o
+estabelecimento de coberturas diferenciadas para morte, morte acidental, invalidez
+permanente total ou parcial por acidente, morte em casos de dependentes diretos e
+auxílio funeral.
+
+Apenas para exemplificar, o Sindicato da Construção Civil no Estado de São Paulo
+apresentou como custo de referência mais competitivo de mercado o valor de R$ 4,00
+por vida, para a realização de seguro de vida e auxílio funeral, contemplando
+coberturas de R$ 18.750,00 para morte, de R$ 50.000,00 para morte acidental e
+invalidez permanente, de R$ 3.750,00 para morte de cônjuge e/ou filho(s) e de R$
+2.250,00 para auxílio funeral do titular, para o mês de maio de 2014.
+
+Tais valores mostram-se compatíveis à média das coberturas de seguro previstas nas
+convenções coletivas das 27 unidades da federação.
+
+Dessa forma, tomando-se por base o valor referencial indicado pelo SINDUSCON-SP
+para a contratação de seguro de vida em grupo e auxílio funeral, apurou-se que o
+custo com este encargo adicional pode onerar o salário médio/hora das categorias
+profissionais nas seguintes proporções, conforme apresentado na Tabela 33.
+
+                Tabela 33 - Custos estimados com seguro de vida e auxílio funeral
+
+                                                     Custo estimado com Seguro de Vida
+                                                             e Auxílio Funeral (2)
+           Categoria                Salário (1)
+                       Unidade
+          Profissional                (R$)
+                                                  Custo Unitário    Custo          Percentual
+                                                     Mensal         Horário       sobre Salário
+
+          Ajudante           h            6,05               4,00         0,022      0,36%
+
+          Armador            h            7,20               4,00         0,022      0,30%
+
+          Carpinteiro        h            7,27               4,00         0,022      0,30%
+
+          Pedreiro           h            7,28               4,00         0,022      0,30%
+
+          Apontador        mês        1.707,20               4,00     -              0,23%
+
+          Encarregado      mês        4.002,73               4,00     -              0,10%
+
+          (1) Salário/Hora: Rio de Janeiro / Maio de 2014.
+          (2)Custo mais competitivo apresentado pela SINDUSCON/SP, no valor de R$
+          4,00/mês/trabalhador, para coberturas de morte de R$ 18.750,00, morte acidental e
+          invalidez permanente de R$ 50.000,00, morte de cônjuge e filhos de R$ 3.750,00 e
+          auxílio funeral de R$ 2.250,00.
+
+
+
+
+                                                    71
+                        Manual de Custos de Infraestrutura de Transportes
+                                   Volume 04 - Mão de Obra
+
+
+5.3. Assistência Médica/Odontológica
+
+O fornecimento de plano de assistência médica e odontológica aos trabalhadores foi
+apontado em diferentes convenções coletivas de trabalho, sendo uma determinação
+por sua obrigatoriedade e oito recomendações para a disponibilização de alguma
+forma de atendimento aos trabalhadores.
+
+Considerando o custo expressivo deste encargo no caso de sua obrigatoriedade, foi
+efetuada simulação de custos com base em valores definidos na convenção coletiva
+do Espírito Santo, onde o fornecimento de assistência médica e odontológica aos
+trabalhadores mostra-se obrigatório, conforme apresentado na Tabela 34.
+
+              Tabela 34 - Custo estimado com assistência médica e odontológica
+
+                                                   Custo estimado com Assistência Médica
+                                                        e Odontológica (CCT - ES) (2)
+          Categoria                 Salário (1)
+                        Unidade
+         Profissional                  (R$)
+                                                  Custo Unitário    Custo        Percentual
+                                                    Mensal (2)     Horário      sobre Salário
+
+        Ajudante           h              6,05            56,50          0,31      5,1 %
+
+        Armador            h              7,20            56,50          0,31      4,3 %
+
+        Carpinteiro        h              7,27            56,50          0,31      4,3 %
+
+        Pedreiro           h              7,28            56,50          0,31      4,3 %
+
+        Apontador         mês         1.707,20            56,50      -             3,3 %
+
+        Encarregado       mês         4.002,73            56,50      -             1,4 %
+
+        (1)
+          Salário/Hora: Rio de Janeiro - Maio de 2014.
+        (2)A Convenção Coletiva de Trabalho dos Trabalhadores do Espírito Santo prevê
+        obrigatoriedade, com participação da empresa em R$ 47,50 por Plano Médico e R$ 9,00
+        por Plano Odontológico.
+
+
+
+
+                                                  72
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+         6. TRABALHO EM CONDIÇÕES ESPECIAIS
+
+
+
+
+                      73
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+6. TRABALHO EM CONDIÇÕES ESPECIAIS
+
+Os custos da mão de obra definidos no SICRO são aqueles diretamente envolvidos
+na execução dos serviços ou na operação de equipamentos e/ou veículos em
+condições normais de jornada e de ambiente de trabalho, o que se mostra
+perfeitamente razoável para a obtenção de custos de referência.
+
+Os horários especiais de trabalho, as horas extraordinárias noturnas e outras
+atividades que se caracterizem como insalubres ou perigosas, além das descritas
+nesse volume do Manual de Custos de Infraestrutura de Transportes, devem ser
+incluídos aos custos da obra no momento da elaboração do orçamento, em função
+das características do local e dos serviços, observadas as legislações pertinentes e
+as determinações específicas preconizadas nas convenções coletivas de trabalho.
+
+De acordo com estas diretrizes, torna-se possível o estabelecimento de critérios de
+aplicação de custos complementares na elaboração dos orçamentos de obras de
+infraestrutura nas seguintes condições:
+
+     Trabalho extraordinário;
+     Trabalho noturno;
+     Trabalho insalubre;
+     Trabalho perigoso.
+
+6.1. Trabalho Extraordinário
+
+Segundo o artigo 7º da Constituição Federal, inciso XVI, são direitos dos trabalhadores
+urbanos e rurais, além de outros que visem à melhoria de sua condição social,
+“remuneração do serviço extraordinário superior, no mínimo, em cinquenta por cento
+à do serviço normal”.
+
+Há que se considerar o art. 59 da Consolidação das Leis Trabalhistas que estabelece
+que a duração normal do trabalho poderá ser acrescida de horas suplementares, em
+número não excedente a 2 horas, mediante acordo escrito entre empregador e
+empregado ou contrato coletivo de trabalho.
+
+O contrato coletivo de trabalho firmado poderá ainda prever a dispensa do acréscimo
+de salário se o excesso de horas em um dia for compensado pela correspondente
+diminuição em outro dia, de maneira que não exceda, no período máximo de um ano,
+à soma das jornadas semanais de trabalho previstas, nem seja ultrapassado o limite
+máximo de dez horas diárias.
+
+Com base na legislação, o trabalho em horário extraordinário é remunerado em 1,5
+vezes o salário horário básico, devendo ser ainda cumpridas as condições
+estabelecidas nas convenções coletivas de trabalho correspondentes ao local da obra.
+
+Tais convenções podem prever acréscimos percentuais diferenciados por trabalho
+extraordinário em dias normais da semana, aos sábados, domingos e feriados,
+havendo ainda a possibilidade de compensação de horas.
+
+
+
+                                            75
+                      Manual de Custos de Infraestrutura de Transportes
+                                 Volume 04 - Mão de Obra
+
+
+6.2. Trabalho Noturno
+
+O artigo 7º da Constituição Federal, inciso IX, determina que os trabalhadores urbanos
+e rurais têm direito à remuneração do trabalho noturno superior à do diurno.
+
+Com a exceção dos casos de revezamento semanal ou quinzenal, o artigo 73 da
+Consolidação das Leis Trabalhistas considera como noturno o trabalho executado
+entre as 22 horas de um dia e as 5 horas do dia seguinte, e indica que a hora nesse
+período será computada como de 52 minutos e 30 segundos e paga com acréscimo
+de 20%, pelo menos, sobre a hora diurna.
+
+A hora reduzida calculada pela proporção de 60 minutos sobre a hora de 52,5 minutos
+equivale a um fator de 1,1428. Dessa forma, considerando-se ainda o adicional de
+20%, obtém-se um acréscimo total da hora noturna em 37,14% que deve ser aplicado
+sobre o salário horário básico do trabalhador.
+
+De forma similar ao trabalho em horário extraordinário, devem ser observadas as
+condições específicas firmadas nas convenções coletivas de trabalho, que podem
+inclusive estabelecer acréscimos diferenciados para o trabalho noturno, conforme
+constatado nos acordos coletivos celebrados nos estados do Amapá e Pernambuco,
+onde são previstos adicionais noturnos de 30%.
+
+6.3. Trabalho Insalubre
+
+O artigo 7º da Constituição Federal, inciso XXIII, determina que os trabalhadores
+urbanos e rurais têm direito à adicional de remuneração para as atividades penosas,
+insalubres ou perigosas, na forma da lei.
+
+As atividades ou operações insalubres são definidas no Capítulo V, Seção XIII da
+Consolidação das Leis Trabalhistas e na Norma Regulamentadora NR-15, segundo
+as quais o exercício de trabalho em condições insalubres, acima dos limites de
+tolerância estabelecidos pelo Ministério do Trabalho e Emprego, assegura a
+percepção de adicional de 40%, 20% e 10% do salário mínimo da região, em função
+da classificação das condições nos graus máximo, médio e mínimo de insalubridade.
+
+Entretanto, os coeficientes podem ser aplicados diretamente sobre o salário
+normativo, desde que haja previsão convencional para tanto, conforme observado nas
+seguintes convenções coletivas de trabalho:
+
+     O Acordo Coletivo da Construção Civil do Acre estabelece que os pintores de
+      estrutura metálica e soldadores farão jus à insalubridade nos termos da Lei,
+      com valor mínimo de 10%;
+     O Acordo Coletivo da Construção Pesada do Pará assegura aos trabalhadores
+      que exercem atividades e funções vinculadas à produção, transporte e
+      aplicação de massas asfálticas ou ligantes asfálticos, o pagamento do adicional
+      de insalubridade, conforme percentuais a seguir: a) Produção e transporte de
+      asfalto: 20%; b) Aplicação de asfalto: 40%;
+
+
+
+
+                                            76
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+    Os Acordos Coletivos da Construção Pesada de Minas Gerais, do Rio de
+     Janeiro e do Distrito Federal estabelecem que, mediante perícia a ser realizada
+     pelo órgão competente do Ministério do Trabalho, o trabalhador fará jus ao
+     adicional de insalubridade ou periculosidade, no percentual que vier a ser
+     estabelecido, inclusive nos serviços especiais e hiperbáricos.
+
+6.4. Trabalho Perigoso
+
+O artigo 193 da Consolidação das Leis Trabalhistas define que as atividades ou
+operações perigosas são aquelas que, por sua natureza ou métodos de trabalho,
+resultem em riscos acentuados ao trabalhador em virtude de exposição permanente
+a inflamáveis, explosivos ou energia elétrica, roubos ou outras espécies de violência
+física nas atividades profissionais de segurança pessoal ou patrimonial.
+
+Nestas condições, assegura-se ao trabalhador um adicional de 30% sobre o salário,
+sem os acréscimos resultantes de gratificações, prêmios ou participações nos lucros
+e resultados da empresa.
+
+Consta ainda da regulamentação que o empregado poderá optar pelo adicional de
+insalubridade que porventura lhe seja devido e, que, o direito do empregado ao
+adicional de insalubridade ou de periculosidade cessará com a eliminação do risco a
+sua saúde ou integridade física.
+
+Além da legislação acima, também devem ser aplicadas as determinações de
+convenções coletivas de trabalho, conforme exemplificado a seguir:
+
+    Consta do Acordo Coletivo da Construção Pesada do Pará que faz jus ao
+     adicional de periculosidade definido no art. 193, § 1° da CLT, o empregado
+     exposto a risco decorrente de contato a explosivos ou a inflamáveis,
+     excetuados os casos de exposição eventual, assim entendida a exposição
+     fortuita ou a exposição por tempo extremamente reduzido, ainda que habitual
+     (Súmula 364 do TST). Periculosidade de Eletricitários - Faz jus ao adicional de
+     periculosidade de 30% (trinta por cento), os trabalhadores expostos a condição
+     de risco elétrico, definido no Quadro de Atividades/Área de Risco, anexo à Lei
+     7.369/85 e ao Dec. 93.412/86;
+    Consta do Acordo Coletivo da Construção Pesada do Maranhão que, para
+     prevenir os frequentes litígios provocados pela dificuldade de interpretação do
+     texto legal, as entidades estabelecem que os eletricistas e encarregados de
+     eletricista perceberão, independente de laudo pericial, o adicional de
+     periculosidade na taxa de 15% (quinze por cento), sobre o salário efetivamente
+     recebido, tendo em vista que exercem sua atividade em ambiente normalmente
+     desenergizado, em rede de baixa tensão, dispondo de equipamentos de
+     proteção individual, sendo assim o risco puramente virtual, não sendo aplicada
+     esta cláusula aos eletricistas de veículos;
+    Consta do Acordo Coletivo da Construção Pesada da Bahia que as horas
+     trabalhadas pelos eletricistas em rede e painel de alta tensão energizados,
+     serão remuneradas com o adicional de 30% (trinta por cento) a título de
+     adicional de periculosidade, na forma que determina a Lei nº 7.369, de
+     20/09/1985 e as normas regulamentadoras que regem a matéria.
+
+
+                                           77
+                       Manual de Custos de Infraestrutura de Transportes
+                                  Volume 04 - Mão de Obra
+
+
+6.5. Categorias Profissionais com Adicionais de Insalubridade e
+     Periculosidade
+
+Em virtude da natureza dos serviços, O SICRO considerou necessária a aplicação de
+adicionais de insalubridade e de periculosidade para alguns serviços e/ou
+equipamentos, de acordo com o previsto nas normas regulamentadoras do trabalho.
+
+O adicional de insalubridade foi considerado diretamente no custo horário da mão de
+obra do SICRO para os perfuradores que atuam em tubulões sob ar comprimido e aos
+mergulhadores nos serviços de molhes, em respeito à Norma Regulamentadora nº 15,
+em particular o Anexo 6, que trata de trabalhos exercidos em condições hiperbáricas.
+
+Para essas categorias profissionais, foi acrescido um percentual de 40% (quarenta
+por cento) sobre o salário mínimo, considerando o grau máximo previsto na referida
+norma, uma vez que os trabalhadores estarão expostos a condições hiperbárica,
+perigosas e em ambientes confinados.
+
+No que se refere ao adicional de periculosidade, em observância à Norma
+Regulamentadora nº 16, estabeleceu-se a necessidade de se aplicar o referido
+adicional, em percentual de 30% (trinta por cento) sobre o salário de referência, aos
+trabalhadores que atuam em áreas nas quais ocorra manipulação regular de
+explosivos, particularmente nos serviços de túneis, derrocagem (inclusive para os
+mergulhadores) e nas atividades de blaster.
+
+A Tabela 35 apresenta a relação de categorias profissionais cujos adicionais de
+insalubridade e periculosidade são incluídos diretamente no custo da mão de obra.
+    Tabela 35 - Categorias profissionais com adicionais de insalubridade e periculosidade
+
+            Código          Categoriais Profissionais com Adicionais de
+                                                                                Unidade
+            SICRO                 Insalubridade e Periculosidade
+
+             9835     Perfurador de tubulão a ar comprimido com insalubridade     h
+
+             9852     Blaster                                                     h
+
+             9860     Mergulhador                                                 h
+
+             9892     Auxiliar de blaster                                         h
+
+             9923     Mergulhador com periculosidade                              h
+
+             9927     Frentista de túnel com periculosidade                       h
+
+             9928     Servente com periculosidade                                 h
+
+             9929     Bombeiro hidráulico com periculosidade                      h
+
+             9930     Eletricista com periculosidade                              h
+
+             9932     Operador de equipamento pesado com periculosidade           h
+
+             9934     Motorista de veículo especial com periculosidade            h
+
+             9938     Operador de equipamento leve com periculosidade             h
+
+             9939     Operador de equipamento leve com insalubridade              h
+
+             9944     Operador de equipamento especial com periculosidade         h
+
+             9956     Motorista de caminhão com periculosidade                    h
+
+
+
+                                                 78
+                     Manual de Custos de Infraestrutura de Transportes
+                                Volume 04 - Mão de Obra
+
+
+6.6. Não Cumulatividade dos Adicionais de Insalubridade e Periculosidade
+
+No Capítulo V, Seção XIII da Consolidação das Leis Trabalhistas, que trata das
+atividades insalubres ou perigosas, consta do § 2º, do Art. 193, específico sobre
+atividades ou operações perigosas, que “o empregado poderá optar pelo adicional de
+insalubridade que porventura lhe seja devido. (Incluído pela Lei nº 6.514, de 22 de
+dezembro de 1977)”.
+
+Esta condição é reforçada pelo Art. 196, onde consta que:
+
+                     Os efeitos pecuniários decorrentes do trabalho em condições de
+                     insalubridade ou periculosidade serão devidos a contar da data da inclusão
+                     da respectiva atividade nos quadros aprovados pelo Ministro do Trabalho,
+                     respeitadas as normas do artigo 11. (Redação dada pela Lei nº 6.514, de
+                     22.12.1977).
+
+O que proporciona a interpretação de que, caso se constate, que a atividade exercida
+seja concomitantemente insalubre e perigosa, será facultado ao empregado optar pelo
+adicional que lhe for mais favorável, não cabendo o recebimento cumulativo de ambos
+os adicionais.
+.
+
+
+
+
+                                            79
+.
+Manual de Custos de Infraestrutura de Transportes
+           Volume 04 - Mão de Obra
+
+
+
+
+                      81

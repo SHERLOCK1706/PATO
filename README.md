@@ -73,6 +73,21 @@ O motor reproduz as 132 composições do PATO nos dois regimes (uma única difer
 arredondamento da planilha).
 
 ### Binômio aquisição + transporte
+Sequência da planilha de referência (BR-158/MT): **① cotações → ② binômio → ③ resumo do mais vantajoso → ④ conferência →
+⑤ preço adotado na composição.**
+- **📄 Anexar cotação (PDF) — leitura automática**: escolha o PDF (ou foto) da proposta. O sistema lê o texto do PDF ou faz
+  OCR (Tesseract, português) se for digitalizado e pré-preenche fornecedor (reconhecido pelo cadastro, pelo KMZ ou pelo nome do
+  arquivo — nunca o destinatário do orçamento), CNPJ do fornecedor, mês, itens (preço unitário, unidade — inclusive “Mº” lido
+  como m³), frete CIF/FOB, local e rodovia/km do endereço. A DMT vem da proposta ou, se não houver, da distância em linha reta
+  do fornecedor (KMZ/endereço) ao canteiro, sinalizada como estimativa. **Tudo fica editável** (material do binômio, preço,
+  unidade, densidade, DMT pavimentada e não pavimentada) antes de gravar; a cotação é acrescentada ao material (substitui a do
+  mesmo fornecedor) e o PDF fica anexado. CIF ⇒ DMT 0 (IN DNIT 10/2024, art. 10, § 2º).
+- **Fornecedores e localização (KMZ)**: importa a planilha de fornecedores (FORNECEDOR, ENDEREÇO, INSUMO; opcionais CNPJ e
+  CONTATO) e os pontos de um KMZ/KML. Cada fornecedor é localizado pelo ponto do KMZ ou pelo endereço “BR-xxx, km yyy” no SNV
+  202610A: rodovia mais próxima, km na rodovia do projeto, distância ao eixo e ao canteiro (linha reta — conferir a rota).
+- **Resumo e conferência**: tabela com o mais vantajoso de cada material, total, SICRO, preço a adotar, DMT e avisos (menos de 3
+  cotações, PDF não anexado, m³ sem densidade, sem código SICRO). Marque “conferido” e use **Adotar nas composições os
+  conferidos**; se a cotação mudar depois, a conferência deixa de valer.
 - **Materiais cotados** (pétreos, madeira, capa asfáltica comercial, outros): cotações de cada fornecedor (R$/t ou R$/m³,
   densidade, mês, DMT pavimentada/não pavimentada) + linha de referência do SICRO. Preço reajustado =
   TRUNC(preço × índice da data-base ÷ índice do mês da cotação, 2) (Conservação Rodoviária); total = preço + DMT × custo t·km;
@@ -116,6 +131,11 @@ Exportar gera CROQUI (desenho em células), DMT, VMDf, FIT (com fórmulas), TRAN
 RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” guarda a quantidade de cada serviço.
 
 ## Planilha PATO (aba PATO) — Resolução DNIT nº 8/2023
+- **BDI no cabeçalho** (SD/CD) com o botão **conferir/ajustar**, que abre Custos → **Data-base e BDI** (parcelas, SELIC, CPRB, ISSQN).
+- **Importar lista de serviços** (Ficha): .xlsx/.csv/.txt com os códigos (colunas opcionais NE e quantidade). Marca os serviços da
+  ficha; códigos fora da ficha entram em “01.08 Serviços incluídos pela lista”.
+- **Croqui → Importar pontos (KMZ/KML)**: pedreiras, areais, usina, jazidas localizados no eixo do SNV (km e distância); se o
+  ponto está junto a outra BR, isso é indicado. Ao montar o croqui, o fornecedor vencedor usa a posição do KMZ.
 - **Importar planilha PATO**: lê as abas PATO (itens, níveis de esforço e memórias de cálculo), DESEMPENHO e BD (preços de
   administração local, canteiro, instalação industrial, mobilização) e liga as quantidades ao inventário do projeto.
 - Quantidade = TRUNC|ARRED(base × nível de esforço; 3). A base pode ser medida do inventário (vínculo vivo), outro item
@@ -258,7 +278,7 @@ Ferramentas disponíveis: `listar_projetos`, `ler_projeto`, `criar_projeto`, `at
 `dispensar_sugestao`, `desfazer_sugestao`, `relatorio_pontos_a_corrigir`, `exportar_original_corrigido`;
 custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_composicoes`, `servicos_do_orcamento`, `adicionar_servico`,
 `ver_composicao`, `alterar_preco_insumo`, `trocar_insumo`, `alterar_tempo_fixo`, `alterar_dmt`, `listar_alteracoes_custo`,
-`desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `binomio_listar`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
+`desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `binomio_listar`, `binomio_ler_cotacao`, `binomio_gravar_cotacao`, `binomio_resumo`, `binomio_conferir`, `binomio_adotar_conferidos`, `fornecedores`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
 `binomio_importar_planilha`, `binomio_aplicar_vencedor`, `binomio_anexar`, `binomio_exportar`, `indices_reajuste`,
 `gravar_indice_reajuste`; transporte: `croqui_ler`, `croqui_salvar`, `importar_vmd_dnit`, `quadro_transportes`,
 `gerar_quadro_transportes`, `definir_origem_material`, `definir_quantidade_servico`, `aplicar_momentos_ao_orcamento`,

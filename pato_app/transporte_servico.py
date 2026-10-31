@@ -185,6 +185,53 @@ class Transportes:
                                                     f"{len(atual.get('travessias', []))} travessias")
         return self.croqui(pid)
 
+    _TIPOS_NOME = [(r"PEDREIRA|BRITA|BRITADOR", "pedreira"), (r"AREAL|AREIA|AREEIRA|ARE[EI]IRA", "areal"), (r"USINA", "usina"),
+                   (r"CANTEIRO|ACAMPAMENTO", "outro"), (r"JAZIDA|EMPR[EÉ]STIMO|CASCALH", "emprestimo"),
+                   (r"BOTA.?FORA|DEMOLI|ENTULHO", "bota_fora"), (r"ATERRO", "aterro"), (r"DEP[OÓ]SITO", "deposito"),
+                   (r"CENTRO SEDE|CIDADE|MUNIC", "canteiro")]
+
+    def importar_pontos(self, pid: int, caminho: str, acesso: str = "rp") -> dict:
+        """Pontos de um KMZ/KML (pedreira, areal, usina, jazida…) localizados no eixo oficial do SNV: km mais próximo e
+        distância até a rodovia (em linha reta — conferir o acesso). Ocorrências de mesmo nome são substituídas."""
+        import re as _re
+
+        from . import snv
+        p = self.sv.projeto(pid)
+        br, uf = snv.br_uf(p.get("rodovia"))
+        if not br:
+            raise ValueError("Informe a rodovia do projeto (ex.: BR-158/MT) para localizar os pontos.")
+        pontos = snv.pontos_kml(caminho)
+        if not pontos:
+            raise ValueError("Não encontrei pontos (marcadores) no arquivo.")
+        atual = self.dados_croqui(pid)
+        ocs = {(o.get("nome") or "").upper(): o for o in atual.get("ocorrencias") or []}
+        novos, fora = [], []
+        cad = {nz.sem_acento(f.get("nome") or "").upper().strip(): nz.sem_acento(f.get("insumo") or "").upper()
+               for f in (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or []}
+        for pt in pontos:
+            loc = snv.localizar(br, uf, pt["lat"], pt["lon"])
+            if not loc:
+                fora.append(pt["nome"])
+                continue
+            nome_u = nz.sem_acento(pt["nome"]).upper()
+            tipo = next((t for rx, t in self._TIPOS_NOME if _re.search(rx, nome_u)), None)
+            if tipo is None:  # pelo insumo do cadastro de fornecedores (Areia → areal; Brita → pedreira)
+                f = cad.get(nome_u) or ""
+                tipo = "pedreira" if "BRITA" in f else "areal" if "AREIA" in f else "outro"
+            via = snv.localizar(None, uf, pt["lat"], pt["lon"]) if loc["distancia_km"] > 5 else None
+            fora_txt = f"; está junto à BR-{via['br']} km {via['km']:g} ({via['distancia_km']:g} km)" if via and via["br"] != loc.get("br") else ""
+            o = dict(nome=pt["nome"], tipo=tipo, km=loc["km"], lat=pt["lat"], lon=pt["lon"],
+                     obs=f"KMZ: {loc['distancia_km']:g} km em linha reta até o eixo ({loc['segmento']}){fora_txt} — conferir o acesso pela estrada")
+            if loc["distancia_km"] > 0.05:
+                o["acesso_rp" if acesso == "rp" else "acesso_p"] = round(loc["distancia_km"], 3)
+            ocs[nome_u] = dict(ocs.get(nome_u) or {}, **o)
+            novos.append(dict(o, distancia_km=loc["distancia_km"], segmento=loc["segmento"],
+                              rodovia_proxima=f"BR-{via['br']} km {via['km']:g}" if via else None))
+        atual["ocorrencias"] = list(ocs.values())
+        self.db.gravar_dados_projeto(pid, "croqui", atual)
+        self.db.registrar(pid, "transporte: pontos do KMZ", f"{len(novos)} pontos localizados no SNV {snv.versao()}")
+        return dict(self.croqui(pid), pontos=novos, fora=fora, versao_snv=snv.versao())
+
     def montar_croqui(self, pid: int, km_canteiro: float, km_usina: float | None = None,
                       informadas: list[dict] | None = None) -> dict:
         """Croqui pelo modelo e pela Res. 8/2023: canteiro/usina no km informado, origem de cada material pelo binômio
@@ -194,8 +241,9 @@ class Transportes:
         p = self.sv.projeto(pid)
         atual = self.dados_croqui(pid)
         mats = self.sv.binomio.listar(pid)["materiais"]
+        pontos = [o for o in atual.get("ocorrencias") or [] if str(o.get("obs") or "").startswith("KMZ")]
         r = ca.montar(float(km_canteiro), p.get("km_ini") or 0.0, p.get("km_fim") or 0.0, mats, atual.get("travessias") or [],
-                      km_usina, informadas)
+                      km_usina, informadas, pontos=pontos)
         atual["ocorrencias"] = r["ocorrencias"]
         atual["origem_material"] = r["origem_material"]
         atual["automatico"] = dict(km_canteiro=km_canteiro, km_usina=km_usina, notas=r["notas"])

@@ -5,3 +5,6 @@ __pycache__/
 *.zip
 saidas/
 *_EXEMPLO.xlsx
+tessdata/
+tests/dados/AREEIRA_CARVALHO.*
+tests/dados/FORNECEDORES_MATERIAIS.xlsx

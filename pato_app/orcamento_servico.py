@@ -576,8 +576,42 @@ class Orcamentos:
         fc.gravar(f, Path(self.sv.pasta) / "modelos" / "ficha_servicos.json")
         return self.ficha()
 
+    def ficha_pela_lista(self, pid: int, caminho: str) -> dict:
+        """Marca na ficha os serviços de uma lista (planilha/CSV/texto com códigos, NE e quantidade). Os códigos que não
+        estão na ficha voltam em 'extras' para entrar no PATO como itens novos."""
+        from . import ficha as fc
+        lista = fc.ler_lista_servicos(caminho)
+        if not lista:
+            raise ValueError("Não encontrei códigos de serviço no arquivo.")
+        f = self.ficha(pid)
+        por_cod: dict[str, list] = {}
+        for x in f["servicos"]:
+            if x["tipo"] == "servico":
+                por_cod.setdefault(cp._cod(x.get("codigo") or ""), []).append(x)
+        sel, ne, extras = [], {}, []
+        for e in lista:
+            achados = por_cod.get(cp._cod(e["codigo"])) or []
+            for x in achados:
+                sel.append(x["id"])
+                if e.get("ne") is not None:
+                    ne[x["id"]] = e["ne"]
+                for dep in f["servicos"]:  # itens que dependem do escolhido (AM/TM, transportes) vão junto
+                    if dep.get("depende_de") == x["id"]:
+                        sel.append(dep["id"])
+            if not achados:
+                extras.append(e)
+        try:
+            m = self.sv.custos.motor(pid, "SD")
+            for e in extras:
+                c = m.comps.get(cp._cod(e["codigo"])) or (m.base.get("sintetico") or {}).get(cp._cod(e["codigo"])) or {}
+                e["descricao"], e["unidade"] = c.get("descricao"), c.get("unidade")
+                e["na_base"] = bool(c)
+        except ValueError:
+            pass
+        return dict(lidos=len(lista), selecionados=sorted(set(sel)), ne=ne, extras=extras)
+
     def montar_pela_ficha(self, pid: int, selecionados: list | None = None, ne: dict | None = None,
-                          valores: dict | None = None) -> dict:
+                          valores: dict | None = None, extras: list | None = None) -> dict:
         """PATO do projeto a partir da ficha: serviços escolhidos, NE ajustado e valores a informar. As quantidades saem
         do inventário, do levantamento ICM/IP, da extensão e do prazo do projeto; os transportes, do croqui."""
         from . import ficha as fc
@@ -599,6 +633,15 @@ class Orcamentos:
         if mudou_ip:
             self.db.gravar_dados_projeto(pid, "ip", ipd)
         d = fc.montar(f, selecionados, ne, valores)
+        if extras:  # serviços da lista que não estão na ficha: itens novos, quantidade informada ou a informar
+            d["itens"].append(dict(id=uuid.uuid4().hex[:12], tipo="titulo", item="01.08",
+                                   descricao="SERVIÇOS INCLUÍDOS PELA LISTA (classificar no grupo correto)"))
+            for k, e in enumerate(extras, start=1):
+                d["itens"].append(dict(id=uuid.uuid4().hex[:12], tipo="servico", item=f"01.08.{k:02d}", codigo=cp._cod(e["codigo"]),
+                                       descricao=e.get("descricao") or "", unidade=e.get("unidade") or "",
+                                       ne=e.get("ne") if e.get("ne") is not None else 1.0,
+                                       base=dict(tipo="direta", valor=e.get("quantidade") or 0.0, fonte="lista de serviços — a informar"
+                                                 if not e.get("quantidade") else "lista de serviços")))
         d["prazo_anos"] = self.anos_contrato(pid, {})
         self._gravar(pid, d)
         for chave in ("sinalizacao", "diversos", "ne_rocada"):

@@ -170,3 +170,59 @@ def montar(f: dict, selecionados: list[str] | None = None, ne: dict | None = Non
     return dict(itens=final, desempenho=copy.deepcopy(f.get("desempenho") or {}),
                 precos_informados=copy.deepcopy(f.get("precos_informados") or {}),
                 origem=f"ficha de serviços ({f.get('origem') or 'modelo'})")
+
+
+def ler_lista_servicos(caminho: str) -> list[dict]:
+    """Lista de serviços escolhidos: .xlsx/.csv/.txt com os códigos (SICRO ou próprios) e, se houver, colunas de nível de
+    esforço (NE) e quantidade. Sem cabeçalho, vale qualquer célula com código de serviço (7 dígitos ou letras+dígitos)."""
+    import csv
+    import re
+    from . import normalizar as nz
+    linhas: list[list] = []
+    low = caminho.lower()
+    if low.endswith((".xlsx", ".xlsm")):
+        import openpyxl
+        wb = openpyxl.load_workbook(caminho, read_only=True, data_only=True)
+        try:
+            for ws in wb.worksheets:
+                linhas += [list(r) for r in ws.iter_rows(values_only=True)]
+        finally:
+            wb.close()
+    else:
+        with open(caminho, encoding="utf-8-sig", errors="replace") as f:
+            txt = f.read()
+        try:
+            dial = csv.Sniffer().sniff(txt[:4096], delimiters=";,\t")
+            linhas = [r for r in csv.reader(txt.splitlines(), dial)]
+        except csv.Error:
+            linhas = [re.split(r"[;\t,]", ln) for ln in txt.splitlines()]
+    cod_rx = re.compile(r"^(\d{6,7}[A-Z]?|[A-Z]{2,4}\d{1,4}[A-Z]?)$")
+    col = dict()
+    for i, r in enumerate(linhas[:30]):
+        rot = [nz.sem_acento(str(x or "")).upper().strip() for x in r]
+        for j, t in enumerate(rot):
+            if t.startswith("COD") and "cod" not in col:
+                col["cod"] = j
+            elif (t in ("NE", "N.E.") or "ESFORCO" in t) and "ne" not in col:
+                col["ne"] = j
+            elif t.startswith("QUANT") and "q" not in col:
+                col["q"] = j
+        if "cod" in col:
+            linhas = linhas[i + 1:]
+            break
+    out, vistos = [], set()
+    for r in linhas:
+        cels = [str(x).strip() if x is not None else "" for x in r]
+        if "cod" in col:
+            cands = [cels[col["cod"]]] if col["cod"] < len(cels) else []
+        else:
+            cands = [c for c in cels if cod_rx.match(c.upper())]
+        for c in cands:
+            c = c.upper().split(".")[0] if re.fullmatch(r"\d+\.0", c) else c.upper()
+            if not cod_rx.match(c) or c in vistos:
+                continue
+            vistos.add(c)
+            ne = nz.numero(cels[col["ne"]]) if "ne" in col and col["ne"] < len(cels) else None
+            q = nz.numero(cels[col["q"]]) if "q" in col and col["q"] < len(cels) else None
+            out.append(dict(codigo=c, ne=ne, quantidade=q))
+    return out

@@ -59,9 +59,22 @@ def centro_sede(km_canteiro: float, dmt: float, a: float, b: float, travessias: 
     return o
 
 
+def _ponto_do_fornecedor(forn: str, pontos: list[dict], tipo: str) -> dict | None:
+    """Ponto do KMZ cujo nome contém o nome do fornecedor (ou, havendo um só ponto do tipo, esse ponto)."""
+    f = chave(forn)
+    cand = [p for p in pontos if f and f in chave(p.get("nome"))]
+    if not cand:
+        do_tipo = [p for p in pontos if p.get("tipo") == tipo]
+        cand = do_tipo if len(do_tipo) == 1 else []
+    return cand[0] if cand else None
+
+
 def montar(km_canteiro: float, a: float, b: float, materiais: list[dict], travessias: list[dict],
            km_usina: float | None = None, informadas: list[dict] | None = None,
-           fixas_modelo: list[dict] | None = None) -> dict:
+           fixas_modelo: list[dict] | None = None, pontos: list[dict] | None = None) -> dict:
+    """pontos: ocorrências localizadas por KMZ (pedreiras, areais…) — usadas para os fornecedores e mantidas no croqui."""
+    pontos = pontos or []
+    usados: set = set()
     """materiais: resultados do binômio (nome, grupo, linhas, vencedor). Devolve ocorrências, origem por material e notas."""
     ocs = [dict(nome="Canteiro", tipo="outro", km=km_canteiro, obs="km do canteiro informado"),
            dict(nome="Usina", tipo="usina", km=km_usina if km_usina is not None else km_canteiro,
@@ -83,12 +96,18 @@ def montar(km_canteiro: float, a: float, b: float, materiais: list[dict], traves
         areia = "AREIA" in chave(m.get("nome"))
         nome = ("Areal" if len(areias) <= 1 else f"Areal – {forn}") if areia else f"Pedreira – {forn}"
         if nome not in nomes_forn.values():
-            o = dict(nome=nome, tipo="areal" if areia else "pedreira", km=km_canteiro,
-                     obs=f"cotação {forn}: DMT {nz.numero(v.get('dmt_pav')) or 0:g} km pav. + {nz.numero(v.get('dmt_npav')) or 0:g} km não pav. até o canteiro")
-            if nz.numero(v.get("dmt_pav")):
-                o["acesso_p"] = nz.numero(v.get("dmt_pav"))
-            if nz.numero(v.get("dmt_npav")):
-                o["acesso_rp"] = nz.numero(v.get("dmt_npav"))
+            pk = _ponto_do_fornecedor(forn, pontos, "areal" if areia else "pedreira")
+            if pk:  # localização real do fornecedor (KMZ): km no eixo e acesso
+                o = dict({k: pk[k] for k in ("km", "acesso_p", "acesso_rp", "lat", "lon") if pk.get(k) is not None},
+                         nome=nome, tipo="areal" if areia else "pedreira", obs=f"cotação {forn}: localização do KMZ ({pk['nome']})")
+                usados.add(pk["nome"])
+            else:
+                o = dict(nome=nome, tipo="areal" if areia else "pedreira", km=km_canteiro,
+                         obs=f"cotação {forn}: DMT {nz.numero(v.get('dmt_pav')) or 0:g} km pav. + {nz.numero(v.get('dmt_npav')) or 0:g} km não pav. até o canteiro")
+                if nz.numero(v.get("dmt_pav")):
+                    o["acesso_p"] = nz.numero(v.get("dmt_pav"))
+                if nz.numero(v.get("dmt_npav")):
+                    o["acesso_rp"] = nz.numero(v.get("dmt_npav"))
             ocs.append(o)
         nomes_forn[chave(m.get("nome"))] = nome
         origem[chave(m.get("nome"))] = nome
@@ -108,6 +127,10 @@ def montar(km_canteiro: float, a: float, b: float, materiais: list[dict], traves
         else:
             ocs.append(dict(o))
             notas.append(f"{o['nome']}: não informado — distância do modelo ({o.get('obs')}).")
+    nomes = {chave(o["nome"]) for o in ocs}
+    for p in pontos:  # demais pontos do KMZ continuam no croqui
+        if p["nome"] not in usados and chave(p["nome"]) not in nomes:
+            ocs.append(dict(p))
     return dict(ocorrencias=ocs, origem_material=origem, notas=notas)
 
 

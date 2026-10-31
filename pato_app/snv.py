@@ -89,3 +89,65 @@ def tabela_oficial(rodovia: str | None) -> list[dict]:
     return [dict(codigo=s["codigo"], km_ini=s["km_ini"], km_fim=s["km_fim"], br=s["br"], uf=s["uf"],
                  local_ini=s.get("local_ini"), local_fim=s.get("local_fim"), superficie=s.get("superficie"),
                  versao=versao()) for s in segmentos(br, uf)]
+
+
+def localizar(br: str | None, uf: str | None, lat: float, lon: float) -> dict | None:
+    """Km do eixo oficial mais próximo de um ponto (pedreira, areal, usina…) e a distância em linha reta até a rodovia.
+    br=None: a rodovia federal mais próxima (qualquer BR da UF)."""
+    melhor = None
+    for s in dados().get("segmentos") or []:
+        if (br and s["br"] != str(br).zfill(3)) or (uf and s["uf"] != uf) or s.get("tipo") not in (None, "", "B"):
+            continue
+        pts = s.get("eixo") or []
+        if len(pts) < 2:
+            continue
+        acum = [0.0]
+        for a, b in zip(pts, pts[1:]):
+            acum.append(acum[-1] + _comp(a, b))
+        tot = acum[-1] or 1e-9
+        kx = 111.32 * math.cos(math.radians(lat))
+        for i in range(1, len(pts)):
+            (x1, y1), (x2, y2) = pts[i - 1], pts[i]
+            ax, ay = (x1 - lon) * kx, (y1 - lat) * 110.57
+            bx, by = (x2 - lon) * kx, (y2 - lat) * 110.57
+            dx, dy = bx - ax, by - ay
+            L2 = dx * dx + dy * dy
+            t = max(0.0, min(1.0, -(ax * dx + ay * dy) / L2)) if L2 > 0 else 0.0
+            d = math.hypot(ax + t * dx, ay + t * dy)
+            if melhor is None or d < melhor["distancia_km"]:
+                frac = (acum[i - 1] + t * (acum[i] - acum[i - 1])) / tot
+                melhor = dict(km=round(s["km_ini"] + frac * (s["km_fim"] - s["km_ini"]), 3), distancia_km=round(d, 3),
+                              segmento=s["codigo"], br=s["br"], uf=s["uf"], versao=versao())
+    return melhor
+
+
+def distancia(a: tuple[float, float], b: tuple[float, float]) -> float:
+    """Distância em linha reta (km) entre dois pontos (lat, lon)."""
+    return round(_comp((a[1], a[0]), (b[1], b[0])), 3)
+
+
+def pontos_kml(caminho: str) -> list[dict]:
+    """Pontos (nome, lat, lon, descrição) de um .kml ou .kmz (Google Earth / My Maps)."""
+    import zipfile
+    from lxml import etree
+    if caminho.lower().endswith(".kmz") or zipfile.is_zipfile(caminho):
+        with zipfile.ZipFile(caminho) as z:
+            nome = next((n for n in z.namelist() if n.lower().endswith(".kml")), None)
+            if not nome:
+                raise ValueError("O .kmz não contém um arquivo .kml.")
+            raw = z.read(nome)
+    else:
+        raw = open(caminho, "rb").read()
+    raiz = etree.fromstring(raw, etree.XMLParser(huge_tree=True, recover=True))
+    out = []
+    for pm in raiz.iter("{*}Placemark"):
+        pt = next(pm.iter("{*}Point"), None)
+        c = next(pt.iter("{*}coordinates"), None) if pt is not None else None
+        if c is None or not (c.text or "").strip():
+            continue
+        lon, lat = (float(v) for v in c.text.strip().split(",")[:2])
+        nm = next(pm.iter("{*}name"), None)
+        ds = next(pm.iter("{*}description"), None)
+        out.append(dict(nome=(nm.text or "").strip() if nm is not None else f"Ponto {len(out) + 1}", lat=lat, lon=lon,
+                        descricao=re.sub(r"<[^>]+>", " ", ds.text or "").strip() if ds is not None and ds.text else None))
+    return out

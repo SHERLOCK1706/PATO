@@ -202,3 +202,10 @@ tr.vencedor td { background: #66bb6a33; font-weight: 600; }
 td.manual { background: #fff59d55; }
 .sub-orc { display: none; } .sub-orc.ativa { display: block; }
 tr.titulo-orc td { background: var(--pri-claro); font-weight: 600; }
+
+.passos { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0 10px; }
+.passos .passo { border: 1px solid var(--borda); border-radius: 8px; padding: 4px 10px; background: var(--sup); font-weight: 600; }
+.passos .passo small { font-weight: 400; color: var(--txt2); }
+.passos .seta { color: var(--txt2); }
+.cot-campos input, .cot-campos select { width: 100%; }
+tr.adotado td { background: color-mix(in srgb, var(--ok, #2e7d32) 10%, transparent); }

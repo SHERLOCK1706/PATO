@@ -6,6 +6,8 @@ Configuração no Claude Desktop (claude_desktop_config.json):
 """
 from __future__ import annotations
 
+from pathlib import Path
+
 from typing import Any
 
 try:  # SDK mcp 2.x
@@ -373,6 +375,55 @@ def binomio_importar_planilha(projeto_id: int, caminho_xlsx: str, substituir: bo
     """Lê BINOMIO_COTACOES, BINOMIO_ANP e INDICES_REAJ de uma planilha PATO."""
     r = sv().binomio.importar_de_planilha(projeto_id, caminho_xlsx, substituir)
     return r["importados"]
+
+
+@mcp.tool()
+def binomio_ler_cotacao(projeto_id: int, caminho_pdf: str) -> dict:
+    """Lê uma cotação (PDF com texto, PDF digitalizado ou foto — OCR): fornecedor, CNPJ, data, itens (preço, unidade,
+    material sugerido do binômio), frete, local, rodovia/km do endereço e DMT (lida ou estimada pela posição do
+    fornecedor). Só sugere: confira antes de gravar com binomio_gravar_cotacao."""
+    r = sv().binomio.ler_cotacao(projeto_id, caminho_pdf, Path(caminho_pdf).name)
+    r.pop("texto", None)
+    return r
+
+
+@mcp.tool()
+def binomio_gravar_cotacao(projeto_id: int, caminho_pdf: str, fornecedor: str, itens: list[dict], data: str | None = None,
+                           cnpj: str | None = None, frete: str | None = None, local: str | None = None) -> dict:
+    """Grava a cotação conferida: itens [{binomio_id (ou material/codigo para criar), preco, unidade 't'|'m3',
+    densidade, dmt_pav, dmt_npav}]. Substitui a cotação do mesmo fornecedor e anexa o PDF."""
+    r = sv().binomio.adicionar_cotacao(projeto_id, caminho_pdf, Path(caminho_pdf).name,
+                                       dict(fornecedor=fornecedor, itens=itens, data=data, cnpj=cnpj, frete=frete, local=local))
+    return dict(gravados=r["gravados"])
+
+
+@mcp.tool()
+def binomio_resumo(projeto_id: int) -> list[dict]:
+    """Resumo do binômio (RESUMO_COTACOES): mais vantajoso de cada material, preço a adotar, avisos (mínimo de 3
+    cotações, PDF anexado, densidade), conferência e se o preço já foi adotado na composição."""
+    return sv().binomio.listar(projeto_id)["resumo"]
+
+
+@mcp.tool()
+def binomio_conferir(projeto_id: int, binomio_id: int, conferido: bool = True, por: str | None = None) -> dict:
+    """Marca (ou desmarca) a conferência do vencedor de um material do resumo."""
+    r = sv().binomio.conferir(projeto_id, binomio_id, conferido, por)
+    return _resumo_binomio(r)
+
+
+@mcp.tool()
+def binomio_adotar_conferidos(projeto_id: int) -> dict:
+    """Adota nas composições (insumo SICRO e DMT) o preço dos materiais conferidos ainda não adotados."""
+    r = sv().binomio.aplicar_conferidos(projeto_id)
+    return dict(aplicados=r["aplicados"], mensagens=r["mensagens"])
+
+
+@mcp.tool()
+def fornecedores(projeto_id: int, caminho_xlsx: str | None = None) -> dict:
+    """Cadastro de fornecedores (importa a planilha FORNECEDOR/ENDEREÇO/INSUMO se informada) com a posição (KMZ ou
+    endereço BR/km no SNV), a rodovia mais próxima e a distância em linha reta até o canteiro."""
+    b = sv().binomio
+    return b.importar_fornecedores(projeto_id, caminho_xlsx) if caminho_xlsx else b.fornecedores(projeto_id)
 
 
 @mcp.tool()

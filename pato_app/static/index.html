@@ -200,7 +200,7 @@
     <div id="cst-base" class="sub-custos">
       <div class="grade2">
         <form class="caixa form" id="formCfgCustos">
-          <h3>Base e BDI do projeto</h3>
+          <h3>Data-base e BDI do projeto</h3>
           <div class="campos">
             <label>Base SICRO (estado e data-base) <select name="base" data-dica="Tabela do SICRO usada para os preços deste projeto"></select></label>
             <label>Regime <select name="regime" data-dica="Regime de encargos usado para o orçamento"><option value="SD">Sem desoneração</option><option value="CD">Com desoneração</option></select></label>
@@ -289,10 +289,17 @@
     <div id="cst-binomio" class="sub-custos">
       <div class="caixa">
         <h3>Binômio aquisição + transporte</h3>
+        <div class="passos" data-dica="Sequência da planilha de referência (BR-158/MT): cotações → binômio → resumo do mais vantajoso → conferência → preço adotado na composição">
+          <span class="passo">① Cotações <small>(PDF lido automaticamente, ajustável)</small></span><span class="seta">→</span>
+          <span class="passo">② Binômio <small>(aquisição reajustada + transporte)</small></span><span class="seta">→</span>
+          <span class="passo">③ Resumo do mais vantajoso</span><span class="seta">→</span>
+          <span class="passo">④ Conferência</span><span class="seta">→</span><span class="passo">⑤ Preço adotado na composição</span></div>
         <p class="nota">Compara as cotações (reajustadas pelo índice até a data-base) somadas ao transporte até a obra e escolhe a mais vantajosa.
           Materiais pétreos, madeira e capa asfáltica comercial: preço reajustado + DMT × custo t·km. Betuminosos: preço ANP + transporte
           pelas Portarias DNIT 1977/2017 e 434/2017, com ICMS, PIS/COFINS e BDI. <span id="binRef"></span></p>
         <div class="linha-botoes">
+          <button class="btn primario" id="btnCotPdf" data-dica="Escolha o PDF (ou foto) da cotação: o sistema lê fornecedor, CNPJ, data, preços, unidade, frete e distância (OCR se for digitalizado) e mostra tudo para você conferir e ajustar antes de gravar">📄 Anexar cotação (PDF) — leitura automática</button>
+          <button class="btn" id="btnForn" data-dica="Cadastro de fornecedores (planilha FORNECEDOR / ENDEREÇO / INSUMO) e pontos do KMZ: localiza pedreiras e areais no SNV e estima a distância até o canteiro">Fornecedores e localização (KMZ)</button>
           <button class="btn primario" id="btnNovoMat" data-dica="Cria um material com cotações (pétreo, madeira, capa asfáltica comercial ou outro)">Novo material cotado</button>
           <button class="btn primario" id="btnNovoBet" data-dica="Cria um material betuminoso com as origens (distribuidoras/refinarias) da tabela ANP">Novo betuminoso (ANP)</button>
           <button class="btn" id="btnImpBin" data-dica="Lê as abas BINOMIO_COTACOES, BINOMIO_ANP e INDICES_REAJ de uma planilha PATO">Importar de planilha PATO</button>
@@ -303,7 +310,10 @@
         <div id="anexosGerais"></div>
         <div id="resBin"></div>
       </div>
+      <div class="caixa" id="painelCotOcr" hidden></div>
+      <div class="caixa" id="painelForn" hidden></div>
       <div class="caixa" id="editorBin" hidden></div>
+      <div class="caixa" id="resumoBin"></div>
       <div class="caixa" id="painelIndices" hidden></div>
       <div id="listaMateriais"></div>
       <div id="listaBetuminosos"></div>
@@ -337,7 +347,9 @@
         <div class="barra filtros"><b>Montar pelo modelo (Res. 8/2023):</b>
           <label>km do canteiro <input id="crqKmCant" type="number" step="any" style="width:90px" data-dica="Local do canteiro de obras (ponto de referência das DMT do binômio)"></label>
           <label>km da usina <input id="crqKmUsina" type="number" step="any" style="width:90px" placeholder="no canteiro" data-dica="Deixe em branco se a usina fica no canteiro"></label>
-          <button class="btn" id="btnCrqAuto" data-dica="Canteiro e usina no km informado; origem de cada material pelo binômio (SICRO mais vantajoso → centro sede mais próximo na DMT do SICRO; cotação → fornecedor com a DMT da cotação); jazida, bota-fora do material demolido, depósito e aterro sanitário com as distâncias do modelo, se não estiverem no croqui. As linhas do quadro de transportes passam a sair da origem vencedora.">Montar croqui</button></div>
+          <button class="btn" id="btnCrqAuto" data-dica="Canteiro e usina no km informado; origem de cada material pelo binômio (SICRO mais vantajoso → centro sede mais próximo na DMT do SICRO; cotação → fornecedor com a DMT da cotação); jazida, bota-fora do material demolido, depósito e aterro sanitário com as distâncias do modelo, se não estiverem no croqui. As linhas do quadro de transportes passam a sair da origem vencedora.">Montar croqui</button>
+          <button class="btn" id="btnCrqKmz" data-dica="Lê os marcadores de um KMZ/KML (Google Earth / My Maps): pedreira, areal, usina, jazida… Cada ponto é localizado no eixo oficial do SNV (km mais próximo e distância até a rodovia). Ao montar o croqui, o fornecedor vencedor do binômio usa a posição do KMZ">Importar pontos (KMZ/KML)</button></div>
+        <div id="crqKmzRes"></div>
         <div id="crqNotas"></div>
         <div id="croquiSvg" class="croqui-svg"></div>
       </div>
@@ -431,10 +443,12 @@
       <div class="caixa"><div class="bin-cab"><h3>Ficha de serviços</h3>
         <div class="linha-botoes" style="margin:0">
           <button class="btn" id="btnFichaGravar" data-dica="Grava a planilha PATO deste projeto (regras, níveis de esforço, quadro de transportes, sinalização, ADM/mobilização) como a ficha de serviços para os próximos projetos">Gravar este PATO como ficha</button>
+          <button class="btn" id="btnFichaLista" data-dica="Planilha (.xlsx/.csv) ou texto com os códigos dos serviços a usar (colunas opcionais: NE e quantidade). Marca na ficha os serviços da lista; códigos que não estão na ficha entram como serviços incluídos pela lista">Importar lista de serviços</button>
           <button class="btn primario" id="btnFichaMontar" data-dica="Substitui a planilha PATO do projeto pelos serviços marcados, com os níveis de esforço e valores informados; as quantidades saem do inventário, do ICM/IP, da extensão e do prazo do projeto e os transportes do croqui">Montar PATO pela ficha</button></div></div>
         <p class="nota">Marque os serviços do contrato e ajuste o nível de esforço. As quantidades são calculadas pelas regras do PATO de referência
           (<span id="fichaOrigem"></span>) com os dados <b>deste</b> segmento: inventário, levantamento ICM/IP, extensão, prazo, sinalização e croqui.
           Nos serviços do ICM o esforço é o parâmetro da intervenção no levantamento (NE ou % da faixa). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto.</p>
+        <div id="fichaListaRes"></div>
         <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label></div>
         <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div>
     </div>

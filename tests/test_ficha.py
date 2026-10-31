@@ -117,3 +117,18 @@ def test_ajusta_ne_e_escolhe_servicos(proj):
     cods = {x["codigo"] for x in sv.orcamento.dados(pid)["itens"] if x["tipo"] == "servico"}
     assert "4011410" not in cods and r["servicos"] < 123
     assert not any(ln["servico"] == "4011410" for ln in sv.transporte.dados_quadro(pid)["linhas"])
+
+
+def test_lista_de_servicos(proj, tmp_path):
+    """Lista importada: marca os serviços da ficha; códigos fora da ficha entram em 01.08 (base direta)."""
+    sv, pid, _ = proj
+    arq = tmp_path / "lista.csv"
+    arq.write_text("codigo;NE\n4011353;0,5\n5501700;1\n4011209;1\n", encoding="utf-8")
+    r = sv.orcamento.ficha_pela_lista(pid, str(arq))
+    assert r["lidos"] == 3 and r["selecionados"]
+    assert [e["codigo"] for e in r["extras"]] == ["4011209"] and r["extras"][0]["na_base"]
+    m = sv.orcamento.montar_pela_ficha(pid, r["selecionados"], r["ne"], None, r["extras"])
+    itens = sv.orcamento.calcular(pid)["itens"] if hasattr(sv.orcamento, "calcular") else None
+    assert m["servicos"] >= len(r["selecionados"])
+    if itens:
+        assert any(i.get("codigo") == "4011209" and str(i.get("item", "")).startswith("01.08") for i in itens)

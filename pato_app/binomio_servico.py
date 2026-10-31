@@ -123,8 +123,260 @@ class Binomios:
                 r["sicro"] = self.preco_sicro(pid, d.get("codigo"), tab)
                 produtos.append(dict(r, id=b["id"], anexos=ax, bdi_projeto=bdi is None))
         return dict(data_base=ref["data_base"], bdi=ref["bdi"], materiais=materiais, produtos=produtos,
+                    resumo=self._resumo(materiais, produtos),
                     grupos=bn.GRUPOS, tipos_anexo=TIPOS_ANEXO, indices=list(ind),
                     anexos_gerais=[a for a in anexos if not a["binomio_id"]])
+
+    @staticmethod
+    def _assinatura(r: dict) -> dict | None:
+        """O que foi conferido: vencedor e total (se mudar a cotação, a conferência deixa de valer)."""
+        v = r.get("vencedor")
+        if not v:
+            return None
+        return dict(fornecedor=v.get("fornecedor") or f"{v.get('local')}/{v.get('uf')}", total=round(v.get("total") or 0, 2))
+
+    def _resumo(self, materiais: list[dict], produtos: list[dict]) -> list[dict]:
+        """RESUMO das cotações: o mais vantajoso de cada material, o preço do SICRO, a conferência e se já foi adotado."""
+        out = []
+        for r in materiais + produtos:
+            v = r.get("vencedor") or {}
+            ass = self._assinatura(r)
+            conf = r.get("conferido") or None
+            sic = next((x for x in r.get("linhas") or [] if x.get("sicro")), None)
+            n_cot = len([x for x in r.get("linhas") or [] if not x.get("sicro")]) if "nome" in r else len(r.get("linhas") or [])
+            ap = r.get("aplicado") or {}
+            avisos = []
+            if "nome" in r and n_cot < 3:
+                avisos.append(f"{n_cot} cotação(ões): a IN DNIT 10/2024 pede no mínimo 3 (ou justificativa).")
+            if "nome" in r and n_cot and not r.get("anexos"):
+                avisos.append("Sem o PDF da cotação anexado.")
+            if not r.get("codigo"):
+                avisos.append("Sem código do insumo SICRO: informe para adotar o preço na composição.")
+            if "nome" in r and v and not v.get("sicro") and v.get("unidade") == "m3" and not (
+                    nz.numero(next((c.get("densidade") for c in r.get("cotacoes") or [] if c.get("fornecedor") == v.get("fornecedor")), None))
+                    or nz.numero(r.get("densidade"))):
+                avisos.append("Cotação em m³ sem densidade: adotado 1,0 t/m³ — informe a densidade do material.")
+            un = "t"
+            if "nome" in r:
+                un_s = ((r.get("sicro") or {}).get("unidade") or "t").replace("³", "3").lower()
+                un = "m³" if un_s.startswith("m") else "t"
+                preco = v.get("preco_m3_reaj" if un == "m³" else "preco_t_reaj")
+            else:
+                preco = v.get("aq_icms")
+            out.append(dict(id=r["id"], material=r.get("nome") or r.get("produto"), codigo=r.get("codigo"),
+                            tipo="material" if "nome" in r else "betuminoso", cotacoes=n_cot,
+                            vencedor=ass["fornecedor"] if ass else None, sicro_vence=bool(v.get("sicro")),
+                            total=v.get("total"), total_sicro=sic.get("total") if sic else None,
+                            preco_adotar=preco, unidade=un, dmt_pav=v.get("dmt_pav"), dmt_npav=v.get("dmt_npav"),
+                            conferido=bool(conf and ass and conf.get("vencedor") == ass), conferido_por=(conf or {}).get("por"),
+                            conferencia_vencida=bool(conf and ass and conf.get("vencedor") != ass),
+                            adotado=bool(ap and ass and ap.get("fornecedor") in (ass["fornecedor"], v.get("local"))
+                                         and abs((ap.get("preco") or 0) - (preco or 0)) < 0.005),
+                            avisos=avisos))
+        return out
+
+    def conferir(self, pid: int, bid: int, conferido: bool = True, por: str | None = None) -> dict:
+        """Marca a conferência do resumo (vencedor e total no momento da conferência)."""
+        r = self.item(pid, bid)
+        b = self.db.binomio(bid)
+        b["dados"]["conferido"] = dict(vencedor=self._assinatura(r), por=nz.texto(por)) if conferido else None
+        self.db.salvar_binomio(pid, b["tipo"], b["dados"], bid)
+        self.db.registrar(pid, "binômio: conferência", f"{r.get('nome') or r.get('produto')}: {'conferido' if conferido else 'desmarcado'}")
+        return self.item(pid, bid)
+
+    def aplicar_conferidos(self, pid: int) -> dict:
+        """Adota nas composições o preço dos materiais conferidos e ainda não adotados."""
+        msgs, n = [], 0
+        for ln in self.listar(pid)["resumo"]:
+            if ln["conferido"] and not ln["adotado"]:
+                if not ln["codigo"]:
+                    msgs.append(f"{ln['material']}: sem código SICRO — informe para adotar o preço.")
+                    continue
+                r = self.aplicar_vencedor(pid, ln["id"])
+                msgs += r["mensagens"]
+                n += 1
+        if not n and not msgs:
+            msgs.append("Nenhum material conferido pendente de adoção.")
+        return dict(aplicados=n, mensagens=msgs, resumo=self.listar(pid)["resumo"])
+
+    # ------------------------------------------------ cadastro de fornecedores
+    @staticmethod
+    def _endereco(end: str | None) -> dict:
+        """Rodovia/km, cidade e UF do endereço ("Rodovia BR-174, km 224 - Pontes e Lacerda - MT")."""
+        u = nz.sem_acento(end or "").upper()
+        out = {}
+        m = re.search(r"\bBR\s*[-–]?\s*(\d{3})\D{0,12}?\bKM\s*(\d+(?:[.,]\d+)?)", u)
+        if m:
+            out.update(br=m.group(1), km=nz.numero(m.group(2)))
+        m = re.search(r"[-–,]\s*([A-Za-zÀ-ú' .]{3,40}?)\s*[-–/]\s*([A-Z]{2})\s*$", (end or "").strip())
+        if m:
+            out.update(cidade=m.group(1).strip(), uf=m.group(2))
+        return out
+
+    def fornecedores(self, pid: int) -> dict:
+        """Cadastro de fornecedores do projeto, com a posição: ponto do KMZ (croqui) ou rodovia/km do endereço (SNV),
+        o km mais próximo na rodovia do projeto e a distância em linha reta até o canteiro."""
+        from . import snv
+        from .croqui_auto import chave
+        lst = (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or []
+        croqui = self.sv.transporte.dados_croqui(pid)
+        kmz = {chave(o.get("nome")): o for o in croqui.get("ocorrencias") or [] if o.get("lat") is not None}
+        br_p, uf_p = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
+        lc = self.sv.orcamento.locais_croqui(pid) if hasattr(self.sv, "orcamento") else {}
+        km_can = (lc or {}).get("km_canteiro")
+        pos_can = snv.posicao(br_p, uf_p, km_can) if br_p and km_can is not None else None
+        out = []
+        for f in lst:
+            f = dict(f)
+            k = chave(f.get("nome"))
+            pk = kmz.get(k) or next((o for n, o in kmz.items() if k and (k in n or n in k)), None)
+            if pk:
+                f.update(lat=pk["lat"], lon=pk["lon"], fonte_posicao="KMZ")
+            elif f.get("br") and f.get("km") is not None:
+                pos = snv.posicao(f["br"], f.get("uf") or uf_p, f["km"])
+                if pos:
+                    f.update(lat=pos[0], lon=pos[1], fonte_posicao=f"endereço BR-{f['br']} km {f['km']:g} (SNV)")
+            if f.get("lat") is not None:
+                via = snv.localizar(None, f.get("uf") or uf_p, f["lat"], f["lon"])
+                if f.get("br") and via and via["br"] != str(f["br"]).zfill(3):  # trecho coincidente: a BR do endereço
+                    mesma = snv.localizar(f["br"], f.get("uf") or uf_p, f["lat"], f["lon"])
+                    if mesma and mesma["distancia_km"] <= via["distancia_km"] + 0.5:
+                        via = mesma
+                if via:
+                    f["rodovia_proxima"] = f"BR-{via['br']} km {via['km']:g} ({via['distancia_km']:g} km do eixo)"
+                if br_p:
+                    no_proj = snv.localizar(br_p, uf_p, f["lat"], f["lon"])
+                    if no_proj:
+                        f.update(km_projeto=no_proj["km"], distancia_eixo_km=no_proj["distancia_km"])
+                if pos_can:
+                    f["distancia_canteiro_km"] = snv.distancia((f["lat"], f["lon"]), pos_can)
+            out.append(f)
+        return dict(lista=out, km_canteiro=km_can,
+                    nota="Distância ao canteiro em linha reta (estimativa): confira a DMT pela rota e separe pavimentada / não pavimentada.")
+
+    def salvar_fornecedores(self, pid: int, lista: list[dict], acrescentar: bool = False) -> dict:
+        from .croqui_auto import chave
+        atual = (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or [] if acrescentar else []
+        por_nome = {chave(f.get("nome")): f for f in atual}
+        for f in lista:
+            nome = nz.texto(f.get("nome"))
+            if not nome:
+                continue
+            e = self._endereco(f.get("endereco"))
+            novo = dict(nome=nome, endereco=nz.texto(f.get("endereco")), insumo=nz.texto(f.get("insumo")),
+                        cnpj=nz.texto(f.get("cnpj")), contato=nz.texto(f.get("contato")),
+                        br=nz.texto(f.get("br")) or e.get("br"), km=_num(f.get("km")) if _num(f.get("km")) is not None else e.get("km"),
+                        cidade=nz.texto(f.get("cidade")) or e.get("cidade"), uf=nz.texto(f.get("uf")) or e.get("uf"))
+            por_nome[chave(nome)] = dict(por_nome.get(chave(nome)) or {}, **{k: v for k, v in novo.items() if v is not None})
+        self.db.gravar_dados_projeto(pid, "fornecedores", dict(lista=list(por_nome.values())))
+        self.db.registrar(pid, "binômio: fornecedores", f"{len(por_nome)} fornecedores no cadastro")
+        return self.fornecedores(pid)
+
+    def importar_fornecedores(self, pid: int, caminho: str) -> dict:
+        """Planilha de fornecedores (colunas FORNECEDOR, ENDEREÇO, INSUMO; opcionais CNPJ, CONTATO)."""
+        import openpyxl
+        wb = openpyxl.load_workbook(caminho, data_only=True, read_only=True)
+        lista = []
+        for ws in wb.worksheets:
+            cols = None
+            for row in ws.iter_rows(values_only=True):
+                cel = [nz.sem_acento(str(v or "")).upper().strip() for v in row]
+                if cols is None:
+                    if any(c.startswith("FORNECEDOR") or c in ("EMPRESA", "RAZAO SOCIAL") for c in cel):
+                        busca = lambda *ns: next((i for i, c in enumerate(cel) if any(c.startswith(n) for n in ns)), None)
+                        cols = dict(nome=busca("FORNECEDOR", "EMPRESA", "RAZAO"), endereco=busca("ENDERECO", "LOCAL"),
+                                    insumo=busca("INSUMO", "MATERIA", "PRODUTO"), cnpj=busca("CNPJ"), contato=busca("CONTATO", "TELEFONE", "E-MAIL"))
+                    continue
+                f = {k: row[i] for k, i in cols.items() if i is not None and i < len(row)}
+                if f.get("nome"):
+                    lista.append({k: str(v).strip() if v is not None else None for k, v in f.items()})
+        if not lista:
+            raise ValueError("Não encontrei a coluna FORNECEDOR na planilha.")
+        return self.salvar_fornecedores(pid, lista, acrescentar=True)
+
+    def _posicao_fornecedor(self, pid: int, nome: str | None, rodovia: dict | None = None) -> dict | None:
+        from .croqui_auto import chave
+        k = chave(nome)
+        cad = self.fornecedores(pid)["lista"]
+        f = next((f for f in cad if k and (chave(f["nome"]) == k or chave(f["nome"]) in k or k in chave(f["nome"]))), None)
+        if f is None and rodovia:  # não cadastrado: posição pelo endereço da própria cotação
+            from . import snv
+            br_p, uf_p = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
+            pos = snv.posicao(rodovia["br"], uf_p, rodovia["km"])
+            if pos:
+                f = dict(nome=nome, lat=pos[0], lon=pos[1], fonte_posicao=f"endereço BR-{rodovia['br']} km {rodovia['km']:g} (SNV)")
+                lc = self.sv.orcamento.locais_croqui(pid)
+                pc = snv.posicao(br_p, uf_p, lc["km_canteiro"]) if br_p and lc.get("km_canteiro") is not None else None
+                if pc:
+                    f["distancia_canteiro_km"] = snv.distancia(pos, pc)
+        return f
+
+    # --------------------------------------------------- cotação por PDF (OCR)
+    def ler_cotacao(self, pid: int, caminho: str, nome_arquivo: str | None = None) -> dict:
+        """Lê a cotação (texto do PDF ou OCR) e sugere o material do binômio de cada item — só pré-preenche."""
+        from . import cotacao_ocr
+        from .croqui_auto import chave
+        conhecidos = [f["nome"] for f in (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or []]
+        conhecidos += [o["nome"] for o in self.sv.transporte.dados_croqui(pid).get("ocorrencias") or [] if o.get("lat") is not None]
+        r = cotacao_ocr.ler(caminho, conhecidos, nome_arquivo)
+        pf = self._posicao_fornecedor(pid, r.get("fornecedor"), r.get("rodovia"))
+        r["posicao"] = pf
+        dist = r.get("distancia_km")
+        if dist is None and pf and pf.get("distancia_canteiro_km") is not None:
+            dist = pf["distancia_canteiro_km"]
+            r["avisos"].append(f"DMT estimada em linha reta do fornecedor ({pf.get('fonte_posicao')}) ao canteiro: "
+                               f"{dist:g} km — ajuste pela rota real.")
+        if pf and (pf.get("distancia_canteiro_km") or 0) > 150:
+            r["avisos"].append(f"Fornecedor a {pf['distancia_canteiro_km']:g} km do canteiro (linha reta): confira se a cotação é deste trecho.")
+        if dist is None:
+            r["avisos"].append("Distância não informada na cotação: localize o fornecedor (KMZ ou cadastro) ou digite a DMT.")
+        mats = [dict(id=b["id"], nome=b["dados"].get("nome"), codigo=b["dados"].get("codigo"),
+                     densidade=b["dados"].get("densidade")) for b in self.db.binomios(pid, TIPO_MATERIAL)]
+        tab = None
+        for it in r["itens"]:
+            k = chave(it["material"])
+            tk = set(k.split())  # todas as palavras do item no nome do material ("AREIA LAVADA" → AREIA MÉDIA LAVADA)
+            cand = [m for m in mats if k and (tk <= set(chave(m["nome"]).split()) or chave(m["nome"]) in k)]
+            m = min(cand, key=lambda m: abs(len(chave(m["nome"]).split()) - len(tk))) if cand else None
+            it["binomio_id"] = m["id"] if m else None
+            it["densidade"] = m["densidade"] if m else None
+            if not m:  # novo material: sugere o insumo do SICRO pela descrição
+                tab = tab if tab is not None else self._tabela_mat(pid)
+                it["codigo"] = next((c for c, d in tab.items() if k and k in chave(d.get("descricao"))), None)
+            cif = r.get("frete") == "CIF"
+            it["dmt_pav"] = 0 if cif else dist
+            it["dmt_npav"] = 0
+        r["materiais"] = mats
+        if r.get("distancia_km") is not None and r.get("frete") != "CIF":
+            r["avisos"].append("A distância lida foi posta como DMT pavimentada — confira e separe o trecho não pavimentado.")
+        if not r["itens"]:
+            r["avisos"].append("Nenhum item com preço reconhecido — preencha manualmente.")
+        return r
+
+    def adicionar_cotacao(self, pid: int, caminho: str, nome_arquivo: str, dados: dict) -> dict:
+        """Grava os itens conferidos da cotação: acrescenta a cotação ao material (ou cria o material) e anexa o arquivo."""
+        feitos = []
+        for it in dados.get("itens") or []:
+            if not it.get("incluir", True) or it.get("preco") in (None, ""):
+                continue
+            cot = dict(fornecedor=dados.get("fornecedor"), cnpj=dados.get("cnpj"), data=dados.get("data"),
+                       frete=dados.get("frete"), local=dados.get("local"), preco=it.get("preco"),
+                       unidade=it.get("unidade"), densidade=it.get("densidade"),
+                       dmt_pav=it.get("dmt_pav"), dmt_npav=it.get("dmt_npav"), anexo=nome_arquivo)
+            bid = it.get("binomio_id") or None
+            if bid:
+                d = dict(self.db.binomio(int(bid))["dados"])
+                d["cotacoes"] = [c for c in d.get("cotacoes") or []
+                                 if nz.texto(c.get("fornecedor")) != nz.texto(cot["fornecedor"])] + [cot]
+                r = self.salvar_material(pid, d, int(bid))
+            else:
+                r = self.salvar_material(pid, dict(nome=it.get("material") or "Material", codigo=it.get("codigo"),
+                                                   grupo="petreo", densidade=it.get("densidade"), cotacoes=[cot]))
+            self.anexar(pid, caminho, nome_arquivo, r["id"], "cotacao", dados.get("fornecedor"), "cotação lida automaticamente e conferida")
+            feitos.append(dict(id=r["id"], material=r["nome"], vencedor=(r.get("vencedor") or {}).get("fornecedor")))
+        if not feitos:
+            raise ValueError("Nenhum item com preço para gravar.")
+        return dict(gravados=feitos, binomio=self.listar(pid))
 
     def item(self, pid: int, bid: int) -> dict:
         lst = self.listar(pid)
@@ -146,11 +398,13 @@ class Binomios:
                              sicro=bool(c.get("sicro")), preco=_num(c.get("preco")), unidade="m3" if un.startswith("m") else "t",
                              densidade=_num(c.get("densidade")), data=bn.mes(c.get("data")),
                              dmt_pav=_num(c.get("dmt_pav")), dmt_npav=_num(c.get("dmt_npav")),
-                             local=nz.texto(c.get("local")), contato=nz.texto(c.get("contato"))))
+                             local=nz.texto(c.get("local")), contato=nz.texto(c.get("contato")),
+                             cnpj=nz.texto(c.get("cnpj")), frete=c.get("frete") if c.get("frete") in ("CIF", "FOB") else None,
+                             anexo=c.get("anexo")))
         return dict(nome=nz.texto(d.get("nome")) or "Material", codigo=cp._cod(d["codigo"]) if d.get("codigo") else None,
                     grupo=grupo, indice=d.get("indice") or bn.INDICE_PETREOS, densidade=_num(d.get("densidade")),
                     custo_pav=_num(d.get("custo_pav")), custo_npav=_num(d.get("custo_npav")), cotacoes=cots,
-                    obs=nz.texto(d.get("obs")), aplicado=d.get("aplicado"))
+                    obs=nz.texto(d.get("obs")), aplicado=d.get("aplicado"), conferido=d.get("conferido"))
 
     @staticmethod
     def _limpar_produto(d: dict) -> dict:
@@ -166,7 +420,7 @@ class Binomios:
                                 pedagio=_num(o.get("pedagio")), balsa=_num(o.get("balsa"))))
         out = dict(produto=nz.texto(d.get("produto")) or "Material betuminoso",
                    codigo=cp._cod(d["codigo"]) if d.get("codigo") else None, indice=d.get("indice") or bn.INDICE_ASFALTO,
-                   origens=origens, obs=nz.texto(d.get("obs")), aplicado=d.get("aplicado"),
+                   origens=origens, obs=nz.texto(d.get("obs")), aplicado=d.get("aplicado"), conferido=d.get("conferido"),
                    fluvial_sempre=bool(d.get("fluvial_sempre", True)))
         for k, padrao in (("pis", 0.0065), ("cofins", 0.03), ("bdi_transporte", 0.15), ("bdi_transporte_cd", 0.1867),
                           ("ton_viagem", 60)):
@@ -183,16 +437,20 @@ class Binomios:
 
     def salvar_material(self, pid: int, dados: dict, bid: int | None = None) -> dict:
         d = self._limpar_material(dados)
-        if bid and not d.get("aplicado"):
-            d["aplicado"] = (self.db.binomio(bid) or {}).get("dados", {}).get("aplicado")
+        antes = (self.db.binomio(bid) or {}).get("dados", {}) if bid else {}
+        for k in ("aplicado", "conferido"):
+            if not d.get(k):
+                d[k] = antes.get(k)
         bid = self.db.salvar_binomio(pid, TIPO_MATERIAL, d, bid)
         self.db.registrar(pid, "binômio: material", d["nome"])
         return self.item(pid, bid)
 
     def salvar_produto(self, pid: int, dados: dict, bid: int | None = None) -> dict:
         d = self._limpar_produto(dados)
-        if bid and not d.get("aplicado"):
-            d["aplicado"] = (self.db.binomio(bid) or {}).get("dados", {}).get("aplicado")
+        antes = (self.db.binomio(bid) or {}).get("dados", {}) if bid else {}
+        for k in ("aplicado", "conferido"):
+            if not d.get(k):
+                d[k] = antes.get(k)
         bid = self.db.salvar_binomio(pid, TIPO_BETUMINOSO, d, bid)
         self.db.registrar(pid, "binômio: betuminoso", d["produto"])
         return self.item(pid, bid)

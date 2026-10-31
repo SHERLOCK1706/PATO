@@ -491,7 +491,7 @@ async function carregarCustos() {
     <div class="it">BDI sem desoneração<br><b>${pct(c.bdi.SD)}</b></div><div class="it">BDI com desoneração<br><b>${pct(c.bdi.CD)}</b></div>`;
   const subs = [["servicos", "Serviços e composições", "Escolha os serviços e veja/ajuste as composições"], ["proprias", "Composições próprias", "Crie, copie e edite composições próprias (preços novos)"], ["insumos", "Insumos", "Preços dos insumos usados nos serviços escolhidos"],
     ["binomio", "Binômio", "Cotações × SICRO (pétreos, madeira, capa asfáltica) e betuminosos ANP, com anexos"],
-    ["alteracoes", "Alterações", "Registro das alterações de custo, com desfazer"], ["base", "Base e BDI", "Base SICRO do projeto, BDI e importação de novas bases"],
+    ["alteracoes", "Alterações", "Registro das alterações de custo, com desfazer"], ["base", "Data-base e BDI", "Base SICRO do projeto (estado, data-base), BDI (conferir e ajustar as parcelas) e importação de novas bases"],
     ["database", "Trocar data-base", "Compare e passe o projeto para outra data-base"]];
   $("#chipsCustos").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${C_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsCustos .chip").forEach(ch => ch.onclick = () => { C_.sub = ch.dataset.sub; carregarCustos(); });
@@ -800,7 +800,7 @@ const listaAnexos = (lst, tipos) => !lst.length ? "" : `<div class="anexos">📎
   <small>${esc(tipos[a.tipo] || a.tipo)}${a.rotulo ? " · " + esc(a.rotulo) : ""}</small> <button class="btn mini perigo" data-exax="${a.id}" data-dica="Remove o anexo">×</button></span>`).join(" ")}</div>`;
 async function renderBinomio() {
   const d = B_.dados = await api(`${base_}${E.pid}/binomio`);
-  $("#binRef").innerHTML = `Data-base: <b>${esc(d.data_base)}</b> · BDI aplicado aos betuminosos: <b>${pctN(d.bdi)}</b> (aba Base e BDI).`;
+  $("#binRef").innerHTML = `Data-base: <b>${esc(d.data_base)}</b> · BDI aplicado aos betuminosos: <b>${pctN(d.bdi)}</b> (Custos → Data-base e BDI).`;
   $("#anexosGerais").innerHTML = listaAnexos(d.anexos_gerais, d.tipos_anexo);
   const vazio = !d.materiais.length && !d.produtos.length;
   $("#listaMateriais").innerHTML = vazio ? `<div class="caixa"><p class="nota">Nenhum binômio neste projeto. Crie um material ou importe de uma planilha PATO (abas BINOMIO_COTACOES e BINOMIO_ANP).</p></div>` :
@@ -811,6 +811,106 @@ async function renderBinomio() {
   $$("[data-exbin]").forEach(b => b.onclick = async () => { if (!confirm("Excluir este binômio e seus anexos?")) return; await api(`${base_}${E.pid}/binomio/${b.dataset.exbin}`, { method: "DELETE" }); renderBinomio(); });
   $$("[data-axbin]").forEach(b => b.onclick = () => { const [id, tipo] = b.dataset.axbin.split(":"); enviarAnexo(id, tipo, prompt("Fornecedor/origem a que se refere o anexo (opcional):") || ""); });
   $$("[data-apbin]").forEach(b => b.onclick = () => aplicarVencedor(+b.dataset.apbin));
+  $$("[data-cotbin]").forEach(b => b.onclick = () => cotacaoPdf(+b.dataset.cotbin));
+  renderResumoBin(d);
+}
+function renderResumoBin(d) {
+  const r = d.resumo || [];
+  if (!r.length) { $("#resumoBin").innerHTML = ""; return; }
+  const pend = r.filter(x => x.conferido && !x.adotado).length;
+  $("#resumoBin").innerHTML = `<div class="bin-cab"><h3>③ Resumo do mais vantajoso · ④ Conferência · ⑤ Preço adotado</h3>
+    <div class="linha-botoes" style="margin:0"><button class="btn primario" id="btnAdotarConf" ${pend ? "" : "disabled"} data-dica="Grava nas composições (insumo SICRO, sem e com desoneração) o preço do vencedor de cada material conferido, e as DMT do transporte">Adotar nas composições os conferidos (${pend})</button></div></div>
+    <p class="nota">Confira cada linha (vencedor, preço reajustado e DMT) e marque “conferido”. Só os conferidos são adotados. Se uma cotação mudar depois, a conferência deixa de valer.</p>
+    <div class="tabela-rolagem"><table class="tab"><tr><th>Material</th><th>Código</th><th class=n>Cotações</th><th>Mais vantajoso</th><th class=n>Total R$/t</th><th class=n>SICRO R$/t</th>
+      <th class=n>Preço a adotar</th><th class=n>DMT pav./não pav.</th><th>Avisos</th><th>Conferido</th><th>Composição</th></tr>
+    ${r.map(x => `<tr class="${x.adotado ? "adotado" : ""}"><td>${esc(x.material)}</td><td>${esc(x.codigo || "—")}</td><td class=n>${x.tipo === "material" ? x.cotacoes : "ANP"}</td>
+      <td>${x.vencedor ? (x.sicro_vence ? "SICRO (centro sede)" : esc(x.vencedor)) : '<span class="tag aviso">sem cotação</span>'}</td>
+      <td class=n><b>${reais(x.total)}</b></td><td class=n>${reais(x.total_sicro)}</td><td class=n>${x.preco_adotar != null ? `R$ ${reais(x.preco_adotar)}/${esc(x.unidade)}` : ""}</td>
+      <td class=n>${x.tipo === "material" ? `${nf(x.dmt_pav)} / ${nf(x.dmt_npav)}` : ""}</td>
+      <td>${x.avisos.map(a => `<small class="tag aviso">${esc(a)}</small>`).join(" ")}${x.conferencia_vencida ? '<small class="tag erro">cotação mudou depois da conferência</small>' : ""}</td>
+      <td><label class="check"><input type="checkbox" data-confbin="${x.id}" ${x.conferido ? "checked" : ""} ${x.vencedor ? "" : "disabled"}> ${x.conferido && x.conferido_por ? esc(x.conferido_por) : ""}</label></td>
+      <td>${x.adotado ? '<span class="tag ok">adotado</span>' : x.sicro_vence ? '<span class="tag">SICRO mantido</span>' : '<span class="tag">pendente</span>'}</td></tr>`).join("")}</table></div>`;
+  $$("[data-confbin]").forEach(c => c.onchange = async () => {
+    try { await jpost(`${base_}${E.pid}/binomio/${c.dataset.confbin}/conferir`, { conferido: c.checked }); renderBinomio(); } catch (e) { erro(e); }
+  });
+  const bt = $("#btnAdotarConf");
+  if (bt) bt.onclick = async () => {
+    if (!confirm("Adotar nas composições o preço dos materiais conferidos? As alterações entram em “Alterações” e podem ser desfeitas.")) return;
+    try { const a = await jpost(`${base_}${E.pid}/binomio/aplicar-conferidos`, {}); toast(a.mensagens.join(" ")); renderBinomio(); } catch (e) { erro(e); }
+  };
+}
+
+// cotação em PDF: leitura automática (OCR) → conferência e ajuste → grava no binômio
+async function cotacaoPdf(binomio_id) {
+  const arq = await escolherArquivo(".pdf,.png,.jpg,.jpeg,.tif,.tiff"); if (!arq) return;
+  const pn = $("#painelCotOcr"); pn.hidden = false;
+  pn.innerHTML = `<p class="carregando">Lendo a cotação ${esc(arq.name)}… (PDF digitalizado ou foto: OCR, pode levar alguns segundos)</p>`;
+  pn.scrollIntoView({ behavior: "smooth" });
+  const fd = new FormData(); fd.append("arquivo", arq);
+  let r;
+  try { r = await api(`${base_}${E.pid}/binomio/cotacao/ler`, { method: "POST", body: fd }); } catch (e) { pn.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; return; }
+  if (!r.itens.length) r.itens = [{ material: "", preco: null, unidade: "m³", binomio_id: binomio_id || null, dmt_pav: r.distancia_km, dmt_npav: 0 }];
+  if (binomio_id) r.itens.forEach(i => { if (!i.binomio_id) i.binomio_id = binomio_id; });
+  const optsMat = sel => `<option value="">➕ novo material</option>` + r.materiais.map(m => `<option value="${m.id}" ${+sel === m.id ? "selected" : ""}>${esc(m.nome)}${m.codigo ? " · " + esc(m.codigo) : ""}</option>`).join("");
+  const linha = i => `<tr data-cit><td><input type="checkbox" data-k="incluir" checked></td><td><select data-k="binomio_id">${optsMat(i.binomio_id)}</select>
+      <input data-k="material" value="${esc(i.material || "")}" placeholder="nome do material novo" style="width:150px"></td>
+    <td><input data-k="codigo" value="${esc(i.codigo || "")}" style="width:80px" placeholder="SICRO" data-dica="Código do insumo SICRO (material novo)"></td>
+    <td><input data-k="preco" type="number" step="any" value="${i.preco ?? ""}" style="width:90px"></td>
+    <td><select data-k="unidade"><option value="m3" ${String(i.unidade).startsWith("m") ? "selected" : ""}>R$/m³</option><option value="t" ${i.unidade === "t" ? "selected" : ""}>R$/t</option></select></td>
+    <td><input data-k="densidade" type="number" step="any" value="${i.densidade ?? ""}" style="width:70px" placeholder="do material"></td>
+    <td><input data-k="dmt_pav" type="number" step="any" value="${i.dmt_pav ?? ""}" style="width:75px"></td>
+    <td><input data-k="dmt_npav" type="number" step="any" value="${i.dmt_npav ?? ""}" style="width:75px"></td>
+    <td><small>${esc(i.descricao || "")}</small></td></tr>`;
+  const pos = r.posicao;
+  pn.innerHTML = `<div class="bin-cab"><h3>① Cotação lida — confira e ajuste antes de gravar</h3><small>${esc(arq.name)} · ${r.ocr ? "lido por OCR (documento digitalizado)" : "texto do PDF"}</small></div>
+    ${r.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("")}
+    <div class="form"><div class="campos cot-campos">
+      <label>Fornecedor <input id="coForn" value="${esc(r.fornecedor || "")}"></label>
+      <label>CNPJ <input id="coCnpj" value="${esc(r.cnpj || "")}"></label>
+      <label>Mês da cotação <input id="coData" type="month" value="${esc(r.data || "")}" data-dica="Mês da proposta: o preço é reajustado pelo índice até a data-base"></label>
+      <label>Frete <select id="coFrete"><option value="">não informado</option><option ${r.frete === "FOB" ? "selected" : ""}>FOB</option><option ${r.frete === "CIF" ? "selected" : ""}>CIF</option></select></label>
+      <label>Local <input id="coLocal" value="${esc(r.local || "")}"></label>
+      <label>Endereço na rodovia <input value="${r.rodovia ? `BR-${r.rodovia.br} km ${r.rodovia.km}` : ""}" disabled></label></div>
+    ${pos ? `<p class="nota">📍 Posição do fornecedor: ${esc(pos.fonte_posicao || "")}${pos.rodovia_proxima ? " · " + esc(pos.rodovia_proxima) : ""}${pos.distancia_canteiro_km != null ? ` · ${nf(pos.distancia_canteiro_km)} km em linha reta até o canteiro` : ""}</p>` : ""}
+    <h4>Itens (DMT em km até o canteiro — ajuste pavimentada / não pavimentada)</h4>
+    <div class="tabela-rolagem"><table class="tab" id="tabCotOcr"><tr><th>Gravar</th><th>Material do binômio</th><th>Código</th><th>Preço</th><th>Unid.</th><th>Dens. t/m³</th><th>DMT pav.</th><th>DMT não pav.</th><th>Linha lida</th></tr>${r.itens.map(linha).join("")}</table></div>
+    <div class="linha-botoes"><button class="btn mini" id="coAdd">+ Item</button></div>
+    <details><summary>Texto lido do documento</summary><pre style="white-space:pre-wrap;max-height:260px;overflow:auto">${esc(r.texto || "")}</pre></details>
+    <div class="linha-botoes"><button class="btn primario" id="coGravar" data-dica="Acrescenta a cotação aos materiais (substitui a do mesmo fornecedor) e anexa o PDF">Gravar cotação no binômio</button><button class="btn" id="coFechar">Cancelar</button></div></div>`;
+  $("#coAdd").onclick = () => $("#tabCotOcr").insertAdjacentHTML("beforeend", linha({ unidade: "m3", dmt_pav: r.distancia_km, dmt_npav: 0, binomio_id }));
+  $("#coFechar").onclick = () => pn.hidden = true;
+  $("#coGravar").onclick = async () => {
+    const itens = $$("#tabCotOcr tr[data-cit]").map(tr => Object.fromEntries($$("[data-k]", tr).map(i => [i.dataset.k, i.type === "checkbox" ? i.checked : i.value === "" ? null : i.value])));
+    const dados = { fornecedor: $("#coForn").value, cnpj: $("#coCnpj").value, data: $("#coData").value, frete: $("#coFrete").value || null, local: $("#coLocal").value, itens };
+    const f2 = new FormData(); f2.append("arquivo", arq); f2.append("dados", JSON.stringify(dados));
+    try { const g = await api(`${base_}${E.pid}/binomio/cotacao/adicionar`, { method: "POST", body: f2 });
+      toast(`Cotação gravada: ${g.gravados.map(x => x.material).join(", ")}`); pn.hidden = true; renderBinomio(); } catch (e) { erro(e); }
+  };
+}
+
+// cadastro de fornecedores e pontos do KMZ
+async function renderForn() {
+  const pn = $("#painelForn"); pn.hidden = false;
+  const f = await api(`${base_}${E.pid}/fornecedores`);
+  pn.innerHTML = `<div class="bin-cab"><h3>Fornecedores e localização</h3><div class="linha-botoes" style="margin:0">
+      <button class="btn mini" id="fnImp" data-dica="Planilha com as colunas FORNECEDOR, ENDEREÇO e INSUMO (opcionais CNPJ e CONTATO). O endereço “BR-xxx, km yyy” é localizado no SNV">Importar planilha de fornecedores</button>
+      <button class="btn mini" id="fnKmz" data-dica="Pontos do Google Earth (pedreiras, areais…): localizados no SNV e incluídos no croqui">Importar KMZ/KML</button>
+      <button class="btn mini" id="fnFechar">Fechar</button></div></div>
+    <p class="nota">${esc(f.nota)} ${f.km_canteiro == null ? "<b>Informe o km do canteiro no croqui (aba Transporte) para calcular a distância.</b>" : `Canteiro no km ${nf(f.km_canteiro)}.`}</p>
+    ${f.lista.length ? `<div class="tabela-rolagem"><table class="tab"><tr><th>Fornecedor</th><th>Insumo</th><th>Endereço</th><th>Posição</th><th>Rodovia mais próxima</th><th class=n>km na rodovia do projeto</th><th class=n>Dist. ao eixo (km)</th><th class=n>Dist. ao canteiro (linha reta, km)</th></tr>
+      ${f.lista.map(x => `<tr><td>${esc(x.nome)}</td><td>${esc(x.insumo || "")}</td><td><small>${esc(x.endereco || "")}</small></td><td><small>${esc(x.fonte_posicao || "sem posição — importe o KMZ")}</small></td>
+        <td><small>${esc(x.rodovia_proxima || "")}</small></td><td class=n>${nf(x.km_projeto)}</td><td class=n>${nf(x.distancia_eixo_km)}</td><td class=n>${nf(x.distancia_canteiro_km)}</td></tr>`).join("")}</table></div>`
+      : '<p class="nota">Nenhum fornecedor cadastrado.</p>'}`;
+  $("#fnFechar").onclick = () => pn.hidden = true;
+  $("#fnImp").onclick = async () => { const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
+    try { await api(`${base_}${E.pid}/fornecedores/importar`, { method: "POST", body: fd }); toast("Fornecedores importados"); renderForn(); } catch (e) { erro(e); } };
+  $("#fnKmz").onclick = async () => { await importarKmz(); renderForn(); };
+}
+async function importarKmz() {
+  const a = await escolherArquivo(".kmz,.kml"); if (!a) return null;
+  const fd = new FormData(); fd.append("arquivo", a);
+  try { const r = await api(`${base_}${E.pid}/croqui/pontos`, { method: "POST", body: fd });
+    toast(`${r.pontos.length} ponto(s) localizados no SNV ${r.versao_snv || ""}`); return r; } catch (e) { erro(e); return null; }
 }
 function cartaoMaterial(m, d) {
   const un = m.sicro ? (m.sicro.unidade || "") : "";
@@ -829,7 +929,8 @@ function cartaoMaterial(m, d) {
     ${listaAnexos(m.anexos, d.tipos_anexo)}
     <div class="linha-botoes"><button class="btn mini primario" data-apbin="${m.id}" data-dica="Grava o preço reajustado do vencedor no insumo SICRO (todas as composições) e as DMTs do transporte">Aplicar vencedor ao insumo</button>
       <button class="btn mini" data-edbin="${m.id}" data-dica="Edita o material e as cotações">Editar</button>
-      <button class="btn mini" data-axbin="${m.id}:cotacao" data-dica="Anexa a proposta/cotação do fornecedor (PDF, e-mail, planilha)">Anexar cotação</button>
+      <button class="btn mini" data-cotbin="${m.id}" data-dica="Lê o PDF da cotação (OCR se digitalizado), pré-preenche preço, data, unidade e DMT para conferir e grava neste material, com o PDF anexado">📄 Cotação em PDF (leitura automática)</button>
+      <button class="btn mini" data-axbin="${m.id}:cotacao" data-dica="Só anexa o arquivo (proposta, e-mail, planilha), sem ler">Anexar arquivo</button>
       <button class="btn mini perigo" data-exbin="${m.id}" data-dica="Exclui este material do binômio">Excluir</button></div></div>`;
 }
 function cartaoBetuminoso(p, d) {
@@ -928,6 +1029,8 @@ function editorBetuminoso(p) {
   ed.scrollIntoView({ behavior: "smooth" });
 }
 $("#btnNovoMat").onclick = () => editorMaterial(null);
+$("#btnCotPdf").onclick = () => cotacaoPdf(null);
+$("#btnForn").onclick = () => { const p = $("#painelForn"); if (!p.hidden) { p.hidden = true; return; } renderForn().catch(erro); };
 $("#btnNovoBet").onclick = () => editorBetuminoso(null);
 $("#btnAnexoGeral").onclick = () => { const t = prompt("Tipo do documento: icms, anp, cotacao ou outro", "icms"); if (t) enviarAnexo(null, t.trim().toLowerCase(), ""); };
 $("#btnImpBin").onclick = async () => {
@@ -1233,8 +1336,11 @@ async function carregarOrc() {
     const n = c.itens.filter(i => i.tipo === "servico").length, t = c.totais;
     $("#cabOrc").innerHTML = n ? `<div class="it">Sem desoneração<br><b>R$ ${reais(t.SD)}</b></div><div class="it">Com desoneração<br><b>R$ ${reais(t.CD)}</b></div>
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
-      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
-      : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
+      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>
+      <div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
+      : `<div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>
+        <p class="nota">Nenhuma planilha PATO neste projeto. Monte pela ficha de serviços, importe a aba PATO de uma planilha de referência ou inclua os itens.</p>`;
+    if ($("#btnVerBdi")) $("#btnVerBdi").onclick = () => { C_.sub = "base"; irAba("custos"); };
     await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
@@ -1358,6 +1464,14 @@ $("#btnCrqAuto").onclick = async () => {
     toast(`Croqui montado — ${r.linhas_reorientadas} linhas do quadro reorientadas`); carregarTransp(); } catch (e) { erro(e); }
 };
 
+$("#btnCrqKmz").onclick = async () => {
+  const r = await importarKmz(); if (!r) return;
+  $("#crqKmzRes").innerHTML = `<div class="tabela-rolagem"><table class="tab"><tr><th>Ponto</th><th>Tipo</th><th class=n>km (SNV)</th><th class=n>Distância ao eixo (km)</th><th>Segmento</th><th>Observação</th></tr>
+    ${r.pontos.map(p => `<tr><td>${esc(p.nome)}</td><td>${esc(p.tipo)}</td><td class=n>${nf(p.km)}</td><td class=n>${nf(p.distancia_km)}</td><td>${esc(p.segmento)}</td><td><small>${esc(p.obs)}</small></td></tr>`).join("")}</table></div>
+    ${r.fora?.length ? `<p class="tag aviso">Sem localização no SNV: ${esc(r.fora.join(", "))}</p>` : ""}<p class="nota">Confira o acesso (estrada até a rodovia) e ajuste na tabela de ocorrências.</p>`;
+  carregarTransp();
+};
+
 // ---- conferência
 const CF_ = { r: null };
 const CF_TAG = { ok: ["ok", "OK"], atencao: ["aviso", "Atenção"], falha: ["erro", "Falha"], manual: ["", "A conferir"], feito: ["ok", "Conferido"] };
@@ -1401,10 +1515,21 @@ $("#btnFichaMontar").onclick = async () => {
   const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
   const valores = Object.fromEntries($$("[data-fval]").filter(i => i.value !== "").map(i => [i.dataset.fval, +i.value]));
   $("#resOrc").innerHTML = '<p class="carregando">Montando a planilha PATO pela ficha…</p>';
-  try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores });
+  try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores, extras: O_.lista?.extras || [] });
     $("#resOrc").innerHTML = `<p class="ok-msg">${r.servicos} serviços; ${r.transporte_linhas} linhas de transporte local do modelo.</p>` +
       (r.ocorrencias_faltando?.length ? `<p class="tag aviso">Ocorrências do quadro sem correspondente no croqui: ${esc(r.ocorrencias_faltando.join(", "))} — monte o croqui na aba Transporte.</p>` : "");
     O_.sub = "planilha"; carregarOrc(); } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+};
+$("#btnFichaLista").onclick = async () => {
+  const a = await escolherArquivo(".xlsx,.xlsm,.csv,.txt"); if (!a) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  try { const r = O_.lista = await api(`${base_}${E.pid}/pato/lista-servicos`, { method: "POST", body: fd });
+    const sel = new Set(r.selecionados);
+    $$("[data-fsel]").forEach(c => c.checked = sel.has(c.dataset.fsel));
+    Object.entries(r.ne || {}).forEach(([id, v]) => { const i = $(`[data-fne="${id}"]`); if (i) i.value = v; });
+    $("#fichaListaRes").innerHTML = `<p class="ok-msg">${r.lidos} códigos lidos: ${r.selecionados.length} serviços da ficha marcados.</p>` +
+      (r.extras.length ? `<p class="nota">Fora da ficha (entram em “01.08 Serviços incluídos pela lista” ao montar):</p><ul class="nota">${r.extras.map(e => `<li>${esc(e.codigo)} — ${esc(e.descricao || "")} ${e.na_base ? "" : '<span class="tag aviso">não está na base SICRO do projeto</span>'}</li>`).join("")}</ul>` : "");
+  } catch (e) { erro(e); }
 };
 $("#btnFichaGravar").onclick = async () => {
   if (!confirm("Gravar a planilha PATO deste projeto como a ficha de serviços (substitui a ficha atual)?")) return;

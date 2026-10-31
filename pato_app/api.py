@@ -1,6 +1,7 @@
 """API web (FastAPI) + painel em /."""
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import tempfile
@@ -372,6 +373,46 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def b_aplicar(pid: int, bid: int, dados: dict = Body(default={})):
         return bi.aplicar_vencedor(pid, bid, dados.get("aplicar_dmt", True), dados.get("codigo") or None)
 
+    @app.post("/api/projetos/{pid}/binomio/cotacao/ler")
+    async def b_ler_cotacao(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.ler_cotacao(pid, caminho, arquivo.filename)
+        finally:
+            os.unlink(caminho)
+
+    @app.post("/api/projetos/{pid}/binomio/cotacao/adicionar")
+    async def b_add_cotacao(pid: int, arquivo: UploadFile = File(...), dados: str = Form(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.adicionar_cotacao(pid, caminho, arquivo.filename or "cotacao.pdf", json.loads(dados))
+        finally:
+            os.unlink(caminho)
+
+    @app.get("/api/projetos/{pid}/fornecedores")
+    def b_fornecedores(pid: int):
+        return bi.fornecedores(pid)
+
+    @app.put("/api/projetos/{pid}/fornecedores")
+    def b_salvar_fornecedores(pid: int, dados: dict = Body(...)):
+        return bi.salvar_fornecedores(pid, dados.get("lista") or [], bool(dados.get("acrescentar")))
+
+    @app.post("/api/projetos/{pid}/fornecedores/importar")
+    async def b_importar_fornecedores(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return bi.importar_fornecedores(pid, caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.post("/api/projetos/{pid}/binomio/{bid}/conferir")
+    def b_conferir(pid: int, bid: int, dados: dict = Body(default={})):
+        return bi.conferir(pid, bid, dados.get("conferido", True), dados.get("por"))
+
+    @app.post("/api/projetos/{pid}/binomio/aplicar-conferidos")
+    def b_aplicar_conf(pid: int):
+        return bi.aplicar_conferidos(pid)
+
     @app.post("/api/projetos/{pid}/anexos")
     async def b_anexar(pid: int, arquivo: UploadFile = File(...), binomio_id: int | None = Form(default=None),
                        tipo: str = Form(default="cotacao"), rotulo: str | None = Form(default=None),
@@ -402,6 +443,16 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.put("/api/projetos/{pid}/croqui")
     def t_salvar_croqui(pid: int, dados: dict = Body(...)):
         return tr.salvar_croqui(pid, dados)
+
+    @app.post("/api/projetos/{pid}/croqui/pontos")
+    async def t_pontos(pid: int, arquivo: UploadFile = File(...), acesso: str = Form(default="rp")):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return tr.importar_pontos(pid, caminho, acesso)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        finally:
+            os.unlink(caminho)
 
     @app.post("/api/projetos/{pid}/croqui/montar")
     def t_montar_croqui(pid: int, dados: dict = Body(...)):
@@ -543,9 +594,19 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def ficha_gravar(pid: int):
         return orc.salvar_como_ficha(pid)
 
+    @app.post("/api/projetos/{pid}/pato/lista-servicos")
+    async def ficha_lista(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return orc.ficha_pela_lista(pid, caminho)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        finally:
+            os.unlink(caminho)
+
     @app.post("/api/projetos/{pid}/pato/montar")
     def ficha_montar(pid: int, dados: dict = Body(default={})):
-        r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"))
+        r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"), dados.get("extras"))
         r.pop("resumo", None)
         return r
 

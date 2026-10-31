@@ -32,6 +32,19 @@ for /f "usebackq eol=# tokens=*" %%p in ("requirements-opcionais.txt") do (
     pip install --only-binary=:all: "%%p" >nul 2>&1 && (echo   ok: %%p) || (echo   aviso: %%p nao instalado - opcional)
 )
 echo.
+echo OCR das cotacoes digitalizadas (Tesseract, opcional)...
+set "TESS="
+where tesseract >nul 2>&1 && set "TESS=1"
+if exist "%ProgramFiles%\Tesseract-OCR\tesseract.exe" set "TESS=1"
+if defined TESS echo   ok: Tesseract encontrado
+if not defined TESS (
+    winget install -e --id UB-Mannheim.TesseractOCR --accept-package-agreements --accept-source-agreements >nul 2>&1 && echo   ok: Tesseract instalado || echo   aviso: Tesseract nao instalado - baixe em github.com/UB-Mannheim/tesseract/wiki. Sem ele a cotacao digitalizada e preenchida a mao.
+)
+if not exist tessdata\por.traineddata (
+    mkdir tessdata 2>nul
+    powershell -NoProfile -Command "try { Invoke-WebRequest -UseBasicParsing https://github.com/tesseract-ocr/tessdata_fast/raw/main/por.traineddata -OutFile tessdata\por.traineddata; Write-Host '  ok: idioma portugues do OCR' } catch { Write-Host '  aviso: idioma portugues do OCR nao baixado' }"
+)
+echo.
 echo Instalacao concluida. Use iniciar.bat para abrir o painel.
 pause
 exit /b 0

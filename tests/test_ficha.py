@@ -120,15 +120,18 @@ def test_ajusta_ne_e_escolhe_servicos(proj):
 
 
 def test_lista_de_servicos(proj, tmp_path):
-    """Lista importada: marca os serviços da ficha; códigos fora da ficha entram em 01.08 (base direta)."""
+    """Lista importada: marca os serviços da ficha (com os AM/TM que dependem deles); avisa quando um serviço depende de
+    outro fora da lista; códigos fora da ficha entram em 01.08 com a quantidade da lista."""
     sv, pid, _ = proj
     arq = tmp_path / "lista.csv"
-    arq.write_text("codigo;NE\n4011353;0,5\n5501700;1\n4011209;1\n", encoding="utf-8")
+    arq.write_text("codigo;NE;quantidade\n4011353;0,5;\n5501700;1;\n4011209;1;1500\n", encoding="utf-8")
     r = sv.orcamento.ficha_pela_lista(pid, str(arq))
-    assert r["lidos"] == 3 and r["selecionados"]
+    assert r["lidos"] == 3 and "L84" in r["selecionados"]
     assert [e["codigo"] for e in r["extras"]] == ["4011209"] and r["extras"][0]["na_base"]
-    m = sv.orcamento.montar_pela_ficha(pid, r["selecionados"], r["ne"], None, r["extras"])
-    itens = sv.orcamento.calcular(pid)["itens"] if hasattr(sv.orcamento, "calcular") else None
-    assert m["servicos"] >= len(r["selecionados"])
-    if itens:
-        assert any(i.get("codigo") == "4011209" and str(i.get("item", "")).startswith("01.08") for i in itens)
+    assert any("PINTURA DE LIGA" in a and "depende de" in a for a in r["avisos"])  # pintura sem o revestimento
+    sv.orcamento.montar_pela_ficha(pid, r["selecionados"], r["ne"], None, r["extras"])
+    c = sv.orcamento.calcular(pid)
+    serv = {(i["item"], i["codigo"]) for i in c["itens"] if i["tipo"] == "servico"}
+    assert ("01.02.07.01", "5501700") in serv and ("01.08.01", "4011209") in serv
+    sec = {x["secao"]: x for x in sv.orcamento.resumo(pid)["secoes"]}
+    assert sec["01.08"]["nome"].startswith("Serviços incluídos") and sec["01.08"]["SD"] > 0

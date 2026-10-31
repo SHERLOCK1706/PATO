@@ -600,6 +600,18 @@ class Orcamentos:
                         sel.append(dep["id"])
             if not achados:
                 extras.append(e)
+        por_id = {x["id"]: x for x in f["servicos"]}
+        avisos = []
+        for i in dict.fromkeys(sel):  # serviço cuja quantidade sai de outro que não está na lista: sairia do PATO
+            pai = por_id[i].get("depende_de")
+            if pai and pai not in sel and por_id.get(pai, {}).get("tipo") == "servico":
+                x, p = por_id[i], por_id[pai]
+                avisos.append(f"{x['item']} {x.get('codigo')} ({(x.get('descricao') or '')[:40]}) depende de {p['item']} "
+                              f"{p.get('codigo')} ({(p.get('descricao') or '')[:40]}), que não está na lista — marque-o na ficha "
+                              f"ou o item sai do PATO.")
+        for e in extras:
+            if not e.get("quantidade"):
+                avisos.append(f"{e['codigo']}: fora da ficha e sem quantidade na lista — informe a quantidade na planilha PATO.")
         try:
             m = self.sv.custos.motor(pid, "SD")
             for e in extras:
@@ -608,7 +620,7 @@ class Orcamentos:
                 e["na_base"] = bool(c)
         except ValueError:
             pass
-        return dict(lidos=len(lista), selecionados=sorted(set(sel)), ne=ne, extras=extras)
+        return dict(lidos=len(lista), selecionados=sorted(set(sel)), ne=ne, extras=extras, avisos=avisos)
 
     def montar_pela_ficha(self, pid: int, selecionados: list | None = None, ne: dict | None = None,
                           valores: dict | None = None, extras: list | None = None) -> dict:

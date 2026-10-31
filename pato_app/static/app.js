@@ -1528,6 +1528,7 @@ $("#btnFichaLista").onclick = async () => {
     $$("[data-fsel]").forEach(c => c.checked = sel.has(c.dataset.fsel));
     Object.entries(r.ne || {}).forEach(([id, v]) => { const i = $(`[data-fne="${id}"]`); if (i) i.value = v; });
     $("#fichaListaRes").innerHTML = `<p class="ok-msg">${r.lidos} códigos lidos: ${r.selecionados.length} serviços da ficha marcados.</p>` +
+      (r.avisos || []).map(a => `<p class="tag aviso">${esc(a)}</p>`).join("") +
       (r.extras.length ? `<p class="nota">Fora da ficha (entram em “01.08 Serviços incluídos pela lista” ao montar):</p><ul class="nota">${r.extras.map(e => `<li>${esc(e.codigo)} — ${esc(e.descricao || "")} ${e.na_base ? "" : '<span class="tag aviso">não está na base SICRO do projeto</span>'}</li>`).join("")}</ul>` : "");
   } catch (e) { erro(e); }
 };

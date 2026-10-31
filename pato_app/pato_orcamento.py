@@ -32,6 +32,7 @@ SECOES = {
     "01.05": "Serviços de transportes",
     "01.06": "Sinalização de obras temporárias",
     "01.07": "Serviços diversos (administração local, canteiro, mobilização)",
+    "01.08": "Serviços incluídos pela lista (classificar no grupo correto)",
     "02": "Demais serviços de manutenção – DSM",
 }
 LIMITE_DSM = 0.25  # Res. 8/2023, art. 6º, III

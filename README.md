@@ -223,6 +223,10 @@ ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 2. Copie a pasta `pato-app` para, por exemplo, `C:\PATO\pato-app`.
 3. Dê dois cliques em `instalar.bat` (uma vez) e depois em `iniciar.bat`.
    O painel abre em http://127.0.0.1:8000.
+   O instalador põe primeiro os componentes essenciais (`requirements.txt`, todos com pacote pronto para Windows —
+   Python 3.10 a 3.14) e depois tenta os opcionais (`requirements-opcionais.txt`); se algum opcional falhar, a instalação
+   conclui e o sistema funciona. Para abrir os pacotes .7z do SICRO, o sistema usa o 7-Zip instalado ou o `tar` do
+   Windows 10/11.
 
 Linux/macOS: `python3 -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt && python -m pato_app`
 

@@ -1,0 +1,8 @@
+# Opcionais — o sistema funciona sem eles (instalar.bat tenta instalar e só avisa se algum falhar)
+# abrir .7z do SICRO sem o 7-Zip instalado (precisa compilar em algumas versões do Python no Windows)
+py7zr>=0.20
+# indexar documentos Word/PowerPoint novos na base de normas
+python-docx>=1.0
+python-pptx>=0.6
+# testes automáticos
+pytest>=8.0

@@ -371,25 +371,51 @@ def _tabela_sintetica(linhas: list[tuple]) -> tuple[str | None, dict]:
     return None, {}
 
 
+def _programa_7z() -> str | None:
+    import os
+    import shutil
+    for p in ("7z", "7za", "7zz"):
+        if shutil.which(p):
+            return shutil.which(p)
+    for base in (os.environ.get("ProgramFiles"), os.environ.get("ProgramFiles(x86)"), r"C:\Program Files", r"C:\Program Files (x86)"):
+        if base and os.path.exists(os.path.join(base, "7-Zip", "7z.exe")):
+            return os.path.join(base, "7-Zip", "7z.exe")
+    return None
+
+
 def extrair_pacote(caminho: str, destino: str) -> None:
-    """Abre .7z/.rar/.zip: usa o unar/7z do sistema se houver; senão, py7zr (.7z) ou zipfile (.zip) — funciona no Windows."""
+    """Abre .7z/.rar/.zip sem exigir biblioteca compilada: unar ou 7-Zip instalados; .zip pelo Python; no Windows 10/11,
+    o 'tar' do sistema (libarchive) abre .7z e .rar; por último o py7zr, se estiver instalado."""
+    import os
     import shutil
     import subprocess
     import zipfile
-    for prog, args in (("unar", ["-q", "-f", "-o", destino, caminho]), ("7z", ["x", "-y", f"-o{destino}", caminho])):
-        if shutil.which(prog):
-            subprocess.run([prog, *args], capture_output=True, timeout=1200)
-            return
     low = caminho.lower()
-    if low.endswith(".7z"):
-        import py7zr
-        with py7zr.SevenZipFile(caminho, "r") as z:
-            z.extractall(destino)
-    elif low.endswith(".zip"):
+    if low.endswith(".zip"):
         with zipfile.ZipFile(caminho) as z:
             z.extractall(destino)
-    else:
-        raise ValueError("Para abrir .rar instale o 7-Zip (7z) ou envie o pacote em .7z/.zip.")
+        return
+    if shutil.which("unar"):
+        subprocess.run(["unar", "-q", "-f", "-o", destino, caminho], capture_output=True, timeout=1200)
+        return
+    sete = _programa_7z()
+    if sete:
+        subprocess.run([sete, "x", "-y", f"-o{destino}", caminho], capture_output=True, timeout=1200)
+        return
+    if shutil.which("tar"):
+        r = subprocess.run(["tar", "-xf", caminho, "-C", destino], capture_output=True, timeout=1200)
+        if r.returncode == 0 and any(os.scandir(destino)):
+            return
+    if low.endswith(".7z"):
+        try:
+            import py7zr
+        except ImportError:
+            raise ValueError("Não consegui abrir o .7z: instale o 7-Zip (7-zip.org) ou descompacte o pacote e envie os "
+                             ".xlsx soltos ou um .zip.") from None
+        with py7zr.SevenZipFile(caminho, "r") as z:
+            z.extractall(destino)
+        return
+    raise ValueError("Para abrir .rar instale o 7-Zip (7-zip.org) ou envie o pacote em .7z/.zip.")
 
 
 def _abrir_planilhas(caminhos: list[str]):

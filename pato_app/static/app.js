@@ -1085,6 +1085,11 @@ const lerTab = sel => $$(sel).map(tr => Object.fromEntries($$("[data-c]", tr).ma
 async function renderCroqui() {
   const c = T_.cro, d = c.dados;
   $("#croquiSvg").innerHTML = svgCroqui(c);
+  if (d.automatico) { $("#crqKmCant").value = d.automatico.km_canteiro ?? ""; $("#crqKmUsina").value = d.automatico.km_usina ?? ""; }
+  const om = d.origem_material || {};
+  $("#crqNotas").innerHTML = (Object.keys(om).length ? `<p class="nota"><b>Origem dos materiais (binômio):</b> ${Object.entries(om).map(([m, o]) => `${esc(m.toLowerCase())} → ${esc(o)}`).join(" · ")}</p>`
+      : d.automatico ? '<p class="tag aviso">Sem materiais no binômio: os materiais saem do centro sede (preço SICRO). Cadastre as cotações para comparar.</p>' : "") +
+    ((d.automatico?.notas || []).length ? `<ul class="nota">${d.automatico.notas.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : "");
   $("#tabOcorr").innerHTML = `<tr><th>Nome</th><th>Tipo</th><th>km</th><th>Lado</th><th colspan=3 data-dica="Distância do acesso entre a rodovia e a ocorrência">Acesso LN / RP / P (km)</th>
     <th colspan=3 data-dica="Para ocorrências sem km: distância fixa até a pista (ex.: bota-fora a 5 km)">Distância fixa LN / RP / P (km)</th><th>½ ext.</th><th>Obs.</th><th></th></tr>` + d.ocorrencias.map(linhaOcorr).join("");
   $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial</th><th>km final</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
@@ -1215,7 +1220,7 @@ const O_ = { sub: "planilha", c: null, med: null };
 const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 3 });
 async function carregarOrc() {
   if (!E.pid) return;
-  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
+  const subs = [["ficha", "Ficha de serviços", "Escolha dos serviços e níveis de esforço para montar o PATO do segmento"], ["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
     ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
@@ -1229,7 +1234,7 @@ async function carregarOrc() {
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
       <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
-    await ({ planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 function renderOrcPlanilha() {
@@ -1337,6 +1342,43 @@ function renderOrcDesemp() {
       toast("NE da roçada salvo — desempenho recalculado"); carregarOrc(); } catch (e) { erro(e); }
   };
 }
+$("#btnCrqAuto").onclick = async () => {
+  const km = $("#crqKmCant").value;
+  if (km === "") return toast("Informe o km do canteiro");
+  if (!confirm("Montar o croqui pelo modelo? As ocorrências atuais são substituídas (travessias e VMD são mantidos).")) return;
+  try { const r = await jpost(`${base_}${E.pid}/croqui/montar`, { km_canteiro: +km, km_usina: $("#crqKmUsina").value === "" ? null : +$("#crqKmUsina").value });
+    toast(`Croqui montado — ${r.linhas_reorientadas} linhas do quadro reorientadas`); carregarTransp(); } catch (e) { erro(e); }
+};
+
+// ---- ficha de serviços
+async function renderFicha() {
+  const f = await api(`${base_}${E.pid}/pato/ficha`), atuais = new Set((O_.c?.itens || []).filter(i => i.tipo === "servico").map(i => i.id));
+  $("#fichaOrigem").textContent = f.origem || "modelo";
+  const vazio = !atuais.size;
+  $("#tabFicha").innerHTML = `<tr><th></th><th>Item</th><th>Código</th><th>Serviço</th><th>Un.</th><th>Regra da quantidade</th><th class=n>Nível de esforço</th><th class=n>Valor a informar</th></tr>` +
+    f.servicos.map(x => x.tipo === "titulo" ? `<tr class="tit"><td></td><td colspan=7><b>${esc(x.item || "")} ${esc(x.descricao || "")}</b></td></tr>`
+      : `<tr><td><input type="checkbox" data-fsel="${x.id}" ${vazio || atuais.has(x.id) ? "checked" : ""}></td><td>${esc(x.item)}</td><td>${esc(x.codigo)}</td>
+        <td>${esc((x.descricao || "").slice(0, 70))}</td><td>${esc(x.unidade || "")}</td><td><small>${esc(x.regra)}</small></td>
+        <td class=n>${x.depende_de ? "—" : `<input data-fne="${x.id}" type="number" step="any" value="${x.ne ?? ""}" style="width:90px" data-dica="${esc(x.ne_rotulo || "Nível de esforço do item")}">`}</td>
+        <td class=n>${x.a_informar ? `<input data-fval="${x.id}" type="number" step="any" value="${x.valor_ref ?? ""}" style="width:100px" data-dica="Quantidade sem regra automática (sugestão: valor do modelo)">` : ""}</td></tr>`).join("");
+  $("#fichaTodos").onchange = e => $$("[data-fsel]").forEach(c => c.checked = e.target.checked);
+}
+$("#btnFichaMontar").onclick = async () => {
+  if (O_.c?.itens?.length && !confirm("Substituir a planilha PATO deste projeto pelos serviços marcados na ficha?")) return;
+  const selecionados = $$("[data-fsel]").filter(c => c.checked).map(c => c.dataset.fsel);
+  const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
+  const valores = Object.fromEntries($$("[data-fval]").filter(i => i.value !== "").map(i => [i.dataset.fval, +i.value]));
+  $("#resOrc").innerHTML = '<p class="carregando">Montando a planilha PATO pela ficha…</p>';
+  try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores });
+    $("#resOrc").innerHTML = `<p class="ok-msg">${r.servicos} serviços; ${r.transporte_linhas} linhas de transporte local do modelo.</p>` +
+      (r.ocorrencias_faltando?.length ? `<p class="tag aviso">Ocorrências do quadro sem correspondente no croqui: ${esc(r.ocorrencias_faltando.join(", "))} — monte o croqui na aba Transporte.</p>` : "");
+    O_.sub = "planilha"; carregarOrc(); } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+};
+$("#btnFichaGravar").onclick = async () => {
+  if (!confirm("Gravar a planilha PATO deste projeto como a ficha de serviços (substitui a ficha atual)?")) return;
+  try { await jpost(`${base_}${E.pid}/pato/ficha`, {}); toast("Ficha de serviços gravada"); carregarOrc(); } catch (e) { erro(e); }
+};
+
 $("#btnImpOrc").onclick = async () => {
   const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return;
   if (O_.c?.itens?.length && !confirm("Substituir a planilha PATO deste projeto pela importada?")) return;

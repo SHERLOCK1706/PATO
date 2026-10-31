@@ -397,6 +397,12 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def t_salvar_croqui(pid: int, dados: dict = Body(...)):
         return tr.salvar_croqui(pid, dados)
 
+    @app.post("/api/projetos/{pid}/croqui/montar")
+    def t_montar_croqui(pid: int, dados: dict = Body(...)):
+        if dados.get("km_canteiro") in (None, ""):
+            raise HTTPException(400, "Informe o km do canteiro.")
+        return tr.montar_croqui(pid, float(dados["km_canteiro"]), dados.get("km_usina"), dados.get("informadas"))
+
     @app.post("/api/projetos/{pid}/croqui/vmd")
     async def t_vmd(pid: int, arquivo: UploadFile = File(...)):
         caminho = await _salvar_upload(arquivo)
@@ -480,6 +486,20 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.put("/api/projetos/{pid}/ne-rocada")
     def ner_salvar(pid: int, dados: dict = Body(...)):
         return orc.salvar_ne_rocada(pid, dados)
+
+    @app.get("/api/projetos/{pid}/pato/ficha")
+    def ficha_ler(pid: int):
+        return orc.ficha(pid)
+
+    @app.post("/api/projetos/{pid}/pato/ficha")
+    def ficha_gravar(pid: int):
+        return orc.salvar_como_ficha(pid)
+
+    @app.post("/api/projetos/{pid}/pato/montar")
+    def ficha_montar(pid: int, dados: dict = Body(default={})):
+        r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"))
+        r.pop("resumo", None)
+        return r
 
     @app.get("/api/projetos/{pid}/diversos")
     def div_ler(pid: int):

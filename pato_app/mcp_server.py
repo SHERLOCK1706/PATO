@@ -553,6 +553,33 @@ def pato_exportar_licitacao(projeto_id: int, recalcular: bool = True) -> dict:
 
 
 @mcp.tool()
+def pato_ficha_servicos(projeto_id: int) -> dict:
+    """Ficha de serviços (regras do PATO de referência): id, item, código, regra da quantidade, NE padrão (nos serviços
+    do ICM/IP, o parâmetro da intervenção no levantamento) e se a quantidade é a informar."""
+    return sv().orcamento.ficha(projeto_id)
+
+
+@mcp.tool()
+def pato_montar_pela_ficha(projeto_id: int, selecionados: list[str] | None = None, ne: dict | None = None,
+                           valores: dict | None = None) -> dict:
+    """Monta a planilha PATO do projeto pela ficha: selecionados = ids dos serviços (None = todos); ne = {id: nível de
+    esforço}; valores = {id: quantidade} para os itens a informar. Quantidades pelo inventário, ICM/IP, extensão, prazo
+    e croqui do projeto; o quadro de transportes locais do modelo entra para os serviços escolhidos."""
+    r = sv().orcamento.montar_pela_ficha(projeto_id, selecionados, ne, valores)
+    return dict(servicos=r["servicos"], transporte_linhas=r["transporte_linhas"], ocorrencias_faltando=r["ocorrencias_faltando"],
+                totais=r["resumo"]["totais"])
+
+
+@mcp.tool()
+def croqui_montar(projeto_id: int, km_canteiro: float, km_usina: float | None = None) -> dict:
+    """Monta o croqui pelo modelo (Res. 8/2023): canteiro/usina no km informado, origem dos materiais pelo binômio
+    (SICRO → centro sede; cotação → fornecedor), jazida, bota-fora, depósito e aterro do modelo se não informados."""
+    r = sv().transporte.montar_croqui(projeto_id, km_canteiro, km_usina)
+    return dict(ocorrencias=r["dados"]["ocorrencias"], origem_material=r["origem_material"], notas=r["notas"],
+                linhas_reorientadas=r["linhas_reorientadas"])
+
+
+@mcp.tool()
 def pato_adm_mobilizacao(projeto_id: int) -> dict:
     """Administração local, canteiro, instalação industrial (usina) e mobilização/desmobilização: parâmetros e preços
     calculados com a base SICRO do projeto (SICRO Vol. 07 a 09), ao lado dos preços da planilha de origem."""

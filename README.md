@@ -139,6 +139,23 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   Alimenta os itens 01.06 e as linhas de sinalização do grupo por desempenho.
 - **NE da roçada (DNIT 182/2018)** — na sub-aba Desempenho: NERp = Σ(NERe/d)/Σ(1/d) das estações pluviométricas, NE adotado
   (ou informado pela observação de campo) como frequência anual da capina e das roçadas do GD.
+- **Ficha de serviços** (sub-aba própria) — monta o PATO de um segmento novo sem a planilha PATO: marque os serviços,
+  ajuste o nível de esforço (nos serviços do ICM/IP, o NE ou % da faixa da intervenção) e informe as poucas quantidades sem
+  regra. A ficha guarda as regras do PATO de referência (BR-158/MT) sem os números do segmento: inventário, produção ×
+  8 h × dias, extensão, prazo, ICM/IP (maior entre calculado e histórico — art. 17), sinalização de obras, NE da roçada,
+  ADM/mobilização e o **quadro de transportes locais do modelo** (pétreos, solo, jazida, mistura betuminosa, material
+  demolido). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto. "Gravar este PATO como ficha"
+  transforma qualquer PATO importado na ficha dos próximos projetos.
+- **Croqui montado pelo sistema** (aba Transporte → "Montar croqui", Res. 8/2023): informe o km do canteiro (e da usina,
+  se for outro). A origem de cada material sai do binômio: SICRO mais vantajoso → centro sede (na DMT do SICRO a partir do
+  canteiro, em direção à cidade mais próxima); cotação mais vantajosa → o fornecedor, com a DMT da cotação. Jazida,
+  bota-fora do material demolido, depósito e aterro sanitário usam as distâncias do modelo quando não informados. As linhas
+  do quadro de transportes passam a sair da origem vencedora.
+
+  **Teste de ponta a ponta** (`tests/test_ficha.py`): projeto novo só com inventário, cotações/binômio ANP com ICMS,
+  levantamento ICM, trecho (travessias e VMD) e km do canteiro 124,5 + todos os serviços da ficha → croqui igual ao do
+  modelo e PATO igual ao da planilha importada (R$ 26.715.472,25 / 27.267.278,71). Diferenças para a planilha licitada:
+  só as correções documentadas (transportes 5915321/5914464 da Fase 3, BDI dos betuminosos com desoneração e usina).
 - **ADM local e mobilização** (sub-aba própria, itens 01.07 — SICRO Vol. 07, 08 e 09): administração local (parcelas fixa,
   vinculada e variável com MO mensalista e veículos da base, equipes de laboratório ELA = Σ quantidade no contrato ÷ QE,
   manutenção do canteiro, despesas diversas), canteiro (áreas por NPF/NMAX/NMO, FEAC, k1·k2·k3, CMCC), instalação

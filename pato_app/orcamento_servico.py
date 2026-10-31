@@ -428,6 +428,124 @@ class Orcamentos:
         exportar_xlsx(self, pid, str(dest))
         return dict(arquivo=str(dest), nome=dest.name)
 
+    # ------------------------------------------------- ficha de serviços
+    def _arquivo_ficha(self):
+        from pathlib import Path
+
+        from . import ficha as fc
+        u = Path(self.sv.pasta) / "modelos" / "ficha_servicos.json"
+        return u if u.exists() else fc.ARQUIVO_PADRAO
+
+    def _ip_parametros(self, pid: int) -> dict:
+        d = self.db.dados_projeto(pid, "ip") or {}
+        return d.get("parametros") or ip_mod.parametros_padrao()
+
+    def ficha(self, pid: int | None = None) -> dict:
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        servs = fc.lista(f)
+        if pid is not None:  # serviços do ICM/IP: o esforço é o parâmetro da intervenção no levantamento do projeto
+            itv = self._ip_parametros(pid).get("intervencoes") or {}
+            por_id = {x["id"]: x for x in f.get("itens", [])}
+            for s in servs:
+                b = (por_id.get(s["id"]) or {}).get("base") or {}
+                if s["tipo"] == "servico" and b.get("tipo") == "ip" and len(b.get("chaves") or []) == 1:
+                    it = itv.get(b["chaves"][0]) or {}
+                    if it.get("modo") == "ne":
+                        s.update(ne=it.get("ne"), ne_rotulo="NE do levantamento (ICM)")
+                    elif it.get("modo") == "faixa":
+                        s.update(ne=it.get("pct"), ne_rotulo=f"% da faixa (esp. {it.get('espessura')} m)")
+                    s["ne_ip"] = b["chaves"][0]
+        return dict(origem=f.get("origem"), servicos=servs,
+                    desempenho=[dict(codigo=c, descricao=g.get("descricao"), linhas=len(g.get("linhas") or []))
+                                for c, g in (f.get("desempenho") or {}).items()])
+
+    def salvar_como_ficha(self, pid: int) -> dict:
+        """Grava o PATO deste projeto (regras, NE, sinalização, ADM/mobilização, NE da roçada) como ficha de serviços."""
+        from pathlib import Path
+
+        from . import ficha as fc
+        d = self.dados(pid)
+        if not any(x.get("tipo") == "servico" for x in d.get("itens", [])):
+            raise ValueError("O projeto não tem planilha PATO para virar ficha.")
+        f = fc.de_projeto(d, self.db.dados_projeto(pid, "sinalizacao"), self.db.dados_projeto(pid, "diversos"),
+                          self.db.dados_projeto(pid, "ne_rocada"), self.sv.transporte.dados_quadro(pid),
+                          self.sv.transporte.dados_croqui(pid))
+        fc.gravar(f, Path(self.sv.pasta) / "modelos" / "ficha_servicos.json")
+        return self.ficha()
+
+    def montar_pela_ficha(self, pid: int, selecionados: list | None = None, ne: dict | None = None,
+                          valores: dict | None = None) -> dict:
+        """PATO do projeto a partir da ficha: serviços escolhidos, NE ajustado e valores a informar. As quantidades saem
+        do inventário, do levantamento ICM/IP, da extensão e do prazo do projeto; os transportes, do croqui."""
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        ne = dict(ne or {})
+        por_id = {x["id"]: x for x in f.get("itens", [])}
+        ipd = self.db.dados_projeto(pid, "ip")
+        mudou_ip = False
+        for iid in list(ne):  # NE dos serviços do ICM/IP vai para o parâmetro da intervenção
+            b = (por_id.get(iid) or {}).get("base") or {}
+            if b.get("tipo") == "ip" and len(b.get("chaves") or []) == 1 and ne[iid] not in (None, ""):
+                ipd = ipd or dict(linhas=[], parametros=ip_mod.parametros_padrao())
+                par = ipd.setdefault("parametros", ip_mod.parametros_padrao())
+                it = par.setdefault("intervencoes", {}).get(b["chaves"][0])
+                if it is not None:
+                    it["pct" if it.get("modo") == "faixa" else "ne"] = float(ne[iid])
+                    mudou_ip = True
+                ne.pop(iid)
+        if mudou_ip:
+            self.db.gravar_dados_projeto(pid, "ip", ipd)
+        d = fc.montar(f, selecionados, ne, valores)
+        d["prazo_anos"] = self.anos_contrato(pid, {})
+        self._gravar(pid, d)
+        for chave in ("sinalizacao", "diversos", "ne_rocada"):
+            if f.get(chave) and not self.db.dados_projeto(pid, chave):
+                self.db.gravar_dados_projeto(pid, chave, f[chave])
+        n = sum(1 for x in d["itens"] if x.get("tipo") == "servico")
+        # quadro de transportes locais do modelo (pétreos, solo, jazida, mistura betuminosa) para os serviços escolhidos
+        cods = {cp._cod(x["codigo"]) for x in d["itens"] if x.get("tipo") == "servico"}
+        linhas, faltam = fc.linhas_transporte(f, cods, self.sv.transporte.dados_croqui(pid))
+        if linhas:
+            q = self.sv.transporte.dados_quadro(pid)
+            q["linhas"] = [x for x in q.get("linhas", []) if x.get("origem_linha") == "manual"] + linhas
+            self.db.gravar_dados_projeto(pid, "quadro", q)
+            self.sv.transporte.aplicar_origens(pid)
+        self.db.registrar(pid, "PATO: montado pela ficha de serviços", f"{n} serviços, {len(linhas)} linhas de transporte")
+        tr = self.sincronizar_transportes(pid, gerar=not linhas)
+        return dict(servicos=n, transporte_linhas=len(linhas), ocorrencias_faltando=faltam, transporte=tr,
+                    resumo=self.resumo(pid))
+
+    def sincronizar_transportes(self, pid: int, gerar: bool = False) -> dict:
+        """Leva as quantidades anuais do PATO para os serviços do projeto (base do quadro de transportes); com gerar=True
+        monta o quadro pelos transportes das composições (quando não há quadro do modelo)."""
+        d = self.dados(pid)
+        p = self.sv.projeto(pid)
+        ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, self._ip_calc(pid), self._producao_fn(pid),
+                          self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
+        ner = ne_rocada_mod.calcular(self.db.dados_projeto(pid, "ne_rocada"))
+        calc.ne_rocada = ner["adotado"] if ner else None
+        q: dict[str, float] = {}
+        for x in d.get("itens", []):
+            if x.get("tipo") == "servico" and (x.get("base") or {}).get("tipo") != "transporte":
+                c = cp._cod(x["codigo"])
+                q[c] = q.get(c, 0.0) + calc.quantidade(x)[0]
+        for c, v in q.items():
+            self.db.adicionar_servico(pid, c)
+            self.db.quantidade_servico(pid, c, round(v, 6), "planilha PATO (ficha)")
+        if not gerar:
+            return dict(servicos=len(q))
+        try:
+            r = self.sv.transporte.gerar_quadro(pid)
+            return dict(servicos=len(q), linhas=len(r.get("linhas") or []))
+        except ValueError as e:  # sem base SICRO: o quadro fica para depois
+            return dict(servicos=len(q), erro=str(e))
+
+    def _ip_calc(self, pid: int):
+        ip_dados = self.db.dados_projeto(pid, "ip")
+        return ip_mod.calcular(ip_dados) if ip_dados and ip_dados.get("linhas") else None
+
     def exportar_licitacao(self, pid: int, recalcular: bool = True) -> dict:
         """PATO final no modelo da planilha de licitação (70 abas), preenchido pelo sistema e conferido."""
         import os

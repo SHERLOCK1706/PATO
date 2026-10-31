@@ -185,6 +185,40 @@ class Transportes:
                                                     f"{len(atual.get('travessias', []))} travessias")
         return self.croqui(pid)
 
+    def montar_croqui(self, pid: int, km_canteiro: float, km_usina: float | None = None,
+                      informadas: list[dict] | None = None) -> dict:
+        """Croqui pelo modelo e pela Res. 8/2023: canteiro/usina no km informado, origem de cada material pelo binômio
+        (SICRO → centro sede; cotação → fornecedor), jazida, bota-fora, depósito e aterro informados ou do modelo.
+        Mantém travessias, VMD e demais ajustes do croqui; aplica as origens às linhas do quadro de transportes."""
+        from . import croqui_auto as ca
+        p = self.sv.projeto(pid)
+        atual = self.dados_croqui(pid)
+        mats = self.sv.binomio.listar(pid)["materiais"]
+        r = ca.montar(float(km_canteiro), p.get("km_ini") or 0.0, p.get("km_fim") or 0.0, mats, atual.get("travessias") or [],
+                      km_usina, informadas)
+        atual["ocorrencias"] = r["ocorrencias"]
+        atual["origem_material"] = r["origem_material"]
+        atual["automatico"] = dict(km_canteiro=km_canteiro, km_usina=km_usina, notas=r["notas"])
+        self.db.gravar_dados_projeto(pid, "croqui", atual)
+        n = self.aplicar_origens(pid)
+        self.db.registrar(pid, "transporte: croqui montado pelo sistema",
+                          f"canteiro km {km_canteiro}, {len(r['ocorrencias'])} ocorrências, {n} linhas do quadro reorientadas")
+        return dict(self.croqui(pid), notas=r["notas"], origem_material=r["origem_material"], linhas_reorientadas=n)
+
+    def aplicar_origens(self, pid: int) -> int:
+        """Origem vencedora (binômio) de cada material nas linhas de aquisição do quadro de transportes."""
+        from . import croqui_auto as ca
+        c = self.dados_croqui(pid)
+        om = c.get("origem_material")
+        q = self.db.dados_projeto(pid, "quadro")
+        if not om or not q or not q.get("linhas"):
+            return 0
+        tipos = {o.get("nome"): o.get("tipo") for o in c.get("ocorrencias") or []}
+        n = ca.aplicar_no_quadro(q["linhas"], om, tipos)
+        if n:
+            self.db.gravar_dados_projeto(pid, "quadro", q)
+        return n
+
     def importar_vmd(self, pid: int, caminho: str) -> dict:
         """Modelagem do VMDa do DNIT (PNCT): usa os subtrechos da mesma BR/UF que cruzam o segmento do projeto
         (o SNV da modelagem pode ser de outra versão); sem BR no projeto, casa pelo código SNV dos segmentos."""

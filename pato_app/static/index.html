@@ -333,6 +333,11 @@
         <div class="linha-botoes" style="margin:0"><button class="btn mini" id="btnSvgCroqui" data-dica="Baixa o desenho do croqui (SVG — abre no navegador, Word, Inkscape)">Baixar desenho</button></div></div>
         <p class="nota">Desenhado pelo sistema a partir do segmento do projeto. Informe o km do canteiro/centro sede, pedreira, areal, usina e
           demais ocorrências, as distâncias de acesso e as travessias urbanas; as DMT e o FIT são recalculados ao salvar.</p>
+        <div class="barra filtros"><b>Montar pelo modelo (Res. 8/2023):</b>
+          <label>km do canteiro <input id="crqKmCant" type="number" step="any" style="width:90px" data-dica="Local do canteiro de obras (ponto de referência das DMT do binômio)"></label>
+          <label>km da usina <input id="crqKmUsina" type="number" step="any" style="width:90px" placeholder="no canteiro" data-dica="Deixe em branco se a usina fica no canteiro"></label>
+          <button class="btn" id="btnCrqAuto" data-dica="Canteiro e usina no km informado; origem de cada material pelo binômio (SICRO mais vantajoso → centro sede mais próximo na DMT do SICRO; cotação → fornecedor com a DMT da cotação); jazida, bota-fora do material demolido, depósito e aterro sanitário com as distâncias do modelo, se não estiverem no croqui. As linhas do quadro de transportes passam a sair da origem vencedora.">Montar croqui</button></div>
+        <div id="crqNotas"></div>
         <div id="croquiSvg" class="croqui-svg"></div>
       </div>
       <div class="caixa form">
@@ -411,6 +416,18 @@
       </div></div>
     <div id="resOrc"></div>
     <div id="orc-planilha" class="sub-orc"><div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-ficha" class="sub-orc">
+      <div class="caixa"><div class="bin-cab"><h3>Ficha de serviços</h3>
+        <div class="linha-botoes" style="margin:0">
+          <button class="btn" id="btnFichaGravar" data-dica="Grava a planilha PATO deste projeto (regras, níveis de esforço, quadro de transportes, sinalização, ADM/mobilização) como a ficha de serviços para os próximos projetos">Gravar este PATO como ficha</button>
+          <button class="btn primario" id="btnFichaMontar" data-dica="Substitui a planilha PATO do projeto pelos serviços marcados, com os níveis de esforço e valores informados; as quantidades saem do inventário, do ICM/IP, da extensão e do prazo do projeto e os transportes do croqui">Montar PATO pela ficha</button></div></div>
+        <p class="nota">Marque os serviços do contrato e ajuste o nível de esforço. As quantidades são calculadas pelas regras do PATO de referência
+          (<span id="fichaOrigem"></span>) com os dados <b>deste</b> segmento: inventário, levantamento ICM/IP, extensão, prazo, sinalização e croqui.
+          Nos serviços do ICM o esforço é o parâmetro da intervenção no levantamento (NE ou % da faixa). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto.</p>
+        <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label></div>
+        <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div>
+    </div>
+
     <div id="orc-ip" class="sub-orc">
       <div class="caixa"><div class="bin-cab"><h3>Levantamento da condição do pavimento (IP)</h3>
         <div class="linha-botoes" style="margin:0">

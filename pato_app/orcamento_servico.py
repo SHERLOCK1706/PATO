@@ -502,6 +502,9 @@ class Orcamentos:
         for chave in ("sinalizacao", "diversos", "ne_rocada"):
             if f.get(chave) and not self.db.dados_projeto(pid, chave):
                 self.db.gravar_dados_projeto(pid, chave, f[chave])
+        ner = self.db.dados_projeto(pid, "ne_rocada") or {}
+        if not ner.get("estacoes") and self.ponto_medio(pid):  # NE da roçada pelas estações da norma 182/2018
+            self.ne_rocada_estacoes(pid)
         n = sum(1 for x in d["itens"] if x.get("tipo") == "servico")
         # quadro de transportes locais do modelo (pétreos, solo, jazida, mistura betuminosa) para os serviços escolhidos
         cods = {cp._cod(x["codigo"]) for x in d["itens"] if x.get("tipo") == "servico"}
@@ -649,6 +652,31 @@ class Orcamentos:
                 atual[k] = dados[k]
         self.db.gravar_dados_projeto(pid, "sinalizacao", atual)
         return self.sinalizacao(pid)
+
+    def ponto_medio(self, pid: int) -> tuple[float, float] | None:
+        """Coordenadas do ponto médio do segmento pelo eixo do inventário (CAD_SEG / itens georreferenciados)."""
+        from . import geo
+        p = self.sv.projeto(pid)
+        if p.get("km_ini") is None or p.get("km_fim") is None:
+            return None
+        try:
+            return geo.Eixo(self.db.itens(pid)).posicao((p["km_ini"] + p["km_fim"]) / 2)
+        except Exception:  # noqa: BLE001 — inventário sem coordenadas
+            return None
+
+    def ne_rocada_estacoes(self, pid: int, n: int = 5, lat: float | None = None, lon: float | None = None) -> dict:
+        """NE da roçada pela norma DNIT 182/2018: as n (2 a 5) estações mais próximas do ponto médio do trecho e as
+        distâncias geodésicas; mantém o acréscimo e a justificativa já informados."""
+        pm = (lat, lon) if lat is not None and lon is not None else self.ponto_medio(pid)
+        if not pm:
+            raise ValueError("Sem coordenadas do ponto médio do segmento: importe o inventário georreferenciado (CAD_SEG) "
+                             "ou informe a latitude e a longitude.")
+        atual = self.db.dados_projeto(pid, "ne_rocada") or dict(acrescimo=1.0)
+        atual.update(estacoes=ne_rocada_mod.estacoes_proximas(pm[0], pm[1], n), ponto_medio=dict(lat=pm[0], lon=pm[1]),
+                     fonte="norma DNIT 182/2018 — estações mais próximas do ponto médio (distância geodésica)", adotado=None)
+        self.db.gravar_dados_projeto(pid, "ne_rocada", atual)
+        self.db.registrar(pid, "PATO: NE da roçada pelas estações", f"{len(atual['estacoes'])} estações")
+        return dict(ne_rocada_mod.calcular(atual) or {}, ponto_medio=atual["ponto_medio"])
 
     def salvar_ne_rocada(self, pid: int, dados: dict) -> dict:
         atual = self.db.dados_projeto(pid, "ne_rocada") or dict(estacoes=[], acrescimo=1.0)

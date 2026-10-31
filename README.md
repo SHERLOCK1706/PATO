@@ -138,7 +138,11 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   dias = horas ÷ 7,333 e bandeirola = horas × operadores; dispositivos (un.dia) = ARRED(quantidade × dias), por código SICRO.
   Alimenta os itens 01.06 e as linhas de sinalização do grupo por desempenho.
 - **NE da roçada (DNIT 182/2018)** — na sub-aba Desempenho: NERp = Σ(NERe/d)/Σ(1/d) das estações pluviométricas, NE adotado
-  (ou informado pela observação de campo) como frequência anual da capina e das roçadas do GD.
+  (ou informado pela observação de campo) como frequência anual da capina e das roçadas do GD. "Buscar estações mais
+  próximas" usa as 82 estações do Anexo A da norma (arquivo Est-Pluv_NERP do IPR, em `docs/referencias/dnit/`): pega as 2 a 5
+  mais próximas do ponto médio do segmento (pelo eixo do inventário), de qualquer UF, com a distância geodésica (régua do
+  Google Earth). Na BR-158/MT encontra as mesmas 5 estações da planilha (NERp 5,10 → NE 6); no exemplo da norma
+  (BR-381/MG), NERp 3,7 → 4. Ao montar o PATO pela ficha, o NE é calculado assim automaticamente.
 - **Ficha de serviços** (sub-aba própria) — monta o PATO de um segmento novo sem a planilha PATO: marque os serviços,
   ajuste o nível de esforço (nos serviços do ICM/IP, o NE ou % da faixa da intervenção) e informe as poucas quantidades sem
   regra. A ficha guarda as regras do PATO de referência (BR-158/MT) sem os números do segmento: inventário, produção ×

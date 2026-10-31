@@ -1323,7 +1323,10 @@ function renderOrcDesemp() {
       <td><input data-c="nome" value="${esc(e.nome || "")}" style="width:160px"> <input data-c="municipio" value="${esc(e.municipio || "")}" style="width:160px"></td>
       <td class=n><input data-c="distancia" type="number" step="any" value="${e.distancia ?? ""}" style="width:80px"></td><td class=n><input data-c="nere" type="number" step="any" value="${e.nere ?? ""}" style="width:70px"></td>
       <td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("")}</table>
-    <div class="linha-botoes"><button class="btn mini" type="button" id="btnNerAdd">+ Estação</button></div>
+    <div class="linha-botoes"><button class="btn mini" type="button" id="btnNerAdd">+ Estação</button>
+      <button class="btn mini" type="button" id="btnNerAuto" data-dica="Busca, entre as 82 estações da norma (Anexo A / Est-Pluv_NERP), as mais próximas do ponto médio do segmento (pelo eixo do inventário) e calcula as distâncias geodésicas — como a régua do Google Earth">Buscar estações mais próximas</button>
+      <label>nº de estações <select id="nerN">${[5, 4, 3, 2].map(n => `<option>${n}</option>`).join("")}</select></label>
+      ${ner?.ponto_medio ? `<small>ponto médio do trecho: ${nf(ner.ponto_medio.lat, 5)}, ${nf(ner.ponto_medio.lon, 5)}</small>` : ""}</div>
     <p>NERp = <b>${ner?.nerp != null ? nf(ner.nerp, 4) : "—"}</b> · acréscimo <input id="nerAcr" type="number" step="any" value="${ner?.acrescimo ?? 1}" style="width:60px">
       · sugerido <b>${ner?.sugerido ?? "—"}</b> · <b>NE adotado</b> <input id="nerAdot" type="number" step="any" value="${ner && ner.adotado !== ner.sugerido ? ner.adotado : ""}" placeholder="${ner?.sugerido ?? ""}" style="width:70px">
       <input id="nerJust" placeholder="justificativa (observação de campo)" value="${esc(ner?.justificativa || "")}" style="width:280px">
@@ -1336,6 +1339,10 @@ function renderOrcDesemp() {
   $("#listaDesemp").insertAdjacentHTML("beforeend", blocoNer);
   ligarRemover();
   $("#btnNerAdd").onclick = () => { $("#tabNer").insertAdjacentHTML("beforeend", `<tr data-est><td><input data-c="codigo" style="width:90px"></td><td><input data-c="uf" style="width:40px"></td><td><input data-c="nome" style="width:160px"> <input data-c="municipio" style="width:160px"></td><td class=n><input data-c="distancia" type="number" step="any" style="width:80px"></td><td class=n><input data-c="nere" type="number" step="any" style="width:70px"></td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+  $("#btnNerAuto").onclick = async () => {
+    try { const r = await jpost(`${base_}${E.pid}/ne-rocada/estacoes`, { n: +$("#nerN").value });
+      toast(`NERp ${nf(r.nerp, 2)} → NE ${r.sugerido} (${r.estacoes.length} estações)`); carregarOrc(); } catch (e) { erro(e); }
+  };
   $("#btnNerSalvar").onclick = async () => {
     const estacoes = lerTab("#tabNer tr[data-est]").filter(e => e.distancia != null);
     try { await jpost(`${base_}${E.pid}/ne-rocada`, { estacoes, acrescimo: +$("#nerAcr").value, adotado: $("#nerAdot").value === "" ? null : +$("#nerAdot").value, justificativa: $("#nerJust").value }, "PUT");

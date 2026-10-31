@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="Norma_182" id="Norma_182">
+	<SimpleField name="Região" type="string"></SimpleField>
+	<SimpleField name="UF" type="string"></SimpleField>
+	<SimpleField name="Estação Pluviométrica" type="int"></SimpleField>
+	<SimpleField name="Nome da Estação" type="string"></SimpleField>
+	<SimpleField name="Município " type="string"></SimpleField>
+	<SimpleField name="Entidade" type="string"></SimpleField>
+	<SimpleField name="nd" type="string"></SimpleField>
+	<SimpleField name="NERE " type="float"></SimpleField>
+</Schema>
+<Folder><name>Norma_182</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Acre</SimpleData>
+		<SimpleData name="Estação Pluviométrica">967000</SimpleData>
+		<SimpleData name="Nome da Estação">Rio Branco</SimpleData>
+		<SimpleData name="Município ">Rio Branco</SimpleData>
+		<SimpleData name="Entidade">INMET</SimpleData>
+		<SimpleData name="nd">0.03744</SimpleData>
+		<SimpleData name="NERE ">5.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-67.8,-9.97583333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Acre</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1067003</SimpleData>
+		<SimpleData name="Nome da Estação">Vila Capixaba</SimpleData>
+		<SimpleData name="Município ">Capixaba</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02546</SimpleData>
+		<SimpleData name="NERE ">4.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-67.6766666666667,-10.5758333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amapá</SimpleData>
+		<SimpleData name="Estação Pluviométrica">8050000</SimpleData>
+		<SimpleData name="Nome da Estação">Carmo</SimpleData>
+		<SimpleData name="Município ">Macapá</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03308</SimpleData>
+		<SimpleData name="NERE ">5.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.7483333333333,0.508055555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amapá</SimpleData>
+		<SimpleData name="Estação Pluviométrica">8251001</SimpleData>
+		<SimpleData name="Nome da Estação">Cunani</SimpleData>
+		<SimpleData name="Município ">Calçoene</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.08774</SimpleData>
+		<SimpleData name="NERE ">12</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.3613888888889,2.69833333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">765000</SimpleData>
+		<SimpleData name="Nome da Estação">Cachoeira</SimpleData>
+		<SimpleData name="Município ">Lábrea</SimpleData>
+		<SimpleData name="Entidade">COHIDRO</SimpleData>
+		<SimpleData name="nd">0.04543</SimpleData>
+		<SimpleData name="NERE ">6.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-66.0513888888889,-7.7025</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">759000</SimpleData>
+		<SimpleData name="Nome da Estação">Vila do Apuí</SimpleData>
+		<SimpleData name="Município ">Novo Aripuanã</SimpleData>
+		<SimpleData name="Entidade">COHIDRO</SimpleData>
+		<SimpleData name="nd">0.05509</SimpleData>
+		<SimpleData name="NERE ">8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-59.8922222222222,-7.20083333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">470002</SimpleData>
+		<SimpleData name="Nome da Estação">Esteirão do Repouso</SimpleData>
+		<SimpleData name="Município ">Atalaia do Norte</SimpleData>
+		<SimpleData name="Entidade">COHIDRO</SimpleData>
+		<SimpleData name="nd">0.05583</SimpleData>
+		<SimpleData name="NERE ">8.1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-70.9666666666667,-4.38333333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">8069004</SimpleData>
+		<SimpleData name="Nome da Estação">Pirarara Poço</SimpleData>
+		<SimpleData name="Município ">São Gabriel da Cachoeira</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.07611</SimpleData>
+		<SimpleData name="NERE ">10.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-69.2133333333333,-0.142777777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">363000</SimpleData>
+		<SimpleData name="Nome da Estação">Barro Alto</SimpleData>
+		<SimpleData name="Município ">Coari</SimpleData>
+		<SimpleData name="Entidade">COHIDRO</SimpleData>
+		<SimpleData name="nd">0.04304</SimpleData>
+		<SimpleData name="NERE ">6.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-63.7858333333333,-3.875</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">259000</SimpleData>
+		<SimpleData name="Nome da Estação">Cachoeira Morena</SimpleData>
+		<SimpleData name="Município ">Presidente Figueiredo</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03572</SimpleData>
+		<SimpleData name="NERE ">5.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-59.3352777777778,-2.11444444444444</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Amazonas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">267001</SimpleData>
+		<SimpleData name="Nome da Estação">Espírito Santo</SimpleData>
+		<SimpleData name="Município ">Fonte Boa</SimpleData>
+		<SimpleData name="Entidade">COHIDRO</SimpleData>
+		<SimpleData name="nd">0.06215</SimpleData>
+		<SimpleData name="NERE ">8.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-67.5666666666667,-2.75</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Pará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">247000</SimpleData>
+		<SimpleData name="Nome da Estação">Badajós</SimpleData>
+		<SimpleData name="Município ">São Domingos do Capim</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04139</SimpleData>
+		<SimpleData name="NERE ">6.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.7680555555556,-2.51277777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Pará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">555002</SimpleData>
+		<SimpleData name="Nome da Estação">Km 1130 da BR163</SimpleData>
+		<SimpleData name="Município ">Itaituba</SimpleData>
+		<SimpleData name="Entidade">UFC</SimpleData>
+		<SimpleData name="nd">0.04395</SimpleData>
+		<SimpleData name="NERE ">6.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-55.4958333333333,-6.67138888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Pará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">152005</SimpleData>
+		<SimpleData name="Nome da Estação">Almeirim</SimpleData>
+		<SimpleData name="Município ">Almeirim</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04223</SimpleData>
+		<SimpleData name="NERE ">6.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.5783333333333,-1.22638888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Pará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">47003</SimpleData>
+		<SimpleData name="Nome da Estação">Curuçá</SimpleData>
+		<SimpleData name="Município ">Curuçá</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.05177</SimpleData>
+		<SimpleData name="NERE ">7.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8536111111111,-0.7375</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Pará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">352005</SimpleData>
+		<SimpleData name="Nome da Estação">Brasil Novo</SimpleData>
+		<SimpleData name="Município ">Altamira</SimpleData>
+		<SimpleData name="Entidade">UFC</SimpleData>
+		<SimpleData name="nd">0.0498</SimpleData>
+		<SimpleData name="NERE ">7.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.5419444444444,-3.30777777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Rondônia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">862000</SimpleData>
+		<SimpleData name="Nome da Estação">Tabajara</SimpleData>
+		<SimpleData name="Município ">Machadinho d'Oeste</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04426</SimpleData>
+		<SimpleData name="NERE ">6.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-62.0538888888889,-8.93222222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Rondônia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1160000</SimpleData>
+		<SimpleData name="Nome da Estação">Marco Rondon</SimpleData>
+		<SimpleData name="Município ">Pimenta Bueno</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03849</SimpleData>
+		<SimpleData name="NERE ">5.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-60.855,-12.0152777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Rondônia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1063000</SimpleData>
+		<SimpleData name="Nome da Estação">Escola Caramurú</SimpleData>
+		<SimpleData name="Município ">Ariquemes</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0541</SimpleData>
+		<SimpleData name="NERE ">7.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-63.6461111111111,-10.505</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Roraima</SimpleData>
+		<SimpleData name="Estação Pluviométrica">8360002</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Passarão</SimpleData>
+		<SimpleData name="Município ">Boa Vista</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02703</SimpleData>
+		<SimpleData name="NERE ">4.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-60.5711111111111,3.20777777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Roraima</SimpleData>
+		<SimpleData name="Estação Pluviométrica">8161001</SimpleData>
+		<SimpleData name="Nome da Estação">Caracaraí</SimpleData>
+		<SimpleData name="Município ">Caracaraí</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0349</SimpleData>
+		<SimpleData name="NERE ">5.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-61.1236111111111,1.82138888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Roraima</SimpleData>
+		<SimpleData name="Estação Pluviométrica">61000</SimpleData>
+		<SimpleData name="Nome da Estação">Santa Maria do Boiaçú</SimpleData>
+		<SimpleData name="Município ">Rorainópolis</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04878</SimpleData>
+		<SimpleData name="NERE ">7.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-61.7858333333333,-0.506666666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Tocantins</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1148000</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Lobeira</SimpleData>
+		<SimpleData name="Município ">São Valeiro da Natividade</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0272</SimpleData>
+		<SimpleData name="NERE ">4.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2947222222222,-11.5313888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Norte</SimpleData>
+		<SimpleData name="UF">Tocantins</SimpleData>
+		<SimpleData name="Estação Pluviométrica">848000</SimpleData>
+		<SimpleData name="Nome da Estação">Colinas do Tocantins</SimpleData>
+		<SimpleData name="Município ">Colinas do Tocantins</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03527</SimpleData>
+		<SimpleData name="NERE ">5.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.4816666666667,-8.05277777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Distrito Federal</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1547013</SimpleData>
+		<SimpleData name="Nome da Estação">Taquara</SimpleData>
+		<SimpleData name="Município ">Brasília</SimpleData>
+		<SimpleData name="Entidade">CAESB</SimpleData>
+		<SimpleData name="nd">0.01966</SimpleData>
+		<SimpleData name="NERE ">3.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.5202777777778,-15.6322222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Distrito Federal</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1547004</SimpleData>
+		<SimpleData name="Nome da Estação">Brasília</SimpleData>
+		<SimpleData name="Município ">Brasília</SimpleData>
+		<SimpleData name="Entidade">INMET</SimpleData>
+		<SimpleData name="nd">0.02543</SimpleData>
+		<SimpleData name="NERE ">4.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.9227777777778,-15.79</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Goiás</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1750001</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda do Turno</SimpleData>
+		<SimpleData name="Município ">Paraúna</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0252</SimpleData>
+		<SimpleData name="NERE ">4.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.2894444444444,-17.0791666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Goiás</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1549001</SimpleData>
+		<SimpleData name="Nome da Estação">Goianésia</SimpleData>
+		<SimpleData name="Município ">Goianésia</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02632</SimpleData>
+		<SimpleData name="NERE ">4.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.1216666666667,-15.3291666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1156000</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Itaubá</SimpleData>
+		<SimpleData name="Município ">Tabaporã</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04125</SimpleData>
+		<SimpleData name="NERE ">6.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-56.4333333333333,-11.4713888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1351000</SimpleData>
+		<SimpleData name="Nome da Estação">Trecho Médio</SimpleData>
+		<SimpleData name="Município ">Cocalinho</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03102</SimpleData>
+		<SimpleData name="NERE ">5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.6988888888889,-14.0880555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1655001</SimpleData>
+		<SimpleData name="Nome da Estação">Córrego Grande</SimpleData>
+		<SimpleData name="Município ">Santo Antônio do Leverger</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03385</SimpleData>
+		<SimpleData name="NERE ">5.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-55.2063888888889,-16.6080555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1456008</SimpleData>
+		<SimpleData name="Nome da Estação">Rosário Oeste</SimpleData>
+		<SimpleData name="Município ">Rosário Oeste</SimpleData>
+		<SimpleData name="Entidade">FURNAS</SimpleData>
+		<SimpleData name="nd">0.02655</SimpleData>
+		<SimpleData name="NERE ">4.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-56.4116666666667,-14.8341666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1951003</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Pindorama</SimpleData>
+		<SimpleData name="Município ">Paranaíba</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03005</SimpleData>
+		<SimpleData name="NERE ">4.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.6088888888889,-19.3908333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1956005</SimpleData>
+		<SimpleData name="Nome da Estação">Bodoquena</SimpleData>
+		<SimpleData name="Município ">Miranda</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02235</SimpleData>
+		<SimpleData name="NERE ">3.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-56.9836111111111,-19.8708333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2254000</SimpleData>
+		<SimpleData name="Nome da Estação">Caarapó</SimpleData>
+		<SimpleData name="Município ">Caarapó</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0266</SimpleData>
+		<SimpleData name="NERE ">4.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-54.8247222222222,-22.6244444444444</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Centro-oeste</SimpleData>
+		<SimpleData name="UF">Mato Grosso do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2055002</SimpleData>
+		<SimpleData name="Nome da Estação">Palmeiras</SimpleData>
+		<SimpleData name="Município ">Dois Irmãos Buriti</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02829</SimpleData>
+		<SimpleData name="NERE ">4.7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-55.4308333333333,-20.4488888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Paraná</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2352002</SimpleData>
+		<SimpleData name="Nome da Estação">Quinta do Sol</SimpleData>
+		<SimpleData name="Município ">Quinta do Sol</SimpleData>
+		<SimpleData name="Entidade">AGUASPARANÁ</SimpleData>
+		<SimpleData name="nd">0.03011</SimpleData>
+		<SimpleData name="NERE ">4.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.1833333333333,-23.8166666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Paraná</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2549000</SimpleData>
+		<SimpleData name="Nome da Estação">São Bento</SimpleData>
+		<SimpleData name="Município ">Lapa</SimpleData>
+		<SimpleData name="Entidade">COPEL</SimpleData>
+		<SimpleData name="nd">0.02775</SimpleData>
+		<SimpleData name="NERE ">4.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.7833333333333,-25.9333333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Paraná</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2552001</SimpleData>
+		<SimpleData name="Nome da Estação">Águas do Vere</SimpleData>
+		<SimpleData name="Município ">São Jorge do Ivaí</SimpleData>
+		<SimpleData name="Entidade">COPEL</SimpleData>
+		<SimpleData name="nd">0.0459</SimpleData>
+		<SimpleData name="NERE ">6.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.9327777777778,-25.7738888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Rio Grande do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">3050002</SimpleData>
+		<SimpleData name="Nome da Estação">Palmares do Sul</SimpleData>
+		<SimpleData name="Município ">Palmares do Sul</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01998</SimpleData>
+		<SimpleData name="NERE ">3.7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.5058333333333,-30.2513888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Rio Grande do Sul</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2953030</SimpleData>
+		<SimpleData name="Nome da Estação">Tupancireta</SimpleData>
+		<SimpleData name="Município ">Tupancireta</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03925</SimpleData>
+		<SimpleData name="NERE ">6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-53.8191666666667,-29.0855555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Santa Catarina</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2750001</SimpleData>
+		<SimpleData name="Nome da Estação">Campo Belo do Sul</SimpleData>
+		<SimpleData name="Município ">Campo Belo do Sul</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02811</SimpleData>
+		<SimpleData name="NERE ">4.7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.7536111111111,-27.8988888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sul</SimpleData>
+		<SimpleData name="UF">Santa Catarina</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2651040</SimpleData>
+		<SimpleData name="Nome da Estação">Ponte Serrada</SimpleData>
+		<SimpleData name="Município ">Ponte Serrada</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.04152</SimpleData>
+		<SimpleData name="NERE ">6.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.9280555555556,-26.9205555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Estírito Santo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1840000</SimpleData>
+		<SimpleData name="Nome da Estação">Águia Branca</SimpleData>
+		<SimpleData name="Município ">Águia Branca</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02295</SimpleData>
+		<SimpleData name="NERE ">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-40.7461111111111,-18.9855555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Estírito Santo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2041018</SimpleData>
+		<SimpleData name="Nome da Estação">Usina Fortaleza</SimpleData>
+		<SimpleData name="Município ">Muniz Freire</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02655</SimpleData>
+		<SimpleData name="NERE ">4.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-41.4088888888889,-20.3713888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Minas Gerais</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2044042</SimpleData>
+		<SimpleData name="Nome da Estação">Carmo da Mata (Copasa)</SimpleData>
+		<SimpleData name="Município ">Carmo da Mata</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.026</SimpleData>
+		<SimpleData name="NERE ">4.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.8675,-20.5625</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Minas Gerais</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1844018</SimpleData>
+		<SimpleData name="Nome da Estação">Ponte do Bicudo</SimpleData>
+		<SimpleData name="Município ">Corinto</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0211</SimpleData>
+		<SimpleData name="NERE ">3.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.5772222222222,-18.2011111111111</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Minas Gerais</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1941018</SimpleData>
+		<SimpleData name="Nome da Estação">Itanhomi</SimpleData>
+		<SimpleData name="Município ">Itanhomi</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01878</SimpleData>
+		<SimpleData name="NERE ">3.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-41.8622222222222,-19.1616666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Minas Gerais</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1542016</SimpleData>
+		<SimpleData name="Nome da Estação">Serra Branca</SimpleData>
+		<SimpleData name="Município ">Porteirinha</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01557</SimpleData>
+		<SimpleData name="NERE ">3.1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-42.9436111111111,-15.6366666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Minas Gerais</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1847010</SimpleData>
+		<SimpleData name="Nome da Estação">Iraí de Minas</SimpleData>
+		<SimpleData name="Município ">Iraí de Minas</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02554</SimpleData>
+		<SimpleData name="NERE ">4.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4575,-18.9819444444444</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Rio de Janeiro</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2142022</SimpleData>
+		<SimpleData name="Nome da Estação">Aldeia</SimpleData>
+		<SimpleData name="Município ">Cantagalo</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02159</SimpleData>
+		<SimpleData name="NERE ">3.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-42.3561111111111,-21.9513888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">Rio de Janeiro</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2243004</SimpleData>
+		<SimpleData name="Nome da Estação">Conservatória</SimpleData>
+		<SimpleData name="Município ">Valença</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03002</SimpleData>
+		<SimpleData name="NERE ">4.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-43.9294444444444,-22.2875</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">São Paulo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2345067</SimpleData>
+		<SimpleData name="Nome da Estação">Ponte Alta 1</SimpleData>
+		<SimpleData name="Município ">São Luís do Paraitinga</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03204</SimpleData>
+		<SimpleData name="NERE ">5.1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.1402777777778,-23.3291666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">São Paulo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2147117</SimpleData>
+		<SimpleData name="Nome da Estação">Pirassununga</SimpleData>
+		<SimpleData name="Município ">Pirassununga</SimpleData>
+		<SimpleData name="Entidade">DAEESP</SimpleData>
+		<SimpleData name="nd">0.02573</SimpleData>
+		<SimpleData name="NERE ">4.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4166666666667,-21.9997222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">São Paulo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2151039</SimpleData>
+		<SimpleData name="Nome da Estação">Lucélia</SimpleData>
+		<SimpleData name="Município ">Lucélia</SimpleData>
+		<SimpleData name="Entidade">DAEESP</SimpleData>
+		<SimpleData name="nd">0.02442</SimpleData>
+		<SimpleData name="NERE ">4.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.0166666666667,-21.7333333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Sudeste</SimpleData>
+		<SimpleData name="UF">São Paulo</SimpleData>
+		<SimpleData name="Estação Pluviométrica">2348088</SimpleData>
+		<SimpleData name="Nome da Estação">Engenheiro Barcelar</SimpleData>
+		<SimpleData name="Município ">Itapeva</SimpleData>
+		<SimpleData name="Entidade">CONTRUFAM</SimpleData>
+		<SimpleData name="nd">0.02405</SimpleData>
+		<SimpleData name="NERE ">4.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.7722222222222,-23.8830555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Alagoas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">935012</SimpleData>
+		<SimpleData name="Nome da Estação">MuriciPonte</SimpleData>
+		<SimpleData name="Município ">Murici</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01954</SimpleData>
+		<SimpleData name="NERE ">3.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.9497222222222,-9.31361111111111</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Alagoas</SimpleData>
+		<SimpleData name="Estação Pluviométrica">937013</SimpleData>
+		<SimpleData name="Nome da Estação">Delmiro Gouvêia</SimpleData>
+		<SimpleData name="Município ">Delmiro Gouvêia</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00658</SimpleData>
+		<SimpleData name="NERE ">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.9941666666667,-9.39277777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1539022</SimpleData>
+		<SimpleData name="Nome da Estação">Camacan (Vargito)</SimpleData>
+		<SimpleData name="Município ">Camacan</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02017</SimpleData>
+		<SimpleData name="NERE ">3.7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-39.4927777777778,-15.4252777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1144005</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Macambira</SimpleData>
+		<SimpleData name="Município ">Cotegipe</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01853</SimpleData>
+		<SimpleData name="NERE ">3.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.1575,-11.6138888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1139022</SimpleData>
+		<SimpleData name="Nome da Estação">Gavião II</SimpleData>
+		<SimpleData name="Município ">Gavião</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00685</SimpleData>
+		<SimpleData name="NERE ">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-39.7847222222222,-11.4741666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">940024</SimpleData>
+		<SimpleData name="Nome da Estação">Juazeiro</SimpleData>
+		<SimpleData name="Município ">Juazeiro</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00766</SimpleData>
+		<SimpleData name="NERE ">2.1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-40.5033333333333,-9.40555555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1241001</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Iguaçú</SimpleData>
+		<SimpleData name="Município ">Itaeté</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01228</SimpleData>
+		<SimpleData name="NERE ">2.7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-41.0658333333333,-12.9347222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1137043</SimpleData>
+		<SimpleData name="Nome da Estação">Usina Altamira</SimpleData>
+		<SimpleData name="Município ">Conde</SimpleData>
+		<SimpleData name="Entidade">ANA</SimpleData>
+		<SimpleData name="nd">0.01671</SimpleData>
+		<SimpleData name="NERE ">3.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.8036111111111,-11.7683333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Bahia</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1739021</SimpleData>
+		<SimpleData name="Nome da Estação">Cachoeira Grande</SimpleData>
+		<SimpleData name="Município ">Prado</SimpleData>
+		<SimpleData name="Entidade">ANA</SimpleData>
+		<SimpleData name="nd">0.01819</SimpleData>
+		<SimpleData name="NERE ">3.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-39.7783333333333,-17.2536111111111</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Ceará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">339000</SimpleData>
+		<SimpleData name="Nome da Estação">Amontada</SimpleData>
+		<SimpleData name="Município ">Amontada</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01335</SimpleData>
+		<SimpleData name="NERE ">2.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-39.8294444444444,-3.36333333333333</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Ceará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">438011</SimpleData>
+		<SimpleData name="Nome da Estação">Baú</SimpleData>
+		<SimpleData name="Município ">Pacatuba</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01983</SimpleData>
+		<SimpleData name="NERE ">3.6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-38.6591666666667,-4.12138888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Ceará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">638014</SimpleData>
+		<SimpleData name="Nome da Estação">Icó</SimpleData>
+		<SimpleData name="Município ">Icó</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.0141</SimpleData>
+		<SimpleData name="NERE ">2.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-38.8636111111111,-6.40888888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Ceará</SimpleData>
+		<SimpleData name="Estação Pluviométrica">440005</SimpleData>
+		<SimpleData name="Nome da Estação">Croatá</SimpleData>
+		<SimpleData name="Município ">Croatá</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00802</SimpleData>
+		<SimpleData name="NERE ">2.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-40.9041666666667,-4.41638888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Maranhão</SimpleData>
+		<SimpleData name="Estação Pluviométrica">644003</SimpleData>
+		<SimpleData name="Nome da Estação">Colinas</SimpleData>
+		<SimpleData name="Município ">Colinas</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02309</SimpleData>
+		<SimpleData name="NERE ">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.2538888888889,-6.0275</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Maranhão</SimpleData>
+		<SimpleData name="Estação Pluviométrica">444001</SimpleData>
+		<SimpleData name="Nome da Estação">Coroatá</SimpleData>
+		<SimpleData name="Município ">Coroatá</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03187</SimpleData>
+		<SimpleData name="NERE ">5.1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.1658333333333,-4.16277777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Paraíba</SimpleData>
+		<SimpleData name="Estação Pluviométrica">638032</SimpleData>
+		<SimpleData name="Nome da Estação">Antenor Navarro</SimpleData>
+		<SimpleData name="Município ">São João do Rio do Peixe</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01889</SimpleData>
+		<SimpleData name="NERE ">3.5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-38.4480555555556,-6.73527777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Paraíba</SimpleData>
+		<SimpleData name="Estação Pluviométrica">735009</SimpleData>
+		<SimpleData name="Nome da Estação">Mulungu</SimpleData>
+		<SimpleData name="Município ">Mulungu</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01389</SimpleData>
+		<SimpleData name="NERE ">2.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.4680555555556,-7.02944444444444</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Pernambuco</SimpleData>
+		<SimpleData name="Estação Pluviométrica">835138</SimpleData>
+		<SimpleData name="Nome da Estação">Pirapama</SimpleData>
+		<SimpleData name="Município ">Cabo de Santo Agostinho</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.03228</SimpleData>
+		<SimpleData name="NERE ">5.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.0633333333333,-8.27916666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Pernambuco</SimpleData>
+		<SimpleData name="Estação Pluviométrica">838004</SimpleData>
+		<SimpleData name="Nome da Estação">Belém de São Francisco</SimpleData>
+		<SimpleData name="Município ">Belém de São Francisco</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00845</SimpleData>
+		<SimpleData name="NERE ">2.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-38.9605555555556,-8.765</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Pernambuco</SimpleData>
+		<SimpleData name="Estação Pluviométrica">840010</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda São Bento</SimpleData>
+		<SimpleData name="Município ">Santa Maria da Boa Vista</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00868</SimpleData>
+		<SimpleData name="NERE ">2.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-39.9994444444444,-8.61611111111111</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Piauí</SimpleData>
+		<SimpleData name="Estação Pluviométrica">844008</SimpleData>
+		<SimpleData name="Nome da Estação">Cristino Castro II</SimpleData>
+		<SimpleData name="Município ">Cristino Castro</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01496</SimpleData>
+		<SimpleData name="NERE ">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-44.2155555555556,-8.81305555555556</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Piauí</SimpleData>
+		<SimpleData name="Estação Pluviométrica">541002</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Boa Esperança</SimpleData>
+		<SimpleData name="Município ">Castelo do Piauí</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02096</SimpleData>
+		<SimpleData name="NERE ">3.8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-41.7369444444444,-5.22472222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Rio Grande do Norte</SimpleData>
+		<SimpleData name="Estação Pluviométrica">537035</SimpleData>
+		<SimpleData name="Nome da Estação">Fazenda Angicos</SimpleData>
+		<SimpleData name="Município ">Mossoró</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.00927</SimpleData>
+		<SimpleData name="NERE ">2.3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.2888888888889,-5.28888888888889</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Rio Grande do Norte</SimpleData>
+		<SimpleData name="Estação Pluviométrica">637010</SimpleData>
+		<SimpleData name="Nome da Estação">Açude Lagoinha</SimpleData>
+		<SimpleData name="Município ">Jardim de Piranhas</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01358</SimpleData>
+		<SimpleData name="NERE ">2.9</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.3025,-6.46222222222222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Sergipe</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1037049</SimpleData>
+		<SimpleData name="Nome da Estação">Santa Rosa de Lima</SimpleData>
+		<SimpleData name="Município ">Santa Rosa de Lima</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.01807</SimpleData>
+		<SimpleData name="NERE ">3.4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.1927777777778,-10.6527777777778</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Região">Nordeste</SimpleData>
+		<SimpleData name="UF">Sergipe</SimpleData>
+		<SimpleData name="Estação Pluviométrica">1137017</SimpleData>
+		<SimpleData name="Nome da Estação">Estância</SimpleData>
+		<SimpleData name="Município ">Estância</SimpleData>
+		<SimpleData name="Entidade">CPRM</SimpleData>
+		<SimpleData name="nd">0.02437</SimpleData>
+		<SimpleData name="NERE ">4.2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-37.4430555555556,-11.2666666666667</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Município "></SimpleData>
+		<SimpleData name="nd"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#Norma_182">
+		<SimpleData name="Município "></SimpleData>
+		<SimpleData name="nd"></SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

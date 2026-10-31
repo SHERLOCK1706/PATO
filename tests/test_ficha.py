@@ -26,6 +26,14 @@ def proj(tmp_path_factory):
     return sv, pid, r
 
 
+def test_ne_rocada_pelas_estacoes_da_norma(proj):
+    sv, pid, _ = proj
+    ner = sv.db.dados_projeto(pid, "ne_rocada")
+    assert {e["nome"] for e in ner["estacoes"]} == {"Trecho Médio", "Fazenda Lobeira", "Colinas do Tocantins",
+                                                     "Fazenda Itaubá", "Goianésia"}
+    assert sv.orcamento.calcular(pid)["ne_rocada"]["adotado"] == 6
+
+
 def test_croqui_montado_igual_ao_modelo(proj):
     sv, pid, _ = proj
     oc = {o["nome"]: o for o in sv.transporte.dados_croqui(pid)["ocorrencias"]}

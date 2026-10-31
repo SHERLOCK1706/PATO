@@ -6,9 +6,37 @@ a unidade local justificar pela observação de campo (art. 24, § 4º).
 """
 from __future__ import annotations
 
+import json
 import math
+from pathlib import Path
 
 from . import normalizar as nz
+
+N_ESTACOES = 5  # a norma admite de 2 a 5 estações, necessariamente as mais próximas do ponto médio (qualquer UF)
+_EST = None
+
+
+def estacoes() -> list[dict]:
+    """As 82 estações pluviométricas da norma DNIT 182/2018 (Anexo A, arquivo Est-Pluv_NERP do IPR)."""
+    global _EST
+    if _EST is None:
+        _EST = json.loads((Path(__file__).parent / "modelos" / "estacoes_nerp.json").read_text(encoding="utf-8"))["estacoes"]
+    return _EST
+
+
+def distancia_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Distância geodésica (círculo máximo, raio médio 6.371 km) — equivale à régua do Google Earth."""
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    h = math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(lon2 - lon1) / 2) ** 2
+    return 2 * 6371.0088 * math.asin(math.sqrt(h))
+
+
+def estacoes_proximas(lat: float, lon: float, n: int = N_ESTACOES) -> list[dict]:
+    n = max(2, min(5, int(n or N_ESTACOES)))
+    lst = sorted(({**e, "distancia": round(distancia_km(lat, lon, e["lat"], e["lon"]), 1)} for e in estacoes()),
+                 key=lambda e: e["distancia"])
+    return [dict(codigo=e["codigo"], uf=e["uf"], nome=e["nome"], municipio=e["municipio"], lat=e["lat"], lon=e["lon"],
+                 distancia=e["distancia"], nere=e["nere"]) for e in lst[:n]]
 
 
 def calcular(d: dict | None) -> dict | None:
@@ -29,7 +57,7 @@ def calcular(d: dict | None) -> dict | None:
     sugerido = (math.floor(nerp + 0.5) + acr) if nerp is not None else None
     adotado = nz.numero(d.get("adotado")) if d.get("adotado") not in (None, "") else sugerido
     return dict(estacoes=linhas, nerp=nerp, acrescimo=acr, sugerido=sugerido, adotado=adotado,
-                justificativa=d.get("justificativa"))
+                justificativa=d.get("justificativa"), ponto_medio=d.get("ponto_medio"), fonte=d.get("fonte"))
 
 
 def importar_planilha(caminho: str) -> dict | None:

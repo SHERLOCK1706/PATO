@@ -483,6 +483,13 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def o_preco(pid: int, dados: dict = Body(...)):
         return orc.preco_informado(pid, dados["codigo"], dados.get("SD"), dados.get("CD"), dados.get("descricao"), dados.get("unidade"))
 
+    @app.post("/api/projetos/{pid}/ne-rocada/estacoes")
+    def ner_estacoes(pid: int, dados: dict = Body(default={})):
+        try:
+            return orc.ne_rocada_estacoes(pid, int(dados.get("n") or 5), dados.get("lat"), dados.get("lon"))
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+
     @app.put("/api/projetos/{pid}/ne-rocada")
     def ner_salvar(pid: int, dados: dict = Body(...)):
         return orc.salvar_ne_rocada(pid, dados)

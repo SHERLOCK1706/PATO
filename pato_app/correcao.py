@@ -397,7 +397,7 @@ def analisar(projeto: dict, itens: list[dict], snv_oficial: list[dict] | None = 
         if s1.get("km_fim") is not None and s2.get("km_ini") is not None and abs(s1["km_fim"] - s2["km_ini"]) > 0.001:
             acao(s2, "km_ini", s2["km_ini"], None, f"descontinuidade no cadastro de segmentos ({s1['km_fim']} → {s2['km_ini']})",
                  "conferir com o SNV oficial", "—", VERIFICAR)
-        if None not in (s1.get("lat_fim"), s2.get("lat_ini")):
+        if None not in (s1.get("lat_fim"), s1.get("lon_fim"), s2.get("lat_ini"), s2.get("lon_ini")):
             d = dist_km((s1["lat_fim"], s1["lon_fim"]), (s2["lat_ini"], s2["lon_ini"]))
             pos = eixo.posicao(s2["km_ini"]) if s2.get("km_ini") is not None else None
             if d > 0.1 and pos:

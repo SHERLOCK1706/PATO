@@ -5,6 +5,7 @@ import re
 import shutil
 import threading
 import uuid
+import json
 from pathlib import Path
 
 from . import binomio as bn
@@ -31,16 +32,25 @@ class Binomios:
 
     # ------------------------------------------------------------ índices
     def garantir_indices(self) -> None:
-        if self.db.indices():
+        """Índices de reajustamento: os da planilha PATO de exemplo e a última publicação do DNIT incluída no sistema
+        (modelos/indices_reajuste.json); meses que ainda não estão no banco são acrescentados."""
+        if getattr(self, "_indices_ok", False):
             return
         with _TRAVA:
-            if self.db.indices():
-                return
-            from .servico import MODELO_PADRAO
-            try:
-                self._gravar_series(bn.ler_indices(str(MODELO_PADRAO)), "Planilha PATO de exemplo (INDICES_REAJ)")
-            except Exception:  # noqa: BLE001 — sem índices o binômio funciona sem reajuste
-                pass
+            if not self.db.indices():
+                from .servico import MODELO_PADRAO
+                try:
+                    self._gravar_series(bn.ler_indices(str(MODELO_PADRAO)), "Planilha PATO de exemplo (INDICES_REAJ)")
+                except Exception:  # noqa: BLE001 — sem índices o binômio funciona sem reajuste
+                    pass
+            arq = Path(__file__).parent / "modelos" / "indices_reajuste.json"
+            if arq.exists():
+                inc = json.loads(arq.read_text(encoding="utf-8"))
+                tem = self.db.indices()
+                novos = [(n, m, v) for n, ser in inc["series"].items() for m, v in ser.items() if m not in (tem.get(n) or {})]
+                if novos:
+                    self.db.gravar_indices(novos, inc.get("fonte"))
+            self._indices_ok = True
 
     def _gravar_series(self, series: dict, fonte: str) -> int:
         return self.db.gravar_indices([(n, m, v) for n, s in series.items() for m, v in s.items()], fonte)
@@ -53,7 +63,7 @@ class Binomios:
                     padrao=dict(petreos=bn.INDICE_PETREOS, asfalto=bn.INDICE_ASFALTO))
 
     def importar_indices(self, caminho: str) -> dict:
-        series = bn.ler_indices(caminho)
+        series = bn.ler_indices_pdf(caminho) if caminho.lower().endswith(".pdf") else bn.ler_indices(caminho)
         if not series:
             raise ValueError("Nenhum índice encontrado na planilha.")
         n = self._gravar_series(series, Path(caminho).name)

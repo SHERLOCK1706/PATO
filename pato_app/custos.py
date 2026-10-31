@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import threading
+from pathlib import Path
 import zlib
 from collections import Counter
 from typing import Any
@@ -66,6 +67,13 @@ def _desempacotar(raw: bytes) -> dict:
 
 
 _TRAVA_EXEMPLO = threading.Lock()
+INCLUIDAS = Path(__file__).parent / "modelos" / "bases_sicro"  # datas-base oficiais do SICRO que acompanham o sistema
+FONTES = {"sicro": "SICRO oficial (DNIT)", "planilha": "planilha PATO de origem"}
+
+
+def fonte_base(b: dict) -> str:
+    """'sicro' para relatórios oficiais do DNIT; 'planilha' para bases lidas de uma planilha PATO (abas CPU)."""
+    return "sicro" if str(b.get("origem") or "").startswith("SICRO oficial") else "planilha"
 
 
 class Custos:
@@ -95,6 +103,8 @@ class Custos:
                 raise ValueError("Não foi possível identificar o estado e a data-base; informe-os na importação.")
             b["descricao"] = descricao or f"SICRO {b['uf']} {b['data_base']} — {cp.REGIMES[reg]}"
             b["origem"] = origem or "; ".join(b.get("fontes", []))
+            if any(c.get("oficial") for c in b["composicoes"].values()) and not b["origem"].startswith("SICRO oficial"):
+                b["origem"] = "SICRO oficial — " + b["origem"]
             b["n_composicoes"] = len(b["composicoes"])
             b["n_sintetico"] = len(b.get("sintetico") or {})
             bid = self.db.inserir_base(b, _empacotar(b))
@@ -121,15 +131,49 @@ class Custos:
         return self._cache[bid]
 
     def garantir_base_exemplo(self) -> None:
-        """Na primeira execução, importa a base MT 04/2026 contida na planilha PATO de exemplo."""
-        if self.db.bases():
+        """Na primeira execução, importa a base MT 04/2026 contida na planilha PATO de exemplo e carrega as datas-base
+        oficiais do SICRO incluídas no sistema (modelos/bases_sicro) que ainda não estiverem cadastradas."""
+        if getattr(self, "_bases_ok", False):
             return
         with _TRAVA_EXEMPLO:  # requisições simultâneas não podem importar a base duas vezes
-            if self.db.bases():
-                return
-            from .servico import MODELO_PADRAO
-            self.importar_base(str(MODELO_PADRAO), descricao=None,
-                               origem="Planilha PATO de exemplo (BR-158/MT) — 132 composições analíticas + lista sintética")
+            if not self.db.bases():
+                from .servico import MODELO_PADRAO
+                self.importar_base(str(MODELO_PADRAO), descricao=None,
+                                   origem="Planilha PATO de exemplo (BR-158/MT) — 132 composições analíticas + lista sintética")
+            self._carregar_incluidas()
+            self._bases_ok = True
+
+    def _carregar_incluidas(self) -> int:
+        idx = INCLUIDAS / "indice.json"
+        if not idx.exists():
+            return 0
+        tem = {(b["uf"], b["data_base"], b["regime"], fonte_base(b)) for b in self.db.bases()}
+        n = 0
+        for e in json.loads(idx.read_text(encoding="utf-8")):
+            if (e["uf"], e["data_base"], e["regime"], "sicro") in tem:
+                continue
+            raw = (INCLUIDAS / e["arquivo"]).read_bytes()
+            self.db.inserir_base(dict(e, n_sintetico=None), raw)
+            n += 1
+        return n
+
+    def opcoes_data_base(self) -> list[dict]:
+        """Datas-base disponíveis: estado, mês e fonte (SICRO oficial ou planilha), com as bases sem/com desoneração."""
+        self.garantir_base_exemplo()
+        out: dict[tuple, dict] = {}
+        for b in self.db.bases():
+            k = (b["uf"], b["data_base"], fonte_base(b))
+            o = out.setdefault(k, dict(uf=k[0], data_base=k[1], fonte=k[2], chave="|".join(k), bases={},
+                                       rotulo=f"{k[0]} {k[1][5:]}/{k[1][:4]} — {FONTES[k[2]]}"))
+            o["bases"].setdefault(b["regime"], b["id"])  # a mais recente de cada regime
+        return sorted(out.values(), key=lambda o: (o["uf"], o["data_base"], o["fonte"]), reverse=True)
+
+    def _id_base(self, uf: str, data_base: str, regime: str, fonte: str | None) -> int | None:
+        cands = [b for b in self.db.bases() if b["uf"] == uf and b["data_base"] == data_base and b["regime"] == regime]
+        if fonte:
+            pref = [b for b in cands if fonte_base(b) == fonte]
+            cands = pref or cands
+        return max((b["id"] for b in cands), default=None)
 
     # ---------------------------------------------------------- projeto
     def config(self, pid: int) -> dict:
@@ -137,22 +181,30 @@ class Custos:
         self.garantir_base_exemplo()
         bases = self.db.bases()
         uf, dbase = p.get("custo_uf"), p.get("custo_data_base")
+        fonte = (self.db.dados_projeto(pid, "custo_base") or {}).get("fonte")
         if not uf and bases:
-            preferida = next((b for b in bases if b["uf"] == "MT"), bases[0])
+            # sem escolha: a base da planilha de origem (modelo do sistema); senão a data-base mais recente
+            plan = [b for b in bases if fonte_base(b) == "planilha"]
+            preferida = plan[0] if plan else next((b for b in bases if b["uf"] == "MT"), bases[0])
             uf = preferida["uf"]
-            dbase = max(b["data_base"] for b in bases if b["uf"] == uf)
+            dbase = preferida["data_base"] if plan else max(b["data_base"] for b in bases if b["uf"] == uf)
+            fonte = fonte or fonte_base(preferida)
         regime = p.get("custo_regime") or "SD"
         parcelas = json.loads(p["bdi_parcelas"]) if p.get("bdi_parcelas") else None
         bdi = {"SD": p.get("bdi_sd"), "CD": p.get("bdi_cd")}
         for reg in ("SD", "CD"):
             if bdi[reg] is None:
-                bid = self.db.base_id(uf, dbase, reg) if uf else None
+                bid = self._id_base(uf, dbase, reg, fonte) if uf else None
                 bp = self._base(bid).get("bdi_planilha") if bid else None
                 bdi[reg] = cp.arred(bp, 4) if bp else cp.arred(calcular_bdi(BDI_PARCELAS_PADRAO[reg]), 4)
         disp = sorted({(b["uf"], b["data_base"]) for b in bases}, key=lambda x: (x[0], x[1]), reverse=True)
         par = {r: dict(BDI_PARCELAS_PADRAO[r], **((parcelas or {}).get(r) or {})) for r in ("SD", "CD")}
         extras = {k: (parcelas or {}).get(k) for k in ("municipios", "selic", "ano")}
-        return dict(uf=uf, data_base=dbase, regime=regime, bdi=bdi, parcelas=par, bdi_extras=extras,
+        if not fonte:
+            tem_plan = any(b["uf"] == uf and b["data_base"] == dbase and fonte_base(b) == "planilha" for b in bases)
+            fonte = "planilha" if tem_plan else "sicro"
+        return dict(uf=uf, data_base=dbase, fonte=fonte, fonte_rotulo=FONTES.get(fonte), opcoes=self.opcoes_data_base(),
+                    regime=regime, bdi=bdi, parcelas=par, bdi_extras=extras,
                     rotulos_parcelas=ROTULO_PARCELA, disponiveis=[dict(uf=u, data_base=d,
                     regimes=[b["regime"] for b in bases if b["uf"] == u and b["data_base"] == d]) for u, d in disp])
 
@@ -181,8 +233,11 @@ class Custos:
                     municipios=municipios or [], selic=selic, ano=ano)
 
     def configurar(self, pid: int, uf: str | None = None, data_base: str | None = None, regime: str | None = None,
-                   bdi_sd: float | None = None, bdi_cd: float | None = None, parcelas: dict | None = None) -> dict:
+                   bdi_sd: float | None = None, bdi_cd: float | None = None, parcelas: dict | None = None,
+                   fonte: str | None = None) -> dict:
         mud: dict[str, Any] = {}
+        if fonte in FONTES:
+            self.db.gravar_dados_projeto(pid, "custo_base", dict(fonte=fonte))
         if uf:
             mud["custo_uf"] = uf
         if data_base:
@@ -204,7 +259,8 @@ class Custos:
 
     def _base_projeto(self, pid: int, regime: str, uf: str | None = None, data_base: str | None = None) -> dict:
         cfg = self.config(pid)
-        bid = self.db.base_id(uf or cfg["uf"], data_base or cfg["data_base"], regime)
+        fonte = cfg.get("fonte") if not (uf or data_base) else None
+        bid = self._id_base(uf or cfg["uf"], data_base or cfg["data_base"], regime, fonte)
         if not bid:
             raise ValueError(f"Não há base SICRO {uf or cfg['uf']} {data_base or cfg['data_base']} {cp.REGIMES[regime]}. "
                              "Importe os relatórios do SICRO na aba Custos.")

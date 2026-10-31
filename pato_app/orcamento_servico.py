@@ -183,6 +183,7 @@ class Orcamentos:
         meses = round(self.anos_contrato(pid, d) * 12, 6)
         dd = dv.com_2025(dd)
         if dd["modelo"] == "sicro2025":
+            dd = self._centro_fornecedor(pid, dd)
             m_sd = motores.get("SD")
 
             def prod(cod):
@@ -198,6 +199,58 @@ class Orcamentos:
         return dict(dv.calcular(dd, mo_fn=mo, eq_fn=eq, custo_comp_fn=custo_comp, bdi=self.bdi_exato(pid), meses=meses,
                                 quantidade_fn=quantidade_fn, indice_fn=lambda n, m: bn_.indice(ind, n, m),
                                 data_base=bn_.mes(cfg.get("data_base"))), metodologia="br158")
+
+    def locais_croqui(self, pid: int) -> dict:
+        """Km do canteiro e as cidades/ocorrências do croqui que podem ser o centro fornecedor."""
+        c = self.sv.transporte.dados_croqui(pid)
+        ocs = c.get("ocorrencias") or []
+        can = next((o for o in ocs if (o.get("nome") or "").upper() == "CANTEIRO" and o.get("km") not in (None, "")), None)
+        km_can = nz.numero((c.get("automatico") or {}).get("km_canteiro")) or (nz.numero(can.get("km")) if can else None)
+        locais = []
+        for o in ocs:
+            if o.get("km") not in (None, "") and (o.get("nome") or "").upper() not in ("CANTEIRO", "USINA"):
+                locais.append(dict(nome=o["nome"], km=nz.numero(o["km"]), acesso_p=nz.numero(o.get("acesso_p")) or 0.0,
+                                   acesso_rp=nz.numero(o.get("acesso_rp")) or 0.0, tipo=o.get("tipo")))
+        for t in c.get("travessias") or []:
+            a, b = nz.numero(t.get("km_ini")), nz.numero(t.get("km_fim"))
+            if a is not None and b is not None:
+                locais.append(dict(nome=t.get("nome"), km=(a + b) / 2, acesso_p=0.0, acesso_rp=0.0, tipo="cidade"))
+        for lc in c.get("localidades") or []:
+            if lc.get("km") not in (None, ""):
+                locais.append(dict(nome=lc.get("nome"), km=nz.numero(lc["km"]), acesso_p=0.0, acesso_rp=0.0, tipo="cidade"))
+        return dict(km_canteiro=km_can, locais=locais)
+
+    def _centro_fornecedor(self, pid: int, dd: dict) -> dict:
+        """k3 do canteiro e da usina: distância do canteiro ao centro fornecedor (capital, centro sede ou a cidade com
+        suporte mais próxima). No modo 'croqui' é medida no croqui; no 'manual', vale a informada."""
+        import copy
+        s_ = dd.get("sicro2025") or {}
+        cf = (s_.get("canteiro") or {}).get("centro_fornecedor") or {}
+        if cf.get("modo", "croqui") != "croqui":
+            return dd
+        lc = self.locais_croqui(pid)
+        alvo = next((x for x in lc["locais"] if (x["nome"] or "").upper() == (cf.get("nome") or "").upper()), None)
+        if not alvo or lc["km_canteiro"] is None:
+            return dd
+        dd = copy.deepcopy(dd)
+        dt = dd["sicro2025"]["canteiro"].setdefault("dt", {})
+        dt["pav"] = round(abs(alvo["km"] - lc["km_canteiro"]) + alvo["acesso_p"], 3)
+        dt["rp"] = round(alvo["acesso_rp"], 3)
+        dd["sicro2025"]["canteiro"]["centro_fornecedor"] = dict(cf, km=alvo["km"], km_canteiro=lc["km_canteiro"])
+        return dd
+
+    def capitais_sugeridas(self, pid: int) -> list[dict]:
+        from . import diversos as dv
+        from . import geo
+        km = self.locais_croqui(pid)["km_canteiro"]
+        p = self.sv.projeto(pid)
+        if km is None and p.get("km_ini") is not None:
+            km = (p["km_ini"] + (p.get("km_fim") or p["km_ini"])) / 2
+        try:
+            pos = geo.Eixo(self.db.itens(pid)).posicao(km) if km is not None else None
+        except Exception:  # noqa: BLE001
+            pos = None
+        return dv.capitais_mais_proximas(pos[0], pos[1]) if pos else []
 
     def _precificador(self, pid: int, d: dict, diversos_fn=None):
         motores = self._motores(pid)
@@ -320,6 +373,7 @@ class Orcamentos:
         inf = d.get("precos_informados") or {}
         ref = {c: {reg: (inf.get(c) or {}).get(reg) for reg in ("SD", "CD")} for c in dv.CODIGOS}
         return dict(dados=dd, resultado=r, referencia=ref, codigos=dv.CODIGOS, modelos=dv.MODELOS, modelo=dd["modelo"],
+                    locais=self.locais_croqui(pid), capitais=self.capitais_sugeridas(pid),
                     fixos=[c for c in dv.CODIGOS if (inf.get(c) or {}).get("fixo")], gravado=bool(self.db.dados_projeto(pid, "diversos")))
 
     def salvar_diversos(self, pid: int, dados: dict | None = None, fixos: list | None = None) -> dict:

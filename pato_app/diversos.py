@@ -52,7 +52,9 @@ def _n(v, padrao=0.0) -> float:
 
 
 # --------------------------------------------------------------- cálculo
-def meses_parcela(regra, meses: float, ela: float) -> float:
+def meses_parcela(regra, meses: float, ela: float, tf: float = 0.0) -> float:
+    if regra == "manejo":
+        return tf
     if regra in (None, "", "contrato"):
         return meses
     if regra == "contrato-1":
@@ -74,12 +76,13 @@ def calcular_ela(adm: dict, quantidade_fn) -> tuple[float, list[dict]]:
     return round(tot, 5), linhas
 
 
-def calcular_adm(adm: dict, mo_fn, eq_fn, bdi: dict, meses: float, quantidade_fn=None) -> dict:
+def calcular_adm(adm: dict, mo_fn, eq_fn, bdi: dict, meses: float, quantidade_fn=None, producao_fn=None) -> dict:
     ela, ela_linhas = calcular_ela(adm, quantidade_fn)
-    out = dict(ela=ela, ela_linhas=ela_linhas, parcelas=[], meses=meses)
+    tf, tf_linhas = _tf(adm, quantidade_fn, producao_fn) if adm.get("manejo") else (0.0, [])
+    out = dict(ela=ela, ela_linhas=ela_linhas, tf=tf, tf_linhas=tf_linhas, parcelas=[], meses=meses)
     tot = {r: 0.0 for r in REGIMES}
     for p in adm.get("parcelas") or []:
-        m = meses_parcela(p.get("meses"), meses, ela)
+        m = meses_parcela(p.get("meses"), meses, ela, tf)
         lp = dict(chave=p.get("chave"), titulo=p.get("titulo"), meses=m, regra=p.get("meses"), mao_obra=[], veiculos=[])
         for reg in REGIMES:
             smo = sve = 0.0
@@ -450,10 +453,48 @@ def importar_planilha(caminho: str) -> dict | None:
 # SICRO — Manual de Custos de Infraestrutura de Transportes, 2ª edição (2025): Vol. 06 (canteiro), 07 (administração
 # local) e 08 (mobilização), conforme os modelos ADM_Local_2025, CANT_Construcao_2025, USINA_2025 e MOB_2025.
 # ======================================================================================================================
-MODELOS = {"sicro2025": "SICRO — Manual de Custos 2ª edição (2025)", "br158": "Planilha de origem (PATO BR-158/MT)"}
+MODELOS = {"sicro2025": "Ajustada — 2ª edição do Manual de Custos (manejo florestal, descanso, canteiro e usina)",
+           "br158": "Planilha de origem (PATO BR-158/MT)"}
 H_MES = 182.49  # horas por mês (Tf do manejo florestal)
 K3 = dict(pav=0.0008, rp=0.0009, leito=0.0014)  # Vol. 06, Tabela 36
 VEL = dict(caminhao=dict(pav=60.0, rp=50.0, leito=40.0), cavalo=dict(pav=30.0, rp=25.0, leito=20.0))
+CAPITAIS = {  # sede do governo estadual (lat, lon) — origem da mobilização: a capital mais próxima do canteiro
+    "Rio Branco/AC": (-9.9747, -67.8243), "Maceió/AL": (-9.6658, -35.7353), "Macapá/AP": (0.0349, -51.0694),
+    "Manaus/AM": (-3.1190, -60.0217), "Salvador/BA": (-12.9777, -38.5016), "Fortaleza/CE": (-3.7319, -38.5267),
+    "Brasília/DF": (-15.7939, -47.8828), "Vitória/ES": (-20.3155, -40.3128), "Goiânia/GO": (-16.6869, -49.2648),
+    "São Luís/MA": (-2.5307, -44.3068), "Cuiabá/MT": (-15.6014, -56.0979), "Campo Grande/MS": (-20.4697, -54.6201),
+    "Belo Horizonte/MG": (-19.9167, -43.9345), "Belém/PA": (-1.4558, -48.4902), "João Pessoa/PB": (-7.1195, -34.8450),
+    "Curitiba/PR": (-25.4284, -49.2733), "Recife/PE": (-8.0476, -34.8770), "Teresina/PI": (-5.0920, -42.8038),
+    "Rio de Janeiro/RJ": (-22.9068, -43.1729), "Natal/RN": (-5.7945, -35.2110), "Porto Alegre/RS": (-30.0346, -51.2177),
+    "Porto Velho/RO": (-8.7612, -63.9004), "Boa Vista/RR": (2.8235, -60.6758), "Florianópolis/SC": (-27.5954, -48.5480),
+    "São Paulo/SP": (-23.5505, -46.6333), "Aracaju/SE": (-10.9472, -37.0731), "Palmas/TO": (-10.1844, -48.3336),
+}
+
+
+def capitais_mais_proximas(lat: float, lon: float, n: int = 3) -> list[dict]:
+    """Capitais em ordem de distância em linha reta ao canteiro (a distância rodoviária é confirmada pelo usuário)."""
+    from .ne_rocada import distancia_km
+    lst = sorted(((distancia_km(lat, lon, la, lo), c) for c, (la, lo) in CAPITAIS.items()))
+    return [dict(capital=c, linha_reta_km=round(d, 1)) for d, c in lst[:n]]
+
+
+def aplicar_origem_mob(mob: dict) -> dict:
+    """Distância de mobilização única: da capital de origem ao canteiro, para todos os equipamentos e o pessoal
+    (equipamento com 'dmt_proprio' mantém a sua)."""
+    import copy
+    o = mob.get("origem") or {}
+    if o.get("dmt_pav") is None and o.get("dmt_npav") is None:
+        return mob
+    m = copy.deepcopy(mob)
+    for e in m.get("equipamentos") or []:
+        if not e.get("dmt_proprio"):
+            e["dmt_pav"], e["dmt_npav"] = _n(o.get("dmt_pav")), _n(o.get("dmt_npav"))
+    m["dmt_pessoal"] = _n(o.get("dmt_pav")) + _n(o.get("dmt_npav"))
+    if o.get("capital") and o.get("destino"):
+        m["itinerario"] = f"{o['capital']} - {o['destino']}"
+    return m
+
+
 MANEJO_PADRAO = ["5501700", "5501701", "4915768", "4915764", "4915765", "4915766", "4915767"]
 
 
@@ -466,47 +507,37 @@ def _ve(cod, q, desc=None):
 
 
 def padrao_2025(base: dict | None = None) -> dict:
-    """Parâmetros da 2ª edição. Aproveita da planilha de origem o que é do projeto: equipes de laboratório (QE), CMCC,
-    distância aos centros fornecedores, mão de obra de pico, lista e DMT dos equipamentos e a passagem."""
+    """Ajustes da 2ª edição do Manual de Custos sobre a planilha de origem (orientação do usuário):
+    administração local da planilha + manejo florestal (técnico florestal, Tf); mobilização da planilha com descanso de
+    0,5 h a cada 4 h; canteiro pelo método construtivo provisório (Vol. 06) com a distância ao centro fornecedor; usina
+    com AD·FEAD e k3 por tipo de via (k2 = 1,11)."""
+    import copy
     b = base or {}
     adm0, can0, mob0 = b.get("adm") or {}, b.get("canteiro") or {}, b.get("mob") or {}
-    adm = dict(despesas_pct=5.0, casas_ela=2, ela=adm0.get("ela") or [],
-               manejo=[dict(codigo=c) for c in MANEJO_PADRAO], horas_mes=H_MES, parcelas=[
-        dict(chave="fixa", titulo="Parcela fixa", meses="contrato",
-             mao_obra=[_mo("P9819", 0.25, "Engenheiro supervisor"), _mo("P9958", 1, "Motorista de ônibus"),
-                       _mo("P9806", 1, "Auxiliar administrativo"), _mo("P9803", 1, "Almoxarife"), _mo("P9842", 1, "Faxineiro")],
-             veiculos=[_ve("E9093", 0.25, "Veículo leve (engenheiro)"), _ve("E9239", 1, "Miniônibus 30 passageiros"),
-                       _ve("E9093", 1, "Veículo leve (gerência administrativa)")]),
-        dict(chave="vinculada", titulo="Parcela vinculada", meses="contrato",
-             mao_obra=[_mo("P9916", 1, "Encarregado de conservação rodoviária"), _mo("P9875", 2, "Encarregado de turma")],
-             veiculos=[_ve("E9093", 1, "Veículo leve")]),
-        dict(chave="variavel", titulo="Parcela variável — laboratório de asfalto", meses="ela",
-             mao_obra=[_mo("P9858", 1, "Laboratorista"), _mo("P9833", 2, "Auxiliar de laboratório")],
-             veiculos=[_ve("E9125", 1, "Van furgão")]),
-        dict(chave="manejo", titulo="Parcela variável — manejo florestal", meses="manejo",
-             mao_obra=[_mo("P9947", 1, "Técnico florestal")], veiculos=[]),
-        dict(chave="manutencao", titulo="Manutenção do canteiro de obras e acampamentos", meses="contrato-1",
-             mao_obra=[_mo("P9952", 0.1, "Pedreiro"), _mo("P9954", 0.1, "Servente"), _mo("P9953", 0.1, "Eletricista")],
-             veiculos=[], veiculos_horas=[dict(codigo="E9686", horas=5.5, descricao="Caminhão guindauto"),
-                                          dict(codigo="E9669", horas=11.0, descricao="Caminhão tanque 8.000 l"),
-                                          dict(codigo="E9524", horas=5.5, descricao="Motoniveladora")]),
-    ])
+    adm = copy.deepcopy(adm0) or dict(parcelas=[], despesas_pct=5.0, ela=[])
+    if not any(p.get("chave") == "manejo" for p in adm.get("parcelas") or []):
+        adm.setdefault("parcelas", []).insert(
+            next((i for i, p in enumerate(adm["parcelas"]) if p.get("chave") == "manutencao"), len(adm["parcelas"])),
+            dict(chave="manejo", titulo="Parcela variável — manejo florestal", meses="manejo",
+                 mao_obra=[_mo("P9947", 1, "Técnico florestal")], veiculos=[]))
+    adm.setdefault("manejo", [dict(codigo=c) for c in MANEJO_PADRAO])
+    adm.setdefault("horas_mes", H_MES)
     nmo = _n(can0.get("nmo"))
     can = dict(mo_pico=round(nmo / 1.33, 4) if nmo else 15.0, k1=0.8, k2=1.11, fead=0.05,
+               centro_fornecedor=dict(modo="croqui", nome="Centro Sede"),
                dt=dict(pav=_n(can0.get("distancia_km"), 50.0), rp=0.0, leito=0.0), cmcc=dict(can0.get("cmcc") or {}),
                areas_fixas=[dict(nome="Almoxarifado", area=29.54, feac=0.5), dict(nome="Oficina", area=37.10, feac=0.5),
                             dict(nome="Guarita", area=5.29, feac=0.7)])
     usi = dict(codigo_instalacao=(b.get("usina") or {}).get("codigo_instalacao") or "903810",
                areas=[dict(nome="Laboratório", area=94.36, feac=0.6)], k1=0.8, k2=1.11, fead=0.05)
-    eqs = []
-    for e in mob0.get("equipamentos") or []:
-        auto = (e.get("transporte") or "") == e.get("codigo")
-        eqs.append(dict(codigo=e["codigo"], descricao=e.get("descricao"), quant=e.get("quant"), transporte=e.get("transporte"),
-                        fu=e.get("fu"), dmt=dict(pav=_n(e.get("dmt_pav")), rp=_n(e.get("dmt_npav")), leito=0.0),
-                        k=1.0 if auto else 2.0, pedagio_eixos=0, pedagio_valor=0.0))
-    mob = dict(passagem=mob0.get("passagem"), mes_indice_pesquisa=mob0.get("mes_indice_pesquisa"), fator_ref=mob0.get("fator_ref"),
-               indice=mob0.get("indice") or INDICE_MOB, itinerario=mob0.get("itinerario"), dmt_pessoal=mob0.get("dmt_pessoal"),
-               descanso_carga_h=6.0, descanso_passageiros_h=4.0, tempo_descanso=0.5, equipamentos=eqs)
+    mob = copy.deepcopy(mob0)
+    it = mob.get("itinerario") or ""
+    e0 = (mob.get("equipamentos") or [{}])[0]
+    mob["origem"] = dict(capital=it.split(" - ")[0].strip() if " - " in it else None,
+                         destino=it.split(" - ")[1].strip() if " - " in it else None,
+                         dmt_pav=_n(e0.get("dmt_pav"), _n(mob.get("dmt_pessoal"))), dmt_npav=_n(e0.get("dmt_npav")))
+    mob["horas_entre_descansos"] = 4.0  # 0,5 h de descanso a cada 4 h de viagem (modelo MOB_2025)
+    mob.setdefault("tempo_descanso", 0.5)
     return dict(adm=adm, canteiro=can, usina=usi, mob=mob)
 
 
@@ -679,10 +710,11 @@ def calcular_mob_2025(m: dict, adm: dict, can: dict, eq_fn, desc_fn, bdi: dict, 
 def calcular_2025(d: dict, *, mo_fn, eq_fn, custo_comp_fn, bdi, meses, quantidade_fn=None, producao_fn=None, desc_fn=None,
                   indice_fn=None, data_base=None) -> dict:
     s = d.get("sicro2025") or padrao_2025(d)
-    adm = calcular_adm_2025(s["adm"], mo_fn, eq_fn, bdi, meses, quantidade_fn, producao_fn)
+    adm = calcular_adm(s["adm"], mo_fn, eq_fn, bdi, meses, quantidade_fn, producao_fn)
     can = calcular_canteiro_2025(s["canteiro"], s["adm"], bdi)
     usi = calcular_usina_2025(s["usina"], s["canteiro"], custo_comp_fn, bdi)
-    mob = calcular_mob_2025(s["mob"], s["adm"], s["canteiro"], eq_fn, desc_fn, bdi, indice_fn, data_base)
+    mob = calcular_mob(aplicar_origem_mob(s["mob"]), eq_fn, bdi, indice_fn, data_base)
+    mob["origem"] = s["mob"].get("origem")
     precos = {c: {} for c in CODIGOS}
     for reg in REGIMES:
         precos["ADM"][reg] = adm[reg]["mensal"]

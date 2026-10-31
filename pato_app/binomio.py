@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import math
+import re
 
 import openpyxl
 
@@ -76,6 +77,32 @@ def ler_indices(caminho: str) -> dict[str, dict[str, float]]:
         return out
     finally:
         wb.close()
+
+
+def ler_indices_pdf(caminho: str) -> dict[str, dict[str, float]]:
+    """Publicação do DNIT 'Índices de Reajustamento de Obras — Obras Rodoviárias' (PDF, FGV/IBRE): cabeçalho com os meses
+    (01/26 … 12/26) e uma linha por índice — descrição, base (ex.: 'dez/2000 = 100') e valores (1.075,242)."""
+    import subprocess
+    txt = subprocess.run(["pdftotext", "-layout", caminho, "-"], capture_output=True, timeout=300).stdout.decode("utf-8", "ignore")
+    meses: list[tuple[int, str]] = []  # (coluna do fim do rótulo do mês, 'AAAA-MM')
+    out: dict[str, dict[str, float]] = {}
+    for ln in txt.splitlines():
+        cab = list(re.finditer(r"\b(\d{2})/(\d{2,4})\b", ln))
+        if len(cab) >= 6 and "=" not in ln:
+            meses = [(c.end(), f"{(2000 + int(c.group(2))) if len(c.group(2)) == 2 else int(c.group(2))}-{int(c.group(1)):02d}")
+                     for c in cab]
+            continue
+        m = re.match(r"^\s*(.+?)\s{2,}([a-zç]{3}/\d{4}\s*=\s*100)\s+", ln, re.I)
+        if not m or not meses:
+            continue
+        nome = re.sub(r"\s+", " ", m.group(1)).strip()
+        largura = max(b - a for (a, _), (b, _) in zip(meses, meses[1:])) if len(meses) > 1 else 12
+        for v in re.finditer(r"\d{1,3}(?:\.\d{3})*,\d+", ln[m.end():]):
+            fim = m.end() + v.end()
+            col, mes_ = min(meses, key=lambda x: abs(x[0] - fim))
+            if abs(col - fim) <= largura / 2 + 2:  # valores fora das colunas de mês são as variações (%)
+                out.setdefault(nome, {})[mes_] = float(v.group().replace(".", "").replace(",", "."))
+    return out
 
 
 def indice(indices: dict, nome: str, m: str | None) -> float | None:

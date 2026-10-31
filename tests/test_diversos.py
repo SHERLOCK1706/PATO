@@ -62,29 +62,29 @@ def test_sugere_equipamentos_mob(proj):
     assert "E9545" in cods and len(cods & planilha) >= len(planilha) // 2  # vibroacabadora; maioria da lista da BR-158
 
 
-def test_metodologia_sicro_2025(proj):
-    """Manual de Custos 2ª ed. (modelos ADM_Local_2025, CANT_Construcao_2025, USINA_2025, MOB_2025)."""
+def test_metodologia_ajustada_2a_edicao(proj):
+    """Ajustes da 2ª edição sobre a planilha de origem: ADM + manejo florestal; canteiro método construtivo provisório
+    com o centro fornecedor do croqui; usina corrigida; mobilização da planilha com descanso a cada 4 h, da capital."""
     sv, pid = proj
     sv.orcamento.salvar_diversos(pid, dict(modelo="sicro2025"))
     r = sv.orcamento.diversos(pid)
     assert r["modelo"] == "sicro2025"
     res = r["resultado"]
     a = res["adm"]
-    assert a["ela"] == 8.45  # ARRED(Q/QE; 2)
-    assert a["tf"] > 0 and {p["chave"] for p in a["parcelas"]} == {"fixa", "vinculada", "variavel", "manejo", "manutencao"}
-    man = next(p for p in a["parcelas"] if p["chave"] == "manutencao")
-    assert man["meses"] == 23 and len(man["veiculos_horas"]) == 3
+    assert [p["chave"] for p in a["parcelas"]] == ["fixa", "vinculada", "variavel", "manejo", "manutencao"]
+    assert a["ela"] == pytest.approx(8.4526, abs=1e-4)  # como na planilha
+    man = next(p for p in a["parcelas"] if p["chave"] == "manejo")
+    assert man["meses"] == a["tf"] > 0 and man["mao_obra"][0]["codigo"] == "P9947"
+    fixa = next(p for p in a["parcelas"] if p["chave"] == "fixa")
+    assert [x["codigo"] for x in fixa["mao_obra"]] == ["P9819", "P9806"]  # sem os acréscimos do modelo 2025
     c = res["canteiro"]
     assert [x["area"] for x in c["areas"][4:]] == [29.54, 37.10, 5.29] and c["k2"] == 1.11
-    assert c["k3"] == pytest.approx(1 + 0.0008 * 18)
     u = res["usina"]
     assert u["k2"] == 1.11 and u["SD"]["instalacao"] == pytest.approx(257437.73)
     m = res["mob"]
-    e = next(x for x in m["equipamentos"] if x["codigo"] == "E9042")  # transportado por cavalo mecânico com semirreboque
-    assert e["tipo_transportador"] == "cavalo" and e["tempo_viagem"] == pytest.approx(562 / 30) and e["tempo_descanso"] == 1.5
-    assert e["k"] == 2.0
-    auto = next(x for x in m["equipamentos"] if x["codigo"] == "E9041")  # autopropelido
-    assert auto["k"] == 1.0 and auto["tempo_viagem"] == pytest.approx(562 / 60)
+    e = m["equipamentos"][0]
+    assert e["tempo_viagem"] == pytest.approx(562 / 60) and e["descansos"] == 2 and e["tempo_descanso"] == 1.0  # a cada 4 h
+    assert m["origem"]["capital"] == "Palmas/TO" and r["capitais"][0]["capital"] == "Palmas/TO"
     c1 = next(x for x in sv.orcamento.calcular(pid)["itens"] if x.get("codigo") == "ADM")
-    assert c1["preco_SD"] == res["precos"]["ADM"]["SD"]
+    assert c1["preco_SD"] == res["precos"]["ADM"]["SD"] > 74824.54
     sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))

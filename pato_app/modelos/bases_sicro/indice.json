@@ -1,0 +1,56 @@
+[
+ {
+  "arquivo": "MT-2026-01-SD.json.z",
+  "uf": "MT",
+  "data_base": "2026-01",
+  "regime": "SD",
+  "descricao": "SICRO MT 2026-01 — sem desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-01-2026.7z)",
+  "n_composicoes": 6525
+ },
+ {
+  "arquivo": "MT-2026-01-CD.json.z",
+  "uf": "MT",
+  "data_base": "2026-01",
+  "regime": "CD",
+  "descricao": "SICRO MT 2026-01 — com desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-01-2026.7z)",
+  "n_composicoes": 6525
+ },
+ {
+  "arquivo": "MT-2026-07-SD.json.z",
+  "uf": "MT",
+  "data_base": "2026-07",
+  "regime": "SD",
+  "descricao": "SICRO MT 2026-07 — sem desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-07-2026.7z)",
+  "n_composicoes": 6619
+ },
+ {
+  "arquivo": "MT-2026-07-CD.json.z",
+  "uf": "MT",
+  "data_base": "2026-07",
+  "regime": "CD",
+  "descricao": "SICRO MT 2026-07 — com desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-07-2026.7z)",
+  "n_composicoes": 6619
+ },
+ {
+  "arquivo": "MT-2026-04-SD.json.z",
+  "uf": "MT",
+  "data_base": "2026-04",
+  "regime": "SD",
+  "descricao": "SICRO MT 2026-04 — sem desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-04-2026.7z)",
+  "n_composicoes": 6618
+ },
+ {
+  "arquivo": "MT-2026-04-CD.json.z",
+  "uf": "MT",
+  "data_base": "2026-04",
+  "regime": "CD",
+  "descricao": "SICRO MT 2026-04 — com desoneração",
+  "origem": "SICRO oficial — relatórios publicados pelo DNIT (mt-04-2026.7z)",
+  "n_composicoes": 6618
+ }
+]

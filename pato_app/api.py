@@ -220,7 +220,7 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.put("/api/projetos/{pid}/custos/config")
     def c_configurar(pid: int, d: dict = Body(...)):
         return cu.configurar(pid, d.get("uf"), d.get("data_base"), d.get("regime"), d.get("bdi_sd"), d.get("bdi_cd"),
-                             d.get("parcelas"))
+                             d.get("parcelas"), d.get("fonte"))
 
     @app.post("/api/custos/bdi/calcular")
     def c_calc_bdi(d: dict = Body(...)):

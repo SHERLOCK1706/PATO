@@ -1,6 +1,9 @@
 """Levantamento da condição do pavimento (abas IP e CALCULO_IP do PATO) — Res. DNIT nº 8/2023, art. 17.
 
-IP (km a km, por faixa): grau de panelas, remendos e trincamento — Bom / Regular / Ruim / Péssimo (pesos 0 / 0,25 / 0,5 / 1).
+IP (km a km, por faixa): grau de panelas, remendos e trincamento — Bom / Regular / Ruim / Péssimo (pesos 0 / 0,25 / 0,5 / 1),
+    informado direto ou pela contagem da Res. DNIT nº 6/2025 (panelas/remendos por km: 0 · 1–2 · 3–5 · >5; trincas: 0 · <10% ·
+    <50% · ≥50%). Com os níveis de conservação (roçada, drenagem, sinalização vertical e horizontal) calcula também
+    IC = 30·R + 20·D + 25·SV + 25·SH e ICM = 0,70·IP + 0,30·IC (Res. 6/2025, Anexo I).
     ICP = 50·panela + 30·remendo + 20·trincamento;  condição: < 30 BOM, < 50 REGULAR, < 70 RUIM, senão PÉSSIMO.
     Intervenção primária e secundária por km (sugerida pela regra abaixo; a escolha final é do engenheiro).
 
@@ -14,6 +17,37 @@ import math
 import re
 
 from . import normalizar as nz
+
+# Resolução DNIT nº 6/2025 (ICM), Anexo I — tabela 1A (frequência → nível) e IC (conservação)
+PESOS_IC = dict(rocada=30, drenagem=20, sinal_vertical=25, sinal_horizontal=25)
+
+
+def nivel_contagem(n) -> int | None:
+    """Panelas ou remendos por km: 0 → Bom, 1 a 2 → Regular, 3 a 5 → Ruim, mais de 5 → Péssimo."""
+    n = nz.numero(n)
+    if n is None:
+        return None
+    return 0 if n <= 0 else 1 if n <= 2 else 2 if n <= 5 else 3
+
+
+def nivel_trinca(pct) -> int | None:
+    """% da área trincada no km: 0 → Bom, < 10% → Regular, < 50% → Ruim, ≥ 50% → Péssimo."""
+    v = nz.numero(pct)
+    if v is None:
+        return None
+    return 0 if v <= 0 else 1 if v < 10 else 2 if v < 50 else 3
+
+
+def ic(ln: dict) -> float | None:
+    """IC = 30·roçada + 20·drenagem + 25·sinalização vertical + 25·sinalização horizontal (sem dado → None)."""
+    if not any(ln.get(k) not in (None, "") for k in PESOS_IC):
+        return None
+    return sum(w * PESOS[nivel(ln.get(k))] for k, w in PESOS_IC.items())
+
+
+def icm(ip_: float, ic_: float | None) -> float | None:
+    """ICM = 0,70·IP + 0,30·IC (Res. 6/2025, eq. 1); condição pelas mesmas faixas do IP."""
+    return None if ic_ is None else round(0.7 * ip_ + 0.3 * ic_, 4)
 
 NIVEIS = ["Bom", "Regular", "Ruim", "Péssimo"]
 PESOS = [0.0, 0.25, 0.5, 1.0]
@@ -95,6 +129,13 @@ def calcular(dados: dict) -> dict:
     out, kmf_por = [], {}
     rotulos = {c for it in (par.get("intervencoes") or {}).values() for c in (it.get("inclui") or [])}
     for ln in linhas:
+        # contagens do ICM (Res. 6/2025): nº de panelas/remendos por km e % de trincamento definem o nível
+        ln = dict(ln)
+        for k, fn, campo in (("panela", nivel_contagem, "n_panelas"), ("remendo", nivel_contagem, "n_remendos"),
+                             ("trinca", nivel_trinca, "pct_trinca")):
+            nv = fn(ln.get(campo))
+            if nv is not None:
+                ln[k] = nv
         p, r, t = (nivel(ln.get(k)) for k in DEFEITOS)
         v = icp(p, r, t)
         sp, ss = sugerir(p, r, t)
@@ -109,8 +150,11 @@ def calcular(dados: dict) -> dict:
         for col, val in (("primaria", prim), ("secundaria", sec)):
             if val:
                 kmf_por.setdefault((col, val), []).append((ln.get("linha_planilha"), ext))
+        ic_ = ic(ln)
+        icm_ = icm(v, ic_)
         out.append(dict(ln, panela=p, remendo=r, trinca=t, icp=v, condicao=condicao(v), ext=ext, primaria=prim, secundaria=sec,
-                        sugestao=[sp, ss], diverge=(prim, sec) != (sp, ss)))
+                        sugestao=[sp, ss], diverge=(prim, sec) != (sp, ss), ic=ic_, icm=icm_,
+                        condicao_icm=condicao(icm_) if icm_ is not None else None))
     calc, inv_por = [], {}
     ordem = sorted((par.get("intervencoes") or {}).items(), key=lambda kv: bool(kv[1].get("soma")))
     for chave, it in ordem:

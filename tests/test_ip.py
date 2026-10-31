@@ -90,3 +90,15 @@ def test_importa_formato_antigo_icp(tmp_path):
     assert q["CORREÇÃO DE DEFEITOS"]["ne_calc"] == pytest.approx(8.75) and q["CORREÇÃO DE DEFEITOS"]["quantidade"] == 17.5
     assert q["FRESAGEM CONTÍNUA"]["quantidade"] == 175
     assert q["MICRORREVESTIMENTO"]["inventario"] == 2 and q["MICRORREVESTIMENTO"]["quantidade"] == pytest.approx(7700)
+
+
+def test_icm_resolucao_6_2025():
+    """Exemplo do Anexo I da Res. DNIT 6/2025: sem panela, remendos 'Ruim' (3 a 5/km), trincas < 10%, roçada e drenagem
+    'Bom', sinalização vertical e horizontal 'Péssimo' → IP 20, IC 50, ICM 29 (BOM)."""
+    from pato_app import ip as ipm
+    r = ipm.calcular(dict(linhas=[dict(km_ini=0, km_fim=1, n_panelas=0, n_remendos=4, pct_trinca=5, rocada="Bom",
+                                       drenagem="Bom", sinal_vertical="Péssimo", sinal_horizontal="Péssimo")]))
+    ln = r["linhas"][0]
+    assert (ln["icp"], ln["ic"], ln["icm"], ln["condicao_icm"]) == (20.0, 50.0, 29.0, "BOM")
+    assert [ipm.nivel_contagem(n) for n in (0, 2, 3, 6)] == [0, 1, 2, 3]
+    assert [ipm.nivel_trinca(v) for v in (0, 9.9, 10, 50)] == [0, 1, 2, 3]

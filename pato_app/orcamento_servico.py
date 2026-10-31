@@ -428,6 +428,36 @@ class Orcamentos:
         exportar_xlsx(self, pid, str(dest))
         return dict(arquivo=str(dest), nome=dest.name)
 
+    # ------------------------------------------------- conferência (checklists + normativos)
+    def conferencia(self, pid: int) -> dict:
+        from . import conferencia as cf
+        try:
+            calc = self.calcular(pid)
+        except Exception:  # noqa: BLE001 — sem base/planilha: a conferência aponta o que falta
+            calc = {}
+        ip_d = self.db.dados_projeto(pid, "ip")
+        cfg = self.sv.custos.config(pid)
+        try:
+            mats = self.sv.binomio.listar(pid)["materiais"]
+        except Exception:  # noqa: BLE001
+            mats = []
+        datas = sorted({b.get("data_base") for b in self.sv.custos.bases() if b.get("uf") == cfg.get("uf") and b.get("data_base")})
+        ctx = dict(projeto=self.sv.projeto(pid), inventario=self.db.itens(pid), calc=calc, ne_rocada=calc.get("ne_rocada"),
+                   ip=ip_d, ip_calc=self._ip_calc(pid), croqui=self.sv.transporte.dados_croqui(pid), binomio_materiais=mats,
+                   diversos=self.db.dados_projeto(pid, "diversos"), sinalizacao=calc.get("sinalizacao"), config=cfg,
+                   datas_base=datas)
+        return cf.montar(ctx, self.db.dados_projeto(pid, "conferencia") or {})
+
+    def marcar_conferencia(self, pid: int, item: str, feito: bool | None = None, obs: str | None = None) -> dict:
+        d = self.db.dados_projeto(pid, "conferencia") or {}
+        e = d.setdefault(item, {})
+        if feito is not None:
+            e["feito"] = bool(feito)
+        if obs is not None:
+            e["obs"] = obs
+        self.db.gravar_dados_projeto(pid, "conferencia", d)
+        return dict(item=item, **e)
+
     # ------------------------------------------------- ficha de serviços
     def _arquivo_ficha(self):
         from pathlib import Path

@@ -38,6 +38,7 @@ function irAba(nome) {
   if (nome === "custos") carregarCustos();
   if (nome === "transporte") carregarTransp();
   if (nome === "orcamento") carregarOrc();
+  if (nome === "normas") carregarNormas();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
@@ -1221,7 +1222,7 @@ const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumF
 async function carregarOrc() {
   if (!E.pid) return;
   const subs = [["ficha", "Ficha de serviços", "Escolha dos serviços e níveis de esforço para montar o PATO do segmento"], ["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
-    ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
+    ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["conf", "Conferência", "Checklists de elaboração e auditoria e regras dos normativos — verificação automática e itens a marcar"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
@@ -1234,7 +1235,7 @@ async function carregarOrc() {
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
       <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<p class="nota">Nenhuma planilha PATO neste projeto. Importe a aba PATO de uma planilha de referência (itens, níveis de esforço e memórias) ou inclua os itens.</p>`;
-    await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 function renderOrcPlanilha() {
@@ -1356,6 +1357,30 @@ $("#btnCrqAuto").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/croqui/montar`, { km_canteiro: +km, km_usina: $("#crqKmUsina").value === "" ? null : +$("#crqKmUsina").value });
     toast(`Croqui montado — ${r.linhas_reorientadas} linhas do quadro reorientadas`); carregarTransp(); } catch (e) { erro(e); }
 };
+
+// ---- conferência
+const CF_ = { r: null };
+const CF_TAG = { ok: ["ok", "OK"], atencao: ["aviso", "Atenção"], falha: ["erro", "Falha"], manual: ["", "A conferir"], feito: ["ok", "Conferido"] };
+async function renderConf() {
+  const r = CF_.r = await api(`${base_}${E.pid}/conferencia`);
+  const rs = r.resumo;
+  $("#confResumo").innerHTML = `<p>${Object.entries(CF_TAG).map(([k, [cl, t]]) => `<span class="tag ${cl}">${t}: ${rs[k] || 0}</span>`).join(" ")}</p>`;
+  desenharConf();
+}
+function desenharConf() {
+  const so = $("#confPend").checked; let sec = "";
+  $("#tabConf").innerHTML = `<tr><th>Situação</th><th>Verificação</th><th>Detalhe</th><th>Fonte</th><th>Observação</th></tr>` +
+    CF_.r.itens.filter(x => !so || ["falha", "atencao", "manual"].includes(x.status)).map(x => {
+      const [cl, t] = CF_TAG[x.status] || ["", x.status];
+      const cab = x.secao !== sec ? `<tr class="tit"><td colspan=5><b>${esc(sec = x.secao)}</b></td></tr>` : "";
+      return cab + `<tr><td>${x.tipo === "manual" ? `<label class="check"><input type="checkbox" data-cfok="${x.id}" ${x.status === "feito" ? "checked" : ""}> ` : ""}<span class="tag ${cl}">${t}</span>${x.tipo === "manual" ? "</label>" : ""}<br><small>${x.tipo === "auto" ? "automático" : "manual"}</small></td>
+        <td>${esc(x.texto)}</td><td><small>${esc(x.detalhe || "")}</small></td><td><small>${esc(x.fonte)}</small></td>
+        <td><input data-cfobs="${x.id}" value="${esc(x.obs || "")}" placeholder="observação / documento de suporte" style="width:220px"></td></tr>`;
+    }).join("");
+  $$("[data-cfok]").forEach(c => c.onchange = async () => { await jpost(`${base_}${E.pid}/conferencia/${c.dataset.cfok}`, { feito: c.checked }, "PUT"); renderConf(); });
+  $$("[data-cfobs]").forEach(i => i.onchange = async () => { await jpost(`${base_}${E.pid}/conferencia/${i.dataset.cfobs}`, { obs: i.value }, "PUT"); toast("Observação gravada"); });
+}
+$("#confPend").onchange = () => CF_.r && desenharConf();
 
 // ---- ficha de serviços
 async function renderFicha() {
@@ -1566,6 +1591,45 @@ $("#btnDivSug").onclick = async () => {
     d.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
     salvarDiv(d); } catch (e) { erro(e); }
 };
+
+// ---------------------------------------------------------------- base de conhecimento
+const NM_ = { r: null };
+const SIT_CLASSE = { revogado: "erro", substituido: "erro", modelo_antigo: "aviso", parcial: "aviso", vigente_confirmar: "", vigente: "ok", referencia: "" };
+async function carregarNormas() {
+  const r = NM_.r = await api("/api/base/documentos"), docs = r.documentos;
+  const cats = [...new Set(docs.map(d => d.categoria))].sort();
+  if ($("#nmCat").options.length <= 1) $("#nmCat").insertAdjacentHTML("beforeend", cats.map(c => `<option>${esc(c)}</option>`).join(""));
+  const cont = {}; docs.forEach(d => cont[d.situacao_txt] = (cont[d.situacao_txt] || 0) + 1);
+  $("#nmResumo").innerHTML = `<p>${docs.length} documentos · ${Object.entries(cont).map(([k, v]) => `${esc(k)}: <b>${v}</b>`).join(" · ")} · retirados da busca: <b>${docs.filter(d => d.retirar).length}</b></p>`;
+  $("#tabNm").innerHTML = `<tr><th>Situação</th><th>Documento</th><th>Categoria</th><th>Identificação</th><th>Nota / substituto</th><th></th></tr>` +
+    docs.map(d => `<tr><td><span class="tag ${SIT_CLASSE[d.situacao] || ""}">${esc(d.situacao_txt)}</span>${d.retirar ? "<br><small>fora da busca</small>" : ""}</td>
+      <td>${esc(d.titulo)}${d.pacote ? `<br><small>pacote: ${esc(d.pacote)}</small>` : ""}</td><td>${esc(d.categoria)}</td><td>${esc(d.identificacao || "—")}</td>
+      <td><small>${esc(d.nota || "")}${d.substituto ? `<br><b>Substituto:</b> ${esc(d.substituto)}` : ""}${d.evidencia ? `<br><i>Evidência:</i> ${esc(d.evidencia)}` : ""}
+        ${(d.cita_desatualizado || []).map(c => `<br>⚠ cita ${esc(c.citada)} (p. ${c.pagina}) — atual: ${esc(c.mais_nova)}`).join("")}</small></td>
+      <td><button class="btn mini" data-nmdoc="${d.id}">Ler</button></td></tr>`).join("");
+  $("#tabNmExt").innerHTML = `<tr><th>Ato</th><th>Situação</th><th>Substituto</th><th>Evidência</th></tr>` +
+    (r.externos || []).map(x => `<tr><td>${esc(x.identificacao)}</td><td><span class="tag erro">${esc(r.situacoes[x.situacao] || x.situacao)}</span></td><td>${esc(x.substituto || "")}</td><td><small>${esc(x.evidencia || "")}</small></td></tr>`).join("");
+  ligarLerNorma();
+}
+function ligarLerNorma() {
+  $$("[data-nmdoc]").forEach(b => b.onclick = async () => {
+    const d = await api(`/api/base/documento/${encodeURIComponent(b.dataset.nmdoc)}${b.dataset.pg ? `?pagina=${b.dataset.pg}` : ""}`);
+    $("#dlgNmTxt").textContent = `${d.titulo}${d.pagina ? ` — página ${d.pagina}` : ""}\n\n${(d.texto || "").replace(/\f/g, "\n\n———— página ————\n\n")}`;
+    $("#dlgNm").showModal();
+  });
+}
+async function buscarNormas() {
+  const q = $("#nmQ").value.trim(); if (!q) return;
+  const r = await api(`/api/base/buscar?q=${encodeURIComponent(q)}&categoria=${encodeURIComponent($("#nmCat").value)}&retirados=${$("#nmRet").checked}`);
+  $("#nmRes").innerHTML = r.length ? r.map(x => `<div class="caixa" style="margin:6px 0;padding:8px"><b>${esc(x.titulo)}</b> · p. ${x.pagina} · <small>${esc(x.categoria)}</small>
+      ${x.situacao && x.situacao !== "vigente" ? ` <span class="tag ${SIT_CLASSE[x.situacao] || ""}">${esc(NM_.r?.situacoes?.[x.situacao] || x.situacao)}</span>` : ""}
+      <p style="margin:4px 0">${esc(x.trecho)}</p><button class="btn mini" data-nmdoc="${x.id}" data-pg="${x.pagina}">Ler a página</button>
+      ${x.original ? ` <a class="btn mini" href="/api/base/original/${encodeURIComponent(x.id)}" target="_blank">Original</a>` : ""}</div>`).join("")
+    : '<p class="nota">Nada encontrado.</p>';
+  ligarLerNorma();
+}
+$("#btnNmBuscar").onclick = buscarNormas;
+$("#nmQ").onkeydown = e => { if (e.key === "Enter") buscarNormas(); };
 
 // ---------------------------------------------------------------- projeto
 async function renderProjeto() {

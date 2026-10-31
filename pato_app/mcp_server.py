@@ -553,6 +553,38 @@ def pato_exportar_licitacao(projeto_id: int, recalcular: bool = True) -> dict:
 
 
 @mcp.tool()
+def pato_conferencia(projeto_id: int) -> dict:
+    """Conferência do PATO (checklists de elaboração/auditoria e normativos): itens automáticos com status ok/atenção/
+    falha e detalhe, e itens manuais pendentes ou feitos, cada um com a fonte normativa."""
+    return sv().orcamento.conferencia(projeto_id)
+
+
+@mcp.tool()
+def consultar_normativos(pergunta: str, categoria: str | None = None, limite: int = 10) -> list[dict]:
+    """Busca na base de conhecimento do PATO (Res. 8/2023, IN, ofícios, acórdãos TCU, CGU, normas DNIT, manuais SICRO,
+    cursos, modelos de planilha). Devolve documento, página, trecho e a situação de vigência. Frases entre aspas são
+    buscadas inteiras. Documentos revogados/substituídos ficam fora."""
+    from . import base_conhecimento as bc
+    return bc.buscar(pergunta, limite, categoria)
+
+
+@mcp.tool()
+def ler_documento_normativo(doc_id: str, pagina: int | None = None) -> dict:
+    """Texto de um documento da base (inteiro ou de uma página) — doc_id vem de consultar_normativos."""
+    from . import base_conhecimento as bc
+    return bc.documento(doc_id, pagina)
+
+
+@mcp.tool()
+def vigencia_normativos() -> dict:
+    """Situação de cada documento da base (vigente, parcial, substituído, revogado), substituto e evidência."""
+    from . import vigencia
+    r = vigencia.relatorio()
+    return dict(documentos=[{k: v for k, v in x.items() if k not in ("cita_desatualizado",)} for x in r["documentos"]],
+                externos=r["externos"])
+
+
+@mcp.tool()
 def pato_ficha_servicos(projeto_id: int) -> dict:
     """Ficha de serviços (regras do PATO de referência): id, item, código, regra da quantidade, NE padrão (nos serviços
     do ICM/IP, o parâmetro da intervenção no levantamento) e se a quantidade é a informar."""

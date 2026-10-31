@@ -34,6 +34,16 @@ def test_ne_rocada_pelas_estacoes_da_norma(proj):
     assert sv.orcamento.calcular(pid)["ne_rocada"]["adotado"] == 6
 
 
+def test_conferencia(proj):
+    sv, pid, _ = proj
+    r = sv.orcamento.conferencia(pid)
+    st = {x["id"]: x["status"] for x in r["itens"]}
+    assert st["obj-prazo"] == st["ne-rocada"] == st["orc-bdi-betuminoso"] == st["adm-engenheiro"] == st["cmp-codigos"] == "ok"
+    assert st["ne-historico"] == "atencao"  # BR-158: reparo/remendo/fresagem pelo histórico (Ofício-Circular 6832/2025)
+    sv.orcamento.marcar_conferencia(pid, "inv-nao-copiar", True, "levantamento de 03/2026")
+    assert next(x for x in sv.orcamento.conferencia(pid)["itens"] if x["id"] == "inv-nao-copiar")["status"] == "feito"
+
+
 def test_croqui_montado_igual_ao_modelo(proj):
     sv, pid, _ = proj
     oc = {o["nome"]: o for o in sv.transporte.dados_croqui(pid)["ocorrencias"]}

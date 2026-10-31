@@ -32,6 +32,7 @@
   <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições e insumos">Custos</button>
   <button data-aba="transporte" data-dica="Croqui de ocorrências, VMD, DMT, FIT e quadro de transportes (momentos)">Transporte</button>
   <button data-aba="orcamento" data-dica="Planilha PATO (Res. DNIT 8/2023): quantidades × preços, resumo, % dos grupos, curva ABC e cronograma">PATO</button>
+  <button data-aba="normas" data-dica="Base de conhecimento: resoluções, IN, ofícios, acórdãos, normas, manuais SICRO, cursos e modelos — busca por trecho e situação de vigência">Normas</button>
   <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
   <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
 </nav>
@@ -416,6 +417,16 @@
       </div></div>
     <div id="resOrc"></div>
     <div id="orc-planilha" class="sub-orc"><div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-conf" class="sub-orc">
+      <div class="caixa"><h3>Conferência do PATO</h3>
+        <p class="nota">Checklists de elaboração e de auditoria (Res. DNIT nº 8/2023) e regras dos normativos da base (IN 10/2024, Ofícios-Circulares
+          6832/2025, 9237/2025, 10161/2025 e 6990/2026, Acórdãos TCU 2.700/2025 e 136/2025, DNIT 182/2018-PRO, Res. 6/2025-ICM).
+          Os itens automáticos são verificados nos dados do projeto; os manuais você marca e anota.</p>
+        <div id="confResumo"></div>
+        <div class="barra filtros"><label class="check"><input type="checkbox" id="confPend"> só pendências (falha, atenção e manuais não feitos)</label></div>
+        <div class="tabela-rolagem" style="max-height:72vh"><table class="tab" id="tabConf"></table></div></div>
+    </div>
+
     <div id="orc-ficha" class="sub-orc">
       <div class="caixa"><div class="bin-cab"><h3>Ficha de serviços</h3>
         <div class="linha-botoes" style="margin:0">
@@ -486,6 +497,22 @@
   </section>
 
   <!-- IMPORTAR -->
+  <section id="aba-normas" class="aba">
+    <div class="caixa"><h3>Base de conhecimento</h3>
+      <p class="nota">Resoluções, instruções normativas, ofícios, acórdãos do TCU, relatório da CGU, normas DNIT, manuais do SICRO, cursos, apresentações e
+        modelos de planilha — texto extraído (com OCR nas páginas digitalizadas). Documentos revogados ou substituídos, com evidência, ficam fora da busca.</p>
+      <div class="barra filtros"><input id="nmQ" placeholder='buscar (ex.: BDI betuminoso, "nível de esforço", remendo profundo)' style="flex:1;min-width:260px">
+        <select id="nmCat"><option value="">todas as categorias</option></select>
+        <label class="check"><input type="checkbox" id="nmRet"> incluir retirados</label>
+        <button class="btn primario" id="btnNmBuscar">Buscar</button></div>
+      <div id="nmRes"></div></div>
+    <div class="caixa"><h3>Documentos e vigência</h3><div id="nmResumo"></div>
+      <div class="tabela-rolagem" style="max-height:60vh"><table class="tab" id="tabNm"></table></div>
+      <h4>Atos citados que não estão na base</h4><div class="tabela-rolagem"><table class="tab" id="tabNmExt"></table></div></div>
+    <dialog id="dlgNm" style="max-width:900px;width:90vw"><div id="dlgNmTxt" style="white-space:pre-wrap;max-height:70vh;overflow:auto;font-family:monospace;font-size:12px"></div>
+      <form method="dialog"><button class="btn">Fechar</button></form></dialog>
+  </section>
+
   <section id="aba-importar" class="aba">
     <div class="caixa">
       <h3>Importar inventário de Excel</h3>

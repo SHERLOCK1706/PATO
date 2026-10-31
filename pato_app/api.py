@@ -494,6 +494,41 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def ner_salvar(pid: int, dados: dict = Body(...)):
         return orc.salvar_ne_rocada(pid, dados)
 
+    # ------------------------------------------------- base de conhecimento (normativos, manuais, cursos, modelos)
+    @app.get("/api/base/buscar")
+    def base_buscar(q: str, categoria: str | None = None, limite: int = 25, retirados: bool = False):
+        from . import base_conhecimento as bc
+        return bc.buscar(q, limite, categoria, incluir_retirados=retirados)
+
+    @app.get("/api/base/documentos")
+    def base_documentos():
+        from . import vigencia
+        return vigencia.relatorio()
+
+    @app.get("/api/base/documento/{doc_id}")
+    def base_documento(doc_id: str, pagina: int | None = None):
+        from . import base_conhecimento as bc
+        try:
+            return bc.documento(doc_id, pagina)
+        except KeyError as e:
+            raise HTTPException(404, str(e)) from e
+
+    @app.get("/api/base/original/{doc_id}")
+    def base_original(doc_id: str):
+        from . import base_conhecimento as bc
+        d = next((x for x in bc.carregar_indice()["documentos"] if x["id"] == doc_id), None)
+        if not d or not d.get("original"):
+            raise HTTPException(404, "Original não guardado na base (arquivo grande ou de pacote): use o texto.")
+        return FileResponse(bc.RAIZ / d["original"], filename=d.get("arquivo") or Path(d["original"]).name)
+
+    @app.get("/api/projetos/{pid}/conferencia")
+    def conf_ler(pid: int):
+        return orc.conferencia(pid)
+
+    @app.put("/api/projetos/{pid}/conferencia/{item}")
+    def conf_marcar(pid: int, item: str, dados: dict = Body(...)):
+        return orc.marcar_conferencia(pid, item, dados.get("feito"), dados.get("obs"))
+
     @app.get("/api/projetos/{pid}/pato/ficha")
     def ficha_ler(pid: int):
         return orc.ficha(pid)

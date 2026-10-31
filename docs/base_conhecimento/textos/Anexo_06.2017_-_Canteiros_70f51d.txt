@@ -1,0 +1,316 @@
+  DNIT
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+                   ANEXO 06/2017
+
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Manual de Custos de Infraestrutura de Transportes
+                Anexo 06/2017
+
+
+
+
+                            1. SUBSTITUIÇÃO DE TABELAS
+
+
+
+
+                        1
+                      Manual de Custos de Infraestrutura de Transportes
+                                      Anexo 06/2017
+
+
+1. SUBSTITUIÇÃO DE TABELAS
+
+     Descrições das Ocorrências
+
+Primeira ocorrência
+
+Os insumos relacionados aos contêineres sofreram alterações em suas descrições
+para correta adequação de unidade de medida e melhor especificação dos mesmos
+na Pesquisa de Preços do SICRO, sendo realizadas as seguintes correções:
+
+Onde se lê: 20 TEU/40 TEU
+Leia-se: 1 TEU/ 2 TEU
+
+As Tabelas 24, 25 e 26 do Volume 07 do Manual de Custos também sofreram
+alterações para a devida compatibilização aos contêineres cotados nas descrições
+dos insumos: M0041, M0042, M0057, M0058, M0059, M0060, M0065 e M0066.
+
+Segunda ocorrência
+
+Alteração das áreas de referências das instalações para o canteiro tipo apresentadas
+na Tabela 43 do Volume 07 do Manual de Custos de Infraestrutura de Transportes,
+referente às obras de conservação rodoviária, em decorrência da adequação da
+especificação técnica aos conteineres pesquisados no SICRO. Para melhor
+entendimento, foram acrescidos na referida tabela os códigos dos insumos utilizados,
+bem como as quantidades de conteineres necessárias para cada área.
+
+Destaca-se ainda a necessidade de incluir uma restrição ao coeficiente de
+proporcionalidade (cp) sempre maior ou igual a 1.
+
+     Ações Resultantes
+
+Revisão e correção do Manual de Custos de Infraestrutura de Transportes, no Volume
+07 - Canteiros de Obras, readequando as tabelas, com a divulgação de nova versão
+revisada no endereço eletrônico do SICRO sob forma do Anexo 06/2017.
+
+
+
+
+                                              3
+Manual de Custos de Infraestrutura de Transportes
+                Anexo 06/2017
+
+
+
+
+                                   2. CONTEÚDO REVISADO
+
+
+
+
+                        5
+                            Manual de Custos de Infraestrutura de Transportes
+                                            Anexo 06/2017
+
+
+  Tabela 24 - Quadro de quantidades e serviços do canteiro tipo para obras de conservação
+                           rodoviária rotineira em pista simples
+                      Descrição do serviços                         Tipo de Container Und Quantidade
+Limpeza mecanizada da camada vegetal                                       -         m2     595,92
+Expurgo                                                                    -         m3     148,98
+Regularização do subleito                                                  -         m2     595,92
+Reforço do subleito                                                        -         m3     119,18
+Lastro de brita comercial com espalhamento mecânico                        -         m3      8,94
+Locação da obra                                                            -         m2     297,96
+Cerca com 4 fios de arame farpado e mourão de madeira a cada
+                                                                           -         m      157,00
+2,5 m
+Escritório e seção técnica (Área = 29,72 m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                        M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Almoxarifado (Área = 29,72 m²)
+Container 1 TEU duplo - inclusive montagem e desmontagem -
+                                                                        M0057        und      1
+utilização 5 vezes
+Depósito de cimento (Área = 29,72 m²)
+Container 1 TEU duplo - inclusive montagem e desmontagem -
+                                                                        M0057        und      1
+utilização 5 vezes
+Refeitório e cozinha (Área = 59,46 m²)
+Container 1 TEU duplo com banheiro - inclusive montagem e
+                                                                        M0058        und      1
+desmontagem - utilização 5 vezes
+Container 1 TEU duplo - inclusive montagem e desmontagem -
+                                                                        M0057        und      1
+utilização 5 vezes
+Alojamento (Área = 44,59 m²)
+Container 1 TEU com revestimento térmico, janela e banheiro -
+                                                                        M0059        und      3
+inclusive montagem e desmontagem - utilização 5 vezes
+Banheiro e vestiário (Área = 14,86 m²)
+Container 1 TEU com banheiro - inclusive montagem e desmontagem
+                                                                        M0041        und      1
+- utilização 5 vezes
+Oficina (Área = 37,16 m²)
+Container 1 TEU com janela - inclusive montagem e desmontagem -
+                                                                        M0042        und      1
+utilização 5 vezes
+Container 3/4 TEU com janela - inclusive montagem e desmontagem -
+                                                                        M0060        und      1
+utilização 5 vezes
+Container 3/4 TEU com janela e banheiro - inclusive montagem e
+                                                                        M0065        und      1
+desmontagem - utilização 5 vezes
+Ambulatório (Área = 29,72 m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                        M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Posto de combustível - tipo IV                                             -         und      1
+Guarita (Área = 11,15 m²)
+Container 3/4 TEU com janela - inclusive montagem e desmontagem -
+                                                                        M0060        und      1
+utilização 5 vezes
+Residência (Área = 14,86 m²)
+Container 1 TEU com revestimento térmico, janela e banheiro -
+                                                                        M0059        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+
+
+
+
+                                                     7
+                          Manual de Custos de Infraestrutura de Transportes
+                                          Anexo 06/2017
+
+
+Tabela 25 - Quadro de quantidades e serviços do canteiro tipo das obras de arte especiais de
+           pequeno porte (padrão provisório - barracões em tábuas e contêineres)
+                       Descrição do serviços                           Tipo de Container Und Quantidade
+Limpeza mecanizada da camada vegetal                                          -         m2    3.135,77
+Expurgo                                                                       -         m3     783,94
+Regularização do subleito                                                     -         m2    3.135,77
+Reforço do subleito                                                           -         m3     627,15
+Lastro de brita comercial com espalhamento mecânico                           -         m3     61,15
+Locação da obra                                                               -         m2    1.097,52
+Meio fio de concreto - MFC 06 com areia e brita comerciais - forma
+                                                                              -         m      256,75
+de madeira
+Cerca com 4 fios de arame farpado e mourão de madeira a cada
+                                                                              -         m       282
+2,5 m
+Escritório (Área = 14,86 m²)
+Container 1 TEU com revestimento térmico, janela e banheiro -
+                                                                           M0059        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Seção técnica (Área = 29,72 m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                           M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Almoxarifado em       barracão    em   tábua   de   pinho   -    com
+                                                                              -         m2     89,89
+reaproveitamento
+Depósito de cimento em barracão em tábua de pinho - com
+                                                                              -         m2     172,38
+reaproveitamento
+Central de armaduras em barracão em compensado 10 mm - com
+                                                                              -         m2     84,79
+reaproveitamento
+Refeitório e cozinha em barracão em tábua de pinho - com
+                                                                              -         m2     88,65
+reaproveitamento
+Alojamentos em        barracão    em   tábua   de   pinho   -    com
+                                                                              -         m2     109,62
+reaproveitamento
+Banheiros e vestiários em barracão em tábua de pinho - com
+                                                                              -         m2     62,91
+reaproveitamento
+Oficina em barracão em tábua de pinho - com reaproveitamento                  -         m2      18,1
+Estacionamento de veículos leves                                              -         m2     115,14
+Ambulatório (Área = 29,72 m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                           M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Equipe de topografia (Área = 14,86 m²)
+Container 1 TEU com janela - inclusive montagem e desmontagem -
+                                                                           M0042        und      1
+utilização 5 vezes
+Posto de combustível - tipo V                                                 -         und      1
+Carpintaria em barracão          em    tábua   de   pinho   -    sem
+                                                                              -         m2     111,26
+reaproveitamento
+Recreação (Área = 11,15 m²)
+Container 3/4 TEU com janela - inclusive montagem e desmontagem -
+                                                                           M0065        und      1
+utilização 5 vezes
+Guarita em barracão em tábua de pinho - sem reaproveitamento                  -         m2      6,1
+Demolição de construções provisórias em madeira - com
+                                                                              -         m2     626,34
+reaproveitamento
+Demolição de construções provisórias sem fechamento lateral -
+                                                                              -         m2     370,43
+com reaproveitamento
+
+
+
+
+                                                     8
+                          Manual de Custos de Infraestrutura de Transportes
+                                          Anexo 06/2017
+
+
+Tabela 26 - Quadro de quantidades e serviços do canteiro tipo das obras de arte especiais de
+           pequeno porte (padrão permanente - alvenaria de tijolos e contêineres)
+                      Descrição do serviços                          Tipo de Container Und Quantidade
+Limpeza mecanizada da camada vegetal                                        -         m2    3.135,77
+Expurgo                                                                     -         m3     783,94
+Regularização do subleito                                                   -         m2    3.135,77
+Reforço do subleito                                                         -         m3     627,15
+Lastro de brita comercial com espalhamento mecânico                         -         m3     61,15
+Locação da obra                                                             -         m2    1.097,52
+Meio fio de concreto - MFC 06 com areia e brita comerciais - forma
+                                                                            -         m      256,75
+de madeira
+Cerca com 4 fios de arame farpado e mourão de madeira a cada
+                                                                            -         m       282
+2,5 m
+Portão em madeira - altura de 1,5 m e largura de 3,5 m                      -         m2      8,4
+Escritório (Área = 14,86 m²)
+Container 1 TEU com revestimento térmico, janela e banheiro -
+                                                                         M0059        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Seção técnica (Área = 29,72m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                         M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                        -         m2     89,89
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                 -         m2     172,38
+Central de armaduras em barracão em compensado 10 mm - com
+                                                                            -         m2     84,79
+reaproveitamento
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                -         m2     88,65
+Alojamentos barracão em alvenaria de tijolos 10 x 10 x 20 cm                -         m2     109,62
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm              -         m2     62,91
+Oficina em barracão em alvenaria de tijolos 10 x 10 x 20 cm                 -         m2      18,1
+Estacionamento para veículos leves                                          -         m2     115,14
+Ambulatório (Área = 29,72 m²)
+Container 2 TEUs com revestimento térmico, janela e banheiro -
+                                                                         M0066        und      1
+inclusive montagem e desmontagem - utilização 5 vezes
+Equipe de topografia (Área = 14,86 m²)
+Container 1 TEU com janela - inclusive montagem e desmontagem -
+                                                                         M0042        und      1
+utilização 5 vezes
+Posto de combustível - tipo V                                               -         und      1
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                         -         m2     111,26
+Recreação (Área = 11,15 m²)
+Container 3/4 TEU com janela - inclusive montagem e desmontagem -
+                                                                         M0065        und      1
+utilização 5 vezes
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                             -         m2      6,1
+
+
+
+
+                                                      9
+                        Manual de Custos de Infraestrutura de Transportes
+                                        Anexo 06/2017
+
+
+Tabela 43 - Instalações e áreas de referência para o canteiro tipo desenvolvido para as obras
+                                 de conservação rodoviária
+
+                                                        Tipo de
+                  Instalações         Área (m²)                    Unidade   Quantidade
+                                                       Container
+
+        Escritório e seção técnica     29,72            M0066        und         1
+                                       29,72            M0057        und         1
+        Refeitório e cozinha
+                                       29,72            M0058        und         1
+        Alojamentos                    44,59            M0059        und         3
+        Banheiros e vestiário          14,86            M0041        und         1
+        Residências                    14,86            M0065        und         1
+        Ambulatório                    29,73            M0066        und         1
+        Almoxarifado                   29,73            M0057        und         1
+        Depósito de cimento            29,73            M0057        und         1
+                                                        M0042        und         1
+        Oficina                        37,16            M0060        und         1
+                                                        M0065        und         1
+        Guarita                        11,15            M0060        und         1
+
+
+
+
+                                                  10
+

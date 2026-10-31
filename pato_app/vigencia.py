@@ -100,7 +100,7 @@ def aplicar(raiz: Path = bc.RAIZ) -> dict:
     por_id = {x["id"]: x for x in rel["documentos"]}
     retirados = []
     for d in ind["documentos"]:
-        d["categoria"] = bc.categoria(d.get("arquivo") or d["titulo"])
+        d["categoria"] = bc.categoria(d.get("arquivo") or d["titulo"], d.get("pacote"))
         r = por_id.get(d["id"]) or {}
         d["ativo"] = not r.get("retirar")
         d["situacao"] = r.get("situacao")

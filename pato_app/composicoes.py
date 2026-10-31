@@ -197,6 +197,130 @@ def _ler_blocos(linhas: list[tuple]) -> list[dict]:
     return comps
 
 
+UF_SIGLA = {"ACRE": "AC", "ALAGOAS": "AL", "AMAPA": "AP", "AMAZONAS": "AM", "BAHIA": "BA", "CEARA": "CE", "DISTRITO FEDERAL": "DF",
+            "ESPIRITO SANTO": "ES", "GOIAS": "GO", "MARANHAO": "MA", "MATO GROSSO": "MT", "MATO GROSSO DO SUL": "MS",
+            "MINAS GERAIS": "MG", "PARA": "PA", "PARAIBA": "PB", "PARANA": "PR", "PERNAMBUCO": "PE", "PIAUI": "PI",
+            "RIO DE JANEIRO": "RJ", "RIO GRANDE DO NORTE": "RN", "RIO GRANDE DO SUL": "RS", "RONDONIA": "RO", "RORAIMA": "RR",
+            "SANTA CATARINA": "SC", "SAO PAULO": "SP", "SERGIPE": "SE", "TOCANTINS": "TO"}
+_SEC_OFICIAL = [("A - EQUIP", "A"), ("B - MAO", "B"), ("C - MATER", "C"), ("D - ATIV", "D"), ("E - TEMPO", "E"), ("F - MOMENTO", "F"),
+                ("F - TRANSP", "F")]
+
+
+def _e_oficial(linhas: list[tuple]) -> bool:
+    return any(r and isinstance(r[0], str) and r[0].strip().upper().startswith("SISTEMA DE CUSTOS REFERENCIAIS DE OBRAS")
+               for r in linhas[:5])
+
+
+def _ler_oficial(linhas: list[tuple]) -> tuple[list[dict], str | None, str | None]:
+    """Relatório Analítico de Composições de Custos publicado pelo DNIT (xlsx): blocos que começam em
+    'SISTEMA DE CUSTOS REFERENCIAIS DE OBRAS - SICRO' (UF, FIC), 'Custo Unitário de Referência' (mês/ano, produção, unidade)
+    e a linha código/descrição; seções A (equipamentos) a F (momento de transporte). Composições sem desoneração."""
+    heads = [i for i, r in enumerate(linhas) if r and isinstance(r[0], str) and r[0].startswith("SISTEMA DE CUSTOS REFERENCIAIS")]
+    comps, uf, db = [], None, None
+    for n, h in enumerate(heads):
+        fim = heads[n + 1] if n + 1 < len(heads) else len(linhas)
+        r1 = tuple(linhas[h]) + (None,) * 9
+        r2 = tuple(linhas[h + 1]) + (None,) * 9 if h + 1 < fim else (None,) * 9
+        r3 = tuple(linhas[h + 2]) + (None,) * 9 if h + 2 < fim else (None,) * 9
+        if uf is None and isinstance(r1[3], str):
+            uf = UF_SIGLA.get(nz.sem_acento(r1[3]).upper().strip())
+        if db is None:
+            db = data_base_uf(r2[3])[0]
+        c = dict(codigo=_cod(r3[0]), descricao=nz.texto(r3[1]), unidade=nz.texto(r2[8]), data_base=nz.texto(r2[3]),
+                 linha=h + 3, equipamentos=[], mao_obra=[], materiais=[], auxiliares=[], tempo_fixo=[], transportes=[],
+                 producao=_n(r2[7]) or 1.0, fic=_n(r1[7]), fit=0.0, fic_base="execucao", original={}, oficial=True)
+        sec = None
+        for i in range(h + 3, fim):
+            r = tuple(linhas[i]) + (None,) * 9
+            a = r[0]
+            lab = nz.sem_acento(a).upper().strip() if isinstance(a, str) else ""
+            nova = next((s_ for p_, s_ in _SEC_OFICIAL if lab.startswith(p_)), None)
+            if nova:
+                sec = nova
+                continue
+            txt = " ".join(nz.sem_acento(str(x)).upper() for x in r[1:8] if isinstance(x, str))
+            if "CUSTO UNITARIO DE EXECUCAO" in txt:
+                c["original"]["exec_unit"] = _n(r[8])
+            elif "CUSTO DO FIC" in txt:
+                c["original"]["fic"] = _n(r[8])
+            elif txt.startswith("SUBTOTAL") or "SUBTOTAL" == txt.strip():
+                c["original"]["subtotal"] = _n(r[8])
+            elif "CUSTO UNITARIO DIRETO TOTAL" in txt:
+                c["original"]["custo_direto"] = _n(r[8])
+                sec = None
+            elif a is None or not sec or not _COD_INSUMO.match(str(a).strip()):
+                continue
+            elif sec == "A":
+                c["equipamentos"].append(dict(codigo=_cod(a), descricao=nz.texto(r[1]), quant=_n(r[2]), util_op=_n(r[3]),
+                                              util_imp=_n(r[4]), custo_op=_n(r[5]), custo_imp=_n(r[6]), linha=i + 1))
+            elif sec == "B":
+                c["mao_obra"].append(dict(codigo=_cod(a), descricao=nz.texto(r[1]), quant=_n(r[2]), unidade=nz.texto(r[3]),
+                                          custo=_n(r[5]), linha=i + 1))
+            elif sec in "CD":
+                (c["materiais"] if sec == "C" else c["auxiliares"]).append(dict(
+                    codigo=_cod(a), descricao=nz.texto(r[1]), quant=_n(r[2]), unidade=nz.texto(r[3]),
+                    preco=_n(r[5]) if r[5] is not None else _n(r[6]), linha=i + 1))
+            elif sec == "E":
+                c["tempo_fixo"].append(dict(insumo=_cod(a), composicao=_cod(r[2]), descricao=nz.texto(r[1]), quant=_n(r[3]),
+                                            unidade=nz.texto(r[4]), preco=_n(r[6]), linha=i + 1, retirado=False, tf_dinamico=True))
+            elif sec == "F":
+                c["transportes"].append(dict(insumo=_cod(a), composicao=_cod(r[6] or r[5] or r[4]), descricao=nz.texto(r[1]),
+                                             quant=_n(r[2]), unidade=nz.texto(r[3]), comp_ln=_cod(r[4]) if r[4] else None,
+                                             comp_rp=_cod(r[5]) if r[5] else None, comp_p=_cod(r[6]) if r[6] else None,
+                                             custo_ln=0.0, custo_rp=0.0, custo_p=0.0, dmt_ln=0.0, dmt_rp=0.0, dmt_p=0.0,
+                                             linha=i + 1))
+        o = c["original"]
+        if o.get("fic") is not None and o.get("exec_unit"):
+            c["fic_ef"] = o["fic"] / o["exec_unit"]  # FIC efetiva publicada (o coeficiente do cabeçalho é arredondado)
+        if c["codigo"]:
+            comps.append(c)
+    return comps, uf, db
+
+
+def _custos_transporte(b: dict) -> None:
+    """Custo por tkm das composições de transporte (LN/RP/P) de cada momento de transporte, na própria base."""
+    try:
+        m = Motor(b)
+    except Exception:  # noqa: BLE001
+        return
+    cache = {}
+
+    def custo(cod):
+        if cod and cod not in cache:
+            try:
+                cache[cod] = m.calcular(cod)["custo_direto"] if cod in m.comps else 0.0
+            except Exception:  # noqa: BLE001
+                cache[cod] = 0.0
+        return cache.get(cod, 0.0)
+    for c in b["composicoes"].values():
+        for t in c.get("transportes") or []:
+            for k in ("ln", "rp", "p"):
+                if t.get(f"comp_{k}"):
+                    t[f"custo_{k}"] = custo(t[f"comp_{k}"])
+
+
+def _base_desonerada(sd: dict, tabelas_cd: dict) -> dict:
+    """Composições com desoneração: as do relatório analítico (sem desoneração) com os custos de mão de obra e de
+    equipamentos dos relatórios sintéticos 'com desoneração'; tempo fixo e transportes recalculados na própria base."""
+    import copy as _copy
+    b = dict(sd, regime="CD", composicoes=_copy.deepcopy(sd["composicoes"]), tabelas=dict(sd.get("tabelas") or {}),
+             fontes=list(sd.get("fontes") or []) + ["mão de obra e equipamentos dos relatórios sintéticos com desoneração"])
+    b["tabelas"].update(tabelas_cd)
+    mo, eq = tabelas_cd.get("MO") or {}, tabelas_cd.get("EQ") or {}
+    for c in b["composicoes"].values():
+        c["original"] = {}
+        for x in c["mao_obra"]:
+            t = mo.get(x["codigo"])
+            if t and _n(t.get("preco")):
+                x["custo"] = _n(t["preco"])
+        for x in c["equipamentos"]:
+            t = eq.get(x["codigo"])
+            if t:
+                x["custo_op"] = _n(t.get("custo_op")) if t.get("custo_op") is not None else x["custo_op"]
+                x["custo_imp"] = _n(t.get("custo_imp")) if t.get("custo_imp") is not None else x["custo_imp"]
+    return b
+
+
 def _regime_do_nome(nome: str) -> str | None:
     u = nz.sem_acento(nome).upper().replace("_", " ")
     if re.search(r"\bSEM DESONERA|\bSD\b|NAO DESONERA", u):
@@ -253,6 +377,16 @@ def _abrir_planilhas(caminhos: list[str]):
     import os
     import zipfile
     for cam in caminhos:
+        if cam.lower().endswith((".7z", ".rar")):  # pacotes dos relatórios do SICRO (como publicados pelo DNIT)
+            import subprocess
+            import tempfile
+            with tempfile.TemporaryDirectory() as tmp:
+                subprocess.run(["unar", "-q", "-f", "-o", tmp, cam], capture_output=True, timeout=1200)
+                for raiz, _d, arqs in sorted(os.walk(tmp)):
+                    for a in sorted(arqs):
+                        if a.lower().endswith((".xlsx", ".xlsm")):
+                            yield from _abrir_xlsx(os.path.join(raiz, a), a)
+            continue
         if cam.lower().endswith(".zip"):
             with zipfile.ZipFile(cam) as z:
                 for nome in z.namelist():
@@ -286,6 +420,14 @@ def ler_bases(caminhos: list[str] | str, uf: str | None = None, data_base: str |
                                           tabelas={}, fontes=[]))
     for arq, aba, linhas in _abrir_planilhas(caminhos):
         reg = _regime_do_nome(aba) or _regime_do_nome(arq)
+        if _e_oficial(linhas):
+            comps, uf_, db_ = _ler_oficial(linhas)
+            b = base(reg or "SD")
+            b["uf"], b["data_base"] = b["uf"] or uf_, b["data_base"] or db_
+            for c in comps:
+                b["composicoes"][c["codigo"]] = c
+            b["fontes"].append(f"{arq} ({len(comps)} composições — relatório analítico oficial)")
+            continue
         if nz.rotulo(aba) == "BDI":
             bdi.update(_bdi_de_linhas(linhas))
             continue
@@ -312,6 +454,14 @@ def ler_bases(caminhos: list[str] | str, uf: str | None = None, data_base: str |
             regs = [reg] if reg else ["SD", "CD"] if tipo == "MAT" else ["SD"]
             for rg in regs:
                 base(rg)["tabelas"].setdefault(tipo, {}).update(tab)
+    sd = bases.get("SD")
+    if sd and sd["composicoes"] and any(c.get("oficial") for c in sd["composicoes"].values()):
+        cd = bases.get("CD")
+        if (not cd or not cd["composicoes"]) and cd and cd.get("tabelas"):
+            bases["CD"] = _base_desonerada(sd, cd["tabelas"])
+        for b in bases.values():
+            b["uf"], b["data_base"] = b.get("uf") or sd.get("uf"), b.get("data_base") or sd.get("data_base")
+            _custos_transporte(b)
     for reg, b in bases.items():
         b["sintetico"] = sinteticos.get(reg) or sinteticos.get("SD") or {}
         b["sintetico_regime"] = reg if sinteticos.get(reg) else ("SD" if sinteticos.get("SD") else None)
@@ -422,6 +572,8 @@ class Motor:
     def _calibrar(self) -> None:
         """Fatores FIC/FIT efetivos que reproduzem os valores originais da planilha."""
         for c in self.comps.values():
+            if c.get("oficial"):
+                continue  # relatório oficial: FIC efetiva já lida (fic_ef), não recalibrar
             o = c.get("original", {})
             prod = c["producao"] or 1
             mo = sum(arred(m["quant"] * m["custo"], 4) for m in c["mao_obra"])

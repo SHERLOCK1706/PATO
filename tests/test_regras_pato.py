@@ -10,6 +10,7 @@ def proj(tmp_path_factory):
     sv = Servico(pasta=tmp_path_factory.mktemp("regras"))
     pid = sv.criar_projeto(dict(nome="t", rodovia="BR-158/MT", km_ini=85, km_fim=212.5, prazo=2))["id"]
     imp = sv.orcamento.importar_referencia(pid, str(MODELO_PADRAO))
+    sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))  # reproduz a planilha de origem
     return sv, pid, imp
 
 

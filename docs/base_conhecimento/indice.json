@@ -1,19 +1,6 @@
 {
  "documentos": [
   {
-   "id": "FU_Conteineres_Mobilizacao_7e6d13",
-   "titulo": "FU Conteineres Mobilizacao",
-   "arquivo": "FU_Conteineres_Mobilizacao.xlsx",
-   "categoria": "Outros",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 867,
-   "ocr_paginas": [],
-   "sha1": "7e6d13a589c7d202cc5933b33d865418eae26ab9",
-   "original": "originais/FU_Conteineres_Mobilizacao_7e6d13.xlsx",
-   "tamanho_mb": 0.02
-  },
-  {
    "id": "MEMORANDO_CIRCULAR_2018-491_-_ESCLARECIMENTOS_SICRO_f48379",
    "titulo": "MEMORANDO CIRCULAR 2018-491 - ESCLARECIMENTOS SICRO",
    "arquivo": "MEMORANDO_CIRCULAR_2018-491_-_ESCLARECIMENTOS_SICRO.pdf",
@@ -24,7 +11,10 @@
    "ocr_paginas": [],
    "sha1": "f483799596f2c0b0270c184bc1453074f8d8d476",
    "original": "originais/MEMORANDO_CIRCULAR_2018-491_-_ESCLARECIMENTOS_SICRO_f48379.pdf",
-   "tamanho_mb": 0.09
+   "tamanho_mb": 0.09,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "OFICIO_CIRCULAR_2025-9237_-_SUBSTITUICAO_DE_HIDROSSEMEADURA_POR_SEMEADURA_A_LANCO_adb452",
@@ -37,7 +27,10 @@
    "ocr_paginas": [],
    "sha1": "adb45213638cf5e8e489762d59d659e0dba9d0e4",
    "original": "originais/OFICIO_CIRCULAR_2025-9237_-_SUBSTITUICAO_DE_HIDROSSEMEADURA_POR_SEMEADURA_A_LANCO_adb452.pdf",
-   "tamanho_mb": 0.11
+   "tamanho_mb": 0.11,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "OFICIO_DNIT_2025-165923_-_ENVIO_DO_BINOMIO_A_CGCIT_IN_10-2024_1d14b7",
@@ -50,7 +43,10 @@
    "ocr_paginas": [],
    "sha1": "1d14b7cd445fc452b185d1374bfb7ea84adbe3aa",
    "original": "originais/OFICIO_DNIT_2025-165923_-_ENVIO_DO_BINOMIO_A_CGCIT_IN_10-2024_1d14b7.pdf",
-   "tamanho_mb": 0.13
+   "tamanho_mb": 0.13,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "OFICIO_CIRCULAR_2025-10161_-_BDI_NORMAL_NA_AQUISI_O_DE_MATERIAIS_BETUMINOSOS_87f4e1",
@@ -63,7 +59,10 @@
    "ocr_paginas": [],
    "sha1": "87f4e1d8252241a7fee9beaa1db81bd23399b2d7",
    "original": "originais/OFICIO_CIRCULAR_2025-10161_-_BDI_NORMAL_NA_AQUISI_O_DE_MATERIAIS_BETUMINOSOS_87f4e1.pdf",
-   "tamanho_mb": 0.13
+   "tamanho_mb": 0.13,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "OFICIO_CIRCULAR_2026-6990_-_DIRETRIZES_PARA_DETALHAMENTO_DE_ORCAMENTO_4160ba",
@@ -76,7 +75,10 @@
    "ocr_paginas": [],
    "sha1": "4160ba592593f57942ac3dbf8e11757f48cd36f9",
    "original": "originais/OFICIO_CIRCULAR_2026-6990_-_DIRETRIZES_PARA_DETALHAMENTO_DE_ORCAMENTO_4160ba.pdf",
-   "tamanho_mb": 0.15
+   "tamanho_mb": 0.15,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "MEMORANDO_CIRCULAR_2014-219_-_COTACAO_DE_BRITA_E_AREIA_3adfde",
@@ -92,7 +94,10 @@
    ],
    "sha1": "3adfded00910e784b0e2f474dd5de905f5341d20",
    "original": "originais/MEMORANDO_CIRCULAR_2014-219_-_COTACAO_DE_BRITA_E_AREIA_3adfde.pdf",
-   "tamanho_mb": 0.15
+   "tamanho_mb": 0.15,
+   "ativo": true,
+   "situacao": "parcial",
+   "substituto": "O binômio passou a ser regido pela IN DNIT nº 10/2024 (art. 10: SICRO com origem no centro da sede do município; transporte só no preço FOB) e pelo Acórdão TCU nº 136/2025."
   },
   {
    "id": "OFICIO_CIRCULAR_2025-6832_-_ORIENTACOES_CONTRATOS_PATO_COM_BASE_NO_TCU_43f406",
@@ -105,7 +110,10 @@
    "ocr_paginas": [],
    "sha1": "43f406ed7a859d0a6e1879580695cddb742db56b",
    "original": "originais/OFICIO_CIRCULAR_2025-6832_-_ORIENTACOES_CONTRATOS_PATO_COM_BASE_NO_TCU_43f406.pdf",
-   "tamanho_mb": 0.18
+   "tamanho_mb": 0.18,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "INSTRUCAO_NORMATIVA_2024-10_-_BINOMIO_DE_AQUISICAO_E_TRANSPORTE_51553d",
@@ -118,7 +126,10 @@
    "ocr_paginas": [],
    "sha1": "51553d870c35446beed0874cde2e5063aa2f9ef1",
    "original": "originais/INSTRUCAO_NORMATIVA_2024-10_-_BINOMIO_DE_AQUISICAO_E_TRANSPORTE_51553d.pdf",
-   "tamanho_mb": 0.2
+   "tamanho_mb": 0.2,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "Informativo_SICRO_n_02.2025_40cdb7",
@@ -131,7 +142,10 @@
    "ocr_paginas": [],
    "sha1": "40cdb7883384751ec0dc9333e121328ba66b408c",
    "original": "originais/Informativo_SICRO_n_02.2025_40cdb7.pdf",
-   "tamanho_mb": 0.25
+   "tamanho_mb": 0.25,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "SEI_DNIT_-_4405411_-_Nota_T_cnica_67cb33",
@@ -144,7 +158,10 @@
    "ocr_paginas": [],
    "sha1": "67cb33286c144b18753627cad5ecb028e6912c1e",
    "original": "originais/SEI_DNIT_-_4405411_-_Nota_T_cnica_67cb33.pdf",
-   "tamanho_mb": 0.26
+   "tamanho_mb": 0.26,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "RELATORIO_DE_AVALIACAO_CGU_1601894_ba867c",
@@ -157,7 +174,10 @@
    "ocr_paginas": [],
    "sha1": "ba867c312be49b6aa5023c7687785bbed87581a4",
    "original": "originais/RELATORIO_DE_AVALIACAO_CGU_1601894_ba867c.pdf",
-   "tamanho_mb": 0.31
+   "tamanho_mb": 0.31,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "ACORDAO_TCU_2025-136_-_BINOMIO_DE_AQUISICAO_E_TRANSPORTE_546f2e",
@@ -170,163 +190,10 @@
    "ocr_paginas": [],
    "sha1": "546f2efa63e0298ca5fade6ebb5d0202e405af96",
    "original": "originais/ACORDAO_TCU_2025-136_-_BINOMIO_DE_AQUISICAO_E_TRANSPORTE_546f2e.pdf",
-   "tamanho_mb": 0.33
-  },
-  {
-   "id": "TRANSP_Modelo_698803",
-   "titulo": "TRANSP Modelo",
-   "arquivo": "TRANSP_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 74,
-   "ocr_paginas": [],
-   "sha1": "698803e4b0cc03151ab08ddceb4d5969ebeeb888",
-   "original": "originais/TRANSP_Modelo_698803.xlsx",
-   "tamanho_mb": 0.41
-  },
-  {
-   "id": "CANT_Conteiner_2025_Modelo_525846",
-   "titulo": "CANT Conteiner 2025 Modelo",
-   "arquivo": "CANT_Conteiner_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 268,
-   "ocr_paginas": [],
-   "sha1": "52584687dafd721efec5896a37d74ab2cf4f4a20",
-   "original": "originais/CANT_Conteiner_2025_Modelo_525846.xlsx",
-   "tamanho_mb": 0.41
-  },
-  {
-   "id": "CANT_Construcao_2025_Modelo_842814",
-   "titulo": "CANT Construcao 2025 Modelo",
-   "arquivo": "CANT_Construcao_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 547,
-   "ocr_paginas": [],
-   "sha1": "84281437c02a18f4dcd485996b9af5d387d537e2",
-   "original": "originais/CANT_Construcao_2025_Modelo_842814.xlsx",
-   "tamanho_mb": 0.41
-  },
-  {
-   "id": "USINA_2025_Modelo_6639d3",
-   "titulo": "USINA 2025 Modelo",
-   "arquivo": "USINA_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 495,
-   "ocr_paginas": [],
-   "sha1": "6639d3369f8d0fc1b26061c9dd6ce553227d2558",
-   "original": "originais/USINA_2025_Modelo_6639d3.xlsx",
-   "tamanho_mb": 0.41
-  },
-  {
-   "id": "DESEMPENHO_Modelo_843db8",
-   "titulo": "DESEMPENHO Modelo",
-   "arquivo": "DESEMPENHO_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 209,
-   "ocr_paginas": [],
-   "sha1": "843db8a690880075729768bcde6eaa2da5b6abb5",
-   "original": "originais/DESEMPENHO_Modelo_843db8.xlsx",
-   "tamanho_mb": 0.41
-  },
-  {
-   "id": "CURVA_ABC_Modelo_4be49b",
-   "titulo": "CURVA ABC Modelo",
-   "arquivo": "CURVA_ABC_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 174,
-   "ocr_paginas": [],
-   "sha1": "4be49bd0e3f40f0797aedd4d30d9353ab67c75c9",
-   "original": "originais/CURVA_ABC_Modelo_4be49b.xlsx",
-   "tamanho_mb": 0.42
-  },
-  {
-   "id": "QUANTIDADES_Modelo_511d5b",
-   "titulo": "QUANTIDADES Modelo",
-   "arquivo": "QUANTIDADES_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 125,
-   "ocr_paginas": [],
-   "sha1": "511d5b174a0d7dc0817385692c826cba514e75d5",
-   "original": "originais/QUANTIDADES_Modelo_511d5b.xlsx",
-   "tamanho_mb": 0.42
-  },
-  {
-   "id": "SIN_Modelo_9f3b55",
-   "titulo": "SIN Modelo",
-   "arquivo": "SIN_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 4,
-   "palavras": 930,
-   "ocr_paginas": [],
-   "sha1": "9f3b558651171c24cd31ad640bfa441a4198d0ee",
-   "original": "originais/SIN_Modelo_9f3b55.xlsx",
-   "tamanho_mb": 0.42
-  },
-  {
-   "id": "CRONOGRAMA_Modelo_ebf242",
-   "titulo": "CRONOGRAMA Modelo",
-   "arquivo": "CRONOGRAMA_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 126,
-   "ocr_paginas": [],
-   "sha1": "ebf2425063f8d97e1af9ec99adfca8bdea91ec8c",
-   "original": "originais/CRONOGRAMA_Modelo_ebf242.xlsx",
-   "tamanho_mb": 0.42
-  },
-  {
-   "id": "ADM_Local_2025_Modelo_3ee3a5",
-   "titulo": "ADM Local 2025 Modelo",
-   "arquivo": "ADM_Local_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 1612,
-   "ocr_paginas": [],
-   "sha1": "3ee3a5b82e98f9bbc621266048fee4f77485dac8",
-   "original": "originais/ADM_Local_2025_Modelo_3ee3a5.xlsx",
-   "tamanho_mb": 0.43
-  },
-  {
-   "id": "BDI_Modelo_6df2bd",
-   "titulo": "BDI Modelo",
-   "arquivo": "BDI_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 495,
-   "ocr_paginas": [],
-   "sha1": "6df2bd40958a27c6399609895526eb9d17a246a8",
-   "original": "originais/BDI_Modelo_6df2bd.xlsx",
-   "tamanho_mb": 0.44
-  },
-  {
-   "id": "PATO_Modelo_9d3ec0",
-   "titulo": "PATO Modelo",
-   "arquivo": "PATO_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 1,
-   "palavras": 667,
-   "ocr_paginas": [],
-   "sha1": "9d3ec065ac4c5dc26f1ad139c7d9f56e37067677",
-   "original": "originais/PATO_Modelo_9d3ec0.xlsx",
-   "tamanho_mb": 0.44
+   "tamanho_mb": 0.33,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "resolucao-8-2023-dir-publ_15bf9e",
@@ -339,52 +206,16 @@
    "ocr_paginas": [],
    "sha1": "15bf9ed62f0ea433fac4a8d02ce40ad287497766",
    "original": "originais/resolucao-8-2023-dir-publ_15bf9e.pdf",
-   "tamanho_mb": 0.45
-  },
-  {
-   "id": "MAT_Betum_Modelo_b1b66a",
-   "titulo": "MAT Betum Modelo",
-   "arquivo": "MAT_Betum_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 550,
-   "ocr_paginas": [],
-   "sha1": "b1b66a5fa62360e629bd326cacfd77ca2ab34dba",
-   "original": "originais/MAT_Betum_Modelo_b1b66a.xlsx",
-   "tamanho_mb": 0.45
-  },
-  {
-   "id": "FIT_2025_Modelo_7bdaf9",
-   "titulo": "FIT 2025 Modelo",
-   "arquivo": "FIT_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 5,
-   "palavras": 2729,
-   "ocr_paginas": [],
-   "sha1": "7bdaf9eddd25c68b90158e8e5fcff45e3090e822",
-   "original": "originais/FIT_2025_Modelo_7bdaf9.xlsx",
-   "tamanho_mb": 0.45
-  },
-  {
-   "id": "MOB_2025_Modelo_9ad7c0",
-   "titulo": "MOB 2025 Modelo",
-   "arquivo": "MOB_2025_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 250,
-   "ocr_paginas": [],
-   "sha1": "9ad7c019eb5776767d63b314f95237c090f58e87",
-   "original": "originais/MOB_2025_Modelo_9ad7c0.xlsx",
-   "tamanho_mb": 0.47
+   "tamanho_mb": 0.45,
+   "ativo": true,
+   "situacao": "parcial",
+   "substituto": "Anexo VI (FIT nos serviços) superado pelo Manual de Custos V05 – FIT, 2ª edição (FIT só nos transportes); ICM pela Resolução nº 6/2025."
   },
   {
    "id": "M_dulo_1_-_Conceitos_Gerais_1dcc83",
    "titulo": "M dulo 1 - Conceitos Gerais",
    "arquivo": "M_dulo_1_-_Conceitos_Gerais.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 23,
    "palavras": 3978,
@@ -393,20 +224,10 @@
    ],
    "sha1": "1dcc83cf5e31ed4ea04d7a15e6c869ace4a21147",
    "original": "originais/M_dulo_1_-_Conceitos_Gerais_1dcc83.pdf",
-   "tamanho_mb": 0.49
-  },
-  {
-   "id": "IP_Modelo_8ecdf2",
-   "titulo": "IP Modelo",
-   "arquivo": "IP_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 2179,
-   "ocr_paginas": [],
-   "sha1": "8ecdf220a851bcf33d6168567054036984d056b0",
-   "original": "originais/IP_Modelo_8ecdf2.xlsx",
-   "tamanho_mb": 0.5
+   "tamanho_mb": 0.49,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "OFICIO_CIRCULAR_2024-6781_-_INCLUSAO_DAS_ALIQUOTAS_PIS_E_COFINS_NO_MATERIAL_BETUMINOSO_6ca160",
@@ -419,26 +240,16 @@
    "ocr_paginas": [],
    "sha1": "6ca160a933649a75f842c8f4079015a462f3c379",
    "original": "originais/OFICIO_CIRCULAR_2024-6781_-_INCLUSAO_DAS_ALIQUOTAS_PIS_E_COFINS_NO_MATERIAL_BETUMINOSO_6ca160.pdf",
-   "tamanho_mb": 0.5
-  },
-  {
-   "id": "INVENTARIO_Modelo_f99f49",
-   "titulo": "INVENTARIO Modelo",
-   "arquivo": "INVENTARIO_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 21,
-   "palavras": 3579,
-   "ocr_paginas": [],
-   "sha1": "f99f49d9c64dadb27d1ca9780a5efa511555bd35",
-   "original": "originais/INVENTARIO_Modelo_f99f49.xlsx",
-   "tamanho_mb": 0.53
+   "tamanho_mb": 0.5,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "M_dulo_2_-_Composi_o_de_Custos_d1520f",
    "titulo": "M dulo 2 - Composi o de Custos",
    "arquivo": "M_dulo_2_-_Composi__o_de_Custos.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 22,
    "palavras": 3607,
@@ -447,13 +258,16 @@
    ],
    "sha1": "d1520fc2ea17c8deed14d0e447d5b53962bfd6f8",
    "original": "originais/M_dulo_2_-_Composi_o_de_Custos_d1520f.pdf",
-   "tamanho_mb": 0.54
+   "tamanho_mb": 0.54,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_5_-_Composi_o_de_Custos_Benef_cios_e_Despesas_Indiretas_BDI_990599",
    "titulo": "M dulo 5 - Composi o de Custos Benef cios e Despesas Indiretas BDI",
    "arquivo": "M_dulo_5_-_Composi__o_de_Custos_Benef_cios_e_Despesas_Indiretas_BDI.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 14,
    "palavras": 1516,
@@ -462,7 +276,10 @@
    ],
    "sha1": "9905996db2b520758eb233d71a759d1b3ea5131f",
    "original": "originais/M_dulo_5_-_Composi_o_de_Custos_Benef_cios_e_Despesas_Indiretas_BDI_990599.pdf",
-   "tamanho_mb": 0.6
+   "tamanho_mb": 0.6,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "OFICIO_CIRCULAR_2023-3296_-_ORCAMENTOS_COM_AS_NECESSIDADES_REAIS_DA_RODOVIA_0d287f",
@@ -475,7 +292,10 @@
    "ocr_paginas": [],
    "sha1": "0d287fbbf975757a1bd8aae708e75da340298ba3",
    "original": "originais/OFICIO_CIRCULAR_2023-3296_-_ORCAMENTOS_COM_AS_NECESSIDADES_REAIS_DA_RODOVIA_0d287f.pdf",
-   "tamanho_mb": 0.61
+   "tamanho_mb": 0.61,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "dnit_182_2018_pro-hiperlink_e9530b",
@@ -488,13 +308,16 @@
    "ocr_paginas": [],
    "sha1": "e9530b231167eb0797eafdd74397135a69e80779",
    "original": "originais/dnit_182_2018_pro-hiperlink_e9530b.pdf",
-   "tamanho_mb": 0.65
+   "tamanho_mb": 0.65,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "M_dulo_1_-_Conceitos_B_sicos_de_Hidrologia_84516b",
    "titulo": "M dulo 1 - Conceitos B sicos de Hidrologia",
    "arquivo": "M_dulo_1_-_Conceitos_B_sicos_de_Hidrologia.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 32,
    "palavras": 6477,
@@ -503,13 +326,16 @@
    ],
    "sha1": "84516bc6f9035ccb29512c87c5fb6ee008997b60",
    "original": "originais/M_dulo_1_-_Conceitos_B_sicos_de_Hidrologia_84516b.pdf",
-   "tamanho_mb": 0.7
+   "tamanho_mb": 0.7,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_3_-_Bacias_Hidrogr_ficas_-_revisado_8dc953",
    "titulo": "M dulo 3 - Bacias Hidrogr ficas - revisado",
    "arquivo": "M_dulo_3_-_Bacias_Hidrogr_ficas_-_revisado.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 29,
    "palavras": 6598,
@@ -518,13 +344,16 @@
    ],
    "sha1": "8dc953e9a2bd712cb04377da743f34faa4e4004c",
    "original": "originais/M_dulo_3_-_Bacias_Hidrogr_ficas_-_revisado_8dc953.pdf",
-   "tamanho_mb": 0.72
+   "tamanho_mb": 0.72,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_3_-_Tipos_de_revestimentos_asf_lticos_54a384",
    "titulo": "M dulo 3 - Tipos de revestimentos asf lticos",
    "arquivo": "M_dulo_3_-_Tipos_de_revestimentos_asf_lticos.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 17,
    "palavras": 2971,
@@ -534,13 +363,16 @@
    ],
    "sha1": "54a384aa155f8741413654344aff4eee517c697d",
    "original": "originais/M_dulo_3_-_Tipos_de_revestimentos_asf_lticos_54a384.pdf",
-   "tamanho_mb": 0.73
+   "tamanho_mb": 0.73,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_4_-_Dosagem_de_misturas_asf_lticas_743ef3",
    "titulo": "M dulo 4 - Dosagem de misturas asf lticas",
    "arquivo": "M_dulo_4_-_Dosagem_de_misturas_asf_lticas.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 19,
    "palavras": 3038,
@@ -551,7 +383,10 @@
    ],
    "sha1": "743ef38a3c3908c0848415c95f6a98a69ca6e746",
    "original": "originais/M_dulo_4_-_Dosagem_de_misturas_asf_lticas_743ef3.pdf",
-   "tamanho_mb": 0.78
+   "tamanho_mb": 0.78,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "NORMA_DNIT_2024-031_ES_-_CONCRETO_ASFALTICO_CBUQ_1643cf",
@@ -564,26 +399,16 @@
    "ocr_paginas": [],
    "sha1": "1643cf383d21d7c951e90b09ffd92cb19e831665",
    "original": "originais/NORMA_DNIT_2024-031_ES_-_CONCRETO_ASFALTICO_CBUQ_1643cf.pdf",
-   "tamanho_mb": 0.8
-  },
-  {
-   "id": "ICMNP_Modelo_1aee0c",
-   "titulo": "ICMNP Modelo",
-   "arquivo": "ICMNP_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 2,
-   "palavras": 8779,
-   "ocr_paginas": [],
-   "sha1": "1aee0cf602cf8f11bad4c417f2eb4d2d5c82d8af",
-   "original": "originais/ICMNP_Modelo_1aee0c.xlsx",
-   "tamanho_mb": 0.83
+   "tamanho_mb": 0.8,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "M_dulo_1_-_Considera_es_Gerais_bd4f1a",
    "titulo": "M dulo 1 - Considera es Gerais",
    "arquivo": "M_dulo_1_-_Considera__es_Gerais.pdf",
-   "categoria": "Norma DNIT",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 30,
    "palavras": 3829,
@@ -592,13 +417,16 @@
    ],
    "sha1": "bd4f1abc653e45fe446a63a7ab4390082461e76c",
    "original": "originais/M_dulo_1_-_Considera_es_Gerais_bd4f1a.pdf",
-   "tamanho_mb": 0.88
+   "tamanho_mb": 0.88,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_2_-_Aspectos_Legais_e_Normativos_077c72",
    "titulo": "M dulo 2 - Aspectos Legais e Normativos",
    "arquivo": "M_dulo_2_-_Aspectos_Legais_e_Normativos.pdf",
-   "categoria": "Norma DNIT",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 33,
    "palavras": 6327,
@@ -607,7 +435,10 @@
    ],
    "sha1": "077c723f6e3cc28816845673fff93710e587ddff",
    "original": "originais/M_dulo_2_-_Aspectos_Legais_e_Normativos_077c72.pdf",
-   "tamanho_mb": 0.94
+   "tamanho_mb": 0.94,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_Caderno_de_aplicacao_c10d25",
@@ -622,20 +453,10 @@
    ],
    "sha1": "c10d25b43e7ab3d7b808bb434db9949144afd3fd",
    "original": "originais/Manual-de-Custos-SICRO_V06-Canteiro-Obras_Caderno_de_aplicacao_c10d25.pdf",
-   "tamanho_mb": 0.95
-  },
-  {
-   "id": "COTACOES_Modelo_f53d17",
-   "titulo": "COTACOES Modelo",
-   "arquivo": "COTACOES_Modelo.xlsx",
-   "categoria": "Modelo de planilha",
-   "pacote": null,
-   "paginas": 9,
-   "palavras": 73336,
-   "ocr_paginas": [],
-   "sha1": "f53d17d8bce9989e7cfeef606814564993881009",
-   "original": "originais/COTACOES_Modelo_f53d17.xlsx",
-   "tamanho_mb": 0.96
+   "tamanho_mb": 0.95,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "NORMA_DNIT_2003-005_PRO_-_PATOLOGIAS_PAVIMENTO_FLEXIVEL_fb4f9d",
@@ -650,7 +471,10 @@
    ],
    "sha1": "fb4f9dd991e2bf41aaaf75a396368c3b16f75fd7",
    "original": "originais/NORMA_DNIT_2003-005_PRO_-_PATOLOGIAS_PAVIMENTO_FLEXIVEL_fb4f9d.pdf",
-   "tamanho_mb": 1.04
+   "tamanho_mb": 1.04,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "CATALOGO_DE_SOLUCOES_DE_MANUTENCAO_DE_PAV_FLEX_e249a4",
@@ -666,13 +490,16 @@
    ],
    "sha1": "e249a43cddc31b255fafedd58484fc53df04a982",
    "original": "originais/CATALOGO_DE_SOLUCOES_DE_MANUTENCAO_DE_PAV_FLEX_e249a4.pdf",
-   "tamanho_mb": 1.06
+   "tamanho_mb": 1.06,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_2_-_Tipos_de_ligantes_asf_lticos_2f1729",
    "titulo": "M dulo 2 - Tipos de ligantes asf lticos",
    "arquivo": "M_dulo_2_-_Tipos_de_ligantes_asf_lticos.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 23,
    "palavras": 4097,
@@ -682,13 +509,16 @@
    ],
    "sha1": "2f1729c842d52a3eafd728e926dbfa60b49bfe30",
    "original": "originais/M_dulo_2_-_Tipos_de_ligantes_asf_lticos_2f1729.pdf",
-   "tamanho_mb": 1.17
+   "tamanho_mb": 1.17,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_2_-_Pluviomtria_0c14a2",
    "titulo": "M dulo 2 - Pluviomtria",
    "arquivo": "M_dulo_2_-_Pluviomtria.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 47,
    "palavras": 9410,
@@ -697,7 +527,10 @@
    ],
    "sha1": "0c14a26b5625a1780f56a5e1445f5cb87945808f",
    "original": "originais/M_dulo_2_-_Pluviomtria_0c14a2.pdf",
-   "tamanho_mb": 1.29
+   "tamanho_mb": 1.29,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "ATF_CGCIT_2024-32_-_CAMINHAO_28_M3_4d97b5",
@@ -710,7 +543,10 @@
    "ocr_paginas": [],
    "sha1": "4d97b58363dfda6058012161aa343f7984dac71c",
    "original": "originais/ATF_CGCIT_2024-32_-_CAMINHAO_28_M3_4d97b5.pdf",
-   "tamanho_mb": 1.29
+   "tamanho_mb": 1.29,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Manual-de-Custos-SICRO_V04-FIC_Caderno_de_aplica_ao_aeb746",
@@ -725,7 +561,10 @@
    ],
    "sha1": "aeb746fd40aebf252ce96c928d7c7e5bbe2f7d5a",
    "original": "originais/Manual-de-Custos-SICRO_V04-FIC_Caderno_de_aplica_ao_aeb746.pdf",
-   "tamanho_mb": 1.29
+   "tamanho_mb": 1.29,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "RESOLUCAO_DNIT_2025-06_-_ICM_fe57d3",
@@ -738,26 +577,32 @@
    "ocr_paginas": [],
    "sha1": "fe57d33a552ef0f8d96379b9b0d965f2c62e194c",
    "original": "originais/RESOLUCAO_DNIT_2025-06_-_ICM_fe57d3.pdf",
-   "tamanho_mb": 1.33
+   "tamanho_mb": 1.33,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "M_dulo_3_-_Custo_Unit_rio_de_Insumos_f29536",
    "titulo": "M dulo 3 - Custo Unit rio de Insumos",
    "arquivo": "M_dulo_3_-_Custo_Unit_rio_de_Insumos.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 35,
    "palavras": 4464,
    "ocr_paginas": [],
    "sha1": "f29536013c75cbbbb1f215fb70e98c461335ee46",
    "original": "originais/M_dulo_3_-_Custo_Unit_rio_de_Insumos_f29536.pdf",
-   "tamanho_mb": 1.46
+   "tamanho_mb": 1.46,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_4_-_Conceitos_B_sicos_de_Drenagem_1c5ef0",
    "titulo": "M dulo 4 - Conceitos B sicos de Drenagem",
    "arquivo": "M_dulo_4_-_Conceitos_B_sicos_de_Drenagem.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 49,
    "palavras": 10161,
@@ -766,7 +611,10 @@
    ],
    "sha1": "1c5ef03f74d1db7cd481c1f92aba0e2ca99c72a9",
    "original": "originais/M_dulo_4_-_Conceitos_B_sicos_de_Drenagem_1c5ef0.pdf",
-   "tamanho_mb": 1.52
+   "tamanho_mb": 1.52,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "ATF_CGCIT_2019-56_-_TRATAMENTO_ANTI_PO_356208",
@@ -789,13 +637,16 @@
    ],
    "sha1": "3562086ff82e10c1c51b280e736dbdd49ec78e28",
    "original": "originais/ATF_CGCIT_2019-56_-_TRATAMENTO_ANTI_PO_356208.pdf",
-   "tamanho_mb": 1.58
+   "tamanho_mb": 1.58,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_1_-_Conceitos_gerais_ec156d",
    "titulo": "M dulo 1 - Conceitos gerais",
    "arquivo": "M_dulo_1_-_Conceitos_gerais_.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 31,
    "palavras": 5173,
@@ -804,7 +655,10 @@
    ],
    "sha1": "ec156da0b032ff7c982878a00893f6438a9dde18",
    "original": "originais/M_dulo_1_-_Conceitos_gerais_ec156d.pdf",
-   "tamanho_mb": 1.59
+   "tamanho_mb": 1.59,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Manual-de-Custos-SICRO_V05-FIT_Caderno_de_aplicacao_aea4bd",
@@ -819,7 +673,10 @@
    ],
    "sha1": "aea4bd09ded3df08d3dfdb685e61e20baf7cfd6a",
    "original": "originais/Manual-de-Custos-SICRO_V05-FIT_Caderno_de_aplicacao_aea4bd.pdf",
-   "tamanho_mb": 1.65
+   "tamanho_mb": 1.65,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "PORTARIA_2017-1977_-_MATERIAIS_BETUMINOSOS_8af908",
@@ -837,13 +694,16 @@
    ],
    "sha1": "8af9085fa9acc1cb660f5318018b075dc9815133",
    "original": "originais/PORTARIA_2017-1977_-_MATERIAIS_BETUMINOSOS_8af908.pdf",
-   "tamanho_mb": 1.76
+   "tamanho_mb": 1.76,
+   "ativo": true,
+   "situacao": "parcial",
+   "substituto": "BDI: na aquisição de betuminosos passa a ser o ordinário (Acórdão TCU nº 2.700/2025 e Ofício-Circular nº 10161/2025/DIR); o BDI diferenciado de 15% (Acórdão 1.447/2010, 9.4.2) ficou prejudicado."
   },
   {
    "id": "M_dulo_5_-_Bueiros_e_Pontes_f729f2",
    "titulo": "M dulo 5 - Bueiros e Pontes",
    "arquivo": "M_dulo_5_-_Bueiros_e_Pontes.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 44,
    "palavras": 8657,
@@ -852,7 +712,10 @@
    ],
    "sha1": "f729f2861aa509571c08311bc81d91eb3ee60338",
    "original": "originais/M_dulo_5_-_Bueiros_e_Pontes_f729f2.pdf",
-   "tamanho_mb": 1.82
+   "tamanho_mb": 1.82,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "1_PTF_n._04_01_2018_BR_230_319_AM_1e203a",
@@ -865,20 +728,26 @@
    "ocr_paginas": [],
    "sha1": "1e203ad27a80d05f27b1eab185d32b928ea21457",
    "original": "originais/1_PTF_n._04_01_2018_BR_230_319_AM_1e203a.pdf",
-   "tamanho_mb": 1.98
+   "tamanho_mb": 1.98,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_5_-_Materiais_e_Fiscaliza_o_9f4c94",
    "titulo": "M dulo 5 - Materiais e Fiscaliza o",
    "arquivo": "M_dulo_5_-_Materiais_e_Fiscaliza__o.pdf",
-   "categoria": "Curso",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 45,
    "palavras": 8455,
    "ocr_paginas": [],
    "sha1": "9f4c94ce42cf629e8ea8f13651579e504e238bb4",
    "original": "originais/M_dulo_5_-_Materiais_e_Fiscaliza_o_9f4c94.pdf",
-   "tamanho_mb": 2.14
+   "tamanho_mb": 2.14,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "2_ATF_n._47_FGV_2019_cbe909",
@@ -903,7 +772,10 @@
    ],
    "sha1": "cbe909cdaf13cf6f04ca4da7a621afbd2e6a3466",
    "original": "originais/2_ATF_n._47_FGV_2019_cbe909.pdf",
-   "tamanho_mb": 2.2
+   "tamanho_mb": 2.2,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "VMDa_2025_a228b0",
@@ -916,13 +788,16 @@
    "ocr_paginas": [],
    "sha1": "a228b07fcebcf3d574b75e3b57b43a924af1d88a",
    "original": "originais/VMDa_2025_a228b0.xlsx",
-   "tamanho_mb": 2.22
+   "tamanho_mb": 2.22,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_4_-_Projetos_de_Sinaliza_o_ec67c5",
    "titulo": "M dulo 4 - Projetos de Sinaliza o",
    "arquivo": "M_dulo_4_-_Projetos_de_Sinaliza__o.pdf",
-   "categoria": "Norma DNIT",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 27,
    "palavras": 3879,
@@ -939,13 +814,16 @@
    ],
    "sha1": "ec67c537a601dac9871b032ebabb1253a6f49684",
    "original": "originais/M_dulo_4_-_Projetos_de_Sinaliza_o_ec67c5.pdf",
-   "tamanho_mb": 2.22
+   "tamanho_mb": 2.22,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "M_dulo_6_-_Drenagem_subsuperficial_e_profunda_747bb7",
    "titulo": "M dulo 6 - Drenagem subsuperficial e profunda",
    "arquivo": "M_dulo_6_-_Drenagem_subsuperficial_e_profunda.pdf",
-   "categoria": "Norma DNIT",
+   "categoria": "Outros",
    "pacote": null,
    "paginas": 51,
    "palavras": 8459,
@@ -954,7 +832,10 @@
    ],
    "sha1": "747bb72010dc1a7bb0bfefe1bd695c56d85cfae6",
    "original": "originais/M_dulo_6_-_Drenagem_subsuperficial_e_profunda_747bb7.pdf",
-   "tamanho_mb": 2.45
+   "tamanho_mb": 2.45,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "ACORDAO_TCU_2025-2700_-_BDI_NORMAL_NOS_MATERIAIS_BETUMINOSOS_d98b07",
@@ -967,7 +848,10 @@
    "ocr_paginas": [],
    "sha1": "d98b07ed19847ada36901ec82e7801ca8ad23143",
    "original": "originais/ACORDAO_TCU_2025-2700_-_BDI_NORMAL_NOS_MATERIAIS_BETUMINOSOS_d98b07.pdf",
-   "tamanho_mb": 2.64
+   "tamanho_mb": 2.64,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "INSTRUCAO_NORMATIVA_2021-69_-_ATIVIDADE_PERMANTE_DE_MANUTENCAO_6bf7eb",
@@ -985,7 +869,10 @@
    ],
    "sha1": "6bf7ebe19e614b511908421bc636b27246c639ec",
    "original": "originais/INSTRUCAO_NORMATIVA_2021-69_-_ATIVIDADE_PERMANTE_DE_MANUTENCAO_6bf7eb.pdf",
-   "tamanho_mb": 2.85
+   "tamanho_mb": 2.85,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "Projeto_de_Execucao_de_Pontes_de_Madeira_acdb23",
@@ -998,7 +885,10 @@
    "ocr_paginas": [],
    "sha1": "acdb23caa545597cf36afa30dfe69e81e5f2e1da",
    "original": "originais/Projeto_de_Execucao_de_Pontes_de_Madeira_acdb23.pdf",
-   "tamanho_mb": 2.87
+   "tamanho_mb": 2.87,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Apresenta_o_parte02_DNIT_918611",
@@ -1027,7 +917,10 @@
    ],
    "sha1": "9186117d287099b43c4a66dff4aedd868473a0d4",
    "original": "originais/Apresenta_o_parte02_DNIT_918611.pdf",
-   "tamanho_mb": 3.61
+   "tamanho_mb": 3.61,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Apresenta_o_parte01_DNIT_e633f8",
@@ -1083,7 +976,10 @@
    ],
    "sha1": "e633f82ea92de5188725cbeb83952389ef3869e5",
    "original": "originais/Apresenta_o_parte01_DNIT_e633f8.pdf",
-   "tamanho_mb": 3.63
+   "tamanho_mb": 3.63,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "INSTRUCAO_NORMATIVA_2022-08_-_PADRONIZA_O_DE_MANUTEN_O_E_RESTAURA_O_b03110",
@@ -1096,7 +992,10 @@
    "ocr_paginas": [],
    "sha1": "b0311016e1cb42a425e58779f077d28ba373a2d7",
    "original": "originais/INSTRUCAO_NORMATIVA_2022-08_-_PADRONIZA_O_DE_MANUTEN_O_E_RESTAURA_O_b03110.pdf",
-   "tamanho_mb": 3.96
+   "tamanho_mb": 3.96,
+   "ativo": true,
+   "situacao": "vigente_confirmar",
+   "substituto": null
   },
   {
    "id": "resolucao-8-2023-dir-anexo_1_e08db8",
@@ -1109,7 +1008,10 @@
    "ocr_paginas": [],
    "sha1": "e08db83dc7cdc51136c9848e7b0aedf0e4d995d3",
    "original": "originais/resolucao-8-2023-dir-anexo_1_e08db8.xlsx",
-   "tamanho_mb": 4.34
+   "tamanho_mb": 4.34,
+   "ativo": true,
+   "situacao": "parcial",
+   "substituto": "Anexo VI (FIT nos serviços) superado pelo Manual de Custos V05 – FIT, 2ª edição (FIT só nos transportes); ICM pela Resolução nº 6/2025."
   },
   {
    "id": "emenda_3_ipr_736_509318",
@@ -1122,7 +1024,10 @@
    "ocr_paginas": [],
    "sha1": "5093185193b81beb1340705ca7ba8d99154380c4",
    "original": "originais/emenda_3_ipr_736_509318.pdf",
-   "tamanho_mb": 4.71
+   "tamanho_mb": 4.71,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
   },
   {
    "id": "ipr_736_emenda-2_republicacao_47f32b",
@@ -1135,20 +1040,26 @@
    "ocr_paginas": [],
    "sha1": "47f32b224388a2dff9373f1029e3dcd6aaa41983",
    "original": null,
-   "tamanho_mb": 5.88
+   "tamanho_mb": 5.88,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
   },
   {
    "id": "PATO_BR_174_603_771_ONERADO_647c3e",
    "titulo": "PATO BR 174 603 771 ONERADO",
    "arquivo": "PATO_BR_174_603_771_ONERADO.xlsx",
-   "categoria": "Outros",
+   "categoria": "PATO de referência",
    "pacote": null,
    "paginas": 44,
    "palavras": 109800,
    "ocr_paginas": [],
    "sha1": "647c3e52b071e96713c589fda3762d1439cf925f",
    "original": null,
-   "tamanho_mb": 6.31
+   "tamanho_mb": 6.31,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "INVENTARIO_004-2022_Rev_pela_Supervisora_ae761f",
@@ -1161,33 +1072,42 @@
    "ocr_paginas": [],
    "sha1": "ae761fbf21459f241f9ce64f42dfdd5838ea7166",
    "original": null,
-   "tamanho_mb": 7.03
+   "tamanho_mb": 7.03,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "PATO_BR_174_191_304_ONERADO_11666a",
    "titulo": "PATO BR 174 191 304 ONERADO",
    "arquivo": "PATO_BR_174_191_304_ONERADO.xlsx",
-   "categoria": "Outros",
+   "categoria": "PATO de referência",
    "pacote": null,
    "paginas": 71,
    "palavras": 175366,
    "ocr_paginas": [],
    "sha1": "11666a341ae77683a38b474c73d5a2d9589b284a",
    "original": null,
-   "tamanho_mb": 8.2
+   "tamanho_mb": 8.2,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "PATO_BR_158_MT_KM_85_KM_212_REV2_1b3643",
    "titulo": "PATO BR 158 MT KM 85 KM 212 REV2",
    "arquivo": "PATO_BR_158_MT_KM_85_KM_212_REV2.xlsx",
-   "categoria": "Outros",
+   "categoria": "PATO de referência",
    "pacote": null,
    "paginas": 70,
    "palavras": 185545,
    "ocr_paginas": [],
    "sha1": "1b364368b09df6f3e241b037f273bc263bdb0180",
    "original": null,
-   "tamanho_mb": 8.2
+   "tamanho_mb": 8.2,
+   "ativo": true,
+   "situacao": "vigente",
+   "substituto": null
   },
   {
    "id": "MANUAL_ORCAVIA_fc0266",
@@ -1214,33 +1134,42 @@
    ],
    "sha1": "fc0266dca7a1036d04209325adabac04aa84b383",
    "original": null,
-   "tamanho_mb": 9.06
+   "tamanho_mb": 9.06,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "PATO_BR_364_405_435_REV1_7d8980",
    "titulo": "PATO BR 364 405 435 REV1",
    "arquivo": "PATO_BR_364_405_435_REV1.xlsx",
-   "categoria": "Outros",
+   "categoria": "PATO de referência",
    "pacote": null,
    "paginas": 76,
    "palavras": 216714,
    "ocr_paginas": [],
    "sha1": "7d898014052d3ac26b08088969b23bab4f005706",
    "original": null,
-   "tamanho_mb": 11.8
+   "tamanho_mb": 11.8,
+   "ativo": false,
+   "situacao": "modelo_antigo",
+   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
   },
   {
    "id": "PATO_BR_174_MT_KM_303_KM_365_E_KM_0_KM_81_R2_9edb7a",
    "titulo": "PATO BR 174 MT KM 303 KM 365 E KM 0 KM 81 R2",
    "arquivo": "PATO_BR_174_MT_KM_303_KM_365_E_KM_0_KM_81___R2.xlsx",
-   "categoria": "Outros",
+   "categoria": "PATO de referência",
    "pacote": null,
    "paginas": 80,
    "palavras": 214168,
    "ocr_paginas": [],
    "sha1": "9edb7ac76b47f4e5c94238cb9159616e1c4d8417",
    "original": null,
-   "tamanho_mb": 13.21
+   "tamanho_mb": 13.21,
+   "ativo": false,
+   "situacao": "modelo_antigo",
+   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
   },
   {
    "id": "CHECKLIST_ELABORACAO_PATO_263c30",
@@ -1253,7 +1182,10 @@
    "ocr_paginas": [],
    "sha1": "263c30c70c3fc5c1bd2f86ef4abe1f0292d82c4e",
    "original": "originais/CHECKLIST_ELABORACAO_PATO_263c30.docx",
-   "tamanho_mb": 0.02
+   "tamanho_mb": 0.02,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "CHECKLIST_ANALISE_PATO_7fb072",
@@ -1266,7 +1198,10 @@
    "ocr_paginas": [],
    "sha1": "7fb072a1701337615bfec3b9c609d9aeddce3796",
    "original": "originais/CHECKLIST_ANALISE_PATO_7fb072.docx",
-   "tamanho_mb": 0.02
+   "tamanho_mb": 0.02,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "sicronovomarcoaux_5ee05c",
@@ -1279,7 +1214,10 @@
    "ocr_paginas": [],
    "sha1": "5ee05c36a81a3e989e4bd99dc0a6ea7f65008c64",
    "original": "originais/sicronovomarcoaux_5ee05c.xlsx",
-   "tamanho_mb": 0.04
+   "tamanho_mb": 0.04,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "sicronovomarco_dfb902",
@@ -1292,7 +1230,10 @@
    "ocr_paginas": [],
    "sha1": "dfb902053d801fe89680983a76491ab7c9b83ffb",
    "original": "originais/sicronovomarco_dfb902.xlsx",
-   "tamanho_mb": 0.04
+   "tamanho_mb": 0.04,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Manual-de-Custos-SICRO_V03-Precos-Referenciais_fa944b",
@@ -1307,7 +1248,10 @@
    ],
    "sha1": "fa944bef3f650fa3389f8af095492d417ea97db8",
    "original": "originais/Manual-de-Custos-SICRO_V03-Precos-Referenciais_fa944b.pdf",
-   "tamanho_mb": 0.75
+   "tamanho_mb": 0.75,
+   "ativo": true,
+   "situacao": "parcial",
+   "substituto": "Emenda 2 ao Vol. 03 (precificação de dragas e alíquota do REA temporária) — Informativo SICRO nº 02/2026."
   },
   {
    "id": "Manual-de-Custos-SICRO_V05-FIT_ca0382",
@@ -1320,13 +1264,16 @@
    "ocr_paginas": [],
    "sha1": "ca03822d63150a315f1ecae1ea5176a53eb2e60e",
    "original": "originais/Manual-de-Custos-SICRO_V05-FIT_ca0382.pdf",
-   "tamanho_mb": 0.66
+   "tamanho_mb": 0.66,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Volume_05_-_Materiais_a6c738",
    "titulo": "Volume 05 - Materiais",
    "arquivo": "Volume 05 - Materiais.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-05-materiais",
    "paginas": 188,
    "palavras": 55662,
@@ -1336,26 +1283,32 @@
    ],
    "sha1": "a6c738d2c6f5a5bb4fa7c63c2fca2517ae26bc3e",
    "original": "originais/Volume_05_-_Materiais_a6c738.pdf",
-   "tamanho_mb": 1.76
+   "tamanho_mb": 1.76,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_09_-_Mobiliza_Æo_e_Desmobiliza_Æo_d27e0c",
    "titulo": "Volume 09 - Mobiliza‡Æo e Desmobiliza‡Æo",
    "arquivo": "Volume 09 - Mobiliza‡Æo e Desmobiliza‡Æo.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-09-mobilizacao-e-desmobilizacao",
    "paginas": 64,
    "palavras": 7993,
    "ocr_paginas": [],
    "sha1": "d27e0c27238131b9085febd8e1c298f57d445d04",
    "original": "originais/Volume_09_-_Mobiliza_Æo_e_Desmobiliza_Æo_d27e0c.pdf",
-   "tamanho_mb": 0.93
+   "tamanho_mb": 0.93,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Anexo_02.2023_-_Mobiliza_Æo_e_Desmobiliza_Æo_3ce677",
    "titulo": "Anexo 02.2023 - Mobiliza‡Æo e Desmobiliza‡Æo",
    "arquivo": "Anexo 02.2023 - Mobiliza‡Æo e Desmobiliza‡Æo.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-09-mobilizacao-e-desmobilizacao",
    "paginas": 23,
    "palavras": 6959,
@@ -1365,20 +1318,26 @@
    ],
    "sha1": "3ce6774515e221d9fff13fd70c532481c0696cd6",
    "original": "originais/Anexo_02.2023_-_Mobiliza_Æo_e_Desmobiliza_Æo_3ce677.pdf",
-   "tamanho_mb": 0.52
+   "tamanho_mb": 0.52,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_02_-_Pesquisa_de_Precos_1ebf5f",
    "titulo": "Volume 02 - Pesquisa de Preços",
    "arquivo": "Volume 02 - Pesquisa de Preços.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-02-pesquisa-de-precos",
    "paginas": 118,
    "palavras": 34326,
    "ocr_paginas": [],
    "sha1": "1ebf5f1af9d1de9b8ae2070c219dcc0cf163c65c",
    "original": "originais/Volume_02_-_Pesquisa_de_Precos_1ebf5f.pdf",
-   "tamanho_mb": 1.65
+   "tamanho_mb": 1.65,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Manual-de-Custos-SICRO_V02-Mao-de-Obra_91aa39",
@@ -1393,26 +1352,32 @@
    ],
    "sha1": "91aa391ffae2786e009d8e645b247b34a69fb7a7",
    "original": "originais/Manual-de-Custos-SICRO_V02-Mao-de-Obra_91aa39.pdf",
-   "tamanho_mb": 1.76
+   "tamanho_mb": 1.76,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Volume_03_-_Equipamentos_ac846b",
    "titulo": "Volume 03 - Equipamentos",
    "arquivo": "Volume 03 - Equipamentos.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-03-equipamentos",
    "paginas": 212,
    "palavras": 46185,
    "ocr_paginas": [],
    "sha1": "ac846bc92db6ed87a68fa92cc1a22bfb1d90afd5",
    "original": "originais/Volume_03_-_Equipamentos_ac846b.pdf",
-   "tamanho_mb": 1.91
+   "tamanho_mb": 1.91,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_08_-_Administracao_Local_439ca2",
    "titulo": "Volume 08 - Administração Local",
    "arquivo": "Volume 08 - Administração Local.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-08-administracao-local",
    "paginas": 103,
    "palavras": 27894,
@@ -1424,7 +1389,10 @@
    ],
    "sha1": "439ca21b1453eb62c0c0af4635a6ed7266b563fb",
    "original": "originais/Volume_08_-_Administracao_Local_439ca2.pdf",
-   "tamanho_mb": 1.7
+   "tamanho_mb": 1.7,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Manual-de-Custos-SICRO_V01-Conceitos-Metodologias_b2f14c",
@@ -1439,20 +1407,26 @@
    ],
    "sha1": "b2f14c6ca26fa485a304c8494b5bb56c72c71458",
    "original": "originais/Manual-de-Custos-SICRO_V01-Conceitos-Metodologias_b2f14c.pdf",
-   "tamanho_mb": 1.88
+   "tamanho_mb": 1.88,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   },
   {
    "id": "Anexo_01-2017_-_Fator_de_Interferencia_do_Trafego_11e0cb",
    "titulo": "Anexo 01-2017 - Fator de Interferência do Tráfego",
    "arquivo": "Anexo 01-2017 - Fator de Interferência do Tráfego.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-01-metodologia-e-conceitos",
    "paginas": 10,
    "palavras": 1464,
    "ocr_paginas": [],
    "sha1": "11e0cb78e7768d971b536ec8eaf04f954e1bbfe4",
    "original": "originais/Anexo_01-2017_-_Fator_de_Interferencia_do_Trafego_11e0cb.pdf",
-   "tamanho_mb": 0.21
+   "tamanho_mb": 0.21,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_01_41f934",
@@ -1465,7 +1439,10 @@
    "ocr_paginas": [],
    "sha1": "41f9343271d9c930b972ee6fbed632c9127a1aac",
    "original": "originais/SICRO_-_Volume_01_41f934.pdf",
-   "tamanho_mb": 4.56
+   "tamanho_mb": 4.56,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_Volume_06_texto_9805de",
@@ -1478,7 +1455,10 @@
    "ocr_paginas": [],
    "sha1": "9805decbe062b38d917794c9add7818f757baa4e",
    "original": null,
-   "tamanho_mb": 0.08
+   "tamanho_mb": 0.08,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_Volume_06_Fator_Influencia_Chuvas_08a3f4",
@@ -1491,7 +1471,10 @@
    "ocr_paginas": [],
    "sha1": "08a3f4c8b2a71992b3412caabd6b25c9bdd0dd04",
    "original": "originais/SICRO_Volume_06_Fator_Influencia_Chuvas_08a3f4.pdf",
-   "tamanho_mb": 0.93
+   "tamanho_mb": 0.93,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_04_6c9281",
@@ -1504,7 +1487,10 @@
    "ocr_paginas": [],
    "sha1": "6c9281668ad93bdf016be22eaf9208fae4c92b69",
    "original": "originais/SICRO_-_Volume_12_-_Tomo_04_6c9281.pdf",
-   "tamanho_mb": 2.12
+   "tamanho_mb": 2.12,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_02_97e9e4",
@@ -1517,7 +1503,10 @@
    "ocr_paginas": [],
    "sha1": "97e9e4581d660b599a608ca667a7ee6b16e24f45",
    "original": "originais/SICRO_-_Volume_12_-_Tomo_02_97e9e4.pdf",
-   "tamanho_mb": 2.41
+   "tamanho_mb": 2.41,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_06_72d4c3",
@@ -1530,7 +1519,10 @@
    "ocr_paginas": [],
    "sha1": "72d4c3870b418ea2ff301a202b7d1b387fc45b6a",
    "original": "originais/SICRO_-_Volume_12_-_Tomo_06_72d4c3.pdf",
-   "tamanho_mb": 1.77
+   "tamanho_mb": 1.77,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_01_59396b",
@@ -1543,7 +1535,10 @@
    "ocr_paginas": [],
    "sha1": "59396bbd1dcef9491db8c957bb8afbb73e1f13f8",
    "original": null,
-   "tamanho_mb": 6.14
+   "tamanho_mb": 6.14,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_03_2ee4f2",
@@ -1556,7 +1551,10 @@
    "ocr_paginas": [],
    "sha1": "2ee4f2f0cd80bfecba7758b7a62a0a3dfbca53c0",
    "original": "originais/SICRO_-_Volume_12_-_Tomo_03_2ee4f2.pdf",
-   "tamanho_mb": 3.11
+   "tamanho_mb": 3.11,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "SICRO_-_Volume_12_-_Tomo_05_0b4959",
@@ -1569,13 +1567,16 @@
    "ocr_paginas": [],
    "sha1": "0b49595a49b008f64b69d4a90940c88d1892a574",
    "original": "originais/SICRO_-_Volume_12_-_Tomo_05_0b4959.pdf",
-   "tamanho_mb": 2.53
+   "tamanho_mb": 2.53,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_04_-_Tomo_04_-_Consolidacao_dos_Custos_de_Mao_de_Obra_64c06f",
    "titulo": "Volume 04 - Tomo 04 - Consolidação dos Custos de Mão de Obra",
    "arquivo": "Volume 04 - Tomo 04 - Consolidação dos Custos de Mão de Obra.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-04-mao-de-obra",
    "paginas": 160,
    "palavras": 87044,
@@ -1584,59 +1585,661 @@
    ],
    "sha1": "64c06fde3577272bae986b64a1e9f15610478ace",
    "original": null,
-   "tamanho_mb": 9.36
+   "tamanho_mb": 9.36,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_04_-_Tomo_01_-_Parametros_do_CAGED_be9e28",
    "titulo": "Volume 04 - Tomo 01 - Parâmetros do CAGED",
    "arquivo": "Volume 04 - Tomo 01 - Parâmetros do CAGED.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-04-mao-de-obra",
    "paginas": 158,
    "palavras": 37336,
    "ocr_paginas": [],
    "sha1": "be9e28308e22664755f04ccdaf9c904b0263c799",
    "original": "originais/Volume_04_-_Tomo_01_-_Parametros_do_CAGED_be9e28.pdf",
-   "tamanho_mb": 3.49
+   "tamanho_mb": 3.49,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_04_-_Mao_de_obra_d93a14",
    "titulo": "Volume 04 - Mão de obra",
    "arquivo": "Volume 04 - Mão de obra.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-04-mao-de-obra",
    "paginas": 99,
    "palavras": 20075,
    "ocr_paginas": [],
    "sha1": "d93a1433647dcbe2274d42d8393dda3686b41992",
    "original": "originais/Volume_04_-_Mao_de_obra_d93a14.pdf",
-   "tamanho_mb": 1.23
+   "tamanho_mb": 1.23,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_04_-_Tomo_02_-_Encargos_Sociais_bff45e",
    "titulo": "Volume 04 - Tomo 02 - Encargos Sociais",
    "arquivo": "Volume 04 - Tomo 02 - Encargos Sociais.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-04-mao-de-obra",
    "paginas": 120,
    "palavras": 21013,
    "ocr_paginas": [],
    "sha1": "bff45ee94814463c549a5eec216c81ac0b359b9e",
    "original": "originais/Volume_04_-_Tomo_02_-_Encargos_Sociais_bff45e.pdf",
-   "tamanho_mb": 1.71
+   "tamanho_mb": 1.71,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "Volume_04_-_Tomo_03_-_Encargos_Complementares_639ec0",
    "titulo": "Volume 04 - Tomo 03 - Encargos Complementares",
    "arquivo": "Volume 04 - Tomo 03 - Encargos Complementares.pdf",
-   "categoria": "Outros",
+   "categoria": "Manual SICRO",
    "pacote": "volume-04-mao-de-obra",
    "paginas": 88,
    "palavras": 17266,
    "ocr_paginas": [],
    "sha1": "639ec089ab75c42e79cc159202596641d4f3bfce",
    "original": "originais/Volume_04_-_Tomo_03_-_Encargos_Complementares_639ec0.pdf",
-   "tamanho_mb": 1.47
+   "tamanho_mb": 1.47,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "PATO_APRESENTACAO_82f042",
+   "titulo": "PATO APRESENTACAO",
+   "arquivo": "PATO_APRESENTACAO.pdf",
+   "categoria": "Apresentação",
+   "pacote": "PATO APRESENTACAO",
+   "paginas": 699,
+   "palavras": 38094,
+   "ocr_paginas": [
+    10,
+    14,
+    15,
+    16,
+    21,
+    52,
+    57,
+    59,
+    63,
+    65,
+    67,
+    69,
+    78,
+    87,
+    89,
+    93,
+    96,
+    99,
+    104,
+    117,
+    120,
+    123,
+    125,
+    127,
+    139,
+    142,
+    145,
+    149,
+    152,
+    155,
+    158,
+    161,
+    163,
+    165,
+    169,
+    185,
+    187,
+    201,
+    209,
+    212,
+    214,
+    217,
+    220,
+    229,
+    259,
+    267,
+    363,
+    365,
+    366,
+    375,
+    384,
+    441,
+    508
+   ],
+   "sha1": "82f042e2c5773bfa832f6e69583dc8c03f00ccb1",
+   "original": null,
+   "tamanho_mb": 10.92,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_com_Errata_1_14e30a",
+   "titulo": "Manual-de-Custos-SICRO V06-Canteiro-Obras com Errata 1",
+   "arquivo": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_com Errata 1.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "Manual-de-Custos V06-Canteiro-Obras com-Errata1",
+   "paginas": 137,
+   "palavras": 30535,
+   "ocr_paginas": [],
+   "sha1": "14e30a678fab533e860fc3e37418233207f161d3",
+   "original": "originais/Manual-de-Custos-SICRO_V06-Canteiro-Obras_com_Errata_1_14e30a.pdf",
+   "tamanho_mb": 3.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_TOMO-2_ed43d0",
+   "titulo": "Manual-de-Custos-SICRO V06-Canteiro-Obras TOMO-2",
+   "arquivo": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_TOMO-2.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "Manual-de-Custos V06-Canteiro-Obras com-Errata1",
+   "paginas": 32,
+   "palavras": 8920,
+   "ocr_paginas": [],
+   "sha1": "ed43d0dfffb6916433135dee2abbe2b002752a6d",
+   "original": "originais/Manual-de-Custos-SICRO_V06-Canteiro-Obras_TOMO-2_ed43d0.pdf",
+   "tamanho_mb": 0.89,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "Errata1_do_Manual-de-Custos-SICRO_V06-Canteiro-Obras_bf6086",
+   "titulo": "Errata1 do Manual-de-Custos-SICRO V06-Canteiro-Obras",
+   "arquivo": "Errata1 do Manual-de-Custos-SICRO_V06-Canteiro-Obras.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "Manual-de-Custos V06-Canteiro-Obras com-Errata1",
+   "paginas": 2,
+   "palavras": 246,
+   "ocr_paginas": [],
+   "sha1": "bf6086525746c56502ffcedba8022c79e0551241",
+   "original": "originais/Errata1_do_Manual-de-Custos-SICRO_V06-Canteiro-Obras_bf6086.pdf",
+   "tamanho_mb": 0.44,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_TOMO-1_6c15b5",
+   "titulo": "Manual-de-Custos-SICRO V06-Canteiro-Obras TOMO-1",
+   "arquivo": "Manual-de-Custos-SICRO_V06-Canteiro-Obras_TOMO-1.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "Manual-de-Custos V06-Canteiro-Obras com-Errata1",
+   "paginas": 266,
+   "palavras": 40244,
+   "ocr_paginas": [],
+   "sha1": "6c15b52ec3efe7fd35242ea05ea53fa15b102651",
+   "original": null,
+   "tamanho_mb": 17.53,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "Volume_07_-_Tomo_01_-_M_dulos_B_sicos_e_Projetos_Tipo_A3_900890",
+   "titulo": "Volume 07 - Tomo 01 - M¢dulos B sicos e Projetos Tipo (A3)",
+   "arquivo": "Volume 07 - Tomo 01 - M¢dulos B sicos e Projetos Tipo (A3).pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "volume-07-canteiros",
+   "paginas": 200,
+   "palavras": 24428,
+   "ocr_paginas": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    86,
+    87,
+    88,
+    89,
+    90,
+    94,
+    95,
+    104,
+    105,
+    106,
+    108,
+    149,
+    150,
+    151,
+    152,
+    153,
+    156,
+    157,
+    158,
+    159,
+    162,
+    169,
+    174,
+    177,
+    178,
+    179,
+    180,
+    183,
+    184,
+    185,
+    186,
+    197
+   ],
+   "sha1": "900890dabc94cdae390a68384714e94b12f71e14",
+   "original": null,
+   "tamanho_mb": 22.1,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "Anexo_06.2017_-_Canteiros_70f51d",
+   "titulo": "Anexo 06.2017 - Canteiros",
+   "arquivo": "Anexo 06.2017 - Canteiros.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "volume-07-canteiros",
+   "paginas": 13,
+   "palavras": 1622,
+   "ocr_paginas": [],
+   "sha1": "70f51df6d31c25d977c346ba25bca16e2f09c36d",
+   "original": "originais/Anexo_06.2017_-_Canteiros_70f51d.pdf",
+   "tamanho_mb": 0.1,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "Volume_07_-_Canteiros_3c2edc",
+   "titulo": "Volume 07 - Canteiros",
+   "arquivo": "Volume 07 - Canteiros.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "volume-07-canteiros",
+   "paginas": 141,
+   "palavras": 30960,
+   "ocr_paginas": [
+    23,
+    27,
+    31,
+    39,
+    45,
+    51,
+    67,
+    73,
+    81
+   ],
+   "sha1": "3c2edc2fd2809e186ceb58dadf5ee1d6499476f6",
+   "original": "originais/Volume_07_-_Canteiros_3c2edc.pdf",
+   "tamanho_mb": 2.44,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "Anexo_01.2023_-_Canteiro_de_Obras_93f616",
+   "titulo": "Anexo 01.2023 - Canteiro de Obras",
+   "arquivo": "Anexo 01.2023 - Canteiro de Obras.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "volume-07-canteiros",
+   "paginas": 24,
+   "palavras": 7614,
+   "ocr_paginas": [
+    2,
+    4
+   ],
+   "sha1": "93f61615b0ede63200afec191f03d9dbe08ae5f7",
+   "original": "originais/Anexo_01.2023_-_Canteiro_de_Obras_93f616.pdf",
+   "tamanho_mb": 0.44,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "Anexo_02.2017_-_Instala_Æo_de_Canteiros_dd1b31",
+   "titulo": "Anexo 02.2017 - Instala‡Æo de Canteiros",
+   "arquivo": "Anexo 02.2017 - Instala‡Æo de Canteiros.pdf",
+   "categoria": "Manual SICRO",
+   "pacote": "volume-07-canteiros",
+   "paginas": 11,
+   "palavras": 679,
+   "ocr_paginas": [],
+   "sha1": "dd1b31ae6c02f45da75ea3d773eebdd02fc157c1",
+   "original": "originais/Anexo_02.2017_-_Instala_Æo_de_Canteiros_dd1b31.pdf",
+   "tamanho_mb": 0.32,
+   "ativo": false,
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "id": "QUANTIDADES_Modelo_511d5b",
+   "titulo": "QUANTIDADES Modelo",
+   "arquivo": "QUANTIDADES_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 125,
+   "ocr_paginas": [],
+   "sha1": "511d5b174a0d7dc0817385692c826cba514e75d5",
+   "original": "originais/QUANTIDADES_Modelo_511d5b.xlsx",
+   "tamanho_mb": 0.42,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "MOB_2025_Modelo_9ad7c0",
+   "titulo": "MOB 2025 Modelo",
+   "arquivo": "MOB_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 250,
+   "ocr_paginas": [],
+   "sha1": "9ad7c019eb5776767d63b314f95237c090f58e87",
+   "original": "originais/MOB_2025_Modelo_9ad7c0.xlsx",
+   "tamanho_mb": 0.47,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "IP_Modelo_8ecdf2",
+   "titulo": "IP Modelo",
+   "arquivo": "IP_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 4589,
+   "ocr_paginas": [],
+   "sha1": "8ecdf220a851bcf33d6168567054036984d056b0",
+   "original": "originais/IP_Modelo_8ecdf2.xlsx",
+   "tamanho_mb": 0.5,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "ICMNP_Modelo_1aee0c",
+   "titulo": "ICMNP Modelo",
+   "arquivo": "ICMNP_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 8779,
+   "ocr_paginas": [],
+   "sha1": "1aee0cf602cf8f11bad4c417f2eb4d2d5c82d8af",
+   "original": "originais/ICMNP_Modelo_1aee0c.xlsx",
+   "tamanho_mb": 0.83,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "DESEMPENHO_Modelo_843db8",
+   "titulo": "DESEMPENHO Modelo",
+   "arquivo": "DESEMPENHO_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 209,
+   "ocr_paginas": [],
+   "sha1": "843db8a690880075729768bcde6eaa2da5b6abb5",
+   "original": "originais/DESEMPENHO_Modelo_843db8.xlsx",
+   "tamanho_mb": 0.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "BDI_Modelo_6df2bd",
+   "titulo": "BDI Modelo",
+   "arquivo": "BDI_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 495,
+   "ocr_paginas": [],
+   "sha1": "6df2bd40958a27c6399609895526eb9d17a246a8",
+   "original": "originais/BDI_Modelo_6df2bd.xlsx",
+   "tamanho_mb": 0.44,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "INVENTARIO_Modelo_f99f49",
+   "titulo": "INVENTARIO Modelo",
+   "arquivo": "INVENTARIO_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 21,
+   "palavras": 3579,
+   "ocr_paginas": [],
+   "sha1": "f99f49d9c64dadb27d1ca9780a5efa511555bd35",
+   "original": "originais/INVENTARIO_Modelo_f99f49.xlsx",
+   "tamanho_mb": 0.53,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "CANT_Construcao_2025_Modelo_842814",
+   "titulo": "CANT Construcao 2025 Modelo",
+   "arquivo": "CANT_Construcao_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 547,
+   "ocr_paginas": [],
+   "sha1": "84281437c02a18f4dcd485996b9af5d387d537e2",
+   "original": "originais/CANT_Construcao_2025_Modelo_842814.xlsx",
+   "tamanho_mb": 0.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "PATO_Modelo_9d3ec0",
+   "titulo": "PATO Modelo",
+   "arquivo": "PATO_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 667,
+   "ocr_paginas": [],
+   "sha1": "9d3ec065ac4c5dc26f1ad139c7d9f56e37067677",
+   "original": "originais/PATO_Modelo_9d3ec0.xlsx",
+   "tamanho_mb": 0.44,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "USINA_2025_Modelo_6639d3",
+   "titulo": "USINA 2025 Modelo",
+   "arquivo": "USINA_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 495,
+   "ocr_paginas": [],
+   "sha1": "6639d3369f8d0fc1b26061c9dd6ce553227d2558",
+   "original": "originais/USINA_2025_Modelo_6639d3.xlsx",
+   "tamanho_mb": 0.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "ADM_Local_2025_Modelo_3ee3a5",
+   "titulo": "ADM Local 2025 Modelo",
+   "arquivo": "ADM_Local_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 1612,
+   "ocr_paginas": [],
+   "sha1": "3ee3a5b82e98f9bbc621266048fee4f77485dac8",
+   "original": "originais/ADM_Local_2025_Modelo_3ee3a5.xlsx",
+   "tamanho_mb": 0.43,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "COTACOES_Modelo_f53d17",
+   "titulo": "COTACOES Modelo",
+   "arquivo": "COTACOES_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 9,
+   "palavras": 73336,
+   "ocr_paginas": [],
+   "sha1": "f53d17d8bce9989e7cfeef606814564993881009",
+   "original": "originais/COTACOES_Modelo_f53d17.xlsx",
+   "tamanho_mb": 0.96,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "FIT_2025_Modelo_7bdaf9",
+   "titulo": "FIT 2025 Modelo",
+   "arquivo": "FIT_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 5,
+   "palavras": 2833,
+   "ocr_paginas": [],
+   "sha1": "7bdaf9eddd25c68b90158e8e5fcff45e3090e822",
+   "original": "originais/FIT_2025_Modelo_7bdaf9.xlsx",
+   "tamanho_mb": 0.45,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "CRONOGRAMA_Modelo_ebf242",
+   "titulo": "CRONOGRAMA Modelo",
+   "arquivo": "CRONOGRAMA_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 126,
+   "ocr_paginas": [],
+   "sha1": "ebf2425063f8d97e1af9ec99adfca8bdea91ec8c",
+   "original": "originais/CRONOGRAMA_Modelo_ebf242.xlsx",
+   "tamanho_mb": 0.42,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "SIN_Modelo_9f3b55",
+   "titulo": "SIN Modelo",
+   "arquivo": "SIN_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 4,
+   "palavras": 930,
+   "ocr_paginas": [],
+   "sha1": "9f3b558651171c24cd31ad640bfa441a4198d0ee",
+   "original": "originais/SIN_Modelo_9f3b55.xlsx",
+   "tamanho_mb": 0.42,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "TRANSP_Modelo_698803",
+   "titulo": "TRANSP Modelo",
+   "arquivo": "TRANSP_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 74,
+   "ocr_paginas": [],
+   "sha1": "698803e4b0cc03151ab08ddceb4d5969ebeeb888",
+   "original": "originais/TRANSP_Modelo_698803.xlsx",
+   "tamanho_mb": 0.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "CURVA_ABC_Modelo_4be49b",
+   "titulo": "CURVA ABC Modelo",
+   "arquivo": "CURVA_ABC_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 174,
+   "ocr_paginas": [],
+   "sha1": "4be49bd0e3f40f0797aedd4d30d9353ab67c75c9",
+   "original": "originais/CURVA_ABC_Modelo_4be49b.xlsx",
+   "tamanho_mb": 0.42,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "CANT_Conteiner_2025_Modelo_525846",
+   "titulo": "CANT Conteiner 2025 Modelo",
+   "arquivo": "CANT_Conteiner_2025_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 1,
+   "palavras": 268,
+   "ocr_paginas": [],
+   "sha1": "52584687dafd721efec5896a37d74ab2cf4f4a20",
+   "original": "originais/CANT_Conteiner_2025_Modelo_525846.xlsx",
+   "tamanho_mb": 0.41,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "MAT_Betum_Modelo_b1b66a",
+   "titulo": "MAT Betum Modelo",
+   "arquivo": "MAT_Betum_Modelo.xlsx",
+   "categoria": "Modelo de planilha",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 550,
+   "ocr_paginas": [],
+   "sha1": "b1b66a5fa62360e629bd326cacfd77ca2ab34dba",
+   "original": "originais/MAT_Betum_Modelo_b1b66a.xlsx",
+   "tamanho_mb": 0.45,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
+  },
+  {
+   "id": "FU_Conteineres_Mobilizacao_7e6d13",
+   "titulo": "FU Conteineres Mobilizacao",
+   "arquivo": "FU_Conteineres_Mobilizacao.xlsx",
+   "categoria": "Outros",
+   "pacote": null,
+   "paginas": 2,
+   "palavras": 987,
+   "ocr_paginas": [],
+   "sha1": "7e6d13a589c7d202cc5933b33d865418eae26ab9",
+   "original": "originais/FU_Conteineres_Mobilizacao_7e6d13.xlsx",
+   "tamanho_mb": 0.02,
+   "ativo": true,
+   "situacao": "referencia",
+   "substituto": null
   }
  ]
 }

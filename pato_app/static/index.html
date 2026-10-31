@@ -228,10 +228,10 @@
           <div class="tabela-rolagem" style="max-height:220px"><table class="tab" id="tabBases"></table></div>
           <h4>Importar nova base (atualização trimestral)</h4>
           <p class="nota">Envie os relatórios do SICRO do estado e mês (relatório analítico de composições e, se houver, os sintéticos
-            de composições, equipamentos, mão de obra e materiais) — .xlsx soltos ou o .zip publicado pelo DNIT. Também aceita uma planilha PATO.</p>
+            de composições, equipamentos, mão de obra e materiais) — .xlsx soltos ou o pacote .zip/.7z publicado pelo DNIT (com e sem desoneração). Também aceita uma planilha PATO.</p>
           <form class="form" id="formBase">
             <div class="campos">
-              <label class="largo">Arquivos <input type="file" name="arquivos" multiple accept=".xlsx,.xlsm,.zip" required data-dica="Selecione um ou vários arquivos (ou o .zip do SICRO)"></label>
+              <label class="largo">Arquivos <input type="file" name="arquivos" multiple accept=".xlsx,.xlsm,.zip,.7z,.rar" required data-dica="Selecione um ou vários arquivos, ou os pacotes .zip/.7z/.rar do SICRO como publicados pelo DNIT"></label>
               <label>Estado (UF) <input name="uf" maxlength="2" placeholder="lido do arquivo" data-dica="Opcional: o sistema lê do relatório (ex.: ABRIL/2026-MT)"></label>
               <label>Data-base (AAAA-MM) <input name="data_base" placeholder="lida do arquivo" data-dica="Opcional: o sistema lê do relatório"></label>
             </div>

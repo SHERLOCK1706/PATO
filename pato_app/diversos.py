@@ -444,3 +444,249 @@ def importar_planilha(caminho: str) -> dict | None:
     finally:
         wv.close()
         wf.close()
+
+
+# ======================================================================================================================
+# SICRO — Manual de Custos de Infraestrutura de Transportes, 2ª edição (2025): Vol. 06 (canteiro), 07 (administração
+# local) e 08 (mobilização), conforme os modelos ADM_Local_2025, CANT_Construcao_2025, USINA_2025 e MOB_2025.
+# ======================================================================================================================
+MODELOS = {"sicro2025": "SICRO — Manual de Custos 2ª edição (2025)", "br158": "Planilha de origem (PATO BR-158/MT)"}
+H_MES = 182.49  # horas por mês (Tf do manejo florestal)
+K3 = dict(pav=0.0008, rp=0.0009, leito=0.0014)  # Vol. 06, Tabela 36
+VEL = dict(caminhao=dict(pav=60.0, rp=50.0, leito=40.0), cavalo=dict(pav=30.0, rp=25.0, leito=20.0))
+MANEJO_PADRAO = ["5501700", "5501701", "4915768", "4915764", "4915765", "4915766", "4915767"]
+
+
+def _mo(cod, q, desc=None):
+    return dict(codigo=cod, quant=q, descricao=desc)
+
+
+def _ve(cod, q, desc=None):
+    return dict(codigo=cod, quant=q, h_prod=44.0, h_improd=138.49, descricao=desc)
+
+
+def padrao_2025(base: dict | None = None) -> dict:
+    """Parâmetros da 2ª edição. Aproveita da planilha de origem o que é do projeto: equipes de laboratório (QE), CMCC,
+    distância aos centros fornecedores, mão de obra de pico, lista e DMT dos equipamentos e a passagem."""
+    b = base or {}
+    adm0, can0, mob0 = b.get("adm") or {}, b.get("canteiro") or {}, b.get("mob") or {}
+    adm = dict(despesas_pct=5.0, casas_ela=2, ela=adm0.get("ela") or [],
+               manejo=[dict(codigo=c) for c in MANEJO_PADRAO], horas_mes=H_MES, parcelas=[
+        dict(chave="fixa", titulo="Parcela fixa", meses="contrato",
+             mao_obra=[_mo("P9819", 0.25, "Engenheiro supervisor"), _mo("P9958", 1, "Motorista de ônibus"),
+                       _mo("P9806", 1, "Auxiliar administrativo"), _mo("P9803", 1, "Almoxarife"), _mo("P9842", 1, "Faxineiro")],
+             veiculos=[_ve("E9093", 0.25, "Veículo leve (engenheiro)"), _ve("E9239", 1, "Miniônibus 30 passageiros"),
+                       _ve("E9093", 1, "Veículo leve (gerência administrativa)")]),
+        dict(chave="vinculada", titulo="Parcela vinculada", meses="contrato",
+             mao_obra=[_mo("P9916", 1, "Encarregado de conservação rodoviária"), _mo("P9875", 2, "Encarregado de turma")],
+             veiculos=[_ve("E9093", 1, "Veículo leve")]),
+        dict(chave="variavel", titulo="Parcela variável — laboratório de asfalto", meses="ela",
+             mao_obra=[_mo("P9858", 1, "Laboratorista"), _mo("P9833", 2, "Auxiliar de laboratório")],
+             veiculos=[_ve("E9125", 1, "Van furgão")]),
+        dict(chave="manejo", titulo="Parcela variável — manejo florestal", meses="manejo",
+             mao_obra=[_mo("P9947", 1, "Técnico florestal")], veiculos=[]),
+        dict(chave="manutencao", titulo="Manutenção do canteiro de obras e acampamentos", meses="contrato-1",
+             mao_obra=[_mo("P9952", 0.1, "Pedreiro"), _mo("P9954", 0.1, "Servente"), _mo("P9953", 0.1, "Eletricista")],
+             veiculos=[], veiculos_horas=[dict(codigo="E9686", horas=5.5, descricao="Caminhão guindauto"),
+                                          dict(codigo="E9669", horas=11.0, descricao="Caminhão tanque 8.000 l"),
+                                          dict(codigo="E9524", horas=5.5, descricao="Motoniveladora")]),
+    ])
+    nmo = _n(can0.get("nmo"))
+    can = dict(mo_pico=round(nmo / 1.33, 4) if nmo else 15.0, k1=0.8, k2=1.11, fead=0.05,
+               dt=dict(pav=_n(can0.get("distancia_km"), 50.0), rp=0.0, leito=0.0), cmcc=dict(can0.get("cmcc") or {}),
+               areas_fixas=[dict(nome="Almoxarifado", area=29.54, feac=0.5), dict(nome="Oficina", area=37.10, feac=0.5),
+                            dict(nome="Guarita", area=5.29, feac=0.7)])
+    usi = dict(codigo_instalacao=(b.get("usina") or {}).get("codigo_instalacao") or "903810",
+               areas=[dict(nome="Laboratório", area=94.36, feac=0.6)], k1=0.8, k2=1.11, fead=0.05)
+    eqs = []
+    for e in mob0.get("equipamentos") or []:
+        auto = (e.get("transporte") or "") == e.get("codigo")
+        eqs.append(dict(codigo=e["codigo"], descricao=e.get("descricao"), quant=e.get("quant"), transporte=e.get("transporte"),
+                        fu=e.get("fu"), dmt=dict(pav=_n(e.get("dmt_pav")), rp=_n(e.get("dmt_npav")), leito=0.0),
+                        k=1.0 if auto else 2.0, pedagio_eixos=0, pedagio_valor=0.0))
+    mob = dict(passagem=mob0.get("passagem"), mes_indice_pesquisa=mob0.get("mes_indice_pesquisa"), fator_ref=mob0.get("fator_ref"),
+               indice=mob0.get("indice") or INDICE_MOB, itinerario=mob0.get("itinerario"), dmt_pessoal=mob0.get("dmt_pessoal"),
+               descanso_carga_h=6.0, descanso_passageiros_h=4.0, tempo_descanso=0.5, equipamentos=eqs)
+    return dict(adm=adm, canteiro=can, usina=usi, mob=mob)
+
+
+def com_2025(d: dict) -> dict:
+    """Dados do projeto com a metodologia da 2ª edição como padrão (mantém os da planilha de origem para a opção 'br158')."""
+    d = dict(d or {})
+    d.setdefault("modelo", "sicro2025")
+    if not d.get("sicro2025"):
+        d["sicro2025"] = padrao_2025(d)
+    return d
+
+
+def _tf(adm: dict, quantidade_fn, producao_fn) -> tuple[float, list[dict]]:
+    linhas, tot = [], 0.0
+    hm = _n(adm.get("horas_mes"), H_MES)
+    for e in adm.get("manejo") or []:
+        q = quantidade_fn(e["codigo"]) if quantidade_fn else None
+        prod = _n(e.get("producao")) or (producao_fn(e["codigo"]) if producao_fn else None)
+        if not q or not prod:
+            linhas.append(dict(e, quantidade=q, producao=prod, tf=0.0))
+            continue
+        v = arred(q / (prod * hm), 2)
+        tot += v
+        linhas.append(dict(e, quantidade=q, producao=prod, tf=v))
+    return round(tot, 2), linhas
+
+
+def calcular_adm_2025(adm: dict, mo_fn, eq_fn, bdi: dict, meses: float, quantidade_fn=None, producao_fn=None) -> dict:
+    casas = int(_n(adm.get("casas_ela"), 2))
+    ela_l, ela = [], 0.0
+    for e in adm.get("ela") or []:
+        q = quantidade_fn(e["codigo"]) if quantidade_fn else None
+        q = _n(e.get("quantidade_ref")) if q is None else q
+        v = arred(q / _n(e.get("qe")), casas) if _n(e.get("qe")) else 0.0
+        ela += v
+        ela_l.append(dict(e, quantidade=q, ela=v))
+    ela = round(ela, casas)
+    tf, tf_l = _tf(adm, quantidade_fn, producao_fn)
+    out = dict(ela=ela, ela_linhas=ela_l, tf=tf, tf_linhas=tf_l, parcelas=[], meses=meses, metodologia="sicro2025")
+    tot = {r: 0.0 for r in REGIMES}
+    for p in adm.get("parcelas") or []:
+        regra = p.get("meses")
+        m = tf if regra == "manejo" else meses_parcela(regra, meses, ela)
+        lp = dict(chave=p.get("chave"), titulo=p.get("titulo"), meses=m, regra=regra, mao_obra=[], veiculos=[], veiculos_horas=[])
+        for reg in REGIMES:
+            smo = sve = 0.0
+            for i, x in enumerate(p.get("mao_obra") or []):
+                pr = mo_fn(x["codigo"], reg)
+                v = trunc(_n(x.get("quant")) * (pr or 0), 2)
+                smo += v
+                (lp["mao_obra"].append(dict(x, preco_SD=pr, total_SD=v)) if reg == "SD" else lp["mao_obra"][i].update(preco_CD=pr, total_CD=v))
+            for i, x in enumerate(p.get("veiculos") or []):
+                op, imp = eq_fn(x["codigo"], reg) or (None, None)
+                v = (_n(x.get("h_prod")) * (op or 0) + _n(x.get("h_improd")) * (imp or 0)) * _n(x.get("quant"))
+                sve += v
+                (lp["veiculos"].append(dict(x, chp_SD=op, chi_SD=imp, total_SD=v)) if reg == "SD" else lp["veiculos"][i].update(chp_CD=op, chi_CD=imp, total_CD=v))
+            for i, x in enumerate(p.get("veiculos_horas") or []):
+                op, _imp = eq_fn(x["codigo"], reg) or (None, None)
+                v = (op or 0) * _n(x.get("horas"))  # equipamento por hora produtiva no mês (Tabela 48)
+                sve += v
+                (lp["veiculos_horas"].append(dict(x, chp_SD=op, total_SD=v)) if reg == "SD" else lp["veiculos_horas"][i].update(chp_CD=op, total_CD=v))
+            lp[f"mo_mes_{reg}"], lp[f"veic_mes_{reg}"] = round(smo, 2), sve
+            lp[f"total_{reg}"] = trunc((round(smo, 2) + sve) * m, 2)  # mão de obra + veículos × meses (resumo do modelo)
+            tot[reg] += lp[f"total_{reg}"]
+        out["parcelas"].append(lp)
+    pct = _n(adm.get("despesas_pct"), 5.0)
+    for reg in REGIMES:
+        sub = round(tot[reg], 2)
+        desp = trunc(sub * pct / 100, 2)
+        custo = round(sub + desp, 2)
+        preco = trunc(custo * (1 + bdi[reg]), 2)
+        out[reg] = dict(subtotal=sub, despesas=desp, custo=custo, bdi=bdi[reg], preco=preco, mensal=trunc(preco / meses, 2) if meses else None)
+    out["despesas_pct"] = pct
+    return out
+
+
+def _func_2025(adm: dict) -> dict:
+    s = {}
+    for p in adm.get("parcelas") or []:
+        k = "variavel" if p.get("chave") in ("variavel", "manejo") else p.get("chave")
+        s[k] = s.get(k, 0.0) + sum(_n(x.get("quant")) for x in p.get("mao_obra") or [])
+    return dict(fixa=s.get("fixa", 0.0), vinculada=s.get("vinculada", 0.0), variavel=s.get("variavel", 0.0))
+
+
+def k3_2025(dt: dict) -> float:
+    return 1 + sum(K3[k] * _n((dt or {}).get(k)) for k in K3)
+
+
+def calcular_canteiro_2025(c: dict, adm: dict, bdi: dict) -> dict:
+    f = _func_2025(adm)
+    nmo = 1.33 * _n(c.get("mo_pico"))
+    npf, npv = f["fixa"], f["variavel"]
+    nmax = trunc(nmo + f["fixa"] + f["vinculada"] + f["variavel"], 2)
+    areas = [dict(nome="Escritório e seção técnica", formula="57,95 + 4,50 × NPF", area=57.95 + 4.5 * npf, feac=0.7),
+             dict(nome="Refeitório e cozinha", formula="1,55 × (50% × NMAX)", area=1.55 * 0.5 * nmax, feac=0.7),
+             dict(nome="Alojamentos", formula="3,11 × 50% × (NMO + NPV)", area=3.11 * 0.5 * (nmo + npv), feac=0.7),
+             dict(nome="Banheiros e vestiário", formula="0,77 × (NMO + NPV)", area=0.77 * (nmo + npv), feac=0.7)]
+    areas += [dict(x, formula="área de referência", area=_n(x.get("area")), feac=_n(x.get("feac"), 0.5)) for x in c.get("areas_fixas") or []]
+    for a in areas:
+        a["equivalente"] = trunc(a["area"] * a["feac"], 2)
+    ac = round(sum(a["equivalente"] for a in areas), 2)
+    kk = (_n(c.get("k1"), 0.8), _n(c.get("k2"), 1.11), k3_2025(c.get("dt")))
+    out = dict(funcionarios=dict(f, nmo=nmo, nmax=nmax, mo_pico=_n(c.get("mo_pico"))), areas=areas, ac=ac, ad=ac, k1=kk[0], k2=kk[1],
+               k3=kk[2], fead=_n(c.get("fead"), 0.05), dt=c.get("dt"), metodologia="sicro2025")
+    for reg in REGIMES:
+        cmcc = _n((c.get("cmcc") or {}).get(reg))
+        cco = (kk[0] * kk[1] * kk[2] * ac + ac * out["fead"]) * cmcc
+        out[reg] = dict(cmcc=cmcc, custo=cco, bdi=bdi[reg], preco=trunc(cco * (1 + bdi[reg]), 2))
+    return out
+
+
+def calcular_usina_2025(u: dict, can: dict, custo_comp_fn, bdi: dict) -> dict:
+    areas = [dict(x, area=_n(x.get("area")), feac=_n(x.get("feac"), 0.6)) for x in u.get("areas") or []]
+    for a in areas:
+        a["equivalente"] = trunc(a["area"] * a["feac"], 2)
+    ac = round(sum(a["equivalente"] for a in areas), 2)
+    kk = (_n(u.get("k1"), 0.8), _n(u.get("k2"), 1.11), k3_2025(can.get("dt")))
+    cod = u.get("codigo_instalacao")
+    out = dict(areas=areas, ac=ac, ad=ac, k1=kk[0], k2=kk[1], k3=kk[2], fead=_n(u.get("fead"), 0.05), codigo_instalacao=cod,
+               metodologia="sicro2025")
+    for reg in REGIMES:
+        cmcc = _n((can.get("cmcc") or {}).get(reg))
+        inst = custo_comp_fn(cod, reg) if cod and custo_comp_fn else None
+        inst = inst or 0.0
+        cco = (kk[0] * kk[1] * kk[2] * ac + ac * out["fead"]) * cmcc + inst
+        out[reg] = dict(cmcc=cmcc, instalacao=inst, custo=cco, bdi=bdi[reg], preco=trunc(cco * (1 + bdi[reg]), 2))
+    return out
+
+
+def _tipo_transportador(desc: str | None) -> str:
+    t = nz.sem_acento(desc or "").upper()
+    return "cavalo" if re.search(r"CAVALO|DOLLY|SEMIRREBOQUE|PRANCHA|REBOQUE", t) else "caminhao"
+
+
+def calcular_mob_2025(m: dict, adm: dict, can: dict, eq_fn, desc_fn, bdi: dict, indice_fn=None, data_base=None) -> dict:
+    fator, ind = fator_passagem(m, indice_fn, data_base)
+    passagem = trunc(_n(m.get("passagem")) * (1 + fator), 2)
+    f = _func_2025(adm)
+    nmo = 1.33 * _n(can.get("mo_pico"))
+    nadm = f["fixa"] + f["vinculada"] + 0.5 * f["variavel"]  # NADM = NPF-V + 50% × NPV
+    ntf = 0.5 * nmo + nadm  # NTF = 50% × NMO + NADM
+    n_pes = math.ceil(ntf - 1e-9) if m.get("pessoal_qtd") in (None, "") else _n(m.get("pessoal_qtd"))
+    td_c, td_h = _n(m.get("descanso_carga_h"), 6.0), _n(m.get("tempo_descanso"), 0.5)
+    linhas, soma = [], {r: 0.0 for r in REGIMES}
+    for x in m.get("equipamentos") or []:
+        tr = x.get("transporte")
+        tipo = _tipo_transportador(desc_fn(tr) if desc_fn and tr else "")
+        dmt = x.get("dmt") or {}
+        tv = sum(_n(dmt.get(k)) / VEL[tipo][k] for k in ("pav", "rp", "leito"))
+        td = math.floor(tv / td_c) * td_h if td_c else 0.0
+        cc = _n(x.get("pedagio_eixos")) * _n(x.get("pedagio_valor"))
+        fu, q, k = _n(x.get("fu"), 1.0), _n(x.get("quant")), _n(x.get("k"), 1.0)
+        ln = dict(x, tipo_transportador=tipo, tempo_viagem=tv, tempo_descanso=td, pedagio=cc, dmt_total=sum(_n(dmt.get(k_)) for k_ in dmt))
+        for reg in REGIMES:
+            op, imp = (eq_fn(tr, reg) if tr else None) or (None, None)
+            v = q * fu * (((tv * (op or 0)) + td * (imp or 0)) * k + cc)  # CMD = QT × FU × {[(TV×CHP + TD×CHI) × K] + CC}
+            ln[f"chp_{reg}"], ln[f"chi_{reg}"], ln[f"custo_{reg}"] = op, imp, round(v, 2)
+            soma[reg] += v
+        linhas.append(ln)
+    out = dict(equipamentos=linhas, metodologia="sicro2025",
+               pessoal=dict(quantidade=n_pes, ntf=ntf, nadm=nadm, nmo=nmo, passagem=passagem, fator=fator, **ind,
+                            itinerario=m.get("itinerario"), dmt=m.get("dmt_pessoal")))
+    for reg in REGIMES:
+        pes = trunc(n_pes * passagem, 2)
+        custo = round(pes + soma[reg], 2)
+        out[reg] = dict(pessoal=pes, equipamentos=round(soma[reg], 2), custo=custo, bdi=bdi[reg], preco=trunc(custo * (1 + bdi[reg]), 2))
+    return out
+
+
+def calcular_2025(d: dict, *, mo_fn, eq_fn, custo_comp_fn, bdi, meses, quantidade_fn=None, producao_fn=None, desc_fn=None,
+                  indice_fn=None, data_base=None) -> dict:
+    s = d.get("sicro2025") or padrao_2025(d)
+    adm = calcular_adm_2025(s["adm"], mo_fn, eq_fn, bdi, meses, quantidade_fn, producao_fn)
+    can = calcular_canteiro_2025(s["canteiro"], s["adm"], bdi)
+    usi = calcular_usina_2025(s["usina"], s["canteiro"], custo_comp_fn, bdi)
+    mob = calcular_mob_2025(s["mob"], s["adm"], s["canteiro"], eq_fn, desc_fn, bdi, indice_fn, data_base)
+    precos = {c: {} for c in CODIGOS}
+    for reg in REGIMES:
+        precos["ADM"][reg] = adm[reg]["mensal"]
+        precos["CAN"][reg] = can[reg]["preco"]
+        precos["INSIND"][reg] = usi[reg]["preco"]
+        precos["MOB"][reg] = precos["DESMOB"][reg] = mob[reg]["preco"]
+    return dict(adm=adm, canteiro=can, usina=usi, mob=mob, precos=precos, metodologia="sicro2025")

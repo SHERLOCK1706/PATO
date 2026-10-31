@@ -143,58 +143,58 @@ MISTURA BETUMINOSA | USINA | PISTA | 0 | 0 | #DIV/0! | 0 | #DIV/0! | MISTURA BET
 FATOR DE INTERFERÊNCIA DE TRÁFEGO - FIT
 CÓDIGO | SERVIÇO | INSUMO | ORIGEM | DESTINO | OCULTAR | KM-i | KM-f | SENTIDO | DMTp (km) | INTERF. | DMTr (km) | DMTu (km) | VMDf | Atraso A1 (s) | Atraso A2 (s) | FIT
 CONSERVAÇÃO RODOVIÁRIA
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
-38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
-38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
-38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
-38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
-44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0!
-85 | 38 | SIM | #REF! | 0 | #DIV/0![aba TRANSPORTES]
+=E7&F7&G7 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E8&F8&G8 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E9&F9&G9 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E10&F10&G10 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E11&F11&G11 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E12&F12&G12 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E13&F13&G13 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E14&F14&G14 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E15&F15&G15 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E16&F16&G16 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E17&F17&G17 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E18&F18&G18 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E19&F19&G19 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E20&F20&G20 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E21&F21&G21 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E22&F22&G22 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E23&F23&G23 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E24&F24&G24 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E25&F25&G25 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E26&F26&G26 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E27&F27&G27 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E28&F28&G28 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E29&F29&G29 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E30&F30&G30 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E31&F31&G31 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E32&F32&G32 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E33&F33&G33 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E34&F34&G34 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E35&F35&G35 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E36&F36&G36 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E37&F37&G37 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E38&F38&G38 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E39&F39&G39 | 38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+=E40&F40&G40 | 44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E41&F41&G41 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E42&F42&G42 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E43&F43&G43 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E44&F44&G44 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E45&F45&G45 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E46&F46&G46 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E47&F47&G47 | 44.3 | 23.011882352941175 | SIM | #REF! | 0 | #DIV/0!
+=E48&F48&G48 | 38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+=E49&F49&G49 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E50&F50&G50 | 85 | 42.5 | SIM | #REF! | 0 | #DIV/0!
+=E51&F51&G51 | 38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+=E52&F52&G52 | 38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+=E53&F53&G53 | 38 | 59.48823529411764 | SIM | #REF! | 0 | #DIV/0!
+=E54&F54&G54 | 44.3 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E55&F55&G55 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E56&F56&G56 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E57&F57&G57 | 85 | 38 | SIM | #REF! | 0 | #DIV/0!
+=E58&F58&G58 | 85 | 38 | SIM | #REF! | 0 | #DIV/0![aba TRANSPORTES]
 QUADRO DE TRANSPORTES
 CÓDIGO | DISCRIMINAÇÃO | MATERIAL | QUANT. ANUAL | UNID. | F. UTILIZAÇÃO | PESO | REFERÊNCIA | OCULTAR | DMT | FIT | MOMENTO
 TRABALHO | FATOR | UND. | (t) | Origem | Destino | (km) | TRANSP.(tkm)

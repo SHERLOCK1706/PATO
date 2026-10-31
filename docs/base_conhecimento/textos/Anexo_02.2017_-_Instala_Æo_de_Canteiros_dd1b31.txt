@@ -1,0 +1,177 @@
+  DNIT
+topografia
+
+
+0,0
+,0,
+
+
+
+
+     MANUAL DE CUSTOS DE
+INFRAESTRUTURA DE TRANSPORTES
+
+                   ANEXO 02/2017
+
+
+
+
+     MINISTÉRIO DOS TRANSPORTES, PORTOS E AVIAÇÃO CIVIL
+ DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                       DIRETORIA GERAL
+                     DIRETORIA EXECUTIVA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+
+                               1
+      Manual de Custos de Infraestrutura de Transportes
+                      Anexo 02/2017
+
+
+
+
+1. REVISÃO E INSERÇÃO DE EXPRESSÕES MATEMÁTICAS
+
+
+
+
+                             1
+                    Manual de Custos de Infraestrutura de Transportes
+                                    Anexo 02/2017
+
+
+1. REVISÃO E INSERÇÃO DE EXPRESSÕES MATEMÁTICAS
+
+1.1. Descrição da ocorrência
+
+As expressões matemáticas utilizadas para o cálculo dos custos de instalação do
+canteiro de obras, constantes do Manual de Custos de Infraestrutura de Transportes,
+Volume 07 - Canteiros de obras, item 9.11, páginas 109 e 110, carecem de
+adequações paramétricas e indiciais. Além do mencionado apontamento, faz-se
+necessário a inclusão de equação para o cálculo dos custos associados à implantação
+das instalações industriais.
+
+1.2. Ação Resultante
+
+Os parâmetros e índices integrantes das referidas expressões matemáticas serão
+ajustados, bem como procedida a inclusão da equação para o cálculo dos custos das
+instalações industriais no Manual de Custos de Infraestrutura de Transportes, Volume
+07 - Canteiros de Obras, cuja divulgação será realizada no endereço eletrônico do
+SICRO sob forma do Anexo 02/2017.
+
+
+
+
+                                           3
+Manual de Custos de Infraestrutura de Transportes
+                Anexo 02/2017
+
+
+
+
+                                    2. CONTEÚDO REVISADO
+
+
+
+
+                       5
+                     Manual de Custos de Infraestrutura de Transportes
+                                     Anexo 02/2017
+
+
+9.11. Cálculo do Custo de Instalação dos Canteiros de Obras
+
+A metodologia proposta para definição dos custos de referência para instalação dos
+canteiros de obras no padrão provisório e permanente pode ser sintetizada por meio
+da seguinte equação matemática:
+
+
+                                n
+
+     CCO = [(k1 x k2 x k3 x ∑ AC x FEAC ) + ∑ AD x FEAD ] x CMCC + CII
+                               i=1
+
+
+
+onde:
+
+CCO representa o custo total do canteiro de obras e de suas instalações industriais;
+k1 representa o fator de ajuste do padrão de construção (provisório ou permanente);
+k2 representa o fator de mobiliário;
+k3 representa o fator de ajuste da distância do canteiro aos centros fornecedores;
+AC representa as áreas das edificações consideradas cobertas e com vedação lateral;
+FEAC representa os fatores de equivalência de áreas cobertas das instalações;
+AD representa as áreas descobertas ou sem vedação lateral;
+FEAD representa o fator de equivalência de áreas descobertas;
+CII representa o custo específico das instalações industriais;
+CMCC representa o custo médio da construção civil por metro quadrado, calculado
+pelo IBGE e divulgado pelo SINAPI mensalmente e por unidade da federação.
+
+Para o cálculo dos custos das Instalações Industriais aplica-se expressão a seguir:
+
+
+
+                           n                         n                    n
+                                       1
+          CII = k2 x k3 (∑ ACI x CMCC + x ∑ QCIi x CCi) + ∑ CDI
+                                       5
+                         i=1                        i=1                  i=1
+
+
+
+onde:
+
+CII representa o custo específico das instalações industriais;
+k2 representa o fator de mobiliário;
+k3 representa o fator de ajuste da distância do canteiro aos centros fornecedores;
+ACI representa as áreas das edificações consideradas cobertas e com vedação lateral
+das instalações industriais;
+CMCC representa o custo médio da construção civil por metro quadrado, calculado
+QCIi representa a quantidade de contêineres propostas nas instalações industriais;
+CCi representa o custo dos contêineres;
+CDI representa os custos associados ao tratamento das áreas e às montagens das
+instalações industriais.
+
+
+
+
+                                            7
+                     Manual de Custos de Infraestrutura de Transportes
+                                     Anexo 02/2017
+
+
+Para as instalações de canteiro com previsão exclusiva de contêineres, como as obras
+de conservação rodoviária, deve-se aplicar a seguinte equação matemática:
+
+
+                                 n
+                1
+         CCC = [ x (k2 x k3 x ∑ QCi x CCi) + AT x FEAT x CMCC ] x CP
+                5
+                                i=1
+
+
+
+onde:
+
+CCC representa o custo total do canteiro de obras exclusivamente em contêiner;
+k2 representa o fator de mobiliário;
+k3 representa o fator de ajuste da distância do canteiro aos centros fornecedores;
+QCi representa a quantidade de contêineres propostas no canteiro;
+CCi representa o custo dos contêineres;
+AT representa a área total do terreno;
+FEAT representa o fator de equivalência de áreas totais;
+CMCC representa o custo médio da construção civil por metro quadrado;
+CP representa o coeficiente de proporcionalidade (adimensional).
+
+
+
+
+                                            8
+Manual de Custos de Infraestrutura de Transportes
+        Volume 02 - Pesquisa de Preços
+
+
+
+
+                       9

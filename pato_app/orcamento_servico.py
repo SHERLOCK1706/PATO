@@ -181,9 +181,23 @@ class Orcamentos:
         from . import binomio as bn_
         cfg = self.sv.custos.config(pid)
         meses = round(self.anos_contrato(pid, d) * 12, 6)
-        return dv.calcular(dd, mo_fn=mo, eq_fn=eq, custo_comp_fn=custo_comp, bdi=self.bdi_exato(pid), meses=meses,
-                           quantidade_fn=quantidade_fn, indice_fn=lambda n, m: bn_.indice(ind, n, m),
-                           data_base=bn_.mes(cfg.get("data_base")))
+        dd = dv.com_2025(dd)
+        if dd["modelo"] == "sicro2025":
+            m_sd = motores.get("SD")
+
+            def prod(cod):
+                c = (m_sd.comps.get(cp._cod(cod)) if m_sd else None) or {}
+                return nz.numero(c.get("producao"))
+
+            def desc(cod):
+                t = (m_sd._preco_tabela("EQ", cod) if m_sd else None) or {}
+                return t.get("descricao")
+            return dv.calcular_2025(dd, mo_fn=mo, eq_fn=eq, custo_comp_fn=custo_comp, bdi=self.bdi_exato(pid), meses=meses,
+                                    quantidade_fn=quantidade_fn, producao_fn=prod, desc_fn=desc,
+                                    indice_fn=lambda n, m: bn_.indice(ind, n, m), data_base=bn_.mes(cfg.get("data_base")))
+        return dict(dv.calcular(dd, mo_fn=mo, eq_fn=eq, custo_comp_fn=custo_comp, bdi=self.bdi_exato(pid), meses=meses,
+                                quantidade_fn=quantidade_fn, indice_fn=lambda n, m: bn_.indice(ind, n, m),
+                                data_base=bn_.mes(cfg.get("data_base"))), metodologia="br158")
 
     def _precificador(self, pid: int, d: dict, diversos_fn=None):
         motores = self._motores(pid)
@@ -296,25 +310,28 @@ class Orcamentos:
         if not dd:
             from .servico import MODELO_PADRAO
             dd = dv.importar_planilha(str(MODELO_PADRAO)) or {}
-            dd["modelo"] = True
+            dd["origem_modelo"] = True
         p = self.sv.projeto(pid)
         ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
-        calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, None, self._producao_fn(pid),
-                          self.anos_contrato(pid, d), None)
+        calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, self._ip_calc(pid), self._producao_fn(pid),
+                          self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
+        dd = dv.com_2025(dd)
         r = self._calc_diversos(pid, d, self._motores(pid), self._qtd_contrato_fn(calc, d), dd)
         inf = d.get("precos_informados") or {}
         ref = {c: {reg: (inf.get(c) or {}).get(reg) for reg in ("SD", "CD")} for c in dv.CODIGOS}
-        return dict(dados=dd, resultado=r, referencia=ref, codigos=dv.CODIGOS,
+        return dict(dados=dd, resultado=r, referencia=ref, codigos=dv.CODIGOS, modelos=dv.MODELOS, modelo=dd["modelo"],
                     fixos=[c for c in dv.CODIGOS if (inf.get(c) or {}).get("fixo")], gravado=bool(self.db.dados_projeto(pid, "diversos")))
 
     def salvar_diversos(self, pid: int, dados: dict | None = None, fixos: list | None = None) -> dict:
         from . import diversos as dv
         if dados is not None:
-            atual = self.db.dados_projeto(pid, "diversos") or {}
-            for k in ("adm", "canteiro", "usina", "mob"):
+            atual = dv.com_2025(self.db.dados_projeto(pid, "diversos") or {})
+            for k in ("adm", "canteiro", "usina", "mob", "sicro2025"):
                 if k in dados:
                     atual[k] = dados[k]
-            atual.pop("modelo", None)
+            if dados.get("modelo") in dv.MODELOS:
+                atual["modelo"] = dados["modelo"]
+            atual.pop("origem_modelo", None)
             self.db.gravar_dados_projeto(pid, "diversos", atual)
         if fixos is not None:
             d = self.dados(pid)

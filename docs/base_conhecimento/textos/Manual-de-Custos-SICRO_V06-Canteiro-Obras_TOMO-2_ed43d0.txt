@@ -1,0 +1,1321 @@
+        DNIT
+                MANUAL DE CUSTOS DE
+        INFRAESTRUTURA DE TRANSPORTES
+
+                          VOLUME 06
+                    CANTEIRO DE OBRAS
+
+
+                           TOMO 2
+       SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO
+
+
+                            2ª Edição
+                           BRASÍLIA-DF
+                               2025
+
+
+
+                 MINISTÉRIO DOS TRANSPORTES
+   DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+MINISTRO DOS TRANSPORTES
+José Renan Vasconcelos Calheiros Filho
+
+
+DIRETOR-GERAL DO DNIT
+Fabricio de Oliveira Galvão
+
+
+DIRETOR DE PLANEJAMENTO E PESQUISA
+Luiz Guilherme Rodrigues de Mello
+
+
+COORDENADOR-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+Caio Saravy Cardoso
+       MANUAL DE CUSTOS DE
+ INFRAESTRUTURA DE TRANSPORTES
+
+               VOLUME 06
+           CANTEIRO DE OBRAS
+
+
+                TOMO 2
+SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO
+SEGUNDA EDIÇÃO – Brasília, 2025
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 490/2021-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 647/2024-00)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Caio Saravy Cardoso
+Eng.º Rodrigo Bezerra Marques
+Eng.º Renan Abreu de Moura
+Eng.º Pedro Henrique Dantas de Medeiros
+Eng.º Gleydson Viegas de Oliveira
+
+PRIMEIRA EDIÇÃO – Brasília, 2017
+
+EQUIPE TÉCNICA:
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 327/2012-00)
+Revisão e Atualização: Fundação Getulio Vargas (Contrato nº 462/2015-00)
+
+COMISSÃO DE SUPERVISÃO:
+MSc. Eng.º Luiz Heleno Albuquerque Filho
+Eng.º Paulo Moreira Neto
+Eng.º Caio Saravy Cardoso
+
+PRIMEIRAS VERSÕES
+EQUIPE TÉCNICA (SINCTRAN e Sicro 3):
+Elaboração: CENTRAN
+Eng.º Osvaldo Rezende Mendes (Coordenador)
+
+COMISSÃO DE SUPERVISÃO:
+Eng.º Silvio Mourão (Brasília)
+Eng.º Luciano Gerk (Rio de Janeiro)
+
+
+
+                   Brasil. Departamento Nacional de Infraestrutura de Transportes.
+            Diretoria-Geral. Diretoria de Planejamento e Pesquisa. Coordenação-Geral de
+                                Custos de Infraestrutura de Transportes.
+
+           Manual de Custos de Infraestrutura de Transportes – Volume 06 – Canteiro de
+           Obras – Tomo 2 - Serviços e quantidades dos projetos-tipo. 2ª Edição – Brasília
+                                         – DF, 2025. 30p.
+
+            1. Rodovias - Construções - Estimativa e Custo - Manuais. 2. Ferrovias - Construções -
+           Estimativa e Custo – Manuais. 3 Aquavias - Construções - Estimativa e Custo – Manuais.
+                                             I. Série. II. Título.
+
+
+Reprodução permitida desde que citado o DNIT como fonte.
+Impresso no Brasil / Printed in Brazil
+                 MINISTÉRIO DOS TRANSPORTES
+  DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES
+                      DIRETORIA-GERAL
+            DIRETORIA DE PLANEJAMENTO E PESQUISA
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+
+
+
+
+            MANUAL DE CUSTOS DE
+  INFRAESTRUTURA DE TRANSPORTES
+
+                       VOLUME 06
+                 CANTEIRO DE OBRAS
+
+
+                         TOMO 2
+SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO
+
+
+
+
+                          2ª Edição
+                           Brasília
+                            2025
+MINISTÉRIO DOS TRANSPORTES – MT
+DEPARTAMENTO NACIONAL DE INFRAESTRUTURA DE TRANSPORTES – DNIT
+DIRETORIA-GERAL – DG
+DIRETORIA DE PLANEJAMENTO E PESQUISA – DPP
+COORDENAÇÃO-GERAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES – CGCIT
+
+
+Setor de Autarquias Norte
+Quadra 03 Lote A, Ed. Núcleo dos Transportes
+CEP: 70040-902 – Brasília – DF
+Telefone: (061) 3315-4700
+E-mail: cgcit.sicro@dnit.gov.br
+
+
+TÍTULO: MANUAL DE CUSTOS DE INFRAESTRUTURA DE TRANSPORTES
+            Volume 06 - Canteiro de Obras
+            Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+Segunda Edição: 2025
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 490/2021-00 e 647/2024-00
+Aprovado pela Diretoria Colegiada do DNIT em 21/10/2025 (Relato nº 191/2025)
+Processo SEI nº 50600.027352/2017-78
+
+
+Primeira Edição: 2017
+Elaboração ou Revisão: CGCIT/DPP/DNIT e FGV
+Contrato: 327/2012-00 e 462/2015-00
+Aprovado pela Diretoria Colegiada do DNIT em 25/04/2017 (Relato nº 38/2017)
+Processo SEI nº 50600.027352/2017-78
+
+
+
+
+Impresso no Brasil / Printed in Brazil
+                                 APRESENTAÇÃO
+
+O Sistema de Custos Referenciais de Obras (SICRO) constitui a síntese de todo o
+desenvolvimento técnico das áreas de custos do extinto Departamento Nacional de
+Estradas e Rodagem (DNER) e do Departamento Nacional de Infraestrutura de
+Transportes (DNIT) na formação de preços referenciais de obras públicas.
+
+Em consonância à história dessas importantes instituições, o Manual de Custos de
+Infraestrutura de Transportes preserva o conhecimento e a experiência acumulados
+desde a edição das primeiras tabelas referenciais de preços, passando pelo
+pioneirismo na conceituação e aplicação das composições de custos, até as mais
+recentes diferenciações de serviços e modais de transportes.
+
+A implantação do SICRO, ocorrida em abril de 2017, fora acompanhada da divulgação
+dos relatórios sintéticos e analíticos valorados de composições de custos e insumos,
+juntamente com a publicação da 1ª edição do Manual de Custos de Infraestrutura de
+Transportes e das Produções de Equipes Mecânicas dos serviços.
+
+A constante evolução dos procedimentos executivos de serviços de engenharia,
+influenciados pelo aprimoramento tecnológico dos equipamentos e materiais
+empregados na execução das obras, demanda a manutenção de um processo
+contínuo de revisão do sistema de custos, de forma que esse ofereça soluções
+técnicas eficientes e aderentes às melhores práticas.
+
+Nesse sentido, com o objetivo de expandir a abordagem das premissas e
+metodologias já aplicadas, incorporando elementos técnicos e ampliando seu
+arcabouço conceitual, tornou-se premente a publicação da 2ª edição do Manual de
+Custos de Infraestrutura de Transportes. Os conteúdos encontram-se dispostos
+conforme a seguinte estrutura:
+
+   ▪ manual de custos;
+   ▪ memoriais de cálculo - cadernos técnicos e produções de equipes mecânicas;
+   ▪   caderno de aplicação.
+
+O manual de custos reúne as premissas e metodologias empregadas no
+desenvolvimento dos custos referenciais constantes do SICRO, assim como as
+diretrizes para orçamentação de obras de infraestrutura de transportes.
+Os cadernos técnicos apresentam as condições de contorno adotadas nos cálculos
+dos consumos dos materiais e da produção horária dos serviços, suas respectivas
+memórias e as produções de equipes mecânicas.
+
+O caderno de aplicação, por sua vez, consiste em um guia prático para elaboração de
+orçamentos baseados no SICRO, estabelecendo diretrizes básicas para tomada de
+decisão e exemplos práticos que ilustram o emprego das diferentes ferramentas que
+integram o sistema.
+
+Ao todo, o Manual de Custos de Infraestrutura de Transportes - 2ª edição está dividido
+em oito volumes:
+
+    ▪ Volume 01 - Metodologia e Conceitos;
+    ▪ Volume 02 - Mão de Obra;
+    ▪ Volume 03 - Preços Referenciais;
+    ▪ Volume 04 - Fator de Influência de Chuvas (FIC):
+      − Tomo 1 - Fator de Intensidade de Chuvas (ND);
+      − Tomo 2 - Etapas de execução da obra.
+    ▪ Volume 05 - Fator de Interferência de Tráfego (FIT);
+    ▪ Volume 06 - Canteiro de Obras:
+      − Tomo 1 - Módulos básico e projetos-tipo;
+      − Tomo 2 - Serviços e quantidades dos projetos-tipo.
+    ▪ Volume 07 - Administração Local;
+    ▪ Volume 08 - Mobilização e Desmobilização.
+
+A utilização do SICRO, sempre acompanhada do Manual de Custos de Infraestrutura
+de Transportes, pode produzir orçamentos para obras de infraestrutura de transportes
+que incorporam as nuances dos casos concretos, ao tempo que observam a eficiência
+associada à otimização dos recursos envolvidos característica da engenharia.
+
+                             CAIO SARAVY CARDOSO
+             Coordenador-Geral de Custos de Infraestrutura de Transportes
+                                                 LISTA DE TABELAS
+
+Tabela 1 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de pequeno porte (padrão provisório - barracões em tábuas de pinho) ... 13
+Tabela 2 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de pequeno porte (padrão permanente - alvenaria de tijolos) .................. 14
+Tabela 3 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de médio porte (padrão provisório - barracões em tábuas) ...................... 15
+Tabela 4 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de médio porte (padrão permanente - alvenaria de tijolos) ...................... 16
+Tabela 5 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de grande porte (padrão provisório - barracões em tábuas) ..................... 17
+Tabela 6 - Serviços e quantidades - canteiro-tipo de construção ou restauração
+rodoviária de grande porte (padrão permanente - alvenaria de tijolos) ..................... 18
+Tabela 7 - Serviços e quantidades - canteiro-tipo de conservação rodoviária rotineira
+.................................................................................................................................. 19
+Tabela 8 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de
+pequeno porte (padrão provisório - barracões em tábuas e contêiner) ..................... 20
+Tabela 9 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de
+pequeno porte (padrão permanente - alvenaria de tijolos e contêiner) ..................... 21
+Tabela 10 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de médio
+porte (padrão provisório - barracões em tábuas) ...................................................... 22
+Tabela 11 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de médio
+porte (padrão permanente - alvenaria de tijolos) ....................................................... 23
+Tabela 12 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de
+grande porte (padrão provisório - barracões em tábuas) .......................................... 23
+Tabela 13 - Serviços e quantidades - canteiro-tipo das obras de arte especiais de
+grande porte (padrão permanente - alvenaria de tijolos)........................................... 24
+Tabela 14 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+pequeno porte (bitola métrica)................................................................................... 25
+Tabela 15 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+médio porte (bitola métrica) ....................................................................................... 26
+Tabela 16 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+grande porte (bitola métrica) ..................................................................................... 27
+Tabela 17 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+pequeno porte (bitola larga) ...................................................................................... 27
+Tabela 18 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+médio porte (bitola larga) .......................................................................................... 28
+Tabela 19 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de
+grande porte (bitola larga) ......................................................................................... 29
+Tabela 20 - Serviços e quantidades - canteiro-tipo de intervenções pontuais .......... 29
+                                               SUMÁRIO
+
+1       INTRODUÇÃO ........................................................................................... 11
+
+2       SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO ............................ 13
+
+2.1     Obras rodoviárias ..................................................................................... 13
+
+2.1.1   Construção ou restauração rodoviária ........................................................ 13
+
+2.1.2   Conservação rodoviária .............................................................................. 19
+
+2.2     Obras de arte especiais ........................................................................... 20
+
+2.3     Obras ferroviárias ..................................................................................... 25
+
+2.4     Obras de intervenções pontuais ............................................................. 29
+     Manual de Custos de Infraestrutura de Transportes
+Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+
+                                                     1          INTRODUÇÃO
+
+
+
+
+                             10                                 DNIT/DPP/CGCIT
+                     Manual de Custos de Infraestrutura de Transportes
+                Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+1       INTRODUÇÃO
+
+Para calibrar o modelo estabelecido no Manual de Custos de Infraestrutura de
+Transportes - Volume 06: Canteiro de Obras - 2ª Edição, atenuando possíveis
+distorções, e ajustar a remuneração de elementos essenciais aos canteiros-tipo, foram
+estabelecidos fatores que são aplicados nas equações finais de custos do canteiro.
+
+Para calcular os fatores, foram elaborados orçamentos referenciais considerando os
+serviços associados à construção das instalações e estruturas do canteiro, de acordo
+com a metodologia do Sistema de Custos Referenciais de Obras (SICRO).
+
+A partir desses orçamentos, foi possível realizar um estudo comparativo entre os
+custos desenvolvidos e os valores nacionais de construção por metro quadrado,
+conforme divulgado pelo Instituto Brasileiro de Geografia e Estatística (IBGE) no
+âmbito do Sistema Nacional de Pesquisa de Custos e Índices da Construção Civil
+(SINAPI).
+
+Este documento fornece detalhes sobre os serviços e quantidades contemplados nos
+projetos-tipo que serviram de base para a elaboração dos orçamentos referenciais de
+todas as instalações fixas.
+
+Essas instalações foram diferenciadas nos seguintes padrões de construção:
+
+    ▪ provisórias: construção de barracão em tábuas de pinho ou contêineres;
+    ▪ permanentes: construção de barracão em alvenaria de tijolos ou contêineres.
+
+As instalações móveis dos canteiros-tipo foram definidas em contêineres ou vagões
+adaptados, no caso específico de obras ferroviárias.
+
+
+
+
+                                             11                                 DNIT/DPP/CGCIT
+     Manual de Custos de Infraestrutura de Transportes
+Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+
+       2       SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO
+
+
+
+
+                             12                                 DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                    Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+2 SERVIÇOS E QUANTIDADES DOS PROJETOS-TIPO
+
+A seguir, são apresentadas as tabelas com os serviços e suas quantidades
+considerados nos canteiros-tipo de obras rodoviárias, ferroviárias, obras de arte
+especiais e de intervenções pontuais. As tabelas incluem uma segmentação que
+identifica os padrões de construção específicos para cada categoria.
+
+2.1      Obras rodoviárias
+
+As subseções a seguir apresentam o detalhamento dos serviços os canteiros-tipo de
+obras rodoviárias.
+
+2.1.1    Construção ou restauração rodoviária
+
+As Tabelas 1 a 6 apresentam os serviços e quantidades para os canteiros-tipo de
+construção ou restauração rodoviária, diferenciados em função dos padrões provisório
+e permanente.
+
+ Tabela 1 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+              pequeno porte (padrão provisório - barracões em tábuas de pinho)
+                             Descrição dos serviços                                 Unidade   Quantidade
+Placa de obra                                                                         m²        12,50
+Limpeza mecanizada da camada vegetal                                                  m2       5.757,87
+Expurgo de jazida                                                                     m3       1.439,47
+Regularização do subleito                                                             m2       5.757,87
+Reforço do subleito com material de jazida                                            m3       1.151,57
+Lastro de brita comercial - espalhamento mecânico                                     m3        115,16
+Locação da obra                                                                       m2       1.919,27
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m         345,48
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un        120,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                      m         280,00
+a cada 50 m
+Escritório e seção técnica em tábua de pinho                                          m2        136,20
+Almoxarifado em barracão em tábua de pinho                                            m2        104,88
+Depósito de cimento em barracão em tábua de pinho                                     m2        93,45
+Central de armaduras em barracão em compensado de 10 mm                               m2        84,79
+Refeitório e cozinha em barracão em tábua de pinho                                    m2        129,87
+Alojamentos barracão em tábua de pinho                                                m2        217,66
+Banheiros e vestiários em barracão em tábua de pinho                                  m2        124,50
+Oficina em barracão em tábua de pinho                                                 m2        215,14
+Ambulatório em barracão em tábua de pinho                                             m2        62,95
+
+
+
+                                                      13                                   DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                             Tabela 1 (conclusão)
+                             Descrição dos serviços                                 Unidade    Quantidade
+Rampa de lavagem - inclusive demolição                                                 un         1,00
+Sistema separador de água e óleo, inclusive demolição                                  un         1,00
+Equipe de topografia em barracão em tábua de pinho                                    m2         42,08
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                       un         1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em barracão em tábua de pinho                                              m2        111,30
+Área de recreação em barracão em tábua de pinho                                        m2        125,72
+Guarita em barracão em tábua de pinho                                                  m2         6,10
+Residências em barracão em tábua de pinho                                              m2        198,58
+
+Demolição manual de construções provisórias de madeira - sem reaproveitamento          m2       1.653,22
+
+Demolição manual de construções provisórias de madeira, sem fechamento lateral,
+                                                                                       m2        266,05
+sem reaproveitamento
+
+
+Tabela 2 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+                  pequeno porte (padrão permanente - alvenaria de tijolos)
+                             Descrição dos serviços                                 Unidade   Quantidade
+Placa de obra                                                                         m²         12,50
+Limpeza mecanizada da camada vegetal                                                  m2        5.757,87
+Expurgo de jazida                                                                     m3        1.439,47
+Regularização do subleito                                                             m2        5.757,87
+Reforço do subleito com material de jazida                                            m3        1.151,57
+Lastro de brita comercial - espalhamento mecânico                                     m3        115,16
+Locação da obra                                                                       m2        1.919,27
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m         345,48
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un        120,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                      m         280,00
+a cada 50 m
+Escritório e seção técnica em alvenaria de tijolos 10 x 10 x 20 cm                    m2        136,20
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                  m2        104,88
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                           m2         93,45
+Central de armaduras em barracão em compensado 10 mm                                  m2         84,79
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                          m2        129,87
+Alojamentos em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        217,66
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                        m2        124,50
+Oficina em alvenaria de tijolos 10 x 10 x 20 cm                                       m2        215,14
+Ambulatório em alvenaria de tijolos 10 x 10 x 20 cm                                   m2         62,95
+Rampa de lavagem - inclusive demolição                                                un         1,00
+Sistema separador de água e óleo, inclusive demolição                                 un         1,00
+Equipe de topografia em alvenaria de tijolos 10 x 10 x 20 cm                          m2         42,08
+Posto de combustível - com reaproveitamento de 2 vezes do tanque/bomba/cobertura
+                                                                                      un         1,00
+- inclusive demolição
+
+
+
+                                                       14                                   DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                             Tabela 2 (conclusão)
+                             Descrição dos serviços                                 Unidade   Quantidade
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        111,30
+Área de recreação em alvenaria de tijolos 10 x 10 x 20 cm                             m2        125,72
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                       m2         6,10
+Residências em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        198,58
+
+
+
+Tabela 3 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+                   médio porte (padrão provisório - barracões em tábuas)
+                             Descrição dos serviços                                 Unidade   Quantidade
+Placa de obra                                                                         m²        12,50
+Limpeza mecanizada da camada vegetal                                                  m2       7.945,55
+Expurgo de jazida                                                                     m3       1.986,39
+Regularização do subleito                                                             m2       7.945,55
+Reforço do subleito com material de jazida                                            m3       1.589,11
+Lastro de brita comercial - espalhamento mecânico                                     m3        143,02
+Locação da obra                                                                       m2       3.178,22
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m         408,77
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un        123,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                      m         344,00
+a cada 50 m
+Escritório e seção técnica em tábua de pinho                                          m2        272,10
+Almoxarifado em barracão em tábua de pinho                                            m2        152,66
+Depósito de cimento em barracão em tábua de pinho                                     m2        121,00
+Central de armaduras em barracão em tábua de pinho                                    m2        115,19
+Refeitório e cozinha em barracão em tábua de pinho                                    m2        218,42
+Alojamentos barracão em tábua de pinho                                                m2        435,32
+Banheiros e vestiários em barracão em tábua de pinho                                  m2        196,71
+Oficina em barracão em tábua de pinho                                                 m2        337,86
+Ambulatório em barracão em tábua de pinho                                             m2        111,82
+Rampa de lavagem - inclusive demolição                                                un         1,00
+Sistema separador de água e óleo, inclusive demolição                                 un         1,00
+Equipe de topografia em barracão em tábua de pinho                                    m2        42,08
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                      un         1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em barracão em tábua de pinho                                             m2        140,72
+Área de recreação em barracão em tábua de pinho                                       m2        198,91
+Guarita em barracão em tábua de pinho                                                 m2         6,10
+Residências em barracão em tábua de pinho                                             m2        397,16
+Demolição manual de construções provisórias de madeira - sem reaproveitamento         m2       2.746,05
+Demolição manual de construções provisórias de madeira, sem fechamento
+                                                                                      m2        432,17
+lateral, sem reaproveitamento
+
+
+
+                                                      15                                   DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+Tabela 4 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+                   médio porte (padrão permanente - alvenaria de tijolos)
+                             Descrição dos serviços                                 Unidade   Quantidade
+Placa de obra                                                                         m²        12,50
+Limpeza mecanizada da camada vegetal                                                  m2       7.945,55
+Expurgo de jazida                                                                     m3       1.986,39
+Regularização do subleito                                                             m2       7.945,55
+Reforço do subleito com material de jazida                                            m3       1.589,11
+Lastro de brita comercial - espalhamento mecânico                                     m3        143,02
+Locação da obra                                                                       m2       3.178,22
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m         408,77
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un        123,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                      m         344,00
+a cada 50 m
+Escritório e seção técnica em alvenaria de tijolos 10 x 10 x 20 cm                    m2        272,10
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                  m2        152,66
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                           m2        121,00
+Central de armaduras em barracão em compensado de 10 mm                               m2        115,19
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                          m2        218,42
+Alojamentos em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        435,32
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                        m2        196,71
+Oficina em alvenaria de tijolos 10 x 10 x 20 cm                                       m2        337,86
+Ambulatório em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        111,82
+Rampa de lavagem - inclusive demolição                                                un         1,00
+Sistema separador de água e óleo, inclusive demolição                                 un         1,00
+Equipe de topografia em alvenaria de tijolos 10 x 10 x 20 cm                          m2        42,08
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                      un         1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        140,72
+Área de recreação em alvenaria de tijolos 10 x 10 x 20 cm                             m2        198,91
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                       m2         6,10
+Residências em alvenaria de tijolos 10 x 10 x 20 cm                                   m2        397,16
+
+
+
+
+                                                       16                                  DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                    Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+Tabela 5 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+                   grande porte (padrão provisório - barracões em tábuas)
+                            Descrição dos serviços                                  Unidade   Quantidade
+Placa de obra                                                                         m²        12,50
+Limpeza mecanizada da camada vegetal                                                  m2      11.307,82
+Expurgo de jazida                                                                     m3       2.826,96
+Regularização do subleito                                                             m2      11.307,82
+Reforço do subleito com material de jazida                                            m3       2.261,56
+Lastro de brita comercial - espalhamento mecânico                                     m3        186,58
+Locação da obra                                                                       m2       5.088,52
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m         548,07
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un        139,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                      m         488,00
+a cada 50 m
+Escritório e seção técnica em tábua de pinho                                          m2        574,72
+Almoxarifado em barracão em tábua de pinho                                            m2        239,17
+Depósito de cimento em barracão em tábua de pinho                                     m2        196,71
+Central de armaduras em barracão em tábua de pinho                                    m2        202,61
+Refeitório e cozinha em barracão em tábua de pinho                                    m2        396,58
+Alojamentos barracão em tábua de pinho                                                m2        652,98
+Banheiros e vestiários em barracão em tábua de pinho                                  m2        295,18
+Oficina em barracão em tábua de pinho                                                 m2        612,55
+Ambulatório em barracão em tábua de pinho                                             m2        161,96
+Rampa de lavagem - inclusive demolição                                                un         1,00
+Sistema separador de água e óleo, inclusive demolição                                 un         1,00
+Equipe de topografia em barracão em tábua de pinho                                    m2        62,99
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                      un         1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em barracão em tábua de pinho                                             m2        193,59
+Área de recreação em barracão em tábua de pinho                                       m2        295,84
+Guarita em barracão em tábua de pinho                                                 m2         9,11
+Residências em barracão em tábua de pinho                                             m2        595,74
+Demolição manual de construções provisórias de madeira - sem reaproveitamento         m2       4.489,73
+Demolição manual de construções provisórias de madeira, sem fechamento lateral,
+                                                                                      m2        589,79
+sem reaproveitamento
+
+
+
+
+                                                      17                                   DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+Tabela 6 - Serviços e quantidades - canteiro-tipo de construção ou restauração rodoviária de
+                   grande porte (padrão permanente - alvenaria de tijolos)
+                             Descrição dos serviços                                 Unidade     Quantidade
+Placa de obra                                                                         m²           12,50
+Limpeza mecanizada da camada vegetal                                                  m2         11.307,82
+Expurgo de jazida                                                                     m3          2.826,96
+Regularização do subleito                                                             m2         11.307,82
+Reforço do subleito com material de jazida                                            m3          2.261,56
+Lastro de brita comercial - espalhamento mecânico                                     m3          186,58
+Locação da obra                                                                       m2          5.088,52
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira           m           548,07
+Plantio de muda de arbusto com altura até 50,0 cm em cova de 0,40 x 0,40 x 0,40 m     un          139,00
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador a
+                                                                                      m           488,00
+cada 50 m
+Escritório e seção técnica em alvenaria de tijolos 10 x 10 x 20 cm                    m2          574,72
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                  m2          239,17
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                           m2          196,71
+Central de armaduras em barracão em compensado 10 mm                                  m2          202,61
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                          m2          396,58
+Alojamentos em alvenaria de tijolos 10 x 10 x 20 cm                                   m2          652,98
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                        m2          295,18
+Oficina em alvenaria de tijolos 10 x 10 x 20 cm                                       m2          612,55
+Ambulatório em alvenaria de tijolos 10 x 10 x 20 cm                                   m2          161,96
+Rampa de lavagem - inclusive demolição                                                un           1,00
+Sistema separador de água e óleo, inclusive demolição                                 un           1,00
+Equipe de topografia em alvenaria de tijolos 10 x 10 x 20 cm                          m2           62,99
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                      un           1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                   m2          193,59
+Área de recreação em alvenaria de tijolos 10 x 10 x 20 cm                             m2          295,84
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                       m2           9,11
+Residências em alvenaria de tijolos 10 x 10 x 20 cm                                   m2          595,74
+
+
+
+
+                                                        18                                    DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+2.1.2     Conservação rodoviária
+
+A Tabela 7 apresenta os serviços e quantidades elaborados para o canteiro-tipo de
+obras de conservação rodoviária rotineira em pista simples.
+
+      Tabela 7 - Serviços e quantidades - canteiro-tipo de conservação rodoviária rotineira
+                             Descrição dos serviços                                   Unidade     Quantidade
+Placa de obra                                                                           m²          12,50
+Limpeza mecanizada da camada vegetal                                                    m2          595,92
+Expurgo de jazida                                                                       m3          148,98
+Regularização do subleito                                                               m2          595,92
+Reforço do subleito com material de jazida                                              m3          119,18
+Lastro de brita comercial - espalhamento mecânico                                       m3           8,72
+Locação da obra                                                                         m2          303,52
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e
+                                                                                        m           157,00
+esticador a cada 50 m
+Escritório e seção técnica (Área = 29,74 m2)
+Contêiner de 2 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                        un           1,00
+lavabo - inclusive montagem e desmontagem
+Almoxarifado (Área = 29,57 m²)
+Contêiner de 1 TEU duplo (6,06 m x 4,88 m) com janela - inclusive montagem e
+                                                                                        un           1,00
+desmontagem
+Depósito de cimento (Área = 29,57 m²)
+Contêiner de 1 TEU duplo (6,06 m x 4,88 m) com janela - inclusive montagem e
+                                                                                        un           1,00
+desmontagem
+Refeitório e cozinha (Área = 59,14 m²)
+Contêiner de 1 TEU duplo (6,06 m x 4,88 m) com janela e 2 lavabos - inclusive
+                                                                                        un           1,00
+montagem e desmontagem
+Contêiner de 1 TEU duplo (6,06 m x 4,88 m) com janela - inclusive montagem e
+                                                                                        un           1,00
+desmontagem
+Alojamento (Área = 44,36 m²)
+Contêiner de 1 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                        un           3,00
+banheiro - inclusive montagem e desmontagem
+Banheiro e vestiário (Área = 14,79 m²)
+Contêiner de 1 TEU com 2 banheiros - inclusive montagem e desmontagem                   un           1,00
+Oficina (Área = 44,37 m²)
+Contêiner de 1 TEU com janela - inclusive montagem e desmontagem                        un           1,00
+Contêiner de 1 TEU com janela - inclusive montagem e desmontagem                        un           1,00
+Contêiner de 1 TEU com janela e 1 banheiro - inclusive montagem e desmontagem           un           1,00
+Ambulatório (Área = 29,74 m²)
+Contêiner de 2 TEU revestimento térmico (ar-condicionado) com janela e 1 lavabo
+                                                                                        un           1,00
+- inclusive montagem e desmontagem
+Posto de combustível - com reaproveitamento de 2 vezes do tanque/bomba/cobertura
+                                                                                        un           1,00
+- inclusive demolição
+Guarita (Área = 7,44 m²)
+Contêiner de 1/2 de 1 TEU, com 3 janelas, para guarita - inclusive montagem e
+                                                                                        un           1,00
+desmontagem
+Residência (Área = 14,79 m²)
+Contêiner de 1 TEU revestimento térmico (ar-condicionado) com janela e 1 banheiro -
+                                                                                        un           1,00
+inclusive montagem e desmontagem
+
+
+
+
+                                                       19                                       DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+
+2.2      Obras de arte especiais
+
+As Tabelas 8 a 13 apresentam os serviços e quantidades para os canteiros-tipo de
+construção ou recuperação, reforço e alargamento de obras de arte especiais,
+diferenciados em função do porte e dos padrões de construção provisório e
+permanente.
+
+Tabela 8 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de pequeno porte
+                    (padrão provisório - barracões em tábuas e contêiner)
+                                Descrição dos serviços                          Unidade   Quantidade
+ Placa de obra                                                                    m²        12,50
+ Limpeza mecanizada da camada vegetal                                             m2       3.135,77
+ Expurgo de jazida                                                                m3        783,94
+ Regularização do subleito                                                        m2       3.135,77
+ Reforço do subleito com material de jazida                                       m3        627,15
+ Lastro de brita comercial - espalhamento mecânico                                m3        61,15
+ Locação da obra                                                                  m2       1.097,52
+ Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira      m         256,75
+ Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e
+                                                                                  m         282,00
+ esticador a cada 50 m
+ Escritório (Área = 14,79 m²)
+ Contêiner de 1 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                  un         1,00
+ banheiro - inclusive montagem e desmontagem
+ Seção técnica (Área = 29,74 m²)
+ Contêiner de 2 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                  un         1,00
+ lavabo - inclusive montagem e desmontagem
+ Almoxarifado em barracão em tábua de pinho                                       m2        89,89
+ Depósito de cimento em barracão em tábua de pinho                                m2        172,38
+ Central de armaduras em barracão em compensado 10 mm                             m2        84,79
+ Refeitório e cozinha em barracão em tábua de pinho                               m2        88,65
+ Alojamentos em barracão em tábua de pinho                                        m2        109,62
+ Banheiros e vestiários em barracão em tábua de pinho                             m2        62,91
+ Oficina em barracão em tábua de pinho                                            m2        18,10
+ Ambulatório (Área = 29,74 m²)
+ Contêiner de 2 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                  un         1,00
+ lavabo - inclusive montagem e desmontagem
+ Equipe de topografia (Área = 14,79 m²)
+ Contêiner de 1 TEU com janela - inclusive montagem e desmontagem                 un         1,00
+ Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                  un         1,00
+ tanque/bomba/cobertura - inclusive demolição
+ Carpintaria em barracão em tábua de pinho                                        m2        111,30
+
+
+
+
+                                                      20                               DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                    Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                          Tabela 8 (conclusão)
+                               Descrição dos serviços                               Unidade   Quantidade
+Recreação (Área = 11,17 m²)
+Contêiner 3/4 de 1 TEU com janela e 1 banheiro - inclusive montagem e desmontagem     un         1,00
+Guarita em barracão em tábua de pinho                                                 m2         6,10
+Demolição manual de construções provisórias de madeira - sem reaproveitamento         m2        626,34
+Demolição manual de construções provisórias de madeira, sem fechamento
+                                                                                      m2        370,43
+lateral, sem reaproveitamento
+
+
+Tabela 9 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de pequeno porte
+                    (padrão permanente - alvenaria de tijolos e contêiner)
+                               Descrição dos serviços                               Unidade   Quantidade
+Placa de obra                                                                         m²         12,50
+Limpeza mecanizada da camada vegetal                                                  m2        3.135,77
+Expurgo de jazida                                                                     m3        783,94
+Regularização do subleito                                                             m2        3.135,77
+Reforço do subleito com material de jazida                                            m3        627,15
+Lastro de brita comercial - espalhamento mecânico                                     m3         61,15
+Locação da obra                                                                       m2        1.097,52
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira            m        256,75
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e
+                                                                                       m        282,00
+esticador a cada 50 m
+Portão em madeira - altura de 1,5 m e largura de 3,5 m                                m2         8,40
+Escritório (Área = 14,79 m²)
+Contêiner de 1 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                      un         1,00
+banheiro - inclusive montagem e desmontagem
+Seção técnica (Área = 29,79 m²)
+Contêiner de 2 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                      un         1,00
+lavabo - inclusive montagem e desmontagem
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                  m2         89,89
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                           m2        172,38
+Central de armaduras em barracão em compensado 10 mm                                  m2         84,79
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                          m2         88,65
+Alojamentos barracão em alvenaria de tijolos 10 x 10 x 20 cm                          m2        109,62
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                        m2         62,91
+Oficina em barracão em alvenaria de tijolos 10 x 10 x 20 cm                           m2         18,10
+Ambulatório (Área = 29,75 m²)
+Contêiner de 2 TEU com revestimento térmico (ar-condicionado) com janela e 1
+                                                                                      un         1,00
+lavabo - inclusive montagem e desmontagem
+Equipe de topografia (Área = 14,79 m²)
+Contêiner de 1 TEU com janela - inclusive montagem e desmontagem                      un         1,00
+
+
+
+
+                                                    21                                     DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                    Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                             Tabela 9 (conclusão)
+                             Descrição dos serviços                               Unidade   Quantidade
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                    un          1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                 m2        111,30
+Recreação (Área = 11,18 m²)
+Contêiner de 1 TEU com janela e 1 banheiro - inclusive montagem e desmontagem       un          1,00
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                     m2          6,10
+
+
+ Tabela 10 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de médio porte
+                          (padrão provisório - barracões em tábuas)
+                             Descrição dos serviços                               Unidade   Quantidade
+Placa de obra                                                                       m²         12,50
+Limpeza mecanizada da camada vegetal                                                m2        5.566,25
+Expurgo de jazida                                                                   m3        1.391,63
+Regularização do subleito                                                           m2        5.566,25
+Reforço do subleito com material de jazida                                          m3        1.113,25
+Lastro de brita comercial - espalhamento mecânico                                   m3        108,54
+Locação da obra                                                                     m2        1.948,19
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira         m         460,73
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                    m         326,00
+a cada 50 m
+Escritório e seção técnica em tábua de pinho                                        m²        126,48
+Almoxarifado em barracão em tábua de pinho                                          m²        125,76
+Depósito de cimento em barracão em tábua de pinho                                   m²        245,36
+Central de armaduras em barracão em compensado 10 mm                                m²        202,61
+Refeitório e cozinha em barracão em tábua de pinho                                  m²        130,10
+Alojamentos em barracão em tábua de pinho                                           m²        137,14
+Banheiros e vestiários em barracão em tábua de pinho                                m²         93,70
+Oficina em barracão em tábua de pinho                                               m²         98,98
+Ambulatório em barracão em tábua de pinho                                           m²         47,50
+Rampa de lavagem - inclusive demolição                                              un         1,00
+Sistema separador de água e óleo, inclusive demolição                               un         1,00
+Equipe de topografia em barracão em tábua de pinho                                  m²         40,63
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                    un         1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em barracão em tábua de pinho                                           m²        193,48
+Área de recreação em barracão em tábua de pinho                                     m²        104,80
+Guarita em barracão em tábua de pinho                                               m²         6,10
+Demolição manual de construções provisórias de madeira - sem reaproveitamento       m2        1.552,64
+Demolição manual de construções provisórias de madeira, sem fechamento lateral,
+                                                                                    m2        283,01
+sem reaproveitamento
+
+
+
+
+                                                      22                                 DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+ Tabela 11 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de médio porte
+                          (padrão permanente - alvenaria de tijolos)
+                              Descrição dos serviços                                 Unidade    Quantidade
+Placa de obra                                                                          m²         12,50
+Limpeza mecanizada da camada vegetal                                                   m2        5.566,25
+Expurgo de jazida                                                                      m3        1.391,63
+Regularização do subleito                                                              m2        5.566,25
+Reforço do subleito com material de jazida                                             m3        1.113,25
+Lastro de brita comercial - espalhamento mecânico                                      m3         108,54
+Locação da obra                                                                        m2        1.948,19
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira            m          455,61
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                       m          326,00
+a cada 50 m
+Escritório e seção técnica de tijolos 10 x 10 x 20 cm                                  m²         126,48
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                   m²         125,76
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                            m²         245,36
+Central de armaduras em barracão em compensado 10 mm                                   m²         202,61
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                           m²         130,10
+Alojamentos em alvenaria de tijolos 10 x 10 x 20 cm                                    m²         137,14
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                         m²         93,70
+Oficina em alvenaria de tijolos 10 x 10 x 20 cm                                        m²         98,98
+Ambulatório em alvenaria de tijolos 10 x 10 x 20 cm                                    m²         47,50
+Rampa de lavagem - inclusive demolição                                                 un          1,00
+Sistema separador de água e óleo, inclusive demolição                                  un          1,00
+Equipe de topografia em alvenaria de tijolos 10 x 10 x 20 cm                           m²         40,63
+Posto de combustível - com reaproveitamento de 2 vezes do tanque/bomba/cobertura -
+                                                                                       un          1,00
+inclusive demolição
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                    m²         193,48
+Área de recreação em alvenaria de tijolos 10 x 10 x 20 cm                              m²         104,80
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                        m²          6,10
+
+
+Tabela 12 - Serviços e quantidades - canteiro-tipo de obras de arte especiais de grande porte
+                         (padrão provisório - barracões em tábuas)
+                              Descrição dos serviços                                 Unidade   Quantidade
+Placa de obra                                                                          m²         12,50
+Limpeza mecanizada da camada vegetal                                                   m2        7.114,31
+Expurgo de jazida                                                                      m3        1.778,58
+Regularização do subleito                                                              m2        7.114,31
+Reforço do subleito com material de jazida                                             m3        1.422,86
+Lastro de brita comercial - espalhamento mecânico                                      m3         138,73
+Locação da obra                                                                        m2        2.490,01
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira            m          497,71
+
+
+
+
+                                                        23                                  DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                             Tabela 12 (conclusão)
+                             Descrição dos serviços                               Unidade   Quantidade
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                    m         380,00
+a cada 50 m
+Escritório e seção técnica em tábua de pinho                                        m²        145,91
+Almoxarifado em barracão em tábua de pinho                                          m²        152,66
+Depósito de cimento em barracão em tábua de pinho                                   m²        344,76
+Central de armaduras em barracão em compensado 10 mm                                m²        264,83
+Refeitório e cozinha em barracão em tábua de pinho                                  m²        182,31
+Alojamentos em barracão em tábua de pinho                                           m²        217,66
+Banheiros e vestiários em barracão em tábua de pinho                                m²        124,50
+Oficina em barracão em tábua de pinho                                               m²        179,41
+Ambulatório em barracão em tábua de pinho                                           m²         62,95
+Rampa de lavagem - inclusive demolição                                              un          1,00
+Sistema separador de água e óleo, inclusive demolição                               un          1,00
+Equipe de topografia em barracão em tábua de pinho                                  m²         62,99
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                    un          1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em barracão em tábua de pinho                                           m²        289,04
+Área de recreação em barracão em tábua de pinho                                     m²        167,54
+Guarita em barracão em tábua de pinho                                               m²          9,11
+Demolição manual de construções provisórias de madeira - sem reaproveitamento       m2        2.203,68
+Demolição manual de construções provisórias de madeira, sem fechamento lateral,
+                                                                                    m2        553,87
+sem reaproveitamento
+
+
+Tabela 13 - Serviços e quantidades - canteiro-tipo das obras de arte especiais de grande porte
+                          (padrão permanente - alvenaria de tijolos)
+                             Descrição dos serviços                               Unidade   Quantidade
+Placa de obra                                                                       m²         12,50
+Limpeza mecanizada da camada vegetal                                                m2        7.114,31
+Expurgo de jazida                                                                   m3        1.778,58
+Regularização do subleito                                                           m2        7.114,31
+Reforço do subleito com material de jazida                                          m3        1.422,86
+Lastro de brita comercial - espalhamento mecânico                                   m3        138,73
+Locação da obra                                                                     m2        2.490,01
+Meio-fio de concreto - MFC 06 - areia e brita comerciais - fôrma de madeira         m         497,71
+Cerca com 4 fios de arame farpado e mourão de madeira a cada 2,5 m e esticador
+                                                                                    m         380,00
+a cada 50 m
+Escritório e seção técnica em alvenaria de tijolos 10 x 10 x 20 cm                  m²        145,91
+Almoxarifado em alvenaria de tijolos 10 x 10 x 20 cm                                m²        152,66
+Depósito de cimento em alvenaria de tijolos 10 x 10 x 20 cm                         m²        344,76
+Central de armaduras em barracão em compensado 10 mm                                m²        264,83
+Refeitório e cozinha em alvenaria de tijolos 10 x 10 x 20 cm                        m²        182,31
+
+
+
+                                                       24                                DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                           Tabela 13 (conclusão)
+                             Descrição dos serviços                                     Unidade     Quantidade
+Alojamentos em alvenaria de tijolos 10 x 10 x 20 cm                                       m²          217,66
+Banheiros e vestiários em alvenaria de tijolos 10 x 10 x 20 cm                            m²          124,50
+Oficina em alvenaria de tijolos 10 x 10 x 20 cm                                           m²          179,41
+Ambulatório em alvenaria de tijolos 10 x 10 x 20 cm                                       m²          62,95
+Rampa de lavagem - inclusive demolição                                                    un           1,00
+Sistema separador de água e óleo, inclusive demolição                                     un           1,00
+Equipe de topografia em alvenaria de tijolos 10 x 10 x 20 cm                              m²          62,99
+Posto de combustível - com reaproveitamento de 2 vezes do
+                                                                                          un           1,00
+tanque/bomba/cobertura - inclusive demolição
+Carpintaria em alvenaria de tijolos 10 x 10 x 20 cm                                       m²          289,04
+Área de recreação em alvenaria de tijolos 10 x 10 x 20 cm                                 m²          167,54
+Guarita em alvenaria de tijolos 10 x 10 x 20 cm                                           m²           9,11
+
+
+
+2.3      Obras ferroviárias
+
+As Tabelas 14 a 19 apresentam os serviços e quantidades para os canteiros-tipo das
+obras ferroviárias, admitindo-se a utilização de vagões de serviços. As obras
+ferroviárias foram ainda diferenciadas em função da bitola da via (métrica ou larga).
+
+Tabela 14 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de pequeno
+                                     porte (bitola métrica)
+                               Descrição dos serviços                                     Unidade Quantidade
+Placa de obra                                                                               m²         12,50
+Vagão fechado                                                                                  h     2.800,0000
+Vagão tanque                                                                                   h     200,0000
+Vagão gôndola                                                                                  h     400,0000
+Trabalhador de via                                                                             h      20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola métrica                     un        0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola métrica                   jg     0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                 un        0,0833
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                            m3        6,0300
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                            km        0,0208
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+Posicionamento mecanizado de trilhos                                                        km        0,0025
+Dormente de madeira, bitola métrica, taxa de dormentação de 1.750 un/km -
+                                                                                            km        0,0025
+posicionamento mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -     km        0,0050
+posicionamento e assentamento manual
+Corte de trilho TR 57 com utilização de equipamento leve                                    un        0,0600
+
+
+
+                                                      25                                       DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                          Tabela 14 (conclusão)
+                               Descrição dos serviços                                     Unidade Quantidade
+Furação de trilho TR 57 com utilização de equipamento leve                                  un      0,1800
+Aluguel de contêiner com 15 m²                                                              mês     1,0000
+Escavação, carga e transporte de material de 1ª categoria - DMT de 50 m                     m³      1,3333
+Compactação de aterros a 100% do Proctor normal                                             m³      1,3333
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                            m³      1,3333
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                       un      0,0833
+
+
+
+ Tabela 15 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de médio
+                                    porte (bitola métrica)
+                              Descrição dos serviços                                      Unidade Quantidade
+Placa de obra                                                                               m²       12,50
+Vagão fechado                                                                               h     4.600,0000
+Vagão tanque                                                                                h      200,0000
+Vagão gôndola                                                                               h      400,0000
+Trabalhador de via                                                                          h       20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola métrica                     un      0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola métrica                jg      0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                 un      0,0833
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                            m3      9,5850
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                            km      0,0333
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+Posicionamento mecanizado de trilhos                                                        km      0,0040
+Dormente de madeira, bitola métrica, taxa de dormentação de 1.750 un/km -
+                                                                                            km      0,0040
+posicionamento mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -     km      0,0080
+posicionamento e assentamento manual
+Corte de trilho TR 57 com utilização de equipamento leve                                    un      0,0600
+Furação de trilho TR 57 com utilização de equipamento Leve                                  un      0,1800
+Aluguel de contêiner com 15 m²                                                             mês      1,0000
+Escavação, carga e transporte de material de 1ª - DMT de 50 m                               m³      2,5000
+Compactação de aterros a 100% do Proctor normal                                             m³      2,5000
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                            m³      2,5000
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                       un      0,0833
+
+
+
+
+                                                      26                                     DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+Tabela 16 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de grande
+                                    porte (bitola métrica)
+                               Descrição dos serviços                                      Unidade Quantidade
+Placa de obra                                                                                m²       12,50
+Vagão fechado                                                                                h     6.400,0000
+Vagão tanque                                                                                 h      200,0000
+Vagão gôndola                                                                                h      400,0000
+Trabalhador de via                                                                           h       20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola métrica                      un      0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola métrica                 jg      0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                  un      0,0100
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                             m3      13,1400
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                             km      0,0458
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+Posicionamento mecanizado de trilhos                                                         km      0,0055
+Dormente de madeira, bitola métrica, taxa de dormentação de 1.750 un/km - posicionamento
+                                                                                             km      0,0055
+mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -      km      0,0110
+posicionamento e assentamento manual
+Corte de trilho TR 57 com utilização de equipamento leve                                     un      0,0600
+Furação de trilho TR 57 com utilização de equipamento Leve                                   un      0,1800
+Aluguel de contêiner com 15 m²                                                              mês      1,0000
+Escavação, carga e transporte de material de 1ª categoria - DMT de 50 m                      m³      3,3333
+Compactação de aterros a 100% do Proctor normal                                              m³      3,3333
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                             m³      3,3333
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                        un      0,0833
+
+
+Tabela 17 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de pequeno
+                                      porte (bitola larga)
+                               Descrição dos serviços                                      Unidade Quantidade
+Placa de obra                                                                                m²       12,50
+Vagão fechado                                                                                h     2.800,0000
+Vagão tanque                                                                                 h      200,0000
+Vagão gôndola                                                                                h      400,0000
+Trabalhador de via                                                                           h       20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola larga                        un      0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola                         jg      0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                  un      0,0100
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                             m3      6,0510
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                             km      0,0208
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+
+
+
+                                                       27                                     DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                          Tabela 17 (conclusão)
+                              Descrição dos serviços                                      Unidade Quantidade
+Posicionamento mecanizado de trilhos                                                        km      0,0025
+Dormente de madeira, bitola larga ou mista, taxa de dormentação de 1.750 un/km -
+                                                                                            km      0,0025
+posicionamento mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -     km      0,0050
+posicionamento e assentamento manual
+Corte de trilho TR 57 com utilização de equipamento leve                                    un      0,0600
+Furação de trilho TR 57 com utilização de equipamento Leve                                  un      0,1800
+Aluguel de contêiner com 15 m²                                                             mês      1,0000
+Escavação, carga e transporte de material de 1ª categoria - DMT de 50 m                     m³      1,3333
+Compactação de aterros a 100% do Proctor normal                                             m³      1,3333
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                            m³      1,3333
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                       un      0,0833
+
+
+ Tabela 18 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de médio
+                                      porte (bitola larga)
+                              Descrição dos serviços                                      Unidade Quantidade
+Placa de obra                                                                               m²       12,50
+Vagão fechado                                                                               h     4.600,0000
+Vagão tanque                                                                                h      200,0000
+Vagão gôndola                                                                               h      400,0000
+Trabalhador de via                                                                          h       20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola larga                       un      0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola                        jg      0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                 un      0,0833
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                            m3      9,6100
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                            km      0,0333
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+Posicionamento mecanizado de trilhos                                                        km      0,0040
+Dormente de madeira, bitola larga ou mista, taxa de dormentação de 1.750 un/km -
+                                                                                            km      0,0040
+posicionamento mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -     km      0,0080
+posicionamento e assentamento manual
+Corte de trilho TR57 com utilização de equipamento leve                                     un      0,0600
+Furação de trilho TR 57 com utilização de equipamento Leve                                  un      0,1800
+Aluguel de contêiner com 15 m²                                                             mês      1,0000
+Escavação, carga e transporte de material de 1ª categoria - DMT de 50 m                     m³      2,5000
+Compactação de aterros a 100% do Proctor normal                                             m³      2,5000
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                            m³      2,5000
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                       un      0,0833
+
+
+                                                      28                                     DNIT/DPP/CGCIT
+                          Manual de Custos de Infraestrutura de Transportes
+                     Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+ Tabela 19 - Serviços e quantidades - canteiro-tipo em vagões de obras ferroviárias de grande
+                                      porte (bitola larga)
+                              Descrição dos serviços                                      Unidade Quantidade
+Placa de obra                                                                               m²         12,50
+Vagão fechado                                                                               h        6.400,0000
+Vagão tanque                                                                                h        200,0000
+Vagão gôndola                                                                               h        400,0000
+Trabalhador de via                                                                          h         20,0000
+Assentamento dos materiais metálicos do AMV 1:14, TR 57, bitola larga                       un        0,0100
+Posicionamento de jogo de dormentes de madeira para AMV 1:14, bitola                        jg        0,0100
+Alinhamento manual da grade do AMV para qualquer abertura e qualquer bitola                 un        0,0833
+Lançamento de lastro, 10 cm de altura, primeiro levante, descarga de pedra britada de
+                                                                                            m3        13,1700
+caminhões
+Nivelamento de via com grupo gerador/vibrador e levante de até 10 cm - bitola métrica
+                                                                                            km        0,0458
+ou larga com dormente de madeira ou concreto e taxa de dormentação de 1.750 un/km
+Posicionamento mecanizado de trilhos                                                        km        0,0055
+Dormente de madeira, bitola larga ou mista, taxa de dormentação de 1.750 un/km -
+                                                                                            km        0,0055
+posicionamento mecanizado com carregadeira
+Trilho TR57, comprimento de 12 m, sobre dormente de madeira, bitola métrica ou
+larga, taxa de dormentação de 1.667 un/km, tala de junção de 6 furos e fixação rígida -     km        0,0110
+posicionamento e assentamento manual
+Corte de trilho TR 57 com utilização de equipamento leve                                    un        0,0600
+Furação de trilho TR 57 com utilização de equipamento Leve                                  un        0,1800
+Aluguel de contêiner com 15 m²                                                             mês        1,0000
+Escavação, carga e transporte de material de 1ª categoria - DMT de 50 m                     m³        3,3333
+Compactação de aterros a 100% do Proctor normal                                             m³        3,3333
+Base ou sub-base de solo estabilizado granulometricamente sem mistura com material
+                                                                                            m³        3,3333
+de jazida produzido
+Sistema separador de água e óleo, inclusive demolição                                       un        0,0833
+
+
+
+2.4      Obras de intervenções pontuais
+
+A Tabela 20 apresenta os serviços e quantidades para o canteiro-tipo de obras de
+intervenções pontuais, restritas ou contínuas.
+
+           Tabela 20 - Serviços e quantidades - canteiro-tipo de intervenções pontuais
+                           Serviços                              Unidade Módulo 1         Módulo 2    Módulo 3
+Placa de obra                                                        m²        12,50        12,50       12,50
+Limpeza mecanizada da camada vegetal                                 m²       586,86        692,28      825,87
+Expurgo de jazida                                                    m³       146,72        173,07      206,47
+Regularização do subleito                                            m²       586,86        692,28      825,87
+Reforço do subleito com material de jazida                           m³       117,37        138,46      165,17
+Lastro de brita comercial - espalhamento mecânico                    m³        13,10        14,85       17,86
+Cerca com 4 fios de arame farpado e mourão de madeira a
+                                                                     m         95,80        110,65      121,53
+cada 2,5 m e esticador a cada 50 m
+
+
+
+
+                                                      29                                     DNIT/DPP/CGCIT
+                         Manual de Custos de Infraestrutura de Transportes
+                    Volume 06 - Tomo 2 - Serviços e quantidades dos projetos-tipo
+
+
+                                          Tabela 20 (conclusão)
+                            Serviços                            Unidade Módulo 1   Módulo 2   Módulo 3
+Escritório e Seção Técnica (Área = 2 x 14,79 m²)
+Contêiner com revestimento térmico, janela e banheiro (1 TEU)     un      1,00       2,00       2,00
+Almoxarifado e Depósito de Cimento (Área = 14,79 m²)
+Contêiner com janela (1 TEU)                                      un      1,00       1,00       2,00
+Refeitório e Cozinha (Área = 2 x 29,57 m²)
+Contêiner com janela (1 TEU duplo)                                un      1,00       1,00       1,00
+Contêiner com janela e 2 banheiros (1 TEU duplo)                  un      1,00       1,00       1,00
+Alojamento (Área = 14,79 m²)
+Contêiner com revestimento térmico, janela e banheiro (1 TEU)     un       -         1,00       1,00
+Banheiro e Vestiário (Área = 14,79 m²)
+Contêiner com 2 banheiros (1 TEU)                                 un      1,00       1,00       1,00
+Oficina (Área = 14,79 m²)
+Contêiner com janela (1 TEU)                                      un       -          -         1,00
+Ambulatório (Área = 14,79 m²)
+Contêiner com janela, banheiro e divisória (1 TEU)                un      1,00       1,00       1,00
+Posto de combustível
+Posto de combustível classe IV - com reaproveitamento de 5
+                                                                  un       -          -         1,00
+vezes do tanque/bomba/bacia de contenção
+Guarita (Área = 7,44 m²)
+Contêiner com 3 janelas para guarita (1/2 TEU)                    un      1,00       1,00       1,00
+Residência (Área = 14,79 m²)
+Contêiner com revestimento térmico, janela e banheiro (1 TEU)     un       -         1,00       1,00
+Laboratório (Área = 14,79 m²)
+Contêiner com janela (1 TEU)                                      un       -         1,00       1,00
+
+
+
+
+                                                     30                              DNIT/DPP/CGCIT

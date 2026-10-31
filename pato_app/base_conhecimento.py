@@ -26,7 +26,7 @@ EXT_PACOTE = {".zip", ".rar", ".7z"}
 MIN_PALAVRAS_PAGINA = 25  # abaixo disso (e com imagem) a página vai para o OCR
 
 CATEGORIAS = [  # (padrão no nome, categoria) — a primeira que casar
-    (r"M.?DULO", "Curso"), (r"APRESENTA", "Apresentação"), (r"_?MODELO\b|MODELO\.", "Modelo de planilha"),
+    (r"^M.?DULO\W", "Curso"), (r"^VOLUME[-_ ]?\d|^SICRO[-_ ]|^ANEXO \d", "Manual SICRO"), (r"APRESENTA", "Apresentação"), (r"_?MODELO\b|MODELO\.", "Modelo de planilha"),
     (r"RESOLU", "Resolução"), (r"INSTRU..O_NORMATIVA|^IN_", "Instrução normativa"), (r"PORTARIA", "Portaria"),
     (r"OFICIO|OF.CIO", "Ofício"), (r"MEMORANDO", "Memorando"), (r"ACORDAO|AC.RD.O", "Acórdão TCU"),
     (r"CGU", "Relatório CGU"), (r"NORMA[_ ]DNIT|DNIT[_ ]\d+[_ ]\d{4}[_ ](PRO|ES|TER)", "Norma DNIT"),
@@ -36,8 +36,12 @@ CATEGORIAS = [  # (padrão no nome, categoria) — a primeira que casar
 ]
 
 
-def categoria(nome: str) -> str:
-    n = nz.sem_acento(nome).upper()
+def categoria(nome: str, pacote: str | None = None) -> str:
+    if pacote:
+        c = categoria(nome)
+        return c if c != "Outros" else categoria(pacote)
+    n = nz.sem_acento(Path(nome).name if "/" in nome else nome).upper()
+    n = re.sub(r"^[0-9A-F]{8}-", "", n)
     for rx, cat in CATEGORIAS:
         if re.search(rx, n):
             return cat
@@ -103,22 +107,25 @@ def _pptx(caminho: Path) -> list[str]:
 
 
 def _xlsx(caminho: Path, max_linhas: int = 600) -> list[str]:
+    """Uma página por aba: valores calculados e, onde a célula não tem valor (modelos em branco), a fórmula."""
     import openpyxl
-    wb = openpyxl.load_workbook(str(caminho), read_only=True, data_only=True)
+    wv = openpyxl.load_workbook(str(caminho), read_only=True, data_only=True)
+    wf = openpyxl.load_workbook(str(caminho), read_only=True)
     out = []
     try:
-        for ws in wb.worksheets:
+        for ws, wsf in zip(wv.worksheets, wf.worksheets):
             linhas = [f"[aba {ws.title}]"]
-            for i, row in enumerate(ws.iter_rows(values_only=True)):
+            for i, (row, rowf) in enumerate(zip(ws.iter_rows(values_only=True), wsf.iter_rows(values_only=True))):
                 if i >= max_linhas:
                     linhas.append("…")
                     break
-                vals = [str(v).strip() for v in row if v not in (None, "")]
+                vals = [str(v if v not in (None, "") else f).strip() for v, f in zip(row, rowf) if v not in (None, "") or f not in (None, "")]
                 if vals:
                     linhas.append(" | ".join(vals))
             out.append("\n".join(linhas))
     finally:
-        wb.close()
+        wv.close()
+        wf.close()
     return out
 
 

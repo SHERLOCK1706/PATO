@@ -42,21 +42,21 @@ CET (kg) | FUA
 (ME/CET) | FU
 (=MAX(FUA;FUC))
 M0057 | Contêiner com janela | 29.7192 | 2300 | 32 | 27000 | 0.928725 | 0.0851851851851852 | 0.928725
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+=IF($A6="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A6,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A6="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A6,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C6/E6,"") | =IFERROR(D6/F6,"") | 0
+=IF($A7="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A7,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A7="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A7,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C7/E7,"") | =IFERROR(D7/F7,"") | 0
+=IF($A8="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A8,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A8="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A8,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C8/E8,"") | =IFERROR(D8/F8,"") | 0
+=IF($A9="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A9,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A9="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A9,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C9/E9,"") | =IFERROR(D9/F9,"") | 0
+=IF($A10="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A10,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A10="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A10,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C10/E10,"") | =IFERROR(D10/F10,"") | 0
+=IF($A11="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A11,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A11="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A11,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C11/E11,"") | =IFERROR(D11/F11,"") | 0
+=IF($A12="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A12,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A12="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A12,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C12/E12,"") | =IFERROR(D12/F12,"") | 0
+=IF($A13="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A13,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A13="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A13,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C13/E13,"") | =IFERROR(D13/F13,"") | 0
+=IF($A14="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A14,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A14="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A14,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C14/E14,"") | =IFERROR(D14/F14,"") | 0
+=IF($A15="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A15,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A15="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A15,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C15/E15,"") | =IFERROR(D15/F15,"") | 0
+=IF($A16="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A16,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A16="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A16,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C16/E16,"") | =IFERROR(D16/F16,"") | 0
+=IF($A17="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A17,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A17="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A17,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C17/E17,"") | =IFERROR(D17/F17,"") | 0
+=IF($A18="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A18,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A18="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A18,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C18/E18,"") | =IFERROR(D18/F18,"") | 0
+=IF($A19="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A19,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A19="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A19,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C19/E19,"") | =IFERROR(D19/F19,"") | 0
+=IF($A20="","",IFERROR(INDEX(Referencia_Conteineres!$B$4:$B$19,MATCH($A20,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IF($A20="","",IFERROR(INDEX(Referencia_Conteineres!$F$4:$F$19,MATCH($A20,Referencia_Conteineres!$A$4:$A$19,0)),"")) | =IFERROR(C20/E20,"") | =IFERROR(D20/F20,"") | 0
 Fórmulas (Manual de Custos DNIT — Volume 08, seção 3.4.3):
 FUA = AE / AET   (Equação 2 — área do contêiner ÷ área útil do transportador)
 FUC = ME / CET   (Equação 3 — massa do contêiner ÷ carga útil do transportador)

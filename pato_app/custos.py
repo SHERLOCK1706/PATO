@@ -77,11 +77,20 @@ class Custos:
     # ------------------------------------------------------------- bases
     def importar_base(self, caminhos: list[str] | str, uf: str | None = None, data_base: str | None = None,
                       descricao: str | None = None, origem: str | None = None) -> list[dict]:
-        bases = cp.ler_bases(caminhos, uf, data_base)
-        if not bases:
-            raise ValueError("Não encontrei composições analíticas (blocos 'CÓDIGO:') nos arquivos enviados.")
+        if isinstance(caminhos, str):
+            caminhos = [caminhos]
+        pacotes = [c for c in caminhos if c.lower().endswith((".zip", ".7z", ".rar"))]
+        soltos = [c for c in caminhos if c not in pacotes]
+        grupos = ([soltos] if soltos else []) + [[p] for p in pacotes]  # cada pacote do SICRO é uma data-base
+        lidas = []
+        for g in grupos:
+            bs = cp.ler_bases(g, uf, data_base)
+            lidas += list(bs.items())
+        if not lidas:
+            raise ValueError("Não encontrei composições analíticas nos arquivos enviados (relatório analítico do SICRO "
+                             "ou abas CPU de uma planilha PATO).")
         out = []
-        for reg, b in bases.items():
+        for reg, b in lidas:
             if not b.get("uf") or not b.get("data_base"):
                 raise ValueError("Não foi possível identificar o estado e a data-base; informe-os na importação.")
             b["descricao"] = descricao or f"SICRO {b['uf']} {b['data_base']} — {cp.REGIMES[reg]}"

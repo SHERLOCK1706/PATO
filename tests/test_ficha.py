@@ -23,6 +23,7 @@ def proj(tmp_path_factory):
     sv.transporte.salvar_croqui(pid, dict(travessias=CROQUI_PATO["travessias"], vmd=CROQUI_PATO["vmd"], ocorrencias=[]))
     sv.transporte.montar_croqui(pid, 124.5)
     r = sv.orcamento.montar_pela_ficha(pid)                               # todos os serviços da ficha, NE padrão
+    sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))  # compara com a planilha (metodologia de origem)
     return sv, pid, r
 
 

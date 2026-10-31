@@ -1516,11 +1516,20 @@ $("#btnSzSalvar").onclick = async () => {
 const DV_ = { r: null };
 const dvIn = (path, v, w = 80, dica = "") => `<input data-dv="${path}" type="number" step="any" value="${v ?? ""}" style="width:${w}px" ${dica ? `data-dica="${esc(dica)}"` : ""}>`;
 const dvTx = (path, v, w = 160) => `<input data-dvt="${path}" value="${esc(v ?? "")}" style="width:${w}px">`;
+function seletorMetodologia(r) {
+  return `<p><b>Metodologia:</b> <select id="dvModelo" data-dica="SICRO 2ª edição: Manual de Custos de 17/11/2025 (Vol. 06 a 08). Planilha de origem: reproduz a planilha BR-158/MT">
+    ${Object.entries(r.modelos || {}).map(([k, v]) => `<option value="${k}" ${r.modelo === k ? "selected" : ""}>${esc(v)}</option>`).join("")}</select></p>`;
+}
+function ligarSeletorMetodologia() {
+  const s = $("#dvModelo"); if (!s) return;
+  s.onchange = () => { const d = lerDiv(); d.modelo = s.value; salvarDiv(d); };
+}
 async function renderDiv() {
   const r = DV_.r = await api(`${base_}${E.pid}/diversos`), d = r.dados, res = r.resultado;
+  if (r.modelo === "sicro2025" && res) return renderDiv2025(r);
   if (!res) { $("#divResumo").innerHTML = '<p class="tag aviso">Sem base SICRO no projeto: importe a base na aba Custos.</p>'; ["#divAdm", "#divCan", "#divUsi", "#divMob"].forEach(s => $(s).innerHTML = ""); return; }
   const aviso = r.gravado ? "" : '<p class="tag aviso">Parâmetros do modelo BR-158/MT — ajuste e salve para este projeto.</p>';
-  $("#divResumo").innerHTML = aviso + `<table class="tab"><tr><th>Código</th><th>Item</th><th class=n>Calculado SD</th><th class=n>Calculado CD</th><th class=n>Planilha de origem SD</th><th class=n>Planilha de origem CD</th><th>Fixar</th></tr>` +
+  $("#divResumo").innerHTML = seletorMetodologia(r) + aviso + `<table class="tab"><tr><th>Código</th><th>Item</th><th class=n>Calculado SD</th><th class=n>Calculado CD</th><th class=n>Planilha de origem SD</th><th class=n>Planilha de origem CD</th><th>Fixar</th></tr>` +
     Object.entries(r.codigos).map(([c, nome]) => { const p = res.precos[c], f = r.referencia[c] || {};
       const dif = reg => f[reg] != null && Math.abs(f[reg] - p[reg]) > 0.005 ? ' class="n sit-conferir"' : " class=n";
       return `<tr><td>${c}</td><td>${esc(nome)}${c === "ADM" ? " (por mês)" : ""}</td><td class=n>${reais(p.SD)}</td><td class=n>${reais(p.CD)}</td>
@@ -1571,6 +1580,67 @@ async function renderDiv() {
       <td class=n>${reais(x.custo_SD)}</td><td class=n>${reais(x.custo_CD)}</td><td><button class="btn mini" data-dvrem="${i}" data-dica="Retira o equipamento da mobilização">×</button></td></tr>`).join("") +
     `</table></div><p>Custo SD R$ ${reais(m.SD.custo)} · CD R$ ${reais(m.CD.custo)} → <b>MOB = DESMOB: SD R$ ${reais(m.SD.preco)} · CD R$ ${reais(m.CD.preco)}</b></p>`;
   $$("[data-dvrem]").forEach(b => b.onclick = () => { const dd = lerDiv(); dd.mob.equipamentos.splice(+b.dataset.dvrem, 1); salvarDiv(dd); });
+  ligarSeletorMetodologia();
+}
+function tabelaPrecosDiv(r, res) {
+  return `<table class="tab"><tr><th>Código</th><th>Item</th><th class=n>Calculado SD</th><th class=n>Calculado CD</th><th class=n>Planilha de origem SD</th><th class=n>Planilha de origem CD</th><th>Fixar</th></tr>` +
+    Object.entries(r.codigos).map(([c, nome]) => { const p = res.precos[c], f = r.referencia[c] || {};
+      return `<tr><td>${c}</td><td>${esc(nome)}${c === "ADM" ? " (por mês)" : ""}</td><td class=n>${reais(p.SD)}</td><td class=n>${reais(p.CD)}</td>
+        <td class=n>${f.SD == null ? "—" : reais(f.SD)}</td><td class=n>${f.CD == null ? "—" : reais(f.CD)}</td>
+        <td><input type="checkbox" data-dvfix="${c}" ${r.fixos.includes(c) ? "checked" : ""} ${f.SD == null ? "disabled" : ""}></td></tr>`; }).join("") + "</table>";
+}
+function renderDiv2025(r) {
+  const s = r.dados.sicro2025, res = r.resultado, P = "sicro2025.";
+  const REG = { contrato: "meses do contrato", "contrato-1": "meses do contrato − 1", ela: "ELA (laboratório)", manejo: "Tf (manejo florestal)" };
+  $("#divResumo").innerHTML = seletorMetodologia(r) + `<p class="nota">Manual de Custos de Infraestrutura de Transportes, 2ª edição (17/11/2025): Vol. 06 (canteiro — método construtivo, instalação provisória),
+    Vol. 07 (administração local) e Vol. 08 (mobilização). Insumos da base SICRO do projeto.</p>` + tabelaPrecosDiv(r, res);
+  const a = res.adm;
+  $("#divAdm").innerHTML = a.parcelas.map((p, i) => `<h5>${esc(p.titulo)} — ${q3(p.meses)} meses <small>(${esc(REG[p.regra] || "informado")})</small></h5>
+    <table class="tab"><tr><th>Código</th><th>Descrição</th><th class=n>Quant.</th><th class=n>h prod / h improd (mês)</th><th class=n>Unit. SD</th><th class=n>Total/mês SD</th><th class=n>Total/mês CD</th></tr>` +
+    p.mao_obra.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}</td><td class=n>${dvIn(`${P}adm.parcelas.${i}.mao_obra.${j}.quant`, x.quant, 70)}</td><td></td>
+      <td class=n>${reais(x.preco_SD)}</td><td class=n>${reais(x.total_SD)}</td><td class=n>${reais(x.total_CD)}</td></tr>`).join("") +
+    p.veiculos.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")}</td><td class=n>${dvIn(`${P}adm.parcelas.${i}.veiculos.${j}.quant`, x.quant, 70)}</td>
+      <td class=n>${nf(x.h_prod, 2)} / ${nf(x.h_improd, 2)}</td><td class=n>${nf(x.chp_SD, 4)} / ${nf(x.chi_SD, 4)}</td><td class=n>${reais(x.total_SD)}</td><td class=n>${reais(x.total_CD)}</td></tr>`).join("") +
+    (p.veiculos_horas || []).map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc(x.descricao || "")} <small>(por hora)</small></td><td class=n>${dvIn(`${P}adm.parcelas.${i}.veiculos_horas.${j}.horas`, x.horas, 70)} h</td><td></td>
+      <td class=n>${nf(x.chp_SD, 4)}</td><td class=n>${reais(x.total_SD)}</td><td class=n>${reais(x.total_CD)}</td></tr>`).join("") +
+    `<tr class="tot"><td colspan=5>Total da parcela: (mão de obra + veículos) × meses</td><td class=n>${reais(p.total_SD)}</td><td class=n>${reais(p.total_CD)}</td></tr></table>`).join("") +
+    `<h5>Laboratório: ELA = Σ ARRED(quantidade no contrato ÷ QE; 2) = ${nf(a.ela, 2)}</h5><table class="tab"><tr><th>Código</th><th>Serviço</th><th class=n>Quantidade no contrato</th><th class=n>QE</th><th class=n>ELA</th></tr>` +
+    a.ela_linhas.map((x, j) => `<tr><td>${esc(x.codigo)}</td><td>${esc((x.descricao || "").slice(0, 70))}</td><td class=n>${q3(x.quantidade)}</td><td class=n>${dvIn(`${P}adm.ela.${j}.qe`, x.qe, 100)}</td><td class=n>${nf(x.ela, 2)}</td></tr>`).join("") + "</table>" +
+    `<h5>Manejo florestal: Tf = Σ ARRED(quantidade ÷ (produção horária × ${nf(s.adm.horas_mes, 2)} h); 2) = ${nf(a.tf, 2)} meses</h5><table class="tab"><tr><th>Código</th><th class=n>Quantidade no contrato</th><th class=n>Produção/h</th><th class=n>Tf</th></tr>` +
+    a.tf_linhas.map(x => `<tr><td>${esc(x.codigo)}</td><td class=n>${q3(x.quantidade)}</td><td class=n>${q3(x.producao)}</td><td class=n>${nf(x.tf, 2)}</td></tr>`).join("") + "</table>" +
+    `<p>Despesas diversas ${dvIn(P + "adm.despesas_pct", a.despesas_pct, 60)} % · Preço SD R$ ${reais(a.SD.preco)} (R$ ${reais(a.SD.mensal)}/mês) · CD R$ ${reais(a.CD.preco)} (R$ ${reais(a.CD.mensal)}/mês)</p>`;
+  const c = res.canteiro, sc = s.canteiro, f = c.funcionarios;
+  $("#divCan").innerHTML = `<p>Funcionários (da administração local): fixa ${q3(f.fixa)} · vinculada ${q3(f.vinculada)} · variável ${q3(f.variavel)} ·
+      mão de obra ordinária no pico ${dvIn(P + "canteiro.mo_pico", sc.mo_pico, 70)} → NMO = 1,33 × pico = ${nf(f.nmo, 2)} · NMAX ${q3(f.nmax)}</p>
+    <table class="tab"><tr><th>Área</th><th>Regra</th><th class=n>Área (m²)</th><th class=n>FEAC</th><th class=n>Equivalente</th></tr>` +
+    c.areas.map((x, i) => `<tr><td>${esc(x.nome)}</td><td><small>${esc(x.formula)}</small></td><td class=n>${i >= 4 ? dvIn(`${P}canteiro.areas_fixas.${i - 4}.area`, x.area, 80) : nf(x.area, 4)}</td><td class=n>${nf(x.feac, 2)}</td><td class=n>${nf(x.equivalente, 2)}</td></tr>`).join("") +
+    `<tr class="tot"><td colspan=4>AC (= AD)</td><td class=n>${nf(c.ac, 2)}</td></tr></table>
+    <p>k1 ${dvIn(P + "canteiro.k1", sc.k1, 60)} · k2 ${dvIn(P + "canteiro.k2", sc.k2, 60)} (conservação: 1,11) · distância aos centros fornecedores (km):
+      pavimentada ${dvIn(P + "canteiro.dt.pav", sc.dt?.pav, 60)} · revestimento primário ${dvIn(P + "canteiro.dt.rp", sc.dt?.rp, 60)} · leito natural ${dvIn(P + "canteiro.dt.leito", sc.dt?.leito, 60)} → k3 = ${nf(c.k3, 4)} · FEAD ${dvIn(P + "canteiro.fead", sc.fead, 60)}</p>
+    <p>CMCC SD ${dvIn(P + "canteiro.cmcc.SD", sc.cmcc?.SD, 90)} · CD ${dvIn(P + "canteiro.cmcc.CD", sc.cmcc?.CD, 90)}</p>
+    <p>CCO = (k1·k2·k3·AC + AD·FEAD)·CMCC → <b>PCO SD R$ ${reais(c.SD.preco)} · CD R$ ${reais(c.CD.preco)}</b></p>`;
+  const u = res.usina;
+  $("#divUsi").innerHTML = `<table class="tab"><tr><th>Área coberta</th><th class=n>Área (m²)</th><th class=n>FEAC</th><th class=n>Equivalente</th></tr>` +
+    u.areas.map((x, i) => `<tr><td>${esc(x.nome)}</td><td class=n>${dvIn(`${P}usina.areas.${i}.area`, x.area, 70)}</td><td class=n>${nf(x.feac, 2)}</td><td class=n>${nf(x.equivalente, 2)}</td></tr>`).join("") +
+    `</table><p>k1 ${nf(u.k1, 2)} · k2 ${dvIn(P + "usina.k2", s.usina.k2, 60)} · k3 ${nf(u.k3, 4)} (distâncias do canteiro) · instalação ${dvTx(P + "usina.codigo_instalacao", u.codigo_instalacao, 90)}:
+      SD R$ ${reais(u.SD.instalacao)} · CD R$ ${reais(u.CD.instalacao)}</p>
+    <p>CCO = (k1·k2·k3·AC + AD·FEAD)·CMCC + instalação → <b>PCO SD R$ ${reais(u.SD.preco)} · CD R$ ${reais(u.CD.preco)}</b></p>
+    <p class="nota">O modelo USINA_2025 traz k2 = 0,11; o Manual (Vol. 06, Tabela 35) dá 1,11 para conservação rodoviária — adotado 1,11.</p>`;
+  const m = res.mob, sm = s.mob, ps = m.pessoal;
+  $("#divMob").innerHTML = `<p>Pessoal: NTF = 50% × NMO + NPF-V + 50% × NPV = ${nf(ps.ntf, 2)} → <b>${ps.quantidade}</b> pessoas × passagem R$ ${reais(ps.passagem)}
+      (pesquisada ${dvIn(P + "mob.passagem", sm.passagem, 80)}, ${esc(ps.indice)} ${ps.a ? `${nf(ps.a, 2)} → ${nf(ps.b, 2)}` : ""}) · itinerário ${dvTx(P + "mob.itinerario", sm.itinerario, 200)}</p>
+    <p class="nota">CMD = QT × FU × {[(TV × CHP + TD × CHI) × K] + CC}; TV = Σ D ÷ VM (caminhão 60/50/40 km/h; cavalo com prancha/dolly 30/25/20 km/h — pavimentada/revestimento primário/leito natural);
+      TD = 0,5 h a cada ${dvIn(P + "mob.descanso_carga_h", sm.descanso_carga_h, 45)} h de viagem (carga); K = 2 quando o transportador retorna à origem; CC = pedágio (eixos × valor por eixo). Distância ≥ 50 km, salvo justificativa.</p>
+    <div class="tabela-rolagem" style="max-height:420px"><table class="tab"><tr><th>Código</th><th>Equipamento</th><th>Transportador</th><th class=n>Quant.</th><th class=n>FU</th><th class=n>D pav</th><th class=n>D rp</th><th class=n>D leito</th>
+      <th class=n>TV (h)</th><th class=n>TD (h)</th><th class=n>K</th><th class=n>Eixos</th><th class=n>R$/eixo</th><th class=n>Custo SD</th><th class=n>Custo CD</th></tr>` +
+    m.equipamentos.map((x, i) => `<tr><td>${esc(x.codigo)}</td><td><small>${esc(x.descricao || "")}</small></td><td>${dvTx(`${P}mob.equipamentos.${i}.transporte`, x.transporte, 64)}<br><small>${x.tipo_transportador === "cavalo" ? "cavalo/prancha" : "caminhão"}</small></td>
+      <td class=n>${dvIn(`${P}mob.equipamentos.${i}.quant`, x.quant, 45)}</td><td class=n>${dvIn(`${P}mob.equipamentos.${i}.fu`, x.fu, 55)}</td>
+      ${["pav", "rp", "leito"].map(k => `<td class=n>${dvIn(`${P}mob.equipamentos.${i}.dmt.${k}`, (x.dmt || {})[k], 55)}</td>`).join("")}
+      <td class=n>${nf(x.tempo_viagem, 3)}</td><td class=n>${nf(x.tempo_descanso, 1)}</td><td class=n>${dvIn(`${P}mob.equipamentos.${i}.k`, x.k, 40)}</td>
+      <td class=n>${dvIn(`${P}mob.equipamentos.${i}.pedagio_eixos`, x.pedagio_eixos, 40)}</td><td class=n>${dvIn(`${P}mob.equipamentos.${i}.pedagio_valor`, x.pedagio_valor, 60)}</td>
+      <td class=n>${reais(x.custo_SD)}</td><td class=n>${reais(x.custo_CD)}</td></tr>`).join("") +
+    `</table></div><p>Custo SD R$ ${reais(m.SD.custo)} · CD R$ ${reais(m.CD.custo)} → <b>MOB = DESMOB: SD R$ ${reais(m.SD.preco)} · CD R$ ${reais(m.CD.preco)}</b></p>`;
+  ligarSeletorMetodologia();
 }
 function lerDiv() {
   const d = JSON.parse(JSON.stringify(DV_.r.dados));
@@ -1587,8 +1657,14 @@ $("#btnDivSalvar").onclick = () => salvarDiv(lerDiv());
 $("#btnDivSug").onclick = async () => {
   try { const l = await api(`${base_}${E.pid}/diversos/sugerir-mob`); if (!l.length) return toast("Nenhum equipamento com transporte rodoviário nas composições");
     if (!confirm(`Substituir a lista da mobilização por ${l.length} equipamentos das composições do PATO?`)) return;
-    const d = lerDiv(), ant = d.mob.equipamentos[0] || {};
-    d.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
+    const d = lerDiv();
+    if (d.modelo === "sicro2025" && d.sicro2025) {
+      const ant = d.sicro2025.mob.equipamentos[0] || {};
+      d.sicro2025.mob.equipamentos = l.map(x => ({ ...x, dmt: { ...(ant.dmt || { pav: 0, rp: 0, leito: 0 }) }, k: x.transporte === x.codigo ? 1 : 2, pedagio_eixos: 0, pedagio_valor: 0 }));
+    } else {
+      const ant = d.mob.equipamentos[0] || {};
+      d.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
+    }
     salvarDiv(d); } catch (e) { erro(e); }
 };
 

@@ -12,6 +12,7 @@ def proj(tmp_path_factory):
     sv = Servico(pasta=tmp_path_factory.mktemp("lic"))
     pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
     sv.orcamento.importar_referencia(pid, str(MODELO_PADRAO))
+    sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))  # reproduz a planilha de origem
     return sv, pid
 
 

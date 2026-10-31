@@ -138,17 +138,35 @@ def _automaticos(c: dict) -> list[dict]:
     out.append(_item("mat-fit", 5, "FIT calculado (VMD por segmento) — só nos transportes, pelo Manual de Custos V05 (2ª ed.)",
                      "Manual de Custos SICRO V05-FIT, 2ª ed.", "ok" if any(v.get("vmdf_c") or v.get("vmd") for v in vmd) else "atencao",
                      f"{len(vmd)} segmentos com VMD" if vmd else "VMD não lançado"))
-    adm = (c.get("diversos") or {}).get("adm") or {}
+    div = c.get("diversos") or {}
+    ativo = div.get("sicro2025") if div.get("modelo", "sicro2025") == "sicro2025" and div.get("sicro2025") else div
+    adm = (ativo or {}).get("adm") or {}
     fixa = next((p_ for p_ in adm.get("parcelas") or [] if p_.get("chave") == "fixa"), None)
     if fixa:
         eng = next((x for x in fixa.get("mao_obra") or [] if "ENGENHEIRO" in nz.sem_acento(x.get("descricao") or "").upper()), None)
         sec = [x for x in fixa.get("mao_obra") or [] if "SECRET" in nz.sem_acento(x.get("descricao") or "").upper()]
+        out.append(_item("adm-metodologia", 7, "Administração local, canteiro, usina e mobilização pela metodologia da 2ª edição do Manual de Custos",
+                         "Manual de Custos SICRO, 2ª ed. (17/11/2025), Vol. 06 a 08", "ok" if div.get("modelo", "sicro2025") == "sicro2025" else "atencao",
+                         "SICRO 2ª edição (2025)" if div.get("modelo", "sicro2025") == "sicro2025" else "planilha de origem (BR-158)"))
         out.append(_item("adm-engenheiro", 7, "Administração local: 0,25 engenheiro supervisor (com veículo leve proporcional)",
                          "Checklist, 8 · SICRO, Administração Local", "ok" if eng and abs((nz.numero(eng.get("quant")) or 0) - 0.25) < 1e-9 else "atencao",
                          f"engenheiro: {eng.get('quant') if eng else 'ausente'}"))
         out.append(_item("adm-secretaria", 7, "Secretária fora da parcela fixa", "Checklist, 8", "ok" if not sec else "falha",
                          "ok" if not sec else ", ".join(x.get("descricao") for x in sec)))
-    mob = (c.get("diversos") or {}).get("mob") or {}
+    mob = (ativo or {}).get("mob") or {}
+    can = (ativo or {}).get("canteiro") or {}
+    dt = can.get("dt") or {}
+    dist = sum(nz.numero(v) or 0 for v in dt.values()) if dt else nz.numero(can.get("distancia_km"))
+    if dist is not None:
+        out.append(_item("adm-dt-50", 7, "Distância do canteiro aos centros fornecedores ≥ 50 km ou justificada",
+                         "Manual de Custos SICRO, 2ª ed., Vol. 06, 3.2.6", "ok" if dist >= 50 else "atencao",
+                         f"{dist:g} km" + ("" if dist >= 50 else " — justificar tecnicamente (abaixo de 50 km)")))
+    for e in mob.get("equipamentos") or []:
+        d_ = sum((nz.numero(v) or 0) for v in (e.get("dmt") or {}).values()) or nz.numero(e.get("dmt_pav"))
+        if d_ is not None and d_ < 50:
+            out.append(_item("adm-mob-50", 7, "Mobilização: distância de origem ≥ 50 km ou justificada",
+                             "Manual de Custos SICRO, 2ª ed. (mobilização)", "atencao", f"{e['codigo']}: {d_:g} km"))
+            break
     veic_adm = {x["codigo"] for p_ in adm.get("parcelas") or [] for x in p_.get("veiculos") or []}
     dup = [e["codigo"] for e in mob.get("equipamentos") or [] if e.get("codigo") in veic_adm]
     out.append(_item("adm-mob-dup", 7, "Mobilização não duplica custos da administração local", "Checklist, 8",

@@ -17,6 +17,7 @@ def proj(tmp_path_factory):
     sv.transporte.salvar_croqui(pid, {k: v for k, v in CROQUI_PATO.items() if k != "vmd"})
     sv.custos.criar_exemplo_28m3()
     imp = sv.orcamento.importar_referencia(pid, str(MODELO_PADRAO))
+    sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))  # reproduz a planilha de origem
     return sv, pid, imp
 
 

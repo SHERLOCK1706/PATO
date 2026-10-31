@@ -160,6 +160,21 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   levantamento ICM, trecho (travessias e VMD) e km do canteiro 124,5 + todos os serviços da ficha → croqui igual ao do
   modelo e PATO igual ao da planilha importada (R$ 26.715.472,25 / 27.267.278,71). Diferenças para a planilha licitada:
   só as correções documentadas (transportes 5915321/5914464 da Fase 3, BDI dos betuminosos com desoneração e usina).
+- **Metodologia da 2ª edição do Manual de Custos do SICRO (17/11/2025)** — padrão para administração local, canteiro, usina
+  e mobilização (a da planilha BR-158 continua disponível no seletor, para reproduzir a planilha de origem):
+  - administração local (Vol. 07, modelo ADM_Local_2025): parcela fixa com motorista e miniônibus, almoxarife e faxineiro;
+    vinculada com 2 encarregados de turma; laboratório (ELA com 2 casas) e manejo florestal (Tf = Σ Q ÷ (produção × 182,49 h));
+    manutenção do canteiro com 0,1 profissional e equipamentos por hora; (mão de obra + veículos) × meses;
+  - canteiro — método construtivo, instalação provisória (Vol. 06, CANT_Construcao_2025): áreas fixas 29,54 / 37,10 / 5,29 m²,
+    k2 = 1,11 (conservação, Tabela 35), k3 = 1 + 0,0008·DT pav + 0,0009·DT rp + 0,0014·DT leito (Tabela 36);
+  - instalação industrial (USINA_2025): CCO = (k1·k2·k3·AC + AD·FEAD)·CMCC + instalação (k2 = 1,11 — o modelo trazia 0,11);
+  - mobilização (Vol. 08): CMD = QT × FU × {[(TV × CHP + TD × CHI) × K] + CC}, TV = Σ D ÷ VM (caminhão 60/50/40 km/h, cavalo com
+    prancha/dolly 30/25/20 km/h), TD = 0,5 h a cada 6 h (carga), K = 2 quando o transportador retorna, CC = pedágio; pessoal
+    NTF = 50% × NMO + NPF-V + 50% × NPV × passagem.
+- **Relatórios oficiais do SICRO**: na aba Custos, importe o pacote publicado pelo DNIT (.7z, .rar ou .zip, um por data-base,
+  vários de uma vez). O relatório analítico dá as composições sem desoneração; as com desoneração saem dos sintéticos de
+  mão de obra e equipamentos "com desoneração". Em MT 04/2026 o motor reproduz o custo unitário direto publicado em 6.611 de
+  6.618 composições (as 7 restantes são canteiros-tipo). As DMT não vêm no relatório — são as do croqui/quadro do projeto.
 - **ADM local e mobilização** (sub-aba própria, itens 01.07 — SICRO Vol. 07, 08 e 09): administração local (parcelas fixa,
   vinculada e variável com MO mensalista e veículos da base, equipes de laboratório ELA = Σ quantidade no contrato ÷ QE,
   manutenção do canteiro, despesas diversas), canteiro (áreas por NPF/NMAX/NMO, FEAC, k1·k2·k3, CMCC), instalação

@@ -219,7 +219,9 @@ A base de normas guarda só o texto pesquisável dos documentos (com página), n
 ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 
 ## Instalação (Windows)
-1. Instale o Python 3.10+ (python.org, marque “Add to PATH”).
+1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
+   pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do
+   SICRO são abertos pelo 7-Zip ou pelo tar do Windows.
 2. Copie a pasta `pato-app` para, por exemplo, `C:\PATO\pato-app`.
 3. Dê dois cliques em `instalar.bat` (uma vez) e depois em `iniciar.bat`.
    O painel abre em http://127.0.0.1:8000.

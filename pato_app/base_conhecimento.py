@@ -146,7 +146,8 @@ def extrair(caminho: Path, ocr: bool = True) -> tuple[list[str], list[int]]:
 
 def _abrir_pacote(caminho: Path, destino: Path) -> list[Path]:
     destino.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["unar", "-q", "-f", "-o", str(destino), str(caminho)], capture_output=True, timeout=1200)
+    from .composicoes import extrair_pacote
+    extrair_pacote(str(caminho), str(destino))
     return [p for p in destino.rglob("*") if p.is_file()]
 
 

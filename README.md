@@ -232,6 +232,12 @@ escolha-o na aba **Exportar → Definir como modelo padrão**.
 “Conferir totais” (aba Exportar) recalcula a planilha gerada com o LibreOffice, se estiver instalado.
 Sem ele, basta abrir o arquivo no Excel — o recálculo é automático.
 
+Programas opcionais (o sistema funciona sem eles):
+- **LibreOffice**: conferência automática do total da planilha de licitação exportada (sem ele, o Excel recalcula ao abrir);
+- **Tesseract OCR** (com português): indexar documentos digitalizados novos na base de normas — a base que acompanha o
+  sistema já está indexada;
+- **7-Zip**: abrir pacotes .rar; os .7z e .zip do SICRO são abertos pelo próprio sistema (py7zr).
+
 ## Conectar ao Claude (MCP)
 No Claude Desktop: *Configurações → Desenvolvedor → Editar configuração* e acrescente o bloco de
 `claude_desktop_config.exemplo.json` (ajuste o caminho). Reinicie o Claude Desktop.

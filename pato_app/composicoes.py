@@ -371,6 +371,27 @@ def _tabela_sintetica(linhas: list[tuple]) -> tuple[str | None, dict]:
     return None, {}
 
 
+def extrair_pacote(caminho: str, destino: str) -> None:
+    """Abre .7z/.rar/.zip: usa o unar/7z do sistema se houver; senão, py7zr (.7z) ou zipfile (.zip) — funciona no Windows."""
+    import shutil
+    import subprocess
+    import zipfile
+    for prog, args in (("unar", ["-q", "-f", "-o", destino, caminho]), ("7z", ["x", "-y", f"-o{destino}", caminho])):
+        if shutil.which(prog):
+            subprocess.run([prog, *args], capture_output=True, timeout=1200)
+            return
+    low = caminho.lower()
+    if low.endswith(".7z"):
+        import py7zr
+        with py7zr.SevenZipFile(caminho, "r") as z:
+            z.extractall(destino)
+    elif low.endswith(".zip"):
+        with zipfile.ZipFile(caminho) as z:
+            z.extractall(destino)
+    else:
+        raise ValueError("Para abrir .rar instale o 7-Zip (7z) ou envie o pacote em .7z/.zip.")
+
+
 def _abrir_planilhas(caminhos: list[str]):
     """Gera (nome_do_arquivo, nome_da_aba, linhas) de .xlsx soltos ou dentro de .zip."""
     import io
@@ -378,10 +399,9 @@ def _abrir_planilhas(caminhos: list[str]):
     import zipfile
     for cam in caminhos:
         if cam.lower().endswith((".7z", ".rar")):  # pacotes dos relatórios do SICRO (como publicados pelo DNIT)
-            import subprocess
             import tempfile
             with tempfile.TemporaryDirectory() as tmp:
-                subprocess.run(["unar", "-q", "-f", "-o", tmp, cam], capture_output=True, timeout=1200)
+                extrair_pacote(cam, tmp)
                 for raiz, _d, arqs in sorted(os.walk(tmp)):
                     for a in sorted(arqs):
                         if a.lower().endswith((".xlsx", ".xlsm")):

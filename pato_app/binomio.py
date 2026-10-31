@@ -82,8 +82,13 @@ def ler_indices(caminho: str) -> dict[str, dict[str, float]]:
 def ler_indices_pdf(caminho: str) -> dict[str, dict[str, float]]:
     """Publicação do DNIT 'Índices de Reajustamento de Obras — Obras Rodoviárias' (PDF, FGV/IBRE): cabeçalho com os meses
     (01/26 … 12/26) e uma linha por índice — descrição, base (ex.: 'dez/2000 = 100') e valores (1.075,242)."""
+    import shutil
     import subprocess
-    txt = subprocess.run(["pdftotext", "-layout", caminho, "-"], capture_output=True, timeout=300).stdout.decode("utf-8", "ignore")
+    if shutil.which("pdftotext"):
+        txt = subprocess.run(["pdftotext", "-layout", caminho, "-"], capture_output=True, timeout=300).stdout.decode("utf-8", "ignore")
+    else:  # Windows sem Poppler: pypdf em modo layout
+        from pypdf import PdfReader
+        txt = "\n".join(pg.extract_text(extraction_mode="layout") or "" for pg in PdfReader(caminho).pages)
     meses: list[tuple[int, str]] = []  # (coluna do fim do rótulo do mês, 'AAAA-MM')
     out: dict[str, dict[str, float]] = {}
     for ln in txt.splitlines():

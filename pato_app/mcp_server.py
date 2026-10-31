@@ -545,6 +545,14 @@ def pato_exportar(projeto_id: int) -> dict:
 
 
 @mcp.tool()
+def pato_exportar_licitacao(projeto_id: int, recalcular: bool = True) -> dict:
+    """PATO final no modelo da planilha de licitação (as 70 abas da BR-158/MT): inventário, preços do sistema no BD
+    (sem vínculos externos), base SICRO nas abas MO/EQ, níveis de esforço, momentos de transporte e correções de fórmula.
+    Com recalcular=True, recalcula no LibreOffice e confere o total com o do sistema."""
+    return sv().orcamento.exportar_licitacao(projeto_id, recalcular)
+
+
+@mcp.tool()
 def pato_adm_mobilizacao(projeto_id: int) -> dict:
     """Administração local, canteiro, instalação industrial (usina) e mobilização/desmobilização: parâmetros e preços
     calculados com a base SICRO do projeto (SICRO Vol. 07 a 09), ao lado dos preços da planilha de origem."""

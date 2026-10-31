@@ -149,6 +149,20 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
 - **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
   **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
 - **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.
+- **Exportar PATO de licitação**: o PATO final no modelo da planilha que vai para licitação (as 70 abas da BR-158/MT, com
+  croqui, CPU, binômios, inventário e memórias), preenchido pelo sistema:
+  - projeto e inventário nas abas CAPA e CAD_*;
+  - preços das composições no BD no lugar dos vínculos externos `[1]onerado`/`[2]desonerado` (o arquivo fica autocontido);
+  - base SICRO do projeto nas abas MO/EQ (com e sem desoneração);
+  - níveis de esforço, quantidades informadas e momentos de transporte do sistema (células alteradas em destaque);
+  - correções: betuminosos com desoneração (BDI em % sem ÷100), usina com desoneração (USINA!H38) e retirada das
+    conferências auxiliares do BD que só exibiam #N/A e das células com #REF!.
+
+  A planilha é recalculada no LibreOffice e o total é conferido com o do sistema. Onde a memória do modelo (inventário,
+  levantamento IP, quadros) dá quantidade ou preço diferente do sistema — típico de um segmento novo —, a linha do PATO
+  recebe o valor do sistema (em destaque, listada no log) e a planilha é recalculada de novo. Na BR-158/MT a diferença é
+  zero nos dois regimes e não sobra nenhuma célula com erro. Itens incluídos no sistema que não existem no modelo aparecem
+  como pendência.
 
 Conferência com a planilha BR-158/MT: todas as quantidades e preços batem (GD R$ 148.968,45 / 148.228,95/mês), exceto:
 - transportes 5915321 e 5914464 — as diferenças da planilha documentadas na Fase 3;

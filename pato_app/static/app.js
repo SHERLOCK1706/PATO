@@ -1352,6 +1352,16 @@ $("#btnExpOrc").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
 
+$("#btnExpLic").onclick = async () => {
+  $("#resOrc").innerHTML = '<p class="carregando">Gerando a planilha de licitação e recalculando para conferir…</p>';
+  try { const r = await jpost(`${base_}${E.pid}/exportar/licitacao`, {}), cf = r.conferencia || {};
+    const ok = cf.diferenca && Math.abs(cf.diferenca.SD) < 0.01 && Math.abs(cf.diferenca.CD) < 0.01;
+    const conf = cf.totais_planilha ? `<p class="tag ${ok ? "ok" : "aviso"}">Planilha recalculada: SD R$ ${reais(cf.totais_planilha.SD)} · CD R$ ${reais(cf.totais_planilha.CD)}
+      ${ok ? "— igual ao sistema" : `— diferença SD ${reais(cf.diferenca.SD)} · CD ${reais(cf.diferenca.CD)}`}</p>` : (cf.erro ? `<p class="tag aviso">Sem conferência automática (${esc(cf.erro)}); o Excel recalcula ao abrir.</p>` : "");
+    $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>${conf}<ul class="nota">${r.log.map(l => `<li>${esc(l)}</li>`).join("")}${(r.pendencias || []).map(l => `<li class="sit-conferir">${esc(l)}</li>`).join("")}</ul>`;
+  } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+};
+
 // ---- levantamento IP
 const IP_ = { d: null };
 const NIV = ["Bom", "Regular", "Ruim", "Péssimo"];

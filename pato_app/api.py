@@ -156,8 +156,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return sv.transporte.exportar(pid)
         if formato == "orcamento":
             return sv.orcamento.exportar(pid)
+        if formato == "licitacao":
+            return sv.orcamento.exportar_licitacao(pid)
         if formato not in ("geojson", "kml"):
-            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes, binomio, transportes ou orcamento")
+            raise HTTPException(400, "Formato deve ser geojson, kml, original, composicoes, binomio, transportes, orcamento ou licitacao")
         return sv.exportar_geo(pid, formato)
 
     # ------------------------------------------------- revisão (sugestões)

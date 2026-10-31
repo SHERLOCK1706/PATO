@@ -428,6 +428,29 @@ class Orcamentos:
         exportar_xlsx(self, pid, str(dest))
         return dict(arquivo=str(dest), nome=dest.name)
 
+    def exportar_licitacao(self, pid: int, recalcular: bool = True) -> dict:
+        """PATO final no modelo da planilha de licitação (70 abas), preenchido pelo sistema e conferido."""
+        import os
+
+        import openpyxl
+
+        from . import licitacao
+        p = self.sv.projeto(pid)
+        orig = p.get("arquivo_original")
+        modelo = None
+        if orig and os.path.exists(orig):  # a própria planilha PATO importada, se for do modelo completo
+            try:
+                wb = openpyxl.load_workbook(orig, read_only=True)
+                if {"PATO", "BD", "RESUMO_PATO"} <= set(wb.sheetnames):
+                    modelo = orig
+                wb.close()
+            except Exception:  # noqa: BLE001 — arquivo de inventário avulso: usa o modelo padrão
+                pass
+        dest = self.sv._nome(p, "PATO_licitacao", "xlsx")
+        r = licitacao.exportar(self.sv, pid, str(dest), modelo, recalcular)
+        self.db.registrar(pid, "exportar PATO de licitação", dest.name)
+        return dict(r, nome=dest.name)
+
     # ------------------------------------------------- levantamento IP
     def ip(self, pid: int) -> dict:
         d = self.db.dados_projeto(pid, "ip") or dict(linhas=[], parametros=ip_mod.parametros_padrao())

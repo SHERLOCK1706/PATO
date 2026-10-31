@@ -157,11 +157,12 @@ def carregar_indice(raiz: Path = RAIZ) -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else dict(documentos=[])
 
 
-def indexar(arquivos: list[Path], raiz: Path = RAIZ, originais_ate_mb: float = 5.0, ocr: bool = True,
+def indexar(arquivos: list[Path], raiz: Path = RAIZ, originais_ate_mb: float = 0.0, ocr: bool = True,
             log=print) -> dict:
     """Extrai e indexa os arquivos (pacotes são abertos). Documentos já indexados (mesmo SHA-1) são pulados."""
     (raiz / "textos").mkdir(parents=True, exist_ok=True)
-    (raiz / "originais").mkdir(parents=True, exist_ok=True)
+    if originais_ate_mb > 0:  # por padrão só o texto pesquisável (os originais ficam com o usuário)
+        (raiz / "originais").mkdir(parents=True, exist_ok=True)
     ind = carregar_indice(raiz)
     por_hash = {d["sha1"]: d for d in ind["documentos"]}
     fila = [(Path(a), None) for a in arquivos]
@@ -188,7 +189,7 @@ def indexar(arquivos: list[Path], raiz: Path = RAIZ, originais_ate_mb: float = 5
             slug = f"{_slug(nome)}_{h[:6]}"
             (raiz / "textos" / f"{slug}.txt").write_text("\f".join(paginas), encoding="utf-8")
             orig = None
-            if a.stat().st_size <= originais_ate_mb * 1048576 and ext != ".txt":
+            if originais_ate_mb > 0 and a.stat().st_size <= originais_ate_mb * 1048576 and ext != ".txt":
                 orig = f"originais/{slug}{ext}"
                 shutil.copyfile(a, raiz / orig)
             d = dict(id=slug, titulo=nome, arquivo=re.sub(r"^[0-9a-f]{8}-", "", a.name), categoria=categoria(a.name),

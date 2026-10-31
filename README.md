@@ -215,6 +215,9 @@ Conferência com a planilha BR-158/MT: todas as quantidades e preços batem (GD 
 - transporte de betuminosos com desoneração (TM): BDI de transporte 18,67% (parâmetro do binômio), diferença de R$ 0,01 por
   arredondamento.
 
+A base de normas guarda só o texto pesquisável dos documentos (com página), não os arquivos originais — eles
+ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10+ (python.org, marque “Add to PATH”).
 2. Copie a pasta `pato-app` para, por exemplo, `C:\PATO\pato-app`.

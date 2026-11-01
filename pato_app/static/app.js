@@ -52,14 +52,76 @@ async function carregarProjetos(selecionar) {
   let pid = selecionar || E.pid;
   if (!pid) { try { pid = +localStorage.getItem("pato.pid"); } catch (_) {} }
   if (!E.projetos.some(p => p.id === pid)) pid = E.projetos[0]?.id || null;
+  const mudou = pid !== E.pid;
   E.pid = pid;
+  if (mudou && typeof limparEstadoProjeto === "function") limparEstadoProjeto();
+  try { if (pid) localStorage.setItem("pato.pid", pid); } catch (_) {}
+  mostrarSalvo();
   if (pid) sel.value = pid;
   $("#vazio").classList.toggle("oculto", !!pid);
   $("#painelConteudo").classList.toggle("oculto", !pid);
   if (pid) await carregarResumo();
 }
+// estado de tela de um projeto não pode passar para outro (ex.: lista importada, conferência, caches)
+function limparEstadoProjeto() {
+  Object.assign(C_, { cfg: null, comp: null, tfOpcoes: null });
+  Object.assign(B_, { dados: null });
+  Object.assign(T_, { cro: null, q: null });
+  Object.assign(O_, { c: null, med: null, lista: null, confQtd: null });
+  CF_.r = IP_.d = SZ_.r = DV_.r = null;
+  R_.resumo = null;
+  ["#fichaListaRes", "#resOrc", "#resBin", "#crqKmzRes"].forEach(q => { const el = $(q); if (el) el.innerHTML = ""; });
+  ["#painelCotOcr", "#painelForn", "#editorBin"].forEach(q => { const el = $(q); if (el) el.hidden = true; });
+  mostrarSalvo();
+}
+async function mostrarSalvo() {
+  const el = $("#salvoEm"); if (!el || !E.pid) return;
+  try { const v = await api(`/api/projetos/${E.pid}/versoes`);
+    el.textContent = v.length ? `última versão salva: ${new Date(v[0].salvo_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })}` : "nenhuma versão salva";
+  } catch (_) { el.textContent = ""; }
+}
+async function salvarProjeto(rotulo) {
+  if (!E.pid) return;
+  try { const r = await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: rotulo || null });
+    toast(`Projeto salvo (${new Date(r.salvo_em).toLocaleTimeString("pt-BR", { timeStyle: "short" })})`); mostrarSalvo(); } catch (e) { erro(e); }
+}
+$("#btnSalvar").onclick = () => salvarProjeto(null);
+document.addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") { e.preventDefault(); salvarProjeto(null); } });
+$("#btnProjArq").onclick = async () => {
+  if (!E.pid) return;
+  const d = $("#dlg"), f = $("#dlgForm"), p = E.projetos.find(x => x.id === E.pid) || {};
+  const v = await api(`/api/projetos/${E.pid}/versoes`);
+  f.className = "form";
+  f.innerHTML = `<h3>Projeto: ${esc(p.nome || "")}</h3>
+    <p class="nota">Cada projeto é independente: trocar de projeto no seletor não altera os outros. Tudo o que você faz já fica gravado;
+      <b>Salvar</b> guarda uma versão completa (ponto de restauração) para voltar a ela quando quiser.</p>
+    <div class="linha-botoes">
+      <button class="btn primario" type="button" id="pvSalvar" data-dica="Salva uma versão com um nome (ex.: 'antes de trocar a data-base')">Salvar versão com nome…</button>
+      <button class="btn" type="button" id="pvCopia" data-dica="Cria um projeto novo, independente, com tudo deste">Salvar como cópia…</button>
+      <a class="btn" href="/api/projetos/${E.pid}/arquivo" data-dica="Baixa o projeto completo num arquivo .pato (levar para outro computador, backup)">Baixar arquivo do projeto (.pato)</a>
+      <button class="btn" type="button" id="pvAbrir" data-dica="Abre um arquivo .pato como um projeto novo (não altera os existentes)">Abrir projeto de arquivo…</button></div>
+    <h4>Versões salvas</h4>
+    ${v.length ? `<div class="tabela-rolagem" style="max-height:320px"><table class="tab"><tr><th>Salvo em</th><th>Nome</th><th class=n>Tamanho</th><th></th></tr>
+      ${v.map(x => `<tr><td>${new Date(x.salvo_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "medium" })}</td><td>${esc(x.rotulo || "")}</td><td class=n>${(x.tamanho / 1024).toLocaleString("pt-BR", { maximumFractionDigits: 0 })} kB</td>
+        <td><button class="btn mini" type="button" data-restaura="${esc(x.arquivo)}" data-dica="Volta o projeto para esta versão (o estado atual é salvo antes, como 'antes de restaurar')">Voltar para esta</button>
+          <a class="btn mini" href="/api/projetos/${E.pid}/versoes/${encodeURIComponent(x.arquivo)}">baixar</a></td></tr>`).join("")}</table></div>`
+      : '<p class="nota">Nenhuma versão salva ainda — use 💾 Salvar.</p>'}
+    <div class="linha-botoes"><button class="btn" value="cancelar">Fechar</button></div>`;
+  d.showModal();
+  $("#pvSalvar").onclick = async () => { const r = prompt("Nome da versão:", ""); if (r === null) return; d.close(); await salvarProjeto(r); };
+  $("#pvCopia").onclick = async () => { const n = prompt("Nome do novo projeto:", `${p.nome || "Projeto"} (cópia)`); if (!n) return;
+    try { const np = await jpost(`/api/projetos/${E.pid}/duplicar`, { nome: n }); d.close(); limparEstadoProjeto(); await carregarProjetos(np.id); toast("Cópia criada — você está agora na cópia"); irAba($("#abas button.ativa").dataset.aba); } catch (e) { erro(e); } };
+  $("#pvAbrir").onclick = async () => { const a = await escolherArquivo(".pato,.zip"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
+    try { const np = await api("/api/projetos/abrir", { method: "POST", body: fd }); d.close(); limparEstadoProjeto(); await carregarProjetos(np.id); toast(`Projeto aberto: ${np.nome}`); irAba("painel"); } catch (e) { erro(e); } };
+  $$("[data-restaura]", f).forEach(b => b.onclick = async () => {
+    if (!confirm("Voltar o projeto para esta versão? O estado atual será salvo antes (versão 'antes de restaurar').")) return;
+    try { await jpost(`/api/projetos/${E.pid}/versoes/restaurar`, { arquivo: b.dataset.restaura }); d.close(); limparEstadoProjeto(); await carregarProjetos(E.pid);
+      toast("Projeto restaurado"); irAba($("#abas button.ativa").dataset.aba); } catch (e) { erro(e); }
+  });
+};
 $("#selProjeto").onchange = async e => {
   E.pid = +e.target.value; E.geo = null; E.pagina = 0;
+  limparEstadoProjeto();
   try { localStorage.setItem("pato.pid", E.pid); } catch (_) {}
   await carregarResumo();
   const ativa = $("#abas button.ativa").dataset.aba; irAba(ativa);
@@ -1924,7 +1986,8 @@ $("#formAceiro").onsubmit = async e => {
   try { const r = await jpost(`/api/projetos/${E.pid}/gerar-aceiro`, formObj(e.target));
     toast(`${r.gerados} trechos de aceiro gerados a partir das cercas`); E.geo = null; await carregarResumo(); } catch (er) { erro(er); }
 };
-$("#btnDuplicar").onclick = async () => { const p = await jpost(`/api/projetos/${E.pid}/duplicar`, {}); await carregarProjetos(p.id); toast("Projeto duplicado"); };
+$("#btnDuplicar").onclick = async () => { const atual = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Nome do novo projeto:", `${atual.nome || "Projeto"} (cópia)`); if (!n) return;
+  try { const p = await jpost(`/api/projetos/${E.pid}/duplicar`, { nome: n }); limparEstadoProjeto(); await carregarProjetos(p.id); toast("Cópia completa criada — você está agora na cópia"); renderProjeto(); } catch (e) { erro(e); } };
 $("#btnExcluirProj").onclick = async () => {
   if (!confirm("Excluir este projeto e todo o seu inventário? Esta ação não pode ser desfeita.")) return;
   await api(`/api/projetos/${E.pid}`, { method: "DELETE" }); E.pid = null; E.geo = null; await carregarProjetos(); irAba("painel");

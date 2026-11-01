@@ -113,14 +113,23 @@ class Servico:
         return self.projeto(pid)
 
     def excluir_projeto(self, pid: int) -> None:
+        """Exclui o projeto; antes guarda o arquivo completo em <pasta>/excluidos (pode ser aberto de novo)."""
+        from datetime import datetime
+
+        from . import projeto_arquivo as pa
+        p = self.projeto(pid)
+        lix = self.pasta / "excluidos"
+        lix.mkdir(exist_ok=True)
+        seguro = re.sub(r"[^\w\- ]+", "", p.get("nome") or "projeto").strip().replace(" ", "_")[:60]
+        (lix / f"{seguro}_{datetime.now():%Y%m%d_%H%M%S}.pato").write_bytes(pa.exportar(self, pid))
         self.db.excluir_projeto(pid)
+        pa.excluir_versoes(self, pid)
 
     def duplicar_projeto(self, pid: int, nome: str | None = None) -> dict:
+        """Cópia completa e independente (inventário, PATO, binômio e cotações com anexos, croqui, custos, IP…)."""
+        from . import projeto_arquivo as pa
         p = self.projeto(pid)
-        novo = {k: v for k, v in p.items() if k not in ("id", "criado_em", "alterado_em", "n_itens")}
-        novo["nome"] = nome or f"{p.get('nome') or 'Projeto'} (cópia)"
-        nid = self.db.criar_projeto(novo)
-        self.db.inserir_itens(nid, self.db.itens(pid))
+        nid = pa.importar(self, pa.exportar(self, pid), nome=nome or f"{p.get('nome') or 'Projeto'} (cópia)")
         return self.projeto(nid)
 
     # ------------------------------------------------------------- importar

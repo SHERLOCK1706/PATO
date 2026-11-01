@@ -373,6 +373,41 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def b_aplicar(pid: int, bid: int, dados: dict = Body(default={})):
         return bi.aplicar_vencedor(pid, bid, dados.get("aplicar_dmt", True), dados.get("codigo") or None)
 
+    # ------------------------------------------------ salvar / versões / arquivo do projeto
+    from . import projeto_arquivo as pa
+    from fastapi.responses import Response
+
+    def _nome_arq(pid: int) -> str:
+        import re as _re
+        p = sv.projeto(pid)
+        return (_re.sub(r"[^\w\- ]+", "", p.get("nome") or f"projeto_{pid}").strip().replace(" ", "_")[:80] or f"projeto_{pid}") + ".pato"
+
+    @app.post("/api/projetos/{pid}/salvar")
+    def p_salvar(pid: int, dados: dict = Body(default={})):
+        return pa.salvar_versao(sv, pid, dados.get("rotulo") or None)
+
+    @app.get("/api/projetos/{pid}/versoes")
+    def p_versoes(pid: int):
+        return pa.versoes(sv, pid)
+
+    @app.post("/api/projetos/{pid}/versoes/restaurar")
+    def p_restaurar(pid: int, dados: dict = Body(...)):
+        return pa.restaurar_versao(sv, pid, dados["arquivo"])
+
+    @app.get("/api/projetos/{pid}/versoes/{arquivo}")
+    def p_baixar_versao(pid: int, arquivo: str):
+        return FileResponse(pa.caminho_versao(sv, pid, arquivo), filename=_nome_arq(pid).replace(".pato", "_" + arquivo))
+
+    @app.get("/api/projetos/{pid}/arquivo")
+    def p_arquivo(pid: int):
+        return Response(pa.exportar(sv, pid), media_type="application/zip",
+                        headers={"Content-Disposition": f'attachment; filename="{_nome_arq(pid)}"'})
+
+    @app.post("/api/projetos/abrir")
+    async def p_abrir(arquivo: UploadFile = File(...)):
+        conteudo = await arquivo.read()
+        return sv.projeto(pa.importar(sv, conteudo))
+
     @app.post("/api/projetos/{pid}/binomio/cotacao/ler")
     async def b_ler_cotacao(pid: int, arquivo: UploadFile = File(...)):
         caminho = await _salvar_upload(arquivo)

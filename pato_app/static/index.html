@@ -14,6 +14,9 @@
     <label for="selProjeto" class="sr">Projeto</label>
     <select id="selProjeto" data-dica="Projeto (trecho) em trabalho"></select>
     <button class="btn" id="btnNovo" data-dica="Cria um projeto vazio (trecho sem inventário)">+ Novo</button>
+    <button class="btn primario" id="btnSalvar" data-dica="Salva uma versão do projeto (ponto de restauração). Tudo o que você altera já fica gravado; o Salvar guarda uma versão completa para poder voltar a ela. Atalho: Ctrl+S">💾 Salvar</button>
+    <button class="btn" id="btnProjArq" data-dica="Versões salvas, salvar como cópia, baixar o arquivo do projeto (.pato) ou abrir um projeto de arquivo">Projetos ▾</button>
+    <small id="salvoEm" class="nota"></small>
   </div>
   <div class="acoes">
     <button class="btn" data-ir="importar" data-dica="Lê uma planilha de inventário (modelo DNIT ou PATO) e cria/atualiza um projeto">Importar inventário</button>
@@ -138,8 +141,8 @@
         <div class="caixa">
           <h3>Projeto</h3>
           <div class="linha-botoes">
-            <button class="btn" id="btnDuplicar" data-dica="Cria uma cópia deste projeto com todo o inventário">Duplicar</button>
-            <button class="btn perigo" id="btnExcluirProj" data-dica="Apaga o projeto e o inventário (não pode ser desfeito)">Excluir projeto</button>
+            <button class="btn" id="btnDuplicar" data-dica="Cria uma cópia completa e independente deste projeto (inventário, PATO, binômio e cotações, croqui, custos, IP)">Salvar como cópia</button>
+            <button class="btn perigo" id="btnExcluirProj" data-dica="Apaga o projeto. Uma cópia completa (.pato) fica na pasta 'excluidos' e pode ser aberta de novo">Excluir projeto</button>
           </div>
           <h4>Histórico</h4>
           <ul class="historico" id="historico"></ul>

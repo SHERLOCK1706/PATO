@@ -82,12 +82,12 @@ def test_fornecedores_planilha_e_kmz(proj, tmp_path):
     assert len(cad) == 4 and cad["PEDREIRA SERRANA"]["br"] == "174" and cad["PEDREIRA SERRANA"]["km"] == 252
     assert cad["PEDREIRA SERRANA"]["fonte_posicao"].startswith("endereço BR-174")
     assert cad["BRITAMIX"]["rodovia_proxima"].startswith("BR-364")  # trecho coincidente BR-163/364: a BR do endereço
-    assert "fonte_posicao" not in cad["PROESTE"]                     # sem rodovia/km nem KMZ
+    assert "Cáceres" in cad["PROESTE"]["fonte_posicao"]             # sem rodovia/km nem KMZ: sede do município (IBGE)
     r = sv.transporte.importar_pontos(pid, str(_kml(tmp_path / "pontos.kml")))
     p = r["pontos"][0]
     assert p["tipo"] == "areal" and p["rodovia_proxima"].startswith("BR-174")
     cad = {x["nome"]: x for x in sv.binomio.fornecedores(pid)["lista"]}
-    assert cad["AREEIRA CARVALHO"]["fonte_posicao"] == "KMZ"
+    assert cad["AREEIRA CARVALHO"]["fonte_posicao"] == "KMZ do projeto"
 
 
 def test_cotacao_entra_no_binomio_e_resumo(proj, tmp_path):
@@ -119,3 +119,23 @@ def test_cotacao_entra_no_binomio_e_resumo(proj, tmp_path):
     sv.binomio.salvar_material(pid, d, bid)
     ln = next(x for x in sv.binomio.listar(pid)["resumo"] if x["id"] == bid)
     assert ln["conferencia_vencida"] and not ln["conferido"]
+
+
+def test_dmt_pela_estrada_e_anm(proj):
+    """Com o canteiro no croqui: DMT pela rede do SNV (pav./não pav.) e sugestões da ANM (SIGMINE) perto do canteiro."""
+    sv, pid = proj
+    c = sv.transporte.dados_croqui(pid)
+    sv.transporte.salvar_croqui(pid, dict(c, ocorrencias=[dict(nome="Canteiro", tipo="outro", km=124.5)]))
+    sv.transporte.montar_croqui(pid, 124.5)
+    cad = {x["nome"]: x for x in sv.binomio.fornecedores(pid)["lista"]}
+    s = cad["PEDREIRA SERRANA"]
+    assert s["dmt_total"] > s["distancia_canteiro_km"] and abs(s["dmt_pav"] + s["dmt_npav"] - s["dmt_total"]) < 0.05
+    assert "BR-158" in s["rota"]
+    sug = sv.binomio.sugestoes_anm(pid, raio_km=30)
+    nomes = {x["titular"] for x in sug["lista"]}
+    assert {"BRITASA MINERADORA CONFRESA LTDA", "BRITAZIL XINGU LTDA"} <= nomes  # fornecedores do binômio da BR-158
+    b = next(x for x in sug["lista"] if x["titular"] == "BRITAZIL XINGU LTDA")
+    assert b["tipo"] == "pedreira" and b["dmt_total"] < 15
+    sv.binomio.adicionar_do_sigmine(pid, [b])
+    cad = {x["nome"]: x for x in sv.binomio.fornecedores(pid)["lista"]}
+    assert cad["BRITAZIL XINGU LTDA"]["dmt_total"] < 15

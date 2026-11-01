@@ -38,6 +38,7 @@ function irAba(nome) {
   if (nome === "custos") carregarCustos();
   if (nome === "transporte") carregarTransp();
   if (nome === "orcamento") carregarOrc();
+  if (nome === "assistente") renderAssistente();
   if (nome === "normas") carregarNormas();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
@@ -933,7 +934,7 @@ async function cotacaoPdf(binomio_id) {
       <label>Frete <select id="coFrete"><option value="">não informado</option><option ${r.frete === "FOB" ? "selected" : ""}>FOB</option><option ${r.frete === "CIF" ? "selected" : ""}>CIF</option></select></label>
       <label>Local <input id="coLocal" value="${esc(r.local || "")}"></label>
       <label>Endereço na rodovia <input value="${r.rodovia ? `BR-${r.rodovia.br} km ${r.rodovia.km}` : ""}" disabled></label></div>
-    ${pos ? `<p class="nota">📍 Posição do fornecedor: ${esc(pos.fonte_posicao || "")}${pos.rodovia_proxima ? " · " + esc(pos.rodovia_proxima) : ""}${pos.distancia_canteiro_km != null ? ` · ${nf(pos.distancia_canteiro_km)} km em linha reta até o canteiro` : ""}</p>` : ""}
+    ${pos ? `<p class="nota">📍 Posição do fornecedor: ${esc(pos.fonte_posicao || "")}${pos.rodovia_proxima ? " · " + esc(pos.rodovia_proxima) : ""}${pos.dmt_total != null ? ` · <b>pela estrada: ${nf(pos.dmt_pav)} km pav. + ${nf(pos.dmt_npav)} km não pav.</b> (${esc(pos.rota || "")})` : pos.distancia_canteiro_km != null ? ` · ${nf(pos.distancia_canteiro_km)} km em linha reta até o canteiro` : ""}</p>` : ""}
     <h4>Itens (DMT em km até o canteiro — ajuste pavimentada / não pavimentada)</h4>
     <div class="tabela-rolagem"><table class="tab" id="tabCotOcr"><tr><th>Gravar</th><th>Material do binômio</th><th>Código</th><th>Preço</th><th>Unid.</th><th>Dens. t/m³</th><th>DMT pav.</th><th>DMT não pav.</th><th>Linha lida</th></tr>${r.itens.map(linha).join("")}</table></div>
     <div class="linha-botoes"><button class="btn mini" id="coAdd">+ Item</button></div>
@@ -954,19 +955,56 @@ async function cotacaoPdf(binomio_id) {
 async function renderForn() {
   const pn = $("#painelForn"); pn.hidden = false;
   const f = await api(`${base_}${E.pid}/fornecedores`);
-  pn.innerHTML = `<div class="bin-cab"><h3>Fornecedores e localização</h3><div class="linha-botoes" style="margin:0">
-      <button class="btn mini" id="fnImp" data-dica="Planilha com as colunas FORNECEDOR, ENDEREÇO e INSUMO (opcionais CNPJ e CONTATO). O endereço “BR-xxx, km yyy” é localizado no SNV">Importar planilha de fornecedores</button>
+  pn.innerHTML = `<div class="bin-cab"><h3>Fornecedores (cadastro geral — vale para todos os projetos)</h3><div class="linha-botoes" style="margin:0">
+      <button class="btn mini primario" id="fnAnm" data-dica="Pedreiras, areais e cascalheiras com lavra autorizada na ANM (SIGMINE) perto do canteiro, com a DMT pela estrada — a quem pedir as cotações">Sugerir pela ANM (SIGMINE)</button>
+      <button class="btn mini" id="fnImp" data-dica="Planilha com as colunas FORNECEDOR, ENDEREÇO e INSUMO (opcionais CNPJ e CONTATO)">Importar planilha de fornecedores</button>
       <button class="btn mini" id="fnKmz" data-dica="Pontos do Google Earth (pedreiras, areais…): localizados no SNV e incluídos no croqui">Importar KMZ/KML</button>
+      <button class="btn mini" id="fnSig" data-dica="Atualiza os processos minerários: arquivo <UF>.zip baixado de app.anm.gov.br/dadosabertos/SIGMINE/PROCESSOS_MINERARIOS/">Atualizar dados da ANM</button>
       <button class="btn mini" id="fnFechar">Fechar</button></div></div>
-    <p class="nota">${esc(f.nota)} ${f.km_canteiro == null ? "<b>Informe o km do canteiro no croqui (aba Transporte) para calcular a distância.</b>" : `Canteiro no km ${nf(f.km_canteiro)}.`}</p>
-    ${f.lista.length ? `<div class="tabela-rolagem"><table class="tab"><tr><th>Fornecedor</th><th>Insumo</th><th>Endereço</th><th>Posição</th><th>Rodovia mais próxima</th><th class=n>km na rodovia do projeto</th><th class=n>Dist. ao eixo (km)</th><th class=n>Dist. ao canteiro (linha reta, km)</th></tr>
-      ${f.lista.map(x => `<tr><td>${esc(x.nome)}</td><td>${esc(x.insumo || "")}</td><td><small>${esc(x.endereco || "")}</small></td><td><small>${esc(x.fonte_posicao || "sem posição — importe o KMZ")}</small></td>
-        <td><small>${esc(x.rodovia_proxima || "")}</small></td><td class=n>${nf(x.km_projeto)}</td><td class=n>${nf(x.distancia_eixo_km)}</td><td class=n>${nf(x.distancia_canteiro_km)}</td></tr>`).join("")}</table></div>`
+    <p class="nota">${esc(f.nota)} ${f.km_canteiro == null ? "<b>Informe o km do canteiro no croqui (aba Transporte) para calcular a DMT.</b>" : `Canteiro no km ${nf(f.km_canteiro)}.`}
+      Posição: KMZ do projeto → endereço “BR, km” → titular na ANM → sede do município.</p>
+    <div id="fnAnmRes"></div>
+    ${f.lista.length ? `<div class="tabela-rolagem" style="max-height:420px"><table class="tab"><tr><th>Fornecedor</th><th>Insumo</th><th>Posição</th><th>Rodovia mais próxima</th>
+      <th class=n>DMT pav. (km)</th><th class=n>DMT não pav. (km)</th><th class=n>DMT total</th><th>Rota</th><th class=n>Cotações</th><th></th></tr>
+      ${f.lista.map(x => `<tr><td>${esc(x.nome)}${x.cnpj ? `<br><small>${esc(x.cnpj)}</small>` : ""}</td><td>${esc(x.insumo || "")}</td>
+        <td><small>${esc(x.fonte_posicao || "sem posição — importe o KMZ ou informe BR/km ou cidade")}</small></td><td><small>${esc(x.rodovia_proxima || "")}</small></td>
+        <td class=n>${nf(x.dmt_pav)}</td><td class=n>${nf(x.dmt_npav)}</td><td class=n><b>${nf(x.dmt_total)}</b>${x.distancia_canteiro_km != null ? `<br><small>reta ${nf(x.distancia_canteiro_km)}</small>` : ""}</td>
+        <td><small>${esc(x.rota || "")}${(x.avisos_rota || []).map(a => `<br><span class="tag aviso">${esc(a)}</span>`).join("")}</small></td>
+        <td class=n title="${esc((x.historico || []).map(h => `${h.data || ""} ${h.material}: R$ ${h.preco} /${h.unidade || ""} (${h.projeto || ""})`).join("\n"))}">${(x.historico || []).length || ""}</td>
+        <td><button class="btn mini perigo" data-exforn="${esc(x.nome)}" data-dica="Remove do cadastro geral">×</button></td></tr>`).join("")}</table></div>`
       : '<p class="nota">Nenhum fornecedor cadastrado.</p>'}`;
   $("#fnFechar").onclick = () => pn.hidden = true;
   $("#fnImp").onclick = async () => { const a = await escolherArquivo(".xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
     try { await api(`${base_}${E.pid}/fornecedores/importar`, { method: "POST", body: fd }); toast("Fornecedores importados"); renderForn(); } catch (e) { erro(e); } };
   $("#fnKmz").onclick = async () => { await importarKmz(); renderForn(); };
+  $("#fnSig").onclick = async () => { const a = await escolherArquivo(".zip"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
+    toast("Lendo o SIGMINE…"); try { const r = await api(`/api/sigmine/importar`, { method: "POST", body: fd });
+      toast(`ANM ${r.uf}: ${r.processos} processos (${r.lavra_autorizada} com lavra autorizada)`); } catch (e) { erro(e); } };
+  $$("[data-exforn]").forEach(b => b.onclick = async () => { if (!confirm(`Remover ${b.dataset.exforn} do cadastro geral?`)) return;
+    try { await api(`${base_}${E.pid}/fornecedores?nome=${encodeURIComponent(b.dataset.exforn)}`, { method: "DELETE" }); renderForn(); } catch (e) { erro(e); } });
+  $("#fnAnm").onclick = () => sugerirAnm(80);
+}
+async function sugerirAnm(raio) {
+  const el = $("#fnAnmRes"); el.innerHTML = '<p class="carregando">Buscando na ANM e calculando a DMT pela estrada…</p>';
+  try {
+    const r = await api(`${base_}${E.pid}/fornecedores/anm?raio=${raio}`);
+    if (!r.lista.length) { el.innerHTML = `<p class="tag aviso">${esc(r.aviso || "Nenhum processo com lavra autorizada no raio.")}</p>`; return; }
+    B_.anm = r.lista;
+    el.innerHTML = `<div class="caixa"><div class="bin-cab"><h4>ANM/SIGMINE — lavra autorizada até ${r.raio_km} km do canteiro (${esc(r.uf)}, dados de ${esc(r.importado || "")})</h4>
+      <div class="linha-botoes" style="margin:0"><label>raio <select id="anmRaio">${[30, 50, 80, 120, 200].map(x => `<option ${x === raio ? "selected" : ""}>${x}</option>`).join("")}</select> km</label>
+      <button class="btn mini primario" id="anmAdd" data-dica="Inclui os marcados no cadastro geral de fornecedores (com a posição do processo)">Adicionar marcados ao cadastro</button></div></div>
+      <p class="nota">${esc(r.nota)}</p>
+      <div class="tabela-rolagem" style="max-height:340px"><table class="tab"><tr><th></th><th>Titular</th><th>Tipo</th><th>Substâncias</th><th>Fase</th><th class=n>Linha reta</th><th class=n>DMT pav.</th><th class=n>DMT não pav.</th><th class=n>DMT total</th></tr>
+      ${r.lista.map((x, k) => `<tr><td>${x.no_cadastro ? '<span class="tag ok">no cadastro</span>' : `<input type="checkbox" data-anm="${k}">`}</td><td>${esc(x.titular)}<br><small>${esc(x.processos.slice(0, 3).join(", "))}${x.processos.length > 3 ? "…" : ""}</small></td>
+        <td>${esc(x.tipo_nome)}</td><td><small>${esc(x.substancias.join(", "))}</small></td><td><small>${esc(x.fase)}</small></td><td class=n>${nf(x.linha_reta_km)}</td>
+        <td class=n>${nf(x.dmt_pav)}</td><td class=n>${nf(x.dmt_npav)}</td><td class=n><b>${nf(x.dmt_total)}</b></td></tr>`).join("")}</table></div></div>`;
+    $("#anmRaio").onchange = e => sugerirAnm(+e.target.value);
+    $("#anmAdd").onclick = async () => {
+      const tit = $$("[data-anm]").filter(c => c.checked).map(c => B_.anm[+c.dataset.anm]);
+      if (!tit.length) return toast("Marque os titulares a incluir");
+      try { await jpost(`${base_}${E.pid}/fornecedores/anm`, { titulares: tit }); toast(`${tit.length} incluído(s) no cadastro`); renderForn(); } catch (e) { erro(e); }
+    };
+  } catch (e) { el.innerHTML = ""; erro(e); }
 }
 async function importarKmz() {
   const a = await escolherArquivo(".kmz,.kml"); if (!a) return null;
@@ -1585,6 +1623,28 @@ $("#btnCrqKmz").onclick = async () => {
   carregarTransp();
 };
 
+// ---- assistente
+async function renderAssistente() {
+  if (!E.pid) return;
+  $("#assEtapas").innerHTML = '<p class="carregando">Conferindo as etapas…</p>';
+  try {
+    const a = await api(`${base_}${E.pid}/assistente`);
+    const ic = { ok: "✅", pendente: "⚠️", falta: "❌" };
+    $("#assResumo").innerHTML = `<p><b>${a.concluidas} de ${a.total} etapas concluídas</b>${a.pronto ? ' — <span class="tag ok">pronto para exportar</span>' : ""}</p>
+      <div class="barra-prog"><div style="width:${Math.round(100 * a.concluidas / a.total)}%"></div></div>`;
+    $("#assEtapas").innerHTML = a.etapas.map(e => `<div class="ass-etapa ${e.status}"><div class="ass-cab"><span class="ass-ic">${ic[e.status]}</span>
+        <b>${e.n}. ${esc(e.titulo)}</b> <small class="nota">${esc(e.feito || "")}</small>
+        <button class="btn mini ${e.status === "ok" ? "" : "primario"}" data-assir="${e.aba}|${e.sub || ""}">${e.status === "ok" ? "Ver" : "Ir para a etapa"}</button></div>
+        ${e.avisos.length ? `<ul class="nota">${e.avisos.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`).join("");
+    $$("[data-assir]").forEach(b => b.onclick = () => {
+      const [aba, sub] = b.dataset.assir.split("|");
+      if (sub) { if (aba === "orcamento") O_.sub = sub; if (aba === "custos") C_.sub = sub; if (aba === "transporte") T_.sub = sub; }
+      irAba(aba);
+    });
+  } catch (e) { $("#assEtapas").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+}
+$("#btnAssAtual").onclick = renderAssistente;
+
 // ---- conferência
 const CF_ = { r: null };
 const CF_TAG = { ok: ["ok", "OK"], atencao: ["aviso", "Atenção"], falha: ["erro", "Falha"], manual: ["", "A conferir"], feito: ["ok", "Conferido"] };
@@ -1679,6 +1739,10 @@ $("#btnExpOrc").onclick = async () => {
   try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
 
+$("#btnMemoria").onclick = async () => {
+  $("#resOrc").innerHTML = '<p class="carregando">Gerando a memória de cálculo…</p>';
+  try { const r = await jpost(`${base_}${E.pid}/memoria`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+};
 $("#btnExpLic").onclick = async () => {
   $("#resOrc").innerHTML = '<p class="carregando">Gerando a planilha de licitação e recalculando para conferir…</p>';
   try { const r = await jpost(`${base_}${E.pid}/exportar/licitacao`, {}), cf = r.conferencia || {};

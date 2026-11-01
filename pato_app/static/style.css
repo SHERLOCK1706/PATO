@@ -209,3 +209,13 @@ tr.titulo-orc td { background: var(--pri-claro); font-weight: 600; }
 .passos .seta { color: var(--txt2); }
 .cot-campos input, .cot-campos select { width: 100%; }
 tr.adotado td { background: color-mix(in srgb, var(--ok, #2e7d32) 10%, transparent); }
+
+.ass-etapa { border: 1px solid var(--borda); border-left: 5px solid var(--borda); border-radius: 8px; padding: 8px 12px; margin: 8px 0; background: var(--sup); }
+.ass-etapa.ok { border-left-color: var(--ok); }
+.ass-etapa.pendente { border-left-color: #d29a00; }
+.ass-etapa.falta { border-left-color: var(--perigo); }
+.ass-cab { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ass-cab button { margin-left: auto; }
+.ass-ic { font-size: 1.1em; }
+.barra-prog { height: 8px; background: var(--sup2); border: 1px solid var(--borda); border-radius: 99px; overflow: hidden; margin-bottom: 8px; }
+.barra-prog div { height: 100%; background: var(--ok); }

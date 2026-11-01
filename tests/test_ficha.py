@@ -172,3 +172,20 @@ def test_topicos_editaveis(proj):
     assert k2 < k and itens[k2 + 1]["item"] == "01.10.01"
     o.remover_item(pid, tit["id"], com_itens=True)
     assert not any(x["item"].startswith("01.10") for x in o.dados(pid)["itens"])
+
+
+def test_assistente_e_memoria(proj, tmp_path):
+    """Assistente: etapas com situação; memória de cálculo em PDF; ficha PATO com GD/ADM/CAN/MOB."""
+    from pato_app import ficha as fc
+    from pato_app import memoria
+    sv, pid, _ = proj
+    a = sv.orcamento.assistente(pid)
+    st = {e["n"]: e["status"] for e in a["etapas"]}
+    assert st[1] == st[2] == st[3] == st[6] == st[7] == "ok" and a["total"] == 9
+    lst = {x["codigo"] for x in fc.ler_lista_servicos(str(MODELO_PADRAO))}
+    assert {"GD", "ADM", "CAN", "MOB"} <= lst
+    pdf = memoria.gerar(sv, pid, str(tmp_path / "memoria.pdf"))
+    from pypdf import PdfReader
+    r = PdfReader(pdf)
+    texto = "".join(pg.extract_text() or "" for pg in r.pages[:2])
+    assert len(r.pages) > 5 and "Memória de cálculo" in texto and "levantamento IP" in texto

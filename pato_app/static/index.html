@@ -26,6 +26,7 @@
 
 <nav class="abas" id="abas">
   <button data-aba="painel" class="ativa" data-dica="Resumo do trecho, quantidades e reflexo no PATO">Painel</button>
+  <button data-aba="assistente" data-dica="Passo a passo para montar o PATO de um segmento: o que já está pronto, o que falta e onde fazer">Assistente</button>
   <button data-aba="inventario" data-dica="Tabela editável do inventário por categoria">Inventário</button>
   <button data-aba="mapa" data-dica="Mapa com as camadas do inventário">Mapa</button>
   <button data-aba="projeto" data-dica="Dados do projeto, alterar trecho e gerar aceiro">Projeto e trecho</button>
@@ -69,6 +70,12 @@
   </section>
 
   <!-- INVENTÁRIO -->
+  <section id="aba-assistente" class="aba">
+    <div class="caixa"><div class="bin-cab"><h3>Assistente — montar o PATO deste segmento</h3>
+      <div class="linha-botoes" style="margin:0"><button class="btn" id="btnAssAtual" data-dica="Confere de novo todas as etapas">Atualizar</button></div></div>
+      <p class="nota">Sequência do modelo BR-158/MT. Cada etapa mostra se está concluída (✅), com pendências (⚠️) ou faltando (❌); o botão leva ao lugar certo.</p>
+      <div id="assResumo"></div><div id="assEtapas"></div></div>
+  </section>
   <section id="aba-inventario" class="aba">
     <div class="barra">
       <div class="chips" id="chipsInv"></div>
@@ -428,6 +435,7 @@
         <button class="btn" id="btnImpOrc" data-dica="Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO: itens, níveis de esforço, memórias de cálculo e preços informados; liga as quantidades ao inventário do projeto">Importar planilha PATO</button>
         <button class="btn" id="btnAddOrc" data-dica="Inclui um serviço ou um título (tópico) no fim da planilha — use o ＋ de cada linha para incluir no lugar certo">+ Serviço / título</button>
         <button class="btn" id="btnExpLic" data-dica="PATO final no modelo da planilha de licitação (70 abas, com croqui, CPU, binômios e inventário): preços do sistema no BD sem vínculos externos, base SICRO, níveis de esforço e correções de fórmula; confere o total recalculado com o do sistema">Exportar PATO de licitação</button>
+        <button class="btn" id="btnMemoria" data-dica="PDF para o processo: origem de cada quantidade (inventário, ICM/IP, memórias), preços, binômio conferido com as cotações e anexos, croqui e conferência">Memória de cálculo (PDF)</button>
         <button class="btn primario" id="btnExpOrc" data-dica="Gera o Excel: planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Exportar (Excel)</button>
       </div></div>
     <div id="resOrc"></div>

@@ -200,64 +200,48 @@ class Binomios:
         return dict(aplicados=n, mensagens=msgs, resumo=self.listar(pid)["resumo"])
 
     # ------------------------------------------------ cadastro de fornecedores
+    # Cadastro geral (vale para todos os projetos) em <pasta>/fornecedores.json, com o histórico das cotações gravadas.
     @staticmethod
     def _endereco(end: str | None) -> dict:
         """Rodovia/km, cidade e UF do endereço ("Rodovia BR-174, km 224 - Pontes e Lacerda - MT")."""
+        from . import rede
         u = nz.sem_acento(end or "").upper()
         out = {}
         m = re.search(r"\bBR\s*[-–]?\s*(\d{3})\D{0,12}?\bKM\s*(\d+(?:[.,]\d+)?)", u)
         if m:
             out.update(br=m.group(1), km=nz.numero(m.group(2)))
-        m = re.search(r"[-–,]\s*([A-Za-zÀ-ú' .]{3,40}?)\s*[-–/]\s*([A-Z]{2})\s*$", (end or "").strip())
-        if m:
-            out.update(cidade=m.group(1).strip(), uf=m.group(2))
+        cid, uf = rede.cidade_uf(end)
+        if cid:
+            out.update(cidade=cid, uf=uf)
         return out
 
-    def fornecedores(self, pid: int) -> dict:
-        """Cadastro de fornecedores do projeto, com a posição: ponto do KMZ (croqui) ou rodovia/km do endereço (SNV),
-        o km mais próximo na rodovia do projeto e a distância em linha reta até o canteiro."""
-        from . import snv
-        from .croqui_auto import chave
-        lst = (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or []
-        croqui = self.sv.transporte.dados_croqui(pid)
-        kmz = {chave(o.get("nome")): o for o in croqui.get("ocorrencias") or [] if o.get("lat") is not None}
-        br_p, uf_p = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
-        lc = self.sv.orcamento.locais_croqui(pid) if hasattr(self.sv, "orcamento") else {}
-        km_can = (lc or {}).get("km_canteiro")
-        pos_can = snv.posicao(br_p, uf_p, km_can) if br_p and km_can is not None else None
-        out = []
-        for f in lst:
-            f = dict(f)
-            k = chave(f.get("nome"))
-            pk = kmz.get(k) or next((o for n, o in kmz.items() if k and (k in n or n in k)), None)
-            if pk:
-                f.update(lat=pk["lat"], lon=pk["lon"], fonte_posicao="KMZ")
-            elif f.get("br") and f.get("km") is not None:
-                pos = snv.posicao(f["br"], f.get("uf") or uf_p, f["km"])
-                if pos:
-                    f.update(lat=pos[0], lon=pos[1], fonte_posicao=f"endereço BR-{f['br']} km {f['km']:g} (SNV)")
-            if f.get("lat") is not None:
-                via = snv.localizar(None, f.get("uf") or uf_p, f["lat"], f["lon"])
-                if f.get("br") and via and via["br"] != str(f["br"]).zfill(3):  # trecho coincidente: a BR do endereço
-                    mesma = snv.localizar(f["br"], f.get("uf") or uf_p, f["lat"], f["lon"])
-                    if mesma and mesma["distancia_km"] <= via["distancia_km"] + 0.5:
-                        via = mesma
-                if via:
-                    f["rodovia_proxima"] = f"BR-{via['br']} km {via['km']:g} ({via['distancia_km']:g} km do eixo)"
-                if br_p:
-                    no_proj = snv.localizar(br_p, uf_p, f["lat"], f["lon"])
-                    if no_proj:
-                        f.update(km_projeto=no_proj["km"], distancia_eixo_km=no_proj["distancia_km"])
-                if pos_can:
-                    f["distancia_canteiro_km"] = snv.distancia((f["lat"], f["lon"]), pos_can)
-            out.append(f)
-        return dict(lista=out, km_canteiro=km_can,
-                    nota="Distância ao canteiro em linha reta (estimativa): confira a DMT pela rota e separe pavimentada / não pavimentada.")
+    @property
+    def _arq_cad(self) -> Path:
+        return Path(self.sv.pasta) / "fornecedores.json"
 
-    def salvar_fornecedores(self, pid: int, lista: list[dict], acrescentar: bool = False) -> dict:
+    def _cadastro(self) -> list[dict]:
+        with _TRAVA:
+            lst = json.loads(self._arq_cad.read_text(encoding="utf-8")).get("lista", []) if self._arq_cad.exists() else []
+        return lst
+
+    def _gravar_cadastro(self, lst: list[dict]) -> None:
+        with _TRAVA:
+            tmp = self._arq_cad.with_suffix(".tmp")
+            tmp.write_text(json.dumps(dict(lista=lst), ensure_ascii=False, indent=1), encoding="utf-8")
+            tmp.replace(self._arq_cad)
+
+    def _migrar_cadastro(self, pid: int) -> None:
+        """Cadastro antigo, por projeto → cadastro geral (uma vez)."""
+        d = self.db.dados_projeto(pid, "fornecedores")
+        if d and d.get("lista") and not d.get("migrado"):
+            self._mesclar(d["lista"])
+            self.db.gravar_dados_projeto(pid, "fornecedores", dict(d, migrado=True))
+
+    def _mesclar(self, lista: list[dict]) -> int:
         from .croqui_auto import chave
-        atual = (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or [] if acrescentar else []
-        por_nome = {chave(f.get("nome")): f for f in atual}
+        cad = self._cadastro()
+        por_nome = {chave(f.get("nome")): f for f in cad}
+        n = 0
         for f in lista:
             nome = nz.texto(f.get("nome"))
             if not nome:
@@ -266,10 +250,94 @@ class Binomios:
             novo = dict(nome=nome, endereco=nz.texto(f.get("endereco")), insumo=nz.texto(f.get("insumo")),
                         cnpj=nz.texto(f.get("cnpj")), contato=nz.texto(f.get("contato")),
                         br=nz.texto(f.get("br")) or e.get("br"), km=_num(f.get("km")) if _num(f.get("km")) is not None else e.get("km"),
-                        cidade=nz.texto(f.get("cidade")) or e.get("cidade"), uf=nz.texto(f.get("uf")) or e.get("uf"))
-            por_nome[chave(nome)] = dict(por_nome.get(chave(nome)) or {}, **{k: v for k, v in novo.items() if v is not None})
-        self.db.gravar_dados_projeto(pid, "fornecedores", dict(lista=list(por_nome.values())))
-        self.db.registrar(pid, "binômio: fornecedores", f"{len(por_nome)} fornecedores no cadastro")
+                        cidade=nz.texto(f.get("cidade")) or e.get("cidade"), uf=nz.texto(f.get("uf")) or e.get("uf"),
+                        lat=_num(f.get("lat")), lon=_num(f.get("lon")), fonte_posicao=f.get("fonte_posicao"),
+                        processos_anm=f.get("processos_anm"))
+            k = chave(nome)
+            base = por_nome.get(k) or {}
+            por_nome[k] = dict(base, **{a: b for a, b in novo.items() if b not in (None, "", [])})
+            n += k not in {chave(x.get("nome")) for x in cad}
+        self._gravar_cadastro(list(por_nome.values()))
+        return n
+
+    def _contexto(self, pid: int) -> dict:
+        from . import snv
+        from .croqui_auto import chave
+        br_p, uf_p = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
+        lc = self.sv.orcamento.locais_croqui(pid)
+        km_can = lc.get("km_canteiro")
+        pos_can = snv.posicao(br_p, uf_p, km_can) if br_p and km_can is not None else None
+        croqui = self.sv.transporte.dados_croqui(pid)
+        kmz = {chave(o.get("nome")): o for o in croqui.get("ocorrencias") or [] if o.get("lat") is not None}
+        return dict(br=br_p, uf=uf_p or "MT", km_canteiro=km_can, pos_can=pos_can, kmz=kmz)
+
+    def _localizar(self, f: dict, ctx: dict) -> dict:
+        """Posição do fornecedor: KMZ do projeto > informada > rodovia/km do endereço (SNV) > titular na ANM (SIGMINE,
+        processo com lavra mais próximo do canteiro) > sede do município (IBGE). E a DMT pela estrada até o canteiro."""
+        from . import rede, sigmine, snv
+        from .croqui_auto import chave
+        f = dict(f)
+        k = chave(f.get("nome"))
+        pk = ctx["kmz"].get(k) or next((o for n, o in ctx["kmz"].items() if k and (k in n or n in k)), None)
+        uf = f.get("uf") or ctx["uf"]
+        if pk:
+            f.update(lat=pk["lat"], lon=pk["lon"], fonte_posicao="KMZ do projeto")
+        elif f.get("lat") is not None and f.get("lon") is not None:
+            f.setdefault("fonte_posicao", "informada")
+        elif f.get("br") and f.get("km") is not None and snv.posicao(f["br"], uf, f["km"]):
+            pos = snv.posicao(f["br"], uf, f["km"])
+            f.update(lat=pos[0], lon=pos[1], fonte_posicao=f"endereço BR-{f['br']} km {f['km']:g} (SNV)")
+        else:
+            procs = [p for p in sigmine.por_titular(uf, f.get("nome")) if p["lavra"]]
+            if procs:
+                ref = ctx["pos_can"] or (procs[0]["lat"], procs[0]["lon"])
+                p = min(procs, key=lambda p: snv.distancia((p["lat"], p["lon"]), ref))
+                f.update(lat=p["lat"], lon=p["lon"], fonte_posicao=f"ANM/SIGMINE processo {p['processo']} ({p['substancia']}, {p['fase'].lower()})")
+            else:
+                m = rede.municipio(f.get("cidade"), uf) if f.get("cidade") else None
+                if m:
+                    f.update(lat=m["lat"], lon=m["lon"], fonte_posicao=f"sede do município {m['nome']}/{m['uf']} (IBGE) — aproximada")
+        if f.get("lat") is None:
+            return f
+        via = snv.localizar(None, uf, f["lat"], f["lon"])
+        if f.get("br") and via and via["br"] != str(f["br"]).zfill(3):  # trecho coincidente: a BR do endereço
+            mesma = snv.localizar(f["br"], uf, f["lat"], f["lon"])
+            if mesma and mesma["distancia_km"] <= via["distancia_km"] + 0.5:
+                via = mesma
+        if via:
+            f["rodovia_proxima"] = f"BR-{via['br']} km {via['km']:g} ({via['distancia_km']:g} km do eixo)"
+        if ctx["br"]:
+            no_proj = snv.localizar(ctx["br"], ctx["uf"], f["lat"], f["lon"])
+            if no_proj:
+                f.update(km_projeto=no_proj["km"], distancia_eixo_km=no_proj["distancia_km"])
+        if ctx["pos_can"]:
+            f["distancia_canteiro_km"] = snv.distancia((f["lat"], f["lon"]), ctx["pos_can"])
+            r = rede.rota((f["lat"], f["lon"]), ctx["pos_can"])
+            if r:
+                f.update(dmt_total=r["total"], dmt_pav=r["pav"], dmt_npav=r["npav"], rota=" → ".join(r["rodovias"]),
+                         avisos_rota=r["avisos"])
+        return f
+
+    def fornecedores(self, pid: int) -> dict:
+        """Cadastro geral de fornecedores, com a posição e a DMT pela estrada até o canteiro deste projeto."""
+        self._migrar_cadastro(pid)
+        ctx = self._contexto(pid)
+        lista = [self._localizar(f, ctx) for f in self._cadastro()]
+        lista.sort(key=lambda f: (f.get("dmt_total") is None, f.get("dmt_total") or 0, f.get("nome") or ""))
+        return dict(lista=lista, km_canteiro=ctx["km_canteiro"],
+                    nota="DMT pela rede federal do SNV (pavimentada / não pavimentada; o acesso até a rodovia entra como não "
+                         "pavimentado). Trechos por rodovias estaduais/municipais não estão no SNV — confira.")
+
+    def salvar_fornecedores(self, pid: int, lista: list[dict], acrescentar: bool = True) -> dict:
+        if not acrescentar:
+            self._gravar_cadastro([])
+        n = self._mesclar(lista)
+        self.db.registrar(pid, "fornecedores", f"{n} novo(s) no cadastro geral")
+        return self.fornecedores(pid)
+
+    def excluir_fornecedor(self, pid: int, nome: str) -> dict:
+        from .croqui_auto import chave
+        self._gravar_cadastro([f for f in self._cadastro() if chave(f.get("nome")) != chave(nome)])
         return self.fornecedores(pid)
 
     def importar_fornecedores(self, pid: int, caminho: str) -> dict:
@@ -294,42 +362,98 @@ class Binomios:
             raise ValueError("Não encontrei a coluna FORNECEDOR na planilha.")
         return self.salvar_fornecedores(pid, lista, acrescentar=True)
 
-    def _posicao_fornecedor(self, pid: int, nome: str | None, rodovia: dict | None = None) -> dict | None:
+    def sugestoes_anm(self, pid: int, raio_km: float = 80, tipos: list[str] | None = None, limite: int = 30) -> dict:
+        """Pedreiras, areais e cascalheiras com lavra autorizada (ANM/SIGMINE) perto do canteiro, por titular, com a DMT
+        pela estrada — para pedir as cotações (mínimo de 3, IN DNIT 10/2024) e para as jazidas do croqui."""
+        from . import rede, sigmine
+        from .croqui_auto import chave
+        ctx = self._contexto(pid)
+        d = sigmine.dados(ctx["uf"])
+        if not d:
+            return dict(lista=[], aviso=f"Sem os dados do SIGMINE para {ctx['uf']} — importe o {ctx['uf']}.zip da ANM.")
+        if not ctx["pos_can"]:
+            return dict(lista=[], aviso="Informe o km do canteiro no croqui (aba Transporte) para buscar os fornecedores próximos.")
+        procs = sigmine.proximos(ctx["uf"], *ctx["pos_can"], raio_km=raio_km, tipos=tipos, so_lavra=True, limite=400)
+        grupos = sorted(sigmine.agrupar(procs), key=lambda g: g["linha_reta_km"])
+        no_cad = {chave(f.get("nome")) for f in self._cadastro()}
+        out, por_tipo = [], {}
+        for g in grupos:
+            if por_tipo.get(g["tipo"], 0) >= limite:
+                continue
+            por_tipo[g["tipo"]] = por_tipo.get(g["tipo"], 0) + 1
+            r = rede.rota((g["lat"], g["lon"]), ctx["pos_can"])
+            out.append(dict(titular=g["titular"], tipo=g["tipo"], tipo_nome=sigmine.TIPOS[g["tipo"]], substancias=g["substancias"],
+                            fase=g["fase"], processos=g["processos"], lat=g["lat"], lon=g["lon"], linha_reta_km=g["linha_reta_km"],
+                            dmt_total=r and r["total"], dmt_pav=r and r["pav"], dmt_npav=r and r["npav"],
+                            no_cadastro=chave(g["titular"]) in no_cad))
+        return dict(lista=out, uf=ctx["uf"], fonte=d.get("fonte"), importado=d.get("importado"), raio_km=raio_km,
+                    nota="Processos com lavra autorizada (licenciamento, concessão de lavra, registro de extração). "
+                         "Posição = centro do polígono do processo; confira o acesso à frente de lavra.")
+
+    def adicionar_do_sigmine(self, pid: int, titulares: list[dict]) -> dict:
+        """Inclui no cadastro geral os titulares escolhidos da lista da ANM (com a posição do processo)."""
+        self._mesclar([dict(nome=t["titular"], insumo=t.get("tipo_nome"), lat=t.get("lat"), lon=t.get("lon"),
+                            fonte_posicao=f"ANM/SIGMINE processo {', '.join((t.get('processos') or [])[:3])}",
+                            processos_anm=t.get("processos")) for t in titulares])
+        return self.fornecedores(pid)
+
+    def _historico(self, cot: dict, material: str, pid: int) -> None:
+        """Guarda a cotação gravada no histórico do fornecedor (cadastro geral)."""
+        from .croqui_auto import chave
+        cad = self._cadastro()
+        k = chave(cot.get("fornecedor"))
+        f = next((x for x in cad if chave(x.get("nome")) == k), None)
+        if f is None:
+            f = dict(nome=cot.get("fornecedor"), cnpj=cot.get("cnpj"), endereco=cot.get("local"))
+            f.update({a: b for a, b in self._endereco(cot.get("local")).items() if b})
+            cad.append(f)
+        p = self.sv.projeto(pid)
+        h = dict(data=cot.get("data"), material=material, preco=_num(cot.get("preco")), unidade=cot.get("unidade"),
+                 frete=cot.get("frete"), dmt_pav=_num(cot.get("dmt_pav")), dmt_npav=_num(cot.get("dmt_npav")),
+                 projeto=p.get("nome"), anexo=cot.get("anexo"))
+        f["historico"] = [x for x in f.get("historico") or [] if not (x.get("data") == h["data"] and x.get("material") == material
+                                                                      and x.get("projeto") == h["projeto"])] + [h]
+        if cot.get("cnpj") and not f.get("cnpj"):
+            f["cnpj"] = cot["cnpj"]
+        self._gravar_cadastro(cad)
+
+    def _posicao_fornecedor(self, pid: int, nome: str | None, rodovia: dict | None = None, local: str | None = None) -> dict | None:
         from .croqui_auto import chave
         k = chave(nome)
-        cad = self.fornecedores(pid)["lista"]
-        f = next((f for f in cad if k and (chave(f["nome"]) == k or chave(f["nome"]) in k or k in chave(f["nome"]))), None)
-        if f is None and rodovia:  # não cadastrado: posição pelo endereço da própria cotação
-            from . import snv
-            br_p, uf_p = snv.br_uf(self.sv.projeto(pid).get("rodovia"))
-            pos = snv.posicao(rodovia["br"], uf_p, rodovia["km"])
-            if pos:
-                f = dict(nome=nome, lat=pos[0], lon=pos[1], fonte_posicao=f"endereço BR-{rodovia['br']} km {rodovia['km']:g} (SNV)")
-                lc = self.sv.orcamento.locais_croqui(pid)
-                pc = snv.posicao(br_p, uf_p, lc["km_canteiro"]) if br_p and lc.get("km_canteiro") is not None else None
-                if pc:
-                    f["distancia_canteiro_km"] = snv.distancia(pos, pc)
-        return f
+        self._migrar_cadastro(pid)
+        ctx = self._contexto(pid)
+        f = next((f for f in self._cadastro() if k and (chave(f["nome"]) == k or chave(f["nome"]) in k or k in chave(f["nome"]))), None)
+        if f is None:  # não cadastrado: endereço da cotação (BR/km), titular na ANM ou município
+            cid, uf = self._endereco(local).get("cidade"), self._endereco(local).get("uf")
+            f = dict(nome=nome, br=(rodovia or {}).get("br"), km=(rodovia or {}).get("km"), cidade=cid, uf=uf)
+        f = self._localizar(f, ctx)
+        return f if f.get("lat") is not None else None
 
     # --------------------------------------------------- cotação por PDF (OCR)
     def ler_cotacao(self, pid: int, caminho: str, nome_arquivo: str | None = None) -> dict:
         """Lê a cotação (texto do PDF ou OCR) e sugere o material do binômio de cada item — só pré-preenche."""
         from . import cotacao_ocr
         from .croqui_auto import chave
-        conhecidos = [f["nome"] for f in (self.db.dados_projeto(pid, "fornecedores") or {}).get("lista") or []]
+        self._migrar_cadastro(pid)
+        conhecidos = [f["nome"] for f in self._cadastro()]
         conhecidos += [o["nome"] for o in self.sv.transporte.dados_croqui(pid).get("ocorrencias") or [] if o.get("lat") is not None]
         r = cotacao_ocr.ler(caminho, conhecidos, nome_arquivo)
-        pf = self._posicao_fornecedor(pid, r.get("fornecedor"), r.get("rodovia"))
+        pf = self._posicao_fornecedor(pid, r.get("fornecedor"), r.get("rodovia"), r.get("local"))
         r["posicao"] = pf
-        dist = r.get("distancia_km")
-        if dist is None and pf and pf.get("distancia_canteiro_km") is not None:
+        dist, dmt_np = r.get("distancia_km"), 0
+        if dist is None and pf and pf.get("dmt_total") is not None:
+            dist, dmt_np = pf["dmt_pav"], pf["dmt_npav"]
+            r["avisos"].append(f"DMT pela estrada ({pf.get('rota')}): {pf['dmt_pav']:g} km pavimentada + {pf['dmt_npav']:g} km não "
+                               f"pavimentada — posição: {pf.get('fonte_posicao')}. Confira.")
+            r["avisos"] += pf.get("avisos_rota") or []
+        elif dist is None and pf and pf.get("distancia_canteiro_km") is not None:
             dist = pf["distancia_canteiro_km"]
             r["avisos"].append(f"DMT estimada em linha reta do fornecedor ({pf.get('fonte_posicao')}) ao canteiro: "
                                f"{dist:g} km — ajuste pela rota real.")
-        if pf and (pf.get("distancia_canteiro_km") or 0) > 150:
-            r["avisos"].append(f"Fornecedor a {pf['distancia_canteiro_km']:g} km do canteiro (linha reta): confira se a cotação é deste trecho.")
+        if pf and (pf.get("dmt_total") or pf.get("distancia_canteiro_km") or 0) > 150:
+            r["avisos"].append(f"Fornecedor a {pf.get('dmt_total') or pf.get('distancia_canteiro_km'):g} km do canteiro: confira se a cotação é deste trecho.")
         if dist is None:
-            r["avisos"].append("Distância não informada na cotação: localize o fornecedor (KMZ ou cadastro) ou digite a DMT.")
+            r["avisos"].append("Distância não informada na cotação: localize o fornecedor (KMZ, cadastro, ANM) ou digite a DMT.")
         mats = [dict(id=b["id"], nome=b["dados"].get("nome"), codigo=b["dados"].get("codigo"),
                      densidade=b["dados"].get("densidade")) for b in self.db.binomios(pid, TIPO_MATERIAL)]
         tab = None
@@ -345,7 +469,7 @@ class Binomios:
                 it["codigo"] = next((c for c, d in tab.items() if k and k in chave(d.get("descricao"))), None)
             cif = r.get("frete") == "CIF"
             it["dmt_pav"] = 0 if cif else dist
-            it["dmt_npav"] = 0
+            it["dmt_npav"] = 0 if cif else dmt_np
         r["materiais"] = mats
         if r.get("distancia_km") is not None and r.get("frete") != "CIF":
             r["avisos"].append("A distância lida foi posta como DMT pavimentada — confira e separe o trecho não pavimentado.")
@@ -373,6 +497,7 @@ class Binomios:
                 r = self.salvar_material(pid, dict(nome=it.get("material") or "Material", codigo=it.get("codigo"),
                                                    grupo="petreo", densidade=it.get("densidade"), cotacoes=[cot]))
             self.anexar(pid, caminho, nome_arquivo, r["id"], "cotacao", dados.get("fornecedor"), "cotação lida automaticamente e conferida")
+            self._historico(cot, r["nome"], pid)
             feitos.append(dict(id=r["id"], material=r["nome"], vencedor=(r.get("vencedor") or {}).get("fornecedor")))
         if not feitos:
             raise ValueError("Nenhum item com preço para gravar.")

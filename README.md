@@ -238,6 +238,26 @@ Conferência com a planilha BR-158/MT: todas as quantidades e preços batem (GD 
 A base de normas guarda só o texto pesquisável dos documentos (com página), não os arquivos originais — eles
 ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 
+## Novidades: assistente, salvar versões, fornecedores (ANM/SIGMINE), DMT pela estrada e memória de cálculo
+- **Assistente** (aba própria): as 9 etapas para montar o PATO de um segmento — projeto, inventário, ICM/IP, data-base e BDI,
+  cotações/binômio, croqui, ficha de serviços, ADM/mobilização, conferência — com ✅/⚠️/❌, o que falta e o botão para a etapa.
+- **💾 Salvar** (ou Ctrl+S): versão completa do projeto (ponto de restauração). **Projetos ▾**: versões salvas (voltar a qualquer
+  uma — o estado atual é salvo antes), **salvar como cópia** (projeto novo independente, com tudo), **baixar/abrir arquivo
+  .pato** (levar para outro computador). Cada projeto é independente; ao trocar no seletor nada passa de um para outro.
+  Excluir um projeto guarda o .pato em `excluidos`.
+- **Fornecedores — cadastro geral** (vale para todos os projetos) com o histórico das cotações gravadas. Posição do
+  fornecedor: KMZ do projeto → endereço “BR, km” (SNV) → titular na **ANM/SIGMINE** → sede do município (IBGE).
+- **Sugerir pela ANM (SIGMINE)**: pedreiras, areais e cascalheiras **com lavra autorizada** (licenciamento, concessão de lavra,
+  registro de extração) perto do canteiro, por titular, com a DMT pela estrada — a quem pedir as 3 cotações. Na BR-158 aparecem
+  BRITASA, Vale do Araguaia e BRITAZIL, os fornecedores do binômio da planilha. Dados de MT incluídos (SIGMINE out/2026);
+  **Atualizar dados da ANM** lê o `<UF>.zip` de app.anm.gov.br/dadosabertos/SIGMINE/PROCESSOS_MINERARIOS/.
+- **DMT pela estrada**: caminho mínimo na rede federal do SNV 202610A, separado em pavimentada (PAV/DUP) e não pavimentada
+  (IMP/LEN; o acesso até a rodovia conta como não pavimentado). Usada no cadastro, nas sugestões da ANM e na leitura da cotação.
+  Trechos por rodovias estaduais/municipais não estão no SNV — o sistema avisa quando a rota parece longa demais.
+- **Memória de cálculo (PDF)** (aba PATO): origem de cada quantidade (inventário, ICM/IP, memórias), NE e preços; resumo por
+  grupo; binômio com o resumo do mais vantajoso, a conferência, as cotações e os anexos; croqui; conferência.
+- **Ficha PATO enviada**: agora lê também GD (grupo por desempenho), ADM, CAN e MOB.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do
@@ -278,7 +298,7 @@ Ferramentas disponíveis: `listar_projetos`, `ler_projeto`, `criar_projeto`, `at
 `dispensar_sugestao`, `desfazer_sugestao`, `relatorio_pontos_a_corrigir`, `exportar_original_corrigido`;
 custos: `custos_configuracao`, `custos_configurar`, `calcular_bdi`, `buscar_composicoes`, `servicos_do_orcamento`, `adicionar_servico`,
 `ver_composicao`, `alterar_preco_insumo`, `trocar_insumo`, `alterar_tempo_fixo`, `alterar_dmt`, `listar_alteracoes_custo`,
-`desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `binomio_listar`, `binomio_ler_cotacao`, `binomio_gravar_cotacao`, `binomio_resumo`, `binomio_conferir`, `binomio_adotar_conferidos`, `fornecedores`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
+`desfazer_alteracao_custo`, `exportar_composicoes`; binômio: `assistente_pato`, `projeto_salvar_versao`, `memoria_de_calculo`, `fornecedores_anm`, `rota_dmt`, `binomio_listar`, `binomio_ler_cotacao`, `binomio_gravar_cotacao`, `binomio_resumo`, `binomio_conferir`, `binomio_adotar_conferidos`, `fornecedores`, `binomio_salvar_material`, `binomio_salvar_betuminoso`,
 `binomio_importar_planilha`, `binomio_aplicar_vencedor`, `binomio_anexar`, `binomio_exportar`, `indices_reajuste`,
 `gravar_indice_reajuste`; transporte: `croqui_ler`, `croqui_salvar`, `importar_vmd_dnit`, `quadro_transportes`,
 `gerar_quadro_transportes`, `definir_origem_material`, `definir_quantidade_servico`, `aplicar_momentos_ao_orcamento`,

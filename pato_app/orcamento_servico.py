@@ -558,6 +558,103 @@ class Orcamentos:
         exportar_xlsx(self, pid, str(dest))
         return dict(arquivo=str(dest), nome=dest.name)
 
+    # ------------------------------------------------- assistente "Novo PATO"
+    def assistente(self, pid: int) -> dict:
+        """Etapas para montar o PATO de um segmento (na ordem do modelo BR-158/MT), com a situação de cada uma, o que
+        falta e onde fazer: ok (concluída), pendente (feita, com avisos) ou falta."""
+        def etapa(n, titulo, aba, sub, status, msgs, feito=""):
+            return dict(n=n, titulo=titulo, aba=aba, sub=sub, status=status, avisos=[m for m in msgs if m], feito=feito)
+
+        out = []
+        p = self.sv.projeto(pid)
+        falta = [r for k, r in (("rodovia", "rodovia"), ("km_ini", "km inicial"), ("km_fim", "km final"), ("prazo", "prazo do contrato"))
+                 if p.get(k) in (None, "")]
+        out.append(etapa(1, "Projeto e trecho", "projeto", None, "falta" if falta else "ok",
+                         [f"Informe: {', '.join(falta)}." if falta else ""],
+                         f"{p.get('rodovia') or ''} km {p.get('km_ini')}–{p.get('km_fim')} · prazo {p.get('prazo') or '—'} meses"))
+        n_inv = len(self.db.itens(pid))
+        out.append(etapa(2, "Inventário", "importar", None, "ok" if n_inv else "falta",
+                         [] if n_inv else ["Importe o inventário (planilha CAD_*, CSV, GeoJSON ou KML)."], f"{n_inv} itens"))
+        ipd = self.db.dados_projeto(pid, "ip") or {}
+        n_ip = len(ipd.get("linhas") or [])
+        out.append(etapa(3, "Levantamento ICM/IP", "orcamento", "ip", "ok" if n_ip else "falta",
+                         [] if n_ip else ["Importe ou digite o levantamento do pavimento (ICM — Res. DNIT 6/2025)."], f"{n_ip} trechos levantados"))
+        try:
+            cfg = self.sv.custos.config(pid)
+            ok_base = bool(cfg.get("uf") and cfg.get("data_base"))
+            msgs = [] if ok_base else ["Escolha o estado e a data-base do SICRO."]
+            if not (p.get("bdi_sd") or p.get("bdi_parcelas")):
+                msgs.append("BDI do projeto não conferido (está o padrão da base) — confira as parcelas.")
+            out.append(etapa(4, "Data-base e BDI", "custos", "base", "falta" if not ok_base else ("pendente" if msgs else "ok"), msgs,
+                             f"{cfg.get('uf')} · {cfg.get('data_base')} · BDI {round((cfg.get('bdi') or {}).get('SD') or 0, 4) * 100:.2f}% / "
+                             f"{round((cfg.get('bdi') or {}).get('CD') or 0, 4) * 100:.2f}%"))
+        except Exception as e:  # noqa: BLE001
+            out.append(etapa(4, "Data-base e BDI", "custos", "base", "falta", [str(e)]))
+        try:
+            res = self.sv.binomio.listar(pid)["resumo"]
+        except Exception:  # noqa: BLE001
+            res = []
+        mats = [r for r in res if r["tipo"] == "material"]
+        msgs = []
+        poucas = [r["material"] for r in mats if r["cotacoes"] < 3]
+        if poucas:
+            msgs.append(f"{len(poucas)} material(is) com menos de 3 cotações: {', '.join(poucas[:4])}{'…' if len(poucas) > 4 else ''}.")
+        nconf = [r["material"] for r in res if r["vencedor"] and not r["conferido"]]
+        if nconf:
+            msgs.append(f"{len(nconf)} sem conferência no resumo do binômio.")
+        pend = [r["material"] for r in res if r["conferido"] and not r["adotado"] and not r["sicro_vence"]]
+        if pend:
+            msgs.append(f"{len(pend)} conferido(s) e ainda não adotado(s) na composição.")
+        out.append(etapa(5, "Cotações e binômio", "custos", "binomio", "falta" if not res else ("pendente" if msgs else "ok"),
+                         msgs or ([] if res else ["Anexe as cotações (PDF) e/ou importe o binômio; use “Sugerir pela ANM” para saber a quem pedir."]),
+                         f"{len(mats)} materiais, {len(res) - len(mats)} betuminosos"))
+        lc = self.locais_croqui(pid)
+        cro = self.sv.transporte.dados_croqui(pid)
+        msgs = []
+        if lc.get("km_canteiro") is None:
+            msgs.append("Informe o km do canteiro e monte o croqui.")
+        if not cro.get("travessias"):
+            msgs.append("Sem travessias urbanas no croqui (posicionam o centro sede e o VMD).")
+        if not cro.get("vmd"):
+            msgs.append("Sem VMD por segmento (FIT).")
+        out.append(etapa(6, "Croqui, VMD e transportes", "transporte", "croqui",
+                         "falta" if lc.get("km_canteiro") is None else ("pendente" if msgs else "ok"), msgs,
+                         f"canteiro km {lc.get('km_canteiro')} · {len(cro.get('ocorrencias') or [])} ocorrências"))
+        d = self.dados(pid)
+        n_serv = sum(1 for x in d.get("itens", []) if x.get("tipo") == "servico")
+        tot = None
+        if n_serv:
+            try:
+                tot = self.calcular(pid)["totais"]
+            except Exception:  # noqa: BLE001
+                tot = None
+        out.append(etapa(7, "Serviços (ficha) e planilha PATO", "orcamento", "ficha", "ok" if n_serv else "falta",
+                         [] if n_serv else ["Marque os serviços na ficha (ou envie uma ficha PATO) e clique em Montar PATO pela ficha."],
+                         f"{n_serv} serviços" + (f" · SD R$ {tot['SD']:,.2f} · CD R$ {tot['CD']:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                                                 if tot else "")))
+        dv = self.db.dados_projeto(pid, "diversos")
+        out.append(etapa(8, "Administração local, canteiro e mobilização", "orcamento", "div", "ok" if dv else "pendente",
+                         [] if dv else ["Confira a ADM local, o canteiro, a usina e a mobilização (metodologia e centro fornecedor)."],
+                         "metodologia: " + __import__("pato_app.diversos", fromlist=["MODELOS"]).MODELOS.get((dv or {}).get("modelo") or "sicro2025", "—")))
+        try:
+            cf = self.conferencia(pid)
+            r = cf["resumo"]
+            falhas = [x["texto"] for x in cf["itens"] if x["status"] == "falha"]
+            msgs = [f"{r.get('falha', 0)} falha(s): {'; '.join(t[:70] for t in falhas[:3])}" if falhas else "",
+                    f"{r.get('atencao', 0)} ponto(s) de atenção." if r.get("atencao") else "",
+                    f"{r.get('manual', 0)} item(ns) do checklist a marcar." if r.get("manual") else ""]
+            st = "falta" if falhas else ("pendente" if r.get("atencao") or r.get("manual") else "ok")
+            out.append(etapa(9, "Conferência (checklists e normativos)", "orcamento", "conf", st, msgs,
+                             f"{r.get('ok', 0) + r.get('feito', 0)} itens conferidos"))
+        except Exception as e:  # noqa: BLE001
+            out.append(etapa(9, "Conferência (checklists e normativos)", "orcamento", "conf", "falta", [str(e)]))
+        pronto = all(e["status"] == "ok" for e in out)
+        out.append(etapa(10, "Exportar a planilha de licitação (modelo de 70 abas) e a memória de cálculo", "orcamento", "planilha",
+                         "ok" if pronto else "pendente", [] if pronto else ["Conclua as etapas acima antes de exportar a versão final."],
+                         "PATO → Exportar planilha de licitação · Memória de cálculo (PDF)"))
+        feitas = sum(1 for e in out[:-1] if e["status"] == "ok")
+        return dict(etapas=out, concluidas=feitas, total=len(out) - 1, pronto=pronto)
+
     # ------------------------------------------------- conferência (checklists + normativos)
     def conferencia(self, pid: int) -> dict:
         from . import conferencia as cf

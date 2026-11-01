@@ -427,6 +427,44 @@ def fornecedores(projeto_id: int, caminho_xlsx: str | None = None) -> dict:
 
 
 @mcp.tool()
+def fornecedores_anm(projeto_id: int, raio_km: float = 80, tipo: str | None = None) -> dict:
+    """Pedreiras, areais e cascalheiras com lavra autorizada na ANM (SIGMINE) perto do canteiro, por titular, com a DMT
+    pela estrada (rede do SNV). tipo: pedreira | areal | cascalheira | argila."""
+    return sv().binomio.sugestoes_anm(projeto_id, raio_km, [tipo] if tipo else None)
+
+
+@mcp.tool()
+def rota_dmt(lat_origem: float, lon_origem: float, lat_destino: float, lon_destino: float) -> dict | None:
+    """DMT pela rede federal do SNV entre dois pontos: total, pavimentada, não pavimentada e rodovias."""
+    from . import rede
+    return rede.rota((lat_origem, lon_origem), (lat_destino, lon_destino))
+
+
+@mcp.tool()
+def assistente_pato(projeto_id: int) -> dict:
+    """Etapas para montar o PATO do segmento (projeto, inventário, ICM/IP, data-base/BDI, binômio, croqui, ficha,
+    ADM/mobilização, conferência, exportação) com a situação e o que falta."""
+    return sv().orcamento.assistente(projeto_id)
+
+
+@mcp.tool()
+def projeto_salvar_versao(projeto_id: int, rotulo: str | None = None) -> dict:
+    """Salva uma versão completa do projeto (ponto de restauração)."""
+    from . import projeto_arquivo as pa
+    return pa.salvar_versao(sv(), projeto_id, rotulo)
+
+
+@mcp.tool()
+def memoria_de_calculo(projeto_id: int) -> dict:
+    """Gera a memória de cálculo do PATO em PDF (quantidades e origem, preços, binômio, croqui, conferência)."""
+    from . import memoria
+    s = sv()
+    dest = s._nome(s.projeto(projeto_id), "memoria_de_calculo", "pdf")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    return dict(arquivo=memoria.gerar(s, projeto_id, str(dest)))
+
+
+@mcp.tool()
 def binomio_aplicar_vencedor(projeto_id: int, binomio_id: int, codigo_insumo: str | None = None,
                              aplicar_dmt: bool = True) -> dict:
     """Grava o preço do vencedor no insumo SICRO (e as DMTs, para materiais cotados). Fica no registro de alterações."""

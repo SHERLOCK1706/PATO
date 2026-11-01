@@ -382,6 +382,18 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         p = sv.projeto(pid)
         return (_re.sub(r"[^\w\- ]+", "", p.get("nome") or f"projeto_{pid}").strip().replace(" ", "_")[:80] or f"projeto_{pid}") + ".pato"
 
+    @app.get("/api/projetos/{pid}/assistente")
+    def p_assistente(pid: int):
+        return sv.orcamento.assistente(pid)
+
+    @app.post("/api/projetos/{pid}/memoria")
+    def p_memoria(pid: int):
+        from . import memoria
+        dest = sv._nome(sv.projeto(pid), "memoria_de_calculo", "pdf")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        memoria.gerar(sv, pid, str(dest))
+        return dict(arquivo=str(dest), nome=dest.name)
+
     @app.post("/api/projetos/{pid}/salvar")
     def p_salvar(pid: int, dados: dict = Body(default={})):
         return pa.salvar_versao(sv, pid, dados.get("rotulo") or None)
@@ -430,7 +442,28 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     @app.put("/api/projetos/{pid}/fornecedores")
     def b_salvar_fornecedores(pid: int, dados: dict = Body(...)):
-        return bi.salvar_fornecedores(pid, dados.get("lista") or [], bool(dados.get("acrescentar")))
+        return bi.salvar_fornecedores(pid, dados.get("lista") or [], dados.get("acrescentar", True))
+
+    @app.get("/api/projetos/{pid}/fornecedores/anm")
+    def b_forn_anm(pid: int, raio: float = 80, tipo: str | None = None):
+        return bi.sugestoes_anm(pid, raio, [tipo] if tipo else None)
+
+    @app.post("/api/projetos/{pid}/fornecedores/anm")
+    def b_forn_anm_add(pid: int, dados: dict = Body(...)):
+        return bi.adicionar_do_sigmine(pid, dados.get("titulares") or [])
+
+    @app.delete("/api/projetos/{pid}/fornecedores")
+    def b_forn_excluir(pid: int, nome: str):
+        return bi.excluir_fornecedor(pid, nome)
+
+    @app.post("/api/sigmine/importar")
+    async def b_sigmine(arquivo: UploadFile = File(...)):
+        from . import sigmine
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return sigmine.importar(caminho, Path(sv.pasta) / "sigmine")
+        finally:
+            os.unlink(caminho)
 
     @app.post("/api/projetos/{pid}/fornecedores/importar")
     async def b_importar_fornecedores(pid: int, arquivo: UploadFile = File(...)):

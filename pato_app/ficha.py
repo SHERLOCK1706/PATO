@@ -199,6 +199,7 @@ def ler_lista_servicos(caminho: str) -> list[dict]:
         except csv.Error:
             linhas = [re.split(r"[;\t,]", ln) for ln in txt.splitlines()]
     cod_rx = re.compile(r"^(\d{6,7}[A-Z]?|[A-Z]{2,4}\d{1,4}[A-Z]?)$")
+    cod_col = re.compile(r"^(\d{5,7}[A-Z]?|[A-Z]{2,4}\d{0,5}[A-Z]?)$")
     col: dict = {}
     anterior: list[str] = []
     for i, r in enumerate(linhas[:40]):
@@ -230,9 +231,10 @@ def ler_lista_servicos(caminho: str) -> list[dict]:
         else:
             cands = [c for c in cels if cod_rx.match(c.upper())]
         item = cels[col["item"]] if "item" in col and col["item"] < len(cels) else None
+        rx = cod_col if "cod" in col else cod_rx  # com a coluna CÓDIGO vale também o grupo por desempenho ("GD")
         for c in cands:
             c = c.upper().split(".")[0] if re.fullmatch(r"\d+\.0", c) else c.upper()
-            if not cod_rx.match(c) or (item, c) in vistos or (not item and c in vistos):
+            if not rx.match(c) or (item, c) in vistos or (not item and c in vistos):
                 continue
             vistos.add((item, c) if item else c)
             ne = nz.numero(cels[col["ne"]]) if "ne" in col and col["ne"] < len(cels) else None

@@ -25,6 +25,7 @@ CASCALHO = {"CASCALHO", "SAIBRO", "LATERITA", "CANGA"}
 LAVRA_AUTORIZADA = {"LICENCIAMENTO", "CONCESSAO DE LAVRA", "REGISTRO DE EXTRACAO"}
 TIPOS = {"pedreira": "Pedreira (brita)", "areal": "Areal", "cascalheira": "Cascalheira / jazida", "argila": "Argila"}
 _CACHE: dict = {}
+PASTAS_USUARIO: list[Path] = []  # <pasta de dados>/sigmine (arquivos importados pelo usuário, mais novos que os incluídos)
 
 
 def classificar(subs: str, uso: str) -> str | None:
@@ -111,7 +112,7 @@ def dados(uf: str, pastas: list[Path] | None = None) -> dict | None:
     uf = (uf or "").upper()
     if uf in _CACHE:
         return _CACHE[uf]
-    for p in (pastas or []) + [PASTA]:
+    for p in (pastas or []) + PASTAS_USUARIO + [PASTA]:
         a = p / f"{uf}.json.gz"
         if a.exists():
             d = json.loads(gzip.open(a, "rt", encoding="utf-8").read())

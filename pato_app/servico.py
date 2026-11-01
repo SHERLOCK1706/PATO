@@ -80,6 +80,9 @@ class Servico:
         from .binomio_servico import Binomios
         self.binomio = Binomios(self)
         from .transporte_servico import Transportes
+        from . import sigmine
+        if self.pasta / "sigmine" not in sigmine.PASTAS_USUARIO:
+            sigmine.PASTAS_USUARIO.insert(0, self.pasta / "sigmine")
         self.transporte = Transportes(self)
         from .orcamento_servico import Orcamentos
         self.orcamento = Orcamentos(self)

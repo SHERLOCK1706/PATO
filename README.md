@@ -258,6 +258,12 @@ ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
   grupo; binômio com o resumo do mais vantajoso, a conferência, as cotações e os anexos; croqui; conferência.
 - **Ficha PATO enviada**: agora lê também GD (grupo por desempenho), ADM, CAN e MOB.
 
+## Uso em equipe (servidor) e login
+O login vem **desligado** no computador local. Para uso em equipe: `python -m pato_app --host 0.0.0.0 --login` (rede do
+escritório) ou o servidor com Docker + https — passo a passo, custos e backup em [`servidor/LEIAME.md`](servidor/LEIAME.md).
+Perfis: administrador (usuários), editor (monta e altera; copia projetos como modelo) e leitor (consulta e baixa). Todos veem
+todos os projetos; o histórico mostra quem alterou o quê.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do

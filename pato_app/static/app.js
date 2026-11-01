@@ -13,6 +13,7 @@ const BASE = ["snv", "km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_f
 
 async function api(url, op = {}) {
   const r = await fetch(url, op);
+  if (r.status === 401 && !url.startsWith("/api/auth/")) { mostrarLogin(); throw new Error("Faça o login."); }
   if (!r.ok) {
     let msg = r.statusText;
     try { msg = (await r.json()).detail || msg; } catch (_) {}
@@ -2030,7 +2031,7 @@ async function renderProjeto() {
   for (const el of f.elements) if (el.name) el.value = p[el.name] ?? "";
   $("#formTrecho").km_ini.value = p.km_ini ?? ""; $("#formTrecho").km_fim.value = p.km_fim ?? "";
   const h = await api(`/api/projetos/${E.pid}/historico`);
-  $("#historico").innerHTML = h.map(x => `<li><b>${esc(x.quando)}</b> · ${esc(x.acao)} ${esc(x.detalhe || "")}</li>`).join("") || "<li>—</li>";
+  $("#historico").innerHTML = h.map(x => `<li><b>${esc(x.quando)}</b>${x.usuario ? ` · <i>${esc(x.usuario)}</i>` : ""} · ${esc(x.acao)} ${esc(x.detalhe || "")}</li>`).join("") || "<li>—</li>";
 }
 const formObj = f => Object.fromEntries([...f.elements].filter(e => e.name).map(e => [e.name, e.type === "checkbox" ? e.checked : e.value]));
 $("#formProjeto").onsubmit = async e => {
@@ -2164,7 +2165,88 @@ function dialogo(titulo, campos, aoConfirmar) {
 }
 
 // ---------------------------------------------------------------- início
-(async () => {
+// ---------------------------------------------------------------- login (servidor)
+const AU_ = { estado: null, usuario: null };
+function mostrarLogin(primeiro) {
+  const t = $("#telaLogin"); t.hidden = false;
+  $("#loginTitulo").textContent = primeiro ? "Criar o administrador" : "Entrar";
+  $("#loginNota").textContent = primeiro ? "Primeiro acesso: crie o usuário administrador (ele cadastra as demais pessoas)." : "";
+  $("#lNome").hidden = $("#lSenha2").hidden = !primeiro;
+  $("#btnEntrar").textContent = primeiro ? "Criar e entrar" : "Entrar";
+  $("#loginErro").hidden = true;
+  $("#formLogin").onsubmit = async ev => {
+    ev.preventDefault();
+    const v = formObj($("#formLogin"));
+    try {
+      if (primeiro && v.senha !== v.senha2) throw new Error("As senhas não conferem.");
+      const r = await jpost(primeiro ? "/api/auth/primeiro-admin" : "/api/auth/entrar", v);
+      t.hidden = true; $("#formLogin").reset(); aplicarUsuario(r.usuario);
+      if (r.usuario.trocar_senha) trocarSenha(true);
+      iniciar();
+    } catch (e) { $("#loginErro").textContent = e.message; $("#loginErro").hidden = false; }
+  };
+  setTimeout(() => $("#formLogin input[name=" + (primeiro ? "nome" : "login") + "]").focus(), 50);
+}
+function aplicarUsuario(u) {
+  AU_.usuario = u;
+  $("#usuarioTopo").hidden = !u;
+  document.body.classList.toggle("leitor", u?.perfil === "leitor");
+  if (u) $("#btnUsuario").textContent = `👤 ${u.nome || u.login} ▾`;
+}
+function trocarSenha(obrigatoria) {
+  const d = $("#dlg"), f = $("#dlgForm");
+  f.className = "form";
+  f.innerHTML = `<h3>${obrigatoria ? "Defina a sua senha" : "Trocar a senha"}</h3>${obrigatoria ? '<p class="nota">O administrador definiu uma senha provisória: escolha a sua.</p>' : ""}
+    <div class="campos"><label>Senha atual <input name="atual" type="password" required></label>
+    <label>Nova senha (mín. 8) <input name="nova" type="password" minlength="8" required></label><label>Repita <input name="nova2" type="password" minlength="8" required></label></div>
+    <div class="linha-botoes"><button class="btn primario" value="ok">Salvar</button>${obrigatoria ? "" : '<button class="btn" value="cancelar" formnovalidate>Cancelar</button>'}</div>`;
+  d.showModal();
+  d.onclose = async () => {
+    if (d.returnValue !== "ok") return;
+    const v = formObj(f);
+    try { if (v.nova !== v.nova2) throw new Error("As senhas não conferem.");
+      const r = await jpost("/api/auth/senha", v); aplicarUsuario(r.usuario); toast("Senha alterada"); } catch (e) { erro(e); if (obrigatoria) trocarSenha(true); }
+  };
+}
+async function telaUsuarios() {
+  const d = $("#dlg"), f = $("#dlgForm");
+  const lst = await api("/api/usuarios"), P = AU_.estado.perfis;
+  f.className = "form";
+  f.style.minWidth = "min(900px, 92vw)";
+  d.addEventListener("close", () => { f.style.minWidth = ""; }, { once: true });
+  f.innerHTML = `<h3>Usuários</h3><p class="nota">Todos veem todos os projetos. Administrador: gerencia usuários e tudo; Editor: monta e altera os PATOs (e copia projetos como modelo); Leitor: só consulta e baixa.</p>
+    <div class="tabela-rolagem"><table class="tab"><tr><th>Nome</th><th>Login</th><th>Perfil</th><th>Situação</th><th>Último acesso</th><th></th></tr>
+    ${lst.map(u => `<tr><td>${esc(u.nome || "")}</td><td>${esc(u.login)}</td>
+      <td><select data-uperf="${u.id}">${Object.entries(P).map(([k, r]) => `<option value="${k}" ${u.perfil === k ? "selected" : ""}>${esc(r)}</option>`).join("")}</select></td>
+      <td>${u.ativo ? '<span class="tag ok">ativo</span>' : '<span class="tag">desativado</span>'}${u.trocar_senha ? ' <small class="tag aviso">senha provisória</small>' : ""}</td>
+      <td><small>${esc(u.ultimo_acesso || "—")}</small></td>
+      <td style="white-space:nowrap"><button class="btn mini" type="button" data-usenha="${u.id}" data-dica="Define uma senha provisória (a pessoa troca no próximo acesso)">nova senha</button>
+        <button class="btn mini ${u.ativo ? "perigo" : ""}" type="button" data-uativo="${u.id}" data-v="${u.ativo ? 0 : 1}">${u.ativo ? "desativar" : "reativar"}</button></td></tr>`).join("")}</table></div>
+    <h4>Novo usuário</h4><div class="campos"><label>Nome <input id="nuNome"></label><label>Login <input id="nuLogin" placeholder="ex.: maria.silva"></label>
+      <label>Perfil <select id="nuPerfil">${Object.entries(P).map(([k, r]) => `<option value="${k}" ${k === "editor" ? "selected" : ""}>${esc(r)}</option>`).join("")}</select></label>
+      <label>Senha provisória (mín. 8) <input id="nuSenha" type="text"></label></div>
+    <div class="linha-botoes"><button class="btn primario" type="button" id="nuCriar">Criar usuário</button><button class="btn" value="cancelar">Fechar</button></div>`;
+  d.showModal();
+  const rec = () => { d.close(); telaUsuarios(); };
+  $("#nuCriar").onclick = async () => { try { await jpost("/api/usuarios", { nome: $("#nuNome").value, login: $("#nuLogin").value, perfil: $("#nuPerfil").value, senha: $("#nuSenha").value }); toast("Usuário criado — informe o login e a senha provisória à pessoa"); rec(); } catch (e) { erro(e); } };
+  $$("[data-uperf]", f).forEach(sl => sl.onchange = async () => { try { await jpost(`/api/usuarios/${sl.dataset.uperf}`, { perfil: sl.value }, "PUT"); toast("Perfil alterado"); } catch (e) { erro(e); rec(); } });
+  $$("[data-uativo]", f).forEach(b => b.onclick = async () => { try { await jpost(`/api/usuarios/${b.dataset.uativo}`, { ativo: b.dataset.v === "1" }, "PUT"); rec(); } catch (e) { erro(e); } });
+  $$("[data-usenha]", f).forEach(b => b.onclick = async () => { const s_ = prompt("Senha provisória (mín. 8 caracteres):"); if (!s_) return;
+    try { await jpost(`/api/usuarios/${b.dataset.usenha}/senha`, { senha: s_ }); toast("Senha provisória definida"); rec(); } catch (e) { erro(e); } });
+}
+$("#btnUsuario").onclick = () => {
+  const d = $("#dlg"), f = $("#dlgForm"), u = AU_.usuario;
+  f.className = "form";
+  f.innerHTML = `<h3>${esc(u.nome || u.login)}</h3><p class="nota">${esc(u.perfil_nome || u.perfil)} · login ${esc(u.login)}</p>
+    <div class="linha-botoes"><button class="btn" type="button" id="uSenha">Trocar minha senha</button>
+    ${u.perfil === "admin" ? '<button class="btn" type="button" id="uUsuarios">Usuários</button>' : ""}
+    <button class="btn perigo" type="button" id="uSair">Sair</button><button class="btn" value="cancelar">Fechar</button></div>`;
+  d.showModal();
+  $("#uSenha").onclick = () => { d.close(); trocarSenha(false); };
+  if ($("#uUsuarios")) $("#uUsuarios").onclick = () => { d.close(); telaUsuarios(); };
+  $("#uSair").onclick = async () => { await jpost("/api/auth/sair", {}); d.close(); aplicarUsuario(null); location.reload(); };
+};
+async function iniciar() {
   try {
     E.cat = await api("/api/catalogo");
     $("#nomeModelo").textContent = E.cat.modelo;
@@ -2172,4 +2254,13 @@ function dialogo(titulo, campos, aoConfirmar) {
     let aba = "painel"; try { aba = localStorage.getItem("pato.aba") || "painel"; } catch (_) {}
     irAba(E.pid ? aba : "painel");
   } catch (e) { erro(e); }
+}
+(async () => {
+  try {
+    const st = AU_.estado = await api("/api/auth/estado");
+    if (st.login_ligado && !st.usuario) return mostrarLogin(!st.tem_usuarios);
+    aplicarUsuario(st.usuario);
+    if (st.usuario?.trocar_senha) trocarSenha(true);
+  } catch (e) { erro(e); }
+  iniciar();
 })();

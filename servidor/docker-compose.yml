@@ -1,0 +1,20 @@
+# PATO no servidor: o app + Caddy (https automático com Let's Encrypt).
+# 1) aponte o domínio (ex.: pato.suaempresa.com.br) para o IP do servidor; 2) edite DOMINIO abaixo; 3) docker compose up -d
+services:
+  pato:
+    build: ..
+    restart: unless-stopped
+    volumes:
+      - ./dados:/dados          # banco, projetos, versões, anexos (faça backup desta pasta)
+    environment:
+      - PATO_LOGIN=1
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443"]
+    environment:
+      - DOMINIO=pato.suaempresa.com.br
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy_dados:/data
+    depends_on: [pato]

@@ -8,7 +8,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from fastapi import Body, FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import Body, FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -23,6 +23,94 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     app = FastAPI(title="PATO — Inventário e Orçamento de Conservação", version="1.0")
     sv = servico or Servico()
     app.state.servico = sv
+
+    # ------------------------------------------------------------ login (servidor)
+    from . import auth
+    au = app.state.auth = auth.Autenticacao(sv.db)
+
+    @app.middleware("http")
+    async def _login(request: Request, call_next):
+        caminho = request.url.path
+        if not auth.ligado() or not caminho.startswith("/api/") or caminho.startswith(auth.LIVRES):
+            return await call_next(request)
+        u = au.sessao(request.cookies.get(auth.COOKIE))
+        if not u:
+            return JSONResponse({"detail": "Faça o login."}, status_code=401)
+        motivo = auth.permitido(u, request.method, caminho)
+        if motivo:
+            return JSONResponse({"detail": motivo}, status_code=403)
+        tok = auth.usuario_atual.set(u)
+        try:
+            return await call_next(request)
+        finally:
+            auth.usuario_atual.reset(tok)
+
+    def _cookie(resp, request: Request, token: str | None):
+        seguro = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
+        if token:
+            resp.set_cookie(auth.COOKIE, token, max_age=auth.EXPIRA_S, httponly=True, samesite="lax", secure=seguro, path="/")
+        else:
+            resp.delete_cookie(auth.COOKIE, path="/")
+
+    @app.get("/api/auth/estado")
+    def a_estado(request: Request):
+        u = au.sessao(request.cookies.get(auth.COOKIE)) if auth.ligado() else None
+        return dict(login_ligado=auth.ligado(), tem_usuarios=au.tem_usuarios(), usuario=u, perfis=auth.PERFIS)
+
+    @app.post("/api/auth/primeiro-admin")
+    def a_primeiro(request: Request, dados: dict = Body(...)):
+        if not auth.ligado() or au.tem_usuarios():
+            raise HTTPException(403, "Já existe usuário cadastrado.")
+        u = au.criar(dados.get("login"), dados.get("nome"), dados.get("senha"), "admin", trocar_senha=False)
+        token, u = au.entrar(u["login"], dados.get("senha"))
+        resp = JSONResponse(dict(usuario=u))
+        _cookie(resp, request, token)
+        return resp
+
+    @app.post("/api/auth/entrar")
+    def a_entrar(request: Request, dados: dict = Body(...)):
+        try:
+            token, u = au.entrar(dados.get("login"), dados.get("senha"))
+        except PermissionError as e:
+            raise HTTPException(401, str(e)) from e
+        resp = JSONResponse(dict(usuario=u))
+        _cookie(resp, request, token)
+        return resp
+
+    @app.post("/api/auth/sair")
+    def a_sair(request: Request):
+        au.sair(request.cookies.get(auth.COOKIE))
+        resp = JSONResponse({"ok": True})
+        _cookie(resp, request, None)
+        return resp
+
+    @app.post("/api/auth/senha")
+    def a_senha(request: Request, dados: dict = Body(...)):
+        u = au.sessao(request.cookies.get(auth.COOKIE))
+        if not u:
+            raise HTTPException(401, "Faça o login.")
+        au.trocar_minha_senha(u["id"], dados.get("atual") or "", dados.get("nova") or "")
+        token, u = au.entrar(u["login"], dados.get("nova"))
+        resp = JSONResponse(dict(usuario=u))
+        _cookie(resp, request, token)
+        return resp
+
+    @app.get("/api/usuarios")
+    def u_lista():
+        return au.usuarios()
+
+    @app.post("/api/usuarios")
+    def u_criar(dados: dict = Body(...)):
+        return au.criar(dados.get("login"), dados.get("nome"), dados.get("senha"), dados.get("perfil") or "editor", True)
+
+    @app.put("/api/usuarios/{uid}")
+    def u_alterar(uid: int, dados: dict = Body(...)):
+        return au.alterar(uid, dados.get("nome"), dados.get("perfil"), dados.get("ativo"))
+
+    @app.post("/api/usuarios/{uid}/senha")
+    def u_senha(uid: int, dados: dict = Body(...)):
+        au.definir_senha(uid, dados.get("senha") or "", trocar_no_proximo=True)
+        return {"ok": True}
 
     @app.exception_handler(KeyError)
     async def _nf(_, exc):

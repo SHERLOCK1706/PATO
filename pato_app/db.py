@@ -277,8 +277,14 @@ class Banco:
 
     # ------------------------------------------------------------- histórico
     def registrar(self, pid: int | None, acao: str, detalhe: str = "") -> None:
+        from .auth import usuario_atual  # quem fez (com o login ligado)
+        u = usuario_atual.get()
         with _lock, self.con:
-            self.con.execute("INSERT INTO historico (projeto_id, acao, detalhe) VALUES (?, ?, ?)", (pid, acao, detalhe))
+            if u:
+                self.con.execute("INSERT INTO historico (projeto_id, acao, detalhe, usuario) VALUES (?, ?, ?, ?)",
+                                 (pid, acao, detalhe, u.get("nome") or u.get("login")))
+            else:
+                self.con.execute("INSERT INTO historico (projeto_id, acao, detalhe) VALUES (?, ?, ?)", (pid, acao, detalhe))
 
     def inserir_log(self, pid: int, tipo: str, entradas: list[dict]) -> None:
         def txt(v):

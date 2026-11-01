@@ -219,3 +219,11 @@ tr.adotado td { background: color-mix(in srgb, var(--ok, #2e7d32) 10%, transpare
 .ass-ic { font-size: 1.1em; }
 .barra-prog { height: 8px; background: var(--sup2); border: 1px solid var(--borda); border-radius: 99px; overflow: hidden; margin-bottom: 8px; }
 .barra-prog div { height: 100%; background: var(--ok); }
+
+.tela-login { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 16px; }
+.tela-login[hidden] { display: none; }
+.caixa-login { background: var(--sup); border: 1px solid var(--borda); border-radius: 12px; padding: 24px; width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 10px; }
+.caixa-login label { display: flex; flex-direction: column; gap: 4px; }
+.caixa-login label[hidden] { display: none; }
+.usuario-topo { display: flex; align-items: center; }
+body.leitor #btnSalvar, body.leitor #btnNovo { display: none; }

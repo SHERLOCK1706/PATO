@@ -18,6 +18,7 @@
     <button class="btn" id="btnProjArq" data-dica="Versões salvas, salvar como cópia, baixar o arquivo do projeto (.pato) ou abrir um projeto de arquivo">Projetos ▾</button>
     <small id="salvoEm" class="nota"></small>
   </div>
+  <div class="usuario-topo" id="usuarioTopo" hidden><button class="btn" id="btnUsuario" data-dica="Trocar senha, usuários (administrador) e sair"></button></div>
   <div class="acoes">
     <button class="btn" data-ir="importar" data-dica="Lê uma planilha de inventário (modelo DNIT ou PATO) e cria/atualiza um projeto">Importar inventário</button>
     <button class="btn primario" data-ir="exportar" data-dica="Gerar a planilha PATO preenchida, o inventário, GeoJSON/KML ou a planilha original corrigida">Exportar</button>
@@ -607,6 +608,19 @@
 </main>
 
 <dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
+<div id="telaLogin" class="tela-login" hidden>
+  <form id="formLogin" class="caixa-login" autocomplete="on">
+    <div class="marca"><span class="logo">PATO</span><span class="sub">Plano Anual de Trabalho e Orçamento</span></div>
+    <h3 id="loginTitulo">Entrar</h3>
+    <p class="nota" id="loginNota"></p>
+    <label id="lNome" hidden>Nome <input name="nome" autocomplete="name"></label>
+    <label>Login <input name="login" autocomplete="username" required></label>
+    <label>Senha <input name="senha" type="password" autocomplete="current-password" required minlength="8"></label>
+    <label id="lSenha2" hidden>Repita a senha <input name="senha2" type="password" autocomplete="new-password"></label>
+    <p class="tag erro" id="loginErro" hidden></p>
+    <button class="btn primario" type="submit" id="btnEntrar">Entrar</button>
+  </form>
+</div>
 <div id="toast" class="toast"></div>
 
 <script src="/static/leaflet/leaflet.js"></script>

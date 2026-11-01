@@ -1,0 +1,7 @@
+{$DOMINIO} {
+	encode gzip
+	request_body {
+		max_size 200MB
+	}
+	reverse_proxy pato:8000
+}

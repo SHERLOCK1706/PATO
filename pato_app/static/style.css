@@ -227,3 +227,9 @@ tr.adotado td { background: color-mix(in srgb, var(--ok, #2e7d32) 10%, transpare
 .caixa-login label[hidden] { display: none; }
 .usuario-topo { display: flex; align-items: center; }
 body.leitor #btnSalvar, body.leitor #btnNovo { display: none; }
+
+input.falta, select.falta { background: #fff6d6; border-color: #d29a00; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) input.falta { background: #3a3010; } }
+.cot-cartao { border: 1px solid var(--borda); border-radius: 10px; padding: 10px 12px; margin: 10px 0; background: var(--sup); }
+.cot-cartao.gravada { background: var(--sup2); color: var(--txt2); }
+.cot-cartao .campos { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }

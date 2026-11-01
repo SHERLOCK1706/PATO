@@ -75,7 +75,7 @@ arredondamento da planilha).
 ### Binômio aquisição + transporte
 Sequência da planilha de referência (BR-158/MT): **① cotações → ② binômio → ③ resumo do mais vantajoso → ④ conferência →
 ⑤ preço adotado na composição.**
-- **📄 Anexar cotação (PDF) — leitura automática**: escolha o PDF (ou foto) da proposta. O sistema lê o texto do PDF ou faz
+- **📄 Anexar cotações (PDF) — uma ou várias de uma vez, leitura automática**: escolha os PDFs (ou fotos) das propostas; cada uma vira um cartão editável, os campos que faltam ficam em amarelo para preencher, e **Gravar todas no binômio** grava as completas (as incompletas ficam pendentes, dizendo o que falta). O sistema lê o texto do PDF ou faz
   OCR (Tesseract, português) se for digitalizado e pré-preenche fornecedor (reconhecido pelo cadastro, pelo KMZ ou pelo nome do
   arquivo — nunca o destinatário do orçamento), CNPJ do fornecedor, mês, itens (preço unitário, unidade — inclusive “Mº” lido
   como m³), frete CIF/FOB, local e rodovia/km do endereço. A DMT vem da proposta ou, se não houver, da distância em linha reta

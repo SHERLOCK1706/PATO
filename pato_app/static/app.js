@@ -904,52 +904,106 @@ function renderResumoBin(d) {
   };
 }
 
-// cotação em PDF: leitura automática (OCR) → conferência e ajuste → grava no binômio
+// cotações em PDF (uma ou várias): leitura automática (OCR) → conferência e ajuste → grava no binômio
+function escolherArquivos(accept = "") {
+  return new Promise(ok => { const i = document.createElement("input"); i.type = "file"; i.accept = accept; i.multiple = true; i.onchange = () => ok([...i.files]); i.click(); });
+}
+const CO_ = { lidas: [] };  // [{arq, r, binomio_id, gravada}]
+const vazio = v => v === null || v === undefined || v === "";
+const mf = (v, extra = "") => vazio(v) ? `class="falta" placeholder="preencher" ${extra}` : extra;  // campo faltando: destacado
 async function cotacaoPdf(binomio_id) {
-  const arq = await escolherArquivo(".pdf,.png,.jpg,.jpeg,.tif,.tiff"); if (!arq) return;
-  const pn = $("#painelCotOcr"); pn.hidden = false;
-  pn.innerHTML = `<p class="carregando">Lendo a cotação ${esc(arq.name)}… (PDF digitalizado ou foto: OCR, pode levar alguns segundos)</p>`;
-  pn.scrollIntoView({ behavior: "smooth" });
-  const fd = new FormData(); fd.append("arquivo", arq);
-  let r;
-  try { r = await api(`${base_}${E.pid}/binomio/cotacao/ler`, { method: "POST", body: fd }); } catch (e) { pn.innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; return; }
-  if (!r.itens.length) r.itens = [{ material: "", preco: null, unidade: "m³", binomio_id: binomio_id || null, dmt_pav: r.distancia_km, dmt_npav: 0 }];
-  if (binomio_id) r.itens.forEach(i => { if (!i.binomio_id) i.binomio_id = binomio_id; });
-  const optsMat = sel => `<option value="">➕ novo material</option>` + r.materiais.map(m => `<option value="${m.id}" ${+sel === m.id ? "selected" : ""}>${esc(m.nome)}${m.codigo ? " · " + esc(m.codigo) : ""}</option>`).join("");
-  const linha = i => `<tr data-cit><td><input type="checkbox" data-k="incluir" checked></td><td><select data-k="binomio_id">${optsMat(i.binomio_id)}</select>
-      <input data-k="material" value="${esc(i.material || "")}" placeholder="nome do material novo" style="width:150px"></td>
-    <td><input data-k="codigo" value="${esc(i.codigo || "")}" style="width:80px" placeholder="SICRO" data-dica="Código do insumo SICRO (material novo)"></td>
-    <td><input data-k="preco" type="number" step="any" value="${i.preco ?? ""}" style="width:90px"></td>
-    <td><select data-k="unidade"><option value="m3" ${String(i.unidade).startsWith("m") ? "selected" : ""}>R$/m³</option><option value="t" ${i.unidade === "t" ? "selected" : ""}>R$/t</option></select></td>
-    <td><input data-k="densidade" type="number" step="any" value="${i.densidade ?? ""}" style="width:70px" placeholder="do material"></td>
-    <td><input data-k="dmt_pav" type="number" step="any" value="${i.dmt_pav ?? ""}" style="width:75px"></td>
-    <td><input data-k="dmt_npav" type="number" step="any" value="${i.dmt_npav ?? ""}" style="width:75px"></td>
-    <td><small>${esc(i.descricao || "")}</small></td></tr>`;
-  const pos = r.posicao;
-  pn.innerHTML = `<div class="bin-cab"><h3>① Cotação lida — confira e ajuste antes de gravar</h3><small>${esc(arq.name)} · ${r.ocr ? "lido por OCR (documento digitalizado)" : "texto do PDF"}</small></div>
-    ${r.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("")}
-    <div class="form"><div class="campos cot-campos">
-      <label>Fornecedor <input id="coForn" value="${esc(r.fornecedor || "")}"></label>
-      <label>CNPJ <input id="coCnpj" value="${esc(r.cnpj || "")}"></label>
-      <label>Mês da cotação <input id="coData" type="month" value="${esc(r.data || "")}" data-dica="Mês da proposta: o preço é reajustado pelo índice até a data-base"></label>
-      <label>Frete <select id="coFrete"><option value="">não informado</option><option ${r.frete === "FOB" ? "selected" : ""}>FOB</option><option ${r.frete === "CIF" ? "selected" : ""}>CIF</option></select></label>
-      <label>Local <input id="coLocal" value="${esc(r.local || "")}"></label>
-      <label>Endereço na rodovia <input value="${r.rodovia ? `BR-${r.rodovia.br} km ${r.rodovia.km}` : ""}" disabled></label></div>
-    ${pos ? `<p class="nota">📍 Posição do fornecedor: ${esc(pos.fonte_posicao || "")}${pos.rodovia_proxima ? " · " + esc(pos.rodovia_proxima) : ""}${pos.dmt_total != null ? ` · <b>pela estrada: ${nf(pos.dmt_pav)} km pav. + ${nf(pos.dmt_npav)} km não pav.</b> (${esc(pos.rota || "")})` : pos.distancia_canteiro_km != null ? ` · ${nf(pos.distancia_canteiro_km)} km em linha reta até o canteiro` : ""}</p>` : ""}
-    <h4>Itens (DMT em km até o canteiro — ajuste pavimentada / não pavimentada)</h4>
-    <div class="tabela-rolagem"><table class="tab" id="tabCotOcr"><tr><th>Gravar</th><th>Material do binômio</th><th>Código</th><th>Preço</th><th>Unid.</th><th>Dens. t/m³</th><th>DMT pav.</th><th>DMT não pav.</th><th>Linha lida</th></tr>${r.itens.map(linha).join("")}</table></div>
-    <div class="linha-botoes"><button class="btn mini" id="coAdd">+ Item</button></div>
-    <details><summary>Texto lido do documento</summary><pre style="white-space:pre-wrap;max-height:260px;overflow:auto">${esc(r.texto || "")}</pre></details>
-    <div class="linha-botoes"><button class="btn primario" id="coGravar" data-dica="Acrescenta a cotação aos materiais (substitui a do mesmo fornecedor) e anexa o PDF">Gravar cotação no binômio</button><button class="btn" id="coFechar">Cancelar</button></div></div>`;
-  $("#coAdd").onclick = () => $("#tabCotOcr").insertAdjacentHTML("beforeend", linha({ unidade: "m3", dmt_pav: r.distancia_km, dmt_npav: 0, binomio_id }));
-  $("#coFechar").onclick = () => pn.hidden = true;
-  $("#coGravar").onclick = async () => {
-    const itens = $$("#tabCotOcr tr[data-cit]").map(tr => Object.fromEntries($$("[data-k]", tr).map(i => [i.dataset.k, i.type === "checkbox" ? i.checked : i.value === "" ? null : i.value])));
-    const dados = { fornecedor: $("#coForn").value, cnpj: $("#coCnpj").value, data: $("#coData").value, frete: $("#coFrete").value || null, local: $("#coLocal").value, itens };
-    const f2 = new FormData(); f2.append("arquivo", arq); f2.append("dados", JSON.stringify(dados));
-    try { const g = await api(`${base_}${E.pid}/binomio/cotacao/adicionar`, { method: "POST", body: f2 });
-      toast(`Cotação gravada: ${g.gravados.map(x => x.material).join(", ")}`); pn.hidden = true; renderBinomio(); } catch (e) { erro(e); }
+  const arqs = await escolherArquivos(".pdf,.png,.jpg,.jpeg,.tif,.tiff"); if (!arqs.length) return;
+  const pn = $("#painelCotOcr"); pn.hidden = false; pn.scrollIntoView({ behavior: "smooth" });
+  CO_.lidas = CO_.lidas.filter(x => !x.gravada);
+  for (const [k, arq] of arqs.entries()) {
+    pn.innerHTML = `<p class="carregando">Lendo ${k + 1} de ${arqs.length}: ${esc(arq.name)}… (digitalizado ou foto: OCR, alguns segundos por arquivo)</p>`;
+    const fd = new FormData(); fd.append("arquivo", arq);
+    let r;
+    try { r = await api(`${base_}${E.pid}/binomio/cotacao/ler`, { method: "POST", body: fd }); }
+    catch (e) { r = { erro: e.message, itens: [], avisos: [], materiais: B_.dados?.materiais?.map(m => ({ id: m.id, nome: m.nome, codigo: m.codigo })) || [] }; }
+    if (!r.itens.length) r.itens = [{ material: "", preco: null, unidade: "m3", binomio_id: binomio_id || null, dmt_pav: r.distancia_km ?? null, dmt_npav: null }];
+    if (binomio_id) r.itens.forEach(i => { if (!i.binomio_id) i.binomio_id = binomio_id; });
+    CO_.lidas.push({ arq, r });
+  }
+  renderCotacoesLidas();
+}
+function linhaItemCot(i, mats) {
+  const opts = `<option value="">➕ novo material</option>` + mats.map(m => `<option value="${m.id}" ${+i.binomio_id === m.id ? "selected" : ""}>${esc(m.nome)}${m.codigo ? " · " + esc(m.codigo) : ""}</option>`).join("");
+  return `<tr data-cit><td><input type="checkbox" data-k="incluir" checked></td>
+    <td><select data-k="binomio_id">${opts}</select> <input data-k="material" value="${esc(i.material || "")}" ${!i.binomio_id && vazio(i.material) ? 'class="falta"' : ""} placeholder="nome (material novo)" style="width:140px"></td>
+    <td><input data-k="codigo" value="${esc(i.codigo || "")}" style="width:75px" placeholder="SICRO" data-dica="Código do insumo SICRO (material novo)"></td>
+    <td><input data-k="preco" type="number" step="any" value="${i.preco ?? ""}" style="width:85px" ${mf(i.preco)}></td>
+    <td><select data-k="unidade"><option value="m3" ${String(i.unidade || "m3").startsWith("m") ? "selected" : ""}>R$/m³</option><option value="t" ${i.unidade === "t" ? "selected" : ""}>R$/t</option></select></td>
+    <td><input data-k="densidade" type="number" step="any" value="${i.densidade ?? ""}" style="width:65px" placeholder="do material"></td>
+    <td><input data-k="dmt_pav" type="number" step="any" value="${i.dmt_pav ?? ""}" style="width:70px" ${mf(i.dmt_pav)}></td>
+    <td><input data-k="dmt_npav" type="number" step="any" value="${i.dmt_npav ?? ""}" style="width:70px" ${mf(i.dmt_npav)}></td>
+    <td><small>${esc(i.descricao || "")}</small></td>
+    <td><button class="btn mini perigo" type="button" data-rmit data-dica="Remove o item">×</button></td></tr>`;
+}
+function renderCotacoesLidas() {
+  const pn = $("#painelCotOcr"), L = CO_.lidas;
+  if (!L.length) { pn.hidden = true; return; }
+  const pend = L.filter(x => !x.gravada).length;
+  pn.innerHTML = `<div class="bin-cab"><h3>① Cotações lidas (${L.length}) — confira, preencha o que falta (em amarelo) e grave</h3>
+      <div class="linha-botoes" style="margin:0"><button class="btn primario" id="coGravarTodas" ${pend ? "" : "disabled"} data-dica="Grava todas as cotações ainda não gravadas (acrescenta ao material, substitui a do mesmo fornecedor e anexa o PDF)">Gravar todas no binômio (${pend})</button>
+      <button class="btn" id="coMais" data-dica="Lê mais arquivos de cotação">+ Mais cotações</button><button class="btn" id="coFechar">Fechar</button></div></div>
+    <div id="coResumo"></div>
+    ${L.map((x, k) => cartaoCotacao(x, k)).join("")}`;
+  $("#coFechar").onclick = () => { pn.hidden = true; CO_.lidas = CO_.lidas.filter(x => !x.gravada); };
+  $("#coMais").onclick = () => cotacaoPdf(null);
+  $$("[data-coadd]").forEach(b => b.onclick = () => { const k = +b.dataset.coadd; $(`#tabCo${k}`).insertAdjacentHTML("beforeend", linhaItemCot({ unidade: "m3", dmt_pav: L[k].r.distancia_km }, L[k].r.materiais)); ligarCot(); });
+  $$("[data-cograv]").forEach(b => b.onclick = async () => { await gravarCotacao(+b.dataset.cograv); renderCotacoesLidas(); renderBinomio(); });
+  $$("[data-codesc]").forEach(b => b.onclick = () => { L.splice(+b.dataset.codesc, 1); renderCotacoesLidas(); });
+  $("#coGravarTodas").onclick = async () => {
+    let ok = 0, falhas = [];
+    for (let k = 0; k < L.length; k++) {
+      if (L[k].gravada) continue;
+      const r = await gravarCotacao(k, true);
+      if (r === true) ok++; else falhas.push(`${L[k].arq.name}: ${r}`);
+    }
+    renderCotacoesLidas(); renderBinomio();
+    $("#coResumo").innerHTML = `<p class="ok-msg">${ok} cotação(ões) gravada(s) no binômio.</p>` + falhas.map(f => `<p class="tag aviso">${esc(f)}</p>`).join("");
   };
+  ligarCot();
+}
+function ligarCot() {
+  $$("#painelCotOcr [data-rmit]").forEach(b => b.onclick = () => b.closest("tr").remove());
+  $$("#painelCotOcr input.falta, #painelCotOcr input[data-k]").forEach(i => i.oninput = () => i.classList.toggle("falta", i.value === "" && i.dataset.k !== "densidade" && i.dataset.k !== "codigo"));
+  $$("#painelCotOcr select[data-k=binomio_id]").forEach(sl => sl.onchange = () => { const m = sl.parentElement.querySelector("[data-k=material]"); m.classList.toggle("falta", !sl.value && !m.value); });
+}
+function cartaoCotacao(x, k) {
+  const r = x.r, pos = r.posicao;
+  if (x.gravada) return `<div class="cot-cartao gravada"><b>✅ ${esc(r.fornecedor || x.arq.name)}</b> — gravada: ${esc(x.gravada)}</div>`;
+  return `<div class="cot-cartao" data-co="${k}"><div class="bin-cab"><b>${k + 1}. ${esc(x.arq.name)}</b> <small>${r.erro ? "não foi possível ler — preencha à mão" : r.ocr ? "lido por OCR" : "texto do PDF"}</small>
+      <div class="linha-botoes" style="margin:0"><button class="btn mini primario" data-cograv="${k}">Gravar esta</button><button class="btn mini" data-codesc="${k}" data-dica="Descarta este arquivo (não grava)">Descartar</button></div></div>
+    ${r.erro ? `<p class="tag erro">${esc(r.erro)}</p>` : ""}${(r.avisos || []).map(a => `<p class="tag aviso">${esc(a)}</p>`).join("")}
+    <div class="campos cot-campos">
+      <label>Fornecedor <input data-cf="fornecedor" value="${esc(r.fornecedor || "")}" ${mf(r.fornecedor)}></label>
+      <label>CNPJ <input data-cf="cnpj" value="${esc(r.cnpj || "")}" ${mf(r.cnpj)}></label>
+      <label>Mês da cotação <input data-cf="data" type="month" value="${esc(r.data || "")}" ${mf(r.data)}></label>
+      <label>Frete <select data-cf="frete"><option value="">não informado</option><option ${r.frete === "FOB" ? "selected" : ""}>FOB</option><option ${r.frete === "CIF" ? "selected" : ""}>CIF</option></select></label>
+      <label>Local <input data-cf="local" value="${esc(r.local || "")}" ${mf(r.local)}></label></div>
+    ${pos ? `<p class="nota">📍 ${esc(pos.fonte_posicao || "")}${pos.dmt_total != null ? ` · <b>pela estrada: ${nf(pos.dmt_pav)} km pav. + ${nf(pos.dmt_npav)} km não pav.</b> (${esc(pos.rota || "")})` : ""}</p>` : ""}
+    <div class="tabela-rolagem"><table class="tab" id="tabCo${k}"><tr><th>Gravar</th><th>Material do binômio</th><th>Código</th><th>Preço</th><th>Unid.</th><th>Dens. t/m³</th><th>DMT pav.</th><th>DMT não pav.</th><th>Linha lida</th><th></th></tr>
+      ${r.itens.map(i => linhaItemCot(i, r.materiais || [])).join("")}</table></div>
+    <div class="linha-botoes"><button class="btn mini" data-coadd="${k}">+ Item</button></div>
+    ${r.texto ? `<details><summary>Texto lido</summary><pre style="white-space:pre-wrap;max-height:220px;overflow:auto">${esc(r.texto)}</pre></details>` : ""}</div>`;
+}
+async function gravarCotacao(k, emLote) {
+  const x = CO_.lidas[k], el = $(`[data-co="${k}"]`);
+  const cab = Object.fromEntries($$("[data-cf]", el).map(i => [i.dataset.cf, i.value || null]));
+  const itens = $$(`#tabCo${k} tr[data-cit]`, el).map(tr => Object.fromEntries($$("[data-k]", tr).map(i => [i.dataset.k, i.type === "checkbox" ? i.checked : i.value === "" ? null : i.value])))
+    .filter(i => i.incluir);
+  const faltam = [];
+  if (!cab.fornecedor) faltam.push("fornecedor");
+  if (!itens.length) faltam.push("ao menos um item");
+  itens.forEach((i, n) => { if (vazio(i.preco)) faltam.push(`preço do item ${n + 1}`); if (!i.binomio_id && !i.material) faltam.push(`material do item ${n + 1}`); });
+  if (faltam.length) { const m = "falta preencher: " + faltam.join(", "); if (!emLote) toast(m); el?.scrollIntoView({ behavior: "smooth" }); return m; }
+  itens.forEach(i => { if (vazio(i.dmt_pav)) i.dmt_pav = 0; if (vazio(i.dmt_npav)) i.dmt_npav = 0; });
+  const f2 = new FormData(); f2.append("arquivo", x.arq); f2.append("dados", JSON.stringify({ ...cab, itens }));
+  try { const g = await api(`${base_}${E.pid}/binomio/cotacao/adicionar`, { method: "POST", body: f2 });
+    x.gravada = g.gravados.map(y => y.material).join(", "); if (!emLote) toast(`Cotação gravada: ${x.gravada}`); return true;
+  } catch (e) { if (!emLote) erro(e); return e.message; }
 }
 
 // cadastro de fornecedores e pontos do KMZ

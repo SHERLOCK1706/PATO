@@ -214,3 +214,20 @@ def test_incluir_pelo_codigo(proj):
     assert itens[k - 1]["item"].startswith("01.02.06")         # entrou na posição pela numeração
     novo = next(x for x in o.calcular(pid)["itens"] if x["item"] == "01.02.06.99")
     assert abs(novo["quantidade"] - op["quantidade"]) < 0.01
+
+
+def test_incluir_varios_codigos(proj):
+    """Lista de códigos (linha em branco / colada do Excel): sem quantidade → regra da planilha modelo; com quantidade →
+    valor digitado com o NE; código inexistente → erro informado; trocar o código da linha puxa a descrição da base."""
+    sv, pid, _ = proj
+    o = sv.orcamento
+    ultimo = o.dados(pid)["itens"][-1]["id"]
+    r = o.incluir_codigos(pid, [dict(codigo="2003373", item="01.09.01"), dict(codigo="4011209", quantidade="1500", ne="2"),
+                                dict(codigo="0804039"), dict(codigo="9999999")], ultimo)
+    assert len(r["incluidos"]) == 3 and len(r["erros"]) == 1 and "9999999" in r["erros"][0]
+    itens = {x["codigo"]: x for x in r["calc"]["itens"] if x["tipo"] == "servico"}
+    assert r["incluidos"][0]["origem"].startswith("Modelo") and itens["4011209"]["quantidade"] == 3000
+    novo = next(x for x in o.dados(pid)["itens"] if x["item"] == "01.09.01")
+    o.editar_item(pid, novo["id"], dict(codigo="2003372"))
+    novo = next(x for x in o.dados(pid)["itens"] if x["item"] == "01.09.01")
+    assert novo["codigo"] == "2003372" and "areia extraída" in novo["descricao"]  # descrição da base do novo código

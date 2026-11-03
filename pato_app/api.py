@@ -680,6 +680,12 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         finally:
             os.unlink(caminho)
 
+    @app.post("/api/projetos/{pid}/pato/codigos")
+    def o_codigos(pid: int, dados: dict = Body(...)):
+        r = orc.incluir_codigos(pid, dados.get("linhas") or [], dados.get("apos"))
+        r.pop("calc", None)
+        return r
+
     @app.get("/api/projetos/{pid}/pato/consultar")
     def o_consultar(pid: int, codigo: str, ne: float | None = None, base: float | None = None):
         return orc.consultar_codigo(pid, codigo, ne, base)

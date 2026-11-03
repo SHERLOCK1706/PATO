@@ -438,6 +438,15 @@ class Orcamentos:
         x = next((i for i in d["itens"] if i["id"] == iid), None)
         if not x:
             raise KeyError("Item não encontrado.")
+        if campos.get("codigo") and cp._cod(campos["codigo"]) != cp._cod(x.get("codigo") or "") and "descricao" not in campos:
+            try:  # código trocado na linha: descrição e unidade da base
+                m = self.sv.custos.motor(pid, "SD")
+                c = m.comps.get(cp._cod(campos["codigo"])) or (m.base.get("sintetico") or {}).get(cp._cod(campos["codigo"])) or {}
+            except ValueError:
+                c = {}
+            if not c and cp._cod(campos["codigo"]) not in (d.get("precos_informados") or {}):
+                raise ValueError(f"Código {cp._cod(campos['codigo'])} não encontrado na base SICRO do projeto.")
+            campos = dict(campos, descricao=c.get("descricao") or x.get("descricao"), unidade=c.get("unidade") or x.get("unidade"))
         novo_num = (campos.get("item") or "").strip()
         if x["tipo"] == "titulo" and novo_num and novo_num != (x.get("item") or "").strip():
             ant = (x.get("item") or "").strip()  # renumera os serviços e subtítulos do tópico (01.03.xx → 01.09.xx)
@@ -503,6 +512,42 @@ class Orcamentos:
                 break
             j += 1
         return j
+
+    def incluir_codigos(self, pid: int, linhas: list[dict], apos: str | None = None) -> dict:
+        """Inclui vários serviços pelo código (linha em branco da planilha ou lista colada do Excel). Cada linha:
+        codigo e, se houver, item, quantidade e NE. Sem quantidade, a origem é a regra da planilha modelo (inventário,
+        IP, transporte, outro item…); com quantidade, vale o valor digitado."""
+        feitos, erros = [], []
+        for ln in linhas:
+            cod = cp._cod(str(ln.get("codigo") or "").strip())
+            if not cod:
+                continue
+            try:
+                r = self.consultar_codigo(pid, cod)
+            except ValueError as e:
+                erros.append(f"{cod}: {e}")
+                continue
+            q, ne = nz.numero(ln.get("quantidade")), nz.numero(ln.get("ne"))
+            if q is not None:
+                base, ne_ = dict(tipo="valor", valor=q, fonte="digitado"), ne if ne is not None else 1.0
+                item = ln.get("item") or r.get("sugestao_item")
+                origem = "digitada"
+            else:
+                op = next((o for o in r["opcoes"] if not o.get("indisponivel")), r["opcoes"][-1])
+                base, ne_ = op["base"], ne if ne is not None else (op["ne"] if op["ne"] is not None else 1.0)
+                item = ln.get("item") or op.get("item") or ""
+                origem = op["rotulo"] if op["base"].get("tipo") not in ("valor",) else "a informar"
+            if item and any(x.get("item") == item for x in self.dados(pid)["itens"]):
+                item = ""  # numeração já usada: entra sem número, no lugar indicado (renumere depois)
+            self.incluir_item(pid, apos if not item else None, dict(tipo="servico", item=item, codigo=cod, descricao=r["descricao"],
+                                                                     unidade=r["unidade"], ne=ne_, base=base))
+            novo = self.dados(pid)["itens"]
+            ult = next((x for x in reversed(novo) if x.get("codigo") == cod and x.get("item") == item), None)
+            if ult and apos and not item:
+                apos = ult["id"]  # a próxima linha entra depois desta
+            feitos.append(dict(codigo=cod, item=item, origem=origem, descricao=r["descricao"]))
+        self.db.registrar(pid, "PATO: serviços incluídos pelo código", f"{len(feitos)} incluídos" + (f", {len(erros)} com erro" if erros else ""))
+        return dict(incluidos=feitos, erros=erros, calc=self.calcular(pid))
 
     @staticmethod
     def _chave_item(item: str) -> tuple:

@@ -238,3 +238,15 @@ input.ne-in { width: 80px; text-align: right; }
 tr.inativa td { color: var(--txt2); }
 .cq { border: 1px solid var(--borda); border-radius: 8px; padding: 10px 12px; background: var(--sup2); }
 .cq .campos { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+
+#tabOrc input.cel { border: 1px solid transparent; background: transparent; padding: 3px 4px; font: inherit; color: inherit; border-radius: 4px; }
+#tabOrc input.cel:hover { border-color: var(--borda); }
+#tabOrc input.cel:focus { border-color: var(--pri); background: var(--sup); outline: none; }
+#tabOrc input.cel.n { text-align: right; }
+#tabOrc input.cel.falta { background: #fff6d6; border-color: #d29a00; }
+#tabOrc tr.filtros-orc td { background: var(--sup2); }
+#tabOrc tr.filtros-orc input { border: 1px solid var(--borda); border-radius: 4px; padding: 2px 4px; font-size: .85em; }
+#tabOrc tr.lin-nova td { background: var(--pri-claro); }
+#tabOrc .lig { cursor: help; }
+#tabOrc td { vertical-align: top; }
+.usuario-topo[hidden] { display: none; }

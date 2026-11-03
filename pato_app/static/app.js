@@ -1499,31 +1499,90 @@ async function carregarOrc() {
     await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
+// planilha PATO como tabela editável (estilo planilha): código na linha puxa o serviço; Qtde. (base), NE e demais
+// campos editáveis na célula; quantidade de trabalho = base × NE; preço final = TRUNC(qtd × preço; 2)
+const LIGADAS = { inventario: "inventário", ip: "levantamento IP", transporte: "quadro de transportes", item: "outro item", producao: "produção SICRO", extensao: "extensão", contrato: "contrato", sinalizacao: "sinalização", diversos: "ADM/canteiro/mobilização" };
+async function atualizarPlanilha() {
+  const rol = $("#tabOrc").closest(".tabela-rolagem"), top = rol?.scrollTop || 0;
+  try { O_.c = await api(`${base_}${E.pid}/pato`); renderOrcPlanilha(); if (rol) rol.scrollTop = top;
+    const t = O_.c.totais, cab = $$("#cabOrc .it b"); if (cab.length > 2) { cab[0].textContent = `R$ ${reais(t.SD)}`; cab[1].textContent = `R$ ${reais(t.CD)}`; cab[2].textContent = REG[O_.c.vantajosa] || cab[2].textContent; }
+  } catch (e) { erro(e); }
+}
+async function putItem(id, campos, msg) {
+  try { await jpost(`${base_}${E.pid}/pato/itens/${id}`, campos, "PUT"); if (msg) toast(msg); await atualizarPlanilha(); } catch (e) { erro(e); atualizarPlanilha(); }
+}
 function renderOrcPlanilha() {
-  const c = O_.c;
+  const c = O_.c, F = O_.filtro = O_.filtro || {};
   const acoes = i => `<span class="acoes-orc">
-      <button class="btn mini" data-novo="${esc(i.id)}" data-dica="Inclui um serviço ou um título (tópico) logo abaixo desta linha">＋</button>
-      <button class="btn mini" data-sobe="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Sobe o tópico inteiro (título e seus serviços)" : "Sobe a linha"}">↑</button>
+      <button class="btn mini" data-novo="${esc(i.id)}" data-dica="Abre uma linha em branco logo abaixo para digitar o código (ou incluir um título)">＋</button>
+      <button class="btn mini" data-sobe="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Sobe o tópico inteiro" : "Sobe a linha"}">↑</button>
       <button class="btn mini" data-desce="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Desce o tópico inteiro" : "Desce a linha"}">↓</button>
-      <button class="btn mini perigo" data-exorc="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Exclui o título (pergunta se exclui também os serviços do tópico)" : "Exclui o serviço"}">×</button></span>`;
-  $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Código</th><th>Discriminação</th><th class=n>Base</th><th class=n>NE</th><th class=n>Quantidade</th><th>Und</th>
-    <th class=n>Preço unit. SD</th><th class=n>Preço final SD<br><small>qtd × preço</small></th><th class=n>Preço unit. CD</th><th class=n>Preço final CD</th><th></th></tr>` + c.itens.map(i => i.tipo === "titulo"
-    ? `<tr class="titulo-orc"><td>${esc(i.item)}</td><td colspan=10>${esc(i.descricao)}</td>
-      <td style="white-space:nowrap"><button class="btn mini" data-edtit="${esc(i.id)}" data-dica="Edita a numeração e o nome do tópico">Editar</button>${acoes(i)}</td></tr>`
-    : `<tr><td>${esc(i.item)}</td><td>${esc(i.codigo)}</td><td>${esc(i.descricao)}</td>
-      <td class=n title="${esc(i.base_fonte || "")}">${q3(i.base_valor)}<br><small>${esc((i.base_fonte || "").slice(0, 38))}</small></td><td class=n>${(i.base || {}).tipo === "direta" ? "—" : `<input class="ne-in" data-nein="${esc(i.id)}" type="number" step="any" value="${i.ne ?? 1}" data-dica="Nível de esforço — altere e tecle Enter: quantidade = base × NE">`}</td>
-      <td class=n><b>${q3(i.quantidade)}</b></td><td>${esc(i.unidade || "")}</td>
-      <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n>${reais(i.parcial_SD)}</td>
+      <button class="btn mini perigo" data-exorc="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Exclui o título (pergunta se exclui também os serviços)" : "Exclui o serviço"}">×</button></span>`;
+  const cel = (id, campo, v, w, extra = "") => `<input class="cel" data-cel="${esc(id)}" data-campo="${campo}" value="${esc(v ?? "")}" style="width:${w}" ${extra}>`;
+  const filtra = i => (!F.item || (i.item || "").includes(F.item)) && (!F.codigo || (i.codigo || "").toUpperCase().includes(F.codigo.toUpperCase()))
+    && (!F.descricao || (i.descricao || "").toUpperCase().includes(F.descricao.toUpperCase())) && (!F.unidade || (i.unidade || "").toUpperCase().includes(F.unidade.toUpperCase()));
+  const temFiltro = Object.values(F).some(v => v);
+  const linhaServ = i => {
+    const b = i.base || {}, lig = LIGADAS[b.tipo], dir = b.tipo === "direta";
+    return `<tr data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td>${cel(i.id, "codigo", /^\d{5,6}$/.test(i.codigo || "") ? String(i.codigo).padStart(7, "0") : i.codigo, "78px", 'data-dica="Troque o código: descrição, unidade e preço vêm da base"')}</td>
+      <td>${cel(i.id, "descricao", i.descricao, "100%", `title="${esc(i.descricao || "")}"`)}</td><td>${cel(i.id, "unidade", i.unidade, "46px")}</td>
+      <td class=n style="white-space:nowrap">${lig ? `<span class="lig" title="Quantidade ligada: ${esc(i.base_fonte || lig)}${b.expr ? " " + esc(b.expr) : ""}">🔗</span>` : `<button class="btn mini lig-btn" data-ligar="${esc(i.id)}" data-dica="Volta a ligar a quantidade à regra da planilha modelo (inventário, IP, transporte…)">🔗?</button>`}
+        <input class="cel n ${!lig && !i.base_valor ? "falta" : ""}" type="number" step="any" data-qbase="${esc(i.id)}" value="${i.base_valor == null ? "" : +(+i.base_valor).toFixed(3)}" style="width:100px" title="${esc(i.base_fonte || "")}" data-dica="Qtde. (inventário/base). Digitar troca a origem por valor digitado"><br><small>${esc((i.base_fonte || "").slice(0, 34))}</small></td>
+      <td class=n>${dir ? "—" : `<input class="cel n ne-in" type="number" step="any" data-nein="${esc(i.id)}" value="${i.ne ?? 1}" data-dica="Nível de esforço: quantidade = base × NE">`}</td>
+      <td class=n><b>${q3(i.quantidade)}</b></td>
+      <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n><b>${reais(i.parcial_SD)}</b></td>
       <td class=n title="${esc(i.preco_fonte_CD || "")}">${reais(i.preco_CD)}</td><td class=n>${reais(i.parcial_CD)}</td>
-      <td style="white-space:nowrap"><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Altera numeração, código, descrição, a base da quantidade (inventário, IP, outro item, transporte, valor), o nível de esforço ou o preço">Editar</button>${acoes(i)}</td></tr>`).join("")
+      <td style="white-space:nowrap"><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Mais opções: origem da quantidade (inventário, IP, outro item, transporte, produção), arredondamento, preço informado">⋯</button>${acoes(i)}</td></tr>`;
+  };
+  const linhaBranca = (apos, sug) => `<tr class="lin-nova" data-apos="${esc(apos || "")}"><td><input class="cel" data-nitem placeholder="item" value="${esc(sug || "")}" style="width:92px"></td>
+      <td><input class="cel falta" data-ncod placeholder="código ↵" style="width:78px" data-dica="Digite o código e tecle Enter: a linha se preenche (descrição, unidade, preço e quantidade pela planilha modelo)"></td>
+      <td colspan=9><small class="nota">Digite o código e tecle Enter — ou cole vários códigos (um por linha, com quantidade e NE opcionais).</small>
+        <button class="btn mini" data-ntit data-dica="Inclui um título (tópico) neste lugar">+ título</button>${apos ? ' <button class="btn mini" data-ncanc>cancelar</button>' : ""}</td><td></td></tr>`;
+  const itens = c.itens.filter(i => !temFiltro || (i.tipo !== "titulo" && filtra(i)));
+  const ult = c.itens.length ? c.itens[c.itens.length - 1] : null;
+  $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Cód.</th><th>Descrição completa</th><th>Unid.</th><th class=n>Qtde.<br><small>inventário / base</small></th><th class=n>NE</th>
+      <th class=n>Qtde. de trabalho<br><small>base × NE</small></th><th class=n>Preço unit. SD</th><th class=n>Preço final SD</th><th class=n>Preço unit. CD</th><th class=n>Preço final CD</th><th></th></tr>
+    <tr class="filtros-orc"><td><input data-filt="item" value="${esc(F.item || "")}" placeholder="▼ filtrar" style="width:92px"></td><td><input data-filt="codigo" value="${esc(F.codigo || "")}" placeholder="▼" style="width:78px"></td>
+      <td><input data-filt="descricao" value="${esc(F.descricao || "")}" placeholder="▼ filtrar descrição" style="width:100%"></td><td><input data-filt="unidade" value="${esc(F.unidade || "")}" placeholder="▼" style="width:46px"></td>
+      <td colspan=8>${temFiltro ? `<small class="nota">${itens.length} linha(s) no filtro</small> <button class="btn mini" id="limpaFilt">limpar filtros</button>` : ""}</td></tr>`
+    + itens.map(i => i.tipo === "titulo"
+      ? `<tr class="titulo-orc" data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td></td><td colspan=9>${cel(i.id, "descricao", i.descricao, "100%")}</td>
+        <td style="white-space:nowrap">${acoes(i)}</td></tr>`
+      : linhaServ(i)).join("")
+    + (temFiltro ? "" : linhaBranca(ult?.id, ""))
     + `<tr class="titulo-orc"><td colspan=8>TOTAL GERAL DO ORÇAMENTO</td><td class=n>${reais(c.totais.SD)}</td><td></td><td class=n>${reais(c.totais.CD)}</td><td></td></tr>`;
-  $$("[data-edorc]").forEach(b => b.onclick = () => editarItemOrc(b.dataset.edorc));
-  $$("[data-nein]").forEach(inp => inp.onchange = async () => {
-    try { await jpost(`${base_}${E.pid}/pato/itens/${inp.dataset.nein}`, { ne: inp.value === "" ? 1 : +inp.value }, "PUT"); toast("NE alterado — planilha recalculada"); carregarOrc(); } catch (e) { erro(e); }
+  ligarPlanilha();
+}
+function ligarPlanilha() {
+  const F = O_.filtro;
+  $$("[data-filt]").forEach(inp => inp.oninput = () => { clearTimeout(O_.hf); O_.hf = setTimeout(() => { F[inp.dataset.filt] = inp.value; const pos = inp.selectionStart; renderOrcPlanilha();
+    const n = $(`[data-filt="${inp.dataset.filt}"]`); n.focus(); n.setSelectionRange(pos, pos); }, 250); });
+  if ($("#limpaFilt")) $("#limpaFilt").onclick = () => { O_.filtro = {}; renderOrcPlanilha(); };
+  $$("[data-cel]").forEach(inp => inp.onchange = () => putItem(inp.dataset.cel, { [inp.dataset.campo]: inp.value }, inp.dataset.campo === "codigo" ? "Código trocado — descrição, unidade e preço da base" : null));
+  $$("[data-nein]").forEach(inp => inp.onchange = () => putItem(inp.dataset.nein, { ne: inp.value === "" ? 1 : +inp.value }));
+  $$("[data-qbase]").forEach(inp => inp.onchange = () => {
+    const x = O_.c.itens.find(y => y.id === inp.dataset.qbase);
+    if (LIGADAS[(x.base || {}).tipo] && !confirm(`A quantidade está ligada a ${x.base_fonte || LIGADAS[x.base.tipo]}. Trocar pelo valor digitado (${inp.value})?\n(o botão 🔗? religa depois)`)) { inp.value = x.base_valor ?? ""; return; }
+    putItem(x.id, { base: { tipo: "valor", valor: inp.value === "" ? 0 : +inp.value, fonte: "digitado" } });
   });
-  $$("[data-edtit]").forEach(b => b.onclick = () => dialogoLinha(O_.c.itens.find(x => x.id === b.dataset.edtit), null));
-  $$("[data-novo]").forEach(b => b.onclick = () => dialogoLinha(null, b.dataset.novo));
-  const mover = (id, dir) => jpost(`${base_}${E.pid}/pato/itens/${id}/mover`, { direcao: dir }).then(carregarOrc).catch(erro);
+  $$("[data-ligar]").forEach(b => b.onclick = async () => {
+    const x = O_.c.itens.find(y => y.id === b.dataset.ligar);
+    try { const r = await api(`${base_}${E.pid}/pato/consultar?codigo=${encodeURIComponent(x.codigo)}`);
+      const op = r.opcoes.find(o => !o.indisponivel && o.base.tipo !== "valor");
+      if (!op) return toast("Não há regra da planilha modelo para este código (ou o serviço de origem não está na planilha).");
+      if (!confirm(`Ligar a quantidade a: ${op.rotulo}?\nQtde. de trabalho: ${q3(op.quantidade)}`)) return;
+      putItem(x.id, { base: op.base }, "Quantidade ligada à regra da planilha modelo");
+    } catch (e) { erro(e); }
+  });
+  $$("[data-edorc]").forEach(b => b.onclick = () => editarItemOrc(b.dataset.edorc));
+  $$("[data-novo]").forEach(b => b.onclick = () => {
+    $$("#tabOrc tr.lin-nova[data-apos]").forEach(tr => { if (tr.dataset.apos !== (O_.c.itens.at(-1)?.id || "")) tr.remove(); });
+    const tr = b.closest("tr"), x = O_.c.itens.find(y => y.id === b.dataset.novo);
+    const sug = x.tipo === "titulo" ? x.item + ".01" : (x.item || "").replace(/(\d+)$/, m => String(+m + 1).padStart(m.length, "0"));
+    tr.insertAdjacentHTML("afterend", linhaBranca2(x.id, sug)); ligarBrancas(); tr.nextElementSibling.querySelector("[data-ncod]").focus();
+  });
+  ligarBrancas();
+  const mover = (id, dir) => jpost(`${base_}${E.pid}/pato/itens/${id}/mover`, { direcao: dir }).then(atualizarPlanilha).catch(erro);
   $$("[data-sobe]").forEach(b => b.onclick = () => mover(b.dataset.sobe, -1));
   $$("[data-desce]").forEach(b => b.onclick = () => mover(b.dataset.desce, 1));
   $$("[data-exorc]").forEach(b => b.onclick = async () => {
@@ -1533,9 +1592,36 @@ function renderOrcPlanilha() {
       if (!confirm(`Excluir o título ${x.item} — ${x.descricao}?`)) return;
       com = confirm("Excluir também os serviços e subtítulos deste tópico?\n(OK = excluir o tópico inteiro · Cancelar = excluir só o título)");
     } else if (!confirm(`Excluir o serviço ${x.item} ${x.codigo || ""}?`)) return;
-    try { await api(`${base_}${E.pid}/pato/itens/${x.id}?com_itens=${com}`, { method: "DELETE" }); toast("Excluído"); carregarOrc(); } catch (e) { erro(e); }
+    try { await api(`${base_}${E.pid}/pato/itens/${x.id}?com_itens=${com}`, { method: "DELETE" }); toast("Excluído"); atualizarPlanilha(); } catch (e) { erro(e); }
   });
 }
+function linhaBranca2(apos, sug) {
+  return `<tr class="lin-nova" data-apos="${esc(apos)}"><td><input class="cel" data-nitem placeholder="item" value="${esc(sug || "")}" style="width:92px"></td>
+      <td><input class="cel falta" data-ncod placeholder="código ↵" style="width:78px"></td>
+      <td colspan=9><small class="nota">Digite o código e tecle Enter (ou cole vários códigos).</small> <button class="btn mini" data-ntit>+ título</button> <button class="btn mini" data-ncanc>cancelar</button></td><td></td></tr>`;
+}
+// colar do Excel: "código[TAB quantidade][TAB NE]" por linha (ignora cabeçalho e linhas sem código)
+function lerColagem(txt) {
+  return txt.split(/\r?\n/).map(l => l.split(/\t|;/).map(x => x.trim())).filter(c => c[0] && /^[A-Z0-9]{2,}/i.test(c[0]) && !/^c[oó]d/i.test(c[0]))
+    .map(c => ({ codigo: c[0], quantidade: c[1] ? c[1].replace(/\./g, "").replace(",", ".") : null, ne: c[2] ? c[2].replace(",", ".") : null }));
+}
+async function incluirLinhas(linhas, apos) {
+  if (!linhas.length) return;
+  toast(`Incluindo ${linhas.length} serviço(s)…`);
+  try { const r = await jpost(`${base_}${E.pid}/pato/codigos`, { linhas, apos: apos || null });
+    toast(`${r.incluidos.length} incluído(s)${r.erros.length ? ` · ${r.erros.length} não encontrado(s): ${r.erros.join("; ")}` : ""}`); await atualizarPlanilha();
+  } catch (e) { erro(e); }
+}
+function ligarBrancas() {
+  $$("#tabOrc tr.lin-nova").forEach(tr => {
+    const cod = tr.querySelector("[data-ncod]"), item = tr.querySelector("[data-nitem]"), apos = tr.dataset.apos || null;
+    cod.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); if (cod.value.trim()) incluirLinhas([{ codigo: cod.value.trim(), item: item.value.trim() || null }], apos); } };
+    cod.onpaste = e => { const t = e.clipboardData.getData("text"); if (/\n/.test(t.trim())) { e.preventDefault(); incluirLinhas(lerColagem(t), apos); } };
+    const tt = tr.querySelector("[data-ntit]"); if (tt) tt.onclick = () => dialogoLinha(null, apos, "titulo", item.value.trim());
+    const cc = tr.querySelector("[data-ncanc]"); if (cc) cc.onclick = () => tr.remove();
+  });
+}
+
 // incluir serviço pelo código: dados da base + origem da quantidade pela planilha modelo, NE editável, preço final
 const CQ_ = { r: null, op: 0 };
 async function consultarCodigo(ne, base) {
@@ -1577,16 +1663,26 @@ function renderConsulta() {
   };
 }
 $("#cqBuscar").onclick = () => consultarCodigo();
+$("#btnColar").onclick = () => {
+  const d = $("#dlg"), f = $("#dlgForm");
+  f.className = "form";
+  f.innerHTML = `<h3>Colar lista de códigos</h3><p class="nota">Copie do Excel as colunas <b>código</b>, <b>quantidade</b> (opcional) e <b>NE</b> (opcional) e cole abaixo.
+    Sem quantidade, a quantidade vem da regra da planilha modelo (inventário, IP, transporte…). Os serviços entram no fim da planilha (ou pela numeração do modelo).</p>
+    <textarea id="colaTxt" rows="12" style="width:100%" placeholder="2003373\t\t\n4011209\t1500\t1"></textarea>
+    <div class="linha-botoes"><button class="btn primario" value="ok">Incluir</button><button class="btn" value="cancelar" formnovalidate>Cancelar</button></div>`;
+  d.showModal();
+  d.onclose = () => { if (d.returnValue === "ok") incluirLinhas(lerColagem($("#colaTxt").value), O_.c?.itens?.at(-1)?.id); };
+};
 $("#cqCod").onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); consultarCodigo(); } };
 
 // novo título/serviço (apos = id da linha acima) ou edição de um título
-function dialogoLinha(x, apos) {
+function dialogoLinha(x, apos, tipoPadrao, itemSug) {
   const d = $("#dlg"), f = $("#dlgForm"), novo = !x;
   const acima = apos ? O_.c.itens.find(y => y.id === apos) : null;
-  const sug = acima ? (acima.tipo === "titulo" ? acima.item + ".01" : (acima.item || "").replace(/(\d+)$/, m => String(+m + 1).padStart(m.length, "0"))) : "";
+  const sug = itemSug || (acima ? (acima.tipo === "titulo" ? acima.item + ".01" : (acima.item || "").replace(/(\d+)$/, m => String(+m + 1).padStart(m.length, "0"))) : "");
   f.className = "form";
   f.innerHTML = `<h3>${novo ? "Incluir linha" + (acima ? ` abaixo de ${esc(acima.item)}` : "") : `Editar título ${esc(x.item)}`}</h3><div class="campos">
-    ${novo ? `<label>Tipo <select name="tipo"><option value="servico">Serviço</option><option value="titulo">Título (tópico)</option></select></label>` : ""}
+    ${novo ? `<label>Tipo <select name="tipo"><option value="servico">Serviço</option><option value="titulo" ${tipoPadrao === "titulo" ? "selected" : ""}>Título (tópico)</option></select></label>` : ""}
     <label>Item (numeração) <input name="item" value="${esc(x ? x.item : sug)}" data-dica="Ex.: 01.03 (tópico) ou 01.03.05 (serviço). Os serviços de um tópico começam com a numeração dele"></label>
     <label class="largo">Nome / discriminação <input name="descricao" value="${esc(x ? x.descricao : "")}" placeholder="ex.: CONSERVAÇÃO PREVENTIVA PERIÓDICA (vazio no serviço = descrição da base)"></label>
     ${novo ? `<label>Código SICRO/próprio <input name="codigo" data-dica="Serviço: a descrição, a unidade e o preço vêm da base"></label>

@@ -440,7 +440,12 @@
         <button class="btn primario" id="btnExpOrc" data-dica="Gera o Excel: planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Exportar (Excel)</button>
       </div></div>
     <div id="resOrc"></div>
-    <div id="orc-planilha" class="sub-orc"><div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-planilha" class="sub-orc">
+      <div class="caixa"><div class="bin-cab"><h3>Incluir serviço pelo código</h3></div>
+        <div class="barra filtros"><input id="cqCod" placeholder="código SICRO ou próprio (ex.: 2003373, 4915632, 5915321)" style="width:320px" data-dica="Digite o código e tecle Enter: descrição, unidade, preço unitário e a origem da quantidade pela planilha modelo">
+          <button class="btn primario" id="cqBuscar">Buscar</button></div>
+        <div id="cqRes"></div></div>
+      <div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
     <div id="orc-conf" class="sub-orc">
       <div class="caixa"><h3>Conferência do PATO</h3>
         <p class="nota">Checklists de elaboração e de auditoria (Res. DNIT nº 8/2023) e regras dos normativos da base (IN 10/2024, Ofícios-Circulares

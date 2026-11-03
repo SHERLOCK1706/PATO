@@ -310,8 +310,8 @@ class Orcamentos:
         return out
 
     # ------------------------------------------------------------ cálculo
-    def calcular(self, pid: int) -> dict:
-        d = self.dados(pid)
+    def calcular(self, pid: int, d: dict | None = None) -> dict:
+        d = d if d is not None else self.dados(pid)
         p = self.sv.projeto(pid)
         ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
         try:
@@ -472,7 +472,14 @@ class Orcamentos:
                 x["descricao"], x["unidade"] = c.get("descricao") or "", x["unidade"] or c.get("unidade") or ""
             except ValueError:
                 pass
-        pos = next((i + 1 for i, y in enumerate(d["itens"]) if y["id"] == apos), len(d["itens"]))
+        if apos is None and x["item"]:  # sem posição: pela numeração (depois do último item de número menor)
+            chave = self._chave_item(x["item"])
+            pos = 0
+            for i, y in enumerate(d["itens"]):
+                if y.get("item") and self._chave_item(y["item"]) <= chave:
+                    pos = i + 1
+        else:
+            pos = next((i + 1 for i, y in enumerate(d["itens"]) if y["id"] == apos), len(d["itens"]))
         d["itens"].insert(pos, x)
         self._gravar(pid, d)
         return self.calcular(pid)
@@ -496,6 +503,92 @@ class Orcamentos:
                 break
             j += 1
         return j
+
+    @staticmethod
+    def _chave_item(item: str) -> tuple:
+        return tuple(int(p) if p.isdigit() else 0 for p in str(item).strip().split("."))
+
+    def consultar_codigo(self, pid: int, codigo: str, ne: float | None = None, base_valor: float | None = None) -> dict:
+        """Serviço pelo código (SICRO ou próprio): descrição, unidade, preço unitário (SD/CD) e as origens possíveis da
+        quantidade pela planilha modelo (inventário, levantamento IP, quadro de transportes, quantidade de outro item,
+        produção, extensão…), cada uma já calculada com os dados deste projeto: base × NE = quantidade e o preço final."""
+        import copy
+
+        from . import ficha as fc
+        cod = cp._cod(codigo or "")
+        if not cod:
+            raise ValueError("Informe o código do serviço.")
+        d = self.dados(pid)
+        try:
+            m = self.sv.custos.motor(pid, "SD")
+            c = m.comps.get(cod) or (m.base.get("sintetico") or {}).get(cod) or {}
+        except ValueError:
+            c = {}
+        f = fc.ler(self._arquivo_ficha())
+        fich = {x["id"]: x for x in f.get("itens", [])}
+        regras = [x for x in f.get("itens", []) if x.get("tipo") == "servico" and cp._cod(x.get("codigo") or "") == cod]
+        descricao = c.get("descricao") or next((x.get("descricao") for x in regras if x.get("descricao")), None)
+        unidade = c.get("unidade") or next((x.get("unidade") for x in regras if x.get("unidade")), None)
+        if not descricao and cod not in (d.get("precos_informados") or {}):
+            raise ValueError(f"Código {cod} não encontrado na base SICRO do projeto nem nas composições próprias.")
+        atuais = [x for x in d.get("itens", []) if x.get("tipo") == "servico"]
+        opcoes = []
+        for k, r in enumerate(regras):
+            b = copy.deepcopy(r.get("base") or {})
+            rot = b.get("fonte") or b.get("tipo")
+            motivo = None
+            if b.get("tipo") == "item":
+                pai = fich.get(b.get("ref")) or {}
+                alvo = next((y for y in atuais if y["id"] == b.get("ref")), None) or next(
+                    (y for y in atuais if cp._cod(y.get("codigo") or "") == cp._cod(pai.get("codigo") or "")), None)
+                rot = f"{'quantidade' if b.get('campo') != 'base' else 'base'} do item {pai.get('item')} {pai.get('codigo')} — " \
+                      f"{(pai.get('descricao') or '')[:60]}"
+                if alvo:
+                    b["ref"] = alvo["id"]
+                    rot += f" (na planilha: {alvo.get('item')})"
+                else:
+                    motivo = f"o serviço {pai.get('codigo')} ({(pai.get('descricao') or '')[:50]}) não está na planilha"
+            elif b.get("tipo") == "inventario":
+                rot = f"inventário: {b.get('medida')}"
+            elif b.get("tipo") == "ip":
+                rot = f"levantamento IP: {', '.join(b.get('chaves') or [])}"
+            elif b.get("tipo") == "transporte":
+                rot = "momento do quadro de transportes (aba Transporte)"
+            if b.get("expr"):
+                rot += f"  [{b['expr']}]"
+            opcoes.append(dict(id=f"__sim{k}", rotulo=f"Modelo {r.get('item')}: {rot}", item=r.get("item"), ne=r.get("ne"),
+                               arred=r.get("arred") or "trunc", base=b, indisponivel=motivo))
+        if not any(o["base"].get("tipo") == "transporte" for o in opcoes):
+            try:
+                if any(t["codigo"] == cod for t in self.sv.transporte.quadro(pid)["totais"]):
+                    opcoes.append(dict(id="__simT", rotulo="momento do quadro de transportes (aba Transporte)", item=None, ne=1.0,
+                                       arred="trunc", base=dict(tipo="transporte", codigo=cod)))
+            except Exception:  # noqa: BLE001
+                pass
+        opcoes.append(dict(id="__simV", rotulo="valor informado (digite a base)", item=None, ne=1.0, arred="trunc",
+                           base=dict(tipo="valor", valor=0.0, fonte="informado")))
+        for o in opcoes:  # NE / base digitados pelo usuário (recalcula pelas mesmas fórmulas)
+            if ne is not None:
+                o["ne"] = ne
+            if base_valor is not None and o["base"].get("tipo") in ("valor", "direta"):
+                o["base"]["valor"] = base_valor
+        d2 = copy.deepcopy(d)
+        for o in opcoes:
+            if not o.get("indisponivel"):
+                d2["itens"].append(dict(id=o["id"], tipo="servico", item=o["item"] or "99", codigo=cod, descricao=descricao or "",
+                                        unidade=unidade or "", ne=o["ne"] if o["ne"] is not None else 1.0, arred=o["arred"], base=o["base"]))
+        calc = {x["id"]: x for x in self.calcular(pid, d2)["itens"] if str(x.get("id", "")).startswith("__sim")}
+        preco = {}
+        for o in opcoes:
+            x = calc.get(o["id"])
+            if x:
+                o.update(base_valor=x.get("base_valor"), quantidade=x.get("quantidade"), fonte=x.get("base_fonte"),
+                         parcial_SD=x.get("parcial_SD"), parcial_CD=x.get("parcial_CD"))
+                preco = preco or dict(SD=x.get("preco_SD"), CD=x.get("preco_CD"), fonte_SD=x.get("preco_fonte_SD"))
+        ja = [dict(id=y["id"], item=y.get("item")) for y in atuais if cp._cod(y.get("codigo") or "") == cod]
+        return dict(codigo=cod, descricao=descricao, unidade=unidade, preco_SD=preco.get("SD"), preco_CD=preco.get("CD"),
+                    preco_fonte=preco.get("fonte_SD"), opcoes=opcoes, ja_na_planilha=ja,
+                    sugestao_item=next((o["item"] for o in opcoes if o.get("item") and not o.get("indisponivel")), None))
 
     def remover_item(self, pid: int, iid: str, com_itens: bool = False) -> dict:
         """Remove um serviço ou um título (com_itens=True: o título e os serviços/subtítulos do tópico)."""

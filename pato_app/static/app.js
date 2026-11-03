@@ -1507,17 +1507,20 @@ function renderOrcPlanilha() {
       <button class="btn mini" data-desce="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Desce o tópico inteiro" : "Desce a linha"}">↓</button>
       <button class="btn mini perigo" data-exorc="${esc(i.id)}" data-dica="${i.tipo === "titulo" ? "Exclui o título (pergunta se exclui também os serviços do tópico)" : "Exclui o serviço"}">×</button></span>`;
   $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Código</th><th>Discriminação</th><th class=n>Base</th><th class=n>NE</th><th class=n>Quantidade</th><th>Und</th>
-    <th class=n>Preço SD</th><th class=n>Parcial SD</th><th class=n>Preço CD</th><th class=n>Parcial CD</th><th></th></tr>` + c.itens.map(i => i.tipo === "titulo"
+    <th class=n>Preço unit. SD</th><th class=n>Preço final SD<br><small>qtd × preço</small></th><th class=n>Preço unit. CD</th><th class=n>Preço final CD</th><th></th></tr>` + c.itens.map(i => i.tipo === "titulo"
     ? `<tr class="titulo-orc"><td>${esc(i.item)}</td><td colspan=10>${esc(i.descricao)}</td>
       <td style="white-space:nowrap"><button class="btn mini" data-edtit="${esc(i.id)}" data-dica="Edita a numeração e o nome do tópico">Editar</button>${acoes(i)}</td></tr>`
     : `<tr><td>${esc(i.item)}</td><td>${esc(i.codigo)}</td><td>${esc(i.descricao)}</td>
-      <td class=n title="${esc(i.base_fonte || "")}">${q3(i.base_valor)}<br><small>${esc((i.base_fonte || "").slice(0, 38))}</small></td><td class=n>${(i.base || {}).tipo === "direta" ? "—" : q3(i.ne)}</td>
+      <td class=n title="${esc(i.base_fonte || "")}">${q3(i.base_valor)}<br><small>${esc((i.base_fonte || "").slice(0, 38))}</small></td><td class=n>${(i.base || {}).tipo === "direta" ? "—" : `<input class="ne-in" data-nein="${esc(i.id)}" type="number" step="any" value="${i.ne ?? 1}" data-dica="Nível de esforço — altere e tecle Enter: quantidade = base × NE">`}</td>
       <td class=n><b>${q3(i.quantidade)}</b></td><td>${esc(i.unidade || "")}</td>
       <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n>${reais(i.parcial_SD)}</td>
       <td class=n title="${esc(i.preco_fonte_CD || "")}">${reais(i.preco_CD)}</td><td class=n>${reais(i.parcial_CD)}</td>
       <td style="white-space:nowrap"><button class="btn mini" data-edorc="${esc(i.id)}" data-dica="Altera numeração, código, descrição, a base da quantidade (inventário, IP, outro item, transporte, valor), o nível de esforço ou o preço">Editar</button>${acoes(i)}</td></tr>`).join("")
     + `<tr class="titulo-orc"><td colspan=8>TOTAL GERAL DO ORÇAMENTO</td><td class=n>${reais(c.totais.SD)}</td><td></td><td class=n>${reais(c.totais.CD)}</td><td></td></tr>`;
   $$("[data-edorc]").forEach(b => b.onclick = () => editarItemOrc(b.dataset.edorc));
+  $$("[data-nein]").forEach(inp => inp.onchange = async () => {
+    try { await jpost(`${base_}${E.pid}/pato/itens/${inp.dataset.nein}`, { ne: inp.value === "" ? 1 : +inp.value }, "PUT"); toast("NE alterado — planilha recalculada"); carregarOrc(); } catch (e) { erro(e); }
+  });
   $$("[data-edtit]").forEach(b => b.onclick = () => dialogoLinha(O_.c.itens.find(x => x.id === b.dataset.edtit), null));
   $$("[data-novo]").forEach(b => b.onclick = () => dialogoLinha(null, b.dataset.novo));
   const mover = (id, dir) => jpost(`${base_}${E.pid}/pato/itens/${id}/mover`, { direcao: dir }).then(carregarOrc).catch(erro);
@@ -1533,6 +1536,49 @@ function renderOrcPlanilha() {
     try { await api(`${base_}${E.pid}/pato/itens/${x.id}?com_itens=${com}`, { method: "DELETE" }); toast("Excluído"); carregarOrc(); } catch (e) { erro(e); }
   });
 }
+// incluir serviço pelo código: dados da base + origem da quantidade pela planilha modelo, NE editável, preço final
+const CQ_ = { r: null, op: 0 };
+async function consultarCodigo(ne, base) {
+  const cod = $("#cqCod").value.trim(); if (!cod) return;
+  const q = new URLSearchParams({ codigo: cod }); if (ne != null && ne !== "") q.set("ne", ne); if (base != null && base !== "") q.set("base", base);
+  if (ne == null) $("#cqRes").innerHTML = '<p class="carregando">Buscando…</p>';
+  try { CQ_.r = await api(`${base_}${E.pid}/pato/consultar?${q}`); if (ne == null) CQ_.op = Math.max(0, CQ_.r.opcoes.findIndex(o => !o.indisponivel)); renderConsulta(); }
+  catch (e) { $("#cqRes").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+}
+function renderConsulta() {
+  const r = CQ_.r, o = r.opcoes[CQ_.op];
+  $("#cqRes").innerHTML = `<div class="cq"><p><b>${esc(r.codigo)}</b> — ${esc(r.descricao || "")} · <b>${esc(r.unidade || "")}</b><br>
+      Preço unitário: <b>R$ ${reais(r.preco_SD)}</b> sem desoneração · <b>R$ ${reais(r.preco_CD)}</b> com desoneração <small class="nota">${esc(r.preco_fonte || "")}</small></p>
+    ${r.ja_na_planilha.length ? `<p class="tag aviso">Já está na planilha: ${esc(r.ja_na_planilha.map(x => x.item).join(", "))} (pode incluir de novo, ex.: outro serviço de origem)</p>` : ""}
+    <p class="nota">Origem da quantidade (como na planilha modelo):</p>
+    <div class="tabela-rolagem"><table class="tab"><tr><th></th><th>Origem</th><th class=n>Base</th><th class=n>NE</th><th class=n>Quantidade</th><th class=n>Preço final SD</th><th class=n>Preço final CD</th></tr>
+      ${r.opcoes.map((x, k) => `<tr class="${x.indisponivel ? "inativa" : ""}"><td><input type="radio" name="cqop" value="${k}" ${k === CQ_.op ? "checked" : ""} ${x.indisponivel ? "disabled" : ""}></td>
+        <td>${esc(x.rotulo)}${x.indisponivel ? `<br><small class="tag aviso">indisponível: ${esc(x.indisponivel)}</small>` : ""}</td>
+        <td class=n>${x.indisponivel ? "" : q3(x.base_valor)}</td><td class=n>${x.indisponivel ? "" : q3(x.ne)}</td><td class=n><b>${x.indisponivel ? "" : q3(x.quantidade)}</b></td>
+        <td class=n><b>${x.indisponivel ? "" : reais(x.parcial_SD)}</b></td><td class=n>${x.indisponivel ? "" : reais(x.parcial_CD)}</td></tr>`).join("")}</table></div>
+    <div class="campos cot-campos" style="margin-top:8px">
+      <label>Nível de esforço <input id="cqNe" type="number" step="any" value="${o.ne ?? 1}" data-dica="Altere: a quantidade e o preço final são recalculados pelas fórmulas da planilha"></label>
+      ${["valor", "direta"].includes(o.base.tipo) ? `<label>Base (quantidade antes do NE) <input id="cqBase" type="number" step="any" value="${o.base.valor ?? ""}" ${o.base.valor ? "" : 'class="falta" placeholder="preencher"'}></label>` : ""}
+      <label>Item (numeração) <input id="cqItem" value="${esc(o.item || r.sugestao_item || "")}" placeholder="ex.: 01.02.09" data-dica="Posição na planilha: entra depois do último item de número menor"></label></div>
+    <p>Quantidade: <b>${q3(o.quantidade)} ${esc(r.unidade || "")}</b> × R$ ${reais(r.preco_SD)} = <b>Preço final R$ ${reais(o.parcial_SD)}</b> (SD) · R$ ${reais(o.parcial_CD)} (CD)</p>
+    <div class="linha-botoes"><button class="btn primario" id="cqIncluir" ${o.indisponivel ? "disabled" : ""}>Incluir na planilha PATO</button></div></div>`;
+  $$("input[name=cqop]").forEach(rd => rd.onchange = () => { CQ_.op = +rd.value; consultarCodigo(r.opcoes[CQ_.op].ne, null); });
+  let h;
+  const recalc = () => { clearTimeout(h); h = setTimeout(() => consultarCodigo($("#cqNe").value, $("#cqBase")?.value), 350); };
+  $("#cqNe").oninput = recalc; if ($("#cqBase")) $("#cqBase").oninput = recalc;
+  $("#cqIncluir").onclick = async () => {
+    const op = CQ_.r.opcoes[CQ_.op];
+    if (["valor", "direta"].includes(op.base.tipo) && !op.base.valor) return toast("Informe a base (quantidade) do serviço");
+    try {
+      await jpost(`${base_}${E.pid}/pato/itens`, { tipo: "servico", item: $("#cqItem").value.trim(), codigo: r.codigo, descricao: r.descricao, unidade: r.unidade,
+        ne: +$("#cqNe").value || 1, base: op.base, apos: null });
+      toast(`${r.codigo} incluído na planilha`); $("#cqRes").innerHTML = ""; $("#cqCod").value = ""; carregarOrc();
+    } catch (e) { erro(e); }
+  };
+}
+$("#cqBuscar").onclick = () => consultarCodigo();
+$("#cqCod").onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); consultarCodigo(); } };
+
 // novo título/serviço (apos = id da linha acima) ou edição de um título
 function dialogoLinha(x, apos) {
   const d = $("#dlg"), f = $("#dlgForm"), novo = !x;

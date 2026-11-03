@@ -131,6 +131,11 @@ Exportar gera CROQUI (desenho em células), DMT, VMDf, FIT (com fórmulas), TRAN
 RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” guarda a quantidade de cada serviço.
 
 ## Planilha PATO (aba PATO) — Resolução DNIT nº 8/2023
+- **Incluir serviço pelo código** (Planilha PATO): digite o código SICRO/próprio → descrição, unidade, preço unitário SD/CD e
+  as origens da quantidade **pela planilha modelo** (inventário — ex.: meio-fio `(CAD_MFC!X21+Y21)/2×8,5%`; levantamento IP;
+  momento do **quadro de transportes**; quantidade de outro item — usinagem, AM/TM; produção; ou valor informado), cada uma já
+  calculada com os dados do projeto; NE editável com recálculo (quantidade = base × NE; preço final = TRUNC(qtd × preço; 2)).
+  O NE também é editável direto na tabela.
 - **BDI no cabeçalho** (SD/CD) com o botão **conferir/ajustar**, que abre Custos → **Data-base e BDI** (parcelas, SELIC, CPRB, ISSQN).
 - **Importar lista de serviços** (Ficha): .xlsx/.csv/.txt com os códigos (colunas opcionais NE e quantidade). Marca os serviços da
   ficha; códigos fora da ficha entram em “01.08 Serviços incluídos pela lista”.

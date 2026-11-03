@@ -189,3 +189,28 @@ def test_assistente_e_memoria(proj, tmp_path):
     r = PdfReader(pdf)
     texto = "".join(pg.extract_text() or "" for pg in r.pages[:2])
     assert len(r.pages) > 5 and "Memória de cálculo" in texto and "levantamento IP" in texto
+
+
+def test_incluir_pelo_codigo(proj):
+    """Código → descrição, unidade, preço e origem da quantidade pela planilha modelo (inventário, IP, transporte,
+    quantidade de outro item), com NE editável: quantidade = base × NE; preço final = TRUNC(qtd × preço; 2)."""
+    sv, pid, _ = proj
+    o = sv.orcamento
+    sv.orcamento.montar_pela_ficha(pid)
+    ref = {x["codigo"]: x for x in o.calcular(pid)["itens"] if x["tipo"] == "servico"}
+    for cod, tipo in (("2003373", "inventario"), ("4915632", "ip"), ("5915321", "transporte"), ("5501700", "producao")):
+        r = o.consultar_codigo(pid, cod)
+        op = next(x for x in r["opcoes"] if x["base"].get("tipo") == tipo)
+        assert r["descricao"] and r["unidade"] and r["preco_SD"] > 0
+        assert abs(op["quantidade"] - ref[cod]["quantidade"]) < 1e-6 and abs(op["parcial_SD"] - ref[cod]["parcial_SD"]) < 0.01
+    us = o.consultar_codigo(pid, "6416078")
+    assert sum(1 for x in us["opcoes"] if x["base"].get("tipo") == "item" and not x.get("indisponivel")) >= 3
+    r = o.consultar_codigo(pid, "2003373", ne=2)
+    op = r["opcoes"][0]
+    assert abs(op["quantidade"] - 2 * ref["2003373"]["quantidade"]) < 0.01
+    o.incluir_item(pid, None, dict(tipo="servico", item="01.02.06.99", codigo="2003373", ne=2, base=op["base"]))
+    itens = o.dados(pid)["itens"]
+    k = next(i for i, x in enumerate(itens) if x["item"] == "01.02.06.99")
+    assert itens[k - 1]["item"].startswith("01.02.06")         # entrou na posição pela numeração
+    novo = next(x for x in o.calcular(pid)["itens"] if x["item"] == "01.02.06.99")
+    assert abs(novo["quantidade"] - op["quantidade"]) < 0.01

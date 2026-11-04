@@ -114,10 +114,11 @@ def aplicar(raiz: Path = bc.RAIZ, excluir: bool = True) -> dict:
 
 
 def remover_retirados(raiz: Path = bc.RAIZ) -> list[str]:
-    """Exclui da base (índice e textos) os documentos revogados/substituídos, com evidência no registro de vigência.
+    """Exclui da base (índice e textos) os documentos revogados/substituídos (e modelos antigos declarados defasados),
+    com evidência no registro de vigência.
     Os de alteração parcial e os sem notícia de revogação ficam (não se retira norma vigente)."""
     ind = bc.carregar_indice(raiz)
-    fora = [d for d in ind["documentos"] if d.get("ativo") is False and d.get("situacao") in ("revogado", "substituido")]
+    fora = [d for d in ind["documentos"] if d.get("ativo") is False and d.get("situacao") in ("revogado", "substituido", "modelo_antigo")]
     for d in fora:
         for arq in (raiz / "textos").glob(f"{d['id']}*"):
             arq.unlink(missing_ok=True)

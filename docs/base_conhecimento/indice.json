@@ -1108,38 +1108,6 @@
    "substituto": null
   },
   {
-   "id": "PATO_BR_364_405_435_REV1_7d8980",
-   "titulo": "PATO BR 364 405 435 REV1",
-   "arquivo": "PATO_BR_364_405_435_REV1.xlsx",
-   "categoria": "PATO de referência",
-   "pacote": null,
-   "paginas": 76,
-   "palavras": 216714,
-   "ocr_paginas": [],
-   "sha1": "7d898014052d3ac26b08088969b23bab4f005706",
-   "original": null,
-   "tamanho_mb": 11.8,
-   "ativo": false,
-   "situacao": "modelo_antigo",
-   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
-  },
-  {
-   "id": "PATO_BR_174_MT_KM_303_KM_365_E_KM_0_KM_81_R2_9edb7a",
-   "titulo": "PATO BR 174 MT KM 303 KM 365 E KM 0 KM 81 R2",
-   "arquivo": "PATO_BR_174_MT_KM_303_KM_365_E_KM_0_KM_81___R2.xlsx",
-   "categoria": "PATO de referência",
-   "pacote": null,
-   "paginas": 80,
-   "palavras": 214168,
-   "ocr_paginas": [],
-   "sha1": "9edb7ac76b47f4e5c94238cb9159616e1c4d8417",
-   "original": null,
-   "tamanho_mb": 13.21,
-   "ativo": false,
-   "situacao": "modelo_antigo",
-   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
-  },
-  {
    "id": "CHECKLIST_ELABORACAO_PATO_263c30",
    "titulo": "CHECKLIST ELABORACAO PATO",
    "arquivo": "CHECKLIST_ELABORACAO_PATO.docx",
@@ -1868,6 +1836,16 @@
    "titulo": "Anexo 02.2017 - Instala‡Æo de Canteiros",
    "situacao": "substituido",
    "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "PATO BR 364 405 435 REV1",
+   "situacao": "modelo_antigo",
+   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
+  },
+  {
+   "titulo": "PATO BR 174 MT KM 303 KM 365 E KM 0 KM 81 R2",
+   "situacao": "modelo_antigo",
+   "substituto": "PATO BR-158/MT km 85–212,5 REV2 (licitado) — modelo do sistema."
   }
  ]
 }

@@ -2169,17 +2169,36 @@ async function salvarDiv(d) {
 }
 $("#btnDivSalvar").onclick = () => salvarDiv(lerDiv());
 $("#btnDivSug").onclick = async () => {
-  try { const l = await api(`${base_}${E.pid}/diversos/sugerir-mob`); if (!l.length) return toast("Nenhum equipamento com transporte rodoviário nas composições");
-    if (!confirm(`Substituir a lista da mobilização por ${l.length} equipamentos das composições do PATO?`)) return;
-    const d = lerDiv();
-    if (d.modelo === "sicro2025" && d.sicro2025) {
-      const ant = d.sicro2025.mob.equipamentos[0] || {};
-      d.sicro2025.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
-    } else {
-      const ant = d.mob.equipamentos[0] || {};
-      d.mob.equipamentos = l.map(x => ({ ...x, dmt_pav: ant.dmt_pav ?? 0, dmt_npav: ant.dmt_npav ?? 0, vel_pav: ant.vel_pav ?? 60, vel_npav: ant.vel_npav ?? 50, k: 1 }));
-    }
-    salvarDiv(d); } catch (e) { erro(e); }
+  let l;
+  try { l = await api(`${base_}${E.pid}/diversos/sugerir-mob`); } catch (e) { return erro(e); }
+  if (!l.length) return toast("Nenhum equipamento com transporte rodoviário nas composições");
+  const d = lerDiv(), m25 = d.modelo === "sicro2025" && d.sicro2025, alvo = m25 ? d.sicro2025.mob : d.mob;
+  const atual = Object.fromEntries((alvo.equipamentos || []).map(e => [e.codigo, e])), sug = Object.fromEntries(l.map(e => [e.codigo, e]));
+  const cods = [...new Set([...Object.keys(atual), ...Object.keys(sug)])].sort();
+  const sit = c => !atual[c] ? "novo" : !sug[c] ? "sem_uso" : (+atual[c].quant !== +sug[c].quant ? "quant" : "igual");
+  const rot = { novo: '<span class="tag ok">entra (usado nos serviços)</span>', sem_uso: '<span class="tag aviso">não aparece nas composições escolhidas</span>', quant: '<span class="tag">quantidade diferente</span>', igual: "igual" };
+  const dl = $("#dlg"), f = $("#dlgForm");
+  f.className = "form"; f.style.minWidth = "min(1000px, 94vw)";
+  dl.addEventListener("close", () => { f.style.minWidth = ""; }, { once: true });
+  const n = s_ => cods.filter(c => sit(c) === s_).length;
+  f.innerHTML = `<h3>Equipamentos da mobilização × serviços escolhidos</h3>
+    <p class="nota">Equipamentos das composições e auxiliares dos serviços do PATO que exigem transporte rodoviário (SICRO Vol. 09, tabela IMOB).
+      ${n("igual")} iguais · ${n("novo")} novos · ${n("sem_uso")} sem uso nos serviços · ${n("quant")} com quantidade diferente. Marque o que deve ficar na mobilização.</p>
+    <div class="tabela-rolagem" style="max-height:55vh"><table class="tab"><tr><th>Manter</th><th>Código</th><th>Equipamento</th><th>Situação</th><th class=n>Quant. atual</th><th class=n>Quant. pelos serviços</th><th class=n>Quant. a usar</th></tr>
+    ${cods.map(c => { const a = atual[c], g = sug[c], st = sit(c);
+      return `<tr><td><input type="checkbox" data-mk="${esc(c)}" ${st === "sem_uso" ? "" : "checked"}></td><td>${esc(c)}</td><td><small>${esc((a || g).descricao || "")}</small></td><td>${rot[st]}</td>
+        <td class=n>${a ? nf(a.quant) : "—"}</td><td class=n>${g ? nf(g.quant) : "—"}</td><td class=n><input data-mq="${esc(c)}" type="number" step="1" value="${a ? a.quant : g.quant}" style="width:60px"></td></tr>`; }).join("")}</table></div>
+    <div class="linha-botoes"><button class="btn primario" value="ok">Aplicar na mobilização</button><button class="btn" value="cancelar" formnovalidate>Cancelar</button></div>`;
+  dl.showModal();
+  dl.onclose = () => {
+    if (dl.returnValue !== "ok") return;
+    const base0 = (alvo.equipamentos || [])[0] || {};
+    alvo.equipamentos = cods.filter(c => $(`[data-mk="${c}"]`, f).checked).map(c => {
+      const a = atual[c], g = sug[c], q = +$(`[data-mq="${c}"]`, f).value || 1;
+      return a ? { ...a, quant: q } : { ...g, quant: q, dmt_pav: base0.dmt_pav ?? 0, dmt_npav: base0.dmt_npav ?? 0, vel_pav: 60, vel_npav: 50, k: 1 };
+    });
+    salvarDiv(d);
+  };
 };
 
 // ---------------------------------------------------------------- base de conhecimento

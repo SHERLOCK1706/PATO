@@ -88,3 +88,16 @@ def test_metodologia_ajustada_2a_edicao(proj):
     c1 = next(x for x in sv.orcamento.calcular(pid)["itens"] if x.get("codigo") == "ADM")
     assert c1["preco_SD"] == res["precos"]["ADM"]["SD"] > 74824.54
     sv.orcamento.salvar_diversos(pid, dict(modelo="br158"))
+
+
+def test_mob_velocidades_da_referencia():
+    """Mobilização (metodologia da 2ª edição): velocidades iguais às da planilha de referência (60/50 km/h), mesmo se
+    o dado salvo tiver outra velocidade."""
+    from pato_app import diversos as dv
+    from pato_app.servico import MODELO_PADRAO
+    d = dv.importar_planilha(str(MODELO_PADRAO))
+    ref = {(e["vel_pav"], e["vel_npav"]) for e in d["mob"]["equipamentos"]}
+    s = dv.padrao_2025(d)
+    s["mob"]["equipamentos"][0].update(vel_pav=30, vel_npav=20)
+    m = dv.velocidades_referencia(s["mob"], d["mob"])
+    assert ref == {(60.0, 50.0)} and {(e["vel_pav"], e["vel_npav"]) for e in m["equipamentos"]} == ref

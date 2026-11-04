@@ -2147,11 +2147,12 @@ function renderDiv2025(r) {
       <br><small>Sugestão pelo canteiro (linha reta): ${(r.capitais || []).map(x => `${esc(x.capital)} ${nf(x.linha_reta_km, 0)} km`).join(" · ") || "—"} — confirme a distância pela rodovia.</small></p>
     <p>Pessoal: ${ps.quantidade} motoristas/operadores × passagem R$ ${reais(ps.passagem)} (pesquisada ${dvIn(P + "mob.passagem", sm.passagem, 80)}) ·
       descanso de ${nf(sm.tempo_descanso, 1)} h a cada ${dvIn(P + "mob.horas_entre_descansos", sm.horas_entre_descansos, 45)} h de viagem</p>
+    <p class="nota">Velocidades dos veículos iguais às da planilha de referência (aba MOB): pavimentada e não pavimentada por equipamento (60 / 50 km/h).</p>
     <div class="tabela-rolagem" style="max-height:420px"><table class="tab"><tr><th>Código</th><th>Equipamento</th><th>Transportador</th><th class=n>Quant.</th><th class=n>FU</th>
-      <th class=n>Viagem (h)</th><th class=n>Descansos</th><th class=n>Descanso (h)</th><th class=n>Custo SD</th><th class=n>Custo CD</th></tr>` +
+      <th class=n>v pav (km/h)</th><th class=n>v não pav (km/h)</th><th class=n>Viagem (h)</th><th class=n>Descansos</th><th class=n>Descanso (h)</th><th class=n>Custo SD</th><th class=n>Custo CD</th></tr>` +
     m.equipamentos.map((x, i) => `<tr><td>${esc(x.codigo)}</td><td><small>${esc(x.descricao || "")}</small></td><td>${dvTx(`${P}mob.equipamentos.${i}.transporte`, x.transporte, 64)}</td>
       <td class=n>${dvIn(`${P}mob.equipamentos.${i}.quant`, x.quant, 45)}</td><td class=n>${dvIn(`${P}mob.equipamentos.${i}.fu`, x.fu, 55)}</td>
-      <td class=n>${nf(x.tempo_viagem, 4)}</td><td class=n>${x.descansos}</td><td class=n>${nf(x.tempo_descanso, 1)}</td><td class=n>${reais(x.custo_SD)}</td><td class=n>${reais(x.custo_CD)}</td></tr>`).join("") +
+      <td class=n title="planilha de referência">${nf(x.vel_pav, 0)}</td><td class=n title="planilha de referência">${nf(x.vel_npav, 0)}</td><td class=n>${nf(x.tempo_viagem, 4)}</td><td class=n>${x.descansos}</td><td class=n>${nf(x.tempo_descanso, 1)}</td><td class=n>${reais(x.custo_SD)}</td><td class=n>${reais(x.custo_CD)}</td></tr>`).join("") +
     `</table></div><p>Custo SD R$ ${reais(m.SD.custo)} · CD R$ ${reais(m.CD.custo)} → <b>MOB = DESMOB: SD R$ ${reais(m.SD.preco)} · CD R$ ${reais(m.CD.preco)}</b></p>`;
   ligarSeletorMetodologia();
 }

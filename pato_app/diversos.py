@@ -198,7 +198,7 @@ def calcular_mob(m: dict, eq_fn, bdi: dict, indice_fn=None, data_base: str | Non
         info = tab.get(x["codigo"]) or {}
         tr = x.get("transporte") or info.get("transporte")
         fu = _n(x.get("fu"), _n(info.get("fu")))
-        vp, vn = _n(x.get("vel_pav"), 60), _n(x.get("vel_npav"), 50)
+        vp, vn = _n(x.get("vel_pav"), VEL_PAV_REF), _n(x.get("vel_npav"), VEL_NPAV_REF)
         k = (_n(x.get("dmt_pav")) / vp if vp else 0) + (_n(x.get("dmt_npav")) / vn if vn else 0)
         nd = math.floor(k / hd) if hd else 0
         mm = nd * td
@@ -457,7 +457,11 @@ MODELOS = {"sicro2025": "Ajustada — 2ª edição do Manual de Custos (manejo f
            "br158": "Planilha de origem (PATO BR-158/MT)"}
 H_MES = 182.49  # horas por mês (Tf do manejo florestal)
 K3 = dict(pav=0.0008, rp=0.0009, leito=0.0014)  # Vol. 06, Tabela 36
-VEL = dict(caminhao=dict(pav=60.0, rp=50.0, leito=40.0), cavalo=dict(pav=30.0, rp=25.0, leito=20.0))
+# velocidades da planilha de referência (BR-158/MT, aba MOB): 60 km/h pavimentada e 50 km/h não pavimentada, para
+# todos os transportadores — mantidas também na metodologia da 2ª edição (orientação do usuário)
+VEL_PAV_REF, VEL_NPAV_REF = 60.0, 50.0
+VEL = dict(caminhao=dict(pav=VEL_PAV_REF, rp=VEL_NPAV_REF, leito=VEL_NPAV_REF),
+           cavalo=dict(pav=VEL_PAV_REF, rp=VEL_NPAV_REF, leito=VEL_NPAV_REF))
 CAPITAIS = {  # sede do governo estadual (lat, lon) — origem da mobilização: a capital mais próxima do canteiro
     "Rio Branco/AC": (-9.9747, -67.8243), "Maceió/AL": (-9.6658, -35.7353), "Macapá/AP": (0.0349, -51.0694),
     "Manaus/AM": (-3.1190, -60.0217), "Salvador/BA": (-12.9777, -38.5016), "Fortaleza/CE": (-3.7319, -38.5267),
@@ -476,6 +480,19 @@ def capitais_mais_proximas(lat: float, lon: float, n: int = 3) -> list[dict]:
     from .ne_rocada import distancia_km
     lst = sorted(((distancia_km(lat, lon, la, lo), c) for c, (la, lo) in CAPITAIS.items()))
     return [dict(capital=c, linha_reta_km=round(d, 1)) for d, c in lst[:n]]
+
+
+def velocidades_referencia(mob: dict, ref: dict | None) -> dict:
+    """Velocidades dos veículos iguais às da planilha de referência: as do mesmo equipamento na mobilização de origem
+    (aba MOB importada) ou, sem ele, 60 km/h pavimentada / 50 km/h não pavimentada."""
+    import copy
+    m = copy.deepcopy(mob)
+    vr = {e.get("codigo"): e for e in (ref or {}).get("equipamentos") or []}
+    for e in m.get("equipamentos") or []:
+        r = vr.get(e.get("codigo")) or {}
+        e["vel_pav"] = _n(r.get("vel_pav"), VEL_PAV_REF)
+        e["vel_npav"] = _n(r.get("vel_npav"), VEL_NPAV_REF)
+    return m
 
 
 def aplicar_origem_mob(mob: dict) -> dict:
@@ -713,7 +730,7 @@ def calcular_2025(d: dict, *, mo_fn, eq_fn, custo_comp_fn, bdi, meses, quantidad
     adm = calcular_adm(s["adm"], mo_fn, eq_fn, bdi, meses, quantidade_fn, producao_fn)
     can = calcular_canteiro_2025(s["canteiro"], s["adm"], bdi)
     usi = calcular_usina_2025(s["usina"], s["canteiro"], custo_comp_fn, bdi)
-    mob = calcular_mob(aplicar_origem_mob(s["mob"]), eq_fn, bdi, indice_fn, data_base)
+    mob = calcular_mob(velocidades_referencia(aplicar_origem_mob(s["mob"]), d.get("mob")), eq_fn, bdi, indice_fn, data_base)
     mob["origem"] = s["mob"].get("origem")
     precos = {c: {} for c in CODIGOS}
     for reg in REGIMES:

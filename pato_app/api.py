@@ -608,6 +608,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         finally:
             os.unlink(caminho)
 
+    @app.post("/api/projetos/{pid}/croqui/perimetros/detectar")
+    def t_perim_detectar(pid: int, dados: dict = Body(default={})):
+        return tr.detectar_perimetros(pid, dados.get("usar_mapa", True))
+
     @app.post("/api/projetos/{pid}/croqui/cidades-ibge")
     def t_cidades(pid: int):
         """Adota as cidades (sede IBGE) com limites estimados como travessias urbanas — conferir."""

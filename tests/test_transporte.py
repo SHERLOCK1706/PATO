@@ -164,3 +164,42 @@ def test_perimetro_urbano_no_croqui(tmp_path):
     t = r["perimetros"][0]
     assert t["km_ini"] < c[0]["km_sede"] < t["km_fim"] and "polígono" in t["fonte"]
     assert [x["nome"] for x in r["modelo_res8"]["cidades_estimadas"]] == ["Porto Alegre do Norte"]
+
+
+def test_perimetro_automatico_placas_e_mapa(tmp_path, monkeypatch):
+    """Automático: placas de início/fim de perímetro (inventário) → mancha urbana do mapa (OpenStreetMap) → estimativa."""
+    from pato_app import perimetro as pm
+    from pato_app import snv
+    from pato_app.servico import MODELO_PADRAO, Servico
+    sv = Servico(pasta=tmp_path / "d")
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    # placas de Confresa no inventário de sinalização vertical (coluna Observações)
+    sv.db.inserir_itens(pid, [dict(categoria="PLACA", km_ini=139.62, tipo="Indicação", obs="INÍCIO DO PERÍMETRO URBANO - CONFRESA"),
+                              dict(categoria="PLACA", km_ini=143.71, tipo="Indicação", obs="FIM DO PERÍMETRO URBANO")])
+    # área urbana (OSM) em Porto Alegre do Norte: quadras dos dois lados do eixo do km 167,2 ao km 170,6
+    lado = []
+    for k in [167.2 + i * 0.2 for i in range(18)]:
+        la, lo = snv.posicao("158", "MT", k)
+        lado.append((la, lo))
+    anel = [(la, lo + 0.004) for la, lo in lado] + [(la, lo - 0.004) for la, lo in reversed(lado)]
+    osm = dict(elements=[dict(type="way", tags=dict(landuse="residential"), geometry=[dict(lat=a, lon=b) for a, b in anel])])
+    monkeypatch.setattr(pm, "baixar_osm", lambda bbox, cache=None, timeout=120: osm)
+    r = sv.transporte.detectar_perimetros(pid)
+    t = {x["nome"]: x for x in r["perimetros"]}
+    assert (t["Confresa"]["km_ini"], t["Confresa"]["km_fim"]) == (139.62, 143.71) and "placas" in t["Confresa"]["fonte"]
+    pan = t["Porto Alegre do Norte"]
+    assert abs(pan["km_ini"] - 167.2) <= 0.2 and abs(pan["km_fim"] - 170.6) <= 0.2 and "mapa" in pan["fonte"]
+    # sem internet: estimativa pela sede (as placas continuam valendo)
+    def falha(*a, **k):
+        raise ValueError("sem internet")
+    monkeypatch.setattr(pm, "baixar_osm", falha)
+    r = sv.transporte.detectar_perimetros(pid)
+    t = {x["nome"]: x for x in r["perimetros"]}
+    assert "placas" in t["Confresa"]["fonte"] and t["Porto Alegre do Norte"].get("estimado") and r["aviso"]
+    # travessia digitada pelo usuário prevalece
+    d = sv.transporte.dados_croqui(pid)
+    sv.transporte.salvar_croqui(pid, dict(travessias=[dict(nome="Confresa", km_ini=139.0, km_fim=144.0, fonte="lei municipal")]))
+    r = sv.transporte.detectar_perimetros(pid)
+    trav = sv.transporte.dados_croqui(pid)["travessias"]
+    assert any(x["nome"] == "Confresa" and x["km_ini"] == 139.0 and not x.get("auto") for x in trav)
+    assert [x["nome"] for x in r["perimetros"]] == ["Porto Alegre do Norte"]

@@ -199,6 +199,42 @@ class Transportes:
         self._cache_cidades[chave] = out
         return [dict(c) for c in out]
 
+    def detectar_perimetros(self, pid: int, usar_mapa: bool = True) -> dict:
+        """km inicial e final do perímetro urbano de cada cidade do trecho, automaticamente: placas de início/fim de
+        perímetro (inventário de sinalização ou KMZ) → mancha urbana no mapa (OpenStreetMap) → estimativa pela sede.
+        Travessias digitadas pelo usuário (não automáticas) são mantidas; as automáticas são refeitas."""
+        from . import perimetro as pm
+        from . import snv
+        from . import transporte as tp_
+        p = self.sv.projeto(pid)
+        br, uf = snv.br_uf(p.get("rodovia"))
+        if not br:
+            raise ValueError("Informe a rodovia do projeto (ex.: BR-158/MT).")
+        d = self.dados_croqui(pid)
+        a = _num(d.get("km_ini")) if d.get("km_ini") is not None else p.get("km_ini")
+        b = _num(d.get("km_fim")) if d.get("km_fim") is not None else p.get("km_fim")
+        cid = self.cidades_no_trecho(pid, a, b)
+        manuais = [t for t in d.get("travessias") or [] if not t.get("auto")]
+        # cidade com travessia digitada pelo usuário: fica a do usuário
+        cid = [c for c in cid if not any((_num(t.get("km_ini")) or 0) - 0.5 <= c["km_sede"] <= (_num(t.get("km_fim")) or 0) + 0.5
+                                         for t in manuais)]
+        osm, aviso = None, None
+        if usar_mapa and cid:
+            pts = snv.amostrar(br, uf, a, b, 1.0)
+            if pts:
+                bbox = (min(x[1] for x in pts) - .03, min(x[2] for x in pts) - .03, max(x[1] for x in pts) + .03, max(x[2] for x in pts) + .03)
+                try:
+                    osm = pm.baixar_osm(bbox, Path(self.sv.pasta) / "cache_osm")
+                except ValueError as e:
+                    aviso = str(e) + " — usada a estimativa pela sede municipal onde não houver placa."
+        pontos = [o for o in d.get("ocorrencias") or [] if o.get("km") not in (None, "")]
+        novos = pm.detectar(br, uf, a, b, cid, self.db.itens(pid), pontos, osm)
+        d["travessias"] = sorted(manuais + novos, key=lambda t: _num(t.get("km_ini")) or 0)
+        self.db.gravar_dados_projeto(pid, "croqui", d)
+        self.db.registrar(pid, "croqui: perímetros urbanos detectados",
+                          "; ".join(f"{t['nome']} km {t['km_ini']:g}–{t['km_fim']:g} ({t['fonte'].split(' (')[0]})" for t in novos) or "nenhuma cidade")
+        return dict(self.croqui(pid), perimetros=novos, aviso=aviso)
+
     def importar_perimetros(self, pid: int, caminho: str, nome_arquivo: str | None = None) -> dict:
         """Perímetros urbanos / áreas urbanizadas (KML/KMZ ou shapefile .zip): o km onde a rodovia entra e sai de cada
         polígono vira a travessia urbana (início e fim do perímetro). Substitui as travessias de mesmo nome."""

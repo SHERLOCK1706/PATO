@@ -281,6 +281,12 @@ e a distância de cada trecho; formas do modelo (usina/canteiro amarelo, centro 
 jazida triângulo verde); início/fim do trecho, travessias, rosa dos ventos, legenda e as tabelas ORIGEM/DESTINO × LN/RP/P/FLUVIAL
 e MATERIAL BETUMINOSO (vencedores do binômio ANP), com a observação dos insumos CIF.
 
+**Perímetro urbano automático** (botão *Detectar perímetros urbanos*): para cada cidade do trecho (sede IBGE), o km inicial e
+final vêm (1) das **placas de início/fim de perímetro urbano** — inventário de sinalização vertical (tipo/observações) ou pontos
+do KMZ; (2) sem placas, da **mancha urbana no mapa** — áreas residenciais/comerciais/industriais do OpenStreetMap (precisa de
+internet; fica em cache), onde a rodovia entra e sai da área urbana contínua junto à cidade; (3) sem mapa, estimativa ±1 km da
+sede. Travessias digitadas pelo usuário prevalecem.
+
 **Perímetro urbano no croqui:** início e fim de cada travessia urbana demarcados com o km. Critérios, nesta ordem: (1) perímetro
 informado (lei municipal/levantamento) na tabela de travessias; (2) polígono importado — KML/KMZ da prefeitura ou shapefile do
 IBGE (Áreas Urbanizadas): o sistema calcula o km onde a rodovia entra e sai; (3) sem polígono: a sede municipal do IBGE projetada

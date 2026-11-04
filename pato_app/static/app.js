@@ -1409,7 +1409,7 @@ async function renderCroqui() {
   $("#tabOcorr").innerHTML = `<tr><th>Nome</th><th>Tipo</th><th>km</th><th>Lado</th><th colspan=3 data-dica="Distância do acesso entre a rodovia e a ocorrência">Acesso LN / RP / P (km)</th>
     <th colspan=3 data-dica="Para ocorrências sem km: distância fixa até a pista (ex.: bota-fora a 5 km)">Distância fixa LN / RP / P (km)</th><th>½ ext.</th><th>Obs.</th><th></th></tr>` + d.ocorrencias.map(linhaOcorr).join("");
   $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial (início do perímetro)</th><th>km final (fim do perímetro)</th><th>Critério / fonte</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td>
-    <td>${ci("fonte", t.fonte || "informado (perímetro urbano)", "text", 'style="width:300px"')}${t.estimado ? ' <small class="tag aviso">estimado</small><input type="hidden" data-c="estimado" value="1">' : ""}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
+    <td>${ci("fonte", t.fonte || "informado (perímetro urbano)", "text", 'style="width:300px"')}${t.estimado ? ' <small class="tag aviso">estimado</small><input type="hidden" data-c="estimado" value="1">' : ""}${t.auto ? ' <small class="tag">automático</small><input type="hidden" data-c="auto" value="1">' : ""}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
   const ce = c.modelo_res8?.cidades_estimadas || [];
   $("#travCidades").innerHTML = ce.length ? `<p class="nota">Cidades no trecho sem perímetro informado (sede municipal IBGE, limites estimados ±1 km): ${ce.map(x => `<b>${esc(x.nome)}</b> km ${nf(x.km_ini, 2)}–${nf(x.km_fim, 2)}`).join(" · ")}.
     Importe o perímetro (KML/shapefile) ou digite os km, ou <button class="btn mini" type="button" id="btnAdotarCid">adotar como travessias</button></p>` : "";
@@ -1425,6 +1425,13 @@ async function renderCroqui() {
 }
 $("#btnAddOcorr").onclick = () => { $("#tabOcorr").insertAdjacentHTML("beforeend", linhaOcorr({ tipo: "pedreira", lado: "E" })); ligarRemover(); };
 $("#btnAddTrav").onclick = () => { $("#tabTrav").insertAdjacentHTML("beforeend", `<tr data-tv><td>${ci("nome", "")}</td><td>${ci("km_ini", "", "number")}</td><td>${ci("km_fim", "", "number")}</td><td>${ci("fonte", "informado (perímetro urbano)", "text", 'style="width:300px"')}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+$("#btnPerimAuto").onclick = async () => {
+  if (!confirm("Detectar o início e o fim do perímetro urbano de cada cidade do trecho?\n1) placas de início/fim de perímetro (inventário de sinalização ou KMZ);\n2) senão, a mancha urbana no mapa (OpenStreetMap — precisa de internet);\n3) senão, estimativa pela sede municipal (±1 km).\nAs travessias digitadas por você são mantidas; elas entram no FIT e nas DMT urbanas.")) return;
+  toast("Detectando os perímetros urbanos (placas e mapa)…");
+  try { const r = await jpost(`${base_}${E.pid}/croqui/perimetros/detectar`, { usar_mapa: true });
+    toast((r.perimetros.length ? r.perimetros.map(p => `${p.nome}: km ${nf(p.km_ini, 2)}–${nf(p.km_fim, 2)} (${p.fonte.split(" (")[0]})`).join(" · ") : "Nenhuma cidade no trecho") + (r.aviso ? " — " + r.aviso : ""));
+    carregarTransp(); } catch (e) { erro(e); }
+};
 $("#btnPerim").onclick = async () => {
   const a = await escolherArquivo(".kml,.kmz,.zip,.shp"); if (!a) return;
   const fd = new FormData(); fd.append("arquivo", a);

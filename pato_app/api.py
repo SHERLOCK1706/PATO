@@ -600,6 +600,24 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def t_salvar_croqui(pid: int, dados: dict = Body(...)):
         return tr.salvar_croqui(pid, dados)
 
+    @app.post("/api/projetos/{pid}/croqui/perimetros")
+    async def t_perimetros(pid: int, arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return tr.importar_perimetros(pid, caminho, arquivo.filename)
+        finally:
+            os.unlink(caminho)
+
+    @app.post("/api/projetos/{pid}/croqui/cidades-ibge")
+    def t_cidades(pid: int):
+        """Adota as cidades (sede IBGE) com limites estimados como travessias urbanas — conferir."""
+        d = tr.dados_croqui(pid)
+        c = tr.croqui(pid)
+        novas = c["modelo_res8"]["cidades_estimadas"]
+        d["travessias"] = sorted((d.get("travessias") or []) + [dict(nome=x["nome"], km_ini=x["km_ini"], km_fim=x["km_fim"], fonte=x["fonte"],
+                                                                     estimado=True) for x in novas], key=lambda t: t.get("km_ini") or 0)
+        return tr.salvar_croqui(pid, dict(travessias=d["travessias"]))
+
     @app.post("/api/projetos/{pid}/croqui/pontos")
     async def t_pontos(pid: int, arquivo: UploadFile = File(...), acesso: str = Form(default="rp")):
         caminho = await _salvar_upload(arquivo)

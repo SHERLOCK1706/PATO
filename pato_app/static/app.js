@@ -1286,7 +1286,7 @@ function svgCroqui(c) {
     for (;; n++) { const u = ult[lado][n]; xs = u == null ? x : Math.max(x, u + 118); if (xs <= x1 + 60) break; }
     ult[lado][n] = xs; pos.push({ o, lado, n, x, xs });
   });
-  const nE = ult.E.length, nD = Math.max(1, ult.D.length), Y = 190 + nE * 120, H0 = Y + 60 + nD * 120;
+  const nE = ult.E.length, nD = Math.max(1, ult.D.length), Y = 230 + nE * 120, H0 = Y + 60 + nD * 120;
   let g = `<rect x="0" y="0" width="${W}" height="100%" fill="#fff"/>`;
   g += `<rect x="10" y="10" width="${W - 20}" height="36" fill="#D9D9D9" stroke="#000"/><text x="${W / 2}" y="34" text-anchor="middle" font-size="18" font-weight="700" font-family="Times New Roman, serif">CROQUI DE OCORRÊNCIA DE MATERIAIS E DMTs</text>`;
   g += `<text x="30" y="84" font-size="22" font-weight="700">${e(M.rodovia || E.resumo?.projeto?.rodovia || "BR-XXX/XX")}</text>`;
@@ -1312,10 +1312,19 @@ function svgCroqui(c) {
     g += `<line x1="${X(k)}" y1="${Y - 12}" x2="${X(k)}" y2="${Y + 12}" stroke="#000" stroke-width="2.5"/>`;
     g += `<text x="${X(k)}" y="${Y - 34}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333399">${r}</text><text x="${X(k)}" y="${Y - 20}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333399">km ${km(k)}</text>`;
   });
-  // travessias urbanas (cidades no trecho)
-  (d.travessias || []).forEach(t => { const xm = (X(t.km_ini) + X(t.km_fim)) / 2;
-    g += `<line x1="${X(t.km_ini)}" y1="${Y + 6}" x2="${X(t.km_fim)}" y2="${Y + 6}" stroke="#7f7f7f" stroke-width="4" opacity=".55"/>`;
-    g += `<text x="${xm}" y="${Y + 24}" text-anchor="middle" font-size="10" font-weight="700" fill="#333399">${e(t.nome || "")}</text>`; });
+  // perímetro urbano: início e fim demarcados com o km (informado/polígono) ou estimado pela sede municipal (IBGE)
+  const perims = (d.travessias || []).filter(t => t.km_ini != null && t.km_fim != null).map(t => ({ ...t, estimado: !!t.estimado }))
+    .concat((M.cidades_estimadas || []).map(c => ({ ...c, estimado: true })));
+  perims.forEach((t, k) => {
+    const ki = Math.max(a, +t.km_ini), kf = Math.min(b, +t.km_fim); if (kf < a || ki > b) return;
+    const xa = X(ki), xb = X(kf), xm = (xa + xb) / 2, alt = k % 2 ? 30 : 0, tr = t.estimado ? 'stroke-dasharray="2 3"' : 'stroke-dasharray="6 3"';
+    const nome = (t.nome || "").replace(/^Per[ií]metro urbano( de)? /i, "");
+    g += `<rect x="${xa}" y="${Y - 30}" width="${Math.max(2, xb - xa)}" height="30" fill="url(#urb)" stroke="none"/>`;
+    g += `<line x1="${xa}" y1="${Y - 52 - alt}" x2="${xa}" y2="${Y + 8}" stroke="#7030A0" stroke-width="1.6" ${tr}/><line x1="${xb}" y1="${Y - 52 - alt}" x2="${xb}" y2="${Y + 8}" stroke="#7030A0" stroke-width="1.6" ${tr}/>`;
+    g += `<text x="${xa - 3}" y="${Y - 40 - alt}" text-anchor="end" font-size="9" font-weight="700" fill="#7030A0">km ${km(ki)}</text><text x="${xb + 3}" y="${Y - 40 - alt}" font-size="9" font-weight="700" fill="#7030A0">km ${km(kf)}</text>`;
+    g += `<text x="${xm}" y="${Y - 58 - alt}" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7030A0">PERÍMETRO URBANO${t.estimado ? " (estimado)" : ""}</text>`;
+    g += `<text x="${xm}" y="${Y - 70 - alt}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333399">${e(nome)}</text>`;
+  });
   // ocorrências: acesso com as cores das vias (P → RP → LN a partir da rodovia) e a forma do modelo
   let acc = "", fig = "";
   const kmsMarcados = new Set();
@@ -1347,13 +1356,14 @@ function svgCroqui(c) {
   g += acc + fig;
   // legenda
   const lx = W - 270, ly = Y + 40;
-  g += `<rect x="${lx}" y="${ly}" width="250" height="118" fill="#fff" stroke="#000"/><text x="${lx + 10}" y="${ly + 18}" font-size="11.5" font-weight="700">Legenda</text>`;
+  g += `<rect x="${lx}" y="${ly}" width="250" height="144" fill="#fff" stroke="#000"/><text x="${lx + 10}" y="${ly + 18}" font-size="11.5" font-weight="700">Legenda</text>`;
   [["LN", "Leito natural (LN)"], ["RP", "Rev. Primário (RP)"], ["P", "Pavimentado (P)"]].forEach(([v, r], k) => {
     g += `<rect x="${lx + 14}" y="${ly + 30 + k * 26}" width="26" height="14" fill="${COR_VIA[v]}" stroke="#000" stroke-width=".6"/><text x="${lx + 52}" y="${ly + 41 + k * 26}" font-size="10.5" font-weight="700">${r}</text>`;
   });
   g += `<line x1="${lx + 14}" y1="${ly + 107}" x2="${lx + 40}" y2="${ly + 107}" stroke="#000" stroke-width="2.5"/><text x="${lx + 52}" y="${ly + 111}" font-size="10.5">fora do trecho</text>`;
+  g += `<rect x="${lx + 14}" y="${ly + 120}" width="26" height="14" fill="url(#urb)" stroke="#7030A0" stroke-dasharray="4 2"/><text x="${lx + 52}" y="${ly + 131}" font-size="10.5">perímetro urbano (início/fim)</text>`;
   // tabelas (Anexo IX): ORIGEM/DESTINO × LN/RP/P/FLUVIAL e MATERIAL BETUMINOSO
-  const rot = (c.rotas || []).filter(r => (r.ln || r.rp || r.p)), ty = Math.max(H0, ly + 140) + 10, rh = 18;
+  const rot = (c.rotas || []).filter(r => (r.ln || r.rp || r.p)), ty = Math.max(H0, ly + 166) + 10, rh = 18;
   const cel = (x, y, w, t, al = "middle", bold = false, fill = null) => `${fill ? `<rect x="${x}" y="${y}" width="${w}" height="${rh}" fill="${fill}"/>` : ""}<rect x="${x}" y="${y}" width="${w}" height="${rh}" fill="none" stroke="#000" stroke-width=".6"/><text x="${al === "start" ? x + 4 : x + w / 2}" y="${y + 13}" text-anchor="${al}" font-size="10" ${bold ? 'font-weight="700"' : ""}>${e(t)}</text>`;
   let t = "", tx = 30, cw = [260, 62, 62, 62, 62];
   t += cel(tx, ty, cw[0], "ORIGEM / DESTINO", "middle", true, "#D9D9D9") + cel(tx + cw[0], ty, cw[1] * 4, "DISTÂNCIAS (km)", "middle", true, "#D9D9D9");
@@ -1375,7 +1385,7 @@ function svgCroqui(c) {
   t += `<text x="30" y="${ny2 + 20}" font-size="10"><tspan font-weight="700">Obs.: </tspan>Demais insumos não apresentados são considerados como CIF (custo inclui seguro e frete), ou seja, já incluem os custos do transporte da aquisição do insumo, a cargo do fornecedor (Anexo VII).</text>`;
   const H = ny2 + 40;
   g += t + `<rect x="10" y="10" width="${W - 20}" height="${H - 20}" fill="none" stroke="#000" stroke-width="1.5"/>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Arial, Helvetica, sans-serif"><defs><marker id="seta" markerWidth="10" markerHeight="8" refX="0" refY="4" orient="auto"><polygon points="10,0 0,4 10,8" fill="#333399"/></marker></defs>${g}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Arial, Helvetica, sans-serif"><defs><pattern id="urb" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#7030A0" stroke-width="1" opacity=".25"/></pattern><marker id="seta" markerWidth="10" markerHeight="8" refX="0" refY="4" orient="auto"><polygon points="10,0 0,4 10,8" fill="#333399"/></marker></defs>${g}</svg>`;
 }
 const SEL_TIPO = v => `<select data-c="tipo">${Object.entries(T_.cro.tipos).map(([k, r]) => `<option value="${k}" ${v === k ? "selected" : ""}>${esc(r)}</option>`).join("")}</select>`;
 const ci = (k, v, t = "text", extra = "") => `<input data-c="${k}" type="${t}" ${t === "number" ? 'step="any"' : ""} value="${esc(v ?? "")}" ${extra}>`;
@@ -1387,7 +1397,7 @@ function linhaOcorr(o) {
     <td style="text-align:center"><input data-c="meia_extensao" type="checkbox" ${o.meia_extensao ? "checked" : ""} data-dica="P = metade da extensão do segmento (ex.: aterro sanitário, recolhimento ao longo do trecho)"></td>
     <td>${ci("obs", o.obs)}</td><td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a ocorrência">×</button></td></tr>`;
 }
-const lerTab = sel => $$(sel).map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.type === "checkbox" ? i.checked : (i.type === "number" ? (i.value === "" ? null : +i.value) : i.value)])));
+const lerTab = sel => $$(sel).map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.type === "checkbox" ? i.checked : i.type === "hidden" ? i.value === "1" : (i.type === "number" ? (i.value === "" ? null : +i.value) : i.value)])));
 async function renderCroqui() {
   const c = T_.cro, d = c.dados;
   $("#croquiSvg").innerHTML = svgCroqui(c);
@@ -1398,7 +1408,15 @@ async function renderCroqui() {
     ((d.automatico?.notas || []).length ? `<ul class="nota">${d.automatico.notas.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : "");
   $("#tabOcorr").innerHTML = `<tr><th>Nome</th><th>Tipo</th><th>km</th><th>Lado</th><th colspan=3 data-dica="Distância do acesso entre a rodovia e a ocorrência">Acesso LN / RP / P (km)</th>
     <th colspan=3 data-dica="Para ocorrências sem km: distância fixa até a pista (ex.: bota-fora a 5 km)">Distância fixa LN / RP / P (km)</th><th>½ ext.</th><th>Obs.</th><th></th></tr>` + d.ocorrencias.map(linhaOcorr).join("");
-  $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial</th><th>km final</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
+  $("#tabTrav").innerHTML = `<tr><th>Nome</th><th>km inicial (início do perímetro)</th><th>km final (fim do perímetro)</th><th>Critério / fonte</th><th></th></tr>` + d.travessias.map(t => `<tr data-tv><td>${ci("nome", t.nome)}</td><td>${ci("km_ini", t.km_ini, "number")}</td><td>${ci("km_fim", t.km_fim, "number")}</td>
+    <td>${ci("fonte", t.fonte || "informado (perímetro urbano)", "text", 'style="width:300px"')}${t.estimado ? ' <small class="tag aviso">estimado</small><input type="hidden" data-c="estimado" value="1">' : ""}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
+  const ce = c.modelo_res8?.cidades_estimadas || [];
+  $("#travCidades").innerHTML = ce.length ? `<p class="nota">Cidades no trecho sem perímetro informado (sede municipal IBGE, limites estimados ±1 km): ${ce.map(x => `<b>${esc(x.nome)}</b> km ${nf(x.km_ini, 2)}–${nf(x.km_fim, 2)}`).join(" · ")}.
+    Importe o perímetro (KML/shapefile) ou digite os km, ou <button class="btn mini" type="button" id="btnAdotarCid">adotar como travessias</button></p>` : "";
+  if ($("#btnAdotarCid")) $("#btnAdotarCid").onclick = async () => {
+    if (!confirm("Adotar as cidades com os limites estimados (±1 km da sede) como travessias urbanas? Elas entram no FIT e nas DMT urbanas — confira e ajuste os km.")) return;
+    try { await jpost(`${base_}${E.pid}/croqui/cidades-ibge`, {}); toast("Travessias adotadas — confira os km"); carregarTransp(); } catch (e) { erro(e); }
+  };
   $("#tabLocal").innerHTML = `<tr><th>Nome</th><th>km</th><th></th></tr>` + (d.localidades || []).map(l => `<tr data-lc><td>${ci("nome", l.nome)}</td><td>${ci("km", l.km, "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`).join("");
   $("#crMetodo").value = d.metodo || "referencia"; $("#crFitMax").value = d.fit_dmt_max ?? 100;
   $("#crPareSiga").value = d.pare_siga || "auto"; $("#crVelUrb").value = d.vel_urbana ?? 30;
@@ -1406,7 +1424,15 @@ async function renderCroqui() {
   ligarRemover();
 }
 $("#btnAddOcorr").onclick = () => { $("#tabOcorr").insertAdjacentHTML("beforeend", linhaOcorr({ tipo: "pedreira", lado: "E" })); ligarRemover(); };
-$("#btnAddTrav").onclick = () => { $("#tabTrav").insertAdjacentHTML("beforeend", `<tr data-tv><td>${ci("nome", "")}</td><td>${ci("km_ini", "", "number")}</td><td>${ci("km_fim", "", "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+$("#btnAddTrav").onclick = () => { $("#tabTrav").insertAdjacentHTML("beforeend", `<tr data-tv><td>${ci("nome", "")}</td><td>${ci("km_ini", "", "number")}</td><td>${ci("km_fim", "", "number")}</td><td>${ci("fonte", "informado (perímetro urbano)", "text", 'style="width:300px"')}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
+$("#btnPerim").onclick = async () => {
+  const a = await escolherArquivo(".kml,.kmz,.zip,.shp"); if (!a) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  toast("Lendo os polígonos e cruzando com o eixo do SNV…");
+  try { const r = await api(`${base_}${E.pid}/croqui/perimetros`, { method: "POST", body: fd });
+    toast(r.perimetros.length ? `Perímetros: ${r.perimetros.map(p => `${p.nome} km ${nf(p.km_ini, 2)}–${nf(p.km_fim, 2)}`).join(" · ")}` : "Nenhum polígono cruza o trecho");
+    carregarTransp(); } catch (e) { erro(e); }
+};
 $("#btnAddLocal").onclick = () => { $("#tabLocal").insertAdjacentHTML("beforeend", `<tr data-lc><td>${ci("nome", "")}</td><td>${ci("km", "", "number")}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
 $("#btnSalvarCroqui").onclick = async () => {
   const dados = { ocorrencias: lerTab("#tabOcorr tr[data-oc]").filter(o => o.nome), travessias: lerTab("#tabTrav tr[data-tv]").filter(t => t.km_ini != null && t.km_fim != null),

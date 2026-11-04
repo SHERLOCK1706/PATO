@@ -281,6 +281,11 @@ e a distância de cada trecho; formas do modelo (usina/canteiro amarelo, centro 
 jazida triângulo verde); início/fim do trecho, travessias, rosa dos ventos, legenda e as tabelas ORIGEM/DESTINO × LN/RP/P/FLUVIAL
 e MATERIAL BETUMINOSO (vencedores do binômio ANP), com a observação dos insumos CIF.
 
+**Perímetro urbano no croqui:** início e fim de cada travessia urbana demarcados com o km. Critérios, nesta ordem: (1) perímetro
+informado (lei municipal/levantamento) na tabela de travessias; (2) polígono importado — KML/KMZ da prefeitura ou shapefile do
+IBGE (Áreas Urbanizadas): o sistema calcula o km onde a rodovia entra e sai; (3) sem polígono: a sede municipal do IBGE projetada
+no eixo identifica a cidade, com limites estimados (±1 km), marcados como estimados.
+
 ## Base de normas: só o que está em vigor
 Documentos **revogados ou substituídos** (com evidência no registro de vigência) são **excluídos da base** — índice e texto —
 inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de Custos do SICRO (substituída pela 2ª edição de

@@ -142,3 +142,25 @@ def test_importar_vmd_modelagem_dnit_formato_2025(tmp_path):
     assert r["lacunas"] == [dict(km_ini=143, km_fim=173.3), dict(km_ini=189, km_fim=212.5)]
     c = sv.transporte.croqui_obj(pid)
     assert c.vmdf(100, 120) == 1308 and c.vmdf(180, 185) == 1690  # pista dupla: 3380 / 2 faixas
+
+
+def test_perimetro_urbano_no_croqui(tmp_path):
+    """Cidades atravessadas pela sede municipal (IBGE) com limites estimados; perímetro por polígono (KML) → km de
+    entrada e saída da rodovia viram a travessia (início e fim do perímetro)."""
+    from pato_app import rede
+    from pato_app.servico import MODELO_PADRAO, Servico
+    sv = Servico(pasta=tmp_path / "d")
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    c = sv.transporte.cidades_no_trecho(pid, 85, 212.5)
+    assert [x["nome"] for x in c] == ["Confresa", "Porto Alegre do Norte"] and all(x["estimado"] for x in c)
+    assert 139.6 <= c[0]["km_sede"] <= 143.7 and 167.3 <= c[1]["km_sede"] <= 170.8   # dentro das travessias do modelo
+    m, d = rede.municipio("Confresa", "MT"), 0.02
+    kml = tmp_path / "perimetro.kml"
+    kml.write_text('<?xml version="1.0"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document><Placemark><name>Perímetro urbano de '
+                   f'Confresa</name><Polygon><outerBoundaryIs><LinearRing><coordinates>{m["lon"] - d},{m["lat"] - d} {m["lon"] + d},'
+                   f'{m["lat"] - d} {m["lon"] + d},{m["lat"] + d} {m["lon"] - d},{m["lat"] + d} {m["lon"] - d},{m["lat"] - d}'
+                   '</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark></Document></kml>', encoding="utf-8")
+    r = sv.transporte.importar_perimetros(pid, str(kml), "perimetro.kml")
+    t = r["perimetros"][0]
+    assert t["km_ini"] < c[0]["km_sede"] < t["km_fim"] and "polígono" in t["fonte"]
+    assert [x["nome"] for x in r["modelo_res8"]["cidades_estimadas"]] == ["Porto Alegre do Norte"]

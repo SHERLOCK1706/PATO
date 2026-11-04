@@ -115,6 +115,7 @@ class Transportes:
     def __init__(self, sv):
         self.sv = sv
         self.db = sv.db
+        self._cache_cidades: dict = {}
 
     # ------------------------------------------------------------- croqui
     def _segmentos_snv(self, pid: int) -> list[dict]:
@@ -170,6 +171,66 @@ class Transportes:
                     fonte_vmd=DNIT_MODELAGEM, pare_siga=c.pare_siga, pare_siga_previsto=self.pare_siga_previsto(pid),
                     fc=tp.fator_urbano(c.vel_urbana))
 
+    def cidades_no_trecho(self, pid: int, a: float, b: float, dist_max: float = 3.0, meia: float = 1.0) -> list[dict]:
+        """Cidades atravessadas: sedes municipais (IBGE) a até `dist_max` km do eixo, dentro do segmento. Sem o perímetro
+        urbano (lei municipal) nem polígono da área urbanizada, os limites ficam estimados em ±`meia` km da sede."""
+        from . import rede, snv
+        p = self.sv.projeto(pid)
+        br, uf = snv.br_uf(p.get("rodovia"))
+        if not br:
+            return []
+        chave = (br, uf, round(a, 3), round(b, 3), dist_max, meia, snv.versao())
+        if chave in self._cache_cidades:
+            return [dict(c) for c in self._cache_cidades[chave]]
+        pts = snv.amostrar(br, uf, a, b, 1.0)  # filtro rápido: só as sedes perto do eixo do trecho
+        if not pts:
+            return []
+        lim = dist_max + 1.5
+        out = []
+        for _, nome, la, lo in rede._municipios().get(uf or "MT", []):
+            if min(snv.distancia((la, lo), (p[1], p[2])) for p in pts) > lim:
+                continue
+            r = snv.localizar(br, uf, la, lo)
+            if r and r["distancia_km"] <= dist_max and a <= r["km"] <= b:
+                out.append(dict(nome=nome, km_sede=r["km"], km_ini=round(max(a, r["km"] - meia), 2), km_fim=round(min(b, r["km"] + meia), 2),
+                                distancia_eixo=r["distancia_km"], fonte=f"sede municipal IBGE (km {r['km']:g}) — limites estimados ±{meia:g} km",
+                                estimado=True))
+        out.sort(key=lambda c: c["km_sede"])
+        self._cache_cidades[chave] = out
+        return [dict(c) for c in out]
+
+    def importar_perimetros(self, pid: int, caminho: str, nome_arquivo: str | None = None) -> dict:
+        """Perímetros urbanos / áreas urbanizadas (KML/KMZ ou shapefile .zip): o km onde a rodovia entra e sai de cada
+        polígono vira a travessia urbana (início e fim do perímetro). Substitui as travessias de mesmo nome."""
+        from . import snv
+        from . import transporte as tp_
+        p = self.sv.projeto(pid)
+        br, uf = snv.br_uf(p.get("rodovia"))
+        d = self.dados_croqui(pid)
+        a = _num(d.get("km_ini")) if d.get("km_ini") is not None else p.get("km_ini")
+        b = _num(d.get("km_fim")) if d.get("km_fim") is not None else p.get("km_fim")
+        polis = snv.poligonos(caminho)
+        if not polis:
+            raise ValueError("Não encontrei polígonos no arquivo (KML/KMZ ou shapefile).")
+        # só os polígonos perto do trecho (o shapefile do IBGE tem o Brasil todo)
+        pts = snv.amostrar(br, uf, a, b, 1.0)
+        if pts:
+            la0, la1 = min(x[1] for x in pts) - .1, max(x[1] for x in pts) + .1
+            lo0, lo1 = min(x[2] for x in pts) - .1, max(x[2] for x in pts) + .1
+            polis = [q for q in polis if any(lo0 <= x <= lo1 and la0 <= y <= la1 for an in q["aneis"] for x, y in an[:: max(1, len(an) // 50)])]
+        tr = snv.trechos_dentro(br, uf, a, b, polis)
+        cid = self.cidades_no_trecho(pid, a, b)
+        for t in tr:  # nome pela sede do IBGE dentro do trecho, se o polígono não tiver nome
+            c = next((c for c in cid if t["km_ini"] - 0.5 <= c["km_sede"] <= t["km_fim"] + 0.5), None)
+            t["nome"] = t.get("nome") or (c["nome"] if c else "Perímetro urbano")
+            t["fonte"] = f"polígono importado ({nome_arquivo or 'arquivo'})"
+        nomes = {tp_._chave(t["nome"]) for t in tr}
+        d["travessias"] = [t for t in d.get("travessias") or [] if tp_._chave(t.get("nome")) not in nomes] + tr
+        d["travessias"].sort(key=lambda t: _num(t.get("km_ini")) or 0)
+        self.db.gravar_dados_projeto(pid, "croqui", d)
+        self.db.registrar(pid, "croqui: perímetros urbanos importados", f"{len(tr)} travessias de {nome_arquivo or 'arquivo'}")
+        return dict(self.croqui(pid), perimetros=tr)
+
     def _dados_res8(self, pid: int, a: float, b: float) -> dict:
         """Complementos do croqui no modelo da Res. DNIT 8/2023 (Anexo IX): superfície de cada trecho pelo SNV (cor da
         linha: P vermelho, RP azul, LN verde), localidades nas pontas, capital mais próxima (mobilização) e os
@@ -201,7 +262,15 @@ class Transportes:
                                     p=v.get("d_pav"), fluvial=v.get("d_fluvial")))
         except Exception:  # noqa: BLE001
             pass
-        return dict(superficies=sup, rodovia=p.get("rodovia"), trecho=p.get("trecho"), capital=cap,
+        cid = []
+        try:
+            trav = (self.dados_croqui(pid).get("travessias") or [])
+            for c in self.cidades_no_trecho(pid, a, b):  # cidades sem travessia informada: limites estimados
+                if not any((_num(t.get("km_ini")) or 0) - 0.5 <= c["km_sede"] <= (_num(t.get("km_fim")) or 0) + 0.5 for t in trav):
+                    cid.append(c)
+        except Exception:  # noqa: BLE001
+            cid = []
+        return dict(superficies=sup, rodovia=p.get("rodovia"), trecho=p.get("trecho"), capital=cap, cidades_estimadas=cid,
                     local_ini=sup[0]["local_ini"] if sup else None, local_fim=sup[-1]["local_fim"] if sup else None, betuminosos=bet)
 
     def salvar_croqui(self, pid: int, dados: dict) -> dict:

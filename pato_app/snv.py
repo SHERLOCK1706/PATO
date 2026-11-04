@@ -151,3 +151,89 @@ def pontos_kml(caminho: str) -> list[dict]:
         out.append(dict(nome=(nm.text or "").strip() if nm is not None else f"Ponto {len(out) + 1}", lat=lat, lon=lon,
                         descricao=re.sub(r"<[^>]+>", " ", ds.text or "").strip() if ds is not None and ds.text else None))
     return out
+
+
+def amostrar(br: str | None, uf: str | None, km_ini: float, km_fim: float, passo: float = 0.05) -> list[tuple[float, float, float]]:
+    """Pontos (km, lat, lon) do eixo oficial a cada `passo` km entre km_ini e km_fim."""
+    out, k = [], km_ini
+    while k <= km_fim + 1e-9:
+        p = posicao(br, uf, round(k, 4))
+        if p:
+            out.append((round(k, 4), p[0], p[1]))
+        k += passo
+    return out
+
+
+def poligonos(caminho: str) -> list[dict]:
+    """Polígonos (nome, anéis [(lon, lat)…]) de um .kml/.kmz ou de um shapefile (.zip/.shp — ex.: IBGE Áreas Urbanizadas,
+    perímetro urbano da prefeitura), em coordenadas geográficas (WGS84/SIRGAS 2000)."""
+    import tempfile
+    import zipfile
+    low = caminho.lower()
+    if low.endswith((".kml", ".kmz")):
+        from lxml import etree
+        if low.endswith(".kmz"):
+            with zipfile.ZipFile(caminho) as z:
+                raw = z.read(next(n for n in z.namelist() if n.lower().endswith(".kml")))
+        else:
+            raw = open(caminho, "rb").read()
+        raiz = etree.fromstring(raw, etree.XMLParser(huge_tree=True, recover=True))
+        out = []
+        for pm in raiz.iter("{*}Placemark"):
+            aneis = []
+            for pol in pm.iter("{*}Polygon"):
+                for ob in pol.iter("{*}outerBoundaryIs"):
+                    c = next(ob.iter("{*}coordinates"), None)
+                    if c is not None and c.text:
+                        aneis.append([tuple(float(v) for v in t.split(",")[:2]) for t in c.text.split()])
+            if aneis:
+                nm = next(pm.iter("{*}name"), None)
+                out.append(dict(nome=(nm.text or "").strip() if nm is not None else None, aneis=aneis))
+        return out
+    import shapefile
+    with tempfile.TemporaryDirectory() as tmp:
+        shp = caminho
+        if zipfile.is_zipfile(caminho):
+            with zipfile.ZipFile(caminho) as z:
+                z.extractall(tmp)
+            shp = next((str(p) for p in Path(tmp).rglob("*.shp")), None)
+            if not shp:
+                raise ValueError("O .zip não tem shapefile (.shp).")
+        r = shapefile.Reader(shp, encoding="utf-8", encodingErrors="replace")
+        campos = [f[0] for f in r.fields[1:]]
+        cnome = next((c for c in campos if c.upper() in ("NM_MUN", "NOME", "NAME", "NM_MUNICIP", "MUNICIPIO", "NM_LOCALID", "CIDADE")), None)
+        out = []
+        for sr in r.iterShapeRecords():
+            pts, partes = sr.shape.points, list(sr.shape.parts) + [len(sr.shape.points)]
+            aneis = [[tuple(p) for p in pts[a:b]] for a, b in zip(partes, partes[1:]) if b - a >= 3]
+            if aneis:
+                out.append(dict(nome=str(sr.record.as_dict().get(cnome) or "") if cnome else None, aneis=aneis))
+        return out
+
+
+def _dentro(lon: float, lat: float, anel: list[tuple[float, float]]) -> bool:
+    d = False
+    for (x1, y1), (x2, y2) in zip(anel, anel[1:] + anel[:1]):
+        if (y1 > lat) != (y2 > lat) and lon < (x2 - x1) * (lat - y1) / ((y2 - y1) or 1e-15) + x1:
+            d = not d
+    return d
+
+
+def trechos_dentro(br: str | None, uf: str | None, km_ini: float, km_fim: float, polis: list[dict], passo: float = 0.05) -> list[dict]:
+    """Onde o eixo entra e sai de cada polígono (perímetro urbano / área urbanizada): [{nome, km_ini, km_fim}]."""
+    pts = amostrar(br, uf, km_ini, km_fim, passo)
+    out = []
+    for pol in polis:
+        xs = [min(p[0] for a in pol["aneis"] for p in a), max(p[0] for a in pol["aneis"] for p in a)]
+        ys = [min(p[1] for a in pol["aneis"] for p in a), max(p[1] for a in pol["aneis"] for p in a)]
+        ini = None
+        for k, la, lo in pts + [(None, None, None)]:
+            dentro = k is not None and xs[0] <= lo <= xs[1] and ys[0] <= la <= ys[1] and any(_dentro(lo, la, a) for a in pol["aneis"])
+            if dentro and ini is None:
+                ini = k
+            elif not dentro and ini is not None:
+                fim = (k - passo) if k is not None else km_fim
+                if fim - ini >= passo:
+                    out.append(dict(nome=pol.get("nome"), km_ini=round(ini, 2), km_fim=round(fim, 2)))
+                ini = None
+    return sorted(out, key=lambda t: t["km_ini"])

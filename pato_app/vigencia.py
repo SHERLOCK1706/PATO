@@ -93,7 +93,7 @@ def curado() -> list[dict]:
     return _arq()["documentos"]
 
 
-def aplicar(raiz: Path = bc.RAIZ) -> dict:
+def aplicar(raiz: Path = bc.RAIZ, excluir: bool = True) -> dict:
     """Marca no índice os documentos revogados/substituídos (com evidência) como fora da base de consulta."""
     rel = relatorio(raiz)
     ind = bc.carregar_indice(raiz)
@@ -109,7 +109,27 @@ def aplicar(raiz: Path = bc.RAIZ) -> dict:
             retirados.append(d["titulo"])
     (raiz / "indice.json").write_text(json.dumps(ind, ensure_ascii=False, indent=1), encoding="utf-8")
     bc._CACHE.clear()
-    return dict(retirados=retirados, total=len(ind["documentos"]))
+    removidos = remover_retirados(raiz) if excluir else []
+    return dict(retirados=retirados, removidos=removidos, total=len(bc.carregar_indice(raiz)["documentos"]))
+
+
+def remover_retirados(raiz: Path = bc.RAIZ) -> list[str]:
+    """Exclui da base (índice e textos) os documentos revogados/substituídos, com evidência no registro de vigência.
+    Os de alteração parcial e os sem notícia de revogação ficam (não se retira norma vigente)."""
+    ind = bc.carregar_indice(raiz)
+    fora = [d for d in ind["documentos"] if d.get("ativo") is False and d.get("situacao") in ("revogado", "substituido")]
+    for d in fora:
+        for arq in (raiz / "textos").glob(f"{d['id']}*"):
+            arq.unlink(missing_ok=True)
+        if d.get("original"):
+            (raiz / d["original"]).unlink(missing_ok=True) if not str(d["original"]).startswith("/") else None
+    ids = {d["id"] for d in fora}
+    ind["documentos"] = [d for d in ind["documentos"] if d["id"] not in ids]
+    ind.setdefault("removidos", []).extend(dict(titulo=d["titulo"], situacao=d["situacao"], substituto=d.get("substituto"))
+                                           for d in fora)
+    (raiz / "indice.json").write_text(json.dumps(ind, ensure_ascii=False, indent=1), encoding="utf-8")
+    bc._CACHE.clear()
+    return [d["titulo"] for d in fora]
 
 
 def relatorio(raiz: Path = bc.RAIZ) -> dict:

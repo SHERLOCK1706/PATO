@@ -35,13 +35,18 @@ def test_identidade_e_vigencia(tmp_path, monkeypatch):
     assert vg.identidade("RESOLUCAO DNIT 2025-06 - ICM") == dict(tipo="Resolução", numero="6", ano=2025)
     assert vg.identidade("INSTRUCAO NORMATIVA 2024-10 - BINOMIO")["numero"] == "10"
     assert vg.identidade("NORMA DNIT 2024-031 ES - CBUQ") == dict(tipo="Norma DNIT", numero="31", ano=2024, sufixo="ES")
-    raiz = _base(tmp_path)
     cur = tmp_path / "vig.json"
+    cur.write_text(json.dumps(dict(documentos=[], externos=[])), encoding="utf-8")
+    monkeypatch.setattr(vg, "ARQ_CURADO", cur)
+    raiz = _base(tmp_path)              # sem registro de substituição: o volume entra
     cur.write_text(json.dumps(dict(documentos=[dict(padrao="^VOLUME-07", situacao="substituido", retirar=True,
                                                    substituto="Manual de Custos 2ª ed., Vol. 06")], externos=[])), encoding="utf-8")
-    monkeypatch.setattr(vg, "ARQ_CURADO", cur)
     v = vg.varrer(raiz)
     assert any("5/2022" in r["alvo"] for r in v["revogacoes"])
-    r = vg.aplicar(raiz)
+    r = vg.aplicar(raiz, excluir=False)  # só marca: fica fora da busca
     assert r["retirados"] == ["volume-07-canteiros"]
     assert not bc.buscar("FEAC", raiz=raiz) and bc.buscar("FEAC", raiz=raiz, incluir_retirados=True)
+    r = vg.aplicar(raiz)                # padrão: substituído/revogado sai da base (índice e texto)
+    assert r["removidos"] == ["volume-07-canteiros"]
+    assert not bc.buscar("FEAC", raiz=raiz, incluir_retirados=True)
+    assert all(d["id"] != "volume-07-canteiros" for d in bc.carregar_indice(raiz)["documentos"])

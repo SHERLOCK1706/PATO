@@ -199,6 +199,14 @@ def indexar(arquivos: list[Path], raiz: Path = RAIZ, originais_ate_mb: float = 0
             por_hash[h] = d
             log(f"{d['categoria']:<22} {d['paginas']:>4} p {d['palavras']:>7} pal. OCR {len(ocr_pags):>3}  {nome}")
             (raiz / "indice.json").write_text(json.dumps(ind, ensure_ascii=False, indent=1), encoding="utf-8")
+    try:  # normativos revogados/substituídos (com evidência no registro de vigência) não entram na base
+        from . import vigencia
+        r = vigencia.aplicar(raiz)
+        if r.get("removidos"):
+            log(f"retirados da base (revogados/substituídos): {len(r['removidos'])}")
+        ind = carregar_indice(raiz)
+    except Exception as e:  # noqa: BLE001
+        log(f"vigência não aplicada: {e}")
     return ind
 
 

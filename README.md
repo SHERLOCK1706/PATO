@@ -274,6 +274,19 @@ escritório) ou o servidor com Docker + https — passo a passo, custos e backup
 Perfis: administrador (usuários), editor (monta e altera; copia projetos como modelo) e leitor (consulta e baixa). Todos veem
 todos os projetos; o histórico mostra quem alterou o quê.
 
+## Croqui no modelo da Res. DNIT nº 8/2023 (Anexo IX)
+Linha da rodovia pela superfície do SNV — **Pavimentado (P) vermelho, Revestimento primário (RP) azul, Leito natural (LN)
+verde**, fora do trecho em preto (até a capital mais próxima e a cidade seguinte); acessos às ocorrências com as mesmas cores
+e a distância de cada trecho; formas do modelo (usina/canteiro amarelo, centro sede azul-claro, pedreira cinza, areal elipse,
+jazida triângulo verde); início/fim do trecho, travessias, rosa dos ventos, legenda e as tabelas ORIGEM/DESTINO × LN/RP/P/FLUVIAL
+e MATERIAL BETUMINOSO (vencedores do binômio ANP), com a observação dos insumos CIF.
+
+## Base de normas: só o que está em vigor
+Documentos **revogados ou substituídos** (com evidência no registro de vigência) são **excluídos da base** — índice e texto —
+inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de Custos do SICRO (substituída pela 2ª edição de
+17/11/2025) e as Emendas 2 e 3 da IPR-736 (substituídas pela Emenda 4). Os de alteração parcial (Res. 8/2023, Portaria
+1977/2017…) e os sem notícia de revogação continuam.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do

@@ -1265,70 +1265,117 @@ async function carregarTransp() {
 }
 
 // ---- croqui
-const COR_TIPO = { canteiro: "#1f4e79", pedreira: "#7f6000", areal: "#c55a11", usina: "#7030a0", deposito: "#3b6ea8", bota_fora: "#595959",
-  emprestimo: "#548235", aterro: "#843c0c", cidade: "#000", outro: "#2e75b6" };
+// croqui no modelo da Res. DNIT 8/2023 (Anexo IX) e da planilha de referência: linhas por tipo de via —
+// Pavimentado (P) vermelho, Revestimento primário (RP) azul, Leito natural (LN) verde; fora do trecho em preto
+const COR_VIA = { P: "#E00000", RP: "#0070C0", LN: "#00B050", fora: "#000000" };
+const VIA_SUP = s => ({ PAV: "P", DUP: "P", EOP: "P", EOD: "P", IMP: "RP", LEN: "LN", PLA: "PLA" })[(s || "PAV").toUpperCase()] || "P";
+const FORMA = { canteiro: ["rect", "#FFFF99", "#D6B24E"], usina: ["rect", "#FFFF99", "#D6B24E"], pedreira: ["rect", "#D9D9D9", "#7f7f7f"],
+  areal: ["ellipse", "#E6D092", "#BF9000"], emprestimo: ["tri", "#8EC26A", "#548235"], bota_fora: ["rect", "#F4B183", "#843C0C"],
+  deposito: ["rect", "#DDEBF7", "#2E75B6"], aterro: ["rect", "#E7E6E6", "#595959"], outro: ["rect", "#FFFFFF", "#2E75B6"] };
+const COR_TIPO = Object.fromEntries(Object.entries(FORMA).map(([k, v]) => [k, v[2]]));
 function svgCroqui(c) {
-  const d = c.dados, a = +c.km_ini, b = +c.km_fim, W = 1200, x0 = 80, x1 = W - 80;
+  const d = c.dados, a = +c.km_ini, b = +c.km_fim, M = c.modelo_res8 || {}, W = 1400, x0 = 190, x1 = W - 290;
   const X = k => x0 + (Math.min(Math.max(+k, a), b) - a) / ((b - a) || 1) * (x1 - x0);
-  const e = s => esc(s);
-  // ocorrências: acima (E) / abaixo (D), em níveis para não sobrepor
+  const e = s => esc(s ?? ""), km = v => nf(+v, 2);
   const ocs = (d.ocorrencias || []).filter(o => o.km !== "" && o.km != null).sort((p, q) => p.km - q.km);
+  // lado a lado: cada ocorrência tem a sua coluna (mín. 118 px), ligada ao km real por um trecho horizontal
   const ult = { E: [], D: [] }, pos = [];
   ocs.forEach(o => {
-    const lado = (o.lado || "E").toUpperCase().startsWith("D") ? "D" : "E", x = X(o.km);
-    let n = 0; while (ult[lado][n] != null && x - ult[lado][n] < 160) n++;
-    ult[lado][n] = x; pos.push({ o, lado, n, x });
+    const lado = (o.lado || "D").toUpperCase().startsWith("E") ? "E" : "D", x = X(o.km);
+    let n = 0, xs;
+    for (;; n++) { const u = ult[lado][n]; xs = u == null ? x : Math.max(x, u + 118); if (xs <= x1 + 60) break; }
+    ult[lado][n] = xs; pos.push({ o, lado, n, x, xs });
   });
-  const nE = Math.max(1, ult.E.length), nD = ult.D.length, Y = 110 + nE * 54, YD = Y + 128;
-  const H = YD + nD * 54 + 50;
-  let linhas = "", caixas = "";
-  let g = `<rect x="0" y="0" width="${W}" height="${H}" fill="#fff"/>`;
-  g += `<text x="${W / 2}" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1b2430">CROQUI DE OCORRÊNCIA DE MATERIAIS E DMT's</text>`;
-  g += `<text x="${W / 2}" y="48" text-anchor="middle" font-size="12" fill="#5b6675">${e((E.resumo?.projeto?.rodovia || "") + " — segmento km " + nf(a, 3) + " ao km " + nf(b, 3))}</text>`;
-  (d.vmd || []).forEach((s, i) => {
-    const xa = X(s.km_ini), xb = X(s.km_fim), y = Y + 84;
-    g += `<line x1="${xa}" y1="${Y + 10}" x2="${xa}" y2="${y + 20}" stroke="#bbb" stroke-dasharray="3 3"/>`;
-    const f = s.faixas_sentido || 1;
-    const vc = s.vmdf_c ?? (s.vmda_c != null ? s.vmda_c / f : s.vmda != null ? s.vmda / 2 / f : null);
-    const vd = s.vmdf_d ?? (s.vmda_d != null ? s.vmda_d / f : s.vmda != null ? s.vmda / 2 / f : null);
-    g += `<text x="${(xa + xb) / 2}" y="${y}" text-anchor="middle" font-size="11" fill="#3b6ea8">${e(s.snv || "Seg. " + (s.segmento || i + 1))}</text>`;
-    if (vc != null || vd != null) g += `<text x="${(xa + xb) / 2}" y="${y + 15}" text-anchor="middle" font-size="11" fill="#3b6ea8">VMDf ${vc != null ? Math.round(vc) : "—"} → / ← ${vd != null ? Math.round(vd) : "—"}</text>`;
-  });
-  g += `<line x1="${x0}" y1="${Y}" x2="${x1}" y2="${Y}" stroke="#595959" stroke-width="10" stroke-linecap="round"/>`;
-  (d.travessias || []).forEach(t => {
-    const xa = X(t.km_ini), xb = X(t.km_fim);
-    g += `<rect x="${xa}" y="${Y - 9}" width="${Math.max(3, xb - xa)}" height="18" fill="#f4b183"/>`;
-    g += `<text x="${(xa + xb) / 2}" y="${Y + 44}" text-anchor="middle" font-size="10" fill="#843c0c">TRAVESSIA URBANA</text>`;
-    g += `<text x="${(xa + xb) / 2}" y="${Y + 57}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#843c0c">${e(t.nome || "")}</text>`;
-  });
-  g += `<line x1="${x0}" y1="${Y}" x2="${x1}" y2="${Y}" stroke="#fff" stroke-width="1.5" stroke-dasharray="14 10"/>`;
-  const passo = [1, 2, 5, 10, 20, 25, 50, 100].find(p => (b - a) / p <= 12) || 100;
-  for (let k = Math.ceil(a / passo) * passo; k <= b; k += passo) g += `<line x1="${X(k)}" y1="${Y + 7}" x2="${X(k)}" y2="${Y + 14}" stroke="#333"/><text x="${X(k)}" y="${Y + 26}" text-anchor="middle" font-size="9.5" fill="#555">${k}</text>`;
-  g += `<text x="${x0}" y="${Y - 30}" text-anchor="middle" font-size="11" font-weight="700">INÍCIO</text><text x="${x0}" y="${Y - 16}" text-anchor="middle" font-size="10.5">km ${nf(a, 3)}</text>`;
-  g += `<text x="${x1}" y="${Y - 30}" text-anchor="middle" font-size="11" font-weight="700">FIM</text><text x="${x1}" y="${Y - 16}" text-anchor="middle" font-size="10.5">km ${nf(b, 3)}</text>`;
-  (d.localidades || []).filter(l => l.km !== "" && l.km != null).forEach(l => {
-    g += `<text x="${X(l.km)}" y="${Y + 70}" text-anchor="middle" font-size="11" font-weight="700">${e(l.nome)}</text>`;
-  });
-  pos.forEach(({ o, lado, n, x }) => {
-    const y = lado === "E" ? Y - 64 - n * 54 : YD + n * 54, cor = COR_TIPO[o.tipo] || "#2e75b6";
-    const ac = ["ln", "rp", "p"].map(k => +o["acesso_" + k] ? `${k.toUpperCase()} ${nf(+o["acesso_" + k], 2)} km` : "").filter(Boolean).join(" · ");
-    linhas += `<line x1="${x}" y1="${Y}" x2="${x}" y2="${y}" stroke="${cor}" stroke-width="1.5" ${ac ? 'stroke-dasharray="5 3"' : ""}/>`;
-    const h = ac ? 44 : 34;
-    caixas += `<rect x="${x - 74}" y="${y - h / 2}" width="148" height="${h}" rx="6" fill="#fff" stroke="${cor}" stroke-width="1.5"/>`;
-    caixas += `<text x="${x}" y="${y - h / 2 + 15}" text-anchor="middle" font-size="11.5" font-weight="700" fill="${cor}">${e(o.nome)}</text>`;
-    caixas += `<text x="${x}" y="${y - h / 2 + 28}" text-anchor="middle" font-size="10" fill="#333">km ${nf(+o.km, 3)}</text>`;
-    if (ac) caixas += `<text x="${x}" y="${y - h / 2 + 39}" text-anchor="middle" font-size="9.5" fill="#555">acesso ${e(ac)}</text>`;
-    caixas += `<circle cx="${x}" cy="${Y}" r="6" fill="${cor}" stroke="#fff" stroke-width="2"/>`;
-  });
-  g += linhas + caixas;
-  const fixas = (d.ocorrencias || []).filter(o => o.km === "" || o.km == null);
-  if (fixas.length) {
-    g += `<text x="${x0}" y="${H - 18}" font-size="11" fill="#333"><tspan font-weight="700">Distância fixa até a pista: </tspan>${e(fixas.map(o => {
-      const p = o.meia_extensao ? (b - a) / 2 : +o.dist_p || 0;
-      return `${o.nome} (${["LN " + nf(+o.dist_ln || 0, 2), "RP " + nf(+o.dist_rp || 0, 2), "P " + nf(p, 2)].filter(x => !x.endsWith(" 0")).join(", ") || "0"} km)`;
-    }).join(" · "))}</text>`;
+  const nE = ult.E.length, nD = Math.max(1, ult.D.length), Y = 190 + nE * 120, H0 = Y + 60 + nD * 120;
+  let g = `<rect x="0" y="0" width="${W}" height="100%" fill="#fff"/>`;
+  g += `<rect x="10" y="10" width="${W - 20}" height="36" fill="#D9D9D9" stroke="#000"/><text x="${W / 2}" y="34" text-anchor="middle" font-size="18" font-weight="700" font-family="Times New Roman, serif">CROQUI DE OCORRÊNCIA DE MATERIAIS E DMTs</text>`;
+  g += `<text x="30" y="84" font-size="22" font-weight="700">${e(M.rodovia || E.resumo?.projeto?.rodovia || "BR-XXX/XX")}</text>`;
+  g += `<text x="30" y="104" font-size="11" fill="#555">${e((M.trecho || "").slice(0, 110))} · segmento km ${km(a)} ao km ${km(b)}</text>`;
+  // rosa dos ventos (N)
+  const nx = W - 60, ny = 85;
+  g += `<g stroke="#000" fill="#000"><polygon points="${nx},${ny - 32} ${nx - 6},${ny} ${nx + 6},${ny}"/><polygon points="${nx},${ny + 32} ${nx - 6},${ny} ${nx + 6},${ny}" fill="#fff"/>
+    <polygon points="${nx - 26},${ny} ${nx},${ny - 5} ${nx},${ny + 5}"/><polygon points="${nx + 26},${ny} ${nx},${ny - 5} ${nx},${ny + 5}" fill="#fff"/></g><text x="${nx}" y="${ny - 38}" text-anchor="middle" font-size="13" font-family="Times New Roman, serif">N</text>`;
+  // fora do trecho (preto): capital/cidade A à esquerda e cidade B à direita
+  g += `<line x1="70" y1="${Y}" x2="${x0}" y2="${Y}" stroke="${COR_VIA.fora}" stroke-width="2.5"/><line x1="${x1}" y1="${Y}" x2="${x1 + 150}" y2="${Y}" stroke="${COR_VIA.fora}" stroke-width="2.5"/>`;
+  g += `<text x="68" y="${Y - 10}" font-size="11" font-weight="700" fill="#333399">${e(M.local_ini || "Cidade A")}</text>`;
+  g += `<text x="${x1 + 150}" y="${Y + 20}" text-anchor="end" font-size="11" font-weight="700" fill="#333399">${e((M.local_fim || "Cidade B").slice(0, 30))}</text>`;
+  if (M.capital?.nome) {
+    g += `<line x1="70" y1="${Y + 34}" x2="150" y2="${Y + 34}" stroke="#333399" stroke-width="1.5" marker-start="url(#seta)"/>`;
+    g += `<text x="70" y="${Y + 28}" font-size="10.5" font-weight="700" fill="#333399">CAPITAL MAIS PRÓXIMA: ${e(M.capital.nome)}</text>${M.capital.dmt ? `<text x="70" y="${Y + 50}" font-size="10.5" font-weight="700">${km(M.capital.dmt)} km</text>` : ""}`;
   }
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Segoe UI, Arial, sans-serif">${g}</svg>`;
+  // trecho: cor pela superfície do SNV (P / RP / LN)
+  const sup = (M.superficies && M.superficies.length ? M.superficies : [{ km_ini: a, km_fim: b, superficie: "PAV" }]);
+  sup.forEach(s_ => { const v = VIA_SUP(s_.superficie);
+    g += `<line x1="${X(s_.km_ini)}" y1="${Y}" x2="${X(s_.km_fim)}" y2="${Y}" stroke="${v === "PLA" ? "#999" : COR_VIA[v]}" stroke-width="3.5" ${v === "PLA" ? 'stroke-dasharray="8 5"' : ""}/>`; });
+  // início / fim
+  [[a, "Início do Trecho"], [b, "Fim do Trecho"]].forEach(([k, r]) => {
+    g += `<line x1="${X(k)}" y1="${Y - 12}" x2="${X(k)}" y2="${Y + 12}" stroke="#000" stroke-width="2.5"/>`;
+    g += `<text x="${X(k)}" y="${Y - 34}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333399">${r}</text><text x="${X(k)}" y="${Y - 20}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#333399">km ${km(k)}</text>`;
+  });
+  // travessias urbanas (cidades no trecho)
+  (d.travessias || []).forEach(t => { const xm = (X(t.km_ini) + X(t.km_fim)) / 2;
+    g += `<line x1="${X(t.km_ini)}" y1="${Y + 6}" x2="${X(t.km_fim)}" y2="${Y + 6}" stroke="#7f7f7f" stroke-width="4" opacity=".55"/>`;
+    g += `<text x="${xm}" y="${Y + 24}" text-anchor="middle" font-size="10" font-weight="700" fill="#333399">${e(t.nome || "")}</text>`; });
+  // ocorrências: acesso com as cores das vias (P → RP → LN a partir da rodovia) e a forma do modelo
+  let acc = "", fig = "";
+  const kmsMarcados = new Set();
+  pos.forEach(({ o, lado, n, x, xs }) => {
+    const sgn = lado === "E" ? -1 : 1, partes = [["P", +o.acesso_p || 0], ["RP", +o.acesso_rp || 0], ["LN", +o.acesso_ln || 0]].filter(p => p[1] > 0);
+    const tot = partes.reduce((s_, p) => s_ + p[1], 0), yl = Y + sgn * (22 + n * 120), comp = 52;
+    if (!kmsMarcados.has(o.km)) { kmsMarcados.add(o.km);
+      acc += `<line x1="${x}" y1="${Y - 7}" x2="${x}" y2="${Y + 7}" stroke="#000" stroke-width="1.5"/><text x="${x + 4}" y="${Y + (lado === "E" ? 18 : -9)}" font-size="9.5" font-weight="700" fill="#C00000">km ${km(o.km)}</text>`; }
+    // da rodovia (km real) até a coluna da ocorrência: sem distância (no km da rodovia)
+    acc += `<polyline points="${x},${Y} ${x},${yl} ${xs},${yl}" fill="none" stroke="#7f7f7f" stroke-width="1" stroke-dasharray="3 3"/>`;
+    let y = yl;
+    if (!partes.length) { acc += `<line x1="${xs}" y1="${y}" x2="${xs}" y2="${y + sgn * 18}" stroke="#7f7f7f" stroke-width="1" stroke-dasharray="3 3"/>`; y += sgn * 18; }
+    partes.forEach(([v, dist]) => {
+      const l = Math.max(16, comp * dist / tot), y2 = y + sgn * l;
+      acc += `<line x1="${xs}" y1="${y}" x2="${xs}" y2="${y2}" stroke="${COR_VIA[v]}" stroke-width="3"/>`;
+      acc += `<text x="${xs + 5}" y="${(y + y2) / 2 + 3}" font-size="9.5" font-weight="700">${km(dist)} km</text>`;
+      y = y2;
+    });
+    x = xs;
+    const nomeU = (o.nome || "").toUpperCase();
+    const tipoF = /CENTRO SEDE/.test(nomeU) ? "centro" : /CANTEIRO|USINA/.test(nomeU) ? "canteiro" : o.tipo;
+    const [f, cf, cb] = tipoF === "centro" ? ["rect", "#92CDDC", "#31849B"] : (FORMA[tipoF] || FORMA.outro), w = 104, h = 34, cy = y + sgn * (h / 2 + 2);
+    if (f === "ellipse") fig += `<ellipse cx="${x}" cy="${cy}" rx="${w / 2}" ry="${h / 2 + 2}" fill="${cf}" stroke="${cb}"/>`;
+    else if (f === "tri") fig += `<polygon points="${x - w / 2},${cy - h / 2} ${x + w / 2},${cy - h / 2} ${x},${cy + h / 2 + 6}" fill="${cf}" stroke="${cb}"/>`;
+    else fig += `<rect x="${x - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" fill="${cf}" stroke="${cb}"/>`;
+    const nm = (o.nome || "").length > 18 ? [o.nome.slice(0, 18), o.nome.slice(18, 36)] : [o.nome || ""];
+    nm.forEach((t, k) => { fig += `<text x="${x}" y="${cy + (nm.length > 1 ? -2 + k * 11 : 4) - (f === "tri" ? 4 : 0)}" text-anchor="middle" font-size="9.5" font-weight="700">${e(t)}</text>`; });
+  });
+  g += acc + fig;
+  // legenda
+  const lx = W - 270, ly = Y + 40;
+  g += `<rect x="${lx}" y="${ly}" width="250" height="118" fill="#fff" stroke="#000"/><text x="${lx + 10}" y="${ly + 18}" font-size="11.5" font-weight="700">Legenda</text>`;
+  [["LN", "Leito natural (LN)"], ["RP", "Rev. Primário (RP)"], ["P", "Pavimentado (P)"]].forEach(([v, r], k) => {
+    g += `<rect x="${lx + 14}" y="${ly + 30 + k * 26}" width="26" height="14" fill="${COR_VIA[v]}" stroke="#000" stroke-width=".6"/><text x="${lx + 52}" y="${ly + 41 + k * 26}" font-size="10.5" font-weight="700">${r}</text>`;
+  });
+  g += `<line x1="${lx + 14}" y1="${ly + 107}" x2="${lx + 40}" y2="${ly + 107}" stroke="#000" stroke-width="2.5"/><text x="${lx + 52}" y="${ly + 111}" font-size="10.5">fora do trecho</text>`;
+  // tabelas (Anexo IX): ORIGEM/DESTINO × LN/RP/P/FLUVIAL e MATERIAL BETUMINOSO
+  const rot = (c.rotas || []).filter(r => (r.ln || r.rp || r.p)), ty = Math.max(H0, ly + 140) + 10, rh = 18;
+  const cel = (x, y, w, t, al = "middle", bold = false, fill = null) => `${fill ? `<rect x="${x}" y="${y}" width="${w}" height="${rh}" fill="${fill}"/>` : ""}<rect x="${x}" y="${y}" width="${w}" height="${rh}" fill="none" stroke="#000" stroke-width=".6"/><text x="${al === "start" ? x + 4 : x + w / 2}" y="${y + 13}" text-anchor="${al}" font-size="10" ${bold ? 'font-weight="700"' : ""}>${e(t)}</text>`;
+  let t = "", tx = 30, cw = [260, 62, 62, 62, 62];
+  t += cel(tx, ty, cw[0], "ORIGEM / DESTINO", "middle", true, "#D9D9D9") + cel(tx + cw[0], ty, cw[1] * 4, "DISTÂNCIAS (km)", "middle", true, "#D9D9D9");
+  ["LN", "RP", "P", "FLUVIAL"].forEach((h, k) => { t += cel(tx + cw[0] + k * cw[1], ty + rh, cw[1], h, "middle", true, "#D9D9D9"); });
+  t += cel(tx, ty + rh, cw[0], "", "middle", false, "#D9D9D9");
+  rot.forEach((r, k) => { const y = ty + rh * (k + 2);
+    t += cel(tx, y, cw[0], `${r.origem} - ${r.destino}`.slice(0, 44), "start") + [r.ln, r.rp, r.p, r.fluvial].map((v, q) => cel(tx + cw[0] + q * cw[1], y, cw[1], v ? km(v) : "-")).join(""); });
+  const bt = M.betuminosos || [], bx = tx + cw[0] + cw[1] * 4 + 30, bw = [200, 150, 40, 62, 62, 62, 62];
+  t += cel(bx, ty, bw.reduce((s_, v) => s_ + v, 0), "MATERIAL BETUMINOSO", "middle", true, "#D9D9D9");
+  let xx = bx; ["INSUMO", "LOCAL", "UF", "LN", "RP", "P", "FLUVIAL"].forEach((h, k) => { t += cel(xx, ty + rh, bw[k], h, "middle", true, "#D9D9D9"); xx += bw[k]; });
+  bt.forEach((r, k) => { const y = ty + rh * (k + 2); let x_ = bx;
+    [(r.insumo || "").replace(/CIMENTO ASFÁLTICO DE PETRÓLEO - /, "").replace(/EMULSÃO ASFÁLTICA/i, "EMULSÃO").slice(0, 30), (r.local || "").slice(0, 22), r.uf || "", r.ln ? km(r.ln) : "-", r.rp ? km(r.rp) : "-", r.p ? km(r.p) : "-", r.fluvial ? km(r.fluvial) : "-"]
+      .forEach((v, q) => { t += cel(x_, y, bw[q], v, q < 2 ? "start" : "middle"); x_ += bw[q]; }); });
+  const ny2 = ty + rh * (Math.max(rot.length, bt.length) + 2) + 22;
+  const fixas = (d.ocorrencias || []).filter(o => o.km === "" || o.km == null);
+  if (fixas.length) t += `<text x="30" y="${ny2}" font-size="10.5"><tspan font-weight="700">Distância fixa até a pista: </tspan>${e(fixas.map(o => {
+      const p = o.meia_extensao ? (b - a) / 2 : +o.dist_p || 0;
+      return `${o.nome} (${["LN " + km(+o.dist_ln || 0), "RP " + km(+o.dist_rp || 0), "P " + km(p)].filter(x => !/ 0,00$/.test(x)).join(", ") || "0"} km)`; }).join(" · "))}</text>`;
+  t += `<text x="30" y="${ny2 + 20}" font-size="10"><tspan font-weight="700">Obs.: </tspan>Demais insumos não apresentados são considerados como CIF (custo inclui seguro e frete), ou seja, já incluem os custos do transporte da aquisição do insumo, a cargo do fornecedor (Anexo VII).</text>`;
+  const H = ny2 + 40;
+  g += t + `<rect x="10" y="10" width="${W - 20}" height="${H - 20}" fill="none" stroke="#000" stroke-width="1.5"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Arial, Helvetica, sans-serif"><defs><marker id="seta" markerWidth="10" markerHeight="8" refX="0" refY="4" orient="auto"><polygon points="10,0 0,4 10,8" fill="#333399"/></marker></defs>${g}</svg>`;
 }
 const SEL_TIPO = v => `<select data-c="tipo">${Object.entries(T_.cro.tipos).map(([k, r]) => `<option value="${k}" ${v === k ? "selected" : ""}>${esc(r)}</option>`).join("")}</select>`;
 const ci = (k, v, t = "text", extra = "") => `<input data-c="${k}" type="${t}" ${t === "number" ? 'step="any"' : ""} value="${esc(v ?? "")}" ${extra}>`;

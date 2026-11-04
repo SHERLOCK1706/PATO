@@ -1014,38 +1014,6 @@
    "substituto": "Anexo VI (FIT nos serviços) superado pelo Manual de Custos V05 – FIT, 2ª edição (FIT só nos transportes); ICM pela Resolução nº 6/2025."
   },
   {
-   "id": "emenda_3_ipr_736_509318",
-   "titulo": "emenda 3 ipr 736",
-   "arquivo": "emenda_3_ipr_736.pdf",
-   "categoria": "Manual IPR-736",
-   "pacote": null,
-   "paginas": 57,
-   "palavras": 45076,
-   "ocr_paginas": [],
-   "sha1": "5093185193b81beb1340705ca7ba8d99154380c4",
-   "original": null,
-   "tamanho_mb": 4.71,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
-  },
-  {
-   "id": "ipr_736_emenda-2_republicacao_47f32b",
-   "titulo": "ipr 736 emenda-2 republicacao",
-   "arquivo": "ipr_736_emenda-2_republicacao.pdf",
-   "categoria": "Manual IPR-736",
-   "pacote": null,
-   "paginas": 42,
-   "palavras": 17635,
-   "ocr_paginas": [],
-   "sha1": "47f32b224388a2dff9373f1029e3dcd6aaa41983",
-   "original": null,
-   "tamanho_mb": 5.88,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
-  },
-  {
    "id": "PATO_BR_174_603_771_ONERADO_647c3e",
    "titulo": "PATO BR 174 603 771 ONERADO",
    "arquivo": "PATO_BR_174_603_771_ONERADO.xlsx",
@@ -1270,76 +1238,6 @@
    "substituto": null
   },
   {
-   "id": "Volume_05_-_Materiais_a6c738",
-   "titulo": "Volume 05 - Materiais",
-   "arquivo": "Volume 05 - Materiais.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-05-materiais",
-   "paginas": 188,
-   "palavras": 55662,
-   "ocr_paginas": [
-    59,
-    63
-   ],
-   "sha1": "a6c738d2c6f5a5bb4fa7c63c2fca2517ae26bc3e",
-   "original": null,
-   "tamanho_mb": 1.76,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_09_-_Mobiliza_Æo_e_Desmobiliza_Æo_d27e0c",
-   "titulo": "Volume 09 - Mobiliza‡Æo e Desmobiliza‡Æo",
-   "arquivo": "Volume 09 - Mobiliza‡Æo e Desmobiliza‡Æo.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-09-mobilizacao-e-desmobilizacao",
-   "paginas": 64,
-   "palavras": 7993,
-   "ocr_paginas": [],
-   "sha1": "d27e0c27238131b9085febd8e1c298f57d445d04",
-   "original": null,
-   "tamanho_mb": 0.93,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Anexo_02.2023_-_Mobiliza_Æo_e_Desmobiliza_Æo_3ce677",
-   "titulo": "Anexo 02.2023 - Mobiliza‡Æo e Desmobiliza‡Æo",
-   "arquivo": "Anexo 02.2023 - Mobiliza‡Æo e Desmobiliza‡Æo.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-09-mobilizacao-e-desmobilizacao",
-   "paginas": 23,
-   "palavras": 6959,
-   "ocr_paginas": [
-    2,
-    4
-   ],
-   "sha1": "3ce6774515e221d9fff13fd70c532481c0696cd6",
-   "original": null,
-   "tamanho_mb": 0.52,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_02_-_Pesquisa_de_Precos_1ebf5f",
-   "titulo": "Volume 02 - Pesquisa de Preços",
-   "arquivo": "Volume 02 - Pesquisa de Preços.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-02-pesquisa-de-precos",
-   "paginas": 118,
-   "palavras": 34326,
-   "ocr_paginas": [],
-   "sha1": "1ebf5f1af9d1de9b8ae2070c219dcc0cf163c65c",
-   "original": null,
-   "tamanho_mb": 1.65,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
    "id": "Manual-de-Custos-SICRO_V02-Mao-de-Obra_91aa39",
    "titulo": "Manual-de-Custos-SICRO V02-Mao-de-Obra",
    "arquivo": "Manual-de-Custos-SICRO_V02-Mao-de-Obra.pdf",
@@ -1358,43 +1256,6 @@
    "substituto": null
   },
   {
-   "id": "Volume_03_-_Equipamentos_ac846b",
-   "titulo": "Volume 03 - Equipamentos",
-   "arquivo": "Volume 03 - Equipamentos.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-03-equipamentos",
-   "paginas": 212,
-   "palavras": 46185,
-   "ocr_paginas": [],
-   "sha1": "ac846bc92db6ed87a68fa92cc1a22bfb1d90afd5",
-   "original": null,
-   "tamanho_mb": 1.91,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_08_-_Administracao_Local_439ca2",
-   "titulo": "Volume 08 - Administração Local",
-   "arquivo": "Volume 08 - Administração Local.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-08-administracao-local",
-   "paginas": 103,
-   "palavras": 27894,
-   "ocr_paginas": [
-    19,
-    25,
-    55,
-    71
-   ],
-   "sha1": "439ca21b1453eb62c0c0af4635a6ed7266b563fb",
-   "original": null,
-   "tamanho_mb": 1.7,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
    "id": "Manual-de-Custos-SICRO_V01-Conceitos-Metodologias_b2f14c",
    "titulo": "Manual-de-Custos-SICRO V01-Conceitos-Metodologias",
    "arquivo": "Manual-de-Custos-SICRO_V01-Conceitos-Metodologias.pdf",
@@ -1411,248 +1272,6 @@
    "ativo": true,
    "situacao": "referencia",
    "substituto": null
-  },
-  {
-   "id": "Anexo_01-2017_-_Fator_de_Interferencia_do_Trafego_11e0cb",
-   "titulo": "Anexo 01-2017 - Fator de Interferência do Tráfego",
-   "arquivo": "Anexo 01-2017 - Fator de Interferência do Tráfego.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-01-metodologia-e-conceitos",
-   "paginas": 10,
-   "palavras": 1464,
-   "ocr_paginas": [],
-   "sha1": "11e0cb78e7768d971b536ec8eaf04f954e1bbfe4",
-   "original": null,
-   "tamanho_mb": 0.21,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_01_41f934",
-   "titulo": "SICRO - Volume 01",
-   "arquivo": "SICRO - Volume 01.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-01-metodologia-e-conceitos",
-   "paginas": 246,
-   "palavras": 62669,
-   "ocr_paginas": [],
-   "sha1": "41f9343271d9c930b972ee6fbed632c9127a1aac",
-   "original": null,
-   "tamanho_mb": 4.56,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_Volume_06_texto_9805de",
-   "titulo": "SICRO Volume 06 texto",
-   "arquivo": "SICRO_Volume_06_texto.txt",
-   "categoria": "Manual SICRO",
-   "pacote": "SICRO Vol06 FIC",
-   "paginas": 50,
-   "palavras": 5803,
-   "ocr_paginas": [],
-   "sha1": "9805decbe062b38d917794c9add7818f757baa4e",
-   "original": null,
-   "tamanho_mb": 0.08,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_Volume_06_Fator_Influencia_Chuvas_08a3f4",
-   "titulo": "SICRO Volume 06 Fator Influencia Chuvas",
-   "arquivo": "SICRO_Volume_06_Fator_Influencia_Chuvas.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "SICRO Vol06 FIC",
-   "paginas": 49,
-   "palavras": 5803,
-   "ocr_paginas": [],
-   "sha1": "08a3f4c8b2a71992b3412caabd6b25c9bdd0dd04",
-   "original": null,
-   "tamanho_mb": 0.93,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_04_6c9281",
-   "titulo": "SICRO - Volume 12 - Tomo 04",
-   "arquivo": "SICRO - Volume 12 - Tomo 04.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 146,
-   "palavras": 30395,
-   "ocr_paginas": [],
-   "sha1": "6c9281668ad93bdf016be22eaf9208fae4c92b69",
-   "original": null,
-   "tamanho_mb": 2.12,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_02_97e9e4",
-   "titulo": "SICRO - Volume 12 - Tomo 02",
-   "arquivo": "SICRO - Volume 12 - Tomo 02.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 115,
-   "palavras": 21773,
-   "ocr_paginas": [],
-   "sha1": "97e9e4581d660b599a608ca667a7ee6b16e24f45",
-   "original": null,
-   "tamanho_mb": 2.41,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_06_72d4c3",
-   "titulo": "SICRO - Volume 12 - Tomo 06",
-   "arquivo": "SICRO - Volume 12 - Tomo 06.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 129,
-   "palavras": 25746,
-   "ocr_paginas": [],
-   "sha1": "72d4c3870b418ea2ff301a202b7d1b387fc45b6a",
-   "original": null,
-   "tamanho_mb": 1.77,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_01_59396b",
-   "titulo": "SICRO - Volume 12 - Tomo 01",
-   "arquivo": "SICRO - Volume 12 - Tomo 01.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 250,
-   "palavras": 51896,
-   "ocr_paginas": [],
-   "sha1": "59396bbd1dcef9491db8c957bb8afbb73e1f13f8",
-   "original": null,
-   "tamanho_mb": 6.14,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_03_2ee4f2",
-   "titulo": "SICRO - Volume 12 - Tomo 03",
-   "arquivo": "SICRO - Volume 12 - Tomo 03.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 192,
-   "palavras": 73577,
-   "ocr_paginas": [],
-   "sha1": "2ee4f2f0cd80bfecba7758b7a62a0a3dfbca53c0",
-   "original": null,
-   "tamanho_mb": 3.11,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "SICRO_-_Volume_12_-_Tomo_05_0b4959",
-   "titulo": "SICRO - Volume 12 - Tomo 05",
-   "arquivo": "SICRO - Volume 12 - Tomo 05.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-12-producoes-de-equipes-mecanicas",
-   "paginas": 193,
-   "palavras": 43434,
-   "ocr_paginas": [],
-   "sha1": "0b49595a49b008f64b69d4a90940c88d1892a574",
-   "original": null,
-   "tamanho_mb": 2.53,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_04_-_Tomo_04_-_Consolidacao_dos_Custos_de_Mao_de_Obra_64c06f",
-   "titulo": "Volume 04 - Tomo 04 - Consolidação dos Custos de Mão de Obra",
-   "arquivo": "Volume 04 - Tomo 04 - Consolidação dos Custos de Mão de Obra.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-04-mao-de-obra",
-   "paginas": 160,
-   "palavras": 87044,
-   "ocr_paginas": [
-    17
-   ],
-   "sha1": "64c06fde3577272bae986b64a1e9f15610478ace",
-   "original": null,
-   "tamanho_mb": 9.36,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_04_-_Tomo_01_-_Parametros_do_CAGED_be9e28",
-   "titulo": "Volume 04 - Tomo 01 - Parâmetros do CAGED",
-   "arquivo": "Volume 04 - Tomo 01 - Parâmetros do CAGED.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-04-mao-de-obra",
-   "paginas": 158,
-   "palavras": 37336,
-   "ocr_paginas": [],
-   "sha1": "be9e28308e22664755f04ccdaf9c904b0263c799",
-   "original": null,
-   "tamanho_mb": 3.49,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_04_-_Mao_de_obra_d93a14",
-   "titulo": "Volume 04 - Mão de obra",
-   "arquivo": "Volume 04 - Mão de obra.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-04-mao-de-obra",
-   "paginas": 99,
-   "palavras": 20075,
-   "ocr_paginas": [],
-   "sha1": "d93a1433647dcbe2274d42d8393dda3686b41992",
-   "original": null,
-   "tamanho_mb": 1.23,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_04_-_Tomo_02_-_Encargos_Sociais_bff45e",
-   "titulo": "Volume 04 - Tomo 02 - Encargos Sociais",
-   "arquivo": "Volume 04 - Tomo 02 - Encargos Sociais.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-04-mao-de-obra",
-   "paginas": 120,
-   "palavras": 21013,
-   "ocr_paginas": [],
-   "sha1": "bff45ee94814463c549a5eec216c81ac0b359b9e",
-   "original": null,
-   "tamanho_mb": 1.71,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_04_-_Tomo_03_-_Encargos_Complementares_639ec0",
-   "titulo": "Volume 04 - Tomo 03 - Encargos Complementares",
-   "arquivo": "Volume 04 - Tomo 03 - Encargos Complementares.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-04-mao-de-obra",
-   "paginas": 88,
-   "palavras": 17266,
-   "ocr_paginas": [],
-   "sha1": "639ec089ab75c42e79cc159202596641d4f3bfce",
-   "original": null,
-   "tamanho_mb": 1.47,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "PATO_APRESENTACAO_82f042",
@@ -1787,139 +1406,6 @@
    "ativo": true,
    "situacao": "referencia",
    "substituto": null
-  },
-  {
-   "id": "Volume_07_-_Tomo_01_-_M_dulos_B_sicos_e_Projetos_Tipo_A3_900890",
-   "titulo": "Volume 07 - Tomo 01 - M¢dulos B sicos e Projetos Tipo (A3)",
-   "arquivo": "Volume 07 - Tomo 01 - M¢dulos B sicos e Projetos Tipo (A3).pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-07-canteiros",
-   "paginas": 200,
-   "palavras": 24428,
-   "ocr_paginas": [
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    86,
-    87,
-    88,
-    89,
-    90,
-    94,
-    95,
-    104,
-    105,
-    106,
-    108,
-    149,
-    150,
-    151,
-    152,
-    153,
-    156,
-    157,
-    158,
-    159,
-    162,
-    169,
-    174,
-    177,
-    178,
-    179,
-    180,
-    183,
-    184,
-    185,
-    186,
-    197
-   ],
-   "sha1": "900890dabc94cdae390a68384714e94b12f71e14",
-   "original": null,
-   "tamanho_mb": 22.1,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Anexo_06.2017_-_Canteiros_70f51d",
-   "titulo": "Anexo 06.2017 - Canteiros",
-   "arquivo": "Anexo 06.2017 - Canteiros.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-07-canteiros",
-   "paginas": 13,
-   "palavras": 1622,
-   "ocr_paginas": [],
-   "sha1": "70f51df6d31c25d977c346ba25bca16e2f09c36d",
-   "original": null,
-   "tamanho_mb": 0.1,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Volume_07_-_Canteiros_3c2edc",
-   "titulo": "Volume 07 - Canteiros",
-   "arquivo": "Volume 07 - Canteiros.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-07-canteiros",
-   "paginas": 141,
-   "palavras": 30960,
-   "ocr_paginas": [
-    23,
-    27,
-    31,
-    39,
-    45,
-    51,
-    67,
-    73,
-    81
-   ],
-   "sha1": "3c2edc2fd2809e186ceb58dadf5ee1d6499476f6",
-   "original": null,
-   "tamanho_mb": 2.44,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Anexo_01.2023_-_Canteiro_de_Obras_93f616",
-   "titulo": "Anexo 01.2023 - Canteiro de Obras",
-   "arquivo": "Anexo 01.2023 - Canteiro de Obras.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-07-canteiros",
-   "paginas": 24,
-   "palavras": 7614,
-   "ocr_paginas": [
-    2,
-    4
-   ],
-   "sha1": "93f61615b0ede63200afec191f03d9dbe08ae5f7",
-   "original": null,
-   "tamanho_mb": 0.44,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
-  },
-  {
-   "id": "Anexo_02.2017_-_Instala_Æo_de_Canteiros_dd1b31",
-   "titulo": "Anexo 02.2017 - Instala‡Æo de Canteiros",
-   "arquivo": "Anexo 02.2017 - Instala‡Æo de Canteiros.pdf",
-   "categoria": "Manual SICRO",
-   "pacote": "volume-07-canteiros",
-   "paginas": 11,
-   "palavras": 679,
-   "ocr_paginas": [],
-   "sha1": "dd1b31ae6c02f45da75ea3d773eebdd02fc157c1",
-   "original": null,
-   "tamanho_mb": 0.32,
-   "ativo": false,
-   "situacao": "substituido",
-   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   },
   {
    "id": "QUANTIDADES_Modelo_511d5b",
@@ -2240,6 +1726,148 @@
    "ativo": true,
    "situacao": "referencia",
    "substituto": null
+  }
+ ],
+ "removidos": [
+  {
+   "titulo": "emenda 3 ipr 736",
+   "situacao": "substituido",
+   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
+  },
+  {
+   "titulo": "ipr 736 emenda-2 republicacao",
+   "situacao": "substituido",
+   "substituto": "IPR-736 com a Emenda 4 (2025) e erratas 1 a 3 da Emenda 4 (coletânea de manuais vigentes do IPR) — baixar em gov.br/dnit › IPR › Coletânea de manuais › Vigentes."
+  },
+  {
+   "titulo": "Volume 05 - Materiais",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 09 - Mobiliza‡Æo e Desmobiliza‡Æo",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Anexo 02.2023 - Mobiliza‡Æo e Desmobiliza‡Æo",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 02 - Pesquisa de Preços",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 03 - Equipamentos",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 08 - Administração Local",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Anexo 01-2017 - Fator de Interferência do Tráfego",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 01",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO Volume 06 texto",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO Volume 06 Fator Influencia Chuvas",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 04",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 02",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 06",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 01",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 03",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "SICRO - Volume 12 - Tomo 05",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 04 - Tomo 04 - Consolidação dos Custos de Mão de Obra",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 04 - Tomo 01 - Parâmetros do CAGED",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 04 - Mão de obra",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 04 - Tomo 02 - Encargos Sociais",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 04 - Tomo 03 - Encargos Complementares",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 07 - Tomo 01 - M¢dulos B sicos e Projetos Tipo (A3)",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Anexo 06.2017 - Canteiros",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Volume 07 - Canteiros",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Anexo 01.2023 - Canteiro de Obras",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
+  },
+  {
+   "titulo": "Anexo 02.2017 - Instala‡Æo de Canteiros",
+   "situacao": "substituido",
+   "substituto": "Manual de Custos – 2ª edição (17/11/2025), em 8 volumes: 01 Metodologia, 02 Mão de Obra, 03 Preços Referenciais, 04 FIC, 05 FIT, 06 Canteiro de Obras, 07 Administração Local, 08 Mobilização e Desmobilização, com cadernos de aplicação. Na base: V01, V02, V03, V05-FIT, V06-Canteiro e cadernos V04/V05/V06. Faltam V04 (completo), V07 e V08 — baixar em gov.br/dnit › Custos Referenciais › SICRO › Manuais."
   }
  ]
 }

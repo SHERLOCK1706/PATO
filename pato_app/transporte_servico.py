@@ -166,8 +166,43 @@ class Transportes:
         except Exception:  # noqa: BLE001 — sem inventário georreferenciado o croqui funciona sem mapa
             pass
         return dict(dados=d, km_ini=c.a, km_fim=c.b, rotas=rotas, tipos=tp.TIPOS, segmentos_snv=self._segmentos_snv(pid),
+                    modelo_res8=self._dados_res8(pid, c.a, c.b),
                     fonte_vmd=DNIT_MODELAGEM, pare_siga=c.pare_siga, pare_siga_previsto=self.pare_siga_previsto(pid),
                     fc=tp.fator_urbano(c.vel_urbana))
+
+    def _dados_res8(self, pid: int, a: float, b: float) -> dict:
+        """Complementos do croqui no modelo da Res. DNIT 8/2023 (Anexo IX): superfície de cada trecho pelo SNV (cor da
+        linha: P vermelho, RP azul, LN verde), localidades nas pontas, capital mais próxima (mobilização) e os
+        betuminosos vencedores do binômio com as distâncias."""
+        from . import snv
+        p = self.sv.projeto(pid)
+        br, uf = snv.br_uf(p.get("rodovia"))
+        sup = []
+        try:
+            for s_ in snv.segmentos(br, uf, a, b) if br else []:
+                sup.append(dict(km_ini=max(a, s_["km_ini"]), km_fim=min(b, s_["km_fim"]), superficie=s_.get("superficie"),
+                                codigo=s_.get("codigo"), local_ini=s_.get("local_ini"), local_fim=s_.get("local_fim")))
+        except Exception:  # noqa: BLE001 — sem SNV: trecho pavimentado
+            sup = []
+        cap = None
+        try:
+            dv = self.db.dados_projeto(pid, "diversos") or {}
+            o = ((dv.get("sicro2025") or {}).get("mob") or {}).get("origem") or {}
+            cap = dict(nome=o.get("capital") or ((dv.get("mob") or {}).get("itinerario") or "").split(" - ")[0] or None,
+                       dmt=(o.get("dmt_pav") or 0) + (o.get("dmt_npav") or 0) or (dv.get("mob") or {}).get("dmt_pessoal"))
+        except Exception:  # noqa: BLE001
+            pass
+        bet = []
+        try:
+            for pr in self.sv.binomio.listar(pid)["produtos"]:
+                v = pr.get("vencedor") or {}
+                if v:
+                    bet.append(dict(insumo=pr.get("produto"), local=v.get("local"), uf=v.get("uf"), ln=v.get("d_ln"), rp=v.get("d_rp"),
+                                    p=v.get("d_pav"), fluvial=v.get("d_fluvial")))
+        except Exception:  # noqa: BLE001
+            pass
+        return dict(superficies=sup, rodovia=p.get("rodovia"), trecho=p.get("trecho"), capital=cap,
+                    local_ini=sup[0]["local_ini"] if sup else None, local_fim=sup[-1]["local_fim"] if sup else None, betuminosos=bet)
 
     def salvar_croqui(self, pid: int, dados: dict) -> dict:
         atual = self.dados_croqui(pid)

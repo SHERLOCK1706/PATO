@@ -814,6 +814,26 @@ def sicro_baixar(uf: str = "MT", data_base: str | None = None) -> dict:
     return dict(data_base=r["data_base"], revisado=r["revisado"], bases=[(b["regime"], b["n_composicoes"]) for b in r["bases"]])
 
 
+@mcp.tool()
+def dmt_automatica(projeto_id: int, betuminosos: bool = True, mobilizacao: bool = True, substituir: bool = False) -> dict:
+    """DMT pela estrada (rede federal do SNV) até o canteiro: origens dos betuminosos (sede do município, IBGE) e
+    mobilização (capital de menor percurso). substituir=False mantém distâncias já informadas nos betuminosos."""
+    out = {}
+    if betuminosos:
+        out["betuminosos"] = sv().binomio.dmt_betuminosos(projeto_id, substituir)
+    if mobilizacao:
+        out["mobilizacao"] = sv().orcamento.dmt_mobilizacao(projeto_id)
+    return out
+
+
+@mcp.tool()
+def cotar_passagem_onibus(projeto_id: int, valor: float | None = None, mes_pesquisa: str | None = None,
+                          fonte: str | None = None) -> dict:
+    """Passagem de ônibus da mobilização de pessoal: itinerário capital → cidade do canteiro, estimativa por km e links
+    de pesquisa. Com valor (R$), mês da pesquisa (AAAA-MM) e fonte, grava a cotação (reajustada pelo índice de MOB)."""
+    return sv().orcamento.cotar_passagem(projeto_id, valor, mes_pesquisa, fonte)
+
+
 def main():
     mcp.run()
 

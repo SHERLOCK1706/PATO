@@ -14,7 +14,8 @@ from . import normalizar as nz
 
 TIPO_MATERIAL = "cotacao"
 TIPO_BETUMINOSO = "betuminoso"
-TIPOS_ANEXO = {"cotacao": "Cotação", "icms": "ICMS (legislação/alíquota)", "anp": "Tabela ANP", "outro": "Outro"}
+TIPOS_ANEXO = {"cotacao": "Cotação", "icms": "ICMS (legislação/alíquota)", "anp": "Tabela ANP",
+               "passagem": "Cotação de passagem (mobilização)", "outro": "Outro"}
 
 
 _TRAVA = threading.Lock()
@@ -576,7 +577,7 @@ class Binomios:
             icms = _num(o.get("icms"))
             origens.append(dict(nome=nz.texto(o.get("nome")) or f"R-{len(origens) + 1}", uf=nz.texto(o.get("uf")),
                                 local=nz.texto(o.get("local")), preco_t=_num(o.get("preco_t")),
-                                preco_fonte=nz.texto(o.get("preco_fonte")),
+                                preco_fonte=nz.texto(o.get("preco_fonte")), dmt_fonte=nz.texto(o.get("dmt_fonte")),
                                 d_fluvial=_num(o.get("d_fluvial")), d_pav=_num(o.get("d_pav")), d_rp=_num(o.get("d_rp")),
                                 d_ln=_num(o.get("d_ln")), icms=icms / 100 if icms and icms > 1 else icms,
                                 pedagio=_num(o.get("pedagio")), balsa=_num(o.get("balsa"))))
@@ -616,6 +617,47 @@ class Binomios:
         bid = self.db.salvar_binomio(pid, TIPO_BETUMINOSO, d, bid)
         self.db.registrar(pid, "binômio: betuminoso", d["produto"])
         return self.item(pid, bid)
+
+    def dmt_betuminosos(self, pid: int, substituir: bool = False, bid: int | None = None) -> dict:
+        """DMT de cada origem dos betuminosos (refinaria/distribuidora) até o canteiro pela rede federal do SNV:
+        pavimentada → D1 (Pav.), não pavimentada → D2 (RP). Origem pela sede do município (IBGE).
+        substituir=False: só as origens sem distância. O fluvial (D) e o LN continuam como estão."""
+        from . import rede
+        dest, rot = self.sv.orcamento.destino_dmt(pid)
+        if not dest:
+            raise ValueError("Não foi possível localizar o canteiro nem o segmento no SNV — informe a rodovia e o km.")
+        feitos, avisos = [], []
+        for b in self.db.binomios(pid, TIPO_BETUMINOSO):
+            if bid and b["id"] != bid:
+                continue
+            d = b["dados"]
+            mudou = False
+            for o in d.get("origens") or []:
+                tem = any(_num(o.get(k)) for k in ("d_pav", "d_rp", "d_ln", "d_fluvial"))
+                if tem and not substituir:
+                    continue
+                m = rede.municipio(o.get("local"), o.get("uf"))
+                if not m:
+                    avisos.append(f"{d.get('produto')}: origem “{o.get('local')}/{o.get('uf')}” não encontrada no IBGE — informe a DMT.")
+                    continue
+                r = rede.rota((m["lat"], m["lon"]), dest)
+                if not r:
+                    avisos.append(f"{d.get('produto')}: sem ligação pela rede federal de {m['nome']}/{m['uf']} — informe a DMT.")
+                    continue
+                o["d_pav"], o["d_rp"] = round(r["pav"], 1), round(r["npav"], 1)
+                o["d_ln"] = _num(o.get("d_ln")) or 0.0
+                o["dmt_fonte"] = f"rota SNV {m['nome']}/{m['uf']} → {rot}: {' → '.join(r.get('rodovias') or [])}"
+                mudou = True
+                feitos.append(dict(produto=d.get("produto"), origem=f"{m['nome']}/{m['uf']}", pav=o["d_pav"], rp=o["d_rp"],
+                                   total=round(r["total"], 1)))
+                avisos += [f"{m['nome']}/{m['uf']}: {a}" for a in r.get("avisos") or []]
+            if mudou:
+                self.salvar_produto(pid, d, b["id"])
+        if feitos:
+            self.db.registrar(pid, "binômio: DMT dos betuminosos", f"{len(feitos)} origem(ns) → {rot}")
+        return dict(calculadas=feitos, avisos=sorted(set(avisos)), destino=rot,
+                    nota="Rede federal do SNV (pavimentada → Pav.; não pavimentada → RP). O trecho fluvial e o leito natural "
+                         "continuam como informados; trechos estaduais/municipais não estão na rede — confira.")
 
     def preencher_anp(self, pid: int, substituir: bool = False, bid: int | None = None) -> dict:
         """Preço ANP de cada origem dos betuminosos, no mês da data-base: estado da origem → região → Brasil.

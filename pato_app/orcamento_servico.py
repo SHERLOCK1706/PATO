@@ -259,6 +259,132 @@ class Orcamentos:
         dd["sicro2025"]["canteiro"]["centro_fornecedor"] = dict(cf, km=alvo["km"], km_canteiro=lc["km_canteiro"])
         return dd
 
+    def destino_dmt(self, pid: int) -> tuple[tuple[float, float] | None, str]:
+        """Ponto de chegada das DMT automáticas: o canteiro (km do croqui) ou, sem ele, o meio do segmento."""
+        from . import geo
+        km = self.locais_croqui(pid)["km_canteiro"]
+        rot = f"canteiro (km {km:g})" if km is not None else None
+        if km is None:
+            p = self.sv.projeto(pid)
+            if p.get("km_ini") is None:
+                return None, "sem km do projeto"
+            km = (p["km_ini"] + (p.get("km_fim") or p["km_ini"])) / 2
+            rot = f"meio do segmento (km {km:g}) — informe o km do canteiro para a DMT exata"
+        pos = self._pos_snv(pid, km)
+        if not pos:
+            try:
+                pos = geo.Eixo(self.db.itens(pid)).posicao(km)
+            except Exception:  # noqa: BLE001
+                pos = None
+        return (tuple(pos[:2]) if pos else None), rot
+
+    def dmt_mobilizacao(self, pid: int, capital: str | None = None, gravar: bool = True) -> dict:
+        """DMT da mobilização pela estrada (rede federal do SNV): da capital de origem ao canteiro. Sem capital
+        informada, compara as 3 capitais mais próximas em linha reta e adota a de menor percurso rodoviário.
+        Grava a origem (capital, DMT pavimentada e não pavimentada) — continua editável na tela."""
+        from . import diversos as dv
+        from . import rede
+        dest, rot = self.destino_dmt(pid)
+        if not dest:
+            raise ValueError("Não foi possível localizar o canteiro nem o segmento no SNV — informe a rodovia e o km.")
+        nomes = [capital] if capital else [c["capital"] for c in dv.capitais_mais_proximas(dest[0], dest[1], 3)]
+        opcoes = []
+        for c in nomes:
+            pos = dv.CAPITAIS.get(c)
+            if not pos:
+                continue
+            r = rede.rota(tuple(pos), dest)
+            if r:
+                opcoes.append(dict(capital=c, total=round(r["total"], 1), pav=round(r["pav"], 1), npav=round(r["npav"], 1),
+                                   rodovias=r.get("rodovias") or [], avisos=r.get("avisos") or []))
+        if not opcoes:
+            raise ValueError("Sem ligação pela rede federal entre a capital e o canteiro — informe a DMT manualmente.")
+        esc = min(opcoes, key=lambda o: o["total"])
+        cid = self.cidade_canteiro(pid, dest)
+        destino_txt = f"{cid['nome']}/{cid['uf']}" if cid else rot
+        if gravar:
+            dd = self.db.dados_projeto(pid, "diversos") or {}
+            mob = dd.setdefault("mob", {})
+            mob["origem"] = dict(mob.get("origem") or {}, capital=esc["capital"], destino=destino_txt, ponto=rot,
+                                 dmt_pav=esc["pav"], dmt_npav=esc["npav"],
+                                 fonte=f"rota pela rede federal (SNV): {' → '.join(esc['rodovias'])}")
+            self.db.gravar_dados_projeto(pid, "diversos", dd)
+            self.db.registrar(pid, "mobilização: DMT automática", f"{esc['capital']} → {rot}: {esc['total']} km")
+        return dict(escolhida=esc, opcoes=opcoes, destino=destino_txt, ponto=rot,
+                    nota="Rede federal do SNV; trechos por rodovias estaduais/municipais não estão na rede — confira.")
+
+    def cidade_canteiro(self, pid: int, dest: tuple | None = None) -> dict | None:
+        """Sede municipal (IBGE) mais próxima do canteiro — destino do itinerário da mobilização de pessoal."""
+        from . import rede
+        from .ne_rocada import distancia_km
+        dest = dest or self.destino_dmt(pid)[0]
+        if not dest:
+            return None
+        melhor = None
+        for uf, lst in rede._municipios().items():
+            for _, nome, la, lo in lst:
+                d = distancia_km(dest[0], dest[1], la, lo)
+                if melhor is None or d < melhor[0]:
+                    melhor = (d, dict(nome=nome, uf=uf, lat=la, lon=lo, distancia_km=round(d, 1)))
+        return melhor[1] if melhor else None
+
+    # R$ por passageiro·km das passagens pesquisadas nos PATOs aprovados de MT (2025): intraestadual ≈ 0,29
+    # (Cuiabá–Deciolândia 89,67/309 km; Cuiabá–Pontes e Lacerda 132,38/447 km — coerente com o coeficiente AGER/MT
+    # R$ 0,287/km) e interestadual ≈ 0,39 (Palmas/TO–Confresa/MT 219,99/562 km). Só para estimativa: vale a cotação.
+    TARIFA_KM = {"intra": 0.29, "inter": 0.39}
+
+    def cotar_passagem(self, pid: int, valor=None, data: str | None = None, fonte: str | None = None) -> dict:
+        """Cotação da passagem de ônibus da mobilização de pessoal: itinerário capital mais próxima (pela estrada) →
+        cidade do canteiro, estimativa pela tarifa por km e links de pesquisa. Com `valor`, grava a passagem pesquisada,
+        a data da pesquisa e o mês do índice (reajuste até a data-base pelo índice de Mobilização e Desmobilização)."""
+        import datetime as _d
+        import re as _re
+        from urllib.parse import quote
+        from . import normalizar as _nz
+        dd = self.db.dados_projeto(pid, "diversos") or {}
+        o = (dd.get("mob") or {}).get("origem") or {}
+        if not o.get("capital") or o.get("dmt_pav") is None:
+            self.dmt_mobilizacao(pid)
+            dd = self.db.dados_projeto(pid, "diversos") or {}
+            o = dd["mob"]["origem"]
+        dmt = (_nz.numero(o.get("dmt_pav")) or 0) + (_nz.numero(o.get("dmt_npav")) or 0)
+        cap, dst = o.get("capital") or "", o.get("destino") or ""
+        uf_o, uf_d = cap.rsplit("/", 1)[-1] if "/" in cap else "", dst.rsplit("/", 1)[-1] if "/" in dst else ""
+        tipo = "intra" if uf_o and uf_o == uf_d else "inter"
+        estimativa = round(self.TARIFA_KM[tipo] * dmt, 2)
+
+        def slug(t):
+            t = _nz.sem_acento(t).lower()
+            return _re.sub(r"[^a-z0-9]+", "-", t).strip("-")
+        co, cd = cap.split("/")[0], dst.split("/")[0]
+        links = [
+            dict(site="ClickBus", url=f"https://www.clickbus.com.br/onibus/{slug(co)}-{slug(uf_o)}/{slug(cd)}-{slug(uf_d)}"),
+            dict(site="Busca Ônibus", url=f"https://www.buscaonibus.com.br/onibus/{slug(co)}-{slug(uf_o)}/{slug(cd)}-{slug(uf_d)}"),
+            dict(site="Pesquisa na internet", url="https://www.google.com/search?q=" + quote(f"passagem ônibus {co} {uf_o} para {cd} {uf_d} preço")),
+        ]
+        mob = dd.setdefault("mob", {})
+        mob["itinerario"] = f"{cap} - {dst}" if cap and dst else mob.get("itinerario")
+        if valor not in (None, ""):
+            v = _nz.numero(valor)
+            if not v or v <= 0:
+                raise ValueError("Informe o valor da passagem (R$).")
+            mes = (data or _d.date.today().isoformat())[:7]
+            if not _re.fullmatch(r"\d{4}-\d{2}", mes):
+                raise ValueError("Data da pesquisa no formato AAAA-MM.")
+            serie = (self.db.indices() or {}).get(dd["mob"].get("indice") or "Mobilização e Desmobilização") or {}
+            meses_ind = sorted(m for m in serie if m <= mes)
+            mob.update(passagem=v, data_pesquisa=mes, passagem_fonte=fonte or "cotação informada",
+                       mes_indice_pesquisa=meses_ind[-1] if meses_ind else mes)
+            self.db.registrar(pid, "mobilização: passagem cotada", f"{mob['itinerario']}: R$ {v:.2f} ({mes}, {fonte or ''})")
+        self.db.gravar_dados_projeto(pid, "diversos", dd)
+        return dict(itinerario=mob.get("itinerario"), dmt_km=round(dmt, 1), tipo="intraestadual" if tipo == "intra" else "interestadual",
+                    estimativa=estimativa, tarifa_km=self.TARIFA_KM[tipo], links=links,
+                    passagem=mob.get("passagem"), data_pesquisa=mob.get("data_pesquisa"),
+                    mes_indice_pesquisa=mob.get("mes_indice_pesquisa"), fonte=mob.get("passagem_fonte"),
+                    nota=("Estimativa pela tarifa por km das passagens dos PATOs aprovados de MT — use só como conferência: "
+                          "registre o preço real pesquisado (site de venda ou rodoviária), a data e anexe o comprovante. "
+                          "O valor é reajustado até a data-base pelo índice de Mobilização e Desmobilização (FGV)."))
+
     def capitais_sugeridas(self, pid: int) -> list[dict]:
         from . import diversos as dv
         from . import geo

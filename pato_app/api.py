@@ -555,6 +555,27 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
                                      f"“preco-asfalto-uf” e “preco-asfalto-regiao” em {sv.anp.situacao()['pagina']} "
                                      "e use Importar planilha ANP.") from e
 
+    @app.post("/api/projetos/{pid}/binomio/dmt")
+    def b_dmt_betuminosos(pid: int, dados: dict = Body(default={})):
+        try:
+            return bi.dmt_betuminosos(pid, bool(dados.get("substituir")), dados.get("id"))
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+
+    @app.post("/api/projetos/{pid}/diversos/dmt-mobilizacao")
+    def p_dmt_mob(pid: int, dados: dict = Body(default={})):
+        try:
+            return sv.orcamento.dmt_mobilizacao(pid, dados.get("capital") or None)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+
+    @app.post("/api/projetos/{pid}/diversos/passagem")
+    def p_passagem(pid: int, dados: dict = Body(default={})):
+        try:
+            return sv.orcamento.cotar_passagem(pid, dados.get("valor"), dados.get("data") or None, dados.get("fonte") or None)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+
     @app.post("/api/projetos/{pid}/binomio/anp/preencher")
     def b_anp_preencher(pid: int, dados: dict = Body(default={})):
         return bi.preencher_anp(pid, bool(dados.get("substituir")), dados.get("id"))

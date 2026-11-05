@@ -331,6 +331,7 @@
           <button class="btn" id="btnForn" data-dica="Cadastro de fornecedores (planilha FORNECEDOR / ENDEREÇO / INSUMO) e pontos do KMZ: localiza pedreiras e areais no SNV e estima a distância até o canteiro">Fornecedores e localização (KMZ)</button>
           <button class="btn primario" id="btnNovoMat" data-dica="Cria um material com cotações (pétreo, madeira, capa asfáltica comercial ou outro)">Novo material cotado</button>
           <button class="btn primario" id="btnNovoBet" data-dica="Cria um material betuminoso com as origens (distribuidoras/refinarias) da tabela ANP">Novo betuminoso (ANP)</button>
+          <button class="btn" id="btnDmtBet" data-dica="DMT de cada origem (refinaria/distribuidora) até o canteiro pela estrada — rede federal do SNV, saindo da sede do município (IBGE): pavimentada → Pav., não pavimentada → RP">DMT dos betuminosos</button>
           <button class="btn" id="btnAnpPreencher" data-dica="Preço médio ponderado mensal da ANP no mês da data-base: estado da origem → região → Brasil">Preços ANP</button>
           <button class="btn" id="btnAnpAtualizar" data-dica="Baixa da ANP os arquivos mais recentes de preços de produtos asfálticos (precisa de internet)">Atualizar ANP</button>
           <button class="btn" id="btnAnpImportar" data-dica="Importa os arquivos da ANP baixados manualmente (preco-asfalto-uf / preco-asfalto-regiao)">Importar planilha ANP</button>
@@ -547,7 +548,10 @@
       <div class="caixa"><h4>Administração local</h4><div id="divAdm"></div></div>
       <div class="grade2"><div class="caixa"><h4>Canteiro de obras e acampamento</h4><div id="divCan"></div></div>
         <div class="caixa"><h4>Instalação industrial (usina)</h4><div id="divUsi"></div></div></div>
-      <div class="caixa"><h4>Mobilização e desmobilização</h4><div id="divMob"></div></div>
+      <div class="caixa"><h4>Mobilização e desmobilização</h4>
+        <div class="linha-botoes"><button class="btn" type="button" id="btnDmtMob" data-dica="Compara as capitais mais próximas e grava a de menor percurso pela estrada (rede federal do SNV) até o canteiro: DMT pavimentada e não pavimentada">DMT pela estrada (capital → canteiro)</button>
+          <button class="btn" type="button" id="btnPassagem" data-dica="Itinerário capital → cidade do canteiro, estimativa e links para pesquisar o preço da passagem de ônibus; registre o valor, a data e anexe o comprovante">Cotar passagem de ônibus</button></div>
+        <div id="resMobAuto"></div><div id="divMob"></div></div>
     </div>
 
     <div id="orc-resumo" class="sub-orc"><div class="caixa"><h3>Resumo por grupo de tarefas (Anexo XX)</h3><div id="avisosOrc"></div>

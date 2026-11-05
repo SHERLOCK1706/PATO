@@ -1322,6 +1322,15 @@ $("#btnNovoMat").onclick = () => editorMaterial(null);
 $("#btnCotPdf").onclick = () => cotacaoPdf(null);
 $("#btnForn").onclick = () => { const p = $("#painelForn"); if (!p.hidden) { p.hidden = true; return; } renderForn().catch(erro); };
 $("#btnNovoBet").onclick = () => editorBetuminoso(null);
+$("#btnDmtBet").onclick = async () => {
+  const subst = confirm("DMT de cada origem dos betuminosos até o canteiro, pela estrada (rede federal do SNV).\n\nOK = recalcular todas as origens\nCancelar = só as origens sem distância");
+  try { const r = await jpost(`${base_}${E.pid}/binomio/dmt`, { substituir: subst });
+    $("#resBin").innerHTML = `<p class="ok-msg">DMT até ${esc(r.destino)}: ${r.calculadas.length} origem(ns).</p>` +
+      r.calculadas.map(x => `<p class="nota">${esc(x.produto)} — ${esc(x.origem)}: Pav. ${nf(x.pav, 1)} km + RP ${nf(x.rp, 1)} km = <b>${nf(x.total, 1)} km</b></p>`).join("") +
+      r.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("") + `<p class="nota">${esc(r.nota)}</p>`;
+    renderBinomio();
+  } catch (e) { erro(e); }
+};
 $("#btnAnpPreencher").onclick = async () => {
   const subst = confirm("Preços ANP no mês da data-base (estado da origem → região → Brasil).\n\nOK = substituir todos os preços das origens\nCancelar = preencher só as origens sem preço");
   try { const r = await jpost(`${base_}${E.pid}/binomio/anp/preencher`, { substituir: subst });
@@ -2338,6 +2347,42 @@ function ligarSeletorMetodologia() {
   const s = $("#dvModelo"); if (!s) return;
   s.onchange = () => { const d = lerDiv(); d.modelo = s.value; salvarDiv(d); };
 }
+$("#btnDmtMob").onclick = async () => {
+  try { const r = await jpost(`${base_}${E.pid}/diversos/dmt-mobilizacao`, {});
+    $("#resMobAuto").innerHTML = `<p class="ok-msg">Origem: <b>${esc(r.escolhida.capital)}</b> → ${esc(r.destino)} (${esc(r.ponto)}): Pav. ${nf(r.escolhida.pav, 1)} km + não pav. ${nf(r.escolhida.npav, 1)} km = <b>${nf(r.escolhida.total, 1)} km</b> pela ${esc(r.escolhida.rodovias.join(" → "))}.</p>
+      <p class="nota">Comparadas: ${r.opcoes.map(o => `${esc(o.capital)} ${nf(o.total, 0)} km`).join(" · ")}. ${esc(r.nota)}</p>` + r.escolhida.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("");
+    renderDiv();
+  } catch (e) { erro(e); }
+};
+$("#btnPassagem").onclick = async () => {
+  try {
+    const r = await jpost(`${base_}${E.pid}/diversos/passagem`, {});
+    const d = document.createElement("dialog"); d.className = "dlg-pend";
+    d.innerHTML = `<h3>Cotação da passagem de ônibus — mobilização de pessoal</h3>
+      <p>Itinerário: <b>${esc(r.itinerario)}</b> · ${nf(r.dmt_km, 1)} km pela estrada (${esc(r.tipo)})</p>
+      <p>Estimativa: <b>R$ ${reais(r.estimativa)}</b> <small>(R$ ${nf(r.tarifa_km, 2)}/km — tarifa média das passagens dos PATOs aprovados de MT)</small></p>
+      <p>Pesquisar o preço: ${r.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.site)}</a>`).join(" · ")}</p>
+      ${r.passagem ? `<p class="nota">Atual: R$ ${reais(r.passagem)} pesquisada em ${esc(r.data_pesquisa || "—")} (${esc(r.fonte || "")}); índice de ${esc(r.mes_indice_pesquisa || "—")}.</p>` : ""}
+      <div class="form"><div class="campos">
+        <label>Valor pesquisado (R$) <input id="psValor" type="number" step="0.01" value="${r.passagem ?? ""}"></label>
+        <label>Mês da pesquisa <input id="psData" type="month" value="${esc(r.data_pesquisa || new Date().toISOString().slice(0, 7))}"></label>
+        <label class="largo">Fonte <input id="psFonte" value="${esc(r.fonte || "")}" placeholder="ex.: ClickBus, empresa X, rodoviária de Cuiabá — 05/11/2026"></label></div>
+      <p class="nota">${esc(r.nota)}</p>
+      <div class="linha-botoes"><button class="btn primario" type="button" id="psGravar">Gravar passagem</button>
+        <button class="btn" type="button" id="psEstim" data-dica="Usa a estimativa só se não houver cotação disponível — registre como estimativa">Usar a estimativa</button>
+        <button class="btn" type="button" id="psAnexo" data-dica="Print/PDF da pesquisa de preço (fica nos anexos do projeto)">Anexar comprovante</button>
+        <button class="btn" type="button" data-fechar>Fechar</button></div></div>`;
+    document.body.append(d); d.showModal();
+    d.querySelector("[data-fechar]").onclick = () => d.close();
+    d.onclose = () => d.parentNode && d.parentNode.removeChild(d);
+    const gravar = async (valor, fonte) => {
+      try { await jpost(`${base_}${E.pid}/diversos/passagem`, { valor, data: $("#psData").value, fonte }); toast("Passagem gravada"); d.close(); renderDiv(); } catch (e) { erro(e); }
+    };
+    $("#psGravar").onclick = () => gravar($("#psValor").value, $("#psFonte").value || "cotação informada");
+    $("#psEstim").onclick = () => gravar(r.estimativa, `estimativa R$ ${nf(r.tarifa_km, 2)}/km × ${nf(r.dmt_km, 1)} km (sem cotação)`);
+    $("#psAnexo").onclick = () => enviarAnexo(null, "passagem", `Passagem ${r.itinerario}`);
+  } catch (e) { erro(e); }
+};
 async function renderDiv() {
   const r = DV_.r = await api(`${base_}${E.pid}/diversos`), d = r.dados, res = r.resultado;
   if (r.modelo === "sicro2025" && res) return renderDiv2025(r);

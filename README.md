@@ -325,6 +325,15 @@ inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de C
 | **Índices de reajuste (FGV/IBRE, publicação DNIT)** | Binômio → Índices → *Atualizar (internet)* | banco de dados (até set/2026) ou importar o PDF |
 | **VMD** | Transporte → *VMD da base do sistema* (modelagem VMDa 2025 DNIT/PNCT incluída); *Atualizar base de VMD* troca por uma mais nova | idem |
 
+- **DMT automática pela estrada** (rede federal do SNV, saindo da sede do município — IBGE — até o canteiro ou, sem ele, o meio
+  do segmento): Binômio → *DMT dos betuminosos* (pavimentada → Pav., não pavimentada → RP; fluvial e LN como informados) e
+  ADM local e mobilização → *DMT pela estrada (capital → canteiro)*, que compara as 3 capitais mais próximas e adota a de menor
+  percurso. Fora de MT (rede incluída só de MT) o percurso é estimado em linha reta × 1,07, pavimentado — conferido com os binômios
+  ANP aprovados (Betim/MG 1.867,6 × 1.871,8 km; Goiânia/GO 1.200,2 × 1.198,8 km).
+- **Cotação da passagem de ônibus** (mobilização de pessoal): itinerário capital → cidade do canteiro, estimativa pela tarifa
+  média das passagens dos PATOs aprovados de MT (R$ 0,29/km intraestadual; R$ 0,39/km interestadual), links para pesquisar
+  o preço (ClickBus, Busca Ônibus) e registro do valor, mês da pesquisa, fonte e comprovante; o reajuste até a data-base é
+  pelo índice de Mobilização e Desmobilização (FGV).
 - **NE (nível de esforço)**: a ficha traz o NE padrão; edite na ficha e use *Salvar NE como padrão* (vale para os próximos projetos) —
   *Restaurar ficha original* desfaz. No projeto, o NE também é editável em cada linha da planilha PATO.
 - **Croqui como planilha**: edite ou cole do Excel as ocorrências (nome, tipo, km, lado, acesso LN/RP/P, distância fixa). Pedreira/areal

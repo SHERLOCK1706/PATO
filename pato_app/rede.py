@@ -85,6 +85,10 @@ def _projetar(g: dict, lat: float, lon: float) -> dict | None:
     return melhor
 
 
+LIMITE_ACESSO = 30.0      # km: acima disso, a origem está fora da rede incluída (outro estado)
+FATOR_FORA_REDE = 1.07    # percurso rodoviário ÷ linha reta fora da rede
+
+
 def rota(origem: tuple[float, float], destino: tuple[float, float]) -> dict | None:
     """DMT pela rede federal entre dois pontos (lat, lon): total, pavimentada, não pavimentada (inclui os acessos),
     rodovias percorridas. None se não houver ligação pela rede."""
@@ -139,11 +143,24 @@ def rota(origem: tuple[float, float], destino: tuple[float, float]) -> dict | No
     total, caminho = min(cand, key=lambda c: c[0])
     pav = sum(d for k, d in caminho if segs[k]["pav"])
     npav = sum(d for k, d in caminho if not segs[k]["pav"])
-    acesso = po["dist"] + pd["dist"]
+    # acesso até a rede: curto (≤ 30 km) = estrada local, não pavimentada; longo = a origem está fora da rede incluída
+    # (outro estado): estimado em linha reta × 1,07 e pavimentado (fator calibrado nos binômios ANP aprovados: Betim e
+    # Goiânia → BR-364/MT dão 1,066–1,074)
+    acesso, fora = 0.0, 0.0
+    for d_ in (po["dist"], pd["dist"]):
+        if d_ > LIMITE_ACESSO:
+            fora += d_ * FATOR_FORA_REDE
+        else:
+            acesso += d_
     brs = list(dict.fromkeys(f"BR-{segs[k]['br']}" for k, d in caminho if d > 0.05))
     avisos = []
     if acesso > 5:
         avisos.append(f"Acesso fora da rede federal: {acesso:.1f} km em linha reta até o eixo (contado como não pavimentado).")
+    if fora:
+        avisos.append(f"Trecho fora da rede incluída no sistema (outro estado): {fora:.0f} km estimados (linha reta × "
+                      f"{FATOR_FORA_REDE}) como pavimentados — confira o percurso.")
+        pav += fora
+        total += fora
     reta = _comp((origem[1], origem[0]), (destino[1], destino[0]))
     if reta > 1 and (total + acesso) > 2.2 * reta:
         avisos.append(f"Rota federal {total + acesso:.0f} km para {reta:.0f} km em linha reta: provavelmente há caminho mais curto por "

@@ -89,3 +89,34 @@ def test_data_base_pela_capa_quando_a_cpu_so_tem_uf():
     from pato_app import composicoes as cp
     assert cp.data_base_uf("MT") == (None, "MT")
     assert cp.data_base_uf("ABRIL/2026-MT") == ("2026-04", "MT")
+
+
+def test_dmt_automatica_betuminosos_e_mobilizacao(tmp_path):
+    """Rota pela estrada até o segmento: Betim/MG e Goiânia/GO saem como na BR-364 REV4 (1.871,8 e 1.198,8 km pav.)."""
+    sv = Servico(pasta=tmp_path)
+    pid = sv.criar_projeto(dict(nome="BR-364", rodovia="BR-364/MT", uf="MT", km_ini=693, km_fim=809.7))["id"]
+    sv.binomio.salvar_produto(pid, dict(produto="CAP 50/70", origens=[
+        dict(nome="R-1", uf="MT", local="CUIABÁ"), dict(nome="R-2", uf="MG", local="BETIM"),
+        dict(nome="R-3", uf="GO", local="GOIÂNIA"), dict(nome="R-4", uf="MT", local="X", d_pav=10)]))
+    r = sv.binomio.dmt_betuminosos(pid)
+    por = {x["origem"]: x for x in r["calculadas"]}
+    assert len(por) == 3                                          # a origem com distância informada é mantida
+    assert por["Betim/MG"]["pav"] == pytest.approx(1871.8, rel=0.01) and por["Betim/MG"]["rp"] == 0
+    assert por["Goiânia/GO"]["pav"] == pytest.approx(1198.8, rel=0.01)
+    m = sv.orcamento.dmt_mobilizacao(pid)
+    assert m["escolhida"]["capital"] == "Cuiabá/MT" and m["escolhida"]["total"] > 250
+    o = sv.db.dados_projeto(pid, "diversos")["mob"]["origem"]
+    assert o["dmt_pav"] == m["escolhida"]["pav"] and o["destino"].endswith("/MT")
+
+
+def test_cotacao_passagem(tmp_path):
+    sv = Servico(pasta=tmp_path)
+    pid = sv.criar_projeto(dict(nome="BR-158", rodovia="BR-158/MT", uf="MT", km_ini=85, km_fim=212.5))["id"]
+    r = sv.orcamento.cotar_passagem(pid)
+    assert r["itinerario"] == "Palmas/TO - Confresa/MT" and r["tipo"] == "interestadual"   # = BR-158 REV2
+    assert r["estimativa"] > 0 and r["links"][0]["url"].endswith("/palmas-to/confresa-mt")
+    r = sv.orcamento.cotar_passagem(pid, "219,99", "2026-02", "ClickBus")
+    mob = sv.db.dados_projeto(pid, "diversos")["mob"]
+    assert mob["passagem"] == 219.99 and mob["data_pesquisa"] == "2026-02" and mob["mes_indice_pesquisa"] <= "2026-02"
+    with pytest.raises(ValueError):
+        sv.orcamento.cotar_passagem(pid, "0")

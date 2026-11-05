@@ -260,3 +260,7 @@ tr.inativa td { color: var(--txt2); }
 .menu-arq-lista button:hover { background: var(--pri-claro); }
 .menu-arq-lista small { color: var(--txt2); margin-left: 16px; }
 .menu-arq-lista hr { border: 0; border-top: 1px solid var(--borda); margin: 4px 0; }
+
+/* pendências da planilha */
+tr.piscar td { background: #fff3a0 !important; transition: background .3s; }
+dialog.dlg-pend { max-width: 900px; width: 92vw; border: 1px solid #ccc; border-radius: 8px; padding: 16px; }

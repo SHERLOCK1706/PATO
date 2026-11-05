@@ -33,6 +33,13 @@ CREATE TABLE IF NOT EXISTS item (
   dados TEXT DEFAULT '{{}}'
 );
 CREATE INDEX IF NOT EXISTS ix_item_proj ON item(projeto_id, categoria, km_ini);
+CREATE TABLE IF NOT EXISTS item_versao (projeto_id INTEGER PRIMARY KEY, v INTEGER NOT NULL DEFAULT 0);
+CREATE TRIGGER IF NOT EXISTS tr_item_ins AFTER INSERT ON item BEGIN
+  INSERT INTO item_versao (projeto_id, v) VALUES (NEW.projeto_id, 1) ON CONFLICT(projeto_id) DO UPDATE SET v = v + 1; END;
+CREATE TRIGGER IF NOT EXISTS tr_item_upd AFTER UPDATE ON item BEGIN
+  INSERT INTO item_versao (projeto_id, v) VALUES (NEW.projeto_id, 1) ON CONFLICT(projeto_id) DO UPDATE SET v = v + 1; END;
+CREATE TRIGGER IF NOT EXISTS tr_item_del AFTER DELETE ON item BEGIN
+  INSERT INTO item_versao (projeto_id, v) VALUES (OLD.projeto_id, 1) ON CONFLICT(projeto_id) DO UPDATE SET v = v + 1; END;
 CREATE TABLE IF NOT EXISTS log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   projeto_id INTEGER, quando TEXT DEFAULT CURRENT_TIMESTAMP, tipo TEXT, origem TEXT, categoria TEXT,
@@ -407,6 +414,11 @@ class Banco:
         with _lock, self.con:
             self.con.execute("UPDATE servico_projeto SET quantidade = ?, origem_quantidade = ? WHERE projeto_id = ? AND codigo = ?",
                              (quantidade, origem, pid, codigo))
+
+    def versao_itens(self, pid: int) -> int:
+        """Muda a cada inclusão, alteração ou exclusão de item do inventário do projeto."""
+        r = self.con.execute("SELECT v FROM item_versao WHERE projeto_id = ?", (pid,)).fetchone()
+        return r[0] if r else 0
 
     def dados_projeto(self, pid: int, chave: str) -> dict | None:
         r = self.con.execute("SELECT dados FROM projeto_dados WHERE projeto_id = ? AND chave = ?", (pid, chave)).fetchone()

@@ -175,7 +175,16 @@ class Autenticacao:
 
 # --------------------------------------------------------------- permissões
 LIVRES = ("/api/auth/",)
-LEITURA_PERMITIDA_POST = ("/exportar", "/memoria", "/conferencia", "/assistente")
+# o que o perfil leitor pode fazer além de consultar (GET): gerar arquivos para baixar — nada que altere o projeto.
+# Rotas exatas (método, expressão do caminho inteiro), não trechos do caminho.
+import re as _re
+
+LEITURA_PERMITIDA = [
+    ("POST", _re.compile(r"/api/projetos/\d+/exportar/[\w-]+")),
+    ("POST", _re.compile(r"/api/projetos/\d+/memoria")),
+    ("POST", _re.compile(r"/api/projetos/arquivo/info")),
+    ("POST", _re.compile(r"/api/auth/(sair|senha)")),
+]
 
 
 def permitido(usuario: dict, metodo: str, caminho: str) -> str | None:
@@ -184,6 +193,6 @@ def permitido(usuario: dict, metodo: str, caminho: str) -> str | None:
         return None if usuario["perfil"] == "admin" else "Somente o administrador gerencia os usuários."
     if metodo in ("GET", "HEAD", "OPTIONS"):
         return None
-    if usuario["perfil"] == "leitor" and not any(t in caminho for t in LEITURA_PERMITIDA_POST):
+    if usuario["perfil"] == "leitor" and not any(m == metodo and rx.fullmatch(caminho) for m, rx in LEITURA_PERMITIDA):
         return "Seu perfil é somente consulta (leitor): peça ao administrador para alterar."
     return None

@@ -430,9 +430,9 @@ def _imp_mob(wf, wv) -> dict:
 
 
 def importar_planilha(caminho: str) -> dict | None:
-    import openpyxl
-    wv = openpyxl.load_workbook(caminho, data_only=True, read_only=True)
-    wf = openpyxl.load_workbook(caminho, read_only=True)
+    from . import xl
+    wv = xl.abrir(caminho, data_only=True)
+    wf = xl.abrir(caminho)
     try:
         if "ADM_LOCAL" not in wv.sheetnames:
             return None

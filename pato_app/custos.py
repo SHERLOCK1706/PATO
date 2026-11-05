@@ -81,6 +81,7 @@ class Custos:
         self.sv = sv
         self.db = sv.db
         self._cache: dict[int, dict] = {}
+        self._motores: dict[str, cp.Motor] = {}
 
     # ------------------------------------------------------------- bases
     def importar_base(self, caminhos: list[str] | str, uf: str | None = None, data_base: str | None = None,
@@ -271,7 +272,16 @@ class Custos:
         base = self._base_projeto(pid, regime, uf, data_base)
         cfg = self.config(pid)
         alts = [] if sem_alteracoes else [a["dados"] for a in self.db.alteracoes_custo(pid, so_ativas=True)]
-        return cp.Motor(base, cfg["bdi"][regime], alts, self.db.proprias())
+        proprias = self.db.proprias()
+        # o motor é reaproveitado enquanto base, BDI, alterações e composições próprias forem as mesmas
+        chave = json.dumps([id(base), regime, cfg["bdi"][regime], alts, proprias], sort_keys=True, default=str)
+        m = self._motores.get(chave)
+        if m is None:
+            m = cp.Motor(base, cfg["bdi"][regime], alts, proprias)
+            self._motores[chave] = m
+            while len(self._motores) > 12:
+                self._motores.pop(next(iter(self._motores)))
+        return m
 
     # -------------------------------------------------------- serviços
     def buscar(self, pid: int, texto: str = "", limite: int = 60) -> list[dict]:

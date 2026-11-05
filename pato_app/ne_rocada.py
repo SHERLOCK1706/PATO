@@ -61,8 +61,8 @@ def calcular(d: dict | None) -> dict | None:
 
 
 def importar_planilha(caminho: str) -> dict | None:
-    import openpyxl
-    wv = openpyxl.load_workbook(caminho, data_only=True, read_only=True)
+    from . import xl
+    wv = xl.abrir(caminho, data_only=True)
     try:
         if "NE_ROCADA" not in wv.sheetnames:
             return None

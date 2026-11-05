@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import tempfile
+import zipfile
 from pathlib import Path
 from typing import Any
 
@@ -44,6 +44,31 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return await call_next(request)
         finally:
             auth.usuario_atual.reset(tok)
+
+    # ------------------------------------------------------------ uma gravação por vez em cada projeto
+    # As edições leem o projeto, alteram e gravam de volta; duas ao mesmo tempo (ex.: Tab rápido entre células) fariam a
+    # segunda apagar a primeira. Pedidos que alteram (POST/PUT/PATCH/DELETE) no mesmo projeto passam um de cada vez.
+    import re as _re
+    import threading as _th
+
+    import anyio as _anyio
+    _travas: dict[int, _th.Lock] = {}
+    _travas_lock = _th.Lock()
+    _espera = _anyio.CapacityLimiter(1000)  # quem espera a vez não ocupa as threads que executam os pedidos
+    _rx_pid = _re.compile(r"^/api/projetos/(\d+)(/|$)")
+
+    @app.middleware("http")
+    async def _uma_gravacao_por_vez(request: Request, call_next):
+        m = _rx_pid.match(request.url.path)
+        if request.method in ("GET", "HEAD", "OPTIONS") or not m:
+            return await call_next(request)
+        with _travas_lock:
+            trava = _travas.setdefault(int(m.group(1)), _th.Lock())
+        await _anyio.to_thread.run_sync(trava.acquire, limiter=_espera)
+        try:
+            return await call_next(request)
+        finally:
+            trava.release()
 
     def _cookie(resp, request: Request, token: str | None):
         seguro = request.url.scheme == "https" or request.headers.get("x-forwarded-proto") == "https"
@@ -120,12 +145,37 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     async def _ve(_, exc):
         return JSONResponse({"detail": str(exc)}, status_code=400)
 
+    # limite de tamanho dos arquivos enviados (MB) — evita derrubar o sistema com um arquivo gigante
+    max_upload = int(os.environ.get("PATO_MAX_UPLOAD_MB", "800")) * 1024 * 1024
+
+    def _grande_demais():
+        return HTTPException(413, f"Arquivo maior que o limite de {max_upload // 1024 // 1024} MB "
+                                  "(ajuste com a variável PATO_MAX_UPLOAD_MB).")
+
     async def _salvar_upload(arq: UploadFile) -> str:
         suf = Path(arq.filename or "arquivo.xlsx").suffix or ".xlsx"
         fd, caminho = tempfile.mkstemp(suffix=suf)
-        with os.fdopen(fd, "wb") as f:
-            shutil.copyfileobj(arq.file, f)
+        total = 0
+        try:
+            with os.fdopen(fd, "wb") as f:
+                while bloco := await arq.read(1024 * 1024):
+                    total += len(bloco)
+                    if total > max_upload:
+                        raise _grande_demais()
+                    f.write(bloco)
+        except BaseException:
+            Path(caminho).unlink(missing_ok=True)
+            raise
         return caminho
+
+    async def _ler_upload(arq: UploadFile) -> bytes:
+        partes, total = [], 0
+        while bloco := await arq.read(1024 * 1024):
+            total += len(bloco)
+            if total > max_upload:
+                raise _grande_demais()
+            partes.append(bloco)
+        return b"".join(partes)
 
     # ------------------------------------------------------------ catálogo
     @app.get("/api/catalogo")
@@ -295,8 +345,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.post("/api/custos/bases")
     async def c_importar(arquivos: list[UploadFile] = File(...), uf: str | None = Form(default=None),
                          data_base: str | None = Form(default=None), descricao: str | None = Form(default=None)):
-        caminhos = [await _salvar_upload(a) for a in arquivos]
+        caminhos = []
         try:
+            for a in arquivos:
+                caminhos.append(await _salvar_upload(a))
             return cu.importar_base(caminhos, (uf or "").upper() or None, data_base or None, descricao or None,
                                     origem=", ".join(a.filename or "" for a in arquivos))
         finally:
@@ -527,11 +579,17 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     @app.post("/api/projetos/abrir")
     async def p_abrir(arquivo: UploadFile = File(...), substituir: int | None = Form(default=None)):
         """Abre um arquivo .pato: como projeto novo ou substituindo o projeto `substituir` (antes, salva a versão atual)."""
-        conteudo = await arquivo.read()
-        if substituir:
-            pa.salvar_versao(sv, substituir, "antes de abrir arquivo")
-            return sv.projeto(pa.importar(sv, conteudo, substituir_pid=substituir))
-        return sv.projeto(pa.importar(sv, conteudo))
+        conteudo = await _ler_upload(arquivo)
+        avisos: list[str] = []
+        try:
+            if substituir:
+                pa.salvar_versao(sv, substituir, "antes de abrir arquivo")
+                pid = pa.importar(sv, conteudo, substituir_pid=substituir, avisos=avisos)
+            else:
+                pid = pa.importar(sv, conteudo, avisos=avisos)
+        except (ValueError, zipfile.BadZipFile) as e:
+            raise HTTPException(400, str(e) or "Arquivo inválido: não é um projeto do PATO (.pato).") from e
+        return dict(sv.projeto(pid), avisos_abertura=avisos)
 
     @app.post("/api/projetos/arquivo/info")
     async def p_arquivo_info(arquivo: UploadFile = File(...)):
@@ -540,8 +598,11 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         import json as _json
         import zipfile as _zip
         try:
-            with _zip.ZipFile(_io.BytesIO(await arquivo.read())) as z:
+            with _zip.ZipFile(_io.BytesIO(await _ler_upload(arquivo))) as z:
+                pa.conferir_zip(z)
                 d = _json.loads(z.read("projeto.json"))
+        except HTTPException:
+            raise
         except Exception as e:  # noqa: BLE001
             raise HTTPException(400, "Arquivo inválido: não é um projeto do PATO (.pato).") from e
         prj = d.get("projeto") or {}

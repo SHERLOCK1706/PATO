@@ -66,8 +66,9 @@ def chave_asfalto(desc: str | None) -> str | None:
 # --------------------------------------------------------------- importação
 def importar_referencia(caminho: str) -> dict:
     """Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO (fórmulas e valores)."""
-    wf = openpyxl.load_workbook(caminho, data_only=False)
-    wv = openpyxl.load_workbook(caminho, data_only=True)
+    from . import xl
+    wf = xl.abrir(caminho, data_only=False, read_only=False)
+    wv = xl.abrir(caminho, data_only=True, read_only=False)
     try:
         if "PATO" not in wf.sheetnames:
             raise ValueError("A planilha não tem a aba PATO.")

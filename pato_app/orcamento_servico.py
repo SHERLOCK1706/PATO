@@ -17,6 +17,7 @@ class Orcamentos:
     def __init__(self, sv):
         self.sv = sv
         self.db = sv.db
+        self._medidas: dict[int, tuple] = {}
 
     # ------------------------------------------------------------ dados
     def dados(self, pid: int) -> dict:
@@ -26,8 +27,22 @@ class Orcamentos:
         self.db.gravar_dados_projeto(pid, CHAVE, d)
 
     def medidas(self, pid: int) -> dict[str, float]:
-        """Medidas do inventário disponíveis para vincular quantidades (nome → valor)."""
-        r = self.sv.resumo(pid)
+        """Medidas do inventário disponíveis para vincular quantidades (nome → valor). Guardadas em memória enquanto o
+        inventário e o trecho não mudam (o recálculo da planilha não precisa revalidar a geografia a cada edição)."""
+        import json
+
+        from .calculo import resumo as resumo_invent
+        p = self.sv.projeto(pid)
+        chave = (self.db.versao_itens(pid), json.dumps({k: v for k, v in p.items() if k != "alterado_em"}, sort_keys=True, default=str))
+        c = self._medidas.get(pid)
+        if c and c[0] == chave:
+            return dict(c[1])
+        out = self._medidas_de(resumo_invent(p, self.db.itens(pid)))
+        self._medidas[pid] = (chave, out)
+        return dict(out)
+
+    @staticmethod
+    def _medidas_de(r: dict) -> dict[str, float]:
         out: dict[str, float] = {}
         for x in r.get("painel", []):
             out[f"{x['rotulo']} ({x['unidade']})"] = x["valor"]
@@ -85,6 +100,11 @@ class Orcamentos:
         return n
 
     def importar_referencia(self, pid: int, caminho: str, vincular: bool = True) -> dict:
+        from . import xl
+        with xl.compartilhar():  # a planilha é aberta uma vez e lida por todos os módulos (PATO, IP, NE, sinalização, ADM…)
+            return self._importar_referencia(pid, caminho, vincular)
+
+    def _importar_referencia(self, pid: int, caminho: str, vincular: bool = True) -> dict:
         d = po.importar_referencia(caminho)
         p_ = self.sv.projeto(pid)
         regras = self._regras(pid, d, (p_.get("km_fim") or 0) - (p_.get("km_ini") or 0))
@@ -314,10 +334,11 @@ class Orcamentos:
         d = d if d is not None else self.dados(pid)
         p = self.sv.projeto(pid)
         ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        aviso_quadro = None
         try:
             momentos = {t["codigo"]: t["momento"] for t in self.sv.transporte.quadro(pid)["totais"]}
-        except Exception:  # noqa: BLE001 — sem base/quadro, usa o valor importado
-            momentos = {}
+        except Exception as e:  # noqa: BLE001 — sem base/quadro, usa o valor importado (e avisa)
+            momentos, aviso_quadro = {}, str(e) or e.__class__.__name__
         ip_dados = self.db.dados_projeto(pid, "ip")
         ip_calc = ip_mod.calcular(ip_dados) if ip_dados and ip_dados.get("linhas") else None
         ref = {}
@@ -343,7 +364,34 @@ class Orcamentos:
         r["config"] = self.sv.custos.config(pid)
         r["ip_lancado"] = bool(ip_calc)
         r["sinalizacao"] = calc.sinalizacao()
+        r["pendencias"] = self._pendencias(r, aviso_quadro)
         return r
+
+    # textos de origem que indicam valor substituto (o sistema não conseguiu calcular e usou outro valor)
+    _SUBSTITUTOS = (("valor anterior", "quantidade"), ("momento da planilha", "quantidade"), ("produção da planilha de origem", "quantidade"),
+                    ("item de referência removido", "quantidade"), ("não lançado", "quantidade"), ("não cadastrada", "quantidade"))
+
+    def _pendencias(self, r: dict, aviso_quadro: str | None) -> list[dict]:
+        """O que impede ou fragiliza a entrega: itens sem preço e valores substitutos usados sem o usuário escolher."""
+        out = []
+        if aviso_quadro:
+            out.append(dict(tipo="transporte", nivel="aviso", item=None, codigo=None,
+                            msg=f"Quadro de transportes não calculado ({aviso_quadro}) — os transportes usam o momento importado."))
+        for x in r.get("itens", []):
+            if x.get("tipo") != "servico":
+                continue
+            if x.get("preco_SD") is None or x.get("preco_CD") is None:
+                out.append(dict(tipo="preco", nivel="erro", id=x.get("id"), item=x.get("item"), codigo=x.get("codigo"),
+                                msg=f"Sem preço: {x.get('preco_fonte_SD') or 'código não encontrado na base'}"))
+            fonte = str(x.get("base_fonte") or "")
+            for txt, tipo in self._SUBSTITUTOS:
+                if txt in fonte:
+                    out.append(dict(tipo=tipo, nivel="aviso", id=x.get("id"), item=x.get("item"), codigo=x.get("codigo"),
+                                    msg=f"Quantidade por valor substituto: {fonte}"))
+                    break
+        for a in r.get("avisos") or []:
+            out.append(dict(tipo="norma", nivel="aviso", item=None, codigo=None, msg=a))
+        return out
 
     @staticmethod
     def _qtd_contrato_fn(calc, d: dict):

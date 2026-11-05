@@ -302,6 +302,20 @@ inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de C
 17/11/2025) e as Emendas 2 e 3 da IPR-736 (substituídas pela Emenda 4). Os de alteração parcial (Res. 8/2023, Portaria
 1977/2017…) e os sem notícia de revogação continuam.
 
+## Confiabilidade e desempenho (revisão técnica)
+
+- **Nenhuma edição se perde**: as alterações de um mesmo projeto são gravadas uma de cada vez (no servidor e na tela), mesmo
+  passando rápido de célula em célula com Tab ou com várias pessoas no mesmo projeto.
+- **Arquivo .pato autocontido**: leva a data-base usada, as bases SICRO (SD/CD), a planilha de origem e os totais do
+  orçamento. Ao abrir em outro computador, o sistema instala a base se faltar, recalcula e **avisa** se o total der
+  diferente do gravado, ou se uma composição própria daquele computador for diferente da usada no projeto.
+- **Pendências na planilha PATO** (botão ⚠ no topo): itens sem preço e quantidades que o sistema não conseguiu calcular e
+  substituiu pelo valor anterior/importado (inventário, IP, quadro de transportes, sinalização) — clique para ir ao item.
+- **Recálculo ~10× mais rápido** (de ~0,5 s para < 0,05 s por edição): as medidas do inventário e os motores de custo ficam
+  em memória enquanto nada muda; a importação da planilha de referência abre o arquivo uma vez só.
+- **Servidor**: perfil leitor só consulta e gera arquivos (rotas exatas); limite de tamanho de upload (`PATO_MAX_UPLOAD_MB`,
+  padrão 800) e recusa de .pato malformado; o aviso de "aberto em outro computador" identifica a pessoa logada.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do

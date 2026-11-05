@@ -104,3 +104,31 @@ def test_aviso_arquivo_aberto_em_outro_computador(tmp_path, monkeypatch):
     assert not c.post("/api/projetos/arquivo/info", files={"arquivo": ("x.pato", fechado)}).json()["aberto_em_outro"]
     # cada gravação gera nova revisão
     assert c.get(f"/api/projetos/{pid}/arquivo", params=dict(acao="salvar")).headers["x-pato-revisao"] != rev1
+
+
+def test_leitor_so_le_e_exporta(tmp_path):
+    from fastapi.testclient import TestClient
+
+    from pato_app import auth
+    assert auth.permitido(dict(perfil="leitor"), "PUT", "/api/projetos/1/conferencia/01.01") is not None   # marcar = alterar
+    assert auth.permitido(dict(perfil="leitor"), "POST", "/api/projetos/1/exportar/licitacao") is None
+    assert auth.permitido(dict(perfil="leitor"), "POST", "/api/projetos/1/memoria") is None
+    assert auth.permitido(dict(perfil="leitor"), "POST", "/api/projetos/1/pato/itens") is not None
+    assert auth.permitido(dict(perfil="leitor"), "POST", "/api/projetos/1/exportar/x/../../salvar") is not None
+    assert auth.permitido(dict(perfil="editor"), "PUT", "/api/projetos/1/conferencia/01.01") is None
+
+
+def test_edicoes_simultaneas_nao_se_perdem(tmp_path, monkeypatch):
+    """Várias edições ao mesmo tempo no mesmo projeto (ex.: Tab rápido entre células): nenhuma se perde."""
+    from concurrent.futures import ThreadPoolExecutor
+    monkeypatch.delenv("PATO_LOGIN", raising=False)
+    sv = Servico(pasta=tmp_path)
+    c = TestClient(criar_app(sv))
+    pid = c.post("/api/projetos", json=dict(nome="Concorrência", rodovia="BR-158/MT", km_ini=0, km_fim=10)).json()["id"]
+    itens = [dict(id=f"t{k}", tipo="titulo", item=f"01.{k:02d}", descricao=f"Tópico {k}") for k in range(12)]
+    sv.orcamento._gravar(pid, dict(itens=itens, desempenho={}, precos_informados={}))
+    with ThreadPoolExecutor(12) as ex:
+        rs = list(ex.map(lambda k: c.put(f"/api/projetos/{pid}/pato/itens/t{k}", json=dict(obs=f"obs {k}")), range(12)))
+    assert all(r.status_code == 200 for r in rs)
+    d = sv.orcamento.dados(pid)
+    assert [x.get("obs") for x in d["itens"]] == [f"obs {k}" for k in range(12)]

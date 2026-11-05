@@ -11,7 +11,15 @@ const E = { cat: null, projetos: [], pid: null, resumo: null, catInv: null, pagi
 const POR_PAG = 200;
 const BASE = ["snv", "km_ini", "km_fim", "lat_ini", "lon_ini", "lat_fim", "lon_fim", "lado", "condicao", "tipo"];
 
-async function api(url, op = {}) {
+// pedidos que gravam saem um de cada vez, na ordem em que foram feitos (nenhuma edição se perde ou chega fora de ordem)
+let _filaGravacao = Promise.resolve();
+function api(url, op = {}) {
+  if (!op.method || /^(GET|HEAD)$/i.test(op.method)) return _api(url, op);
+  const p = _filaGravacao.then(() => _api(url, op));
+  _filaGravacao = p.catch(() => {});
+  return p;
+}
+async function _api(url, op = {}) {
   const r = await fetch(url, op);
   if (r.status === 401 && !url.startsWith("/api/auth/")) { mostrarLogin(); throw new Error("Faça o login."); }
   if (!r.ok) {
@@ -153,9 +161,11 @@ async function abrirArquivo() {
     if (h) { try { const desde = new Date().toISOString(); E.pid = np.id; const rev = await gravarNoArquivo(h, "abrir", desde); await idbSet("p" + np.id, { h, rev, desde }); }
              catch (e) { await idbSet("p" + np.id, { h, rev: info.revisao, desde: new Date().toISOString() }); } }
     limparEstadoProjeto(); await carregarProjetos(np.id);
-    toast(`Aberto: ${np.nome}`); irAba($("#abas button.ativa").dataset.aba);
+    toast(`Aberto: ${np.nome}`); irAba($("#abas button.ativa").dataset.aba); avisosAbertura(np);
   } catch (e) { if (e.name !== "AbortError") erro(e); }
 }
+// o arquivo .pato é conferido ao abrir: base SICRO, composições próprias e total recalculado × total gravado
+function avisosAbertura(np) { if (np?.avisos_abertura?.length) alert("Ao abrir o projeto:\n\n• " + np.avisos_abertura.join("\n\n• ")); }
 async function fecharArquivo() {
   const v = await vinculo(E.pid);
   if (!v) return toast("Este projeto não está ligado a um arquivo (use Salvar como…)");
@@ -214,7 +224,7 @@ $("#btnProjArq").onclick = async () => {
   $("#pvCopia").onclick = async () => { const n = prompt("Nome do novo projeto:", `${p.nome || "Projeto"} (cópia)`); if (!n) return;
     try { const np = await jpost(`/api/projetos/${E.pid}/duplicar`, { nome: n }); d.close(); limparEstadoProjeto(); await carregarProjetos(np.id); toast("Cópia criada — você está agora na cópia"); irAba($("#abas button.ativa").dataset.aba); } catch (e) { erro(e); } };
   $("#pvAbrir").onclick = async () => { const a = await escolherArquivo(".pato,.zip"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
-    try { const np = await api("/api/projetos/abrir", { method: "POST", body: fd }); d.close(); limparEstadoProjeto(); await carregarProjetos(np.id); toast(`Projeto aberto: ${np.nome}`); irAba("painel"); } catch (e) { erro(e); } };
+    try { const np = await api("/api/projetos/abrir", { method: "POST", body: fd }); d.close(); limparEstadoProjeto(); await carregarProjetos(np.id); toast(`Projeto aberto: ${np.nome}`); irAba("painel"); avisosAbertura(np); } catch (e) { erro(e); } };
   $$("[data-restaura]", f).forEach(b => b.onclick = async () => {
     if (!confirm("Voltar o projeto para esta versão? O estado atual será salvo antes (versão 'antes de restaurar').")) return;
     try { await jpost(`/api/projetos/${E.pid}/versoes/restaurar`, { arquivo: b.dataset.restaura }); d.close(); limparEstadoProjeto(); await carregarProjetos(E.pid);
@@ -760,7 +770,7 @@ async function abrirComposicao(cod) {
   try { x = await api(`${base_}${E.pid}/custos/composicao/${encodeURIComponent(cod)}?regime=${reg}`); } catch (e) { $("#detComp").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; return; }
   if (!C_.tfOpcoes) C_.tfOpcoes = await api(`${base_}${E.pid}/custos/tempo-fixo/opcoes`);
   const n4 = v => v == null ? "" : v.toLocaleString("pt-BR", { maximumFractionDigits: 6 });
-  const inp = (attrs, v) => `<input type="number" step="any" ${attrs} value="${v ?? ""}">`;
+  const inp = (attrs, v) => `<input type="number" step="any" ${attrs} value="${esc(v ?? "")}">`;
   const tfSel = t => `<select data-tftrocar="${esc(t.insumo)}" data-tfde="${esc(t.composicao)}" data-dica="Troca a composição de tempo fixo (e o veículo do transporte do mesmo insumo)"><option value="">trocar veículo…</option>${C_.tfOpcoes.map(o => `<option value="${esc(o.codigo)}">${esc(o.codigo)} — ${esc((o.veiculo || o.descricao).slice(0, 70))} (R$ ${reais(o.preco)}/t)</option>`).join("")}</select>`;
   $("#detComp").innerHTML = `<div class="cpu">
     <div class="barra" style="justify-content:space-between"><h3 style="margin:0">${esc(x.codigo)} — ${esc(x.descricao)} <small>(${esc(x.unidade)})</small></h3>
@@ -1671,11 +1681,12 @@ async function carregarOrc() {
     const n = c.itens.filter(i => i.tipo === "servico").length, t = c.totais;
     $("#cabOrc").innerHTML = n ? `<div class="it">Sem desoneração<br><b>R$ ${reais(t.SD)}</b></div><div class="it">Com desoneração<br><b>R$ ${reais(t.CD)}</b></div>
       <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
-      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>
+      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div><div class="it" id="itPend"></div>
       <div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
       : `<div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>
         <p class="nota">Nenhuma planilha PATO neste projeto. Monte pela ficha de serviços, importe a aba PATO de uma planilha de referência ou inclua os itens.</p>`;
     if ($("#btnVerBdi")) $("#btnVerBdi").onclick = () => { C_.sub = "base"; irAba("custos"); };
+    renderPendencias();
     await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
@@ -1685,8 +1696,32 @@ const LIGADAS = { inventario: "inventário", ip: "levantamento IP", transporte: 
 async function atualizarPlanilha() {
   const rol = $("#tabOrc").closest(".tabela-rolagem"), top = rol?.scrollTop || 0;
   try { O_.c = await api(`${base_}${E.pid}/pato`); renderOrcPlanilha(); if (rol) rol.scrollTop = top;
+    renderPendencias();
     const t = O_.c.totais, cab = $$("#cabOrc .it b"); if (cab.length > 2) { cab[0].textContent = `R$ ${reais(t.SD)}`; cab[1].textContent = `R$ ${reais(t.CD)}`; cab[2].textContent = REG[O_.c.vantajosa] || cab[2].textContent; }
   } catch (e) { erro(e); }
+}
+// pendências: itens sem preço e valores substitutos (o sistema não conseguiu calcular e usou outro valor)
+function renderPendencias() {
+  const el = $("#itPend"); if (!el) return;
+  const pd = O_.c?.pendencias || [], ne = pd.filter(p => p.nivel === "erro").length;
+  el.innerHTML = pd.length ? `Pendências<br><button class="btn mini ${ne ? "perigo" : ""}" type="button" id="btnPend" data-dica="Itens sem preço e quantidades que o sistema não conseguiu calcular e substituiu pelo valor anterior/importado — confira antes de entregar">⚠ ${pd.length} (${ne} sem preço)</button>`
+    : `Pendências<br><b>✔ nenhuma</b>`;
+  if ($("#btnPend")) $("#btnPend").onclick = () => {
+    const d = document.createElement("dialog"); d.className = "dlg-pend";
+    d.innerHTML = `<h3>Pendências da planilha (${pd.length})</h3><p class="nota">Clique na linha para ir ao item. Valor substituto: faltou o dado (inventário, IP, quadro de transportes, sinalização) e o sistema usou o valor anterior/importado — lance o dado ou confirme o valor.</p>
+      <div class="tabela-rolagem" style="max-height:60vh"><table class="tab"><tr><th>Item</th><th>Código</th><th>Pendência</th></tr>${pd.map((p, k) =>
+        `<tr data-pk="${k}" style="cursor:${p.id ? "pointer" : "default"}"><td>${esc(p.item || "—")}</td><td>${esc(p.codigo || "")}</td><td><span class="tag ${p.nivel === "erro" ? "erro" : "aviso"}">${esc(p.msg)}</span></td></tr>`).join("")}</table></div>
+      <div class="linha-botoes"><button class="btn" type="button" data-fechar>Fechar</button></div>`;
+    document.body.append(d); d.showModal();
+    d.querySelector("[data-fechar]").onclick = () => d.close();
+    d.onclose = () => d.parentNode && d.parentNode.removeChild(d);
+    $$("[data-pk]", d).forEach(tr => tr.onclick = async () => {
+      const p = pd[+tr.dataset.pk]; if (!p.id) return; d.close();
+      if (O_.sub !== "planilha") { O_.sub = "planilha"; await carregarOrc(); }
+      const lin = $(`#tabOrc tr[data-lin="${CSS.escape(p.id)}"]`);
+      if (lin) { lin.scrollIntoView({ block: "center" }); lin.classList.add("piscar"); setTimeout(() => lin.classList.toggle("piscar", false), 2500); }
+    });
+  };
 }
 async function putItem(id, campos, msg) {
   try { await jpost(`${base_}${E.pid}/pato/itens/${id}`, campos, "PUT"); if (msg) toast(msg); await atualizarPlanilha(); } catch (e) { erro(e); atualizarPlanilha(); }

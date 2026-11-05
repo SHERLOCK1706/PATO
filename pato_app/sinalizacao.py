@@ -90,9 +90,9 @@ def calcular(dados: dict, quantidade_fn, producao_fn, extensao: float) -> dict:
 # ----------------------------------------------------------- importação
 def importar_planilha(caminho: str) -> dict | None:
     """Lê DURACAO_SERVICOS (serviços, projeto-tipo, produção), TEMPO_PROJETO_TIPO (operadores, h/dia) e UN_DIA (dispositivos)."""
-    import openpyxl
-    wv = openpyxl.load_workbook(caminho, data_only=True, read_only=True)
-    wf = openpyxl.load_workbook(caminho, read_only=True)
+    from . import xl
+    wv = xl.abrir(caminho, data_only=True)
+    wf = xl.abrir(caminho)
     try:
         if not {"DURACAO_SERVICOS", "UN_DIA"} <= set(wv.sheetnames):
             return None

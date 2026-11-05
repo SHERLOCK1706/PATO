@@ -200,9 +200,9 @@ def importar_planilha(caminho: str) -> dict:
     """Lê o levantamento (aba IP ou ICP) e a memória de cálculo (CALCULO_IP ou CALCULO_ICP) de uma planilha PATO.
     Aceita o modelo atual (Bom/Regular/Ruim/Péssimo, por faixa) e os antigos (Alta/Média/Baixa, com nível de serventia):
     as colunas, os rótulos de intervenção e o que cada linha do cálculo soma são lidos das próprias fórmulas."""
-    import openpyxl
-    wv = openpyxl.load_workbook(caminho, data_only=True, read_only=True)
-    wf = openpyxl.load_workbook(caminho, read_only=True)
+    from . import xl
+    wv = xl.abrir(caminho, data_only=True)
+    wf = xl.abrir(caminho)
     try:
         aba = next((n for n in ("IP", "ICP") if n in wv.sheetnames), None)
         if not aba:

@@ -443,7 +443,8 @@ def _abrir_planilhas(caminhos: list[str]):
 
 
 def _abrir_xlsx(fonte, nome):
-    wb = openpyxl.load_workbook(fonte, read_only=True, data_only=True)
+    from . import xl
+    wb = xl.abrir(fonte, data_only=True)
     try:
         for ws in wb.worksheets:
             yield nome, ws.title, [tuple(r) for r in ws.iter_rows(values_only=True)]

@@ -355,6 +355,25 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             for c in caminhos:
                 os.unlink(c)
 
+    @app.get("/api/custos/sicro/publicados")
+    def c_sicro_publicados(uf: str = "MT"):
+        try:
+            return cu.sicro_publicados(uf)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(502, f"Não foi possível acessar o site do DNIT ({e.__class__.__name__}).") from e
+
+    @app.post("/api/custos/sicro/baixar")
+    def c_sicro_baixar(dados: dict = Body(default={})):
+        try:
+            return cu.baixar_sicro(dados.get("uf") or "MT", dados.get("data_base") or None)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(502, f"Não foi possível baixar o SICRO do site do DNIT ({e.__class__.__name__}: {e}). "
+                                     "Baixe o pacote manualmente e use Importar base.") from e
+
     @app.delete("/api/custos/bases/{bid}")
     def c_excluir_base(bid: int):
         cu.excluir_base(bid)
@@ -476,6 +495,13 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def b_gravar_indice(dados: dict = Body(...)):
         return bi.gravar_indice(dados.get("nome"), dados.get("mes"), dados.get("valor"))
 
+    @app.post("/api/indices/atualizar")
+    def b_atualizar_indices():
+        try:
+            return bi.atualizar_indices_online()
+        except ConnectionError as e:
+            raise HTTPException(502, str(e)) from e
+
     @app.post("/api/indices/importar")
     async def b_importar_indices(arquivo: UploadFile = File(...)):
         caminho = await _salvar_upload(arquivo)
@@ -495,6 +521,43 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             return bi.importar_de_planilha(pid, caminho, substituir)
         finally:
             os.unlink(caminho)
+
+    # ------------------------------------------------------------ preços ANP (asfaltos)
+    @app.get("/api/anp")
+    def anp_situacao():
+        return sv.anp.situacao()
+
+    @app.get("/api/anp/preco")
+    def anp_preco(produto: str, uf: str | None = None, mes: str | None = None):
+        return sv.anp.preco(produto, uf, mes)
+
+    @app.post("/api/anp/importar")
+    async def anp_importar(arquivos: list[UploadFile] = File(...)):
+        caminhos = []
+        try:
+            for a in arquivos:
+                caminhos.append(await _salvar_upload(a))
+            return sv.anp.importar(caminhos, ", ".join(a.filename or "" for a in arquivos))
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        finally:
+            for c in caminhos:
+                os.unlink(c)
+
+    @app.post("/api/anp/atualizar")
+    def anp_atualizar():
+        try:
+            return sv.anp.atualizar_online()
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        except Exception as e:  # noqa: BLE001 — sem internet / site fora do ar
+            raise HTTPException(502, f"Não foi possível acessar a ANP ({e.__class__.__name__}). Baixe os arquivos "
+                                     f"“preco-asfalto-uf” e “preco-asfalto-regiao” em {sv.anp.situacao()['pagina']} "
+                                     "e use Importar planilha ANP.") from e
+
+    @app.post("/api/projetos/{pid}/binomio/anp/preencher")
+    def b_anp_preencher(pid: int, dados: dict = Body(default={})):
+        return bi.preencher_anp(pid, bool(dados.get("substituir")), dados.get("id"))
 
     @app.post("/api/projetos/{pid}/binomio/material")
     def b_salvar_material(pid: int, dados: dict = Body(...)):
@@ -522,6 +585,14 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         p = sv.projeto(pid)
         nome = _re.sub(r'[\\/:*?"<>|]+', "-", p.get("nome") or f"projeto_{pid}")  # legível, válido no Windows
         return (_re.sub(r"\s+", " ", nome).strip(" .-")[:90] or f"projeto_{pid}") + ".pato"
+
+    @app.put("/api/pato/ficha/ne")
+    def p_ficha_ne(dados: dict = Body(...)):
+        return sv.orcamento.salvar_ne_padrao(dados.get("ne") or {})
+
+    @app.delete("/api/pato/ficha")
+    def p_ficha_restaurar():
+        return sv.orcamento.restaurar_ficha_padrao()
 
     @app.get("/api/projetos/{pid}/assistente")
     def p_assistente(pid: int):
@@ -744,10 +815,27 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         return tr.montar_croqui(pid, float(dados["km_canteiro"]), dados.get("km_usina"), dados.get("informadas"))
 
     @app.post("/api/projetos/{pid}/croqui/vmd")
-    async def t_vmd(pid: int, arquivo: UploadFile = File(...)):
+    async def t_vmd(pid: int, arquivo: UploadFile | None = File(default=None)):
+        if arquivo is None or not arquivo.filename:  # sem arquivo: base de VMDa do sistema
+            return tr.importar_vmd(pid, None)
         caminho = await _salvar_upload(arquivo)
         try:
             return tr.importar_vmd(pid, caminho)
+        finally:
+            os.unlink(caminho)
+
+    @app.get("/api/vmd/base")
+    def t_vmd_base():
+        b = tr.base_vmd()
+        return dict(fonte=b.get("fonte"), ano=b.get("ano"), registros=len(b.get("registros") or []), atualizada_pelo_usuario=b.get("usuario"))
+
+    @app.post("/api/vmd/base")
+    async def t_vmd_base_atualizar(arquivo: UploadFile = File(...)):
+        caminho = await _salvar_upload(arquivo)
+        try:
+            return tr.atualizar_base_vmd(caminho)
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
         finally:
             os.unlink(caminho)
 

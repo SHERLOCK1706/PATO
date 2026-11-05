@@ -48,7 +48,11 @@ def calcular_iss(municipios: list[dict]) -> dict:
     for m in municipios:
         aliq = nz.numero(m.get("aliquota")) or 0.0
         base = nz.numero(m.get("base")) if m.get("base") not in (None, "") else 100.0
-        peso = nz.numero(m.get("peso")) if m.get("peso") not in (None, "") else 1.0
+        k0, k1 = nz.numero(m.get("km_ini")), nz.numero(m.get("km_fim"))
+        if k0 is not None and k1 is not None and k1 != k0:  # como a aba ISSQN: peso = extensão no município
+            peso = abs(k1 - k0)
+        else:
+            peso = nz.numero(m.get("peso")) if m.get("peso") not in (None, "") else 1.0
         efetivo = aliq * base / 100
         linhas.append(dict(m, aliquota=aliq, base=base, peso=peso, efetivo=round(efetivo, 4)))
         soma_p += peso
@@ -113,6 +117,69 @@ class Custos:
                             n_composicoes=b["n_composicoes"], n_sintetico=b["n_sintetico"],
                             bdi_planilha=b.get("bdi_planilha")))
         return out
+
+    # ------------------------------------------------- SICRO: download no site do DNIT
+    URL_SICRO = ("https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-referenciais/sistemas-de-custos/sicro/"
+                 "relatorios/relatorios-sicro/{regiao}/{regiao}")
+    _REGIAO = {"AC": "norte", "AP": "norte", "AM": "norte", "PA": "norte", "RO": "norte", "RR": "norte", "TO": "norte",
+               "AL": "nordeste", "BA": "nordeste", "CE": "nordeste", "MA": "nordeste", "PB": "nordeste", "PE": "nordeste",
+               "PI": "nordeste", "RN": "nordeste", "SE": "nordeste", "DF": "centro-oeste", "GO": "centro-oeste",
+               "MT": "centro-oeste", "MS": "centro-oeste", "ES": "sudeste", "MG": "sudeste", "RJ": "sudeste", "SP": "sudeste",
+               "PR": "sul", "RS": "sul", "SC": "sul"}
+    _MES_NOME = ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro",
+                 "novembro", "dezembro"]
+
+    def sicro_publicados(self, uf: str, timeout: int = 60) -> list[dict]:
+        """Datas-base do SICRO publicadas no site do DNIT para a UF (mais recente primeiro; a versão 'revisado' de um mês
+        vem antes da original)."""
+        import re as _re
+        import urllib.request
+        from .anp import UFS
+        uf = (uf or "").upper()
+        if uf not in self._REGIAO:
+            raise ValueError(f"UF inválida: {uf}")
+        slug = nz.sem_acento(UFS[uf][0]).lower().replace(" ", "-")
+        url = self.URL_SICRO.format(regiao=self._REGIAO[uf])
+        html = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (PATO)"}),
+                                      timeout=timeout).read().decode("utf-8", "ignore")
+        out = []
+        for link in sorted(set(_re.findall(r'href="(https://www\.gov\.br/dnit[^"]*/' + _re.escape(slug) + r'/(\d{4})/[^"]+)"', html))):
+            u, ano = link
+            nome = u.rstrip("/").rsplit("/", 1)[-1]
+            mes = next((i + 1 for i, m in enumerate(self._MES_NOME) if nome.startswith(m)), None)
+            if mes:
+                out.append(dict(uf=uf, data_base=f"{ano}-{mes:02d}", revisado="revisad" in nome, pagina=u))
+        out.sort(key=lambda x: (x["data_base"], x["revisado"]), reverse=True)
+        return out
+
+    def baixar_sicro(self, uf: str, data_base: str | None = None, timeout: int = 300) -> dict:
+        """Baixa do site do DNIT o pacote do SICRO (relatórios analítico e sintético, SD e CD) da UF e data-base — a mais
+        recente se não informada; prefere a versão 'revisado' — e importa no sistema."""
+        import re as _re
+        import tempfile
+        import urllib.request
+        pub = self.sicro_publicados(uf)
+        if data_base:
+            pub = [p for p in pub if p["data_base"] == data_base]
+        if not pub:
+            raise ValueError(f"O DNIT não publicou o SICRO {uf} {data_base or ''} (ou o site mudou).")
+        escolhido = pub[0]
+        cab = {"User-Agent": "Mozilla/5.0 (PATO)"}
+        html = urllib.request.urlopen(urllib.request.Request(escolhido["pagina"], headers=cab), timeout=60).read().decode("utf-8", "ignore")
+        arqs = [a for a in _re.findall(r'href="([^"]+\.(?:7z|zip|rar))"', html, _re.I) if "/relatorios-sicro/" in a]
+        if not arqs:
+            raise ValueError(f"Não encontrei o pacote do SICRO na página {escolhido['pagina']}.")
+        url = arqs[0] if arqs[0].startswith("http") else "https://www.gov.br" + arqs[0]
+        ext = "." + url.rsplit(".", 1)[-1].lower()
+        with tempfile.NamedTemporaryFile(suffix=ext, delete=False) as f:
+            f.write(urllib.request.urlopen(urllib.request.Request(url, headers=cab), timeout=timeout).read())
+        try:
+            r = self.importar_base([f.name], uf, escolhido["data_base"],
+                                   origem=f"SICRO oficial — download DNIT ({url.rsplit('/', 1)[-1]}"
+                                          f"{', revisado' if escolhido['revisado'] else ''})")
+        finally:
+            Path(f.name).unlink(missing_ok=True)
+        return dict(bases=r, data_base=escolhido["data_base"], revisado=escolhido["revisado"], arquivo=url)
 
     def bases(self) -> list[dict]:
         return self.db.bases()

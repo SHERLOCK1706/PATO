@@ -774,6 +774,46 @@ def ip_lancar_km(projeto_id: int, km_ini: float, panela: int | None = None, reme
     return dict(linhas_alteradas=alt, calculo=r["calculo"])
 
 
+@mcp.tool()
+def anp_preco_asfalto(produto: str, uf: str, mes: str) -> dict:
+    """Preço médio ponderado mensal da ANP (R$/t, sem ICMS/PIS/Cofins) do produto asfáltico para a UF e o mês (AAAA-MM):
+    estado → região → Brasil; mês não publicado → último publicado (com aviso)."""
+    return sv().anp.preco(produto, uf, mes)
+
+
+@mcp.tool()
+def binomio_preencher_anp(projeto_id: int, substituir: bool = False) -> dict:
+    """Preenche o preço ANP de cada origem dos betuminosos do projeto no mês da data-base (estado → região → Brasil)."""
+    return sv().binomio.preencher_anp(projeto_id, substituir)
+
+
+@mcp.tool()
+def atualizar_dados_oficiais(anp: bool = True, indices: bool = True) -> dict:
+    """Baixa da internet os preços de asfalto da ANP e a publicação mais recente dos índices de reajustamento do DNIT
+    (FGV/IBRE). Sem internet, os dados já gravados continuam valendo."""
+    out = {}
+    if anp:
+        try:
+            out["anp"] = {k: v for k, v in sv().anp.atualizar_online().items() if k in ("ultimo_mes", "baixados")}
+        except Exception as e:  # noqa: BLE001
+            out["anp"] = f"erro: {e}"
+    if indices:
+        try:
+            r = sv().binomio.atualizar_indices_online()
+            out["indices"] = dict(publicacao=r["publicacao"], gravados=r["gravados"])
+        except Exception as e:  # noqa: BLE001
+            out["indices"] = f"erro: {e}"
+    return out
+
+
+@mcp.tool()
+def sicro_baixar(uf: str = "MT", data_base: str | None = None) -> dict:
+    """Baixa do site do DNIT o pacote oficial do SICRO (SD e CD) da UF e data-base (AAAA-MM; vazio = mais recente,
+    preferindo a versão revisada) e importa no sistema."""
+    r = sv().custos.baixar_sicro(uf, data_base)
+    return dict(data_base=r["data_base"], revisado=r["revisado"], bases=[(b["regime"], b["n_composicoes"]) for b in r["bases"]])
+
+
 def main():
     mcp.run()
 

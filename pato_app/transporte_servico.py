@@ -388,6 +388,12 @@ class Transportes:
         atual["origem_material"] = r["origem_material"]
         atual["automatico"] = dict(km_canteiro=km_canteiro, km_usina=km_usina, notas=r["notas"])
         self.db.gravar_dados_projeto(pid, "croqui", atual)
+        if not any(v.get("vmda") or v.get("vmda_c") or v.get("vmdf_c") for v in atual.get("vmd") or []):
+            try:  # projeto sem VMD: base de VMDa do sistema (planilha VMDa 2025 do DNIT), até o usuário trocar
+                self.importar_vmd(pid, None)
+                r["notas"].append("VMD da base do sistema (modelagem VMDa DNIT/PNCT) — confira na aba VMD.")
+            except ValueError:
+                pass
         n = self.aplicar_origens(pid)
         self.db.registrar(pid, "transporte: croqui montado pelo sistema",
                           f"canteiro km {km_canteiro}, {len(r['ocorrencias'])} ocorrências, {n} linhas do quadro reorientadas")
@@ -407,10 +413,42 @@ class Transportes:
             self.db.gravar_dados_projeto(pid, "quadro", q)
         return n
 
-    def importar_vmd(self, pid: int, caminho: str) -> dict:
-        """Modelagem do VMDa do DNIT (PNCT): usa os subtrechos da mesma BR/UF que cruzam o segmento do projeto
-        (o SNV da modelagem pode ser de outra versão); sem BR no projeto, casa pelo código SNV dos segmentos."""
+    # base nacional do VMDa (modelagem DNIT/PNCT) incluída no sistema; o usuário pode trocar por uma mais nova
+    ARQ_VMD_BASE = Path(__file__).parent / "modelos" / "vmda_base.json.gz"
+
+    def _arq_vmd_usuario(self) -> Path:
+        return Path(self.sv.pasta) / "vmda_base.json.gz"
+
+    def base_vmd(self) -> dict:
+        """Base de VMDa usada quando o projeto não tem VMD próprio: a atualizada pelo usuário ou a incluída no sistema."""
+        import gzip
+        for arq in (self._arq_vmd_usuario(), self.ARQ_VMD_BASE):
+            if arq.exists():
+                d = json.loads(gzip.decompress(arq.read_bytes()).decode("utf-8"))
+                return dict(d, usuario=arq == self._arq_vmd_usuario())
+        return dict(registros=[], fonte=None, usuario=False)
+
+    def atualizar_base_vmd(self, caminho: str) -> dict:
+        """Troca a base nacional de VMDa (nova modelagem do DNIT/PNCT, mesma estrutura)."""
+        import gzip
         regs = ler_vmd_dnit(caminho)
+        anos = sorted({r.get("ano") for r in regs if r.get("ano")})
+        d = dict(registros=regs, fonte=f"{Path(caminho).name}" + (f" (VMDa {anos[-1]})" if anos else ""), ano=anos[-1] if anos else None)
+        self._arq_vmd_usuario().write_bytes(gzip.compress(json.dumps(d, ensure_ascii=False).encode("utf-8")))
+        return dict(registros=len(regs), fonte=d["fonte"], ano=d["ano"])
+
+    def importar_vmd(self, pid: int, caminho: str | None = None) -> dict:
+        """Modelagem do VMDa do DNIT (PNCT): usa os subtrechos da mesma BR/UF que cruzam o segmento do projeto
+        (o SNV da modelagem pode ser de outra versão); sem BR no projeto, casa pelo código SNV dos segmentos.
+        Sem arquivo: usa a base de VMDa do sistema (planilha VMDa 2025 do DNIT, até ser atualizada)."""
+        if caminho:
+            regs = ler_vmd_dnit(caminho)
+        else:
+            base = self.base_vmd()
+            regs = base["registros"]
+            if not regs:
+                raise ValueError("O sistema não tem base de VMDa — importe a modelagem do DNIT.")
+            caminho = f"base do sistema: {base.get('fonte')}"
         d = self.dados_croqui(pid)
         p = self.sv.projeto(pid)
         a, b = p.get("km_ini"), p.get("km_fim")
@@ -440,7 +478,7 @@ class Transportes:
             cand.append(dict(snv=r.get("snv"), km_ini=round(k0, 3), km_fim=round(k1, 3), vmda=r.get("vmda"),
                              vmda_c=r.get("vmda_c"), vmda_d=r.get("vmda_d"), faixas_sentido=2 if dup else 1,
                              ano=r.get("ano"), superficie=r.get("superficie"),
-                             fonte=f"Modelagem VMDa DNIT/PNCT ({Path(caminho).name}{', SNV ' + r['versao'] if r.get('versao') else ''})"))
+                             fonte=f"Modelagem VMDa DNIT/PNCT ({Path(caminho).name if Path(caminho).exists() else caminho}{', SNV ' + r['versao'] if r.get('versao') else ''})"))
         if not cand:
             raise ValueError("Nenhum registro do arquivo cruza o segmento do projeto (BR, UF e km) nem os códigos SNV cadastrados.")
         cand.sort(key=lambda s: (s["km_ini"], s["km_fim"]))

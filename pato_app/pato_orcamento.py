@@ -18,7 +18,6 @@ import math
 import re
 from pathlib import Path
 
-import openpyxl
 
 from . import composicoes as cp
 from . import normalizar as nz
@@ -127,6 +126,10 @@ def importar_referencia(caminho: str) -> dict:
                 x["base_ref_valor"] = nz.numero(fv)
             elif m and int(m.group(2)) in por_linha:
                 x["base"] = dict(tipo="item", ref=por_linha[int(m.group(2))]["id"], campo="quantidade" if m.group(1) == "J" else "base")
+            elif fs and "UN_DIA!" in fs.upper() and str(x.get("item") or "").startswith("02"):
+                # sinalização de obras do DSM (grupo 02): o un.dia é do DSM, não da conservação — fica o valor da planilha
+                x["base"] = dict(tipo="valor", valor=nz.numero(fv), expr=F_txt(fs),
+                                 fonte="sinalização de obras do DSM (un.dia da planilha — confira se o DSM mudar)")
             elif fs and "UN_DIA!" in fs.upper():
                 x["base"] = dict(tipo="undia", grupo="conservacao", codigo=x["codigo"], valor=nz.numero(fv), expr=F_txt(fs),
                                  fonte="sinalização de obras (un.dia)")

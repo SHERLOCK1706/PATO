@@ -690,8 +690,9 @@ async function renderBaseCfg() {
   $$("[data-exb]").forEach(b => b.onclick = async () => { if (!confirm("Excluir esta base?")) return; await api(`/api/custos/bases/${b.dataset.exb}`, { method: "DELETE" }); carregarCustos(); });
 }
 function linhasIss(lst) {
-  $("#tabIss").innerHTML = "<tr><th>Município</th><th>UF</th><th>Alíquota (%)</th><th>Base de cálculo (% PV)</th><th>Peso</th><th></th></tr>" +
+  $("#tabIss").innerHTML = "<tr><th>Município</th><th>UF</th><th>km inicial</th><th>km final</th><th>Alíquota (%)</th><th>Base de cálculo (% PV)</th><th data-dica='Com km inicial e final, o peso é a extensão no município (como a aba ISSQN)'>Peso</th><th></th></tr>" +
     lst.map((m, i) => `<tr data-mun="${i}"><td><input data-k="nome" value="${esc(m.nome || "")}"></td><td><input data-k="uf" value="${esc(m.uf || "")}" style="width:50px"></td>
+      <td><input data-k="km_ini" type="number" step="any" value="${esc(m.km_ini ?? "")}" style="width:80px"></td><td><input data-k="km_fim" type="number" step="any" value="${esc(m.km_fim ?? "")}" style="width:80px"></td>
       <td><input data-k="aliquota" type="number" step="0.01" value="${m.aliquota ?? ""}" style="width:80px"></td><td><input data-k="base" type="number" step="0.01" value="${m.base ?? 100}" style="width:80px"></td>
       <td><input data-k="peso" type="number" step="0.01" value="${m.peso ?? 1}" style="width:80px"></td><td><button class="btn mini perigo" type="button" data-rmun="${i}" data-dica="Remove o município">×</button></td></tr>`).join("");
   $$("[data-rmun]").forEach(b => b.onclick = () => { const l = lerIss(); l.splice(+b.dataset.rmun, 1); linhasIss(l); });
@@ -730,6 +731,20 @@ $("#formBase").onsubmit = async e => {
     $("#resBase").innerHTML = `<p class="ok-msg">Importado: ${r.map(b => `${b.uf} ${b.data_base} ${REG[b.regime]} (${b.n_composicoes} composições)`).join(" · ")}</p>`;
     f.reset(); renderBaseCfg();
   } catch (er) { $("#resBase").innerHTML = `<p class="tag erro">${esc(er.message)}</p>`; }
+};
+
+$("#btnSicroListar").onclick = async () => {
+  try { const l = await api(`/api/custos/sicro/publicados?uf=${encodeURIComponent($("#sicroUf").value || "MT")}`);
+    $("#sicroMes").innerHTML = `<option value="">mais recente</option>` + [...new Set(l.map(x => x.data_base))].map(m => `<option>${esc(m)}</option>`).join("");
+    toast(`${l.length} publicações do SICRO ${$("#sicroUf").value.toUpperCase()} — a mais recente: ${l[0]?.data_base || "—"}`);
+  } catch (e) { erro(e); }
+};
+$("#btnSicroBaixar").onclick = async () => {
+  $("#resBase").innerHTML = `<p class="carregando">Baixando o SICRO do site do DNIT e lendo os relatórios… (1 a 3 minutos)</p>`;
+  try { const r = await jpost("/api/custos/sicro/baixar", { uf: $("#sicroUf").value || "MT", data_base: $("#sicroMes").value || null });
+    $("#resBase").innerHTML = `<p class="ok-msg">SICRO ${esc(r.data_base)}${r.revisado ? " (revisado)" : ""} importado: ${r.bases.map(b => `${REG[b.regime]} ${b.n_composicoes} composições`).join(" · ")}. Escolha a data-base em “Data-base e BDI”.</p>`;
+    renderBaseCfg();
+  } catch (e) { $("#resBase").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 };
 
 // ---- serviços e composição
@@ -1264,7 +1279,7 @@ function editorBetuminoso(p) {
   p = p || { produto: "", indice: "Pavimentação", pis: 0.0065, cofins: 0.03, bdi_transporte: 0.15, ton_viagem: 60, fluvial_sempre: true, origens: [{ nome: "R-1" }, { nome: "R-2" }, { nome: "R-3" }] };
   const ed = $("#editorBin"); ed.hidden = false;
   const linha = o => `<tr data-ori><td>${inp("nome", o.nome, "text", 50)}</td><td>${inp("uf", o.uf, "text", 40)}</td><td>${inp("local", o.local, "text", 130)}</td>
-    <td>${inp("preco_t", o.preco_t, "number", 90, 'data-dica="Preço ANP sem ICMS (R$/t)"')}</td><td>${inp("icms", o.icms != null ? +(o.icms * 100).toFixed(4) : "", "number", 60, 'data-dica="Alíquota de ICMS da operação (%)"')}</td>
+    <td>${inp("preco_t", o.preco_t, "number", 90, `data-dica="${esc(o.preco_fonte || "Preço ANP sem ICMS (R$/t) — botão ANP preenche pelo estado → região → Brasil")}"`)}${inp("preco_fonte", o.preco_fonte, "hidden", 0)}<button class="btn mini" type="button" data-anp data-dica="Busca o preço da ANP no mês da data-base (estado → região → Brasil)">ANP</button></td><td>${inp("icms", o.icms != null ? +(o.icms * 100).toFixed(4) : "", "number", 60, 'data-dica="Alíquota de ICMS da operação (%)"')}</td>
     <td>${inp("d_fluvial", o.d_fluvial, "number", 60)}</td><td>${inp("d_pav", o.d_pav, "number", 60)}</td><td>${inp("d_rp", o.d_rp, "number", 60)}</td><td>${inp("d_ln", o.d_ln, "number", 60)}</td>
     <td>${inp("pedagio", o.pedagio, "number", 70, 'data-dica="Pedágio por viagem (R$) — dividido pela carga do caminhão"')}</td><td>${inp("balsa", o.balsa, "number", 70)}</td>
     <td><button class="btn mini perigo" type="button" data-rmlin data-dica="Remove a origem">×</button></td></tr>`;
@@ -1282,8 +1297,18 @@ function editorBetuminoso(p) {
     ${(p.origens || []).map(linha).join("")}</table></div>
     <div class="linha-botoes"><button class="btn mini" type="button" id="bpAdd" data-dica="Acrescenta uma origem">+ Origem</button></div>
     <div class="linha-botoes"><button class="btn primario" id="bpSalvar" data-dica="Grava e recalcula o binômio">Salvar</button><button class="btn" id="bpFechar">Fechar</button></div></div>`;
-  ligarRemover();
-  $("#bpAdd").onclick = () => { $("#tabOri").insertAdjacentHTML("beforeend", linha({ nome: `R-${$$("#tabOri tr[data-ori]").length + 1}` })); ligarRemover(); };
+  const ligarAnp = () => $$("#tabOri [data-anp]").forEach(b => b.onclick = async () => {
+    const tr = b.closest("tr"), uf = $('[data-c="uf"]', tr).value || $('[data-c="local"]', tr).value;
+    try {
+      const mes = (await api(`${base_}${E.pid}/custos/config`)).data_base;
+      const r = await api(`/api/anp/preco?${new URLSearchParams({ produto: $("#bpProd").value, uf, mes })}`);
+      if (!r.ok) return toast(r.aviso);
+      $('[data-c="preco_t"]', tr).value = r.preco_t; $('[data-c="preco_t"]', tr).dataset.dica = r.fonte; $('[data-c="preco_fonte"]', tr).value = r.fonte;
+      toast(r.aviso || `R$ ${nf(r.preco_t)}/t — ${r.fonte}`);
+    } catch (e) { erro(e); }
+  });
+  ligarRemover(); ligarAnp();
+  $("#bpAdd").onclick = () => { $("#tabOri").insertAdjacentHTML("beforeend", linha({ nome: `R-${$$("#tabOri tr[data-ori]").length + 1}` })); ligarRemover(); ligarAnp(); };
   $("#bpFechar").onclick = () => ed.hidden = true;
   $("#bpSalvar").onclick = async () => {
     const origens = $$("#tabOri tr[data-ori]").map(tr => Object.fromEntries($$("[data-c]", tr).map(i => [i.dataset.c, i.value])));
@@ -1297,6 +1322,26 @@ $("#btnNovoMat").onclick = () => editorMaterial(null);
 $("#btnCotPdf").onclick = () => cotacaoPdf(null);
 $("#btnForn").onclick = () => { const p = $("#painelForn"); if (!p.hidden) { p.hidden = true; return; } renderForn().catch(erro); };
 $("#btnNovoBet").onclick = () => editorBetuminoso(null);
+$("#btnAnpPreencher").onclick = async () => {
+  const subst = confirm("Preços ANP no mês da data-base (estado da origem → região → Brasil).\n\nOK = substituir todos os preços das origens\nCancelar = preencher só as origens sem preço");
+  try { const r = await jpost(`${base_}${E.pid}/binomio/anp/preencher`, { substituir: subst });
+    $("#resBin").innerHTML = `<p class="ok-msg">ANP ${esc(r.mes)}: ${r.preenchidos.length} preço(s) preenchido(s). Dados da ANP até ${esc(r.anp.ultimo_mes || "—")}.</p>` +
+      r.preenchidos.map(x => `<p class="nota">${esc(x.produto)} — ${esc(x.origem)}: R$ ${nf(x.preco_t)}/t · ${esc(x.fonte)}</p>`).join("") +
+      r.avisos.map(a => `<p class="tag aviso">${esc(a)}</p>`).join("");
+    renderBinomio();
+  } catch (e) { erro(e); }
+};
+$("#btnAnpAtualizar").onclick = async () => {
+  $("#resBin").innerHTML = `<p class="carregando">Baixando os preços de produtos asfálticos da ANP…</p>`;
+  try { const r = await jpost("/api/anp/atualizar", {}); $("#resBin").innerHTML = `<p class="ok-msg">Dados da ANP atualizados: até ${esc(r.ultimo_mes)}.</p>`; }
+  catch (e) { $("#resBin").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
+$("#btnAnpImportar").onclick = async () => {
+  const arqs = await escolherArquivos(".xlsx"); if (!arqs?.length) return;
+  const fd = new FormData(); arqs.forEach(a => fd.append("arquivos", a));
+  try { const r = await api("/api/anp/importar", { method: "POST", body: fd }); $("#resBin").innerHTML = `<p class="ok-msg">Planilha(s) da ANP importada(s): dados até ${esc(r.ultimo_mes)}.</p>`; }
+  catch (e) { $("#resBin").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+};
 $("#btnAnexoGeral").onclick = () => { const t = prompt("Tipo do documento: icms, anp, cotacao ou outro", "icms"); if (t) enviarAnexo(null, t.trim().toLowerCase(), ""); };
 $("#btnImpBin").onclick = async () => {
   const arq = await escolherArquivo(".xlsx,.xlsm"); if (!arq) return;
@@ -1316,15 +1361,19 @@ async function renderIndices() {
   B_.serie = B_.serie && r.series[B_.serie] ? B_.serie : r.padrao.petreos;
   const s = r.series[B_.serie] || {};
   p.innerHTML = `<h3>Índices de reajustamento (DNIT)</h3><p class="nota">Usados para reajustar as cotações até a data-base (Conservação Rodoviária para pétreos) e para Kr/Kf dos betuminosos (Pavimentação).
-    Digite o índice do mês quando o DNIT publicar, ou importe a aba de índices de uma planilha.</p>
+    Fonte: FGV/IBRE, publicados mensalmente pelo DNIT. “Atualizar (internet)” baixa a publicação mais recente; sem internet, valem os do banco de dados (ou importe o PDF / digite o mês).
+    Último mês no banco: <b>${esc(r.meses[r.meses.length - 1] || "—")}</b>.</p>
     <div class="barra filtros"><label>Índice <select id="selSerie">${r.nomes.map(n => `<option ${n === B_.serie ? "selected" : ""}>${esc(n)}</option>`).join("")}</select></label>
     <label>Mês <input type="month" id="indMes"></label><label>Valor <input type="number" step="any" id="indVal" style="width:100px"></label>
     <button class="btn" id="btnGravaInd" data-dica="Grava (ou corrige) o índice do mês">Gravar</button>
+    <button class="btn" id="btnAtuInd" data-dica="Baixa do site do DNIT a publicação mensal mais recente dos índices (FGV/IBRE) — precisa de internet">Atualizar (internet)</button>
     <button class="btn" id="btnImpInd" data-dica="Lê a publicação mensal do DNIT 'Índices de Reajustamento de Obras Rodoviárias' (PDF) ou a aba INDICES_REAJ de uma planilha; meses novos são acrescentados">Importar publicação (PDF) ou planilha</button></div>
     <div class="tabela-rolagem" style="max-height:260px"><table class="tab"><tr><th>Mês</th><th class=n>Valor</th></tr>
     ${Object.keys(s).sort().reverse().map(m => `<tr><td>${esc(m)}</td><td class=n>${nf(s[m], 3)}</td></tr>`).join("")}</table></div>`;
   $("#selSerie").onchange = e => { B_.serie = e.target.value; renderIndices(); };
   $("#btnGravaInd").onclick = async () => { try { await jpost("/api/indices", { nome: B_.serie, mes: $("#indMes").value, valor: $("#indVal").value }, "PUT"); toast("Índice gravado"); renderIndices(); renderBinomio(); } catch (e) { erro(e); } };
+  $("#btnAtuInd").onclick = async () => { toast("Baixando a publicação do DNIT…");
+    try { const x = await jpost("/api/indices/atualizar", {}); toast(`Índices atualizados — publicação ${x.publicacao}`); renderIndices(); renderBinomio(); } catch (e) { erro(e); } };
   $("#btnImpInd").onclick = async () => { const a = await escolherArquivo(".pdf,.xlsx,.xlsm"); if (!a) return; const fd = new FormData(); fd.append("arquivo", a);
     try { const x = await api("/api/indices/importar", { method: "POST", body: fd }); toast(`${x.gravados} índices gravados`); renderIndices(); renderBinomio(); } catch (e) { erro(e); } };
 }
@@ -1533,6 +1582,20 @@ async function renderCroqui() {
   $("#crKmIni").value = d.km_ini ?? ""; $("#crKmFim").value = d.km_fim ?? "";
   ligarRemover();
 }
+// colar do Excel na tabela de ocorrências (uma linha por ocorrência, colunas na ordem da tabela)
+$("#tabOcorr").addEventListener("paste", e => {
+  const t = e.clipboardData.getData("text"); if (!/\t|\n/.test(t.trim())) return;
+  e.preventDefault();
+  const tipos = T_.cro.tipos, porRotulo = Object.fromEntries(Object.entries(tipos).map(([k, r]) => [String(r).toLowerCase(), k]));
+  const n = v => { v = String(v ?? "").trim().replace(/\./g, "").replace(",", "."); return v === "" || isNaN(+v) ? null : +v; };
+  const linhas = t.split(/\r?\n/).map(l => l.split("\t")).filter(c => c[0] && c[0].trim() && !/^nome$/i.test(c[0].trim()));
+  linhas.forEach(c => {
+    const tp = String(c[1] || "").trim().toLowerCase(), tipo = tipos[tp] ? tp : porRotulo[tp] || Object.keys(tipos).find(k => tp.includes(k)) || "outro";
+    $("#tabOcorr").insertAdjacentHTML("beforeend", linhaOcorr({ nome: c[0].trim(), tipo, km: n(c[2]), lado: /^d/i.test(c[3] || "") ? "D" : "E",
+      acesso_ln: n(c[4]), acesso_rp: n(c[5]), acesso_p: n(c[6]), dist_ln: n(c[7]), dist_rp: n(c[8]), dist_p: n(c[9]), obs: (c[10] || "").trim() }));
+  });
+  ligarRemover(); toast(`${linhas.length} ocorrência(s) coladas — confira e clique em Salvar croqui`);
+});
 $("#btnAddOcorr").onclick = () => { $("#tabOcorr").insertAdjacentHTML("beforeend", linhaOcorr({ tipo: "pedreira", lado: "E" })); ligarRemover(); };
 $("#btnAddTrav").onclick = () => { $("#tabTrav").insertAdjacentHTML("beforeend", `<tr data-tv><td>${ci("nome", "")}</td><td>${ci("km_ini", "", "number")}</td><td>${ci("km_fim", "", "number")}</td><td>${ci("fonte", "informado (perímetro urbano)", "text", 'style="width:300px"')}</td><td><button class="btn mini perigo" type="button" data-rmlin>×</button></td></tr>`); ligarRemover(); };
 $("#btnPerimAuto").onclick = async () => {
@@ -1580,6 +1643,19 @@ async function renderVmd() {
 $("#btnAddSeg").onclick = () => { $("#tabVmd").insertAdjacentHTML("beforeend", linhaSeg({ faixas_sentido: 1, fonte: "manual" })); ligarRemover(); };
 $("#btnSalvarVmd").onclick = async () => {
   try { await jpost(`${base_}${E.pid}/croqui`, { vmd: lerTab("#tabVmd tr[data-sg]").filter(s => s.km_ini != null) }, "PUT"); toast("VMD salvo"); carregarTransp(); } catch (e) { erro(e); }
+};
+function resultadoVmd(r) {
+  $("#resTransp").innerHTML = `<p class="ok-msg">VMD: ${r.segmentos} segmentos (${r.casados} subtrechos de ${r.lidos} registros).</p>` +
+    (r.lacunas.length ? `<p class="tag aviso">Sem VMD na base: ${r.lacunas.map(l => `km ${nf(l.km_ini, 3)} a ${nf(l.km_fim, 3)}`).join(" · ")} — o FIT usa o segmento vizinho; confira ou digite o VMD.</p>` : "");
+}
+api("/api/vmd/base").then(b => { if ($("#vmdBaseInfo")) $("#vmdBaseInfo").textContent = b.registros ? `Base: ${b.fonte}` : ""; }).catch(() => {});
+$("#btnVmdBase").onclick = async () => {
+  try { const fd = new FormData(); const r = await api(`${base_}${E.pid}/croqui/vmd`, { method: "POST", body: fd }); resultadoVmd(r); carregarTransp(); } catch (e) { erro(e); }
+};
+$("#btnVmdAtuBase").onclick = async () => {
+  const a = await escolherArquivo(".xlsx,.xls,.csv,.txt,.geojson,.json"); if (!a) return;
+  const fd = new FormData(); fd.append("arquivo", a);
+  try { const r = await api("/api/vmd/base", { method: "POST", body: fd }); toast(`Base de VMD atualizada: ${r.registros} registros (${r.fonte})`); $("#vmdBaseInfo").textContent = `Base: ${r.fonte}`; } catch (e) { erro(e); }
 };
 $("#btnImpVmd").onclick = async () => {
   const a = await escolherArquivo(".xlsx,.xls,.csv,.txt,.geojson,.json"); if (!a) return;
@@ -2105,6 +2181,15 @@ $("#btnFichaMontar").onclick = async () => {
     $("#resOrc").innerHTML = `<p class="ok-msg">${r.servicos} serviços; ${r.transporte_linhas} linhas de transporte local do modelo.</p>` +
       (r.ocorrencias_faltando?.length ? `<p class="tag aviso">Ocorrências do quadro sem correspondente no croqui: ${esc(r.ocorrencias_faltando.join(", "))} — monte o croqui na aba Transporte.</p>` : "");
     O_.sub = "planilha"; carregarOrc(); } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+};
+$("#btnFichaNePadrao").onclick = async () => {
+  const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
+  if (!confirm("Gravar estes níveis de esforço como padrão da ficha (próximos projetos)?\nO PATO deste projeto não muda — use “Montar PATO pela ficha” ou edite o NE na planilha.")) return;
+  try { const r = await jpost("/api/pato/ficha/ne", { ne }, "PUT"); toast(`NE padrão gravado (${r.alterados} alterado(s))`); renderFicha(); } catch (e) { erro(e); }
+};
+$("#btnFichaRestaurar").onclick = async () => {
+  if (!confirm("Voltar à ficha original do sistema (regras e níveis de esforço)? As suas alterações de NE padrão serão descartadas.")) return;
+  try { await api("/api/pato/ficha", { method: "DELETE" }); toast("Ficha original restaurada"); renderFicha(); } catch (e) { erro(e); }
 };
 function mostrarConfQtd() {
   const l = O_.confQtd || [], dif = l.filter(x => !x.confere);

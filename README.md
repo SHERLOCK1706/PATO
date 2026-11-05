@@ -316,6 +316,29 @@ inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de C
 - **Servidor**: perfil leitor só consulta e gera arquivos (rotas exatas); limite de tamanho de upload (`PATO_MAX_UPLOAD_MB`,
   padrão 800) e recusa de .pato malformado; o aviso de "aberto em outro computador" identifica a pessoa logada.
 
+## Dados oficiais automáticos (com internet) e bases incluídas
+
+| Dado | Automático (botão) | Sem internet |
+|---|---|---|
+| **SICRO** (relatórios SD/CD) | Custos → *Baixar e importar SICRO*: escolhe UF e data-base publicadas no site do DNIT (prefere a versão revisada) | importar o pacote .zip/.7z baixado à mão |
+| **Preços de asfalto (ANP)** | Binômio → *Atualizar ANP* baixa as planilhas da ANP; *Preços ANP* preenche as origens no mês da data-base: **estado → região → Brasil** | planilhas da ANP incluídas no sistema (até set/2026) ou *Importar planilha ANP* |
+| **Índices de reajuste (FGV/IBRE, publicação DNIT)** | Binômio → Índices → *Atualizar (internet)* | banco de dados (até set/2026) ou importar o PDF |
+| **VMD** | Transporte → *VMD da base do sistema* (modelagem VMDa 2025 DNIT/PNCT incluída); *Atualizar base de VMD* troca por uma mais nova | idem |
+
+- **NE (nível de esforço)**: a ficha traz o NE padrão; edite na ficha e use *Salvar NE como padrão* (vale para os próximos projetos) —
+  *Restaurar ficha original* desfaz. No projeto, o NE também é editável em cada linha da planilha PATO.
+- **Croqui como planilha**: edite ou cole do Excel as ocorrências (nome, tipo, km, lado, acesso LN/RP/P, distância fixa). Pedreira/areal
+  fora do segmento pela rodovia: km fora do intervalo; saída por vicinal: km do entroncamento + acesso LN/RP/P.
+- **ISSQN** por município com km inicial/final (peso = extensão no município, como a aba ISSQN).
+- **Projetos com vários segmentos** (ex.: BR-174 km 304,6–366,3 + km 0–81,4 + km 0–3,7): a extensão é a soma dos segmentos.
+
+### Validação contra PATOs aprovados (data-base jul/2025)
+- **BR-364/MT km 693–809 REV4**: quantidades iguais à planilha; total SD a 0,03% do aprovado. Diferenças apontadas:
+  aquisição de betuminoso **com desoneração** na planilha aprovada usa o BDI em % sem dividir por 100 (BD: `E/(1+BDI!E25)*(1+BDI!E44)` com
+  E25 = 34,82 e E44 = 40,46) — superestima o AM com desoneração em ~11%; o sistema calcula o valor correto.
+- BR-174 R2 e BR-364/405/435 REV1 buscam os preços das composições em planilhas externas (`[10]Planilha1`, `[11]Planilha1` = SICRO com BDI);
+  as abas CPU internas estão desatualizadas — use a base SICRO oficial baixada do DNIT.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do

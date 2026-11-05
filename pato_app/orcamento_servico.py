@@ -107,7 +107,7 @@ class Orcamentos:
     def _importar_referencia(self, pid: int, caminho: str, vincular: bool = True) -> dict:
         d = po.importar_referencia(caminho)
         p_ = self.sv.projeto(pid)
-        regras = self._regras(pid, d, (p_.get("km_fim") or 0) - (p_.get("km_ini") or 0))
+        regras = self._regras(pid, d, self.sv.extensao(pid))
         if d.get("ip"):
             self.db.gravar_dados_projeto(pid, "ip", d.pop("ip"))
         else:
@@ -286,8 +286,11 @@ class Orcamentos:
                 if "r" not in div_cache:
                     div_cache["r"] = diversos_fn(motores)
                 v = ((div_cache["r"] or {}).get("precos", {}).get(cod) or {}).get(reg)
-                if v is not None:
+                if v:  # zero = faltou dado (km do canteiro, equipamentos): não vale como preço
                     return v, "calculado (ADM local/canteiro/mobilização — SICRO Vol. 07 a 09)"
+                if (inf.get(cod) or {}).get(reg) is not None:
+                    return inf[cod][reg], ("preço da planilha de origem — o sistema não conseguiu calcular "
+                                           f"{cod} (informe o km do canteiro e os equipamentos em ADM local e mobilização)")
             if cod[:2] in ("AM", "TM") and cod[2:].isdigit():
                 chave = po.chave_asfalto((inf.get(cod) or {}).get("descricao"))
                 b = bets.get((chave, reg))
@@ -333,7 +336,7 @@ class Orcamentos:
     def calcular(self, pid: int, d: dict | None = None) -> dict:
         d = d if d is not None else self.dados(pid)
         p = self.sv.projeto(pid)
-        ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        ext = self.sv.extensao(pid)
         aviso_quadro = None
         try:
             momentos = {t["codigo"]: t["momento"] for t in self.sv.transporte.quadro(pid)["totais"]}
@@ -383,6 +386,10 @@ class Orcamentos:
             if x.get("preco_SD") is None or x.get("preco_CD") is None:
                 out.append(dict(tipo="preco", nivel="erro", id=x.get("id"), item=x.get("item"), codigo=x.get("codigo"),
                                 msg=f"Sem preço: {x.get('preco_fonte_SD') or 'código não encontrado na base'}"))
+            pf = str(x.get("preco_fonte_SD") or "")
+            if "não conseguiu calcular" in pf:
+                out.append(dict(tipo="preco", nivel="aviso", id=x.get("id"), item=x.get("item"), codigo=x.get("codigo"),
+                                msg=f"Preço substituto: {pf}"))
             fonte = str(x.get("base_fonte") or "")
             for txt, tipo in self._SUBSTITUTOS:
                 if txt in fonte:
@@ -414,7 +421,7 @@ class Orcamentos:
             dd = dv.importar_planilha(str(MODELO_PADRAO)) or {}
             dd["origem_modelo"] = True
         p = self.sv.projeto(pid)
-        ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        ext = self.sv.extensao(pid)
         calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, self._ip_calc(pid), self._producao_fn(pid),
                           self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
         dd = dv.com_2025(dd)
@@ -917,6 +924,30 @@ class Orcamentos:
         fc.gravar(f, Path(self.sv.pasta) / "modelos" / "ficha_servicos.json")
         return self.ficha()
 
+    def salvar_ne_padrao(self, ne: dict) -> dict:
+        """Grava os níveis de esforço digitados como o padrão da ficha (vale para os próximos projetos deste computador).
+        A ficha incluída no sistema não é alterada: a cópia do usuário fica na pasta de dados (modelos/ficha_servicos.json)."""
+        from pathlib import Path
+
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        n = 0
+        for x in f.get("itens", []):
+            if x.get("tipo") == "servico" and x["id"] in (ne or {}) and ne[x["id"]] not in (None, ""):
+                v = nz.numero(ne[x["id"]])
+                if v is not None and v != x.get("ne"):
+                    x["ne"] = v
+                    n += 1
+        f["ne_editado_em"] = __import__("datetime").datetime.now().isoformat(timespec="seconds")
+        fc.gravar(f, Path(self.sv.pasta) / "modelos" / "ficha_servicos.json")
+        return dict(alterados=n, **self.ficha())
+
+    def restaurar_ficha_padrao(self) -> dict:
+        """Volta à ficha incluída no sistema (apaga a cópia do usuário)."""
+        from pathlib import Path
+        (Path(self.sv.pasta) / "modelos" / "ficha_servicos.json").unlink(missing_ok=True)
+        return self.ficha()
+
     def ficha_pela_lista(self, pid: int, caminho: str) -> dict:
         """Marca na ficha os serviços de uma lista (planilha/CSV/texto com códigos, NE e quantidade). Os códigos que não
         estão na ficha voltam em 'extras' para entrar no PATO como itens novos."""
@@ -1043,7 +1074,7 @@ class Orcamentos:
         monta o quadro pelos transportes das composições (quando não há quadro do modelo)."""
         d = self.dados(pid)
         p = self.sv.projeto(pid)
-        ext = (p.get("km_fim") or 0) - (p.get("km_ini") or 0)
+        ext = self.sv.extensao(pid)
         calc = po.Calculo(d, self.medidas(pid), {}, lambda c, r: (None, ""), ext, self._ip_calc(pid), self._producao_fn(pid),
                           self.anos_contrato(pid, d), self.db.dados_projeto(pid, "sinalizacao"))
         ner = ne_rocada_mod.calcular(self.db.dados_projeto(pid, "ne_rocada"))

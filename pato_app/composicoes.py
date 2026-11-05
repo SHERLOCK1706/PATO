@@ -67,6 +67,8 @@ _COD_INSUMO = re.compile(r"^(?:[A-Z]{1,3}\d|\d)")  # E9686, P9824, M0424, PN04, 
 def data_base_uf(txt) -> tuple[str | None, str | None]:
     """'ABRIL/2026-MT' → ('2026-04', 'MT')."""
     t = nz.sem_acento(str(txt or "")).upper()
+    if re.fullmatch(r"\s*[A-Z]{2}\s*", t):  # só a UF ("DATA BASE: MT")
+        return None, t.strip()
     m = re.search(r"([A-Z]+)\s*/\s*(\d{4})(?:\s*-\s*([A-Z]{2}))?", t)
     if m and m.group(1) in MESES:
         return f"{m.group(2)}-{MESES[m.group(1)]:02d}", m.group(3)
@@ -514,7 +516,49 @@ def ler_bases(caminhos: list[str] | str, uf: str | None = None, data_base: str |
         b["sintetico_regime"] = reg if sinteticos.get(reg) else ("SD" if sinteticos.get("SD") else None)
         if reg in bdi:
             b["bdi_planilha"] = bdi[reg]
+    if any(not b.get("data_base") or not b.get("uf") for b in bases.values()):
+        db_, uf_ = _data_base_da_planilha(caminhos)  # composições com "DATA BASE: MT" (sem o mês): capa/resumo
+        for b in bases.values():
+            b["data_base"], b["uf"] = b.get("data_base") or db_, b.get("uf") or uf_
     return {r: b for r, b in bases.items() if b["composicoes"]}
+
+
+def _data_base_da_planilha(caminhos) -> tuple[str | None, str | None]:
+    """Data-base e UF de uma planilha PATO pelo rótulo DATA-BASE (RESUMO_PATO, CAPA, BD) e pela rodovia (BR-xxx/UF)."""
+    import datetime as _d
+    db_, uf_ = None, None
+    for cam in caminhos if isinstance(caminhos, (list, tuple)) else [caminhos]:
+        if not str(cam).lower().endswith((".xlsx", ".xlsm")):
+            continue
+        try:
+            wb = openpyxl.load_workbook(cam, read_only=True, data_only=True)
+        except Exception:  # noqa: BLE001
+            continue
+        try:
+            for aba in [a for a in ("RESUMO_PATO", "CAPA", "PATO", "BD") if a in wb.sheetnames]:
+                linhas = [list(r) for r in wb[aba].iter_rows(max_row=40, values_only=True)]
+                for i, r in enumerate(linhas):
+                    for j, x in enumerate(r):
+                        t = nz.sem_acento(str(x or "")).upper()
+                        if not db_ and re.search(r"DATA[\s-]*BASE", t):
+                            for y in r[j + 1:] + [v for rr in linhas[i + 1:i + 3] for v in rr[max(0, j - 1):j + 3]]:
+                                if isinstance(y, (_d.date, _d.datetime)):
+                                    db_ = f"{y.year:04d}-{y.month:02d}"
+                                    break
+                                d2, u2 = data_base_uf(y) if isinstance(y, str) else (None, None)
+                                if d2:
+                                    db_, uf_ = d2, uf_ or u2
+                                    break
+                        if not uf_:
+                            m = re.search(r"\bBR\s*-?\s*\d{3}(?:/\d{3})*\s*/\s*([A-Z]{2})\b", t)
+                            uf_ = m.group(1) if m else None
+                if db_ and uf_:
+                    break
+        finally:
+            wb.close()
+        if db_ and uf_:
+            break
+    return db_, uf_
 
 
 def _bdi_de_linhas(linhas) -> dict:

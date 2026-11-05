@@ -79,6 +79,8 @@ class Servico:
         self.custos = Custos(self)
         from .binomio_servico import Binomios
         self.binomio = Binomios(self)
+        from .anp import PrecosANP
+        self.anp = PrecosANP(self.pasta)
         from .transporte_servico import Transportes
         from . import sigmine
         if self.pasta / "sigmine" not in sigmine.PASTAS_USUARIO:
@@ -321,6 +323,11 @@ class Servico:
         out["sugestoes_pendentes"] = len(self.db.sugestoes(pid, "pendente"))
         out["ajustes_aplicados"] = len(self.db.sugestoes(pid, "aplicada"))
         return out
+
+    def extensao(self, pid: int) -> float:
+        """Extensão do projeto (soma dos segmentos quando o projeto tem vários — ver calculo.extensao_projeto)."""
+        from .calculo import extensao_projeto
+        return extensao_projeto(self.projeto(pid), self.db.itens(pid, "SEG"))
 
     def validar(self, pid: int) -> list[dict]:
         return geo.validar(self.projeto(pid), self.db.itens(pid))

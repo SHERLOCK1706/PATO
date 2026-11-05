@@ -179,6 +179,38 @@ def _agrupar(itens, chave) -> dict:
     return {k: dict(v) for k, v in out.items()}
 
 
+def extensao_projeto(projeto: dict, segs: list[dict]) -> float:
+    """Extensão do projeto. Segmento contínuo: km final − km inicial. Vários segmentos (ex.: BR-174 km 304,6–366,3 +
+    km 0–81,4 + km 0–3,7, cada um com o seu SNV/variante): a soma dos segmentos do inventário (CAD_SEG), juntando os
+    intervalos que se sobrepõem dentro da mesma via (prefixo do SNV, ex.: 174B, 174A, 174U)."""
+    km_ini, km_fim = projeto.get("km_ini"), projeto.get("km_fim")
+    corrido = (km_fim - km_ini) if km_ini is not None and km_fim is not None else None
+    por_via: dict[str, list] = {}
+    for s_ in segs or []:
+        a, b_ = s_.get("km_ini"), s_.get("km_fim")
+        if a is None or b_ is None:
+            continue
+        via = str(s_.get("snv") or "")[:4].upper()
+        por_via.setdefault(via, []).append(tuple(sorted((float(a), float(b_)))))
+    soma = 0.0
+    for ints in por_via.values():
+        ints.sort()
+        ca, cb = ints[0]
+        for a, b_ in ints[1:]:
+            if a <= cb + 1e-6:
+                cb = max(cb, b_)
+            else:
+                soma += cb - ca
+                ca, cb = a, b_
+        soma += cb - ca
+    if corrido is None:
+        return round(soma, 3) if soma else 0.0
+    # vários segmentos (vias diferentes ou intervalos separados): vale a soma; contínuo: o km do projeto
+    if soma and (len(por_via) > 1 or soma < corrido - 0.05):
+        return round(soma, 3)
+    return corrido
+
+
 def resumo(projeto: dict, itens: list[dict]) -> dict:
     por_cat: dict[str, list] = defaultdict(list)
     for it in itens:
@@ -216,8 +248,7 @@ def resumo(projeto: dict, itens: list[dict]) -> dict:
     area_pista = T("PISTA", "area_m2")
     area_acost = T("ACOST", "area_m2")
 
-    km_ini, km_fim = projeto.get("km_ini"), projeto.get("km_fim")
-    extensao = (km_fim - km_ini) if km_ini is not None and km_fim is not None else T("SEG", "ext_km")
+    extensao = extensao_projeto(projeto, por_cat.get("SEG", []))
     painel = [
         dict(rotulo="Extensão do segmento", valor=extensao, unidade="km"),
         dict(rotulo="Faixa de pista", valor=T("PISTA", "km_faixa"), unidade="kmf"),

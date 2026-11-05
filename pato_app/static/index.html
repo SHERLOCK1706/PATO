@@ -250,6 +250,11 @@
         <div class="caixa">
           <h3>Bases SICRO importadas</h3>
           <div class="tabela-rolagem" style="max-height:220px"><table class="tab" id="tabBases"></table></div>
+          <h4>Baixar do site do DNIT (automático)</h4>
+          <div class="barra filtros"><label>UF <input id="sicroUf" maxlength="2" value="MT" style="width:50px"></label>
+            <button class="btn" type="button" id="btnSicroListar" data-dica="Consulta as datas-base do SICRO publicadas pelo DNIT para a UF">Ver publicadas</button>
+            <label>Data-base <select id="sicroMes"><option value="">mais recente</option></select></label>
+            <button class="btn primario" type="button" id="btnSicroBaixar" data-dica="Baixa o pacote oficial (SD e CD) da data-base escolhida e importa — precisa de internet; leva 1 a 3 minutos">Baixar e importar SICRO</button></div>
           <h4>Importar nova base (atualização trimestral)</h4>
           <p class="nota">Envie os relatórios do SICRO do estado e mês (relatório analítico de composições e, se houver, os sintéticos
             de composições, equipamentos, mão de obra e materiais) — .xlsx soltos ou o pacote .zip/.7z publicado pelo DNIT (com e sem desoneração). Também aceita uma planilha PATO.</p>
@@ -326,6 +331,9 @@
           <button class="btn" id="btnForn" data-dica="Cadastro de fornecedores (planilha FORNECEDOR / ENDEREÇO / INSUMO) e pontos do KMZ: localiza pedreiras e areais no SNV e estima a distância até o canteiro">Fornecedores e localização (KMZ)</button>
           <button class="btn primario" id="btnNovoMat" data-dica="Cria um material com cotações (pétreo, madeira, capa asfáltica comercial ou outro)">Novo material cotado</button>
           <button class="btn primario" id="btnNovoBet" data-dica="Cria um material betuminoso com as origens (distribuidoras/refinarias) da tabela ANP">Novo betuminoso (ANP)</button>
+          <button class="btn" id="btnAnpPreencher" data-dica="Preço médio ponderado mensal da ANP no mês da data-base: estado da origem → região → Brasil">Preços ANP</button>
+          <button class="btn" id="btnAnpAtualizar" data-dica="Baixa da ANP os arquivos mais recentes de preços de produtos asfálticos (precisa de internet)">Atualizar ANP</button>
+          <button class="btn" id="btnAnpImportar" data-dica="Importa os arquivos da ANP baixados manualmente (preco-asfalto-uf / preco-asfalto-regiao)">Importar planilha ANP</button>
           <button class="btn" id="btnImpBin" data-dica="Lê as abas BINOMIO_COTACOES, BINOMIO_ANP e INDICES_REAJ de uma planilha PATO">Importar de planilha PATO</button>
           <button class="btn" id="btnAnexoGeral" data-dica="Anexa um documento ao projeto (ex.: legislação do ICMS, tabela ANP do mês)">Anexar documento</button>
           <button class="btn" id="btnExpBin" data-dica="Gera a planilha do binômio no modelo da planilha de referência (cotações, resumo e ANP)">Exportar binômio (Excel)</button>
@@ -379,6 +387,10 @@
       </div>
       <div class="caixa form">
         <h3>Ocorrências</h3>
+        <p class="nota">Edite como planilha (ou cole do Excel: Nome · Tipo · km · Lado · Acesso LN · RP · P · Distância fixa LN · RP · P · Obs.).
+          Pedreira/areal <b>fora do segmento</b> pela própria rodovia: informe o km (fora do intervalo do segmento) — o trecho até o segmento entra como pavimentado.
+          Pedreira/areal que <b>sai do traçado por uma vicinal</b> (ou outra rodovia): deixe o km do entroncamento e informe o percurso fora da rodovia em
+          <b>Acesso LN / RP / P</b> (leito natural, revestimento primário, pavimentado); se não houver entroncamento no segmento, deixe o km em branco e use a <b>Distância fixa</b>.</p>
         <div class="tabela-rolagem"><table class="tab" id="tabOcorr"></table></div>
         <div class="linha-botoes"><button class="btn mini" type="button" id="btnAddOcorr" data-dica="Acrescenta uma ocorrência (pedreira, areal, usina, bota-fora…)">+ Ocorrência</button></div>
         <div class="grade2" style="margin-top:10px">
@@ -409,7 +421,9 @@
         <p class="nota">Baixe a planilha da modelagem do VMDa no site do DNIT (<a id="lnkVmd" target="_blank" rel="noopener">servicos.dnit.gov.br/dadospnct/Modelagem</a>,
           Plano Nacional de Contagem de Tráfego) e importe aqui: o sistema casa os registros pelo código SNV dos segmentos do projeto (ou pela BR e km).
           VMD por faixa = VMDa do sentido ÷ faixas por sentido (sem o sentido: metade do VMDa). Também é possível digitar o VMDf direto.</p>
-        <div class="linha-botoes"><button class="btn" id="btnImpVmd" data-dica="Planilha .xlsx, .csv ou GeoJSON da modelagem do VMDa (DNIT)">Importar VMD do DNIT</button>
+        <div class="linha-botoes"><button class="btn primario" id="btnVmdBase" data-dica="Usa a base de VMDa do sistema (planilha VMDa 2025 da modelagem DNIT/PNCT) para os segmentos deste projeto">VMD da base do sistema</button>
+          <button class="btn" id="btnImpVmd" data-dica="Planilha .xlsx, .csv ou GeoJSON da modelagem do VMDa (DNIT) só para este projeto">Importar VMD do DNIT</button>
+          <button class="btn" id="btnVmdAtuBase" data-dica="Troca a base de VMDa do sistema por uma modelagem mais nova do DNIT/PNCT (vale para os próximos projetos)">Atualizar base de VMD</button> <small id="vmdBaseInfo" class="nota"></small>
           <button class="btn mini" type="button" id="btnAddSeg" data-dica="Acrescenta um segmento">+ Segmento</button></div>
         <div class="tabela-rolagem"><table class="tab" id="tabVmd"></table></div>
         <div class="linha-botoes"><button class="btn primario" id="btnSalvarVmd" data-dica="Grava o VMD e recalcula o FIT">Salvar VMD</button></div>
@@ -479,7 +493,9 @@
         <div class="linha-botoes" style="margin:0">
           <button class="btn" id="btnFichaGravar" data-dica="Grava a planilha PATO deste projeto (regras, níveis de esforço, quadro de transportes, sinalização, ADM/mobilização) como a ficha de serviços para os próximos projetos">Gravar este PATO como ficha</button>
           <button class="btn" id="btnFichaLista" data-dica="Ficha PATO (planilha PATO completa ou só a aba PATO) ou lista (.xlsx/.csv/.txt) com código e, se houver, item, NE e quantidade. Marca os serviços na ficha e ajusta o NE; ao montar, as quantidades continuam ligadas ao inventário e ao ICM/IP e são comparadas com as da ficha. Códigos que não estão na ficha entram como serviços incluídos">Importar ficha PATO / lista de serviços</button>
-          <button class="btn primario" id="btnFichaMontar" data-dica="Substitui a planilha PATO do projeto pelos serviços marcados, com os níveis de esforço e valores informados; as quantidades saem do inventário, do ICM/IP, da extensão e do prazo do projeto e os transportes do croqui">Montar PATO pela ficha</button></div></div>
+          <button class="btn primario" id="btnFichaMontar" data-dica="Substitui a planilha PATO do projeto pelos serviços marcados, com os níveis de esforço e valores informados; as quantidades saem do inventário, do ICM/IP, da extensão e do prazo do projeto e os transportes do croqui">Montar PATO pela ficha</button>
+          <button class="btn" id="btnFichaNePadrao" data-dica="Grava os níveis de esforço digitados nesta ficha como padrão para os próximos projetos (pode alterar quando quiser)">Salvar NE como padrão</button>
+          <button class="btn" id="btnFichaRestaurar" data-dica="Volta à ficha e aos níveis de esforço originais do sistema">Restaurar ficha original</button></div></div>
         <p class="nota">Marque os serviços do contrato e ajuste o nível de esforço. As quantidades são calculadas pelas regras do PATO de referência
           (<span id="fichaOrigem"></span>) com os dados <b>deste</b> segmento: inventário, levantamento ICM/IP, extensão, prazo, sinalização e croqui.
           Nos serviços do ICM o esforço é o parâmetro da intervenção no levantamento (NE ou % da faixa). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto.</p>

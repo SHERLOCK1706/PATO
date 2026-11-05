@@ -69,6 +69,42 @@ class Binomios:
         n = self._gravar_series(series, Path(caminho).name)
         return dict(gravados=n, series=len(series), **self.indices())
 
+    URL_INDICES = ("https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/custos-referenciais/indices-de-reajustamentos/"
+                   "indices-de-reajustamentos-de-obras-rodoviario/dnit_iii-04-0_divulgacao-indices-obras-rodoviarias-{mes}-{ano}.pdf")
+    MESES_ABREV = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+
+    def atualizar_indices_online(self, meses_atras: int = 6, timeout: int = 40) -> dict:
+        """Baixa a publicação mensal mais recente do DNIT 'Índices de Reajustamento de Obras Rodoviárias' (dados da
+        FGV/IBRE) e acrescenta os meses novos. Procura do mês atual para trás. Sem internet: mantém o banco de dados."""
+        import datetime as _d
+        import tempfile
+        import urllib.request
+        hoje = _d.date.today()
+        tentados = []
+        for k in range(meses_atras + 1):
+            a, m = divmod(hoje.year * 12 + hoje.month - 1 - k, 12)
+            url = self.URL_INDICES.format(mes=self.MESES_ABREV[m], ano=a)
+            tentados.append(url)
+            try:
+                raw = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (PATO)"}),
+                                             timeout=timeout).read()
+            except Exception:  # noqa: BLE001 — mês ainda não publicado (404) ou sem internet
+                continue
+            if not raw.startswith(b"%PDF"):
+                continue
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as f:
+                f.write(raw)
+            try:
+                series = bn.ler_indices_pdf(f.name)
+            finally:
+                Path(f.name).unlink(missing_ok=True)
+            if series:
+                n = self._gravar_series(series, f"DNIT/FGV — publicação {self.MESES_ABREV[m]}/{a} (download)")
+                return dict(gravados=n, publicacao=f"{self.MESES_ABREV[m]}/{a}", url=url, **self.indices())
+        raise ConnectionError("Não foi possível baixar a publicação do DNIT (sem internet ou site fora do ar). "
+                              "Os índices do banco de dados continuam valendo; importe o PDF manualmente se precisar. "
+                              f"Último endereço tentado: {tentados[-1]}")
+
     def gravar_indice(self, nome: str, mes: str, valor) -> dict:
         m = bn.mes(mes)
         if not nome or not m or not re.fullmatch(r"\d{4}-\d{2}", m):
@@ -540,6 +576,7 @@ class Binomios:
             icms = _num(o.get("icms"))
             origens.append(dict(nome=nz.texto(o.get("nome")) or f"R-{len(origens) + 1}", uf=nz.texto(o.get("uf")),
                                 local=nz.texto(o.get("local")), preco_t=_num(o.get("preco_t")),
+                                preco_fonte=nz.texto(o.get("preco_fonte")),
                                 d_fluvial=_num(o.get("d_fluvial")), d_pav=_num(o.get("d_pav")), d_rp=_num(o.get("d_rp")),
                                 d_ln=_num(o.get("d_ln")), icms=icms / 100 if icms and icms > 1 else icms,
                                 pedagio=_num(o.get("pedagio")), balsa=_num(o.get("balsa"))))
@@ -579,6 +616,35 @@ class Binomios:
         bid = self.db.salvar_binomio(pid, TIPO_BETUMINOSO, d, bid)
         self.db.registrar(pid, "binômio: betuminoso", d["produto"])
         return self.item(pid, bid)
+
+    def preencher_anp(self, pid: int, substituir: bool = False, bid: int | None = None) -> dict:
+        """Preço ANP de cada origem dos betuminosos, no mês da data-base: estado da origem → região → Brasil.
+        substituir=False: só as origens sem preço. Devolve o que foi preenchido e os avisos."""
+        mes = self._ref(pid)["data_base"]
+        feitos, avisos = [], []
+        for b in self.db.binomios(pid, TIPO_BETUMINOSO):
+            if bid and b["id"] != bid:
+                continue
+            d = b["dados"]
+            mudou = False
+            for o in d.get("origens") or []:
+                if o.get("preco_t") not in (None, "") and not substituir:
+                    continue
+                r = self.sv.anp.preco(d.get("produto"), o.get("uf") or o.get("local"), mes)
+                if not r.get("ok"):
+                    avisos.append(f"{d.get('produto')} — {o.get('local') or o.get('nome')}: {r.get('aviso')}")
+                    continue
+                o["preco_t"], o["preco_fonte"] = r["preco_t"], r["fonte"]
+                mudou = True
+                feitos.append(dict(produto=d.get("produto"), origem=o.get("local") or o.get("nome"), uf=o.get("uf"),
+                                   preco_t=r["preco_t"], fonte=r["fonte"]))
+                if r.get("aviso"):
+                    avisos.append(r["aviso"])
+            if mudou:
+                self.salvar_produto(pid, d, b["id"])
+        if feitos:
+            self.db.registrar(pid, "binômio: preços ANP", f"{len(feitos)} origem(ns) — data-base {mes}")
+        return dict(preenchidos=feitos, avisos=sorted(set(avisos)), mes=mes, anp=self.sv.anp.situacao())
 
     def excluir(self, pid: int, bid: int) -> None:
         for a in self.db.anexos(pid, bid):

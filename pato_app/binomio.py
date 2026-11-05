@@ -251,7 +251,37 @@ def importar_planilha(caminho: str) -> dict:
                                                     pedagio=nz.numero(rr[13]), balsa=nz.numero(rr[14])))
                         prod["pis"] = nz.numero(rr[10]) or prod["pis"]
                         prod["cofins"] = nz.numero(rr[9]) or prod["cofins"]
+                        bdi_ = nz.numero(rr[11])  # BDI da planilha sem arredondar (BDI!E25/100)
+                        if bdi_ and 0 < bdi_ < 1:
+                            prod["bdi"] = bdi_
                     produtos.append(prod)
+        bdi_tr = _bdi_transporte_planilha(caminho)
+        if bdi_tr:
+            for prod in produtos:
+                prod.update(bdi_tr)
         return dict(materiais=materiais, produtos=produtos)
     finally:
         wb.close()
+
+
+def _bdi_transporte_planilha(caminho: str) -> dict:
+    """BDI do transporte de betuminosos da planilha: na aba BD, TM… com desoneração = TRUNC(SD / 1,15 × 1,1995) →
+    {bdi_transporte: 0,15, bdi_transporte_cd: 0,1995}."""
+    try:
+        wf = openpyxl.load_workbook(caminho, read_only=True)
+    except Exception:  # noqa: BLE001
+        return {}
+    try:
+        if "BD" not in wf.sheetnames:
+            return {}
+        for r in wf["BD"].iter_rows(values_only=True):
+            r = [x for x in r if x is not None]
+            if r and isinstance(r[0], str) and re.fullmatch(r"TM\d+", r[0].strip()):
+                for f in r[1:]:
+                    m = re.search(r"/\s*(1[.,]\d+)\s*\*\s*(1[.,]\d+)", str(f)) if isinstance(f, str) else None
+                    if m:
+                        sd, cd = (float(x.replace(",", ".")) - 1 for x in m.groups())
+                        return dict(bdi_transporte=round(sd, 6), bdi_transporte_cd=round(cd, 6))
+        return {}
+    finally:
+        wf.close()

@@ -60,3 +60,21 @@ def test_login_perfis_e_historico(app):
     adm = next(u["id"] for u in c.get("/api/usuarios").json() if u["login"] == "matheus")
     assert c.put(f"/api/usuarios/{adm}", json=dict(perfil="editor")).status_code == 400  # mantém 1 administrador
     assert c.post("/api/auth/sair").status_code == 200 and c.get("/api/projetos").status_code == 401
+
+
+def test_arquivo_abrir_salvar_como(tmp_path, monkeypatch):
+    """Menu Arquivo: o .pato baixado tem nome legível; abrir mostra o projeto do arquivo e pode substituir o existente."""
+    monkeypatch.delenv("PATO_LOGIN", raising=False)
+    c = TestClient(criar_app(Servico(pasta=tmp_path)))
+    pid = c.post("/api/projetos", json=dict(nome="BR-158/MT km 85,00 ao km 212,50", rodovia="BR-158/MT", km_ini=85, km_fim=212.5)).json()["id"]
+    r = c.get(f"/api/projetos/{pid}/arquivo")
+    assert r.status_code == 200 and "BR-158-MT%20km%2085%2C00" in r.headers["content-disposition"]
+    arq = r.content
+    info = c.post("/api/projetos/arquivo/info", files={"arquivo": ("x.pato", arq)}).json()
+    assert info["nome"] == "BR-158/MT km 85,00 ao km 212,50" and info["mesmos"][0]["id"] == pid
+    c.put(f"/api/projetos/{pid}", json=dict(obs="alterado depois"))
+    p = c.post("/api/projetos/abrir", files={"arquivo": ("x.pato", arq)}, data={"substituir": str(pid)}).json()
+    assert p["id"] == pid and len(c.get("/api/projetos").json()) == 1           # substituiu, não duplicou
+    assert any("antes de abrir" in (v["rotulo"] or "") for v in c.get(f"/api/projetos/{pid}/versoes").json())
+    novo = c.post("/api/projetos/abrir", files={"arquivo": ("x.pato", arq)}).json()
+    assert novo["id"] != pid and len(c.get("/api/projetos").json()) == 2         # ou como projeto novo

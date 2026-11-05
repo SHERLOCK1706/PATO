@@ -468,7 +468,8 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def _nome_arq(pid: int) -> str:
         import re as _re
         p = sv.projeto(pid)
-        return (_re.sub(r"[^\w\- ]+", "", p.get("nome") or f"projeto_{pid}").strip().replace(" ", "_")[:80] or f"projeto_{pid}") + ".pato"
+        nome = _re.sub(r'[\\/:*?"<>|]+', "-", p.get("nome") or f"projeto_{pid}")  # legível, válido no Windows
+        return (_re.sub(r"\s+", " ", nome).strip(" .-")[:90] or f"projeto_{pid}") + ".pato"
 
     @app.get("/api/projetos/{pid}/assistente")
     def p_assistente(pid: int):
@@ -500,13 +501,35 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
 
     @app.get("/api/projetos/{pid}/arquivo")
     def p_arquivo(pid: int):
+        from urllib.parse import quote as _q
+        nome = _nome_arq(pid)
+        ascii_ = nome.encode("ascii", "ignore").decode() or "projeto.pato"
         return Response(pa.exportar(sv, pid), media_type="application/zip",
-                        headers={"Content-Disposition": f'attachment; filename="{_nome_arq(pid)}"'})
+                        headers={"Content-Disposition": f'attachment; filename="{ascii_}"; filename*=UTF-8\'\'{_q(nome)}'})
 
     @app.post("/api/projetos/abrir")
-    async def p_abrir(arquivo: UploadFile = File(...)):
+    async def p_abrir(arquivo: UploadFile = File(...), substituir: int | None = Form(default=None)):
+        """Abre um arquivo .pato: como projeto novo ou substituindo o projeto `substituir` (antes, salva a versão atual)."""
         conteudo = await arquivo.read()
+        if substituir:
+            pa.salvar_versao(sv, substituir, "antes de abrir arquivo")
+            return sv.projeto(pa.importar(sv, conteudo, substituir_pid=substituir))
         return sv.projeto(pa.importar(sv, conteudo))
+
+    @app.post("/api/projetos/arquivo/info")
+    async def p_arquivo_info(arquivo: UploadFile = File(...)):
+        """Projeto contido num .pato (nome, rodovia, quando foi salvo) e os projetos do sistema com o mesmo nome."""
+        import io as _io
+        import json as _json
+        import zipfile as _zip
+        try:
+            with _zip.ZipFile(_io.BytesIO(await arquivo.read())) as z:
+                d = _json.loads(z.read("projeto.json"))
+        except Exception as e:  # noqa: BLE001
+            raise HTTPException(400, "Arquivo inválido: não é um projeto do PATO (.pato).") from e
+        prj = d.get("projeto") or {}
+        mesmos = [dict(id=p["id"], nome=p.get("nome")) for p in sv.listar_projetos() if (p.get("nome") or "") == (prj.get("nome") or "")]
+        return dict(nome=prj.get("nome"), rodovia=prj.get("rodovia"), salvo_em=d.get("salvo_em"), mesmos=mesmos)
 
     @app.post("/api/projetos/{pid}/binomio/cotacao/ler")
     async def b_ler_cotacao(pid: int, arquivo: UploadFile = File(...)):

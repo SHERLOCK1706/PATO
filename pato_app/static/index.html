@@ -13,9 +13,19 @@
   <div class="proj">
     <label for="selProjeto" class="sr">Projeto</label>
     <select id="selProjeto" data-dica="Projeto (trecho) em trabalho"></select>
-    <button class="btn" id="btnNovo" data-dica="Cria um projeto vazio (trecho sem inventário)">+ Novo</button>
-    <button class="btn primario" id="btnSalvar" data-dica="Salva uma versão do projeto (ponto de restauração). Tudo o que você altera já fica gravado; o Salvar guarda uma versão completa para poder voltar a ela. Atalho: Ctrl+S">💾 Salvar</button>
-    <button class="btn" id="btnProjArq" data-dica="Versões salvas, salvar como cópia, baixar o arquivo do projeto (.pato) ou abrir um projeto de arquivo">Projetos ▾</button>
+    <div class="menu-arq"><button class="btn" id="btnArquivo" data-dica="Novo, Abrir, Salvar, Salvar como… (como no Word/Excel)">Arquivo ▾</button>
+      <div class="menu-arq-lista" id="menuArquivo" hidden>
+        <button type="button" data-arq="novo">Novo projeto</button>
+        <button type="button" data-arq="abrir">Abrir arquivo… <small>Ctrl+O</small></button>
+        <hr>
+        <button type="button" data-arq="salvar">Salvar <small>Ctrl+S</small></button>
+        <button type="button" data-arq="salvar_como">Salvar como… <small>Ctrl+Shift+S</small></button>
+        <button type="button" data-arq="copia">Salvar como cópia (novo projeto)…</button>
+        <hr>
+        <button type="button" data-arq="versoes">Versões salvas…</button>
+      </div></div>
+    <button class="btn primario" id="btnSalvar" data-dica="Salva o projeto (Ctrl+S): grava uma versão no sistema e, se o projeto tiver um arquivo no seu computador (Salvar como…), atualiza esse arquivo">💾 Salvar</button>
+    <button class="btn" id="btnNovo" hidden></button><button class="btn" id="btnProjArq" hidden></button>
     <small id="salvoEm" class="nota"></small>
   </div>
   <div class="usuario-topo" id="usuarioTopo" hidden><button class="btn" id="btnUsuario" data-dica="Trocar senha, usuários (administrador) e sair"></button></div>

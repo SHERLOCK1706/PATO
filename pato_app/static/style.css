@@ -250,3 +250,13 @@ tr.inativa td { color: var(--txt2); }
 #tabOrc .lig { cursor: help; }
 #tabOrc td { vertical-align: top; }
 .usuario-topo[hidden] { display: none; }
+
+.menu-arq { position: relative; }
+.menu-arq-lista { position: absolute; top: 100%; right: 0; z-index: 900; background: var(--sup); border: 1px solid var(--borda); border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18); min-width: 280px; padding: 6px 0; margin-top: 4px; }
+.menu-arq-lista[hidden] { display: none; }
+.menu-arq-lista button { display: flex; justify-content: space-between; width: 100%; text-align: left; background: none; border: 0; padding: 8px 14px;
+  font: inherit; color: var(--txt); cursor: pointer; }
+.menu-arq-lista button:hover { background: var(--pri-claro); }
+.menu-arq-lista small { color: var(--txt2); margin-left: 16px; }
+.menu-arq-lista hr { border: 0; border-top: 1px solid var(--borda); margin: 4px 0; }

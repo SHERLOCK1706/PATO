@@ -79,16 +79,91 @@ function limparEstadoProjeto() {
 async function mostrarSalvo() {
   const el = $("#salvoEm"); if (!el || !E.pid) return;
   try { const v = await api(`/api/projetos/${E.pid}/versoes`);
-    el.textContent = v.length ? `última versão salva: ${new Date(v[0].salvo_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })}` : "nenhuma versão salva";
+    const h = await idbGet("p" + E.pid);
+    el.textContent = (h ? `📄 ${h.name} · ` : "") + (v.length ? `salvo em ${new Date(v[0].salvo_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })}` : "não salvo");
   } catch (_) { el.textContent = ""; }
+}
+
+// ---- Arquivo (como Word/Excel): Novo, Abrir, Salvar, Salvar como — o projeto vira um arquivo .pato no computador.
+// Chrome/Edge: grava direto no arquivo escolhido (File System Access API) e o Ctrl+S atualiza o mesmo arquivo;
+// outros navegadores: baixa o .pato. O vínculo projeto ↔ arquivo fica guardado no navegador (IndexedDB).
+const ARQ_ = { fs: "showSaveFilePicker" in window };
+function idb() {
+  return new Promise((ok, falha) => { const r = indexedDB.open("pato-arquivos", 1); r.onupgradeneeded = () => r.result.createObjectStore("h");
+    r.onsuccess = () => ok(r.result); r.onerror = () => falha(r.error); });
+}
+async function idbGet(k) { try { const db = await idb(); return await new Promise(ok => { const q = db.transaction("h").objectStore("h").get(k); q.onsuccess = () => ok(q.result); q.onerror = () => ok(null); }); } catch (_) { return null; } }
+async function idbSet(k, v) { try { const db = await idb(); await new Promise(ok => { const t = db.transaction("h", "readwrite"); t.objectStore("h").put(v, k); t.oncomplete = ok; t.onerror = ok; }); } catch (_) {} }
+async function bytesProjeto() { const r = await fetch(`/api/projetos/${E.pid}/arquivo`); if (!r.ok) throw new Error("Não foi possível gerar o arquivo do projeto."); return await r.blob(); }
+const nomeArq = () => ((E.projetos.find(x => x.id === E.pid) || {}).nome || "projeto").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim().slice(0, 90) + ".pato";
+async function gravarNoArquivo(h) {
+  if ((await h.queryPermission?.({ mode: "readwrite" })) !== "granted" && (await h.requestPermission?.({ mode: "readwrite" })) !== "granted") throw new Error("Sem permissão para gravar no arquivo.");
+  const w = await h.createWritable(); await w.write(await bytesProjeto()); await w.close();
 }
 async function salvarProjeto(rotulo) {
   if (!E.pid) return;
-  try { const r = await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: rotulo || null });
-    toast(`Projeto salvo (${new Date(r.salvo_em).toLocaleTimeString("pt-BR", { timeStyle: "short" })})`); mostrarSalvo(); } catch (e) { erro(e); }
+  try {
+    const r = await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: rotulo || null });
+    const h = await idbGet("p" + E.pid);
+    let msg = `Projeto salvo (${new Date(r.salvo_em).toLocaleTimeString("pt-BR", { timeStyle: "short" })})`;
+    if (h) { try { await gravarNoArquivo(h); msg += ` — ${h.name}`; } catch (e) { msg += ` — arquivo não atualizado: ${e.message}`; } }
+    toast(msg); mostrarSalvo();
+  } catch (e) { erro(e); }
+}
+async function salvarComo() {
+  if (!E.pid) return;
+  try {
+    if (ARQ_.fs) {
+      const h = await window.showSaveFilePicker({ suggestedName: nomeArq(), types: [{ description: "Projeto PATO", accept: { "application/octet-stream": [".pato"] } }] });
+      await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "salvar como " + h.name });
+      await gravarNoArquivo(h); await idbSet("p" + E.pid, h);
+      toast(`Salvo em ${h.name} — o Ctrl+S passa a atualizar este arquivo`); mostrarSalvo();
+    } else {
+      const a = document.createElement("a"); a.href = `/api/projetos/${E.pid}/arquivo`; a.download = nomeArq(); a.click();
+      toast("Arquivo do projeto baixado (.pato) — guarde na pasta que quiser");
+    }
+  } catch (e) { if (e.name !== "AbortError") erro(e); }
+}
+async function abrirArquivo() {
+  try {
+    let arq, h = null;
+    if ("showOpenFilePicker" in window) {
+      [h] = await window.showOpenFilePicker({ types: [{ description: "Projeto PATO", accept: { "application/octet-stream": [".pato"] } }] });
+      arq = await h.getFile();
+    } else { arq = await escolherArquivo(".pato,.zip"); if (!arq) return; }
+    const fi = new FormData(); fi.append("arquivo", arq);
+    const info = await api("/api/projetos/arquivo/info", { method: "POST", body: fi });
+    let substituir = null;
+    if (info.mesmos.length) {
+      const alvo = info.mesmos[0];
+      if (confirm(`Já existe o projeto "${alvo.nome}" no sistema.\nOK = substituir pelo conteúdo do arquivo (a versão atual é salva antes)\nCancelar = abrir como projeto novo`)) substituir = alvo.id;
+    }
+    const fd = new FormData(); fd.append("arquivo", arq); if (substituir) fd.append("substituir", substituir);
+    const np = await api("/api/projetos/abrir", { method: "POST", body: fd });
+    if (h) await idbSet("p" + np.id, h);
+    limparEstadoProjeto(); await carregarProjetos(np.id);
+    toast(`Aberto: ${np.nome}${h ? " — o Ctrl+S grava neste arquivo" : ""}`); irAba($("#abas button.ativa").dataset.aba);
+  } catch (e) { if (e.name !== "AbortError") erro(e); }
+}
+async function copiaProjeto() {
+  const p = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Nome do novo projeto:", `${p.nome || "Projeto"} (cópia)`); if (!n) return;
+  try { const np = await jpost(`/api/projetos/${E.pid}/duplicar`, { nome: n }); limparEstadoProjeto(); await carregarProjetos(np.id); toast("Cópia criada — você está agora na cópia"); irAba($("#abas button.ativa").dataset.aba); } catch (e) { erro(e); }
 }
 $("#btnSalvar").onclick = () => salvarProjeto(null);
-document.addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") { e.preventDefault(); salvarProjeto(null); } });
+$("#btnArquivo").onclick = e => { e.stopPropagation(); $("#menuArquivo").hidden = !$("#menuArquivo").hidden; };
+document.addEventListener("click", () => { const m = $("#menuArquivo"); if (m) m.hidden = true; });
+$$("[data-arq]").forEach(b => b.onclick = () => {
+  $("#menuArquivo").hidden = true;
+  ({ novo: () => $("#btnNovo").click(), abrir: abrirArquivo, salvar: () => salvarProjeto(null), salvar_como: salvarComo, copia: copiaProjeto,
+     versoes: () => $("#btnProjArq").click() })[b.dataset.arq]();
+});
+document.addEventListener("keydown", e => {
+  if (!(e.ctrlKey || e.metaKey)) return;
+  const k = e.key.toLowerCase();
+  if (k === "s" && e.shiftKey) { e.preventDefault(); salvarComo(); }
+  else if (k === "s") { e.preventDefault(); salvarProjeto(null); }
+  else if (k === "o") { e.preventDefault(); abrirArquivo(); }
+});
 $("#btnProjArq").onclick = async () => {
   if (!E.pid) return;
   const d = $("#dlg"), f = $("#dlgForm"), p = E.projetos.find(x => x.id === E.pid) || {};

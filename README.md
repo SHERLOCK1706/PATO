@@ -251,6 +251,10 @@ ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 ## Novidades: assistente, salvar versões, fornecedores (ANM/SIGMINE), DMT pela estrada e memória de cálculo
 - **Assistente** (aba própria): as 9 etapas para montar o PATO de um segmento — projeto, inventário, ICM/IP, data-base e BDI,
   cotações/binômio, croqui, ficha de serviços, ADM/mobilização, conferência — com ✅/⚠️/❌, o que falta e o botão para a etapa.
+- **Menu Arquivo (como Word/Excel):** Novo projeto · **Abrir arquivo… (Ctrl+O)** · **Salvar (Ctrl+S)** · **Salvar como… (Ctrl+Shift+S)**
+  · Salvar como cópia · Versões salvas. O projeto vira um arquivo **.pato** na pasta que você escolher (pode ser OneDrive/Google
+  Drive para usar em qualquer computador); no Chrome/Edge o Ctrl+S atualiza esse mesmo arquivo. Abrir um .pato de um projeto que
+  já existe pergunta se substitui (salvando antes a versão atual) ou abre como projeto novo.
 - **💾 Salvar** (ou Ctrl+S): versão completa do projeto (ponto de restauração). **Projetos ▾**: versões salvas (voltar a qualquer
   uma — o estado atual é salvo antes), **salvar como cópia** (projeto novo independente, com tudo), **baixar/abrir arquivo
   .pato** (levar para outro computador). Cada projeto é independente; ao trocar no seletor nada passa de um para outro.

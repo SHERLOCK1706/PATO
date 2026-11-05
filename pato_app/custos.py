@@ -250,6 +250,16 @@ class Custos:
         bases = self.db.bases()
         uf, dbase = p.get("custo_uf"), p.get("custo_data_base")
         fonte = (self.db.dados_projeto(pid, "custo_base") or {}).get("fonte")
+        if not uf and p.get("data_base"):
+            # sem escolha: a data-base da capa do projeto (ex.: DATA-BASE 01/07/2025 → 2025-07) e a UF da rodovia,
+            # se houver base para ela; senão segue a regra padrão (e o painel mostra a data-base usada)
+            import re as _re
+            mdb = _re.match(r"(\d{4})-(\d{2})", str(p["data_base"]))
+            uf_p = (p.get("uf") or "").upper() or next(iter(_re.findall(r"/([A-Z]{2})\b", (p.get("rodovia") or "").upper())), "")
+            if mdb and uf_p:
+                alvo = f"{mdb.group(1)}-{mdb.group(2)}"
+                if any(b["uf"] == uf_p and b["data_base"] == alvo for b in bases):
+                    uf, dbase = uf_p, alvo
         if not uf and bases:
             # sem escolha: a base da planilha de origem (modelo do sistema); senão a data-base mais recente
             plan = [b for b in bases if fonte_base(b) == "planilha"]
@@ -271,7 +281,12 @@ class Custos:
         if not fonte:
             tem_plan = any(b["uf"] == uf and b["data_base"] == dbase and fonte_base(b) == "planilha" for b in bases)
             fonte = "planilha" if tem_plan else "sicro"
+        aviso_db = None
+        if p.get("data_base") and dbase and not str(p["data_base"]).startswith(dbase):
+            aviso_db = (f"A capa do projeto indica data-base {str(p['data_base'])[:7]}, mas os custos estão na base {dbase}: "
+                        f"baixe o SICRO {str(p['data_base'])[:7]} (Custos → Baixar e importar SICRO) ou escolha a data-base.")
         return dict(uf=uf, data_base=dbase, fonte=fonte, fonte_rotulo=FONTES.get(fonte), opcoes=self.opcoes_data_base(),
+                    aviso_data_base=aviso_db,
                     regime=regime, bdi=bdi, parcelas=par, bdi_extras=extras,
                     rotulos_parcelas=ROTULO_PARCELA, disponiveis=[dict(uf=u, data_base=d,
                     regimes=[b["regime"] for b in bases if b["uf"] == u and b["data_base"] == d]) for u, d in disp])

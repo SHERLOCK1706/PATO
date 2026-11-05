@@ -234,6 +234,9 @@ def _projeto(wb, nomes_cat: dict[str, str]) -> dict:
             for j, v in enumerate(row):
                 if not isinstance(v, str):
                     continue
+                mv = re.search(r"VERS[AÃ]O\s*:?\s*(\d{6}[A-Z]?)", v.upper())
+                if mv and "snv_versao" not in proj:  # capa: "(Versão 202511A)" na linha abaixo do SNV
+                    proj["snv_versao"] = mv.group(1)
                 lab = nz.rotulo(v)
                 campo = ROTULOS_PROJETO.get(lab)
                 if not campo or campo in proj:

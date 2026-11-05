@@ -398,6 +398,8 @@ class Orcamentos:
                     break
         for a in r.get("avisos") or []:
             out.append(dict(tipo="norma", nivel="aviso", item=None, codigo=None, msg=a))
+        if (r.get("config") or {}).get("aviso_data_base"):
+            out.insert(0, dict(tipo="data_base", nivel="erro", item=None, codigo=None, msg=r["config"]["aviso_data_base"]))
         return out
 
     @staticmethod

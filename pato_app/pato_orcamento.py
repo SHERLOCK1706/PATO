@@ -304,7 +304,10 @@ class Calculo:
             if not ref:
                 return 0.0, "item de referência removido"
             q, bs, _ = self.quantidade(ref)
-            return (q if b.get("campo", "quantidade") == "quantidade" else bs), f"{'quantidade' if b.get('campo', 'quantidade') == 'quantidade' else 'base'} do item {ref['item']}"
+            fator = nz.numero(b.get("fator")) if b.get("fator") not in (None, "") else 1.0
+            campo = "quantidade" if b.get("campo", "quantidade") == "quantidade" else "base"
+            v = (q if campo == "quantidade" else bs) * fator
+            return v, f"{campo} do item {ref['item']}" + (f" × {fator:g}" if fator != 1 else "")
         if t == "inventario":
             v = self.medidas.get(b.get("medida"))
             if v is None:

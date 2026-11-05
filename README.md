@@ -173,7 +173,18 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   mais próximas do ponto médio do segmento (pelo eixo do inventário), de qualquer UF, com a distância geodésica (régua do
   Google Earth). Na BR-158/MT encontra as mesmas 5 estações da planilha (NERp 5,10 → NE 6); no exemplo da norma
   (BR-381/MG), NERp 3,7 → 4. Ao montar o PATO pela ficha, o NE é calculado assim automaticamente.
-- **Ficha de serviços** (sub-aba própria) — monta o PATO de um segmento novo sem a planilha PATO: marque os serviços,
+- **Planilha PATO e ficha de serviços unificadas** (aba PATO → Planilha PATO) — a ficha fica no painel recolhível do
+  topo (aberto quando a planilha está vazia) e a planilha é editada como no Excel:
+  - "mostrar os serviços da ficha que não estão na planilha" mostra, em cinza e no lugar pela numeração, os serviços da
+    ficha que faltam; **＋ incluir** (ou marcar vários e "incluir os marcados") põe o serviço na planilha já com a regra
+    da quantidade (inventário, ICM/IP, outro item, transporte), sem refazer o resto; o serviço de referência de um
+    AM/TM entra junto se faltar.
+  - **Quantidade puxada de outra linha**: na célula Qtde. digite `=01.03.02` (quantidade da linha 01.03.02),
+    `=01.03.02*0,055` (× fator), `=01.03.02/1000` ou `=base(01.03.02)` (base antes do NE) — ou use ⤴ para escolher a
+    linha numa lista, com prévia do resultado. Ex.: a usinagem, a aquisição e o transporte do CAP a partir do concreto
+    asfáltico. A linha de origem mostra "↳ alimenta …"; referência circular não trava o cálculo (vale 0, com aviso).
+  - MCP: `pato_incluir_da_ficha` e `pato_puxar_de_outra_linha`.
+- **Ficha de serviços** (painel da Planilha PATO) — monta o PATO de um segmento novo sem a planilha PATO: marque os serviços,
   ajuste o nível de esforço (nos serviços do ICM/IP, o NE ou % da faixa da intervenção) e informe as poucas quantidades sem
   regra. A ficha guarda as regras do PATO de referência (BR-158/MT) sem os números do segmento: inventário, produção ×
   8 h × dias, extensão, prazo, ICM/IP (maior entre calculado e histórico — art. 17), sinalização de obras, NE da roçada,

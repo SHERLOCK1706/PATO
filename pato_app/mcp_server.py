@@ -710,6 +710,34 @@ def pato_montar_pela_ficha(projeto_id: int, selecionados: list[str] | None = Non
 
 
 @mcp.tool()
+def pato_incluir_da_ficha(projeto_id: int, ids: list[str], ne: dict | None = None) -> dict:
+    """Inclui na planilha PATO existente serviços da ficha (ids de pato_ficha_servicos), com a regra da quantidade
+    (inventário, ICM/IP, outro item, transporte), sem refazer a planilha; o serviço de referência entra junto se faltar."""
+    r = sv().orcamento.incluir_da_ficha(projeto_id, ids, ne)
+    return dict(incluidos=r["incluidos"], totais=r["calc"]["totais"])
+
+
+@mcp.tool()
+def pato_puxar_de_outra_linha(projeto_id: int, item_id: str, item_origem: str, fator: float = 1.0,
+                              usar: str = "quantidade", ne: float | None = None) -> dict:
+    """Liga a quantidade de um item à de outra linha da planilha (item_origem = id ou numeração, ex.: "01.03.02"):
+    base = quantidade (ou base, usar="base") da origem × fator. Ex.: aquisição de CAP = concreto asfáltico × 0,055."""
+    o = sv().orcamento
+    itens = o.dados(projeto_id)["itens"]
+    ref = next((x for x in itens if x["id"] == item_origem), None) or next(
+        (x for x in itens if x.get("tipo") == "servico" and (x.get("item") or "").strip() == item_origem.strip()), None)
+    if not ref:
+        raise ValueError(f"Linha de origem {item_origem} não encontrada.")
+    campos: dict = dict(base=dict(tipo="item", ref=ref["id"], campo="base" if usar == "base" else "quantidade", fator=fator,
+                                  fonte="outra linha"))
+    if ne is not None:
+        campos["ne"] = ne
+    c = o.editar_item(projeto_id, item_id, campos)
+    x = next(i for i in c["itens"] if i["id"] == item_id)
+    return dict(quantidade=x["quantidade"], fonte=x.get("base_fonte"), totais=c["totais"])
+
+
+@mcp.tool()
 def croqui_montar(projeto_id: int, km_canteiro: float, km_usina: float | None = None) -> dict:
     """Monta o croqui pelo modelo (Res. 8/2023): canteiro/usina no km informado, origem dos materiais pelo binômio
     (SICRO → centro sede; cotação → fornecedor), jazida, bota-fora, depósito e aterro do modelo se não informados."""

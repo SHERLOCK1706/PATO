@@ -248,6 +248,12 @@ tr.inativa td { color: var(--txt2); }
 #tabOrc tr.filtros-orc input { border: 1px solid var(--borda); border-radius: 4px; padding: 2px 4px; font-size: .85em; }
 #tabOrc tr.lin-nova td { background: var(--pri-claro); }
 #tabOrc .lig { cursor: help; }
+#tabOrc tr.lin-ficha td { opacity: .62; font-style: italic; background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(127,127,127,.06) 6px 12px); }
+#tabOrc tr.lin-ficha:hover td { opacity: 1; }
+#tabOrc input.cel.formula { color: var(--pri); font-weight: 600; }
+#tabOrc .alimenta { font-size: 11px; color: var(--pri); cursor: help; }
+#fichaPainel > summary { cursor: pointer; padding: 2px 0; }
+#fichaPainel[open] > summary { margin-bottom: 8px; }
 #tabOrc td { vertical-align: top; }
 .usuario-topo[hidden] { display: none; }
 

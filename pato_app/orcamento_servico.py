@@ -676,6 +676,65 @@ class Orcamentos:
         self._gravar(pid, d)
         return self.calcular(pid)
 
+    def incluir_da_ficha(self, pid: int, ids: list[str], ne: dict | None = None) -> dict:
+        """Inclui na planilha PATO serviços da ficha (com a regra da quantidade: inventário, IP, outro item, transporte…),
+        sem refazer a planilha. Entram no lugar pela numeração, com o título do grupo se faltar. O serviço de referência
+        de um item dependente (AM/TM, aquisição, transporte) entra junto se ainda não estiver na planilha."""
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        por_id = {x["id"]: x for x in f.get("itens", [])}
+        d = self.dados(pid)
+        tem = {x["id"] for x in d["itens"]}
+        pedir: list[str] = []
+
+        def add(i):
+            x = por_id.get(i)
+            if not x or x.get("tipo") == "titulo" or i in tem or i in pedir:
+                return
+            b = x.get("base") or {}
+            if b.get("tipo") == "item" and b.get("ref"):
+                add(b["ref"])
+            pedir.append(i)
+        for i in ids or []:
+            add(i)
+        if not pedir:
+            raise ValueError("Os serviços escolhidos já estão na planilha (ou não estão na ficha).")
+        import copy
+        ordem = [x["id"] for x in f.get("itens", [])]
+        for i in sorted(pedir, key=ordem.index):
+            x = copy.deepcopy(por_id[i])
+            if ne and i in ne and ne[i] not in (None, ""):
+                x["ne"] = float(ne[i])
+            item = (x.get("item") or "").strip()
+            if item and any((y.get("item") or "").strip() == item for y in d["itens"]):
+                x["item"] = ""  # numeração já usada na planilha: entra sem número, depois do grupo
+            # título do grupo (01.03, 01.03.02…) que ainda não existe
+            partes = item.split(".")
+            for n in range(2, len(partes)):
+                pref = ".".join(partes[:n])
+                if not any(y.get("tipo") == "titulo" and (y.get("item") or "").strip() == pref for y in d["itens"]):
+                    t = next((y for y in f.get("itens", []) if y.get("tipo") == "titulo" and (y.get("item") or "").strip() == pref), None)
+                    if t:
+                        self._inserir_ordenado(d, copy.deepcopy(t))
+            self._inserir_ordenado(d, x, item or None)
+            tem.add(i)
+        self._gravar(pid, d)
+        self.db.registrar(pid, "PATO: serviços incluídos da ficha", ", ".join(por_id[i].get("codigo") or "" for i in pedir))
+        return dict(incluidos=[dict(id=i, item=por_id[i].get("item"), codigo=por_id[i].get("codigo")) for i in pedir],
+                    calc=self.calcular(pid))
+
+    def _inserir_ordenado(self, d: dict, x: dict, item: str | None = None) -> None:
+        item = item or x.get("item")
+        if not item:
+            d["itens"].append(x)
+            return
+        chave = self._chave_item(item)
+        pos = 0
+        for i, y in enumerate(d["itens"]):
+            if y.get("item") and self._chave_item(y["item"]) <= chave:
+                pos = i + 1
+        d["itens"].insert(pos, x)
+
     @staticmethod
     def _bloco(itens: list[dict], k: int) -> int:
         """Fim (exclusivo) do bloco que começa em k: um título leva junto as linhas seguintes até o próximo título do
@@ -949,7 +1008,7 @@ class Orcamentos:
                 tot = self.calcular(pid)["totais"]
             except Exception:  # noqa: BLE001
                 tot = None
-        out.append(etapa(7, "Serviços (ficha) e planilha PATO", "orcamento", "ficha", "ok" if n_serv else "falta",
+        out.append(etapa(7, "Serviços (ficha) e planilha PATO", "orcamento", "planilha", "ok" if n_serv else "falta",
                          [] if n_serv else ["Marque os serviços na ficha (ou envie uma ficha PATO) e clique em Montar PATO pela ficha."],
                          f"{n_serv} serviços" + (f" · SD R$ {tot['SD']:,.2f} · CD R$ {tot['CD']:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
                                                  if tot else "")))

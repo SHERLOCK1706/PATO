@@ -472,25 +472,8 @@
       </div></div>
     <div id="resOrc"></div>
     <div id="orc-planilha" class="sub-orc">
-      <div class="caixa"><div class="bin-cab"><h3>Incluir serviço pelo código</h3></div>
-        <p class="nota">Também dá para digitar o código direto na linha em branco no fim da planilha (ou no ＋ de qualquer linha). Qtde., NE, item, código, descrição e unidade são editáveis na própria célula.</p>
-        <div class="barra filtros"><input id="cqCod" placeholder="código SICRO ou próprio (ex.: 2003373, 4915632, 5915321)" style="width:320px" data-dica="Digite o código e tecle Enter: descrição, unidade, preço unitário e a origem da quantidade pela planilha modelo">
-          <button class="btn primario" id="cqBuscar">Buscar</button>
-          <button class="btn" id="btnColar" data-dica="Cole do Excel uma lista: código, quantidade (opcional) e NE (opcional) por linha — sem quantidade, vale a regra da planilha modelo">Colar lista de códigos</button></div>
-        <div id="cqRes"></div></div>
-      <div class="caixa"><div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
-    <div id="orc-conf" class="sub-orc">
-      <div class="caixa"><h3>Conferência do PATO</h3>
-        <p class="nota">Checklists de elaboração e de auditoria (Res. DNIT nº 8/2023) e regras dos normativos da base (IN 10/2024, Ofícios-Circulares
-          6832/2025, 9237/2025, 10161/2025 e 6990/2026, Acórdãos TCU 2.700/2025 e 136/2025, DNIT 182/2018-PRO, Res. 6/2025-ICM).
-          Os itens automáticos são verificados nos dados do projeto; os manuais você marca e anota.</p>
-        <div id="confResumo"></div>
-        <div class="barra filtros"><label class="check"><input type="checkbox" id="confPend"> só pendências (falha, atenção e manuais não feitos)</label></div>
-        <div class="tabela-rolagem" style="max-height:72vh"><table class="tab" id="tabConf"></table></div></div>
-    </div>
-
-    <div id="orc-ficha" class="sub-orc">
-      <div class="caixa"><div class="bin-cab"><h3>Ficha de serviços</h3>
+    <details class="caixa" id="fichaPainel">
+      <summary><b>Ficha de serviços</b> — montar o PATO do segmento, NE padrão e lista de serviços <small class="nota">(clique para abrir)</small></summary><div><div class="bin-cab"><h3></h3>
         <div class="linha-botoes" style="margin:0">
           <button class="btn" id="btnFichaGravar" data-dica="Grava a planilha PATO deste projeto (regras, níveis de esforço, quadro de transportes, sinalização, ADM/mobilização) como a ficha de serviços para os próximos projetos">Gravar este PATO como ficha</button>
           <button class="btn" id="btnFichaLista" data-dica="Ficha PATO (planilha PATO completa ou só a aba PATO) ou lista (.xlsx/.csv/.txt) com código e, se houver, item, NE e quantidade. Marca os serviços na ficha e ajusta o NE; ao montar, as quantidades continuam ligadas ao inventário e ao ICM/IP e são comparadas com as da ficha. Códigos que não estão na ficha entram como serviços incluídos">Importar ficha PATO / lista de serviços</button>
@@ -502,7 +485,26 @@
           Nos serviços do ICM o esforço é o parâmetro da intervenção no levantamento (NE ou % da faixa). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto.</p>
         <div id="fichaListaRes"></div>
         <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label></div>
-        <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div>
+        <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div></details>
+      <div class="caixa"><div class="bin-cab"><h3>Incluir serviço pelo código</h3></div>
+        <p class="nota">Também dá para digitar o código direto na linha em branco no fim da planilha (ou no ＋ de qualquer linha). Qtde., NE, item, código, descrição e unidade são editáveis na própria célula.</p>
+        <div class="barra filtros"><input id="cqCod" placeholder="código SICRO ou próprio (ex.: 2003373, 4915632, 5915321)" style="width:320px" data-dica="Digite o código e tecle Enter: descrição, unidade, preço unitário e a origem da quantidade pela planilha modelo">
+          <button class="btn primario" id="cqBuscar">Buscar</button>
+          <button class="btn" id="btnColar" data-dica="Cole do Excel uma lista: código, quantidade (opcional) e NE (opcional) por linha — sem quantidade, vale a regra da planilha modelo">Colar lista de códigos</button></div>
+        <div id="cqRes"></div></div>
+      <div class="caixa"><div class="barra filtros" style="margin-top:0">
+          <label class="check" data-dica="Mostra, no lugar de cada um (pela numeração), os serviços da ficha que ainda não estão na planilha — inclua com ＋ incluir, já com a regra da quantidade (inventário, IP, outro item, transporte)"><input type="checkbox" id="orcMostraFicha"> mostrar os serviços da ficha que não estão na planilha</label>
+          <span id="orcFichaBulk"></span>
+          <small class="nota" style="margin-left:auto">Na Qtde. digite um número ou <b>=item</b> para puxar de outra linha (ex.: <code>=01.03.02</code>, <code>=01.03.02*0,055</code>, <code>=01.03.02/1000</code>) — ou use ⤴.</small></div>
+        <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
+    <div id="orc-conf" class="sub-orc">
+      <div class="caixa"><h3>Conferência do PATO</h3>
+        <p class="nota">Checklists de elaboração e de auditoria (Res. DNIT nº 8/2023) e regras dos normativos da base (IN 10/2024, Ofícios-Circulares
+          6832/2025, 9237/2025, 10161/2025 e 6990/2026, Acórdãos TCU 2.700/2025 e 136/2025, DNIT 182/2018-PRO, Res. 6/2025-ICM).
+          Os itens automáticos são verificados nos dados do projeto; os manuais você marca e anota.</p>
+        <div id="confResumo"></div>
+        <div class="barra filtros"><label class="check"><input type="checkbox" id="confPend"> só pendências (falha, atenção e manuais não feitos)</label></div>
+        <div class="tabela-rolagem" style="max-height:72vh"><table class="tab" id="tabConf"></table></div></div>
     </div>
 
     <div id="orc-ip" class="sub-orc">

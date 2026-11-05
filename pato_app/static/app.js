@@ -1754,7 +1754,8 @@ const O_ = { sub: "planilha", c: null, med: null };
 const q3 = v => v == null ? "—" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: 3 });
 async function carregarOrc() {
   if (!E.pid) return;
-  const subs = [["ficha", "Ficha de serviços", "Escolha dos serviços e níveis de esforço para montar o PATO do segmento"], ["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
+  if (O_.sub === "ficha") O_.sub = "planilha";  // ficha e planilha unificadas
+  const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes; a ficha de serviços fica no painel de cima e os serviços dela podem entrar linha a linha"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
     ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["conf", "Conferência", "Checklists de elaboração e auditoria e regras dos normativos — verificação automática e itens a marcar"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
@@ -1772,7 +1773,7 @@ async function carregarOrc() {
         <p class="nota">Nenhuma planilha PATO neste projeto. Monte pela ficha de serviços, importe a aba PATO de uma planilha de referência ou inclua os itens.</p>`;
     if ($("#btnVerBdi")) $("#btnVerBdi").onclick = () => { C_.sub = "base"; irAba("custos"); };
     renderPendencias();
-    await ({ ficha: renderFicha, planilha: renderOrcPlanilha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ planilha: renderPlanilhaFicha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 // planilha PATO como tabela editável (estilo planilha): código na linha puxa o serviço; Qtde. (base), NE e demais
@@ -1811,6 +1812,64 @@ function renderPendencias() {
 async function putItem(id, campos, msg) {
   try { await jpost(`${base_}${E.pid}/pato/itens/${id}`, campos, "PUT"); if (msg) toast(msg); await atualizarPlanilha(); } catch (e) { erro(e); atualizarPlanilha(); }
 }
+async function renderPlanilhaFicha() {
+  try { await renderFicha(); } catch (e) { O_.ficha = null; }
+  const pf = $("#fichaPainel"); if (pf && !O_.fichaAberta) pf.open = !O_.c.itens.some(i => i.tipo === "servico");
+  if (pf) pf.ontoggle = () => { O_.fichaAberta = true; };
+  renderOrcPlanilha();
+}
+// "=01.03.02*0,055" → referência a outra linha (quantidade × fator); número → valor digitado
+function lerFormulaQtd(txt) {
+  const t = String(txt || "").trim().replace(/\s+/g, "");
+  if (!t.startsWith("=")) { const v = t === "" ? 0 : Number(t.includes(",") ? t.replace(/\./g, "").replace(",", ".") : t); if (!isFinite(v)) throw new Error("Quantidade inválida: " + txt); return { valor: v }; }
+  const m = t.slice(1).match(/^(base\()?([0-9A-Za-z.]+)\)?(?:([*/])([0-9.,]+))?$/i);
+  if (!m) throw new Error("Fórmula inválida. Use =ITEM, =ITEM*fator ou =ITEM/divisor (ex.: =01.03.02*0,055).");
+  const alvo = m[2], ref = O_.c.itens.find(i => i.tipo === "servico" && (i.item === alvo || (!O_.c.itens.some(y => y.item === alvo) && cp7(i.codigo) === cp7(alvo))));
+  if (!ref) throw new Error(`Não há linha ${alvo} na planilha (use o número do item ou o código).`);
+  let f = m[4] ? Number(m[4].replace(",", ".")) : 1; if (!f) throw new Error("Fator inválido.");
+  if (m[3] === "/") f = 1 / f;
+  return { base: { tipo: "item", ref: ref.id, campo: m[1] ? "base" : "quantidade", fator: +f.toPrecision(12), fonte: "outra linha" } };
+}
+const cp7 = c => /^\d{5,6}$/.test(String(c || "")) ? String(c).padStart(7, "0") : String(c || "").toUpperCase();
+function formulaQtd(i) {
+  const b = i.base || {}; if (b.tipo !== "item") return null;
+  const r = O_.c.itens.find(y => y.id === b.ref); if (!r) return "=?";
+  const f = b.fator == null || b.fator === "" ? 1 : +b.fator;
+  const ft = f === 1 ? "" : (f < 1 && Math.abs(1 / f - Math.round(1 / f)) < 1e-9 && 1 / f >= 10 ? "/" + Math.round(1 / f) : "*" + String(+f.toPrecision(10)).replace(".", ","));
+  return `=${b.campo === "base" ? "base(" + r.item + ")" : r.item}${ft}`;
+}
+// puxar a quantidade de outra linha (ex.: aquisição do CAP, mistura e transporte a partir do concreto asfáltico)
+function puxarDeOutraLinha(id) {
+  const i = O_.c.itens.find(x => x.id === id), b = i.base || {};
+  const outros = O_.c.itens.filter(x => x.tipo === "servico" && x.id !== id);
+  const d = document.createElement("dialog"); d.className = "dlg-pend";
+  d.innerHTML = `<h3>Quantidade de ${esc(i.item)} ${esc(i.codigo || "")} pela de outra linha</h3>
+    <p class="nota">${esc((i.descricao || "").slice(0, 110))} (${esc(i.unidade || "")})</p>
+    <div class="form"><div class="campos">
+      <label class="largo">Linha de origem <input id="plBusca" placeholder="filtrar por item, código ou descrição"></label>
+      <label class="largo"><select id="plRef" size="8" style="width:100%">${outros.map(x => `<option value="${esc(x.id)}" ${b.ref === x.id ? "selected" : ""}>${esc(x.item)} · ${esc(cp7(x.codigo))} · ${esc((x.descricao || "").slice(0, 70))} — ${q3(x.quantidade)} ${esc(x.unidade || "")}</option>`).join("")}</select></label>
+      <label>Usar da linha <select id="plCampo"><option value="quantidade">quantidade de trabalho (base × NE)</option><option value="base" ${b.campo === "base" ? "selected" : ""}>base (antes do NE)</option></select></label>
+      <label>Multiplicar por <input id="plFator" type="number" step="any" value="${b.tipo === "item" ? b.fator ?? 1 : 1}" data-dica="Ex.: teor de ligante 0,055; densidade 2,4 t/m³; espessura 0,05 m; 1/1000 para kg → t"></label>
+      <label>NE desta linha <input id="plNe" type="number" step="any" value="${i.ne ?? 1}" data-dica="A quantidade de trabalho desta linha = (origem × fator) × NE — use 1 para seguir a origem"></label></div>
+      <p id="plPrev" class="ok-msg"></p>
+      <div class="linha-botoes"><button class="btn primario" type="button" id="plOk">Ligar à linha</button><button class="btn" type="button" data-fechar>Cancelar</button></div></div>`;
+  document.body.append(d); d.showModal();
+  d.querySelector("[data-fechar]").onclick = () => d.close();
+  d.onclose = () => d.parentNode && d.parentNode.removeChild(d);
+  const prev = () => { const r = O_.c.itens.find(x => x.id === $("#plRef", d).value); if (!r) { $("#plPrev", d).textContent = "Escolha a linha de origem."; return; }
+    const v = ($("#plCampo", d).value === "base" ? r.base_valor : r.quantidade) * (+$("#plFator", d).value || 0);
+    $("#plPrev", d).textContent = `${r.item} (${q3($("#plCampo", d).value === "base" ? r.base_valor : r.quantidade)} ${r.unidade || ""}) × ${$("#plFator", d).value} = ${q3(v)} → × NE ${$("#plNe", d).value} = ${q3(v * (+$("#plNe", d).value || 0))} ${i.unidade || ""}`; };
+  ["#plRef", "#plCampo", "#plFator", "#plNe"].forEach(q => { $(q, d).oninput = prev; $(q, d).onchange = prev; });
+  $("#plBusca", d).oninput = e => { const t = e.target.value.toUpperCase(); $$("#plRef option", d).forEach(o => o.hidden = !!t && !o.textContent.toUpperCase().includes(t)); };
+  prev();
+  $("#plOk", d).onclick = () => { const ref = $("#plRef", d).value; if (!ref) return toast("Escolha a linha de origem");
+    d.close(); putItem(id, { base: { tipo: "item", ref, campo: $("#plCampo", d).value, fator: +$("#plFator", d).value || 1, fonte: "outra linha" }, ne: +$("#plNe", d).value || 1 }, "Quantidade ligada à outra linha"); };
+}
+async function incluirDaFicha(ids, ne) {
+  try { const r = await jpost(`${base_}${E.pid}/pato/ficha/incluir`, { ids, ne });
+    toast(`${r.incluidos.length} serviço(s) da ficha incluído(s): ${r.incluidos.map(x => x.item || x.codigo).join(", ")}`); await atualizarPlanilha();
+  } catch (e) { erro(e); }
+}
 function renderOrcPlanilha() {
   const c = O_.c, F = O_.filtro = O_.filtro || {};
   const acoes = i => `<span class="acoes-orc">
@@ -1822,12 +1881,16 @@ function renderOrcPlanilha() {
   const filtra = i => (!F.item || (i.item || "").includes(F.item)) && (!F.codigo || (i.codigo || "").toUpperCase().includes(F.codigo.toUpperCase()))
     && (!F.descricao || (i.descricao || "").toUpperCase().includes(F.descricao.toUpperCase())) && (!F.unidade || (i.unidade || "").toUpperCase().includes(F.unidade.toUpperCase()));
   const temFiltro = Object.values(F).some(v => v);
+  const alim = {};
+  c.itens.forEach(x => { const b = x.base || {}; if (x.tipo === "servico" && b.tipo === "item" && b.ref) (alim[b.ref] = alim[b.ref] || []).push(x.item || x.codigo); });
   const linhaServ = i => {
-    const b = i.base || {}, lig = LIGADAS[b.tipo], dir = b.tipo === "direta";
+    const b = i.base || {}, lig = LIGADAS[b.tipo], dir = b.tipo === "direta", fx = formulaQtd(i);
     return `<tr data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td>${cel(i.id, "codigo", /^\d{5,6}$/.test(i.codigo || "") ? String(i.codigo).padStart(7, "0") : i.codigo, "78px", 'data-dica="Troque o código: descrição, unidade e preço vêm da base"')}</td>
       <td>${cel(i.id, "descricao", i.descricao, "100%", `title="${esc(i.descricao || "")}"`)}</td><td>${cel(i.id, "unidade", i.unidade, "46px")}</td>
       <td class=n style="white-space:nowrap">${lig ? `<span class="lig" title="Quantidade ligada: ${esc(i.base_fonte || lig)}${b.expr ? " " + esc(b.expr) : ""}">🔗</span>` : `<button class="btn mini lig-btn" data-ligar="${esc(i.id)}" data-dica="Volta a ligar a quantidade à regra da planilha modelo (inventário, IP, transporte…)">🔗?</button>`}
-        <input class="cel n ${!lig && !i.base_valor ? "falta" : ""}" type="number" step="any" data-qbase="${esc(i.id)}" value="${i.base_valor == null ? "" : +(+i.base_valor).toFixed(3)}" style="width:100px" title="${esc(i.base_fonte || "")}" data-dica="Qtde. (inventário/base). Digitar troca a origem por valor digitado"><br><small>${esc((i.base_fonte || "").slice(0, 34))}</small></td>
+        <input class="cel n ${!lig && !i.base_valor ? "falta" : ""} ${fx ? "formula" : ""}" inputmode="decimal" data-qbase="${esc(i.id)}" value="${esc(fx || (i.base_valor == null ? "" : String(+(+i.base_valor).toFixed(3)).replace(".", ",")))}" style="width:${fx ? 124 : 100}px" title="${esc((i.base_fonte || "") + (fx ? " = " + q3(i.base_valor) : ""))}" data-dica="Qtde. (inventário/base): número, ou =ITEM para puxar de outra linha (=01.03.02*0,055). Digitar troca a origem">
+        <button class="btn mini" data-puxar="${esc(i.id)}" data-dica="Puxar a quantidade de outra linha (ex.: aquisição de CAP, usinagem e transporte a partir do concreto asfáltico)">⤴</button>
+        <br><small>${esc((i.base_fonte || "").slice(0, 34))}</small>${alim[i.id] ? `<br><span class="alimenta" title="Linhas que usam esta quantidade: ${esc(alim[i.id].join(", "))}">↳ alimenta ${alim[i.id].length}: ${esc(alim[i.id].slice(0, 3).join(", "))}${alim[i.id].length > 3 ? "…" : ""}</span>` : ""}</td>
       <td class=n>${dir ? "—" : `<input class="cel n ne-in" type="number" step="any" data-nein="${esc(i.id)}" value="${i.ne ?? 1}" data-dica="Nível de esforço: quantidade = base × NE">`}</td>
       <td class=n><b>${q3(i.quantidade)}</b></td>
       <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n><b>${reais(i.parcial_SD)}</b></td>
@@ -1838,14 +1901,29 @@ function renderOrcPlanilha() {
       <td><input class="cel falta" data-ncod placeholder="código ↵" style="width:78px" data-dica="Digite o código e tecle Enter: a linha se preenche (descrição, unidade, preço e quantidade pela planilha modelo)"></td>
       <td colspan=9><small class="nota">Digite o código e tecle Enter — ou cole vários códigos (um por linha, com quantidade e NE opcionais).</small>
         <button class="btn mini" data-ntit data-dica="Inclui um título (tópico) neste lugar">+ título</button>${apos ? ' <button class="btn mini" data-ncanc>cancelar</button>' : ""}</td><td></td></tr>`;
-  const itens = c.itens.filter(i => !temFiltro || (i.tipo !== "titulo" && filtra(i)));
+  let itens = c.itens.filter(i => !temFiltro || (i.tipo !== "titulo" && filtra(i)));
+  const fora = O_.mostraFicha && O_.ficha ? (() => { const ids = new Set(c.itens.map(i => i.id)), cods = new Set(c.itens.filter(i => i.tipo === "servico").map(i => cp7(i.codigo)));
+    // planilha montada pela ficha: compara pelo id (o mesmo código pode aparecer em vários grupos); importada: pelo código
+    const daFicha = O_.ficha.servicos.some(s => ids.has(s.id));
+    return O_.ficha.servicos.filter(s => s.tipo === "servico" && !ids.has(s.id) && (daFicha || !cods.has(cp7(s.codigo))) && (!temFiltro || filtra(s))); })() : [];
+  if (fora.length) {
+    const ch = t => String(t || "").split(".").map(p => /^\d+$/.test(p) ? +p : 0), cmp = (a, b) => { for (let k = 0; k < Math.max(a.length, b.length); k++) { const d = (a[k] ?? -1) - (b[k] ?? -1); if (d) return d; } return 0; };
+    const lst = itens.slice();
+    fora.forEach(s => { const k = ch(s.item); let pos = 0; lst.forEach((y, j) => { if (y.item && cmp(ch(y.item), k) <= 0) pos = j + 1; }); lst.splice(pos, 0, Object.assign({}, s, { _ficha: true })); });
+    itens = lst;
+  }
+  $("#orcFichaBulk").innerHTML = fora.length ? `<button class="btn mini" id="btnFichaIncl" data-dica="Inclui de uma vez os serviços da ficha marcados nas linhas em cinza">＋ incluir os marcados (<span id="nFichaSel">0</span> de ${fora.length})</button>` : "";
+  const linhaFicha = s => `<tr class="lin-ficha" data-fid="${esc(s.id)}"><td><label class="check"><input type="checkbox" data-fincl="${esc(s.id)}"> ${esc(s.item || "")}</label></td><td>${esc(cp7(s.codigo))}</td>
+      <td>${esc(s.descricao || "")}<br><small class="nota">da ficha · ${esc(s.regra || "")}</small></td><td>${esc(s.unidade || "")}</td><td></td>
+      <td class=n>${s.depende_de ? "—" : `<input class="cel n ne-in" type="number" step="any" data-fne2="${esc(s.id)}" value="${s.ne ?? 1}">`}</td><td colspan=5></td>
+      <td><button class="btn mini" data-fichain="${esc(s.id)}" data-dica="Inclui este serviço da ficha na planilha com a regra da quantidade${s.depende_de ? " (o serviço de referência entra junto, se faltar)" : ""}">＋ incluir</button></td></tr>`;
   const ult = c.itens.length ? c.itens[c.itens.length - 1] : null;
   $("#tabOrc").innerHTML = `<tr><th>Item</th><th>Cód.</th><th>Descrição completa</th><th>Unid.</th><th class=n>Qtde.<br><small>inventário / base</small></th><th class=n>NE</th>
       <th class=n>Qtde. de trabalho<br><small>base × NE</small></th><th class=n>Preço unit. SD</th><th class=n>Preço final SD</th><th class=n>Preço unit. CD</th><th class=n>Preço final CD</th><th></th></tr>
     <tr class="filtros-orc"><td><input data-filt="item" value="${esc(F.item || "")}" placeholder="▼ filtrar" style="width:92px"></td><td><input data-filt="codigo" value="${esc(F.codigo || "")}" placeholder="▼" style="width:78px"></td>
       <td><input data-filt="descricao" value="${esc(F.descricao || "")}" placeholder="▼ filtrar descrição" style="width:100%"></td><td><input data-filt="unidade" value="${esc(F.unidade || "")}" placeholder="▼" style="width:46px"></td>
       <td colspan=8>${temFiltro ? `<small class="nota">${itens.length} linha(s) no filtro</small> <button class="btn mini" id="limpaFilt">limpar filtros</button>` : ""}</td></tr>`
-    + itens.map(i => i.tipo === "titulo"
+    + itens.map(i => i._ficha ? linhaFicha(i) : i.tipo === "titulo"
       ? `<tr class="titulo-orc" data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td></td><td colspan=9>${cel(i.id, "descricao", i.descricao, "100%")}</td>
         <td style="white-space:nowrap">${acoes(i)}</td></tr>`
       : linhaServ(i)).join("")
@@ -1855,6 +1933,14 @@ function renderOrcPlanilha() {
 }
 function ligarPlanilha() {
   const F = O_.filtro;
+  $("#orcMostraFicha").checked = !!O_.mostraFicha;
+  $("#orcMostraFicha").onchange = e => { O_.mostraFicha = e.target.checked; renderOrcPlanilha(); };
+  const neF = () => Object.fromEntries($$("[data-fne2]").filter(x => x.value !== "").map(x => [x.dataset.fne2, +x.value]));
+  $$("[data-fichain]").forEach(b => b.onclick = () => incluirDaFicha([b.dataset.fichain], neF()));
+  $$("[data-fincl]").forEach(cb => cb.onchange = () => { const n = $("#nFichaSel"); if (n) n.textContent = $$("[data-fincl]").filter(x => x.checked).length; });
+  if ($("#btnFichaIncl")) $("#btnFichaIncl").onclick = () => { const ids = $$("[data-fincl]").filter(x => x.checked).map(x => x.dataset.fincl);
+    if (!ids.length) return toast("Marque os serviços da ficha (linhas em cinza)"); incluirDaFicha(ids, neF()); };
+  $$("[data-puxar]").forEach(b => b.onclick = () => puxarDeOutraLinha(b.dataset.puxar));
   $$("[data-filt]").forEach(inp => inp.oninput = () => { clearTimeout(O_.hf); O_.hf = setTimeout(() => { F[inp.dataset.filt] = inp.value; const pos = inp.selectionStart; renderOrcPlanilha();
     const n = $(`[data-filt="${inp.dataset.filt}"]`); n.focus(); n.setSelectionRange(pos, pos); }, 250); });
   if ($("#limpaFilt")) $("#limpaFilt").onclick = () => { O_.filtro = {}; renderOrcPlanilha(); };
@@ -1862,8 +1948,11 @@ function ligarPlanilha() {
   $$("[data-nein]").forEach(inp => inp.onchange = () => putItem(inp.dataset.nein, { ne: inp.value === "" ? 1 : +inp.value }));
   $$("[data-qbase]").forEach(inp => inp.onchange = () => {
     const x = O_.c.itens.find(y => y.id === inp.dataset.qbase);
-    if (LIGADAS[(x.base || {}).tipo] && !confirm(`A quantidade está ligada a ${x.base_fonte || LIGADAS[x.base.tipo]}. Trocar pelo valor digitado (${inp.value})?\n(o botão 🔗? religa depois)`)) { inp.value = x.base_valor ?? ""; return; }
-    putItem(x.id, { base: { tipo: "valor", valor: inp.value === "" ? 0 : +inp.value, fonte: "digitado" } });
+    let r; try { r = lerFormulaQtd(inp.value); } catch (e) { toast(e.message); inp.value = formulaQtd(x) || x.base_valor || ""; return; }
+    if (r.base && r.base.ref === x.id) { toast("A linha não pode puxar a própria quantidade"); inp.value = formulaQtd(x) || ""; return; }
+    const tipo = (x.base || {}).tipo;
+    if (LIGADAS[tipo] && tipo !== "item" && !confirm(`A quantidade está ligada a ${x.base_fonte || LIGADAS[tipo]}. Trocar por ${r.base ? "outra linha (" + inp.value + ")" : "valor digitado (" + inp.value + ")"}?\n(o botão 🔗? religa depois)`)) { inp.value = x.base_valor ?? ""; return; }
+    putItem(x.id, { base: r.base || { tipo: "valor", valor: r.valor, fonte: "digitado" } }, r.base ? "Quantidade puxada de outra linha" : null);
   });
   $$("[data-ligar]").forEach(b => b.onclick = async () => {
     const x = O_.c.itens.find(y => y.id === b.dataset.ligar);
@@ -2168,7 +2257,7 @@ $("#confPend").onchange = () => CF_.r && desenharConf();
 
 // ---- ficha de serviços
 async function renderFicha() {
-  const f = await api(`${base_}${E.pid}/pato/ficha`), atuais = new Set((O_.c?.itens || []).filter(i => i.tipo === "servico").map(i => i.id));
+  const f = O_.ficha = await api(`${base_}${E.pid}/pato/ficha`), atuais = new Set((O_.c?.itens || []).filter(i => i.tipo === "servico").map(i => i.id));
   $("#fichaOrigem").textContent = f.origem || "modelo";
   const vazio = !atuais.size;
   $("#tabFicha").innerHTML = `<tr><th></th><th>Item</th><th>Código</th><th>Serviço</th><th>Un.</th><th>Regra da quantidade</th><th class=n>Nível de esforço</th><th class=n>Valor a informar</th></tr>` +
@@ -2194,11 +2283,11 @@ $("#btnFichaMontar").onclick = async () => {
 $("#btnFichaNePadrao").onclick = async () => {
   const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
   if (!confirm("Gravar estes níveis de esforço como padrão da ficha (próximos projetos)?\nO PATO deste projeto não muda — use “Montar PATO pela ficha” ou edite o NE na planilha.")) return;
-  try { const r = await jpost("/api/pato/ficha/ne", { ne }, "PUT"); toast(`NE padrão gravado (${r.alterados} alterado(s))`); renderFicha(); } catch (e) { erro(e); }
+  try { const r = await jpost("/api/pato/ficha/ne", { ne }, "PUT"); toast(`NE padrão gravado (${r.alterados} alterado(s))`); await renderFicha(); renderOrcPlanilha(); } catch (e) { erro(e); }
 };
 $("#btnFichaRestaurar").onclick = async () => {
   if (!confirm("Voltar à ficha original do sistema (regras e níveis de esforço)? As suas alterações de NE padrão serão descartadas.")) return;
-  try { await api("/api/pato/ficha", { method: "DELETE" }); toast("Ficha original restaurada"); renderFicha(); } catch (e) { erro(e); }
+  try { await api("/api/pato/ficha", { method: "DELETE" }); toast("Ficha original restaurada"); await renderFicha(); renderOrcPlanilha(); } catch (e) { erro(e); }
 };
 function mostrarConfQtd() {
   const l = O_.confQtd || [], dif = l.filter(x => !x.confere);

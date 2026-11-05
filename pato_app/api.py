@@ -1010,6 +1010,15 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         finally:
             os.unlink(caminho)
 
+    @app.post("/api/projetos/{pid}/pato/ficha/incluir")
+    def ficha_incluir(pid: int, dados: dict = Body(...)):
+        try:
+            r = orc.incluir_da_ficha(pid, dados.get("ids") or [], dados.get("ne"))
+        except ValueError as e:
+            raise HTTPException(400, str(e)) from e
+        r.pop("calc", None)
+        return r
+
     @app.post("/api/projetos/{pid}/pato/montar")
     def ficha_montar(pid: int, dados: dict = Body(default={})):
         r = orc.montar_pela_ficha(pid, dados.get("selecionados"), dados.get("ne"), dados.get("valores"), dados.get("extras"),

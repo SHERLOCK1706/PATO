@@ -251,14 +251,10 @@ ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 ## Novidades: assistente, salvar versões, fornecedores (ANM/SIGMINE), DMT pela estrada e memória de cálculo
 - **Assistente** (aba própria): as 9 etapas para montar o PATO de um segmento — projeto, inventário, ICM/IP, data-base e BDI,
   cotações/binômio, croqui, ficha de serviços, ADM/mobilização, conferência — com ✅/⚠️/❌, o que falta e o botão para a etapa.
-- **Menu Arquivo (como Word/Excel):** Novo projeto · **Abrir arquivo… (Ctrl+O)** · **Salvar (Ctrl+S)** · **Salvar como… (Ctrl+Shift+S)**
-  · Salvar como cópia · Versões salvas. O projeto vira um arquivo **.pato** na pasta que você escolher (pode ser OneDrive/Google
-  Drive para usar em qualquer computador); no Chrome/Edge o Ctrl+S atualiza esse mesmo arquivo. Abrir um .pato de um projeto que
-  já existe pergunta se substitui (salvando antes a versão atual) ou abre como projeto novo.
-- **Arquivo em dois computadores (OneDrive/Google Drive):** o .pato registra quem está com ele aberto e a revisão de cada
-  gravação. **Ao abrir**, se ele estiver aberto em outro computador, o sistema avisa (quem, desde quando, última gravação) e pergunta
-  se abre mesmo assim. **Ao salvar (Ctrl+S)**, se alguém salvou o arquivo em outro computador depois que você o abriu, avisa antes
-  de sobrescrever. **Arquivo → Fechar arquivo** salva e libera o arquivo para o outro computador.
+- **Menu Arquivo (como Word/Excel):** Novo · **Abrir** (Ctrl+A / Ctrl+O) · **Salvar** (Ctrl+B / Ctrl+S) · **Salvar como** (F12) ·
+  **Salvar uma cópia** · **Renomear** · **Histórico de versões** · **Fechar**. O projeto vira um arquivo **.pato** na pasta que você
+  escolher (pode ser OneDrive/Google Drive, para usar em qualquer computador); no Chrome/Edge o Salvar atualiza esse mesmo arquivo.
+  Ao abrir um projeto que está aberto em outro computador, o sistema informa (uma única mensagem); o Fechar libera o arquivo.
 - **💾 Salvar** (ou Ctrl+S): versão completa do projeto (ponto de restauração). **Projetos ▾**: versões salvas (voltar a qualquer
   uma — o estado atual é salvo antes), **salvar como cópia** (projeto novo independente, com tudo), **baixar/abrir arquivo
   .pato** (levar para outro computador). Cada projeto é independente; ao trocar no seletor nada passa de um para outro.

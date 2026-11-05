@@ -111,20 +111,6 @@ async function gravarNoArquivo(h, acao = "salvar", desde = null) {
   const w = await h.createWritable(); await w.write(blob); await w.close();
   return rev;
 }
-// antes de gravar: o arquivo foi salvo em outro computador depois que você o abriu? (revisão diferente)
-async function conferirConflito(v) {
-  let info;
-  try { info = await infoArquivo(await v.h.getFile()); } catch (_) { return true; }
-  if (v.rev && info.revisao && info.revisao !== v.rev) {
-    return confirm(`⚠️ ATENÇÃO: o arquivo "${v.h.name}" foi salvo por ${quem(info.salvo_por)} em ${quando(info.salvo_em)}, depois que você o abriu aqui.\n\n`
-      + `Se salvar agora, as alterações feitas lá serão SOBRESCRITAS.\n\nOK = sobrescrever com a minha versão\nCancelar = não salvar (use Arquivo → Abrir para pegar a versão do outro computador, ou Salvar como cópia)`);
-  }
-  if (info.aberto_em_outro && info.uso && (!v.desde || info.uso.desde > v.desde)) {
-    return confirm(`⚠️ O arquivo "${v.h.name}" está aberto também por ${quem(info.uso)} desde ${quando(info.uso.desde)}.\n`
-      + `Se os dois salvarem, um sobrescreve o outro. Salvar mesmo assim?`);
-  }
-  return true;
-}
 async function salvarProjeto(rotulo) {
   if (!E.pid) return;
   try {
@@ -132,7 +118,6 @@ async function salvarProjeto(rotulo) {
     const v = await vinculo(E.pid);
     let msg = `Projeto salvo (${new Date(r.salvo_em).toLocaleTimeString("pt-BR", { timeStyle: "short" })})`;
     if (v) {
-      if (!(await conferirConflito(v))) { toast(msg + " no sistema — o arquivo NÃO foi gravado"); mostrarSalvo(); return; }
       try { const rev = await gravarNoArquivo(v.h, "salvar", v.desde); await idbSet("p" + E.pid, { ...v, rev }); msg += ` — ${v.h.name}`; }
       catch (e) { msg += ` — arquivo não atualizado: ${e.message}`; }
     }
@@ -146,7 +131,7 @@ async function salvarComo() {
       const h = await window.showSaveFilePicker({ suggestedName: nomeArq(), types: [{ description: "Projeto PATO", accept: { "application/octet-stream": [".pato"] } }] });
       await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "salvar como " + h.name });
       const desde = new Date().toISOString(); const rev = await gravarNoArquivo(h, "abrir", desde); await idbSet("p" + E.pid, { h, rev, desde });
-      toast(`Salvo em ${h.name} — o Ctrl+S passa a atualizar este arquivo`); mostrarSalvo();
+      toast(`Salvo em ${h.name} — o Salvar passa a atualizar este arquivo`); mostrarSalvo();
     } else {
       const a = document.createElement("a"); a.href = `/api/projetos/${E.pid}/arquivo`; a.download = nomeArq(); a.click();
       toast("Arquivo do projeto baixado (.pato) — guarde na pasta que quiser");
@@ -161,47 +146,48 @@ async function abrirArquivo() {
       arq = await h.getFile();
     } else { arq = await escolherArquivo(".pato,.zip"); if (!arq) return; }
     const info = await infoArquivo(arq);
-    if (info.aberto_em_outro && info.uso && !confirm(`⚠️ ESTE ARQUIVO ESTÁ ABERTO EM OUTRO COMPUTADOR\n\nAberto por ${quem(info.uso)} desde ${quando(info.uso.desde)}`
-        + ` (última gravação: ${quando(info.uso.ultimo || info.salvo_em)}).\n\nSe os dois trabalharem e salvarem ao mesmo tempo, um sobrescreve o trabalho do outro.`
-        + `\nPeça para fecharem o arquivo lá (Arquivo → Fechar arquivo).\n\nOK = abrir mesmo assim · Cancelar = não abrir`)) return;
-    let substituir = null;
-    if (info.mesmos.length) {
-      const alvo = info.mesmos[0];
-      if (confirm(`Já existe o projeto "${alvo.nome}" no sistema.\nOK = substituir pelo conteúdo do arquivo (a versão atual é salva antes)\nCancelar = abrir como projeto novo`)) substituir = alvo.id;
-    }
+    if (info.aberto_em_outro && info.uso) alert(`Este projeto está aberto em outro computador (${quem(info.uso)}, desde ${quando(info.uso.desde)}).`);
+    const substituir = info.mesmos.length ? info.mesmos[0].id : null;  // mesmo projeto: atualiza (a versão atual fica salva antes)
     const fd = new FormData(); fd.append("arquivo", arq); if (substituir) fd.append("substituir", substituir);
     const np = await api("/api/projetos/abrir", { method: "POST", body: fd });
     if (h) { try { const desde = new Date().toISOString(); E.pid = np.id; const rev = await gravarNoArquivo(h, "abrir", desde); await idbSet("p" + np.id, { h, rev, desde }); }
              catch (e) { await idbSet("p" + np.id, { h, rev: info.revisao, desde: new Date().toISOString() }); } }
     limparEstadoProjeto(); await carregarProjetos(np.id);
-    toast(`Aberto: ${np.nome}${h ? " — o Ctrl+S grava neste arquivo" : ""}`); irAba($("#abas button.ativa").dataset.aba);
+    toast(`Aberto: ${np.nome}`); irAba($("#abas button.ativa").dataset.aba);
   } catch (e) { if (e.name !== "AbortError") erro(e); }
 }
 async function fecharArquivo() {
   const v = await vinculo(E.pid);
   if (!v) return toast("Este projeto não está ligado a um arquivo (use Salvar como…)");
-  try { if (await conferirConflito(v)) { await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "fechar arquivo" }); await gravarNoArquivo(v.h, "fechar", v.desde); }
+  try { await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "fechar arquivo" }); await gravarNoArquivo(v.h, "fechar", v.desde);
     await idbDel("p" + E.pid); toast(`Arquivo ${v.h.name} salvo e liberado — já pode ser aberto em outro computador`); mostrarSalvo();
   } catch (e) { erro(e); }
 }
+async function renomearProjeto() {
+  const p = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Renomear — novo nome:", p.nome || ""); if (!n || n === p.nome) return;
+  try { await jpost(`/api/projetos/${E.pid}`, { nome: n.trim() }, "PUT"); await carregarProjetos(E.pid); toast("Projeto renomeado"); } catch (e) { erro(e); }
+}
 async function copiaProjeto() {
-  const p = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Nome do novo projeto:", `${p.nome || "Projeto"} (cópia)`); if (!n) return;
+  const p = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Salvar uma cópia — nome da cópia:", `${p.nome || "Projeto"} - Cópia`); if (!n) return;
   try { const np = await jpost(`/api/projetos/${E.pid}/duplicar`, { nome: n }); limparEstadoProjeto(); await carregarProjetos(np.id); toast("Cópia criada — você está agora na cópia"); irAba($("#abas button.ativa").dataset.aba); } catch (e) { erro(e); }
 }
 $("#btnSalvar").onclick = () => salvarProjeto(null);
+if ($("#btnRenomear")) $("#btnRenomear").onclick = () => renomearProjeto();
 $("#btnArquivo").onclick = e => { e.stopPropagation(); $("#menuArquivo").hidden = !$("#menuArquivo").hidden; };
 document.addEventListener("click", () => { const m = $("#menuArquivo"); if (m) m.hidden = true; });
 $$("[data-arq]").forEach(b => b.onclick = () => {
   $("#menuArquivo").hidden = true;
-  ({ novo: () => $("#btnNovo").click(), abrir: abrirArquivo, salvar: () => salvarProjeto(null), salvar_como: salvarComo, copia: copiaProjeto, fechar: fecharArquivo,
+  ({ novo: () => $("#btnNovo").click(), abrir: abrirArquivo, salvar: () => salvarProjeto(null), salvar_como: salvarComo, copia: copiaProjeto, renomear: renomearProjeto, fechar: fecharArquivo,
      versoes: () => $("#btnProjArq").click() })[b.dataset.arq]();
 });
+// atalhos do Word/Excel em português: Ctrl+B salvar, Ctrl+A abrir, F12 salvar como (também Ctrl+S e Ctrl+O)
 document.addEventListener("keydown", e => {
+  if (e.key === "F12") { e.preventDefault(); salvarComo(); return; }
   if (!(e.ctrlKey || e.metaKey)) return;
-  const k = e.key.toLowerCase();
-  if (k === "s" && e.shiftKey) { e.preventDefault(); salvarComo(); }
-  else if (k === "s") { e.preventDefault(); salvarProjeto(null); }
-  else if (k === "o") { e.preventDefault(); abrirArquivo(); }
+  const k = e.key.toLowerCase(), campo = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName || "");
+  if ((k === "s" || k === "b") && e.shiftKey) { e.preventDefault(); salvarComo(); }
+  else if (k === "s" || (k === "b" && !campo)) { e.preventDefault(); salvarProjeto(null); }
+  else if (k === "o" || (k === "a" && !campo)) { e.preventDefault(); abrirArquivo(); }
 });
 $("#btnProjArq").onclick = async () => {
   if (!E.pid) return;

@@ -13,19 +13,20 @@
   <div class="proj">
     <label for="selProjeto" class="sr">Projeto</label>
     <select id="selProjeto" data-dica="Projeto (trecho) em trabalho"></select>
-    <div class="menu-arq"><button class="btn" id="btnArquivo" data-dica="Novo, Abrir, Salvar, Salvar como… (como no Word/Excel)">Arquivo ▾</button>
+    <div class="menu-arq"><button class="btn" id="btnArquivo" data-dica="Novo, Abrir, Salvar, Salvar como, Salvar uma cópia, Renomear, Histórico de versões, Fechar">Arquivo ▾</button>
       <div class="menu-arq-lista" id="menuArquivo" hidden>
-        <button type="button" data-arq="novo">Novo projeto</button>
-        <button type="button" data-arq="abrir">Abrir arquivo… <small>Ctrl+O</small></button>
+        <button type="button" data-arq="novo">Novo</button>
+        <button type="button" data-arq="abrir">Abrir <small>Ctrl+A</small></button>
         <hr>
-        <button type="button" data-arq="salvar">Salvar <small>Ctrl+S</small></button>
-        <button type="button" data-arq="salvar_como">Salvar como… <small>Ctrl+Shift+S</small></button>
-        <button type="button" data-arq="copia">Salvar como cópia (novo projeto)…</button>
-        <button type="button" data-arq="fechar">Fechar arquivo (liberar para outro computador)</button>
+        <button type="button" data-arq="salvar">Salvar <small>Ctrl+B</small></button>
+        <button type="button" data-arq="salvar_como">Salvar como <small>F12</small></button>
+        <button type="button" data-arq="copia">Salvar uma cópia</button>
+        <button type="button" data-arq="renomear">Renomear</button>
         <hr>
-        <button type="button" data-arq="versoes">Versões salvas…</button>
+        <button type="button" data-arq="versoes">Histórico de versões</button>
+        <button type="button" data-arq="fechar">Fechar</button>
       </div></div>
-    <button class="btn primario" id="btnSalvar" data-dica="Salva o projeto (Ctrl+S): grava uma versão no sistema e, se o projeto tiver um arquivo no seu computador (Salvar como…), atualiza esse arquivo">💾 Salvar</button>
+    <button class="btn primario" id="btnSalvar" data-dica="Salvar (Ctrl+B ou Ctrl+S): grava uma versão no sistema e, se o projeto tiver um arquivo no seu computador (Salvar como…), atualiza esse arquivo">💾 Salvar</button>
     <button class="btn" id="btnNovo" hidden></button><button class="btn" id="btnProjArq" hidden></button>
     <small id="salvoEm" class="nota"></small>
   </div>
@@ -160,7 +161,8 @@
         <div class="caixa">
           <h3>Projeto</h3>
           <div class="linha-botoes">
-            <button class="btn" id="btnDuplicar" data-dica="Cria uma cópia completa e independente deste projeto (inventário, PATO, binômio e cotações, croqui, custos, IP)">Salvar como cópia</button>
+            <button class="btn" id="btnDuplicar" data-dica="Cria uma cópia completa e independente deste projeto (inventário, PATO, binômio e cotações, croqui, custos, IP) com o nome que você escolher">Gerar cópia</button>
+            <button class="btn" type="button" id="btnRenomear" data-dica="Muda o nome do projeto">Renomear</button>
             <button class="btn perigo" id="btnExcluirProj" data-dica="Apaga o projeto. Uma cópia completa (.pato) fica na pasta 'excluidos' e pode ser aberta de novo">Excluir projeto</button>
           </div>
           <h4>Histórico</h4>

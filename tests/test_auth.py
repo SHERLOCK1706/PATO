@@ -78,3 +78,29 @@ def test_arquivo_abrir_salvar_como(tmp_path, monkeypatch):
     assert any("antes de abrir" in (v["rotulo"] or "") for v in c.get(f"/api/projetos/{pid}/versoes").json())
     novo = c.post("/api/projetos/abrir", files={"arquivo": ("x.pato", arq)}).json()
     assert novo["id"] != pid and len(c.get("/api/projetos").json()) == 2         # ou como projeto novo
+
+
+def test_aviso_arquivo_aberto_em_outro_computador(tmp_path, monkeypatch):
+    """O .pato registra quem está com ele aberto e a revisão de cada gravação: abrir um arquivo aberto em outro computador
+    avisa; fechar libera; cada gravação muda a revisão (o Ctrl+S confere antes de sobrescrever)."""
+    from pato_app import projeto_arquivo as pa
+    monkeypatch.delenv("PATO_LOGIN", raising=False)
+    sv = Servico(pasta=tmp_path)
+    c = TestClient(criar_app(sv))
+    pid = c.post("/api/projetos", json=dict(nome="Trecho X", rodovia="BR-158/MT", km_ini=0, km_fim=10)).json()["id"]
+    eu = c.get("/api/maquina").json()
+    # aberto aqui (Salvar como / Abrir): não avisa para este computador
+    r = c.get(f"/api/projetos/{pid}/arquivo", params=dict(acao="abrir"))
+    rev1 = r.headers["x-pato-revisao"]
+    info = c.post("/api/projetos/arquivo/info", files={"arquivo": ("x.pato", r.content)}).json()
+    assert info["uso"]["maquina"] == eu["maquina"] and not info["aberto_em_outro"] and info["revisao"] == rev1
+    # o mesmo arquivo, salvo/aberto em OUTRO computador: avisa, com quem e desde quando
+    outro = pa.exportar(sv, pid, dict(maquina="NOTEBOOK-CAMPO", usuario="ana", desde="2026-11-05T08:00:00", ultimo="2026-11-05T09:30:00",
+                                      fechado=False))
+    info = c.post("/api/projetos/arquivo/info", files={"arquivo": ("x.pato", outro)}).json()
+    assert info["aberto_em_outro"] and info["uso"]["maquina"] == "NOTEBOOK-CAMPO" and info["revisao"] != rev1
+    # fechado lá: não avisa mais
+    fechado = pa.exportar(sv, pid, dict(maquina="NOTEBOOK-CAMPO", usuario="ana", desde="2026-11-05T08:00:00", fechado=True))
+    assert not c.post("/api/projetos/arquivo/info", files={"arquivo": ("x.pato", fechado)}).json()["aberto_em_outro"]
+    # cada gravação gera nova revisão
+    assert c.get(f"/api/projetos/{pid}/arquivo", params=dict(acao="salvar")).headers["x-pato-revisao"] != rev1

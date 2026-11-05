@@ -79,7 +79,7 @@ function limparEstadoProjeto() {
 async function mostrarSalvo() {
   const el = $("#salvoEm"); if (!el || !E.pid) return;
   try { const v = await api(`/api/projetos/${E.pid}/versoes`);
-    const h = await idbGet("p" + E.pid);
+    const vv = await vinculo(E.pid), h = vv?.h;
     el.textContent = (h ? `📄 ${h.name} · ` : "") + (v.length ? `salvo em ${new Date(v[0].salvo_em).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })}` : "não salvo");
   } catch (_) { el.textContent = ""; }
 }
@@ -93,20 +93,49 @@ function idb() {
     r.onsuccess = () => ok(r.result); r.onerror = () => falha(r.error); });
 }
 async function idbGet(k) { try { const db = await idb(); return await new Promise(ok => { const q = db.transaction("h").objectStore("h").get(k); q.onsuccess = () => ok(q.result); q.onerror = () => ok(null); }); } catch (_) { return null; } }
+async function idbDel(k) { try { const db = await idb(); await new Promise(ok => { const t = db.transaction("h", "readwrite"); t.objectStore("h").delete(k); t.oncomplete = ok; t.onerror = ok; }); } catch (_) {} }
+async function vinculo(pid) { const v = await idbGet("p" + pid); return !v ? null : v.kind === "file" ? { h: v } : v; }  // {h, rev, desde}
+const quando = iso => iso ? new Date(iso).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }) : "—";
+const quem = u => u ? `${u.usuario ? u.usuario + " no " : ""}computador ${u.maquina}` : "outro computador";
+async function infoArquivo(file) { const fi = new FormData(); fi.append("arquivo", file); return api("/api/projetos/arquivo/info", { method: "POST", body: fi }); }
 async function idbSet(k, v) { try { const db = await idb(); await new Promise(ok => { const t = db.transaction("h", "readwrite"); t.objectStore("h").put(v, k); t.oncomplete = ok; t.onerror = ok; }); } catch (_) {} }
-async function bytesProjeto() { const r = await fetch(`/api/projetos/${E.pid}/arquivo`); if (!r.ok) throw new Error("Não foi possível gerar o arquivo do projeto."); return await r.blob(); }
+async function bytesProjeto(acao, desde) {
+  const q = new URLSearchParams(); if (acao) q.set("acao", acao); if (desde) q.set("desde", desde);
+  const r = await fetch(`/api/projetos/${E.pid}/arquivo?${q}`); if (!r.ok) throw new Error("Não foi possível gerar o arquivo do projeto.");
+  return { blob: await r.blob(), rev: r.headers.get("X-Pato-Revisao") };
+}
 const nomeArq = () => ((E.projetos.find(x => x.id === E.pid) || {}).nome || "projeto").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim().slice(0, 90) + ".pato";
-async function gravarNoArquivo(h) {
+async function gravarNoArquivo(h, acao = "salvar", desde = null) {
   if ((await h.queryPermission?.({ mode: "readwrite" })) !== "granted" && (await h.requestPermission?.({ mode: "readwrite" })) !== "granted") throw new Error("Sem permissão para gravar no arquivo.");
-  const w = await h.createWritable(); await w.write(await bytesProjeto()); await w.close();
+  const { blob, rev } = await bytesProjeto(acao, desde);
+  const w = await h.createWritable(); await w.write(blob); await w.close();
+  return rev;
+}
+// antes de gravar: o arquivo foi salvo em outro computador depois que você o abriu? (revisão diferente)
+async function conferirConflito(v) {
+  let info;
+  try { info = await infoArquivo(await v.h.getFile()); } catch (_) { return true; }
+  if (v.rev && info.revisao && info.revisao !== v.rev) {
+    return confirm(`⚠️ ATENÇÃO: o arquivo "${v.h.name}" foi salvo por ${quem(info.salvo_por)} em ${quando(info.salvo_em)}, depois que você o abriu aqui.\n\n`
+      + `Se salvar agora, as alterações feitas lá serão SOBRESCRITAS.\n\nOK = sobrescrever com a minha versão\nCancelar = não salvar (use Arquivo → Abrir para pegar a versão do outro computador, ou Salvar como cópia)`);
+  }
+  if (info.aberto_em_outro && info.uso && (!v.desde || info.uso.desde > v.desde)) {
+    return confirm(`⚠️ O arquivo "${v.h.name}" está aberto também por ${quem(info.uso)} desde ${quando(info.uso.desde)}.\n`
+      + `Se os dois salvarem, um sobrescreve o outro. Salvar mesmo assim?`);
+  }
+  return true;
 }
 async function salvarProjeto(rotulo) {
   if (!E.pid) return;
   try {
     const r = await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: rotulo || null });
-    const h = await idbGet("p" + E.pid);
+    const v = await vinculo(E.pid);
     let msg = `Projeto salvo (${new Date(r.salvo_em).toLocaleTimeString("pt-BR", { timeStyle: "short" })})`;
-    if (h) { try { await gravarNoArquivo(h); msg += ` — ${h.name}`; } catch (e) { msg += ` — arquivo não atualizado: ${e.message}`; } }
+    if (v) {
+      if (!(await conferirConflito(v))) { toast(msg + " no sistema — o arquivo NÃO foi gravado"); mostrarSalvo(); return; }
+      try { const rev = await gravarNoArquivo(v.h, "salvar", v.desde); await idbSet("p" + E.pid, { ...v, rev }); msg += ` — ${v.h.name}`; }
+      catch (e) { msg += ` — arquivo não atualizado: ${e.message}`; }
+    }
     toast(msg); mostrarSalvo();
   } catch (e) { erro(e); }
 }
@@ -116,7 +145,7 @@ async function salvarComo() {
     if (ARQ_.fs) {
       const h = await window.showSaveFilePicker({ suggestedName: nomeArq(), types: [{ description: "Projeto PATO", accept: { "application/octet-stream": [".pato"] } }] });
       await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "salvar como " + h.name });
-      await gravarNoArquivo(h); await idbSet("p" + E.pid, h);
+      const desde = new Date().toISOString(); const rev = await gravarNoArquivo(h, "abrir", desde); await idbSet("p" + E.pid, { h, rev, desde });
       toast(`Salvo em ${h.name} — o Ctrl+S passa a atualizar este arquivo`); mostrarSalvo();
     } else {
       const a = document.createElement("a"); a.href = `/api/projetos/${E.pid}/arquivo`; a.download = nomeArq(); a.click();
@@ -131,8 +160,10 @@ async function abrirArquivo() {
       [h] = await window.showOpenFilePicker({ types: [{ description: "Projeto PATO", accept: { "application/octet-stream": [".pato"] } }] });
       arq = await h.getFile();
     } else { arq = await escolherArquivo(".pato,.zip"); if (!arq) return; }
-    const fi = new FormData(); fi.append("arquivo", arq);
-    const info = await api("/api/projetos/arquivo/info", { method: "POST", body: fi });
+    const info = await infoArquivo(arq);
+    if (info.aberto_em_outro && info.uso && !confirm(`⚠️ ESTE ARQUIVO ESTÁ ABERTO EM OUTRO COMPUTADOR\n\nAberto por ${quem(info.uso)} desde ${quando(info.uso.desde)}`
+        + ` (última gravação: ${quando(info.uso.ultimo || info.salvo_em)}).\n\nSe os dois trabalharem e salvarem ao mesmo tempo, um sobrescreve o trabalho do outro.`
+        + `\nPeça para fecharem o arquivo lá (Arquivo → Fechar arquivo).\n\nOK = abrir mesmo assim · Cancelar = não abrir`)) return;
     let substituir = null;
     if (info.mesmos.length) {
       const alvo = info.mesmos[0];
@@ -140,10 +171,18 @@ async function abrirArquivo() {
     }
     const fd = new FormData(); fd.append("arquivo", arq); if (substituir) fd.append("substituir", substituir);
     const np = await api("/api/projetos/abrir", { method: "POST", body: fd });
-    if (h) await idbSet("p" + np.id, h);
+    if (h) { try { const desde = new Date().toISOString(); E.pid = np.id; const rev = await gravarNoArquivo(h, "abrir", desde); await idbSet("p" + np.id, { h, rev, desde }); }
+             catch (e) { await idbSet("p" + np.id, { h, rev: info.revisao, desde: new Date().toISOString() }); } }
     limparEstadoProjeto(); await carregarProjetos(np.id);
     toast(`Aberto: ${np.nome}${h ? " — o Ctrl+S grava neste arquivo" : ""}`); irAba($("#abas button.ativa").dataset.aba);
   } catch (e) { if (e.name !== "AbortError") erro(e); }
+}
+async function fecharArquivo() {
+  const v = await vinculo(E.pid);
+  if (!v) return toast("Este projeto não está ligado a um arquivo (use Salvar como…)");
+  try { if (await conferirConflito(v)) { await jpost(`/api/projetos/${E.pid}/salvar`, { rotulo: "fechar arquivo" }); await gravarNoArquivo(v.h, "fechar", v.desde); }
+    await idbDel("p" + E.pid); toast(`Arquivo ${v.h.name} salvo e liberado — já pode ser aberto em outro computador`); mostrarSalvo();
+  } catch (e) { erro(e); }
 }
 async function copiaProjeto() {
   const p = E.projetos.find(x => x.id === E.pid) || {}; const n = prompt("Nome do novo projeto:", `${p.nome || "Projeto"} (cópia)`); if (!n) return;
@@ -154,7 +193,7 @@ $("#btnArquivo").onclick = e => { e.stopPropagation(); $("#menuArquivo").hidden 
 document.addEventListener("click", () => { const m = $("#menuArquivo"); if (m) m.hidden = true; });
 $$("[data-arq]").forEach(b => b.onclick = () => {
   $("#menuArquivo").hidden = true;
-  ({ novo: () => $("#btnNovo").click(), abrir: abrirArquivo, salvar: () => salvarProjeto(null), salvar_como: salvarComo, copia: copiaProjeto,
+  ({ novo: () => $("#btnNovo").click(), abrir: abrirArquivo, salvar: () => salvarProjeto(null), salvar_como: salvarComo, copia: copiaProjeto, fechar: fecharArquivo,
      versoes: () => $("#btnProjArq").click() })[b.dataset.arq]();
 });
 document.addEventListener("keydown", e => {

@@ -47,15 +47,28 @@ def _proprias_usadas(sv, pid: int) -> list[dict]:
     return [c for c in todas if re.search(r"\b" + re.escape(str(c["codigo"])) + r"\b", texto)]
 
 
-def exportar(sv, pid: int) -> bytes:
-    """Bytes do .pato do projeto."""
+def maquina() -> dict:
+    """Identificação deste computador (nome e usuário do sistema) — para o aviso de arquivo aberto em outro computador."""
+    import getpass
+    import socket
+    try:
+        usuario = getpass.getuser()
+    except Exception:  # noqa: BLE001
+        usuario = None
+    return dict(maquina=socket.gethostname(), usuario=usuario)
+
+
+def exportar(sv, pid: int, uso: dict | None = None) -> bytes:
+    """Bytes do .pato do projeto. `uso`: quem está com o arquivo aberto (computador, usuário, desde, fechado) — gravado no
+    arquivo para avisar quem tentar abrir o mesmo arquivo em outro computador. Cada gravação ganha uma nova revisão."""
     con = sv.db.con
     cols = _colunas(con, "projeto")
     prj = dict(zip(cols, con.execute(f"SELECT {', '.join(cols)} FROM projeto WHERE id = ?", (pid,)).fetchone() or []))
     if not prj:
         raise KeyError(f"Projeto {pid} não encontrado.")
     dados = dict(formato=FORMATO, salvo_em=datetime.now().isoformat(timespec="seconds"), projeto=prj,
-                 tabelas={t: _linhas(con, t, pid) for t in TABELAS}, composicoes_proprias=_proprias_usadas(sv, pid))
+                 tabelas={t: _linhas(con, t, pid) for t in TABELAS}, composicoes_proprias=_proprias_usadas(sv, pid),
+                 revisao=uuid.uuid4().hex, salvo_por=maquina(), uso=uso)
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         for a in dados["tabelas"]["anexo"]:

@@ -499,13 +499,30 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def p_baixar_versao(pid: int, arquivo: str):
         return FileResponse(pa.caminho_versao(sv, pid, arquivo), filename=_nome_arq(pid).replace(".pato", "_" + arquivo))
 
+    @app.get("/api/maquina")
+    def p_maquina():
+        return pa.maquina()
+
     @app.get("/api/projetos/{pid}/arquivo")
-    def p_arquivo(pid: int):
+    def p_arquivo(pid: int, acao: str | None = None, desde: str | None = None):
+        """Arquivo .pato. acao=abrir|salvar: marca no arquivo que este computador está com ele aberto; acao=fechar: libera."""
+        import io as _io
+        import json as _json
+        import zipfile as _zip
+        from datetime import datetime as _dt
         from urllib.parse import quote as _q
+        uso = None
+        if acao in ("abrir", "salvar", "fechar"):
+            agora = _dt.now().isoformat(timespec="seconds")
+            uso = dict(pa.maquina(), desde=desde or agora, ultimo=agora, fechado=acao == "fechar")
+        dados = pa.exportar(sv, pid, uso)
+        with _zip.ZipFile(_io.BytesIO(dados)) as z:
+            rev = _json.loads(z.read("projeto.json")).get("revisao")
         nome = _nome_arq(pid)
         ascii_ = nome.encode("ascii", "ignore").decode() or "projeto.pato"
-        return Response(pa.exportar(sv, pid), media_type="application/zip",
-                        headers={"Content-Disposition": f'attachment; filename="{ascii_}"; filename*=UTF-8\'\'{_q(nome)}'})
+        return Response(dados, media_type="application/zip",
+                        headers={"Content-Disposition": f'attachment; filename="{ascii_}"; filename*=UTF-8\'\'{_q(nome)}',
+                                 "X-Pato-Revisao": rev or "", "Access-Control-Expose-Headers": "X-Pato-Revisao"})
 
     @app.post("/api/projetos/abrir")
     async def p_abrir(arquivo: UploadFile = File(...), substituir: int | None = Form(default=None)):
@@ -529,7 +546,11 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
             raise HTTPException(400, "Arquivo inválido: não é um projeto do PATO (.pato).") from e
         prj = d.get("projeto") or {}
         mesmos = [dict(id=p["id"], nome=p.get("nome")) for p in sv.listar_projetos() if (p.get("nome") or "") == (prj.get("nome") or "")]
-        return dict(nome=prj.get("nome"), rodovia=prj.get("rodovia"), salvo_em=d.get("salvo_em"), mesmos=mesmos)
+        eu = pa.maquina()
+        uso = d.get("uso") or None
+        outro = bool(uso and not uso.get("fechado") and (uso.get("maquina"), uso.get("usuario")) != (eu["maquina"], eu["usuario"]))
+        return dict(nome=prj.get("nome"), rodovia=prj.get("rodovia"), salvo_em=d.get("salvo_em"), mesmos=mesmos,
+                    revisao=d.get("revisao"), salvo_por=d.get("salvo_por"), uso=uso, aberto_em_outro=outro, eu=eu)
 
     @app.post("/api/projetos/{pid}/binomio/cotacao/ler")
     async def b_ler_cotacao(pid: int, arquivo: UploadFile = File(...)):

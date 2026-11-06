@@ -40,3 +40,22 @@ def test_nivel_de_esforco_vai_para_a_planilha(proj):
     x = XlsxPatcher(r["arquivo"])
     linha = next(n for n in range(17, 300) if x.get("PATO", f"C{n}") == it["item"])
     assert x.get("PATO", f"H{linha}") == pytest.approx(float(it["ne"]) * 2)
+
+
+def test_outro_segmento_e_outra_data_base(tmp_path):
+    """Segmento com outra rodovia e data-base fora do ano da referência: índices pela série do banco (sem #N/A), total
+    igual ao do sistema e a varredura aponta o que ainda é texto da referência."""
+    sv = Servico(pasta=tmp_path)
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    sv.atualizar_projeto(pid, dict(nome="BR-999/MT teste", rodovia="BR-999/MT", trecho="Trecho de teste", subtrecho="Subtrecho de teste",
+                                   snv="999BMT0010 - 999BMT0020", data_base="2025-07-01", prazo=24))
+    sv.orcamento.montar_pela_ficha(pid)
+    r = sv.orcamento.exportar_licitacao(pid)
+    cf = r["conferencia"]
+    assert cf["diferenca"] == dict(SD=0.0, CD=0.0), cf
+    assert not [e for e in cf["erros_exemplos"] if "RESUMO_PATO" in e or e.startswith("PATO:")], cf["erros_exemplos"]
+    assert any("INDICES_REAJ" in ln and "meses" in ln for ln in r["log"])
+    x = XlsxPatcher(r["arquivo"])
+    assert x.get("INDICES_REAJ", "I30") is not None and "INDICES_REAJ!$C$30:$N$56" not in str(x.get("BINOMIO_COTACOES", "K17"))
+    sobras = [p_ for p_ in r["pendencias"] if "ainda contém" in p_]  # varredura: o que ainda é da referência
+    assert sobras and not any(p_.startswith(("IP:", "CALCULO_IP:", "INDICES_REAJ:")) for p_ in sobras), sobras

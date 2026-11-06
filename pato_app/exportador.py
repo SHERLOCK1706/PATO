@@ -213,9 +213,16 @@ def preencher_modelo_pato(projeto: dict, itens: list[dict], modelo: str, saida: 
     seg_txt = projeto.get("segmento") or (f"km {_texto_km(km0)} ao km {_texto_km(km1)}" if km0 is not None and km1 is not None else None)
     if "CAPA" in p.sheets:
         for cel, campo in (("D74", "rodovia"), ("D75", "trecho"), ("D76", "subtrecho"), ("D79", "snv"),
-                           ("D81", "prazo"), ("B86", "estado")):
+                           ("B86", "estado")):
             if projeto.get(campo) not in (None, ""):
                 p.set("CAPA", cel, projeto[campo])
+        pr = projeto.get("prazo")
+        if pr not in (None, ""):  # a CAPA da planilha leva o prazo em ANOS (PATO: canteiro/mobilização = 1 ÷ anos)
+            try:
+                pr = float(str(pr).replace(",", "."))
+                p.set("CAPA", "D81", round(pr / 12, 4) if pr > 6 else pr)
+            except ValueError:
+                pass
         if seg_txt:
             p.set("CAPA", "D77", seg_txt)
         if km0 is not None and km1 is not None:

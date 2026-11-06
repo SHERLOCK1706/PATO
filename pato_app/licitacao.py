@@ -73,7 +73,8 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
     from .exportador import preencher_modelo_pato
     p = sv.projeto(pid)
     orc = sv.orcamento
-    log = list(preencher_modelo_pato(p, sv.db.itens(pid), str(modelo or sv.modelo_pato()), destino, True))
+    log = [ln for ln in preencher_modelo_pato(p, sv.db.itens(pid), str(modelo or sv.modelo_pato()), destino, True)
+           if "IP / CALCULO_IP" not in ln]  # o PATO de licitação grava o levantamento do projeto (memorias.ip)
     x = XlsxPatcher(destino)
     calc = orc.calcular(pid)
     precos, fontes = {}, {}
@@ -147,6 +148,12 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
                 x.set(aba, f"K{r}", float(t["custo_imp"]))
                 n += 1
         log.append(f"{aba}: {n} preços da base {reg}")
+
+    # 3b) abas de memória com os dados do projeto (não os da referência)
+    from . import memorias as mm
+    refm = referencia(str(modelo or sv.modelo_pato()))
+    mm.indices(x, sv.binomio.indices()["series"], log, pend)
+    mm.ip(x, sv.db.dados_projeto(pid, "ip"), refm["ip"], p.get("data_inventario"), log, pend)
 
     # 4) nível de esforço e quantidades informadas dos itens
     linhas_pato = {}
@@ -240,9 +247,76 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
                 cf = conferir(destino, calc["totais"])
             cf.pop("linhas", None)
             out["conferencia"] = cf
+            if isinstance(cf.get("diferenca"), dict) and any(isinstance(v, str) for v in cf["diferenca"].values()):
+                pend.append("Total da planilha com erro de fórmula após o recálculo: " +
+                            "; ".join(cf.get("erros_exemplos") or []))
         except Exception as e:  # noqa: BLE001 — sem LibreOffice o Excel recalcula ao abrir
             out["conferencia"] = dict(erro=str(e))
+    # varredura: textos do segmento de referência que sobraram no arquivo
+    try:
+        proprios = []  # textos que também são do projeto (mesma refinaria, fornecedor ou cidade) não são sobra
+        for b_ in sv.db.binomios(pid):
+            dd_ = b_.get("dados") or {}
+            proprios += [o.get("local") or "" for o in dd_.get("origens") or []]
+            proprios += [c.get("fornecedor") or "" for c in dd_.get("cotacoes") or []]
+        proprios += [o.get("nome") or "" for o in sv.transporte.dados_croqui(pid).get("ocorrencias") or []]
+        mob_ = ((sv.db.dados_projeto(pid, "diversos") or {}).get("mob") or {})
+        proprios += [mob_.get("itinerario") or "", str((mob_.get("origem") or {}).get("capital") or ""),
+                     str((mob_.get("origem") or {}).get("destino") or "")]
+        termos = [t for t in mm.termos_da_referencia(refm["projeto"], refm["termos"])
+                  if not any(mm._chave(t) and mm._chave(t) in mm._chave(q) for q in proprios)]
+        pend.extend(mm.varrer(destino, termos, p))
+    except Exception as e:  # noqa: BLE001
+        log.append(f"Varredura de sobras da referência não concluída: {e}")
     return out
+
+
+_REF: dict = {}
+
+
+def referencia(modelo: str) -> dict:
+    """Dados da planilha de referência usados para casar linhas e achar sobras: projeto (CAPA), parâmetros do
+    CALCULO_IP (linha de cada intervenção) e textos próprios do segmento (cidades do croqui, itinerário, fornecedores)."""
+    import os
+    chave = (modelo, os.path.getmtime(modelo))
+    if _REF.get("chave") == chave:
+        return _REF["dados"]
+    from . import binomio as bn
+    from . import importador
+    from . import ip as ip_mod
+    import openpyxl
+    try:
+        proj = importador.importar_xlsx(modelo).get("projeto") or {}
+    except Exception:  # noqa: BLE001
+        proj = {}
+    try:
+        ipm = ip_mod.importar_planilha(modelo)["parametros"]
+    except Exception:  # noqa: BLE001
+        ipm = {}
+    termos = []
+    try:
+        for p_ in bn.importar_planilha(modelo).get("produtos") or []:
+            termos += [o.get("local") or "" for o in p_.get("origens") or []]
+        for m_ in bn.importar_planilha(modelo).get("materiais") or []:
+            termos += [c.get("fornecedor") or "" for c in m_.get("cotacoes") or []]
+    except Exception:  # noqa: BLE001
+        pass
+    try:
+        wb = openpyxl.load_workbook(modelo, read_only=True, data_only=True)
+        for aba in ("CROQUI", "MOB"):
+            if aba in wb.sheetnames:
+                for row in wb[aba].iter_rows(values_only=True):
+                    for v in row:
+                        if isinstance(v, str):
+                            termos += re.findall(r"([A-ZÀ-Ú][A-Za-zÀ-ú' ]{3,40})/[A-Z]{2}\b", v)
+        wb.close()
+    except Exception:  # noqa: BLE001
+        pass
+    genericos = {"sicro", "centro sede", "jazida", "areal", "pedreira", "usina", "canteiro"}
+    dados = dict(projeto=proj, ip=ipm, termos=sorted({t.strip() for t in termos if t and len(t.strip()) >= 4
+                                                      and nz.sem_acento(t.strip()).lower() not in genericos}))
+    _REF.update(chave=chave, dados=dados)
+    return dados
 
 
 def alinhar(destino: str, calc: dict, linhas: dict, log: list[str], ja: set | None = None) -> int:
@@ -280,6 +354,8 @@ def alinhar(destino: str, calc: dict, linhas: dict, log: list[str], ja: set | No
             mud.append(f"quantidade {j} → {q}")
         for col, reg, atual in (("L", "SD", l_), ("N", "CD", n_)):
             pr = it.get(f"preco_{reg}")
+            if pr is None and isinstance(atual, (int, float)) and atual and q:
+                pr = 0.0  # sem preço no sistema: não leva o preço da planilha de referência (fica como pendência)
             if pr is not None and (not isinstance(atual, (int, float)) or abs(atual - pr) > 0.004):
                 x.set("PATO", f"{col}{r}", pr)
                 x.destacar("PATO", f"{col}{r}", "FFF2CC")

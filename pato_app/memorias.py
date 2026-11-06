@@ -749,12 +749,16 @@ def pato_dinamico(x, itens: list[dict], log: list[str], pend: list[str]) -> None
     incl, sem_grupo, bd_novos = [], [], []
     bd_cods = {cp._cod(str(x.get("BD", f"B{r}"))) for r in x._rows("BD") if x.get("BD", f"B{r}") not in (None, "")}
     for it in sorted(novos, key=lambda i: _chave_item(i["item"])):
-        pref = ".".join(str(it["item"]).split(".")[:3])
+        partes = str(it["item"]).split(".")
         irmaos = []
-        for r in sorted(x._rows("PATO")):
-            v = x.get("PATO", f"C{r}")
-            if isinstance(v, str) and x.get("PATO", f"D{r}") not in (None, "") and (v.strip() + ".").startswith(pref + "."):
-                irmaos.append((_chave_item(v), r))
+        for nivel in range(min(3, len(partes) - 1), 0, -1):  # subgrupo (01.02.06) → grupo (01.02) → seção (01)
+            pref = ".".join(partes[:nivel])
+            for r in sorted(x._rows("PATO")):
+                v = x.get("PATO", f"C{r}")
+                if isinstance(v, str) and x.get("PATO", f"D{r}") not in (None, "") and (v.strip() + ".").startswith(pref + "."):
+                    irmaos.append((_chave_item(v), r))
+            if irmaos:
+                break
         if not irmaos:
             sem_grupo.append(f"{it['item']} {it.get('codigo')}")
             continue

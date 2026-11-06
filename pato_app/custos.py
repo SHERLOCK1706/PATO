@@ -325,6 +325,7 @@ class Custos:
             mud["custo_uf"] = uf
         if data_base:
             mud["custo_data_base"] = data_base
+            mud["data_base"] = f"{str(data_base)[:7]}-01"  # a data-base do orçamento (capa) acompanha a base SICRO
         if regime:
             mud["custo_regime"] = regime
         if parcelas:

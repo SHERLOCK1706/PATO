@@ -304,14 +304,24 @@ class Orcamentos:
         destino_txt = f"{cid['nome']}/{cid['uf']}" if cid else rot
         if gravar:
             dd = self.db.dados_projeto(pid, "diversos") or {}
-            mob = dd.setdefault("mob", {})
-            mob["origem"] = dict(mob.get("origem") or {}, capital=esc["capital"], destino=destino_txt, ponto=rot,
-                                 dmt_pav=esc["pav"], dmt_npav=esc["npav"],
-                                 fonte=f"rota pela rede federal (SNV): {' → '.join(esc['rodovias'])}")
+            for mob in self._mobs(dd):  # as duas metodologias (planilha de origem e SICRO 2ª ed.)
+                mob["origem"] = dict(mob.get("origem") or {}, capital=esc["capital"], destino=destino_txt, ponto=rot,
+                                     dmt_pav=esc["pav"], dmt_npav=esc["npav"],
+                                     fonte=f"rota pela rede federal (SNV): {' → '.join(esc['rodovias'])}")
+                mob["itinerario"] = f"{esc['capital']} - {destino_txt}"
             self.db.gravar_dados_projeto(pid, "diversos", dd)
             self.db.registrar(pid, "mobilização: DMT automática", f"{esc['capital']} → {rot}: {esc['total']} km")
         return dict(escolhida=esc, opcoes=opcoes, destino=destino_txt, ponto=rot,
                     nota="Rede federal do SNV; trechos por rodovias estaduais/municipais não estão na rede — confira.")
+
+    @staticmethod
+    def _mobs(dd: dict) -> list[dict]:
+        """Mobilização nas duas metodologias: a da planilha de origem (dd['mob']) e a da 2ª edição do SICRO
+        (dd['sicro2025']['mob'], a usada no cálculo e na licitação). Itinerário, DMT e passagem valem para as duas."""
+        out = [dd.setdefault("mob", {})]
+        if isinstance(dd.get("sicro2025"), dict):
+            out.append(dd["sicro2025"].setdefault("mob", {}))
+        return out
 
     def cidade_canteiro(self, pid: int, dest: tuple | None = None) -> dict | None:
         """Sede municipal (IBGE) mais próxima do canteiro — destino do itinerário da mobilização de pessoal."""
@@ -363,7 +373,10 @@ class Orcamentos:
             dict(site="Pesquisa na internet", url="https://www.google.com/search?q=" + quote(f"passagem ônibus {co} {uf_o} para {cd} {uf_d} preço")),
         ]
         mob = dd.setdefault("mob", {})
-        mob["itinerario"] = f"{cap} - {dst}" if cap and dst else mob.get("itinerario")
+        for m_ in self._mobs(dd):
+            m_["itinerario"] = f"{cap} - {dst}" if cap and dst else m_.get("itinerario")
+            if m_ is not mob:
+                m_["origem"] = dict(m_.get("origem") or {}, **o)
         if valor not in (None, ""):
             v = _nz.numero(valor)
             if not v or v <= 0:
@@ -373,8 +386,9 @@ class Orcamentos:
                 raise ValueError("Data da pesquisa no formato AAAA-MM.")
             serie = (self.db.indices() or {}).get(dd["mob"].get("indice") or "Mobilização e Desmobilização") or {}
             meses_ind = sorted(m for m in serie if m <= mes)
-            mob.update(passagem=v, data_pesquisa=mes, passagem_fonte=fonte or "cotação informada",
-                       mes_indice_pesquisa=meses_ind[-1] if meses_ind else mes)
+            for m_ in self._mobs(dd):
+                m_.update(passagem=v, data_pesquisa=mes, passagem_fonte=fonte or "cotação informada",
+                          mes_indice_pesquisa=meses_ind[-1] if meses_ind else mes)
             self.db.registrar(pid, "mobilização: passagem cotada", f"{mob['itinerario']}: R$ {v:.2f} ({mes}, {fonte or ''})")
         self.db.gravar_dados_projeto(pid, "diversos", dd)
         return dict(itinerario=mob.get("itinerario"), dmt_km=round(dmt, 1), tipo="intraestadual" if tipo == "intra" else "interestadual",
@@ -1135,7 +1149,15 @@ class Orcamentos:
         st = pior(a[2]["status"], "pendente" if a[3]["status"] != "ok" else "ok")
         passos.append(dict(st=st, msgs=itens(2, 3), feito=f"{a[2]['feito']} · {a[3]['feito']}"))
         # 3) data-base e BDI (bloqueia) + binômio (sem nenhum preço de betuminoso/material: falta)
-        passos.append(dict(st=pior(a[4]["status"], a[5]["status"]), msgs=itens(4, 5), feito=f"{a[4]['feito']} · {a[5]['feito']}"))
+        msgs, st = itens(4, 5), pior(a[4]["status"], a[5]["status"])
+        try:
+            av = self.sv.custos.config(pid).get("aviso_data_base")
+        except Exception:  # noqa: BLE001 — sem base: o assistente já aponta
+            av = None
+        if av:
+            msgs.insert(0, dict(texto=av, aba="custos", sub="base"))
+            st = "falta"
+        passos.append(dict(st=st, msgs=msgs, feito=f"{a[4]['feito']} · {a[5]['feito']}"))
         # 4) croqui
         passos.append(dict(st=a[6]["status"], msgs=itens(6), feito=a[6]["feito"]))
         # 5) serviços: planilha montada; sem preço = falta; valores substitutos = pendente

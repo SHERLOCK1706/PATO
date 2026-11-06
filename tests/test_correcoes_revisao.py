@@ -100,3 +100,24 @@ def test_importar_inventario_em_projeto_existente_preenche_trecho(sv):
     p = sv.projeto(pid)
     assert p["nome"] == "Meu PATO" and p["prazo"] == 36
     assert p["rodovia"] and p["km_ini"] is not None and p["km_fim"] is not None and p["snv"]
+
+
+def test_base_sicro_define_a_data_base_do_orcamento(sv):
+    """Achado do teste de ponta a ponta: capa em 2025-07 e base SICRO em 2026-04 passavam sem bloqueio."""
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    sv.atualizar_projeto(pid, dict(data_base="2025-07-01"))
+    p3 = next(x for x in sv.orcamento.caminho(pid)["passos"] if x["n"] == 3)
+    assert p3["status"] == "falta" and "capa do projeto indica data-base" in p3["o_que_falta"][0]["texto"]
+    sv.custos.configurar(pid, uf="MT", data_base="2026-04")
+    assert str(sv.projeto(pid)["data_base"]).startswith("2026-04")
+    assert not sv.custos.config(pid).get("aviso_data_base")
+
+
+def test_mobilizacao_vale_para_as_duas_metodologias(sv):
+    """DMT pela estrada e passagem cotada iam só para a metodologia antiga; o cálculo (SICRO 2ª ed.) usava a referência."""
+    o = sv.orcamento
+    dd = {"mob": {"itinerario": "Palmas/TO - Confresa/MT"}, "sicro2025": {"mob": {"itinerario": "Palmas/TO - Confresa/MT"}}}
+    for m in o._mobs(dd):
+        m["itinerario"] = "Cuiabá/MT - Cáceres/MT"
+    assert dd["mob"]["itinerario"] == dd["sicro2025"]["mob"]["itinerario"] == "Cuiabá/MT - Cáceres/MT"
+    assert len(o._mobs({})) == 1

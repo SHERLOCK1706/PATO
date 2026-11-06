@@ -69,6 +69,9 @@ try { if (localStorage.getItem("pato.nav") === "recolhida") document.body.classL
 $("#btnRecolherNav").onclick = () => { const r = document.body.classList.toggle("nav-recolhida"); $("#btnRecolherNav").textContent = r ? "»" : "«";
   try { localStorage.setItem("pato.nav", r ? "recolhida" : ""); } catch (_) {} };
 if (document.body.classList.contains("nav-recolhida")) $("#btnRecolherNav").textContent = "»";
+try { if (localStorage.getItem("pato.densa") === "1") document.body.classList.add("densa"); } catch (_) {}
+document.addEventListener("click", e => { if (e.target.id !== "btnDensidade") return; const d = document.body.classList.toggle("densa");
+  e.target.textContent = d ? "⇕ confortável" : "⇕ compacta"; try { localStorage.setItem("pato.densa", d ? "1" : ""); } catch (_) {} });
 // a barra de totais fica presa no topo; o menu lateral começa abaixo dela
 new ResizeObserver(() => document.documentElement.style.setProperty("--alt-barra", ($("#barraTot").hidden ? 0 : $("#barraTot").offsetHeight) + "px")).observe($("#barraTot"));
 // notas longas viram "ⓘ Como funciona" (abre ao clicar)
@@ -85,7 +88,7 @@ $$("[data-proxy]").forEach(b => b.onclick = () => $("#" + b.dataset.proxy).click
 const alvoOrc = () => $("#aba-exportar").classList.contains("ativa") ? $("#resExpOrc") : $("#resOrc");
 
 // ---------------------------------------------------------------- barra de totais (todas as telas)
-const BT_ = { t: 0, ant: null, h: null, ass: 0 };
+const BT_ = { t: 0, ant: null, h: null, ass: 0, pintada: 0 };
 function atualizarBarra(forcar) {
   if (!E.pid) { $("#barraTot").hidden = true; return; }
   if (!forcar && Date.now() - BT_.t < 4000) return;
@@ -94,8 +97,9 @@ function atualizarBarra(forcar) {
   if (Date.now() - BT_.ass > 20000) { BT_.ass = Date.now(); estadoEtapas(); }
 }
 // depois de qualquer gravação, a barra se atualiza sozinha (com folga, para juntar edições seguidas)
-function barraDepoisDeGravar() { clearTimeout(BT_.h); BT_.h = setTimeout(() => atualizarBarra(true), 1800); }
+function barraDepoisDeGravar() { const w = Date.now(); clearTimeout(BT_.h); BT_.h = setTimeout(() => { if (BT_.pintada < w) atualizarBarra(true); }, 1800); }
 function pintarBarra(c) {
+  BT_.pintada = Date.now();
   const el = $("#barraTot"), t = c.totais || {}, n = c.itens.filter(i => i.tipo === "servico").length;
   const p = (E.projetos || []).find(x => x.id === E.pid) || {};
   el.hidden = false;
@@ -1891,6 +1895,7 @@ async function carregarOrc() {
 }
 // planilha PATO como tabela editável (estilo planilha): código na linha puxa o serviço; Qtde. (base), NE e demais
 // campos editáveis na célula; quantidade de trabalho = base × NE; preço final = TRUNC(qtd × preço; 2)
+const ORIGEM_SELO = { inventario: "INV", ip: "IP", transporte: "TR", item: "=", producao: "PRD", extensao: "km", contrato: "ano", sinalizacao: "SZ", diversos: "ADM" };
 const LIGADAS = { inventario: "inventário", ip: "levantamento IP", transporte: "quadro de transportes", item: "outro item", producao: "produção SICRO", extensao: "extensão", contrato: "contrato", sinalizacao: "sinalização", diversos: "ADM/canteiro/mobilização" };
 async function atualizarPlanilha() {
   const rol = $("#tabOrc").closest(".tabela-rolagem"), top = rol?.scrollTop || 0;
@@ -1999,10 +2004,10 @@ function renderOrcPlanilha() {
     const b = i.base || {}, lig = LIGADAS[b.tipo], dir = b.tipo === "direta", fx = formulaQtd(i);
     return `<tr data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td>${cel(i.id, "codigo", /^\d{5,6}$/.test(i.codigo || "") ? String(i.codigo).padStart(7, "0") : i.codigo, "78px", 'data-dica="Troque o código: descrição, unidade e preço vêm da base"')}</td>
       <td>${cel(i.id, "descricao", i.descricao, "100%", `title="${esc(i.descricao || "")}"`)}</td><td>${cel(i.id, "unidade", i.unidade, "46px")}</td>
-      <td class=n style="white-space:nowrap">${lig ? `<span class="lig" title="Quantidade ligada: ${esc(i.base_fonte || lig)}${b.expr ? " " + esc(b.expr) : ""}">🔗</span>` : `<button class="btn mini lig-btn" data-ligar="${esc(i.id)}" data-dica="Volta a ligar a quantidade à regra da planilha modelo (inventário, IP, transporte…)">🔗?</button>`}
+      <td class=n style="white-space:nowrap">${lig ? `<span class="org org-${esc(b.tipo)}" title="Origem da quantidade: ${esc(i.base_fonte || lig)}${b.expr ? " · " + esc(b.expr) : ""}">${ORIGEM_SELO[b.tipo] || "🔗"}</span>` : `<button class="org org-valor" data-ligar="${esc(i.id)}" title="${esc(i.base_fonte || "valor digitado")}" data-dica="Valor digitado — clique para voltar a ligar a quantidade à regra da planilha modelo (inventário, IP, transporte…)">✎</button>`}
         <input class="cel n ${!lig && !i.base_valor ? "falta" : ""} ${fx ? "formula" : ""}" inputmode="decimal" data-qbase="${esc(i.id)}" value="${esc(fx || (i.base_valor == null ? "" : String(+(+i.base_valor).toFixed(3)).replace(".", ",")))}" style="width:${fx ? 124 : 100}px" title="${esc((i.base_fonte || "") + (fx ? " = " + q3(i.base_valor) : ""))}" data-dica="Qtde. (inventário/base): número, ou =ITEM para puxar de outra linha (=01.03.02*0,055). Digitar troca a origem">
         <button class="btn mini" data-puxar="${esc(i.id)}" data-dica="Puxar a quantidade de outra linha (ex.: aquisição de CAP, usinagem e transporte a partir do concreto asfáltico)">⤴</button>
-        <br><small>${esc((i.base_fonte || "").slice(0, 34))}</small>${alim[i.id] ? `<br><span class="alimenta" title="Linhas que usam esta quantidade: ${esc(alim[i.id].join(", "))}">↳ alimenta ${alim[i.id].length}: ${esc(alim[i.id].slice(0, 3).join(", "))}${alim[i.id].length > 3 ? "…" : ""}</span>` : ""}</td>
+        ${alim[i.id] ? `<span class="alimenta" title="Alimenta ${alim[i.id].length} linha(s): ${esc(alim[i.id].join(", "))}">↳${alim[i.id].length}</span>` : ""}</td>
       <td class=n>${dir ? "—" : `<input class="cel n ne-in" type="number" step="any" data-nein="${esc(i.id)}" value="${i.ne ?? 1}" data-dica="Nível de esforço: quantidade = base × NE">`}</td>
       <td class=n><b>${q3(i.quantidade)}</b></td>
       <td class=n title="${esc(i.preco_fonte_SD || "")}">${reais(i.preco_SD)}</td><td class=n><b>${reais(i.parcial_SD)}</b></td>
@@ -2013,7 +2018,13 @@ function renderOrcPlanilha() {
       <td><input class="cel falta" data-ncod placeholder="código ↵" style="width:78px" data-dica="Digite o código e tecle Enter: a linha se preenche (descrição, unidade, preço e quantidade pela planilha modelo)"></td>
       <td colspan=9><small class="nota">Digite o código e tecle Enter — ou cole vários códigos (um por linha, com quantidade e NE opcionais).</small>
         <button class="btn mini" data-ntit data-dica="Inclui um título (tópico) neste lugar">+ título</button>${apos ? ' <button class="btn mini" data-ncanc>cancelar</button>' : ""}</td><td></td></tr>`;
-  let itens = c.itens.filter(i => !temFiltro || (i.tipo !== "titulo" && filtra(i)));
+  // grupos (títulos) recolhíveis, com subtotal SD/CD
+  const rec = O_.recolhidos = O_.recolhidos || lerRecolhidos();
+  const sub = {};
+  c.itens.forEach(x => { if (x.tipo !== "servico" || !x.item) return; const p = x.item.split(".");
+    for (let k = 1; k < p.length; k++) { const g = p.slice(0, k).join("."); const s = sub[g] = sub[g] || { SD: 0, CD: 0, n: 0 }; s.SD += +x.parcial_SD || 0; s.CD += +x.parcial_CD || 0; s.n++; } });
+  const escondido = it => !!it && [...rec].some(g => it.startsWith(g + "."));
+  let itens = c.itens.filter(i => !temFiltro ? !escondido(i.item) : (i.tipo !== "titulo" && filtra(i)));
   const fora = O_.mostraFicha && O_.ficha ? (() => { const ids = new Set(c.itens.map(i => i.id)), cods = new Set(c.itens.filter(i => i.tipo === "servico").map(i => cp7(i.codigo)));
     // planilha montada pela ficha: compara pelo id (o mesmo código pode aparecer em vários grupos); importada: pelo código
     const daFicha = O_.ficha.servicos.some(s => ids.has(s.id));
@@ -2036,15 +2047,42 @@ function renderOrcPlanilha() {
       <td><input data-filt="descricao" value="${esc(F.descricao || "")}" placeholder="▼ filtrar descrição" style="width:100%"></td><td><input data-filt="unidade" value="${esc(F.unidade || "")}" placeholder="▼" style="width:46px"></td>
       <td colspan=8>${temFiltro ? `<small class="nota">${itens.length} linha(s) no filtro</small> <button class="btn mini" id="limpaFilt">limpar filtros</button>` : ""}</td></tr>`
     + itens.map(i => i._ficha ? linhaFicha(i) : i.tipo === "titulo"
-      ? `<tr class="titulo-orc" data-lin="${esc(i.id)}"><td>${cel(i.id, "item", i.item, "92px")}</td><td></td><td colspan=9>${cel(i.id, "descricao", i.descricao, "100%")}</td>
+      ? `<tr class="titulo-orc ${rec.has(i.item) ? "fechado" : ""}" data-lin="${esc(i.id)}"><td><button class="tg" type="button" data-tg="${esc(i.item || "")}" data-dica="${rec.has(i.item) ? "Abrir" : "Recolher"} o grupo">${rec.has(i.item) ? "▸" : "▾"}</button>${cel(i.id, "item", i.item, "78px")}</td><td></td>
+        <td colspan=6>${cel(i.id, "descricao", i.descricao, "100%")}${rec.has(i.item) && sub[i.item] ? `<small class="nota"> ${sub[i.item].n} serviço(s) recolhido(s)</small>` : ""}</td>
+        <td class=n>${sub[i.item] ? reais(sub[i.item].SD) : ""}</td><td></td><td class=n>${sub[i.item] ? reais(sub[i.item].CD) : ""}</td>
         <td style="white-space:nowrap">${acoes(i)}</td></tr>`
       : linhaServ(i)).join("")
     + (temFiltro ? "" : linhaBranca(ult?.id, ""))
     + `<tr class="titulo-orc"><td colspan=8>TOTAL GERAL DO ORÇAMENTO</td><td class=n>${reais(c.totais.SD)}</td><td></td><td class=n>${reais(c.totais.CD)}</td><td></td></tr>`;
   ligarPlanilha();
 }
+// planilha como no Excel: ↑ ↓ e Enter andam na mesma coluna, Esc desfaz a digitação; o foco volta ao lugar após o recálculo
+function celulaDe(el) { const td = el.closest("td"), tr = el.closest("tr"); return tr && td ? { lin: tr.dataset.lin, col: td.cellIndex } : null; }
+function restaurarFoco() {
+  const f = O_.foco; if (!f || !f.lin) return;
+  const tr = $(`#tabOrc tr[data-lin="${CSS.escape(f.lin)}"]`), inp = tr?.cells[f.col]?.querySelector("input");
+  if (inp && document.activeElement !== inp) { inp.focus({ preventScroll: true }); if (inp.select) try { inp.select(); } catch (_) {} }
+}
+$("#tabOrc").addEventListener("focusin", e => { O_.foco = e.target.matches("input.cel") ? celulaDe(e.target) : null; });
+$("#tabOrc").addEventListener("focusout", e => { setTimeout(() => { if (!$("#tabOrc").contains(document.activeElement)) O_.foco = null; }, 0); });
+$("#tabOrc").addEventListener("keydown", e => {
+  const inp = e.target; if (!inp.matches("input.cel") || inp.closest("tr.lin-nova")) return;
+  if (e.key === "Escape") { inp.value = inp.defaultValue; inp.blur(); return; }
+  const dir = e.key === "ArrowDown" || (e.key === "Enter" && !e.shiftKey) ? 1 : e.key === "ArrowUp" || (e.key === "Enter" && e.shiftKey) ? -1 : 0;
+  if (!dir) return;
+  e.preventDefault();
+  const td = inp.closest("td"), linhas = $$("#tabOrc tr[data-lin]");
+  let k = linhas.indexOf(inp.closest("tr")) + dir;
+  for (; k >= 0 && k < linhas.length; k += dir) { const alvo = linhas[k].cells[td.cellIndex]?.querySelector("input.cel"); if (alvo) { alvo.focus(); try { alvo.select(); } catch (_) {} break; } }
+});
+function lerRecolhidos() { try { return new Set(JSON.parse(localStorage.getItem("pato.rec." + E.pid) || "[]")); } catch (_) { return new Set(); } }
+function gravarRecolhidos() { try { localStorage.setItem("pato.rec." + E.pid, JSON.stringify([...O_.recolhidos])); } catch (_) {} }
 function ligarPlanilha() {
   const F = O_.filtro;
+  $$("[data-tg]").forEach(b => b.onclick = () => { const g = b.dataset.tg; O_.recolhidos.has(g) ? O_.recolhidos.delete(g) : O_.recolhidos.add(g); gravarRecolhidos(); renderOrcPlanilha(); });
+  $("#orcRecTodos").onclick = () => { O_.recolhidos = new Set(O_.c.itens.filter(i => i.tipo === "titulo" && i.item && i.item.split(".").length === 2).map(i => i.item)); gravarRecolhidos(); renderOrcPlanilha(); };
+  $("#orcAbrTodos").onclick = () => { O_.recolhidos = new Set(); gravarRecolhidos(); renderOrcPlanilha(); };
+  restaurarFoco();
   $("#orcMostraFicha").checked = !!O_.mostraFicha;
   $("#orcMostraFicha").onchange = e => { O_.mostraFicha = e.target.checked; renderOrcPlanilha(); };
   const neF = () => Object.fromEntries($$("[data-fne2]").filter(x => x.value !== "").map(x => [x.dataset.fne2, +x.value]));

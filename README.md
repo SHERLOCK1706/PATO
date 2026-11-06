@@ -198,6 +198,11 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
     linha numa lista, com prévia do resultado. Ex.: a usinagem, a aquisição e o transporte do CAP a partir do concreto
     asfáltico. A linha de origem mostra "↳ alimenta …"; referência circular não trava o cálculo (vale 0, com aviso).
   - MCP: `pato_incluir_da_ficha` e `pato_puxar_de_outra_linha`.
+  - **Como no Excel**: colunas Item e Código fixas ao rolar para o lado; ↑ ↓ e Enter andam na coluna (Shift+Enter
+    sobe), Esc desfaz, e o cursor continua no lugar depois do recálculo; grupos (títulos) recolhem com ▸/▾ e mostram o
+    subtotal SD/CD ("recolher grupos" deixa só os subtotais — lembrado por projeto); selo da origem da quantidade (INV,
+    IP, TR, = outra linha, PRD, km, ano, SZ, ADM; ✎ digitado, clique para religar) e ↳n nas linhas que alimentam outras;
+    botões da linha aparecem ao passar o mouse; linhas compactas ou confortáveis (⇕, vale para todas as tabelas).
 - **Ficha de serviços** (painel da Planilha PATO) — monta o PATO de um segmento novo sem a planilha PATO: marque os serviços,
   ajuste o nível de esforço (nos serviços do ICM/IP, o NE ou % da faixa da intervenção) e informe as poucas quantidades sem
   regra. A ficha guarda as regras do PATO de referência (BR-158/MT) sem os números do segmento: inventário, produção ×

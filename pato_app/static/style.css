@@ -341,3 +341,37 @@ details.ajuda[open] > summary { margin-bottom: 4px; }
 .filtros label.check input[type=checkbox] { width: auto; }
 #tabOrc td:nth-child(3) { min-width: 240px; }
 @media (max-width: 640px) { .barra-tot { gap: 4px 14px; padding: 6px 10px; } .barra-tot .sec { display: none; } }
+
+/* ---------- planilha PATO estilo Excel ---------- */
+#tabOrc th:nth-child(1), #tabOrc td:nth-child(1) { position: sticky; left: 0; z-index: 2; background: var(--sup); min-width: 112px; }
+#tabOrc th:nth-child(2), #tabOrc td:nth-child(2) { position: sticky; left: 112px; z-index: 2; background: var(--sup); box-shadow: 1px 0 0 var(--borda); }
+#tabOrc tr:first-child th:nth-child(-n+2) { z-index: 4; background: var(--sup2); }
+#tabOrc tr.titulo-orc td:nth-child(-n+2) { background: color-mix(in srgb, var(--pri-claro) 70%, var(--sup)); }
+#tabOrc tr.lin-nova td:nth-child(-n+2) { background: var(--pri-claro); }
+#tabOrc tr[data-lin]:not(.titulo-orc):hover td { background: color-mix(in srgb, var(--pri-claro) 55%, var(--sup)); }
+#tabOrc tr:focus-within td { background: color-mix(in srgb, var(--pri-claro) 70%, var(--sup)); }
+#tabOrc input.cel { border-color: transparent; background: transparent; }
+#tabOrc input.cel:hover { border-color: var(--borda); }
+#tabOrc input.cel:focus { border-color: var(--pri); background: var(--sup); }
+#tabOrc input.cel.falta { border-color: #d29a00; }
+#tabOrc .acoes-orc, #tabOrc [data-edorc], #tabOrc [data-puxar] { opacity: 0; transition: opacity .12s; }
+#tabOrc tr:hover .acoes-orc, #tabOrc tr:hover [data-edorc], #tabOrc tr:hover [data-puxar],
+#tabOrc tr:focus-within .acoes-orc, #tabOrc tr:focus-within [data-edorc], #tabOrc tr:focus-within [data-puxar] { opacity: 1; }
+@media (hover: none) { #tabOrc .acoes-orc, #tabOrc [data-edorc], #tabOrc [data-puxar] { opacity: 1; } }
+#tabOrc .tg { border: 0; background: none; cursor: pointer; color: var(--pri); padding: 0 4px 0 0; font-size: 12px; width: 16px; }
+#tabOrc tr.titulo-orc.fechado td { opacity: .92; }
+.org { display: inline-block; min-width: 26px; padding: 0 4px; border-radius: 4px; font-size: 10px; font-weight: 700; line-height: 18px; text-align: center;
+  border: 1px solid currentColor; cursor: help; background: none; font-family: inherit; vertical-align: middle; }
+.org-inventario { color: #2f7d4f; } .org-ip { color: #9a5b00; } .org-transporte { color: #6b4fa0; } .org-item { color: var(--pri); }
+.org-producao, .org-extensao, .org-contrato { color: #5b6675; } .org-sinalizacao { color: #a3461b; } .org-diversos { color: #2c6f8f; }
+.org-valor { color: var(--txt2); border-style: dashed; cursor: pointer; }
+#tabOrc .alimenta { display: inline-block; margin-left: 3px; padding: 0 4px; border-radius: 8px; background: var(--pri-claro); font-size: 10px; }
+
+/* cores mais calmas: vermelho/amarelo só para erro e pendência */
+.tag { background: transparent; }
+tr.titulo-orc td { background: color-mix(in srgb, var(--pri-claro) 70%, var(--sup)); }
+
+/* densidade das tabelas */
+body.densa .tab th, body.densa .tab td { padding: 2px 6px; }
+body.densa #tabOrc input.cel { padding: 2px 4px; }
+body.densa .btn.mini { padding: 0 6px; }

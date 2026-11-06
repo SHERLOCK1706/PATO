@@ -528,7 +528,12 @@
       <div class="caixa"><div class="barra filtros" style="margin-top:0">
           <label class="check" data-dica="Mostra, no lugar de cada um (pela numeração), os serviços da ficha que ainda não estão na planilha — inclua com ＋ incluir, já com a regra da quantidade (inventário, IP, outro item, transporte)"><input type="checkbox" id="orcMostraFicha"> mostrar os serviços da ficha que não estão na planilha</label>
           <span id="orcFichaBulk"></span>
-          <small class="nota" style="margin-left:auto">Na Qtde. digite um número ou <b>=item</b> para puxar de outra linha (ex.: <code>=01.03.02</code>, <code>=01.03.02*0,055</code>, <code>=01.03.02/1000</code>) — ou use ⤴.</small></div>
+          <span class="linha-botoes" style="margin:0"><button class="btn mini" type="button" id="orcRecTodos" data-dica="Recolhe todos os grupos (mostra só os subtotais)">▸ recolher grupos</button>
+            <button class="btn mini" type="button" id="orcAbrTodos" data-dica="Abre todos os grupos">▾ abrir</button>
+            <button class="btn mini" type="button" id="btnDensidade" data-dica="Linhas compactas (mais linhas na tela) ou confortáveis — vale para todas as tabelas">⇕ compacta</button></span>
+          <details class="ajuda" style="margin:0 0 0 auto"><summary>ⓘ Atalhos da planilha</summary><p class="nota">↑ ↓ e Enter andam na coluna (Shift+Enter sobe), Esc desfaz a digitação, Tab vai para a próxima célula.
+  Na Qtde. digite um número ou <b>=item</b> para puxar de outra linha (<code>=01.03.02</code>, <code>=01.03.02*0,055</code>, <code>=01.03.02/1000</code>, <code>=base(01.03.02)</code>) — ou use ⤴.
+  Selos da origem da quantidade: INV inventário · IP levantamento · TR transporte · = outra linha · PRD produção · km extensão · ano contrato · SZ sinalização · ADM ADM/mobilização · ✎ digitado (clique para religar).</p></details></div>
         <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabOrc"></table></div></div></div>
     <div id="orc-conf" class="sub-orc">
       <div class="caixa"><h3>Conferência do PATO</h3>

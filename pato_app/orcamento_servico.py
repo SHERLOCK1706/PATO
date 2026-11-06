@@ -1155,6 +1155,7 @@ class Orcamentos:
         lst = self.ficha(pid)
         d = fc.montar(f, None)
         d["prazo_anos"] = self.anos_contrato(pid, {})
+        self._precos_do_projeto(pid, d)
         r = self.calcular(pid, d)
         calc = {x["id"]: x for x in r["itens"]}
         por_id = {x["id"]: x for x in f.get("itens", [])}
@@ -1172,6 +1173,13 @@ class Orcamentos:
             linhas.append(ln)
         return dict(origem=lst["origem"], linhas=linhas, totais=r["totais"], anos=d["prazo_anos"],
                     sem_preco=r.get("sem_preco") or [])
+
+    def _precos_do_projeto(self, pid: int, d: dict) -> None:
+        """Preços informados do projeto (AM/TM do binômio, composições cotadas) valem sobre os da ficha, que só guarda a
+        descrição dos betuminosos."""
+        for c, v in (self.dados(pid).get("precos_informados") or {}).items():
+            if any(v.get(k) is not None for k in ("SD", "CD")):
+                d.setdefault("precos_informados", {})[c] = v
 
     def _desc_base(self, pid: int, codigo: str) -> dict:
         try:
@@ -1419,6 +1427,7 @@ class Orcamentos:
         if mudou_ip:
             self.db.gravar_dados_projeto(pid, "ip", ipd)
         d = fc.montar(f, selecionados, ne, valores)
+        self._precos_do_projeto(pid, d)
         if extras:  # serviços da lista que não estão na ficha: itens novos, quantidade informada ou a informar
             d["itens"].append(dict(id=uuid.uuid4().hex[:12], tipo="titulo", item="01.08",
                                    descricao="SERVIÇOS INCLUÍDOS PELA LISTA (classificar no grupo correto)"))

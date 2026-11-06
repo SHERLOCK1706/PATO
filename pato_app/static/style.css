@@ -400,3 +400,6 @@ body.densa .btn.mini { padding: 0 6px; }
 #tabFicha tr.fp-serv:hover td { background: color-mix(in srgb, var(--pri-claro) 45%, var(--sup)); }
 #tabFicha tr .acoes-orc { visibility: hidden; }
 #tabFicha tr:hover .acoes-orc { visibility: visible; }
+#tabFicha td.fp-desc { min-width: 340px; }
+#tabFicha tr.fp-tit td:nth-child(4) { min-width: 340px; }
+#tabFicha .fp-icm { font-size: 9px; color: #b45309; margin-left: 2px; cursor: help; }

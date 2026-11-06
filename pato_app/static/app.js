@@ -2468,12 +2468,12 @@ function desenharFicha(fp) {
     const lig = !l.a_informar, ip = !!l.ne_ip, dir = l.base_tipo === "direta";
     html += `<tr class="fp-serv ${ehRaiz ? "raiz" : ""} ${efetivo(l) ? "" : "desmarcado"}" data-flin="${esc(l.id)}">
       <td><input type="checkbox" data-fsel="${esc(l.id)}" ${marcado(l) ? "checked" : ""}></td>
-      <td>${inp(l, "item", l.item, "100px")}</td><td>${inp(l, "codigo", cp7(l.codigo), "74px", "", )}</td><td>${inp(l, "descricao", l.descricao, "100%")}</td>
+      <td>${inp(l, "item", l.item, "100px")}</td><td>${inp(l, "codigo", cp7(l.codigo), "74px", "", )}</td><td class="fp-desc">${inp(l, "descricao", l.descricao, "100%")}</td>
       <td class=n>${lig ? `<span class="fp-lig" title="${esc((l.regra || "") + (l.base_fonte ? " — " + l.base_fonte : ""))}">${q3(l.base_valor)}</span>`
         : `<input class="cel n ${!l.base_valor ? "falta" : ""}" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px" title="Quantidade a informar (sem regra automática)">`}</td>
       <td>${esc(l.unidade_base || "")}</td>
       <td class=n>${dir ? "—" : `<input class="cel n" data-fne="${esc(l.id)}" value="${esc(fmtIn(ip ? l.ne : (l.ne ?? l.ne_calc), 5))}" style="width:74px" title="${esc(ip ? (l.ne_rotulo || "NE do levantamento") + " — índice resultante " + fmtIn(l.ne_calc, 5) : "Nível de esforço: quantidade = base × NE")}">`}
-        ${ip ? `<br><small class="nota">${esc(l.ne_rotulo || "ICM")}</small>` : ""}</td>
+        ${ip ? `<sup class="fp-icm" title="${esc(l.ne_rotulo || "NE do levantamento (ICM)")}">ICM</sup>` : ""}</td>
       <td><small>${esc(l.unidade && l.unidade_base ? l.unidade + "/" + l.unidade_base : "")}</small></td>
       <td class=n><b>${q3(l.quantidade)}</b></td><td>${inp(l, "unidade", l.unidade, "44px")}</td>
       <td class=n>${preco(l, "SD")}</td><td class=n>${reais(l.parcial_SD)}</td><td class=n>${preco(l, "CD")}</td><td class=n>${reais(l.parcial_CD)}</td>
@@ -2508,7 +2508,9 @@ function ligarNovaFicha() {
   $$("#tabFicha tr.lin-nova").forEach(tr => {
     const item = () => $("[data-nfitem]", tr).value.trim(), apos = tr.dataset.apos;
     $("[data-nfcod]", tr).onkeydown = async e => { if (e.key !== "Enter" || !e.target.value.trim()) return; e.preventDefault();
-      try { const r = await jpost(`${base_}${E.pid}/pato/ficha/itens`, { apos, item: item(), codigo: e.target.value.trim() }); toast("Serviço incluído na ficha"); desenharFicha(r); } catch (err) { erro(err); } };
+      try { const r = await jpost(`${base_}${E.pid}/pato/ficha/itens`, { apos, item: item(), codigo: e.target.value.trim() });
+        O_.fsel = new Set($$("#tabFicha [data-fsel]").filter(c => c.checked).map(c => c.dataset.fsel)); O_.fsel.add(r.id);  // a linha nova já entra marcada
+        toast("Serviço incluído na ficha — marcado para o PATO"); desenharFicha(r); } catch (err) { erro(err); } };
     if ($("[data-nftit]", tr)) $("[data-nftit]", tr).onclick = async () => { const d = prompt("Descrição do título:", "NOVO GRUPO"); if (!d) return;
       try { desenharFicha(await jpost(`${base_}${E.pid}/pato/ficha/itens`, { apos, item: item(), titulo: true, descricao: d })); } catch (err) { erro(err); } };
     if ($("[data-nfcanc]", tr)) $("[data-nfcanc]", tr).onclick = () => tr.remove();

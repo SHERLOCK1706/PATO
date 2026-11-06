@@ -1,23 +1,47 @@
 {
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
-      "source": { "source": "github", "repo": "anthropics/claude-plugins-official" }
-    },
-    "ecc": {
-      "source": { "source": "github", "repo": "affaan-m/everything-claude-code" }
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
     },
     "thedotmack": {
-      "source": { "source": "github", "repo": "thedotmack/claude-mem" }
-    },
-    "headroom-marketplace": {
-      "source": { "source": "github", "repo": "chopratejas/headroom" }
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
     }
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
-    "ecc@ecc": true,
-    "claude-mem@thedotmack": true,
-    "headroom@headroom-marketplace": true
+    "claude-mem@thedotmack": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/bloquear_planilhas.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/checar_sintaxe.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
   }
 }

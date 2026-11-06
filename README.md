@@ -485,18 +485,15 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
 `python -m pytest -q` (o teste de recálculo com LibreOffice é pulado se ele não estiver instalado).
 
 
-## Plugins do Claude Code (para quem desenvolve o sistema)
+## Claude Code no projeto (para quem desenvolve o sistema)
 
-O arquivo `.claude/settings.json` registra os marketplaces e ativa os plugins abaixo. Ao abrir a pasta no Claude Code,
-ele pede para confiar na pasta e instalar os plugins (ou rode `/plugin` para conferir).
-
-| Plugin | Origem | Para que serve |
-|---|---|---|
-| superpowers | anthropics/claude-plugins-official (obra/superpowers) | TDD, depuração sistemática, planos, revisão de código |
-| claude-code-setup | anthropics/claude-plugins-official | recomenda hooks, skills, MCP e subagentes para o projeto |
-| ecc | affaan-m/everything-claude-code | coleção de agentes, skills, comandos e hooks |
-| claude-mem | thedotmack/claude-mem | memória persistente entre sessões |
-| headroom | chopratejas/headroom | compressão de contexto; exige o runtime local: `pip install "headroom-ai[all]"` |
-
-OmniRoute não é plugin do Claude Code: é um gateway/proxy de modelos (`npm i -g omniroute`) que troca o endpoint da
-API; não foi configurado no projeto.
+- **`CLAUDE.md`** — regras do projeto, regras de negócio sensíveis, mapa do código e tempo de cada teste.
+- **Hooks** (`.claude/settings.json`, scripts em `.claude/hooks/`):
+  - `bloquear_planilhas.py` — barra `git add`/`git commit` de planilhas, PDFs e zips fora de `pato_app/modelos/`,
+    `tests/dados/` e `docs/referencias/` (as planilhas enviadas pelo usuário são particulares);
+  - `checar_sintaxe.py` — após cada edição, confere a sintaxe dos `.py` e do `app.js` (< 1 s).
+- **Skill `/conferir-licitacao [planilha.xlsx]`** — monta um PATO do zero, exporta a planilha de licitação, recalcula e
+  confere total × sistema, #N/A, sobras da referência e pendências.
+- **Plugins** ativados ao abrir a pasta no Claude Code (`/plugin` para conferir): **superpowers** e
+  **claude-code-setup** (marketplace oficial da Anthropic) e **claude-mem** (thedotmack/claude-mem, memória entre
+  sessões).

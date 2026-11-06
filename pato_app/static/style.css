@@ -404,3 +404,32 @@ body.densa .btn.mini { padding: 0 6px; }
 #tabFicha tr.fp-tit td:nth-child(4) { min-width: 340px; }
 #tabFicha .fp-icm { font-size: 9px; color: #b45309; margin-left: 2px; cursor: help; }
 #tabFicha input.cel.antigo { background: #fde2e1; border-color: #dc2626; }
+
+/* caminho guiado (7 passos) */
+.cam-passos { list-style: none; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 0; margin: 12px 0 16px; }
+.cam-p { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; cursor: pointer; padding: 6px 4px; border-radius: 8px; }
+.cam-p::before { content: ""; position: absolute; top: 23px; left: -50%; width: 100%; height: 3px; background: var(--borda); z-index: 0; }
+.cam-p:first-child::before { display: none; }
+.cam-p.ok + .cam-p::before { background: var(--ok); }
+.cam-n { position: relative; z-index: 1; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 700;
+  background: var(--sup); border: 3px solid var(--borda); color: var(--txt2); }
+.cam-p.ok .cam-n { background: var(--ok); border-color: var(--ok); color: #fff; }
+.cam-p.pendente .cam-n { border-color: #d29a00; color: #9a6b00; }
+.cam-p.falta .cam-n { border-color: var(--perigo); color: var(--perigo); }
+.cam-p.bloq .cam-n { border-style: dashed; border-color: var(--borda); color: var(--txt2); }
+.cam-p.sel { background: color-mix(in srgb, var(--pri-claro) 70%, transparent); }
+.cam-p.atual .cam-t { font-weight: 700; }
+.cam-t { font-size: 12px; line-height: 1.25; color: var(--txt); }
+.cam-cartao { border: 1px solid var(--borda); border-left: 6px solid var(--borda); border-radius: 10px; padding: 14px 18px; background: var(--sup); }
+.cam-cartao.ok { border-left-color: var(--ok); } .cam-cartao.pendente { border-left-color: #d29a00; } .cam-cartao.falta { border-left-color: var(--perigo); }
+.cam-cab { display: flex; gap: 14px; align-items: flex-start; }
+.cam-cab h3 { margin: 0 0 4px; }
+.cam-grande { font-size: 30px; font-weight: 800; color: var(--pri); min-width: 34px; }
+.cam-falta { padding-left: 18px; }
+.cam-falta li { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 4px 0; border-bottom: 1px dashed var(--borda); }
+.cam-nav { display: flex; justify-content: space-between; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--borda); }
+.guia-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px 12px; margin-bottom: 12px; border-radius: 10px;
+  background: var(--sup); border: 1px solid var(--borda); border-left: 5px solid var(--pri); position: sticky; top: calc(var(--alt-barra, 0px) + 4px); z-index: 5; }
+.guia-bar.ok { border-left-color: var(--ok); } .guia-bar.pendente { border-left-color: #d29a00; } .guia-bar.falta { border-left-color: var(--perigo); }
+.guia-bar .guia-telas { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
+@media (max-width: 900px) { .cam-passos { grid-template-columns: repeat(4, 1fr); } .cam-p::before { display: none; } }

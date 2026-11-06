@@ -38,7 +38,7 @@
 <nav class="abas lateral" id="abas" aria-label="Etapas do PATO">
   <div class="grp">
     <button data-aba="painel" class="ativa" data-dica="Resumo do trecho, quantidades e reflexo no PATO"><span class="ic">◧</span><span class="rot">Painel</span></button>
-    <button data-aba="assistente" data-dica="Passo a passo para montar o PATO de um segmento: o que já está pronto, o que falta e onde fazer"><span class="ic">➜</span><span class="rot">Assistente</span></button>
+    <button data-aba="assistente" data-dica="Caminho guiado em 7 passos: do trecho à planilha de licitação — o que está pronto, o que falta e onde resolver"><span class="ic">➜</span><span class="rot">Caminho guiado</span></button>
     <button data-aba="pendencias" data-dica="Tudo o que precisa da sua ação: itens sem preço, valores substitutos, falhas da conferência, decisões do inventário e etapas faltando"><span class="ic">⚑</span><span class="rot">Pendências</span> <span id="nPend" class="pill"></span></button>
   </div>
   <div class="grp" data-etapa="dados"><div class="grp-tit"><span class="est"></span><span class="rot">1 · Dados do trecho</span></div>
@@ -78,6 +78,7 @@
 </nav>
 
 <main>
+  <div id="guiaBar" class="guia-bar" hidden></div>
   <!-- PENDÊNCIAS -->
   <section id="aba-pendencias" class="aba"><div id="centralPend"></div></section>
   <!-- PAINEL -->
@@ -109,10 +110,14 @@
 
   <!-- INVENTÁRIO -->
   <section id="aba-assistente" class="aba">
-    <div class="caixa"><div class="bin-cab"><h3>Assistente — montar o PATO deste segmento</h3>
-      <div class="linha-botoes" style="margin:0"><button class="btn" id="btnAssAtual" data-dica="Confere de novo todas as etapas">Atualizar</button></div></div>
-      <p class="nota">Sequência do modelo BR-158/MT. Cada etapa mostra se está concluída (✅), com pendências (⚠️) ou faltando (❌); o botão leva ao lugar certo.</p>
-      <div id="assResumo"></div><div id="assEtapas"></div></div>
+    <div class="caixa"><div class="bin-cab"><h3>Caminho guiado — PATO em 7 passos</h3>
+      <div class="linha-botoes" style="margin:0"><button class="btn" id="btnAssAtual" data-dica="Confere de novo todos os passos">Atualizar</button></div></div>
+      <div id="camResumo"></div>
+      <ol class="cam-passos" id="camPassos"></ol>
+      <div id="camCartao"></div>
+      <details class="ajuda"><summary>ⓘ Como funciona</summary><p class="nota">Cada passo mostra se está concluído (✓), com avisos (!) ou faltando (✕).
+        Um passo só é liberado quando nenhum anterior está faltando; avisos não bloqueiam, mas devem ser resolvidos ou justificados antes de entregar.
+        Os botões abrem as telas do passo; enquanto você trabalha, a faixa do caminho no topo mostra o passo e leva ao próximo.</p></details></div>
   </section>
   <section id="aba-inventario" class="aba">
     <div class="barra">

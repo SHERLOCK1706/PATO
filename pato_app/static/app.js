@@ -33,7 +33,7 @@ async function _api(url, op = {}) {
 const _apiOrig = api;
 api = async function (url, opt) {  // eslint-disable-line no-func-assign
   const r = await _apiOrig(url, opt);
-  if (opt && opt.method && opt.method !== "GET" && /\/api\/projetos\/\d+\//.test(url) && !/\/exportar|\/memoria/.test(url)) barraDepoisDeGravar();
+  if (opt && opt.method && opt.method !== "GET" && /\/api\/projetos\/\d+\//.test(url) && !/\/exportar|\/memoria/.test(url)) { barraDepoisDeGravar(); document.dispatchEvent(new Event("pato:gravou")); }
   return r;
 };
 const jpost = (url, body, method = "POST") => api(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -61,9 +61,12 @@ function irAba(nome) {
   if (nome === "orcamento") carregarOrc();
   if (nome === "assistente") renderAssistente();
   if (nome === "normas") carregarNormas();
+  pintarGuia(nome);
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
 $$("#abas button[data-aba]").forEach(b => b.onclick = () => { if (b.dataset.sub) O_.sub = b.dataset.sub; irAba(b.dataset.aba); });
+// depois de gravar, a situação do caminho é reconferida (a faixa do topo acompanha)
+document.addEventListener("pato:gravou", () => { CAM_.t = 0; const a = $(".aba.ativa")?.id?.slice(4); if (a && !$("#guiaBar").hidden) setTimeout(() => pintarGuia(a), 2500); });
 // menu lateral recolhível (lembra a escolha)
 try { if (localStorage.getItem("pato.nav") === "recolhida") document.body.classList.add("nav-recolhida"); } catch (_) {}
 $("#btnRecolherNav").onclick = () => { const r = document.body.classList.toggle("nav-recolhida"); $("#btnRecolherNav").textContent = r ? "»" : "«";
@@ -790,7 +793,7 @@ async function carregarCustos() {
     ["alteracoes", "Alterações", "Registro das alterações de custo, com desfazer"], ["base", "Data-base e BDI", "Base SICRO do projeto (estado, data-base), BDI (conferir e ajustar as parcelas) e importação de novas bases"],
     ["database", "Trocar data-base", "Compare e passe o projeto para outra data-base"]];
   $("#chipsCustos").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${C_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
-  $$("#chipsCustos .chip").forEach(ch => ch.onclick = () => { C_.sub = ch.dataset.sub; carregarCustos(); });
+  $$("#chipsCustos .chip").forEach(ch => ch.onclick = () => { C_.sub = ch.dataset.sub; carregarCustos(); pintarGuia("custos"); });
   $$(".sub-custos").forEach(el => el.classList.toggle("ativa", el.id === "cst-" + C_.sub));
   ({ servicos: renderServicos, proprias: renderProprias, insumos: renderInsumos, alteracoes: renderAltCusto, binomio: renderBinomio, base: renderBaseCfg, database: renderDataBase })[C_.sub]().catch(erro);
 }
@@ -1540,7 +1543,7 @@ async function carregarTransp() {
   const subs = [["croqui", "Croqui", "Desenho do segmento com as ocorrências e travessias urbanas"], ["vmd", "VMD", "Volume médio diário por segmento (modelagem DNIT)"],
     ["dmt", "DMT e FIT", "Distâncias médias de transporte e fator de interferência de tráfego por rota"], ["quadro", "Quadro de transportes", "Momentos de transporte por serviço e material"]];
   $("#chipsTransp").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${T_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
-  $$("#chipsTransp .chip").forEach(ch => ch.onclick = () => { T_.sub = ch.dataset.sub; carregarTransp(); });
+  $$("#chipsTransp .chip").forEach(ch => ch.onclick = () => { T_.sub = ch.dataset.sub; carregarTransp(); pintarGuia("transporte"); });
   $$(".sub-transp").forEach(el => el.classList.toggle("ativa", el.id === "trp-" + T_.sub));
   try {
     T_.cro = await api(`${base_}${E.pid}/croqui`);
@@ -1881,7 +1884,7 @@ async function carregarOrc() {
     ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["conf", "Conferência", "Checklists de elaboração e auditoria e regras dos normativos — verificação automática e itens a marcar"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
     ["quant", "Quantidades do contrato", "PATO (orçamento de 1 ano) × anos de vigência — como a aba QUANTIDADES"], ["abc", "Curva ABC", "Anexo XXI — sobre o contrato (vigência inteira)"], ["crono", "Cronograma", "Distribuição mensal do contrato (vigência inteira)"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
-  $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
+  $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); pintarGuia("orcamento"); });
   $$(".sub-orc").forEach(el => el.classList.toggle("ativa", el.id === "orc-" + O_.sub));
   $("#cabOrc").hidden = false; $("#cabOrc").innerHTML = '<p class="carregando">Calculando a planilha…</p>';
   try {
@@ -2375,25 +2378,74 @@ $("#btnCrqKmz").onclick = async () => {
   carregarTransp();
 };
 
-// ---- assistente
+// ---- caminho guiado (7 passos)
+const CAM_ = { c: null, sel: null };
+const CAM_IC = { ok: "✓", pendente: "!", falta: "✕" };
+function lerGuia() { try { return +localStorage.getItem("pato.guia." + E.pid) || null; } catch (_) { return null; } }
+function gravarGuia(n) { try { n ? localStorage.setItem("pato.guia." + E.pid, n) : localStorage.removeItem("pato.guia." + E.pid); } catch (_) {} }
+function abrirTela(aba, sub) {
+  if (sub) { if (aba === "orcamento") O_.sub = sub; if (aba === "custos") C_.sub = sub; if (aba === "transporte") T_.sub = sub; }
+  irAba(aba);
+}
+async function carregarCaminho(forcar) {
+  if (!E.pid) return null;
+  if (!forcar && CAM_.c && CAM_.pid === E.pid && Date.now() - CAM_.t < 15000) return CAM_.c;
+  CAM_.c = await api(`${base_}${E.pid}/caminho`); CAM_.pid = E.pid; CAM_.t = Date.now();
+  return CAM_.c;
+}
 async function renderAssistente() {
   if (!E.pid) return;
-  $("#assEtapas").innerHTML = '<p class="carregando">Conferindo as etapas…</p>';
+  if (!CAM_.c) $("#camCartao").innerHTML = '<p class="carregando">Conferindo os passos…</p>';
   try {
-    const a = await api(`${base_}${E.pid}/assistente`);
-    const ic = { ok: "✅", pendente: "⚠️", falta: "❌" };
-    $("#assResumo").innerHTML = `<p><b>${a.concluidas} de ${a.total} etapas concluídas</b>${a.pronto ? ' — <span class="tag ok">pronto para exportar</span>' : ""}</p>
-      <div class="barra-prog"><div style="width:${Math.round(100 * a.concluidas / a.total)}%"></div></div>`;
-    $("#assEtapas").innerHTML = a.etapas.map(e => `<div class="ass-etapa ${e.status}"><div class="ass-cab"><span class="ass-ic">${ic[e.status]}</span>
-        <b>${e.n}. ${esc(e.titulo)}</b> <small class="nota">${esc(e.feito || "")}</small>
-        <button class="btn mini ${e.status === "ok" ? "" : "primario"}" data-assir="${e.aba}|${e.sub || ""}">${e.status === "ok" ? "Ver" : "Ir para a etapa"}</button></div>
-        ${e.avisos.length ? `<ul class="nota">${e.avisos.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}</div>`).join("");
-    $$("[data-assir]").forEach(b => b.onclick = () => {
-      const [aba, sub] = b.dataset.assir.split("|");
-      if (sub) { if (aba === "orcamento") O_.sub = sub; if (aba === "custos") C_.sub = sub; if (aba === "transporte") T_.sub = sub; }
-      irAba(aba);
-    });
-  } catch (e) { $("#assEtapas").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+    const c = await carregarCaminho(true);
+    const sel = CAM_.sel = CAM_.sel && CAM_.selPid === E.pid ? CAM_.sel : (lerGuia() || c.atual); CAM_.selPid = E.pid;
+    $("#camResumo").innerHTML = `<p><b>${c.concluidos} de ${c.total} passos concluídos</b>${c.totais ? ` · PATO (1 ano): SD R$ ${reais(c.totais.SD)} · CD R$ ${reais(c.totais.CD)}` : ""}
+      ${c.pronto_para_exportar ? ' <span class="tag ok">nada bloqueando a exportação</span>' : ""}</p>
+      <div class="barra-prog"><div style="width:${Math.round(100 * c.concluidos / c.total)}%"></div></div>`;
+    $("#camPassos").innerHTML = c.passos.map(p => `<li class="cam-p ${p.status} ${p.n === sel ? "sel" : ""} ${p.liberado ? "" : "bloq"} ${p.n === c.atual ? "atual" : ""}" data-camn="${p.n}"
+        title="${esc(p.liberado ? p.titulo : `Bloqueado: conclua o passo ${p.bloqueado_por}`)}">
+        <span class="cam-n">${p.liberado ? (p.status === "ok" ? "✓" : p.n) : "🔒"}</span><span class="cam-t">${esc(p.titulo)}</span></li>`).join("");
+    $$("#camPassos [data-camn]").forEach(li => li.onclick = () => { CAM_.sel = +li.dataset.camn; renderAssistente(); });
+    desenharCartao(c.passos.find(p => p.n === sel) || c.passos[0], c);
+  } catch (e) { $("#camCartao").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
+}
+function desenharCartao(p, c) {
+  const prox = c.passos.find(x => x.n === p.n + 1), ant = c.passos.find(x => x.n === p.n - 1);
+  const st = { ok: ["ok", "Concluído"], pendente: ["aviso", "Com avisos"], falta: ["erro", "Faltando"] }[p.status];
+  $("#camCartao").innerHTML = `<div class="cam-cartao ${p.status}">
+    <div class="cam-cab"><span class="cam-grande">${p.n}</span><div><h3>${esc(p.titulo)} <span class="tag ${st[0]}">${st[1]}</span></h3>
+      <p>${esc(p.objetivo)}</p>${p.feito ? `<p class="nota">Situação: ${esc(p.feito)}</p>` : ""}</div></div>
+    ${p.liberado ? "" : `<p class="tag aviso">Este passo depende do passo ${p.bloqueado_por}, que ainda está faltando. Você pode abrir as telas, mas os números podem mudar.</p>`}
+    ${p.o_que_falta.length ? `<h4>O que falta</h4><ul class="cam-falta">${p.o_que_falta.map(m => `<li><span>${esc(m.texto)}</span>
+        <button class="btn mini" data-camir="${esc(m.aba)}|${esc(m.sub || "")}">Resolver</button></li>`).join("")}</ul>`
+      : '<p class="ok-msg">Nada faltando neste passo.</p>'}
+    <h4>Telas deste passo</h4><div class="linha-botoes">${p.telas.map((t, k) => `<button class="btn ${k === 0 ? "primario" : ""}" data-camir="${esc(t.aba)}|${esc(t.sub || "")}">${esc(t.rotulo)}</button>`).join("")}</div>
+    <div class="cam-nav">${ant ? `<button class="btn" data-camsel="${ant.n}">‹ Passo ${ant.n}</button>` : "<span></span>"}
+      ${prox ? `<button class="btn primario" data-camsel="${prox.n}" ${p.status === "falta" ? `disabled title="Resolva o que falta neste passo para seguir"` : ""}>Próximo: ${esc(prox.titulo)} ›</button>`
+        : `<button class="btn primario" data-camir="exportar|">Exportar a planilha de licitação ›</button>`}</div></div>`;
+  $$("#camCartao [data-camir]").forEach(b => b.onclick = () => { const [aba, sub] = b.dataset.camir.split("|"); gravarGuia(p.n); abrirTela(aba, sub || null); });
+  $$("#camCartao [data-camsel]").forEach(b => b.onclick = () => { CAM_.sel = +b.dataset.camsel; gravarGuia(CAM_.sel); renderAssistente(); });
+}
+// faixa do caminho no topo das telas do passo em andamento
+async function pintarGuia(nome) {
+  const bar = $("#guiaBar"), n = E.pid ? lerGuia() : null;
+  if (!n || nome === "assistente" || nome === "painel") { bar.hidden = true; return; }
+  let c; try { c = await carregarCaminho(); } catch (_) { bar.hidden = true; return; }
+  const p = c?.passos.find(x => x.n === n);
+  const subAtual = nome === "orcamento" ? O_.sub : nome === "custos" ? C_.sub : nome === "transporte" ? T_.sub : null;
+  if (!p || !p.telas.some(t => t.aba === nome && (!t.sub || !subAtual || t.sub === subAtual))) { bar.hidden = true; return; }
+  const prox = c.passos.find(x => x.n === n + 1);
+  bar.hidden = false;
+  bar.className = "guia-bar " + p.status;
+  bar.innerHTML = `<button class="btn mini" id="guiaVolta" data-dica="Volta ao caminho guiado">‹ Caminho</button>
+    <b>Passo ${p.n} de ${c.total} · ${esc(p.titulo)}</b> <span class="tag ${{ ok: "ok", pendente: "aviso", falta: "erro" }[p.status]}">${CAM_IC[p.status]} ${p.o_que_falta.length ? p.o_que_falta.length + " a resolver" : "ok"}</span>
+    <span class="guia-telas">${p.telas.map(t => `<button class="chip ${t.aba === nome && (!t.sub || t.sub === subAtual) ? "ativo" : ""}" data-guiair="${esc(t.aba)}|${esc(t.sub || "")}">${esc(t.rotulo)}</button>`).join("")}</span>
+    ${prox ? `<button class="btn mini primario" id="guiaProx" ${p.status === "falta" ? 'disabled title="Ainda falta algo neste passo"' : ""}>Próximo: ${esc(prox.titulo)} ›</button>` : ""}
+    <button class="btn mini" id="guiaFechar" data-dica="Esconde a faixa (volte pelo Caminho guiado)">×</button>`;
+  $("#guiaVolta").onclick = () => { CAM_.sel = n; irAba("assistente"); };
+  $("#guiaFechar").onclick = () => { gravarGuia(null); bar.hidden = true; };
+  $$("#guiaBar [data-guiair]").forEach(b => b.onclick = () => { const [aba, sub] = b.dataset.guiair.split("|"); abrirTela(aba, sub || null); });
+  if ($("#guiaProx")) $("#guiaProx").onclick = () => { gravarGuia(prox.n); CAM_.sel = prox.n; const t = prox.telas[0]; abrirTela(t.aba, t.sub); };
 }
 $("#btnAssAtual").onclick = renderAssistente;
 
@@ -3190,8 +3242,8 @@ async function iniciar() {
     E.cat = await api("/api/catalogo");
     $("#nomeModelo").textContent = E.cat.modelo;
     await carregarProjetos();
-    let aba = "painel"; try { aba = localStorage.getItem("pato.aba") || "painel"; } catch (_) {}
-    irAba(E.pid ? aba : "painel");
+    let aba = "assistente"; try { aba = localStorage.getItem("pato.aba") || "assistente"; } catch (_) {}
+    irAba(E.pid ? aba : "painel");  // projeto aberto: começa pelo caminho guiado
   } catch (e) { erro(e); }
 }
 (async () => {

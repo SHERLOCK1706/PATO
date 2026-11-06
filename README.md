@@ -5,7 +5,14 @@ Sistema local (painel web + servidor MCP) construído a partir da planilha
 
 ## O que faz
 
-**Navegação por etapas** (menu lateral, recolhível com «): Painel · Assistente · **Pendências**, e as etapas
+**Caminho guiado em 7 passos** (tela inicial do projeto): 1 Trecho e prazo → 2 Inventário e levantamento ICM/IP →
+3 Data-base, preços e BDI → 4 Croqui, DMT e transportes → 5 Serviços e níveis de esforço → 6 ADM local, canteiro e
+mobilização → 7 Conferir e exportar. Cada passo mostra ✓ concluído, ! com avisos ou ✕ faltando, **o que falta** (cada
+item com o botão "Resolver" que abre a tela certa) e as telas do passo. Um passo só é liberado quando nenhum anterior
+está faltando (avisos não bloqueiam). Ao abrir uma tela pelo caminho, uma **faixa no topo** mostra o passo, as telas
+dele e o botão "Próximo passo"; ela se atualiza depois de cada gravação. Também no MCP (`pato_caminho`).
+
+**Navegação por etapas** (menu lateral, recolhível com «): Painel · Caminho guiado · **Pendências**, e as etapas
 1 · Dados do trecho (Projeto, Inventário, Mapa, Importar; Alertas, Revisão e Histórico de ajustes) →
 2 · Custos e transporte → 3 · Orçamento (Planilha PATO, IP, Sinalização, ADM e mobilização, Desempenho) →
 4 · Entrega (Conferência, Resumo, Curva ABC, Cronograma, Exportar). Cada etapa mostra ✅/⚠️/❌ pelo Assistente.
@@ -294,8 +301,8 @@ A base de normas guarda só o texto pesquisável dos documentos (com página), n
 ficam com o usuário. Isso mantém o sistema em cerca de 70 MB.
 
 ## Novidades: assistente, salvar versões, fornecedores (ANM/SIGMINE), DMT pela estrada e memória de cálculo
-- **Assistente** (aba própria): as 9 etapas para montar o PATO de um segmento — projeto, inventário, ICM/IP, data-base e BDI,
-  cotações/binômio, croqui, ficha de serviços, ADM/mobilização, conferência — com ✅/⚠️/❌, o que falta e o botão para a etapa.
+- **Assistente** (por trás do caminho guiado e da situação das etapas no menu): verificações de projeto, inventário,
+  ICM/IP, data-base e BDI, cotações/binômio, croqui, ficha de serviços, ADM/mobilização e conferência.
 - **Menu Arquivo (como Word/Excel):** Novo · **Abrir** (Ctrl+A / Ctrl+O) · **Salvar** (Ctrl+B / Ctrl+S) · **Salvar como** (F12) ·
   **Salvar uma cópia** · **Renomear** · **Histórico de versões** · **Fechar**. O projeto vira um arquivo **.pato** na pasta que você
   escolher (pode ser OneDrive/Google Drive, para usar em qualquer computador); no Chrome/Edge o Salvar atualiza esse mesmo arquivo.

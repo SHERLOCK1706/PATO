@@ -622,6 +622,13 @@ def pato_medidas(projeto_id: int) -> dict:
 
 
 @mcp.tool()
+def pato_caminho(projeto_id: int) -> dict:
+    """Caminho guiado do PATO em 7 passos (trecho, inventário/ICM, data-base e preços, croqui, serviços e NE, ADM e
+    mobilização, conferir e exportar): situação de cada passo, o que falta e onde resolver."""
+    return sv().orcamento.caminho(projeto_id)
+
+
+@mcp.tool()
 def pato_resumo(projeto_id: int) -> dict:
     """Curva ABC (Anexo XXI), % dos grupos (Anexo XX) e cronograma físico-financeiro."""
     return sv().orcamento.resumo(projeto_id)

@@ -615,6 +615,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def p_ficha_restaurar():
         return sv.orcamento.restaurar_ficha_padrao()
 
+    @app.get("/api/projetos/{pid}/caminho")
+    def p_caminho(pid: int):
+        return sv.orcamento.caminho(pid)
+
     @app.get("/api/projetos/{pid}/assistente")
     def p_assistente(pid: int):
         return sv.orcamento.assistente(pid)

@@ -1079,6 +1079,112 @@ class Orcamentos:
         feitas = sum(1 for e in out[:-1] if e["status"] == "ok")
         return dict(etapas=out, concluidas=feitas, total=len(out) - 1, pronto=pronto)
 
+    # ------------------------------------------------- caminho guiado (7 passos)
+    PASSOS = [
+        (1, "Trecho e prazo", "Identifique o segmento: rodovia, trecho, km inicial e final, SNV e o prazo do contrato (meses).",
+         [("Projeto e trecho", "projeto", None)]),
+        (2, "Inventário e levantamento ICM/IP", "Traga o inventário (CAD_*, CSV, GeoJSON, KML) e o levantamento da condição do "
+         "pavimento: são a base das quantidades.", [("Importar inventário", "importar", None), ("Inventário", "inventario", None),
+                                                    ("Mapa", "mapa", None), ("Levantamento ICM/IP", "orcamento", "ip")]),
+        (3, "Data-base, preços e BDI", "Escolha a base SICRO (estado e mês), confira o BDI e lance as cotações e o binômio "
+         "(pétreos e betuminosos ANP).", [("Data-base e BDI", "custos", "base"), ("Binômio e cotações", "custos", "binomio"),
+                                          ("Insumos", "custos", "insumos")]),
+        (4, "Croqui, DMT e transportes", "Posicione canteiro, usina, jazidas, areais e bota-foras no croqui; o sistema calcula "
+         "DMT, FIT e o quadro de transportes.", [("Croqui", "transporte", "croqui"), ("VMD", "transporte", "vmd"),
+                                                  ("DMT e FIT", "transporte", "dmt"), ("Quadro de transportes", "transporte", "quadro")]),
+        (5, "Serviços e níveis de esforço", "Marque na ficha os serviços do contrato, ajuste o NE e monte a planilha PATO "
+         "(quantitativos para 12 meses).", [("Planilha PATO e ficha", "orcamento", "planilha"),
+                                             ("Sinalização de obras", "orcamento", "sinal"), ("Desempenho e NE da roçada", "orcamento", "desemp")]),
+        (6, "ADM local, canteiro e mobilização", "Confira administração local, canteiro, usina e mobilização: equipamentos das "
+         "CPU, DMT pela estrada e passagem cotada.", [("ADM local e mobilização", "orcamento", "div")]),
+        (7, "Conferir e exportar", "Resolva as pendências, confira os checklists da Res. 8/2023 e exporte a planilha de "
+         "licitação e a memória de cálculo.", [("Conferência", "orcamento", "conf"), ("Resumo e % dos grupos", "orcamento", "resumo"),
+                                               ("Quantidades do contrato", "orcamento", "quant"), ("Exportar", "exportar", None)]),
+    ]
+
+    def caminho(self, pid: int) -> dict:
+        """Caminho guiado do PATO em 7 passos. Cada passo: situação (ok / pendente / falta), o que falta (com a tela onde
+        resolver), o que já está feito e as telas do passo. Um passo só é liberado quando nenhum anterior está 'falta';
+        'pendente' (avisos) não bloqueia, mas aparece. O passo atual é o primeiro que não está ok."""
+        a = {e["n"]: e for e in self.assistente(pid)["etapas"]}
+        ordem = {"ok": 0, "pendente": 1, "falta": 2}
+
+        def pior(*sts):
+            return max(sts, key=lambda x: ordem[x])
+
+        def itens(*ns):
+            return [dict(texto=m, aba=a[n]["aba"], sub=a[n]["sub"]) for n in ns for m in a[n]["avisos"]]
+
+        calc = None
+        try:
+            calc = self.calcular(pid) if any(x.get("tipo") == "servico" for x in self.dados(pid).get("itens", [])) else None
+        except Exception as e:  # noqa: BLE001
+            calc = dict(erro=str(e))
+        passos = []
+        p = self.sv.projeto(pid)
+        # 1) trecho e prazo
+        msgs = itens(1)
+        meses = nz.prazo_em_meses(p.get("prazo"))
+        st = a[1]["status"]
+        if meses and meses % 12:
+            msgs.append(dict(texto=f"Prazo de {meses:g} meses não é múltiplo de 12 (Res. 8/2023: contrato em anos).",
+                             aba="projeto", sub=None))
+            st = pior(st, "pendente")
+        passos.append(dict(st=st, msgs=msgs, feito=a[1]["feito"]))
+        # 2) inventário (bloqueia) e ICM/IP (sem ele, as quantidades do ICM ficam pelo histórico: avisa)
+        st = pior(a[2]["status"], "pendente" if a[3]["status"] != "ok" else "ok")
+        passos.append(dict(st=st, msgs=itens(2, 3), feito=f"{a[2]['feito']} · {a[3]['feito']}"))
+        # 3) data-base e BDI (bloqueia) + binômio (sem nenhum preço de betuminoso/material: falta)
+        passos.append(dict(st=pior(a[4]["status"], a[5]["status"]), msgs=itens(4, 5), feito=f"{a[4]['feito']} · {a[5]['feito']}"))
+        # 4) croqui
+        passos.append(dict(st=a[6]["status"], msgs=itens(6), feito=a[6]["feito"]))
+        # 5) serviços: planilha montada; sem preço = falta; valores substitutos = pendente
+        msgs, st = itens(7), a[7]["status"]
+        if calc and calc.get("erro"):
+            msgs.append(dict(texto=f"Planilha não calculada: {calc['erro']}", aba="orcamento", sub="planilha"))
+            st = "falta"
+        elif calc:
+            pend = calc.get("pendencias") or []
+            sem = [x for x in pend if x.get("tipo") == "preco" and x.get("nivel") == "erro"]
+            subst = [x for x in pend if x.get("nivel") == "aviso" and x.get("tipo") not in ("norma", "transporte")]
+            if sem:
+                msgs.append(dict(texto=f"{len(sem)} serviço(s) sem preço: " + ", ".join(
+                    f"{x.get('item')} {x.get('codigo')}" for x in sem[:5]) + ("…" if len(sem) > 5 else ""), aba="pendencias", sub=None))
+                st = "falta"
+            if subst:
+                msgs.append(dict(texto=f"{len(subst)} valor(es) substituto(s) (quantidade ou preço que o sistema não conseguiu "
+                                       "calcular com os dados do projeto) — veja em Pendências.", aba="pendencias", sub=None))
+                st = pior(st, "pendente")
+        passos.append(dict(st=st, msgs=msgs, feito=a[7]["feito"]))
+        # 6) ADM e mobilização: dados conferidos, DMT pela estrada e passagem cotada
+        msgs, st = itens(8), a[8]["status"]
+        dd = self.db.dados_projeto(pid, "diversos") or {}
+        mobs = [m for m in (dd.get("mob"), (dd.get("sicro2025") or {}).get("mob")) if isinstance(m, dict)]
+        if dd and not any((m.get("origem") or {}).get("capital") for m in mobs):
+            msgs.append(dict(texto="Mobilização sem DMT pela estrada (capital de origem → canteiro): use “DMT pela estrada”.",
+                             aba="orcamento", sub="div"))
+            st = pior(st, "pendente")
+        if dd and not any(m.get("passagem_fonte") for m in mobs):
+            msgs.append(dict(texto="Passagem de ônibus da mobilização não cotada para este itinerário: use “Cotar passagem”.",
+                             aba="orcamento", sub="div"))
+            st = pior(st, "pendente")
+        passos.append(dict(st=st, msgs=msgs, feito=a[8]["feito"]))
+        # 7) conferência e exportação
+        passos.append(dict(st=a[9]["status"], msgs=itens(9), feito=a[9]["feito"]))
+
+        out, bloqueado_por = [], None
+        for (n, titulo, objetivo, telas), ps in zip(self.PASSOS, passos):
+            out.append(dict(n=n, titulo=titulo, objetivo=objetivo, status=ps["st"], o_que_falta=ps["msgs"], feito=ps["feito"],
+                            telas=[dict(rotulo=r, aba=ab, sub=sb) for r, ab, sb in telas],
+                            liberado=bloqueado_por is None, bloqueado_por=bloqueado_por))
+            if ps["st"] == "falta" and bloqueado_por is None:
+                bloqueado_por = n
+        atual = next((x["n"] for x in out if x["status"] != "ok"), 7)
+        concl = sum(1 for x in out if x["status"] == "ok")
+        return dict(passos=out, atual=atual, concluidos=concl, total=len(out),
+                    pronto_para_exportar=all(x["status"] != "falta" for x in out),
+                    totais=(calc or {}).get("totais") if calc and not calc.get("erro") else None)
+
     # ------------------------------------------------- conferência (checklists + normativos)
     def conferencia(self, pid: int) -> dict:
         from . import conferencia as cf

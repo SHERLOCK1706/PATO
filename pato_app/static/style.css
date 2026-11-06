@@ -433,3 +433,14 @@ body.densa .btn.mini { padding: 0 6px; }
 .guia-bar.ok { border-left-color: var(--ok); } .guia-bar.pendente { border-left-color: #d29a00; } .guia-bar.falta { border-left-color: var(--perigo); }
 .guia-bar .guia-telas { display: flex; gap: 4px; flex-wrap: wrap; flex: 1; }
 @media (max-width: 900px) { .cam-passos { grid-template-columns: repeat(4, 1fr); } .cam-p::before { display: none; } }
+
+/* ficha: + / − ao lado do item, sempre visíveis (coluna fixa à esquerda) */
+#tabFicha .fp-col1 { position: sticky; left: 0; z-index: 2; background: var(--sup); white-space: nowrap; }
+#tabFicha tr.fp-tit .fp-col1 { background: inherit; }
+#tabFicha tr.fp-tit td.fp-col1 { background: #1f3864; } #tabFicha tr.fp-tit.nv1 td.fp-col1 { background: #0f1f3d; }
+#tabFicha tr.fp-cab th.fp-col1 { z-index: 3; background: var(--sup); }
+.fp-acoes { display: inline-flex; gap: 2px; margin-left: 4px; vertical-align: middle; }
+.fp-b { width: 20px; height: 20px; padding: 0; border-radius: 4px; font-weight: 700; font-size: 14px; line-height: 18px; cursor: pointer; border: 1px solid var(--borda); background: var(--sup); }
+.fp-b.mais { color: #1b7a33; border-color: #1b7a33; } .fp-b.mais:hover { background: #1b7a33; color: #fff; }
+.fp-b.menos { color: #b3261e; border-color: #b3261e; } .fp-b.menos:hover { background: #b3261e; color: #fff; }
+.fp-barra { display: inline-flex; gap: 6px; align-items: center; margin-right: 12px; }

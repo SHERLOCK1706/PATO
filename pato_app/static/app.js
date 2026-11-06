@@ -2499,28 +2499,28 @@ function desenharFicha(fp) {
   const preco = (l, reg) => { const man = (l.preco_manual || {})[reg] != null, velho = man && l.preco_manual_antigo;
     return `<input class="cel n ${man ? "informado" : ""} ${velho ? "antigo" : ""} ${l["preco_" + reg] == null ? "falta" : ""}" data-fpre="${reg}" data-fid="${esc(l.id)}" value="${esc(fmtIn(l["preco_" + reg], 2))}" style="width:96px"
       title="${esc(velho ? `Preço informado na data-base ${l.preco_manual_data_base || "?"} — o projeto está em ${fp.data_base || "?"}: confira ou apague para voltar ao da base` : man ? "Preço informado neste projeto (apague para voltar ao da base)" : (l["preco_fonte_" + reg] || "preço da base"))}">`; };
-  const acoes = l => `<span class="acoes-orc"><button class="btn mini" data-fnova="${esc(l.id)}" data-dica="Nova linha logo abaixo (digite o código)">＋</button><button class="btn mini perigo" data-frem="${esc(l.id)}" data-dica="Remove a linha da ficha${l.tipo === "servico" ? " (e as que puxam a quantidade dela)" : ""}">×</button></span>`;
-  let html = `<tr class="fp-faixa"><th colspan=9></th><th colspan=5>QUANTITATIVOS PARA 12 MESES</th><th></th></tr>
-    <tr class="fp-cab"><th rowspan=2><input type="checkbox" id="fichaTodos2" title="marcar todos"></th><th colspan=3>TAREFA OU SERVIÇO</th><th colspan=2>INVENTÁRIO</th><th colspan=2>NÍVEL DE ESFORÇO</th><th colspan=2>QUANT. DE TRABALHO</th>
-      <th colspan=2>CONDIÇÃO SEM DESONERAÇÃO</th><th colspan=2>CONDIÇÃO COM DESONERAÇÃO</th><th rowspan=2></th></tr>
+  const acoes = l => `<span class="fp-acoes"><button class="fp-b mais" data-fnova="${esc(l.id)}" title="Adicionar serviço logo abaixo desta linha">+</button><button class="fp-b menos" data-frem="${esc(l.id)}" title="Remover esta linha${l.tipo === "servico" ? " (e as que puxam a quantidade dela)" : ""}">−</button></span>`;
+  let html = `<tr class="fp-faixa"><th colspan=9></th><th colspan=5>QUANTITATIVOS PARA 12 MESES</th></tr>
+    <tr class="fp-cab"><th rowspan=2 class="fp-col1"><input type="checkbox" id="fichaTodos2" title="marcar todos"></th><th colspan=3>TAREFA OU SERVIÇO</th><th colspan=2>INVENTÁRIO</th><th colspan=2>NÍVEL DE ESFORÇO</th><th colspan=2>QUANT. DE TRABALHO</th>
+      <th colspan=2>CONDIÇÃO SEM DESONERAÇÃO</th><th colspan=2>CONDIÇÃO COM DESONERAÇÃO</th></tr>
     <tr class="fp-cab"><th>ITEM</th><th>CÓDIGO</th><th>DISCRIMINAÇÃO</th><th>QUANT.</th><th>UND</th><th>QUANT.</th><th>UND/UND</th><th>QUANT.</th><th>UND</th>
       <th>PREÇO UNITÁRIO (R$)</th><th>PREÇO PARCIAL (R$)</th><th>PREÇO UNITÁRIO (R$)</th><th>PREÇO PARCIAL (R$)</th></tr>`;
   const subtotal = raiz => { const t = soma(raiz.item + "."), p = efetivo(raiz) ? { SD: +raiz.parcial_SD || 0, CD: +raiz.parcial_CD || 0 } : { SD: 0, CD: 0 };
-    return `<tr class="fp-sub"><td colspan=11></td><td class=n>R$ ${reais(t.SD + p.SD)}</td><td></td><td class=n>R$ ${reais(t.CD + p.CD)}</td><td></td></tr>`; };
+    return `<tr class="fp-sub"><td colspan=11></td><td class=n>R$ ${reais(t.SD + p.SD)}</td><td></td><td class=n>R$ ${reais(t.CD + p.CD)}</td></tr>`; };
   let raiz = null;
   ls.forEach((l, k) => {
     if (l.tipo === "titulo") {
       if (raiz) { html += subtotal(raiz); raiz = null; }
       const t = soma(l.item + "."), nv = (l.item || "").split(".").length;
-      html += `<tr class="fp-tit nv${Math.min(nv, 3)}" data-flin="${esc(l.id)}"><td></td><td>${inp(l, "item", l.item, "86px")}</td><td></td><td colspan=8>${inp(l, "descricao", l.descricao, "100%")}</td>
-        <td class=n>R$ ${reais(t.SD)}</td><td></td><td class=n>R$ ${reais(t.CD)}</td><td>${acoes(l)}</td></tr>`;
+      html += `<tr class="fp-tit nv${Math.min(nv, 3)}" data-flin="${esc(l.id)}"><td class="fp-col1">${acoes(l)}</td><td>${inp(l, "item", l.item, "86px")}</td><td></td><td colspan=8>${inp(l, "descricao", l.descricao, "100%")}</td>
+        <td class=n>R$ ${reais(t.SD)}</td><td></td><td class=n>R$ ${reais(t.CD)}</td></tr>`;
       return;
     }
     const ehRaiz = !raiz || !(l.item || "").startsWith(raiz.item + ".");
     if (ehRaiz) { if (raiz) html += subtotal(raiz); raiz = l; }
     const lig = !l.a_informar, ip = !!l.ne_ip, dir = l.base_tipo === "direta";
     html += `<tr class="fp-serv ${ehRaiz ? "raiz" : ""} ${efetivo(l) ? "" : "desmarcado"}" data-flin="${esc(l.id)}">
-      <td><input type="checkbox" data-fsel="${esc(l.id)}" ${marcado(l) ? "checked" : ""}></td>
+      <td class="fp-col1"><input type="checkbox" data-fsel="${esc(l.id)}" ${marcado(l) ? "checked" : ""}>${acoes(l)}</td>
       <td>${inp(l, "item", l.item, "100px")}</td><td>${inp(l, "codigo", cp7(l.codigo), "74px", "", )}</td><td class="fp-desc">${inp(l, "descricao", l.descricao, "100%")}</td>
       <td class=n>${lig ? `<span class="fp-lig" title="${esc((l.regra || "") + (l.base_fonte ? " — " + l.base_fonte : ""))}">${q3(l.base_valor)}</span>`
         : `<input class="cel n ${!l.base_valor ? "falta" : ""}" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px" title="Quantidade a informar (sem regra automática)">`}</td>
@@ -2529,21 +2529,23 @@ function desenharFicha(fp) {
         ${ip ? `<sup class="fp-icm" title="${esc(l.ne_rotulo || "NE do levantamento (ICM)")}">ICM</sup>` : ""}</td>
       <td><small>${esc(l.unidade && l.unidade_base ? l.unidade + "/" + l.unidade_base : "")}</small></td>
       <td class=n><b>${q3(l.quantidade)}</b></td><td>${inp(l, "unidade", l.unidade, "44px")}</td>
-      <td class=n>${preco(l, "SD")}</td><td class=n>${reais(l.parcial_SD)}</td><td class=n>${preco(l, "CD")}</td><td class=n>${reais(l.parcial_CD)}</td>
-      <td style="white-space:nowrap">${acoes(l)}</td></tr>`;
+      <td class=n>${preco(l, "SD")}</td><td class=n>${reais(l.parcial_SD)}</td><td class=n>${preco(l, "CD")}</td><td class=n>${reais(l.parcial_CD)}</td></tr>`;
   });
   if (raiz) html += subtotal(raiz);
   const ult = ls[ls.length - 1];
-  html += `<tr class="lin-nova" data-apos="${esc(ult?.id || "")}"><td></td><td><input class="cel" data-nfitem placeholder="item" style="width:100px"></td>
+  html += `<tr class="lin-nova" id="fichaLinhaFim" data-apos="${esc(ult?.id || "")}"><td class="fp-col1"></td><td><input class="cel" data-nfitem placeholder="item" style="width:100px"></td>
       <td><input class="cel falta" data-nfcod placeholder="código ↵" style="width:74px" data-dica="Digite o código e tecle Enter: descrição, unidade e preço vêm da base (e continuam editáveis)"></td>
-      <td colspan=11><small class="nota">Digite o código e tecle Enter para incluir o serviço na ficha</small> <button class="btn mini" data-nftit>+ título</button></td><td></td></tr>`;
+      <td colspan=11><small class="nota">Digite o código e tecle Enter para incluir o serviço na ficha</small> <button class="btn mini" data-nftit>+ título</button></td></tr>`;
   const tot = soma("");
-  html += `<tr class="fp-tit nv1"><td colspan=11>TOTAL DOS SERVIÇOS MARCADOS (PATO de 1 ano)</td><td class=n>R$ ${reais(tot.SD)}</td><td></td><td class=n>R$ ${reais(tot.CD)}</td><td></td></tr>`;
-  $("#fichaEstado").innerHTML = fp.ficha_do_projeto
+  html += `<tr class="fp-tit nv1"><td colspan=11>TOTAL DOS SERVIÇOS MARCADOS (PATO de 1 ano)</td><td class=n>R$ ${reais(tot.SD)}</td><td></td><td class=n>R$ ${reais(tot.CD)}</td></tr>`;
+  const barra = `<span class="fp-barra"><button class="btn mini primario" id="btnFichaAddServ" data-dica="Inclui um serviço no fim da ficha (ou use o + de cada linha para inserir logo abaixo dela)">+ Adicionar serviço</button>
+    <button class="btn mini" id="btnFichaAddTit" data-dica="Inclui um título (grupo) no fim da ficha">+ Adicionar título</button>
+    <small class="nota">Use <b>+</b> / <b>−</b> ao lado de cada linha para inserir abaixo ou remover.</small></span> `;
+  $("#fichaEstado").innerHTML = barra + (fp.ficha_do_projeto
     ? `<span class="tag aviso">Ficha deste projeto</span> as edições valem só aqui.
        <button class="btn mini" id="btnFichaPadrao" data-dica="Grava esta ficha como a padrão dos próximos projetos (os preços informados ficam só neste projeto)">Tornar padrão</button>
        <button class="btn mini perigo" id="btnFichaDescartar" data-dica="Descarta as edições da ficha feitas neste projeto e volta à ficha padrão">Descartar edições</button>`
-    : `<span class="tag">Ficha padrão</span> ao editar uma célula, a ficha passa a ser deste projeto (a padrão não muda).`;
+    : `<span class="tag">Ficha padrão</span> ao editar uma célula, a ficha passa a ser deste projeto (a padrão não muda).`);
   if ($("#btnFichaPadrao")) $("#btnFichaPadrao").onclick = async () => { if (!confirm("Gravar esta ficha como padrão para os próximos projetos?\nOs preços informados não vão para o padrão (dependem da data-base).")) return;
     try { const r = await jpost(`${base_}${E.pid}/pato/ficha/tornar-padrao`, {}); toast(`Ficha padrão atualizada${r.precos_mantidos_no_projeto ? ` (${r.precos_mantidos_no_projeto} preço(s) informado(s) ficaram só neste projeto)` : ""}`); desenharFicha(r); } catch (e) { erro(e); } };
   if ($("#btnFichaDescartar")) $("#btnFichaDescartar").onclick = async () => { if (!confirm("Descartar as edições da ficha deste projeto e voltar à ficha padrão?")) return;
@@ -2606,6 +2608,9 @@ function ligarFicha() {
     for (; k >= 0 && k < linhas.length; k += dir) { const a = linhas[k].cells[td.cellIndex]?.querySelector("input.cel"); if (a) { a.focus(); try { a.select(); } catch (_) {} break; } }
   }));
   ligarNovaFicha();
+  const fim = () => $("#fichaLinhaFim");
+  $("#btnFichaAddServ").onclick = () => { fim().scrollIntoView({ block: "center" }); const c = $("[data-nfcod]", fim()); c.focus(); };
+  $("#btnFichaAddTit").onclick = () => { fim().scrollIntoView({ block: "center" }); $("[data-nftit]", fim()).click(); };
 }
 $("#btnFichaMontar").onclick = async () => {
   if (O_.c?.itens?.length && !confirm("Substituir a planilha PATO deste projeto pelos serviços marcados na ficha?")) return;

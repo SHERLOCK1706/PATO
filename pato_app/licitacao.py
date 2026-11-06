@@ -163,6 +163,16 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
         transp_ok = False
         pend.append(f"Abas de transporte não reescritas: {e}")
     from . import diversos as dv
+    from .binomio_servico import TIPO_BETUMINOSO, TIPO_MATERIAL
+    mm.binomio_anp(x, [b_["dados"] for b_ in sv.db.binomios(pid, TIPO_BETUMINOSO)], p.get("data_base"), log, pend)
+    mm.binomio_cotacoes(x, [b_["dados"] for b_ in sv.db.binomios(pid, TIPO_MATERIAL)], log, pend)
+    mm.titulos(x, (refm["projeto"] or {}).get("rodovia") or "", p.get("rodovia") or "")
+    from . import ne_rocada as ner_mod
+    mm.ne_rocada(x, ner_mod.calcular(sv.db.dados_projeto(pid, "ne_rocada")), log, pend)
+    try:
+        mm.bdi(x, sv.custos.config(pid).get("parcelas") or {}, log)
+    except ValueError as e:
+        pend.append(f"BDI: parcelas do projeto não disponíveis ({e})")
     dd_div = dv.com_2025(sv.db.dados_projeto(pid, "diversos") or {})
     mm.mob(x, dd_div, log, pend)
     if dd_div.get("modelo") == "sicro2025":

@@ -481,3 +481,225 @@ def mob(x, diversos: dict | None, log: list[str], pend: list[str]) -> None:
         pend.append("MOB: itinerário ou valor da passagem do pessoal não informados no projeto (ADM e mobilização)")
     log.append(f"MOB: {len(eqs)} equipamentos ({m.get('equipamentos_fonte') or 'lista do projeto'}), itinerário "
                f"{itin or '—'}, descanso de {t_desc:g} h a cada {h_desc:g} h ({'SICRO 2ª ed.' if met == 'sicro2025' else 'planilha de origem'})")
+
+
+# ------------------------------------------------------------------ binômios: ANP, PEDAGIO, BINOMIO_ANP, BINOMIO_COTACOES
+def _data(mes: str | None):
+    if not mes:
+        return None
+    try:
+        return _dt.date(int(str(mes)[:4]), int(str(mes)[5:7]), 1)
+    except ValueError:
+        return None
+
+
+def binomio_anp(x, produtos: list[dict], data_base: str | None, log: list[str], pend: list[str]) -> None:
+    """Origens (refinaria/distribuidora), distâncias, ICMS, pedágio, balsa e preço ANP de cada betuminoso do projeto."""
+    if not {"BINOMIO_ANP", "ANP", "PEDAGIO"} <= set(x.sheets) or not produtos:
+        return
+    from . import anp as anp_mod
+    for aba in ("BINOMIO_ANP", "ANP", "PEDAGIO"):
+        x.unshare(aba)
+    blocos = {}
+    for r in sorted(x._rows("BINOMIO_ANP")):
+        v = x.get("BINOMIO_ANP", f"B{r}")
+        if isinstance(v, str) and _chave(x.get("BINOMIO_ANP", f"B{r + 1}") or "").startswith("origem"):
+            blocos[anp_mod.produto_anp(v) or _chave(v)] = r
+    cidades: dict[str, dict] = {}
+    anp_linhas, n, sem = [], 0, []
+    for pr in produtos:
+        rb = blocos.get(anp_mod.produto_anp(pr.get("produto")) or _chave(pr.get("produto")))
+        if not rb:
+            sem.append(pr.get("produto") or "?")
+            continue
+        nome_bloco = x.get("BINOMIO_ANP", f"B{rb}")
+        origs = [o for o in pr.get("origens") or [] if o.get("local")]
+        if not origs:
+            sem.append(f"{pr.get('produto')} (sem origens)")
+            continue
+        if len(origs) > 3:
+            pend.append(f"BINOMIO_ANP: {pr.get('produto')} tem {len(origs)} origens; a planilha comporta 3 — "
+                        "foram as 3 primeiras do projeto")
+        for k in range(3):
+            o = origs[min(k, len(origs) - 1)]  # menos de 3 origens: repete a última (não altera o menor custo)
+            r = rb + 3 + k
+            cid = str(o.get("local")).strip().upper()
+            cidades.setdefault(cid, o)
+            for c, v in (("C", o.get("uf") or ""), ("D", cid), ("E", float(nz.numero(o.get("d_fluvial")) or 0)),
+                         ("H", float(nz.numero(o.get("d_ln")) or 0)), ("I", float(nz.numero(o.get("icms")) or 0)),
+                         ("O", float(nz.numero(o.get("balsa")) or 0))):
+                x.set("BINOMIO_ANP", f"{c}{r}", v)
+            if k < len(origs) and nz.numero(o.get("preco_t")) is not None:
+                anp_linhas.append((nome_bloco, cid, o.get("uf") or "", o.get("preco_fonte") or o.get("nivel") or "",
+                                   float(nz.numero(o["preco_t"])) / 1000))
+        n += 1
+    # ANP: preços (R$/kg) usados pelo projeto
+    a0, a1 = 11, 26
+    if len(anp_linhas) > a1 - a0 + 1:
+        x.insert_rows("ANP", a1, len(anp_linhas) - (a1 - a0 + 1))
+        a1 = a0 + len(anp_linhas) - 1
+    for k in range(a1 - a0 + 1):
+        r = a0 + k
+        _limpar(x, "ANP", r, "BCDEFG")
+        if k < len(anp_linhas):
+            prod, cid, uf, fonte, preco = anp_linhas[k]
+            for c, v in (("B", "=CAPA!B85" if k == 0 else "=$B$11"), ("C", prod), ("D", cid), ("E", uf),
+                         ("F", str(fonte)[:40] or "ANP"), ("G", preco)):
+                x.set("ANP", f"{c}{r}", v)
+    # PEDAGIO: distâncias por cidade de origem (fluvial, RP, pavimentado) e pedágio por veículo
+    p0, p1 = 9, 13
+    lst = list(cidades.items())
+    if len(lst) > p1 - p0 + 1:
+        x.insert_rows("PEDAGIO", p1, len(lst) - (p1 - p0 + 1))
+        p1 = p0 + len(lst) - 1
+    db_ = _data(data_base)
+    for c_ in ("I8", "J8"):
+        if db_:
+            x.set("PEDAGIO", c_, db_)
+    for k in range(p1 - p0 + 1):
+        r = p0 + k
+        _limpar(x, "PEDAGIO", r, "BCDEFGHL")
+        if k < len(lst):
+            cid, o = lst[k]
+            for c, v in (("B", cid), ("C", o.get("uf") or ""), ("D", "CANTEIRO DE OBRAS/USINA" if k == 0 else ""),
+                         ("E", float(nz.numero(o.get("d_fluvial")) or 0)), ("F", float(nz.numero(o.get("d_rp")) or 0)),
+                         ("G", float(nz.numero(o.get("d_pav")) or 0)), ("H", float(nz.numero(o.get("pedagio")) or 0)),
+                         ("L", f"=H{r}*(1+$K$9)")):
+                x.set("PEDAGIO", f"{c}{r}", v)
+    if "RESUMO_ANP" in x.sheets:  # origens do resumo sempre pelas do binômio (a referência tinha nomes digitados)
+        x.unshare("RESUMO_ANP")
+        for i, rb in enumerate(sorted(blocos.values())):
+            for k in range(3):
+                x.set("RESUMO_ANP", f"C{8 + 3 * i + k}", f"=BINOMIO_ANP!D{rb + 3 + k}")
+    if sem:
+        pend.append("BINOMIO_ANP: betuminosos do projeto sem bloco na planilha de referência ou sem origem — " + ", ".join(sem))
+    log.append(f"Binômio ANP: {n} produto(s), {len(lst)} origem(ns) (ANP, PEDAGIO e BINOMIO_ANP com os dados do projeto)")
+
+
+def binomio_cotacoes(x, materiais: list[dict], log: list[str], pend: list[str]) -> None:
+    """Cotações (fornecedor, preço, densidade, data, DMT) de cada material pétreo do projeto, por código SICRO."""
+    aba = "BINOMIO_COTACOES"
+    if aba not in x.sheets or not materiais:
+        return
+    x.unshare(aba)
+    rows = sorted(x._rows(aba))
+    grupos, atual = [], None
+    for r in rows:
+        c = x.get(aba, f"C{r}")
+        d = x.get(aba, f"D{r}")
+        if isinstance(c, str) and re.match(r"^M\d{4}$", c.strip()):
+            atual = dict(codigo=c.strip(), linhas=[r], sicro=None)
+            grupos.append(atual)
+            if str(d).strip().upper() == "SICRO":
+                atual["sicro"] = r
+            continue
+        if atual and d not in (None, "") and not x.get(aba, f"B{r}"):
+            if str(d).strip().upper() == "SICRO":
+                atual["sicro"] = r
+            else:
+                atual["linhas"].append(r)
+        elif atual and d in (None, ""):
+            atual = None
+    por_cod = {str(m.get("codigo") or "").strip().upper(): m for m in materiais}
+    n, faltam, cheios = 0, [], []
+    for g in grupos:
+        m = por_cod.get(g["codigo"].upper())
+        cots = [c for c in (m or {}).get("cotacoes") or [] if not c.get("sicro")]
+        sic = next((c for c in (m or {}).get("cotacoes") or [] if c.get("sicro")), {})
+        if m and len(cots) > len(g["linhas"]):
+            cheios.append(f"{m.get('nome')} ({len(cots)} cotações, {len(g['linhas'])} linhas)")
+        for k, r in enumerate(g["linhas"]):
+            ct = cots[k] if k < len(cots) else None
+            if ct is None:
+                _limpar(x, aba, r, "DEFGHIJKLMNOPQRST")
+                continue
+            un_m3 = (ct.get("unidade") or "t") in ("m3", "m³")
+            for c, v in (("D", ct.get("fornecedor") or ""), ("F", float(nz.numero(ct.get("densidade")) or 1)),
+                         ("E", f"=G{r}/F{r}" if un_m3 else float(nz.numero(ct.get("preco")) or 0)),
+                         ("G", float(nz.numero(ct.get("preco")) or 0) if un_m3 else f"=E{r}*F{r}"),
+                         ("H", _data(ct.get("data"))), ("I", f"=HLOOKUP(H{r},INDICES_REAJ!$C$30:$ZZ$56,12,FALSE)"),
+                         ("J", "=CAPA!$B$85"), ("K", f"=HLOOKUP(J{r},INDICES_REAJ!$C$30:$ZZ$56,12,FALSE)"),
+                         ("L", f"=K{r}/I{r}-1"), ("M", f"=TRUNC(E{r}*(1+L{r}),2)"), ("N", f"=TRUNC(G{r}*(1+L{r}),2)"),
+                         ("O", float(nz.numero(ct.get("dmt_pav")) or 0)), ("P", float(nz.numero(ct.get("dmt_npav")) or 0)),
+                         ("S", f"=O{r}*Q{r}+P{r}*R{r}"), ("T", f"=S{r}+M{r}")):
+                x.set(aba, f"{c}{r}", v)
+            if not ct.get("data"):
+                faltam.append(f"{m.get('nome')} — {ct.get('fornecedor')}")
+        if g["sicro"] and sic:
+            x.set(aba, f"O{g['sicro']}", float(nz.numero(sic.get("dmt_pav")) or 0))
+            x.set(aba, f"P{g['sicro']}", float(nz.numero(sic.get("dmt_npav")) or 0))
+        if m:
+            n += 1
+    sem = [m.get("nome") for c, m in por_cod.items() if c and c not in {g["codigo"].upper() for g in grupos}]
+    if sem:
+        pend.append("BINOMIO_COTACOES: materiais do projeto sem grupo na planilha de referência — " + ", ".join(sem))
+    if cheios:
+        pend.append("BINOMIO_COTACOES: mais cotações do que linhas na planilha — " + "; ".join(cheios))
+    if faltam:
+        pend.append("BINOMIO_COTACOES: cotação sem data (o reajuste fica sem índice) — " + "; ".join(faltam[:6]))
+    log.append(f"Binômio de cotações: {n} materiais com as cotações do projeto")
+
+
+def titulos(x, rodovia_ref: str, rodovia: str, abas=("CAD_ACEIRO",)) -> None:
+    """Troca a rodovia da referência pela do projeto em títulos de abas que a trazem escrita."""
+    if not rodovia_ref or not rodovia:
+        return
+    rr = rodovia_ref.split("/")[0].strip()
+    nova = rodovia.split("/")[0].strip()
+    for aba in abas:
+        if aba not in x.sheets:
+            continue
+        for r, row in x._rows(aba).items():
+            for c in row:
+                v = x.get(aba, c.get("r"))
+                if isinstance(v, str) and not v.startswith("=") and rr in v:
+                    x.set(aba, c.get("r"), v.replace(rr, nova))
+
+
+# ------------------------------------------------------------------ NE da roçada e BDI
+def ne_rocada(x, calc: dict | None, log: list[str], pend: list[str]) -> None:
+    """Estações pluviométricas (DNIT 182/2018), NERp e NE adotado do projeto."""
+    if "NE_ROCADA" not in x.sheets:
+        return
+    est = (calc or {}).get("estacoes") or []
+    if not est:
+        pend.append("NE_ROCADA: estações pluviométricas do projeto não definidas (Desempenho → NE da roçada)")
+        return
+    x.unshare("NE_ROCADA")
+    e0, e1 = 3, 7
+    if len(est) > e1 - e0 + 1:
+        x.insert_rows("NE_ROCADA", e1, len(est) - (e1 - e0 + 1))
+        e1 = e0 + len(est) - 1
+    for k in range(e1 - e0 + 1):
+        r = e0 + k
+        _limpar(x, "NE_ROCADA", r, "BCDEFGHIJ")
+        if k < len(est):
+            s = est[k]
+            for c, v in (("B", 1 if k == 0 else f"=B{r - 1}+1"), ("C", _num_ou_txt(s.get("codigo"))), ("D", s.get("uf") or ""),
+                         ("E", s.get("nome") or ""), ("F", s.get("municipio") or ""), ("G", float(nz.numero(s.get("distancia")) or 0)),
+                         ("H", float(nz.numero(s.get("nere")) or 0)), ("I", f"=1/G{r}"), ("J", f"=I{r}*H{r}")):
+                x.set("NE_ROCADA", f"{c}{r}", v)
+    h9 = next((r for r in sorted(x._rows("NE_ROCADA")) if _chave(x.get("NE_ROCADA", f"B{r}") or "") == "nerp"), None)
+    if h9:
+        x.set("NE_ROCADA", f"H{h9}", f"=SUM(J{e0}:J{e1})/SUM(I{e0}:I{e1})")
+        if calc.get("adotado") is not None:
+            x.set("NE_ROCADA", f"H{h9 + 2}", float(calc["adotado"]))
+    log.append(f"NE_ROCADA: {len(est)} estações do projeto; NE adotado {calc.get('adotado')}")
+
+
+BDI_CELULAS = {"SD": dict(ac="E11", df="C12", seguros="C13", riscos="C14", lucro="E17", pis="C20", cofins="C21", iss="C22", cprb="C23"),
+               "CD": dict(ac="E30", df="C31", seguros="D32", riscos="D33", lucro="E36", pis="C39", cofins="C40", iss="C41", cprb="C42")}
+
+
+def bdi(x, parcelas: dict, log: list[str]) -> None:
+    """Parcelas do BDI do projeto (SD e CD): AC, DF, seguros, riscos, lucro, PIS, COFINS, ISSQN (municípios) e CPRB."""
+    if "BDI" not in x.sheets or not parcelas:
+        return
+    n = 0
+    for reg, cels in BDI_CELULAS.items():
+        p = parcelas.get(reg) or {}
+        for k, ref in cels.items():
+            if p.get(k) is not None and nz.numero(x.get("BDI", ref)) is not None or (p.get(k) is not None and reg == "CD" and k == "df"):
+                x.set("BDI", ref, float(p[k]))
+                n += 1
+    log.append(f"BDI: {n} parcelas do projeto (ISSQN pela média ponderada dos municípios, CPRB do ano)")

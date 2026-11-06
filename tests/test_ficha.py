@@ -10,6 +10,9 @@ from pato_app.servico import MODELO_PADRAO, Servico
 from test_transporte import CROQUI_PATO
 
 TOT_SISTEMA = dict(SD=26715472.25, CD=27267278.71)  # = PATO importado da planilha, calculado pelo sistema
+# montado do zero: a mobilização leva os equipamentos das CPU dos serviços adotados (entram cavalo mecânico c/ semirreboque,
+# basculante 6 m³, usina de PMF, guindauto 6 t e carroceria 5 t; saem 5 que nenhuma CPU usa) — MOB/DESMOB sobem
+TOT_FICHA = dict(SD=26724948.91, CD=27276972.31)
 
 
 @pytest.fixture(scope="module")
@@ -67,7 +70,7 @@ def test_ficha_sem_numeros_do_segmento(proj):
 def test_mesmo_pato_da_planilha(proj):
     sv, pid, _ = proj
     c = sv.orcamento.calcular(pid)
-    assert c["totais"] == pytest.approx(TOT_SISTEMA, abs=0.005)
+    assert c["totais"] == pytest.approx(TOT_FICHA, abs=0.005)
     assert (c["desempenho"]["GD"]["mensal_SD"], c["desempenho"]["GD"]["mensal_CD"]) == (148968.45, 148228.95)
     ref = {(x["item"], x["codigo"]): x for x in po.importar_referencia(str(MODELO_PADRAO))["itens"] if x["tipo"] == "servico"}
     divergem = set()
@@ -78,8 +81,9 @@ def test_mesmo_pato_da_planilha(proj):
         pq = math.trunc(round(rf["quantidade_ref"] * rf["preco_ref"]["SD"] * 100, 6)) / 100
         if abs(x["quantidade"] - rf["quantidade_ref"]) > 0.0005 or abs(x["parcial_SD"] - pq) > 0.005:
             divergem.add(x["codigo"])
-    # só os dois transportes com as divergências documentadas da planilha (Pu do areal e bloco RP)
-    assert divergem == {"5915321", "5914464"}
+    # os dois transportes com as divergências documentadas da planilha (Pu do areal e bloco RP) e a mobilização
+    # (equipamentos pelas CPU dos serviços adotados)
+    assert divergem - {"MOB", "DESMOB"} == {"5915321", "5914464"}
 
 
 def test_cotacao_vencedora_vira_origem(proj):

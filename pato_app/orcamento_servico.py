@@ -607,6 +607,42 @@ class Orcamentos:
                 visitar(cp._cod(ln.get("codigo") or ""), set())
         return dv.sugerir_equipamentos_mob(eqs)
 
+    def aplicar_mob_pelos_servicos(self, pid: int) -> dict:
+        """Equipamentos da mobilização = os das CPU (e auxiliares) dos serviços adotados na planilha PATO que exigem
+        transporte rodoviário (SICRO Vol. 09, IMOB). Mantém DMT, velocidades e k já informados; vale para as duas
+        metodologias (SICRO 2ª ed. e planilha de origem)."""
+        from . import diversos as dv
+        sug = self.sugerir_mob(pid)
+        if not sug:
+            return dict(equipamentos=0, entraram=[], sairam=[])
+        dd = self.db.dados_projeto(pid, "diversos")
+        if not dd:
+            from .servico import MODELO_PADRAO
+            dd = dv.importar_planilha(str(MODELO_PADRAO)) or {}
+        dd = dv.com_2025(dd)
+        entraram, sairam = set(), set()
+        for alvo in [dd.get("mob")] + [(dd.get("sicro2025") or {}).get("mob")]:
+            if not isinstance(alvo, dict):
+                continue
+            atual = {e.get("codigo"): e for e in alvo.get("equipamentos") or []}
+            base0 = next(iter(atual.values()), {})
+            novos = []
+            for g in sug:
+                a = atual.get(g["codigo"])
+                if a:
+                    novos.append(dict(a, quant=max(nz.numero(a.get("quant")) or 0, g["quant"])))  # mantém o ajuste maior do usuário
+                else:
+                    entraram.add(g["codigo"])
+                    novos.append(dict(g, dmt_pav=base0.get("dmt_pav", 0), dmt_npav=base0.get("dmt_npav", 0),
+                                      vel_pav=base0.get("vel_pav", 60), vel_npav=base0.get("vel_npav", 50), k=base0.get("k", 1)))
+            sairam |= set(atual) - {g["codigo"] for g in sug}
+            alvo["equipamentos"] = novos
+            alvo["equipamentos_fonte"] = "CPU dos serviços adotados na planilha PATO (SICRO Vol. 09, IMOB)"
+        dd.pop("origem_modelo", None)
+        self.db.gravar_dados_projeto(pid, "diversos", dd)
+        self.db.registrar(pid, "mobilização: equipamentos pelas CPU", f"{len(sug)} equipamentos; entraram {len(entraram)}, saíram {len(sairam)}")
+        return dict(equipamentos=len(sug), entraram=sorted(entraram), sairam=sorted(sairam))
+
     def resumo(self, pid: int) -> dict:
         r = self.calcular(pid)
         reg = r["vantajosa"]
@@ -719,6 +755,10 @@ class Orcamentos:
             self._inserir_ordenado(d, x, item or None)
             tem.add(i)
         self._gravar(pid, d)
+        try:
+            self.aplicar_mob_pelos_servicos(pid)
+        except Exception:  # noqa: BLE001
+            pass
         self.db.registrar(pid, "PATO: serviços incluídos da ficha", ", ".join(por_id[i].get("codigo") or "" for i in pedir))
         return dict(incluidos=[dict(id=i, item=por_id[i].get("item"), codigo=por_id[i].get("codigo")) for i in pedir],
                     calc=self.calcular(pid))
@@ -1252,8 +1292,12 @@ class Orcamentos:
             self.sv.transporte.aplicar_origens(pid)
         self.db.registrar(pid, "PATO: montado pela ficha de serviços", f"{n} serviços, {len(linhas)} linhas de transporte")
         tr = self.sincronizar_transportes(pid, gerar=not linhas)
+        try:
+            mob = self.aplicar_mob_pelos_servicos(pid)
+        except Exception as e:  # noqa: BLE001 — sem base SICRO a lista fica para depois
+            mob = dict(erro=str(e))
         conf = self.conferir_quantidades(pid, conferir) if conferir else []
-        return dict(servicos=n, transporte_linhas=len(linhas), ocorrencias_faltando=faltam, transporte=tr, conferencia_qtd=conf,
+        return dict(servicos=n, transporte_linhas=len(linhas), ocorrencias_faltando=faltam, transporte=tr, conferencia_qtd=conf, mob=mob,
                     resumo=self.resumo(pid))
 
     def sincronizar_transportes(self, pid: int, gerar: bool = False) -> dict:

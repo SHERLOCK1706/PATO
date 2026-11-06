@@ -1010,6 +1010,10 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
         finally:
             os.unlink(caminho)
 
+    @app.post("/api/projetos/{pid}/diversos/mob-pelos-servicos")
+    def p_mob_servicos(pid: int):
+        return sv.orcamento.aplicar_mob_pelos_servicos(pid)
+
     @app.post("/api/projetos/{pid}/pato/ficha/incluir")
     def ficha_incluir(pid: int, dados: dict = Body(...)):
         try:

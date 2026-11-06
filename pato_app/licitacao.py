@@ -152,8 +152,23 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
     # 3b) abas de memória com os dados do projeto (não os da referência)
     from . import memorias as mm
     refm = referencia(str(modelo or sv.modelo_pato()))
+    ext = sv.extensao(pid)
+    if ext:  # extensão real (soma dos segmentos SNV), não km final − km inicial
+        x.set("CAPA", "D78", round(float(ext), 3))
     mm.indices(x, sv.binomio.indices()["series"], log, pend)
     mm.ip(x, sv.db.dados_projeto(pid, "ip"), refm["ip"], p.get("data_inventario"), log, pend)
+    try:
+        transp_ok = mm.transportes(x, sv.transporte.quadro(pid), sv.transporte.croqui(pid), p, log, pend)
+    except Exception as e:  # noqa: BLE001 — sem croqui/quadro as abas ficam como na referência (a conferência acusa)
+        transp_ok = False
+        pend.append(f"Abas de transporte não reescritas: {e}")
+    from . import diversos as dv
+    dd_div = dv.com_2025(sv.db.dados_projeto(pid, "diversos") or {})
+    mm.mob(x, dd_div, log, pend)
+    if dd_div.get("modelo") == "sicro2025":
+        pend.append("ADM_LOCAL / CANTEIRO / USINA: o sistema calcula pela 2ª edição do SICRO (ADM com manejo florestal, "
+                    "canteiro e instalação industrial do Manual de Custos), que o layout da referência não expressa — os "
+                    "preços de ADM, CAN e INSIND na aba PATO são os do sistema (em destaque); confira na memória de cálculo")
 
     # 4) nível de esforço e quantidades informadas dos itens
     linhas_pato = {}
@@ -176,6 +191,8 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
             x.set("PATO", f"H{r}", ne)
             n_ne += 1
         b = it.get("base") or {}
+        if b.get("tipo") == "transporte" and transp_ok:
+            continue  # o momento sai da própria aba TRANSPORTES_CONSERVA (reescrita com o quadro do projeto)
         if b.get("tipo") == "transporte" and it["id"] in calc_it:
             # momento de transporte do quadro do sistema (croqui, DMT e FIT do projeto)
             mt = calc_it[it["id"]].get("base_valor")

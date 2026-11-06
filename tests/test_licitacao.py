@@ -59,3 +59,21 @@ def test_outro_segmento_e_outra_data_base(tmp_path):
     assert x.get("INDICES_REAJ", "I30") is not None and "INDICES_REAJ!$C$30:$N$56" not in str(x.get("BINOMIO_COTACOES", "K17"))
     sobras = [p_ for p_ in r["pendencias"] if "ainda contém" in p_]  # varredura: o que ainda é da referência
     assert sobras and not any(p_.startswith(("IP:", "CALCULO_IP:", "INDICES_REAJ:")) for p_ in sobras), sobras
+
+
+def test_pato_segue_os_servicos_do_projeto(tmp_path):
+    """Serviço retirado fica com quantidade zero; serviço novo ganha linha no grupo e preço no BD; total = sistema."""
+    sv = Servico(pasta=tmp_path)
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    sv.atualizar_projeto(pid, dict(prazo=24))
+    f = sv.orcamento.ficha(pid)["servicos"]
+    sel = [x["id"] for x in f if x["tipo"] == "servico" and x.get("codigo") != "4011410"]
+    sv.orcamento.montar_pela_ficha(pid, selecionados=sel)
+    sv.orcamento.incluir_item(pid, None, dict(tipo="servico", item="01.02.06.99", codigo="2003373",
+                                              base=dict(tipo="valor", valor=10.0, fonte="teste"), ne=1))
+    r = sv.orcamento.exportar_licitacao(pid)
+    assert r["conferencia"]["diferenca"] == dict(SD=0.0, CD=0.0), r["conferencia"]
+    x = XlsxPatcher(r["arquivo"])
+    linhas = {x.get("PATO", f"C{n}"): n for n in range(15, 260) if isinstance(x.get("PATO", f"C{n}"), str)}
+    assert "01.02.06.99" in linhas and str(x.get("PATO", f"D{linhas['01.02.06.99']}")) == "2003373"
+    assert any("quantidade zero" in ln and "4011410" in ln for ln in r["log"])

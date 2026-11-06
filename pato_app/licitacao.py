@@ -180,6 +180,8 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
                     "canteiro e instalação industrial do Manual de Custos), que o layout da referência não expressa — os "
                     "preços de ADM, CAN e INSIND na aba PATO são os do sistema (em destaque); confira na memória de cálculo")
 
+    mm.pato_dinamico(x, calc["itens"], log, pend)
+
     # 4) nível de esforço e quantidades informadas dos itens
     linhas_pato = {}
     for r in _linhas(x, "PATO"):

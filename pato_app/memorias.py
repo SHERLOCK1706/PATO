@@ -703,3 +703,89 @@ def bdi(x, parcelas: dict, log: list[str]) -> None:
                 x.set("BDI", ref, float(p[k]))
                 n += 1
     log.append(f"BDI: {n} parcelas do projeto (ISSQN pela média ponderada dos municípios, CPRB do ano)")
+
+
+# ------------------------------------------------------------------ aba PATO: serviços retirados e incluídos
+_PATO_FORMULAS = {"A": '=IF(VLOOKUP(D{r},BD!$B$4:$B$1271,1,FALSE)="","REVISAR","OK")',
+                  "E": "=VLOOKUP($D{r},BD!$B$4:$E$1271,2,FALSE)", "I": '=K{r}&"/"&G{r}', "J": "=TRUNC(F{r}*H{r},3)",
+                  "K": "=VLOOKUP($D{r},BD!$B$4:$E$1271,3,FALSE)", "L": "=VLOOKUP(D{r},BD!$B:$E,4,FALSE)",
+                  "M": "=TRUNC(J{r}*L{r},2)", "N": "=VLOOKUP(D{r},BD!$B:$Z,5,FALSE)", "O": "=TRUNC(J{r}*N{r},2)"}
+
+
+def _chave_item(it: str) -> tuple:
+    return tuple(int(p) if p.isdigit() else 0 for p in re.split(r"[.\-]", str(it).strip()) if p)
+
+
+def pato_dinamico(x, itens: list[dict], log: list[str], pend: list[str]) -> None:
+    """A aba PATO segue os serviços do projeto: os da referência que o projeto não adota ficam com quantidade zero
+    (em cinza) e os do projeto que a referência não tem ganham linha no seu grupo (com o preço no BD)."""
+    from . import composicoes as cp
+    x.unshare("PATO")
+    serv = [i for i in itens if i.get("tipo") == "servico" and i.get("item")]
+    meus = {(str(i["item"]).strip(), cp._cod(i.get("codigo") or "")) for i in serv}
+    linhas = {}
+    for r in sorted(x._rows("PATO")):
+        it, cod = x.get("PATO", f"C{r}"), x.get("PATO", f"D{r}")
+        if isinstance(it, str) and cod not in (None, ""):
+            linhas[(it.strip(), cp._cod(str(cod)))] = r
+    fora = [k for k in linhas if k not in meus]
+    for k in fora:
+        r = linhas[k]
+        x.set("PATO", f"J{r}", 0)
+        for c in "CDEJM":
+            x.destacar("PATO", f"{c}{r}", "D9D9D9")
+    novos = [i for i in serv if (str(i["item"]).strip(), cp._cod(i.get("codigo") or "")) not in linhas]
+    incl, sem_grupo, bd_novos = [], [], []
+    bd_cods = {cp._cod(str(x.get("BD", f"B{r}"))) for r in x._rows("BD") if x.get("BD", f"B{r}") not in (None, "")}
+    for it in sorted(novos, key=lambda i: _chave_item(i["item"])):
+        pref = ".".join(str(it["item"]).split(".")[:3])
+        irmaos = []
+        for r in sorted(x._rows("PATO")):
+            v = x.get("PATO", f"C{r}")
+            if isinstance(v, str) and x.get("PATO", f"D{r}") not in (None, "") and (v.strip() + ".").startswith(pref + "."):
+                irmaos.append((_chave_item(v), r))
+        if not irmaos:
+            sem_grupo.append(f"{it['item']} {it.get('codigo')}")
+            continue
+        ult = max(r for _, r in irmaos)
+        alvo = ult + 1
+        sub = alvo
+        while sub in x._rows("PATO") and x.get("PATO", f"C{sub}") in (None, "") and not str(x.get("PATO", f"M{sub}") or "").startswith("=SUM"):
+            sub += 1
+        if sub == alvo:  # a linha seguinte é o subtotal do grupo: abre uma linha e estende as somas
+            x.insert_rows("PATO", alvo, 1)
+            for c in "MO":
+                f = x.get("PATO", f"{c}{alvo + 1}")
+                if isinstance(f, str):
+                    x.set("PATO", f"{c}{alvo + 1}", re.sub(rf"(:\${{0,1}}{c}\$?){alvo - 1}\)", rf"\g<1>{alvo})", f))
+        r = alvo
+        cod = cp._cod(it.get("codigo") or "")
+        b = it.get("base") or {}
+        direta = b.get("tipo") == "direta"
+        for c, f in _PATO_FORMULAS.items():
+            x.set("PATO", f"{c}{r}", f.format(r=r))
+        for c, v in (("B", "SISTEMA"), ("C", str(it["item"])), ("D", _num_ou_txt(cod)), ("G", it.get("unidade") or ""),
+                     ("F", float(it.get("quantidade") if direta else (it.get("base_valor") or 0)) or 0.0),
+                     ("H", 1.0 if direta else float(nz.numero(it.get("ne")) or 1.0))):
+            x.set("PATO", f"{c}{r}", v)
+        for c in "CDFHJ":
+            x.destacar("PATO", f"{c}{r}", "FFF2CC")
+        if cod not in bd_cods:
+            ultbd = max(rr for rr in x._rows("BD") if x.get("BD", f"B{rr}") not in (None, ""))
+            for c, v in (("B", _num_ou_txt(cod)), ("C", (it.get("descricao") or "").upper()), ("D", it.get("unidade") or ""),
+                         ("E", float(it.get("preco_SD") or 0)), ("F", float(it.get("preco_CD") or 0))):
+                x.set("BD", f"{c}{ultbd + 1}", v)
+            bd_cods.add(cod)
+            bd_novos.append(cod)
+        incl.append(f"{it['item']} {cod}")
+    if fora:
+        log.append(f"PATO: {len(fora)} serviço(s) da referência não adotado(s) pelo projeto ficam com quantidade zero (em cinza): "
+                   + ", ".join(f"{a} {b}" for a, b in fora[:12]) + (" …" if len(fora) > 12 else ""))
+    if incl:
+        log.append(f"PATO: {len(incl)} serviço(s) do projeto incluído(s) no grupo (em destaque): " + ", ".join(incl[:12])
+                   + (f"; {len(bd_novos)} preço(s) acrescentado(s) ao BD" if bd_novos else ""))
+        pend.append("PATO: serviços incluídos pelo sistema não constam das abas QUANTIDADES, CURVA_ABC, CRONOGRAMA e "
+                    "PATO_CONTRATUAL do modelo — use o Excel do orçamento (Anexos XIX–XXI) gerado pelo sistema para esses anexos")
+    if sem_grupo:
+        pend.append("PATO: serviços do projeto sem grupo correspondente na planilha de referência (inclua no Excel): "
+                    + ", ".join(sem_grupo))

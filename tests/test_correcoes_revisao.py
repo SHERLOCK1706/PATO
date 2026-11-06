@@ -90,3 +90,13 @@ def test_gravacao_segura_da_ficha(tmp_path):
     p.write_text("{corrompido")  # queda no meio da gravação: lê a cópia anterior
     assert fc.ler(p)["itens"] == [1]
     assert not list(tmp_path.glob("*.tmp"))
+
+
+def test_importar_inventario_em_projeto_existente_preenche_trecho(sv):
+    """Projeto criado à mão e inventário importado depois: rodovia, km e SNV vêm da planilha; o que o usuário já
+    informou (nome, prazo) não é sobrescrito."""
+    pid = sv.criar_projeto(dict(nome="Meu PATO", prazo=36))["id"]
+    sv.importar_arquivo(str(MODELO_PADRAO), modo="substituir", projeto_id=pid)
+    p = sv.projeto(pid)
+    assert p["nome"] == "Meu PATO" and p["prazo"] == 36
+    assert p["rodovia"] and p["km_ini"] is not None and p["km_fim"] is not None and p["snv"]

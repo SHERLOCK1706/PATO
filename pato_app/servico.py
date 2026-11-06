@@ -174,7 +174,13 @@ class Servico:
             pid = self.db.criar_projeto(dados)
         else:
             pid = projeto_id
-            self.projeto(pid)
+            atual = self.projeto(pid)
+            # projeto criado à mão e inventário importado depois: os dados do trecho que estão em branco vêm da
+            # planilha (rodovia, trecho, km, SNV, UF…); o que o usuário já informou não é sobrescrito
+            vazios = {k: v for k, v in (res.get("projeto") or {}).items()
+                      if v not in (None, "") and atual.get(k) in (None, "") and k not in ("nome",)}
+            if vazios:
+                self.db.atualizar_projeto(pid, vazios)
             if modo == "substituir":
                 cats = sorted({i["categoria"] for i in itens})
                 if cats:

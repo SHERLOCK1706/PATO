@@ -50,3 +50,18 @@ def test_ficha_planilha_editavel(proj):
     assert any(x.get("descricao") == "MICRO EDITADO" for x in c["itens"])
     r = o.remover_linha_ficha(pid, n["id"])
     assert r["removidos"] == 1 and not any(x["id"] == n["id"] for x in r["linhas"])
+
+
+def test_quantidade_da_regra_editavel(proj):
+    """Quantidade que vem do inventário (regra) pode ser digitada; apagar volta à regra."""
+    sv, pid = proj
+    o = sv.orcamento
+    fp = o.ficha_planilha(pid)
+    x = next(l for l in fp["linhas"] if l["tipo"] == "servico" and not l["a_informar"] and not l.get("depende_de"))
+    q0 = x["base_valor"]
+    r = o.editar_ficha_item(pid, x["id"], {"valor": 37})
+    n = _l(r, x["id"])
+    assert n["base_valor"] == 37 and n["regra_guardada"] and n["a_informar"]
+    r = o.editar_ficha_item(pid, x["id"], {"valor": None})
+    n = _l(r, x["id"])
+    assert n["base_valor"] == q0 and not n["regra_guardada"] and not n["a_informar"]

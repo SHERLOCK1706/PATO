@@ -396,7 +396,7 @@ body.densa .btn.mini { padding: 0 6px; }
 #tabFicha input.cel.n { text-align: right; }
 #tabFicha input.cel.informado { background: #fff2cc; color: #111; }
 #tabFicha input.cel.falta { border-color: color-mix(in srgb, #d97706 55%, transparent); }
-#tabFicha .fp-lig { border-bottom: 1px dotted #888; cursor: help; }
+#tabFicha .fp-lig { border-bottom: 1px dotted #888; }
 #tabFicha tr.fp-serv:hover td { background: color-mix(in srgb, var(--pri-claro) 45%, var(--sup)); }
 #tabFicha tr .acoes-orc { visibility: hidden; }
 #tabFicha tr:hover .acoes-orc { visibility: visible; }

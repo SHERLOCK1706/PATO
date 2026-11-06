@@ -1345,6 +1345,7 @@ class Orcamentos:
                                                   "parcial_SD", "parcial_CD", "base_fonte", "preco_fonte_SD", "preco_fonte_CD")})
                 ln["ne_calc"] = c.get("ne")
                 ln["base_tipo"] = (x.get("base") or {}).get("tipo")
+                ln["regra_guardada"] = fc.regra_txt(x["base_regra"]) if x.get("base_regra") else None
             linhas.append(ln)
         return dict(origem=lst["origem"], linhas=linhas, totais=r["totais"], anos=d["prazo_anos"],
                     ficha_do_projeto=bool(f.get("do_projeto")), data_base=db_proj,
@@ -1414,13 +1415,18 @@ class Orcamentos:
             else:
                 x["ne"] = 1.0 if v is None else v
         if "valor" in campos and x.get("tipo") == "servico":
-            v = nz.numero(campos["valor"]) or 0.0
+            import copy
             b = x.setdefault("base", {})
-            if b.get("tipo") not in (None, "valor", "direta"):
-                b.clear()
-                b.update(tipo="valor", fonte="informado na ficha")
-            b.setdefault("tipo", "valor")
-            b["valor"] = v
+            if campos["valor"] in (None, "") and x.get("base_regra"):  # apagou: volta à regra (inventário, ICM, outro item…)
+                x["base"] = x.pop("base_regra")
+            else:
+                v = nz.numero(campos["valor"]) or 0.0
+                if b.get("tipo") not in (None, "valor", "direta"):  # quantidade digitada no lugar da regra (guardada)
+                    x["base_regra"] = copy.deepcopy(b)
+                    b.clear()
+                    b.update(tipo="valor", fonte="informado na ficha")
+                b.setdefault("tipo", "valor")
+                b["valor"] = v
         if "preco_manual" in campos:
             pm = {k: nz.numero(v) for k, v in (campos["preco_manual"] or {}).items() if v not in (None, "")}
             pm = {k: v for k, v in pm.items() if v is not None}

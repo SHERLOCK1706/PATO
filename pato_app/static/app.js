@@ -2522,8 +2522,11 @@ function desenharFicha(fp) {
     html += `<tr class="fp-serv ${ehRaiz ? "raiz" : ""} ${efetivo(l) ? "" : "desmarcado"}" data-flin="${esc(l.id)}">
       <td class="fp-col1"><input type="checkbox" data-fsel="${esc(l.id)}" ${marcado(l) ? "checked" : ""}>${acoes(l)}</td>
       <td>${inp(l, "item", l.item, "100px")}</td><td>${inp(l, "codigo", cp7(l.codigo), "74px", "", )}</td><td class="fp-desc">${inp(l, "descricao", l.descricao, "100%")}</td>
-      <td class=n>${lig ? `<span class="fp-lig" title="${esc((l.regra || "") + (l.base_fonte ? " — " + l.base_fonte : ""))}">${q3(l.base_valor)}</span>`
-        : `<input class="cel n ${!l.base_valor ? "falta" : ""}" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px" title="Quantidade a informar (sem regra automática)">`}</td>
+      <td class=n style="white-space:nowrap">${lig ? `<input class="cel n fp-lig" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px"
+          title="${esc("Quantidade pela regra: " + (l.regra || "") + (l.base_fonte ? " — " + l.base_fonte : "") + ". Digite um valor para substituir a regra.")}">`
+        : `<input class="cel n ${!l.base_valor ? "falta" : ""} ${l.regra_guardada ? "informado" : ""}" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px"
+          title="${esc(l.regra_guardada ? "Quantidade digitada no lugar da regra (" + l.regra_guardada + "). Apague ou use ↺ para voltar à regra." : "Quantidade a informar (sem regra automática)")}">`}${l.regra_guardada
+        ? `<button class="fp-b" data-fregra="${esc(l.id)}" title="${esc("Voltar à regra: " + l.regra_guardada)}">↺</button>` : ""}</td>
       <td>${esc(l.unidade_base || "")}</td>
       <td class=n>${dir ? "—" : `<input class="cel n" data-fne="${esc(l.id)}" value="${esc(fmtIn(ip ? l.ne : (l.ne ?? l.ne_calc), 5))}" style="width:74px" title="${esc(ip ? (l.ne_rotulo || "NE do levantamento") + " — índice resultante " + fmtIn(l.ne_calc, 5) : "Nível de esforço: quantidade = base × NE")}">`}
         ${ip ? `<sup class="fp-icm" title="${esc(l.ne_rotulo || "NE do levantamento (ICM)")}">ICM</sup>` : ""}</td>
@@ -2592,7 +2595,10 @@ function ligarFicha() {
   $$("#tabFicha [data-fe]").forEach(i => i.onchange = () => gravarFicha(i.dataset.fid, { [i.dataset.fe]: i.value },
     i.dataset.fe === "codigo" ? "Código trocado — descrição, unidade e preço da base (editáveis)" : null));
   $$("#tabFicha [data-fne]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido"); gravarFicha(i.dataset.fne, { ne: v }); });
-  $$("#tabFicha [data-fval]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido"); gravarFicha(i.dataset.fval, { valor: v }); });
+  $$("#tabFicha [data-fval]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido");
+    const l = fp.linhas.find(x => x.id === i.dataset.fval);
+    gravarFicha(i.dataset.fval, { valor: v }, v == null ? (l?.regra_guardada ? "Quantidade de volta à regra" : null) : (!l?.a_informar ? "Quantidade informada no lugar da regra (↺ volta à regra)" : null)); });
+  $$("#tabFicha [data-fregra]").forEach(b => b.onclick = () => gravarFicha(b.dataset.fregra, { valor: null }, "Quantidade de volta à regra"));
   $$("#tabFicha [data-fpre]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido");
     gravarFicha(i.dataset.fid, { preco_manual: { [i.dataset.fpre]: v } }, v == null ? "Preço da base restabelecido" : "Preço informado na ficha"); });
   $$("#tabFicha [data-fnova]").forEach(b => b.onclick = () => linhaNovaFicha(b.dataset.fnova));

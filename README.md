@@ -483,3 +483,20 @@ Exemplos de pedidos: *“importe C:\inventarios\BR-070.xlsx como novo projeto e 
 
 ## Testes
 `python -m pytest -q` (o teste de recálculo com LibreOffice é pulado se ele não estiver instalado).
+
+
+## Plugins do Claude Code (para quem desenvolve o sistema)
+
+O arquivo `.claude/settings.json` registra os marketplaces e ativa os plugins abaixo. Ao abrir a pasta no Claude Code,
+ele pede para confiar na pasta e instalar os plugins (ou rode `/plugin` para conferir).
+
+| Plugin | Origem | Para que serve |
+|---|---|---|
+| superpowers | anthropics/claude-plugins-official (obra/superpowers) | TDD, depuração sistemática, planos, revisão de código |
+| claude-code-setup | anthropics/claude-plugins-official | recomenda hooks, skills, MCP e subagentes para o projeto |
+| ecc | affaan-m/everything-claude-code | coleção de agentes, skills, comandos e hooks |
+| claude-mem | thedotmack/claude-mem | memória persistente entre sessões |
+| headroom | chopratejas/headroom | compressão de contexto; exige o runtime local: `pip install "headroom-ai[all]"` |
+
+OmniRoute não é plugin do Claude Code: é um gateway/proxy de modelos (`npm i -g omniroute`) que troca o endpoint da
+API; não foi configurado no projeto.

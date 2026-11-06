@@ -144,3 +144,17 @@ def data(v) -> str | None:
         except ValueError:
             pass
     return s
+
+
+def prazo_em_meses(v) -> float | None:
+    """Prazo do contrato em MESES. O campo é em meses; valores até 5 são de projetos antigos/planilhas que guardavam o
+    prazo em anos (CAPA!D81: 2 = 2 anos) e viram meses (× 12). 6 é 6 meses (e não 6 anos)."""
+    n = numero(v)
+    if not n or n <= 0:
+        return None
+    return n * 12 if n <= 5 else n
+
+
+def anos_do_prazo(v) -> float | None:
+    m = prazo_em_meses(v)
+    return m / 12 if m else None

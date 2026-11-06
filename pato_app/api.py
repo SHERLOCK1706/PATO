@@ -1014,6 +1014,17 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def p_mob_servicos(pid: int):
         return sv.orcamento.aplicar_mob_pelos_servicos(pid)
 
+    @app.post("/api/projetos/{pid}/pato/ficha/tornar-padrao")
+    def ficha_tornar_padrao(pid: int):
+        try:
+            return orc.tornar_ficha_padrao(pid)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.delete("/api/projetos/{pid}/pato/ficha/projeto")
+    def ficha_descartar(pid: int):
+        return orc.descartar_ficha_projeto(pid)
+
     @app.get("/api/projetos/{pid}/pato/ficha/planilha")
     def ficha_planilha(pid: int):
         return orc.ficha_planilha(pid)

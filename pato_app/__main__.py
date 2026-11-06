@@ -15,6 +15,10 @@ def main():
     ap.add_argument("--sem-navegador", action="store_true")
     ap.add_argument("--login", action="store_true", help="exige login (uso em servidor / rede)")
     a = ap.parse_args()
+    if a.host not in ("127.0.0.1", "localhost", "::1") and not a.login:
+        # na rede, sem senha qualquer máquina poderia importar, apagar e baixar projetos: o login passa a ser exigido
+        print(f"Aviso: o painel vai escutar em {a.host} (acessível pela rede) — login exigido automaticamente.")
+        a.login = True
     if a.login:
         import os
         os.environ["PATO_LOGIN"] = "1"

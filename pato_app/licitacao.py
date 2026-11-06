@@ -190,7 +190,9 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
         meses_ref = 0
         if "CRONOGRAMA" in x.sheets:
             for r_ in range(1, 300):
-                for c_ in range(7, 19):  # cabeçalhos "Mês 01".."Mês 12" em blocos de 12 colunas (G:R)
+                if str(x.get("CRONOGRAMA", f"B{r_}") or "").strip().upper() != "CÓDIGO":
+                    continue  # só as linhas de cabeçalho dos blocos de 12 meses
+                for c_ in range(7, 19):  # "Mês 01".."Mês 12" em G:R
                     v_ = x.get("CRONOGRAMA", f"{get_column_letter(c_)}{r_}")
                     if isinstance(v_, str) and re.fullmatch(r"\s*M[êe]s\s*\d+\s*", v_):
                         meses_ref = max(meses_ref, int(re.search(r"\d+", v_).group()))

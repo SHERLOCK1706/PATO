@@ -18,7 +18,13 @@ e exporta o Excel do orçamento e a **planilha de licitação no modelo da refer
 - **A aba PATO é o orçamento de 1 ano** (quantitativos para 12 meses). QUANTIDADES, curva ABC e cronograma são do
   **contrato**: PATO × anos de vigência (`CAPA!D81`, em anos). Canteiro, usina, MOB e DESMOB valem 1 ÷ anos no PATO e
   1 no contrato (`pato_orcamento.contrato`).
-- Prazo do projeto: meses se > 6, senão anos (`orcamento_servico.anos_contrato`).
+- **Prazo do projeto em MESES** (`nz.prazo_em_meses`/`nz.anos_do_prazo`): valores até 5 são de projetos antigos em anos
+  (× 12); 6 = 6 meses. A CAPA da licitação recebe anos (`D81`).
+- **Ficha de serviços editável por projeto**: edições ficam em `dados_projeto(pid, "ficha")`; a padrão
+  (`<dados>/modelos/ficha_servicos.json`) só muda com "Tornar padrão" (sem os preços informados, que guardam a
+  data-base). Use `_ler_ficha(pid)` / `_gravar_ficha(f, pid)`; nunca `fc.ler` direto num fluxo de projeto.
+- PATO importado de planilha tem ids `L<linha da planilha>`: compare com a ficha pelo código, não pelo id (`_no_pato`).
+- Não engolir erros com `except Exception: pass` em fluxo de orçamento: registrar e devolver aviso/pendência.
 - Quantidade = TRUNC|ROUND(base × NE; 3); parcial = TRUNC(quantidade × preço; 2) — igual à planilha.
 - Valores vêm do banco de dados do projeto (base SICRO, binômio, índices), nunca dos números da referência.
 - Equipamentos da mobilização = os das CPU dos serviços adotados (`aplicar_mob_pelos_servicos`).

@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from datetime import datetime
 
+from . import normalizar as nz
+
 
 def _r(v, casas=2) -> str:
     if v is None or v == "":
@@ -46,7 +48,7 @@ def gerar(sv, pid: int, saida: str) -> str:
     el = []
     el.append(Paragraph("Memória de cálculo — Plano Anual de Trabalho e Orçamento (PATO)", h1))
     el.append(Paragraph(f"<b>{p.get('rodovia') or ''}</b> · {p.get('trecho') or ''}<br/>Segmento: km {_r(p.get('km_ini'), 3)} ao km "
-                        f"{_r(p.get('km_fim'), 3)} · SNV {p.get('snv') or '—'} · prazo {p.get('prazo') or '—'} meses<br/>"
+                        f"{_r(p.get('km_fim'), 3)} · SNV {p.get('snv') or '—'} · prazo {nz.prazo_em_meses(p.get('prazo')) or '—'} meses<br/>"
                         f"Base SICRO {cfg.get('uf')} · {cfg.get('data_base')} · BDI sem desoneração {_r((cfg.get('bdi') or {}).get('SD', 0) * 100)}% · "
                         f"com desoneração {_r((cfg.get('bdi') or {}).get('CD', 0) * 100)}%<br/>"
                         f"<b>Total sem desoneração R$ {_r(calc['totais']['SD'])} · com desoneração R$ {_r(calc['totais']['CD'])}</b><br/>"

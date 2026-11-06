@@ -1,0 +1,92 @@
+"""Correções da revisão: prazo em meses, ficha editável por projeto (padrão só com 'tornar padrão'), preço informado
+com data-base, marcação da ficha num PATO importado (pelo código), gravação segura da ficha."""
+import json
+import warnings
+
+import pytest
+
+from pato_app import ficha as fc
+from pato_app import normalizar as nz
+from pato_app.servico import MODELO_PADRAO, Servico
+
+warnings.filterwarnings("ignore")
+
+
+@pytest.fixture(scope="module")
+def sv(tmp_path_factory):
+    return Servico(pasta=str(tmp_path_factory.mktemp("rev")))
+
+
+def test_prazo_em_meses():
+    assert nz.prazo_em_meses(6) == 6 and nz.anos_do_prazo(6) == 0.5  # 6 meses, e não 6 anos
+    assert nz.prazo_em_meses(24) == 24 and nz.anos_do_prazo(36) == 3
+    assert nz.prazo_em_meses(2) == 24  # projetos antigos (CAPA em anos)
+    assert nz.prazo_em_meses(None) is None and nz.prazo_em_meses(0) is None
+
+
+def test_prazo_no_projeto(sv):
+    pid = sv.criar_projeto(dict(nome="prazo"))["id"]
+    assert sv.atualizar_projeto(pid, dict(prazo=2))["prazo"] == 24
+    assert sv.orcamento.anos_contrato(pid) == 2
+    sv.atualizar_projeto(pid, dict(prazo=6))
+    assert sv.orcamento.anos_contrato(pid) == 0.5
+
+
+def test_ficha_por_projeto(sv):
+    o = sv.orcamento
+    a = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    b = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    gd = next(x for x in o.ficha_planilha(a)["linhas"] if x.get("codigo") == "GD")
+    r = o.editar_ficha_item(a, gd["id"], {"descricao": "GD DO PROJETO A", "preco_manual": {"SD": 150000}})
+    assert r["ficha_do_projeto"] and next(x for x in r["linhas"] if x["id"] == gd["id"])["preco_manual_data_base"]
+    # o projeto B (e a ficha padrão) não mudam
+    gb = next(x for x in o.ficha_planilha(b)["linhas"] if x["id"] == gd["id"])
+    assert gb["descricao"] != "GD DO PROJETO A" and not gb["preco_manual"]
+    # preço informado em outra data-base fica sinalizado
+    sv.atualizar_projeto(a, dict(data_base="2027-01-01"))
+    assert next(x for x in o.ficha_planilha(a)["linhas"] if x["id"] == gd["id"])["preco_manual_antigo"]
+    # tornar padrão: B passa a ver a descrição, mas não o preço informado
+    r = o.tornar_ficha_padrao(a)
+    assert r["precos_mantidos_no_projeto"] == 1
+    gb = next(x for x in o.ficha_planilha(b)["linhas"] if x["id"] == gd["id"])
+    assert gb["descricao"] == "GD DO PROJETO A" and not gb["preco_manual"]
+    # descartar as edições do projeto volta à padrão
+    r = o.descartar_ficha_projeto(a)
+    assert not r["ficha_do_projeto"]
+    o.restaurar_ficha_padrao()
+
+
+def test_renumerar_servico_leva_dependentes(sv):
+    o = sv.orcamento
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    ls = o.ficha_planilha(pid)["linhas"]
+    srv = next(x for x in ls if x.get("item") == "01.02.01")
+    r = o.editar_ficha_item(pid, srv["id"], {"item": "01.02.91"})
+    itens = [x["item"] for x in r["linhas"]]
+    assert "01.02.91.01" in itens and "01.02.01.01" not in itens
+
+
+def test_pato_importado_compara_pelo_codigo(sv):
+    """PATO importado de uma planilha: os ids são o número da linha DAQUELA planilha; a ficha marca pelo código."""
+    o = sv.orcamento
+    pid = sv.importar_arquivo(str(MODELO_PADRAO))["projeto"]["id"]
+    o.importar_referencia(pid, str(MODELO_PADRAO))
+    d = o.dados(pid)
+    for k, x in enumerate(d["itens"]):  # simula outra planilha: mesmos serviços em outras linhas
+        x["id"] = f"L{900 + k}"
+    o._gravar(pid, d)
+    fp = o.ficha_planilha(pid)
+    cods = {x.get("codigo") for x in d["itens"] if x.get("tipo") == "servico"}
+    marcados = [x for x in fp["linhas"] if x["tipo"] == "servico" and x["no_pato"]]
+    assert marcados and all(x["codigo"] in cods for x in marcados)
+    assert o.ficha(pid)["pato_da_ficha"] is False
+
+
+def test_gravacao_segura_da_ficha(tmp_path):
+    p = tmp_path / "ficha.json"
+    fc.gravar({"itens": [1]}, p)
+    fc.gravar({"itens": [2]}, p)
+    assert json.loads(p.read_text())["itens"] == [2] and json.loads((tmp_path / "ficha.json.bak").read_text())["itens"] == [1]
+    p.write_text("{corrompido")  # queda no meio da gravação: lê a cópia anterior
+    assert fc.ler(p)["itens"] == [1]
+    assert not list(tmp_path.glob("*.tmp"))

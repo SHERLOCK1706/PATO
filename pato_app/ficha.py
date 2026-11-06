@@ -109,13 +109,35 @@ def linhas_transporte(f: dict, codigos: set[str], croqui: dict | None) -> tuple[
 
 
 def ler(caminho: Path | str | None = None) -> dict:
+    """Lê a ficha; se o arquivo estiver corrompido, usa a cópia .bak (e, sem ela, a ficha do sistema)."""
     p = Path(caminho) if caminho else ARQUIVO_PADRAO
-    return json.loads(p.read_text(encoding="utf-8"))
+    for alvo in (p, p.with_suffix(p.suffix + ".bak"), ARQUIVO_PADRAO):
+        try:
+            return json.loads(alvo.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+    raise ValueError(f"Ficha de serviços ilegível: {p}")
 
 
 def gravar(f: dict, caminho: Path | str) -> None:
-    Path(caminho).parent.mkdir(parents=True, exist_ok=True)
-    Path(caminho).write_text(json.dumps(f, ensure_ascii=False), encoding="utf-8")
+    """Gravação segura: escreve num temporário na mesma pasta e troca de uma vez (os.replace); a versão anterior
+    fica em .bak. Uma queda no meio da gravação não corrompe a ficha."""
+    import os
+    import tempfile
+    p = Path(caminho)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=p.stem + ".", suffix=".tmp", dir=p.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump(f, fh, ensure_ascii=False)
+            fh.flush()
+            os.fsync(fh.fileno())
+        if p.exists():
+            os.replace(p, p.with_suffix(p.suffix + ".bak"))
+        os.replace(tmp, p)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
 
 
 def lista(f: dict) -> list[dict]:

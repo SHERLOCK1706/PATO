@@ -1984,7 +1984,8 @@ function puxarDeOutraLinha(id) {
 }
 async function incluirDaFicha(ids, ne) {
   try { const r = await jpost(`${base_}${E.pid}/pato/ficha/incluir`, { ids, ne });
-    toast(`${r.incluidos.length} serviço(s) da ficha incluído(s): ${r.incluidos.map(x => x.item || x.codigo).join(", ")}`); await atualizarPlanilha();
+    toast(`${r.incluidos.length} serviço(s) da ficha incluído(s): ${r.incluidos.map(x => x.item || x.codigo).join(", ")}`);
+    (r.avisos || []).forEach(a => toast(a)); await atualizarPlanilha();
   } catch (e) { erro(e); }
 }
 function renderOrcPlanilha() {
@@ -2027,7 +2028,7 @@ function renderOrcPlanilha() {
   let itens = c.itens.filter(i => !temFiltro ? !escondido(i.item) : (i.tipo !== "titulo" && filtra(i)));
   const fora = O_.mostraFicha && O_.ficha ? (() => { const ids = new Set(c.itens.map(i => i.id)), cods = new Set(c.itens.filter(i => i.tipo === "servico").map(i => cp7(i.codigo)));
     // planilha montada pela ficha: compara pelo id (o mesmo código pode aparecer em vários grupos); importada: pelo código
-    const daFicha = O_.ficha.servicos.some(s => ids.has(s.id));
+    const daFicha = O_.ficha.pato_da_ficha ?? O_.ficha.servicos.some(s => ids.has(s.id));
     return O_.ficha.servicos.filter(s => s.tipo === "servico" && !ids.has(s.id) && (daFicha || !cods.has(cp7(s.codigo))) && (!temFiltro || filtra(s))); })() : [];
   if (fora.length) {
     const ch = t => String(t || "").split(".").map(p => /^\d+$/.test(p) ? +p : 0), cmp = (a, b) => { for (let k = 0; k < Math.max(a.length, b.length); k++) { const d = (a[k] ?? -1) - (b[k] ?? -1); if (d) return d; } return 0; };
@@ -2443,9 +2444,9 @@ function desenharFicha(fp) {
   const efetivo = l => { let x = l, n = 0; while (x && n++ < 20) { if (!marcado(x)) return false; x = x.depende_de ? por[x.depende_de] : null; } return true; };
   const soma = (pref) => { const r = { SD: 0, CD: 0 }; ls.forEach(l => { if (l.tipo === "servico" && (l.item || "").startsWith(pref) && efetivo(l)) { r.SD += +l.parcial_SD || 0; r.CD += +l.parcial_CD || 0; } }); return r; };
   const inp = (l, campo, v, w, cls = "") => `<input class="cel ${cls}" data-fe="${campo}" data-fid="${esc(l.id)}" value="${esc(v ?? "")}" style="width:${w}" title="${esc(v ?? "")}">`;
-  const preco = (l, reg) => { const man = (l.preco_manual || {})[reg] != null;
-    return `<input class="cel n ${man ? "informado" : ""} ${l["preco_" + reg] == null ? "falta" : ""}" data-fpre="${reg}" data-fid="${esc(l.id)}" value="${esc(fmtIn(l["preco_" + reg], 2))}" style="width:96px"
-      title="${esc(man ? "Preço informado na ficha (apague para voltar ao da base)" : (l["preco_fonte_" + reg] || "preço da base"))}">`; };
+  const preco = (l, reg) => { const man = (l.preco_manual || {})[reg] != null, velho = man && l.preco_manual_antigo;
+    return `<input class="cel n ${man ? "informado" : ""} ${velho ? "antigo" : ""} ${l["preco_" + reg] == null ? "falta" : ""}" data-fpre="${reg}" data-fid="${esc(l.id)}" value="${esc(fmtIn(l["preco_" + reg], 2))}" style="width:96px"
+      title="${esc(velho ? `Preço informado na data-base ${l.preco_manual_data_base || "?"} — o projeto está em ${fp.data_base || "?"}: confira ou apague para voltar ao da base` : man ? "Preço informado neste projeto (apague para voltar ao da base)" : (l["preco_fonte_" + reg] || "preço da base"))}">`; };
   const acoes = l => `<span class="acoes-orc"><button class="btn mini" data-fnova="${esc(l.id)}" data-dica="Nova linha logo abaixo (digite o código)">＋</button><button class="btn mini perigo" data-frem="${esc(l.id)}" data-dica="Remove a linha da ficha${l.tipo === "servico" ? " (e as que puxam a quantidade dela)" : ""}">×</button></span>`;
   let html = `<tr class="fp-faixa"><th colspan=9></th><th colspan=5>QUANTITATIVOS PARA 12 MESES</th><th></th></tr>
     <tr class="fp-cab"><th rowspan=2><input type="checkbox" id="fichaTodos2" title="marcar todos"></th><th colspan=3>TAREFA OU SERVIÇO</th><th colspan=2>INVENTÁRIO</th><th colspan=2>NÍVEL DE ESFORÇO</th><th colspan=2>QUANT. DE TRABALHO</th>
@@ -2486,6 +2487,15 @@ function desenharFicha(fp) {
       <td colspan=11><small class="nota">Digite o código e tecle Enter para incluir o serviço na ficha</small> <button class="btn mini" data-nftit>+ título</button></td><td></td></tr>`;
   const tot = soma("");
   html += `<tr class="fp-tit nv1"><td colspan=11>TOTAL DOS SERVIÇOS MARCADOS (PATO de 1 ano)</td><td class=n>R$ ${reais(tot.SD)}</td><td></td><td class=n>R$ ${reais(tot.CD)}</td><td></td></tr>`;
+  $("#fichaEstado").innerHTML = fp.ficha_do_projeto
+    ? `<span class="tag aviso">Ficha deste projeto</span> as edições valem só aqui.
+       <button class="btn mini" id="btnFichaPadrao" data-dica="Grava esta ficha como a padrão dos próximos projetos (os preços informados ficam só neste projeto)">Tornar padrão</button>
+       <button class="btn mini perigo" id="btnFichaDescartar" data-dica="Descarta as edições da ficha feitas neste projeto e volta à ficha padrão">Descartar edições</button>`
+    : `<span class="tag">Ficha padrão</span> ao editar uma célula, a ficha passa a ser deste projeto (a padrão não muda).`;
+  if ($("#btnFichaPadrao")) $("#btnFichaPadrao").onclick = async () => { if (!confirm("Gravar esta ficha como padrão para os próximos projetos?\nOs preços informados não vão para o padrão (dependem da data-base).")) return;
+    try { const r = await jpost(`${base_}${E.pid}/pato/ficha/tornar-padrao`, {}); toast(`Ficha padrão atualizada${r.precos_mantidos_no_projeto ? ` (${r.precos_mantidos_no_projeto} preço(s) informado(s) ficaram só neste projeto)` : ""}`); desenharFicha(r); } catch (e) { erro(e); } };
+  if ($("#btnFichaDescartar")) $("#btnFichaDescartar").onclick = async () => { if (!confirm("Descartar as edições da ficha deste projeto e voltar à ficha padrão?")) return;
+    try { const r = await api(`${base_}${E.pid}/pato/ficha/projeto`, { method: "DELETE" }); toast("Edições da ficha descartadas"); O_.fsel = null; desenharFicha(r); } catch (e) { erro(e); } };
   const caixa = $("#tabFicha").closest(".tabela-rolagem"), topo = caixa?.scrollTop, esq = caixa?.scrollLeft;
   $("#tabFicha").innerHTML = html;
   if (caixa) { caixa.scrollTop = topo; caixa.scrollLeft = esq; }

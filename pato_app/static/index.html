@@ -156,7 +156,7 @@
           <label>Unidade local <input name="unidade_local"></label>
           <label>Data do inventário <input name="data_inventario" type="date"></label>
           <label>Data-base <input name="data_base" type="date"></label>
-          <label>Prazo <input name="prazo" type="number" step="1"></label>
+          <label>Prazo do contrato (meses) <input name="prazo" type="number" step="1" min="1" placeholder="24" data-dica="Em MESES (ex.: 24 = 2 anos; Res. 8/2023: múltiplo de 12). Valores até 5 são lidos como anos (projetos antigos)"></label>
           <label class="largo">Observações <textarea name="obs" rows="2"></textarea></label>
         </div>
         <div class="linha-botoes"><button class="btn primario" type="submit" data-dica="Grava os dados do projeto (vão para a CAPA na exportação)">Salvar</button></div>
@@ -519,10 +519,10 @@
           (<span id="fichaOrigem"></span>) com os dados <b>deste</b> segmento: inventário, levantamento ICM/IP, extensão, prazo, sinalização e croqui.
           Nos serviços do ICM o esforço é o parâmetro da intervenção no levantamento (NE ou % da faixa). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto.
           <b>A ficha é editável como a planilha</b>: troque o código (descrição, unidade e preço vêm da base e continuam editáveis), a descrição,
-          a unidade, o NE, a quantidade a informar e o preço (fundo amarelo = preço informado; apague para voltar ao da base). Tudo fica gravado na ficha
-          (vale para os próximos projetos; “Restaurar ficha original” desfaz). Use ＋ na linha ou a linha em branco no fim para incluir serviços pelo código.</p>
+          a unidade, o NE, a quantidade a informar e o preço (fundo amarelo = preço informado; apague para voltar ao da base). As edições valem <b>só para este projeto</b>
+          (“Tornar padrão” leva a ficha para os próximos projetos, sem os preços informados; “Descartar edições” volta à padrão). Use ＋ na linha ou a linha em branco no fim para incluir serviços pelo código.</p>
         <div id="fichaListaRes"></div>
-        <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label></div>
+        <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label> <span id="fichaEstado"></span></div>
         <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div></details>
       <details class="caixa" id="cqPainel"><summary><b>Buscar serviço pelo código</b> <small class="nota">— ver as origens possíveis da quantidade antes de incluir (o atalho é digitar o código na linha em branco da planilha)</small></summary>
         <div class="barra filtros"><input id="cqCod" placeholder="código SICRO ou próprio (ex.: 2003373, 4915632, 5915321)" style="width:320px" data-dica="Digite o código e tecle Enter: descrição, unidade, preço unitário e a origem da quantidade pela planilha modelo">

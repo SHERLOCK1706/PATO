@@ -62,7 +62,7 @@ def _automaticos(c: dict) -> list[dict]:
     itens = [x for x in calc.get("itens", []) if x.get("tipo") == "servico"]
     cods = {x.get("codigo") for x in itens}
     prazo = nz.numero(p.get("prazo"))
-    meses = prazo if prazo and prazo > 6 else (prazo * 12 if prazo else None)
+    meses = nz.prazo_em_meses(prazo)
     out.append(_item("obj-prazo", 0, "Duração do contrato em períodos múltiplos de um ano", "Res. 8/2023 · Checklist, 1",
                      "ok" if meses and abs(meses / 12 - round(meses / 12)) < 1e-9 else ("falha" if meses else "atencao"),
                      f"{meses:g} meses" if meses else "prazo não informado no projeto"))

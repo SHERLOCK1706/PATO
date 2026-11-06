@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/bloquear_planilhas.py\"",
+            "command": "sh -c 'h=\"$CLAUDE_PROJECT_DIR/.claude/hooks/bloquear_planilhas.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$h\"; elif command -v python >/dev/null 2>&1; then exec python \"$h\"; else exec py -3 \"$h\"; fi'",
             "timeout": 15
           }
         ]
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/checar_sintaxe.py\"",
+            "command": "sh -c 'h=\"$CLAUDE_PROJECT_DIR/.claude/hooks/checar_sintaxe.py\"; if command -v python3 >/dev/null 2>&1; then exec python3 \"$h\"; elif command -v python >/dev/null 2>&1; then exec python \"$h\"; else exec py -3 \"$h\"; fi'",
             "timeout": 15
           }
         ]

@@ -214,9 +214,12 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   Nível de esforço (quant./und por und), Quantidade de trabalho e preço unitário/parcial sem e com desoneração, com os
   dados **deste** projeto, títulos com subtotal e subtotal amarelo de cada serviço com os seus AM/TM. Tudo editável na
   célula: digite o código e a descrição, a unidade e o preço vêm da base (e continuam editáveis); NE, quantidade a
-  informar e preço informado (fundo amarelo; apagar volta ao preço da base). ＋ abre linha nova pelo código; × remove
-  (com as linhas que puxam a quantidade dela). As edições ficam na ficha (próximos projetos); "Montar PATO pela ficha"
-  leva ao projeto os serviços marcados.
+  informar e preço informado (fundo amarelo; vermelho = digitado em outra data-base; apagar volta ao preço da base).
+  ＋ abre linha nova pelo código; × remove (com as linhas que puxam a quantidade dela). **As edições valem só para o
+  projeto aberto**; "Tornar padrão" leva a ficha aos próximos projetos (sem os preços informados) e "Descartar
+  edições" volta à ficha padrão. "Montar PATO pela ficha" leva ao PATO os serviços marcados.
+- **Prazo do contrato em meses** (24 = 2 anos). Valores até 5 são lidos como anos (projetos e planilhas antigas).
+- Rodar o painel na rede (`--host 0.0.0.0`) liga o login automaticamente.
 - **Croqui montado pelo sistema** (aba Transporte → "Montar croqui", Res. 8/2023): informe o km do canteiro (e da usina,
   se for outro). A origem de cada material sai do binômio: SICRO mais vantajoso → centro sede (na DMT do SICRO a partir do
   canteiro, em direção à cidade mais próxima); cotação mais vantajosa → o fornecedor, com a DMT da cotação. Jazida,

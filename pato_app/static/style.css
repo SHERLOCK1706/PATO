@@ -403,3 +403,4 @@ body.densa .btn.mini { padding: 0 6px; }
 #tabFicha td.fp-desc { min-width: 340px; }
 #tabFicha tr.fp-tit td:nth-child(4) { min-width: 340px; }
 #tabFicha .fp-icm { font-size: 9px; color: #b45309; margin-left: 2px; cursor: help; }
+#tabFicha input.cel.antigo { background: #fde2e1; border-color: #dc2626; }

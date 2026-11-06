@@ -218,11 +218,9 @@ def preencher_modelo_pato(projeto: dict, itens: list[dict], modelo: str, saida: 
                 p.set("CAPA", cel, projeto[campo])
         pr = projeto.get("prazo")
         if pr not in (None, ""):  # a CAPA da planilha leva o prazo em ANOS (PATO: canteiro/mobilização = 1 ÷ anos)
-            try:
-                pr = float(str(pr).replace(",", "."))
-                p.set("CAPA", "D81", round(pr / 12, 4) if pr > 6 else pr)
-            except ValueError:
-                pass
+            anos = nz.anos_do_prazo(pr)
+            if anos:
+                p.set("CAPA", "D81", round(anos, 4))
         if seg_txt:
             p.set("CAPA", "D77", seg_txt)
         if km0 is not None and km1 is not None:

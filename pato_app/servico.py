@@ -103,7 +103,7 @@ class Servico:
         dados = {k: (None if v == "" else v) for k, v in dados.items()}
         for k in ("km_ini", "km_fim", "prazo"):
             if dados.get(k) is not None:
-                dados[k] = nz.numero(dados[k])
+                dados[k] = nz.prazo_em_meses(dados[k]) if k == "prazo" else nz.numero(dados[k])
         pid = self.db.criar_projeto(dados)
         self.db.registrar(pid, "criar", dados.get("nome") or "")
         return self.projeto(pid)
@@ -112,7 +112,7 @@ class Servico:
         self.projeto(pid)
         for k in ("km_ini", "km_fim", "prazo"):
             if k in dados and dados[k] not in (None, ""):
-                dados[k] = nz.numero(dados[k])
+                dados[k] = nz.prazo_em_meses(dados[k]) if k == "prazo" else nz.numero(dados[k])
         self.db.atualizar_projeto(pid, dados)
         self.db.registrar(pid, "editar projeto", ", ".join(dados))
         return self.projeto(pid)

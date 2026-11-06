@@ -264,7 +264,7 @@ def _projeto(wb, nomes_cat: dict[str, str]) -> dict:
         if k not in ("data_inventario", "data_base", "prazo"):
             proj[k] = nz.texto(proj[k])
     if "prazo" in proj:
-        proj["prazo"] = nz.numero(proj["prazo"])
+        proj["prazo"] = nz.prazo_em_meses(proj["prazo"])  # CAPA traz anos (2) → 24 meses
     return proj
 
 

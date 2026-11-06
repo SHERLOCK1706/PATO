@@ -375,3 +375,28 @@ tr.titulo-orc td { background: color-mix(in srgb, var(--pri-claro) 70%, var(--su
 body.densa .tab th, body.densa .tab td { padding: 2px 6px; }
 body.densa #tabOrc input.cel { padding: 2px 4px; }
 body.densa .btn.mini { padding: 0 6px; }
+
+/* ficha de serviços no formato da aba PATO */
+#tabFicha { font-size: 12.5px; }
+#tabFicha th, #tabFicha td { padding: 3px 5px; vertical-align: middle; }
+#tabFicha tr.fp-faixa th:nth-child(2) { background: #ffff00; color: #1f2d3d; font-weight: 700; text-align: center; border: 1px solid #333; }
+#tabFicha tr.fp-faixa th { background: transparent; border: 0; }
+#tabFicha tr.fp-cab th { text-align: center; font-weight: 700; background: var(--sup); border: 1px solid var(--borda); white-space: nowrap; }
+#tabFicha tr.fp-tit td { background: #1f3864; color: #fff; font-weight: 700; }
+#tabFicha tr.fp-tit.nv1 td { background: #0f1f3d; }
+#tabFicha tr.fp-tit input.cel { background: transparent; color: #fff; font-weight: 700; border-color: transparent; }
+#tabFicha tr.fp-tit input.cel:focus { background: #fff; color: #111; }
+#tabFicha tr.fp-sub td { background: transparent; }
+#tabFicha tr.fp-sub td.n { background: #ffff00; color: #111; font-weight: 700; }
+#tabFicha tr.fp-serv.raiz td, #tabFicha tr.fp-serv.raiz input.cel { font-weight: 700; }
+#tabFicha tr.fp-serv.desmarcado td { opacity: .45; }
+#tabFicha input.cel { border: 1px solid transparent; background: transparent; padding: 2px 3px; font: inherit; }
+#tabFicha input.cel:hover { border-color: var(--borda); }
+#tabFicha input.cel:focus { border-color: var(--pri); background: var(--sup); outline: none; }
+#tabFicha input.cel.n { text-align: right; }
+#tabFicha input.cel.informado { background: #fff2cc; color: #111; }
+#tabFicha input.cel.falta { border-color: color-mix(in srgb, #d97706 55%, transparent); }
+#tabFicha .fp-lig { border-bottom: 1px dotted #888; cursor: help; }
+#tabFicha tr.fp-serv:hover td { background: color-mix(in srgb, var(--pri-claro) 45%, var(--sup)); }
+#tabFicha tr .acoes-orc { visibility: hidden; }
+#tabFicha tr:hover .acoes-orc { visibility: visible; }

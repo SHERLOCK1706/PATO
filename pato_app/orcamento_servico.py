@@ -1138,6 +1138,160 @@ class Orcamentos:
                     desempenho=[dict(codigo=c, descricao=g.get("descricao"), linhas=len(g.get("linhas") or []))
                                 for c, g in (f.get("desempenho") or {}).items()])
 
+    # ------------------------------------------------ ficha em formato de planilha (editável)
+    def _gravar_ficha(self, f: dict) -> None:
+        from pathlib import Path
+
+        from . import ficha as fc
+        f["editado_em"] = __import__("datetime").datetime.now().isoformat(timespec="seconds")
+        fc.gravar(f, Path(self.sv.pasta) / "modelos" / "ficha_servicos.json")
+
+    def ficha_planilha(self, pid: int) -> dict:
+        """Ficha de serviços no formato da aba PATO: para cada serviço da ficha, com os dados DESTE projeto, a base
+        (inventário, ICM/IP, outro item…), o nível de esforço, a quantidade de trabalho e os preços sem e com
+        desoneração — o PATO que sairia se todos os serviços fossem marcados (quantitativos para 12 meses)."""
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        lst = self.ficha(pid)
+        d = fc.montar(f, None)
+        d["prazo_anos"] = self.anos_contrato(pid, {})
+        r = self.calcular(pid, d)
+        calc = {x["id"]: x for x in r["itens"]}
+        por_id = {x["id"]: x for x in f.get("itens", [])}
+        no_pato = {x["id"] for x in self.dados(pid).get("itens", []) if x.get("tipo") == "servico"}
+        linhas = []
+        for s in lst["servicos"]:
+            c = calc.get(s["id"]) or {}
+            x = por_id.get(s["id"]) or {}
+            ln = dict(s, preco_manual=x.get("preco_manual") or None, no_pato=s["id"] in no_pato)
+            if s["tipo"] == "servico":
+                ln.update({k: c.get(k) for k in ("base_valor", "unidade_base", "quantidade", "preco_SD", "preco_CD",
+                                                  "parcial_SD", "parcial_CD", "base_fonte", "preco_fonte_SD", "preco_fonte_CD")})
+                ln["ne_calc"] = c.get("ne")
+                ln["base_tipo"] = (x.get("base") or {}).get("tipo")
+            linhas.append(ln)
+        return dict(origem=lst["origem"], linhas=linhas, totais=r["totais"], anos=d["prazo_anos"],
+                    sem_preco=r.get("sem_preco") or [])
+
+    def _desc_base(self, pid: int, codigo: str) -> dict:
+        try:
+            m = self.sv.custos.motor(pid, "SD")
+            return m.comps.get(cp._cod(codigo)) or (m.base.get("sintetico") or {}).get(cp._cod(codigo)) or {}
+        except ValueError:
+            return {}
+
+    def editar_ficha_item(self, pid: int, iid: str, campos: dict) -> dict:
+        """Edita uma linha da ficha (vale para os próximos projetos): item, código (descrição e unidade vêm da base, mas
+        continuam editáveis), descrição, unidade, nível de esforço, valor a informar e preço informado (SD/CD; vazio =
+        preço da base). O NE dos serviços do ICM/IP é o parâmetro da intervenção no levantamento deste projeto."""
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        x = next((i for i in f.get("itens", []) if i["id"] == iid), None)
+        if not x:
+            raise KeyError("Linha não encontrada na ficha.")
+        campos = dict(campos)
+        if campos.get("codigo") and cp._cod(campos["codigo"]) != cp._cod(x.get("codigo") or ""):
+            c = self._desc_base(pid, campos["codigo"])
+            if not c and cp._cod(campos["codigo"]) not in (self.dados(pid).get("precos_informados") or {}) \
+                    and not cp._cod(campos["codigo"]).startswith(("AM", "TM")):
+                raise ValueError(f"Código {cp._cod(campos['codigo'])} não encontrado na base SICRO do projeto.")
+            campos["codigo"] = cp._cod(campos["codigo"])
+            campos.setdefault("descricao", c.get("descricao") or x.get("descricao"))
+            campos.setdefault("unidade", c.get("unidade") or x.get("unidade"))
+            x.pop("preco_manual", None)  # outro serviço: volta ao preço da base
+        if x.get("tipo") == "titulo" and campos.get("item") and campos["item"].strip() != (x.get("item") or "").strip():
+            ant, novo = (x.get("item") or "").strip(), campos["item"].strip()
+            for y in f["itens"]:
+                it = (y.get("item") or "").strip()
+                if ant and it.startswith(ant + "."):
+                    y["item"] = novo + it[len(ant):]
+        for k in ("item", "codigo", "descricao", "unidade"):
+            if k in campos and campos[k] is not None:
+                x[k] = str(campos[k]).strip()
+        if "ne" in campos and x.get("tipo") == "servico":
+            v = nz.numero(campos["ne"])
+            b = x.get("base") or {}
+            if b.get("tipo") == "ip" and len(b.get("chaves") or []) == 1:
+                ipd = self.db.dados_projeto(pid, "ip") or dict(linhas=[], parametros=ip_mod.parametros_padrao())
+                it = ipd.setdefault("parametros", ip_mod.parametros_padrao()).setdefault("intervencoes", {}).get(b["chaves"][0])
+                if it is not None and v is not None:
+                    it["pct" if it.get("modo") == "faixa" else "ne"] = v
+                    self.db.gravar_dados_projeto(pid, "ip", ipd)
+            else:
+                x["ne"] = 1.0 if v is None else v
+        if "valor" in campos and x.get("tipo") == "servico":
+            v = nz.numero(campos["valor"]) or 0.0
+            b = x.setdefault("base", {})
+            if b.get("tipo") not in (None, "valor", "direta"):
+                b.clear()
+                b.update(tipo="valor", fonte="informado na ficha")
+            b.setdefault("tipo", "valor")
+            b["valor"] = v
+        if "preco_manual" in campos:
+            pm = {k: nz.numero(v) for k, v in (campos["preco_manual"] or {}).items() if v not in (None, "")}
+            pm = {k: v for k, v in pm.items() if v is not None}
+            if pm:
+                x["preco_manual"] = dict(x.get("preco_manual") or {}, **pm)
+            for k, v in (campos["preco_manual"] or {}).items():
+                if v in (None, "") and x.get("preco_manual"):
+                    x["preco_manual"].pop(k, None)
+            if not x.get("preco_manual"):
+                x.pop("preco_manual", None)
+        self._gravar_ficha(f)
+        return self.ficha_planilha(pid)
+
+    def nova_linha_ficha(self, pid: int, dados: dict) -> dict:
+        """Nova linha na ficha logo após 'apos' (id): serviço pelo código — descrição, unidade e preço da base, regra
+        da quantidade de outro uso do mesmo código na ficha (ou valor a informar) — ou título."""
+        import copy
+
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        itens = f.setdefault("itens", [])
+        k = next((i for i, y in enumerate(itens) if y["id"] == dados.get("apos")), len(itens) - 1)
+        if k >= 0 and itens and itens[k].get("tipo") != "titulo":  # depois dos dependentes (AM/TM) do serviço
+            pref = (itens[k].get("item") or "") + "."
+            while k + 1 < len(itens) and (itens[k + 1].get("item") or "").startswith(pref):
+                k += 1
+        nid = "F" + uuid.uuid4().hex[:10]
+        if dados.get("titulo"):
+            x = dict(id=nid, tipo="titulo", item=(dados.get("item") or "").strip(), descricao=dados.get("descricao") or "NOVO TÍTULO")
+        else:
+            cod = cp._cod(dados.get("codigo") or "")
+            if not cod:
+                raise ValueError("Informe o código do serviço.")
+            c = self._desc_base(pid, cod)
+            igual = next((y for y in itens if y.get("tipo") == "servico" and cp._cod(y.get("codigo") or "") == cod
+                          and (y.get("base") or {}).get("tipo") != "item"), None)
+            if not c and not igual and not cod.startswith(("AM", "TM")):
+                raise ValueError(f"Código {cod} não encontrado na base SICRO do projeto.")
+            base = copy.deepcopy(igual["base"]) if igual else dict(tipo="valor", valor=nz.numero(dados.get("valor")) or 0.0,
+                                                                     fonte="informado na ficha")
+            x = dict(id=nid, tipo="servico", item=(dados.get("item") or "").strip(), codigo=cod,
+                     descricao=c.get("descricao") or (igual or {}).get("descricao") or "",
+                     unidade=c.get("unidade") or (igual or {}).get("unidade") or "",
+                     ne=(igual or {}).get("ne", 1.0) if igual else 1.0, arred="trunc", base=base)
+        itens.insert(k + 1, x)
+        self._gravar_ficha(f)
+        return dict(id=nid, **self.ficha_planilha(pid))
+
+    def remover_linha_ficha(self, pid: int, iid: str) -> dict:
+        """Remove a linha da ficha (e as que puxam a quantidade dela: AM/TM, transportes)."""
+        from . import ficha as fc
+        f = fc.ler(self._arquivo_ficha())
+        fora = {iid}
+        mudou = True
+        while mudou:
+            mudou = False
+            for y in f.get("itens", []):
+                b = y.get("base") or {}
+                if y["id"] not in fora and b.get("tipo") == "item" and b.get("ref") in fora:
+                    fora.add(y["id"])
+                    mudou = True
+        f["itens"] = [y for y in f.get("itens", []) if y["id"] not in fora]
+        self._gravar_ficha(f)
+        return dict(removidos=len(fora), **self.ficha_planilha(pid))
+
     def salvar_como_ficha(self, pid: int) -> dict:
         """Grava o PATO deste projeto (regras, NE, sinalização, ADM/mobilização, NE da roçada) como ficha de serviços."""
         from pathlib import Path

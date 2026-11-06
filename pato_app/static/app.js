@@ -2422,22 +2422,133 @@ $("#confPend").onchange = () => CF_.r && desenharConf();
 
 // ---- ficha de serviços
 async function renderFicha() {
-  const f = O_.ficha = await api(`${base_}${E.pid}/pato/ficha`), atuais = new Set((O_.c?.itens || []).filter(i => i.tipo === "servico").map(i => i.id));
-  $("#fichaOrigem").textContent = f.origem || "modelo";
-  const vazio = !atuais.size;
-  $("#tabFicha").innerHTML = `<tr><th></th><th>Item</th><th>Código</th><th>Serviço</th><th>Un.</th><th>Regra da quantidade</th><th class=n>Nível de esforço</th><th class=n>Valor a informar</th></tr>` +
-    f.servicos.map(x => x.tipo === "titulo" ? `<tr class="tit"><td></td><td colspan=7><b>${esc(x.item || "")} ${esc(x.descricao || "")}</b></td></tr>`
-      : `<tr><td><input type="checkbox" data-fsel="${x.id}" ${vazio || atuais.has(x.id) ? "checked" : ""}></td><td>${esc(x.item)}</td><td>${esc(x.codigo)}</td>
-        <td>${esc((x.descricao || "").slice(0, 70))}</td><td>${esc(x.unidade || "")}</td><td><small>${esc(x.regra)}</small></td>
-        <td class=n>${x.depende_de ? "—" : `<input data-fne="${x.id}" type="number" step="any" value="${x.ne ?? ""}" style="width:90px" data-dica="${esc(x.ne_rotulo || "Nível de esforço do item")}">`}</td>
-        <td class=n>${x.a_informar ? `<input data-fval="${x.id}" type="number" step="any" value="${x.valor_ref ?? ""}" style="width:100px" data-dica="Quantidade sem regra automática (sugestão: valor do modelo)">` : ""}</td></tr>`).join("");
-  $("#fichaTodos").onchange = e => $$("[data-fsel]").forEach(c => c.checked = e.target.checked);
+  O_.ficha = await api(`${base_}${E.pid}/pato/ficha`);
+  $("#fichaOrigem").textContent = O_.ficha.origem || "modelo";
+  const pf = $("#fichaPainel");
+  if (pf && !pf._lig) { pf._lig = true; pf.addEventListener("toggle", () => { if (pf.open && !O_.fp) carregarFichaPlanilha(); }); }
+  if (pf?.open || O_.fp) await carregarFichaPlanilha();
+}
+async function carregarFichaPlanilha() {
+  if (!O_.fp) $("#tabFicha").innerHTML = '<tr><td class="carregando">Calculando a ficha com os dados deste projeto…</td></tr>';
+  try { desenharFicha(await api(`${base_}${E.pid}/pato/ficha/planilha`)); } catch (e) { $("#tabFicha").innerHTML = `<tr><td class="tag erro">${esc(e.message)}</td></tr>`; }
+}
+const numBR = v => { const t = String(v ?? "").trim(); if (t === "") return null; const n = Number(t.includes(",") ? t.replace(/\./g, "").replace(",", ".") : t); return isFinite(n) ? n : NaN; };
+const fmtIn = (v, c = 3) => v == null || v === "" ? "" : Number(v).toLocaleString("pt-BR", { maximumFractionDigits: c, useGrouping: false });
+// ficha no formato da aba PATO (quantitativos para 12 meses): edição direta nas células, gravada na ficha
+function desenharFicha(fp) {
+  O_.fp = fp;
+  const sel = O_.fsel = O_.fsel || null, atuais = new Set(fp.linhas.filter(l => l.no_pato).map(l => l.id)), vazio = !atuais.size;
+  const marcado = l => sel ? sel.has(l.id) : (vazio || atuais.has(l.id));
+  const ls = fp.linhas, por = Object.fromEntries(ls.map(l => [l.id, l]));
+  const efetivo = l => { let x = l, n = 0; while (x && n++ < 20) { if (!marcado(x)) return false; x = x.depende_de ? por[x.depende_de] : null; } return true; };
+  const soma = (pref) => { const r = { SD: 0, CD: 0 }; ls.forEach(l => { if (l.tipo === "servico" && (l.item || "").startsWith(pref) && efetivo(l)) { r.SD += +l.parcial_SD || 0; r.CD += +l.parcial_CD || 0; } }); return r; };
+  const inp = (l, campo, v, w, cls = "") => `<input class="cel ${cls}" data-fe="${campo}" data-fid="${esc(l.id)}" value="${esc(v ?? "")}" style="width:${w}" title="${esc(v ?? "")}">`;
+  const preco = (l, reg) => { const man = (l.preco_manual || {})[reg] != null;
+    return `<input class="cel n ${man ? "informado" : ""} ${l["preco_" + reg] == null ? "falta" : ""}" data-fpre="${reg}" data-fid="${esc(l.id)}" value="${esc(fmtIn(l["preco_" + reg], 2))}" style="width:96px"
+      title="${esc(man ? "Preço informado na ficha (apague para voltar ao da base)" : (l["preco_fonte_" + reg] || "preço da base"))}">`; };
+  const acoes = l => `<span class="acoes-orc"><button class="btn mini" data-fnova="${esc(l.id)}" data-dica="Nova linha logo abaixo (digite o código)">＋</button><button class="btn mini perigo" data-frem="${esc(l.id)}" data-dica="Remove a linha da ficha${l.tipo === "servico" ? " (e as que puxam a quantidade dela)" : ""}">×</button></span>`;
+  let html = `<tr class="fp-faixa"><th colspan=9></th><th colspan=5>QUANTITATIVOS PARA 12 MESES</th><th></th></tr>
+    <tr class="fp-cab"><th rowspan=2><input type="checkbox" id="fichaTodos2" title="marcar todos"></th><th colspan=3>TAREFA OU SERVIÇO</th><th colspan=2>INVENTÁRIO</th><th colspan=2>NÍVEL DE ESFORÇO</th><th colspan=2>QUANT. DE TRABALHO</th>
+      <th colspan=2>CONDIÇÃO SEM DESONERAÇÃO</th><th colspan=2>CONDIÇÃO COM DESONERAÇÃO</th><th rowspan=2></th></tr>
+    <tr class="fp-cab"><th>ITEM</th><th>CÓDIGO</th><th>DISCRIMINAÇÃO</th><th>QUANT.</th><th>UND</th><th>QUANT.</th><th>UND/UND</th><th>QUANT.</th><th>UND</th>
+      <th>PREÇO UNITÁRIO (R$)</th><th>PREÇO PARCIAL (R$)</th><th>PREÇO UNITÁRIO (R$)</th><th>PREÇO PARCIAL (R$)</th></tr>`;
+  const subtotal = raiz => { const t = soma(raiz.item + "."), p = efetivo(raiz) ? { SD: +raiz.parcial_SD || 0, CD: +raiz.parcial_CD || 0 } : { SD: 0, CD: 0 };
+    return `<tr class="fp-sub"><td colspan=11></td><td class=n>R$ ${reais(t.SD + p.SD)}</td><td></td><td class=n>R$ ${reais(t.CD + p.CD)}</td><td></td></tr>`; };
+  let raiz = null;
+  ls.forEach((l, k) => {
+    if (l.tipo === "titulo") {
+      if (raiz) { html += subtotal(raiz); raiz = null; }
+      const t = soma(l.item + "."), nv = (l.item || "").split(".").length;
+      html += `<tr class="fp-tit nv${Math.min(nv, 3)}" data-flin="${esc(l.id)}"><td></td><td>${inp(l, "item", l.item, "86px")}</td><td></td><td colspan=8>${inp(l, "descricao", l.descricao, "100%")}</td>
+        <td class=n>R$ ${reais(t.SD)}</td><td></td><td class=n>R$ ${reais(t.CD)}</td><td>${acoes(l)}</td></tr>`;
+      return;
+    }
+    const ehRaiz = !raiz || !(l.item || "").startsWith(raiz.item + ".");
+    if (ehRaiz) { if (raiz) html += subtotal(raiz); raiz = l; }
+    const lig = !l.a_informar, ip = !!l.ne_ip, dir = l.base_tipo === "direta";
+    html += `<tr class="fp-serv ${ehRaiz ? "raiz" : ""} ${efetivo(l) ? "" : "desmarcado"}" data-flin="${esc(l.id)}">
+      <td><input type="checkbox" data-fsel="${esc(l.id)}" ${marcado(l) ? "checked" : ""}></td>
+      <td>${inp(l, "item", l.item, "100px")}</td><td>${inp(l, "codigo", cp7(l.codigo), "74px", "", )}</td><td>${inp(l, "descricao", l.descricao, "100%")}</td>
+      <td class=n>${lig ? `<span class="fp-lig" title="${esc((l.regra || "") + (l.base_fonte ? " — " + l.base_fonte : ""))}">${q3(l.base_valor)}</span>`
+        : `<input class="cel n ${!l.base_valor ? "falta" : ""}" data-fval="${esc(l.id)}" value="${esc(fmtIn(l.base_valor))}" style="width:86px" title="Quantidade a informar (sem regra automática)">`}</td>
+      <td>${esc(l.unidade_base || "")}</td>
+      <td class=n>${dir ? "—" : `<input class="cel n" data-fne="${esc(l.id)}" value="${esc(fmtIn(ip ? l.ne : (l.ne ?? l.ne_calc), 5))}" style="width:74px" title="${esc(ip ? (l.ne_rotulo || "NE do levantamento") + " — índice resultante " + fmtIn(l.ne_calc, 5) : "Nível de esforço: quantidade = base × NE")}">`}
+        ${ip ? `<br><small class="nota">${esc(l.ne_rotulo || "ICM")}</small>` : ""}</td>
+      <td><small>${esc(l.unidade && l.unidade_base ? l.unidade + "/" + l.unidade_base : "")}</small></td>
+      <td class=n><b>${q3(l.quantidade)}</b></td><td>${inp(l, "unidade", l.unidade, "44px")}</td>
+      <td class=n>${preco(l, "SD")}</td><td class=n>${reais(l.parcial_SD)}</td><td class=n>${preco(l, "CD")}</td><td class=n>${reais(l.parcial_CD)}</td>
+      <td style="white-space:nowrap">${acoes(l)}</td></tr>`;
+  });
+  if (raiz) html += subtotal(raiz);
+  const ult = ls[ls.length - 1];
+  html += `<tr class="lin-nova" data-apos="${esc(ult?.id || "")}"><td></td><td><input class="cel" data-nfitem placeholder="item" style="width:100px"></td>
+      <td><input class="cel falta" data-nfcod placeholder="código ↵" style="width:74px" data-dica="Digite o código e tecle Enter: descrição, unidade e preço vêm da base (e continuam editáveis)"></td>
+      <td colspan=11><small class="nota">Digite o código e tecle Enter para incluir o serviço na ficha</small> <button class="btn mini" data-nftit>+ título</button></td><td></td></tr>`;
+  const tot = soma("");
+  html += `<tr class="fp-tit nv1"><td colspan=11>TOTAL DOS SERVIÇOS MARCADOS (PATO de 1 ano)</td><td class=n>R$ ${reais(tot.SD)}</td><td></td><td class=n>R$ ${reais(tot.CD)}</td><td></td></tr>`;
+  const caixa = $("#tabFicha").closest(".tabela-rolagem"), topo = caixa?.scrollTop, esq = caixa?.scrollLeft;
+  $("#tabFicha").innerHTML = html;
+  if (caixa) { caixa.scrollTop = topo; caixa.scrollLeft = esq; }
+  ligarFicha();
+}
+async function gravarFicha(id, campos, msg) {
+  try { const r = await jpost(`${base_}${E.pid}/pato/ficha/itens/${id}`, campos, "PUT"); if (msg) toast(msg); desenharFicha(r); }
+  catch (e) { erro(e); desenharFicha(O_.fp); }
+}
+function linhaNovaFicha(apos) {
+  $$("#tabFicha tr.lin-nova[data-tmp]").forEach(t => t.remove());
+  const tr = $(`#tabFicha tr[data-flin="${CSS.escape(apos)}"]`); if (!tr) return;
+  let alvo = tr; while (alvo.nextElementSibling && alvo.nextElementSibling.classList.contains("fp-sub")) alvo = alvo.nextElementSibling;
+  const l = O_.fp.linhas.find(x => x.id === apos), p = (l?.item || "").split("."), sug = l?.tipo === "titulo" ? (l.item || "") + ".01" : (p[p.length - 1] = String(+p[p.length - 1] + 1).padStart(p[p.length - 1].length, "0"), p.join("."));
+  alvo.insertAdjacentHTML("afterend", `<tr class="lin-nova" data-tmp data-apos="${esc(apos)}"><td></td><td><input class="cel" data-nfitem value="${esc(sug)}" style="width:100px"></td>
+    <td><input class="cel falta" data-nfcod placeholder="código ↵" style="width:74px"></td><td colspan=11><small class="nota">Código + Enter</small> <button class="btn mini" data-nftit>+ título</button> <button class="btn mini" data-nfcanc>cancelar</button></td><td></td></tr>`);
+  ligarNovaFicha(); $(`#tabFicha tr[data-tmp] [data-nfcod]`).focus();
+}
+function ligarNovaFicha() {
+  $$("#tabFicha tr.lin-nova").forEach(tr => {
+    const item = () => $("[data-nfitem]", tr).value.trim(), apos = tr.dataset.apos;
+    $("[data-nfcod]", tr).onkeydown = async e => { if (e.key !== "Enter" || !e.target.value.trim()) return; e.preventDefault();
+      try { const r = await jpost(`${base_}${E.pid}/pato/ficha/itens`, { apos, item: item(), codigo: e.target.value.trim() }); toast("Serviço incluído na ficha"); desenharFicha(r); } catch (err) { erro(err); } };
+    if ($("[data-nftit]", tr)) $("[data-nftit]", tr).onclick = async () => { const d = prompt("Descrição do título:", "NOVO GRUPO"); if (!d) return;
+      try { desenharFicha(await jpost(`${base_}${E.pid}/pato/ficha/itens`, { apos, item: item(), titulo: true, descricao: d })); } catch (err) { erro(err); } };
+    if ($("[data-nfcanc]", tr)) $("[data-nfcanc]", tr).onclick = () => tr.remove();
+  });
+}
+function ligarFicha() {
+  const fp = O_.fp;
+  const todos = $("#fichaTodos2"), cbs = $$("[data-fsel]");
+  todos.checked = cbs.every(c => c.checked);
+  const marcar = () => { O_.fsel = new Set(cbs.filter(c => c.checked).map(c => c.dataset.fsel)); desenharFicha(fp); };
+  todos.onchange = () => { cbs.forEach(c => c.checked = todos.checked); marcar(); };
+  $("#fichaTodos").checked = todos.checked;
+  $("#fichaTodos").onchange = e => { cbs.forEach(c => c.checked = e.target.checked); marcar(); };
+  cbs.forEach(c => c.onchange = marcar);
+  $$("#tabFicha [data-fe]").forEach(i => i.onchange = () => gravarFicha(i.dataset.fid, { [i.dataset.fe]: i.value },
+    i.dataset.fe === "codigo" ? "Código trocado — descrição, unidade e preço da base (editáveis)" : null));
+  $$("#tabFicha [data-fne]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido"); gravarFicha(i.dataset.fne, { ne: v }); });
+  $$("#tabFicha [data-fval]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido"); gravarFicha(i.dataset.fval, { valor: v }); });
+  $$("#tabFicha [data-fpre]").forEach(i => i.onchange = () => { const v = numBR(i.value); if (Number.isNaN(v)) return toast("Número inválido");
+    gravarFicha(i.dataset.fid, { preco_manual: { [i.dataset.fpre]: v } }, v == null ? "Preço da base restabelecido" : "Preço informado na ficha"); });
+  $$("#tabFicha [data-fnova]").forEach(b => b.onclick = () => linhaNovaFicha(b.dataset.fnova));
+  $$("#tabFicha [data-frem]").forEach(b => b.onclick = async () => { const l = fp.linhas.find(x => x.id === b.dataset.frem);
+    if (!confirm(`Remover da ficha ${l.item || ""} ${l.codigo || l.descricao || ""}${l.tipo === "servico" ? " (e as linhas que puxam a quantidade dela)" : ""}?`)) return;
+    try { const r = await api(`${base_}${E.pid}/pato/ficha/itens/${l.id}`, { method: "DELETE" }); toast(`${r.removidos} linha(s) removida(s)`); desenharFicha(r); } catch (e) { erro(e); } });
+  // Enter / setas andam na coluna, como no Excel
+  $$("#tabFicha input.cel").forEach(i => i.onkeydown = i.onkeydown || (e => {
+    const dir = e.key === "ArrowDown" || (e.key === "Enter" && !e.shiftKey) ? 1 : e.key === "ArrowUp" || (e.key === "Enter" && e.shiftKey) ? -1 : 0;
+    if (e.key === "Escape") { i.value = i.defaultValue; i.blur(); return; }
+    if (!dir || i.closest("tr.lin-nova")) return; e.preventDefault();
+    const td = i.closest("td"), linhas = $$("#tabFicha tr[data-flin]"); let k = linhas.indexOf(i.closest("tr")) + dir;
+    for (; k >= 0 && k < linhas.length; k += dir) { const a = linhas[k].cells[td.cellIndex]?.querySelector("input.cel"); if (a) { a.focus(); try { a.select(); } catch (_) {} break; } }
+  }));
+  ligarNovaFicha();
 }
 $("#btnFichaMontar").onclick = async () => {
   if (O_.c?.itens?.length && !confirm("Substituir a planilha PATO deste projeto pelos serviços marcados na ficha?")) return;
-  const selecionados = $$("[data-fsel]").filter(c => c.checked).map(c => c.dataset.fsel);
-  const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
-  const valores = Object.fromEntries($$("[data-fval]").filter(i => i.value !== "").map(i => [i.dataset.fval, +i.value]));
+  const selecionados = $$("#tabFicha [data-fsel]").length ? $$("#tabFicha [data-fsel]").filter(c => c.checked).map(c => c.dataset.fsel)
+    : O_.fsel ? [...O_.fsel] : (O_.ficha?.servicos || []).filter(x => x.tipo === "servico").map(x => x.id);
+  const ne = Object.assign(Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, numBR(i.value)])), O_.lista?.ne || {});
+  const valores = Object.fromEntries($$("[data-fval]").filter(i => i.value !== "").map(i => [i.dataset.fval, numBR(i.value)]));
   $("#resOrc").innerHTML = '<p class="carregando">Montando a planilha PATO pela ficha…</p>';
   try { const r = await jpost(`${base_}${E.pid}/pato/montar`, { selecionados, ne, valores, extras: O_.lista?.extras || [], conferir: O_.lista?.quantidades || null });
     if (r.conferencia_qtd?.length) { O_.confQtd = r.conferencia_qtd; O_.sub = "planilha"; await carregarOrc(); mostrarConfQtd(); return; }
@@ -2446,7 +2557,7 @@ $("#btnFichaMontar").onclick = async () => {
     O_.sub = "planilha"; carregarOrc(); } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
 };
 $("#btnFichaNePadrao").onclick = async () => {
-  const ne = Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, +i.value]));
+  const ne = Object.assign(Object.fromEntries($$("[data-fne]").filter(i => i.value !== "").map(i => [i.dataset.fne, numBR(i.value)])), O_.lista?.ne || {});
   if (!confirm("Gravar estes níveis de esforço como padrão da ficha (próximos projetos)?\nO PATO deste projeto não muda — use “Montar PATO pela ficha” ou edite o NE na planilha.")) return;
   try { const r = await jpost("/api/pato/ficha/ne", { ne }, "PUT"); toast(`NE padrão gravado (${r.alterados} alterado(s))`); await renderFicha(); renderOrcPlanilha(); } catch (e) { erro(e); }
 };
@@ -2473,8 +2584,9 @@ $("#btnFichaLista").onclick = async () => {
   const fd = new FormData(); fd.append("arquivo", a);
   try { const r = O_.lista = await api(`${base_}${E.pid}/pato/lista-servicos`, { method: "POST", body: fd });
     const sel = new Set(r.selecionados);
-    $$("[data-fsel]").forEach(c => c.checked = sel.has(c.dataset.fsel));
-    Object.entries(r.ne || {}).forEach(([id, v]) => { const i = $(`[data-fne="${id}"]`); if (i) i.value = v; });
+    O_.fsel = sel; if (O_.fp) desenharFicha(O_.fp);
+    Object.entries(r.ne || {}).forEach(([id, v]) => { const i = $(`[data-fne="${id}"]`); if (i) i.value = fmtIn(v, 5); });
+    if (!$("#fichaPainel").open) $("#fichaPainel").open = true;
     $("#fichaListaRes").innerHTML = `<p class="ok-msg">${r.lidos} linhas lidas: ${r.selecionados.length} serviços da ficha marcados${Object.keys(r.quantidades || {}).length ? ` · ${Object.keys(r.quantidades).length} quantidades serão conferidas com o inventário/IP ao montar` : ""}.</p>` +
       (r.avisos || []).map(a => `<p class="tag aviso">${esc(a)}</p>`).join("") +
       (r.extras.length ? `<p class="nota">Fora da ficha (entram em “01.08 Serviços incluídos pela lista” ao montar):</p><ul class="nota">${r.extras.map(e => `<li>${esc(e.codigo)} — ${esc(e.descricao || "")} ${e.na_base ? "" : '<span class="tag aviso">não está na base SICRO do projeto</span>'}</li>`).join("")}</ul>` : "");

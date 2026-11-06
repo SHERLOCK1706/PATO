@@ -1014,6 +1014,30 @@ def criar_app(servico: Servico | None = None) -> FastAPI:
     def p_mob_servicos(pid: int):
         return sv.orcamento.aplicar_mob_pelos_servicos(pid)
 
+    @app.get("/api/projetos/{pid}/pato/ficha/planilha")
+    def ficha_planilha(pid: int):
+        return orc.ficha_planilha(pid)
+
+    @app.put("/api/projetos/{pid}/pato/ficha/itens/{iid}")
+    def ficha_editar(pid: int, iid: str, dados: dict = Body(...)):
+        try:
+            return orc.editar_ficha_item(pid, iid, dados)
+        except KeyError as e:
+            raise HTTPException(404, str(e))
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.post("/api/projetos/{pid}/pato/ficha/itens")
+    def ficha_nova(pid: int, dados: dict = Body(...)):
+        try:
+            return orc.nova_linha_ficha(pid, dados)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.delete("/api/projetos/{pid}/pato/ficha/itens/{iid}")
+    def ficha_remover(pid: int, iid: str):
+        return orc.remover_linha_ficha(pid, iid)
+
     @app.post("/api/projetos/{pid}/pato/ficha/incluir")
     def ficha_incluir(pid: int, dados: dict = Body(...)):
         try:

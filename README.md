@@ -210,6 +210,13 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   ADM/mobilização e o **quadro de transportes locais do modelo** (pétreos, solo, jazida, mistura betuminosa, material
   demolido). Itens que dependem de um serviço desmarcado (AM/TM, transportes) saem junto. "Gravar este PATO como ficha"
   transforma qualquer PATO importado na ficha dos próximos projetos.
+- **Ficha no formato da aba PATO** (quantitativos para 12 meses): Item, Código, Discriminação, Inventário (quant./und),
+  Nível de esforço (quant./und por und), Quantidade de trabalho e preço unitário/parcial sem e com desoneração, com os
+  dados **deste** projeto, títulos com subtotal e subtotal amarelo de cada serviço com os seus AM/TM. Tudo editável na
+  célula: digite o código e a descrição, a unidade e o preço vêm da base (e continuam editáveis); NE, quantidade a
+  informar e preço informado (fundo amarelo; apagar volta ao preço da base). ＋ abre linha nova pelo código; × remove
+  (com as linhas que puxam a quantidade dela). As edições ficam na ficha (próximos projetos); "Montar PATO pela ficha"
+  leva ao projeto os serviços marcados.
 - **Croqui montado pelo sistema** (aba Transporte → "Montar croqui", Res. 8/2023): informe o km do canteiro (e da usina,
   se for outro). A origem de cada material sai do binômio: SICRO mais vantajoso → centro sede (na DMT do SICRO a partir do
   canteiro, em direção à cidade mais próxima); cotação mais vantajosa → o fornecedor, com a DMT da cotação. Jazida,

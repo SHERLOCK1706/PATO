@@ -31,30 +31,54 @@
     <small id="salvoEm" class="nota"></small>
   </div>
   <div class="usuario-topo" id="usuarioTopo" hidden><button class="btn" id="btnUsuario" data-dica="Trocar senha, usuários (administrador) e sair"></button></div>
-  <div class="acoes">
-    <button class="btn" data-ir="importar" data-dica="Lê uma planilha de inventário (modelo DNIT ou PATO) e cria/atualiza um projeto">Importar inventário</button>
-    <button class="btn primario" data-ir="exportar" data-dica="Gerar a planilha PATO preenchida, o inventário, GeoJSON/KML ou a planilha original corrigida">Exportar</button>
-  </div>
 </header>
 
-<nav class="abas" id="abas">
-  <button data-aba="painel" class="ativa" data-dica="Resumo do trecho, quantidades e reflexo no PATO">Painel</button>
-  <button data-aba="assistente" data-dica="Passo a passo para montar o PATO de um segmento: o que já está pronto, o que falta e onde fazer">Assistente</button>
-  <button data-aba="inventario" data-dica="Tabela editável do inventário por categoria">Inventário</button>
-  <button data-aba="mapa" data-dica="Mapa com as camadas do inventário">Mapa</button>
-  <button data-aba="projeto" data-dica="Dados do projeto, alterar trecho e gerar aceiro">Projeto e trecho</button>
-  <button data-aba="alertas" data-dica="Inconsistências encontradas no inventário">Alertas <span id="nAlertas" class="pill"></span></button>
-  <button data-aba="revisao" data-dica="Decisões pendentes: correções que precisam da sua escolha">Revisão <span id="nSug" class="pill pill-info"></span></button>
-  <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer">Ajustes <span id="nAj" class="pill pill-ok"></span></button>
-  <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições e insumos">Custos</button>
-  <button data-aba="transporte" data-dica="Croqui de ocorrências, VMD, DMT, FIT e quadro de transportes (momentos)">Transporte</button>
-  <button data-aba="orcamento" data-dica="Planilha PATO (Res. DNIT 8/2023): quantidades × preços, resumo, % dos grupos, curva ABC e cronograma">PATO</button>
-  <button data-aba="normas" data-dica="Base de conhecimento: resoluções, IN, ofícios, acórdãos, normas, manuais SICRO, cursos e modelos — busca por trecho e situação de vigência">Normas</button>
-  <button data-aba="importar" data-dica="Importar planilha de inventário">Importar</button>
-  <button data-aba="exportar" data-dica="Gerar planilhas e arquivos">Exportar</button>
+<div class="barra-tot" id="barraTot" hidden></div>
+<div class="corpo">
+<nav class="abas lateral" id="abas" aria-label="Etapas do PATO">
+  <div class="grp">
+    <button data-aba="painel" class="ativa" data-dica="Resumo do trecho, quantidades e reflexo no PATO"><span class="ic">◧</span><span class="rot">Painel</span></button>
+    <button data-aba="assistente" data-dica="Passo a passo para montar o PATO de um segmento: o que já está pronto, o que falta e onde fazer"><span class="ic">➜</span><span class="rot">Assistente</span></button>
+    <button data-aba="pendencias" data-dica="Tudo o que precisa da sua ação: itens sem preço, valores substitutos, falhas da conferência, decisões do inventário e etapas faltando"><span class="ic">⚑</span><span class="rot">Pendências</span> <span id="nPend" class="pill"></span></button>
+  </div>
+  <div class="grp" data-etapa="dados"><div class="grp-tit"><span class="est"></span><span class="rot">1 · Dados do trecho</span></div>
+    <button data-aba="projeto" data-dica="Dados do projeto, alterar trecho e gerar aceiro"><span class="ic">⌂</span><span class="rot">Projeto e trecho</span></button>
+    <button data-aba="inventario" data-dica="Tabela editável do inventário por categoria"><span class="ic">▤</span><span class="rot">Inventário</span></button>
+    <button data-aba="mapa" data-dica="Mapa com as camadas do inventário"><span class="ic">⌖</span><span class="rot">Mapa</span></button>
+    <button data-aba="importar" data-dica="Importar planilha de inventário"><span class="ic">⇪</span><span class="rot">Importar</span></button>
+    <div class="sub-grp">
+      <button data-aba="alertas" data-dica="Inconsistências encontradas no inventário"><span class="ic">!</span><span class="rot">Alertas</span> <span id="nAlertas" class="pill"></span></button>
+      <button data-aba="revisao" data-dica="Decisões pendentes: correções que precisam da sua escolha"><span class="ic">?</span><span class="rot">Revisão</span> <span id="nSug" class="pill pill-info"></span></button>
+      <button data-aba="ajustes" data-dica="Registro de todas as correções aplicadas (automáticas e suas), com opção de desfazer"><span class="ic">↺</span><span class="rot">Histórico de ajustes</span> <span id="nAj" class="pill pill-neutro"></span></button>
+    </div>
+  </div>
+  <div class="grp" data-etapa="custos"><div class="grp-tit"><span class="est"></span><span class="rot">2 · Custos e transporte</span></div>
+    <button data-aba="custos" data-dica="Base SICRO (estado e data-base), BDI, serviços escolhidos, composições, insumos e binômios"><span class="ic">$</span><span class="rot">Custos e BDI</span></button>
+    <button data-aba="transporte" data-dica="Croqui de ocorrências, VMD, DMT, FIT e quadro de transportes (momentos)"><span class="ic">⇄</span><span class="rot">Transporte e croqui</span></button>
+  </div>
+  <div class="grp" data-etapa="orc"><div class="grp-tit"><span class="est"></span><span class="rot">3 · Orçamento</span></div>
+    <button data-aba="orcamento" data-sub="planilha" data-dica="Planilha PATO (Anexo XIX) e ficha de serviços: quantidades × preços nos dois regimes"><span class="ic">▦</span><span class="rot">Planilha PATO</span></button>
+    <button data-aba="orcamento" data-sub="ip" data-dica="Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"><span class="ic">◫</span><span class="rot">Levantamento IP</span></button>
+    <button data-aba="orcamento" data-sub="sinal" data-dica="Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"><span class="ic">⚠</span><span class="rot">Sinalização de obras</span></button>
+    <button data-aba="orcamento" data-sub="div" data-dica="Administração local, canteiro, usina e mobilização/desmobilização"><span class="ic">⛺</span><span class="rot">ADM e mobilização</span></button>
+    <button data-aba="orcamento" data-sub="desemp" data-dica="Composição da parcela mensal dos grupos por desempenho e NE da roçada"><span class="ic">◔</span><span class="rot">Desempenho</span></button>
+  </div>
+  <div class="grp" data-etapa="entrega"><div class="grp-tit"><span class="est"></span><span class="rot">4 · Entrega</span></div>
+    <button data-aba="orcamento" data-sub="conf" data-dica="Checklists de elaboração e auditoria e regras dos normativos"><span class="ic">✓</span><span class="rot">Conferência</span></button>
+    <button data-aba="orcamento" data-sub="resumo" data-dica="Totais por grupo de tarefas (Anexo XX) e limite de DSM"><span class="ic">Σ</span><span class="rot">Resumo e % dos grupos</span></button>
+    <button data-aba="orcamento" data-sub="abc" data-dica="Curva ABC (Anexo XXI)"><span class="ic">≡</span><span class="rot">Curva ABC</span></button>
+    <button data-aba="orcamento" data-sub="crono" data-dica="Cronograma físico-financeiro"><span class="ic">▥</span><span class="rot">Cronograma</span></button>
+    <button data-aba="exportar" data-dica="Planilha PATO de licitação, Excel do orçamento, memória de cálculo, inventário, GeoJSON/KML"><span class="ic">⇩</span><span class="rot">Exportar</span></button>
+  </div>
+  <div class="grp"><div class="grp-tit"><span class="rot">Consulta</span></div>
+    <button data-aba="normas" data-dica="Base de conhecimento: resoluções, IN, ofícios, acórdãos, normas, manuais SICRO, cursos e modelos"><span class="ic">§</span><span class="rot">Normas</span></button>
+  </div>
+  <button class="recolher" id="btnRecolherNav" type="button" data-dica="Recolher/expandir o menu">«</button>
 </nav>
 
 <main>
+  <!-- PENDÊNCIAS -->
+  <section id="aba-pendencias" class="aba"><div id="centralPend"></div></section>
   <!-- PAINEL -->
   <section id="aba-painel" class="aba ativa">
     <div id="vazio" class="vazio oculto">
@@ -462,13 +486,23 @@
   <!-- PATO (orçamento) -->
   <section id="aba-orcamento" class="aba">
     <div class="caixa cab-custos" id="cabOrc"></div>
-    <div class="barra"><div class="chips" id="chipsOrc"></div>
+    <div class="barra"><div class="chips" id="chipsOrc" hidden></div>
       <div class="linha-botoes" style="margin:0 0 0 auto">
-        <button class="btn" id="btnImpOrc" data-dica="Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO: itens, níveis de esforço, memórias de cálculo e preços informados; liga as quantidades ao inventário do projeto">Importar planilha PATO</button>
-        <button class="btn" id="btnAddOrc" data-dica="Inclui um serviço ou um título (tópico) no fim da planilha — use o ＋ de cada linha para incluir no lugar certo">+ Serviço / título</button>
-        <button class="btn" id="btnExpLic" data-dica="PATO final no modelo da planilha de licitação (70 abas, com croqui, CPU, binômios e inventário): preços do sistema no BD sem vínculos externos, base SICRO, níveis de esforço e correções de fórmula; confere o total recalculado com o do sistema">Exportar PATO de licitação</button>
-        <button class="btn" id="btnMemoria" data-dica="PDF para o processo: origem de cada quantidade (inventário, ICM/IP, memórias), preços, binômio conferido com as cotações e anexos, croqui e conferência">Memória de cálculo (PDF)</button>
-        <button class="btn primario" id="btnExpOrc" data-dica="Gera o Excel: planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Exportar (Excel)</button>
+        <button class="btn primario" id="btnAddOrc" data-dica="Inclui um serviço ou um título (tópico) no fim da planilha — use o ＋ de cada linha para incluir no lugar certo">+ Serviço / título</button>
+        <div class="menu-arq"><button class="btn" id="btnMaisOrc" type="button" data-dica="Importar, colar lista de códigos e exportações">⋯ Mais</button>
+          <div class="menu-arq-lista" id="menuMaisOrc" hidden>
+            <button type="button" data-mais="btnImpOrc">Importar planilha PATO <small>abas PATO/DESEMPENHO/BD</small></button>
+            <button type="button" data-mais="btnColar">Colar lista de códigos <small>do Excel</small></button>
+            <hr>
+            <button type="button" data-mais="btnExpOrc">Exportar orçamento (Excel) <small>Anexos XIX–XXI</small></button>
+            <button type="button" data-mais="btnExpLic">Exportar PATO de licitação <small>70 abas</small></button>
+            <button type="button" data-mais="btnMemoria">Memória de cálculo (PDF)</button>
+          </div></div>
+        <span hidden>
+        <button class="btn" id="btnImpOrc" data-dica="Lê as abas PATO, DESEMPENHO e BD de uma planilha PATO">Importar planilha PATO</button>
+        <button class="btn" id="btnExpLic">Exportar PATO de licitação</button>
+        <button class="btn" id="btnMemoria">Memória de cálculo (PDF)</button>
+        <button class="btn" id="btnExpOrc">Exportar (Excel)</button></span>
       </div></div>
     <div id="resOrc"></div>
     <div id="orc-planilha" class="sub-orc">
@@ -486,12 +520,11 @@
         <div id="fichaListaRes"></div>
         <div class="barra filtros"><label class="check"><input type="checkbox" id="fichaTodos" checked> marcar todos</label></div>
         <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabFicha"></table></div></div></details>
-      <div class="caixa"><div class="bin-cab"><h3>Incluir serviço pelo código</h3></div>
-        <p class="nota">Também dá para digitar o código direto na linha em branco no fim da planilha (ou no ＋ de qualquer linha). Qtde., NE, item, código, descrição e unidade são editáveis na própria célula.</p>
+      <details class="caixa" id="cqPainel"><summary><b>Buscar serviço pelo código</b> <small class="nota">— ver as origens possíveis da quantidade antes de incluir (o atalho é digitar o código na linha em branco da planilha)</small></summary>
         <div class="barra filtros"><input id="cqCod" placeholder="código SICRO ou próprio (ex.: 2003373, 4915632, 5915321)" style="width:320px" data-dica="Digite o código e tecle Enter: descrição, unidade, preço unitário e a origem da quantidade pela planilha modelo">
           <button class="btn primario" id="cqBuscar">Buscar</button>
           <button class="btn" id="btnColar" data-dica="Cole do Excel uma lista: código, quantidade (opcional) e NE (opcional) por linha — sem quantidade, vale a regra da planilha modelo">Colar lista de códigos</button></div>
-        <div id="cqRes"></div></div>
+        <div id="cqRes"></div></details>
       <div class="caixa"><div class="barra filtros" style="margin-top:0">
           <label class="check" data-dica="Mostra, no lugar de cada um (pela numeração), os serviços da ficha que ainda não estão na planilha — inclua com ＋ incluir, já com a regra da quantidade (inventário, IP, outro item, transporte)"><input type="checkbox" id="orcMostraFicha"> mostrar os serviços da ficha que não estão na planilha</label>
           <span id="orcFichaBulk"></span>
@@ -600,6 +633,12 @@
 
   <!-- EXPORTAR -->
   <section id="aba-exportar" class="aba">
+    <div class="caixa"><h3>Orçamento PATO — entrega</h3>
+      <div class="linha-botoes">
+        <button class="btn primario" data-proxy="btnExpLic" data-dica="PATO final no modelo da planilha de licitação (70 abas, com croqui, CPU, binômios e inventário), conferido com o total do sistema">PATO de licitação (.xlsx)</button>
+        <button class="btn" data-proxy="btnExpOrc" data-dica="Planilha PATO (Anexo XIX), % dos grupos (Anexo XX), curva ABC (Anexo XXI), cronograma e desempenho — com fórmulas">Orçamento (Anexos XIX–XXI)</button>
+        <button class="btn" data-proxy="btnMemoria" data-dica="PDF para o processo: origem de cada quantidade, preços, binômio, anexos, croqui e conferência">Memória de cálculo (PDF)</button></div>
+      <div id="resExpOrc"></div></div>
     <div class="grade2">
       <div class="caixa">
         <h3>Planilha PATO preenchida</h3>
@@ -651,6 +690,7 @@
     </div>
   </section>
 </main>
+</div>
 
 <dialog id="dlg"><form method="dialog" id="dlgForm"></form></dialog>
 <div id="telaLogin" class="tela-login" hidden>

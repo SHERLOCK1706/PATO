@@ -5,6 +5,20 @@ Sistema local (painel web + servidor MCP) construído a partir da planilha
 
 ## O que faz
 
+**Navegação por etapas** (menu lateral, recolhível com «): Painel · Assistente · **Pendências**, e as etapas
+1 · Dados do trecho (Projeto, Inventário, Mapa, Importar; Alertas, Revisão e Histórico de ajustes) →
+2 · Custos e transporte → 3 · Orçamento (Planilha PATO, IP, Sinalização, ADM e mobilização, Desempenho) →
+4 · Entrega (Conferência, Resumo, Curva ABC, Cronograma, Exportar). Cada etapa mostra ✅/⚠️/❌ pelo Assistente.
+
+- **Barra de totais fixa no topo de todas as telas**: SD, CD, regime mais vantajoso, nº de serviços, base, BDI (com atalho
+  para ajustar) e pendências; atualiza sozinha depois de cada alteração (o valor que mudou pisca).
+- **Pendências** junta num lugar só o que pede ação: serviços sem preço, valores substitutos, falhas e atenções da
+  conferência, decisões do inventário, alertas de erro e etapas não concluídas — cada uma com o botão para ir ao lugar
+  (os itens da planilha vão direto à linha).
+- Telas mais enxutas: um botão principal por tela e o resto em "⋯ Mais"; as exportações do orçamento também ficam em
+  Entrega → Exportar; explicações longas ficam recolhidas em "ⓘ Como funciona"; em celular a barra mostra só SD/CD e
+  pendências.
+
 | Função | Onde |
 |---|---|
 | Importar inventário de qualquer segmento em Excel (modelo DNIT “Cadastro de …” ou abas `CAD_*` do PATO). As colunas são reconhecidas **pelo nome do cabeçalho**, então funcionam planilhas com colunas em outra posição. Prévia antes de gravar. | aba **Importar** |

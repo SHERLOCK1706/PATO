@@ -270,3 +270,74 @@ tr.inativa td { color: var(--txt2); }
 /* pendências da planilha */
 tr.piscar td { background: #fff3a0 !important; transition: background .3s; }
 dialog.dlg-pend { max-width: 900px; width: 92vw; border: 1px solid #ccc; border-radius: 8px; padding: 16px; }
+
+/* ---------- layout: menu lateral por etapas, barra de totais fixa ---------- */
+.corpo { display: grid; grid-template-columns: 228px minmax(0, 1fr); align-items: start; }
+body.nav-recolhida .corpo { grid-template-columns: 52px minmax(0, 1fr); }
+.abas.lateral { flex-direction: column; gap: 0; padding: 8px 8px 48px; border-bottom: 0; border-right: 1px solid var(--borda);
+  position: sticky; top: var(--alt-barra, 0px); height: calc(100vh - var(--alt-barra, 0px)); overflow-y: auto; overflow-x: hidden; }
+.abas.lateral .grp { padding: 6px 0; border-bottom: 1px solid var(--borda); }
+.abas.lateral .grp:last-of-type { border-bottom: 0; }
+.abas.lateral .grp-tit { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--txt2); padding: 6px 8px 4px; }
+.abas.lateral .grp-tit .est:empty { display: none; }
+.abas.lateral button { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; border: 0; border-left: 3px solid transparent;
+  border-radius: 0 6px 6px 0; padding: 6px 8px; color: var(--txt); }
+.abas.lateral button:hover { background: var(--sup2); }
+.abas.lateral button.ativa { background: var(--pri-claro); color: var(--pri); border-left-color: var(--pri); border-bottom-color: transparent; font-weight: 600; }
+.abas.lateral .ic { width: 18px; text-align: center; color: var(--txt2); flex: none; }
+.abas.lateral button.ativa .ic { color: var(--pri); }
+.abas.lateral .rot { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.abas.lateral .sub-grp button { font-size: 13px; padding: 4px 8px 4px 22px; color: var(--txt2); }
+.abas.lateral .pill { margin-left: auto; }
+.abas.lateral .recolher { position: sticky; bottom: 0; margin-top: 8px; width: auto; border: 1px solid var(--borda); border-radius: 6px; background: var(--sup);
+  padding: 2px 10px; color: var(--txt2); }
+body.nav-recolhida .abas.lateral .rot, body.nav-recolhida .abas.lateral .pill, body.nav-recolhida .abas.lateral .grp-tit { display: none; }
+body.nav-recolhida .abas.lateral button { justify-content: center; padding: 8px 0; }
+body.nav-recolhida .abas.lateral .sub-grp button { padding: 6px 0; }
+.corpo > main { max-width: 1600px; width: 100%; margin: 0; }
+.pill-neutro { background: transparent; color: var(--txt2); border: 1px solid var(--borda); }
+
+.barra-tot { position: sticky; top: 0; z-index: 800; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; padding: 7px 16px;
+  background: var(--sup); border-bottom: 1px solid var(--borda); box-shadow: 0 2px 6px rgba(16,24,40,.06); font-size: 13px; }
+.barra-tot[hidden] { display: none; }
+.barra-tot .it { display: flex; flex-direction: column; line-height: 1.2; }
+.barra-tot .it > span:first-child { font-size: 11px; color: var(--txt2); }
+.barra-tot b { font-variant-numeric: tabular-nums; font-size: 14px; }
+.barra-tot .proj-nome { font-weight: 600; max-width: 340px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barra-tot .mudou { animation: mudou 1.2s ease; }
+@keyframes mudou { from { background: color-mix(in srgb, var(--ok) 30%, transparent); } to { background: transparent; } }
+.barra-tot .dir { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+/* central de pendências */
+.pend-grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.pend-card { background: var(--sup); border: 1px solid var(--borda); border-left: 4px solid var(--borda); border-radius: var(--raio); padding: 10px 12px; }
+.pend-card.erro { border-left-color: var(--erro); } .pend-card.aviso { border-left-color: var(--aviso); } .pend-card.ok { border-left-color: var(--ok); }
+.pend-card .v { font-size: 24px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.pend-card .r { color: var(--txt2); font-size: 12px; }
+.pend-lista td:first-child { white-space: nowrap; }
+
+/* notas longas recolhidas em ⓘ */
+details.ajuda { margin: 0 0 10px; }
+details.ajuda > summary { cursor: pointer; color: var(--txt2); font-size: 12px; list-style: none; display: inline-flex; gap: 4px; align-items: center; }
+details.ajuda > summary::-webkit-details-marker { display: none; }
+details.ajuda > summary:hover { color: var(--pri); }
+details.ajuda[open] > summary { margin-bottom: 4px; }
+#cqPainel > summary { cursor: pointer; }
+#cqPainel[open] > summary { margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  .corpo, body.nav-recolhida .corpo { grid-template-columns: 1fr; }
+  .abas.lateral { flex-direction: row; position: static; height: auto; overflow-x: auto; padding: 0 8px; border-right: 0; border-bottom: 1px solid var(--borda); }
+  .abas.lateral .grp { display: flex; border-bottom: 0; padding: 0; }
+  .abas.lateral .grp-tit, .abas.lateral .recolher { display: none; }
+  .abas.lateral .sub-grp { display: flex; }
+  .abas.lateral button { width: auto; white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; border-radius: 0; }
+  .abas.lateral button.ativa { border-bottom-color: var(--pri); }
+  .abas.lateral .ic { display: none; }
+}
+#cabOrc[hidden], .abas [hidden] { display: none !important; }
+[hidden] { display: none !important; }
+.filtros label.check input[type=checkbox] { width: auto; }
+#tabOrc td:nth-child(3) { min-width: 240px; }
+@media (max-width: 640px) { .barra-tot { gap: 4px 14px; padding: 6px 10px; } .barra-tot .sec { display: none; } }

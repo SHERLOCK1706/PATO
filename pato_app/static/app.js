@@ -30,14 +30,26 @@ async function _api(url, op = {}) {
   const t = r.headers.get("content-type") || "";
   return t.includes("json") ? r.json() : r.text();
 }
+const _apiOrig = api;
+api = async function (url, opt) {  // eslint-disable-line no-func-assign
+  const r = await _apiOrig(url, opt);
+  if (opt && opt.method && opt.method !== "GET" && /\/api\/projetos\/\d+\//.test(url) && !/\/exportar|\/memoria/.test(url)) barraDepoisDeGravar();
+  return r;
+};
 const jpost = (url, body, method = "POST") => api(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("mostrar"); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("mostrar"), 3200); }
 function erro(e) { console.error(e); toast("Erro: " + e.message); }
 
 // ---------------------------------------------------------------- navegação
+function marcarNav() {
+  const ativa = $(".aba.ativa")?.id?.slice(4);
+  $$("#abas button[data-aba]").forEach(b => b.classList.toggle("ativa", b.dataset.aba === ativa && (!b.dataset.sub || (typeof O_ !== "undefined" && b.dataset.sub === O_.sub))));
+}
 function irAba(nome) {
-  $$("#abas button").forEach(b => b.classList.toggle("ativa", b.dataset.aba === nome));
   $$(".aba").forEach(s => s.classList.toggle("ativa", s.id === "aba-" + nome));
+  marcarNav();
+  if (nome === "pendencias") renderCentral();
+  if (nome !== "orcamento") atualizarBarra();
   if (nome === "mapa") abrirMapa();
   if (nome === "inventario") carregarItens();
   if (nome === "alertas") renderAlertas();
@@ -51,7 +63,113 @@ function irAba(nome) {
   if (nome === "normas") carregarNormas();
   try { localStorage.setItem("pato.aba", nome); } catch (_) {}
 }
-$$("#abas button").forEach(b => b.onclick = () => irAba(b.dataset.aba));
+$$("#abas button[data-aba]").forEach(b => b.onclick = () => { if (b.dataset.sub) O_.sub = b.dataset.sub; irAba(b.dataset.aba); });
+// menu lateral recolhível (lembra a escolha)
+try { if (localStorage.getItem("pato.nav") === "recolhida") document.body.classList.add("nav-recolhida"); } catch (_) {}
+$("#btnRecolherNav").onclick = () => { const r = document.body.classList.toggle("nav-recolhida"); $("#btnRecolherNav").textContent = r ? "»" : "«";
+  try { localStorage.setItem("pato.nav", r ? "recolhida" : ""); } catch (_) {} };
+if (document.body.classList.contains("nav-recolhida")) $("#btnRecolherNav").textContent = "»";
+// a barra de totais fica presa no topo; o menu lateral começa abaixo dela
+new ResizeObserver(() => document.documentElement.style.setProperty("--alt-barra", ($("#barraTot").hidden ? 0 : $("#barraTot").offsetHeight) + "px")).observe($("#barraTot"));
+// notas longas viram "ⓘ Como funciona" (abre ao clicar)
+$$("main .aba p.nota").forEach(p => {
+  if (p.textContent.trim().length < 170 || p.closest("dialog, details.ajuda") || p.querySelector("input, select, button")) return;
+  const d = document.createElement("details"); d.className = "ajuda";
+  d.innerHTML = '<summary>ⓘ Como funciona</summary>'; p.replaceWith(d); d.append(p);
+});
+// "⋯ Mais" do PATO e atalhos de exportação da aba Exportar
+$("#btnMaisOrc").onclick = e => { e.stopPropagation(); $("#menuMaisOrc").hidden = !$("#menuMaisOrc").hidden; };
+document.addEventListener("click", () => { $("#menuMaisOrc").hidden = true; });
+$$("[data-mais]").forEach(b => b.onclick = () => { $("#menuMaisOrc").hidden = true; $("#" + b.dataset.mais).click(); });
+$$("[data-proxy]").forEach(b => b.onclick = () => $("#" + b.dataset.proxy).click());
+const alvoOrc = () => $("#aba-exportar").classList.contains("ativa") ? $("#resExpOrc") : $("#resOrc");
+
+// ---------------------------------------------------------------- barra de totais (todas as telas)
+const BT_ = { t: 0, ant: null, h: null, ass: 0 };
+function atualizarBarra(forcar) {
+  if (!E.pid) { $("#barraTot").hidden = true; return; }
+  if (!forcar && Date.now() - BT_.t < 4000) return;
+  BT_.t = Date.now();
+  api(`${base_}${E.pid}/pato`).then(c => { O_.c = c; pintarBarra(c); }).catch(() => {});
+  if (Date.now() - BT_.ass > 20000) { BT_.ass = Date.now(); estadoEtapas(); }
+}
+// depois de qualquer gravação, a barra se atualiza sozinha (com folga, para juntar edições seguidas)
+function barraDepoisDeGravar() { clearTimeout(BT_.h); BT_.h = setTimeout(() => atualizarBarra(true), 1800); }
+function pintarBarra(c) {
+  const el = $("#barraTot"), t = c.totais || {}, n = c.itens.filter(i => i.tipo === "servico").length;
+  const p = (E.projetos || []).find(x => x.id === E.pid) || {};
+  el.hidden = false;
+  el.innerHTML = `<div class="it sec"><span>Projeto</span><span class="proj-nome" title="${esc(p.nome || "")}">${esc(p.rodovia || p.nome || "")}${p.km_ini != null ? ` · km ${nf(p.km_ini, 1)}–${nf(p.km_fim, 1)}` : ""}</span></div>` +
+    (n ? `<div class="it"><span>Sem desoneração</span><b id="btSD">R$ ${reais(t.SD)}</b></div><div class="it"><span>Com desoneração</span><b id="btCD">R$ ${reais(t.CD)}</b></div>
+      <div class="it sec"><span>Mais vantajosa</span><b>${REG[c.vantajosa] || "—"}</b></div><div class="it sec"><span>Serviços</span><b>${n}</b></div>`
+      : `<div class="it"><span>Planilha PATO</span><b>vazia — monte pela ficha</b></div>`) +
+    `<div class="it sec"><span>Base</span><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div>
+     <div class="it sec"><span>BDI SD / CD</span><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)} <button class="btn mini" id="btnVerBdi" type="button" data-dica="Abre Custos → Data-base e BDI">ajustar</button></b></div>` +
+    (c.totais_ref?.SD ? `<div class="it sec"><span>Planilha de origem</span><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : "") +
+    `<div class="dir"><div class="it" id="itPend"></div></div>`;
+  if (BT_.ant && n && (BT_.ant.SD !== t.SD || BT_.ant.CD !== t.CD)) ["#btSD", "#btCD"].forEach(q => $(q)?.classList.add("mudou"));
+  BT_.ant = { SD: t.SD, CD: t.CD };
+  $("#btnVerBdi").onclick = () => { C_.sub = "base"; irAba("custos"); };
+  renderPendencias();
+  contarPendencias();
+}
+// situação de cada etapa no menu (pelo Assistente)
+async function estadoEtapas() {
+  if (!E.pid) return;
+  try {
+    const a = BT_.assist = await api(`${base_}${E.pid}/assistente`);
+    const grupo = e => e.aba === "orcamento" ? (["conf", "resumo", "abc", "crono"].includes(e.sub) ? "entrega" : "orc")
+      : ["custos", "transporte"].includes(e.aba) ? "custos" : e.aba === "exportar" ? "entrega" : "dados";
+    const pior = {}, ordem = { ok: 0, pendente: 1, falta: 2 };
+    a.etapas.forEach(e => { const g = grupo(e); if (pior[g] == null || ordem[e.status] > ordem[pior[g]]) pior[g] = e.status; });
+    $$("#abas .grp[data-etapa]").forEach(g => { const st = pior[g.dataset.etapa]; const est = g.querySelector(".est");
+      est.textContent = st ? { ok: "✅", pendente: "⚠️", falta: "❌" }[st] : ""; est.title = st ? { ok: "etapa concluída", pendente: "com pendências", falta: "faltando" }[st] : ""; });
+    contarPendencias();
+  } catch (_) { /* sem projeto ou sem planilha */ }
+}
+function contarPendencias() {
+  const pd = (O_.c?.pendencias || []).length, faltam = (BT_.assist?.etapas || []).filter(e => e.status !== "ok").length;
+  const inv = (E.resumo?.sugestoes_pendentes || 0);
+  $("#nPend").textContent = (pd + faltam + inv) || "";
+}
+
+// ---------------------------------------------------------------- central de pendências
+async function renderCentral() {
+  const el = $("#centralPend");
+  if (!E.pid) { el.innerHTML = ""; return; }
+  el.innerHTML = '<p class="carregando">Juntando as pendências…</p>';
+  const [c, conf, ass] = await Promise.all([api(`${base_}${E.pid}/pato`).catch(() => null), api(`${base_}${E.pid}/conferencia`).catch(() => null),
+    api(`${base_}${E.pid}/assistente`).catch(() => null)]);
+  if (c) { O_.c = c; pintarBarra(c); }
+  if (ass) BT_.assist = ass;
+  const R = E.resumo || {}, pd = c?.pendencias || [], semPreco = pd.filter(p => p.nivel === "erro");
+  const cf = (conf?.itens || []).filter(x => ["falha", "atencao"].includes(x.status)), cfMan = (conf?.itens || []).filter(x => x.status === "manual");
+  const etapas = (ass?.etapas || []).filter(e => e.status !== "ok");
+  const card = (cls, v, r, ir, rot) => `<div class="pend-card ${v ? cls : "ok"}"><div class="v">${v || "✔"}</div><div class="r">${r}</div>
+    ${ir ? `<button class="btn mini" data-cir="${ir}">${rot}</button>` : ""}</div>`;
+  el.innerHTML = `<div class="caixa"><h3>Pendências do projeto</h3><p class="nota">Tudo o que precisa da sua ação antes de entregar, em ordem de prioridade. Clique para ir ao lugar certo.</p>
+    <div class="pend-grade">
+      ${card("erro", semPreco.length, "serviços sem preço na planilha PATO", "orcamento|planilha", "abrir a planilha")}
+      ${card("aviso", pd.length - semPreco.length, "valores substitutos (faltou dado e o sistema usou o valor anterior/importado)", "orcamento|planilha", "abrir a planilha")}
+      ${card("erro", cf.filter(x => x.status === "falha").length, "falhas da conferência (Res. 8/2023 e normativos)", "orcamento|conf", "abrir a conferência")}
+      ${card("aviso", cf.filter(x => x.status === "atencao").length + cfMan.length, "pontos de atenção e itens manuais a conferir", "orcamento|conf", "abrir a conferência")}
+      ${card("aviso", R.sugestoes_pendentes || 0, "decisões pendentes no inventário (Revisão)", "revisao|", "abrir a revisão")}
+      ${card("erro", R.n_alertas?.erro || 0, "alertas de erro no inventário", "alertas|", "abrir os alertas")}
+      ${card("aviso", etapas.length, "etapas do Assistente não concluídas", "assistente|", "abrir o assistente")}
+    </div></div>` +
+    (etapas.length ? `<div class="caixa"><h3>Etapas a concluir</h3><table class="tab pend-lista">${etapas.map(e => `<tr><td>${e.status === "falta" ? "❌" : "⚠️"} ${e.n}. ${esc(e.titulo)}</td>
+      <td><small>${esc((e.avisos || []).join(" · "))}</small></td><td><button class="btn mini" data-cir="${e.aba}|${e.sub || ""}">ir</button></td></tr>`).join("")}</table></div>` : "") +
+    (pd.length ? `<div class="caixa"><h3>Planilha PATO (${pd.length})</h3><div class="tabela-rolagem" style="max-height:45vh"><table class="tab pend-lista">
+      <tr><th>Item</th><th>Código</th><th>Pendência</th></tr>${pd.map(p => `<tr><td>${p.id ? `<a href="#" data-cpid="${esc(p.id)}">${esc(p.item || "—")}</a>` : esc(p.item || "—")}</td><td>${esc(p.codigo || "")}</td>
+      <td><span class="tag ${p.nivel === "erro" ? "erro" : "aviso"}">${esc(p.msg)}</span></td></tr>`).join("")}</table></div></div>` : "") +
+    (cf.length ? `<div class="caixa"><h3>Conferência (${cf.length})</h3><table class="tab pend-lista">${cf.map(x => `<tr><td><span class="tag ${x.status === "falha" ? "erro" : "aviso"}">${x.status === "falha" ? "Falha" : "Atenção"}</span></td>
+      <td>${esc(x.texto)}<br><small>${esc(x.detalhe || "")}</small></td><td><small>${esc(x.fonte || "")}</small></td></tr>`).join("")}</table></div>` : "");
+  $$("[data-cir]", el).forEach(b => b.onclick = () => { const [a, s] = b.dataset.cir.split("|"); if (s) O_.sub = s; irAba(a); });
+  $$("[data-cpid]", el).forEach(a => a.onclick = async ev => { ev.preventDefault(); O_.sub = "planilha"; irAba("orcamento");
+    for (let k = 0; k < 40 && !$(`#tabOrc tr[data-lin="${CSS.escape(a.dataset.cpid)}"]`); k++) await new Promise(r => setTimeout(r, 150));
+    const lin = $(`#tabOrc tr[data-lin="${CSS.escape(a.dataset.cpid)}"]`);
+    if (lin) { lin.scrollIntoView({ block: "center" }); lin.classList.add("piscar"); setTimeout(() => lin.classList.remove("piscar"), 2500); } });
+}
 $$("[data-ir]").forEach(b => b.onclick = () => irAba(b.dataset.ir));
 
 // ---------------------------------------------------------------- projetos
@@ -1761,18 +1879,13 @@ async function carregarOrc() {
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
   $$(".sub-orc").forEach(el => el.classList.toggle("ativa", el.id === "orc-" + O_.sub));
-  $("#cabOrc").innerHTML = '<p class="carregando">Calculando a planilha…</p>';
+  $("#cabOrc").hidden = false; $("#cabOrc").innerHTML = '<p class="carregando">Calculando a planilha…</p>';
   try {
     const c = O_.c = await api(`${base_}${E.pid}/pato`);
-    const n = c.itens.filter(i => i.tipo === "servico").length, t = c.totais;
-    $("#cabOrc").innerHTML = n ? `<div class="it">Sem desoneração<br><b>R$ ${reais(t.SD)}</b></div><div class="it">Com desoneração<br><b>R$ ${reais(t.CD)}</b></div>
-      <div class="it">Mais vantajosa<br><b>${REG[c.vantajosa]}</b></div><div class="it">Serviços<br><b>${n}</b></div>
-      <div class="it">Base<br><b>${esc(c.config.uf)} · ${esc(c.config.data_base)}</b></div><div class="it" id="itPend"></div>
-      <div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>${c.totais_ref?.SD ? `<div class="it">Planilha de origem<br><b>R$ ${reais(c.totais_ref.SD)} / ${reais(c.totais_ref.CD)}</b></div>` : ""}`
-      : `<div class="it">BDI SD / CD<br><b>${pct(c.config.bdi.SD)} / ${pct(c.config.bdi.CD)}</b> <button class="btn mini" id="btnVerBdi" data-dica="Abre Custos → Data-base e BDI para conferir as parcelas e ajustar">conferir/ajustar</button></div>
-        <p class="nota">Nenhuma planilha PATO neste projeto. Monte pela ficha de serviços, importe a aba PATO de uma planilha de referência ou inclua os itens.</p>`;
-    if ($("#btnVerBdi")) $("#btnVerBdi").onclick = () => { C_.sub = "base"; irAba("custos"); };
-    renderPendencias();
+    const n = c.itens.filter(i => i.tipo === "servico").length;
+    pintarBarra(c); marcarNav();
+    $("#cabOrc").hidden = !!n;
+    $("#cabOrc").innerHTML = n ? "" : `<p class="nota">Nenhuma planilha PATO neste projeto. Abra a <b>Ficha de serviços</b> logo abaixo e clique em <b>Montar PATO pela ficha</b>, importe a aba PATO de uma planilha de referência (⋯ Mais) ou inclua os itens.</p>`;
     await ({ planilha: renderPlanilhaFicha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
@@ -1782,8 +1895,7 @@ const LIGADAS = { inventario: "inventário", ip: "levantamento IP", transporte: 
 async function atualizarPlanilha() {
   const rol = $("#tabOrc").closest(".tabela-rolagem"), top = rol?.scrollTop || 0;
   try { O_.c = await api(`${base_}${E.pid}/pato`); renderOrcPlanilha(); if (rol) rol.scrollTop = top;
-    renderPendencias();
-    const t = O_.c.totais, cab = $$("#cabOrc .it b"); if (cab.length > 2) { cab[0].textContent = `R$ ${reais(t.SD)}`; cab[1].textContent = `R$ ${reais(t.CD)}`; cab[2].textContent = REG[O_.c.vantajosa] || cab[2].textContent; }
+    pintarBarra(O_.c);
   } catch (e) { erro(e); }
 }
 // pendências: itens sem preço e valores substitutos (o sistema não conseguiu calcular e usou outro valor)
@@ -2331,21 +2443,21 @@ $("#btnImpOrc").onclick = async () => {
 };
 $("#btnAddOrc").onclick = () => dialogoLinha(null, O_.c?.itens?.length ? O_.c.itens[O_.c.itens.length - 1].id : null);
 $("#btnExpOrc").onclick = async () => {
-  try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
+  try { const r = await jpost(`${base_}${E.pid}/exportar/orcamento`, {}); alvoOrc().innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { erro(e); }
 };
 
 $("#btnMemoria").onclick = async () => {
-  $("#resOrc").innerHTML = '<p class="carregando">Gerando a memória de cálculo…</p>';
-  try { const r = await jpost(`${base_}${E.pid}/memoria`, {}); $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+  alvoOrc().innerHTML = '<p class="carregando">Gerando a memória de cálculo…</p>';
+  try { const r = await jpost(`${base_}${E.pid}/memoria`, {}); alvoOrc().innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>`; } catch (e) { alvoOrc().innerHTML = ""; erro(e); }
 };
 $("#btnExpLic").onclick = async () => {
-  $("#resOrc").innerHTML = '<p class="carregando">Gerando a planilha de licitação e recalculando para conferir…</p>';
+  alvoOrc().innerHTML = '<p class="carregando">Gerando a planilha de licitação e recalculando para conferir…</p>';
   try { const r = await jpost(`${base_}${E.pid}/exportar/licitacao`, {}), cf = r.conferencia || {};
     const ok = cf.diferenca && Math.abs(cf.diferenca.SD) < 0.01 && Math.abs(cf.diferenca.CD) < 0.01;
     const conf = cf.totais_planilha ? `<p class="tag ${ok ? "ok" : "aviso"}">Planilha recalculada: SD R$ ${reais(cf.totais_planilha.SD)} · CD R$ ${reais(cf.totais_planilha.CD)}
       ${ok ? "— igual ao sistema" : `— diferença SD ${reais(cf.diferenca.SD)} · CD ${reais(cf.diferenca.CD)}`}</p>` : (cf.erro ? `<p class="tag aviso">Sem conferência automática (${esc(cf.erro)}); o Excel recalcula ao abrir.</p>` : "");
-    $("#resOrc").innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>${conf}<ul class="nota">${r.log.map(l => `<li>${esc(l)}</li>`).join("")}${(r.pendencias || []).map(l => `<li class="sit-conferir">${esc(l)}</li>`).join("")}</ul>`;
-  } catch (e) { $("#resOrc").innerHTML = ""; erro(e); }
+    alvoOrc().innerHTML = `<div class="linha-botoes">${linkBaixar(r)}</div>${conf}<ul class="nota">${r.log.map(l => `<li>${esc(l)}</li>`).join("")}${(r.pendencias || []).map(l => `<li class="sit-conferir">${esc(l)}</li>`).join("")}</ul>`;
+  } catch (e) { alvoOrc().innerHTML = ""; erro(e); }
 };
 
 // ---- levantamento IP

@@ -181,6 +181,14 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
                     "preços de ADM, CAN e INSIND na aba PATO são os do sistema (em destaque); confira na memória de cálculo")
 
     mm.pato_dinamico(x, calc["itens"], log, pend)
+    try:
+        k7 = x.get("CPU_SD", "K7") if "CPU_SD" in x.sheets else None
+        db_ref, uf_ref = cp.data_base_uf(str(k7)) if k7 else (None, None)
+        usados = {cp._cod(i.get("codigo") or "") for i in calc["itens"] if i.get("tipo") == "servico"}
+        n_prop = sum(1 for p_ in sv.db.proprias() if cp._cod(p_.get("codigo") or "") in usados)
+        mm.base_sicro(x, motores.get("SD"), (uf_ref or "", db_ref or "") if db_ref else None, n_prop, log, pend)
+    except Exception as e:  # noqa: BLE001
+        pend.append(f"Tabelas da base SICRO não atualizadas: {e}")
 
     # 4) nível de esforço e quantidades informadas dos itens
     linhas_pato = {}

@@ -378,6 +378,31 @@ inclusive na reindexação. Saíram os 26 volumes da 1ª edição do Manual de C
 - BR-174 R2 e BR-364/405/435 REV1 buscam os preços das composições em planilhas externas (`[10]Planilha1`, `[11]Planilha1` = SICRO com BDI);
   as abas CPU internas estão desatualizadas — use a base SICRO oficial baixada do DNIT.
 
+## PATO de licitação de outro segmento (mesmo padrão da referência)
+
+O "Exportar PATO de licitação" parte da planilha de referência (BR-158/MT REV2): layout, fórmulas e formatação ficam;
+as entradas das abas de memória são reescritas com os dados do projeto (`pato_app/memorias.py`):
+
+| Aba(s) | O que vai do projeto |
+|---|---|
+| CAPA | rodovia, trecho, SNV, data-base, **prazo em anos**, **extensão real** (soma dos segmentos) |
+| INDICES_REAJ | série mensal completa do banco de dados (DNIT/FGV); as fórmulas de reajuste consultam a série inteira |
+| IP, CALCULO_IP | levantamento km a km, NE/% da faixa e histórico; levantamento em outro modelo (rótulos combinados, fator de serventia) entra com inventário e NE calculados (em destaque) |
+| CROQUI, FIT, VMDf, TRANSPORTES_CONSERVA | DMT (LN/RP/P/Pr/Pu) de cada origem/destino, desenho (início/fim, canteiro, travessias, cidades), VMDf por segmento e rota, quadro de transportes por bloco |
+| MOB | equipamentos das CPU dos serviços adotados, DMT, velocidades, descanso, itinerário e passagem |
+| ANP, PEDAGIO, BINOMIO_ANP, RESUMO_ANP | origens, distâncias, ICMS, pedágio, balsa e preço ANP de cada betuminoso |
+| BINOMIO_COTACOES | fornecedores, preço (t ou m³), densidade, data e DMT de cada material (linhas a mais quando há mais cotações) |
+| NE_ROCADA, BDI | estações pluviométricas e NE adotado; parcelas do BDI (ISSQN dos municípios, CPRB do ano) |
+| SICRO, MAT, PROD | custos, preços e produções da base SICRO do projeto |
+| PATO | serviços não adotados ficam com quantidade zero (cinza); serviços novos ganham linha no grupo e preço no BD |
+
+Depois do recálculo, a conferência compara o total com o do sistema; onde a memória ainda diverge, a linha do PATO recebe o
+valor do sistema (em destaque). Uma **varredura** procura no arquivo textos do segmento de referência (rodovia, SNV, cidades,
+refinarias, fornecedores) e lista o que sobrou como pendência. Teste com a BR-174 montada do zero: total igual ao do sistema,
+sem #N/A e sem textos da BR-158. Limites conhecidos (viram pendência): ADM local/canteiro/usina pela 2ª edição do SICRO
+(o layout da referência é o da metodologia anterior), composições analíticas CPU_SD/CPU_CD de outra data-base ou próprias,
+produtos/materiais sem bloco na referência e anexos QUANTIDADES/CURVA_ABC/CRONOGRAMA para serviços incluídos.
+
 ## Instalação (Windows)
 1. Instale o Python 3.10 ou mais novo (python.org, marque “Add to PATH”); o 3.13 é o mais testado. O instalador só usa
    pacotes prontos (não precisa do Visual C++). Com Python 3.14/3.15 o py7zr (opcional) pode não instalar — os .7z do

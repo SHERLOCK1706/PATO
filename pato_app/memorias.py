@@ -572,7 +572,7 @@ def binomio_anp(x, produtos: list[dict], data_base: str | None, log: list[str], 
             for k in range(3):
                 x.set("RESUMO_ANP", f"C{8 + 3 * i + k}", f"=BINOMIO_ANP!D{rb + 3 + k}")
     if sem:
-        pend.append("BINOMIO_ANP: betuminosos do projeto sem bloco na planilha de referência ou sem origem — " + ", ".join(sem))
+        pend.append("BINOMIO_ANP: betuminosos do projeto sem bloco na planilha de referência ou sem origem (se algum serviço do PATO usar, inclua o bloco no Excel) — " + ", ".join(sem))
     log.append(f"Binômio ANP: {n} produto(s), {len(lst)} origem(ns) (ANP, PEDAGIO e BINOMIO_ANP com os dados do projeto)")
 
 
@@ -584,9 +584,14 @@ def binomio_cotacoes(x, materiais: list[dict], log: list[str], pend: list[str]) 
     x.unshare(aba)
     rows = sorted(x._rows(aba))
     grupos, atual = [], None
+
+    def valor_d(r, n=0):  # fornecedor repetido por fórmula (=D17) → o valor da linha apontada
+        v = x.get(aba, f"D{r}")
+        m_ = re.fullmatch(r"=\$?D\$?(\d+)", str(v or ""))
+        return valor_d(int(m_.group(1)), n + 1) if m_ and n < 20 else v
     for r in rows:
         c = x.get(aba, f"C{r}")
-        d = x.get(aba, f"D{r}")
+        d = valor_d(r)
         if isinstance(c, str) and re.match(r"^M\d{4}$", c.strip()):
             atual = dict(codigo=c.strip(), linhas=[r], sicro=None)
             grupos.append(atual)
@@ -602,12 +607,18 @@ def binomio_cotacoes(x, materiais: list[dict], log: list[str], pend: list[str]) 
             atual = None
     por_cod = {str(m.get("codigo") or "").strip().upper(): m for m in materiais}
     n, faltam, cheios = 0, [], []
-    for g in grupos:
+    for g in reversed(grupos):  # de baixo para cima: linhas inseridas não mexem nos grupos ainda por preencher
         m = por_cod.get(g["codigo"].upper())
         cots = [c for c in (m or {}).get("cotacoes") or [] if not c.get("sicro")]
         sic = next((c for c in (m or {}).get("cotacoes") or [] if c.get("sicro")), {})
         if m and len(cots) > len(g["linhas"]):
-            cheios.append(f"{m.get('nome')} ({len(cots)} cotações, {len(g['linhas'])} linhas)")
+            extra = len(cots) - len(g["linhas"])
+            if g["sicro"]:
+                x.insert_rows(aba, g["sicro"], extra)
+                g["linhas"] += list(range(g["sicro"], g["sicro"] + extra))
+                g["sicro"] += extra
+            else:
+                cheios.append(f"{m.get('nome')} ({len(cots)} cotações, {len(g['linhas'])} linhas)")
         for k, r in enumerate(g["linhas"]):
             ct = cots[k] if k < len(cots) else None
             if ct is None:
@@ -632,7 +643,7 @@ def binomio_cotacoes(x, materiais: list[dict], log: list[str], pend: list[str]) 
             n += 1
     sem = [m.get("nome") for c, m in por_cod.items() if c and c not in {g["codigo"].upper() for g in grupos}]
     if sem:
-        pend.append("BINOMIO_COTACOES: materiais do projeto sem grupo na planilha de referência — " + ", ".join(sem))
+        pend.append("BINOMIO_COTACOES: materiais do projeto sem grupo na planilha de referência (se algum serviço do PATO usar, inclua o grupo no Excel) — " + ", ".join(sem))
     if cheios:
         pend.append("BINOMIO_COTACOES: mais cotações do que linhas na planilha — " + "; ".join(cheios))
     if faltam:
@@ -726,7 +737,7 @@ def pato_dinamico(x, itens: list[dict], log: list[str], pend: list[str]) -> None
     linhas = {}
     for r in sorted(x._rows("PATO")):
         it, cod = x.get("PATO", f"C{r}"), x.get("PATO", f"D{r}")
-        if isinstance(it, str) and cod not in (None, ""):
+        if isinstance(it, str) and re.match(r"^\d{2}(\.\d{2,})+(-[A-Z])?$", it.strip()) and cod not in (None, ""):
             linhas[(it.strip(), cp._cod(str(cod)))] = r
     fora = [k for k in linhas if k not in meus]
     for k in fora:
@@ -789,3 +800,59 @@ def pato_dinamico(x, itens: list[dict], log: list[str], pend: list[str]) -> None
     if sem_grupo:
         pend.append("PATO: serviços do projeto sem grupo correspondente na planilha de referência (inclua no Excel): "
                     + ", ".join(sem_grupo))
+
+
+# ------------------------------------------------------------------ tabelas da base SICRO do projeto (SICRO, MAT, PROD)
+def _tabela(x, aba: str, valores: dict[str, float], col_val: str = "D", novos: dict | None = None) -> tuple[int, int]:
+    """Atualiza a coluna de valor pelo código (coluna A); acrescenta no fim os códigos que faltam."""
+    from . import composicoes as cp
+    if aba not in x.sheets or not valores:
+        return 0, 0
+    n, ult, vistos = 0, 1, set()
+    for r in sorted(x._rows(aba)):
+        a = x.get(aba, f"A{r}")
+        if a in (None, ""):
+            continue
+        ult = r
+        c = cp._cod(str(a).split(".")[0] if isinstance(a, float) else str(a))
+        vistos.add(c)
+        v = valores.get(c)
+        if v is not None and r > 1:
+            atual = x.get(aba, f"{col_val}{r}")
+            if not isinstance(atual, (int, float)) or abs(float(atual) - float(v)) > 1e-9:
+                x.set(aba, f"{col_val}{r}", float(v))
+                n += 1
+    m = 0
+    for c, info in (novos or {}).items():
+        if c in vistos or valores.get(c) is None:
+            continue
+        ult += 1
+        x.set(aba, f"A{ult}", _num_ou_txt(c))
+        x.set(aba, f"B{ult}", info.get("descricao") or "")
+        x.set(aba, f"C{ult}", info.get("unidade") or "")
+        x.set(aba, f"{col_val}{ult}", float(valores[c]))
+        m += 1
+    return n, m
+
+
+def base_sicro(x, motor, ref_uf_db: tuple[str, str] | None, proprias: int, log: list[str], pend: list[str]) -> None:
+    """SICRO (custo unitário), MAT (preço) e PROD (produção) pela base do projeto; CPU_SD/CPU_CD conferidas pela data-base."""
+    if motor is None:
+        return
+    b = motor.base
+    sint = b.get("sintetico") or {}
+    n1, m1 = _tabela(x, "SICRO", {c: nz.numero(v.get("preco")) for c, v in sint.items() if nz.numero(v.get("preco")) is not None},
+                     novos=sint)
+    mat = (b.get("tabelas") or {}).get("MAT") or {}
+    n2, m2 = _tabela(x, "MAT", {c: nz.numero(v.get("preco")) for c, v in mat.items() if nz.numero(v.get("preco")) is not None},
+                     novos=mat)
+    prod = {c: nz.numero(v.get("producao")) for c, v in (motor.comps or {}).items() if nz.numero(v.get("producao"))}
+    n3, _ = _tabela(x, "PROD", prod)
+    log.append(f"Base SICRO {b.get('uf')} {b.get('data_base')}: SICRO {n1} custos atualizados (+{m1}), MAT {n2} (+{m2}), "
+               f"PROD {n3} produções")
+    if ref_uf_db and (str(b.get("uf") or ""), str(b.get("data_base") or "")[:7]) != ref_uf_db:
+        pend.append(f"CPU_SD / CPU_CD: as composições analíticas da planilha são da base {ref_uf_db[0]} {ref_uf_db[1]}; o projeto "
+                    f"usa {b.get('uf')} {b.get('data_base')} — anexe as composições do sistema (Exportar → Composições e preços)")
+    if proprias:
+        pend.append(f"CPU_SD / CPU_CD: {proprias} composição(ões) própria(s)/alterada(s) no projeto não estão nos blocos da "
+                    "planilha — anexe as composições do sistema (Exportar → Composições e preços)")

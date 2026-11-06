@@ -94,6 +94,32 @@ def exportar_xlsx(orc, pid: int, saida: str) -> str:
         ws.column_dimensions[L(col)].width = w
     ws.freeze_panes = "E14"
 
+    # ------------------------------------------------ QUANTIDADES — contrato (PATO anual × anos de vigência)
+    ct = res["contrato"]
+    wq = wb.create_sheet("QUANTIDADES")
+    _ident(wq, p, cfg, f"PLANILHA DE QUANTIDADES E CUSTOS UNITÁRIOS — CONTRATO DE {ct['anos']:g} ANO(S) "
+                       f"({ct['meses']} meses) = PATO anual × {ct['anos']:g}", 11)
+    _cab(wq, 13, ["ITEM", "CÓDIGO", "DISCRIMINAÇÃO", "QUANT. PATO (1 ANO)", "ANOS", "QUANT. CONTRATO", "UNID.",
+                  "PREÇO UNIT. SD", "PARCIAL SD", "PREÇO UNIT. CD", "PARCIAL CD"])
+    x = 14
+    for a in sorted(ct["itens"], key=lambda a: a["item"]):
+        fq = f"=ROUND(E{x}*F{x},3)" if not a["unico"] else a["quantidade"]
+        vals = [a["item"], a["codigo"], a["descricao"], a["qtd_anual"], ct["anos"], fq, a["unidade"],
+                a["preco_SD"], f"=TRUNC(G{x}*I{x},2)", a["preco_CD"], f"=TRUNC(G{x}*K{x},2)"]
+        for j, v in enumerate(vals):
+            cel = wq.cell(x, 2 + j, v)
+            cel.border = BORDA
+            cel.number_format = MOEDA if j >= 7 else "#,##0.000" if j in (3, 5) else "General"
+        x += 1
+    wq.cell(x, 4, "TOTAL DO CONTRATO").font = NEG
+    for col in ("J", "L"):
+        wq[f"{col}{x}"] = f"=SUM({col}14:{col}{x - 1})"
+        wq[f"{col}{x}"].font, wq[f"{col}{x}"].number_format = NEG, MOEDA
+    wq.cell(x + 1, 2, "O PATO é o orçamento de 1 ano. Canteiro, instalação industrial, mobilização e desmobilização "
+                      "(1 ÷ anos no PATO) entram uma vez no contrato.")
+    for col, w in zip("BCDEFGHIJKL", [10, 10, 60, 14, 7, 14, 7, 13, 15, 13, 15]):
+        wq.column_dimensions[col].width = w
+
     # ------------------------------------------------ Anexo XX — % dos grupos
     wg = wb.create_sheet("PERCENTUAL_GRUPOS")
     _ident(wg, p, cfg, "DISTRIBUIÇÃO PERCENTUAL DO ORÇAMENTO CONFORME GRUPOS DE TAREFAS (Anexo XX)", 7)
@@ -116,7 +142,7 @@ def exportar_xlsx(orc, pid: int, saida: str) -> str:
     # ------------------------------------------------ Anexo XXI — curva ABC
     wa = wb.create_sheet("CURVA_ABC")
     reg = res["vantajosa"]
-    _ident(wa, p, cfg, f"CURVA ABC (Anexo XXI) — {po.REG_TXT[reg]}", 11)
+    _ident(wa, p, cfg, f"CURVA ABC (Anexo XXI) — CONTRATO DE {ct['anos']:g} ANO(S) — {po.REG_TXT[reg]}", 11)
     _cab(wa, 13, ["GRUPO DE TAREFAS", "CÓDIGO", "DESCRIÇÃO", "UND.", "QUANTIDADE TOTAL", "PREÇO UNITÁRIO", "CUSTO TOTAL",
                   "PROPORÇÃO (%)", "PROPORÇÃO ACUMULADA (%)", "FAIXA"])
     na = len(res["abc"])
@@ -138,7 +164,7 @@ def exportar_xlsx(orc, pid: int, saida: str) -> str:
     # ------------------------------------------------ cronograma
     wc = wb.create_sheet("CRONOGRAMA")
     cr = res["cronograma"]
-    _ident(wc, p, cfg, f"CRONOGRAMA FÍSICO-FINANCEIRO — {po.REG_TXT[reg]}", 4 + cr["meses"])
+    _ident(wc, p, cfg, f"CRONOGRAMA FÍSICO-FINANCEIRO — CONTRATO DE {cr['meses']} MESES — {po.REG_TXT[reg]}", 4 + cr["meses"])
     _cab(wc, 13, ["GRUPO DE TAREFAS", "TOTAL"] + [f"MÊS {i + 1}" for i in range(cr["meses"])])
     for i, ln in enumerate(cr["linhas"]):
         x = 14 + i

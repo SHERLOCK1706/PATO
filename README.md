@@ -249,9 +249,14 @@ RESUMO_TRANSPORTES. Na aba Custos → Serviços, a coluna “Quant. anual” gua
   viagem e descanso, veículo transportador e FU da tabela IMOB). Recalcula com o prazo, o BDI e a base do projeto; a
   opção "fixar" mantém o preço da planilha de origem. Na BR-158/MT reproduz ADM, CAN, MOB e DESMOB ao centavo; a usina
   com desoneração é corrigida (a planilha somava a instalação sem desoneração em USINA!H38: R$ 503.838,39 → 498.500,50).
-- **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Curva ABC (Anexo XXI)**,
-  **cronograma físico-financeiro** de 12 meses e detalhamento do **grupo por desempenho**.
-- **Exportar (Excel)**: planilha PATO (Anexo XIX), % dos grupos, curva ABC, cronograma e desempenho, com fórmulas.
+- **Resumo e % dos grupos (Anexo XX)** com verificação do limite de 25% de DSM (art. 6º, III), **Quantidades do contrato**,
+  **Curva ABC (Anexo XXI)**, **cronograma físico-financeiro** e detalhamento do **grupo por desempenho**.
+- **Vigência**: a planilha PATO é o orçamento de **1 ano**; QUANTIDADES, curva ABC e cronograma são do **contrato**
+  (prazo do projeto, ex.: 2 anos = 24 meses): quantidade = PATO × anos, como a aba QUANTIDADES da licitação
+  (`× CAPA!D81`). Canteiro, usina, mobilização e desmobilização (1 ÷ anos no PATO) entram uma vez; no cronograma,
+  vão para o 1º mês (desmobilização no último) e os demais itens em parcelas de 1 ÷ meses.
+- **Exportar (Excel)**: planilha PATO (Anexo XIX), QUANTIDADES do contrato, % dos grupos, curva ABC, cronograma e
+  desempenho, com fórmulas.
 - **Exportar PATO de licitação**: o PATO final no modelo da planilha que vai para licitação (as 70 abas da BR-158/MT, com
   croqui, CPU, binômios, inventário e memórias), preenchido pelo sistema:
   - projeto e inventário nas abas CAPA e CAD_*;

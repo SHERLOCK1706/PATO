@@ -51,8 +51,22 @@ def test_resumos(proj):
     r = sv.orcamento.resumo(pid)
     assert r["vantajosa"] == "SD"
     assert r["abc"][0]["codigo"] == "AM1943" and r["abc"][0]["faixa"] == "A"
-    assert r["cronograma"]["meses"] == 12 and r["cronograma"]["acumulado"][-1] == pytest.approx(1)
     assert sum(s["SD"] for s in r["secoes"]) == pytest.approx(r["totais"]["SD"], abs=0.05)
+    # o PATO é o orçamento de 1 ano; QUANTIDADES, curva ABC e cronograma são do contrato (2 anos = 24 meses)
+    ct = r["contrato"]
+    assert ct["anos"] == 2 and ct["meses"] == 24
+    q = {a["codigo"]: a for a in ct["itens"]}
+    import openpyxl
+    wv = openpyxl.load_workbook(str(MODELO_PADRAO), data_only=True)["QUANTIDADES"]
+    ref = {str(wv.cell(i, 3).value): wv.cell(i, 5).value for i in range(17, 123) if wv.cell(i, 3).value is not None}
+    for cod in ("GD", "ADM", "CAN", "INSIND", "MOB", "DESMOB", "AM1943", "407819", "4011463"):
+        assert q[cod]["quantidade"] == pytest.approx(ref[cod], abs=0.0005), cod
+    assert q["MOB"]["quantidade"] == 1 and q["GD"]["quantidade"] == 24
+    assert ct["totais"]["SD"] == pytest.approx(2 * r["totais"]["SD"], rel=0.001)
+    assert r["abc"][0]["total"] == pytest.approx(q["AM1943"]["parcial_SD"])
+    cr = r["cronograma"]
+    assert cr["meses"] == 24 and cr["acumulado"][-1] == pytest.approx(1)
+    assert sum(cr["por_mes"]) == pytest.approx(ct["totais"]["SD"], abs=1)
 
 
 def test_editar_base_inventario_e_exportar(proj):

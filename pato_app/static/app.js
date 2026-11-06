@@ -122,7 +122,7 @@ async function estadoEtapas() {
   if (!E.pid) return;
   try {
     const a = BT_.assist = await api(`${base_}${E.pid}/assistente`);
-    const grupo = e => e.aba === "orcamento" ? (["conf", "resumo", "abc", "crono"].includes(e.sub) ? "entrega" : "orc")
+    const grupo = e => e.aba === "orcamento" ? (["conf", "resumo", "quant", "abc", "crono"].includes(e.sub) ? "entrega" : "orc")
       : ["custos", "transporte"].includes(e.aba) ? "custos" : e.aba === "exportar" ? "entrega" : "dados";
     const pior = {}, ordem = { ok: 0, pendente: 1, falta: 2 };
     a.etapas.forEach(e => { const g = grupo(e); if (pior[g] == null || ordem[e.status] > ordem[pior[g]]) pior[g] = e.status; });
@@ -1879,7 +1879,7 @@ async function carregarOrc() {
   if (O_.sub === "ficha") O_.sub = "planilha";  // ficha e planilha unificadas
   const subs = [["planilha", "Planilha PATO", "Itens, quantidades (base × nível de esforço) e preços nos dois regimes; a ficha de serviços fica no painel de cima e os serviços dela podem entrar linha a linha"], ["ip", "Levantamento IP", "Condição do pavimento km a km e quantidades de tapa-buraco, remendo, fresagem e microrrevestimento"],
     ["sinal", "Sinalização de obras", "Duração dos serviços, projetos-tipo e dispositivos (un.dia) — Anexo XIII"], ["div", "ADM local e mobilização", "Administração local, canteiro, usina e mobilização/desmobilização calculados com a base SICRO"], ["conf", "Conferência", "Checklists de elaboração e auditoria e regras dos normativos — verificação automática e itens a marcar"], ["resumo", "Resumo e % dos grupos", "Totais por grupo de tarefas (Anexo XX) e limite de DSM"],
-    ["abc", "Curva ABC", "Anexo XXI"], ["crono", "Cronograma", "Distribuição mensal do orçamento"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
+    ["quant", "Quantidades do contrato", "PATO (orçamento de 1 ano) × anos de vigência — como a aba QUANTIDADES"], ["abc", "Curva ABC", "Anexo XXI — sobre o contrato (vigência inteira)"], ["crono", "Cronograma", "Distribuição mensal do contrato (vigência inteira)"], ["desemp", "Desempenho", "Composição da parcela mensal dos grupos por desempenho"]];
   $("#chipsOrc").innerHTML = subs.map(([k, r, d]) => `<span class="chip ${O_.sub === k ? "ativo" : ""}" data-sub="${k}" data-dica="${d}">${r}</span>`).join("");
   $$("#chipsOrc .chip").forEach(ch => ch.onclick = () => { O_.sub = ch.dataset.sub; carregarOrc(); });
   $$(".sub-orc").forEach(el => el.classList.toggle("ativa", el.id === "orc-" + O_.sub));
@@ -1890,7 +1890,7 @@ async function carregarOrc() {
     pintarBarra(c); marcarNav();
     $("#cabOrc").hidden = !!n;
     $("#cabOrc").innerHTML = n ? "" : `<p class="nota">Nenhuma planilha PATO neste projeto. Abra a <b>Ficha de serviços</b> logo abaixo e clique em <b>Montar PATO pela ficha</b>, importe a aba PATO de uma planilha de referência (⋯ Mais) ou inclua os itens.</p>`;
-    await ({ planilha: renderPlanilhaFicha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
+    await ({ planilha: renderPlanilhaFicha, ip: renderIp, sinal: renderSinal, div: renderDiv, conf: renderConf, resumo: renderOrcResumo, quant: renderOrcQuant, abc: renderOrcAbc, crono: renderOrcCrono, desemp: renderOrcDesemp })[O_.sub]();
   } catch (e) { $("#cabOrc").innerHTML = `<p class="tag erro">${esc(e.message)}</p>`; }
 }
 // planilha PATO como tabela editável (estilo planilha): código na linha puxa o serviço; Qtde. (base), NE e demais
@@ -2294,14 +2294,29 @@ async function renderOrcResumo() {
     c.secoes.map(s => `<tr><td>${esc(s.secao)}</td><td>${esc(s.nome)}</td><td class=n>${s.n}</td><td class=n>${reais(s.SD)}</td><td class=n>${pct(s.pct_SD)}</td><td class=n>${reais(s.CD)}</td><td class=n>${pct(s.pct_CD)}</td></tr>`).join("") +
     `<tr class="titulo-orc"><td colspan=3>TOTAL</td><td class=n>${reais(c.totais.SD)}</td><td class=n>100%</td><td class=n>${reais(c.totais.CD)}</td><td class=n>100%</td></tr>`;
 }
+function notaContrato(ct) {
+  return `<p class="nota">O PATO é o orçamento de <b>1 ano</b>. O contrato tem <b>${nf(ct.anos, 2)} ano(s) — ${ct.meses} meses</b> (prazo do projeto):
+    quantidades = PATO × ${nf(ct.anos, 2)}; canteiro, usina, mobilização e desmobilização entram uma vez.
+    Total do contrato: <b>R$ ${reais(ct.totais.SD)}</b> sem desoneração · <b>R$ ${reais(ct.totais.CD)}</b> com desoneração.</p>`;
+}
+async function renderOrcQuant() {
+  const r = O_.res = await api(`${base_}${E.pid}/pato/resumo`), ct = r.contrato;
+  $("#notaQuant").innerHTML = notaContrato(ct);
+  $("#tabQuant").innerHTML = `<tr><th>Item</th><th>Código</th><th>Discriminação</th><th>Und</th><th class=n>Qtde PATO (1 ano)</th><th class=n>Qtde contrato</th><th class=n>Preço SD</th><th class=n>Parcial SD</th><th class=n>Preço CD</th><th class=n>Parcial CD</th></tr>` +
+    [...ct.itens].sort((a, b) => a.item.localeCompare(b.item)).map(a => `<tr><td>${esc(a.item)}</td><td>${esc(a.codigo)}</td><td>${esc(a.descricao || "")}</td><td>${esc(a.unidade || "")}</td>
+      <td class=n>${q3(a.qtd_anual)}</td><td class=n><b>${q3(a.quantidade)}</b></td><td class=n>${reais(a.preco_SD)}</td><td class=n>${reais(a.parcial_SD)}</td><td class=n>${reais(a.preco_CD)}</td><td class=n>${reais(a.parcial_CD)}</td></tr>`).join("") +
+    `<tr class="titulo-orc"><td colspan=7>TOTAL DO CONTRATO</td><td class=n>${reais(ct.totais.SD)}</td><td></td><td class=n>${reais(ct.totais.CD)}</td></tr>`;
+}
 async function renderOrcAbc() {
   const r = O_.res = await api(`${base_}${E.pid}/pato/resumo`);
+  $("#notaAbc") && ($("#notaAbc").innerHTML = notaContrato(r.contrato));
   $("#tabAbc").innerHTML = `<tr><th>Faixa</th><th>Código</th><th>Descrição</th><th>Und</th><th class=n>Quantidade</th><th class=n>Preço</th><th class=n>Custo total</th><th class=n>%</th><th class=n>% acumulado</th></tr>` +
     r.abc.map(a => `<tr><td><span class="tag ${a.faixa === "A" ? "erro" : a.faixa === "B" ? "aviso" : ""}">${a.faixa}</span></td><td>${esc(a.codigo)}</td><td>${esc(a.descricao || "")}</td><td>${esc(a.unidade || "")}</td>
       <td class=n>${q3(a.quantidade)}</td><td class=n>${reais(a.preco)}</td><td class=n>${reais(a.total)}</td><td class=n>${pct(a.pct)}</td><td class=n>${pct(a.acumulado)}</td></tr>`).join("");
 }
 async function renderOrcCrono() {
   const r = await api(`${base_}${E.pid}/pato/resumo`), cr = r.cronograma;
+  $("#notaCrono") && ($("#notaCrono").innerHTML = notaContrato(r.contrato));
   $("#tabCrono").innerHTML = `<tr><th>Grupo</th><th class=n>Total</th>${cr.por_mes.map((_, i) => `<th class=n>Mês ${i + 1}</th>`).join("")}</tr>` +
     cr.linhas.map(l => `<tr><td>${esc(l.nome)}</td><td class=n>${reais(l.total)}</td>${l.meses.map(v => `<td class=n>${reais(v)}</td>`).join("")}</tr>`).join("") +
     `<tr class="titulo-orc"><td>Total do mês</td><td class=n>${reais(cr.por_mes.reduce((a, b) => a + b, 0))}</td>${cr.por_mes.map(v => `<td class=n>${reais(v)}</td>`).join("")}</tr>

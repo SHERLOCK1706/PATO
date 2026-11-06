@@ -66,7 +66,8 @@
   <div class="grp" data-etapa="entrega"><div class="grp-tit"><span class="est"></span><span class="rot">4 · Entrega</span></div>
     <button data-aba="orcamento" data-sub="conf" data-dica="Checklists de elaboração e auditoria e regras dos normativos"><span class="ic">✓</span><span class="rot">Conferência</span></button>
     <button data-aba="orcamento" data-sub="resumo" data-dica="Totais por grupo de tarefas (Anexo XX) e limite de DSM"><span class="ic">Σ</span><span class="rot">Resumo e % dos grupos</span></button>
-    <button data-aba="orcamento" data-sub="abc" data-dica="Curva ABC (Anexo XXI)"><span class="ic">≡</span><span class="rot">Curva ABC</span></button>
+    <button data-aba="orcamento" data-sub="quant" data-dica="Quantidades do contrato: PATO (orçamento de 1 ano) × anos de vigência"><span class="ic">×</span><span class="rot">Quantidades do contrato</span></button>
+    <button data-aba="orcamento" data-sub="abc" data-dica="Curva ABC (Anexo XXI) do contrato"><span class="ic">≡</span><span class="rot">Curva ABC</span></button>
     <button data-aba="orcamento" data-sub="crono" data-dica="Cronograma físico-financeiro"><span class="ic">▥</span><span class="rot">Cronograma</span></button>
     <button data-aba="exportar" data-dica="Planilha PATO de licitação, Excel do orçamento, memória de cálculo, inventário, GeoJSON/KML"><span class="ic">⇩</span><span class="rot">Exportar</span></button>
   </div>
@@ -596,9 +597,11 @@
 
     <div id="orc-resumo" class="sub-orc"><div class="caixa"><h3>Resumo por grupo de tarefas (Anexo XX)</h3><div id="avisosOrc"></div>
       <div class="tabela-rolagem"><table class="tab" id="tabOrcResumo"></table></div></div></div>
-    <div id="orc-abc" class="sub-orc"><div class="caixa"><h3>Curva ABC (Anexo XXI)</h3><p class="nota">Regime mais vantajoso. Faixa A até 80% do custo acumulado, B até 95%, C o restante.</p>
+    <div id="orc-quant" class="sub-orc"><div class="caixa"><h3>Quantidades e custos do contrato</h3><div id="notaQuant"></div>
+      <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabQuant"></table></div></div></div>
+    <div id="orc-abc" class="sub-orc"><div class="caixa"><h3>Curva ABC (Anexo XXI)</h3><div id="notaAbc"></div><p class="nota">Regime mais vantajoso. Faixa A até 80% do custo acumulado, B até 95%, C o restante.</p>
       <div class="tabela-rolagem" style="max-height:70vh"><table class="tab" id="tabAbc"></table></div></div></div>
-    <div id="orc-crono" class="sub-orc"><div class="caixa"><h3>Cronograma físico-financeiro (12 meses)</h3>
+    <div id="orc-crono" class="sub-orc"><div class="caixa"><h3>Cronograma físico-financeiro do contrato</h3><div id="notaCrono"></div>
       <p class="nota">Desempenho, administração local e serviços em parcelas mensais iguais; mobilização, canteiro e instalação industrial no 1º mês; desmobilização no último (Res. 8/2023, art. 56, § 1º: DSM, rotineira, periódica, emergencial e desempenho separados).</p>
       <div class="tabela-rolagem"><table class="tab" id="tabCrono"></table></div></div></div>
     <div id="orc-desemp" class="sub-orc"><div class="caixa"><h3>Grupos por desempenho</h3>

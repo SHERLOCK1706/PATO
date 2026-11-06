@@ -19,6 +19,8 @@ from __future__ import annotations
 
 import re
 
+from openpyxl.utils import get_column_letter
+
 from . import composicoes as cp
 from . import normalizar as nz
 from .xlsx_patch import Q, XlsxPatcher
@@ -181,6 +183,24 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
                     "preços de ADM, CAN e INSIND na aba PATO são os do sistema (em destaque); confira na memória de cálculo")
 
     mm.pato_dinamico(x, calc["itens"], log, pend)
+    # vigência: a aba PATO é o orçamento de 1 ano; QUANTIDADES multiplica por CAPA!D81 (anos) e o CRONOGRAMA da
+    # referência tem colunas para um número fixo de meses (1 ÷ meses em cada uma)
+    try:
+        anos = sv.orcamento.anos_contrato(pid)
+        meses_ref = 0
+        if "CRONOGRAMA" in x.sheets:
+            for r_ in range(1, 300):
+                for c_ in range(7, 19):  # cabeçalhos "Mês 01".."Mês 12" em blocos de 12 colunas (G:R)
+                    v_ = x.get("CRONOGRAMA", f"{get_column_letter(c_)}{r_}")
+                    if isinstance(v_, str) and re.fullmatch(r"\s*M[êe]s\s*\d+\s*", v_):
+                        meses_ref = max(meses_ref, int(re.search(r"\d+", v_).group()))
+        log.append(f"Vigência: PATO de 1 ano; QUANTIDADES = PATO × {anos:g} ano(s) (CAPA!D81)")
+        if meses_ref and round(anos * 12) != meses_ref:
+            pend.append(f"CRONOGRAMA: a referência distribui {meses_ref} meses e o contrato tem {round(anos * 12)} "
+                        f"({anos:g} ano(s)); ajuste as colunas e os percentuais (1 ÷ meses) no Excel ou use o cronograma "
+                        "do Excel do orçamento gerado pelo sistema. QUANTIDADES e CURVA_ABC já seguem a vigência (CAPA!D81).")
+    except Exception as e:  # noqa: BLE001
+        log.append(f"Vigência do cronograma não conferida: {e}")
     try:
         k7 = x.get("CPU_SD", "K7") if "CPU_SD" in x.sheets else None
         db_ref, uf_ref = cp.data_base_uf(str(k7)) if k7 else (None, None)

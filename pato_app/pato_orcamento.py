@@ -458,15 +458,52 @@ def secao_do_item(item: str) -> str:
     return item[:5] if len(item) >= 5 else item
 
 
-def curva_abc(itens: list[dict], regime: str, faixa_a: float = 0.80, faixa_b: float = 0.95) -> list[dict]:
-    """Anexo XXI — agrupa por código e classifica: A até 80% acumulado, B até 95%, C o restante."""
+_UNICOS = ("MOB", "DESMOB", "CAN", "INSIND")  # rateados por ano no PATO (1 ÷ anos): no contrato valem 1 vez
+
+
+def contrato(itens: list[dict], anos: float) -> dict:
+    """Planilha de QUANTIDADES do contrato: o PATO é o orçamento de 1 ano; o contrato soma a vigência inteira.
+    Como na aba QUANTIDADES da planilha de licitação: quantidade = Σ(quantidade do PATO por código) × anos e
+    parcial = TRUNC(preço × quantidade; 2). Canteiro, usina e mobilização (1 ÷ anos no PATO) somam 1 no contrato."""
+    anos = anos or 1.0
     agr: dict[str, dict] = {}
     for r in itens:
-        if r.get("tipo") != "servico" or not r.get(f"parcial_{regime}"):
+        if r.get("tipo") != "servico":
+            continue
+        a = agr.get(r["codigo"])
+        if not a:
+            a = agr[r["codigo"]] = dict(codigo=r["codigo"], descricao=r.get("descricao"), unidade=r.get("unidade"),
+                                        item=r["item"], secao=secao_do_item(r["item"]), qtd_anual=0.0,
+                                        preco_SD=r.get("preco_SD"), preco_CD=r.get("preco_CD"), unico=False)
+        a["qtd_anual"] += r.get("quantidade") or 0.0
+        if (r.get("base") or {}).get("tipo") == "contrato" or str(r["codigo"]).upper().startswith(_UNICOS):
+            a["unico"] = True
+    tot = {"SD": 0.0, "CD": 0.0}
+    lst = []
+    for a in agr.values():
+        q = a["qtd_anual"] * anos
+        if a["unico"] and abs(q - round(q)) < 0.01:
+            q = float(round(q))  # 0,333 × 3 anos = 1 (e não 0,999)
+        a["quantidade"] = round(q, 3)
+        for reg in ("SD", "CD"):
+            pr = a[f"preco_{reg}"]
+            a[f"parcial_{reg}"] = trunc(pr * a["quantidade"], 2) if pr is not None else None
+            tot[reg] += a[f"parcial_{reg}"] or 0.0
+        if a["quantidade"]:
+            lst.append(a)
+    return dict(anos=anos, meses=max(1, round(anos * 12)), itens=lst, totais={k: round(v, 2) for k, v in tot.items()})
+
+
+def curva_abc(itens: list[dict], regime: str, faixa_a: float = 0.80, faixa_b: float = 0.95) -> list[dict]:
+    """Anexo XXI — agrupa por código e classifica: A até 80% acumulado, B até 95%, C o restante. Recebe os itens do
+    PATO (1 ano) ou os do contrato (função contrato), como a aba CURVA_ABC da licitação, que lê a de QUANTIDADES."""
+    agr: dict[str, dict] = {}
+    for r in itens:
+        if r.get("tipo", "servico") != "servico" or not r.get(f"parcial_{regime}"):
             continue
         a = agr.setdefault(r["codigo"], dict(codigo=r["codigo"], descricao=r.get("descricao"), unidade=r.get("unidade"),
                                              quantidade=0.0, preco=r.get(f"preco_{regime}"), total=0.0,
-                                             secao=secao_do_item(r["item"])))
+                                             secao=r.get("secao") or secao_do_item(r["item"])))
         a["quantidade"] += r["quantidade"]
         a["total"] += r[f"parcial_{regime}"]
     lst = sorted(agr.values(), key=lambda a: -a["total"])
@@ -480,34 +517,33 @@ def curva_abc(itens: list[dict], regime: str, faixa_a: float = 0.80, faixa_b: fl
     return lst
 
 
-def cronograma(calc: dict, regime: str, meses: int) -> dict:
-    """Cronograma físico-financeiro: desempenho, administração local e itens mensais em parcelas iguais; mobilização
-    e canteiro no 1º mês; desmobilização no último; demais serviços distribuídos igualmente (a ajustar)."""
+def cronograma(calc: dict, regime: str, meses: int, contrato_: dict | None = None) -> dict:
+    """Cronograma físico-financeiro do contrato (vigência inteira, ex.: 24 meses para 2 anos), como a aba CRONOGRAMA
+    da licitação: itens em parcelas iguais (1 ÷ meses); canteiro, usina e mobilização no 1º mês; desmobilização no
+    último. Sem o contrato, distribui o PATO anual em 12 meses."""
     meses = max(1, int(meses or 12))
-    linhas, por_mes = [], [0.0] * meses
-    for s in calc["secoes"]:
-        v = s[regime]
-        dist = [0.0] * meses
-        if s["secao"] == "01.07":
-            # itens da seção: ADM mensal; CAN/INSIND/MOB no 1º mês; DESMOB no último
-            for r in calc["itens"]:
-                if r.get("tipo") != "servico" or secao_do_item(r["item"]) != "01.07":
-                    continue
-                p = r.get(f"parcial_{regime}") or 0.0
-                cod = r["codigo"].upper()
-                if cod.startswith("DESMOB"):
-                    dist[-1] += p
-                elif cod.startswith(("MOB", "CAN", "INSIND")):
-                    dist[0] += p
-                else:
-                    for i in range(meses):
-                        dist[i] += p / meses
+    fonte = (contrato_ or {}).get("itens")
+    if fonte is None:
+        fonte = [dict(r, secao=secao_do_item(r["item"])) for r in calc["itens"] if r.get("tipo") == "servico"]
+    nomes = {s["secao"]: s["nome"] for s in calc["secoes"]}
+    por_secao: dict[str, list] = {}
+    for r in fonte:
+        p = r.get(f"parcial_{regime}") or 0.0
+        dist = por_secao.setdefault(r["secao"], [0.0] * meses)
+        cod = str(r["codigo"]).upper()
+        if cod.startswith("DESMOB"):
+            dist[-1] += p
+        elif cod.startswith(("MOB", "CAN", "INSIND")):
+            dist[0] += p
         else:
             for i in range(meses):
-                dist[i] = v / meses
+                dist[i] += p / meses
+    linhas, por_mes = [], [0.0] * meses
+    for sec in sorted(por_secao):
+        dist = por_secao[sec]
         for i in range(meses):
             por_mes[i] += dist[i]
-        linhas.append(dict(secao=s["secao"], nome=s["nome"], total=v, meses=[round(x, 2) for x in dist]))
+        linhas.append(dict(secao=sec, nome=nomes.get(sec, sec), total=round(sum(dist), 2), meses=[round(x, 2) for x in dist]))
     acum, ac = [], 0.0
     tot = sum(por_mes) or 1
     for v in por_mes:

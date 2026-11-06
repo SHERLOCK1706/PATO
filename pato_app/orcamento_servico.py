@@ -646,10 +646,11 @@ class Orcamentos:
     def resumo(self, pid: int) -> dict:
         r = self.calcular(pid)
         reg = r["vantajosa"]
-        meses = 12  # o PATO é anual (quantitativos para 12 meses)
+        # o PATO é o orçamento de 1 ano; QUANTIDADES, curva ABC e cronograma são do contrato (PATO × anos de vigência)
+        ct = po.contrato(r["itens"], self.anos_contrato(pid))
         return dict(totais=r["totais"], secoes=r["secoes"], vantajosa=reg, avisos=r["avisos"],
-                    abc=po.curva_abc(r["itens"], reg), cronograma=po.cronograma(r, reg, meses),
-                    totais_ref=r.get("totais_ref"))
+                    contrato=ct, abc=po.curva_abc(ct["itens"], reg),
+                    cronograma=po.cronograma(r, reg, ct["meses"], ct), totais_ref=r.get("totais_ref"))
 
     # ------------------------------------------------------------ edição
     def editar_item(self, pid: int, iid: str, campos: dict) -> dict:

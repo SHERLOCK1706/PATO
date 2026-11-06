@@ -232,7 +232,8 @@ def exportar(sv, pid: int, destino: str, modelo: str | None = None, recalcular: 
             cf = conferir(destino, calc["totais"])
             ja: set = set()
             for _ in range(4):  # quantidades encadeadas (ex.: AM/TM sobre outra linha) pedem mais de uma passada
-                if not cf["diferenca"] or all(abs(v) < 0.01 for v in cf["diferenca"].values()):
+                if not cf["diferenca"] or any(isinstance(v, str) for v in cf["diferenca"].values()) \
+                        or all(abs(v) < 0.01 for v in cf["diferenca"].values()):
                     break
                 if not alinhar(destino, calc, cf["linhas"], log, ja):
                     break
@@ -335,6 +336,8 @@ def conferir(arquivo: str, totais_sistema: dict) -> dict:
                     erros += [f"{ws.title}: {v}" for v in row if isinstance(v, str) and v in _ERROS]
         finally:
             wb.close()
-    dif = {r: round((tot or {}).get(r, 0) - totais_sistema[r], 2) for r in ("SD", "CD")} if tot else None
+    # total com erro de fórmula (#N/A, #VALUE!…) não é número: informa em vez de quebrar a conferência
+    dif = ({r: (round(tot[r] - totais_sistema[r], 2) if isinstance(tot.get(r), (int, float)) else f"total da planilha com erro: {tot.get(r)}")
+            for r in ("SD", "CD")} if tot else None)
     return dict(totais_planilha=tot, diferenca=dif, grupos=grupos, erros=len(erros), erros_exemplos=erros[:10],
                 linhas=linhas)

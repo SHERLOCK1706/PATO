@@ -53,7 +53,7 @@ def main():
     erros = cf.get("erros_exemplos") or []
     pend = r.get("pendencias") or []
     sobras = [x for x in pend if "ainda contém" in x]
-    alinhadas = [x for x in r.get("log") or [] if "alinhad" in x.lower()]
+    alinhadas = [x for x in r.get("log") or [] if "valor do sistema" in x or "em destaque" in x]
     ok = isinstance(dif, dict) and all(isinstance(v, (int, float)) and abs(v) < 0.01 for v in dif.values()) and not erros
     print(f"Projeto: {p.get('rodovia')} km {p.get('km_ini')}–{p.get('km_fim')} · data-base {p.get('data_base')} · "
           f"{m['servicos']} serviços")

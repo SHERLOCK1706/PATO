@@ -43,4 +43,7 @@ e exporta o Excel do orçamento e a **planilha de licitação no modelo da refer
 - Médios (~3–5 min): `tests/test_orcamento.py`, `tests/test_pato.py`, `tests/test_ficha.py`.
 - Lentos (~10 min, LibreOffice): `tests/test_licitacao.py` — rode em segundo plano.
 - Conferência completa da exportação: `/conferir-licitacao`.
+- **Agente revisor** (`.claude/agents/revisor.md`): revisor técnico cético, só leitura, parecer Crítica/Alta/Baixa.
+  Chamar antes de entregar/exportar um PATO e depois de mudanças no cálculo, ficha ou licitação; corrigir os achados
+  e, se forem Críticos, pedir nova revisão.
 - Tela: subir o app com um projeto carregado e conferir com Playwright (Chromium já instalado no ambiente remoto).
